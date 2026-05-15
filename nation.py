@@ -10,8 +10,8 @@ class Nation:
         self.pillar_scores = {} # {pillar_key: score}
         self.overall_score = None
 
-        def __repr__(self):
-            return f"Nation(iso3={self.iso3}, name={self.name}, region={self.region}, rec={self.rec})"
+    def __repr__(self):
+        return f"Nation(iso3={self.iso3}, name={self.name}, region={self.region}, rec={self.rec})"
 
 
 
