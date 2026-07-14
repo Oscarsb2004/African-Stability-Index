@@ -1,0 +1,1188 @@
+# colonial_history.yaml — Historical context for 54 AU member states
+#
+# colonial_type values:
+#   settler        — large permanent European settlement, land expropriation
+#   extractive     — resource/labour extraction with minimal settlement
+#   plantation     — slave-based plantation economy (islands + coastal)
+#   protectorate   — nominal sovereignty retained, indirect rule
+#   never_colonized — formal colonial rule not imposed
+#
+# slave_trade: rough intensity of slave export relative to area/population
+#   (based on Nunn 2008, "The Long-Run Effects of Africa's Slave Trade")
+#   none | low | medium | high | very_high
+#
+# Sources: COLDAT dataset; Nunn (2008); Acemoglu, Johnson & Robinson (2001);
+# Crawford Young "The African Colonial State in Comparative Perspective" (1994)
+
+DZA:
+  name: Algeria
+  primary_colonizer: France
+  other_colonizers: [Ottoman Empire]
+  colonial_start: 1830
+  colonial_end: 1962
+  independence_year: 1962
+  years_colonized: 132
+  colonial_type: settler
+  slave_trade: none
+  resources_extracted: [wheat, olive oil, phosphates, iron ore]
+  colonial_note: >
+    France waged a war of conquest that killed an estimated 500,000–1,000,000
+    Algerians in the 19th century. Pieds-noirs (European settlers) received
+    expropriated land. The War of Independence (1954–1962) cost a further
+    estimated 300,000–1,500,000 Algerian lives. Decolonization left deep
+    institutional fractures that contributed to the civil war of the 1990s.
+  sources:
+    - "Branche, R. (2001). La Torture et l'Armée pendant la Guerre d'Algérie."
+    - "Stora, B. (1991). La Gangrène et l'Oubli."
+
+AGO:
+  name: Angola
+  primary_colonizer: Portugal
+  colonial_start: 1575
+  colonial_end: 1975
+  independence_year: 1975
+  years_colonized: 400
+  colonial_type: extractive
+  slave_trade: very_high
+  resources_extracted: [slaves, rubber, ivory, diamonds, oil]
+  colonial_note: >
+    Angola was the single largest source of enslaved Africans in the Atlantic
+    trade — approximately 4–6 million people were exported over three centuries.
+    Portuguese rule also included the forced rubber and cotton labour system
+    (chibalo). Independence was followed immediately by a devastating civil war
+    (1975–2002) partly fuelled by Cold War proxy competition and diamond revenues.
+  sources:
+    - "Nunn, N. (2008). The Long-Run Effects of Africa's Slave Trade. QJE."
+    - "Heywood, L. (2009). Central Africans, Atlantic Creoles."
+
+BEN:
+  name: Benin
+  primary_colonizer: France
+  colonial_start: 1894
+  colonial_end: 1960
+  independence_year: 1960
+  years_colonized: 66
+  colonial_type: extractive
+  slave_trade: high
+  resources_extracted: [palm oil, slaves, cotton]
+  colonial_note: >
+    The Kingdom of Dahomey was itself a major participant in the slave trade
+    before French conquest. French rule reorganised labour through forced
+    porterage and taxation. The Dahomey Gap (coastal opening) made this region
+    one of the most heavily raided for Atlantic slave exports.
+  sources:
+    - "Law, R. (2004). Ouidah: The Social History of a West African Slaving Port."
+
+BWA:
+  name: Botswana
+  primary_colonizer: United Kingdom
+  colonial_start: 1885
+  colonial_end: 1966
+  independence_year: 1966
+  years_colonized: 81
+  colonial_type: protectorate
+  slave_trade: none
+  resources_extracted: [cattle, land (limited)]
+  colonial_note: >
+    Bechuanaland was established as a protectorate largely to block Boer
+    expansion rather than for resource extraction. Traditional Tswana political
+    structures were largely preserved under indirect rule. This relatively light
+    colonial footprint and strong post-independence leadership (Seretse Khama)
+    are frequently cited as contributors to Botswana's exceptional developmental
+    trajectory, aided also by diamond revenues from 1967.
+  sources:
+    - "Acemoglu, D., Johnson, S., Robinson, J. (2003). An African Success Story: Botswana."
+
+BFA:
+  name: Burkina Faso
+  primary_colonizer: France
+  colonial_start: 1896
+  colonial_end: 1960
+  independence_year: 1960
+  years_colonized: 64
+  colonial_type: extractive
+  slave_trade: medium
+  resources_extracted: [cotton, gold, labour for Côte d'Ivoire plantations]
+  colonial_note: >
+    Upper Volta (as it was called until 1984) served primarily as a labour
+    reserve for French plantations in Côte d'Ivoire. Forced labour under the
+    indigénat system continued until 1946. The territory was dissolved and
+    partitioned between neighbours in 1932, reconstituted in 1947.
+  sources:
+    - "Englebert, P. (1996). Burkina Faso: Unsteady Statehood in West Africa."
+
+BDI:
+  name: Burundi
+  primary_colonizer: Belgium
+  other_colonizers: [Germany]
+  colonial_start: 1890
+  colonial_end: 1962
+  independence_year: 1962
+  years_colonized: 72
+  colonial_type: extractive
+  slave_trade: low
+  resources_extracted: [coffee, tin, cotton]
+  colonial_note: >
+    Germany colonized Ruanda-Urundi from 1890; Belgium took control after 1916.
+    Belgian administrators hardened the Hutu/Tutsi distinction by requiring
+    racial identity cards (1933) — a system that contributed directly to cycles
+    of mass violence culminating in the 1972 Burundi genocide (200,000 Hutu
+    killed) and the 1993–2005 civil war.
+  sources:
+    - "Lemarchand, R. (1994). Burundi: Ethnocide as Discourse and Practice."
+
+CMR:
+  name: Cameroon
+  primary_colonizer: France
+  other_colonizers: [Germany, United Kingdom]
+  colonial_start: 1884
+  colonial_end: 1960
+  independence_year: 1960
+  years_colonized: 76
+  colonial_type: extractive
+  slave_trade: high
+  resources_extracted: [rubber, cocoa, coffee, timber, oil]
+  colonial_note: >
+    Germany's Kamerun (1884–1916) was divided between France (80%) and Britain
+    (20%) after WWI. German colonial rule included brutal forced labour for
+    railway and plantation construction. The British and French Cameroons voted
+    separately on independence in 1961; the anglophone northwest/southwest merger
+    created a political cleavage that erupted into armed conflict from 2016.
+  sources:
+    - "Mbembe, A. (2001). On the Postcolony."
+
+CPV:
+  name: Cabo Verde
+  primary_colonizer: Portugal
+  colonial_start: 1462
+  colonial_end: 1975
+  independence_year: 1975
+  years_colonized: 513
+  colonial_type: plantation
+  slave_trade: high
+  resources_extracted: [slaves (transhipment hub), salt, dyes]
+  colonial_note: >
+    The Cape Verde islands were uninhabited when the Portuguese arrived and were
+    settled as a slave-trading transhipment hub and plantation economy. The Creole
+    population (Kriolu) that emerged from the mixing of enslaved Africans and
+    Portuguese settlers became a distinctive Atlantic cultural identity. The
+    islands' high IIAG and AII scores reflect post-independence stability under
+    PAICV/MpD alternation since 1991 — not a colonial legacy of good institutions.
+  sources:
+    - "Lobban, R. (1995). Cape Verde: Crioulo Colony to Independent Nation."
+
+CAF:
+  name: Central African Republic
+  primary_colonizer: France
+  colonial_start: 1887
+  colonial_end: 1960
+  independence_year: 1960
+  years_colonized: 73
+  colonial_type: extractive
+  slave_trade: medium
+  resources_extracted: [rubber, ivory, cotton, diamonds, timber]
+  colonial_note: >
+    Ubangi-Shari was among the most brutally exploited territories in French
+    Equatorial Africa. Concessionary companies extracted rubber through violence
+    comparable to the Belgian Congo. Forced labour, the ivory trade, and
+    population flight devastated the region. André Gide's 1927 "Voyage au Congo"
+    exposed these abuses. The country has experienced near-continuous conflict
+    since independence.
+  sources:
+    - "O'Toole, T. (1986). The Central African Republic: The Continent's Hidden Heart."
+
+TCD:
+  name: Chad
+  primary_colonizer: France
+  colonial_start: 1900
+  colonial_end: 1960
+  independence_year: 1960
+  years_colonized: 60
+  colonial_type: extractive
+  slave_trade: medium
+  resources_extracted: [cotton, cattle, labour]
+  colonial_note: >
+    Chad was administered as the most neglected part of French Equatorial Africa
+    — difficult access, low economic value, and chronic underfunding of services.
+    The north-south divide (Muslim Arab/Toubou north vs. Sara Christian south)
+    was sharpened by colonial policies. Post-independence Chad has endured nearly
+    continuous conflict, with France repeatedly intervening militarily.
+  sources:
+    - "Buijtenhuis, R. (1987). Le Frolinat et les guerres civiles du Tchad."
+
+COM:
+  name: Comoros
+  primary_colonizer: France
+  colonial_start: 1841
+  colonial_end: 1975
+  independence_year: 1975
+  years_colonized: 134
+  colonial_type: plantation
+  slave_trade: low
+  resources_extracted: [ylang-ylang, vanilla, cloves, copra]
+  colonial_note: >
+    France annexed the islands progressively and developed plantation agriculture
+    using enslaved and indentured labour. At independence in 1975, Mayotte voted
+    to remain French (still a French territory today), fragmenting the archipelago.
+    The Comoros have experienced over 20 coups or coup attempts since independence
+    — the highest rate in the world. French mercenary Bob Denard staged multiple
+    interventions.
+  sources:
+    - "Newitt, M. (1984). The Comoro Islands."
+
+COD:
+  name: Democratic Republic of the Congo
+  primary_colonizer: Belgium
+  other_colonizers: ["Congo Free State (Leopold II personal territory)"]
+  colonial_start: 1885
+  colonial_end: 1960
+  independence_year: 1960
+  years_colonized: 75
+  colonial_type: extractive
+  slave_trade: high
+  resources_extracted: [rubber, ivory, copper, cobalt, diamonds, coltan]
+  colonial_note: >
+    Leopold II's Congo Free State (1885–1908) was one of the most extreme
+    extractive regimes in colonial history. Rubber quotas enforced by cutting off
+    the hands of workers who missed targets. Estimated 10 million deaths. Belgium
+    took over in 1908 but maintained brutal labour regimes. Independence (1960)
+    was immediately destabilised by Belgian support for Katanga secession and CIA
+    involvement in Lumumba's assassination. The country's mineral wealth — rubber,
+    cobalt, coltan — has funded continuous conflict since.
+  sources:
+    - "Hochschild, A. (1998). King Leopold's Ghost."
+    - "Stearns, J. (2011). Dancing in the Glory of Monsters."
+
+COG:
+  name: Republic of the Congo
+  primary_colonizer: France
+  colonial_start: 1880
+  colonial_end: 1960
+  independence_year: 1960
+  years_colonized: 80
+  colonial_type: extractive
+  slave_trade: medium
+  resources_extracted: [rubber, ivory, timber, oil]
+  colonial_note: >
+    Middle Congo (Moyen-Congo) was part of French Equatorial Africa and subject
+    to the same concessionary rubber system as the CAR. Brazzaville served as
+    the administrative capital of FEA. Post-independence politics have alternated
+    between periods of Marxist single-party rule and multiparty elections, with
+    significant oil revenues shaping patronage networks.
+  sources:
+    - "Clark, J. (2008). The Failure of Democracy in the Republic of Congo."
+
+CIV:
+  name: Côte d'Ivoire
+  primary_colonizer: France
+  colonial_start: 1893
+  colonial_end: 1960
+  independence_year: 1960
+  years_colonized: 67
+  colonial_type: extractive
+  slave_trade: high
+  resources_extracted: [palm oil, cocoa, coffee, slaves, timber]
+  colonial_note: >
+    Côte d'Ivoire became France's most economically productive West African
+    territory through cocoa and coffee cultivation based on forced labour and
+    later migrant workers from Upper Volta. Félix Houphouët-Boigny maintained
+    close ties with France post-independence ("Françafrique"), achieving relative
+    stability until the 1990s. The concept of ivoirité (who counts as truly
+    Ivorian) later fuelled two civil wars.
+  sources:
+    - "Toungara, J. (1990). The Apotheosis of Côte d'Ivoire's Nana Houphouët-Boigny."
+
+DJI:
+  name: Djibouti
+  primary_colonizer: France
+  colonial_start: 1862
+  colonial_end: 1977
+  independence_year: 1977
+  years_colonized: 115
+  colonial_type: extractive
+  slave_trade: none
+  resources_extracted: [strategic port access, salt]
+  colonial_note: >
+    French Somaliland (later the French Territory of Afars and Issas) was
+    valued primarily for Djibouti port and the Addis Ababa–Djibouti railway,
+    giving France a strategic position on the Red Sea. France retained a military
+    base after independence and continues to do so alongside US, Chinese, Japanese,
+    and Italian bases — reflecting Djibouti's critical geopolitical position.
+  sources:
+    - "Tholomier, R. (1981). Djibouti: Pawn of the Horn of Africa."
+
+EGY:
+  name: Egypt
+  primary_colonizer: United Kingdom
+  other_colonizers: [France, Ottoman Empire]
+  colonial_start: 1882
+  colonial_end: 1956
+  independence_year: 1956
+  years_colonized: 74
+  colonial_type: extractive
+  slave_trade: low
+  resources_extracted: [cotton, Suez Canal revenues, grain]
+  colonial_note: >
+    Britain occupied Egypt in 1882 ostensibly to restore order. Egypt gained
+    nominal independence in 1922 and formal sovereign status in 1952 (Nasser's
+    coup removed the British-aligned monarchy), but British troops remained at
+    the Suez Canal Zone until 1954 and the canal itself was controlled by an
+    Anglo-French company until Nasser's nationalisation in July 1956. The
+    colonial_end date used here is 1956 — the Suez Crisis and final British
+    military departure — reflecting when British economic and military power was
+    genuinely expelled rather than 1952 (a political transition that left canal
+    control and troop presence intact). Cotton monoculture for British textile
+    mills restructured Egyptian agriculture across the entire period.
+    # Schema note: independence_year matches colonial_end (1956, Suez Crisis).
+    # 1952 is the date of the monarchy's fall; 1956 is the real end of British
+    # economic sovereignty. If a consumer model treats independence_year as
+    # "when colonialism ended," both dates point to 1956 consistently here.
+  sources:
+    - "Owen, R. (1981). The Middle East in the World Economy 1800-1914."
+    - "Kyle, K. (1991). Suez: Britain's End of Empire in the Middle East."
+
+GNQ:
+  name: Equatorial Guinea
+  primary_colonizer: Spain
+  colonial_start: 1778
+  colonial_end: 1968
+  independence_year: 1968
+  years_colonized: 190
+  colonial_type: plantation
+  slave_trade: medium
+  resources_extracted: [cocoa, timber, oil (post-independence)]
+  colonial_note: >
+    Spain used Fernando Poo (now Bioko) as a cocoa plantation economy with
+    contract labourers from Nigeria and São Tomé under harsh conditions.
+    Independence (1968) brought Francisco Macías Nguema, one of Africa's most
+    brutal dictators, who killed or expelled a third of the population before
+    his nephew Obiang Nguema seized power in 1979 and rules to this day.
+    Large offshore oil discoveries in the 1990s enriched the ruling family
+    without broader development.
+  sources:
+    - "Sundiata, I. (1990). Equatorial Guinea: Colonialism, State Terror, and the Search for Stability."
+
+ERI:
+  name: Eritrea
+  primary_colonizer: Italy
+  other_colonizers: [United Kingdom, Ethiopia]
+  colonial_start: 1890
+  colonial_end: 1993
+  independence_year: 1993
+  years_colonized: 103
+  colonial_type: extractive
+  slave_trade: none
+  resources_extracted: [cotton, hides, salt]
+  colonial_note: >
+    Italy created Eritrea as a colony in 1890 and used it as a staging ground
+    for the failed conquest of Ethiopia (Adwa 1896). After Italy's defeat in WWII,
+    Britain administered the territory until 1952 when the UN federated it with
+    Ethiopia — against Eritrean preferences. Ethiopia's annexation in 1962
+    triggered a 30-year liberation war. Eritrea's 1993 independence was hard-won,
+    but the ruling PFDJ party has since created one of the world's most closed
+    states — described as "Africa's North Korea."
+  sources:
+    - "Pool, D. (2001). From Guerrillas to Government: The Eritrean People's Liberation Front."
+
+SWZ:
+  name: Eswatini
+  primary_colonizer: United Kingdom
+  colonial_start: 1902
+  colonial_end: 1968
+  independence_year: 1968
+  years_colonized: 66
+  colonial_type: protectorate
+  slave_trade: none
+  resources_extracted: [labour for South African mines, sugar, timber]
+  colonial_note: >
+    Swaziland (now Eswatini) was a British protectorate administered alongside
+    Bechuanaland and Basutoland. The monarchy was preserved under indirect rule.
+    Unlike its neighbours, Eswatini has never held multiparty elections —
+    it is Africa's last absolute monarchy.
+  sources:
+    - "Levin, R. (1997). When the Sleeping Grass Awakens: Land and Power in Swaziland."
+
+ETH:
+  name: Ethiopia
+  primary_colonizer: none
+  colonial_start: null
+  colonial_end: null
+  independence_year: null
+  years_colonized: 0
+  colonial_type: never_colonized
+  slave_trade: medium
+  resources_extracted: []
+  colonial_note: >
+    Ethiopia is one of only two African states (with Liberia) never subjected
+    to formal colonial rule. Emperor Menelik II's decisive victory over Italy
+    at the Battle of Adwa (1896) secured Ethiopian independence and made the
+    country a symbol of African resistance throughout the continent and the
+    diaspora. Italy occupied Ethiopia 1936–1941 but this is classified as a
+    temporary military occupation rather than colonization. Ethiopia did engage
+    in its own imperial expansion under Menelik and Haile Selassie, incorporating
+    Oromo, Somali, and other peoples — a distinct but related historical dynamic.
+  sources:
+    - "Zewde, B. (2001). A History of Modern Ethiopia, 1855-1991."
+    - "Marcus, H. (1994). A History of Ethiopia."
+
+GAB:
+  name: Gabon
+  primary_colonizer: France
+  colonial_start: 1839
+  colonial_end: 1960
+  independence_year: 1960
+  years_colonized: 121
+  colonial_type: extractive
+  slave_trade: medium
+  resources_extracted: [timber, rubber, ivory, manganese, uranium, oil]
+  colonial_note: >
+    Gabon was the first French foothold in equatorial Africa. Albert Schweitzer
+    established his famous hospital in Lambaréné under French rule. At
+    independence, Léon Mba and then Omar Bongo (who ruled 1967–2009) maintained
+    close relations with France ("Françafrique"), exchanging oil revenues and
+    uranium access for political stability guarantees. The Bongo family's wealth
+    accumulation while much of the population remained poor exemplifies the
+    extractive post-colonial state.
+  sources:
+    - "Barnes, J. (1992). Gabon: Beyond the Colonial Legacy."
+
+GMB:
+  name: Gambia
+  primary_colonizer: United Kingdom
+  colonial_start: 1765
+  colonial_end: 1965
+  independence_year: 1965
+  years_colonized: 200
+  colonial_type: extractive
+  slave_trade: very_high
+  resources_extracted: [slaves, groundnuts]
+  colonial_note: >
+    Britain established a trading fort on St. James Island as early as 1587, but
+    colonial_start is set to 1765, when the Gambia River settlements became a
+    formal British Crown Colony (Senegambia). The 1587 date reflects a pre-colonial
+    commercial and slave-trading presence, not formal sovereignty; the 1765 date
+    is the accepted start of colonial administration. This matters because years_
+    colonized (200) is calculated from the formal colonial period only. The
+    Gambia River was one of West Africa's most heavily used slave export arteries.
+    After abolition, groundnut cultivation replaced the slave trade as the
+    economic basis under the same extractive logic. The country's extraordinary
+    geography — a narrow strip barely 50 km wide, entirely surrounded by Senegal
+    — reflects British colonial boundary-drawing that prioritised riverine trade
+    access over territorial coherence, creating a state whose geography itself is
+    a direct artefact of colonialism.
+  sources:
+    - "Wright, D. (1997). The World and a Very Small Place in Africa."
+    - "Gray, J.M. (1940). A History of The Gambia."
+
+GHA:
+  name: Ghana
+  primary_colonizer: United Kingdom
+  colonial_start: 1874
+  colonial_end: 1957
+  independence_year: 1957
+  years_colonized: 83
+  colonial_type: extractive
+  slave_trade: very_high
+  resources_extracted: [slaves, gold, cocoa, timber]
+  colonial_note: >
+    The Gold Coast (named for its gold trade) was one of the most heavily raided
+    West African regions for Atlantic slave exports — Elmina Castle and Cape Coast
+    Castle were major slave-trading fortresses. British colonisation from 1874
+    brought cocoa cultivation and export. Ghana's independence under Kwame Nkrumah
+    (1957) was a watershed moment for African decolonisation — the first sub-Saharan
+    country to achieve independence in the modern era.
+  sources:
+    - "Akyeampong, E. (2001). Between the Sea and the Lagoon."
+    - "Nkrumah, K. (1957). Ghana: The Autobiography."
+
+GIN:
+  name: Guinea
+  primary_colonizer: France
+  colonial_start: 1891
+  colonial_end: 1958
+  independence_year: 1958
+  years_colonized: 67
+  colonial_type: extractive
+  slave_trade: high
+  resources_extracted: [slaves, groundnuts, rubber, bauxite, iron ore]
+  colonial_note: >
+    Guinea made history by being the only French African colony to vote "Non"
+    in De Gaulle's 1958 referendum on the French Community. France retaliated
+    by withdrawing all personnel and destroying infrastructure. Sékou Touré's
+    subsequent dictatorship (1958–1984) caused enormous suffering. Guinea sits
+    atop the world's largest bauxite reserves; this wealth has fuelled
+    competition rather than development.
+  sources:
+    - "Schmidt, E. (2007). Cold War and Decolonization in Guinea."
+
+GNB:
+  name: Guinea-Bissau
+  primary_colonizer: Portugal
+  colonial_start: 1879
+  colonial_end: 1974
+  independence_year: 1974
+  years_colonized: 95
+  colonial_type: extractive
+  slave_trade: very_high
+  resources_extracted: [slaves, groundnuts, palm oil]
+  colonial_note: >
+    Portuguese Guinea was one of Africa's most impoverished colonies, valued
+    primarily as a slave export route for Cape Verde plantations and the Americas.
+    The liberation war (1963–1974) under Amílcar Cabral and PAIGC was among the
+    most successful guerrilla campaigns in Africa, defeating a Portuguese army
+    with NATO-supplied weapons. Guinea-Bissau has experienced multiple coups
+    and instability since independence.
+  sources:
+    - "Chabal, P. (1983). Amilcar Cabral: Revolutionary Leadership and People's War."
+
+KEN:
+  name: Kenya
+  primary_colonizer: United Kingdom
+  colonial_start: 1895
+  colonial_end: 1963
+  independence_year: 1963
+  years_colonized: 68
+  colonial_type: settler
+  slave_trade: medium
+  resources_extracted: [land, ivory, sisal, tea, coffee]
+  colonial_note: >
+    Kenya's highlands were expropriated for European settlement; the Kikuyu and
+    other communities were displaced into "Native Reserves." The Mau Mau uprising
+    (1952–1960) was suppressed with systematic torture and mass detention — the
+    British government apologised and paid compensation in 2013. Land inequality
+    rooted in colonial expropriation remains a central political issue today.
+  sources:
+    - "Anderson, D. (2005). Histories of the Hanged."
+    - "Elkins, C. (2005). Imperial Reckoning."
+
+LSO:
+  name: Lesotho
+  primary_colonizer: United Kingdom
+  colonial_start: 1868
+  colonial_end: 1966
+  independence_year: 1966
+  years_colonized: 98
+  colonial_type: protectorate
+  slave_trade: none
+  resources_extracted: [labour for South African mines, water]
+  colonial_note: >
+    Basutoland was brought under British protection in 1868 at the request of
+    King Moshoeshoe I to prevent Boer annexation. Traditional Sotho political
+    structures were preserved under indirect rule. As a landlocked enclave within
+    South Africa, Lesotho's economy has long depended on labour migration to
+    South African mines. The Lesotho Highlands Water Project supplies South
+    Africa's Gauteng province.
+  sources:
+    - "Eldredge, E. (1993). A South African Kingdom: The Pursuit of Security in Nineteenth-Century Lesotho."
+
+LBR:
+  name: Liberia
+  primary_colonizer: none
+  other_colonizers: ["American Colonization Society (settler project, not colonial power)"]
+  colonial_start: null
+  colonial_end: null
+  independence_year: 1847
+  years_colonized: 0
+  colonial_type: never_colonized
+  slave_trade: high
+  resources_extracted: []
+  colonial_note: >
+    Liberia was founded in 1822 by the American Colonization Society as a
+    settlement for freed American slaves. It declared independence in 1847.
+    However, the Americo-Liberian minority (returned diaspora) established
+    political domination over the indigenous majority — a system of internal
+    stratification with elements of colonial dynamics. Samuel Doe's 1980 coup
+    ended Americo-Liberian rule but initiated cycles of brutal civil war
+    (1989–2003) that killed approximately 250,000 people.
+  sources:
+    - "Liebenow, J. (1987). Liberia: The Quest for Democracy."
+
+LBY:
+  name: Libya
+  primary_colonizer: Italy
+  other_colonizers: [Ottoman Empire, United Kingdom, France]
+  colonial_start: 1911
+  colonial_end: 1951
+  independence_year: 1951
+  years_colonized: 40
+  colonial_type: settler
+  slave_trade: low
+  resources_extracted: [land, esparto grass, oil (post-independence)]
+  colonial_note: >
+    Italy invaded Ottoman Libya in 1911 and waged one of the most violent
+    colonial pacification campaigns in Africa — the Cyrenaica pacification
+    (1923–1932) under Marshal Graziani killed an estimated 50,000–100,000
+    Libyans and displaced half the Cyrenaican population. Oil was discovered in
+    1959; Gaddafi's 1969 coup nationalised oil revenues and funded his four-decade
+    rule. Libya's collapse after 2011 reflects both the absence of institutions
+    and tribal fragmentation that colonialism intensified.
+  sources:
+    - "Del Boca, A. (2005). Italiani, brava gente?"
+
+MDG:
+  name: Madagascar
+  primary_colonizer: France
+  colonial_start: 1896
+  colonial_end: 1960
+  independence_year: 1960
+  years_colonized: 64
+  colonial_type: extractive
+  slave_trade: low
+  resources_extracted: [vanilla, cloves, graphite, chromite, coffee]
+  colonial_note: >
+    France conquered Madagascar in 1896 after destroying the Merina Kingdom.
+    The 1947 uprising (Insurrection of Madagascar) was suppressed with an
+    estimated 11,000–90,000 killed. Forced labour and the replacement of the
+    Merina administrative class with French officials restructured the island's
+    polity. Post-independence Madagascar has experienced multiple political
+    crises, including the 2009 coup that triggered international isolation.
+  sources:
+    - "Tronchon, J. (1986). L'insurrection malgache de 1947."
+
+MWI:
+  name: Malawi
+  primary_colonizer: United Kingdom
+  colonial_start: 1891
+  colonial_end: 1964
+  independence_year: 1964
+  years_colonized: 73
+  colonial_type: extractive
+  slave_trade: medium
+  resources_extracted: [labour for Rhodesian mines, tobacco, tea]
+  colonial_note: >
+    Nyasaland was brought under British protection partly in response to Arab
+    slave trade from the coast. David Livingstone's legacy as an anti-slavery
+    missionary gave the territory a distinctive colonial narrative. Hastings
+    Banda ruled as a life president from independence until 1994, when Malawi
+    became one of Africa's early multiparty transitions. The country remains
+    among the world's poorest.
+  sources:
+    - "McCracken, J. (2012). A History of Malawi, 1859-1966."
+
+MLI:
+  name: Mali
+  primary_colonizer: France
+  colonial_start: 1890
+  colonial_end: 1960
+  independence_year: 1960
+  years_colonized: 70
+  colonial_type: extractive
+  slave_trade: high
+  resources_extracted: [slaves, gold, groundnuts, cotton]
+  colonial_note: >
+    French Sudan was the core of the Sahel's historic gold and slave trade routes.
+    Conquest required defeating the Tukulor Empire, Samori Ture's Wassoulou
+    Empire, and the Toucouleur state — major resistance campaigns. As French Sudan,
+    Mali was a labour reserve for groundnut cultivation. The 2012 Tuareg/Islamist
+    rebellion and subsequent regional destabilisation draws on long-standing
+    tensions between the south and the Saharan north that colonial borders both
+    created and ignored.
+  sources:
+    - "Roberts, R. (1987). Warriors, Merchants, and Slaves."
+
+MRT:
+  name: Mauritania
+  primary_colonizer: France
+  colonial_start: 1902
+  colonial_end: 1960
+  independence_year: 1960
+  years_colonized: 58
+  colonial_type: extractive
+  slave_trade: medium
+  resources_extracted: [fish, iron ore, gum arabic]
+  colonial_note: >
+    Mauritania straddles the Arab-Berber north and Black African south —
+    a division sharpened by French colonial administration. Mauritania abolished
+    slavery legally in 1981 (last country in the world to do so) and criminalised
+    it in 2007, yet forced labour and slavery-like conditions persist in practice.
+    Conflict with Senegal (1989–1991) triggered massive population displacement
+    along ethnic lines.
+  sources:
+    - "Pazzanita, A. (2008). Historical Dictionary of Mauritania."
+
+MUS:
+  name: Mauritius
+  primary_colonizer: United Kingdom
+  other_colonizers: [Netherlands, France]
+  colonial_start: 1638
+  colonial_end: 1968
+  independence_year: 1968
+  years_colonized: 330
+  colonial_type: plantation
+  slave_trade: high
+  resources_extracted: [sugar (slave labour then indentured labour)]
+  colonial_note: >
+    Mauritius was uninhabited when the Dutch arrived in 1598. France developed
+    it as a slave plantation economy (1715–1810); Britain continued sugar
+    production with enslaved workers until abolition (1835), then replacing
+    them with approximately 450,000 indentured labourers from India — creating
+    the island's current demographic plurality. Mauritius achieved remarkable
+    post-independence development through export processing zones, tourism,
+    and financial services, often cited as an African development success.
+    Note: high stability scores reflect island insularity and economic success,
+    not colonization legacy.
+  sources:
+    - "Eriksen, T.H. (1998). Common Denominators: Ethnicity, Nation-Building and Compromise in Mauritius."
+
+MAR:
+  name: Morocco
+  primary_colonizer: France
+  other_colonizers: [Spain]
+  colonial_start: 1912
+  colonial_end: 1956
+  independence_year: 1956
+  years_colonized: 44
+  colonial_type: protectorate
+  slave_trade: low
+  resources_extracted: [phosphates, sardines, agricultural land]
+  colonial_note: >
+    Morocco became a French protectorate in 1912 (with a Spanish zone in the
+    north and south). The French resident-general Lyautey attempted to govern
+    through traditional Moroccan institutions ("association" vs. assimilation).
+    The 1930 Berber Dahir, which applied French law to Berber communities,
+    sparked early nationalist resistance. Mohammed V's exile (1953) and return
+    (1955) accelerated independence. Morocco remains the only African Union
+    member with a territorial dispute — over Western Sahara.
+  sources:
+    - "Miller, S. (2013). A History of Modern Morocco."
+
+MOZ:
+  name: Mozambique
+  primary_colonizer: Portugal
+  colonial_start: 1498
+  colonial_end: 1975
+  independence_year: 1975
+  years_colonized: 477
+  colonial_type: extractive
+  slave_trade: very_high
+  resources_extracted: [slaves, ivory, gold, sugar, cashews, coal, gas]
+  colonial_note: >
+    Portugal controlled the Mozambique coast from 1498 and exported millions
+    of enslaved Africans primarily to Brazil. The prazo system of large land
+    grants created exploitative feudal conditions. Forced cotton cultivation
+    (chibalo) continued into the 1960s. FRELIMO's liberation war (1964–1975)
+    ended Portuguese rule but the RENAMO insurgency, supported by Rhodesia and
+    apartheid South Africa, caused ~1 million deaths. Recent natural gas finds
+    have attracted international investment.
+  sources:
+    - "Newitt, M. (1995). A History of Mozambique."
+    - "Finnegan, W. (1992). A Complicated War."
+
+NAM:
+  name: Namibia
+  primary_colonizer: Germany
+  other_colonizers: [South Africa]
+  colonial_start: 1884
+  colonial_end: 1990
+  independence_year: 1990
+  years_colonized: 106
+  colonial_type: settler
+  slave_trade: none
+  resources_extracted: [diamonds, cattle, land]
+  colonial_note: >
+    Germany's colonial regime in South West Africa carried out the Herero and
+    Nama genocide (1904–1908) — the first genocide of the 20th century, killing
+    an estimated 65–80% of the Herero people and 50% of the Nama. South Africa
+    occupied the territory in 1915 and applied apartheid law. Germany formally
+    recognised the genocide in 2021. SWAPO's liberation war (1966–1989) ended
+    with independence in 1990; SWAPO has governed since.
+  sources:
+    - "Olusoga, D., Erichsen, C.W. (2010). The Kaiser's Holocaust."
+    - "Gewald, J.B. (1999). Herero Heroes."
+
+NER:
+  name: Niger
+  primary_colonizer: France
+  colonial_start: 1900
+  colonial_end: 1960
+  independence_year: 1960
+  years_colonized: 60
+  colonial_type: extractive
+  slave_trade: medium
+  resources_extracted: [groundnuts, cattle, uranium]
+  colonial_note: >
+    Niger was among the most neglected territories in French West Africa —
+    landlocked, poor, and regularly devastated by drought. Its strategic
+    importance increased sharply with uranium discoveries in the 1960s, which
+    France has controlled through Areva/Orano ever since. A 2023 military coup
+    removed French-aligned President Bazoum, accelerating France's ejection
+    from the Sahel and the formation of the Alliance of Sahel States with
+    Mali and Burkina Faso.
+  sources:
+    - "Lund, C. (1998). Law, Power and Politics in Niger."
+
+NGA:
+  name: Nigeria
+  primary_colonizer: United Kingdom
+  colonial_start: 1861
+  colonial_end: 1960
+  independence_year: 1960
+  years_colonized: 99
+  colonial_type: extractive
+  slave_trade: very_high
+  resources_extracted: [slaves, palm oil, groundnuts, cocoa, tin, oil]
+  colonial_note: >
+    Nigeria was the largest source of enslaved Africans from any single colonial
+    territory — the Bight of Biafra and Bight of Benin together exported millions.
+    British amalgamation of the Northern and Southern Protectorates in 1914
+    (under Lugard) created a state whose internal contradictions have never been
+    resolved: over 250 ethnic groups, stark religious (north Muslim / south
+    Christian) and economic divides, and a civil war (Biafra, 1967–1970) that
+    killed an estimated 1–3 million. Oil discovered in 1956 in the Niger Delta;
+    revenues have funded both development and kleptocracy.
+  sources:
+    - "Falola, T. (1999). The History of Nigeria."
+    - "Maier, K. (2000). This House Has Fallen."
+
+RWA:
+  name: Rwanda
+  primary_colonizer: Belgium
+  other_colonizers: [Germany]
+  colonial_start: 1884
+  colonial_end: 1962
+  independence_year: 1962
+  years_colonized: 78
+  colonial_type: extractive
+  slave_trade: none
+  resources_extracted: [coffee, tin, tungsten, coltan]
+  colonial_note: >
+    Germany colonised Ruanda-Urundi from 1884; Belgium took control after 1916.
+    Belgian administrators institutionalised and racialised the Hutu/Tutsi
+    distinction (which had been more fluid under the Mwami monarchy), introducing
+    racial ID cards in 1933. Belgian favouritism shifted from Tutsi to Hutu in
+    the 1950s. The resulting violence in 1959–1962 killed tens of thousands.
+    The 1994 genocide — in which approximately 800,000 Tutsi and moderate Hutu
+    were killed in 100 days — was the direct downstream consequence of this
+    colonial identity politics. Post-genocide Rwanda under Kagame has achieved
+    remarkable reconstruction.
+  sources:
+    - "Prunier, G. (1995). The Rwanda Crisis."
+    - "Straus, S. (2006). The Order of Genocide."
+
+STP:
+  name: Sao Tome and Principe
+  primary_colonizer: Portugal
+  colonial_start: 1485
+  colonial_end: 1975
+  independence_year: 1975
+  years_colonized: 490
+  colonial_type: plantation
+  slave_trade: high
+  resources_extracted: [slaves (transhipment), sugar, cocoa]
+  colonial_note: >
+    The islands were uninhabited when Portugal arrived and developed as sugar
+    plantation colonies using enslaved West and Central Africans from 1485.
+    São Tomé was briefly the world's largest sugar producer. After sugar's
+    decline, the islands became a transhipment point for enslaved people bound
+    for the Americas. In the 20th century, cocoa plantations replaced sugar.
+    The country has maintained democratic governance since 1990 and benefits
+    from small-island geographic insularity.
+  sources:
+    - "Eyzaguirre, P. (1986). Small Farmers and Estates in Sao Tome."
+
+SEN:
+  name: Senegal
+  primary_colonizer: France
+  colonial_start: 1677
+  colonial_end: 1960
+  independence_year: 1960
+  years_colonized: 283
+  colonial_type: extractive
+  slave_trade: very_high
+  resources_extracted: [slaves, gum arabic, groundnuts, phosphates, fish]
+  colonial_note: >
+    Senegal was one of France's oldest African possessions — the Gorée Island
+    slave house (though its specific role is debated by historians) symbolises
+    the Atlantic trade. Dakar served as the capital of French West Africa,
+    giving Senegal unusual centrality in French colonial administration. The
+    Quatre Communes gave certain Senegalese French citizenship rights from
+    the 19th century. Léopold Sédar Senghor (poet, co-creator of the
+    Négritude movement) led the country to independence and peaceful transition.
+    Senegal is one of West Africa's most stable democracies.
+  sources:
+    - "Diouf, M. (2001). Histoire du Sénégal."
+    - "Gellar, S. (2005). Democracy in Senegal."
+
+SYC:
+  name: Seychelles
+  primary_colonizer: United Kingdom
+  other_colonizers: [France]
+  colonial_start: 1742
+  colonial_end: 1976
+  independence_year: 1976
+  years_colonized: 234
+  colonial_type: plantation
+  slave_trade: low
+  resources_extracted: [coconut oil, tortoiseshell, guano]
+  colonial_note: >
+    The islands were uninhabited when France claimed them in 1742 and settled
+    them with enslaved Africans and French planters. Britain took possession
+    in 1810. Post-independence politics included a 1977 coup by France-Albert
+    René, followed by one-party rule until 1992. Today the Seychelles achieves
+    the highest IIAG scores in Africa — a function of small population (~100,000),
+    high-income tourism economy, and island insularity that dramatically reduces
+    many fragility indicators. Direct comparisons with continental Africa are
+    methodologically problematic.
+  sources:
+    - "Benedict, B. (1966). People of the Seychelles."
+
+SLE:
+  name: Sierra Leone
+  primary_colonizer: United Kingdom
+  colonial_start: 1808
+  colonial_end: 1961
+  independence_year: 1961
+  years_colonized: 153
+  colonial_type: extractive
+  slave_trade: very_high
+  resources_extracted: [slaves, palm oil, diamonds, iron ore, rutile]
+  colonial_note: >
+    Freetown was founded in 1787 as a settlement for freed slaves ("Province of
+    Freedom") and Sierra Leone was a British Crown Colony from 1808. The hinterland
+    was a British Protectorate from 1896 with different rights for Krio (Creole
+    descendants) and indigenous peoples. Diamond mining from the 1930s created
+    the resource curse that funded the devastating civil war (1991–2002) — during
+    which the RUF used diamond revenues and amputations to terrorise civilians.
+  sources:
+    - "Peters, K. (2011). War and the Crisis of Youth in Sierra Leone."
+    - "Keen, D. (2005). Conflict and Collusion in Sierra Leone."
+
+SOM:
+  name: Somalia
+  primary_colonizer: Italy
+  other_colonizers: [United Kingdom, France]
+  colonial_start: 1884
+  colonial_end: 1960
+  independence_year: 1960
+  years_colonized: 76
+  colonial_type: extractive
+  slave_trade: low
+  resources_extracted: [livestock, bananas, hides]
+  colonial_note: >
+    Somalia was partitioned between Italy (south), Britain (north), and France
+    (Djibouti). The Ogaden region was given to Ethiopia; the Northern Frontier
+    District to Kenya. These artificial divisions created the "Somali Question"
+    which shaped post-independence politics. Siad Barre's socialist dictatorship
+    (1969–1991) and its collapse precipitated one of the world's most protracted
+    state failures. Somaliland in the north has maintained relative stability since
+    its unilateral 1991 independence declaration (unrecognised internationally).
+  sources:
+    - "Lewis, I.M. (2002). A Modern History of the Somali."
+    - "Menkhaus, K. (2006). Somalia: State Collapse and the Threat of Terrorism."
+
+ZAF:
+  name: South Africa
+  primary_colonizer: United Kingdom
+  other_colonizers: [Netherlands, "Boer Republics"]
+  colonial_start: 1652
+  colonial_end: 1994
+  independence_year: 1994
+  political_independence: 1910
+  years_colonized: 342
+  colonial_type: settler
+  slave_trade: medium
+  resources_extracted: [land, gold, diamonds, coal, labour]
+  colonial_note: >
+    Dutch settlement began at the Cape in 1652, dispossessing Khoikhoi and San
+    communities. British conquest and the Zulu and Xhosa Wars extended control
+    over Black African kingdoms through the 19th century. The discovery of
+    diamonds (1867) and gold (1886) transformed the economy and led to the
+    Anglo-Boer Wars. The 1910 Union of South Africa gave formal political
+    independence from Britain (political_independence field) but created a white
+    minority settler state with institutionalised racial segregation — not
+    liberation for the African majority. Formal apartheid (1948–1994) was a
+    comprehensive system of racial domination in law, land, labour, and education.
+    colonial_end is therefore set to 1994 (first universal democratic election),
+    and years_colonized (342) is computed from that date. Any model using
+    independence_year as a proxy for "end of colonial systems" will behave
+    correctly here; political_independence records the earlier formal British
+    sovereignty transfer for historiographical reference only. South Africa has
+    the world's highest Gini coefficient — a direct legacy of 342 years of
+    structured dispossession.
+  sources:
+    - "Thompson, L. (2000). A History of South Africa."
+    - "Worden, N. (1994). The Making of Modern South Africa."
+
+SSD:
+  name: South Sudan
+  primary_colonizer: United Kingdom
+  other_colonizers: [Egypt, Sudan]
+  colonial_start: 1899
+  colonial_end: 2011
+  independence_year: 2011
+  years_colonized: 112
+  colonial_type: extractive
+  slave_trade: medium
+  resources_extracted: [ivory, slaves, oil]
+  colonial_note: >
+    The Anglo-Egyptian Condominium (1899–1956) administered what is now South
+    Sudan under a "Southern Policy" that restricted Arab/Muslim influence — then
+    abruptly reversed this at Sudanese independence, handing control to the
+    Arab-dominated Khartoum government without South Sudanese consent. Schema
+    note: years_colonized (112) runs from 1899 to 2011 rather than 1899 to 1956,
+    deliberately including 55 years of Sudanese rule (1956–2011). This choice
+    reflects that South Sudanese were denied self-determination at the moment of
+    Sudanese independence — the change of coloniser from Britain/Egypt to Arab
+    Sudan did not constitute liberation for southern communities. Any model
+    treating this field as strictly "years under European rule" should substitute
+    57 instead. The First (1955–1972) and Second (1983–2005) Sudanese Civil Wars
+    killed approximately 2.5 million people; the 2011 referendum gave South Sudan
+    independence, but oil revenues and political grievances immediately triggered
+    a new civil war (2013–present) between former liberation movement factions.
+  sources:
+    - "Johnson, D. (2003). The Root Causes of Sudan's Civil Wars."
+    - "Copnall, J. (2014). A Poisonous Thorn in Our Hearts: Sudan and South Sudan's Bitter and Incomplete Divorce."
+
+SDN:
+  name: Sudan
+  primary_colonizer: United Kingdom
+  other_colonizers: [Egypt]
+  colonial_start: 1899
+  colonial_end: 1956
+  independence_year: 1956
+  years_colonized: 57
+  colonial_type: extractive
+  slave_trade: high
+  resources_extracted: [cotton, gum arabic, slaves, oil]
+  colonial_note: >
+    The Anglo-Egyptian Condominium administered Sudan primarily to secure the
+    Nile for Egypt and Britain. Sudan was historically a slave-raiding frontier
+    for Arab and Egyptian traders. The divide-and-rule policies — governing north
+    and south separately, favouring Arab elites — created the structural inequalities
+    behind Sudan's post-independence conflicts. The Darfur crisis (2003–) and 2023
+    war between SAF and RSF represent ongoing consequences of these foundational
+    divisions and resource competition.
+  sources:
+    - "Daly, M.W. (2007). Darfur's Sorrow."
+
+TZA:
+  name: Tanzania
+  primary_colonizer: United Kingdom
+  other_colonizers: [Germany]
+  colonial_start: 1885
+  colonial_end: 1961
+  independence_year: 1961
+  years_colonized: 76
+  colonial_type: extractive
+  slave_trade: medium
+  resources_extracted: [ivory, rubber, sisal, coffee, diamonds, gold]
+  colonial_note: >
+    German East Africa (1885–1919) was shaken by the Maji Maji Rebellion
+    (1905–1907), suppressed with a scorched-earth campaign that killed an
+    estimated 200,000–300,000 people. Britain took over after WWI. Julius Nyerere's
+    Tanganyika (independent 1961) and Zanzibar merged in 1964 to form Tanzania.
+    Nyerere's Ujamaa (African socialism) policy created the Arusha Declaration
+    and compulsory villagisation — broadly admired for unity-building, criticised
+    for economic stagnation. Tanzania remains one of East Africa's more stable states.
+  sources:
+    - "Iliffe, J. (1979). A Modern History of Tanganyika."
+
+TGO:
+  name: Togo
+  primary_colonizer: France
+  other_colonizers: [Germany, United Kingdom]
+  colonial_start: 1884
+  colonial_end: 1960
+  independence_year: 1960
+  years_colonized: 76
+  colonial_type: extractive
+  slave_trade: high
+  resources_extracted: [slaves, cocoa, coffee, phosphates]
+  colonial_note: >
+    Germany's Togoland was divided between France (east) and Britain (west)
+    after WWI. British Togoland voted to join Ghana at independence; French
+    Togo became independent in 1960. The Gnassingbé family has ruled since
+    1967 — one of Africa's longest-lasting dynastic political systems. Phosphate
+    deposits remain the principal export.
+  sources:
+    - "Piot, C. (1999). Remotely Global: Village Modernity in West Africa."
+
+TUN:
+  name: Tunisia
+  primary_colonizer: France
+  colonial_start: 1881
+  colonial_end: 1956
+  independence_year: 1956
+  years_colonized: 75
+  colonial_type: protectorate
+  slave_trade: none
+  resources_extracted: [olive oil, phosphates, wheat, agricultural land]
+  colonial_note: >
+    France established a protectorate in 1881, preserving the Beylical dynasty
+    while French settlers acquired agricultural land. Tunisia became a testing
+    ground for French colonial policy; the Neo-Destour independence movement
+    under Bourguiba achieved independence in 1956. Post-independence Tunisia
+    had one of North Africa's most developed middle classes, women's rights,
+    and educational systems — making the 2010–2011 "Jasmine Revolution" and
+    subsequent democratic experiment all the more notable, though democracy has
+    since been reversed by Saied (2021).
+  sources:
+    - "Murphy, E. (1999). Economic and Political Change in Tunisia."
+
+UGA:
+  name: Uganda
+  primary_colonizer: United Kingdom
+  colonial_start: 1894
+  colonial_end: 1962
+  independence_year: 1962
+  years_colonized: 68
+  colonial_type: extractive
+  slave_trade: medium
+  resources_extracted: [ivory, cotton, coffee, copper, oil]
+  colonial_note: >
+    Britain established Uganda as a protectorate partly to cut off Nile sources
+    to competitors. The pre-colonial Buganda Kingdom was preserved and used for
+    indirect rule, creating a privileged Buganda region that generated post-independence
+    resentment. Idi Amin's reign (1971–1979) killed an estimated 100,000–500,000
+    people and expelled the Asian community, devastating the economy. Museveni
+    has governed since 1986, having spent much of that time fighting the Lord's
+    Resistance Army in the north.
+  sources:
+    - "Mutibwa, P. (1992). Uganda since Independence."
+
+ZMB:
+  name: Zambia
+  primary_colonizer: United Kingdom
+  colonial_start: 1889
+  colonial_end: 1964
+  independence_year: 1964
+  years_colonized: 75
+  colonial_type: extractive
+  slave_trade: medium
+  resources_extracted: [copper, lead, zinc, cobalt]
+  colonial_note: >
+    Northern Rhodesia was chartered to the British South Africa Company (Cecil
+    Rhodes) from 1889. The Copperbelt became one of Africa's most productive
+    mining regions — initially using migrant labour under brutal compound
+    conditions. Kenneth Kaunda led the country to independence in 1964 and
+    implemented a humanist one-party socialism, nationalising copper mines.
+    Falling copper prices in the 1970s devastated the economy. Zambia was the
+    first sub-Saharan African country to experience a peaceful electoral
+    transfer of power (1991).
+  sources:
+    - "Ferguson, J. (1999). Expectations of Modernity: Myths and Meanings of Urban Life on the Zambian Copperbelt."
+
+ZWE:
+  name: Zimbabwe
+  primary_colonizer: United Kingdom
+  other_colonizers: ["British South Africa Company", "Rhodesia (white minority rule)"]
+  colonial_start: 1890
+  colonial_end: 1980
+  independence_year: 1980
+  years_colonized: 90
+  colonial_type: settler
+  slave_trade: low
+  resources_extracted: [gold, tobacco, land, chromium, platinum]
+  colonial_note: >
+    Cecil Rhodes' British South Africa Company occupied Mashonaland in 1890;
+    the Ndebele Kingdom was conquered in 1893. The 1896–1897 First Chimurenga
+    (Ndebele and Shona uprising) was suppressed. Ian Smith's Rhodesian government
+    declared UDI in 1965 rather than accept majority rule; the Bush War (Second
+    Chimurenga) ended with the Lancaster House Agreement and Zimbabwe's independence
+    under Mugabe in 1980. The violent fast-track land reform (2000–2002) reversed
+    colonial land theft but collapsed agricultural production and triggered
+    hyperinflation. The structural inequalities of settler colonialism and the
+    violent manner of their attempted correction shape Zimbabwe's ongoing crisis.
+  sources:
+    - "Meredith, M. (2007). Mugabe: Power, Plunder, and the Struggle for Zimbabwe."
+    - "Ranger, T. (1967). Revolt in Southern Rhodesia 1896-97."

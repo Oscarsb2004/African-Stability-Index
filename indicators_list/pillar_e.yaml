@@ -1,0 +1,83 @@
+# pillar_e.yaml — Security / Conflict
+# Measures violent conflict, crime, displacement, terrorism.
+#
+# Shared indicators from Pillar A (pv_estimate, rl_estimate):
+#   already defined in pillar_a.yaml with pillars: ["A", "E"]
+#   do not redefine them here
+#
+# population_total is a DESCRIPTIVE (non-scoring) indicator used exclusively
+# to normalise displaced_persons to a per-capita rate in 02_clean.py.
+# It does not enter the Pillar E composite score and is not normalised in
+# 03_normalize.py or included in 04_score.py pillar calculations.
+
+- variable_name: intent_homicide
+  display_name: Intentional homicides (per 100,000 people)
+  source: wb_api
+  series_code: VC.IHR.PSRC.P5
+  role: scoring
+  polarity: negative
+  pillars:
+  - E
+  year_start: 2015
+  year_end: 2024
+  aggregation: most_recent
+  justification: "Intentional homicide rates are the most consistently measured
+    cross-country proxy for violent crime and societal security failure. WHO and
+    UNODC define intentional homicide as unlawful death inflicted with intent to
+    cause death or serious injury, excluding legal killings and conflict casualties.
+    Per OECD Handbook (2008) §3, this indicator is preferred over self-reported
+    crime surveys because reporting is anchored in mortality data that is harder
+    to manipulate. Expressed per 100,000 population — a rate indicator intrinsically
+    size-neutral across countries of different scale. log_transform applied: homicide
+    rates in Africa range from <1 (Mauritius) to >30 (South Africa, Lesotho),
+    requiring compression for effective min-max normalization. Source: WHO/UNODC
+    via World Bank WDI VC.IHR.PSRC.P5."
+  database: wdi
+  log_transform: true
+
+- variable_name: displaced_persons
+  display_name: Internally displaced persons (per 1,000 population)
+  source: wb_api
+  series_code: SM.POP.IDPC
+  role: scoring
+  polarity: negative
+  pillars:
+  - E
+  year_start: 2015
+  year_end: 2024
+  aggregation: most_recent
+  justification: "Internal displacement is a direct consequence of active conflict,
+    persecution, or disaster and is the clearest observable outcome of security
+    breakdown at population scale. Raw absolute IDP counts (SM.POP.IDPC, sourced
+    from UNHCR and IDMC via World Bank WDI) are converted to IDPs per 1,000
+    population in 02_clean.py using SP.POP.TOTL. This per-capita conversion is
+    required by OECD Handbook (2008) §3 comparability criterion: without it,
+    large countries (DRC, Ethiopia, Sudan) are systematically penalised relative
+    to smaller states regardless of actual conflict intensity per capita. The
+    UNHCR Global Trends report (UNHCR 2023) uses per-capita displacement rates
+    as its standard cross-country comparison metric. log_transform applied: rates
+    span from 0 to 150+ per 1,000 in active conflict states. Source: UNHCR / IDMC
+    via World Bank WDI SM.POP.IDPC; denominator SP.POP.TOTL."
+  database: wdi
+  log_transform: true
+
+- variable_name: population_total
+  display_name: Population, total
+  source: wb_api
+  series_code: SP.POP.TOTL
+  role: descriptive
+  polarity: positive
+  pillars:
+  - E
+  year_start: 2015
+  year_end: 2024
+  aggregation: most_recent
+  justification: "Normalization denominator only. Used exclusively in 02_clean.py
+    Step 1b to convert the absolute IDP count (SM.POP.IDPC) to a per-1,000
+    population rate before any filling or winsorization is applied. Not a scoring
+    indicator and excluded from all scoring steps: 03_normalize.py skips it
+    (role: descriptive), 04_score.py load_pillar_map filters role != scoring,
+    and 06_qualitative.py indicator metadata excludes non-scoring entries.
+    Source: World Bank WDI SP.POP.TOTL, annual mid-year estimate."
+  database: wdi
+  log_transform: false

@@ -1,0 +1,290 @@
+# methodology/references.yaml
+# Machine-readable citation registry for the African Instability Index.
+# Every methodological decision must have an entry here.
+# Consumed by: 07_dashboard.py (methodology panel) and eventually Athena UI.
+#
+# Fields:
+#   id:          short slug used in code comments and YAML cross-references
+#   authors:     list of Last, Initials strings
+#   year:        publication year (int)
+#   title:       article / chapter / book title
+#   venue:       journal, publisher, or institution
+#   doi:         DOI if available (null if not)
+#   url:         direct URL if no DOI
+#   used_in:     list of pipeline stages / files that rely on this source
+#   justifies:   brief description of what design decision this source supports
+#   limitations: honest notes on where our implementation deviates or where
+#                the source's guidance has known gaps
+
+sources:
+
+  - id: oecd_handbook_2008
+    authors:
+      - "Nardo, M."
+      - "Saisana, M."
+      - "Saltelli, A."
+      - "Tarantola, S."
+      - "Hoffmann, A."
+      - "Giovannini, E."
+    year: 2008
+    title: "Handbook on Constructing Composite Indicators: Methodology and User Guide"
+    venue: "OECD Publishing, Paris"
+    doi: "10.1787/9789264043466-en"
+    url: "https://doi.org/10.1787/9789264043466-en"
+    used_in:
+      - "02_clean.py"
+      - "03_normalize.py"
+      - "04_score.py"
+      - "05_robustness.py"
+    justifies: >
+      Primary methodological authority for the entire pipeline.
+      Grounds: min-max normalization (§6.1), log transforms for skewed data (§6.2),
+      polarity inversion at normalization step (§5.3), IQR Winsorization (§5.2),
+      three-stage imputation hierarchy (§5.4), equal weights as reference case (§7.1),
+      PCA-derived weights (§7.3), and robustness testing (§8).
+    limitations: >
+      Handbook recommends z-score normalization as an alternative to min-max.
+      We deviate toward min-max for interpretability (fixed [0,100] range).
+
+  - id: cherchye_2007_bod
+    authors:
+      - "Cherchye, L."
+      - "Moesen, W."
+      - "Rogge, N."
+      - "Van Puyenbroeck, T."
+    year: 2007
+    title: "An Introduction to 'Benefit of the Doubt' Composite Indicators"
+    venue: "Social Indicators Research"
+    doi: "10.1007/s11205-006-9029-7"
+    url: "https://doi.org/10.1007/s11205-006-9029-7"
+    used_in:
+      - "04_score.py"
+    justifies: >
+      Benefit of Doubt (BoD) LP formulation: per-country DEA-CCR that maximises
+      each country's own composite score subject to global pillar weight bounds.
+      Implemented in score_bod() using PuLP CBC solver.
+    limitations: >
+      Original formulation has no explicit upper weight bounds. We add WEIGHT_MAX=0.25
+      to prevent degenerate single-pillar solutions, following Rogge (2018).
+
+  - id: rogge_2018_bod_extended
+    authors:
+      - "Rogge, N."
+    year: 2018
+    title: "Composite Indicators as Generalized Benefit-of-the-Doubt Weighted Averages"
+    venue: "European Journal of Operational Research"
+    doi: "10.1016/j.ejor.2017.12.009"
+    url: "https://doi.org/10.1016/j.ejor.2017.12.009"
+    used_in:
+      - "04_score.py"
+    justifies: >
+      Justifies adding per-pillar upper weight bounds to the standard BoD LP
+      to prevent degenerate solutions (one pillar receiving near-100% weight).
+    limitations: null
+
+  - id: munda_nardo_2009_geometric
+    authors:
+      - "Munda, G."
+      - "Nardo, M."
+    year: 2009
+    title: "Noncompensatory/nonlinear composite indicators for ranking countries: a defensible setting"
+    venue: "Applied Economics"
+    doi: "10.1080/00036840601019364"
+    url: "https://doi.org/10.1080/00036840601019364"
+    used_in:
+      - "04_score.py"
+    justifies: >
+      Grounds the use of geometric mean aggregation as a partially non-compensatory
+      method. Low pillar scores cannot be fully offset by high scores elsewhere,
+      which is methodologically appropriate for a stability index.
+    limitations: >
+      Geometric mean penalises uneven development more harshly than arithmetic mean.
+      Rankings may shift significantly between equal-weight and geometric-mean methods.
+
+  - id: undp_hdr_2010
+    authors:
+      - "UNDP"
+    year: 2010
+    title: "Human Development Report 2010: The Real Wealth of Nations"
+    venue: "United Nations Development Programme, New York"
+    doi: null
+    url: "https://hdr.undp.org/content/human-development-report-2010"
+    used_in:
+      - "04_score.py"
+    justifies: >
+      Precedent for geometric mean adoption in a widely-used country index (HDI).
+      The 2010 switch from arithmetic to geometric mean in the HDI is the most
+      prominent real-world application of partial compensability reasoning.
+    limitations: >
+      HDI is a simpler 3-dimension index; AII has 7 pillars. The rationale transfers
+      but the magnitude of the compensability effect differs.
+
+  - id: zhou_2007_entropy
+    authors:
+      - "Zhou, P."
+      - "Ang, B.W."
+      - "Poh, K.L."
+    year: 2007
+    title: "A mathematical programming approach to constructing composite indicators"
+    venue: "Ecological Economics"
+    doi: "10.1016/j.ecolecon.2006.12.020"
+    url: "https://doi.org/10.1016/j.ecolecon.2006.12.020"
+    used_in:
+      - "04_score.py"
+    justifies: >
+      Grounds the Shannon entropy weighting approach for composite indicators:
+      H_j = -sum(p_ij * ln(p_ij)), divergence e_j = 1 - H_j/ln(n), weights
+      normalised to sum to 1. Pillars with higher cross-country variance receive
+      more weight.
+    limitations: >
+      Entropy weights are sensitive to sample composition — adding or removing
+      countries changes the weights. Results are not directly comparable across
+      AII versions with different country lists.
+
+  - id: shannon_1948
+    authors:
+      - "Shannon, C.E."
+    year: 1948
+    title: "A mathematical theory of communication"
+    venue: "The Bell System Technical Journal"
+    doi: "10.1002/j.1538-7305.1948.tb01338.x"
+    url: "https://doi.org/10.1002/j.1538-7305.1948.tb01338.x"
+    used_in:
+      - "04_score.py"
+    justifies: >
+      Foundational source for Shannon entropy H = -sum(p * ln(p)).
+      The composite indicator application (zhou_2007_entropy) derives from this.
+    limitations: null
+
+  - id: nardo_2005_pca
+    authors:
+      - "Nardo, M."
+      - "Saisana, M."
+      - "Saltelli, A."
+      - "Tarantola, S."
+    year: 2005
+    title: "Tools for Composite Indicators Building"
+    venue: "EUR 21682 EN. European Commission, Joint Research Centre, Ispra"
+    doi: null
+    url: "https://publications.jrc.ec.europa.eu/repository/handle/JRC31473"
+    used_in:
+      - "04_score.py"
+    justifies: >
+      Grounds PCA-derived weights: first principal component loadings used as
+      pillar weights, capturing the direction of maximum variance across countries.
+    limitations: >
+      When pillars are highly correlated, PC1 may not capture structure beyond
+      a single "overall development" axis. PCA weights are descriptive of the
+      sample, not prescriptive. Treat as sensitivity check, not preferred method.
+
+  - id: cronbach_1951
+    authors:
+      - "Cronbach, L.J."
+    year: 1951
+    title: "Coefficient alpha and the internal structure of tests"
+    venue: "Psychometrika"
+    doi: "10.1007/BF02310555"
+    url: "https://doi.org/10.1007/BF02310555"
+    used_in:
+      - "02_clean.py"
+    justifies: >
+      Cronbach's alpha as the pillar internal consistency diagnostic.
+      Threshold alpha >= 0.70 is the conventional minimum for acceptable consistency.
+    limitations: >
+      Alpha assumes tau-equivalence (equal loadings) and is inflated by large pillar
+      size. Pillar C (10 indicators) will mechanically produce higher alpha than
+      Pillar E (4 indicators). Treat alpha as a flag, not a verdict.
+
+  - id: tukey_1977
+    authors:
+      - "Tukey, J.W."
+    year: 1977
+    title: "Exploratory Data Analysis"
+    venue: "Addison-Wesley, Reading, MA"
+    doi: null
+    url: null
+    used_in:
+      - "02_clean.py"
+    justifies: >
+      Tukey's fences for IQR Winsorization: cap at [Q1 - 1.5*IQR, Q3 + 1.5*IQR].
+      Winsorization retains outlier observations in the sample (unlike trimming).
+    limitations: null
+
+  - id: saisana_2005_robustness
+    authors:
+      - "Saisana, M."
+      - "Saltelli, A."
+      - "Tarantola, S."
+    year: 2005
+    title: "Uncertainty and sensitivity analysis techniques as tools for the quality assessment of composite indicators"
+    venue: "Journal of the Royal Statistical Society: Series A"
+    doi: "10.1111/j.1467-985X.2005.00359.x"
+    url: "https://doi.org/10.1111/j.1467-985X.2005.00359.x"
+    used_in:
+      - "05_robustness.py"
+    justifies: >
+      Grounds the robustness framework: MaxS weight search (worst-case rank),
+      rank shift analysis across methods, and Monte Carlo weight perturbation.
+      Referenced in aii.yaml preset header.
+    limitations: >
+      Stage 05 not yet implemented. Source logged here in advance.
+
+  - id: saltelli_2008_sensitivity
+    authors:
+      - "Saltelli, A."
+      - "Ratto, M."
+      - "Andres, T."
+      - "Campolongo, F."
+      - "Cariboni, J."
+      - "Gatelli, D."
+      - "Saisana, M."
+      - "Tarantola, S."
+    year: 2008
+    title: "Global Sensitivity Analysis: The Primer"
+    venue: "John Wiley & Sons"
+    doi: null
+    url: null
+    used_in:
+      - "05_robustness.py"
+    justifies: >
+      Sensitivity band methodology for Monte Carlo weight perturbation in Stage 05.
+    limitations: >
+      Stage 05 not yet implemented. Source logged here in advance.
+
+  - id: kaufmann_2010_wgi
+    authors:
+      - "Kaufmann, D."
+      - "Kraay, A."
+      - "Mastruzzi, M."
+    year: 2010
+    title: "The Worldwide Governance Indicators: Methodology and Analytical Issues"
+    venue: "Hague Journal on the Rule of Law"
+    doi: "10.1017/S1876404511200046"
+    url: "https://doi.org/10.1017/S1876404511200046"
+    used_in:
+      - "01_pull.py"
+      - "indicators_list/pillar_a.yaml"
+    justifies: >
+      Authoritative documentation of WGI data construction. Grounds choice to use
+      estimated scores (.EST) rather than percentile ranks (.PER.RNK) — estimated
+      scores preserve cardinal distance; percentile ranks introduce rank compression.
+    limitations: >
+      WGI dimensions are highly intercorrelated (structural feature of methodology).
+      This limits the independence assumption behind multi-pillar composite design.
+      The AII partially mitigates this by distributing WGI indicators across pillars
+      where they are conceptually relevant, not concentrating all six in Pillar A.
+
+  - id: spearman_1904
+    authors:
+      - "Spearman, C."
+    year: 1904
+    title: "The Proof and Measurement of Association between Two Things"
+    venue: "The American Journal of Psychology"
+    doi: "10.2307/1412159"
+    url: "https://doi.org/10.2307/1412159"
+    used_in:
+      - "02_clean.py"
+    justifies: >
+      Spearman rank correlation matrices computed per pillar to identify redundant
+      indicator pairs (rho > 0.90) and potential pillar misclassifications (rho < 0.30).
+    limitations: null

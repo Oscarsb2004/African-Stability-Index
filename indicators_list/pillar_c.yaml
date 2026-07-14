@@ -1,0 +1,186 @@
+# pillar_c.yaml — Social / Human Capital
+# Measures education access, quality, gender parity, and social cohesion.
+#
+# Consolidation decisions (OECD Handbook §3 parsimony criterion):
+#
+#   adult_literacy REMOVED: Spearman r(youth_literacy, adult_literacy) > 0.88 across
+#   African countries. Including both implicitly up-weights the literacy concept 2x
+#   without transparency. Youth literacy (ages 15-24) is retained as the forward-looking
+#   measure — it reflects the current education system's output, not the cumulative
+#   stock of past education systems. The OECD handbook (§3) states that where indicators
+#   measure the same latent concept at different population cohorts, retain the one with
+#   the strongest policy signal; youth literacy is more actionable.
+#
+#   primary_oos REMOVED: SE.PRM.UNER.ZS ≈ (100 - SE.PRM.NENR). Including both creates
+#   a near-mathematical complement pair (r ≈ -0.97 empirically). This is not a
+#   redundancy in concept — out-of-school children are a distinct policy concern — but
+#   the numerical information is identical to what primary_enroll already captures.
+#   Retaining only primary_enroll avoids the double-weighting of enrollment access.
+#
+# va_estimate (Voice & Accountability, from Pillar A) is cross-listed here; it is
+#   defined in pillar_a.yaml with pillars: ["A", "C"] — do not redefine it here.
+
+- variable_name: youth_literacy
+  display_name: Literacy rate, youth total (% of people ages 15-24)
+  source: wb_api
+  series_code: SE.ADT.1524.LT.ZS
+  role: scoring
+  polarity: positive
+  pillars:
+  - C
+  year_start: 2010
+  year_end: 2024
+  aggregation: most_recent
+  justification: "Youth literacy (ages 15-24) reflects the effectiveness of the
+    current education system for the cohort entering adulthood — it is a leading
+    indicator of future human capital capacity, not a lagging stock measure.
+    Retained in preference to adult_literacy per OECD Handbook (2008) §3 parsimony:
+    both indicators measure the same literacy concept (r > 0.88 across African
+    countries) and including both would implicitly double-weight literacy. Youth
+    literacy is the more policy-sensitive choice: adult literacy changes slowly
+    (reflects decades of past systems), while youth literacy responds within 5-10
+    years to education reforms. Extended year range (2010-2024): literacy data is
+    survey-based and reported infrequently, sometimes with 3-5 year gaps between
+    estimates. Source: World Bank WDI SE.ADT.1524.LT.ZS."
+  database: wdi
+  log_transform: false
+
+- variable_name: primary_enroll
+  display_name: School enrollment, primary, net (%)
+  source: wb_api
+  series_code: SE.PRM.NENR
+  role: scoring
+  polarity: positive
+  pillars:
+  - C
+  year_start: 2015
+  year_end: 2024
+  aggregation: most_recent
+  justification: "Net primary enrollment measures the share of primary-age children
+    actually attending primary school — the most direct indicator of whether children
+    access foundational education. Net (not gross) enrollment is used because gross
+    enrollment includes over-age students and can exceed 100%, making cross-country
+    comparison less meaningful. Retained as the access measure in preference to
+    primary_oos (out-of-school rate): SE.PRM.UNER.ZS ≈ 100 - SE.PRM.NENR, meaning
+    the two contain near-identical information (r ≈ -0.97). Including both would
+    double-count primary access per OECD Handbook §3. Source: World Bank WDI
+    SE.PRM.NENR (UNESCO Institute for Statistics)."
+  database: wdi
+  log_transform: false
+
+- variable_name: secondary_enroll
+  display_name: School enrollment, secondary, net (%)
+  source: wb_api
+  series_code: SE.SEC.NENR
+  role: scoring
+  polarity: positive
+  pillars:
+  - C
+  year_start: 2015
+  year_end: 2024
+  aggregation: most_recent
+  justification: "Secondary enrollment captures progression beyond primary schooling
+    and shapes the skilled labour pool available for formal sector employment.
+    Evidence from USAID (2015) and World Bank (2018) shows that secondary education
+    completion significantly reduces youth vulnerability to recruitment by armed
+    groups. Net (not gross) enrollment used for cross-country comparability. This
+    is a conceptually distinct measure from primary_enroll: it captures the
+    education system's retention capacity after the first transition point, not
+    just initial access. Source: World Bank WDI SE.SEC.NENR."
+  database: wdi
+  log_transform: false
+
+- variable_name: learning_poverty
+  display_name: "Learning poverty: share of children below minimum reading proficiency,
+    adjusted for out-of-school (%)"
+  source: wb_api
+  series_code: SE.LPV.PRIM
+  role: scoring
+  polarity: negative
+  pillars:
+  - C
+  year_start: 2015
+  year_end: 2024
+  aggregation: most_recent
+  justification: "Learning poverty (World Bank / UNESCO, 2019) is conceptually
+    distinct from enrollment: it measures not who attends school but whether
+    attendance produces functional literacy. A country can have high enrollment
+    but high learning poverty if school quality is low — capturing the quality
+    dimension that enrollment indicators miss entirely. This avoids double-counting
+    with primary_enroll because it measures a different outcome (learning achievement
+    vs. access). Series SE.LPV.PRIM: coverage is moderate (~35/54 AU states); Stage-2
+    regional fill applied where data is sparse. Source: World Bank / UNESCO Institute
+    for Statistics, SE.LPV.PRIM."
+  database: wdi
+  log_transform: false
+
+- variable_name: primary_gpi
+  display_name: School enrollment, primary, gender parity index (GPI)
+  source: wb_api
+  series_code: SE.ENR.PRIM.FM.ZS
+  role: scoring
+  polarity: positive
+  pillars:
+  - C
+  year_start: 2015
+  year_end: 2024
+  aggregation: most_recent
+  justification: "Gender Parity Index = girls enrolled / boys enrolled. Values at
+    1.0 indicate parity; values below signal systematic exclusion of girls from
+    primary education. GPI is conceptually distinct from enrollment level: a country
+    with 70% primary enrollment and GPI of 0.6 has a different social profile than
+    one with 70% enrollment and GPI of 1.0. UNESCO uses GPI as its primary gender
+    equity metric in education (UNESCO 2022 Global Education Monitoring Report).
+    Note: SE.ENR.PRIM.FM.ZS is the gross GPI; net GPI (SE.PRM.GINT.FM.ZS) has
+    sparse African coverage and was not used. Source: World Bank WDI, UNESCO UIS."
+  database: wdi
+  log_transform: false
+
+- variable_name: secondary_gpi
+  display_name: School enrollment, secondary, gender parity index (GPI)
+  source: wb_api
+  series_code: SE.ENR.SECO.FM.ZS
+  role: scoring
+  polarity: positive
+  pillars:
+  - C
+  year_start: 2015
+  year_end: 2024
+  aggregation: most_recent
+  justification: "Secondary GPI captures whether girls progress beyond primary
+    schooling at the same rate as boys. Persistent gaps at secondary level signal
+    structural gender inequality with compounding consequences: female secondary
+    enrollment is the strongest predictor of fertility rates, maternal health
+    outcomes, and intergenerational poverty (UNESCO 2022). This is conceptually
+    distinct from primary_gpi: in many African countries, primary GPI is near 1.0
+    while secondary GPI drops sharply (early marriage, economic constraints, safety),
+    making secondary-level parity a more discriminating stability signal.
+    Source: World Bank WDI SE.ENR.SECO.FM.ZS, UNESCO UIS."
+  database: wdi
+  log_transform: false
+
+- variable_name: femicide
+  display_name: Intentional homicides, female (per 100,000 female population)
+  source: wb_api
+  series_code: VC.IHR.PSRC.FE.P5
+  role: scoring
+  polarity: negative
+  pillars:
+  - C
+  year_start: 2015
+  year_end: 2024
+  aggregation: most_recent
+  justification: "Female homicide rates measure gendered violence as a social
+    cohesion failure distinct from general violence (captured in Pillar E). High
+    female homicide rates indicate systemic failure to protect women — reflecting
+    deep structural gender inequality, weak rule of law enforcement for domestic
+    violence, and breakdown of community social norms. The indicator uses
+    VC.IHR.PSRC.FE.P5 (all female homicides per 100,000 female population), not
+    a femicide-specific series, because no consistent cross-African 'femicide' series
+    exists in WDI. The indicator is placed in Pillar C (Social / Human Capital) rather
+    than E (Security) because it measures social inequality, not political or conflict
+    violence — and because it complements the gender parity indicators in capturing
+    women's overall safety and social status. Source: WHO/UNODC via World Bank WDI
+    VC.IHR.PSRC.FE.P5."
+  database: wdi
+  log_transform: false

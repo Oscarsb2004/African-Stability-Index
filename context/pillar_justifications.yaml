@@ -1,0 +1,97 @@
+# pillar_justifications.yaml
+# Pillar-level justifications for the African Stability Index (ASI).
+# These texts are embedded in the 06_results.json bundle and surfaced in the dashboard
+# Methodology tab and country profiles.
+#
+# Each key is a pillar letter (A-G). Text should explain:
+#   1. What the pillar measures
+#   2. Why it is stability-relevant for the African context
+#   3. The methodological basis for including it (OECD Handbook reference where applicable)
+#
+# This file replaces the prior dependency on ../Athena/presets/aii.yaml, which is
+# an external path that does not exist in the deployed environment.
+
+A: >
+  Political governance and institutional quality determine whether a state can manage
+  competing interests, deliver public goods, and maintain legitimacy over time. This
+  pillar uses all six World Governance Indicators (Kaufmann, Kraay & Mastruzzi 2010):
+  Voice and Accountability, Political Stability and Absence of Violence, Government
+  Effectiveness, Regulatory Quality, Rule of Law, and Control of Corruption. These
+  indicators have the strongest theoretical and empirical linkage to long-run stability
+  outcomes in the Africa literature (Bates 2008; Acemoglu & Robinson 2012). WGI data
+  is from the World Bank via the wbgapi db=3 interface using GOV_WGI_*.EST series codes.
+  Justification: OECD Handbook (2008) §4.3 endorses expert-scored composite sub-indices
+  as pillar inputs when they aggregate coherent underlying measurement constructs.
+
+B: >
+  Economic stability underpins all other dimensions of stability: without sustainable
+  growth, governments cannot fund services, populations face unemployment-driven grievances,
+  and states become vulnerable to resource shocks. This pillar measures GDP per capita
+  (living standards), GDP growth (economic dynamism), inflation (macroeconomic management
+  quality), income inequality (Gini), and financial openness (foreign firm ownership as
+  a proxy for investment climate). The African economic growth literature (Rodrik 2011;
+  World Bank 2022 Africa Pulse) identifies macroeconomic stability, structural
+  transformation, and inclusion as the three pillars of sustainable growth. Each economic
+  indicator in this pillar maps to one of these dimensions.
+
+C: >
+  Social cohesion and human capital determine both individual opportunity and the
+  state's ability to build a stable, productive citizenry. Low education, high gender
+  inequality, and high femicide are documented precursors to conflict, youth radicalisation,
+  and political breakdown. This pillar includes youth literacy, primary and secondary
+  enrollment, learning poverty, gender parity in education, and female homicide rates.
+  Indicators were consolidated per OECD Handbook §3: adult_literacy removed (r>0.88
+  with youth_literacy; redundant information), primary_oos removed (near-mathematical
+  complement of primary_enroll, r≈-0.97). Voice and Accountability (va_estimate) is
+  cross-listed from Pillar A because civic participation is both a governance and a
+  social cohesion determinant.
+
+D: >
+  Population health directly determines a country's stability through three mechanisms:
+  (1) a healthy population is more economically productive and less vulnerable to shocks;
+  (2) healthcare system failures generate grievances and erode state legitimacy;
+  (3) epidemic/pandemic events can destabilise economies and governments rapidly.
+  This pillar measures life expectancy (comprehensive mortality summary), infant
+  mortality (healthcare delivery quality at peak vulnerability), safely managed water
+  (waterborne disease prevention), handwashing facilities (outbreak prevention), and
+  severe food insecurity. Moderate-or-severe food insecurity (modsev_food_insec) was
+  removed per OECD §3: it is a hierarchical superset of sev_food_insec (SN.ITK.SVFI.ZS),
+  creating double-counting. The severe threshold corresponds to IPC Phase 3+ and is the
+  internationally recognised humanitarian response trigger.
+
+E: >
+  Security and conflict are the most direct determinants of stability. Active conflict
+  destroys infrastructure, displaces populations, and prevents all other development.
+  This pillar measures internally displaced persons per capita (UNHCR standard,
+  normalised by total population for comparability across country sizes), battle-related
+  deaths per capita, and two rule-of-law indicators from the WGI (Political Stability
+  and Rule of Law) cross-listed from Pillar A. IDP per capita is computed in 02_clean.py
+  Step 1b using SP.POP.TOTL as the denominator (UNHCR standard; OECD §3 comparability).
+  The security dimension is the most stability-proximate of all seven pillars —
+  a country at war cannot be considered stable regardless of its performance on
+  other dimensions.
+
+F: >
+  Environmental sustainability determines long-run stability through climate risk
+  (extreme weather, droughts, sea level rise) and natural resource depletion.
+  Africa is among the most climate-vulnerable regions globally (IPCC AR6 2022),
+  with projected agricultural yield losses of 8-25% by 2050 under moderate warming.
+  This pillar measures CO2 emissions per capita (AR5 GWP100 standard; climate stress
+  indicator), freshwater withdrawal stress, fossil fuel electricity dependence (energy
+  transition risk), and agricultural land share. Agricultural land uses POSITIVE polarity:
+  in the African context, agricultural land is a food production capacity indicator, not
+  an ecosystem loss indicator — food security (Pillar D) is the stability-relevant
+  framing, and ecosystem pressure is already captured by CO2 emissions.
+
+G: >
+  Infrastructure and structural capacity determine whether a state can translate
+  resources and governance into actual development outcomes. Without electricity,
+  healthcare and education systems cannot function. Without water infrastructure,
+  health outcomes deteriorate. Without social protection, populations cannot absorb
+  economic shocks. This pillar measures electricity access, basic water service access
+  (infrastructure delivery reach), and social protection and labour program coverage
+  (state institutional reach). Government Effectiveness and Control of Corruption
+  from Pillar A are cross-listed here because they reflect the state's institutional
+  capacity to plan, fund, and maintain infrastructure systems. Safety net coverage
+  (social_safetynet_pop) was removed per OECD §3: it is a hierarchical subset of
+  social_protection_labour_pop (per_sa_allsa.cov_pop_tot ⊂ per_allsp.cov_pop_tot).

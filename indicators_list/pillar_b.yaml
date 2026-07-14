@@ -1,0 +1,83 @@
+# pillar_b.yaml — Economic
+# Measures economic performance, poverty, inequality, structural resilience.
+
+- variable_name: gdp_pc_ppp
+  display_name: GDP per capita, PPP (current international $)
+  source: wb_api
+  series_code: NY.GDP.PCAP.PP.CD
+  role: scoring
+  polarity: positive
+  pillars:
+  - B
+  year_start: 2015
+  year_end: 2024
+  aggregation: most_recent
+  justification: PPP-adjusted GDP per capita is the primary measure of material living
+    standards, controlling for price differences across countries. The most direct
+    single indicator of economic resilience.
+  database: wdi
+  log_transform: true
+- variable_name: gdp_growth_3yr_avg
+  display_name: GDP growth, annual % (3-year average)
+  source: wb_api
+  series_code: NY.GDP.MKTP.KD.ZG
+  role: scoring
+  polarity: positive
+  pillars:
+  - B
+  year_start: 2015
+  year_end: 2024
+  aggregation: average_recent_3
+  justification: A 3-year average smooths single-year volatility and reflects the
+    recent growth trajectory. Sustained growth signals economic momentum; contraction
+    or stagnation signals structural fragility.
+  database: wdi
+  log_transform: false
+- variable_name: inflation_5yr_avg
+  display_name: Inflation, consumer prices, annual % (5-year average)
+  source: wb_api
+  series_code: FP.CPI.TOTL.ZG
+  role: scoring
+  polarity: negative
+  pillars:
+  - B
+  year_start: 2015
+  year_end: 2024
+  aggregation: average_recent_5
+  justification: Chronic high inflation erodes real wages, destroys savings, and destabilises
+    governments. A 5-year average captures structural monetary instability rather
+    than isolated supply shocks.
+  database: wdi
+  log_transform: false
+- variable_name: gini
+  display_name: Gini index
+  source: wb_api
+  series_code: SI.POV.GINI
+  role: scoring
+  polarity: negative
+  pillars:
+  - B
+  year_start: 2010
+  year_end: 2024
+  aggregation: most_recent
+  justification: Income inequality is a structural driver of social tension and political
+    instability that GDP alone conceals. Year range extended to 2010 because Gini
+    is survey-based and reported infrequently.
+  database: wdi
+  log_transform: false
+- variable_name: firm_foreign_owned
+  display_name: Firms with at least 10% foreign ownership (% of firms)
+  source: wb_api
+  series_code: IC.FRM.FO.ZS
+  role: scoring
+  polarity: positive
+  pillars:
+  - B
+  year_start: 2010
+  year_end: 2024
+  aggregation: most_recent
+  justification: Foreign ownership signals that the investment climate is sufficiently
+    stable and open to attract external capital. Extended year range used because
+    this is drawn from enterprise surveys conducted every few years.
+  database: wdi
+  log_transform: false

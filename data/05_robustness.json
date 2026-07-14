@@ -1,0 +1,60 @@
+{
+  "min_rank_correlation": 0.8988,
+  "n_stable": 29,
+  "n_sensitive": 6,
+  "maxs": {
+    "success": true,
+    "method": "random_restart_grid_search",
+    "n_starts": 1000,
+    "weights": {
+      "A": 0.1417,
+      "B": 0.145,
+      "C": 0.0963,
+      "D": 0.0773,
+      "E": 0.249,
+      "F": 0.2256,
+      "G": 0.065
+    },
+    "spearman_vs_equal": 0.9245,
+    "mean_rank_shift": 4.26,
+    "max_rank_shift": 19.0,
+    "verdict": "Robust"
+  },
+  "rank_correlation_matrix": {
+    "equal": {
+      "equal": 1.0,
+      "pca": 0.9486,
+      "bod": 0.9694,
+      "entropy": 0.9889,
+      "geometric": 0.9652
+    },
+    "pca": {
+      "equal": 0.9486,
+      "pca": 1.0,
+      "bod": 0.9388,
+      "entropy": 0.9328,
+      "geometric": 0.9063
+    },
+    "bod": {
+      "equal": 0.9694,
+      "pca": 0.9388,
+      "bod": 1.0,
+      "entropy": 0.9541,
+      "geometric": 0.8988
+    },
+    "entropy": {
+      "equal": 0.9889,
+      "pca": 0.9328,
+      "bod": 0.9541,
+      "entropy": 1.0,
+      "geometric": 0.9655
+    },
+    "geometric": {
+      "equal": 0.9652,
+      "pca": 0.9063,
+      "bod": 0.8988,
+      "entropy": 0.9655,
+      "geometric": 1.0
+    }
+  }
+}

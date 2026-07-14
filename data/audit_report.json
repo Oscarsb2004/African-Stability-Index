@@ -1,0 +1,197 @@
+{
+  "run_date": "2026-07-02 17:38:30",
+  "n_pass": 14,
+  "n_warn": 11,
+  "n_fail": 0,
+  "sections": {
+    "File Presence": [
+      {
+        "status": "PASS",
+        "msg": "02_clean.xlsx exists (39 KB)"
+      },
+      {
+        "status": "PASS",
+        "msg": "03_norm.xlsx exists (38 KB)"
+      },
+      {
+        "status": "PASS",
+        "msg": "04_scores.xlsx exists (67 KB)"
+      },
+      {
+        "status": "PASS",
+        "msg": "06_results.json exists (274 KB)"
+      }
+    ],
+    "Normalization Math": [
+      {
+        "status": "PASS",
+        "msg": "Normalization: all 32 indicators match recomputed values (max error < 0.01)"
+      },
+      {
+        "status": "PASS",
+        "msg": "All normalized scores are within [0, 100]"
+      }
+    ],
+    "Pillar Score Computation": [
+      {
+        "status": "PASS",
+        "msg": "Pillar scores: all 7 pillars match recomputed means (tol 0.1)"
+      }
+    ],
+    "Overall Score Methods": [
+      {
+        "status": "PASS",
+        "msg": "Equal-weight scores match recomputed pillar means (max err=0.000)"
+      },
+      {
+        "status": "PASS",
+        "msg": "Geometric mean scores match (log + exp formula, tol 1.0)"
+      },
+      {
+        "status": "PASS",
+        "msg": "BoD >= Equal-weight for 54/54 countries (expected: BoD should always be at least as high as equal-weight)"
+      }
+    ],
+    "Confidence Bands": [
+      {
+        "status": "PASS",
+        "msg": "Confidence bands match formula: half_width = 2.0 + pct_filled\u00d726.7"
+      }
+    ],
+    "Peer Ranks": [
+      {
+        "status": "PASS",
+        "msg": "All peer ranks match recomputed regional rankings"
+      }
+    ],
+    "Design / Methodology": [
+      {
+        "status": "WARN",
+        "msg": "DOUBLE-COUNTING: 5 indicators appear in multiple pillars. With equal pillar weights (1/7 each), these indicators receive implicit extra weight. Examples: va_estimate in ['A', 'C']; pv_estimate in ['A', 'E']; ge_estimate in ['A', 'G']; rl_estimate in ['A', 'E']"
+      },
+      {
+        "status": "INFO",
+        "msg": "Effective indicator weights range: max=pv_estimate at 0.0595, min=youth_literacy at 0.0179. A perfectly equal indicator weight would be 0.0278. Cross-listed indicators can receive up to 3x the weight of unique indicators."
+      },
+      {
+        "status": "INFO",
+        "msg": "Indicators per pillar: A=6, B=5, C=8, D=5, E=4, F=4, G=5. Smallest: E=4, Largest: C=8."
+      },
+      {
+        "status": "PASS",
+        "msg": "displaced_persons: per-capita normalization confirmed via display_name ('Internally displaced persons (per 1,000 population)'). IDP size bias resolved by 02_clean.py Step 1b."
+      },
+      {
+        "status": "INFO",
+        "msg": "Indicator year ranges: start [2010\u20132015], end [2023\u20132024]. Mixed reference years mean the index is not a single-year snapshot."
+      },
+      {
+        "status": "INFO",
+        "msg": "Data sources: 6 indicators from WGI, 27 from WDI. WGI constitutes 18% of indicators. WGI aggregates many sub-sources, which risks circular dependency if other sub-indices in the WGI overlap with WDI indicators used here."
+      }
+    ],
+    "Score Distributions": [
+      {
+        "status": "INFO",
+        "msg": "equal: n=54, mean=50.4, min=20.3, max=73.5, std=11.2"
+      },
+      {
+        "status": "INFO",
+        "msg": "pca: n=54, mean=52.9, min=0.0, max=100.0, std=21.5"
+      },
+      {
+        "status": "INFO",
+        "msg": "bod: n=54, mean=58.4, min=29.6, max=83.3, std=11.0"
+      },
+      {
+        "status": "INFO",
+        "msg": "entropy: n=54, mean=49.1, min=19.0, max=72.2, std=11.7"
+      },
+      {
+        "status": "INFO",
+        "msg": "geometric: n=54, mean=47.4, min=13.2, max=70.0, std=11.9"
+      },
+      {
+        "status": "INFO",
+        "msg": "BoD minus Equal-weight: mean=8.0, min=4.5, max=15.6. Expect BoD >= equal for most countries (BoD maximizes)."
+      },
+      {
+        "status": "INFO",
+        "msg": "Data quality: Caution=3, Excellent=2, Good=36, Moderate=13"
+      }
+    ],
+    "Benchmark Plausibility": [
+      {
+        "status": "INFO",
+        "msg": "IIAG 2023 top-5 in our top-10: 4/5 ({'SYC', 'MUS', 'CPV', 'BWA'}). IIAG 2023 bottom-5 in our bottom-10: 5/5 ({'ERI', 'SOM', 'COD', 'SSD', 'SDN'}). (Reference: Mo Ibrahim Foundation IIAG 2023)"
+      },
+      {
+        "status": "PASS",
+        "msg": "Rankings broadly consistent with IIAG 2023 (3+ matches top and bottom)"
+      },
+      {
+        "status": "INFO",
+        "msg": "Our top-10: MUS(#1), SYC(#2), CPV(#3), GHA(#4), SEN(#5), NAM(#6), BWA(#7), MAR(#8), STP(#9), RWA(#10)"
+      },
+      {
+        "status": "INFO",
+        "msg": "Our bottom-10: NGA(#45), NER(#46), GNQ(#47), ERI(#48), SDN(#49), COD(#50), TCD(#51), CAF(#52), SOM(#53), SSD(#54)"
+      }
+    ],
+    "Within-Pillar Correlations": [
+      {
+        "status": "WARN",
+        "msg": "Pillar A: va_estimate vs rl_estimate \u2014 |rho|=0.877 > 0.8. Review for redundancy (OECD Handbook \u00a73 parsimony)."
+      },
+      {
+        "status": "WARN",
+        "msg": "Pillar A: va_estimate vs cc_estimate \u2014 |rho|=0.833 > 0.8. Review for redundancy (OECD Handbook \u00a73 parsimony)."
+      },
+      {
+        "status": "WARN",
+        "msg": "Pillar A: ge_estimate vs rq_estimate \u2014 |rho|=0.914 > 0.8. Review for redundancy (OECD Handbook \u00a73 parsimony)."
+      },
+      {
+        "status": "WARN",
+        "msg": "Pillar A: ge_estimate vs rl_estimate \u2014 |rho|=0.886 > 0.8. Review for redundancy (OECD Handbook \u00a73 parsimony)."
+      },
+      {
+        "status": "WARN",
+        "msg": "Pillar A: ge_estimate vs cc_estimate \u2014 |rho|=0.862 > 0.8. Review for redundancy (OECD Handbook \u00a73 parsimony)."
+      },
+      {
+        "status": "WARN",
+        "msg": "Pillar A: rq_estimate vs rl_estimate \u2014 |rho|=0.913 > 0.8. Review for redundancy (OECD Handbook \u00a73 parsimony)."
+      },
+      {
+        "status": "WARN",
+        "msg": "Pillar A: rq_estimate vs cc_estimate \u2014 |rho|=0.867 > 0.8. Review for redundancy (OECD Handbook \u00a73 parsimony)."
+      },
+      {
+        "status": "WARN",
+        "msg": "Pillar A: rl_estimate vs cc_estimate \u2014 |rho|=0.934 > 0.8. Review for redundancy (OECD Handbook \u00a73 parsimony)."
+      },
+      {
+        "status": "WARN",
+        "msg": "Pillar D: life_expect_tot vs mort_infant \u2014 |rho|=0.884 > 0.8. Review for redundancy (OECD Handbook \u00a73 parsimony)."
+      },
+      {
+        "status": "WARN",
+        "msg": "Pillar G: ge_estimate vs cc_estimate \u2014 |rho|=0.862 > 0.8. Review for redundancy (OECD Handbook \u00a73 parsimony)."
+      }
+    ]
+  },
+  "indicator_meta_summary": {
+    "n_total": 33,
+    "n_cross_listed": 5,
+    "pillar_sizes": {
+      "A": 6,
+      "B": 5,
+      "C": 8,
+      "D": 5,
+      "E": 4,
+      "F": 4,
+      "G": 5
+    }
+  }
+}
