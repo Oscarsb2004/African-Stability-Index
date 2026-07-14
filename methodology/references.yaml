@@ -1,7 +1,10 @@
 # methodology/references.yaml
-# Machine-readable citation registry for the African Instability Index.
+# Machine-readable citation registry for the African Stability Index (ASI).
 # Every methodological decision must have an entry here.
-# Consumed by: 07_dashboard.py (methodology panel) and eventually Athena UI.
+# NOTE: Not yet wired into the dashboard (07_dashboard.py builds its methodology panel
+#       from bundle["method_guide"] in 06_qualitative.py). This file is the standalone
+#       machine-readable registry; the human-readable equivalent is references.md.
+#       Keep both in sync until this is consumed by the dashboard / Athena UI.
 #
 # Fields:
 #   id:          short slug used in code comments and YAML cross-references
@@ -116,7 +119,7 @@ sources:
       The 2010 switch from arithmetic to geometric mean in the HDI is the most
       prominent real-world application of partial compensability reasoning.
     limitations: >
-      HDI is a simpler 3-dimension index; AII has 7 pillars. The rationale transfers
+      HDI is a simpler 3-dimension index; ASI has 7 pillars. The rationale transfers
       but the magnitude of the compensability effect differs.
 
   - id: zhou_2007_entropy
@@ -139,7 +142,7 @@ sources:
     limitations: >
       Entropy weights are sensitive to sample composition — adding or removing
       countries changes the weights. Results are not directly comparable across
-      AII versions with different country lists.
+      ASI versions with different country lists.
 
   - id: shannon_1948
     authors:
@@ -188,12 +191,14 @@ sources:
     used_in:
       - "02_clean.py"
     justifies: >
-      Cronbach's alpha as the pillar internal consistency diagnostic.
-      Threshold alpha >= 0.70 is the conventional minimum for acceptable consistency.
+      Cronbach's alpha as the pillar internal consistency diagnostic. Conventional
+      minimum alpha >= 0.70; pipeline gates leniently at MIN_CRONBACH_ALPHA = 0.60
+      (constants.py) because alpha is computed on raw mixed-polarity values, which
+      deflates it. Polarity-corrected computation is scheduled as ROADMAP Phase 3.
     limitations: >
       Alpha assumes tau-equivalence (equal loadings) and is inflated by large pillar
-      size. Pillar C (10 indicators) will mechanically produce higher alpha than
-      Pillar E (4 indicators). Treat alpha as a flag, not a verdict.
+      size. Pillar C (8 indicators) will mechanically produce higher alpha than
+      Pillar E (4 indicators). Deflated by mixed polarity on raw values. Flag, not verdict.
 
   - id: tukey_1977
     authors:
@@ -206,9 +211,14 @@ sources:
     used_in:
       - "02_clean.py"
     justifies: >
-      Tukey's fences for IQR Winsorization: cap at [Q1 - 1.5*IQR, Q3 + 1.5*IQR].
-      Winsorization retains outlier observations in the sample (unlike trimming).
-    limitations: null
+      Tukey's fences for IQR Winsorization. ASI deliberately widens k from Tukey's
+      1.5 to IQR_MULTIPLIER = 2.0 (constants.py): at n=54, 1.5x clips too aggressively
+      and compresses mid-distribution differentiation; 2.0x caps genuine outliers
+      without truncating moderate variation. Winsorization retains observations (unlike
+      trimming). Applied to scoring indicators only.
+    limitations: >
+      k=2.0 is a deliberate deviation from the Tukey 1.5 default, documented in
+      constants.py.
 
   - id: saisana_2005_robustness
     authors:
@@ -223,11 +233,14 @@ sources:
     used_in:
       - "05_robustness.py"
     justifies: >
-      Grounds the robustness framework: MaxS weight search (worst-case rank),
-      rank shift analysis across methods, and Monte Carlo weight perturbation.
-      Referenced in aii.yaml preset header.
+      Grounds the robustness framework (05_robustness.py, implemented): MaxS worst-case
+      weight search, fill/island-exclusion sensitivity, and rank-shift analysis across
+      methods. MaxS uses random-restart grid search (deterministic pillar corners +
+      Dirichlet samples), not SLSQP — the rank-based objective is non-differentiable.
     limitations: >
-      Stage 05 not yet implemented. Source logged here in advance.
+      Per-assumption sensitivity is implemented; a joint Monte Carlo over all assumptions
+      (imputation x winsorization x normalization x weighting) is scheduled as ROADMAP
+      Phase 3.
 
   - id: saltelli_2008_sensitivity
     authors:
@@ -249,7 +262,8 @@ sources:
     justifies: >
       Sensitivity band methodology for Monte Carlo weight perturbation in Stage 05.
     limitations: >
-      Stage 05 not yet implemented. Source logged here in advance.
+      Weight-perturbation sensitivity is implemented in 05_robustness.py; the full joint
+      Monte Carlo across all assumptions is scheduled as ROADMAP Phase 3.
 
   - id: kaufmann_2010_wgi
     authors:
@@ -271,7 +285,7 @@ sources:
     limitations: >
       WGI dimensions are highly intercorrelated (structural feature of methodology).
       This limits the independence assumption behind multi-pillar composite design.
-      The AII partially mitigates this by distributing WGI indicators across pillars
+      The ASI partially mitigates this by distributing WGI indicators across pillars
       where they are conceptually relevant, not concentrating all six in Pillar A.
 
   - id: spearman_1904

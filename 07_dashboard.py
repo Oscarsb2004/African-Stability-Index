@@ -807,7 +807,7 @@ def render_overview(method="equal", exclude_islands=False, custom_weights=None):
             stat_card("Moderate", int(54 - n_green - n_red), sub="score 35-65", color="#e67e22"),
             stat_card("Fragile", int(n_red), sub="score < 35", color="#c0392b"),
             stat_card("Pillars", 7),
-            stat_card("Indicators", 36),
+            stat_card("Indicators", 32),
         ], style={"display": "flex", "gap": "8px", "flexWrap": "wrap",
                   "padding": "10px 14px"}),
 
@@ -1764,22 +1764,25 @@ def render_audit():
                     style={"fontSize": "11px", "fontWeight": "700",
                            "color": "#e67e22", "margin": "0 0 4px"}),
             html.P(f"{meta_sum.get('n_cross_listed',0)} of {meta_sum.get('n_total',0)} "
-                   "indicators appear in multiple pillars. rq_estimate (Regulatory "
-                   "Quality) is in pillars A, B, and G — effective weight 2.4x.",
+                   "indicators appear in multiple pillars. The cross-listed WGI "
+                   "governance indicators (e.g. pv_estimate and rl_estimate in Pillars "
+                   "A+E) carry up to ~1.9x the effective weight of a single-pillar "
+                   "indicator.",
                    style={"fontSize": "10px", "color": "#555",
                           "lineHeight": "1.4", "margin": "0"}),
         ], style={"padding": "10px", "background": "#fff8e1", "borderRadius": "6px",
                   "border": "1px solid #f1c40f", "marginBottom": "8px"}),
         html.Div([
-            html.H5("IDP size bias",
+            html.H5("IDP size bias — resolved",
                     style={"fontSize": "11px", "fontWeight": "700",
-                           "color": "#e67e22", "margin": "0 0 4px"}),
-            html.P("Displaced persons is an absolute count — large countries (DRC, "
-                   "Ethiopia, Sudan) are penalized regardless of per-capita rate.",
+                           "color": "#27ae60", "margin": "0 0 4px"}),
+            html.P("Displaced persons is normalized to a per-1,000-population rate in "
+                   "02_clean.py (Step 1b), so large countries (DRC, Ethiopia, Sudan) are "
+                   "no longer penalized by population size.",
                    style={"fontSize": "10px", "color": "#555",
                           "lineHeight": "1.4", "margin": "0"}),
-        ], style={"padding": "10px", "background": "#fff8e1", "borderRadius": "6px",
-                  "border": "1px solid #f1c40f", "marginBottom": "8px"}),
+        ], style={"padding": "10px", "background": "#eafaf1", "borderRadius": "6px",
+                  "border": "1px solid #27ae60", "marginBottom": "8px"}),
         html.Div([
             html.H5("Pillar size imbalance",
                     style={"fontSize": "11px", "fontWeight": "700",
@@ -1882,7 +1885,7 @@ app.layout = html.Div([
             html.H1("African Stability Index",
                     style={"color": "#fff", "margin": "0", "fontSize": "19px",
                            "fontWeight": "700"}),
-            html.Div("54 AU Member States  |  7 Pillars  |  36 Indicators  |  "
+            html.Div("54 AU Member States  |  7 Pillars  |  32 Indicators  |  "
                      "Click map or pillars to drill down",
                      style={"color": "#9bb8d4", "fontSize": "10px",
                             "marginTop": "2px"}),

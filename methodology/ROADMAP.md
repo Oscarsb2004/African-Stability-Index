@@ -22,14 +22,21 @@ just re-run the pipeline and both verifiers.
 
 ---
 
-## Phase 0 — Documentation truth 🟢 no score changes · ~½ session
+## Phase 0 — Documentation truth ✅ DONE 2026-07-14 · no score changes
 
-Restore sync between docs, UI, and code (evidence: `METHODOLOGY_REVIEW.md` §B).
+Restored sync between docs, UI, and code (evidence: `METHODOLOGY_REVIEW.md` §B).
 
-- [ ] **Decide the intended IQR multiplier**: `references.md` cites Tukey k=1.5; `constants.py` has `IQR_MULTIPLIER = 2.0`. Pick one deliberately; if 2.0, update the citation rationale (2.0 = "far out" fences, gentler capping); if 1.5, scores change → fold into Phase 1.
-- [ ] references.md: title AII → ASI; Stage-05 "not yet implemented" → implemented; MaxS SLSQP → random-restart grid search (SLSQP invalid on rank objective); add PCA negative-loading exclusion; add BoD n<4 fallback; fix alpha threshold (doc 0.70 vs `MIN_CRONBACH_ALPHA = 0.60`); fix pillar sizes (C=8, E=4); fix winsorisation-sheet description
-- [ ] Dashboard: "36 Indicators" → 32 scoring (header + stat card in `07_dashboard.py`); remove stale audit-panel claims (rq_estimate 2.4×; IDP-as-absolute-count)
-- [ ] Add a "last verified against code" date line to references.md
+- [x] **IQR multiplier resolved**: `constants.py:57-60` already carries a deliberate,
+  statistically-argued rationale for k=2.0 (n=54 → 1.5 over-clips mid-distribution). Not
+  accidental — kept 2.0, documented the rationale in references.md/.yaml. No score change.
+- [x] references.md: title AII → ASI; Stage-05 implemented; MaxS random-restart (not SLSQP);
+  PCA negative-loading exclusion documented; BoD valid-pillar restriction + n<4 fallback;
+  alpha threshold reconciled (0.60 gate vs 0.70 convention, mixed-polarity caveat);
+  pillar sizes C=8; winsorisation-sheet description; verified-against-code footer
+- [x] references.yaml synced (same facts) + corrected its false "consumed by dashboard" header
+- [x] Dashboard: "36 Indicators" → 32 (header + stat card); rq_estimate 2.4× claim → accurate
+  WGI cross-listing statement; IDP box reframed as resolved (per-capita normalization)
+- [x] Verified: dashboard renders (32, no errors), `00_evaluate.py` 31/31 (scores unchanged)
 
 ## Phase 1 — Construct fixes 🔴 scores change · ~1 session
 
