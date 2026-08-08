@@ -1,0 +1,31 @@
+panel_start: 2000
+panel_end: 2024
+reference_year: 2023
+note: reference_year is the latest year with at least 80% of countries scoreable.
+  Later years exist in the panel but are too sparse to score and must render greyed,
+  not blank.
+coverage_by_year:
+  2000: 0.981
+  2001: 0.315
+  2002: 0.981
+  2003: 0.981
+  2004: 0.981
+  2005: 0.981
+  2006: 0.981
+  2007: 0.981
+  2008: 0.981
+  2009: 0.981
+  2010: 0.981
+  2011: 1.0
+  2012: 1.0
+  2013: 1.0
+  2014: 1.0
+  2015: 1.0
+  2016: 0.981
+  2017: 1.0
+  2018: 1.0
+  2019: 0.981
+  2020: 0.981
+  2021: 0.981
+  2022: 0.981
+  2023: 0.963

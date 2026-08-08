@@ -65,19 +65,32 @@
     is survey-based and reported infrequently.
   database: wdi
   log_transform: false
-- variable_name: firm_foreign_owned
-  display_name: Firms with at least 10% foreign ownership (% of firms)
+- variable_name: domestic_credit_private
+  display_name: Domestic credit to private sector (% of GDP)
   source: wb_api
-  series_code: IC.FRM.FO.ZS
+  series_code: FS.AST.PRVT.GD.ZS
   role: scoring
   polarity: positive
   pillars:
   - B
-  year_start: 2010
+  year_start: 2000
   year_end: 2024
   aggregation: most_recent
-  justification: Foreign ownership signals that the investment climate is sufficiently
-    stable and open to attract external capital. Extended year range used because
-    this is drawn from enterprise surveys conducted every few years.
+  justification: "Domestic credit to the private sector measures financial-sector
+    depth: the extent to which banks and other institutions channel savings into
+    productive private investment. Deep credit markets let firms and households
+    absorb shocks without distress sales or default cascades, which is the
+    economic-resilience channel most directly tied to stability. Replaces
+    firm_foreign_owned (IC.FRM.FO.ZS) in the 2026 revision for three reasons
+    (see methodology/METHODOLOGY_REVIEW.md C3): (1) firm_foreign_owned was the
+    only indicator in the index with a NEGATIVE item-rest correlation (-0.10),
+    meaning it moved against the rest of Pillar B as polarised; (2) it drew on
+    enterprise surveys so infrequent that 20 of 49 countries carried pre-2021
+    values, some from 2006; (3) it is conceptually confounded in the African
+    context, because extractive-sector FDI concentrates in less stable states,
+    so high foreign ownership can signal resource dependence rather than a
+    healthy investment climate. Coverage screened before adoption: 53/54
+    countries, 51 of them 2018 or later, median year 2024. Source: World Bank
+    WDI FS.AST.PRVT.GD.ZS (IMF International Financial Statistics)."
   database: wdi
   log_transform: false

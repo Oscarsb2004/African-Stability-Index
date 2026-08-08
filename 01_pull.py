@@ -57,6 +57,7 @@ from asi.core.registry import (
     COVERAGE_WARN_THRESHOLD, COVERAGE_ALERT_THRESHOLD,
 )
 from asi.core.countries import COUNTRIES
+from asi.core.constants import PANEL_START, PANEL_PULL_BUFFER
 
 OUTPUT_DIR  = Path("data")
 OUTPUT_FILE = OUTPUT_DIR / "01_raw_pull.xlsx"
@@ -82,11 +83,17 @@ iso3_list  = list(COUNTRIES.keys())   # 54 AU member states
 wdi_inds = {k: v for k, v in indicators.items() if v.database == "wdi"}
 wgi_inds = {k: v for k, v in indicators.items() if v.database == "wgi"}
 
-# Pull window: earliest year_start - 5yr buffer (supports Stage 1 fill in 02_clean)
+# Pull window: the whole panel, not a per-indicator slice.
+#
+# Before Phase B each indicator was pulled only over its own year_start-5 window,
+# because the pipeline collapsed the series to a single number. The panel needs
+# every year for every indicator, so the window is now uniform: PANEL_START back
+# a further PANEL_PULL_BUFFER years to feed rolling means and carry-forward at
+# the left edge, forward to the latest year any indicator declares.
 def _pull_window(inds: dict) -> tuple[int, int]:
     return (
-        min(v.year_start for v in inds.values()) - 5,
-        max(v.year_end   for v in inds.values()),
+        PANEL_START - PANEL_PULL_BUFFER,
+        max(v.year_end for v in inds.values()),
     )
 
 wdi_start, wdi_end = _pull_window(wdi_inds)

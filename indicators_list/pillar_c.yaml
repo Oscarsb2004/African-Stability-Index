@@ -125,14 +125,21 @@
   year_start: 2015
   year_end: 2024
   aggregation: most_recent
-  justification: "Gender Parity Index = girls enrolled / boys enrolled. Values at
-    1.0 indicate parity; values below signal systematic exclusion of girls from
-    primary education. GPI is conceptually distinct from enrollment level: a country
-    with 70% primary enrollment and GPI of 0.6 has a different social profile than
-    one with 70% enrollment and GPI of 1.0. UNESCO uses GPI as its primary gender
-    equity metric in education (UNESCO 2022 Global Education Monitoring Report).
-    Note: SE.ENR.PRIM.FM.ZS is the gross GPI; net GPI (SE.PRM.GINT.FM.ZS) has
-    sparse African coverage and was not used. Source: World Bank WDI, UNESCO UIS."
+  transform: distance_from_parity
+  justification: "Gender Parity Index = girls enrolled / boys enrolled. GPI is an
+    equality measure whose ideal is exactly 1.0, so deviation in EITHER direction
+    indicates dysfunction. The index therefore applies transform:
+    distance_from_parity, min(GPI, 2 - GPI), before normalisation, and scores the
+    result with positive polarity so that 1.0 is best. Prior to the 2026 revision
+    this indicator was scored monotonically, which meant a country where boys were
+    dropping out (GPI up to 1.16 in this sample; 17 of 54 countries exceed 1.0)
+    scored HIGHER than a country at perfect parity — rewarding the opposite of the
+    intended signal. UNESCO treats |GPI - 1| as the inequity measure for the same
+    reason (UNESCO 2022 Global Education Monitoring Report). GPI is conceptually
+    distinct from enrollment level: a country with 70% enrollment and GPI 0.6 has
+    a different social profile than one with 70% enrollment and GPI 1.0. Note:
+    SE.ENR.PRIM.FM.ZS is the gross GPI; net GPI (SE.PRM.GINT.FM.ZS) has sparse
+    African coverage and was not used. Source: World Bank WDI, UNESCO UIS."
   database: wdi
   log_transform: false
 
@@ -147,15 +154,20 @@
   year_start: 2015
   year_end: 2024
   aggregation: most_recent
+  transform: distance_from_parity
   justification: "Secondary GPI captures whether girls progress beyond primary
     schooling at the same rate as boys. Persistent gaps at secondary level signal
     structural gender inequality with compounding consequences: female secondary
     enrollment is the strongest predictor of fertility rates, maternal health
-    outcomes, and intergenerational poverty (UNESCO 2022). This is conceptually
-    distinct from primary_gpi: in many African countries, primary GPI is near 1.0
-    while secondary GPI drops sharply (early marriage, economic constraints, safety),
-    making secondary-level parity a more discriminating stability signal.
-    Source: World Bank WDI SE.ENR.SECO.FM.ZS, UNESCO UIS."
+    outcomes, and intergenerational poverty (UNESCO 2022). Scored via transform:
+    distance_from_parity, min(GPI, 2 - GPI), so that 1.0 is best and deviation in
+    either direction is penalised; 25 of 54 countries in this sample exceed 1.0,
+    and under the previous monotonic scoring their male-disadvantage gaps were
+    rewarded. This is conceptually distinct from primary_gpi: in many African
+    countries primary GPI is near 1.0 while secondary GPI drops sharply (early
+    marriage, economic constraints, safety), making secondary-level parity a more
+    discriminating stability signal. Source: World Bank WDI SE.ENR.SECO.FM.ZS,
+    UNESCO UIS."
   database: wdi
   log_transform: false
 

@@ -61,6 +61,37 @@ WEIGHT_MAX = 0.25   # upper bound per pillar in the BoD LP
 SMALL      = 1e-8   # numerical floor for log/division operations
 
 
+# ── Panel window (Phase B) ─────────────────────────────────────────────────────
+# The index is a panel: country x indicator x year.
+#
+# PANEL_START is 2000 because that is where the data actually begins, not a
+# preference. Probed against the World Bank API (2026-08):
+#   WGI (all six series, 100% of Pillar A): 0 countries before 2000, 53 in 2000
+#   Electricity access (Pillar G):          4 countries in 1990, 25 in 1995, 51 in 2000
+# Starting earlier would leave two of seven pillars empty and make the composite
+# meaningless for those years.
+#
+# WGI was biennial before 2002 (1996, 1998, 2000, 2002), so 2001 has no WGI
+# observation. It is carried forward from 2000 and flagged as such — never
+# silently interpolated.
+
+PANEL_START        = 2000
+PANEL_PULL_BUFFER  = 5   # extra years pulled before PANEL_START to feed rolling
+                         # means and carry-forward at the panel's left edge
+
+# How many years a real observation may be reused for later years before the
+# value stops counting as a measurement. Uniform by default: tuning this
+# per indicator without evidence would be arbitrary, and the reliability tiers
+# already expose the consequence of staleness.
+DEFAULT_MAX_CARRY_FORWARD = 5
+
+# Displayed score precision. Two decimals is the accepted presentation: it keeps
+# the interface readable, at the cost of occasional visible near-ties (two
+# countries can display the same score and rank one apart, which is correct at
+# full precision). verify/contract.py reports those as WARN so they stay visible.
+DISPLAY_DECIMALS = 2
+
+
 # ── Cleaning parameters ────────────────────────────────────────────────────────
 
 # Deliberately widened from Tukey's conventional 1.5. At n=54, 1.5x IQR clips
@@ -151,5 +182,7 @@ __all__ = [
     "RELIABILITY_RELIABLE_AT", "RELIABILITY_THIN_AT",
     "RELIABILITY_MAX_IMPUTED", "MIN_PILLARS_FOR_COMPOSITE",
     "MAX_PILLAR_NAN_RATE", "MIN_CRONBACH_ALPHA",
+    "PANEL_START", "PANEL_PULL_BUFFER", "DEFAULT_MAX_CARRY_FORWARD",
+    "DISPLAY_DECIMALS",
     "RegionProfile", "AFRICA", "ACTIVE_PROFILE", "ISLAND_SET",
 ]

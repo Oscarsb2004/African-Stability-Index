@@ -86,6 +86,33 @@ class WindowMode(str, Enum):
     ROLLING_MEAN = "rolling_mean"   # mean of the trailing `window_years`
 
 
+#: Registry `aggregation:` values map onto panel windowing. The existing field
+#: already encodes exactly this intent, so it is translated rather than
+#: duplicated into new YAML keys (which would have meant rewriting every file
+#: and losing the header comments that document consolidation decisions).
+#:
+#: In the pre-panel pipeline these meant "collapse the whole window to one
+#: number". In the panel they mean "how to derive the value *for each year*",
+#: which is the same operation applied at every year rather than once.
+AGGREGATION_TO_WINDOW: dict[str, tuple["WindowMode", int]] = {
+    "most_recent":      (WindowMode.MOST_RECENT, 1),
+    "average_recent_3": (WindowMode.ROLLING_MEAN, 3),
+    "average_recent_5": (WindowMode.ROLLING_MEAN, 5),
+    "average":          (WindowMode.ROLLING_MEAN, 0),   # 0 = all available years
+}
+
+
+def window_for(aggregation: str) -> tuple["WindowMode", int]:
+    """Translate a registry `aggregation` value into panel window settings."""
+    try:
+        return AGGREGATION_TO_WINDOW[aggregation]
+    except KeyError:
+        raise ValueError(
+            f"Unknown aggregation {aggregation!r}. "
+            f"Known: {sorted(AGGREGATION_TO_WINDOW)}"
+        ) from None
+
+
 # ── Registry definition ────────────────────────────────────────────────────────
 
 @dataclass(frozen=True, slots=True)
@@ -375,6 +402,7 @@ def missing_keys(record: dict[str, Any], required: Iterable[str]) -> list[str]:
 
 __all__ = [
     "Provenance", "Reliability", "Polarity", "WindowMode",
+    "AGGREGATION_TO_WINDOW", "window_for",
     "IndicatorSpec", "Observation", "PillarScore", "CompositeScore",
     "classify_reliability", "missing_keys",
     "REQUIRED_COUNTRY_KEYS", "REQUIRED_INDICATOR_KEYS",
