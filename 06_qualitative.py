@@ -47,7 +47,7 @@ from pathlib import Path
 from openpyxl.styles import PatternFill, Font, Alignment
 from openpyxl.utils import get_column_letter
 
-from constants import PILLAR_DEFS
+from asi.core.constants import PILLAR_DEFS, ISLAND_SET
 
 # ── Logging ────────────────────────────────────────────────────────────────────
 
@@ -71,7 +71,10 @@ OUTPUT_XLSX    = OUTPUT_DIR / "06_qualitative.xlsx"
 # ── Constants ──────────────────────────────────────────────────────────────────
 
 METHODS     = ["equal", "pca", "bod", "entropy", "geometric"]
-ISLAND_SET  = {"SYC", "MUS", "COM", "CPV", "STP", "MDG"}
+# ISLAND_SET imported from asi.core.constants — do not redefine here.
+# This value is written into 06_results.json as `island_state` and read by the
+# dashboard, so a local copy drifting from the canonical set would silently
+# mislabel countries in the UI.
 
 METHOD_DESCRIPTIONS = {
     "equal": {
@@ -571,7 +574,7 @@ def main():
 
     logger.info("Step 4: Load fill log and compute data quality")
     fill_log = pd.read_excel(CLEAN_FILE, sheet_name="fill_log")
-    from models.countries import COUNTRIES
+    from asi.core.countries import COUNTRIES
     name_map   = {k: v["name"]   for k, v in COUNTRIES.items()}
     region_map = {k: v["region"] for k, v in COUNTRIES.items()}
     dq_map = compute_data_quality(fill_log, indicator_meta, len(indicator_meta))

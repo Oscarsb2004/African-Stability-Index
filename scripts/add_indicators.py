@@ -1,7 +1,11 @@
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+
 import logging
 logging.basicConfig(level=logging.INFO)
 
-from config import PillarRegistry, IndicatorRegistry
+from asi.core.registry import PillarRegistry, IndicatorRegistry
 
 pr = PillarRegistry()
 ir = IndicatorRegistry(pr)

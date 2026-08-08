@@ -12,6 +12,12 @@ Run from the project root:
     python 00_audit.py
 """
 
+import sys as _sys
+from pathlib import Path as _Path
+_REPO = _Path(__file__).resolve().parent.parent
+_sys.path.insert(0, str(_REPO))
+
+
 import sys
 import json
 import math
@@ -25,19 +31,19 @@ import numpy as np
 import pandas as pd
 import yaml
 
-from constants import PILLAR_DEFS, SMALL
+from asi.core.constants import PILLAR_DEFS, SMALL
 
 logging.basicConfig(level=logging.INFO, format="%(levelname)-8s %(message)s", stream=sys.stdout)
 logger = logging.getLogger(__name__)
 
 # ── Paths ──────────────────────────────────────────────────────────────────────
 
-CLEAN_FILE   = Path("data/02_clean.xlsx")
-NORM_FILE    = Path("data/03_norm.xlsx")
-SCORES_FILE  = Path("data/04_scores.xlsx")
-RESULTS_JSON = Path("data/06_results.json")
-IND_DIR      = Path("indicators_list")
-OUTPUT_JSON  = Path("data/audit_report.json")
+CLEAN_FILE   = _REPO / "data" / "02_clean.xlsx"
+NORM_FILE    = _REPO / "data" / "03_norm.xlsx"
+SCORES_FILE  = _REPO / "data" / "04_scores.xlsx"
+RESULTS_JSON = _REPO / "data" / "06_results.json"
+IND_DIR      = _REPO / "indicators_list"
+OUTPUT_JSON  = _REPO / "data" / "audit_report.json"
 
 METHODS  = ["equal", "pca", "bod", "entropy", "geometric"]
 # SCORE_FLOOR must match 04_score.py score_geometric (which uses SMALL as the clip floor).
@@ -470,7 +476,7 @@ def check_design_issues(ind_meta: dict, pillar_map: dict) -> list:
     ))
 
     # 6f. MaxS optimization check
-    rob_path = Path("data/05_robustness.json")
+    rob_path = _REPO / "data" / "05_robustness.json"
     if rob_path.exists():
         with open(rob_path) as f:
             rob = json.load(f)

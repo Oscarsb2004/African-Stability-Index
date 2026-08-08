@@ -43,7 +43,7 @@ from openpyxl.styles import PatternFill, Font, Alignment
 from openpyxl.formatting.rule import ColorScaleRule
 from openpyxl.utils import get_column_letter
 
-from constants import PILLAR_DEFS, WEIGHT_MIN, WEIGHT_MAX, SMALL, ISLAND_SET
+from asi.core.constants import PILLAR_DEFS, WEIGHT_MIN, WEIGHT_MAX, SMALL, ISLAND_SET
 
 # ── Logging ────────────────────────────────────────────────────────────────────
 
@@ -65,7 +65,7 @@ OUTPUT_FILE  = OUTPUT_DIR / "05_robustness.xlsx"
 OUTPUT_JSON  = OUTPUT_DIR / "05_robustness.json"
 
 # ── Config ─────────────────────────────────────────────────────────────────────
-# PILLAR_DEFS, WEIGHT_MIN, WEIGHT_MAX, SMALL, ISLAND_SET imported from constants.py
+# PILLAR_DEFS, WEIGHT_MIN, WEIGHT_MAX, SMALL, ISLAND_SET imported from asi.core.constants
 
 METHODS      = ["equal", "pca", "bod", "entropy", "geometric"]
 BOD_ALT_MIN  = 0.07   # tighter bounds for BoD sensitivity test (vs default 0.05)
@@ -683,10 +683,10 @@ def main():
                 if p in pillar_map and ind["variable_name"] not in pillar_map[p]:
                     pillar_map[p].append(ind["variable_name"])
 
-    from models.countries import COUNTRIES
+    from asi.core.countries import COUNTRIES
     name_map   = {k: v["name"]   for k, v in COUNTRIES.items()}
     region_map = {k: v["region"] for k, v in COUNTRIES.items()}
-    # ISLAND_SET imported from constants.py — do not redefine here
+    # ISLAND_SET imported from asi.core.constants — do not redefine here
 
     logger.info("Step 3: Rank correlation matrix")
     corr_df = rank_correlation_matrix(overall)

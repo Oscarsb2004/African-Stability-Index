@@ -2,7 +2,7 @@
   "run": {
     "project": "African Stability Index",
     "version": "1.0",
-    "date": "2026-07-01",
+    "date": "2026-08-08",
     "n_entities": 54,
     "scoring_methods": [
       "equal",

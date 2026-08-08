@@ -1,5 +1,5 @@
 {
-  "run_date": "2026-07-02 17:38:30",
+  "run_date": "2026-08-08 16:29:43",
   "n_pass": 14,
   "n_warn": 11,
   "n_fail": 0,
@@ -123,7 +123,7 @@
     "Benchmark Plausibility": [
       {
         "status": "INFO",
-        "msg": "IIAG 2023 top-5 in our top-10: 4/5 ({'SYC', 'MUS', 'CPV', 'BWA'}). IIAG 2023 bottom-5 in our bottom-10: 5/5 ({'ERI', 'SOM', 'COD', 'SSD', 'SDN'}). (Reference: Mo Ibrahim Foundation IIAG 2023)"
+        "msg": "IIAG 2023 top-5 in our top-10: 4/5 ({'BWA', 'MUS', 'CPV', 'SYC'}). IIAG 2023 bottom-5 in our bottom-10: 5/5 ({'SOM', 'COD', 'ERI', 'SSD', 'SDN'}). (Reference: Mo Ibrahim Foundation IIAG 2023)"
       },
       {
         "status": "PASS",

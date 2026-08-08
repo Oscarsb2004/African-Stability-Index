@@ -28,7 +28,7 @@ import yaml
 from dash import Dash, dcc, html, Input, Output, State, ALL, callback_context, dash_table, no_update
 import dash_bootstrap_components as dbc
 
-from constants import PILLAR_DEFS, WEIGHT_PRESETS
+from asi.core.constants import PILLAR_DEFS, WEIGHT_PRESETS, ISLAND_SET
 
 # ── Paths ──────────────────────────────────────────────────────────────────────
 
@@ -44,7 +44,7 @@ QUAL_DIR        = Path("qualitative/countries")
 
 # ── Constants ──────────────────────────────────────────────────────────────────
 
-# PILLAR_DEFS and WEIGHT_PRESETS imported from constants.py
+# PILLAR_DEFS and WEIGHT_PRESETS imported from asi.core.constants
 METHODS = ["equal", "pca", "bod", "entropy", "geometric", "custom"]
 METHOD_LABELS = {
     "equal":     "Equal Weights",
@@ -54,7 +54,7 @@ METHOD_LABELS = {
     "geometric": "Geometric Mean",
     "custom":    "Custom Weights",
 }
-ISLAND_SET = {"SYC", "MUS", "COM", "CPV", "STP", "MDG"}
+# ISLAND_SET imported from asi.core.constants — do not redefine here.
 
 TL_GREEN  = 65
 TL_YELLOW = 35
@@ -164,6 +164,15 @@ def _load():
 bundle, rob, audit, ind_meta, raw_wide, norm_pivot, norm_bounds, COLONIAL, COUNTRY_FACTS, QUAL_NOTES, METHOD_WEIGHTS = _load()
 
 country_lookup = {c["iso3"]: c for c in bundle["countries"]}
+
+# Displayed counts are derived from the bundle, never typed into a string.
+# The header once claimed "36 Indicators" for weeks after the count changed;
+# verify/contract.py now fails if a literal count reappears in the UI.
+N_COUNTRIES = len(bundle["countries"])
+N_PILLARS   = len(PILLAR_DEFS)
+N_SCORING_INDICATORS = sum(
+    1 for m in ind_meta.values() if m.get("role", "scoring") == "scoring"
+)
 countries_df = pd.DataFrame([{
     "iso3": c["iso3"], "name": c["name"], "region": c["region"],
     "island": c["island_state"],
@@ -1356,7 +1365,7 @@ def render_pillar(iso3, pillar_id):
         desc_panel,
 
         html.Div([
-            html.H4(f"Raw Data — {c.get('name', iso3)} vs 54 Countries",
+            html.H4(f"Raw Data — {c.get('name', iso3)} vs {N_COUNTRIES} Countries",
                     style={"fontSize": "13px", "fontWeight": "700",
                            "color": BRAND, "margin": "0 0 4px"}),
             html.P(
@@ -1885,7 +1894,11 @@ app.layout = html.Div([
             html.H1("African Stability Index",
                     style={"color": "#fff", "margin": "0", "fontSize": "19px",
                            "fontWeight": "700"}),
-            html.Div("54 AU Member States  |  7 Pillars  |  32 Indicators  |  "
+            # Counts derive from the loaded data, never hardcoded: the header
+            # previously read "36 Indicators" long after the count changed.
+            # verify/contract.py fails the build if a literal count reappears.
+            html.Div(f"{N_COUNTRIES} AU Member States  |  {N_PILLARS} Pillars  |  "
+                     f"{N_SCORING_INDICATORS} Indicators  |  "
                      "Click map or pillars to drill down",
                      style={"color": "#9bb8d4", "fontSize": "10px",
                             "marginTop": "2px"}),

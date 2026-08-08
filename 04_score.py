@@ -49,7 +49,7 @@ from openpyxl.styles import PatternFill, Font, Alignment
 from openpyxl.formatting.rule import ColorScaleRule
 from openpyxl.utils import get_column_letter
 
-from constants import (
+from asi.core.constants import (
     PILLAR_DEFS, ACTIVE_PRESET, WEIGHT_PRESETS,
     WEIGHT_MIN, WEIGHT_MAX, SMALL,
 )
@@ -73,7 +73,7 @@ OUTPUT_FILE    = OUTPUT_DIR / "04_scores.xlsx"
 # ── Config ─────────────────────────────────────────────────────────────────────
 
 # PILLAR_DEFS, WEIGHT_PRESETS, ACTIVE_PRESET, WEIGHT_MIN, WEIGHT_MAX, SMALL
-# are imported from constants.py — do not redefine them here.
+# are imported from asi.core.constants — do not redefine them here.
 
 
 # ── Indicator metadata ─────────────────────────────────────────────────────────
@@ -841,7 +841,7 @@ def main():
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
     # Load country names and regions for display
-    from models.countries import COUNTRIES
+    from asi.core.countries import COUNTRIES
     name_map   = {k: v["name"]   for k, v in COUNTRIES.items()}
     region_map = {k: v["region"] for k, v in COUNTRIES.items()}
 

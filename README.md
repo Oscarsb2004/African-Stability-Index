@@ -48,35 +48,63 @@ from `data/`.
 
 ### Verification (run after any pipeline change)
 
-| Script | Role |
-|---|---|
-| `00_audit.py` | Rule-based audit: recomputes normalization/pillar/equal/geometric, design advisories, benchmark plausibility, within-pillar correlations. Output: `data/audit_report.json` + console. |
-| `00_evaluate.py` | **Independent end-to-end re-derivation** from the frozen raw baseline (`data/baseline/01_raw_pull_BASELINE.xlsx`) through indicators → pillars → all 5 methods, using different solvers than the pipeline (eigendecomposition vs sklearn PCA; scipy HiGHS vs pulp CBC). Exit 0 = all pass. Delete the baseline file to re-freeze after an intentional re-pull. |
+One entry point runs three layers:
 
-Both must be green before committing methodology changes.
+```bash
+python -m verify.run
+```
+
+| Layer | Gates a release? | Role |
+|---|---|---|
+| `verify/replicate.py` | **yes** | Independent end-to-end re-derivation from the frozen raw baseline (`data/baseline/01_raw_pull_BASELINE.xlsx`) through indicators → pillars → all 5 methods, using different tools than the pipeline (numpy eigendecomposition vs sklearn PCA; scipy HiGHS vs pulp CBC). |
+| `verify/contract.py` | **yes** | The backend/frontend object contract: every indicator entry carries its own identity, pillar scores reconcile with the indicators they are built from, ranks reproduce from scores, and the UI neither hardcodes counts nor redefines canonical constants. |
+| `verify/advisory.py` | no | Design diagnostics — correlations, effective weights, coverage, staleness, benchmark plausibility. Reports; never blocks. |
+
+`verify/` is deliberately **not** part of the `asi` package: verification that
+imports the code it checks inherits that code's bugs. It re-reads the registry
+YAML itself.
+
+Unit tests cover pure functions, registry integrity, and single-source-of-truth
+enforcement:
+
+```bash
+python -m pytest tests/ -q
+```
 
 ---
 
 ## Repository map
 
 ```
-00_audit.py, 00_evaluate.py      verification (see above)
+asi/                             importable package (the project's own code)
+  core/constants.py              ALL tunable parameters + the region profile (GSI seam)
+  core/schema.py                 canonical objects: Observation, PillarScore,
+                                 CompositeScore, Provenance, Reliability
+  core/registry.py               indicator/pillar registry loader + validation
+  core/countries.py              54 AU states: names, regions, REC memberships
+  core/models.py                 runtime Indicator / Pillar objects
+verify/                          independent verification (NOT imported by asi/)
+  run.py                         single entry point: python -m verify.run
+  replicate.py contract.py advisory.py
+tests/                           pytest: registry, schema, SSOT enforcement
+scripts/                         one-off utilities (stub generation, adding indicators)
 01..07_*.py                      pipeline stages + dashboard
 app.py, Procfile                 gunicorn entry point for web deploy (Railway-ready)
-constants.py                     ALL tunable parameters (weights bounds, IQR k, thresholds)
-config.py                        indicator/pillar registry loader
-models/countries.py              54 AU states: names, regions, island flags
 indicators_list/pillar_[a-g].yaml  indicator registry — polarity, window, aggregation,
                                    log flag, and written justification per indicator
 context/                         colonial history, country facts, pillar justifications
 qualitative/countries/*.yaml     per-country analyst notes (rendered in dashboard)
 assets/                          dashboard CSS (incl. Dash 4 dropdown fix)
 data/                            all pipeline outputs (committed for portability)
-data/baseline/                   frozen raw pull used by 00_evaluate.py
+data/baseline/                   frozen raw pull used by verify/replicate.py
 methodology/references.md        source → design-decision mapping (keep in sync!)
-methodology/METHODOLOGY_REVIEW.md  full OECD 10-step evaluation (2026-07-14)
-methodology/ROADMAP.md           phased refinement plan — START HERE for next steps
+methodology/METHODOLOGY_REVIEW.md  full OECD 10-step evaluation
+methodology/ROADMAP.md           phased refinement plan
 ```
+
+The numbered pipeline scripts stay at the root for now on purpose: Phase B
+rewrites `02`–`04` for the time-series panel, so they move into `asi/pipeline/`
+when they are rewritten rather than being relocated twice.
 
 ## Documentation rule
 

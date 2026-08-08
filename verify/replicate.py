@@ -13,7 +13,7 @@ independent implementation, then compares expected vs actual at three levels:
 Independence contract
   - Indicator definitions are read directly from indicators_list/*.yaml
     (never through config.PillarRegistry).
-  - Only declarative values are imported from constants.py / models/countries.py.
+  - Only declarative values are imported from asi.core (constants, countries).
   - No computation function from 02_clean / 03_normalize / 04_score is imported.
   - Where practical, different tools are used on purpose:
       PCA  -> np.linalg.eigh on the correlation matrix   (pipeline: sklearn PCA)
@@ -30,6 +30,12 @@ Run:   python 00_evaluate.py [--data-dir data]
 Exit:  0 if no FAIL (WARNs allowed), 1 otherwise.
 """
 
+import sys as _sys
+from pathlib import Path as _Path
+_REPO = _Path(__file__).resolve().parent.parent
+_sys.path.insert(0, str(_REPO))
+
+
 import argparse
 import json
 import shutil
@@ -41,14 +47,14 @@ import pandas as pd
 import yaml
 from scipy.optimize import linprog
 
-from constants import (
+from asi.core.constants import (
     PILLAR_DEFS, WEIGHT_PRESETS, ACTIVE_PRESET,
     WEIGHT_MIN, WEIGHT_MAX, SMALL,
     IQR_MULTIPLIER, MIN_REGIONAL_SAMPLE,
 )
-from models.countries import COUNTRIES
+from asi.core.countries import COUNTRIES
 
-INDICATORS_DIR = Path("indicators_list")
+INDICATORS_DIR = _REPO / "indicators_list"
 ISO3_LIST      = list(COUNTRIES.keys())
 ISO3_TO_REGION = {iso3: m["region"] for iso3, m in COUNTRIES.items()}
 DETAIL_CAP     = 5
@@ -698,7 +704,7 @@ def load_artifacts(data_dir: Path) -> dict:
 
 def main():
     ap = argparse.ArgumentParser(description="Independent ASI pipeline evaluation")
-    ap.add_argument("--data-dir", default="data", type=Path,
+    ap.add_argument("--data-dir", default=str(_REPO / "data"), type=Path,
                     help="pipeline output directory (default: data)")
     args = ap.parse_args()
 

@@ -1,4 +1,21 @@
-# iso3, name, region, recs
+"""
+asi.core.countries — the country registry for this edition.
+
+Each entry carries:
+    name    display name used everywhere in the UI
+    region  subregion used for regional-mean imputation
+            (West, East, Central, North, South, Islands)
+    rec     Regional Economic Community memberships (AU-recognised)
+
+Island-state status is NOT a region: it lives in
+asi.core.constants.ACTIVE_PROFILE.island_states, because a country can be an
+island state and still belong to a mainland region (Cabo Verde is in West).
+
+REC membership here reflects current status, including the 2025 Sahel
+withdrawals from ECOWAS. It is time-invariant today; the Phase B time slider
+will need year-aware membership or an explicit "current membership" label.
+"""
+
 COUNTRIES = {
     "DZA": {
         "name": "Algeria",
@@ -271,18 +288,3 @@ COUNTRIES = {
         "rec": ["ECCAS"],
     },
 }
-
-
-def build_nations() -> dict:
-    from .nation import Nation
-    return {
-        iso3: Nation(
-            iso3   = iso3,
-            name   = data["name"],
-            region = data["region"],
-            rec    = data["rec"],
-        )
-        for iso3, data in COUNTRIES.items()
-    }
-
-

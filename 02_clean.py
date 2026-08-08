@@ -48,13 +48,13 @@ logger = logging.getLogger(__name__)
 
 # ── Imports ────────────────────────────────────────────────────────────────────
 
-from config import (
+from asi.core.registry import (
     PillarRegistry, IndicatorRegistry,
     COVERAGE_WARN_THRESHOLD, COVERAGE_ALERT_THRESHOLD,
     MIN_REGIONAL_SAMPLE, IQR_MULTIPLIER,
     MAX_PILLAR_NAN_RATE, MIN_CRONBACH_ALPHA,
 )
-from models.countries import COUNTRIES
+from asi.core.countries import COUNTRIES
 
 INPUT_FILE  = Path("data/01_raw_pull.xlsx")
 OUTPUT_DIR  = Path("data")
@@ -66,7 +66,7 @@ pr = PillarRegistry()
 ir = IndicatorRegistry(pr)
 
 if not ir.validate_all():
-    logger.error("Registry validation failed — run python setup.py to diagnose.")
+    logger.error("Registry validation failed — run pytest tests/ to diagnose.")
     sys.exit(1)
 
 indicators = ir.build_indicators()

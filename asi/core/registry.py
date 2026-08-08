@@ -1,12 +1,22 @@
+"""
+asi.core.registry — loads and validates the indicator/pillar registry.
 
+All pipeline access to indicator definitions goes through IndicatorRegistry;
+no stage should read indicators_list/*.yaml directly. (verify/ reads the YAML
+itself on purpose, so that it never inherits a bug from this loader.)
+
+Moved from the root-level config.py in Phase A. Two changes were made:
+  - imports now come from asi.core
+  - PillarRegistry derives its pillars from PILLAR_DEFS instead of keeping a
+    second hardcoded copy of the pillar names
+"""
 
 import yaml
 import logging
 from pathlib import Path
 
-from models.indicator import Indicator
-from models.pillar import Pillar
-from constants import (
+from asi.core.models import Indicator, Pillar
+from asi.core.constants import (
     PILLAR_DEFS, ACTIVE_PRESET, WEIGHT_PRESETS,
     WEIGHT_MIN, WEIGHT_MAX, SMALL,
     IQR_MULTIPLIER, MIN_REGIONAL_SAMPLE,
@@ -51,14 +61,18 @@ class PillarRegistry:
     """
 
     def __init__(self):
+        # Derived from PILLAR_DEFS so pillar names exist in exactly one place.
+        # The previous version hardcoded a second copy here, which silently
+        # allowed the two to drift apart.
         self._pillars = {
-            "A": {"name": "Political / Governance",      "weight": 1/7, "weight_min": 0.05, "weight_max": 0.25, "justification": ""},
-            "B": {"name": "Economic",                    "weight": 1/7, "weight_min": 0.05, "weight_max": 0.25, "justification": ""},
-            "C": {"name": "Social / Human Capital",      "weight": 1/7, "weight_min": 0.05, "weight_max": 0.25, "justification": ""},
-            "D": {"name": "Health",                      "weight": 1/7, "weight_min": 0.05, "weight_max": 0.25, "justification": ""},
-            "E": {"name": "Security / Conflict",         "weight": 1/7, "weight_min": 0.05, "weight_max": 0.25, "justification": ""},
-            "F": {"name": "Environmental",               "weight": 1/7, "weight_min": 0.05, "weight_max": 0.25, "justification": ""},
-            "G": {"name": "Structural / Infrastructure", "weight": 1/7, "weight_min": 0.05, "weight_max": 0.25, "justification": ""},
+            key: {
+                "name": name,
+                "weight": 1 / len(PILLAR_DEFS),
+                "weight_min": WEIGHT_MIN,
+                "weight_max": WEIGHT_MAX,
+                "justification": "",
+            }
+            for key, name in PILLAR_DEFS.items()
         }
 
     def valid_keys(self) -> set:
