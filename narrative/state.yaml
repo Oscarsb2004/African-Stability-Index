@@ -1,0 +1,455 @@
+blueprint_version: 1
+created: '2026-08-09'
+note: The work queue for the narrative layer. Every country appears exactly once, either in
+  `countries` (has a record) or in `backlog` (does not yet). Nothing is allowed to be forgotten
+  by omission.
+rotation:
+  policy: create -> expand -> expand -> AUDIT, then audit every 4th run
+  why: An iterative loop whose instructions update themselves trends toward 'add more detail'
+    forever. The scheduled audit is the only thing pushing the other way.
+  forced_audit_trigger: any single run inflating citation count by more than 50%
+models:
+  create_expand: claude-sonnet-5
+  audit: claude-opus-5
+  mechanical: claude-haiku-4-5-20251001
+  why: Sonnet is the best cost/quality for web-grounded writing and does the bulk. Audit is
+    where the strongest reasoning earns its cost, because detecting one's own fabrication
+    is harder than producing it. Haiku handles link liveness and formatting.
+countries: {}
+backlog:
+  MUS:
+    name: Mauritius
+    region: Islands
+    first_pass: true
+    reason: top of the index; island state; long democratic continuity
+    iteration_count: 0
+    last_updated: null
+    next_action: create baseline from blueprint
+  GHA:
+    name: Ghana
+    region: West
+    first_pass: true
+    reason: mid-high; Anglophone West Africa; repeated peaceful transfers of power
+    iteration_count: 0
+    last_updated: null
+    next_action: create baseline from blueprint
+  DZA:
+    name: Algeria
+    region: North
+    first_pass: true
+    reason: rank swings 9-45 with weighting method; Arabophone; hydrocarbon economy
+    iteration_count: 0
+    last_updated: null
+    next_action: create baseline from blueprint
+  COD:
+    name: Democratic Rep. Congo
+    region: Central
+    first_pass: true
+    reason: bottom decile; vast and low-coverage; long conflict history
+    iteration_count: 0
+    last_updated: null
+    next_action: create baseline from blueprint
+  SOM:
+    name: Somalia
+    region: East
+    first_pass: true
+    reason: lowest ranks; state reconstitution; sparse data is the hard case
+    iteration_count: 0
+    last_updated: null
+    next_action: create baseline from blueprint
+  BWA:
+    name: Botswana
+    region: South
+    first_pass: true
+    reason: high and stable; landlocked; resource governance counter-example
+    iteration_count: 0
+    last_updated: null
+    next_action: create baseline from blueprint
+  NGA:
+    name: Nigeria
+    region: West
+    first_pass: true
+    reason: largest population; federal; mixed signals across pillars
+    iteration_count: 0
+    last_updated: null
+    next_action: create baseline from blueprint
+  RWA:
+    name: Rwanda
+    region: East
+    first_pass: true
+    reason: strong development indicators alongside contested governance
+    iteration_count: 0
+    last_updated: null
+    next_action: create baseline from blueprint
+  TCD:
+    name: Chad
+    region: Central
+    first_pass: true
+    reason: Sahel; 2021 coup; the worked example used in the blueprint
+    iteration_count: 0
+    last_updated: null
+    next_action: create baseline from blueprint
+  EGY:
+    name: Egypt
+    region: North
+    first_pass: false
+    reason: not yet scheduled
+    iteration_count: 0
+    last_updated: null
+    next_action: create baseline from blueprint
+  LBY:
+    name: Libya
+    region: North
+    first_pass: false
+    reason: not yet scheduled
+    iteration_count: 0
+    last_updated: null
+    next_action: create baseline from blueprint
+  MAR:
+    name: Morocco
+    region: North
+    first_pass: false
+    reason: not yet scheduled
+    iteration_count: 0
+    last_updated: null
+    next_action: create baseline from blueprint
+  SDN:
+    name: Sudan
+    region: North
+    first_pass: false
+    reason: not yet scheduled
+    iteration_count: 0
+    last_updated: null
+    next_action: create baseline from blueprint
+  TUN:
+    name: Tunisia
+    region: North
+    first_pass: false
+    reason: not yet scheduled
+    iteration_count: 0
+    last_updated: null
+    next_action: create baseline from blueprint
+  BEN:
+    name: Benin
+    region: West
+    first_pass: false
+    reason: not yet scheduled
+    iteration_count: 0
+    last_updated: null
+    next_action: create baseline from blueprint
+  BFA:
+    name: Burkina Faso
+    region: West
+    first_pass: false
+    reason: not yet scheduled
+    iteration_count: 0
+    last_updated: null
+    next_action: create baseline from blueprint
+  CPV:
+    name: Cabo Verde
+    region: West
+    first_pass: false
+    reason: not yet scheduled
+    iteration_count: 0
+    last_updated: null
+    next_action: create baseline from blueprint
+  GMB:
+    name: The Gambia
+    region: West
+    first_pass: false
+    reason: not yet scheduled
+    iteration_count: 0
+    last_updated: null
+    next_action: create baseline from blueprint
+  GIN:
+    name: Guinea
+    region: West
+    first_pass: false
+    reason: not yet scheduled
+    iteration_count: 0
+    last_updated: null
+    next_action: create baseline from blueprint
+  GNB:
+    name: Guinea-Bissau
+    region: West
+    first_pass: false
+    reason: not yet scheduled
+    iteration_count: 0
+    last_updated: null
+    next_action: create baseline from blueprint
+  CIV:
+    name: Cote d'Ivoire
+    region: West
+    first_pass: false
+    reason: not yet scheduled
+    iteration_count: 0
+    last_updated: null
+    next_action: create baseline from blueprint
+  LBR:
+    name: Liberia
+    region: West
+    first_pass: false
+    reason: not yet scheduled
+    iteration_count: 0
+    last_updated: null
+    next_action: create baseline from blueprint
+  MLI:
+    name: Mali
+    region: West
+    first_pass: false
+    reason: not yet scheduled
+    iteration_count: 0
+    last_updated: null
+    next_action: create baseline from blueprint
+  MRT:
+    name: Mauritania
+    region: West
+    first_pass: false
+    reason: not yet scheduled
+    iteration_count: 0
+    last_updated: null
+    next_action: create baseline from blueprint
+  NER:
+    name: Niger
+    region: West
+    first_pass: false
+    reason: not yet scheduled
+    iteration_count: 0
+    last_updated: null
+    next_action: create baseline from blueprint
+  SEN:
+    name: Senegal
+    region: West
+    first_pass: false
+    reason: not yet scheduled
+    iteration_count: 0
+    last_updated: null
+    next_action: create baseline from blueprint
+  SLE:
+    name: Sierra Leone
+    region: West
+    first_pass: false
+    reason: not yet scheduled
+    iteration_count: 0
+    last_updated: null
+    next_action: create baseline from blueprint
+  TGO:
+    name: Togo
+    region: West
+    first_pass: false
+    reason: not yet scheduled
+    iteration_count: 0
+    last_updated: null
+    next_action: create baseline from blueprint
+  AGO:
+    name: Angola
+    region: Central
+    first_pass: false
+    reason: not yet scheduled
+    iteration_count: 0
+    last_updated: null
+    next_action: create baseline from blueprint
+  CMR:
+    name: Cameroon
+    region: Central
+    first_pass: false
+    reason: not yet scheduled
+    iteration_count: 0
+    last_updated: null
+    next_action: create baseline from blueprint
+  CAF:
+    name: Central African Republic
+    region: Central
+    first_pass: false
+    reason: not yet scheduled
+    iteration_count: 0
+    last_updated: null
+    next_action: create baseline from blueprint
+  COG:
+    name: Republic of Congo
+    region: Central
+    first_pass: false
+    reason: not yet scheduled
+    iteration_count: 0
+    last_updated: null
+    next_action: create baseline from blueprint
+  GNQ:
+    name: Equatorial Guinea
+    region: Central
+    first_pass: false
+    reason: not yet scheduled
+    iteration_count: 0
+    last_updated: null
+    next_action: create baseline from blueprint
+  GAB:
+    name: Gabon
+    region: Central
+    first_pass: false
+    reason: not yet scheduled
+    iteration_count: 0
+    last_updated: null
+    next_action: create baseline from blueprint
+  BDI:
+    name: Burundi
+    region: East
+    first_pass: false
+    reason: not yet scheduled
+    iteration_count: 0
+    last_updated: null
+    next_action: create baseline from blueprint
+  DJI:
+    name: Djibouti
+    region: East
+    first_pass: false
+    reason: not yet scheduled
+    iteration_count: 0
+    last_updated: null
+    next_action: create baseline from blueprint
+  ERI:
+    name: Eritrea
+    region: East
+    first_pass: false
+    reason: not yet scheduled
+    iteration_count: 0
+    last_updated: null
+    next_action: create baseline from blueprint
+  ETH:
+    name: Ethiopia
+    region: East
+    first_pass: false
+    reason: not yet scheduled
+    iteration_count: 0
+    last_updated: null
+    next_action: create baseline from blueprint
+  KEN:
+    name: Kenya
+    region: East
+    first_pass: false
+    reason: not yet scheduled
+    iteration_count: 0
+    last_updated: null
+    next_action: create baseline from blueprint
+  MWI:
+    name: Malawi
+    region: East
+    first_pass: false
+    reason: not yet scheduled
+    iteration_count: 0
+    last_updated: null
+    next_action: create baseline from blueprint
+  MOZ:
+    name: Mozambique
+    region: East
+    first_pass: false
+    reason: not yet scheduled
+    iteration_count: 0
+    last_updated: null
+    next_action: create baseline from blueprint
+  SSD:
+    name: South Sudan
+    region: East
+    first_pass: false
+    reason: not yet scheduled
+    iteration_count: 0
+    last_updated: null
+    next_action: create baseline from blueprint
+  TZA:
+    name: Tanzania
+    region: East
+    first_pass: false
+    reason: not yet scheduled
+    iteration_count: 0
+    last_updated: null
+    next_action: create baseline from blueprint
+  UGA:
+    name: Uganda
+    region: East
+    first_pass: false
+    reason: not yet scheduled
+    iteration_count: 0
+    last_updated: null
+    next_action: create baseline from blueprint
+  ZMB:
+    name: Zambia
+    region: East
+    first_pass: false
+    reason: not yet scheduled
+    iteration_count: 0
+    last_updated: null
+    next_action: create baseline from blueprint
+  ZWE:
+    name: Zimbabwe
+    region: East
+    first_pass: false
+    reason: not yet scheduled
+    iteration_count: 0
+    last_updated: null
+    next_action: create baseline from blueprint
+  LSO:
+    name: Lesotho
+    region: South
+    first_pass: false
+    reason: not yet scheduled
+    iteration_count: 0
+    last_updated: null
+    next_action: create baseline from blueprint
+  NAM:
+    name: Namibia
+    region: South
+    first_pass: false
+    reason: not yet scheduled
+    iteration_count: 0
+    last_updated: null
+    next_action: create baseline from blueprint
+  SWZ:
+    name: Eswatini
+    region: South
+    first_pass: false
+    reason: not yet scheduled
+    iteration_count: 0
+    last_updated: null
+    next_action: create baseline from blueprint
+  ZAF:
+    name: South Africa
+    region: South
+    first_pass: false
+    reason: not yet scheduled
+    iteration_count: 0
+    last_updated: null
+    next_action: create baseline from blueprint
+  COM:
+    name: Comoros
+    region: Islands
+    first_pass: false
+    reason: not yet scheduled
+    iteration_count: 0
+    last_updated: null
+    next_action: create baseline from blueprint
+  MDG:
+    name: Madagascar
+    region: Islands
+    first_pass: false
+    reason: not yet scheduled
+    iteration_count: 0
+    last_updated: null
+    next_action: create baseline from blueprint
+  SYC:
+    name: Seychelles
+    region: Islands
+    first_pass: false
+    reason: not yet scheduled
+    iteration_count: 0
+    last_updated: null
+    next_action: create baseline from blueprint
+  STP:
+    name: Sao Tome & Principe
+    region: Islands
+    first_pass: false
+    reason: not yet scheduled
+    iteration_count: 0
+    last_updated: null
+    next_action: create baseline from blueprint
+pending_format_proposals: []
+meta_notes:
+- '2026-08-09: system built; no research runs yet. First nine designated in `backlog` with
+  `first_pass: true`.'
