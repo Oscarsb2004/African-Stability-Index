@@ -115,6 +115,27 @@ produces the right display behaviour by accident rather than by design. Consider
 an explicit `panel_start` per country (South Sudan 2011, Eritrea 1993) so the
 reason is stated rather than inferred from coverage.
 
+### [ ] 9a. Some countries' ranks swing wildly with the weighting method
+
+From `03_robustness.py` at 2023. The index is *robust* overall (worst-case
+Spearman 0.928 across all admissible weightings), but individual countries are
+not:
+
+| Country | Rank range across methods |
+|---|---|
+| Algeria | 9 – 45 |
+| Libya | 16 – 52 |
+| Mauritania | 21 – 42 |
+| Egypt | 6 – 27 |
+| Guinea | 13 – 40 |
+
+These are all North African / Sahelian hydrocarbon economies, which is the
+signature of item 9 below: entropy gives Pillar F the highest weight while PCA
+gives it zero, and oil producers score badly on the environmental indicators. A
+reader who picks a different weighting sees Algeria as either top-10 or
+bottom-10. Decide whether to surface this uncertainty in the interface (a rank
+range rather than a point rank) or resolve it by fixing Pillar F.
+
 ### [ ] 9. PCA and entropy disagree sharply on Pillar F
 
 PCA assigns Pillar F weight **0.000**; entropy assigns it the **highest** weight
@@ -127,6 +148,22 @@ Bottom-end scores rose (SOM 34.3 in 2023 vs 28.2 under the old sample-relative
 scoring) because goalposts now span 24 years of history, so present-day values
 sit less extreme. This is expected and correct, but it changes how the index
 reads. Confirm the interpretation is acceptable before publishing.
+
+---
+
+### [ ] 11. Five indicators were not directly measured anywhere in 2023
+
+From `verify/advisory.py`. At the reference year these carry 0% observed data —
+every value is carried forward or estimated from regional peers:
+
+`freshwater_withdraw` · `secondary_gpi` · `primary_enroll` ·
+`social_protection_labour_pop` · `secondary_enroll`
+
+Overall the reference year is 57.6% directly measured, 22.2% carried forward,
+14.7% regional estimate, 5.4% absent. The five above are the extreme case:
+they contribute to scores every year while never being observed in the year
+shown. Decide whether carry-forward remains acceptable for them, or whether
+they should be restricted to the years they were actually collected.
 
 ---
 

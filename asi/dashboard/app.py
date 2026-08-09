@@ -577,6 +577,174 @@ def view_rankings(lens: D.Lens, group_mode, group_key, exclude_islands, year):
     ])
 
 
+def view_methodology():
+    """
+    How a score is built, in the order it is built.
+
+    Written for a reader who wants to check the index rather than trust it, so
+    every claim points at the file that implements it.
+    """
+    w = PANEL.meta.get("weights", {})
+
+    def step(n, title, body):
+        return html.Div([
+            html.Div([
+                html.Span(str(n), style={"background": BRAND, "color": "#fff",
+                                         "borderRadius": "50%", "width": "20px",
+                                         "height": "20px", "display": "inline-flex",
+                                         "alignItems": "center", "justifyContent": "center",
+                                         "fontSize": "10px", "fontWeight": "700",
+                                         "flexShrink": 0}),
+                html.Span(title, style={"fontWeight": "700", "fontSize": "12px",
+                                        "color": BRAND, "marginLeft": "8px"}),
+            ], style={"display": "flex", "alignItems": "center", "marginBottom": "4px"}),
+            html.Div(body, style={"fontSize": "11px", "color": "#555", "lineHeight": 1.65,
+                                  "paddingLeft": "28px"}),
+        ], style={"marginBottom": "14px"})
+
+    weight_rows = [html.Tr([html.Th(h, style={"textAlign": "left", "padding": "5px 9px",
+                                              "fontSize": "10px", "background": "#f0f4f8"})
+                            for h in ["Pillar", "Equal", "PCA", "Entropy"]])]
+    for pid, pname in PILLAR_DEFS.items():
+        weight_rows.append(html.Tr([
+            html.Td(f"{pid} · {pname}", style={"padding": "4px 9px", "fontSize": "10px"}),
+            *[html.Td(f"{w.get(k, {}).get(pid, 0) * 100:.1f}%",
+                      style={"padding": "4px 9px", "fontSize": "10px",
+                             "color": "#c0392b" if w.get(k, {}).get(pid, 0) == 0 else "#333"})
+              for k in ("equal", "pca", "entropy")],
+        ]))
+
+    return html.Div([
+        html.H3("How a score is built", style={"fontSize": "14px", "color": BRAND,
+                                               "margin": "0 0 12px"}),
+
+        step(1, "One value per country, per indicator, per year",
+             "Each indicator declares how its yearly value is drawn from the source "
+             "series — the most recent observation, or a rolling mean. Where a year "
+             "has no observation, the last real measurement is carried forward for at "
+             "most five years and labelled as such. Older than that and the cell is "
+             "left empty: a fifteen-year-old number is not evidence about this year. "
+             "(asi/pipeline/panel.py)"),
+
+        step(2, "Gaps filled from regional peers, or not at all",
+             "A missing value may be estimated from the same region in the same year, "
+             "but only where at least three peers reported. Filled values are marked "
+             "as estimates and never counted as measurements. (asi/pipeline/panel.py)"),
+
+        step(3, "Transformed, capped, then scaled against fixed goalposts",
+             "Skewed indicators are log-transformed, then extreme values are capped at "
+             "two times the interquartile range, then values are mapped onto 0–100. "
+             "The bounds are computed once across every country and every year and then "
+             "frozen. This is what makes the time slider honest: a country's score moves "
+             "only when its own data moves, never because other countries changed. "
+             "(registry/goalposts.yaml)"),
+
+        step(4, "Pillars, with their coverage attached",
+             "A pillar is the mean of its available indicator scores, and it reports how "
+             "many of its indicators were actually measured. Below 60% measured it is "
+             "shown muted; below 40%, or where estimates outnumber measurements, it is "
+             "not shown at all. (asi/pipeline/score.py)"),
+
+        step(5, "Composites, with the weighting fixed in advance",
+             "Pillars combine into an overall score. PCA and entropy weights are fitted "
+             "once across the pooled panel and reused for every year — refitting them "
+             "annually would move a country's score because the weighting changed rather "
+             "than because the country did."),
+
+        html.H4("Pillar weights actually in use",
+                style={"fontSize": "12px", "color": BRAND, "margin": "16px 0 6px"}),
+        html.Table(weight_rows, style={"borderCollapse": "collapse", "width": "100%",
+                                       "maxWidth": "520px"}),
+        html.P("A zero weight means that pillar loads against the stability dimension in "
+               "the principal-component fit and is excluded rather than inverted. PCA and "
+               "entropy currently disagree sharply about the Environmental pillar, which "
+               "is an open methodological question, not a settled result.",
+               style={"fontSize": "10px", "color": "#888", "lineHeight": 1.6,
+                      "marginTop": "6px", "maxWidth": "620px"}),
+
+        html.H4("What the data-quality labels mean",
+                style={"fontSize": "12px", "color": BRAND, "margin": "16px 0 6px"}),
+        html.Div([
+            html.Div([tier_badge(t), html.Span(D.reliability_note(t),
+                                               style={"fontSize": "10px", "color": "#555",
+                                                      "marginLeft": "8px"})],
+                     style={"display": "flex", "alignItems": "center", "marginBottom": "5px"})
+            for t in ("reliable", "thin", "unreliable", "absent")
+        ]),
+
+        html.H4("Known limitations", style={"fontSize": "12px", "color": BRAND,
+                                            "margin": "16px 0 6px"}),
+        html.Ul([
+            html.Li("Six governance indicators from one source family carry roughly a "
+                    "third of the composite weight."),
+            html.Li("Indicators counted in more than one pillar carry more weight than "
+                    "single-pillar ones."),
+            html.Li("2001 has no governance observation: the source was biennial before "
+                    "2002, so that year is largely estimated."),
+            html.Li(f"The panel runs to {PANEL.panel_end}, but the most recent year with "
+                    f"enough reported data to score is {PANEL.reference_year}."),
+            html.Li("Scores are comparable across years and countries, but only within "
+                    "one edition: regenerating the goalposts would re-anchor everything."),
+        ], style={"fontSize": "10px", "color": "#555", "lineHeight": 1.8,
+                  "paddingLeft": "18px", "maxWidth": "660px"}),
+    ], style={"padding": "16px 18px", "maxWidth": "900px"})
+
+
+def view_sources():
+    """Full indicator provenance — the answer to 'where did this number come from?'"""
+    rows = [html.Tr([html.Th(h, style={"textAlign": "left", "padding": "6px 9px",
+                                       "background": BRAND, "color": "#fff",
+                                       "fontSize": "10px", "position": "sticky", "top": 0})
+                     for h in ["Indicator", "Series code", "Source", "Pillars",
+                               "Direction", "Transform"]])]
+
+    for var, meta in sorted(PANEL.indicators.items(),
+                            key=lambda kv: kv[1].get("display_name", kv[0])):
+        if meta.get("role") != "scoring":
+            continue
+        pillars = ", ".join(meta.get("pillars", []))
+        direction = ("higher is better" if meta.get("polarity") == "positive"
+                     else "lower is better")
+        transforms = []
+        if meta.get("log_transform"):
+            transforms.append("log")
+        if meta.get("transform"):
+            transforms.append(meta["transform"].replace("_", " "))
+        rows.append(html.Tr([
+            html.Td(meta.get("display_name", var),
+                    style={"padding": "5px 9px", "fontSize": "10px", "fontWeight": "600"}),
+            html.Td(meta.get("series_code", ""),
+                    style={"padding": "5px 9px", "fontSize": "9px",
+                           "fontFamily": "monospace", "color": "#666"}),
+            html.Td(meta.get("database", "").upper(),
+                    style={"padding": "5px 9px", "fontSize": "9px", "color": "#777"}),
+            html.Td(pillars, style={"padding": "5px 9px", "fontSize": "9px",
+                                    "color": "#c0392b" if "," in pillars else "#777"}),
+            html.Td(direction, style={"padding": "5px 9px", "fontSize": "9px",
+                                      "color": "#777"}),
+            html.Td(", ".join(transforms) or "—",
+                    style={"padding": "5px 9px", "fontSize": "9px", "color": "#777"}),
+        ]))
+
+    n_scoring = sum(1 for m in PANEL.indicators.values() if m.get("role") == "scoring")
+    n_cross = sum(1 for m in PANEL.indicators.values()
+                  if m.get("role") == "scoring" and len(m.get("pillars", [])) > 1)
+
+    return html.Div([
+        html.Div([
+            html.P(f"{n_scoring} scoring indicators from the World Bank's World "
+                   f"Development Indicators and Worldwide Governance Indicators. "
+                   f"{n_cross} are counted in more than one pillar and therefore carry "
+                   f"more weight than the rest — shown in red.",
+                   style={"fontSize": "11px", "color": "#555", "margin": 0,
+                          "maxWidth": "760px", "lineHeight": 1.6}),
+        ], style={"padding": "10px 14px", "background": "#f8f9fa",
+                  "borderBottom": "1px solid #e4e4e4"}),
+        html.Div(html.Table(rows, style={"borderCollapse": "collapse", "width": "100%"}),
+                 style={"padding": "10px 14px", "maxHeight": "70vh", "overflowY": "auto"}),
+    ])
+
+
 # ── Layout ─────────────────────────────────────────────────────────────────────
 
 def lens_options():
@@ -646,6 +814,8 @@ def build_layout():
             dcc.Tabs(id="tabs", value="explore", children=[
                 dcc.Tab(label="Explore", value="explore"),
                 dcc.Tab(label="Rankings", value="rankings"),
+                dcc.Tab(label="Methodology", value="methodology"),
+                dcc.Tab(label="Data sources", value="sources"),
             ]),
             html.Div(id="content"),
         ], style={"maxWidth": "1450px", "margin": "0 auto", "padding": "0 6px"}),
@@ -675,6 +845,10 @@ def create_app() -> Dash:
 
         if tab == "rankings":
             return view_rankings(lens, mode, key or None, excl, year)
+        if tab == "methodology":
+            return view_methodology()
+        if tab == "sources":
+            return view_sources()
         level = nav.get("level", "overview")
         if level == "country":
             return view_country(nav["iso3"], lens, year)

@@ -2,7 +2,7 @@
 
 A composite stability index covering all **54 African Union member states**, built on
 **7 pillars** and **32 scoring indicators** (33 total incl. one descriptive), scored by
-**5 weighting methods**, with an interactive drill-down dashboard.
+**4 weighting methods**, as a 2000-2024 panel with an interactive drill-down dashboard.
 
 Data sources: World Bank **WDI** (db 2) and **WGI** (db 3) via the `wbgapi` API.
 Methodology anchored to the OECD/JRC *Handbook on Constructing Composite Indicators* (2008)
@@ -38,13 +38,13 @@ from `data/`.
 
 | Stage | Script | What it does | Output |
 |---|---|---|---|
-| 1 | `01_pull.py` | Pull WDI + WGI series via wbgapi (retry logic for 502/504) | `data/01_raw_pull.xlsx` |
-| 2 | `02_clean.py` | Aggregate to one value per country-indicator (per-YAML window/mode), stage-1 lookback fill, IDP per-capita conversion, stage-2 regional fill, IQR winsorization | `data/02_clean.xlsx` |
-| 3 | `03_normalize.py` | Optional log1p, min-max to [0,100] with polarity | `data/03_norm.xlsx` |
-| 4 | `04_score.py` | Pillar scores (mean of available) + 5 methods: equal, PCA, BoD, entropy, geometric | `data/04_scores.xlsx`, `data/04_scores_raw.csv` |
-| 5 | `05_robustness.py` | Weight perturbation, MaxS adversarial search, fill/island exclusion | `data/05_robustness.xlsx/.json` |
-| 6 | `06_qualitative.py` | Bundle everything + qualitative notes into the dashboard payload | `data/06_results.json` |
-| 7 | `07_dashboard.py` | Dash app (port 8050; drill-down: continent → country → pillar → indicator) | — |
+| 1 | `01_pull.py` | Pull WDI + WGI series via wbgapi across the whole panel window | `data/01_raw_pull.xlsx` |
+| 2 | `02_panel.py` | Build the country x indicator x **year** panel with provenance, apply derived transforms, fill regional gaps, normalise against **fixed goalposts**, and score pillars and composites with reliability tiers | `data/panel/*` |
+| 3 | `03_robustness.py` | Sensitivity analysis at the reference year: weighting methods, adversarial weights, measured-only, islands excluded | `data/panel/robustness.json` |
+| 7 | `07_dashboard.py` | Run the interface (port 8050) | — |
+
+Add `--freeze-goalposts` to stage 2 only when deliberately re-anchoring every
+historical score.
 
 ### Verification (run after any pipeline change)
 
@@ -56,7 +56,7 @@ python -m verify.run
 
 | Layer | Gates a release? | Role |
 |---|---|---|
-| `verify/replicate.py` | **yes** | Independent end-to-end re-derivation from the frozen raw baseline (`data/baseline/01_raw_pull_BASELINE.xlsx`) through indicators → pillars → all 5 methods, using different tools than the pipeline (numpy eigendecomposition vs sklearn PCA; scipy HiGHS vs pulp CBC). |
+| `verify/panel.py` | **yes** | Independent re-derivation of the whole panel from the frozen raw baseline, using different tools than the pipeline (carry-forward via a `merge_asof` join; reliability rules re-implemented from the specification). |
 | `verify/contract.py` | **yes** | The backend/frontend object contract: every indicator entry carries its own identity, pillar scores reconcile with the indicators they are built from, ranks reproduce from scores, and the UI neither hardcodes counts nor redefines canonical constants. |
 | `verify/advisory.py` | no | Design diagnostics — correlations, effective weights, coverage, staleness, benchmark plausibility. Reports; never blocks. |
 
@@ -77,6 +77,8 @@ python -m pytest tests/ -q
 
 ```
 asi/                             importable package (the project's own code)
+  pipeline/                      panel, goalposts, normalize, score
+  dashboard/                     data.py (the only door to results) + app.py
   core/constants.py              ALL tunable parameters + the region profile (GSI seam)
   core/schema.py                 canonical objects: Observation, PillarScore,
                                  CompositeScore, Provenance, Reliability
@@ -85,10 +87,11 @@ asi/                             importable package (the project's own code)
   core/models.py                 runtime Indicator / Pillar objects
 verify/                          independent verification (NOT imported by asi/)
   run.py                         single entry point: python -m verify.run
-  replicate.py contract.py advisory.py
+  panel.py contract.py advisory.py
 tests/                           pytest: registry, schema, SSOT enforcement
 scripts/                         one-off utilities (stub generation, adding indicators)
-01..07_*.py                      pipeline stages + dashboard
+01_pull 02_panel 03_robustness   pipeline stages
+07_dashboard.py                  thin runner for asi/dashboard/app.py
 app.py, Procfile                 gunicorn entry point for web deploy (Railway-ready)
 indicators_list/pillar_[a-g].yaml  indicator registry — polarity, window, aggregation,
                                    log flag, and written justification per indicator
@@ -96,35 +99,43 @@ context/                         colonial history, country facts, pillar justifi
 qualitative/countries/*.yaml     per-country analyst notes (rendered in dashboard)
 assets/                          dashboard CSS (incl. Dash 4 dropdown fix)
 data/                            all pipeline outputs (committed for portability)
-data/baseline/                   frozen raw pull used by verify/replicate.py
+data/panel/                      the panel, scores, frozen weights, UI bundle
+data/baseline/                   frozen raw pull used by verify/panel.py
 methodology/references.md        source → design-decision mapping (keep in sync!)
 methodology/METHODOLOGY_REVIEW.md  full OECD 10-step evaluation
 methodology/ROADMAP.md           phased refinement plan
+methodology/MANUAL_REVIEW.md     decisions awaiting human judgement
 ```
 
-The numbered pipeline scripts stay at the root for now on purpose: Phase B
-rewrites `02`–`04` for the time-series panel, so they move into `asi/pipeline/`
-when they are rewritten rather than being relocated twice.
+The legacy snapshot chain (`02_clean` / `03_normalize` / `04_score` /
+`06_qualitative`) was retired in Phase C; `02_panel.py` supersedes all four.
 
 ## Documentation rule
 
 Any change that introduces or alters a methodological choice must be logged in
-`methodology/references.md` **in the same commit**, and `00_audit.py` + `00_evaluate.py`
-must pass. The July 2026 review found doc-drift (see `METHODOLOGY_REVIEW.md` §B) —
-Roadmap Phase 0 restores sync.
+`methodology/references.md` **in the same commit**, and `python -m verify.run` must
+pass. Decisions that need human judgement go to
+[`methodology/MANUAL_REVIEW.md`](methodology/MANUAL_REVIEW.md) rather than being
+settled silently in code.
 
 ## Web deployment
 
 `app.py` + `Procfile` + `requirements.txt` are Railway/Heroku-ready
 (`gunicorn app:server`, `PORT` env var respected, `server = app.server` exported).
 
-## Known methodological caveats (as of 2026-07-14)
+## Known methodological caveats
 
-Documented in full in [`methodology/METHODOLOGY_REVIEW.md`](methodology/METHODOLOGY_REVIEW.md);
-fix plan in [`methodology/ROADMAP.md`](methodology/ROADMAP.md). Headlines: GPI indicators
-scored monotonically (should be distance-from-parity); `co2_pc` acts as an inverted wealth
-proxy (Pillar F excluded by PCA); WGI carries 28.9% effective weight; education data is
-effectively ~2017 despite "most_recent" labels.
+Open items live in [`methodology/MANUAL_REVIEW.md`](methodology/MANUAL_REVIEW.md);
+the full assessment is in [`methodology/METHODOLOGY_REVIEW.md`](methodology/METHODOLOGY_REVIEW.md).
+Headlines: 19 indicators have a fixed goalpost anchored on an estimated rather than
+measured value; `co2_pc` behaves as an inverted wealth proxy (rho -0.93 with GDP per
+capita) and PCA excludes Pillar F entirely while entropy weights it highest; the
+governance source family carries roughly a third of the composite weight; and 2024
+is present in the panel but too sparse to score.
+
+Resolved in the 2026 revision: the gender parity indicators are now scored as
+distance from parity rather than monotonically, and sample-relative normalisation
+was replaced with fixed goalposts.
 
 ---
 

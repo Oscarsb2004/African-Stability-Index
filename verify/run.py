@@ -11,7 +11,8 @@ it reports design judgement, not arithmetic, and blocking a release on a
 judgement call trains people to ignore the gate.
 
 Replaces the former root-level 00_evaluate.py and 00_audit.py, which duplicated
-several checks and had no shared entry point.
+several checks and had no shared entry point. The legacy snapshot replicator was
+retired in Phase C along with the chain it verified; verify/panel.py supersedes it.
 """
 
 import argparse
@@ -22,8 +23,6 @@ from pathlib import Path
 REPO = Path(__file__).resolve().parent.parent
 
 LAYERS = {
-    "replicate": ("verify/replicate.py", True,
-                  "independent re-derivation of the legacy snapshot chain"),
     "panel":     ("verify/panel.py",     True,
                   "independent re-derivation of the time-series panel"),
     "contract":  ("verify/contract.py",  True,

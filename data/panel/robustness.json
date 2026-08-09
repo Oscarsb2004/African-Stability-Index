@@ -1,0 +1,88 @@
+{
+ "year": 2023,
+ "n_countries": 54,
+ "methods": {
+  "pca": {
+   "spearman_vs_equal": 0.9378,
+   "max_rank_shift": 26,
+   "median_rank_shift": 2.0
+  },
+  "entropy": {
+   "spearman_vs_equal": 0.9775,
+   "max_rank_shift": 10,
+   "median_rank_shift": 2.0
+  },
+  "geometric": {
+   "spearman_vs_equal": 0.9476,
+   "max_rank_shift": 29,
+   "median_rank_shift": 2.0
+  }
+ },
+ "adversarial_weights": {
+  "method": "deterministic corners + Dirichlet sampling",
+  "n_sampled": 1000,
+  "n_within_bounds": 23,
+  "worst_spearman": 0.9276,
+  "worst_weights": {
+   "A": 0.125,
+   "B": 0.125,
+   "C": 0.125,
+   "D": 0.125,
+   "E": 0.125,
+   "F": 0.25,
+   "G": 0.125
+  },
+  "verdict": "robust"
+ },
+ "measured_only": {
+  "spearman_vs_baseline": 0.9334,
+  "countries_no_longer_scoreable": 0
+ },
+ "islands_excluded": {
+  "n_removed": 6,
+  "median_rank_shift": 6.0,
+  "max_rank_shift": 6
+ },
+ "rank_spread_across_methods": {
+  "DZA": {
+   "min": 9,
+   "max": 45,
+   "range": 36
+  },
+  "LBY": {
+   "min": 16,
+   "max": 52,
+   "range": 36
+  },
+  "MRT": {
+   "min": 21,
+   "max": 42,
+   "range": 21
+  },
+  "EGY": {
+   "min": 6,
+   "max": 27,
+   "range": 21
+  },
+  "GIN": {
+   "min": 13,
+   "max": 40,
+   "range": 13
+  },
+  "LSO": {
+   "min": 13,
+   "max": 27,
+   "range": 13
+  },
+  "UGA": {
+   "min": 11,
+   "max": 28,
+   "range": 11
+  },
+  "GAB": {
+   "min": 11,
+   "max": 31,
+   "range": 11
+  }
+ }
+}
