@@ -37,7 +37,7 @@ from asi.core.schema import (
 
 BUNDLE_JSON    = _REPO / "data" / "06_results.json"
 INDICATORS_DIR = _REPO / "indicators_list"
-DASHBOARD      = _REPO / "07_dashboard.py"
+DASHBOARD      = _REPO / "asi" / "dashboard" / "app.py"
 
 DETAIL_CAP = 5
 CHECKS: list[dict] = []

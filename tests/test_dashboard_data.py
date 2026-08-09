@@ -115,3 +115,17 @@ def test_unreliable_note_explains_rather_than_blames():
 def test_every_tier_has_a_message():
     for tier in ("reliable", "thin", "unreliable", "absent"):
         assert reliability_note(tier).strip()
+
+
+# ── Empty-scope regression ─────────────────────────────────────────────────────
+
+def test_rankings_keeps_its_shape_when_nothing_is_rankable(frame):
+    """
+    2024 is entirely unreliable (World Bank series report late), so a user who
+    slides there must get an empty view, not a crash. Callers merge on
+    scope_rank, so the column has to exist even with no rows.
+    """
+    none_displayable = frame.assign(displayable=False)
+    out = rankings(apply_grouping(none_displayable, "all", None))
+    assert out.empty
+    assert "scope_rank" in out.columns

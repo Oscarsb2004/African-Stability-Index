@@ -205,6 +205,11 @@ def rankings(frame: pd.DataFrame) -> pd.DataFrame:
     """
     sub = frame[frame["in_scope"] & frame["displayable"]].copy()
     if sub.empty:
+        # Always return the promised shape. A year where nothing is rankable is
+        # a real state — 2024 is entirely unreliable because World Bank series
+        # report late — and callers merge on `scope_rank`, so an empty frame
+        # without that column turns an honest "nothing to show" into a crash.
+        sub["scope_rank"] = pd.Series(dtype="Int64")
         return sub
     sub = sub.sort_values("score", ascending=False)
     sub["scope_rank"] = sub["score"].rank(ascending=False, method="min").astype("Int64")
