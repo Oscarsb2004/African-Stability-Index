@@ -12,16 +12,40 @@ is decided by the rotation, not by preference — see `narrative/LEDGER.md`.
 
 ## How to invoke
 
+This is **not** a terminal command. It is a message you paste into a Claude Code
+session, which then does the web research and writes the file.
+
+Paste this, replacing `<ISO3>`:
+
 ```
 Read narrative/BLUEPRINT.md and narrative/prompts/RESEARCH.md.
 Read narrative/state.yaml and find <ISO3>.
 Run the mode the rotation gives for its next iteration.
-Use web search. Write narrative/countries/<ISO3>.yaml.
-Then update narrative/state.yaml and narrative/LEDGER.md.
-Finally run: python scripts/narrative_check.py --country <ISO3>
+Use web search — do not write from memory.
+Write narrative/countries/<ISO3>.yaml, then update state.yaml and LEDGER.md.
+```
+
+Two things around it **are** ordinary terminal commands — plain Python reading
+local files, no model involved:
+
+```bash
+python scripts/country_facts.py <ISO3>          # run BEFORE: what the index says
+python scripts/narrative_check.py --country <ISO3>   # run AFTER: does it validate
 ```
 
 Do not proceed to a second country until the validator passes on the first.
+
+### Which model to run this on
+
+| Mode | Model | Why |
+|---|---|---|
+| CREATE, EXPAND | **Sonnet** | Web-grounded research and writing is what it is best at, and this is the bulk of the work. Opus is not meaningfully better at summarising a source it has just opened. |
+| AUDIT (every 4th) | **the strongest available** | Detecting one's own fabrication is harder than producing it. This is the one pass where reasoning strength changes the outcome. |
+| link/format checks | Haiku, or just the validator script | Mechanical. |
+
+Do **not** run CREATE or EXPAND on Haiku. Citation discipline and the
+"leave greyed pillars unwritten" rule are precisely where a weaker model slips,
+and every slip becomes audit debt later — a false economy.
 
 ---
 
