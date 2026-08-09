@@ -1,0 +1,1062 @@
+{
+ "run": {
+  "generated": "2026-08-08",
+  "panel_start": 2000,
+  "panel_end": 2024,
+  "reference_year": 2023
+ },
+ "pillars": {
+  "A": {
+   "name": "Political / Governance",
+   "indicators": [
+    "va_estimate",
+    "pv_estimate",
+    "ge_estimate",
+    "rq_estimate",
+    "rl_estimate",
+    "cc_estimate"
+   ]
+  },
+  "B": {
+   "name": "Economic",
+   "indicators": [
+    "gdp_pc_ppp",
+    "gdp_growth_3yr_avg",
+    "inflation_5yr_avg",
+    "gini",
+    "domestic_credit_private"
+   ]
+  },
+  "C": {
+   "name": "Social / Human Capital",
+   "indicators": [
+    "va_estimate",
+    "youth_literacy",
+    "primary_enroll",
+    "secondary_enroll",
+    "learning_poverty",
+    "primary_gpi",
+    "secondary_gpi",
+    "femicide"
+   ]
+  },
+  "D": {
+   "name": "Health",
+   "indicators": [
+    "life_expect_tot",
+    "mort_infant",
+    "managed_water_percent",
+    "hand_washing_facil",
+    "sev_food_insec"
+   ]
+  },
+  "E": {
+   "name": "Security / Conflict",
+   "indicators": [
+    "pv_estimate",
+    "rl_estimate",
+    "intent_homicide",
+    "displaced_persons"
+   ]
+  },
+  "F": {
+   "name": "Environmental",
+   "indicators": [
+    "co2_pc",
+    "freshwater_withdraw",
+    "nonrenew_elec",
+    "agri_land"
+   ]
+  },
+  "G": {
+   "name": "Structural / Infrastructure",
+   "indicators": [
+    "ge_estimate",
+    "cc_estimate",
+    "elec_access_tot",
+    "water_access_pop",
+    "social_protection_labour_pop"
+   ]
+  }
+ },
+ "indicators": {
+  "va_estimate": {
+   "display_name": "Voice and Accountability, WGI estimated score",
+   "series_code": "GOV_WGI_VA.EST",
+   "database": "wgi",
+   "polarity": "positive",
+   "role": "scoring",
+   "pillars": [
+    "A",
+    "C"
+   ],
+   "log_transform": false,
+   "transform": null,
+   "justification": "Measures the degree to which citizens can participate in selecting their government, and freedom of expression, association, and a free media. Selected per OECD Handbook §3 as a direct proxy for political legitimacy — a necessary condition for long-run stability. Cross-listed in Pillar C because civic freedoms are prerequisite conditions for human capital development (UNESCO 2013). Source: Kaufmann, Kraay & Mastruzzi (2010), WGI estimated score, N(0,1) scale."
+  },
+  "pv_estimate": {
+   "display_name": "Political Stability and Absence of Violence / Terrorism, WGI estimated score",
+   "series_code": "GOV_WGI_PV.EST",
+   "database": "wgi",
+   "polarity": "positive",
+   "role": "scoring",
+   "pillars": [
+    "A",
+    "E"
+   ],
+   "log_transform": false,
+   "transform": null,
+   "justification": "Measures the perceived likelihood of political instability and politically motivated violence including terrorism. Selected as the governance dimension most directly linked to security outcomes (OECD §3 coherence criterion). Cross-listed in Pillar E because PV.EST is a leading indicator of active conflict — it reflects government legitimacy under threat, which is the governance-side driver of Pillar E's security failures. Source: Kaufmann, Kraay & Mastruzzi (2010), WGI estimated score, N(0,1) scale."
+  },
+  "ge_estimate": {
+   "display_name": "Government Effectiveness, WGI estimated score",
+   "series_code": "GOV_WGI_GE.EST",
+   "database": "wgi",
+   "polarity": "positive",
+   "role": "scoring",
+   "pillars": [
+    "A",
+    "G"
+   ],
+   "log_transform": false,
+   "transform": null,
+   "justification": "Captures perceptions of public service quality, civil service independence from political pressure, and the credibility of government commitment to stated policies. Cross-listed in Pillar G because government effectiveness is the primary institutional prerequisite for infrastructure delivery — weak states cannot reliably extend electricity, water, or social protection regardless of resources. Aligns with World Bank (2011) fragility framework that treats capacity as the binding constraint on service delivery. Source: Kaufmann, Kraay & Mastruzzi (2010), WGI estimated score, N(0,1) scale."
+  },
+  "rq_estimate": {
+   "display_name": "Regulatory Quality, WGI estimated score",
+   "series_code": "GOV_WGI_RQ.EST",
+   "database": "wgi",
+   "polarity": "positive",
+   "role": "scoring",
+   "pillars": [
+    "A"
+   ],
+   "log_transform": false,
+   "transform": null,
+   "justification": "Measures the government's ability to formulate and implement sound policies and regulations that permit private sector development. Assigned to Pillar A only, per OECD Handbook §3 parsimony criterion: regulatory quality is fundamentally a governance concept, not an economic or infrastructure outcome. A previous version cross-listed this indicator in Pillars B and G, giving it an effective weight of 2.4x that of other indicators — the consolidation to Pillar A removes that implicit up-weighting bias. Source: Kaufmann, Kraay & Mastruzzi (2010), WGI estimated score, N(0,1) scale."
+  },
+  "rl_estimate": {
+   "display_name": "Rule of Law, WGI estimated score",
+   "series_code": "GOV_WGI_RL.EST",
+   "database": "wgi",
+   "polarity": "positive",
+   "role": "scoring",
+   "pillars": [
+    "A",
+    "E"
+   ],
+   "log_transform": false,
+   "transform": null,
+   "justification": "Captures confidence in and abidance by societal rules — property rights, police, courts, contract enforcement. Cross-listed in Pillar E because weak rule of law is both a cause and an enabler of violent crime and organised conflict: where courts are ineffective and police are corrupt, armed non-state actors operate freely. This distinction from PV.EST (governance threat to stability) is that RL.EST measures the institutional failure that allows violence to persist. Source: Kaufmann, Kraay & Mastruzzi (2010), WGI estimated score, N(0,1) scale."
+  },
+  "cc_estimate": {
+   "display_name": "Control of Corruption, WGI estimated score",
+   "series_code": "GOV_WGI_CC.EST",
+   "database": "wgi",
+   "polarity": "positive",
+   "role": "scoring",
+   "pillars": [
+    "A",
+    "G"
+   ],
+   "log_transform": false,
+   "transform": null,
+   "justification": "Measures the extent to which public power is exercised for private gain, including petty and grand corruption and capture of the state by elites. Cross-listed in Pillar G because corruption directly degrades infrastructure delivery and social protection reach: public investment is diverted, contracts are awarded non-competitively, and services reach intended beneficiaries at lower rates. The cross-listing captures the institutional channel through which governance failure translates into structural under-development. Source: Kaufmann, Kraay & Mastruzzi (2010), WGI estimated score, N(0,1) scale."
+  },
+  "gdp_pc_ppp": {
+   "display_name": "GDP per capita, PPP (current international $)",
+   "series_code": "NY.GDP.PCAP.PP.CD",
+   "database": "wdi",
+   "polarity": "positive",
+   "role": "scoring",
+   "pillars": [
+    "B"
+   ],
+   "log_transform": true,
+   "transform": null,
+   "justification": "PPP-adjusted GDP per capita is the primary measure of material living standards, controlling for price differences across countries. The most direct single indicator of economic resilience."
+  },
+  "gdp_growth_3yr_avg": {
+   "display_name": "GDP growth, annual % (3-year average)",
+   "series_code": "NY.GDP.MKTP.KD.ZG",
+   "database": "wdi",
+   "polarity": "positive",
+   "role": "scoring",
+   "pillars": [
+    "B"
+   ],
+   "log_transform": false,
+   "transform": null,
+   "justification": "A 3-year average smooths single-year volatility and reflects the recent growth trajectory. Sustained growth signals economic momentum; contraction or stagnation signals structural fragility."
+  },
+  "inflation_5yr_avg": {
+   "display_name": "Inflation, consumer prices, annual % (5-year average)",
+   "series_code": "FP.CPI.TOTL.ZG",
+   "database": "wdi",
+   "polarity": "negative",
+   "role": "scoring",
+   "pillars": [
+    "B"
+   ],
+   "log_transform": false,
+   "transform": null,
+   "justification": "Chronic high inflation erodes real wages, destroys savings, and destabilises governments. A 5-year average captures structural monetary instability rather than isolated supply shocks."
+  },
+  "gini": {
+   "display_name": "Gini index",
+   "series_code": "SI.POV.GINI",
+   "database": "wdi",
+   "polarity": "negative",
+   "role": "scoring",
+   "pillars": [
+    "B"
+   ],
+   "log_transform": false,
+   "transform": null,
+   "justification": "Income inequality is a structural driver of social tension and political instability that GDP alone conceals. Year range extended to 2010 because Gini is survey-based and reported infrequently."
+  },
+  "domestic_credit_private": {
+   "display_name": "Domestic credit to private sector (% of GDP)",
+   "series_code": "FS.AST.PRVT.GD.ZS",
+   "database": "wdi",
+   "polarity": "positive",
+   "role": "scoring",
+   "pillars": [
+    "B"
+   ],
+   "log_transform": false,
+   "transform": null,
+   "justification": "Domestic credit to the private sector measures financial-sector depth: the extent to which banks and other institutions channel savings into productive private investment. Deep credit markets let firms and households absorb shocks without distress sales or default cascades, which is the economic-resilience channel most directly tied to stability. Replaces firm_foreign_owned (IC.FRM.FO.ZS) in the 2026 revision for three reasons (see methodology/METHODOLOGY_REVIEW.md C3): (1) firm_foreign_owned was the only indicator in the index with a NEGATIVE item-rest correlation (-0.10), meaning it moved against the rest of Pillar B as polarised; (2) it drew on enterprise surveys so infrequent that 20 of 49 countries carried pre-2021 values, some from 2006; (3) it is conceptually confounded in the African context, because extractive-sector FDI concentrates in less stable states, so high foreign ownership can signal resource dependence rather than a healthy investment climate. Coverage screened before adoption: 53/54 countries, 51 of them 2018 or later, median year 2024. Source: World Bank WDI FS.AST.PRVT.GD.ZS (IMF International Financial Statistics)."
+  },
+  "youth_literacy": {
+   "display_name": "Literacy rate, youth total (% of people ages 15-24)",
+   "series_code": "SE.ADT.1524.LT.ZS",
+   "database": "wdi",
+   "polarity": "positive",
+   "role": "scoring",
+   "pillars": [
+    "C"
+   ],
+   "log_transform": false,
+   "transform": null,
+   "justification": "Youth literacy (ages 15-24) reflects the effectiveness of the current education system for the cohort entering adulthood — it is a leading indicator of future human capital capacity, not a lagging stock measure. Retained in preference to adult_literacy per OECD Handbook (2008) §3 parsimony: both indicators measure the same literacy concept (r > 0.88 across African countries) and including both would implicitly double-weight literacy. Youth literacy is the more policy-sensitive choice: adult literacy changes slowly (reflects decades of past systems), while youth literacy responds within 5-10 years to education reforms. Extended year range (2010-2024): literacy data is survey-based and reported infrequently, sometimes with 3-5 year gaps between estimates. Source: World Bank WDI SE.ADT.1524.LT.ZS."
+  },
+  "primary_enroll": {
+   "display_name": "School enrollment, primary, net (%)",
+   "series_code": "SE.PRM.NENR",
+   "database": "wdi",
+   "polarity": "positive",
+   "role": "scoring",
+   "pillars": [
+    "C"
+   ],
+   "log_transform": false,
+   "transform": null,
+   "justification": "Net primary enrollment measures the share of primary-age children actually attending primary school — the most direct indicator of whether children access foundational education. Net (not gross) enrollment is used because gross enrollment includes over-age students and can exceed 100%, making cross-country comparison less meaningful. Retained as the access measure in preference to primary_oos (out-of-school rate): SE.PRM.UNER.ZS ≈ 100 - SE.PRM.NENR, meaning the two contain near-identical information (r ≈ -0.97). Including both would double-count primary access per OECD Handbook §3. Source: World Bank WDI SE.PRM.NENR (UNESCO Institute for Statistics)."
+  },
+  "secondary_enroll": {
+   "display_name": "School enrollment, secondary, net (%)",
+   "series_code": "SE.SEC.NENR",
+   "database": "wdi",
+   "polarity": "positive",
+   "role": "scoring",
+   "pillars": [
+    "C"
+   ],
+   "log_transform": false,
+   "transform": null,
+   "justification": "Secondary enrollment captures progression beyond primary schooling and shapes the skilled labour pool available for formal sector employment. Evidence from USAID (2015) and World Bank (2018) shows that secondary education completion significantly reduces youth vulnerability to recruitment by armed groups. Net (not gross) enrollment used for cross-country comparability. This is a conceptually distinct measure from primary_enroll: it captures the education system's retention capacity after the first transition point, not just initial access. Source: World Bank WDI SE.SEC.NENR."
+  },
+  "learning_poverty": {
+   "display_name": "Learning poverty: share of children below minimum reading proficiency, adjusted for out-of-school (%)",
+   "series_code": "SE.LPV.PRIM",
+   "database": "wdi",
+   "polarity": "negative",
+   "role": "scoring",
+   "pillars": [
+    "C"
+   ],
+   "log_transform": false,
+   "transform": null,
+   "justification": "Learning poverty (World Bank / UNESCO, 2019) is conceptually distinct from enrollment: it measures not who attends school but whether attendance produces functional literacy. A country can have high enrollment but high learning poverty if school quality is low — capturing the quality dimension that enrollment indicators miss entirely. This avoids double-counting with primary_enroll because it measures a different outcome (learning achievement vs. access). Series SE.LPV.PRIM: coverage is moderate (~35/54 AU states); Stage-2 regional fill applied where data is sparse. Source: World Bank / UNESCO Institute for Statistics, SE.LPV.PRIM."
+  },
+  "primary_gpi": {
+   "display_name": "School enrollment, primary, gender parity index (GPI)",
+   "series_code": "SE.ENR.PRIM.FM.ZS",
+   "database": "wdi",
+   "polarity": "positive",
+   "role": "scoring",
+   "pillars": [
+    "C"
+   ],
+   "log_transform": false,
+   "transform": "distance_from_parity",
+   "justification": "Gender Parity Index = girls enrolled / boys enrolled. GPI is an equality measure whose ideal is exactly 1.0, so deviation in EITHER direction indicates dysfunction. The index therefore applies transform: distance_from_parity, min(GPI, 2 - GPI), before normalisation, and scores the result with positive polarity so that 1.0 is best. Prior to the 2026 revision this indicator was scored monotonically, which meant a country where boys were dropping out (GPI up to 1.16 in this sample; 17 of 54 countries exceed 1.0) scored HIGHER than a country at perfect parity — rewarding the opposite of the intended signal. UNESCO treats |GPI - 1| as the inequity measure for the same reason (UNESCO 2022 Global Education Monitoring Report). GPI is conceptually distinct from enrollment level: a country with 70% enrollment and GPI 0.6 has a different social profile than one with 70% enrollment and GPI 1.0. Note: SE.ENR.PRIM.FM.ZS is the gross GPI; net GPI (SE.PRM.GINT.FM.ZS) has sparse African coverage and was not used. Source: World Bank WDI, UNESCO UIS."
+  },
+  "secondary_gpi": {
+   "display_name": "School enrollment, secondary, gender parity index (GPI)",
+   "series_code": "SE.ENR.SECO.FM.ZS",
+   "database": "wdi",
+   "polarity": "positive",
+   "role": "scoring",
+   "pillars": [
+    "C"
+   ],
+   "log_transform": false,
+   "transform": "distance_from_parity",
+   "justification": "Secondary GPI captures whether girls progress beyond primary schooling at the same rate as boys. Persistent gaps at secondary level signal structural gender inequality with compounding consequences: female secondary enrollment is the strongest predictor of fertility rates, maternal health outcomes, and intergenerational poverty (UNESCO 2022). Scored via transform: distance_from_parity, min(GPI, 2 - GPI), so that 1.0 is best and deviation in either direction is penalised; 25 of 54 countries in this sample exceed 1.0, and under the previous monotonic scoring their male-disadvantage gaps were rewarded. This is conceptually distinct from primary_gpi: in many African countries primary GPI is near 1.0 while secondary GPI drops sharply (early marriage, economic constraints, safety), making secondary-level parity a more discriminating stability signal. Source: World Bank WDI SE.ENR.SECO.FM.ZS, UNESCO UIS."
+  },
+  "femicide": {
+   "display_name": "Intentional homicides, female (per 100,000 female population)",
+   "series_code": "VC.IHR.PSRC.FE.P5",
+   "database": "wdi",
+   "polarity": "negative",
+   "role": "scoring",
+   "pillars": [
+    "C"
+   ],
+   "log_transform": false,
+   "transform": null,
+   "justification": "Female homicide rates measure gendered violence as a social cohesion failure distinct from general violence (captured in Pillar E). High female homicide rates indicate systemic failure to protect women — reflecting deep structural gender inequality, weak rule of law enforcement for domestic violence, and breakdown of community social norms. The indicator uses VC.IHR.PSRC.FE.P5 (all female homicides per 100,000 female population), not a femicide-specific series, because no consistent cross-African 'femicide' series exists in WDI. The indicator is placed in Pillar C (Social / Human Capital) rather than E (Security) because it measures social inequality, not political or conflict violence — and because it complements the gender parity indicators in capturing women's overall safety and social status. Source: WHO/UNODC via World Bank WDI VC.IHR.PSRC.FE.P5."
+  },
+  "life_expect_tot": {
+   "display_name": "Life expectancy at birth, total (years)",
+   "series_code": "SP.DYN.LE00.IN",
+   "database": "wdi",
+   "polarity": "positive",
+   "role": "scoring",
+   "pillars": [
+    "D"
+   ],
+   "log_transform": false,
+   "transform": null,
+   "justification": "Life expectancy at birth is the single most comprehensive summary statistic for population health, integrating disease burden, healthcare access, maternal health, nutrition quality, and conflict mortality into one number. The WHO uses life expectancy as the primary health component in the Human Development Index. For stability purposes, low life expectancy signals healthcare system failure and elevated conflict/disease burden that generates grievances and reduces economic productivity. Source: World Bank WDI SP.DYN.LE00.IN (WHO Global Health Observatory)."
+  },
+  "mort_infant": {
+   "display_name": "Mortality rate, infant (per 1,000 live births)",
+   "series_code": "SP.DYN.IMRT.IN",
+   "database": "wdi",
+   "polarity": "negative",
+   "role": "scoring",
+   "pillars": [
+    "D"
+   ],
+   "log_transform": true,
+   "transform": null,
+   "justification": "Infant mortality is highly sensitive to healthcare access at delivery, maternal health, nutrition, and sanitation quality — making it a leading indicator of health system performance at the point of greatest biological vulnerability. Conceptually distinct from life_expect_tot: IMR measures health system quality in the 0-12 month window while life expectancy integrates across the full lifespan including adult mortality from conflict, AIDS, and non-communicable disease. log_transform applied: rates range from ~2 (Mauritius) to ~80+ (Somalia, Mali), requiring compression before min-max normalization. Source: World Bank WDI SP.DYN.IMRT.IN (UN Inter-agency Group for Child Mortality Estimation)."
+  },
+  "managed_water_percent": {
+   "display_name": "People using safely managed drinking water services (% of population)",
+   "series_code": "SH.H2O.SMDW.ZS",
+   "database": "wdi",
+   "polarity": "positive",
+   "role": "scoring",
+   "pillars": [
+    "D"
+   ],
+   "log_transform": false,
+   "transform": null,
+   "justification": "Safely managed water services require on-premises access, availability when needed, and freedom from faecal and chemical contamination — a stronger standard than basic access that more accurately captures disease prevention capacity. Distinguished from Pillar G's water_access_pop (SH.H2O.BASW.ZS, basic access) by measuring the health outcome side: managed water prevents waterborne disease; basic access measures infrastructure delivery reach. Both are needed because countries can have high basic access coverage but low managed service quality. Source: World Bank WDI SH.H2O.SMDW.ZS (WHO/UNICEF Joint Monitoring Programme)."
+  },
+  "hand_washing_facil": {
+   "display_name": "People with basic handwashing facilities including soap and water (% of population)",
+   "series_code": "SH.STA.HYGN.ZS",
+   "database": "wdi",
+   "polarity": "positive",
+   "role": "scoring",
+   "pillars": [
+    "D"
+   ],
+   "log_transform": false,
+   "transform": null,
+   "justification": "Basic handwashing is a frontline communicable disease barrier with documented impact on cholera, typhoid, respiratory infection, and diarrhoeal disease mortality. Low coverage accelerates transmission and reflects underlying sanitation infrastructure gaps. Conceptually distinct from managed_water_percent: managed water prevents ingestion-route contamination; handwashing prevents contact-route transmission. The COVID-19 pandemic demonstrated that handwashing facility coverage is independently predictive of outbreak outcomes even controlling for water access. Source: World Bank WDI SH.STA.HYGN.ZS (WHO/UNICEF JMP)."
+  },
+  "sev_food_insec": {
+   "display_name": "Prevalence of severe food insecurity (% of population)",
+   "series_code": "SN.ITK.SVFI.ZS",
+   "database": "wdi",
+   "polarity": "negative",
+   "role": "scoring",
+   "pillars": [
+    "D"
+   ],
+   "log_transform": true,
+   "transform": null,
+   "justification": "Severe food insecurity (going entire days without eating, measured by the FAO Food Insecurity Experience Scale FIES) is a direct measure of acute deprivation and a documented precursor to displacement, social breakdown, and political violence. Retained in preference to modsev_food_insec (SN.ITK.MSFI.ZS) because the moderate-or-severe series is a hierarchical superset: every person counted in SN.ITK.SVFI.ZS is also counted in SN.ITK.MSFI.ZS. Including both would double-count the severe population, violating OECD Handbook §3 parsimony. The severe threshold is the more stability-relevant choice: it corresponds approximately to IPC Phase 3 (Crisis) and above, the internationally recognised threshold for humanitarian response activation. log_transform applied: rates span 0-60%+ across African countries. Source: World Bank WDI SN.ITK.SVFI.ZS (FAO FIES data)."
+  },
+  "intent_homicide": {
+   "display_name": "Intentional homicides (per 100,000 people)",
+   "series_code": "VC.IHR.PSRC.P5",
+   "database": "wdi",
+   "polarity": "negative",
+   "role": "scoring",
+   "pillars": [
+    "E"
+   ],
+   "log_transform": true,
+   "transform": null,
+   "justification": "Intentional homicide rates are the most consistently measured cross-country proxy for violent crime and societal security failure. WHO and UNODC define intentional homicide as unlawful death inflicted with intent to cause death or serious injury, excluding legal killings and conflict casualties. Per OECD Handbook (2008) §3, this indicator is preferred over self-reported crime surveys because reporting is anchored in mortality data that is harder to manipulate. Expressed per 100,000 population — a rate indicator intrinsically size-neutral across countries of different scale. log_transform applied: homicide rates in Africa range from <1 (Mauritius) to >30 (South Africa, Lesotho), requiring compression for effective min-max normalization. Source: WHO/UNODC via World Bank WDI VC.IHR.PSRC.P5."
+  },
+  "displaced_persons": {
+   "display_name": "Internally displaced persons (per 1,000 population)",
+   "series_code": "SM.POP.IDPC",
+   "database": "wdi",
+   "polarity": "negative",
+   "role": "scoring",
+   "pillars": [
+    "E"
+   ],
+   "log_transform": true,
+   "transform": null,
+   "justification": "Internal displacement is a direct consequence of active conflict, persecution, or disaster and is the clearest observable outcome of security breakdown at population scale. Raw absolute IDP counts (SM.POP.IDPC, sourced from UNHCR and IDMC via World Bank WDI) are converted to IDPs per 1,000 population in 02_clean.py using SP.POP.TOTL. This per-capita conversion is required by OECD Handbook (2008) §3 comparability criterion: without it, large countries (DRC, Ethiopia, Sudan) are systematically penalised relative to smaller states regardless of actual conflict intensity per capita. The UNHCR Global Trends report (UNHCR 2023) uses per-capita displacement rates as its standard cross-country comparison metric. log_transform applied: rates span from 0 to 150+ per 1,000 in active conflict states. Source: UNHCR / IDMC via World Bank WDI SM.POP.IDPC; denominator SP.POP.TOTL."
+  },
+  "population_total": {
+   "display_name": "Population, total",
+   "series_code": "SP.POP.TOTL",
+   "database": "wdi",
+   "polarity": "positive",
+   "role": "descriptive",
+   "pillars": [
+    "E"
+   ],
+   "log_transform": false,
+   "transform": null,
+   "justification": "Normalization denominator only. Used exclusively in 02_clean.py Step 1b to convert the absolute IDP count (SM.POP.IDPC) to a per-1,000 population rate before any filling or winsorization is applied. Not a scoring indicator and excluded from all scoring steps: 03_normalize.py skips it (role: descriptive), 04_score.py load_pillar_map filters role != scoring, and 06_qualitative.py indicator metadata excludes non-scoring entries. Source: World Bank WDI SP.POP.TOTL, annual mid-year estimate."
+  },
+  "co2_pc": {
+   "display_name": "CO2 emissions, AR5 GWP100 (metric tons per capita)",
+   "series_code": "EN.GHG.CO2.PC.CE.AR5",
+   "database": "wdi",
+   "polarity": "negative",
+   "role": "scoring",
+   "pillars": [
+    "F"
+   ],
+   "log_transform": false,
+   "transform": null,
+   "justification": "Per capita CO2 emissions capture fossil-fuel dependence and long-run climate stress exposure — high-emission economies face greater physical climate risk (coastal flooding, heat extremes, drought) and higher energy transition costs, both destabilising forces on governance and livelihoods. Series EN.GHG.CO2.PC.CE.AR5 uses IPCC Fifth Assessment Report (AR5) GWP100 conversion factors, the current international standard adopted by the Paris Agreement reporting framework. The legacy series EN.ATM.CO2E.PC was deprecated by the World Bank in 2023 and no longer returns data via the API. Year end set to 2023: emissions estimates carry a 1-2 year release lag. Source: World Bank Climate Change Knowledge Portal, EN.GHG.CO2.PC.CE.AR5."
+  },
+  "freshwater_withdraw": {
+   "display_name": "Annual freshwater withdrawals, total (% of internal resources)",
+   "series_code": "ER.H2O.FWTL.ZS",
+   "database": "wdi",
+   "polarity": "negative",
+   "role": "scoring",
+   "pillars": [
+    "F"
+   ],
+   "log_transform": false,
+   "transform": null,
+   "justification": "Freshwater withdrawal as a percentage of renewable internal freshwater resources measures water stress intensity. Countries withdrawing >100% of renewable resources (e.g. Libya, Egypt) are drawing on non-renewable groundwater or are heavily import-dependent, creating structural resource insecurity. Water stress is a documented driver of rural-urban migration and agricultural collapse that precedes political instability (Gleick 2014, FAO 2020). Extended year range (2010-2024): this indicator is reported infrequently by national statistics offices, sometimes with gaps of 5-10 years between estimates; the extended window ensures most countries have at least one usable value. Source: World Bank WDI ER.H2O.FWTL.ZS (FAO AQUASTAT)."
+  },
+  "nonrenew_elec": {
+   "display_name": "Electricity production from oil, gas, and coal sources (% of total)",
+   "series_code": "EG.ELC.FOSL.ZS",
+   "database": "wdi",
+   "polarity": "negative",
+   "role": "scoring",
+   "pillars": [
+    "F"
+   ],
+   "log_transform": false,
+   "transform": null,
+   "justification": "Fossil fuel dependence for electricity generation exposes economies to global commodity price shocks (oil, gas, coal import price volatility) and to physical supply disruptions — both drivers of energy insecurity and macroeconomic instability. High fossil-fuel shares also signal slow progress on the energy transition required to reduce long-run climate exposure and meet international climate commitments (a growing source of fiscal and regulatory risk). Africa's rapidly expanding renewable capacity (solar, hydro) makes this a differentiating indicator across the 54-country sample. Source: World Bank WDI EG.ELC.FOSL.ZS (IEA World Energy Statistics)."
+  },
+  "agri_land": {
+   "display_name": "Agricultural land (% of land area)",
+   "series_code": "AG.LND.AGRI.ZS",
+   "database": "wdi",
+   "polarity": "positive",
+   "role": "scoring",
+   "pillars": [
+    "F"
+   ],
+   "log_transform": false,
+   "transform": null,
+   "justification": "Agricultural land share is assigned POSITIVE polarity in this index, treating it as a food production capacity indicator rather than an ecosystem loss indicator. Decision rationale (OECD Handbook §3 construct validity): in the African context, food production capacity is the direct stability-relevant quantity — food insecurity (Pillar D) is a primary driver of conflict and displacement. Countries with larger agricultural land bases have greater domestic food production potential, which buffers against import price shocks and food supply disruptions. The alternative interpretation (negative polarity: land conversion pressure / deforestation risk) is already indirectly captured by co2_pc (emissions from land use change are included in GHG accounting). Assigning negative polarity would penalise food-secure agricultural economies — the opposite of the stability signal intended. Source: World Bank WDI AG.LND.AGRI.ZS (FAO)."
+  },
+  "elec_access_tot": {
+   "display_name": "Access to electricity (% of population)",
+   "series_code": "EG.ELC.ACCS.ZS",
+   "database": "wdi",
+   "polarity": "positive",
+   "role": "scoring",
+   "pillars": [
+    "G"
+   ],
+   "log_transform": false,
+   "transform": null,
+   "justification": "Electricity access is the enabling infrastructure for all other development outcomes — healthcare delivery, education (lighting for study), communications, cold chains, and economic activity. Without electricity, all other infrastructure investments are constrained. Sub-Saharan Africa has the lowest electricity access rates globally, with 54% access as of 2021 (IEA, 2023), making cross-country variation in access a high-discrimination stability indicator. Source: World Bank WDI EG.ELC.ACCS.ZS (IEA / World Bank tracking)."
+  },
+  "water_access_pop": {
+   "display_name": "People using at least basic drinking water services (% of population)",
+   "series_code": "SH.H2O.BASW.ZS",
+   "database": "wdi",
+   "polarity": "positive",
+   "role": "scoring",
+   "pillars": [
+    "G"
+   ],
+   "log_transform": false,
+   "transform": null,
+   "justification": "Basic water access (SH.H2O.BASW.ZS) measures the infrastructure delivery reach of water systems — the share of population with access to a protected water source within a 30-minute round trip (WHO/UNICEF JMP Tier 2). Conceptually distinct from Pillar D's managed_water_percent (SH.H2O.SMDW.ZS): basic access measures the infrastructure side (can people get to water?); managed water measures the quality side (is that water safely managed?). Both are needed: a country can have high basic access but low managed coverage, or vice versa. In Pillar G, this captures state capacity to extend water infrastructure to the population. Source: World Bank WDI SH.H2O.BASW.ZS (WHO/UNICEF JMP)."
+  },
+  "social_protection_labour_pop": {
+   "display_name": "Coverage of social protection and labor programs (% of population)",
+   "series_code": "per_allsp.cov_pop_tot",
+   "database": "wdi",
+   "polarity": "positive",
+   "role": "scoring",
+   "pillars": [
+    "G"
+   ],
+   "log_transform": false,
+   "transform": null,
+   "justification": "Social protection coverage reflects the institutional reach of the state to protect citizens against economic shocks, disability, old age, and unemployment. This broader measure (per_allsp.cov_pop_tot) encompasses all formal social protection and labour programs: contributory social insurance (pensions, unemployment benefits, health insurance) plus targeted safety nets. Retained in preference to social_safetynet_pop (per_sa_allsa.cov_pop_tot) because the safety net series is a hierarchical subset of this broader measure — including both would double-count safety net recipients (OECD Handbook §3). The broader measure also better captures state institutional capacity: high contributory insurance coverage signals a formalised labour market and functioning administrative state, which are prerequisites for long-run stability. Extended year range (2010-2024): World Bank ASPIRE data is reported infrequently. Source: World Bank ASPIRE database, per_allsp.cov_pop_tot."
+  }
+ },
+ "countries": {
+  "DZA": {
+   "name": "Algeria",
+   "region": "North",
+   "recs": [
+    "UMA"
+   ],
+   "island_state": false
+  },
+  "EGY": {
+   "name": "Egypt",
+   "region": "North",
+   "recs": [
+    "COMESA",
+    "CEN-SAD"
+   ],
+   "island_state": false
+  },
+  "LBY": {
+   "name": "Libya",
+   "region": "North",
+   "recs": [
+    "UMA",
+    "COMESA",
+    "CEN-SAD"
+   ],
+   "island_state": false
+  },
+  "MAR": {
+   "name": "Morocco",
+   "region": "North",
+   "recs": [
+    "UMA",
+    "CEN-SAD"
+   ],
+   "island_state": false
+  },
+  "SDN": {
+   "name": "Sudan",
+   "region": "North",
+   "recs": [
+    "COMESA",
+    "CEN-SAD"
+   ],
+   "island_state": false
+  },
+  "TUN": {
+   "name": "Tunisia",
+   "region": "North",
+   "recs": [
+    "UMA",
+    "COMESA",
+    "CEN-SAD"
+   ],
+   "island_state": false
+  },
+  "BEN": {
+   "name": "Benin",
+   "region": "West",
+   "recs": [
+    "CEN-SAD",
+    "ECOWAS"
+   ],
+   "island_state": false
+  },
+  "BFA": {
+   "name": "Burkina Faso",
+   "region": "West",
+   "recs": [
+    "CEN-SAD"
+   ],
+   "island_state": false
+  },
+  "CPV": {
+   "name": "Cabo Verde",
+   "region": "West",
+   "recs": [
+    "ECOWAS"
+   ],
+   "island_state": true
+  },
+  "GMB": {
+   "name": "The Gambia",
+   "region": "West",
+   "recs": [
+    "CEN-SAD",
+    "ECOWAS"
+   ],
+   "island_state": false
+  },
+  "GHA": {
+   "name": "Ghana",
+   "region": "West",
+   "recs": [
+    "CEN-SAD",
+    "ECOWAS"
+   ],
+   "island_state": false
+  },
+  "GIN": {
+   "name": "Guinea",
+   "region": "West",
+   "recs": [
+    "CEN-SAD",
+    "ECOWAS"
+   ],
+   "island_state": false
+  },
+  "GNB": {
+   "name": "Guinea-Bissau",
+   "region": "West",
+   "recs": [
+    "CEN-SAD",
+    "ECOWAS"
+   ],
+   "island_state": false
+  },
+  "CIV": {
+   "name": "Cote d'Ivoire",
+   "region": "West",
+   "recs": [
+    "CEN-SAD",
+    "ECOWAS"
+   ],
+   "island_state": false
+  },
+  "LBR": {
+   "name": "Liberia",
+   "region": "West",
+   "recs": [
+    "ECOWAS"
+   ],
+   "island_state": false
+  },
+  "MLI": {
+   "name": "Mali",
+   "region": "West",
+   "recs": [
+    "CEN-SAD"
+   ],
+   "island_state": false
+  },
+  "MRT": {
+   "name": "Mauritania",
+   "region": "West",
+   "recs": [
+    "UMA",
+    "CEN-SAD"
+   ],
+   "island_state": false
+  },
+  "NER": {
+   "name": "Niger",
+   "region": "West",
+   "recs": [
+    "CEN-SAD"
+   ],
+   "island_state": false
+  },
+  "NGA": {
+   "name": "Nigeria",
+   "region": "West",
+   "recs": [
+    "CEN-SAD",
+    "ECOWAS"
+   ],
+   "island_state": false
+  },
+  "SEN": {
+   "name": "Senegal",
+   "region": "West",
+   "recs": [
+    "CEN-SAD",
+    "ECOWAS"
+   ],
+   "island_state": false
+  },
+  "SLE": {
+   "name": "Sierra Leone",
+   "region": "West",
+   "recs": [
+    "CEN-SAD",
+    "ECOWAS"
+   ],
+   "island_state": false
+  },
+  "TGO": {
+   "name": "Togo",
+   "region": "West",
+   "recs": [
+    "CEN-SAD",
+    "ECOWAS"
+   ],
+   "island_state": false
+  },
+  "AGO": {
+   "name": "Angola",
+   "region": "Central",
+   "recs": [
+    "ECCAS",
+    "SADC"
+   ],
+   "island_state": false
+  },
+  "CMR": {
+   "name": "Cameroon",
+   "region": "Central",
+   "recs": [
+    "ECCAS"
+   ],
+   "island_state": false
+  },
+  "CAF": {
+   "name": "Central African Republic",
+   "region": "Central",
+   "recs": [
+    "CEN-SAD",
+    "ECCAS"
+   ],
+   "island_state": false
+  },
+  "TCD": {
+   "name": "Chad",
+   "region": "Central",
+   "recs": [
+    "CEN-SAD",
+    "ECCAS"
+   ],
+   "island_state": false
+  },
+  "COG": {
+   "name": "Republic of Congo",
+   "region": "Central",
+   "recs": [
+    "ECCAS"
+   ],
+   "island_state": false
+  },
+  "COD": {
+   "name": "Democratic Rep. Congo",
+   "region": "Central",
+   "recs": [
+    "COMESA",
+    "EAC",
+    "ECCAS",
+    "SADC"
+   ],
+   "island_state": false
+  },
+  "GNQ": {
+   "name": "Equatorial Guinea",
+   "region": "Central",
+   "recs": [
+    "ECCAS"
+   ],
+   "island_state": false
+  },
+  "GAB": {
+   "name": "Gabon",
+   "region": "Central",
+   "recs": [
+    "ECCAS"
+   ],
+   "island_state": false
+  },
+  "BDI": {
+   "name": "Burundi",
+   "region": "East",
+   "recs": [
+    "COMESA",
+    "EAC",
+    "ECCAS"
+   ],
+   "island_state": false
+  },
+  "DJI": {
+   "name": "Djibouti",
+   "region": "East",
+   "recs": [
+    "COMESA",
+    "CEN-SAD",
+    "IGAD"
+   ],
+   "island_state": false
+  },
+  "ERI": {
+   "name": "Eritrea",
+   "region": "East",
+   "recs": [
+    "COMESA",
+    "CEN-SAD"
+   ],
+   "island_state": false
+  },
+  "ETH": {
+   "name": "Ethiopia",
+   "region": "East",
+   "recs": [
+    "COMESA",
+    "IGAD"
+   ],
+   "island_state": false
+  },
+  "KEN": {
+   "name": "Kenya",
+   "region": "East",
+   "recs": [
+    "COMESA",
+    "EAC",
+    "IGAD"
+   ],
+   "island_state": false
+  },
+  "MWI": {
+   "name": "Malawi",
+   "region": "East",
+   "recs": [
+    "COMESA",
+    "SADC"
+   ],
+   "island_state": false
+  },
+  "MOZ": {
+   "name": "Mozambique",
+   "region": "East",
+   "recs": [
+    "SADC"
+   ],
+   "island_state": false
+  },
+  "RWA": {
+   "name": "Rwanda",
+   "region": "East",
+   "recs": [
+    "COMESA",
+    "EAC"
+   ],
+   "island_state": false
+  },
+  "SOM": {
+   "name": "Somalia",
+   "region": "East",
+   "recs": [
+    "COMESA",
+    "CEN-SAD",
+    "EAC",
+    "IGAD"
+   ],
+   "island_state": false
+  },
+  "SSD": {
+   "name": "South Sudan",
+   "region": "East",
+   "recs": [
+    "EAC",
+    "IGAD"
+   ],
+   "island_state": false
+  },
+  "TZA": {
+   "name": "Tanzania",
+   "region": "East",
+   "recs": [
+    "EAC",
+    "SADC"
+   ],
+   "island_state": false
+  },
+  "UGA": {
+   "name": "Uganda",
+   "region": "East",
+   "recs": [
+    "COMESA",
+    "EAC",
+    "IGAD"
+   ],
+   "island_state": false
+  },
+  "ZMB": {
+   "name": "Zambia",
+   "region": "East",
+   "recs": [
+    "COMESA",
+    "SADC"
+   ],
+   "island_state": false
+  },
+  "ZWE": {
+   "name": "Zimbabwe",
+   "region": "East",
+   "recs": [
+    "COMESA",
+    "SADC"
+   ],
+   "island_state": false
+  },
+  "BWA": {
+   "name": "Botswana",
+   "region": "South",
+   "recs": [
+    "SADC"
+   ],
+   "island_state": false
+  },
+  "LSO": {
+   "name": "Lesotho",
+   "region": "South",
+   "recs": [
+    "SADC"
+   ],
+   "island_state": false
+  },
+  "NAM": {
+   "name": "Namibia",
+   "region": "South",
+   "recs": [
+    "SADC"
+   ],
+   "island_state": false
+  },
+  "SWZ": {
+   "name": "Eswatini",
+   "region": "South",
+   "recs": [
+    "COMESA",
+    "SADC"
+   ],
+   "island_state": false
+  },
+  "ZAF": {
+   "name": "South Africa",
+   "region": "South",
+   "recs": [
+    "SADC"
+   ],
+   "island_state": false
+  },
+  "COM": {
+   "name": "Comoros",
+   "region": "Islands",
+   "recs": [
+    "COMESA",
+    "CEN-SAD",
+    "SADC"
+   ],
+   "island_state": true
+  },
+  "MDG": {
+   "name": "Madagascar",
+   "region": "Islands",
+   "recs": [
+    "COMESA",
+    "SADC"
+   ],
+   "island_state": true
+  },
+  "MUS": {
+   "name": "Mauritius",
+   "region": "Islands",
+   "recs": [
+    "COMESA",
+    "SADC"
+   ],
+   "island_state": true
+  },
+  "SYC": {
+   "name": "Seychelles",
+   "region": "Islands",
+   "recs": [
+    "COMESA",
+    "SADC"
+   ],
+   "island_state": true
+  },
+  "STP": {
+   "name": "Sao Tome & Principe",
+   "region": "Islands",
+   "recs": [
+    "ECCAS"
+   ],
+   "island_state": true
+  }
+ },
+ "methods": [
+  "entropy",
+  "equal",
+  "geometric",
+  "pca"
+ ],
+ "weights": {
+  "equal": {
+   "A": 0.14285714285714285,
+   "B": 0.14285714285714285,
+   "C": 0.14285714285714285,
+   "D": 0.14285714285714285,
+   "E": 0.14285714285714285,
+   "F": 0.14285714285714285,
+   "G": 0.14285714285714285
+  },
+  "pca": {
+   "A": 0.15812522838559329,
+   "B": 0.16096008076438037,
+   "C": 0.1646207582957655,
+   "D": 0.1731504665863755,
+   "E": 0.15087583063793777,
+   "F": 0.0,
+   "G": 0.19226763532994762
+  },
+  "entropy": {
+   "A": 0.1584082617087334,
+   "B": 0.07051267020003663,
+   "C": 0.09198779467955363,
+   "D": 0.19195822848974584,
+   "E": 0.09236519870289556,
+   "F": 0.20431441363380945,
+   "G": 0.19045343258522549
+  }
+ },
+ "coverage_by_year": {
+  "2000": 0.981,
+  "2001": 0.315,
+  "2002": 0.981,
+  "2003": 0.981,
+  "2004": 0.981,
+  "2005": 0.981,
+  "2006": 0.981,
+  "2007": 0.981,
+  "2008": 0.981,
+  "2009": 0.981,
+  "2010": 0.981,
+  "2011": 1.0,
+  "2012": 1.0,
+  "2013": 1.0,
+  "2014": 1.0,
+  "2015": 1.0,
+  "2016": 0.981,
+  "2017": 1.0,
+  "2018": 1.0,
+  "2019": 0.981,
+  "2020": 0.981,
+  "2021": 0.981,
+  "2022": 0.981,
+  "2023": 0.963
+ }
+}

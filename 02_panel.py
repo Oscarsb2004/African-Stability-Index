@@ -52,6 +52,11 @@ logging.basicConfig(level=logging.INFO, format="%(levelname)-8s %(message)s",
                     stream=sys.stdout)
 logger = logging.getLogger(__name__)
 
+
+def _dt_today() -> str:
+    import datetime
+    return datetime.date.today().isoformat()
+
 RAW_FILE       = Path("data/01_raw_pull.xlsx")
 OUT_DIR        = Path("data/panel")
 GOALPOSTS_FILE = Path("registry/goalposts.yaml")
@@ -239,13 +244,88 @@ def main() -> int:
         }, f, sort_keys=False)
 
     # ── 9. write ──────────────────────────────────────────────────────────────
+    # Identity columns travel with every value. The dashboard must be able to
+    # render a row without consulting the registry: a row IS the Observation.
+    # Denormalised on purpose — the alternative is a UI-side lookup, which is
+    # exactly where the frontend and backend drift apart.
     logger.info("Step 9 - write")
+    identity = pd.DataFrame([
+        {
+            "variable_name": v,
+            "display_name":  s.get("display_name", v),
+            "series_code":   s.get("series_code", ""),
+            "database":      s.get("database", ""),
+            "polarity":      s.get("polarity", "positive"),
+            "role":          s.get("role", "scoring"),
+        }
+        for v, s in specs.items()
+    ])
+    pnl = pnl.merge(identity, on="variable_name", how="left")
+    ordered = [
+        "iso3", "variable_name", "display_name", "series_code", "database",
+        "year", "raw_value", "transformed_value", "score",
+        "provenance", "source_year", "polarity", "role", "clamped",
+    ]
+    pnl = pnl[[c for c in ordered if c in pnl.columns]]
     pnl.to_csv(OUT_DIR / "observations.csv", index=False)
     pil.to_csv(OUT_DIR / "pillar_scores.csv", index=False)
     comp_df.to_csv(OUT_DIR / "composites.csv", index=False)
     logger.info("  %s", OUT_DIR / "observations.csv")
     logger.info("  %s", OUT_DIR / "pillar_scores.csv")
     logger.info("  %s", OUT_DIR / "composites.csv")
+
+    # ── 10. UI metadata bundle ────────────────────────────────────────────────
+    # Deliberately small: it carries identity and structure, not values. The
+    # values live in the panel tables, already computed, and the UI filters them
+    # rather than deriving anything. A single JSON holding 44,550 indicator-years
+    # would be tens of megabytes and would tempt the UI into recomputation.
+    import json
+    bundle = {
+        "run": {
+            "generated": _dt_today(),
+            "panel_start": PANEL_START,
+            "panel_end": panel_end,
+            "reference_year": reference_year,
+        },
+        "pillars": {
+            p: {"name": name, "indicators": pillar_map.get(p, [])}
+            for p, name in PILLAR_DEFS.items()
+        },
+        "indicators": {
+            v: {
+                "display_name": s.get("display_name", v),
+                "series_code":  s.get("series_code", ""),
+                "database":     s.get("database", ""),
+                "polarity":     s.get("polarity", "positive"),
+                "role":         s.get("role", "scoring"),
+                "pillars":      s.get("pillars", []),
+                "log_transform": bool(s.get("log_transform", False)),
+                "transform":    s.get("transform"),
+                "justification": s.get("justification", ""),
+            }
+            for v, s in specs.items()
+        },
+        "countries": {
+            iso3: {
+                "name":   meta["name"],
+                "region": meta["region"],
+                "recs":   meta["rec"],
+                "island_state": iso3 in __import__(
+                    "asi.core.constants", fromlist=["ISLAND_SET"]
+                ).ISLAND_SET,
+            }
+            for iso3, meta in COUNTRIES.items()
+        },
+        "methods": sorted(comp_df["method"].unique().tolist()),
+        "weights": {"equal": equal_w, "pca": pca_w, "entropy": ent_w},
+        "coverage_by_year": {
+            int(y): round(float(v), 3) for y, v in coverage_by_year.items()
+        },
+    }
+    with open(OUT_DIR / "bundle.json", "w", encoding="utf-8") as f:
+        json.dump(bundle, f, indent=1, ensure_ascii=False)
+    logger.info("  %s (metadata only; values stay in the panel tables)",
+                OUT_DIR / "bundle.json")
 
     latest = comp_df[(comp_df["year"] == reference_year) & (comp_df["method"] == "equal")]
     shown = latest[latest["rank"].notna()].sort_values("rank")
