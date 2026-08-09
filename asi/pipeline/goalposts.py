@@ -35,7 +35,30 @@ import numpy as np
 import pandas as pd
 import yaml
 
-GOALPOSTS_VERSION = 1
+GOALPOSTS_VERSION = 2
+
+#: Decimal places bounds are stored at. Bounds are rounded OUTWARD (min down,
+#: max up) rather than to-nearest, so that the very values which defined an
+#: extreme still sit inside the stored range. Rounding to nearest pushed those
+#: countries a fraction outside their own goalpost and set `clamped` on ~35
+#: cells whose true deviation was under 5e-07 — which would have made the flag
+#: meaningless for the case it exists to catch: genuinely new extremes in a
+#: later edition.
+BOUND_DECIMALS = 6
+
+
+def _round_outward(value: float, *, up: bool) -> float:
+    """
+    Round a bound away from the data so no defining value falls outside it.
+
+    Returns a plain Python float: numpy scalars cannot be serialised by
+    PyYAML, and these values are written to the frozen goalposts file.
+    """
+    if not np.isfinite(value):
+        return float(value)
+    scale = 10 ** BOUND_DECIMALS
+    rounded = np.ceil(value * scale) if up else np.floor(value * scale)
+    return float(rounded / scale)
 
 
 # ── Transform steps ────────────────────────────────────────────────────────────
@@ -114,10 +137,10 @@ def compute(
         out[var] = {
             "log_transform":     bool(spec.get("log_transform", False)),
             "polarity":          spec.get("polarity", "positive"),
-            "winsor_lower":      round(lo, 6) if np.isfinite(lo) else None,
-            "winsor_upper":      round(hi, 6) if np.isfinite(hi) else None,
-            "goalpost_min":      round(gmin, 6),
-            "goalpost_max":      round(gmax, 6),
+            "winsor_lower":      _round_outward(lo, up=False) if np.isfinite(lo) else None,
+            "winsor_upper":      _round_outward(hi, up=True) if np.isfinite(hi) else None,
+            "goalpost_min":      _round_outward(gmin, up=False),
+            "goalpost_max":      _round_outward(gmax, up=True),
             "n_values":          int(valid.shape[0]),
             "n_capped_low":      int((logged < lo).sum()) if np.isfinite(lo) else 0,
             "n_capped_high":     int((logged > hi).sum()) if np.isfinite(hi) else 0,

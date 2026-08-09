@@ -1,5 +1,5 @@
 {
-  "run_date": "2026-08-08 16:29:43",
+  "run_date": "2026-08-08 22:29:40",
   "n_pass": 14,
   "n_warn": 11,
   "n_fail": 0,
@@ -19,7 +19,7 @@
       },
       {
         "status": "PASS",
-        "msg": "06_results.json exists (274 KB)"
+        "msg": "06_results.json exists (276 KB)"
       }
     ],
     "Normalization Math": [
@@ -83,7 +83,7 @@
       },
       {
         "status": "INFO",
-        "msg": "Indicator year ranges: start [2010\u20132015], end [2023\u20132024]. Mixed reference years mean the index is not a single-year snapshot."
+        "msg": "Indicator year ranges: start [2000\u20132015], end [2023\u20132024]. Mixed reference years mean the index is not a single-year snapshot."
       },
       {
         "status": "INFO",
@@ -93,27 +93,27 @@
     "Score Distributions": [
       {
         "status": "INFO",
-        "msg": "equal: n=54, mean=50.4, min=20.3, max=73.5, std=11.2"
+        "msg": "equal: n=54, mean=50.6, min=17.8, max=75.8, std=11.7"
       },
       {
         "status": "INFO",
-        "msg": "pca: n=54, mean=52.9, min=0.0, max=100.0, std=21.5"
+        "msg": "pca: n=54, mean=53.2, min=0.0, max=100.0, std=20.8"
       },
       {
         "status": "INFO",
-        "msg": "bod: n=54, mean=58.4, min=29.6, max=83.3, std=11.0"
+        "msg": "bod: n=54, mean=58.4, min=25.1, max=84.1, std=11.7"
       },
       {
         "status": "INFO",
-        "msg": "entropy: n=54, mean=49.1, min=19.0, max=72.2, std=11.7"
+        "msg": "entropy: n=54, mean=49.4, min=18.1, max=73.2, std=11.8"
       },
       {
         "status": "INFO",
-        "msg": "geometric: n=54, mean=47.4, min=13.2, max=70.0, std=11.9"
+        "msg": "geometric: n=54, mean=47.6, min=11.9, max=72.1, std=12.4"
       },
       {
         "status": "INFO",
-        "msg": "BoD minus Equal-weight: mean=8.0, min=4.5, max=15.6. Expect BoD >= equal for most countries (BoD maximizes)."
+        "msg": "BoD minus Equal-weight: mean=7.8, min=3.8, max=15.6. Expect BoD >= equal for most countries (BoD maximizes)."
       },
       {
         "status": "INFO",
@@ -123,7 +123,7 @@
     "Benchmark Plausibility": [
       {
         "status": "INFO",
-        "msg": "IIAG 2023 top-5 in our top-10: 4/5 ({'BWA', 'MUS', 'CPV', 'SYC'}). IIAG 2023 bottom-5 in our bottom-10: 5/5 ({'SOM', 'COD', 'ERI', 'SSD', 'SDN'}). (Reference: Mo Ibrahim Foundation IIAG 2023)"
+        "msg": "IIAG 2023 top-5 in our top-10: 4/5 ({'SYC', 'CPV', 'MUS', 'BWA'}). IIAG 2023 bottom-5 in our bottom-10: 5/5 ({'SSD', 'ERI', 'SOM', 'SDN', 'COD'}). (Reference: Mo Ibrahim Foundation IIAG 2023)"
       },
       {
         "status": "PASS",
@@ -131,11 +131,11 @@
       },
       {
         "status": "INFO",
-        "msg": "Our top-10: MUS(#1), SYC(#2), CPV(#3), GHA(#4), SEN(#5), NAM(#6), BWA(#7), MAR(#8), STP(#9), RWA(#10)"
+        "msg": "Our top-10: MUS(#1), SYC(#2), CPV(#3), NAM(#4), SEN(#5), MAR(#6), BWA(#7), GHA(#8), RWA(#9), STP(#10)"
       },
       {
         "status": "INFO",
-        "msg": "Our bottom-10: NGA(#45), NER(#46), GNQ(#47), ERI(#48), SDN(#49), COD(#50), TCD(#51), CAF(#52), SOM(#53), SSD(#54)"
+        "msg": "Our bottom-10: NGA(#45), NER(#46), ERI(#47), GNQ(#48), SDN(#49), COD(#50), TCD(#51), SOM(#52), CAF(#53), SSD(#54)"
       }
     ],
     "Within-Pillar Correlations": [

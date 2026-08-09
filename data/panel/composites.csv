@@ -4034,7 +4034,7 @@ ZWE,2006,entropy,39.6,reliable,48
 ZWE,2007,entropy,39.84,thin,48
 ZWE,2008,entropy,39.19,thin,48
 ZWE,2009,entropy,41.22,thin,46
-ZWE,2010,entropy,43.09,reliable,44
+ZWE,2010,entropy,43.1,reliable,44
 ZWE,2011,entropy,43.79,thin,44
 ZWE,2012,entropy,46.77,reliable,42
 ZWE,2013,entropy,46.77,thin,41
@@ -4138,7 +4138,7 @@ BFA,2010,geometric,49.68,reliable,25
 BFA,2011,geometric,49.99,reliable,25
 BFA,2012,geometric,50.63,reliable,25
 BFA,2013,geometric,50.62,reliable,27
-BFA,2014,geometric,50.61,reliable,28
+BFA,2014,geometric,50.6,reliable,28
 BFA,2015,geometric,51.54,reliable,22
 BFA,2016,geometric,53.24,reliable,19
 BFA,2017,geometric,55.13,reliable,18

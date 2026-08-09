@@ -23,7 +23,9 @@ REPO = Path(__file__).resolve().parent.parent
 
 LAYERS = {
     "replicate": ("verify/replicate.py", True,
-                  "independent re-derivation from the frozen raw pull"),
+                  "independent re-derivation of the legacy snapshot chain"),
+    "panel":     ("verify/panel.py",     True,
+                  "independent re-derivation of the time-series panel"),
     "contract":  ("verify/contract.py",  True,
                   "backend/frontend object contract"),
     "advisory":  ("verify/advisory.py",  False,

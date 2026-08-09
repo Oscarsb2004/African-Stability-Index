@@ -1,4 +1,4 @@
-version: 1
+version: 2
 generated: '2026-08-08'
 panel_years:
 - 2000
@@ -9,10 +9,10 @@ indicators:
   agri_land:
     log_transform: false
     polarity: positive
-    winsor_lower: -39.802544
-    winsor_upper: 137.055663
-    goalpost_min: 3.26087
-    goalpost_max: 86.475816
+    winsor_lower: -39.802545
+    winsor_upper: 137.055664
+    goalpost_min: 3.260869
+    goalpost_max: 86.475817
     n_values: 1350
     n_capped_low: 0
     n_capped_high: 0
@@ -21,8 +21,8 @@ indicators:
   cc_estimate:
     log_transform: false
     polarity: positive
-    winsor_lower: -2.782997
-    winsor_upper: 1.367728
+    winsor_lower: -2.782998
+    winsor_upper: 1.367729
     goalpost_min: -1.886143
     goalpost_max: 1.239681
     n_values: 1350
@@ -33,7 +33,7 @@ indicators:
   co2_pc:
     log_transform: false
     polarity: negative
-    winsor_lower: -1.751422
+    winsor_lower: -1.751423
     winsor_upper: 3.043962
     goalpost_min: 0.024251
     goalpost_max: 3.043962
@@ -45,9 +45,9 @@ indicators:
   displaced_persons:
     log_transform: true
     polarity: negative
-    winsor_lower: -2.257163
+    winsor_lower: -2.257164
     winsor_upper: 7.431938
-    goalpost_min: 0.000453
+    goalpost_min: 0.000452
     goalpost_max: 5.438699
     n_values: 692
     n_capped_low: 0
@@ -57,10 +57,10 @@ indicators:
   domestic_credit_private:
     log_transform: false
     polarity: positive
-    winsor_lower: -18.36365
-    winsor_upper: 50.115002
+    winsor_lower: -18.363651
+    winsor_upper: 50.115003
     goalpost_min: 0.383077
-    goalpost_max: 50.115002
+    goalpost_max: 50.115003
     n_values: 1350
     n_capped_low: 0
     n_capped_high: 124
@@ -69,8 +69,8 @@ indicators:
   elec_access_tot:
     log_transform: false
     polarity: positive
-    winsor_lower: -74.186538
-    winsor_upper: 159.457692
+    winsor_lower: -74.186539
+    winsor_upper: 159.457693
     goalpost_min: 0.8
     goalpost_max: 100.0
     n_values: 1350
@@ -81,10 +81,10 @@ indicators:
   femicide:
     log_transform: false
     polarity: negative
-    winsor_lower: -2.110171
-    winsor_upper: 7.338178
-    goalpost_min: 0.132785
-    goalpost_max: 7.338178
+    winsor_lower: -2.110172
+    winsor_upper: 7.338179
+    goalpost_min: 0.132784
+    goalpost_max: 7.338179
     n_values: 406
     n_capped_low: 0
     n_capped_high: 44
@@ -93,10 +93,10 @@ indicators:
   freshwater_withdraw:
     log_transform: false
     polarity: negative
-    winsor_lower: -40.466478
-    winsor_upper: 63.434092
+    winsor_lower: -40.466479
+    winsor_upper: 63.434093
     goalpost_min: 0.02036
-    goalpost_max: 63.434092
+    goalpost_max: 63.434093
     n_values: 1350
     n_capped_low: 0
     n_capped_high: 148
@@ -105,10 +105,10 @@ indicators:
   gdp_growth_3yr_avg:
     log_transform: false
     polarity: positive
-    winsor_lower: -4.419654
-    winsor_upper: 12.548287
-    goalpost_min: -4.419654
-    goalpost_max: 12.548287
+    winsor_lower: -4.419655
+    winsor_upper: 12.548288
+    goalpost_min: -4.419655
+    goalpost_max: 12.548288
     n_values: 1350
     n_capped_low: 34
     n_capped_high: 22
@@ -119,8 +119,8 @@ indicators:
     polarity: positive
     winsor_lower: 4.465757
     winsor_upper: 11.768935
-    goalpost_min: 6.073193
-    goalpost_max: 10.440567
+    goalpost_min: 6.073192
+    goalpost_max: 10.440568
     n_values: 1350
     n_capped_low: 0
     n_capped_high: 0
@@ -129,10 +129,10 @@ indicators:
   ge_estimate:
     log_transform: false
     polarity: positive
-    winsor_lower: -2.710476
-    winsor_upper: 1.097758
+    winsor_lower: -2.710477
+    winsor_upper: 1.097759
     goalpost_min: -2.242586
-    goalpost_max: 1.097758
+    goalpost_max: 1.097759
     n_values: 1350
     n_capped_low: 0
     n_capped_high: 1
@@ -141,7 +141,7 @@ indicators:
   gini:
     log_transform: false
     polarity: negative
-    winsor_lower: 22.2
+    winsor_lower: 22.199999
     winsor_upper: 60.2
     goalpost_min: 27.6
     goalpost_max: 60.2
@@ -154,9 +154,9 @@ indicators:
     log_transform: false
     polarity: positive
     winsor_lower: -34.709442
-    winsor_upper: 74.937676
+    winsor_upper: 74.937677
     goalpost_min: 0.0
-    goalpost_max: 74.937676
+    goalpost_max: 74.937677
     n_values: 1197
     n_capped_low: 0
     n_capped_high: 66
@@ -165,7 +165,7 @@ indicators:
   inflation_5yr_avg:
     log_transform: false
     polarity: negative
-    winsor_lower: -11.920104
+    winsor_lower: -11.920105
     winsor_upper: 24.934434
     goalpost_min: -5.180061
     goalpost_max: 24.934434
@@ -177,10 +177,10 @@ indicators:
   intent_homicide:
     log_transform: true
     polarity: negative
-    winsor_lower: -0.300563
-    winsor_upper: 3.790826
-    goalpost_min: 0.237061
-    goalpost_max: 3.790826
+    winsor_lower: -0.300564
+    winsor_upper: 3.790827
+    goalpost_min: 0.23706
+    goalpost_max: 3.790827
     n_values: 1103
     n_capped_low: 0
     n_capped_high: 7
@@ -189,10 +189,10 @@ indicators:
   learning_poverty:
     log_transform: false
     polarity: negative
-    winsor_lower: 44.088112
+    winsor_lower: 44.088111
     winsor_upper: 118.090569
-    goalpost_min: 44.088112
-    goalpost_max: 98.60733
+    goalpost_min: 44.088111
+    goalpost_max: 98.607331
     n_values: 505
     n_capped_low: 12
     n_capped_high: 0
@@ -201,10 +201,10 @@ indicators:
   life_expect_tot:
     log_transform: false
     polarity: positive
-    winsor_lower: 35.6075
-    winsor_upper: 84.97125
-    goalpost_min: 35.6075
-    goalpost_max: 77.236585
+    winsor_lower: 35.607499
+    winsor_upper: 84.971251
+    goalpost_min: 35.607499
+    goalpost_max: 77.236586
     n_values: 1350
     n_capped_low: 5
     n_capped_high: 0
@@ -213,7 +213,7 @@ indicators:
   managed_water_percent:
     log_transform: false
     polarity: positive
-    winsor_lower: -27.909196
+    winsor_lower: -27.909197
     winsor_upper: 77.788585
     goalpost_min: 1.283958
     goalpost_max: 77.788585
@@ -226,7 +226,7 @@ indicators:
     log_transform: true
     polarity: negative
     winsor_lower: 2.334932
-    winsor_upper: 5.526583
+    winsor_upper: 5.526584
     goalpost_min: 2.334932
     goalpost_max: 5.484382
     n_values: 1350
@@ -237,8 +237,8 @@ indicators:
   nonrenew_elec:
     log_transform: false
     polarity: negative
-    winsor_lower: -116.702951
-    winsor_upper: 237.697237
+    winsor_lower: -116.702952
+    winsor_upper: 237.697238
     goalpost_min: 0.0
     goalpost_max: 100.0
     n_values: 1350
@@ -262,7 +262,7 @@ indicators:
     log_transform: false
     polarity: positive
     winsor_lower: 0.704532
-    winsor_upper: 1.156874
+    winsor_upper: 1.156875
     goalpost_min: 0.704532
     goalpost_max: 0.99995
     n_values: 1350
@@ -275,8 +275,8 @@ indicators:
     polarity: positive
     winsor_lower: -3.60333
     winsor_upper: 2.246372
-    goalpost_min: -3.051893
-    goalpost_max: 1.284015
+    goalpost_min: -3.051894
+    goalpost_max: 1.284016
     n_values: 1350
     n_capped_low: 0
     n_capped_high: 0
@@ -285,10 +285,10 @@ indicators:
   rl_estimate:
     log_transform: false
     polarity: positive
-    winsor_lower: -2.917424
-    winsor_upper: 1.37517
-    goalpost_min: -2.508038
-    goalpost_max: 1.028847
+    winsor_lower: -2.917425
+    winsor_upper: 1.375171
+    goalpost_min: -2.508039
+    goalpost_max: 1.028848
     n_values: 1350
     n_capped_low: 0
     n_capped_high: 0
@@ -299,7 +299,7 @@ indicators:
     polarity: positive
     winsor_lower: -2.63745
     winsor_upper: 1.130347
-    goalpost_min: -2.581457
+    goalpost_min: -2.581458
     goalpost_max: 1.130347
     n_values: 1350
     n_capped_low: 0
@@ -321,9 +321,9 @@ indicators:
   secondary_gpi:
     log_transform: false
     polarity: positive
-    winsor_lower: 0.357588
-    winsor_upper: 1.300562
-    goalpost_min: 0.357588
+    winsor_lower: 0.357587
+    winsor_upper: 1.300563
+    goalpost_min: 0.357587
     goalpost_max: 1.0
     n_values: 1346
     n_capped_low: 7
@@ -335,8 +335,8 @@ indicators:
     polarity: negative
     winsor_lower: 0.305163
     winsor_upper: 5.51987
-    goalpost_min: 1.280934
-    goalpost_max: 4.195697
+    goalpost_min: 1.280933
+    goalpost_max: 4.195698
     n_values: 498
     n_capped_low: 0
     n_capped_high: 0
@@ -347,7 +347,7 @@ indicators:
     polarity: positive
     winsor_lower: -24.104567
     winsor_upper: 62.565554
-    goalpost_min: 0.514474
+    goalpost_min: 0.514473
     goalpost_max: 62.565554
     n_values: 983
     n_capped_low: 0
@@ -357,10 +357,10 @@ indicators:
   va_estimate:
     log_transform: false
     polarity: positive
-    winsor_lower: -3.275561
-    winsor_upper: 1.898128
+    winsor_lower: -3.275562
+    winsor_upper: 1.898129
     goalpost_min: -2.361104
-    goalpost_max: 0.968899
+    goalpost_max: 0.9689
     n_values: 1350
     n_capped_low: 0
     n_capped_high: 0
@@ -370,8 +370,8 @@ indicators:
     log_transform: false
     polarity: positive
     winsor_lower: -2.07963
-    winsor_upper: 133.215081
-    goalpost_min: 18.759061
+    winsor_upper: 133.215082
+    goalpost_min: 18.75906
     goalpost_max: 99.926546
     n_values: 1350
     n_capped_low: 0
