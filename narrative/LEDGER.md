@@ -3,7 +3,7 @@
 The document future runs read before doing anything. Machine-readable twin:
 `narrative/state.yaml`.
 
-*Seeded 2026-08-09. Research runs so far: Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria, Rwanda, Chad, Angola (all CREATE). First pass complete; backlog underway.*
+*Seeded 2026-08-09. Research runs so far: Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria, Rwanda, Chad, Angola, South Africa (all CREATE). First pass complete; backlog underway.*
 
 ---
 
@@ -26,7 +26,7 @@ An audit is forced early if a single run inflates the citation count by more tha
 
 ## Status
 
-**10 of 54 countries have a record (Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria, Rwanda, Chad, Angola). The first pass is complete; Angola is the first backlog country.**
+**11 of 54 countries have a record (Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria, Rwanda, Chad, Angola, South Africa). The first pass is complete; Angola and South Africa are the first two backlog countries.**
 
 ### First pass — 9 countries
 
@@ -47,19 +47,20 @@ whose ranks swing hardest with the weighting method.
 | RWA | Rwanda | strong development indicators alongside contested governance | **done — iteration 1** |
 | TCD | Chad | Sahel; 2021 coup; the worked example used in the blueprint | **done — iteration 1** |
 
-### Angola — first backlog country
+### Backlog countries done so far
 
 | ISO3 | Country | Why this one | Status |
 |---|---|---|---|
 | AGO | Angola | fills the corpus's clearest gap (Lusophone Africa, previously unrepresented); third resource-economy (oil) case alongside DZA and TCD | **done — iteration 1** |
+| ZAF | South Africa | anchors the Southern Africa/anchor-economy gap; first reliable-tier (not thin) composite score in the corpus; sharpest test yet of framing balance in the positive direction | **done — iteration 1** |
 
-### Backlog — the remaining 44
+### Backlog — the remaining 43
 
 Listed in full in `narrative/state.yaml` under `backlog`. They are recorded
 explicitly rather than left implicit: a country with no record should be visibly
 absent, not quietly missing.
 
-Egypt, Libya, Morocco, Sudan, Tunisia, Benin, Burkina Faso, Cabo Verde, The Gambia, Guinea, Guinea-Bissau, Cote d'Ivoire, Liberia, Mali, Mauritania, Niger, Senegal, Sierra Leone, Togo, Cameroon, Central African Republic, Republic of Congo, Equatorial Guinea, Gabon, Burundi, Djibouti, Eritrea, Ethiopia, Kenya, Malawi, Mozambique, South Sudan, Tanzania, Uganda, Zambia, Zimbabwe, Lesotho, Namibia, Eswatini, South Africa, Comoros, Madagascar, Seychelles, Sao Tome & Principe
+Egypt, Libya, Morocco, Sudan, Tunisia, Benin, Burkina Faso, Cabo Verde, The Gambia, Guinea, Guinea-Bissau, Cote d'Ivoire, Liberia, Mali, Mauritania, Niger, Senegal, Sierra Leone, Togo, Cameroon, Central African Republic, Republic of Congo, Equatorial Guinea, Gabon, Burundi, Djibouti, Eritrea, Ethiopia, Kenya, Malawi, Mozambique, South Sudan, Tanzania, Uganda, Zambia, Zimbabwe, Lesotho, Namibia, Eswatini, Comoros, Madagascar, Seychelles, Sao Tome & Principe
 
 ---
 
@@ -282,6 +283,43 @@ Append one line per run: date, country, mode, what changed, what was removed.
   (the 2022 election, closest in Angola's history, placed in extended
   since it is now three years old), 2 negative, 1 mixed.
 
+- **2026-08-10 — ZAF — CREATE. Second backlog country.** Full baseline
+  built: historical overview, colonial legacy (expands
+  context/colonial_history.yaml with the 2017 land-audit figures — white
+  South Africans, ~8% of the population, held ~72% of private farmland
+  against Black South Africans' 4% — and traces the January 2025
+  Expropriation Act to the February 2025-onward Trump administration
+  rupture: an executive order, 30% tariffs, and South Africa's
+  unprecedented exclusion from the 2026 G20), 4 key_periods, 6 pillar
+  summaries (Pillar C left empty — greyed at 1/8 measured), 3 primary + 1
+  extended recent items, 4 events, rec_membership (SADC, April 1994). 10
+  sources opened and verified. `--links`: one genuine dead link caught (a
+  feeds.bbci.co.uk URL returning a real HTTP 404, not a 403) — the second
+  confirmed genuine dead link in the corpus after COD's — replaced with a
+  working citation (Corruption Watch) covering the same claim before
+  commit; 1 warning remains (IMF, the familiar 403 bot-detection pattern).
+  South Africa is the first country in the corpus with a genuinely
+  reliable-tier (not thin) composite score, and the sharpest test yet of
+  framing balance in the opposite direction from most prior countries:
+  the recent record skews positive (2 of 4 items), and both positives —
+  the 2024 ANC/GNU transition and Eskom's 441-day loadshedding streak —
+  are real, substantial, independently verified developments, not
+  padding to look balanced. Pillar F is the clearest counter-example yet
+  to the wealth-proxy pattern flagged since DZA: South Africa's CO2 per
+  capita (6.76 tons, freshly measured) scores at the absolute bottom of
+  the scale — a real, substantial emissions cost from a coal-dependent
+  industrial economy, the mirror opposite of every "low CO2 scores well"
+  case documented so far. The Trump-administration dispute was handled
+  as a contested topic requiring evidence, not stance: the real costs
+  (tariffs, G20 exclusion) are documented alongside the well-corroborated
+  fact-check (two independent South African official inquiries, ISS
+  Africa, multiple international outlets) that farm murders are roughly
+  0.2% of the national homicide total and no coordinated racial campaign
+  has been found — while South Africa's genuinely severe general
+  homicide rate (43.72/100k, carried forward, the worst possible score)
+  is reported as exactly that, a real crisis, not a targeted one.
+  Balance: 2 positive, 1 negative, 1 mixed.
+
 ---
 
 ## Meta-notes
@@ -459,6 +497,24 @@ Things a future run should know about how to work, not about a specific country.
   countries (Republic of Congo, Equatorial Guinea, Gabon, Zambia are all
   still in backlog) should be checked against all three patterns rather
   than assumed to fit whichever was used most recently.
+- **2026-08-10** — ZAF surfaced the corpus's second genuine dead link
+  (after COD's): a `feeds.bbci.co.uk` URL that returned a real HTTP 404,
+  not the usual 403 bot-detection block. Both genuine dead links found so
+  far have come from URLs that look canonical but aren't (a World Bank
+  PDF path for COD, a BBC RSS-feed-style URL here) — worth treating
+  feed-style or deeply-pathed URLs with slightly more scepticism at
+  citation time, and always confirming a replacement resolves before
+  swapping it in, same as this run did with Corruption Watch. ZAF also
+  confirms a pattern worth stating explicitly for the backlog going
+  forward: framing-balance discipline cuts both ways. Every country so
+  far has required resisting the pull toward an unearned negative
+  (COD's balance warning, TCD's severity) or an unearned positive
+  (BWA's, RWA's need for real counterweights). ZAF required resisting the
+  pull toward *false* balance — inventing or overweighting a negative to
+  avoid a record that reads as too good, when the two genuine positives
+  (the 2024 political transition, the Eskom turnaround) were simply real
+  and substantial. The rule is the same in both directions: count what
+  actually happened, don't average toward a target ratio.
 
 ---
 

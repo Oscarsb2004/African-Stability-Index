@@ -1,0 +1,462 @@
+meta:
+  iso3: ZAF
+  name: South Africa
+  last_updated: 2026-08-10
+  iteration_count: 1
+  next_action: >
+    EXPAND: (1) follow the Trump-South Africa dispute past January 2026 --
+    check whether South Africa is reincluded in the G20 under the UK's
+    2027 presidency as hoped, and whether the 30% tariffs have changed;
+    (2) check whether Eskom's loadshedding-free streak has held past
+    August 2026 or reversed; (3) check state-capture prosecution and
+    recovery progress -- only a fraction of the ~R57B diverted had been
+    recovered as of this run; (4) check if Pillar C (greyed at 1/8
+    measured) has gained coverage; (5) check whether any expropriations
+    without compensation have occurred under the Expropriation Act since
+    its January 2025 signing.
+  model_used: claude-sonnet-5
+
+historical:
+  overview: >
+    Dutch settlers established a Cape Colony resupply station in 1652
+    under Jan van Riebeeck, dispossessing Khoikhoi and San communities and
+    importing an estimated 71,000 enslaved people from Asia and East
+    Africa over the following century and a half. Britain seized the Cape
+    in 1795 and permanently in 1806, and 19th-century British conquest
+    extended colonial control over Xhosa and Zulu kingdoms through a
+    series of frontier wars. Dutch-speaking Boers migrated inland from
+    the 1830s to found independent republics; the 1867 discovery of
+    diamonds near Kimberley and 1886 discovery of gold on the
+    Witwatersrand transformed the region's economy and triggered the
+    Anglo-Boer Wars, ending in British victory in 1902. The 1910 Union of
+    South Africa granted formal independence from Britain, but only for
+    the white minority: Black South Africans, the demographic majority,
+    gained no corresponding political rights. The National Party's 1948
+    election victory formalised this into apartheid, a comprehensive
+    legal system of racial segregation and dispossession that governed
+    land, labour, education and every other domain of public life for 46
+    years. Sustained internal resistance and international sanctions
+    pressure led President F.W. de Klerk to unban the African National
+    Congress and release Nelson Mandela from 27 years of imprisonment on
+    2 February 1990; South Africa's first universal-suffrage election
+    followed on 27 April 1994, electing Mandela president and beginning
+    three decades of uninterrupted ANC government. That run ended in the
+    May 2024 election, when corruption scandals -- most consequentially
+    the state capture documented against former president Jacob Zuma's
+    2009-2018 administration -- and years of Eskom power cuts cost the
+    ANC its majority for the first time, forcing it into a Government of
+    National Unity with the Democratic Alliance and smaller parties.
+  overview_citations: [c1, c4]
+  colonial_legacy: >
+    context/colonial_history.yaml already credits 342 years of structured
+    dispossession -- Dutch settlement from 1652, formalised apartheid from
+    1948 -- for South Africa's world-highest Gini coefficient. Worth
+    adding is how directly that dispossession still shows up in
+    land-ownership data, and how contested the attempted remedy has become
+    internationally. A 2017 government land audit found that white South
+    Africans, roughly 8% of the population, owned an estimated 72% of
+    privately held farmland, while Black South Africans, 81% of the
+    population, held only about 4%. President Ramaphosa signed the
+    Expropriation Act on 23 January 2025 to allow land expropriation
+    without compensation in specific circumstances judged "just and
+    equitable" -- no seizures have since taken place -- as a legal remedy
+    aimed at that imbalance. The law nonetheless became the trigger for a
+    major US diplomatic rupture: President Trump signed an executive order
+    in February 2025 establishing a refugee pathway for Afrikaners and
+    citing "government-sponsored discrimination," and by late 2025 the
+    dispute had escalated to 30% US tariffs and South Africa's
+    unprecedented exclusion from the 2026 G20 it was scheduled to help
+    host. Independent South African crime data and two separate official
+    inquiries have found no evidence supporting the "white genocide"
+    framing Trump repeated; farm murders account for roughly 0.2% of
+    South Africa's national homicide total, itself the product of the
+    same structural inequality this record documents throughout.
+  colonial_legacy_citations: [c1, c5, c6, c7]
+  key_periods:
+    - title: "Colonial dispossession and the mineral revolution"
+      period: "1652-1910"
+      summary: >
+        Dutch settlers established the Cape Colony in 1652, dispossessing
+        Khoikhoi and San communities; Britain seized permanent control in
+        1806 and extended it inland through 19th-century frontier wars
+        against Xhosa and Zulu kingdoms. Boer republics formed from the
+        1830s; the 1867 discovery of diamonds and 1886 discovery of gold
+        transformed the economy and triggered the Anglo-Boer Wars, which
+        Britain won in 1902. The 1910 Union of South Africa granted
+        formal independence from Britain, but political rights extended
+        only to the white minority.
+      citations: [c1]
+    - title: "Apartheid"
+      period: "1948-1990"
+      summary: >
+        The National Party's 1948 election victory formalised racial
+        segregation into apartheid, a comprehensive legal system
+        governing land ownership, labour, residence, education and
+        political rights along racial lines for the following 46 years.
+        Sustained internal resistance, led substantially by the banned
+        African National Congress, and mounting international sanctions
+        pressure eventually forced the government to negotiate; President
+        F.W. de Klerk unbanned the ANC and released Nelson Mandela after
+        27 years of imprisonment on 2 February 1990.
+      citations: [c1]
+    - title: "Democratic transition and ANC government"
+      period: "1990-2024"
+      summary: >
+        South Africa's first universal-suffrage election on 27 April
+        1994 elected Nelson Mandela president and began three decades of
+        uninterrupted African National Congress government. That era
+        included genuine achievements -- a widely praised constitution,
+        expanded access to electricity, water and housing -- alongside
+        deepening problems, most consequentially the state capture
+        documented against President Jacob Zuma's 2009-2018
+        administration, in which an estimated R57 billion in state funds
+        was diverted through corrupted contracts at Eskom and other state
+        enterprises, only a fraction of which has since been recovered.
+      citations: [c2, c3]
+    - title: "The 2024 election and the Government of National Unity"
+      period: "2024-2025"
+      summary: >
+        Years of Eskom power cuts and unresolved state-capture-era
+        corruption cost the ANC its parliamentary majority for the first
+        time since 1994 in the May 2024 election, in which it won just
+        over 40% of the vote. The ANC formed a Government of National
+        Unity with the Democratic Alliance, Inkatha Freedom Party and
+        Patriotic Alliance, and Cyril Ramaphosa was re-elected president
+        by the National Assembly on 14 June 2024 -- South Africa's first
+        coalition government of the democratic era.
+      citations: [c4, c9]
+
+pillars:
+  A:
+    summary: >
+      All six governance indicators are directly measured, and South
+      Africa scores well overall -- Voice and Accountability, at 87.8, is
+      among the strongest results anywhere in this index, and Rule of Law
+      and Regulatory Quality both clear 65. Control of Corruption is the
+      pillar's weakest indicator, reflecting the unresolved legacy of
+      state capture under President Jacob Zuma's 2009-2018
+      administration, in which an estimated R57 billion in state funds
+      was diverted through corrupted contracts; only a fraction has been
+      recovered. The strength of Voice and Accountability showed itself
+      directly in May 2024, when the ANC lost its parliamentary majority
+      for the first time since 1994 and, rather than contest or resist
+      the result, formed a Government of National Unity with the
+      Democratic Alliance and smaller parties -- a genuine, peaceful
+      transfer of political power within a single governing coalition.
+    drivers:
+      - "all 6 governance indicators directly measured; Voice and Accountability (87.8) among the strongest in the index"
+      - "Control of Corruption weakest -- unresolved state-capture legacy: ~R57B diverted under Zuma (2009-2018), only a fraction recovered"
+      - "May 2024: ANC lost its majority for the first time since 1994, formed a Government of National Unity rather than contest the result"
+    citations: [c2, c4]
+  B:
+    summary: >
+      GDP per capita and domestic credit to the private sector, both
+      freshly measured, are among the strongest results in the index --
+      South Africa has the continent's most sophisticated financial
+      sector by a wide margin. GDP growth, also fresh, is comparatively
+      weak, consistent with a decade of state-capture-era damage to
+      Eskom and other state enterprises that only recently began
+      reversing: the power utility recorded 441 consecutive days without
+      scheduled outages by August 2026, up from just 36 loadshedding-free
+      days in the 2024 financial year, a genuine infrastructure turnaround
+      with direct economic consequences. Gini, at 54.10 and carried
+      forward rather than fresh, remains the highest recorded anywhere in
+      the index -- the direct numerical legacy of 342 years of structured
+      dispossession documented in historical.colonial_legacy, not
+      meaningfully addressed by three decades of ANC government.
+    drivers:
+      - "GDP per capita and domestic credit both fresh, among the strongest in the index -- most sophisticated financial sector in Africa"
+      - "GDP growth weak (fresh) -- consistent with a decade of state-capture-era Eskom damage only recently reversing"
+      - "Eskom: 441 consecutive loadshedding-free days by Aug 2026, up from 36 in FY2024 -- a real, recent turnaround"
+      - "Gini 54.10 (carried forward) remains the index's highest -- the direct numerical legacy of 342 years of dispossession"
+    citations: [c8, c1]
+  D:
+    summary: >
+      Life expectancy above 66 years, infant mortality of just over 24
+      per 1,000 live births, and severe food insecurity affecting under
+      9% of the population -- all freshly measured -- are the strongest
+      combination recorded in this pillar anywhere in the corpus so far,
+      reflecting a substantially more developed health system than South
+      Africa's income peers. Safely managed drinking water access,
+      estimated from regional peers rather than measured directly this
+      year, is comparatively high as an estimate, though this record
+      cannot confirm it holds at the same level specifically for South
+      Africa. One of five indicators was not freshly measured this year.
+    drivers:
+      - "life expectancy >66, infant mortality ~24/1,000, severe food insecurity <9% -- all fresh, the strongest D-pillar combination in the corpus so far"
+      - "safely managed water access high but a regional-mean estimate, not confirmed specifically for South Africa this year"
+    citations: [c1]
+  E:
+    summary: >
+      Political Stability, freshly measured, is moderate, and displaced
+      persons -- effectively zero, also freshly measured -- reflect a
+      country without active internal conflict. The homicide rate is a
+      starkly different story: at 43.72 per 100,000 people, carried
+      forward rather than freshly measured this year, it scores at the
+      very bottom of the index's scale -- one of the highest national
+      homicide rates recorded anywhere in the world. Independent South
+      African crime data directly contradicts the "white genocide"
+      narrative that drove a major 2025 US diplomatic rupture with South
+      Africa (documented in historical.colonial_legacy): farm murders,
+      the specific claim at the centre of that dispute, account for
+      roughly 0.2% of the national homicide total, and two independent
+      official inquiries have found no evidence of a coordinated campaign
+      against any racial group. South Africa's genuinely severe homicide
+      rate is a real, general crisis, not a targeted one.
+    drivers:
+      - "Political Stability fresh, moderate; IDPs near-zero, fresh -- no active internal conflict"
+      - "homicide rate 43.72/100k (carried forward) scores at the very bottom of the scale -- one of the world's highest"
+      - "farm murders ~0.2% of the national homicide total; 2 independent inquiries found no evidence of a coordinated racial campaign, contradicting the 2025 'white genocide' claim documented in colonial_legacy"
+    citations: [c6]
+  F:
+    summary: >
+      South Africa is the clearest counter-example in this project to the
+      CO2-per-capita wealth-proxy pattern documented for several
+      lower-income countries: per-capita emissions, at 6.76 tons and
+      freshly measured, score at the absolute bottom of the index's scale
+      -- not because of poverty, but because of a coal-dependent
+      industrial economy and an electricity grid that remains roughly 85%
+      fossil-fuel generated (a carried-forward figure). This is a real,
+      substantial environmental cost, not a data artefact. Freshwater
+      withdrawal, also carried forward, is comparatively high relative to
+      renewable resources, consistent with a water-stressed, semi-arid
+      country supporting a large industrial and agricultural base.
+      Agricultural land share, freshly measured, is extensive.
+    drivers:
+      - "CO2 pc 6.76 tons (fresh) scores at the absolute bottom of the scale -- the clearest counter-example to the wealth-proxy pattern seen elsewhere, a genuine emissions cost from a coal-dependent economy"
+      - "electricity ~85% fossil-fuel generated (carried forward) -- consistent with the high CO2 score, not contradicting it"
+      - "freshwater withdrawal high relative to renewable resources (carried forward) -- real water stress in a semi-arid country"
+    citations: [c1]
+  G:
+    summary: >
+      Electricity access (88%) and basic water access (90%), both
+      freshly measured, are among the strongest results recorded in this
+      pillar anywhere in the corpus so far. Social protection and labour
+      programme coverage, carried forward rather than fresh, scores at
+      the ceiling of the index -- South Africa runs one of the
+      continent's most extensive social grant systems, reaching a large
+      share of the population directly. Handwashing-facility coverage,
+      also carried forward, is comparatively weaker, pointing to a gap
+      this record cannot confirm is still current. This is the strongest
+      structural pillar recorded in the corpus to date, a direct product
+      of apartheid-era infrastructure built for the white minority and
+      substantially, though unevenly, extended since 1994.
+    drivers:
+      - "electricity access 88%, basic water access 90% -- both fresh, among the strongest in the corpus"
+      - "social protection coverage at the index ceiling (carried forward) -- one of Africa's most extensive social grant systems"
+      - "handwashing coverage weaker (carried forward); strongest structural pillar in the corpus so far, rooted in apartheid-era infrastructure extended unevenly since 1994"
+    citations: [c1]
+
+recent:
+  primary:
+    - headline: "ANC loses its parliamentary majority for the first time since 1994"
+      date: 2024-05-29
+      summary: >
+        The African National Congress won 40.18% of the vote and 159 of
+        400 seats in South Africa's 29 May 2024 general election, losing
+        its parliamentary majority for the first time since the end of
+        apartheid. Rather than govern as a minority or seek a narrow
+        partner, the ANC formed a Government of National Unity with the
+        Democratic Alliance, Inkatha Freedom Party and Patriotic
+        Alliance; Cyril Ramaphosa was re-elected president by the
+        National Assembly on 14 June 2024.
+      why_it_matters: >
+        The clearest recent evidence behind Pillar A's strong Voice and
+        Accountability score, and the most significant change to South
+        Africa's political system since 1994.
+      news_url: "https://www.aljazeera.com/news/2024/6/1/south-africa-anc-loses-30-year-parliamentary-majority-after-election"
+      wikipedia_url: "https://en.wikipedia.org/wiki/2024_South_African_general_election"
+      sentiment: positive
+    - headline: "Trump-South Africa rupture: land law, tariffs, and G20 exclusion"
+      date: 2026-01-27
+      summary: >
+        President Trump signed an executive order in February 2025
+        creating a refugee pathway for Afrikaners and freezing US aid,
+        citing South Africa's January 2025 Expropriation Act and
+        repeating "white genocide" claims that two independent South
+        African inquiries and multiple fact-checks have found no evidence
+        for. The dispute escalated through 2025 into 30% US tariffs on
+        South African goods and, in November 2025, Trump's refusal to
+        attend the G20 summit Johannesburg hosted; by 27 January 2026
+        South Africa confirmed it would step back from G20 engagements
+        entirely during the US presidency of the group -- the first time
+        in the bloc's history a member has been excluded.
+      why_it_matters: >
+        A major, still-unresolved diplomatic and economic rupture rooted
+        directly in the land-ownership legacy documented in
+        historical.colonial_legacy, and a real cost (30% tariffs)
+        alongside a contested framing (the genocide claim) this record
+        does not treat as equally credible.
+      news_url: "https://www.africanews.com/2026/01/23/south-africa-to-step-aside-from-g20-during-united-states-presidency/"
+      wikipedia_url: ""
+      sentiment: negative
+    - headline: "Eskom records 441 consecutive days without load shedding"
+      date: 2026-08-04
+      summary: >
+        Eskom reported 441 consecutive days without scheduled power cuts
+        as of early August 2026, extending a turnaround that began in
+        May 2025; the utility recorded just 36 loadshedding-free days in
+        the 2024 financial year against 352 in 2025, and diesel
+        expenditure fell 85.67% year-on-year by mid-2026 as unplanned
+        outages dropped to their lowest level since 2018.
+      why_it_matters: >
+        A genuine, sustained reversal of the state-capture-era
+        infrastructure damage documented in historical.key_periods, and
+        the clearest positive counterweight in this record to the
+        corruption and inequality it also has to report.
+      news_url: "https://www.sanews.gov.za/south-africa/eskom-reports-441-days-without-load-shedding"
+      wikipedia_url: ""
+      sentiment: positive
+  extended:
+    - headline: "South Africa signs the Expropriation Act to address land inequality"
+      date: 2025-01-23
+      summary: >
+        President Ramaphosa signed the Expropriation Act on 23 January
+        2025, allowing government expropriation of land without
+        compensation only where deemed "just and equitable and in the
+        public interest" -- intended to address a land-ownership
+        imbalance in which a 2017 government audit found white South
+        Africans, roughly 8% of the population, held an estimated 72% of
+        private farmland against Black South Africans' 4%. No
+        expropriations without compensation have taken place since the
+        law's signing.
+      why_it_matters: >
+        A genuine legislative attempt to address the Gini-coefficient
+        legacy documented in historical.colonial_legacy, though its
+        economic and investment effects remain unresolved and it
+        directly triggered the diplomatic rupture documented elsewhere in
+        this record.
+      news_url: "https://www.dailymaverick.co.za/article/2025-03-10-land-ownership-in-sa-the-facts-and-figures/"
+      wikipedia_url: ""
+      sentiment: mixed
+
+events:
+  - year: 1910
+    type: constitutional
+    title: "Union of South Africa formed"
+    description: >
+      The 1910 Union of South Africa granted formal independence from
+      Britain, but political rights extended only to the white minority
+      -- not liberation for the Black African majority.
+    url: "https://en.wikipedia.org/wiki/History_of_South_Africa"
+    direction: mixed
+  - year: 1948
+    type: constitutional
+    title: "Apartheid formalised"
+    description: >
+      The National Party's 1948 election victory formalised racial
+      segregation into apartheid, a comprehensive legal system governing
+      nearly every domain of public life along racial lines for the next
+      46 years.
+    url: "https://en.wikipedia.org/wiki/History_of_South_Africa"
+    direction: deteriorate
+  - year: 1994
+    type: election
+    title: "First democratic election"
+    description: >
+      South Africa's first universal-suffrage election on 27 April 1994
+      elected Nelson Mandela president, ending apartheid and beginning
+      three decades of ANC government.
+    url: "https://en.wikipedia.org/wiki/History_of_South_Africa"
+    direction: improve
+  - year: 2024
+    type: election
+    title: "ANC loses its majority; Government of National Unity formed"
+    description: >
+      The ANC won just 40.18% of the vote in the May 2024 election,
+      losing its parliamentary majority for the first time since 1994,
+      and formed South Africa's first coalition government of the
+      democratic era with the Democratic Alliance and smaller parties.
+    url: "https://en.wikipedia.org/wiki/2024_South_African_general_election"
+    direction: improve
+
+citations:
+  - id: c1
+    url: "https://en.wikipedia.org/wiki/History_of_South_Africa"
+    source_type: wikipedia
+    title: "History of South Africa"
+    accessed: 2026-08-10
+    verified: true
+  - id: c2
+    url: "https://www.corruptionwatch.org.za/zondo-report-a-summary-of-the-first-four-parts-and-who-it-implicated/"
+    source_type: academic
+    title: "Zondo report: a summary of the first four parts, and who it implicated (Corruption Watch)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c3
+    url: "https://blog-pfm.imf.org/en/pfmblog/2023/04/how-and-why-did-state-capture-and-massive-corruption-occur-in-south-africa"
+    source_type: official
+    title: "How and Why Did State Capture and Massive Corruption Occur in South Africa? (IMF)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c4
+    url: "https://www.aljazeera.com/news/2024/6/1/south-africa-anc-loses-30-year-parliamentary-majority-after-election"
+    source_type: news
+    title: "South Africa's ANC loses 30-year parliamentary majority after election (Al Jazeera)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c5
+    url: "https://www.dailymaverick.co.za/article/2025-03-10-land-ownership-in-sa-the-facts-and-figures/"
+    source_type: news
+    title: "Land ownership in South Africa — the facts and figures, and figuring out the facts (Daily Maverick)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c6
+    url: "https://issafrica.org/iss-today/violent-crime-and-the-myth-of-south-africa-s-white-genocide"
+    source_type: academic
+    title: "Violent crime and the myth of South Africa's 'white genocide' (Institute for Security Studies)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c7
+    url: "https://www.africanews.com/2026/01/23/south-africa-to-step-aside-from-g20-during-united-states-presidency/"
+    source_type: news
+    title: "South Africa to step aside from G20 during United States presidency (Africanews)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c8
+    url: "https://www.sanews.gov.za/south-africa/eskom-reports-441-days-without-load-shedding"
+    source_type: official
+    title: "Eskom reports 441 days without load shedding (South African Government News Agency)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c9
+    url: "https://en.wikipedia.org/wiki/2024_South_African_general_election"
+    source_type: wikipedia
+    title: "2024 South African general election"
+    accessed: 2026-08-10
+    verified: true
+  - id: c10
+    url: "https://www.sadc.int/member-states/south-africa"
+    source_type: official
+    title: "South Africa (SADC)"
+    accessed: 2026-08-10
+    verified: true
+
+rec_membership:
+  - org: SADC
+    joined: 1994
+    status: current
+    left: null
+    citations: [c10]
+
+balance:
+  n_positive: 2
+  n_negative: 1
+  n_mixed: 1
+  note: >
+    South Africa's recent record genuinely skews more positive than most
+    of this corpus, and that is not softened or rebalanced to look more
+    even: the 2024 election produced a real, peaceful transfer of
+    governing power for the first time since 1994, and Eskom's turnaround
+    is a real, sustained, independently reported infrastructure recovery.
+    The one negative primary item -- the Trump administration's rupture
+    with South Africa -- is documented with the same rigour applied
+    throughout this project: the real costs (30% tariffs, G20 exclusion)
+    are reported alongside the specific factual claim (a coordinated
+    "white genocide") that independent South African crime data and two
+    official inquiries do not support. This record does not treat every
+    claim in that dispute as equally credible, and does not let the
+    dispute's prominence overstate its place in South Africa's overall
+    trajectory, which the underlying pillar scores -- among the strongest
+    in this corpus outside Pillars E and F -- do not support reading as a
+    country in crisis.

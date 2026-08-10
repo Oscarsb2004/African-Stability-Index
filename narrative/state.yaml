@@ -136,6 +136,23 @@ countries:
       if Pillar C has gained coverage; find a dedicated source for Angola''s current
       (not civil-war-era) IDP figure to replace the regional-mean estimate flagged
       in pillars.E'
+  ZAF:
+    name: South Africa
+    region: South
+    first_pass: false
+    reason: second backlog country -- anchors the corpus's Southern Africa/anchor-economy
+      gap; only reliable-tier (not thin) composite score in the corpus so far, and
+      the sharpest test yet of framing balance in the other direction (a genuinely
+      positive-skewed recent record, plus a contested international dispute requiring
+      careful, evidence-based handling rather than false balance)
+    iteration_count: 1
+    last_updated: '2026-08-10'
+    next_action: 'EXPAND: follow the Trump-South Africa dispute past January 2026 --
+      check G20 reinclusion under the UK''s 2027 presidency and tariff status; check
+      whether Eskom''s loadshedding-free streak held past August 2026; check state-capture
+      prosecution and recovery progress; check if Pillar C has gained coverage; check
+      whether any expropriations without compensation have occurred under the Expropriation
+      Act since its Jan 2025 signing'
 backlog:
   EGY:
     name: Egypt
@@ -449,14 +466,6 @@ backlog:
     iteration_count: 0
     last_updated: null
     next_action: create baseline from blueprint
-  ZAF:
-    name: South Africa
-    region: South
-    first_pass: false
-    reason: not yet scheduled
-    iteration_count: 0
-    last_updated: null
-    next_action: create baseline from blueprint
   COM:
     name: Comoros
     region: Islands
@@ -629,3 +638,30 @@ meta_notes:
 - '2026-08-09: TCD CREATE run complete -- THE FIRST PASS IS DONE (all 9 of MUS/GHA/DZA/COD/SOM/BWA/NGA/RWA/TCD now have iteration-1 records). 11 sources opened and verified: 1 Wikipedia, 5 news, 4 academic/think-tank, 1 official. One validator catch this run: pillars.A was 177 words against the 160 limit on first draft -- trimmed to 164, still over, trimmed again to pass. Worth noting for future runs: a summary covering this much (6 measured indicators + 3 dated events) runs long by default; front-load the index-derived claim and cut connective tissue first, not content. Chad is the most uniformly severe first-pass country -- unlike every other country in this pass, there is no single strong governance dimension to point to (contrast RWA''s 5-of-6, NGA''s split pillars). Also the SECOND resource-revenue-governance case in this pass, and the direct negative counterpart to BWA''s Pula Fund: the World Bank''s 2000 Chad-Cameroon pipeline was an explicit, designed anti-resource-curse mechanism (escrow accounts, earmarked poverty spending) and it failed within 3 years -- Deby spent the first revenue installment on arms in 2003, and the Bank exited the arrangement entirely by 2007-2008. Two resource-governance experiments in one first pass, one succeeded long-term with a recent stress test (BWA), one failed early and completely (TCD) -- worth a cross-reference note when auditing either country later. Also notable: this is the first record where "the same mechanism, inverted" appears twice in one file -- colonial forced-cotton administration mapping onto the FROLINAT civil war''s literal geography, AND France''s post-independence military-guarantee relationship (Opération Épervier, 1986) lasting until Chad itself ended it in November 2024, 125 years after the 1900 conquest. A genuine, verified positive was found despite the country''s severity: $20.5B in financing commitments toward the "Chad Connexion 2030" plan (Nov 2025) -- placed in extended with an explicit caveat that the pipeline was also presented as a solution at signing, so this record does not claim the new plan will succeed where that one failed. Balance: 1 positive, 2 negative, 1 mixed. `--links` passes 0 errors, 0 warnings, 11/11 resolved.'
 - '2026-08-10: Added `rec_membership` (org/joined/status/left/citations) to the schema at the user''s explicit direction, validated against asi.core.countries.COUNTRIES[iso3]["rec"] so the narrative layer cannot drift from the index''s own current-membership list. Retrofitted all 20 (country, REC) pairs across the 9 first-pass records this session -- no join-year data existed anywhere in the codebase beforehand, despite the "already saved data" framing of the request; asi/core/countries.py only ever stored current membership, time-invariant, with its own comment flagging that year-aware data would eventually be needed. Genuinely interesting finding: Somalia signed the 1981 PTA (COMESA''s predecessor) but never transitioned into COMESA at its 1994 founding because the 1991 state collapse left no government to complete it -- Somalia only became a full COMESA member again on 19 July 2018, a 24-year gap directly caused by the same collapse the SOM record already documents. `--links` clean after one confirmed-transient timeout (verified live on retry); 12 warnings remain, all the familiar HTTP-403 bot-detection pattern, no new dead links.'
 - '2026-08-10: AGO CREATE run complete -- the first backlog country after the first pass, chosen specifically to fill the corpus''s clearest documented gap (Lusophone Africa, previously fully unrepresented) and to add a third resource-economy case (oil) alongside DZA and TCD. 12 sources opened and verified: 4 Wikipedia, 4 news, 2 official, 1 academic, plus 2 more for rec_membership. Angola is a genuinely distinct F-pillar case from every prior wealth-proxy or coal-dependency story: its low per-capita CO2 (0.74 tons, near-ceiling score) is PARTLY real hydro investment (only 27% fossil-fuel electricity, carried forward) rather than pure energy poverty, even though electricity access itself is still only ~51% -- a genuinely mixed, not purely artefactual, environmental story. Also a third resource-governance case distinct from both BWA (succeeded, under stress) and TCD (failed early): Angola''s China oil-backed-debt model (once $40B+, being paid down to a $7.5-8B end-2025 target) is neither a sovereign-wealth-fund success nor an escrow-account failure but a third pattern -- heavy bilateral resource-backed borrowing now being actively unwound. Traced a precise colonial mechanism for the still-live Cabinda conflict: the 1885 Treaty of Simulambuco made Cabinda a legally DISTINCT Portuguese protectorate from Angola proper, which is the specific legal basis FLEC has invoked for five decades, most recently in a February 2026 independence declaration from exile in Brussels -- Pillar E''s national Political Stability score does not register this geographically contained but real conflict. Balance: 1 positive (the 2022 election, the closest in Angola''s history, placed in extended since it''s now 3 years old rather than current), 2 negative, 1 mixed. `--links` passes 0 errors, 2 warnings (FurtherAfrica, IMF -- the familiar 403 bot-detection pattern). Also caught and fixed one own error in drafting rec_membership: initially assumed Angola was a 1983 ECCAS founding member by pattern-matching to TCD/COD''s founding-member status: Angola was actually an observer until January 1999, confirmed via direct Wikipedia fetch before committing -- a good reminder that "verify, don''t pattern-match" applies to REC data exactly as much as to pillar narrative.'
+- '2026-08-10: ZAF CREATE run complete -- second backlog country, chosen to anchor the
+  Southern Africa/anchor-economy gap. 10 sources opened and verified. First country in
+  the corpus with a genuinely reliable-tier (not thin) composite score, and the sharpest
+  test yet of framing balance in the OPPOSITE direction from most prior countries: the
+  recent record skews positive (1 positive/2 negative/1 mixed among primary+extended,
+  but the two positives -- the 2024 ANC/GNU transition and Eskom''s 441-day loadshedding
+  streak -- are both real, substantial, independently-reported developments, not padding).
+  Handled a genuinely contested topic carefully: the Feb 2025 Trump executive order and
+  subsequent tariffs/G20 exclusion are documented as real costs, but the specific "white
+  genocide" claim driving them is reported alongside the well-corroborated fact-check
+  (2 independent SA official inquiries, ISS Africa, multiple outlets) that farm murders
+  are ~0.2% of the national homicide total and no coordinated racial campaign has been
+  found -- the real, severe general homicide rate (43.72/100k, carried forward, scores
+  0.0 -- the worst possible) is reported as exactly that: real and general, not targeted.
+  Pillar F is the clearest COUNTER-example yet to the wealth-proxy pattern flagged
+  repeatedly since DZA: South Africa''s CO2 pc (6.76 tons, fresh) scores at the ABSOLUTE
+  BOTTOM of the scale -- a real, substantial emissions cost from a coal-dependent
+  economy, the mirror opposite of every low-CO2-scores-well case seen so far. One
+  colonial mechanism newly used in this corpus: SADCC was literally founded in 1980
+  partly to reduce regional dependence on apartheid South Africa, and South Africa
+  itself only joined the organization it helped define the opposition to in April 1994,
+  the same month as its first democratic election -- confirmed via direct fetch of the
+  SADC official site before use. Balance: 2 positive, 1 negative, 1 mixed. `--links`:
+  one genuine dead link caught (a feeds.bbci.co.uk URL returning 404, not a 403 --
+  the SECOND confirmed genuine dead link in the corpus after COD''s), replaced with a
+  working citation (Corruption Watch) for the same claim before commit; 1 warning
+  remains (IMF, familiar 403 pattern).'
