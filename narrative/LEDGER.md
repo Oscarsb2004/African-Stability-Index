@@ -3,7 +3,7 @@
 The document future runs read before doing anything. Machine-readable twin:
 `narrative/state.yaml`.
 
-*Seeded 2026-08-09. Research runs so far: Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria, Rwanda, Chad, Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan (all CREATE). First pass complete; backlog underway.*
+*Seeded 2026-08-09. Research runs so far: Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria, Rwanda, Chad, Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali (all CREATE). First pass complete; backlog underway.*
 
 ---
 
@@ -26,7 +26,7 @@ An audit is forced early if a single run inflates the citation count by more tha
 
 ## Status
 
-**15 of 54 countries have a record (Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria, Rwanda, Chad, Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan). The first pass is complete; Angola, South Africa, Kenya, Egypt, Ethiopia and Sudan are the first six backlog countries.**
+**16 of 54 countries have a record (Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria, Rwanda, Chad, Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali). The first pass is complete; Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan and Mali are the first seven backlog countries.**
 
 ### First pass — 9 countries
 
@@ -57,14 +57,15 @@ whose ranks swing hardest with the weighting method.
 | EGY | Egypt | North Africa's second major economy (DZA was the region's only prior record); lowest, but reliably-measured, Pillar F score in the corpus, driven by a still-unfolding colonial-legacy water dispute | **done — iteration 1** |
 | ETH | Ethiopia | one of only two never-colonised African states, requiring a genuinely different colonial_legacy framing; the GERD story's other side, cross-referenced against EGY | **done — iteration 1** |
 | SDN | Sudan | the single most severe remaining gap; the SAF-RSF war since April 2023 is the world's largest displacement crisis, with a formal US genocide determination (Jan 2025); closes the refugee-outflow thread already opened in TCD | **done — iteration 1** |
+| MLI | Mali | opens the Sahel coup-belt/ECOWAS-exit category entirely new to this corpus; a fourth distinct resource-governance pattern (coercive renegotiation, Barrick Gold); a case where searching again after an all-negative draft found a genuine positive | **done — iteration 1** |
 
-### Backlog — the remaining 39
+### Backlog — the remaining 38
 
 Listed in full in `narrative/state.yaml` under `backlog`. They are recorded
 explicitly rather than left implicit: a country with no record should be visibly
 absent, not quietly missing.
 
-Libya, Morocco, Tunisia, Benin, Burkina Faso, Cabo Verde, The Gambia, Guinea, Guinea-Bissau, Cote d'Ivoire, Liberia, Mali, Mauritania, Niger, Senegal, Sierra Leone, Togo, Cameroon, Central African Republic, Republic of Congo, Equatorial Guinea, Gabon, Burundi, Djibouti, Eritrea, Malawi, Mozambique, South Sudan, Tanzania, Uganda, Zambia, Zimbabwe, Lesotho, Namibia, Eswatini, Comoros, Madagascar, Seychelles, Sao Tome & Principe
+Libya, Morocco, Tunisia, Benin, Burkina Faso, Cabo Verde, The Gambia, Guinea, Guinea-Bissau, Cote d'Ivoire, Liberia, Mauritania, Niger, Senegal, Sierra Leone, Togo, Cameroon, Central African Republic, Republic of Congo, Equatorial Guinea, Gabon, Burundi, Djibouti, Eritrea, Malawi, Mozambique, South Sudan, Tanzania, Uganda, Zambia, Zimbabwe, Lesotho, Namibia, Eswatini, Comoros, Madagascar, Seychelles, Sao Tome & Principe
 
 ---
 
@@ -439,6 +440,34 @@ Append one line per run: date, country, mode, what changed, what was removed.
   declared August 2024; ~25.6 million facing severe hunger by 2025).
   Balance: 1 positive, 3 negative, 0 mixed.
 
+- **2026-08-10 — MLI — CREATE. Seventh backlog country.** Full baseline
+  built: historical overview, colonial legacy (traces the north's
+  colonial-era military-territorial administration and southern
+  investment concentration to four Tuareg rebellions since independence
+  and the weakly-governed geography JNIM and ISGS now operate from,
+  including the 2025-2026 fuel blockade on Bamako), 4 key_periods, 6
+  pillar summaries (Pillar C left empty — greyed at 1/8 measured), 3
+  primary + 1 extended recent items, 4 events, rec_membership (CEN-SAD
+  1998 founding; ECOWAS recorded as withdrawn — joined 1975 founding,
+  left 2025 — matching the index's own current registry). 11 sources
+  opened and verified. `--links` passes 0 errors, 1 warning (France24,
+  familiar 403 pattern) — 10/11 resolved. Mali opens the Sahel
+  coup-belt/ECOWAS-exit category entirely new to this corpus: the
+  January 2025 Alliance of Sahel States withdrawal alongside Burkina
+  Faso and Niger, and the France-to-Russia (Wagner, then Africa Corps)
+  security realignment. The Barrick Gold dispute ($430M settlement,
+  November 2025, following employee detentions and a CEO arrest
+  warrant) is a fourth distinct resource-governance pattern in this
+  corpus, after Botswana's sovereign-wealth success, Chad's failed
+  pipeline, and Angola's bilateral debt model. Process note worth
+  repeating: the first full draft landed at 0 positive / 2 negative / 1
+  mixed, matching COD/EGY's pattern — but a further search specifically
+  for a counterweight found Goulamina, Mali's first lithium mine (first
+  exports June 2025), which also resolved an internal puzzle the draft
+  had flagged rather than explained away (Pillar D's near-ceiling
+  food-insecurity score, plausibly a genuine strong-harvest effect
+  rather than an anomaly). Balance: 1 positive, 2 negative, 1 mixed.
+
 ---
 
 ## Meta-notes
@@ -703,6 +732,22 @@ Things a future run should know about how to work, not about a specific country.
   documents the war driving Sudanese refugees into Chad from the source
   side, giving a second cross-referenced pair (after EGY/ETH's GERD) that
   a future audit should keep factually consistent across both files.
+- **2026-08-10** — MLI sharpens the SDN lesson into an actionable
+  checkpoint rather than a general principle: when a first full draft
+  lands at 0 positive, treat that specific moment — not "this country
+  seems severe" in the abstract, but the concrete fact of an empty
+  positive slot — as the trigger to run one more targeted search before
+  accepting it. MLI's positive (Goulamina lithium) also did double duty,
+  resolving a data puzzle (Pillar D's food-insecurity figure) the record
+  would otherwise have left as an unexplained flag — a reminder that a
+  genuine counterweight search sometimes pays for itself twice, not just
+  once. Also worth carrying forward: Mali is the first of what will
+  likely be three closely related records (Burkina Faso and Niger remain
+  in backlog) sharing the same AES/ECOWAS-exit institutional facts —
+  future runs on either should reuse MLI's verified ECOWAS-founding-year
+  (1975) and CEN-SAD (1998) research rather than re-deriving it, and all
+  three records should stay consistent on shared AES developments the
+  way EGY/ETH and TCD/SDN already do on their shared events.
 
 ---
 

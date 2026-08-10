@@ -1,0 +1,472 @@
+meta:
+  iso3: MLI
+  name: Mali
+  last_updated: 2026-08-10
+  iteration_count: 1
+  next_action: >
+    EXPAND: (1) follow the JNIM fuel blockade past August 2026 -- check
+    whether it has been broken, has tightened further, or has produced
+    any negotiated outcome; (2) check whether the Africa Corps
+    replacement of Wagner has changed the security situation on the
+    ground; (3) check the Alliance of Sahel States' further institutional
+    development past the January 2025 ECOWAS exit; (4) check if Pillar C
+    (greyed at 1/8 measured) has gained coverage; (5) check whether
+    Goulamina's lithium production has scaled toward its 500,000-tonne
+    annual target and whether the revenue has had any measurable effect
+    on Pillar B or G; (6) check whether the 2.60% severe food insecurity
+    figure holds in the next survey round now that the good-2025-harvest
+    explanation can be tested against real data.
+  model_used: claude-sonnet-5
+
+historical:
+  overview: >
+    France conquered the territory as French Sudan from 1892, following
+    major resistance campaigns against Samori Touré's Wassoulou Empire
+    and other regional powers, and administered it as a labour reserve
+    for groundnut and cotton cultivation. Mali gained independence on 20
+    June 1960 as part of the short-lived Mali Federation with Senegal,
+    which collapsed within two months; Modibo Keïta led the newly
+    separate Republic of Mali, declared 22 September 1960, as a socialist
+    one-party state until a bloodless 1968 coup installed Moussa Traoré,
+    who ruled for 23 years. A pro-democracy uprising toppled Traoré in
+    1991, and the 2002 election -- Mali's first transition between two
+    democratically elected presidents -- was widely cited internationally
+    as a West African democratic success story. That record collapsed in
+    2012: a Tuareg-led rebellion in the north was hijacked by Islamist
+    groups who seized Timbuktu and other major towns, prompting a March
+    2012 military coup in Bamako and, when Islamist forces advanced
+    toward the capital in January 2013, a French military intervention
+    (Operation Serval) that restored government control. The underlying
+    jihadist insurgency was never defeated. Frustration with its
+    persistence, and with a French security partnership seen as
+    ineffective, drove two further coups: soldiers ousted President
+    Ibrahim Boubacar Keïta in August 2020, and the junta's own vice
+    president, Colonel Assimi Goïta, then ousted the transitional
+    civilian government in May 2021. Goïta's government expelled French
+    troops in 2022, contracted Russia's Wagner Group for security
+    support, and in January 2025 formally withdrew Mali from ECOWAS
+    alongside Burkina Faso and Niger, forming the rival Alliance of Sahel
+    States.
+  overview_citations: [c1, c2, c3]
+  colonial_legacy: >
+    context/colonial_history.yaml already credits French Sudan's
+    historic slave and gold trade routes, the major resistance campaigns
+    against Samori Touré's Wassoulou Empire, and colonial borders as
+    drawing on long-standing north-south tensions behind the 2012 crisis.
+    Worth adding is the specific administrative mechanism: conquered
+    Saharan and Sahelian territory in the north was governed under
+    French military-territorial command, subordinate to the
+    civilian-administered federal structure of French West Africa
+    centred in Senegal, while investment concentrated in the south,
+    where French Sudan's assigned economic role was producing foodstuffs
+    and export crops (groundnuts, cotton) to feed and supply
+    French-favoured Senegal. That asymmetry produced both the economic
+    marginalisation Tuareg movements have cited across four separate
+    rebellions since independence (1962-64, 1990-96, 2006-09, 2012-) and
+    a weakly-governed northern geography that first Tuareg separatists
+    and later al-Qaeda- and Islamic State-linked groups (AQIM, and today
+    JNIM and ISGS) have been able to operate within. The same north
+    remains the base for the 2025-2026 JNIM fuel blockade of Bamako
+    documented in recent.primary -- a colonial-era choice about which
+    half of the country to invest in is still shaping which half of the
+    country a jihadist insurgency can operate from, eight decades later.
+  colonial_legacy_citations: [c1, c4]
+  key_periods:
+    - title: "French Sudan and the road to independence"
+      period: "1892-1960"
+      summary: >
+        France conquered the territory as French Sudan from 1892 after
+        major resistance campaigns, including against Samori Touré's
+        Wassoulou Empire, and administered the Saharan north under
+        military command while concentrating investment in the
+        agriculturally productive south. Mali became independent on 20
+        June 1960 as part of the short-lived Mali Federation with
+        Senegal, which collapsed within two months; the separate
+        Republic of Mali was declared on 22 September 1960 under Modibo
+        Keïta.
+      citations: [c1]
+    - title: "One-party rule, Traoré, and the return of democracy"
+      period: "1960-2002"
+      summary: >
+        Keïta governed as a socialist one-party state until a bloodless
+        1968 coup installed Moussa Traoré, who ruled for 23 years. A
+        pro-democracy uprising toppled Traoré in 1991, and the 2002
+        election -- Mali's first transition between two democratically
+        elected presidents -- was widely cited internationally as a West
+        African democratic success story.
+      citations: [c1]
+    - title: "The 2012 crisis and Operation Serval"
+      period: "2012-2013"
+      summary: >
+        A Tuareg-led rebellion in the north was hijacked by Islamist
+        groups who seized Timbuktu and other major towns in 2012,
+        prompting a March 2012 military coup in Bamako. When Islamist
+        forces advanced toward the capital in January 2013, France
+        launched Operation Serval, restoring government control over the
+        major northern towns but not defeating the underlying jihadist
+        insurgency, which persisted in rural areas.
+      citations: [c1]
+    - title: "Coups, the break with France, and the ECOWAS exit"
+      period: "2020-2025"
+      summary: >
+        Frustration with the insurgency's persistence and with a French
+        security partnership seen as ineffective drove two further
+        coups: soldiers ousted President Ibrahim Boubacar Keïta in
+        August 2020, and Colonel Assimi Goïta then ousted the
+        transitional civilian government in May 2021. Goïta's government
+        expelled French troops in 2022, contracted Russia's Wagner Group
+        for security support, and in January 2025 formally withdrew Mali
+        from ECOWAS alongside Burkina Faso and Niger, forming the rival
+        Alliance of Sahel States.
+      citations: [c2, c3, c5]
+
+pillars:
+  A:
+    summary: >
+      All six governance indicators are directly measured, and Mali
+      scores weakly across the board -- Government Effectiveness (30.4)
+      and Control of Corruption (33.2) are both weak, consistent with a
+      state governed by a military junta since May 2021 rather than an
+      elected government. That junta has reoriented Mali's international
+      relationships entirely since taking power: expelling French troops
+      in 2022, contracting first Russia's Wagner Group and then its
+      successor Africa Corps for security support, and formally
+      withdrawing from ECOWAS in January 2025 alongside Burkina Faso and
+      Niger to form the Alliance of Sahel States. The same government has
+      also moved aggressively against foreign business interests, briefly
+      jailing and issuing an arrest warrant for the CEO of Barrick Gold
+      before a $430 million settlement in November 2025 restored the
+      company's operations.
+    drivers:
+      - "all 6 governance indicators directly measured, all weak -- Government Effectiveness and Control of Corruption both weak"
+      - "governed by a military junta since May 2021; expelled France (2022), contracted Wagner then Africa Corps, formally exited ECOWAS Jan 2025 (with BFA, NER, forming AES)"
+      - "Nov 2025: $430M settlement with Barrick Gold after the junta jailed employees and issued a CEO arrest warrant -- an aggressive resource-renegotiation pattern distinct from BWA, TCD or AGO's"
+    citations: [c5, c6, c7]
+  B:
+    summary: >
+      GDP growth and inflation, both freshly measured, are moderate, and
+      the underlying 2025 economy was genuinely stronger than either
+      figure alone suggests: growth reached roughly 5.6%, up from 5.0% in
+      2024, driven by a strong 2025 harvest (agricultural output up
+      roughly 7.9%) and the December 2024 launch of Goulamina, Mali's
+      first lithium mine, which shipped its first exports in June 2025
+      and is expected to make Mali Africa's second-largest lithium
+      producer behind Zimbabwe. That growth sits alongside the Barrick
+      Gold dispute: the junta detained employees, issued an arrest
+      warrant for the company's CEO, and seized gold shipments in late
+      2024 and early 2025 before a $430 million settlement in November
+      2025 restored Barrick's operations -- a distinct, coercive
+      resource-governance pattern from every other case in this corpus.
+      Domestic credit is moderate; Gini, carried forward, is not fresh.
+    drivers:
+      - "GDP growth and inflation both fresh, moderate -- underlying 2025 growth reached ~5.6% (up from 5.0% in 2024)"
+      - "strong 2025 harvest (agriculture +~7.9%) and Dec 2024 launch of Goulamina, Mali's first lithium mine (first exports June 2025) -- a genuine new growth driver"
+      - "Barrick Gold dispute: employees detained, CEO arrest warrant issued, gold shipments seized (2024-25), $430M settlement Nov 2025 -- a fourth, distinct resource-governance pattern in this corpus"
+      - "GDP per capita among the lower figures in the index; Gini not freshly measured"
+    citations: [c7, c11]
+  D:
+    summary: >
+      Life expectancy just above 60 years and infant mortality of
+      roughly 49 per 1,000 live births, both freshly measured, are among
+      the more severe readings in the index. Severe food insecurity, at
+      just 2.6% and also freshly measured, scores at the ceiling of the
+      scale -- a figure that initially seemed hard to reconcile with the
+      security situation documented under Pillar E, but is plausibly
+      explained by the strong 2025 harvest documented under Pillar B
+      rather than a genuine anomaly. Safely managed drinking water
+      access, estimated from regional peers rather than measured
+      directly, is comparatively low. Two of five indicators were not
+      freshly measured this year.
+    drivers:
+      - "life expectancy ~60 years, infant mortality ~49/1,000 -- both fresh, among the more severe readings in the index"
+      - "severe food insecurity only 2.6% (fresh, scores at the ceiling) -- plausibly explained by the strong 2025 harvest (Pillar B), not necessarily an anomaly"
+      - "safely managed water low (regional-mean estimate)"
+    citations: [c1, c11]
+  E:
+    summary: >
+      Political Stability, freshly measured, scores among the very
+      worst recorded anywhere in this index, consistent with a country
+      that has had four coups since 1960 and an unresolved jihadist
+      insurgency since 2012. Displaced persons, also fresh, reflects
+      ongoing conflict in the centre and north. The clearest current
+      evidence is the JNIM fuel blockade: since 3 September 2025, the
+      al-Qaeda-linked group has destroyed more than 300 fuel tankers
+      supplying landlocked Mali from Senegal, Côte d'Ivoire and Guinea,
+      producing rolling blackouts, school closures and hours-long queues
+      in Bamako -- satellite imagery shows the capital visibly darker at
+      night. The blockade was still active as of this record, with JNIM
+      announcing a full siege of the capital in April 2026. Homicide
+      indicators are estimated from regional peers.
+    drivers:
+      - "Political Stability among the very worst in the entire index (fresh) -- 4 coups since 1960, unresolved insurgency since 2012"
+      - "IDPs fresh, reflect ongoing central/northern conflict"
+      - "JNIM fuel blockade since 3 Sept 2025: 300+ tankers destroyed, rolling blackouts and school closures in Bamako, still active as of this record (full siege announced April 2026)"
+      - "homicide indicators regional-mean, not directly measured"
+    citations: [c8, c9]
+  F:
+    summary: >
+      Only two of four indicators were freshly measured this year.
+      Per-capita CO2 emissions score well, and unlike the clearest
+      wealth-proxy cases elsewhere in this project, this partly reflects
+      real hydroelectric capacity: Mali shares the Manantali and Félou
+      dams on the Senegal River with Senegal and Mauritania, historically
+      supplying the large majority of Mali's electricity. The
+      carried-forward electricity-generation figure, showing roughly 62%
+      non-fossil generation, is consistent with that infrastructure,
+      though it may understate how much insecurity has since forced a
+      shift toward diesel generation in unstable areas. Agricultural
+      land share, freshly measured, is moderate. Freshwater withdrawal
+      was not freshly measured this year.
+    drivers:
+      - "CO2 pc scores well (fresh) -- partly a genuine achievement: shared Manantali/Félou hydro dams on the Senegal River historically supply most of Mali's power"
+      - "electricity ~62% non-fossil (carried forward) -- consistent with real hydro capacity, though may not capture insecurity-driven diesel use"
+      - "agricultural land moderate (fresh); freshwater withdrawal not freshly measured"
+    citations: [c1]
+  G:
+    summary: >
+      Electricity access (55%) and basic water access (85%), both
+      freshly measured, are moderate to comparatively good -- the water
+      figure in particular sits above several other countries documented
+      in this corpus. Handwashing coverage, carried forward rather than
+      fresh, is markedly weaker. Social protection and labour programme
+      coverage, also carried forward, is moderate. These figures are
+      annual averages, and the fuel blockade documented under Pillar E
+      is a live, unmeasured threat to the electricity-access figure
+      specifically going forward, since generation and distribution both
+      depend on fuel supply chains the blockade is designed to sever.
+    drivers:
+      - "electricity access 55%, basic water 85% (both fresh) -- water access above several other corpus countries"
+      - "handwashing coverage weaker (carried forward)"
+      - "the JNIM fuel blockade (Pillar E) is a live, unmeasured threat to the electricity-access figure going forward, since it targets the fuel supply chains generation depends on"
+    citations: [c9]
+
+recent:
+  primary:
+    - headline: "Alliance of Sahel States formally exits ECOWAS"
+      date: 2025-01-29
+      summary: >
+        Mali, Burkina Faso and Niger formally withdrew from ECOWAS on 29
+        January 2025, the most significant crisis in West African
+        regional integration since ECOWAS's 1975 founding, after
+        rejecting a six-month extension ECOWAS offered in December 2024.
+        The same day, the three juntas launched a joint Sahel-wide
+        passport and announced a 5,000-strong joint military force and
+        collective defence mechanism under their Alliance of Sahel
+        States (AES), formed in September 2023 partly in response to
+        ECOWAS's handling of Niger's 2023 coup.
+      why_it_matters: >
+        The clearest institutional expression of Pillar A's governance
+        break with the pre-2020 order, and a realignment that directly
+        explains rec_membership's ECOWAS withdrawal entry below.
+      news_url: "https://www.aljazeera.com/news/2025/1/29/military-governments-lead-west-african-trio-out-of-ecowas-regional-bloc"
+      wikipedia_url: ""
+      sentiment: negative
+    - headline: "JNIM fuel blockade strangles Bamako"
+      date: 2025-09-03
+      summary: >
+        The al-Qaeda-linked JNIM announced a blockade on fuel deliveries
+        to Mali on 3 September 2025, destroying more than 300 tankers on
+        the routes supplying landlocked Mali from Senegal, Côte d'Ivoire
+        and Guinea. The blockade produced hours-long fuel queues in
+        Bamako, rolling blackouts, school closures from late October to
+        early November 2025, and foreign embassy staff evacuations;
+        satellite imagery showed the capital visibly darker at night. It
+        eased briefly in early 2026 before JNIM announced a full siege
+        of the capital on 28 April 2026.
+      why_it_matters: >
+        Directly explains Pillar E's severe security score and a live
+        threat to Pillar G's electricity-access figure -- and shows the
+        junta's Russia-oriented security realignment has not resolved
+        the insurgency it was meant to address.
+      news_url: "https://en.wikipedia.org/wiki/Mali_fuel_blockade"
+      wikipedia_url: ""
+      sentiment: negative
+    - headline: "Goulamina lithium mine ships first exports, Mali's newest growth driver"
+      date: 2025-06-01
+      summary: >
+        Mali's first lithium mine, Goulamina in the Bougouni region,
+        began production in December 2024 and shipped its first exports
+        -- 30,000 tonnes of lithium concentrate from the port of Abidjan
+        -- in June 2025. At a planned capacity of 500,000 tonnes of
+        spodumene concentrate annually, the mine is expected to make Mali
+        Africa's second-largest lithium producer, behind Zimbabwe, and
+        contributed to extractive-sector growth of roughly 11.5% in 2025
+        alongside a strong agricultural harvest.
+      why_it_matters: >
+        A genuine new source of export revenue and economic diversification
+        for a landlocked economy under severe security strain elsewhere in
+        this record -- documented at full weight rather than omitted in
+        favour of a simpler, uniformly negative narrative.
+      news_url: "https://source.benchmarkminerals.com/article/mali-set-to-become-africas-second-largest-lithium-producer-in-2025"
+      wikipedia_url: ""
+      sentiment: positive
+  extended:
+    - headline: "Barrick Gold dispute settled for $430 million"
+      date: 2025-11-01
+      summary: >
+        Barrick Mining Corporation and Mali's government reached a
+        comprehensive settlement in November 2025, with Barrick paying
+        roughly $430 million in exchange for the withdrawal of
+        international arbitration claims and restoration of its
+        operational control over the Loulo-Gounkoto mining complex. The
+        settlement followed over a year of escalating conflict: four
+        Barrick employees detained in September 2024, an arrest warrant
+        issued for CEO Mark Bristow in December 2024, and gold shipments
+        seized by the junta in early 2025 that had forced Barrick to
+        suspend operations.
+      why_it_matters: >
+        A distinct, coercive resource-governance pattern -- neither
+        Botswana's sovereign-wealth success nor Chad's failed
+        anti-resource-curse pipeline nor Angola's bilateral debt model --
+        and a real fiscal win for a junta whose broader economy is under
+        severe strain.
+      news_url: "https://www.mining.com/timeline-barricks-dispute-with-malis-junta/"
+      wikipedia_url: ""
+      sentiment: mixed
+
+events:
+  - year: 1960
+    type: independence
+    title: "Mali gains independence"
+    description: >
+      The Republic of Mali was declared on 22 September 1960 after the
+      short-lived Mali Federation with Senegal collapsed within two
+      months of the federation's own 20 June 1960 independence.
+    url: "https://en.wikipedia.org/wiki/History_of_Mali"
+    direction: improve
+  - year: 1991
+    type: coup
+    title: "Pro-democracy uprising topples Traoré"
+    description: >
+      A pro-democracy uprising toppled Moussa Traoré's 23-year military
+      rule in 1991, opening a decade of democratic government
+      internationally cited as a West African success story.
+    url: "https://en.wikipedia.org/wiki/History_of_Mali"
+    direction: improve
+  - year: 2012
+    type: coup
+    title: "Tuareg rebellion, Islamist takeover, and military coup"
+    description: >
+      A Tuareg-led rebellion in the north was hijacked by Islamist
+      groups who seized Timbuktu and other major towns in 2012,
+      prompting a March 2012 military coup in Bamako and a French
+      military intervention in January 2013 that restored government
+      control without defeating the underlying insurgency.
+    url: "https://en.wikipedia.org/wiki/History_of_Mali"
+    direction: deteriorate
+  - year: 2025
+    type: economic
+    title: "Mali exits ECOWAS and JNIM blockades Bamako"
+    description: >
+      Mali formally withdrew from ECOWAS on 29 January 2025 alongside
+      Burkina Faso and Niger, and from 3 September 2025 the al-Qaeda-linked
+      JNIM blockaded fuel supplies to Bamako, producing rolling
+      blackouts and school closures in the capital.
+    url: "https://en.wikipedia.org/wiki/Mali_fuel_blockade"
+    direction: deteriorate
+
+citations:
+  - id: c1
+    url: "https://en.wikipedia.org/wiki/History_of_Mali"
+    source_type: wikipedia
+    title: "History of Mali"
+    accessed: 2026-08-10
+    verified: true
+  - id: c2
+    url: "https://www.aljazeera.com/news/2025/1/29/military-governments-lead-west-african-trio-out-of-ecowas-regional-bloc"
+    source_type: news
+    title: "Military governments lead West African trio out of ECOWAS regional bloc (Al Jazeera)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c3
+    url: "https://www.france24.com/en/africa/20250608-wagner-group-leaves-mali-replaced-by-moscow-backed-africa-corps-russia"
+    source_type: news
+    title: "Wagner Group leaves Mali, replaced by Moscow-backed Africa Corps (France 24)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c4
+    url: "https://en.wikipedia.org/wiki/Tuareg_rebellion_(1962%E2%80%931964)"
+    source_type: wikipedia
+    title: "Tuareg rebellion (1962-1964)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c5
+    url: "https://peoplesdispatch.org/2025/01/29/sahel-states-exit-ecowas-launch-regional-passport-and-joint-military/"
+    source_type: news
+    title: "Sahel states exit ECOWAS, launch regional passport and joint military (Peoples Dispatch)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c6
+    url: "https://www.themoscowtimes.com/2025/06/08/wagner-replaced-by-russias-africa-corp-in-mali-diplomatic-sources-say-a89378"
+    source_type: news
+    title: "Wagner Replaced by Russia's Africa Corp in Mali, Diplomatic Sources Say (The Moscow Times)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c7
+    url: "https://www.mining.com/timeline-barricks-dispute-with-malis-junta/"
+    source_type: news
+    title: "TIMELINE: Barrick's dispute with Mali's junta (MINING.COM)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c8
+    url: "https://en.wikipedia.org/wiki/Mali_fuel_blockade"
+    source_type: wikipedia
+    title: "Mali fuel blockade"
+    accessed: 2026-08-10
+    verified: true
+  - id: c9
+    url: "https://www.riotimesonline.com/mali-fuel-blockade-bamako-siege-2026/"
+    source_type: news
+    title: "Mali's Fuel Blockade Tightens the Siege on Bamako (Rio Times)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c10
+    url: "https://en.wikipedia.org/wiki/Community_of_Sahel%E2%80%93Saharan_States"
+    source_type: wikipedia
+    title: "Community of Sahel-Saharan States"
+    accessed: 2026-08-10
+    verified: true
+  - id: c11
+    url: "https://source.benchmarkminerals.com/article/mali-set-to-become-africas-second-largest-lithium-producer-in-2025"
+    source_type: news
+    title: "Mali set to become Africa's second largest lithium producer in 2025 (Benchmark Mineral Intelligence)"
+    accessed: 2026-08-10
+    verified: true
+
+rec_membership:
+  - org: CEN-SAD
+    joined: 1998
+    status: current
+    left: null
+    citations: [c10]
+  - org: ECOWAS
+    joined: 1975
+    status: withdrawn
+    left: 2025
+    citations: [c2]
+
+balance:
+  n_positive: 1
+  n_negative: 2
+  n_mixed: 1
+  note: >
+    The ECOWAS withdrawal and the JNIM fuel blockade are each
+    independently severe and current, directly explaining Pillars A and
+    E's weak scores, and neither is softened here. The one positive item
+    -- Goulamina, Mali's first lithium mine, shipping its first exports
+    in June 2025 -- was not obvious on first pass; the initial draft of
+    this record had no positive item at all until a further search
+    surfaced it, consistent with this project's practice of searching
+    again before accepting an all-negative record rather than treating a
+    country's overall severity as a reason to stop looking. It also
+    resolved a genuine puzzle this record had flagged: Pillar D's
+    near-ceiling severe-food-insecurity score, which initially seemed
+    hard to reconcile with Pillar E's near-bottom security score, is
+    plausibly explained by the same strong 2025 harvest that helped drive
+    the lithium-adjacent growth figures in Pillar B. The Barrick Gold
+    settlement is coded mixed rather than positive, because a $430
+    million payment secured through employee detentions and a CEO arrest
+    warrant is a real fiscal win for a government under severe strain,
+    but not an unambiguous governance achievement -- documented as what
+    it is, a coercive renegotiation with a real financial outcome, not
+    framed as either a triumph or purely as extortion.

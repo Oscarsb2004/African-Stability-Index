@@ -222,6 +222,26 @@ countries:
       continued operation and safety; check if Pillar C has gained coverage; find a
       directly-opened source for the exact El Fasher initial-assault death toll,
       since this record had to present a disputed range rather than one figure'
+  MLI:
+    name: Mali
+    region: West
+    first_pass: false
+    reason: seventh backlog country -- opens the Sahel coup-belt/ECOWAS-exit category
+      entirely new to this corpus (the Jan 2025 Alliance of Sahel States withdrawal
+      alongside BFA and NER, the France-to-Russia security realignment); a fourth
+      distinct resource-governance pattern (coercive renegotiation, Barrick Gold);
+      a case where the initial all-negative draft was corrected by searching again
+      and finding a genuine positive (Goulamina lithium production) that also
+      resolved an internal data puzzle this record had flagged
+    iteration_count: 1
+    last_updated: '2026-08-10'
+    next_action: 'EXPAND: follow the JNIM fuel blockade past August 2026; check
+      whether the Africa Corps replacement of Wagner has changed the security
+      situation; check the AES''s further institutional development; check if
+      Pillar C has gained coverage; check whether Goulamina''s lithium production
+      has scaled toward its 500,000-tonne annual target and any measurable effect
+      on Pillar B/G; check whether the 2.60% severe food insecurity figure holds
+      in the next survey round'
 backlog:
   LBY:
     name: Libya
@@ -305,14 +325,6 @@ backlog:
     next_action: create baseline from blueprint
   LBR:
     name: Liberia
-    region: West
-    first_pass: false
-    reason: not yet scheduled
-    iteration_count: 0
-    last_updated: null
-    next_action: create baseline from blueprint
-  MLI:
-    name: Mali
     region: West
     first_pass: false
     reason: not yet scheduled
@@ -807,3 +819,32 @@ meta_notes:
   project rather than manufactured. `--links` passes 0 errors, 0 warnings -- 15/15
   resolved, including the archived state.gov genocide-determination page which
   could not be opened directly but resolves for the automated checker.'
+- '2026-08-10: MLI CREATE run complete -- seventh backlog country, opening the Sahel
+  coup-belt/ECOWAS-exit category entirely new to this corpus. 11 sources opened and
+  verified. Traced a precise colonial administrative mechanism for colonial_legacy:
+  the Saharan north was governed under French military-territorial command while
+  investment concentrated in the agriculturally productive south -- the same
+  asymmetry behind four Tuareg rebellions since independence (1962-64, 1990-96,
+  2006-09, 2012-) and the weakly-governed geography JNIM and ISGS now operate from,
+  including the 2025-2026 fuel blockade on Bamako documented in recent.primary.
+  IMPORTANT PROCESS NOTE: the first full draft of this record had NO positive
+  recent item (0 positive/2 negative/1 mixed, matching COD/EGY''s pattern) --
+  before validating and moving on, ran one more search specifically for a
+  counterweight and found Goulamina, Mali''s first lithium mine (first exports
+  June 2025, on track to make Mali Africa''s 2nd-largest lithium producer). This
+  also resolved a genuine internal puzzle the draft had flagged rather than
+  explained away: Pillar D''s near-ceiling severe-food-insecurity score (2.60%),
+  which sat oddly beside Pillar E''s near-bottom security score, is plausibly
+  explained by the same strong 2025 harvest driving the lithium-adjacent growth
+  figures. Lesson for future runs: when a first draft lands at 0 positive, that is
+  the specific moment to search again, not a signal the country is simply "that
+  kind of case" -- COD and EGY may genuinely have no counterweight, but SDN and now
+  MLI both show the search sometimes just needs one more pass. Barrick Gold dispute
+  ($430M settlement, Nov 2025, after employee detentions and a CEO arrest warrant)
+  is a FOURTH distinct resource-governance pattern after BWA (sovereign-wealth
+  success), TCD (failed pipeline), and AGO (bilateral debt) -- coercive state
+  renegotiation via legal/physical pressure. rec_membership: ECOWAS recorded as
+  withdrawn (joined 1975 founding, left 2025), matching the index''s own current
+  registry (asi.core.countries.py already excludes ECOWAS for Mali). Balance: 1
+  positive, 2 negative, 1 mixed. `--links` passes 0 errors, 1 warning (France24,
+  familiar 403 pattern) -- 10/11 resolved.'
