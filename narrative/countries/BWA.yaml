@@ -1,0 +1,482 @@
+meta:
+  iso3: BWA
+  name: Botswana
+  last_updated: 2026-08-09
+  iteration_count: 1
+  next_action: >
+    EXPAND: (1) find a dedicated source for the female intentional-homicide
+    rate under Pillar E (8.32 per 100,000, carried-forward, scores 0.0 --
+    this record could not explain it and flagged it rather than guessing);
+    (2) check whether social protection/labour coverage (absent under
+    Pillar G) has since been measured, given it was a central 2024 UDC
+    campaign pledge; (3) follow the Okavango Diamond Company / De Beers
+    sales agreement (signed Feb 2025) for implementation news -- the 30%
+    ODC share takes effect 2025-2030, rising to 50% by 2035, worth checking
+    whether early execution matches the announced terms; (4) check whether
+    the Pula Fund has stabilised or continued shrinking past its August
+    2024 level of ~$142 million; (5) check for a ruling or resolution in
+    the San/Basarwa land-access case since the December 2022 Court of
+    Appeal decision.
+  model_used: claude-sonnet-5
+
+historical:
+  overview: >
+    Britain established the Bechuanaland Protectorate in March 1885,
+    primarily as a strategic buffer against Boer and German territorial
+    expansion rather than for resource extraction; colonial administration
+    was based across the border in South Africa (first Vryburg, then
+    Mafeking) until 1965, and the territory's Tswana polities retained
+    substantial internal self-governance under indirect rule. The path to
+    independence was not smooth: Seretse Khama's 1948 marriage to Ruth
+    Williams, a white Englishwoman, split opinion within his own Bamangwato
+    people and led Britain to exile him from the territory between 1950 and
+    1956 rather than risk destabilising relations with apartheid-era South
+    Africa. Khama returned, renounced his claim to the Bamangwato
+    chieftaincy, and led the newly formed Botswana Democratic Party to a
+    landslide victory in the 1965 pre-independence election, becoming the
+    country's first president at independence on 30 September 1966. The
+    Botswana he inherited was desperately poor -- roughly 90% of the
+    population lived in absolute poverty and literacy stood near 25% -- but
+    diamond-bearing kimberlite discovered at Orapa in the 1960s, and the
+    1969 formation of Debswana as an equal 50-50 joint venture between the
+    government and De Beers, transformed the economy within a generation
+    into one of the fastest-growing in the world. The Botswana Democratic
+    Party governed continuously for 58 years, making Botswana one of
+    Africa's most durable multiparty democracies, until the October 2024
+    general election ended that run: amid a diamond-market downturn and
+    rising unemployment, the BDP was reduced to just 4 of 61 seats, and
+    opposition leader Duma Boko was sworn in as president on 1 November
+    2024 -- the country's first peaceful transfer of governing power since
+    independence.
+  overview_citations: [c1, c2, c3, c4, c5]
+  colonial_legacy: >
+    context/colonial_history.yaml credits Botswana's light colonial
+    footprint and preserved Tswana institutions for its post-independence
+    trajectory. That framework, however, was built around exactly eight
+    recognised Tswana polities: the 1899 Native Reserves Proclamation, later
+    amended, demarcated tribal reserve land for the Bamangwato, Bakwena,
+    Bangwaketse, Batawana, Bakgatla, Bamalete and others, with each
+    reserve's paramount chief (kgosi) retaining real authority over land
+    allocation under indirect rule. The San (Basarwa), whose hunter-gatherer
+    land use did not map onto this Tswana-organised reserve system, were
+    never allocated a reserve of their own and consequently held no land
+    rights the colonial administration would recognise or enforce. That
+    omission is not merely historical: it is the direct ancestor of the
+    Central Kalahari Game Reserve dispute, since land the colonial state
+    never formally granted the San was available for the post-independence
+    government to declare a wildlife reserve in 1961 and later defend as
+    state land against San habitation claims through forced relocations in
+    1997, 2002 and 2005. The institutional strength most often credited to
+    Botswana's colonial inheritance was built on a land-tenure framework
+    that structurally excluded one community from the outset.
+  colonial_legacy_citations: [c2, c14, c11]
+  key_periods:
+    - title: "Bechuanaland Protectorate and the road to independence"
+      period: "1885-1966"
+      summary: >
+        Britain declared the Bechuanaland Protectorate in March 1885
+        primarily to block Boer and German expansion rather than to extract
+        resources; administration was based across the border in South
+        Africa until 1965, and eight Tswana tribal reserves retained real
+        self-governance under indirect rule. Seretse Khama's 1948 marriage
+        to Ruth Williams triggered a succession crisis serious enough that
+        Britain exiled him from the territory between 1950 and 1956; he
+        returned, renounced his chieftaincy claim, and led the newly formed
+        Botswana Democratic Party to a landslide in the 1965 pre-independence
+        election, becoming the first president at independence on 30
+        September 1966.
+      citations: [c2, c1]
+    - title: "Diamond discovery and the Debswana model"
+      period: "1966-1980s"
+      summary: >
+        Botswana entered independence as one of the world's poorest
+        countries, with roughly 90% of the population in absolute poverty.
+        Diamond-bearing kimberlite discovered at Orapa in the 1960s led to
+        the 1969 formation of Debswana as an equal 50-50 joint venture
+        between the government and De Beers. Diamond revenue, channelled
+        partly into the Pula Fund sovereign wealth fund established in
+        1994, financed rapid infrastructure and human-capital investment
+        and made Botswana one of the fastest-growing economies in the world
+        through the 1980s.
+      citations: [c3, c1, c6]
+    - title: "Democratic consolidation and the HIV/AIDS crisis"
+      period: "1980s-2000s"
+      summary: >
+        The Botswana Democratic Party governed continuously and the country
+        held regular multiparty elections throughout the period without the
+        interruptions common elsewhere on the continent, building one of
+        Africa's most durable democratic records. That institutional
+        strength coexisted with a catastrophic public health crisis: HIV
+        prevalence reached roughly 28% by the early 2000s, among the
+        highest ever recorded, and life expectancy collapsed to around
+        46-47 years at the epidemic's peak. In 2002 Botswana became the
+        first country in sub-Saharan Africa to launch a national programme
+        -- Masa -- providing free antiretroviral therapy to all citizens.
+      citations: [c9, c8]
+    - title: "Diamond downturn and the 2024 change of government"
+      period: "2022-2025"
+      summary: >
+        A global downturn in demand for mined diamonds, compounded by
+        competition from lab-grown stones, slowed Botswana's GDP growth
+        from 5.5% in 2022 to a projected 1% in 2024 and pushed unemployment
+        to 27%; the Pula Fund shrank from roughly $1.8 billion in 2018 to
+        about $142 million by August 2024 as the government drew on it to
+        cover budget deficits. In the October 2024 general election the
+        Botswana Democratic Party, in power since independence, was reduced
+        to 4 of 61 seats; opposition leader Duma Boko was sworn in as
+        president on 1 November 2024, and outgoing president Mokgweetsi
+        Masisi conceded that "we got it wrong big time in the eyes of the
+        people."
+      citations: [c7, c6, c4, c5]
+
+pillars:
+  A:
+    summary: >
+      All six governance indicators are directly measured, and Botswana
+      scores among the strongest in the index on each: Political Stability,
+      Government Effectiveness, Regulatory Quality, Rule of Law, Control of
+      Corruption and Voice and Accountability all place well above the
+      African median, consistent with 58 years of uninterrupted multiparty
+      rule that ended, without violence, in the October 2024 election. That
+      election is itself the strongest recent evidence for the score: an
+      incumbent party reduced to 4 of 61 seats conceded within two days and
+      handed power to the opposition, the first such transfer since
+      independence. The pillar's institutional strength has a documented
+      limit, however: the San (Basarwa) minority has pursued a land-rights
+      claim against the state since the 1990s, and despite a 2006 High
+      Court ruling in their favour, a December 2022 Court of Appeal
+      decision still denied a San family permission to bury a relative on
+      ancestral land inside the Central Kalahari Game Reserve.
+    drivers:
+      - "all 6 governance indicators directly measured, among the strongest in the index"
+      - "Oct 2024 election: incumbent conceded within two days after losing 90% of its seats, first transfer of power since independence"
+      - "San/Basarwa land-rights dispute unresolved since the 1990s despite a 2006 court victory; Dec 2022 ruling still denied land access"
+    citations: [c4, c5, c11, c12]
+  B:
+    summary: >
+      GDP per capita (PPP) scores near the top of the index and GDP growth,
+      despite a recent slowdown, still scores above the African median.
+      That headline strength sits over a narrow base: diamonds account for
+      roughly 80% of export revenue and about a third of government income,
+      and the 2023-2025 downturn in global diamond demand, worsened by
+      competition from lab-grown stones, slowed growth to a projected 1%
+      for 2024 and pushed unemployment to 27%. The Pula Fund -- the
+      clearest institutional evidence Botswana avoided the commodity
+      "resource curse" -- shrank from roughly $1.8 billion in 2018 to about
+      $142 million by August 2024 as government deficits drew it down, a
+      live test of whether that institutional strength holds under
+      sustained fiscal pressure. Domestic credit to the private sector
+      remains thin. Gini was not measured this year.
+    drivers:
+      - "GDP per capita near the top of the index; growth score still above median despite the 2024 slowdown"
+      - "diamonds ~80% of exports, ~1/3 of government revenue -- deep commodity concentration"
+      - "Pula Fund fell from ~$1.8B (2018) to ~$142M (Aug 2024) -- a real stress test of the resource-curse-avoidance story"
+      - "domestic credit to private sector thin; Gini not measured this year"
+    citations: [c5, c6, c7, c3]
+  D:
+    summary: >
+      Life expectancy above 69 years and safely managed drinking-water
+      access above 63% both score well, and both are recent achievements
+      rather than constants: life expectancy was roughly 46-47 years as
+      recently as 2000-2001, at the peak of an HIV/AIDS epidemic that
+      reached close to 28% adult prevalence, among the highest ever
+      recorded. Botswana's 2002 Masa programme was the first free,
+      universal antiretroviral therapy programme in sub-Saharan Africa, and
+      by 2022 the country had met the UNAIDS 95-95-95 treatment targets; in
+      May 2025 it became the first high-HIV-burden country to reach WHO's
+      "gold tier" status for eliminating mother-to-child HIV transmission.
+      Infant mortality, while improved, still scores only moderately, and
+      severe food insecurity scores poorly -- affecting roughly a quarter
+      of the population, consistent with the drought conditions documented
+      under Pillar F. One of five indicators was not measured this year.
+    drivers:
+      - "life expectancy recovered from ~46-47 (2000-01, HIV peak) to 69+ today"
+      - "May 2025: first high-HIV-burden country to reach WHO gold-tier status on mother-to-child transmission"
+      - "infant mortality moderate; severe food insecurity poor (~26% of population), tied to drought"
+    citations: [c8, c9]
+  E:
+    summary: >
+      Political Stability and Absence of Violence, the pillar's most
+      current indicator, scores among the highest in the index, consistent
+      with Botswana's record of peaceful elections and the orderly 2024
+      transfer of power. The rest of the pillar is less reassuring on
+      closer inspection: the female intentional-homicide rate, carried
+      forward rather than freshly measured, scores at the very bottom of
+      the index's scale -- a striking figure this record could not further
+      explain without a dedicated source and flags for the next research
+      pass rather than guessing at a cause. The overall intentional-homicide
+      rate is likewise carried forward, and internally displaced persons
+      data is entirely absent, which is unsurprising for a country without
+      active internal conflict but means this pillar's strong headline
+      score rests on aging sub-indicators as much as on the current
+      Political Stability figure.
+    drivers:
+      - "Political Stability freshly measured, among the highest in the index"
+      - "female homicide rate scores at the bottom of the scale (carried-forward data) -- flagged, not yet explained"
+      - "overall homicide rate carried forward; IDP data entirely absent"
+    citations: [c4]
+  F:
+    summary: >
+      Only two of four indicators were freshly measured this year.
+      Botswana's electricity generation is overwhelmingly fossil-fuel
+      dependent -- almost entirely coal-fired, per the carried-forward
+      figure -- which is a genuine vulnerability rather than an index
+      artifact: unlike the CO2-per-capita "wealth proxy" pattern documented
+      elsewhere in this project (methodology/METHODOLOGY_REVIEW.md), where
+      the very poorest countries score artificially well simply for lacking
+      industry, Botswana's own per-capita emissions are comparatively high
+      for the region, and its coal dependence is a real, current
+      energy-transition risk. Agricultural land share, freshly measured, is
+      moderate. Freshwater withdrawal is carried forward despite drought
+      being an acute and worsening pressure: the government declared
+      2022/23 a severe agricultural drought year, and while above-average
+      2025 rainfall eased some conditions, it brought flooding and crop
+      damage of its own.
+    drivers:
+      - "only 2 of 4 indicators freshly measured"
+      - "electricity generation almost entirely fossil-fuel (coal) -- a genuine vulnerability, not the usual wealth-proxy artifact"
+      - "freshwater withdrawal carried forward despite active, worsening drought pressure"
+      - "2025 brought flooding after the 2022/23 drought -- rainfall increasingly unpredictable, not simply drier"
+    citations: [c10]
+  G:
+    summary: >
+      Electricity access at 76% and basic drinking-water access above 91%
+      both score well and sit among the stronger infrastructure profiles in
+      the index, consistent with decades of diamond-revenue-financed public
+      investment. Handwashing-facility coverage, estimated from regional
+      peers rather than measured directly, scores markedly lower, pointing
+      to a gap between basic and higher-quality service delivery similar to
+      the pattern documented in Pillar D's water indicators. Social
+      protection and labour programme coverage was not measured this year,
+      leaving a real evidence gap for a country whose 2024 election was won
+      substantially on promises to expand exactly this kind of coverage --
+      doubling the minimum wage and improving social services were central
+      UDC campaign pledges.
+    drivers:
+      - "electricity access 76%, basic water access 91.7% -- both strong"
+      - "handwashing coverage (regional-mean estimate) markedly weaker -- basic vs quality-of-service gap"
+      - "social protection coverage unmeasured, notable given it was a central 2024 campaign issue"
+    citations: [c5]
+
+recent:
+  primary:
+    - headline: "Botswana Democratic Party loses power after 58 years"
+      date: 2024-11-01
+      summary: >
+        In the 30 October 2024 general election, the ruling Botswana
+        Democratic Party was reduced to just 4 of 61 directly elected
+        seats, down from 38 in 2019, amid a diamond-market downturn that
+        had slowed growth to a projected 1% and pushed unemployment to 27%.
+        The opposition Umbrella for Democratic Change, led by Harvard-
+        educated human rights lawyer Duma Boko, won 36 seats; President
+        Mokgweetsi Masisi conceded within two days, saying "we got it wrong
+        big time in the eyes of the people," and Boko was sworn in on 1
+        November 2024.
+      why_it_matters: >
+        The first change of governing party since independence, and the
+        clearest recent evidence behind Pillar A's high governance score.
+      news_url: "https://www.aljazeera.com/news/2024/11/1/botswanas-ruling-party-loses-power-after-six-decades-early-results-show"
+      wikipedia_url: "https://en.wikipedia.org/wiki/2024_Botswana_general_election"
+      sentiment: positive
+    - headline: "Botswana becomes first high-HIV-burden country to reach WHO gold-tier status"
+      date: 2025-05-01
+      summary: >
+        In May 2025 Botswana became the first high-HIV-burden country, and
+        the first in Africa, to achieve WHO's gold-tier certification for
+        eliminating mother-to-child transmission of HIV, following the 2002
+        Masa programme that made it the first country in sub-Saharan Africa
+        to offer free antiretroviral therapy to all citizens. HIV
+        prevalence had reached roughly 28% in the early 2000s; by 2022
+        Botswana had met the UNAIDS 95-95-95 treatment targets ahead of the
+        global 2030 deadline.
+      why_it_matters: >
+        Directly explains the life-expectancy recovery documented under
+        Pillar D, from roughly 46-47 years at the epidemic's peak to over
+        69 today.
+      news_url: "https://www.cdc.gov/global-hiv-tb/php/success-stories/a-global-first-botswana-achieves-gold-tier-status-protecting-mothers-and-infants.html"
+      wikipedia_url: ""
+      sentiment: positive
+    - headline: "Diamond downturn empties the Pula Fund and reshapes the De Beers partnership"
+      date: 2025-02-25
+      summary: >
+        Facing a prolonged diamond-market downturn and competition from
+        lab-grown stones, Botswana signed a renegotiated sales agreement
+        with De Beers in February 2025: the state's Okavango Diamond
+        Company will sell 30% of Debswana's output directly, rising to 50%
+        by 2035, and Debswana's mining licences were extended 25 years. The
+        deal followed the government drawing down the Pula Fund, its
+        diamond-revenue sovereign wealth fund, from roughly $1.8 billion in
+        2018 to about $142 million by August 2024 to cover budget deficits.
+      why_it_matters: >
+        A live test of whether Botswana's resource-governance model,
+        credited with avoiding the commodity "resource curse," holds up
+        under a sustained demand shock.
+      news_url: "https://www.debeersgroup.com/about-us/case-studies/2025/strengthening-our-partnership-with-botswana"
+      wikipedia_url: "https://en.wikipedia.org/wiki/Debswana"
+      sentiment: mixed
+  extended:
+    - headline: "Botswana Court of Appeal again denies San family land access"
+      date: 2022-12-01
+      summary: >
+        In December 2022 Botswana's Court of Appeal denied a San (Basarwa)
+        family permission to bury a relative on ancestral land inside the
+        Central Kalahari Game Reserve, despite a 2006 High Court ruling
+        that the community's 1997-2005 evictions had been unlawful and
+        unconstitutional. The government has separately cemented over the
+        community's water borehole, and the family has taken the case to
+        international human-rights bodies including the African Commission
+        on Human and Peoples' Rights.
+      why_it_matters: >
+        Shows the limits of Pillar A's strong governance score: a court
+        victory nearly two decades old has not translated into enforced
+        land rights.
+      news_url: "https://www.fairplanet.org/story/the-forced-eviction-of-botswanas-indigenous-people/"
+      wikipedia_url: "https://en.wikipedia.org/wiki/Central_Kalahari_Game_Reserve"
+      sentiment: negative
+
+events:
+  - year: 1966
+    type: independence
+    title: "Botswana gains independence under Seretse Khama"
+    description: >
+      The Bechuanaland Protectorate became independent Botswana on 30
+      September 1966, with Seretse Khama -- whose 1948 marriage to Ruth
+      Williams had triggered a six-year British exile -- as the first
+      president.
+    url: "https://en.wikipedia.org/wiki/History_of_Botswana"
+    direction: improve
+  - year: 1969
+    type: economic
+    title: "Debswana formed; diamond era begins"
+    description: >
+      Diamond-bearing kimberlite discovered at Orapa in the 1960s led to
+      the formation of Debswana as an equal government-De Beers joint
+      venture, transforming Botswana from one of the world's poorest
+      countries into one of its fastest-growing economies.
+    url: "https://en.wikipedia.org/wiki/Debswana"
+    direction: improve
+  - year: 2006
+    type: constitutional
+    title: "High Court rules San evictions unlawful"
+    description: >
+      Botswana's High Court ruled that the government's 1997-2005 forced
+      evictions of the San (Basarwa) from the Central Kalahari Game Reserve
+      were unlawful and unconstitutional, though the government
+      subsequently cemented over the community's water borehole and access
+      remained restricted.
+    url: "https://en.wikipedia.org/wiki/Central_Kalahari_Game_Reserve"
+    direction: mixed
+  - year: 2024
+    type: election
+    title: "Botswana Democratic Party loses power after 58 years"
+    description: >
+      The ruling BDP was reduced to 4 of 61 seats in the 30 October 2024
+      general election amid a diamond-market downturn; opposition leader
+      Duma Boko was sworn in as president on 1 November 2024 in the
+      country's first peaceful transfer of governing power since
+      independence.
+    url: "https://en.wikipedia.org/wiki/2024_Botswana_general_election"
+    direction: improve
+
+citations:
+  - id: c1
+    url: "https://en.wikipedia.org/wiki/History_of_Botswana"
+    source_type: wikipedia
+    title: "History of Botswana"
+    accessed: 2026-08-09
+    verified: true
+  - id: c2
+    url: "https://en.wikipedia.org/wiki/Bechuanaland_Protectorate"
+    source_type: wikipedia
+    title: "Bechuanaland Protectorate"
+    accessed: 2026-08-09
+    verified: true
+  - id: c3
+    url: "https://en.wikipedia.org/wiki/Debswana"
+    source_type: wikipedia
+    title: "Debswana"
+    accessed: 2026-08-09
+    verified: true
+  - id: c4
+    url: "https://en.wikipedia.org/wiki/2024_Botswana_general_election"
+    source_type: wikipedia
+    title: "2024 Botswana general election"
+    accessed: 2026-08-09
+    verified: true
+  - id: c5
+    url: "https://www.aljazeera.com/news/2024/11/1/botswanas-ruling-party-loses-power-after-six-decades-early-results-show"
+    source_type: news
+    title: "Botswana's ruling party loses power after six decades, early results show (Al Jazeera)"
+    accessed: 2026-08-09
+    verified: true
+  - id: c6
+    url: "https://en.wikipedia.org/wiki/Pula_Fund"
+    source_type: wikipedia
+    title: "Pula Fund"
+    accessed: 2026-08-09
+    verified: true
+  - id: c7
+    url: "https://businessfront.com/finance/news/botswana-launches-new-wealth-fund/"
+    source_type: news
+    title: "New Botswana wealth fund targets economic stability amid diamond slump"
+    accessed: 2026-08-09
+    verified: true
+  - id: c8
+    url: "https://www.cdc.gov/global-hiv-tb/php/success-stories/a-global-first-botswana-achieves-gold-tier-status-protecting-mothers-and-infants.html"
+    source_type: official
+    title: "A Global First: Botswana Achieves 'Gold Tier' Status Protecting Mothers and Infants (CDC)"
+    accessed: 2026-08-09
+    verified: true
+  - id: c9
+    url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC12929189/"
+    source_type: academic
+    title: "Botswana's 95-95-95 Achievement: Pathways to HIV Epidemic Control"
+    accessed: 2026-08-09
+    verified: true
+  - id: c10
+    url: "https://dialogue.earth/en/climate/botswanas-severe-drought-and-the-struggle-to-adapt/"
+    source_type: news
+    title: "Botswana's severe drought and the struggle to adapt (Dialogue Earth)"
+    accessed: 2026-08-09
+    verified: true
+  - id: c11
+    url: "https://en.wikipedia.org/wiki/Central_Kalahari_Game_Reserve"
+    source_type: wikipedia
+    title: "Central Kalahari Game Reserve"
+    accessed: 2026-08-09
+    verified: true
+  - id: c12
+    url: "https://www.fairplanet.org/story/the-forced-eviction-of-botswanas-indigenous-people/"
+    source_type: news
+    title: "The forced eviction of Botswana's indigenous people (FairPlanet)"
+    accessed: 2026-08-09
+    verified: true
+  - id: c13
+    url: "https://www.debeersgroup.com/about-us/case-studies/2025/strengthening-our-partnership-with-botswana"
+    source_type: official
+    title: "Strengthening our partnership with Botswana (De Beers Group)"
+    accessed: 2026-08-09
+    verified: true
+  - id: c14
+    url: "https://iwgia.org/en/botswana/256-history"
+    source_type: academic
+    title: "History: Botswana (International Work Group for Indigenous Affairs)"
+    accessed: 2026-08-09
+    verified: true
+
+balance:
+  n_positive: 2
+  n_negative: 1
+  n_mixed: 1
+  note: >
+    This record leans more positive than several prior countries in this
+    pass, consistent with Botswana's genuinely strong composite scores
+    across most pillars -- but the balance is not manufactured. The diamond
+    downturn driving the 2024 election result is real and ongoing, coded
+    mixed rather than positive because it combines a democratic success
+    (peaceful transfer of power) with a genuine economic shock (a
+    near-empty sovereign wealth fund and 27% unemployment). The San/Basarwa
+    land-rights case is a decades-old, still-unresolved failure of the same
+    governance institutions Pillar A scores highly, and is documented at
+    full weight -- negative, not softened -- rather than folded quietly
+    into the otherwise positive framing of Botswana's institutional story.

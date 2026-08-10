@@ -65,15 +65,19 @@ countries:
     next_action: 'EXPAND: check Al-Shabaab offensive status; check 2026 humanitarian funding;
       check if Pillar C has gained coverage; find a dedicated source for Mogadishu-Puntland
       tension'
-backlog:
   BWA:
     name: Botswana
     region: South
     first_pass: true
     reason: high and stable; landlocked; resource governance counter-example
-    iteration_count: 0
-    last_updated: null
-    next_action: create baseline from blueprint
+    iteration_count: 1
+    last_updated: '2026-08-09'
+    next_action: 'EXPAND: find a dedicated source for the female intentional-homicide rate
+      under Pillar E (carried-forward, scores 0.0, unexplained); check if social protection
+      coverage has since been measured; follow the Feb 2025 ODC/De Beers sales agreement
+      for implementation news; check whether the Pula Fund has stabilised past its Aug 2024
+      low; check for a resolution in the San/Basarwa land-access case since Dec 2022'
+backlog:
   NGA:
     name: Nigeria
     region: West
@@ -523,3 +527,27 @@ meta_notes:
   on the link checker: 13/13 citations resolved on the first attempt, zero 403s, zero 404s
   -- so the fix does not create false positives on healthy runs, which matters as much as
   catching real problems.'
+- '2026-08-09: BWA CREATE run complete (14 sources opened and verified; 1 blocked narrative_check.py
+  --links with HTTP 403 -- CDC, same bot-detection pattern as before, cross-checked against
+  an independent academic source (PMC 95-95-95 review) rather than taken on faith). First
+  first-pass country with a genuinely positive-skewed recent record, and the metaprompt held
+  up under it: the record does not read as hagiography because two real counterweights were
+  found and given full weight rather than softened -- (1) the Pula Fund, Botswana''s sovereign-wealth
+  evidence for avoiding the resource curse, shrank from ~$1.8B (2018) to ~$142M (Aug 2024)
+  under sustained budget deficits, and (2) the San/Basarwa land-rights dispute remains unresolved
+  since the 1990s despite a 2006 court victory, with a Dec 2022 Court of Appeal ruling still
+  denying land access. Also traced the CKGR dispute to a specific colonial-era mechanism not
+  previously used in this corpus: the 1899 Native Reserves Proclamation demarcated tribal
+  land for eight recognised Tswana polities but never allocated the San a reserve, because
+  their land use did not fit the Tswana-organised system -- a genuine EXPAND of context/colonial_history.yaml
+  rather than a restatement of the "light footprint, Khama, diamonds" story it already tells.
+  Pillar F (37.1, thin) is genuinely different from the DZA/COD co2_pc wealth-proxy pattern
+  flagged in earlier notes: Botswana''s near-total coal-fired electricity generation is a
+  real, current vulnerability, not a scoring artifact of poverty -- worth remembering that
+  the wealth-proxy pattern is a recurring risk to check for, not an assumption to apply automatically.
+  One fact flagged rather than guessed at: Pillar E''s female intentional-homicide rate (8.32/100k,
+  carried forward) scores 0.0, and no dedicated source was found to explain it -- left as an
+  explicit next_action rather than speculated on. Balance: 2 positive / 1 negative / 1 mixed.
+  Next country: Nigeria (NGA) -- largest population, federal, mixed signals across pillars;
+  expect this to be a genuinely different shape again (a large, heterogeneous federation rather
+  than a single national story).'

@@ -3,7 +3,7 @@
 The document future runs read before doing anything. Machine-readable twin:
 `narrative/state.yaml`.
 
-*Seeded 2026-08-09. Research runs so far: Mauritius, Ghana, Algeria, DR Congo, Somalia (all CREATE).*
+*Seeded 2026-08-09. Research runs so far: Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana (all CREATE).*
 
 ---
 
@@ -26,7 +26,7 @@ An audit is forced early if a single run inflates the citation count by more tha
 
 ## Status
 
-**5 of 54 countries have a record (Mauritius, Ghana, Algeria, DR Congo, Somalia). 4 of the first pass remain.**
+**6 of 54 countries have a record (Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana). 3 of the first pass remain.**
 
 ### First pass — 9 countries
 
@@ -42,7 +42,7 @@ whose ranks swing hardest with the weighting method.
 | DZA | Algeria | rank swings 9-45 with weighting method; Arabophone; hydrocarbon economy | **done — iteration 1** |
 | COD | Democratic Rep. Congo | bottom decile; vast and low-coverage; long conflict history | **done — iteration 1** |
 | SOM | Somalia | lowest ranks; state reconstitution; sparse data is the hard case | **done — iteration 1** |
-| BWA | Botswana | high and stable; landlocked; resource governance counter-example | backlog |
+| BWA | Botswana | high and stable; landlocked; resource governance counter-example | **done — iteration 1** |
 | NGA | Nigeria | largest population; federal; mixed signals across pillars | backlog |
 | RWA | Rwanda | strong development indicators alongside contested governance | backlog |
 | TCD | Chad | Sahel; 2021 coup; the worked example used in the blueprint | backlog |
@@ -101,6 +101,72 @@ Append one line per run: date, country, mode, what changed, what was removed.
   (positive), with the Eurobond restructuring coded mixed because it is
   recovery from a 2022 default, not the absence of one.
 
+- **2026-08-09 — DZA — CREATE.** Full baseline built: historical overview,
+  colonial legacy, 4 key_periods, 6 pillar summaries (Pillar C left empty
+  — greyed at 1/8 measured). 13 sources opened and verified: 5 Wikipedia,
+  4 news, 3 academic/think-tank, 1 official US State Dept. Confirmed the
+  exact mechanism behind the rank 9-45 swing flagged in
+  `methodology/MANUAL_REVIEW.md` item 9a: Pillar F scores 4.4/100 with 3/4
+  indicators directly measured (not imputed), crushing the non-compensatory
+  geometric mean while PCA discounts the same pillar because it loads
+  inversely against the general stability factor. Flagged a genuine
+  data-provenance issue in `pillars.E`: the displaced-persons figure is a
+  regional estimate, not a direct measurement of Algeria. `--links` passes
+  0 errors, 2 more bot-blocked domains (france24, bloomberg) confirmed real.
+
+- **2026-08-09 — COD — CREATE.** Full baseline built: historical overview,
+  colonial legacy, 4 key_periods, 6 pillar summaries. 14 sources opened and
+  verified — the most of any run so far, correcting the prior assumption
+  that COD would be sparsely sourced. One genuine dead link caught and
+  fixed: a World Bank PDF returned a real HTTP 404 (confirmed via `curl`);
+  replaced with a working citation for the same claim (DRC ~70% of global
+  cobalt supply) rather than deleting it. First run to trigger the balance
+  warning as a true positive: 0 positive / 1 negative / 3 mixed, left as-is
+  with `balance.note` naming two real structural counterweights outside the
+  recent window (23-year +14.7-point composite gain; the 2019 first
+  peaceful transfer of power). Pillar F is COD's highest-scoring pillar
+  (78.4) — the mirror image of Algeria's lowest, same co2_pc wealth-proxy
+  mechanism in reverse.
+
+- **2026-08-09 — SOM — CREATE.** Full baseline built: historical overview,
+  colonial legacy, 4 key_periods, 6 pillar summaries. 13 sources opened and
+  verified. Corrected the DZA-run assumption that low-ranked countries mean
+  low index-data coverage: like COD, only Pillar C is greyed here too — A,
+  B, D, E, G all clear the reliable tier despite catastrophic scores,
+  because reliability measures coverage, not severity. Genuine positive
+  counterweight used at full weight: Somaliland's free, fair, peaceful
+  November 2024 election, placed in `recent.primary` with an honest caveat
+  that it isn't reflected in national-level governance indicators. Balance
+  1 positive / 3 negative / 0 mixed — did not trigger the all-negative
+  warning (that rule targets zero positives specifically). Cleanest link
+  check yet: 13/13 resolved first attempt, zero 403s, zero 404s.
+
+- **2026-08-09 — BWA — CREATE.** Full baseline built: historical overview,
+  colonial legacy, 4 key_periods, 6 pillar summaries (Pillar C left empty —
+  greyed at 1/8 measured). 14 sources opened and verified: 6 Wikipedia, 4
+  news, 2 official, 2 academic. `--links` passes 0 errors, 1 warning (CDC
+  blocked with HTTP 403, same bot-detection pattern seen on every prior
+  run — cross-checked against an independent academic source, a PMC review
+  of the same 95-95-95/gold-tier facts, rather than taken on faith). First
+  first-pass country with a genuinely positive-skewed recent record: the
+  October 2024 election that ended the BDP's 58-year rule, and the May 2025
+  WHO gold-tier HIV/AIDS certification, are both real and both used at full
+  positive weight. The record avoids hagiography by giving equal weight to
+  two real counterweights: the Pula Fund (Botswana's sovereign-wealth
+  evidence for avoiding the resource curse) shrank from ~$1.8B (2018) to
+  ~$142M (Aug 2024) under budget deficits, and the San/Basarwa land-rights
+  dispute remains unresolved since the 1990s despite a 2006 court victory,
+  with a December 2022 ruling still denying land access. `colonial_legacy`
+  traces the CKGR dispute to a specific, previously-unused mechanism: the
+  1899 Native Reserves Proclamation demarcated land for eight recognised
+  Tswana polities but never allocated the San a reserve. Pillar F (37.1,
+  thin) is explicitly NOT the usual co2_pc wealth-proxy pattern — Botswana's
+  near-total coal-fired electricity generation is a real, current
+  vulnerability, not a scoring artifact. Balance: 2 positive / 1 negative /
+  1 mixed. One item flagged rather than guessed at: Pillar E's female
+  intentional-homicide rate (carried forward) scores 0.0 with no source
+  found to explain it — logged as `next_action` for the EXPAND pass.
+
 ---
 
 ## Meta-notes
@@ -148,6 +214,29 @@ Things a future run should know about how to work, not about a specific country.
   story rather than conflict/crisis story) and to be a useful check that the
   metaprompt handles a positive-skewed country as carefully as a
   negative-skewed one.
+- **2026-08-09** — Found and fixed a gap in this ledger itself: the Run log
+  above was missing entries for DZA, COD, and SOM (only MUS and GHA had been
+  recorded, despite all five CREATE runs being reflected in `state.yaml`'s
+  meta_notes). Backfilled from the session record so the Run log and
+  meta_notes stay in sync going forward — a future run should treat any
+  mismatch between the two as a signal to check for a similar gap, not
+  assume the shorter one is complete.
+- **2026-08-09** — BWA confirms the expectation from the note above: the
+  research read as a genuinely different shape (institutional-strength
+  story, not conflict/crisis), and staying honest about it took real work —
+  two counterweights (Pula Fund depletion, the unresolved San/Basarwa
+  land-rights case) had to be actively sought out and given full weight,
+  not just left as an afterthought to a success narrative. Also worth
+  noting for future runs: a country's Pillar F score should NOT be assumed
+  to be the co2_pc wealth-proxy artifact (documented for DZA/COD) by
+  default — BWA's low F score turned out to be a genuine, current
+  vulnerability (near-total coal-fired electricity) once actually checked,
+  not the same artifact recurring a third time. Check the mechanism each
+  time rather than pattern-matching to the last country that had a similar
+  score. Next country: Nigeria (NGA) — largest population, federal, mixed
+  signals across pillars; expect a large, heterogeneous federation to
+  produce a genuinely different research shape again rather than fitting
+  either the crisis-country or stable-country template used so far.
 
 ---
 
