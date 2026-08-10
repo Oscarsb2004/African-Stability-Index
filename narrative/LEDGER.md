@@ -3,7 +3,7 @@
 The document future runs read before doing anything. Machine-readable twin:
 `narrative/state.yaml`.
 
-*Seeded 2026-08-09. Research runs so far: Mauritius, Ghana, Algeria, DR Congo (all CREATE).*
+*Seeded 2026-08-09. Research runs so far: Mauritius, Ghana, Algeria, DR Congo, Somalia (all CREATE).*
 
 ---
 
@@ -26,7 +26,7 @@ An audit is forced early if a single run inflates the citation count by more tha
 
 ## Status
 
-**4 of 54 countries have a record (Mauritius, Ghana, Algeria, DR Congo). 5 of the first pass remain.**
+**5 of 54 countries have a record (Mauritius, Ghana, Algeria, DR Congo, Somalia). 4 of the first pass remain.**
 
 ### First pass — 9 countries
 
@@ -41,7 +41,7 @@ whose ranks swing hardest with the weighting method.
 | GHA | Ghana | mid-high; Anglophone West Africa; repeated peaceful transfers of power | **done — iteration 1** |
 | DZA | Algeria | rank swings 9-45 with weighting method; Arabophone; hydrocarbon economy | **done — iteration 1** |
 | COD | Democratic Rep. Congo | bottom decile; vast and low-coverage; long conflict history | **done — iteration 1** |
-| SOM | Somalia | lowest ranks; state reconstitution; sparse data is the hard case | backlog |
+| SOM | Somalia | lowest ranks; state reconstitution; sparse data is the hard case | **done — iteration 1** |
 | BWA | Botswana | high and stable; landlocked; resource governance counter-example | backlog |
 | NGA | Nigeria | largest population; federal; mixed signals across pillars | backlog |
 | RWA | Rwanda | strong development indicators alongside contested governance | backlog |
@@ -130,12 +130,24 @@ Things a future run should know about how to work, not about a specific country.
   research-source sparsity in future country selection reasoning.
 - **2026-08-09** — The link checker has now caught one confirmed dead citation
   (COD, a World Bank PDF) and repeatedly distinguished it correctly from
-  bot-detection 403s (MUS, GHA, DZA). Confidence in the checker is earned, not
-  assumed — each run should still treat a FAIL from it as meaning what it
-  says. Next country: Somalia (SOM) — lowest ranks, state reconstitution,
-  genuinely the sparsest-data case in the first pass; a good test of whether
-  the "leave greyed pillars unwritten" discipline holds when almost
-  everything is greyed.
+  bot-detection 403s (MUS, GHA, DZA), then ran clean with zero false positives
+  on SOM's 13 citations. Confidence in the checker is earned, not assumed —
+  each run should still treat a FAIL from it as meaning what it says.
+- **2026-08-09** — Revise the "sparsest data" assumption for future country
+  selection: of the four conflict/low-income countries researched so far
+  (COD, SOM), only ONE pillar (C) has ever been greyed, not "most of them" as
+  the DZA-run note speculated. The index's reliability tiers are more
+  forgiving than raw pillar scores suggest — a country can score 16.8 on
+  governance while still being classified RELIABLE, because reliability
+  measures how much of the pillar was actually measured, not how good the
+  measured values are. Don't assume low-ranked countries are low-coverage
+  countries; check country_facts.py output directly each time rather than
+  inferring from rank. Next country: Botswana (BWA) — high and stable,
+  landlocked, a resource-governance counter-example; expect the research to
+  look structurally different from the last two (institutional strength
+  story rather than conflict/crisis story) and to be a useful check that the
+  metaprompt handles a positive-skewed country as carefully as a
+  negative-skewed one.
 
 ---
 

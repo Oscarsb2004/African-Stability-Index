@@ -55,15 +55,17 @@ countries:
     next_action: 'EXPAND: check Washington peace agreement implementation; check 2026 cobalt
       quota effects; check if Pillar C has gained coverage; deepen the 2018-2019 disputed-election
       vote-count characterization with a dedicated source'
-backlog:
   SOM:
     name: Somalia
     region: East
     first_pass: true
     reason: lowest ranks; state reconstitution; sparse data is the hard case
-    iteration_count: 0
-    last_updated: null
-    next_action: create baseline from blueprint
+    iteration_count: 1
+    last_updated: '2026-08-09'
+    next_action: 'EXPAND: check Al-Shabaab offensive status; check 2026 humanitarian funding;
+      check if Pillar C has gained coverage; find a dedicated source for Mogadishu-Puntland
+      tension'
+backlog:
   BWA:
     name: Botswana
     region: South
@@ -504,3 +506,20 @@ meta_notes:
   in mirror image. Worth keeping in mind for future countries: extreme Pillar F scores in
   either direction likely trace to the same methodological pattern, not a real environmental
   story.'
+- '2026-08-09: SOM CREATE run complete (13 sources opened and verified). Corrects the expectation
+  set after the DZA run: SOM is NOT the sparsest-coverage case either. Like COD, only Pillar
+  C is greyed (1/8 measured); A/B/D/E/G all clear the RELIABLE tier despite several individual
+  indicators being regional-mean or carried-forward estimates -- an important distinction
+  made explicit in pillars.B and pillars.E: the INDEX trusts these numbers (enough measured
+  coverage to clear the reliability bar) even though the VALUES themselves are catastrophic.
+  Reliability tier and score severity are independent axes; conflating them would misrepresent
+  what greying means. Genuine positive counterweight found and used at full weight: Somaliland
+  (self-governing, unrecognised, same ISO3 as Somalia in this index) held a free/fair/peaceful
+  election in Nov 2024 -- used as recent.primary, not downgraded to a footnote, with an honest
+  caveat in pillars.A that it is not reflected in the national-level WGI scores the index
+  actually measures. Balance came out 1 positive / 3 negative / 0 mixed -- did not trigger
+  the "0 positive" warning (that rule is specifically about zero positives with nonzero negatives,
+  not about negative-skew generally) and was not forced toward it either. Cleanest run yet
+  on the link checker: 13/13 citations resolved on the first attempt, zero 403s, zero 404s
+  -- so the fix does not create false positives on healthy runs, which matters as much as
+  catching real problems.'

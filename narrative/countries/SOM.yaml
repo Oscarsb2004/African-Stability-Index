@@ -1,0 +1,430 @@
+meta:
+  iso3: SOM
+  name: Somalia
+  last_updated: 2026-08-09
+  iteration_count: 1
+  next_action: >
+    EXPAND: (1) check whether the Al-Shabaab 2025 offensive has been
+    repelled or continues to threaten Mogadishu by the next review; (2)
+    check 2026 humanitarian funding levels and whether the food crisis has
+    resolved or worsened -- funding had fallen to ~15% of need by April
+    2026 at last check; (3) check if Pillar C (greyed at 1/8 measured) has
+    gained coverage; (4) the Mogadishu-Puntland tension mentioned in
+    pillars.A is currently summarised only secondhand from the Soufan
+    Center piece -- find a dedicated source and deepen it.
+  model_used: claude-sonnet-5
+
+historical:
+  overview: >
+    British Somaliland and Italian Somalia united at independence on 1 July
+    1960 to form the Somali Republic. Mohamed Siad Barre seized power in a
+    1969 coup and ruled as a socialist dictator for 22 years; his fall in
+    January 1991 left no functioning central government, and Somalia became
+    the world's most-cited example of state collapse. Two decades of civil
+    war and warlordism followed, punctuated by the 2004 formation of a
+    Transitional Federal Government in exile in Djibouti and the brief rise
+    of the Islamic Courts Union, which imposed order across much of the
+    south before Ethiopia invaded to remove it in December 2006. Al-Shabaab,
+    formed in 2006 as an ICU splinter, absorbed the resulting insurgency and
+    by 2008 controlled most of southern Somalia, including parts of
+    Mogadishu. An African Union mission (AMISOM, since renamed ATMIS and
+    then AUSSOM) pushed Al-Shabaab out of Mogadishu in 2011 and helped
+    install Somalia's first permanent Federal Government in 2012. The group
+    was never eliminated: it launched a major offensive in February 2025
+    that recaptured territory near the capital and, in March 2025, targeted
+    the president's motorcade directly. Meanwhile Somaliland, the former
+    British protectorate in the north, unilaterally declared independence
+    in 1991 and has since built a comparatively stable, internationally
+    unrecognised administration, most recently demonstrating a peaceful,
+    internationally praised transfer of power after its November 2024
+    presidential election.
+  overview_citations: [c1, c2, c3, c5, c6, c7]
+  colonial_legacy: >
+    The "Somali Question" the partition created was not merely a naming
+    grievance: it drove Somalia's most consequential war. Siad Barre invaded
+    Ethiopia's Ogaden region in July 1977, seeking to unite its
+    ethnic-Somali population -- split from Somalia by the colonial-era
+    border -- with the Somali state. Initial Somali advances collapsed when
+    the Soviet Union switched its backing to Ethiopia and Cuba deployed
+    18,000 troops; Somali forces were routed by March 1978. Analysts widely
+    identify the Ogaden War's defeat as the beginning of the end for Siad
+    Barre's regime, discrediting his government and accelerating the
+    clan-based fragmentation that produced the 1991 state collapse. A
+    second, less remarked legacy is administrative: unlike most African
+    states, which inherited one colonial bureaucratic tradition, the 1960
+    Somali Republic fused British indirect rule in the north with Italian
+    direct rule in the south with no harmonisation period, merging two
+    different legal systems, civil services and languages of administration
+    overnight. That structural incoherence compounded the difficulty of
+    building durable institutions even before Siad Barre's rule, and is a
+    less-cited but real contributor to the state weakness the index's
+    Governance and Structural pillars record today.
+  colonial_legacy_citations: [c13, c2]
+  key_periods:
+    - title: "Colonial partition and the 'Somali Question'"
+      period: "1884-1960"
+      summary: >
+        Somali-inhabited territory was partitioned among Italy (south),
+        Britain (north), and France (Djibouti), with the Ogaden ceded to
+        Ethiopia and the Northern Frontier District to Kenya. British
+        Somaliland and Italian Somalia united at independence on 1 July
+        1960 to form the Somali Republic, fusing two different colonial
+        administrative traditions with no harmonisation period. Full
+        partition detail in context/colonial_history.yaml.
+      citations: [c2]
+    - title: "Siad Barre and the Ogaden War"
+      period: "1969-1991"
+      summary: >
+        Mohamed Siad Barre seized power in a 1969 coup and ruled as a
+        socialist dictator for 22 years. His July 1977 invasion of
+        Ethiopia's Ogaden region, intended to unite the territory's ethnic
+        Somalis with the Somali state, ended in catastrophic defeat by
+        March 1978 after Soviet and Cuban intervention on Ethiopia's side --
+        a loss widely identified as the beginning of his regime's
+        unravelling. Clan-based armed opposition grew through the 1980s and
+        forced Barre from Mogadishu in January 1991.
+      citations: [c13, c2]
+    - title: "State collapse and the stateless period"
+      period: "1991-2004"
+      summary: >
+        The fall of Siad Barre left no functioning central government. For
+        over a decade Somalia was the world's most-cited example of a
+        collapsed state: rival clan militias and warlords controlled
+        territory, while some services -- telecommunications, ports,
+        remittance networks -- were rebuilt privately in the absence of any
+        state. A Transitional Federal Government was formed in exile in
+        Djibouti in 2004, beginning a slow and contested process of
+        reconstitution.
+      citations: [c2, c1]
+    - title: "Islamic Courts, Al-Shabaab, and the road to a federal government"
+      period: "2006-2012"
+      summary: >
+        The Islamic Courts Union briefly imposed order across much of
+        southern Somalia in 2006 before an Ethiopian invasion removed it
+        that December. Al-Shabaab, an ICU splinter formed the same year,
+        absorbed the resulting insurgency and by 2008 controlled most of
+        the south. An African Union mission (AMISOM) pushed the group out
+        of Mogadishu in 2011, clearing the way for Somalia's first
+        permanent Federal Government since 1991, established in 2012.
+      citations: [c3, c5]
+
+pillars:
+  A:
+    summary: >
+      All six governance indicators are directly measured, and all six are
+      among the weakest recorded anywhere in the index -- Control of
+      Corruption and Government Effectiveness both score under 20. This
+      reflects the practical reality of a federal government whose
+      authority is contested even within its own borders: in March 2025 the
+      president's own motorcade was targeted in a bombing attributed to
+      Al-Shabaab, and relations between Mogadishu and regional states such
+      as Puntland have deteriorated over what regional leaders describe as
+      a federal government distracted from core security threats. Somaliland,
+      in the northwest, presents a striking internal contrast not captured
+      by these national-level scores: its November 2024 presidential
+      election was judged free, fair and credible by international
+      observers, and produced a peaceful transfer of power to the
+      opposition.
+    drivers:
+      - "all 6 governance indicators directly measured, all among the weakest in the index"
+      - "March 2025 attack on the president's motorcade illustrates contested authority"
+      - "Mogadishu-Puntland tensions over security priorities"
+      - "Somaliland's free, fair election is a stark internal contrast, not reflected nationally"
+    citations: [c7, c6, c11]
+  B:
+    summary: >
+      GDP per capita is among the lowest scored in the index, though GDP
+      growth is comparatively positive. Domestic credit to the private
+      sector is extremely thin, consistent with a financial system still
+      largely informal and remittance-dependent after three decades without
+      a functioning central bank for most of that period. Inflation,
+      coverage, and Gini data were not directly measured this year and were
+      estimated from regional peers -- a caution particularly relevant
+      here, since Somalia's actual price environment, driven by
+      drought-linked food-price shocks, plausibly differs from its regional
+      neighbours' more than the imputation method assumes.
+    drivers:
+      - "GDP per capita among the lowest in the index; GDP growth comparatively positive"
+      - "domestic credit extremely thin: informal, remittance-dependent financial system"
+      - "inflation/Gini estimated from regional peers -- a weaker assumption than usual given drought-driven price shocks"
+    citations: [c12]
+  D:
+    summary: >
+      Life expectancy under 59 years and infant mortality above 67 per
+      1,000 live births are among the most severe readings anywhere in the
+      index. Severe food insecurity, carried forward rather than freshly
+      measured this year, is nonetheless consistent with the current
+      crisis: the UN and World Food Programme warned in early 2025 that
+      drought, conflict and high food prices could push 4.4 million people
+      -- roughly a quarter of the population -- into crisis-level hunger by
+      mid-2025, with 2024 food production 45% below the long-term average.
+    drivers:
+      - "life expectancy under 59 years; infant mortality above 67/1,000"
+      - "severe food insecurity carried forward, but consistent with the current drought crisis"
+      - "4.4 million people (roughly a quarter of the population) at risk of crisis-level hunger"
+    citations: [c8, c12]
+  E:
+    summary: >
+      Political Stability and Absence of Violence scores among the very
+      lowest recorded in the index, and the displaced-persons figure -- 210
+      per 1,000 population, meaning roughly one in five people -- is
+      directly measured, current, and among the highest displacement rates
+      in the world. It reflects the compounding effect of Al-Shabaab's
+      February 2025 offensive, which reversed years of government
+      territorial gains and advanced toward Mogadishu, alongside a severe
+      drought that Amnesty International reported in November 2025 was
+      displacing thousands of additional people whom authorities were
+      failing to protect. Homicide indicators are estimated from regional
+      peers rather than measured directly, which is itself informative: in
+      an active conflict zone, the estimate is likely to understate reality
+      more than the method assumes elsewhere.
+    drivers:
+      - "Political Stability among the very lowest scores in the index"
+      - "displacement 210/1,000 population -- directly measured, ~1 in 5 people"
+      - "Feb 2025 Al-Shabaab offensive and drought are compounding, distinct drivers"
+      - "homicide data estimated, not measured -- likely understates an active conflict zone"
+    citations: [c7, c9]
+  F:
+    summary: >
+      Only two of four indicators were measured directly this year.
+      Per-capita CO2 emissions score near the ceiling of the scale, but --
+      as with several of the lowest-income countries in this index -- that
+      reflects minimal industrial activity and fossil-fuel consumption
+      rather than environmental policy achievement (see
+      methodology/METHODOLOGY_REVIEW.md on this indicator's behaviour as a
+      wealth proxy). Freshwater withdrawal is carried forward rather than
+      freshly measured, a meaningful gap given that recurring drought is
+      currently one of the country's most severe and actively worsening
+      environmental pressures, driving displacement documented under
+      Pillar E.
+    drivers:
+      - "only 2 of 4 indicators freshly measured"
+      - "high CO2 score reflects minimal industrial activity, not policy (wealth-proxy pattern)"
+      - "freshwater withdrawal carried forward despite drought being an acute, worsening pressure"
+    citations: [c9]
+  G:
+    summary: >
+      Electricity access just above 50% and basic water access near 73%
+      are low but not catastrophic by the standards of this pillar
+      elsewhere in the index -- both reflect significant private and
+      NGO-led reconstruction of basic services during the decades without
+      a functioning state, a pattern documented in Somalia's
+      stateless-period history (see historical.key_periods). Safely
+      managed water services and handwashing facilities both score much
+      lower, indicating a gap between basic access and higher-quality
+      service delivery. Social protection coverage was estimated from
+      regional peers rather than measured directly.
+    drivers:
+      - "electricity access ~50%, basic water ~73% -- low but not the pillar's worst pattern"
+      - "reflects private/NGO service reconstruction during the stateless period"
+      - "gap between basic access and higher-quality (safely managed) service delivery"
+    citations: [c2]
+
+recent:
+  primary:
+    - headline: "Al-Shabaab launches major offensive, threatens Mogadishu"
+      date: 2025-02-20
+      summary: >
+        Al-Shabaab launched "Operation Ramadan" on 20 February 2025 in
+        Hirshabelle State, reversing years of government territorial gains
+        from a 2022 counteroffensive. By July 2025 the group had recaptured
+        the towns of Sabiid and Anole near Mogadishu, and in March 2025 it
+        targeted President Hassan Sheikh Mohamud's motorcade directly with
+        a bomb attack that killed four people; the president was unharmed.
+      why_it_matters: >
+        The direct cause of the weak Pillar E score and the clearest
+        illustration that the 2011-2022 gains against Al-Shabaab were
+        reversible rather than settled.
+      news_url: "https://thesoufancenter.org/intelbrief-2025-july-24/"
+      wikipedia_url: "https://en.wikipedia.org/wiki/Somali_Civil_War_(2009%E2%80%93present)"
+      sentiment: negative
+    - headline: "Somaliland holds a free, fair, and peaceful presidential election"
+      date: 2024-11-13
+      summary: >
+        Somaliland's fourth direct presidential election, on 13 November
+        2024, was won by opposition candidate Abdirahman Mohamed Abdullahi
+        with 63.92% of the vote against incumbent Muse Bihi Abdi's 34.81%.
+        International observation missions, including from University
+        College London and the Brenthurst Foundation, found no serious
+        irregularities and characterised the vote as free, fair and
+        credible, resulting in a peaceful transfer of power.
+      why_it_matters: >
+        A genuine democratic success story within the same territory the
+        index scores as Somalia, though Somaliland's internationally
+        unrecognised status means this achievement is not separately
+        reflected in national-level governance indicators.
+      news_url: "https://theconversation.com/somaliland-elections-whats-at-stake-for-independence-stability-and-shifting-power-dynamics-in-the-horn-of-africa-242131"
+      wikipedia_url: "https://en.wikipedia.org/wiki/2024_Somaliland_presidential_election"
+      sentiment: positive
+    - headline: "Drought and conflict push millions toward crisis-level hunger"
+      date: 2025-02-01
+      summary: >
+        The UN and World Food Programme warned in February 2025 that
+        drought, conflict and high food prices could push 4.4 million
+        people -- close to a quarter of the population -- into
+        crisis-level hunger (IPC Phase 3 or above) by mid-2025, after 2024
+        food production came in 45% below the long-term average.
+        Humanitarian funding has fallen far short of need: only about 29%
+        of the 2025 response plan was funded, and by April 2026 that had
+        fallen further to around 15%.
+      why_it_matters: >
+        Explains the severity of the food-insecurity and displacement
+        figures elsewhere in this record, and the widening gap between
+        documented need and the funding available to meet it.
+      news_url: "https://news.un.org/en/story/2025/02/1160521"
+      wikipedia_url: ""
+      sentiment: negative
+  extended:
+    - headline: "Climate displacement compounds conflict displacement"
+      date: 2025-11-01
+      summary: >
+        Amnesty International reported in November 2025 that thousands of
+        Somalis displaced by drought and other climate shocks were being
+        failed by both national authorities and the international
+        community, with inadequate shelter, water and protection in
+        informal displacement settlements. The report distinguishes
+        climate-driven displacement from the conflict-driven displacement
+        covered under Pillar E, though the two increasingly overlap in
+        practice.
+      why_it_matters: >
+        A second, distinct driver behind Somalia's directly-measured
+        displacement figure of 210 per 1,000 population -- one of the
+        highest in the world.
+      news_url: "https://www.amnesty.org/en/latest/news/2025/11/somalia-thousands-of-climate-displaced-individuals-being-failed-by-authorities-and-the-international-community-new-report/"
+      wikipedia_url: ""
+      sentiment: negative
+
+events:
+  - year: 2006
+    type: conflict
+    title: "Islamic Courts Union removed; Al-Shabaab emerges"
+    description: >
+      Ethiopia invaded in December 2006 to remove the Islamic Courts Union,
+      which had briefly imposed order across much of southern Somalia.
+      Al-Shabaab, formed as an ICU splinter earlier that year, absorbed the
+      resulting insurgency.
+    url: "https://en.wikipedia.org/wiki/Somali_Civil_War_(2009%E2%80%93present)"
+    direction: deteriorate
+  - year: 2011
+    type: conflict
+    title: "AMISOM pushes Al-Shabaab out of Mogadishu"
+    description: >
+      African Union forces (AMISOM) forced Al-Shabaab's withdrawal from
+      Mogadishu in August 2011, ending the group's four-year hold on the
+      capital.
+    url: "https://en.wikipedia.org/wiki/African_Union_Support_and_Stabilization_Mission_in_Somalia"
+    direction: improve
+  - year: 2012
+    type: constitutional
+    title: "Federal Government of Somalia established"
+    description: >
+      Somalia's first permanent, internationally recognised government
+      since the 1991 collapse was established in 2012, ending eight years
+      of transitional arrangements.
+    url: "https://en.wikipedia.org/wiki/History_of_the_transitional_federal_government_of_Somalia"
+    direction: improve
+  - year: 2024
+    type: election
+    title: "Somaliland's peaceful, internationally praised transfer of power"
+    description: >
+      Somaliland's November 2024 presidential election, won by the
+      opposition, was judged free and fair by international observers and
+      produced a peaceful transfer of power.
+    url: "https://en.wikipedia.org/wiki/2024_Somaliland_presidential_election"
+    direction: improve
+
+citations:
+  - id: c1
+    url: "https://en.wikipedia.org/wiki/History_of_the_transitional_federal_government_of_Somalia"
+    source_type: wikipedia
+    title: "History of the transitional federal government of Somalia"
+    accessed: 2026-08-09
+    verified: true
+  - id: c2
+    url: "https://en.wikipedia.org/wiki/History_of_Somalia_(1991%E2%80%932006)"
+    source_type: wikipedia
+    title: "History of Somalia (1991-2006)"
+    accessed: 2026-08-09
+    verified: true
+  - id: c3
+    url: "https://en.wikipedia.org/wiki/Somali_Civil_War_(2009%E2%80%93present)"
+    source_type: wikipedia
+    title: "Somali Civil War (2009-present)"
+    accessed: 2026-08-09
+    verified: true
+  - id: c5
+    url: "https://en.wikipedia.org/wiki/African_Union_Support_and_Stabilization_Mission_in_Somalia"
+    source_type: wikipedia
+    title: "African Union Support and Stabilization Mission in Somalia"
+    accessed: 2026-08-09
+    verified: true
+  - id: c6
+    url: "https://en.wikipedia.org/wiki/2024_Somaliland_presidential_election"
+    source_type: wikipedia
+    title: "2024 Somaliland presidential election"
+    accessed: 2026-08-09
+    verified: true
+  - id: c7
+    url: "https://thesoufancenter.org/intelbrief-2025-july-24/"
+    source_type: academic
+    title: "Al-Shabaab's 2025 Offensive and the Unraveling of Somalia's Federal Counterinsurgency (The Soufan Center)"
+    accessed: 2026-08-09
+    verified: true
+  - id: c8
+    url: "https://news.un.org/en/story/2025/02/1160521"
+    source_type: official
+    title: "Somalia faces escalating crisis amid drought, conflict and price hikes (UN News)"
+    accessed: 2026-08-09
+    verified: true
+  - id: c9
+    url: "https://www.amnesty.org/en/latest/news/2025/11/somalia-thousands-of-climate-displaced-individuals-being-failed-by-authorities-and-the-international-community-new-report/"
+    source_type: news
+    title: "Somalia: Thousands of climate-displaced individuals being failed by authorities and the international community (Amnesty International)"
+    accessed: 2026-08-09
+    verified: true
+  - id: c10
+    url: "https://theconversation.com/somaliland-elections-whats-at-stake-for-independence-stability-and-shifting-power-dynamics-in-the-horn-of-africa-242131"
+    source_type: news
+    title: "Somaliland elections: what's at stake for independence, stability and shifting power dynamics in the Horn of Africa"
+    accessed: 2026-08-09
+    verified: true
+  - id: c11
+    url: "https://www.crisisgroup.org/qna/africa/horn-africa/somaliland/somalilands-peaceful-handover-withstands-neighbourhood-strains"
+    source_type: academic
+    title: "Somaliland's Peaceful Handover Withstands Neighbourhood Strains (International Crisis Group)"
+    accessed: 2026-08-09
+    verified: true
+  - id: c12
+    url: "https://www.wfp.org/news/somalia-drought-conflict-and-high-food-prices-risk-pushing-44-million-people-hunger-federal"
+    source_type: official
+    title: "Somalia: Drought, conflict and high food prices risk pushing 4.4 million people into hunger (World Food Programme)"
+    accessed: 2026-08-09
+    verified: true
+  - id: c13
+    url: "https://en.wikipedia.org/wiki/Somali_invasion_of_Ogaden"
+    source_type: wikipedia
+    title: "Somali invasion of Ogaden"
+    accessed: 2026-08-09
+    verified: true
+
+balance:
+  n_positive: 1
+  n_negative: 3
+  n_mixed: 0
+  note: >
+    The Somaliland election is a genuine, well-documented positive
+    counterweight to an otherwise severe national picture, but it should
+    not be read as offsetting the crises measured elsewhere: it occurred in
+    a self-governing northern territory that maintains a separate
+    administration from the Mogadishu-based government the rest of this
+    record describes, and its results do not feed into the national-level
+    governance indicators the index scores. Nothing was omitted to force
+    this balance -- three of four recent items are negative because the
+    underlying situation (renewed Al-Shabaab territorial gains, drought,
+    and a severe humanitarian funding shortfall) is genuinely severe and
+    worsening through 2025-2026. A further structural counterweight worth
+    naming even though it falls outside the "recent" window: the
+    equal-weight composite score rose from 26.8 to 34.3 (+7.5) between 2000
+    and 2023, so Somalia's multi-decade trajectory is not straightforwardly
+    worse today than 23 years ago, even though the last two years
+    specifically have been difficult.
