@@ -326,6 +326,28 @@ countries:
       predates the October 2025 coup entirely); check whether Rajoelina''s
       stripped citizenship has further legal consequences; check if Pillar C has
       gained coverage'
+  NAM:
+    name: Namibia
+    region: South
+    first_pass: false
+    reason: twelfth backlog country -- fills Southern Africa's biggest gap (only
+      ZAF and BWA previously done of 5 in the region); the only backlog country
+      colonized by two different powers in sequence (Germany, then South Africa),
+      including the Herero and Nama genocide (1904-1908), the first genocide of
+      the 20th century, formally recognised by Germany only in 2021; strongest
+      governance pillar recorded in this corpus so far, deliberately balanced
+      against a genuinely unresolved current fact (a 2023 reparations lawsuit
+      still undecided as of mid-2026) rather than treating 2021 recognition as
+      closure
+    iteration_count: 1
+    last_updated: '2026-08-10'
+    next_action: 'EXPAND: follow whether Namibia''s High Court ever rules on the
+      Ovaherero/Nama lawsuit against the 2021 Germany reconciliation agreement;
+      follow whether the Hyphen green-hydrogen project recovers from RWE''s
+      September 2025 withdrawal and whether the $250M green-industrialisation
+      target converts to investment; check whether Gini gets fresh measurement;
+      check whether Pillars E/F/G (thin, 2-4 of 4-5 measured) gain coverage;
+      check if Pillar C has gained coverage'
 backlog:
   LBY:
     name: Libya
@@ -553,14 +575,6 @@ backlog:
     next_action: create baseline from blueprint
   LSO:
     name: Lesotho
-    region: South
-    first_pass: false
-    reason: not yet scheduled
-    iteration_count: 0
-    last_updated: null
-    next_action: create baseline from blueprint
-  NAM:
-    name: Namibia
     region: South
     first_pass: false
     reason: not yet scheduled
@@ -1035,3 +1049,37 @@ meta_notes:
   suspension (distinct from the AES trio''s actual ECOWAS withdrawals) doesn''t
   fit either CURRENT or WITHDRAWN cleanly -- logged rather than self-applied.
   Full pytest suite: 106 passed. 20 of 54 countries now have a record.'
+- '2026-08-10: NAM CREATE run complete (12 sources opened and verified: 4
+  Wikipedia, 5 news, 1 academic/EBSCO, 1 official/UN Namibia, 1 official/SADC).
+  Fills Southern Africa''s biggest proportional gap (only ZAF and BWA previously
+  done of 5 in the region). Distinct colonial mechanism, new to this corpus:
+  Namibia was colonized by two different powers in sequence -- Germany
+  (1884-1915), then South Africa (1915-1990) -- rather than one power
+  throughout. The Herero and Nama genocide (1904-1908, an estimated 80% of
+  Herero and 50% of Nama killed) is the first genocide of the 20th century and
+  was formally recognised by Germany only in May 2021; verified precisely that
+  the 2021 agreement itself avoids the word "reparation" and frames the
+  roughly EUR1.1bn/30-year commitment as development aid, that Herero and Nama
+  leaders were excluded from the negotiations that produced it, and that a
+  2023 lawsuit challenging it in Namibia''s own High Court remained
+  unresolved as of mid-2026 -- not treating Germany''s 2021 recognition as
+  closure the way a less careful pass might have. Found a genuinely
+  unexpected cross-thread connection: in September 2025 RWE withdrew from
+  Namibia''s flagship $10B green-hydrogen project after Nama groups objected
+  the concession sat on ancestral Nama land inside a national park -- the same
+  land the 1904-1908 genocide was fought over resurfacing in a 2020s
+  green-energy investment dispute, worth the colonial_legacy space it took.
+  Strongest governance pillar recorded in this corpus so far (all 6 WGI
+  indicators positive-signed, Voice and Accountability the highest single
+  indicator score seen in this pillar in the project to date) -- deliberately
+  not left uncomplicated: paired directly against the unresolved reparations
+  lawsuit as a real, current counterweight, following the MAR "place a
+  positive and negative on the same subject side by side" discipline but in
+  reverse (here pairing a strong CURRENT governance picture against an
+  unresolved HISTORICAL-legal thread, not two current events on one subject).
+  Balance: 1 positive, 1 negative, 2 mixed. One word-count fix: recent.extended
+  was 3 words under the 40-word floor, fixed by adding a real fact (Vision
+  2030 / sixth National Development Plan framing) rather than padding.
+  `--links` passes 0 errors, 1 warning (allafrica, familiar 403 pattern already
+  confirmed on multiple prior runs) -- 11/12 resolved. Full pytest suite: 106
+  passed. 21 of 54 countries now have a record.'

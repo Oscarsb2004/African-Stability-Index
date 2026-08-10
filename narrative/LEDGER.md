@@ -26,7 +26,7 @@ An audit is forced early if a single run inflates the citation count by more tha
 
 ## Status
 
-**20 of 54 countries have a record (Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria, Rwanda, Chad, Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar). The first pass is complete; Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco and Madagascar are the first eleven backlog countries.**
+**21 of 54 countries have a record (Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria, Rwanda, Chad, Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia). The first pass is complete; Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar and Namibia are the first twelve backlog countries.**
 
 ### First pass — 9 countries
 
@@ -62,14 +62,15 @@ whose ranks swing hardest with the weighting method.
 | NER | Niger | completes the AES/ECOWAS-exit trio with MLI and BFA; Niger's own first-ever civilian-to-civilian democratic transfer (Bazoum, 2021) makes the 2023 coup a sharper rupture than in its AES partners; most precisely quantified extraction-imbalance case yet (Orano: 63% stake, 86.3% of production, 1971-2024) resolved by nationalisation | **done — iteration 1** |
 | MAR | Morocco | the corpus's first stable monarchy; a genuine framing-balance counterweight after a run of negative-leaning Sahel records; Western Sahara documented as the one African decolonisation case still legally open (Morocco left the OAU 1984-2017 over exactly this dispute); a genuine positive (AMO health coverage 42%->88%) placed deliberately alongside the Gen Z 212 protesters' own healthcare grievances | **done — iteration 1** |
 | MDG | Madagascar | fills the Islands gap (only MUS previously represented of 5 island backlog states); distinct colonial history (an independent Merina monarchy conquered militarily in 1895-96, not a protectorate); a live current-events thread -- the October 2025 CAPSAT-backed coup that ousted Rajoelina, the same unit that installed him in 2009 -- and a genuine positive (Jan 2026 mining-moratorium lift) found deliberately rather than manufactured | **done — iteration 1** |
+| NAM | Namibia | fills Southern Africa's biggest gap (only ZAF and BWA previously done of 5 in the region); colonized by two different powers in sequence (Germany, then South Africa), including the Herero and Nama genocide (1904-1908), formally recognised by Germany only in 2021; strongest governance pillar recorded in this corpus so far, deliberately paired against a genuinely unresolved current fact (a 2023 reparations lawsuit still undecided as of mid-2026) rather than treating 2021 recognition as closure | **done — iteration 1** |
 
-### Backlog — the remaining 34
+### Backlog — the remaining 33
 
 Listed in full in `narrative/state.yaml` under `backlog`. They are recorded
 explicitly rather than left implicit: a country with no record should be visibly
 absent, not quietly missing.
 
-Libya, Tunisia, Benin, Cabo Verde, The Gambia, Guinea, Guinea-Bissau, Cote d'Ivoire, Liberia, Mauritania, Senegal, Sierra Leone, Togo, Cameroon, Central African Republic, Republic of Congo, Equatorial Guinea, Gabon, Burundi, Djibouti, Eritrea, Malawi, Mozambique, South Sudan, Tanzania, Uganda, Zambia, Zimbabwe, Lesotho, Namibia, Eswatini, Comoros, Seychelles, Sao Tome & Principe
+Libya, Tunisia, Benin, Cabo Verde, The Gambia, Guinea, Guinea-Bissau, Cote d'Ivoire, Liberia, Mauritania, Senegal, Sierra Leone, Togo, Cameroon, Central African Republic, Republic of Congo, Equatorial Guinea, Gabon, Burundi, Djibouti, Eritrea, Malawi, Mozambique, South Sudan, Tanzania, Uganda, Zambia, Zimbabwe, Lesotho, Eswatini, Comoros, Seychelles, Sao Tome & Principe
 
 ---
 
@@ -628,6 +629,43 @@ Append one line per run: date, country, mode, what changed, what was removed.
   ECOWAS withdrawals) doesn't cleanly fit CURRENT or WITHDRAWN — logged,
   not self-applied, per the self-modifying-format rule.
 
+- **2026-08-10 — NAM — CREATE. Twelfth backlog country, fills
+  Southern Africa's biggest proportional gap.** Full baseline built:
+  historical overview, colonial legacy (the Herero and Nama genocide's
+  2021 German recognition documented alongside its contested
+  aftermath — the agreement avoids the word "reparation," Herero and
+  Nama leaders were excluded from negotiating it, and a 2023 High Court
+  lawsuit challenging it remained unresolved as of mid-2026), 4
+  key_periods, 6 pillar summaries (Pillar C left empty — greyed at 2/8
+  measured), 3 primary + 1 extended recent items, 4 events,
+  rec_membership (SADC 1990 — Namibia joined SADCC within months of its
+  own independence, the only REC it belongs to). 12 sources opened and
+  verified: 4 Wikipedia, 5 news, 1 EBSCO, 1 UN Namibia, 1 SADC. `--links`
+  passes 0 errors, 1 warning (allafrica, familiar 403 pattern) — 11/12
+  resolved. Namibia is the only backlog country colonized by two
+  different powers in sequence — Germany (1884-1915), then South Africa
+  (1915-1990) — rather than one throughout, and the Herero and Nama
+  genocide (1904-1908, an estimated 80% of Herero and 50% of Nama
+  killed) is the first genocide of the 20th century. Found a genuinely
+  unexpected cross-thread connection worth the colonial_legacy space it
+  took: in September 2025, German utility RWE withdrew from Namibia's
+  flagship $10B green-hydrogen project after Nama groups objected the
+  concession sat on ancestral Nama land inside a national park — the
+  same land the 1904-1908 genocide was fought over resurfacing in a
+  2020s green-energy investment dispute. This record has the strongest
+  governance pillar recorded in this corpus so far (all 6 WGI indicators
+  positive-signed, Voice and Accountability the highest single indicator
+  score seen in this pillar to date), and deliberately does not leave
+  that uncomplicated: it is paired directly against the unresolved
+  reparations lawsuit as a real, current counterweight — the MAR "place
+  a positive and negative on the same subject side by side" discipline,
+  but applied in reverse (pairing a strong CURRENT governance picture
+  against an unresolved HISTORICAL-legal thread, rather than two current
+  events on one subject). Balance: 1 positive, 1 negative, 2 mixed. One
+  word-count fix: recent.extended was 3 words under the 40-word floor,
+  fixed by adding a real fact (the Vision 2030 / sixth National
+  Development Plan framing) rather than padding.
+
 ---
 
 ## Meta-notes
@@ -978,6 +1016,23 @@ Things a future run should know about how to work, not about a specific country.
   every future country whose most consequential recent event postdates
   its own data's reference year, not just ones already known to have a
   data-lag problem.
+- **2026-08-10** — NAM introduces a variant of the balance discipline
+  worth naming explicitly: MAR paired a positive and negative item that
+  shared the same CURRENT subject (AMO coverage vs. Gen Z 212 protests,
+  both 2025); NAM instead pairs its strongest-ever governance PILLAR
+  score against an unresolved HISTORICAL-legal thread (the Herero/Nama
+  reparations lawsuit) that is still open only because of ongoing
+  present-day inaction. Different shape, same principle: a genuine
+  strength should not be left to imply a completeness it doesn't have
+  when a real, current, related weakness exists — check for this
+  pairing opportunity at the pillar level, not just within
+  recent.primary. Also worth flagging for a future EXPAND pass: this is
+  the first record where a Pillar F/G explanation depended on ruling OUT
+  the usual wealth-proxy reading (Namibia's low-fossil generation is
+  argued as a genuine achievement specifically because electricity
+  access, unlike NER/BFA/MDG, is only moderately constrained rather than
+  severe) — a useful worked contrast if a future country's Pillar F
+  needs the same kind of judgment call.
 
 ---
 
@@ -993,4 +1048,15 @@ becomes unauditable.
   `colonial_legacy` is a substantial prose block making citable claims (which
   colonizer, which years, sourced historical facts). Suggest adding the same
   `check_refs()` call used for `overview`. Not applied — awaiting a human
+  decision, per the self-modifying-format rule above.
+- **2026-08-10 (from MDG CREATE run):** `asi/narrative/schema.py`'s
+  `RECStatus` enum has only `CURRENT` and `WITHDRAWN`, with no way to
+  represent a temporary suspension. Madagascar's SADC and AU membership was
+  suspended for four years (2009-2013) following the 2009 coup but was never
+  withdrawn and is current again today — a genuinely different case from the
+  AES trio's (MLI/BFA/NER) actual ECOWAS withdrawals. Represented in the MDG
+  record with a current status and the suspension mentioned only in
+  `historical.key_periods` prose, since the schema has no structured field
+  for it. Suggest adding a `SUSPENDED` status value if another
+  suspended-not-withdrawn case comes up. Not applied — awaiting a human
   decision, per the self-modifying-format rule above.

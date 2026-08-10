@@ -1,0 +1,459 @@
+meta:
+  iso3: NAM
+  name: Namibia
+  last_updated: 2026-08-10
+  iteration_count: 1
+  next_action: >
+    EXPAND: (1) follow whether Namibia's High Court ever rules on the
+    Ovaherero/Nama lawsuit against the 2021 Germany reconciliation
+    agreement, now unresolved for multiple years; (2) follow whether the
+    Hyphen green-hydrogen project recovers from RWE's September 2025
+    withdrawal, and whether the $250M green-industrialisation target
+    (Aug 2026) converts to measurable investment; (3) check whether
+    Gini gets fresh measurement -- Namibia is widely cited elsewhere as
+    having among the world's highest income inequality, but this
+    record's Pillar B could not cite it directly this year; (4) check
+    whether Pillars E/F/G indicators (thin, 2-4/4-5 measured) gain
+    coverage; (5) check if Pillar C has gained coverage.
+  model_used: claude-sonnet-5
+
+historical:
+  overview: >
+    Germany declared a protectorate over South West Africa in 1884 and
+    colonised the territory as a settler colony, extracting diamonds,
+    cattle and land. Facing Herero and Nama resistance from 1904, German
+    commander Lothar von Trotha issued an extermination order after the
+    Battle of Waterberg in August 1904; survivors were driven into the
+    Omaheke desert or interned in concentration camps, including on
+    Shark Island, where mortality rates reached 47-74%. By 1908, an
+    estimated 80% of the Herero people and 50% of the Nama people had
+    been killed -- the first genocide of the 20th century. South Africa
+    occupied the territory in 1915 and, after receiving a League of
+    Nations mandate in 1920, extended apartheid law to it from 1948. The
+    South West Africa People's Organisation (SWAPO) launched an armed
+    liberation struggle in 1966; South African forces killed more than
+    600 people, mostly women, children and the elderly, in a 1978 attack
+    on a SWAPO refugee camp at Cassinga in Angola. UN Security Council
+    Resolution 435 finally took effect in 1989, and UN-supervised
+    elections led to independence on 21 March 1990 under SWAPO's Sam
+    Nujoma. Germany formally recognised the Herero and Nama genocide in
+    May 2021 and agreed to pay just over one billion euros over thirty
+    years, but framed the payments as development aid rather than legal
+    reparations; Herero and Nama leaders, excluded from the
+    negotiations, rejected the agreement, and a 2023 lawsuit challenging
+    it in Namibia's own High Court remained unresolved as of mid-2026.
+    In December 2024, Netumbo Nandi-Ndaitwah was elected Namibia's first
+    female president.
+  overview_citations: [c1, c2, c3, c5, c7]
+  colonial_legacy: >
+    context/colonial_history.yaml already credits the Herero and Nama
+    genocide as the primary colonial fact of Namibia's history and
+    Germany's 2021 recognition as its resolution. Worth complicating
+    that resolution: the reconciliation agreement explicitly avoids the
+    word "reparation," framing Germany's roughly 1.1 billion euro,
+    thirty-year commitment as development aid rather than the legal
+    consequence of a wrongful act, and Herero and Nama traditional
+    leaders -- whose ancestors were the agreement's actual subject --
+    were excluded from the negotiations that produced it. A 2023
+    lawsuit by the Ovaherero Traditional Authority and Nama Traditional
+    Leaders Association, seeking to have Namibia's own High Court
+    declare the joint declaration unconstitutional, remained unresolved
+    as of mid-2026, more than two decades after the claim was first
+    raised internationally. The dispossession itself continues to
+    surface in unrelated contexts: in September 2025, German utility
+    RWE withdrew from a $10 billion green-hydrogen project after Nama
+    groups objected that its concession sat on ancestral Nama land
+    inside a national park -- RWE denied any connection to those
+    objections, citing slower European demand instead, but the
+    coincidence illustrates how directly the same land the 1904-1908
+    genocide was fought over remains contested in Namibia's newest
+    industries.
+  colonial_legacy_citations: [c1, c5, c6, c9]
+  key_periods:
+    - title: "German colonisation and the Herero and Nama genocide"
+      period: "1884-1908"
+      summary: >
+        Germany declared a protectorate over South West Africa in 1884
+        and colonised the territory as a settler colony. Facing Herero
+        and Nama resistance from 1904, German commander Lothar von
+        Trotha issued an extermination order after the Battle of
+        Waterberg in August 1904; survivors were driven into the
+        Omaheke desert or interned in concentration camps, including on
+        Shark Island, where mortality rates reached 47-74%. By 1908, an
+        estimated 80% of the Herero people and 50% of the Nama people
+        had been killed.
+      citations: [c1, c2]
+    - title: "South African rule and apartheid"
+      period: "1915-1966"
+      summary: >
+        South Africa occupied the territory in 1915 and, after receiving
+        a League of Nations mandate in 1920, refused to relinquish
+        control when the mandate system ended, extending apartheid law
+        to Namibia from 1948 and integrating it into the South African
+        state in all but name.
+      citations: [c3]
+    - title: "SWAPO's liberation war and independence"
+      period: "1966-1990"
+      summary: >
+        The South West Africa People's Organisation (SWAPO) launched an
+        armed liberation struggle in 1966. South African forces killed
+        more than 600 people, mostly women, children and the elderly, in
+        a 1978 attack on a SWAPO refugee camp at Cassinga in Angola, an
+        event still commemorated annually. UN Security Council
+        Resolution 435 finally took effect in 1989, and UN-supervised
+        elections led to independence on 21 March 1990 under SWAPO's Sam
+        Nujoma.
+      citations: [c3, c4]
+    - title: "Germany's genocide recognition and its contested aftermath"
+      period: "2021-2025"
+      summary: >
+        Germany formally recognised the Herero and Nama genocide in May
+        2021 and agreed to pay just over one billion euros over thirty
+        years, framed as development aid rather than legal reparations.
+        Herero and Nama leaders, excluded from the negotiations,
+        rejected the agreement; a 2023 High Court lawsuit challenging it
+        remained unresolved as of mid-2026. In December 2024, Netumbo
+        Nandi-Ndaitwah was elected Namibia's first female president, and
+        the Supreme Court dismissed an opposition legal challenge to the
+        result in February 2025.
+      citations: [c5, c6, c7, c8]
+
+pillars:
+  A:
+    summary: >
+      All six governance indicators are directly measured this year, and
+      every one scores positive on the underlying World Bank scale --
+      the strongest governance pillar recorded anywhere in this corpus
+      so far. Voice and Accountability is the standout, the highest
+      single indicator score recorded in this pillar in the project to
+      date, consistent with a December 2024 election in which the
+      ruling SWAPO party's own support fell from 65% to just under 51%
+      even as it retained power, and an opposition legal challenge to
+      the result was heard and dismissed by the Supreme Court on its
+      merits rather than suppressed. Rule of Law and Government
+      Effectiveness both score strongly as well. That strength sits
+      against an unresolved question this record's
+      historical.colonial_legacy documents in detail: a 2023 lawsuit
+      challenging Germany's 2021 genocide-reparations agreement remained
+      undecided in Namibia's own High Court as of mid-2026.
+    drivers:
+      - "all 6 governance indicators directly measured, every one positive-signed -- the strongest governance pillar recorded anywhere in this corpus so far"
+      - "Voice and Accountability is the standout -- highest single indicator score recorded in this pillar to date in the project"
+      - "Dec 2024 election: SWAPO's own support fell from 65% to ~51% while retaining power; opposition's Supreme Court challenge heard and dismissed on its merits (Feb 2025), not suppressed"
+      - "unresolved counterpoint: the 2023 High Court lawsuit over Germany's genocide-reparations agreement remained undecided as of mid-2026"
+    citations: [c5, c6, c7, c8]
+  B:
+    summary: >
+      GDP growth and inflation, both freshly measured, are moderate to
+      strong, and domestic credit to the private sector, also fresh,
+      tops out the pillar's scoring range. GDP per capita, at just over
+      $11,000 and also fresh, is among the highest recorded in this
+      corpus. Gini, the pillar's fifth indicator, is not measured this
+      year, though Namibia is widely documented elsewhere as having
+      among the world's highest income inequality, a legacy of the land
+      dispossession this record's historical.colonial_legacy traces to
+      1904-1908. Namibia attracted roughly N$151 billion in foreign
+      direct investment between 2021 and 2024, concentrated in mining
+      and a nascent green-hydrogen sector, though the sector suffered a
+      setback in September 2025 when German utility RWE withdrew from
+      the flagship $10 billion Hyphen project.
+    drivers:
+      - "GDP growth, inflation both fresh, moderate-strong; domestic credit (fresh) tops the pillar's scoring range; GDP per capita (fresh) among the highest in this corpus"
+      - "Gini not measured this year, though Namibia is widely documented as having among the world's highest income inequality -- a legacy of colonial-era land dispossession"
+      - "N$151bn FDI 2021-2024, concentrated in mining and green hydrogen"
+      - "RWE withdrew from the flagship $10B Hyphen green-hydrogen project in Sept 2025 -- a genuine setback to that diversification story"
+    citations: [c10, c11]
+  D:
+    summary: >
+      Life expectancy, just over 67 years, and infant mortality, at 38.3
+      per 1,000 live births, are both freshly measured and moderate.
+      Severe food insecurity, however, affects fully 30% of the
+      population -- also fresh, and among the most severe readings
+      recorded in this corpus, a striking contrast with Namibia's
+      comparatively strong governance and GDP-per-capita figures above.
+      Two of the pillar's five indicators are not measured this year.
+      Namibia's stark income inequality, absent from Pillar B's own
+      data but well documented elsewhere, is a plausible part of the
+      explanation: a high national average income coexisting with severe
+      deprivation for a substantial share of the population.
+    drivers:
+      - "life expectancy ~67 years, infant mortality ~38.3/1,000 -- both fresh, moderate"
+      - "severe food insecurity 30% (fresh) -- among the most severe readings in this corpus, a striking contrast with Namibia's strong governance/GDP-per-capita figures"
+      - "2 of 5 indicators not measured this year; stark income inequality (absent from Pillar B's own data) is a plausible part of the explanation"
+    citations: [c1]
+  E:
+    summary: >
+      Political Stability, freshly measured, is strong -- among the
+      better readings recorded in this corpus -- consistent with three
+      decades of uninterrupted multi-party government since
+      independence. Intentional homicide, carried forward rather than
+      fresh, is comparatively weak, a real and separate concern from
+      political violence. Displaced persons is entirely absent from this
+      year's data. Only two of the pillar's four indicators have any
+      data at all, so this pillar's comparatively strong score should be
+      read as thin rather than fully verified.
+    drivers:
+      - "Political Stability strong (fresh) -- among the better readings in this corpus, consistent with 3 decades of uninterrupted multi-party government"
+      - "intentional homicide comparatively weak (carried forward) -- a real, separate concern from political stability"
+      - "only 2 of 4 indicators have any data -- IDPs entirely absent; the strong score should be read as thin, not fully verified"
+    citations: [c1]
+  F:
+    summary: >
+      CO2 emissions per capita, freshly measured, are moderate.
+      Freshwater withdrawal, carried forward rather than fresh, is very
+      low relative to internal renewable water resources -- but this
+      likely is not the same genuine-abundance story documented for some
+      other countries in this corpus: Namibia is among the most arid
+      countries in Sub-Saharan Africa, and a low share of a small
+      renewable-resource base withdrawn plausibly reflects severe water
+      scarcity constraining use, not abundant supply. Electricity
+      generation from fossil fuels, also carried forward, is very low,
+      consistent with Namibia's reliance on hydropower from the Ruacana
+      plant and imports; unlike the wealth-proxy pattern documented
+      elsewhere in this corpus, electricity access itself (Pillar G) is
+      a moderate 57%, not a severe constraint, making a genuine clean-
+      generation mix a more plausible explanation here than energy
+      poverty alone. Only two of the pillar's four indicators are
+      freshly measured this year.
+    drivers:
+      - "CO2 pc moderate (fresh)"
+      - "freshwater withdrawal very low relative to renewable resources (carried forward) -- plausibly reflects severe water scarcity (Namibia is among the most arid countries in Sub-Saharan Africa), not abundance, unlike some other low-withdrawal cases in this corpus"
+      - "electricity generation ~1.5% fossil-fuel (carried forward) -- plausibly a genuine clean-generation mix (Ruacana hydropower + imports), since electricity access (Pillar G) is a moderate ~57%, not severely constrained like the corpus's wealth-proxy cases"
+      - "only 2 of 4 indicators freshly measured this year"
+    citations: [c1]
+  G:
+    summary: >
+      Electricity access, at just under 57% and freshly measured, is
+      moderate -- Namibia is not at either extreme recorded elsewhere in
+      this corpus. Basic drinking water access, also fresh, is strong,
+      covering the large majority of the population; safely managed
+      water and handwashing coverage, both estimated from regional peers
+      rather than measured directly, are more middling. Social
+      protection and labour programme coverage, the pillar's fifth
+      indicator, is not measured this year. This moderate-to-strong
+      infrastructure picture is a plausible part of why Pillar F's clean
+      electricity-generation figure reads as a genuine achievement
+      rather than the energy-poverty artefact documented for several
+      other countries in this corpus.
+    drivers:
+      - "electricity access ~57% (fresh) -- moderate, not at either extreme recorded elsewhere in this corpus"
+      - "basic drinking water strong (fresh), covering the large majority of the population; safely managed water and handwashing more middling (regional-mean estimates)"
+      - "social protection not measured this year"
+      - "this moderate-to-strong infrastructure picture supports reading Pillar F's low-fossil generation figure as a genuine achievement, not an energy-poverty artefact"
+    citations: [c1]
+
+recent:
+  primary:
+    - headline: "Nandi-Ndaitwah becomes Namibia's first female president"
+      date: 2024-12-03
+      summary: >
+        Netumbo Nandi-Ndaitwah of the ruling SWAPO party was declared
+        the winner of Namibia's presidential election on 3 December
+        2024, becoming the country's first female president with 57% of
+        the vote. SWAPO's own support fell to just under 51%, its worst
+        result since independence, down from 65% previously. Opposition
+        parties challenged the result over a voting-day extension caused
+        by ballot-paper shortages; Namibia's Supreme Court unanimously
+        dismissed the challenge on 28 February 2025, and Nandi-Ndaitwah
+        was sworn in on 21 March 2025.
+      why_it_matters: >
+        A genuine democratic milestone decided by a real, competitive
+        contest and adjudicated through the courts rather than around
+        them -- directly explains Pillar A's strong Voice and
+        Accountability score.
+      news_url: "https://www.aljazeera.com/news/2024/12/3/namibia-elects-nandi-ndaitwah-as-countrys-first-woman-president"
+      wikipedia_url: ""
+      sentiment: positive
+    - headline: "Namibia's High Court reparations lawsuit against Germany remains unresolved"
+      date: 2026-05-01
+      summary: >
+        A 2023 lawsuit by the Ovaherero Traditional Authority and Nama
+        Traditional Leaders Association, seeking to have Namibia's own
+        High Court declare the 2021 Germany-Namibia reconciliation
+        agreement unconstitutional, had still not received a ruling as
+        of May 2026. The case follows the US Supreme Court's 2021
+        refusal to hear a related claim against Germany, ending three
+        years of US litigation.
+      why_it_matters: >
+        Documents that the genocide-reparations question this record's
+        historical.colonial_legacy raises as unresolved has, in fact,
+        gone unresolved for years -- not a rhetorical caveat but a
+        literal, current fact.
+      news_url: "https://www.observer24.com.na/ovaherero-and-nama-leaders-plan-ahead-as-appeal-to-us-supreme-court-is-declined/"
+      wikipedia_url: ""
+      sentiment: negative
+    - headline: "RWE withdraws from Namibia's flagship green-hydrogen project"
+      date: 2025-09-29
+      summary: >
+        German utility RWE withdrew from a non-binding offtake agreement
+        with Namibia's $10 billion Hyphen green-ammonia project on 29
+        September 2025, citing slower-than-expected European hydrogen
+        demand. Indigenous rights groups had separately objected that
+        the project's concession sits inside a national park on
+        ancestral Nama land; RWE said its decision was unrelated to
+        those objections.
+      why_it_matters: >
+        A real setback to the economic-diversification story documented
+        in Pillar B, and an unexpected point of contact between
+        Namibia's newest industry and the same land-dispossession
+        history documented in historical.colonial_legacy.
+      news_url: "https://www.hydrogeninsight.com/production/rwe-pulls-out-of-deal-to-import-green-ammonia-from-giant-namibian-project/2-1-1878176"
+      wikipedia_url: ""
+      sentiment: mixed
+  extended:
+    - headline: "Namibia targets $250 million to accelerate green industrialisation"
+      date: 2026-08-07
+      summary: >
+        Namibia's government set a $250 million target to accelerate
+        green industrialisation in August 2026, as part of its Vision
+        2030 development plan, sixth National Development Plan, and
+        National Strategy for Green Hydrogen, notwithstanding RWE's
+        earlier withdrawal from the sector's flagship offtake agreement.
+      why_it_matters: >
+        Shows the government continuing to pursue the diversification
+        strategy despite the September 2025 setback documented elsewhere
+        in this record.
+      news_url: "https://www.financialafrik.com/en/2026/08/07/namibia-250-million-targeted-to-accelerate-green-industrialization/"
+      wikipedia_url: ""
+      sentiment: mixed
+
+events:
+  - year: 1904
+    type: conflict
+    title: "Herero and Nama genocide begins"
+    description: >
+      German commander Lothar von Trotha issued an extermination order
+      against the Herero people following the Battle of Waterberg in
+      August 1904; by 1908, an estimated 80% of the Herero and 50% of
+      the Nama had been killed, recognised as the first genocide of the
+      20th century.
+    url: "https://en.wikipedia.org/wiki/Herero_and_Nama_genocide"
+    direction: deteriorate
+  - year: 1990
+    type: independence
+    title: "Namibia gains independence"
+    description: >
+      UN-supervised elections following UN Security Council Resolution
+      435 led to Namibia's independence from South African rule on 21
+      March 1990, under SWAPO's Sam Nujoma.
+    url: "https://www.ebsco.com/research-starters/politics-and-government/namibia-liberated-south-african-control"
+    direction: improve
+  - year: 2021
+    type: constitutional
+    title: "Germany recognises the Herero and Nama genocide"
+    description: >
+      Germany formally recognised the Herero and Nama genocide in May
+      2021 and agreed to pay just over one billion euros over thirty
+      years, framed as development aid rather than legal reparations;
+      Herero and Nama leaders, excluded from the negotiations, rejected
+      the agreement.
+    url: "https://en.wikipedia.org/wiki/Herero_and_Nama_genocide_reparations"
+    direction: mixed
+  - year: 2024
+    type: election
+    title: "Nandi-Ndaitwah elected Namibia's first female president"
+    description: >
+      Netumbo Nandi-Ndaitwah of the ruling SWAPO party was elected
+      Namibia's first female president on 3 December 2024, though
+      SWAPO's own vote share fell to its lowest since independence.
+    url: "https://www.aljazeera.com/news/2024/12/3/namibia-elects-nandi-ndaitwah-as-countrys-first-woman-president"
+    direction: improve
+
+citations:
+  - id: c1
+    url: "https://en.wikipedia.org/wiki/Herero_and_Nama_genocide"
+    source_type: wikipedia
+    title: "Herero and Nama genocide"
+    accessed: 2026-08-10
+    verified: true
+  - id: c2
+    url: "https://en.wikipedia.org/wiki/Shark_Island_concentration_camp"
+    source_type: wikipedia
+    title: "Shark Island concentration camp"
+    accessed: 2026-08-10
+    verified: true
+  - id: c3
+    url: "https://www.ebsco.com/research-starters/politics-and-government/namibia-liberated-south-african-control"
+    source_type: academic
+    title: "Namibia Is Liberated from South African Control (EBSCO)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c4
+    url: "https://namibia.un.org/en/node/175155"
+    source_type: official
+    title: "UN Secretary-General congratulates Namibian President Nujoma, 21 March 1990 (UN Namibia)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c5
+    url: "https://en.wikipedia.org/wiki/Herero_and_Nama_genocide_reparations"
+    source_type: wikipedia
+    title: "Herero and Nama genocide reparations"
+    accessed: 2026-08-10
+    verified: true
+  - id: c6
+    url: "https://www.observer24.com.na/ovaherero-and-nama-leaders-plan-ahead-as-appeal-to-us-supreme-court-is-declined/"
+    source_type: news
+    title: "Ovaherero and Nama leaders plan ahead as appeal to US Supreme court is declined (Observer24)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c7
+    url: "https://www.aljazeera.com/news/2024/12/3/namibia-elects-nandi-ndaitwah-as-countrys-first-woman-president"
+    source_type: news
+    title: "Namibia elects Nandi-Ndaitwah as country's first woman president (Al Jazeera)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c8
+    url: "https://allafrica.com/stories/202502280498.html"
+    source_type: news
+    title: "Namibia: Supreme Court Dismisses Presidential Election Challenge (AllAfrica)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c9
+    url: "https://www.hydrogeninsight.com/production/rwe-pulls-out-of-deal-to-import-green-ammonia-from-giant-namibian-project/2-1-1878176"
+    source_type: news
+    title: "RWE pulls out of deal to import green ammonia from giant Namibian project (Hydrogen Insight)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c10
+    url: "https://www.financialafrik.com/en/2026/08/07/namibia-250-million-targeted-to-accelerate-green-industrialization/"
+    source_type: news
+    title: "Namibia: $250 million targeted to accelerate green industrialization (Financial Afrik)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c11
+    url: "https://www.africanleadershipmagazine.co.uk/namibias-green-hydrogen-ambitions-gain-momentum/"
+    source_type: news
+    title: "Namibia's Green Hydrogen Ambitions Gain Momentum (African Leadership Magazine)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c12
+    url: "https://www.sadc.int/member-states/namibia"
+    source_type: official
+    title: "Namibia (SADC)"
+    accessed: 2026-08-10
+    verified: true
+
+rec_membership:
+  - org: SADC
+    joined: 1990
+    status: current
+    left: null
+    citations: [c12]
+
+balance:
+  n_positive: 1
+  n_negative: 1
+  n_mixed: 2
+  note: >
+    Nandi-Ndaitwah's election is coded positive at full weight -- a
+    genuine, competitive democratic milestone, decided in court rather
+    than around it. The unresolved High Court reparations lawsuit is
+    coded negative, not softened by Namibia's otherwise strong
+    governance scores: it is a real, ongoing, multi-year failure to
+    resolve a documented historical wrong, and this record states that
+    plainly rather than treating Germany's 2021 recognition as closure.
+    The RWE withdrawal and the green-industrialisation target are both
+    coded mixed: the former is a genuine setback that does not erase
+    Namibia's other real economic strengths, and the latter is a real
+    government commitment that does not yet have a delivered outcome to
+    point to.
