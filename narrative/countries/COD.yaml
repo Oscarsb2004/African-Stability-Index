@@ -219,6 +219,28 @@ pillars:
       - "World Bank committed $250m to Grand Inga expansion, June 2025"
     citations: [c11, c12]
 
+rec_membership:
+  - org: ECCAS
+    joined: 1983
+    status: current
+    left: null
+    citations: [c15]
+  - org: COMESA
+    joined: 1994
+    status: current
+    left: null
+    citations: [c16]
+  - org: SADC
+    joined: 1997
+    status: current
+    left: null
+    citations: [c17]
+  - org: EAC
+    joined: 2022
+    status: current
+    left: null
+    citations: [c18]
+
 recent:
   primary:
     - headline: "M23 captures Goma and Bukavu in a major escalation"
@@ -413,6 +435,30 @@ citations:
     source_type: official
     title: "First peaceful transfer of power in DR Congo 'an extraordinary opportunity' for advancing rights (UN News)"
     accessed: 2026-08-09
+    verified: true
+  - id: c15
+    url: "https://en.wikipedia.org/wiki/Economic_Community_of_Central_African_States"
+    source_type: wikipedia
+    title: "Economic Community of Central African States"
+    accessed: 2026-08-10
+    verified: true
+  - id: c16
+    url: "https://en.wikipedia.org/wiki/Common_Market_for_Eastern_and_Southern_Africa"
+    source_type: wikipedia
+    title: "Common Market for Eastern and Southern Africa"
+    accessed: 2026-08-10
+    verified: true
+  - id: c17
+    url: "https://www.sadc.int/pages/history-and-treaty"
+    source_type: official
+    title: "History and Treaty (SADC)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c18
+    url: "https://www.eac.int/press-releases/2402-the-democratic-republic-of-the-congo-joins-eac-as-its-7th-member"
+    source_type: official
+    title: "The Democratic Republic of the Congo joins EAC as its 7th Member"
+    accessed: 2026-08-10
     verified: true
 
 balance:

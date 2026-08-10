@@ -227,6 +227,13 @@ pillars:
       - "social protection coverage data unavailable"
     citations: [c3, c11]
 
+rec_membership:
+  - org: UMA
+    joined: 1989
+    status: current
+    left: null
+    citations: [c14]
+
 recent:
   primary:
     - headline: "Tebboune re-elected amid contested vote count"
@@ -407,6 +414,12 @@ citations:
     source_type: news
     title: "Algeria Plans Rare Sukuk Sale at Start of 2026, Document Shows"
     accessed: 2026-08-09
+    verified: true
+  - id: c14
+    url: "https://en.wikipedia.org/wiki/Arab_Maghreb_Union"
+    source_type: wikipedia
+    title: "Arab Maghreb Union"
+    accessed: 2026-08-10
     verified: true
 
 balance:

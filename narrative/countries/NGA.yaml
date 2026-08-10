@@ -253,6 +253,18 @@ pillars:
       - "social protection coverage (~21%, carried forward) is a real gap given the 2023-2025 economic shock's effect on need"
     citations: [c7]
 
+rec_membership:
+  - org: ECOWAS
+    joined: 1975
+    status: current
+    left: null
+    citations: [c13]
+  - org: CEN-SAD
+    joined: 2001
+    status: current
+    left: null
+    citations: [c14]
+
 recent:
   primary:
     - headline: "WFP: 33 million Nigerians projected food-insecure in 2025 amid inflation, floods and insurgency"
@@ -440,6 +452,18 @@ citations:
     source_type: official
     title: "WFP calls for urgent life-saving support in Nigeria as 33 million people face food insecurity in 2025"
     accessed: 2026-08-09
+    verified: true
+  - id: c13
+    url: "https://www.ecowas.int/creation-history/"
+    source_type: official
+    title: "Creation (History) — ECOWAS"
+    accessed: 2026-08-10
+    verified: true
+  - id: c14
+    url: "https://en.wikipedia.org/wiki/Community_of_Sahel%E2%80%93Saharan_States"
+    source_type: wikipedia
+    title: "Community of Sahel-Saharan States"
+    accessed: 2026-08-10
     verified: true
 
 balance:

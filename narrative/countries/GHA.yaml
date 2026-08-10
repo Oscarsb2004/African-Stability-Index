@@ -218,6 +218,18 @@ pillars:
       - "social protection coverage estimated, not measured"
     citations: [c1, c5]
 
+rec_membership:
+  - org: ECOWAS
+    joined: 1975
+    status: current
+    left: null
+    citations: [c12]
+  - org: CEN-SAD
+    joined: 2005
+    status: current
+    left: null
+    citations: [c13]
+
 recent:
   primary:
     - headline: "John Mahama wins Ghana's December 2024 presidential election in a landslide"
@@ -388,6 +400,18 @@ citations:
     source_type: news
     title: "Fighting Illegal Mining (Galamsey) in Ghana: Is a State Of Emergency Enough? (WANEP)"
     accessed: 2026-08-09
+    verified: true
+  - id: c12
+    url: "https://www.ecowas.int/creation-history/"
+    source_type: official
+    title: "Creation (History) — ECOWAS"
+    accessed: 2026-08-10
+    verified: true
+  - id: c13
+    url: "https://en.wikipedia.org/wiki/Community_of_Sahel%E2%80%93Saharan_States"
+    source_type: wikipedia
+    title: "Community of Sahel-Saharan States"
+    accessed: 2026-08-10
     verified: true
 
 balance:

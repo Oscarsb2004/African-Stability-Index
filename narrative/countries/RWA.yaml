@@ -246,6 +246,18 @@ pillars:
       - "Vision 2050 targets closing these gaps, against the World Bank's own caution about weakening poverty-reduction momentum"
     citations: [c9]
 
+rec_membership:
+  - org: COMESA
+    joined: 2004
+    status: current
+    left: null
+    citations: [c13]
+  - org: EAC
+    joined: 2007
+    status: current
+    left: null
+    citations: [c14]
+
 recent:
   primary:
     - headline: "Rwanda-backed M23 rebels capture Goma; UN documents thousands of Rwandan troops"
@@ -439,6 +451,18 @@ citations:
     source_type: news
     title: "Full Text of Washington Accords Signed By Kagame, Tshisekedi (AllAfrica)"
     accessed: 2026-08-09
+    verified: true
+  - id: c13
+    url: "https://www.minaffet.gov.rw/eac-1"
+    source_type: official
+    title: "COMESA (Rwanda Ministry of Foreign Affairs)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c14
+    url: "https://allafrica.com/stories/200706180717.html"
+    source_type: news
+    title: "East Africa: Finally Rwanda, Burundi Become Full EAC Members (AllAfrica)"
+    accessed: 2026-08-10
     verified: true
 
 balance:

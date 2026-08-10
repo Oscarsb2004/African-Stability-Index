@@ -232,6 +232,18 @@ pillars:
       - "social protection coverage data absent this year"
     citations: [c1]
 
+rec_membership:
+  - org: COMESA
+    joined: 1994
+    status: current
+    left: null
+    citations: [c12]
+  - org: SADC
+    joined: 1995
+    status: current
+    left: null
+    citations: [c13]
+
 recent:
   primary:
     - headline: "Alliance du Changement wins landslide election, ending a decade of MSM government"
@@ -400,6 +412,18 @@ citations:
     source_type: news
     title: "Mauritius suspends social media until after election amid wiretapping scandal"
     accessed: 2026-08-09
+    verified: true
+  - id: c12
+    url: "https://en.wikipedia.org/wiki/Common_Market_for_Eastern_and_Southern_Africa"
+    source_type: wikipedia
+    title: "Common Market for Eastern and Southern Africa"
+    accessed: 2026-08-10
+    verified: true
+  - id: c13
+    url: "https://www.sadc.int/pages/history-and-treaty"
+    source_type: official
+    title: "History and Treaty (SADC)"
+    accessed: 2026-08-10
     verified: true
 
 balance:

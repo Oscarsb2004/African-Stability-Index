@@ -220,6 +220,28 @@ pillars:
       - "gap between basic access and higher-quality (safely managed) service delivery"
     citations: [c2]
 
+rec_membership:
+  - org: IGAD
+    joined: 1986
+    status: current
+    left: null
+    citations: [c14]
+  - org: CEN-SAD
+    joined: 2001
+    status: current
+    left: null
+    citations: [c15]
+  - org: COMESA
+    joined: 2018
+    status: current
+    left: null
+    citations: [c16]
+  - org: EAC
+    joined: 2024
+    status: current
+    left: null
+    citations: [c17]
+
 recent:
   primary:
     - headline: "Al-Shabaab launches major offensive, threatens Mogadishu"
@@ -405,6 +427,30 @@ citations:
     source_type: wikipedia
     title: "Somali invasion of Ogaden"
     accessed: 2026-08-09
+    verified: true
+  - id: c14
+    url: "https://en.wikipedia.org/wiki/Intergovernmental_Authority_on_Development"
+    source_type: wikipedia
+    title: "Intergovernmental Authority on Development"
+    accessed: 2026-08-10
+    verified: true
+  - id: c15
+    url: "https://en.wikipedia.org/wiki/Community_of_Sahel%E2%80%93Saharan_States"
+    source_type: wikipedia
+    title: "Community of Sahel-Saharan States"
+    accessed: 2026-08-10
+    verified: true
+  - id: c16
+    url: "https://www.lexology.com/library/detail.aspx?g=03527e20-f588-4a72-9b64-c11731e36d1e"
+    source_type: news
+    title: "Tunisia and Somalia join COMESA"
+    accessed: 2026-08-10
+    verified: true
+  - id: c17
+    url: "https://www.eac.int/press-releases/3049-somalia-finally-joins-eac-as-the-bloc-s-8th-partner-state"
+    source_type: official
+    title: "Somalia finally joins EAC as the bloc's 8th Partner State"
+    accessed: 2026-08-10
     verified: true
 
 balance:

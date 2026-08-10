@@ -386,6 +386,27 @@ Things a future run should know about how to work, not about a specific country.
   visible in the corpus (the corpus is entirely Anglophone/Francophone
   sub-Saharan plus one Arabophone North African
   country; Lusophone and small-island states remain fully unrepresented).
+- **2026-08-10 — schema addition: `rec_membership`, retrofitted across all
+  9 first-pass records.** Per the user's explicit direction (a scoped
+  decision, not a self-modification of the blueprint), added a new
+  structured field recording Regional Economic Community membership —
+  `{org, joined, status, left, citations}` per entry — validated against
+  `asi.core.countries.COUNTRIES[iso3]["rec"]`, the index's own source of
+  truth for current membership, so the narrative layer can add join years
+  and citations but not drift from what the index already lists. All 20
+  (country, REC) pairs across the 9 records were researched and verified
+  this session, not carried over from any existing file — no join-year
+  data existed anywhere in the codebase beforehand. One genuinely
+  interesting finding worth flagging for any future EXPAND/AUDIT pass:
+  Somalia was a 1981 founding signatory of COMESA's predecessor (the PTA)
+  but never formally transitioned into COMESA when it was created in 1994,
+  because the 1991 state collapse left no government to complete the
+  transition — Somalia only became a full COMESA member again on 19 July
+  2018, a 24-year gap directly caused by the same state collapse this
+  project's SOM record already documents. `--links` passes 0 errors after
+  one confirmed-transient timeout (TCD's sciencespo.fr citation, verified
+  live and clean on a retry) — 12 warnings remain, all the familiar
+  HTTP-403 bot-detection pattern, no new genuine dead links introduced.
 
 ---
 

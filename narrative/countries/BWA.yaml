@@ -258,6 +258,13 @@ pillars:
       - "social protection coverage unmeasured, notable given it was a central 2024 campaign issue"
     citations: [c5]
 
+rec_membership:
+  - org: SADC
+    joined: 1980
+    status: current
+    left: null
+    citations: [c15]
+
 recent:
   primary:
     - headline: "Botswana Democratic Party loses power after 58 years"
@@ -462,6 +469,12 @@ citations:
     source_type: academic
     title: "History: Botswana (International Work Group for Indigenous Affairs)"
     accessed: 2026-08-09
+    verified: true
+  - id: c15
+    url: "https://www.sadc.int/pages/history-and-treaty"
+    source_type: official
+    title: "History and Treaty (SADC)"
+    accessed: 2026-08-10
     verified: true
 
 balance:

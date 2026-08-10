@@ -245,6 +245,18 @@ pillars:
       - "Chad's single weakest pillar; traces directly to the chronic underinvestment documented in colonial_legacy"
     citations: [c1]
 
+rec_membership:
+  - org: ECCAS
+    joined: 1983
+    status: current
+    left: null
+    citations: [c12]
+  - org: CEN-SAD
+    joined: 1998
+    status: current
+    left: null
+    citations: [c13]
+
 recent:
   primary:
     - headline: "Chad ends France's military presence after 125 years"
@@ -421,6 +433,18 @@ citations:
     source_type: academic
     title: "Colonial violence and resistance in Chad (1900-1960) (Sciences Po Mass Violence and Resistance Research Network)"
     accessed: 2026-08-09
+    verified: true
+  - id: c12
+    url: "https://en.wikipedia.org/wiki/Economic_Community_of_Central_African_States"
+    source_type: wikipedia
+    title: "Economic Community of Central African States"
+    accessed: 2026-08-10
+    verified: true
+  - id: c13
+    url: "https://en.wikipedia.org/wiki/Community_of_Sahel%E2%80%93Saharan_States"
+    source_type: wikipedia
+    title: "Community of Sahel-Saharan States"
+    accessed: 2026-08-10
     verified: true
 
 balance:
