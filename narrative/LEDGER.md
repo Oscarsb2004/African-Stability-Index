@@ -26,7 +26,7 @@ An audit is forced early if a single run inflates the citation count by more tha
 
 ## Status
 
-**21 of 54 countries have a record (Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria, Rwanda, Chad, Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia). The first pass is complete; Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar and Namibia are the first twelve backlog countries.**
+**22 of 54 countries have a record (Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria, Rwanda, Chad, Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia). The first pass is complete; Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia and Liberia are the first thirteen backlog countries.**
 
 ### First pass — 9 countries
 
@@ -63,14 +63,15 @@ whose ranks swing hardest with the weighting method.
 | MAR | Morocco | the corpus's first stable monarchy; a genuine framing-balance counterweight after a run of negative-leaning Sahel records; Western Sahara documented as the one African decolonisation case still legally open (Morocco left the OAU 1984-2017 over exactly this dispute); a genuine positive (AMO health coverage 42%->88%) placed deliberately alongside the Gen Z 212 protesters' own healthcare grievances | **done — iteration 1** |
 | MDG | Madagascar | fills the Islands gap (only MUS previously represented of 5 island backlog states); distinct colonial history (an independent Merina monarchy conquered militarily in 1895-96, not a protectorate); a live current-events thread -- the October 2025 CAPSAT-backed coup that ousted Rajoelina, the same unit that installed him in 2009 -- and a genuine positive (Jan 2026 mining-moratorium lift) found deliberately rather than manufactured | **done — iteration 1** |
 | NAM | Namibia | fills Southern Africa's biggest gap (only ZAF and BWA previously done of 5 in the region); colonized by two different powers in sequence (Germany, then South Africa), including the Herero and Nama genocide (1904-1908), formally recognised by Germany only in 2021; strongest governance pillar recorded in this corpus so far, deliberately paired against a genuinely unresolved current fact (a 2023 reparations lawsuit still undecided as of mid-2026) rather than treating 2021 recognition as closure | **done — iteration 1** |
+| LBR | Liberia | fills West Africa's biggest absolute gap (5 of 16 done); the only country in the corpus never formally colonized by a foreign state, yet the Americo-Liberian settler elite (freed American slaves, from 1822) held internal-colonial dominance over the indigenous majority for 133 years, and Firestone's 1926 rubber lease shows the same extractive pattern operating without any formal colonizer at all; a 20+-year-overdue War and Economic Crimes Court coded mixed, not positive, since no prosecution has yet followed | **done — iteration 1** |
 
-### Backlog — the remaining 33
+### Backlog — the remaining 32
 
 Listed in full in `narrative/state.yaml` under `backlog`. They are recorded
 explicitly rather than left implicit: a country with no record should be visibly
 absent, not quietly missing.
 
-Libya, Tunisia, Benin, Cabo Verde, The Gambia, Guinea, Guinea-Bissau, Cote d'Ivoire, Liberia, Mauritania, Senegal, Sierra Leone, Togo, Cameroon, Central African Republic, Republic of Congo, Equatorial Guinea, Gabon, Burundi, Djibouti, Eritrea, Malawi, Mozambique, South Sudan, Tanzania, Uganda, Zambia, Zimbabwe, Lesotho, Eswatini, Comoros, Seychelles, Sao Tome & Principe
+Libya, Tunisia, Benin, Cabo Verde, The Gambia, Guinea, Guinea-Bissau, Cote d'Ivoire, Mauritania, Senegal, Sierra Leone, Togo, Cameroon, Central African Republic, Republic of Congo, Equatorial Guinea, Gabon, Burundi, Djibouti, Eritrea, Malawi, Mozambique, South Sudan, Tanzania, Uganda, Zambia, Zimbabwe, Lesotho, Eswatini, Comoros, Seychelles, Sao Tome & Principe
 
 ---
 
@@ -666,6 +667,44 @@ Append one line per run: date, country, mode, what changed, what was removed.
   fixed by adding a real fact (the Vision 2030 / sixth National
   Development Plan framing) rather than padding.
 
+- **2026-08-10 — LBR — CREATE. Thirteenth backlog country, fills
+  West Africa's biggest absolute gap.** Full baseline built: historical
+  overview, colonial legacy (Firestone's 1926 rubber lease — 99 years,
+  ~10% of Liberia's arable land, workers paid as little as 18
+  cents/day, below Liberia's own minimum wage — documented as
+  functionally the same extractive pattern this corpus records for
+  formally colonized countries, operating through an American
+  corporation instead of a European state), 4 key_periods, 6 pillar
+  summaries (Pillar C left empty — greyed at 1/8 measured; two
+  word-count fixes on Pillars D and G, both fixed by adding a real fact
+  rather than padding), 3 primary + 1 extended recent items, 4 events,
+  rec_membership (ECOWAS 1975 founding member, ratified 30 May 1975,
+  one of the earliest ratifiers). 16 sources opened and verified: 6
+  Wikipedia, 7 news, 1 Princeton, 1 Nobel Prize, 1 more Wikipedia for
+  rec_membership. Liberia is genuinely unique in this corpus: never
+  formally colonized by any foreign state, founded in 1822 by the
+  American Colonization Society as a settlement for freed American
+  slaves, yet the resulting Americo-Liberian settler elite held
+  internal-colonial dominance over the indigenous majority for 133
+  years — a mechanism this record argues belongs in the same category
+  as this project's other extraction stories, not a genuine exception
+  to them. One genuine dead link caught: a PressReader URL for the 2023
+  Weah-concedes-to-Boakai citation returned a real HTTP 404 — the
+  fourth confirmed genuine dead link in this corpus (after COD, ZAF,
+  BFA) — replaced with a VOA News piece covering the same event before
+  committing; all 16 citations resolved cleanly afterward. The War and
+  Economic Crimes Court thread (Boakai's May 2024 executive order, May
+  2025 renewal, a more consultative director appointment after
+  civil-society pushback) is coded mixed rather than positive
+  specifically because institutional progress and actual delivered
+  justice are not the same thing: more than two decades after Liberia's
+  civil wars ended, no one has ever been domestically prosecuted, and
+  the office's own timeline doesn't expect a functioning court before
+  November 2027. Balance: 1 positive, 1 negative, 2 mixed — the
+  revenue-growth claim (positive) and the corruption protests
+  (negative) both concern the same period, deliberately not left to
+  cancel each other out.
+
 ---
 
 ## Meta-notes
@@ -1033,6 +1072,22 @@ Things a future run should know about how to work, not about a specific country.
   access, unlike NER/BFA/MDG, is only moderately constrained rather than
   severe) — a useful worked contrast if a future country's Pillar F
   needs the same kind of judgment call.
+- **2026-08-10** — LBR is a genuine test of the "never colonized"
+  category this corpus has only used once before (ETH). Worth stating
+  the distinction plainly for future runs: Ethiopia's non-colonization
+  meant the record needed a genuinely different colonial_legacy
+  framing built around Menelik II's own imperial expansion. Liberia's
+  non-colonization means something else entirely — a settler project
+  by formerly enslaved people that reproduced the same extractive
+  and stratifying dynamics as European colonialism, just without a
+  foreign sovereign ever holding the territory. Do not assume "never
+  colonized" is a single pattern; check what actually filled the
+  space where colonization would otherwise have been. Also: this is
+  the fourth genuine (non-403) dead link caught in this corpus, and
+  the first from PressReader specifically — PressReader URLs may be
+  worth treating with extra suspicion in future citation checks, since
+  their content can rotate or expire independent of the underlying
+  story still existing elsewhere.
 
 ---
 

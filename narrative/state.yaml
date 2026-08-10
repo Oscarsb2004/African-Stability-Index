@@ -348,6 +348,29 @@ countries:
       target converts to investment; check whether Gini gets fresh measurement;
       check whether Pillars E/F/G (thin, 2-4 of 4-5 measured) gain coverage;
       check if Pillar C has gained coverage'
+  LBR:
+    name: Liberia
+    region: West
+    first_pass: false
+    reason: thirteenth backlog country -- fills West Africa's biggest gap (5 of
+      16 done); the only country in the corpus never formally colonized by a
+      foreign state, yet the Americo-Liberian settler elite (freed American
+      slaves who arrived from 1822) established internal-colonial dominance over
+      the indigenous majority for 133 years, and Firestone's 1926 rubber lease
+      over a tenth of the country's arable land shows the same extractive pattern
+      operating without any formal colonizer at all; genuine positive (revenue
+      growth) placed deliberately alongside genuine negative (corruption protests)
+      in the same period, and the 20+-year-overdue War and Economic Crimes Court
+      coded mixed rather than positive since no prosecution has yet followed
+    iteration_count: 1
+    last_updated: '2026-08-10'
+    next_action: 'EXPAND: follow whether the Office of the War and Economic
+      Crimes Court''s framework is actually complete by its own November 2027
+      target, and whether any domestic prosecution follows; follow whether
+      Boakai''s economic-stabilisation claims survive continued corruption
+      criticism, and whether the July 2025 protests recur; check whether Gini
+      or the pillar E/F thin indicators gain fresh measurement; check if
+      Pillar C has gained coverage'
 backlog:
   LBY:
     name: Libya
@@ -407,14 +430,6 @@ backlog:
     next_action: create baseline from blueprint
   CIV:
     name: Cote d'Ivoire
-    region: West
-    first_pass: false
-    reason: not yet scheduled
-    iteration_count: 0
-    last_updated: null
-    next_action: create baseline from blueprint
-  LBR:
-    name: Liberia
     region: West
     first_pass: false
     reason: not yet scheduled
@@ -1083,3 +1098,33 @@ meta_notes:
   `--links` passes 0 errors, 1 warning (allafrica, familiar 403 pattern already
   confirmed on multiple prior runs) -- 11/12 resolved. Full pytest suite: 106
   passed. 21 of 54 countries now have a record.'
+- '2026-08-10: LBR CREATE run complete (16 sources opened and verified: 6
+  Wikipedia, 7 news, 1 academic/Princeton, 1 official/Nobel Prize, 1 more
+  Wikipedia for rec_membership). Fills West Africa''s biggest absolute gap (5
+  of 16 done before this run). Genuinely unique colonial mechanism for this
+  corpus: Liberia was never formally colonized by any foreign state -- founded
+  in 1822 by the American Colonization Society as a settlement for freed
+  American slaves -- but the resulting Americo-Liberian settler elite
+  established internal-colonial dominance over the indigenous majority for 133
+  years, and Firestone''s 1926 rubber lease (99 years, ~10% of the country''s
+  arable land, workers paid as little as 18 cents/day below Liberia''s own
+  minimum wage) shows the identical extractive mechanism operating through an
+  American corporation instead of a European state -- logged explicitly in
+  colonial_legacy as "functionally, if not legally, the same extractive
+  pattern" documented for formally colonized countries elsewhere in this
+  corpus. One genuine dead link caught: a PressReader URL for the 2023
+  Weah-concedes-to-Boakai citation returned a real HTTP 404 (not a 403) --
+  the fourth confirmed genuine dead link in the corpus (after COD, ZAF, BFA)
+  -- replaced with a VOA News piece covering the same event before committing;
+  after the swap all 16 citation URLs resolved cleanly. The War and Economic
+  Crimes Court thread (Boakai''s May 2024 executive order, May 2025 renewal,
+  a more consultative director appointment after civil-society pushback) is a
+  genuinely significant, ongoing accountability story: more than two decades
+  after Liberia''s civil wars ended, no one has ever been domestically
+  prosecuted, and the office''s own timeline doesn''t expect a functioning
+  court before November 2027 -- coded mixed rather than positive specifically
+  because institutional progress and actual delivered justice are not the
+  same thing. Balance: 1 positive, 1 negative, 2 mixed -- the revenue-growth
+  claim (positive) and the corruption protests (negative) both concern the
+  same period, deliberately not left to cancel each other out. Full pytest
+  suite: 106 passed. 22 of 54 countries now have a record.'

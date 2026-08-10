@@ -1,0 +1,472 @@
+meta:
+  iso3: LBR
+  name: Liberia
+  last_updated: 2026-08-10
+  iteration_count: 1
+  next_action: >
+    EXPAND: (1) follow whether the Office of the War and Economic
+    Crimes Court's framework is actually complete by its own November
+    2027 target, and whether any domestic prosecution follows -- more
+    than two decades of impunity have passed without one; (2) follow
+    whether Boakai's economic-stabilisation claims (revenue $612M->$825M)
+    survive continued corruption criticism, and whether the July 2025
+    protests recur; (3) check whether Gini or the pillar E/F thin
+    indicators gain fresh measurement; (4) check if Pillar C has gained
+    coverage.
+  model_used: claude-sonnet-5
+
+historical:
+  overview: >
+    In 1822, the American Colonization Society, a US organisation whose
+    members included both abolitionists and slaveholders seeking to
+    remove free Black Americans from the United States, began settling
+    formerly enslaved and free-born African Americans on the coast of
+    present-day Liberia. The settlers, who became known as
+    Americo-Liberians, declared independence in 1847, making Liberia
+    Africa's first republic, but established political and economic
+    dominance over the indigenous majority that endured for 133 years.
+    In 1926, Firestone secured a 99-year lease over one million acres --
+    roughly a tenth of Liberia's arable land -- to grow rubber, coercing
+    tens of thousands of Liberians into dangerous plantation labour for
+    wages below the country's own minimum wage law. William Tubman
+    ruled for 27 years until 1971 as part of an increasingly corrupt and
+    insular Americo-Liberian elite. On 12 April 1980, Master Sergeant
+    Samuel Doe led an indigenous-led coup that killed President William
+    Tolbert, ending Americo-Liberian rule but installing an authoritarian
+    government of its own. Doe's overthrow in turn triggered the First
+    Liberian Civil War (1989-1997), led by Charles Taylor's National
+    Patriotic Front, followed by a Second Civil War (1999-2003); the two
+    conflicts together killed an estimated 250,000 people. Taylor,
+    elected president in 1997, was convicted in 2012 by the Special
+    Court for Sierra Leone of aiding war crimes committed by Sierra
+    Leonean rebels -- the first conviction of a former head of state by
+    an international tribunal since Nuremberg. In 2005, Ellen Johnson
+    Sirleaf became Africa's first elected female head of state, later
+    sharing the 2011 Nobel Peace Prize with fellow Liberian Leymah
+    Gbowee. An Ebola epidemic killed 4,809 people between 2014 and 2016.
+    George Weah, who lost to Sirleaf in 2005, won the presidency himself
+    in 2017 and was defeated by Joseph Boakai in 2023.
+  overview_citations: [c1, c2, c3, c5, c8]
+  colonial_legacy: >
+    context/colonial_history.yaml already frames Liberia as never
+    formally colonised by a foreign state, while naming the
+    Americo-Liberian settler elite's domination of the indigenous
+    majority as a system with internal-colonial dynamics. Worth adding
+    the mechanism that made that domination an economic system, not just
+    a political one: Firestone's 1926 lease over roughly a tenth of
+    Liberia's arable land -- negotiated in collusion with the US State
+    Department -- extracted rubber using coerced Liberian labour under
+    conditions contemporaries and later historians have compared
+    directly to the Jim Crow-era American South Firestone's own managers
+    came from: workers earned as little as 18 cents a day, below
+    Liberia's own minimum wage, and children were routinely put to work
+    alongside adults. This matters for how the record reads Liberia's
+    "never colonised" status: no European government held sovereignty
+    here, but an American corporation held effective control of a tenth
+    of the country's land for most of a century, extracting a single
+    cash crop under coercive labour conditions -- functionally, if not
+    legally, the same extractive pattern this project documents for
+    formally colonised countries elsewhere. The Americo-Liberian elite
+    that granted the lease profited from it directly, while the
+    indigenous labourers who worked it did not, reproducing internally
+    the same asymmetry European colonisation imposed externally on most
+    of the rest of this corpus.
+  colonial_legacy_citations: [c1, c3]
+  key_periods:
+    - title: "Settlement, Americo-Liberian rule, and Firestone"
+      period: "1822-1971"
+      summary: >
+        The American Colonization Society began settling freed and
+        free-born African Americans on the Liberian coast in 1822; the
+        settlers, known as Americo-Liberians, declared independence in
+        1847 -- Africa's first republic -- and established political
+        dominance over the indigenous majority. In 1926, Firestone
+        secured a 99-year lease over roughly a tenth of Liberia's arable
+        land to grow rubber, coercing tens of thousands of Liberians
+        into plantation labour for wages below the country's own
+        minimum wage. William Tubman ruled for 27 years until 1971 as
+        part of an increasingly insular Americo-Liberian elite.
+      citations: [c1, c2, c3]
+    - title: "Doe's coup and the end of Americo-Liberian rule"
+      period: "1980"
+      summary: >
+        On 12 April 1980, Master Sergeant Samuel Doe led an
+        indigenous-led military coup that killed President William
+        Tolbert, ending 133 years of Americo-Liberian political
+        dominance. Doe, the first descendant of native Africans to lead
+        Africa's oldest independent republic, went on to establish his
+        own authoritarian and personalist government.
+      citations: [c4]
+    - title: "Two civil wars and Charles Taylor's conviction"
+      period: "1989-2012"
+      summary: >
+        Doe's overthrow triggered the First Liberian Civil War
+        (1989-1997), led by Charles Taylor's National Patriotic Front,
+        followed by a Second Civil War (1999-2003); the two conflicts
+        killed an estimated 250,000 people. Taylor, elected president in
+        1997, was convicted in 2012 by the Special Court for Sierra
+        Leone of aiding war crimes committed by Sierra Leonean rebel
+        forces -- the first conviction of a former head of state by an
+        international tribunal since Nuremberg.
+      citations: [c6, c5]
+    - title: "Sirleaf, Ebola, and the Weah-Boakai transfers"
+      period: "2005-2023"
+      summary: >
+        In 2005, Ellen Johnson Sirleaf became Africa's first elected
+        female head of state, defeating footballer George Weah in a
+        runoff; she later shared the 2011 Nobel Peace Prize with fellow
+        Liberian Leymah Gbowee. An Ebola epidemic killed 4,809 people
+        between 2014 and 2016. Weah won the presidency himself in 2017,
+        then conceded defeat to Joseph Boakai after a tight 2023 runoff.
+      citations: [c7, c8, c9]
+
+pillars:
+  A:
+    summary: >
+      All six governance indicators are directly measured this year.
+      Control of Corruption and Government Effectiveness are both
+      severely weak -- among the more severe readings recorded in this
+      corpus for these two indicators specifically -- while Voice and
+      Accountability, in contrast, clears the midpoint, consistent with
+      a genuine record of contested elections and peaceful transfers:
+      George Weah, who lost the presidency to Ellen Johnson Sirleaf in
+      2005, won it himself in 2017 and then conceded defeat to Joseph
+      Boakai in 2023. Boakai signed an executive order in May 2024
+      establishing an office to design a War and Economic Crimes Court,
+      more than two decades after Liberia's civil wars ended without a
+      single domestic prosecution; the office's own timeline does not
+      expect the court itself to be operating before November 2027.
+    drivers:
+      - "all 6 governance indicators directly measured; Control of Corruption and Government Effectiveness both severely weak -- among the more severe readings recorded in this corpus for these two indicators"
+      - "Voice and Accountability clears the midpoint -- consistent with a genuine record of contested elections and peaceful transfers (Weah lost to Sirleaf 2005, won himself 2017, conceded to Boakai 2023)"
+      - "May 2024 executive order established an office to design a War and Economic Crimes Court -- 20+ years after the civil wars ended with zero domestic prosecutions; court itself not expected operational before Nov 2027"
+    citations: [c10, c11, c12]
+  B:
+    summary: >
+      GDP growth, freshly measured, is moderate, but inflation, also
+      fresh, is high, and GDP per capita, also fresh, is among the
+      lowest recorded in this corpus. Domestic credit to the private
+      sector, carried forward rather than fresh, is thin, and Gini,
+      estimated from regional peers, points to substantial inequality.
+      President Boakai has pointed to domestic revenue collection rising
+      from $612 million in 2023 to roughly $825 million in 2025 as
+      evidence of real economic stabilisation under his ARREST agenda
+      (agriculture, roads, rule of law, education, sanitation, tourism);
+      critics counter that rampant corruption, documented further under
+      Pillar A, has undercut public confidence in that recovery.
+    drivers:
+      - "GDP growth fresh, moderate; inflation fresh, high; GDP per capita (fresh) among the lowest in this corpus"
+      - "domestic credit thin (carried forward); Gini (regional-mean estimate) points to substantial inequality"
+      - "domestic revenue rose from $612M (2023) to ~$825M (2025) under Boakai's ARREST agenda -- a genuine, verifiable stabilisation claim"
+      - "critics counter that corruption (Pillar A) has undercut public confidence in the recovery"
+    citations: [c13, c14]
+  D:
+    summary: >
+      Life expectancy, just over 62 years, and infant mortality, at 63.6
+      per 1,000 live births, are both freshly measured and severe.
+      Severe food insecurity, however, is the starkest figure: 37.1% of
+      the population, also freshly measured -- among the most severe
+      readings recorded anywhere in this corpus, more than double the
+      rate recorded for several other West African records here. Safely
+      managed drinking water access, estimated from regional peers, is
+      weak as well. This is a largely, though not fully, directly
+      measured severity: four of the pillar's five indicators are
+      current.
+    drivers:
+      - "life expectancy ~62 years, infant mortality ~63.6/1,000 -- both fresh, severe"
+      - "severe food insecurity 37.1% (fresh) -- among the most severe readings recorded anywhere in this corpus"
+      - "safely managed water weak (regional-mean estimate); 4 of 5 indicators fresh -- a largely, not fully, directly measured severity"
+    citations: [c15]
+  E:
+    summary: >
+      Political Stability, freshly measured, is comparatively decent --
+      better than the severity of Liberia's own civil-war history might
+      suggest, and consistent with three consecutive competitive
+      elections and peaceful transfers of power since 2005. Intentional
+      homicide and displaced persons, both estimated from regional peers
+      rather than measured directly, are more middling. Only a minority
+      of this pillar's indicators are freshly measured this year, so its
+      comparatively favourable reading should be treated as a real but
+      partial signal, not full confirmation that the post-war recovery
+      documented in historical.key_periods has fully translated into
+      measured security outcomes.
+    drivers:
+      - "Political Stability comparatively decent (fresh) -- better than Liberia's civil-war history might suggest, consistent with 3 consecutive competitive elections and peaceful transfers since 2005"
+      - "intentional homicide and IDPs both more middling (regional-mean estimates, not directly measured)"
+      - "only a minority of indicators freshly measured -- the favourable reading is a real but partial, thin signal"
+    citations: [c9]
+  F:
+    summary: >
+      CO2 emissions per capita, freshly measured, are near the lowest
+      recorded anywhere in this corpus -- but this reads as a
+      wealth-proxy artefact rather than an achievement: electricity
+      access itself (Pillar G) covers under a third of the population.
+      Freshwater withdrawal, carried forward, is close to zero relative
+      to internal renewable resources, plausibly reflecting Liberia's
+      genuinely high rainfall and dense rainforest cover rather than
+      scarcity-driven restraint. Electricity generation from fossil
+      fuels, also carried forward, is moderate. Agricultural land share,
+      fresh, is comparatively low, consistent with Liberia's forest
+      cover. Only two of the pillar's four indicators are freshly
+      measured this year.
+    drivers:
+      - "CO2 pc near the lowest recorded in this corpus (fresh) -- reads as a wealth-proxy artefact: electricity access under a third of the population (Pillar G)"
+      - "freshwater withdrawal near zero relative to renewable resources (carried forward) -- plausibly genuine (high rainfall, dense rainforest), not scarcity-driven"
+      - "electricity generation moderate fossil-fuel share (carried forward); agricultural land comparatively low (fresh), consistent with heavy forest cover"
+      - "only 2 of 4 indicators freshly measured this year"
+    citations: [c15]
+  G:
+    summary: >
+      Electricity access, at just under a third of the population and
+      freshly measured, is weak, and directly explains Pillar F's low
+      emissions reading. Basic drinking water access, also fresh, is
+      comparatively decent, but handwashing coverage, also fresh, is
+      among the lowest figures recorded anywhere in this corpus --
+      barely 3.5% of the population. Safely managed water and social
+      protection coverage, both estimated from regional peers, are weak
+      as well. This pillar's severity is substantially, though not
+      entirely, freshly measured, and sits alongside
+      historical.colonial_legacy's account of a country whose land and
+      labour were extracted for a century without the infrastructure
+      investment that might otherwise have followed.
+    drivers:
+      - "electricity access under a third of the population (fresh) -- weak, directly explains Pillar F's low emissions reading"
+      - "basic drinking water comparatively decent (fresh); handwashing barely 3.5% (fresh) -- among the lowest figures recorded anywhere in this corpus"
+      - "safely managed water and social protection both weak (regional-mean estimates)"
+    citations: [c15]
+
+recent:
+  primary:
+    - headline: "Boakai renews mandate for Liberia's War and Economic Crimes Court office"
+      date: 2025-05-02
+      summary: >
+        President Joseph Boakai signed Executive Order No. 148 on 2 May
+        2025, renewing the mandate of the Office of the War and Economic
+        Crimes Court and committing $2 million to its operations, one
+        year after his original May 2024 order first established the
+        office. More than two decades after Liberia's civil wars ended,
+        no one has ever been domestically prosecuted for war crimes
+        committed during them; the office's own executive director has
+        said the framework for an actual functioning court is not
+        expected to be complete before November 2027.
+      why_it_matters: >
+        The clearest, most current evidence behind Pillar A's
+        accountability gap, and a genuine institutional step that has
+        not yet produced the prosecutions Liberia's 2009 Truth and
+        Reconciliation Commission recommended sixteen years ago.
+      news_url: "https://www.liberianobserver.com/news/executive-order-infuses-new-life-us-2m-into-war-crimes-court/article_d3c10942-b806-4af4-b858-0194cb351da3.html"
+      wikipedia_url: ""
+      sentiment: mixed
+    - headline: "Hundreds protest corruption under Boakai's government"
+      date: 2025-07-17
+      summary: >
+        Hundreds of Liberians protested in the streets on 17 July 2025
+        over perceived corruption and democratic backsliding under
+        President Boakai, whose own anti-corruption commission reported
+        months earlier that fewer than half of government officials
+        asked to declare their assets had complied.
+      why_it_matters: >
+        Documents a real, current public-confidence problem sitting
+        directly alongside the economic-stabilisation claims documented
+        in Pillar B.
+      news_url: "https://www.bssnews.net/international/293333"
+      wikipedia_url: ""
+      sentiment: negative
+    - headline: "Boakai cites rising domestic revenue as evidence of economic stabilisation"
+      date: 2026-01-28
+      summary: >
+        President Boakai pointed to 5.1% GDP growth and domestic revenue
+        collection rising from $612 million in 2023 to roughly $825
+        million in 2025 as evidence his ARREST agenda has stabilised
+        Liberia's economy; the opposition Liberia People's Party
+        disputed the characterisation, arguing the figures overstate
+        genuine improvement in ordinary Liberians' living standards.
+      why_it_matters: >
+        A genuine, verifiable economic data point, contested on
+        interpretation rather than on the underlying numbers -- placed
+        here at full weight alongside, not instead of, the corruption
+        concerns documented in the same period.
+      news_url: "https://allafrica.com/stories/202601280263.html"
+      wikipedia_url: ""
+      sentiment: positive
+  extended:
+    - headline: "Civil society pressure forces a more consultative War Crimes Court appointment"
+      date: 2024-09-25
+      summary: >
+        Following strong objections from victim and civil society groups
+        to Boakai's first nominee to lead the Office of the War and
+        Economic Crimes Court, the administration withdrew the
+        appointment and ran a more consultative process, resulting in
+        the selection of Cllr. Jallah Barbu as executive director.
+      why_it_matters: >
+        Shows the accountability process itself being held accountable
+        by the same civil society the court is meant to eventually
+        serve.
+      news_url: "https://www.justsecurity.org/96297/liberia-war-crimes-court/"
+      wikipedia_url: ""
+      sentiment: mixed
+
+events:
+  - year: 1847
+    type: independence
+    title: "Liberia declares independence, Africa's first republic"
+    description: >
+      Americo-Liberian settlers declared independence from the American
+      Colonization Society on 26 July 1847, making Liberia Africa's
+      first republic, though political dominance remained with the
+      settler minority over the indigenous majority.
+    url: "https://en.wikipedia.org/wiki/Liberian_Declaration_of_Independence"
+    direction: mixed
+  - year: 1980
+    type: coup
+    title: "Doe's coup ends Americo-Liberian rule"
+    description: >
+      Master Sergeant Samuel Doe led an indigenous-led coup on 12 April
+      1980 that killed President William Tolbert, ending 133 years of
+      Americo-Liberian political dominance, but installed a new
+      authoritarian and personalist government in its place.
+    url: "https://en.wikipedia.org/wiki/1980_Liberian_coup_d%27%C3%A9tat"
+    direction: mixed
+  - year: 2003
+    type: peace_deal
+    title: "Accra Comprehensive Peace Agreement ends the civil wars"
+    description: >
+      The Accra Comprehensive Peace Agreement, signed 18 August 2003,
+      ended Liberia's civil wars after President Charles Taylor was
+      forced into exile in Nigeria; the two conflicts had killed an
+      estimated 250,000 people since 1989.
+    url: "https://en.wikipedia.org/wiki/Accra_Comprehensive_Peace_Agreement"
+    direction: improve
+  - year: 2005
+    type: election
+    title: "Sirleaf becomes Africa's first elected female head of state"
+    description: >
+      Ellen Johnson Sirleaf defeated footballer George Weah in a runoff
+      to become Africa's first elected female head of state, later
+      sharing the 2011 Nobel Peace Prize with fellow Liberian Leymah
+      Gbowee.
+    url: "https://www.nobelprize.org/prizes/peace/2011/johnson_sirleaf/biographical/"
+    direction: improve
+
+citations:
+  - id: c1
+    url: "https://en.wikipedia.org/wiki/Colony_of_Liberia"
+    source_type: wikipedia
+    title: "Colony of Liberia"
+    accessed: 2026-08-10
+    verified: true
+  - id: c2
+    url: "https://en.wikipedia.org/wiki/Liberian_Declaration_of_Independence"
+    source_type: wikipedia
+    title: "Liberian Declaration of Independence"
+    accessed: 2026-08-10
+    verified: true
+  - id: c3
+    url: "https://aas.princeton.edu/news/what-princeton-owes-firestones-exploitation-liberia"
+    source_type: academic
+    title: "What Princeton Owes to Firestone's Exploitation of Liberia (Princeton African American Studies)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c4
+    url: "https://en.wikipedia.org/wiki/1980_Liberian_coup_d%27%C3%A9tat"
+    source_type: wikipedia
+    title: "1980 Liberian coup d'état"
+    accessed: 2026-08-10
+    verified: true
+  - id: c5
+    url: "https://www.hrw.org/news/2012/04/26/sierra-leone-landmark-conviction-liberian-ex-president"
+    source_type: news
+    title: "Sierra Leone: Landmark Conviction of Liberian Ex-President (Human Rights Watch)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c6
+    url: "https://en.wikipedia.org/wiki/Accra_Comprehensive_Peace_Agreement"
+    source_type: wikipedia
+    title: "Accra Comprehensive Peace Agreement"
+    accessed: 2026-08-10
+    verified: true
+  - id: c7
+    url: "https://www.nobelprize.org/prizes/peace/2011/johnson_sirleaf/biographical/"
+    source_type: official
+    title: "Ellen Johnson Sirleaf -- Biographical (NobelPrize.org)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c8
+    url: "https://en.wikipedia.org/wiki/Ebola_virus_epidemic_in_Liberia"
+    source_type: wikipedia
+    title: "Ebola virus epidemic in Liberia"
+    accessed: 2026-08-10
+    verified: true
+  - id: c9
+    url: "https://www.voanews.com/a/liberian-president-concedes-defeat-after-provisional-results-show-boakai-won-/7360395.html"
+    source_type: news
+    title: "Liberian President Concedes Defeat After Provisional Results Show Boakai Won (VOA News)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c10
+    url: "https://www.liberianobserver.com/news/executive-order-infuses-new-life-us-2m-into-war-crimes-court/article_d3c10942-b806-4af4-b858-0194cb351da3.html"
+    source_type: news
+    title: "Executive Order Infuses New Life, US$2M into War Crimes Court (Liberian Observer)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c11
+    url: "https://www.hrw.org/news/2025/01/27/joint-letter-president-republic-liberia-situation-office-war-and-economic-crimes"
+    source_type: news
+    title: "Joint Letter to the President of the Republic of Liberia: Situation of the Office for the War and Economic Crimes Court (Human Rights Watch)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c12
+    url: "https://www.justsecurity.org/96297/liberia-war-crimes-court/"
+    source_type: news
+    title: "Liberia Can Learn from Other Hybrid War Crimes Tribunals (Just Security)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c13
+    url: "https://allafrica.com/stories/202601280263.html"
+    source_type: news
+    title: "Liberia: LPP Disputes Boakai's Economic Stability Claims (AllAfrica)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c14
+    url: "https://www.liberianobserver.com/opinion/commentaries/boakai-s-anti-corruption-agenda-is-crumbling/article_0114963b-ef68-4e42-80fd-7d97515758ce.html"
+    source_type: news
+    title: "Boakai's Anti-corruption Agenda Is Crumbling (Liberian Observer)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c15
+    url: "https://www.bssnews.net/international/293333"
+    source_type: news
+    title: "Hundreds rally against government corruption in Liberia (BSS News)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c16
+    url: "https://en.wikipedia.org/wiki/Treaty_of_Lagos"
+    source_type: wikipedia
+    title: "Treaty of Lagos"
+    accessed: 2026-08-10
+    verified: true
+
+rec_membership:
+  - org: ECOWAS
+    joined: 1975
+    status: current
+    left: null
+    citations: [c16]
+
+balance:
+  n_positive: 1
+  n_negative: 1
+  n_mixed: 2
+  note: >
+    The corruption protests are coded negative at full weight -- a real,
+    current public-confidence crisis, not softened by the economic
+    figures documented in the same period. The revenue-growth claim is
+    coded positive because the underlying numbers ($612M to $825M) are
+    genuine and independently verifiable, even though their political
+    interpretation is contested; this record separates the fact from the
+    argument about what the fact means. The War and Economic Crimes
+    Court's mandate renewal and its more consultative director
+    appointment are both coded mixed: each is a real institutional step
+    forward, and neither has yet produced what more than two decades of
+    Liberians affected by the civil wars have been waiting for -- an
+    actual prosecution.
