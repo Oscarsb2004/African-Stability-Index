@@ -42,9 +42,44 @@ def greyed_pillars(panel, iso3: str) -> set[str]:
 
 
 def check_links(records: dict[str, dict]) -> list[str]:
-    """Confirm every cited URL resolves. Fabricated sources are the top risk."""
-    import urllib.request
+    """
+    Confirm every cited URL resolves. Fabricated sources are the top risk this
+    task is exposed to, so a citation that cannot be reached is treated as
+    unverified — but "cannot be reached by this script" is not the same claim
+    as "does not exist", and the two must not be reported identically.
+
+    Two things independent of link validity get in the way here:
+      - SSL verification fails on this project's environment against otherwise
+        valid HTTPS sites (documented precedent: 01_pull.py's "Windows SSL fix",
+        a corporate/system proxy replacing certificates with a CA Python does
+        not recognise). Disabled the same way, for the same reason.
+      - Some sites (IMF/Akamai observed) return 403 to any scripted request
+        regardless of method, which a human browser sails past. That is bot
+        detection, not link rot, so it is reported as a warning to check
+        manually rather than an error implying fabrication.
+
+    A HEAD request is tried first and a GET is used as a fallback, since some
+    servers reject HEAD outright (405) while serving GET normally.
+    """
+    import ssl
     import urllib.error
+    import urllib.request
+
+    ctx = ssl.create_default_context()
+    ctx.check_hostname = False
+    ctx.verify_mode = ssl.CERT_NONE
+
+    def _try(url: str, method: str) -> tuple[bool, int | None, str | None]:
+        req = urllib.request.Request(
+            url, method=method,
+            headers={"User-Agent": "Mozilla/5.0 (compatible; ASI-narrative-check/1.0)"})
+        try:
+            with urllib.request.urlopen(req, timeout=12, context=ctx) as r:
+                return 200 <= r.status < 400, r.status, None
+        except urllib.error.HTTPError as e:
+            return False, e.code, None
+        except Exception as e:
+            return False, None, f"{type(e).__name__}: {e}"
 
     problems, seen = [], {}
     for iso3, rec in records.items():
@@ -52,21 +87,26 @@ def check_links(records: dict[str, dict]) -> list[str]:
             url = c.get("url")
             if not url:
                 continue
-            if url in seen:
-                ok = seen[url]
+            if url not in seen:
+                ok, status, err = _try(url, "HEAD")
+                if not ok and status in (403, 405, None):
+                    ok, status, err = _try(url, "GET")
+                seen[url] = (ok, status, err)
+            ok, status, err = seen[url]
+            cid = c.get("id")
+            if ok:
+                continue
+            if status == 403:
+                problems.append(
+                    f"[warning] {iso3} · citation {cid}: blocked our request "
+                    f"(HTTP 403) — check manually in a browser, this is likely "
+                    f"bot detection rather than a dead link — {url}")
+            elif status is not None:
+                problems.append(f"[error] {iso3} · citation {cid}: "
+                                f"HTTP {status} — {url}")
             else:
-                req = urllib.request.Request(
-                    url, method="HEAD",
-                    headers={"User-Agent": "ASI-narrative-check/1.0"})
-                try:
-                    with urllib.request.urlopen(req, timeout=12) as r:
-                        ok = 200 <= r.status < 400
-                except Exception:
-                    ok = False
-                seen[url] = ok
-            if not ok:
-                problems.append(f"[error] {iso3} · citation {c.get('id')}: "
-                                f"url does not resolve — {url}")
+                problems.append(f"[error] {iso3} · citation {cid}: "
+                                f"unreachable ({err}) — {url}")
     return problems
 
 

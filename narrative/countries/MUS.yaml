@@ -1,0 +1,422 @@
+meta:
+  iso3: MUS
+  name: Mauritius
+  last_updated: 2026-08-09
+  iteration_count: 1
+  next_action: >
+    EXPAND: (1) check whether the May 2025 Chagos treaty has follow-on
+    implementation or ratification news since this run; (2) find a second,
+    independent source for the 1965-1968 ethnic unrest beyond
+    History_of_Mauritius (Wikipedia) to strengthen key_periods[1]; (3) confirm
+    whether social protection coverage (currently absent) has since been
+    measured and update the Pillar G summary if so; (4) consider splitting the
+    1965-1968 unrest into its own key_period rather than folding it into the
+    independence period.
+  model_used: claude-sonnet-5
+
+historical:
+  overview: >
+    Mauritius was uninhabited until Dutch sailors established the first
+    permanent settlement in 1638, introducing sugarcane cultivation and
+    enslaved labourers from Madagascar and East Africa before abandoning the
+    island in 1710. France annexed the territory in 1715 as Isle de France,
+    and under Governor Bertrand-Francois Mahe de La Bourdonnais built Port
+    Louis into a major naval and commercial base; the enslaved population grew
+    from roughly 15,000 to 60,000 by 1810. Britain captured the island in
+    December 1810 and formalised control under the 1814 Treaty of Paris,
+    retaining French civil law and language alongside British administration
+    -- a duality still visible in Mauritian institutions. Slavery was
+    abolished in 1835, but the roughly 66,000 people freed received no
+    compensation while planters were paid for their loss; the resulting
+    labour shortage was filled by indentured workers from India, nearly half
+    a million of whom arrived over the following decades and became the
+    demographic and, eventually, political majority. Sir Seewoosagur
+    Ramgoolam, of Indo-Mauritian descent, led the country to independence on
+    12 March 1968, following a 1967 election and a period of ethnic unrest
+    serious enough to require British troops. Mauritius became a republic
+    within the Commonwealth on 12 March 1992. Since independence, political
+    power has alternated peacefully among a small number of coalition blocs,
+    most recently in the landslide of November 2024, making Mauritius one of
+    the few African states with an uninterrupted record of multiparty
+    elections since independence.
+  overview_citations: [c1, c2]
+  colonial_legacy: >
+    The 1835 abolition compensated plantation owners for the loss of
+    enslaved labour but paid the roughly 66,000 freed people nothing, a
+    structural asymmetry that indentured Indian labour then compounded
+    rather than corrected: workers arrived on multi-year contracts with
+    limited legal recourse, and their descendants became first a demographic
+    and later an electoral majority, so that Mauritian party politics has
+    been organised substantially along the communal lines this migration
+    created ever since. A second, more direct colonial legacy remained
+    unresolved within living memory until this year: in 1965, three years
+    before independence, Britain detached the Chagos Archipelago from
+    Mauritius to form the British Indian Ocean Territory, forcibly removed
+    its population between 1967 and 1973, and leased Diego Garcia to the
+    United States as a military base. A 2019 International Court of Justice
+    advisory opinion found the UK's continued administration unlawful.
+    Mauritius pursued the claim for six decades before a 2025 treaty
+    returned sovereignty while extending the US-UK lease of Diego Garcia to
+    99 years -- a resolution that arrived only in the year this index was
+    compiled.
+  colonial_legacy_citations: [c1, c3]
+  key_periods:
+    - title: "Plantation economy and slavery"
+      period: "1638-1835"
+      summary: >
+        Dutch settlers introduced sugarcane and enslaved African and
+        Malagasy labour from 1638, abandoning the island by 1710. France
+        annexed it as Isle de France in 1715 and built a plantation economy
+        on slavery; the enslaved population reached roughly 60,000 by 1810,
+        when Britain captured the island and confirmed French civil law
+        alongside British rule under the 1814 Treaty of Paris. Slavery was
+        abolished in 1835; planters were compensated, the 66,000 people
+        freed were not.
+      citations: [c1]
+    - title: "Indentured labour and the road to independence"
+      period: "1835-1968"
+      summary: >
+        Abolition created a labour shortage filled by indentured workers
+        from India, nearly half a million of whom arrived over the following
+        decades, eventually forming a demographic and electoral majority.
+        Expanding the franchise shifted political power from the
+        Franco-Mauritian elite toward this Indo-Mauritian population,
+        generating ethnic tension serious enough that British troops were
+        deployed to control unrest between 1965 and 1968. Sir Seewoosagur
+        Ramgoolam led the country to independence on 12 March 1968.
+      citations: [c1]
+    - title: "Post-independence diversification"
+      period: "1968-1990s"
+      summary: >
+        Early attempts to diversify beyond sugar monoculture made limited
+        progress until Cyclone Claudette (1979) and collapsing world sugar
+        prices in the early 1980s forced a decisive shift. Government-backed
+        export processing zones built a textile and garment export industry,
+        later supplemented by tourism and financial services, transforming
+        Mauritius from a low-income sugar economy into one of Africa's
+        highest-income states -- a trajectory frequently cited as a
+        development model. Mauritius became a republic on 12 March 1992.
+      citations: [c1]
+    - title: "The Chagos Archipelago dispute"
+      period: "1965-2025"
+      summary: >
+        Britain detached the Chagos Archipelago in 1965 to form the British
+        Indian Ocean Territory, forcibly displacing its population by 1973
+        to establish the Diego Garcia military base leased to the United
+        States. Mauritius contested the separation as unlawful under
+        decolonization law; a 2019 ICJ advisory opinion agreed. Negotiations
+        concluded with a treaty signed 22 May 2025 returning sovereignty to
+        Mauritius while extending the UK-US lease of Diego Garcia for at
+        least 99 years.
+      citations: [c3, c6]
+
+pillars:
+  A:
+    summary: >
+      Mauritius scores strongly across all six governance indicators the
+      index tracks (voice and accountability, government effectiveness, rule
+      of law, regulatory quality, control of corruption, and political
+      stability), consistent with its record as one of the few African
+      states with uninterrupted multiparty elections since independence. The
+      November 2024 general election reinforced this record procedurally: a
+      landslide opposition victory (60 of 62 directly elected seats)
+      produced a peaceful, undisputed transfer of power. That election
+      followed a wiretapping scandal in which leaked recordings implicated
+      senior officials and prompted a brief, contested social media
+      suspension -- an episode that revealed real strain on institutional
+      accountability even as the electoral outcome itself demonstrated a
+      functioning check on incumbent power. The landslide margin has also
+      raised its own concern: with the opposition holding all but two seats,
+      observers have questioned whether parliamentary scrutiny can function
+      without a substantial opposition bloc.
+    drivers:
+      - "uninterrupted multiparty elections since 1968"
+      - "peaceful transfer of power, Nov 2024"
+      - "wiretapping scandal exposed institutional strain (Oct-Nov 2024)"
+      - "near-total opposition wipeout raises scrutiny concerns"
+    citations: [c2, c4, c8]
+  B:
+    summary: >
+      Mauritius records the highest GDP per capita in the sample among
+      mainland-comparable economies and strong access to credit, reflecting
+      the diversification from sugar monoculture into textiles, tourism, and
+      financial services that began in the 1980s. Inflation eased
+      substantially, from roughly 7% in 2023 to 2.5% by early 2025, and
+      growth remained resilient through 2024-2025. The index's economic
+      score does not capture the fiscal position, which is a live concern:
+      public debt reached 86% of GDP by mid-2025, and the IMF has pressed
+      for consolidation while flagging a growth slowdown tied to reduced
+      tourism demand from the war in the Middle East. Coverage of social
+      protection spending was not available for this pillar in the current
+      data.
+    drivers:
+      - "diversified economy: textiles, tourism, financial services"
+      - "inflation eased sharply, 2023-2025"
+      - "public debt at 86% of GDP, IMF pressing for consolidation"
+    citations: [c7]
+  D:
+    summary: >
+      Health outcomes are strong on the measures available: life expectancy
+      of about 73 years and a low infant mortality rate. Two indicators --
+      safely managed drinking water and basic handwashing facilities -- were
+      not directly measured for the current year and are estimated from
+      regional peers, so the pillar score is reasonably confident but not
+      fully verified. The index's mortality-based indicators do not capture
+      a longer-term health transition: non-communicable disease now accounts
+      for the large majority of the disease burden, diabetes prevalence is
+      among the highest recorded globally, and the population aged 60 and
+      over has roughly doubled since 2000. The government's 2023 national
+      ageing-care strategy, developed with WHO support, responds directly to
+      this shift.
+    drivers:
+      - "strong life expectancy and low infant mortality"
+      - "two indicators estimated from regional peers, not measured directly"
+      - "high non-communicable disease and diabetes burden not captured by the index"
+      - "population aged 60+ roughly doubled since 2000"
+    citations: [c9]
+  E:
+    summary: >
+      The security pillar score rests on a thin evidentiary base: two of its
+      four indicators -- the general and female homicide rates -- are
+      carried forward from earlier years rather than freshly measured, and
+      data on displacement is absent altogether (unsurprising, since
+      Mauritius has no active internal conflict). Political stability and
+      absence of violence, the indicator most directly measured, is itself a
+      perception-based governance measure rather than a direct count of
+      security incidents. Mauritius has no record of civil conflict or coup
+      since independence, which is consistent with a high score, but the
+      underlying data should be read as a plausible rather than fully
+      current picture.
+    drivers:
+      - "no civil conflict or coup since 1968"
+      - "homicide indicators carried forward, not freshly measured"
+      - "displacement data absent (no active conflict)"
+    citations: [c1]
+  F:
+    summary: >
+      Mauritius records the weakest pillar score in the index, driven by
+      near-total reliance on imported fossil fuels: roughly 90% of primary
+      energy is imported, and over 80% of electricity generation comes from
+      oil, gas and coal, so the low score reflects energy import dependence
+      more than domestic environmental policy. Per-capita CO2 emissions
+      score at the bottom of the sample under the index's negative-polarity
+      treatment; this indicator correlates strongly and negatively with GDP
+      per capita across the wider sample (see
+      methodology/METHODOLOGY_REVIEW.md), meaning wealthier economies are
+      structurally penalised here regardless of absolute environmental
+      impact. The government has set a target of 60% renewable electricity
+      by 2030 as part of a national strategy to reduce fuel-import
+      dependence and improve energy security -- the more immediate
+      environmental concern for a small island state with no domestic
+      fossil reserves.
+    drivers:
+      - "~90% of primary energy imported; >80% of electricity from fossil fuels"
+      - "co2_pc indicator behaves as an inverted wealth proxy across the index (see methodology review)"
+      - "60% renewable-electricity target by 2030"
+      - "no domestic fossil reserves: energy security, not extraction, is the real concern"
+    citations: [c10]
+  G:
+    summary: >
+      Mauritius scores highest of any pillar here, reflecting complete
+      electrification (100% access), strong basic water access, and deep
+      domestic credit markets -- infrastructure legacies of the post-1980s
+      diversification into export manufacturing, tourism and financial
+      services. Data on social protection and labour program coverage was
+      not available for the current year, so this pillar's strength should
+      be read as a picture of physical and financial infrastructure
+      specifically, rather than social infrastructure more broadly, which
+      the index measures separately and with less complete data.
+    drivers:
+      - "100% electricity access"
+      - "deep domestic credit markets"
+      - "social protection coverage data absent this year"
+    citations: [c1]
+
+recent:
+  primary:
+    - headline: "Alliance du Changement wins landslide election, ending a decade of MSM government"
+      date: 2024-11-10
+      summary: >
+        The opposition Alliance du Changement, led by former prime minister
+        Navin Ramgoolam, won 60 of 62 directly elected seats on 10 November
+        2024, on a turnout of 79%, the highest since 2010. The outgoing
+        Alliance Lepep, led by Pravind Jugnauth, retained no directly
+        elected seats. Ramgoolam was sworn in as prime minister on 13
+        November, returning to the office he last held in 2014.
+      why_it_matters: >
+        A peaceful, decisive transfer of power reinforces the
+        electoral-turnover record the index's governance pillar measures,
+        though the near-total opposition wipeout has itself raised questions
+        about parliamentary scrutiny.
+      news_url: "https://www.aljazeera.com/news/2024/11/10/mauritius-election-amid-wiretapping-scandal-whats-at-stake"
+      wikipedia_url: "https://en.wikipedia.org/wiki/2024_Mauritian_general_election"
+      sentiment: mixed
+    - headline: "Wiretapping scandal and brief social media suspension precede November 2024 election"
+      date: 2024-10-15
+      summary: >
+        Leaked phone recordings implicating politicians, officials,
+        journalists and diplomats began circulating from mid-October 2024;
+        Prime Minister Jugnauth alleged the recordings were AI-manipulated,
+        which journalists disputed. Citing national security, the
+        government suspended access to major social media platforms from 31
+        October, reversing the ban after roughly 24 hours following public
+        and press-freedom objections. The episode dominated the final weeks
+        of the election campaign.
+      why_it_matters: >
+        The episode exposed institutional strain around surveillance and
+        press freedom even in a state whose formal governance indicators
+        score highly.
+      news_url: "https://www.timeslive.co.za/news/africa/2024-11-01-mauritius-suspends-social-media-until-after-election-amid-wiretapping-scandal/"
+      wikipedia_url: "https://en.wikipedia.org/wiki/2024_Mauritian_social_media_ban"
+      sentiment: negative
+    - headline: "UK and Mauritius sign treaty returning sovereignty over the Chagos Archipelago"
+      date: 2025-05-22
+      summary: >
+        The United Kingdom and Mauritius signed a treaty on 22 May 2025
+        transferring sovereignty of the Chagos Archipelago to Mauritius,
+        resolving a dispute dating to Britain's 1965 detachment of the
+        territory. The UK retains use of the Diego Garcia military base
+        under a lease of at least 99 years, paying Mauritius roughly $136
+        million annually. The agreement followed a 2019 ICJ advisory opinion
+        that found continued UK administration unlawful.
+      why_it_matters: >
+        Resolves the most direct unfinished colonial-era territorial claim
+        affecting Mauritius, six decades after the original detachment (see
+        historical.colonial_legacy).
+      news_url: "https://commonslibrary.parliament.uk/research-briefings/cbp-10273/"
+      wikipedia_url: "https://en.wikipedia.org/wiki/Chagos_Archipelago_sovereignty_dispute"
+      sentiment: positive
+  extended:
+    - headline: "IMF presses Mauritius to reduce public debt as growth is expected to slow"
+      date: 2025-06-18
+      summary: >
+        The IMF's 2025 Article IV consultation found Mauritian public debt
+        had reached 86% of GDP by mid-2025 after fiscal loosening, and
+        recommended consolidation. Inflation eased to 2.5% by March 2025
+        from 7% in 2023, and reserves rose, but the IMF forecast growth
+        slowing to 2.8% in 2026 from 3.2% in 2025 as reduced Middle East
+        tourism demand weighs on the economy.
+      why_it_matters: >
+        Fiscal risk is not directly captured by the index's economic
+        indicators, which score current growth and credit access rather
+        than debt sustainability.
+      news_url: "https://www.imf.org/en/news/articles/2025/06/18/pr-25204-mauritius-imf-concludes-2025-article-iv-consultation"
+      wikipedia_url: ""
+      sentiment: mixed
+
+events:
+  - year: 2020
+    type: disaster
+    title: "MV Wakashio oil spill"
+    description: >
+      The bulk carrier MV Wakashio ran aground on a coral reef on 25 July
+      2020 and began leaking fuel oil in early August, eventually spilling
+      roughly 1,000 tonnes and prompting a declared state of environmental
+      emergency.
+    url: "https://en.wikipedia.org/wiki/MV_Wakashio_oil_spill"
+    direction: deteriorate
+  - year: 2024
+    type: constitutional
+    title: "UK-Mauritius agreement on Chagos sovereignty announced"
+    description: >
+      The two governments announced agreement in principle on 3 October 2024
+      to transfer sovereignty of the Chagos Archipelago to Mauritius, with
+      the UK retaining a 99-year lease on Diego Garcia.
+    url: "https://commonslibrary.parliament.uk/research-briefings/cbp-10273/"
+    direction: improve
+  - year: 2024
+    type: election
+    title: "Alliance du Changement landslide victory"
+    description: >
+      Opposition coalition wins 60 of 62 directly elected seats on 10
+      November 2024; Navin Ramgoolam sworn in as prime minister 13 November,
+      ending a decade of MSM-led government.
+    url: "https://en.wikipedia.org/wiki/2024_Mauritian_general_election"
+    direction: improve
+
+citations:
+  - id: c1
+    url: "https://en.wikipedia.org/wiki/History_of_Mauritius"
+    source_type: wikipedia
+    title: "History of Mauritius"
+    accessed: 2026-08-09
+    verified: true
+  - id: c2
+    url: "https://en.wikipedia.org/wiki/2024_Mauritian_general_election"
+    source_type: wikipedia
+    title: "2024 Mauritian general election"
+    accessed: 2026-08-09
+    verified: true
+  - id: c3
+    url: "https://en.wikipedia.org/wiki/Chagos_Archipelago_sovereignty_dispute"
+    source_type: wikipedia
+    title: "Chagos Archipelago sovereignty dispute"
+    accessed: 2026-08-09
+    verified: true
+  - id: c4
+    url: "https://www.aljazeera.com/news/2024/11/10/mauritius-election-amid-wiretapping-scandal-whats-at-stake"
+    source_type: news
+    title: "Mauritius election 2024: Amid wiretapping scandal, what's at stake?"
+    accessed: 2026-08-09
+    verified: true
+  - id: c5
+    url: "https://theconversation.com/mauritius-elections-landslide-why-voters-were-determined-to-get-jugnauths-government-out-243715"
+    source_type: news
+    title: "Mauritius elections landslide - why voters were determined to get Jugnauth's government out"
+    accessed: 2026-08-09
+    verified: true
+  - id: c6
+    url: "https://commonslibrary.parliament.uk/research-briefings/cbp-10273/"
+    source_type: official
+    title: "2025 treaty on the British Indian Ocean Territory/Chagos Archipelago (UK House of Commons Library)"
+    accessed: 2026-08-09
+    verified: true
+  - id: c7
+    url: "https://www.imf.org/en/news/articles/2025/06/18/pr-25204-mauritius-imf-concludes-2025-article-iv-consultation"
+    source_type: official
+    title: "IMF Executive Board Concludes 2025 Article IV Consultation with Mauritius"
+    accessed: 2026-08-09
+    verified: true
+  - id: c8
+    url: "https://en.wikipedia.org/wiki/2024_Mauritian_social_media_ban"
+    source_type: wikipedia
+    title: "2024 Mauritian social media ban"
+    accessed: 2026-08-09
+    verified: true
+  - id: c9
+    url: "https://www.who.int/news-room/feature-stories/detail/integrated-health-care-for-older-people-in-the-republic-of-mauritius"
+    source_type: official
+    title: "Integrated health care for older people in the Republic of Mauritius (WHO)"
+    accessed: 2026-08-09
+    verified: true
+  - id: c10
+    url: "https://www.undp.org/mauritius-seychelles/renewable-energy"
+    source_type: official
+    title: "Renewable energy (UNDP Mauritius & Seychelles)"
+    accessed: 2026-08-09
+    verified: true
+  - id: c11
+    url: "https://www.timeslive.co.za/news/africa/2024-11-01-mauritius-suspends-social-media-until-after-election-amid-wiretapping-scandal/"
+    source_type: news
+    title: "Mauritius suspends social media until after election amid wiretapping scandal"
+    accessed: 2026-08-09
+    verified: true
+
+balance:
+  n_positive: 1
+  n_negative: 1
+  n_mixed: 2
+  note: >
+    Recent developments are a genuine mix rather than uniformly negative:
+    peaceful resolution of the six-decade Chagos sovereignty dispute
+    (positive) and a landslide, undisputed election (mixed -- positive as a
+    governance outcome, but the near-total opposition wipeout is itself a
+    concern) sit alongside a wiretapping scandal that strained press freedom
+    (negative) and rising public debt (mixed). Nothing was omitted to force
+    a different balance; this is the mix found in reporting from mid-2024
+    through mid-2025. Two further structural counterweights are worth
+    naming even though they fall outside the "recent" window: Mauritius's
+    post-1980s economic diversification (see historical.key_periods) is
+    among the most-cited development successes on the continent, and its
+    uninterrupted multiparty electoral record since 1968 is likewise
+    unusual in the region.

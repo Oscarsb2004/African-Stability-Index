@@ -3,7 +3,7 @@
 The document future runs read before doing anything. Machine-readable twin:
 `narrative/state.yaml`.
 
-*Seeded 2026-08-09. No research runs have happened yet.*
+*Seeded 2026-08-09. First research run: 2026-08-09 (Mauritius, CREATE).*
 
 ---
 
@@ -26,7 +26,7 @@ An audit is forced early if a single run inflates the citation count by more tha
 
 ## Status
 
-**0 of 54 countries have a record.**
+**1 of 54 countries have a record (Mauritius). 8 of the first pass remain.**
 
 ### First pass — 9 countries
 
@@ -35,17 +35,17 @@ nine surface it. Top and bottom of the index, island and landlocked, four
 language traditions, active conflict and long stability, and the two countries
 whose ranks swing hardest with the weighting method.
 
-| ISO3 | Country | Why this one |
-|---|---|---|
-| MUS | Mauritius | top of the index; island state; long democratic continuity |
-| GHA | Ghana | mid-high; Anglophone West Africa; repeated peaceful transfers of power |
-| DZA | Algeria | rank swings 9-45 with weighting method; Arabophone; hydrocarbon economy |
-| COD | Democratic Rep. Congo | bottom decile; vast and low-coverage; long conflict history |
-| SOM | Somalia | lowest ranks; state reconstitution; sparse data is the hard case |
-| BWA | Botswana | high and stable; landlocked; resource governance counter-example |
-| NGA | Nigeria | largest population; federal; mixed signals across pillars |
-| RWA | Rwanda | strong development indicators alongside contested governance |
-| TCD | Chad | Sahel; 2021 coup; the worked example used in the blueprint |
+| ISO3 | Country | Why this one | Status |
+|---|---|---|---|
+| MUS | Mauritius | top of the index; island state; long democratic continuity | **done — iteration 1** |
+| GHA | Ghana | mid-high; Anglophone West Africa; repeated peaceful transfers of power | backlog |
+| DZA | Algeria | rank swings 9-45 with weighting method; Arabophone; hydrocarbon economy | backlog |
+| COD | Democratic Rep. Congo | bottom decile; vast and low-coverage; long conflict history | backlog |
+| SOM | Somalia | lowest ranks; state reconstitution; sparse data is the hard case | backlog |
+| BWA | Botswana | high and stable; landlocked; resource governance counter-example | backlog |
+| NGA | Nigeria | largest population; federal; mixed signals across pillars | backlog |
+| RWA | Rwanda | strong development indicators alongside contested governance | backlog |
+| TCD | Chad | Sahel; 2021 coup; the worked example used in the blueprint | backlog |
 
 ### Backlog — the remaining 45
 
@@ -61,7 +61,26 @@ Egypt, Libya, Morocco, Sudan, Tunisia, Benin, Burkina Faso, Cabo Verde, The Gamb
 
 Append one line per run: date, country, mode, what changed, what was removed.
 
-_(empty)_
+- **2026-08-09 — MUS — CREATE.** Full baseline built: historical overview, colonial
+  legacy (expands context/colonial_history.yaml with the political consequence of
+  indentured labour and the Chagos detachment/return), 4 key_periods, 6 pillar
+  summaries (Pillar C correctly left empty — greyed at 1/8 measured), 3 primary +
+  1 extended recent items, 3 events. 11 sources opened and read directly (not
+  from memory): 4 Wikipedia, 3 news, 4 official (IMF, WHO, UNDP, UK Parliament).
+  `narrative_check.py --country MUS` passes with 0 errors, 0 warnings.
+  `--links` passes with 0 errors, 3 warnings (IMF/UNDP/UK-Parliament block
+  scripted HTTP requests with 403; confirmed manually that all three resolve in
+  a browser and match their cited content). Nothing removed — this is the first
+  pass. Balance: 1 positive, 1 negative, 2 mixed, explained in `balance.note`
+  rather than forced even.
+  **Bug found and fixed in the process:** `scripts/narrative_check.py --links`
+  reported all 10 real citations as unreachable. Root cause was local SSL
+  certificate verification failing against valid HTTPS sites — the same
+  environment issue already documented and worked around in `01_pull.py`
+  ("Windows SSL fix"). Fixed the same way, plus added a HEAD→GET fallback and
+  now distinguishes a genuine dead link (error) from a site blocking scripted
+  requests with HTTP 403 (warning, check manually) — the previous version
+  would have reported real news/official citations as fabricated.
 
 ---
 
@@ -69,8 +88,14 @@ _(empty)_
 
 Things a future run should know about how to work, not about a specific country.
 
-- **2026-08-09** — System built: blueprint, schema, validator, this ledger. No
-  research has run. Start with Mauritius (MUS).
+- **2026-08-09** — System built: blueprint, schema, validator, this ledger.
+- **2026-08-09** — First CREATE run (Mauritius) surfaced a real bug in the link
+  checker (see run log) rather than a problem with the metaprompt or blueprint
+  itself. Next country: Ghana (GHA), also a CREATE run.
+- **2026-08-09** — The schema has no `colonial_legacy_citations` check even
+  though that field makes citable claims (see pending format proposals below).
+  Populate the field anyway on future CREATE runs for consistency; do not treat
+  its absence from validation as license to leave it uncited.
 
 ---
 
@@ -80,4 +105,10 @@ A run that believes the blueprint should change writes the proposal here and
 stops. It does not edit the blueprint. Self-modifying format is how a corpus
 becomes unauditable.
 
-_(none)_
+- **2026-08-09 (from MUS CREATE run):** `asi/narrative/schema.py validate()`
+  checks `historical.overview_citations` and `key_periods[].citations` but has
+  no equivalent check for `colonial_legacy_citations`, even though
+  `colonial_legacy` is a substantial prose block making citable claims (which
+  colonizer, which years, sourced historical facts). Suggest adding the same
+  `check_refs()` call used for `overview`. Not applied — awaiting a human
+  decision, per the self-modifying-format rule above.

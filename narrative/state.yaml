@@ -15,16 +15,17 @@ models:
   why: Sonnet is the best cost/quality for web-grounded writing and does the bulk. Audit is
     where the strongest reasoning earns its cost, because detecting one's own fabrication
     is harder than producing it. Haiku handles link liveness and formatting.
-countries: {}
-backlog:
+countries:
   MUS:
     name: Mauritius
     region: Islands
     first_pass: true
     reason: top of the index; island state; long democratic continuity
-    iteration_count: 0
-    last_updated: null
-    next_action: create baseline from blueprint
+    iteration_count: 1
+    last_updated: '2026-08-09'
+    next_action: 'EXPAND: verify Chagos treaty follow-on news; find a second source for 1965-1968
+      unrest; check if social protection coverage has since been measured'
+backlog:
   GHA:
     name: Ghana
     region: West
@@ -449,7 +450,18 @@ backlog:
     iteration_count: 0
     last_updated: null
     next_action: create baseline from blueprint
-pending_format_proposals: []
+pending_format_proposals:
+- asi/narrative/schema.py validate() checks historical.overview_citations and key_periods[].citations
+  but has no check for a colonial_legacy_citations field, even though colonial_legacy is a
+  substantial prose block making citable claims. Consider adding the same check_refs() call
+  used for overview. Raised during MUS CREATE run (2026-08-09), not applied.
 meta_notes:
 - '2026-08-09: system built; no research runs yet. First nine designated in `backlog` with
   `first_pass: true`.'
+- '2026-08-09: MUS CREATE run complete (12 sources opened and verified; 3 blocked narrative_check.py
+  --links with HTTP 403 bot-detection, not dead links -- confirmed manually). Found and fixed
+  a real bug in narrative_check.py: local SSL cert verification was failing against valid
+  HTTPS sites (same root cause as the documented 01_pull.py SSL fix), which made every citation
+  look unreachable. Also found the schema has no colonial_legacy_citations check -- MUS record
+  populates that field anyway for consistency; logged as a pending format proposal rather
+  than silently editing schema.py mid-content-run.'
