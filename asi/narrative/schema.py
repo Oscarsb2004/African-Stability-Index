@@ -31,6 +31,7 @@ from enum import Enum
 from typing import Any
 
 from asi.core.constants import PILLAR_DEFS
+from asi.core.countries import COUNTRIES
 
 
 class Mode(str, Enum):
@@ -69,6 +70,24 @@ class Direction(str, Enum):
     IMPROVE     = "improve"
     DETERIORATE = "deteriorate"
     MIXED       = "mixed"
+
+
+class REC(str, Enum):
+    """AU-recognised Regional Economic Communities, matching asi.core.countries."""
+
+    UMA     = "UMA"
+    CEN_SAD = "CEN-SAD"
+    COMESA  = "COMESA"
+    EAC     = "EAC"
+    ECCAS   = "ECCAS"
+    ECOWAS  = "ECOWAS"
+    IGAD    = "IGAD"
+    SADC    = "SADC"
+
+
+class RECStatus(str, Enum):
+    CURRENT   = "current"
+    WITHDRAWN = "withdrawn"
 
 
 # ── Word budgets ───────────────────────────────────────────────────────────────
@@ -217,6 +236,48 @@ def validate(record: dict[str, Any], *,
                       "pillar_summary", problems)
         check_refs(f"pillars.{pid}", entry.get("citations"))
 
+    # REC (Regional Economic Community) membership
+    rec_membership = record.get("rec_membership")
+    if not rec_membership:
+        problems.append(Problem(
+            iso3, "rec_membership",
+            "missing — every AU member belongs to at least one REC; see "
+            "asi.core.countries.COUNTRIES[iso3]['rec'] for current membership",
+            "warning"))
+    else:
+        valid_orgs = {r.value for r in REC}
+        valid_status = {s.value for s in RECStatus}
+        seen_current: set[str] = set()
+        for i, entry in enumerate(rec_membership):
+            where = f"rec_membership[{i}]"
+            org = entry.get("org")
+            if org not in valid_orgs:
+                problems.append(Problem(iso3, where, f"unknown org {org!r}"))
+            if not isinstance(entry.get("joined"), int):
+                problems.append(Problem(iso3, where, "joined must be an integer year"))
+            status = entry.get("status", RECStatus.CURRENT.value)
+            if status not in valid_status:
+                problems.append(Problem(iso3, where, f"unknown status {status!r}"))
+            if status == RECStatus.WITHDRAWN.value and not entry.get("left"):
+                problems.append(Problem(iso3, where,
+                                        "status is withdrawn but no left year given"))
+            check_refs(where, entry.get("citations"))
+            if status == RECStatus.CURRENT.value and org in valid_orgs:
+                seen_current.add(org)
+        expected = set((COUNTRIES.get(iso3) or {}).get("rec") or [])
+        if expected and seen_current != expected:
+            missing = expected - seen_current
+            extra = seen_current - expected
+            detail = []
+            if missing:
+                detail.append(f"missing {sorted(missing)}")
+            if extra:
+                detail.append(f"not in the index's current list: {sorted(extra)}")
+            problems.append(Problem(
+                iso3, "rec_membership",
+                "doesn't match asi.core.countries.COUNTRIES[iso3]['rec'] — "
+                + "; ".join(detail), "warning"))
+
     # recent developments
     recent = record.get("recent") or {}
     primary = recent.get("primary") or []
@@ -286,6 +347,7 @@ def blank_record(iso3: str, name: str) -> dict[str, Any]:
                        "colonial_legacy": "", "key_periods": []},
         "pillars": {p: {"summary": "", "drivers": [], "citations": []}
                     for p in PILLAR_DEFS},
+        "rec_membership": [],
         "recent": {"primary": [], "extended": []},
         "events": [],
         "citations": [],
@@ -295,6 +357,7 @@ def blank_record(iso3: str, name: str) -> dict[str, Any]:
 
 __all__ = [
     "Mode", "Sentiment", "SourceType", "EventType", "Direction",
+    "REC", "RECStatus",
     "LIMITS", "N_RECENT_PRIMARY", "N_RECENT_EXTENDED",
     "AUDIT_EVERY", "AUDIT_CITATION_GROWTH_TRIGGER",
     "mode_for_iteration", "Problem", "validate", "blank_record",

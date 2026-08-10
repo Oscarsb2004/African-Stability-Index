@@ -53,6 +53,18 @@ pillars:                          # one entry per pillar A-G
     citations: [c4]
   # ... B through G
 
+rec_membership:                   # Regional Economic Community membership
+  - org: ECOWAS                   # must match asi.core.countries.COUNTRIES[iso3]["rec"]
+    joined: 1975                  # year joined, sourced like any other fact
+    status: current                # current | withdrawn
+    left: null                    # year left, required if status is withdrawn
+    citations: [c9]
+  - org: CEN-SAD
+    joined: 2000
+    status: current
+    left: null
+    citations: [c9]
+
 recent:
   primary:                        # exactly 3 — shown by default
     - headline: "..."
@@ -116,6 +128,13 @@ and that take an hour per country to audit.
 **Framing balance is counted, not asserted.** Every record records how many
 positive, negative and mixed items it contains. Where the evidence supports it,
 documented gains belong alongside documented failures.
+
+**REC membership must match the index's own registry.** `rec_membership`'s
+current-status entries are checked against `asi.core.countries.COUNTRIES[iso3]
+["rec"]` — the index's list of which Regional Economic Communities a country
+belongs to today. The narrative layer adds the join year (and, if applicable,
+the year of withdrawal) with a citation; it does not get to disagree with the
+index about which organisations a country is currently in.
 
 ---
 
