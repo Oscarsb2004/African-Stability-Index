@@ -91,15 +91,21 @@ countries:
       combined 2025 conflict-death figure; check if Pillar C has gained coverage; find a
       dedicated source on IPOB/Igbo secessionist sentiment to deepen the colonial_legacy
       link to the Biafra war'
-backlog:
   RWA:
     name: Rwanda
     region: East
     first_pass: true
     reason: strong development indicators alongside contested governance
-    iteration_count: 0
-    last_updated: null
-    next_action: create baseline from blueprint
+    iteration_count: 1
+    last_updated: '2026-08-09'
+    next_action: 'EXPAND: follow Washington Accords implementation into 2026 -- check
+      whether Rwandan troop withdrawal actually occurred and whether the March 2026
+      sanctions changed behaviour; check whether public debt crossed the ~77%-of-GDP
+      threshold the World Bank projected for end-2026; check if Pillar C has gained
+      coverage; find a dedicated source confirming or correcting the reading of the
+      IDP figure as reflecting the DRC conflict''s regional pull rather than Rwanda''s
+      own displacement; find a second source for the kwihutura mechanism in colonial_legacy'
+backlog:
   TCD:
     name: Chad
     region: Central
@@ -579,3 +585,29 @@ meta_notes:
   historical and colonial_legacy sections document authoritarian governance and the 1994
   genocide, without either downplaying the numbers or moralising past what the evidence in
   each section actually supports.'
+- '2026-08-09: RWA CREATE run complete (12 sources opened and verified: 3 Wikipedia, 4 news,
+  3 academic/think-tank, 2 official). This was the predicted new kind of challenge and the
+  metaprompt held up under it: 5 of 6 governance indicators are genuinely strong (Corruption,
+  Effectiveness, Regulatory Quality, Rule of Law all near the top of the index) while Voice
+  and Accountability is a clear, real outlier -- Kagame won a 4th term in July 2024 with
+  99.18% after courts barred his two leading challengers. Both facts are true simultaneously
+  and the record does not resolve the tension by picking a side. Biggest current story by far
+  is Rwanda''s documented military role in the DRC/M23 conflict -- UN Group of Experts (Apr
+  2025): 6,000+ RDF troops in eastern DRC, "strategic command and control" over M23; Rwanda
+  captured Goma (Jan 2025) and Uvira (Dec 2025, days after signing the Dec 4 2025 Washington
+  Accords); US Treasury sanctioned RDF and 4 commanders in March 2026. Rwanda''s own rebuttal
+  (cites the FDLR, a genocide-remnant militia, as its stated security concern) is included at
+  full length rather than only the accusation -- both a fairness matter and a genuinely
+  relevant historical fact, not whitewashing. Also worth flagging for future runs: pillars.E''s
+  IDP figure (49.87/1,000) is a REGIONAL-MEAN estimate, not measured for Rwanda specifically --
+  plausibly inflated by the DRC conflict''s regional average rather than reflecting Rwanda''s
+  own internal displacement. This is a case where the regional-mean imputation method itself
+  may be actively misleading, not just imprecise; logged as an explicit next_action rather than
+  asserted either way. Genuine, well-verified positive counterweight found and given real
+  weight: Rwanda''s parliament is 63.8% women, the highest share in the world by a wide margin
+  -- placed in balance.note as a different axis from the Voice-and-Accountability weakness,
+  not a rebuttal of it. Cleanest link check tied with NGA: 12/12 resolved, zero 403s, zero
+  404s. Next country: Chad (TCD) -- the last of the first pass, and the blueprint''s own
+  worked example (see narrative/BLUEPRINT.md); a useful check of whether the metaprompt as
+  actually used in practice, six countries in, still matches the illustration it was designed
+  around.'

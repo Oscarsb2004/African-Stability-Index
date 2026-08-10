@@ -3,7 +3,7 @@
 The document future runs read before doing anything. Machine-readable twin:
 `narrative/state.yaml`.
 
-*Seeded 2026-08-09. Research runs so far: Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria (all CREATE).*
+*Seeded 2026-08-09. Research runs so far: Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria, Rwanda (all CREATE).*
 
 ---
 
@@ -26,7 +26,7 @@ An audit is forced early if a single run inflates the citation count by more tha
 
 ## Status
 
-**7 of 54 countries have a record (Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria). 2 of the first pass remain.**
+**8 of 54 countries have a record (Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria, Rwanda). 1 of the first pass remains.**
 
 ### First pass — 9 countries
 
@@ -44,7 +44,7 @@ whose ranks swing hardest with the weighting method.
 | SOM | Somalia | lowest ranks; state reconstitution; sparse data is the hard case | **done — iteration 1** |
 | BWA | Botswana | high and stable; landlocked; resource governance counter-example | **done — iteration 1** |
 | NGA | Nigeria | largest population; federal; mixed signals across pillars | **done — iteration 1** |
-| RWA | Rwanda | strong development indicators alongside contested governance | backlog |
+| RWA | Rwanda | strong development indicators alongside contested governance | **done — iteration 1** |
 | TCD | Chad | Sahel; 2021 coup; the worked example used in the blueprint | backlog |
 
 ### Backlog — the remaining 45
@@ -193,6 +193,37 @@ Append one line per run: date, country, mode, what changed, what was removed.
   development, and `balance.note` states explicitly that it does not
   offset the severity of the other three items.
 
+- **2026-08-09 — RWA — CREATE.** Full baseline built: historical overview,
+  colonial legacy (expands context/colonial_history.yaml with the
+  kwihutura mechanism — pre-colonial Hutu/Tutsi identity was fluid and
+  cattle-based until Belgium's 1933 identity cards fixed it as an
+  inherited category, which historians identify as accelerating the 1994
+  genocide's killing pace; also traces the "genocide ideology" and
+  "sectarianism" laws as the same instrument, repurposed for political
+  control), 4 key_periods, 6 pillar summaries (Pillar C left empty —
+  greyed at 1/8 measured). 12 sources opened and verified: 3 Wikipedia, 4
+  news, 3 academic/think-tank, 2 official. `--links` passes 0 errors, 0
+  warnings — 12/12 resolved, tied with NGA for the cleanest link check in
+  the corpus. First first-pass country where strong quantitative scores
+  and a difficult political record pull in different directions rather
+  than the same one: 5 of 6 governance indicators are genuinely strong,
+  while Voice and Accountability is a clear outlier (Kagame's 99.18%
+  fourth-term win in July 2024, after courts barred his two leading
+  challengers). The dominant recent story is Rwanda's documented military
+  role in the DRC/M23 conflict — a UN Group of Experts report (April 2025)
+  found 6,000+ Rwandan troops in eastern DRC exercising "strategic command
+  and control" over M23; Rwanda captured Goma in January 2025 and Uvira in
+  December 2025, days after signing the Washington Accords, before US
+  sanctions followed in March 2026. Rwanda's own stated justification (the
+  FDLR, a remnant of the 1994 genocidal forces, as a genuine security
+  concern) is included at full length alongside the accusation. Flagged
+  rather than asserted: Pillar E's IDP figure is a regional-mean estimate,
+  not measured for Rwanda specifically, and plausibly reflects the
+  region's DRC-conflict-driven average rather than Rwanda's own
+  displacement. Balance: 1 positive (Rwanda's world-leading 63.8% female
+  parliament, a genuinely different axis from the Voice-and-Accountability
+  weakness, not a rebuttal of it), 2 negative, 1 mixed.
+
 ---
 
 ## Meta-notes
@@ -285,6 +316,24 @@ Things a future run should know about how to work, not about a specific country.
   the 1994 genocide without either softening the numbers to match the
   history or moralising the pillar summaries past what each section's own
   evidence supports.
+- **2026-08-09** — RWA confirmed the predicted challenge and the metaprompt
+  held: strong quantitative scores (5 of 6 governance indicators, a fast
+  growth economy) and a difficult political/historical record (a barred
+  opposition, a 99.18% election result, a documented role in a live
+  regional conflict) coexisted in the same record without either side
+  being softened. The two are genuinely different axes, not a contest —
+  the record doesn't need to net them against each other into one verdict.
+  Also worth flagging for future runs handling a regional-mean indicator:
+  RWA's Pillar E IDP figure (49.87/1,000, regional-mean) is a case where
+  the imputation method may be actively misleading rather than just
+  imprecise, since Rwanda's neighbourhood average is currently being
+  pulled up by a conflict Rwanda's own military is party to — a future
+  EXPAND run should try to find a Rwanda-specific figure rather than
+  treating the regional estimate as a neutral placeholder. Next and last
+  first-pass country: Chad (TCD) — the blueprint's own worked example
+  (narrative/BLUEPRINT.md cites it directly). Worth checking whether the
+  metaprompt as actually practiced across eight countries still produces
+  the kind of record the blueprint's illustration implied it would.
 
 ---
 

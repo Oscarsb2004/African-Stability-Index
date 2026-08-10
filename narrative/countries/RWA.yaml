@@ -1,0 +1,463 @@
+meta:
+  iso3: RWA
+  name: Rwanda
+  last_updated: 2026-08-09
+  iteration_count: 1
+  next_action: >
+    EXPAND: (1) follow the Washington Accords implementation into 2026 --
+    check whether Rwandan troop withdrawal has actually occurred and
+    whether the March 2026 sanctions produced any behavioural change; (2)
+    check whether Rwanda's public debt has in fact crossed the ~77%-of-GDP
+    threshold the World Bank projected for end-2026; (3) check if Pillar C
+    (greyed at 1/8 measured) has gained coverage; (4) the IDP figure
+    (49.87/1,000, a regional-mean estimate) is flagged in pillars.E as
+    plausibly reflecting the DRC conflict's regional pull rather than
+    Rwanda's own displacement -- find a dedicated source that either
+    confirms or corrects this reading rather than leaving it inferred; (5)
+    find a second source independent of Wikipedia for the kwihutura
+    (cattle-based social mobility) mechanism in colonial_legacy.
+  model_used: claude-sonnet-5
+
+historical:
+  overview: >
+    Rwanda's pre-colonial Mwami monarchy centralised under 19th-century
+    king Rwabugiri into a hierarchy in which Tutsi aristocrats extracted
+    tribute from Hutu peasants, though the Hutu/Tutsi distinction itself
+    remained comparatively fluid. Germany colonised the territory from
+    1885 and Belgium took over administration after 1916; Belgian
+    administrators hardened that distinction into a fixed racial category,
+    introducing mandatory ethnic identity cards in 1933. Belgian
+    favouritism shifted from Tutsi to Hutu in the 1950s, and the
+    1959-1962 "Hutu Revolution" killed an estimated 20,000-100,000 Tutsi
+    and drove roughly 150,000 into exile before independence on 1 July
+    1962. A Hutu-dominated one-party state under Grégoire Kayibanda, then
+    Juvénal Habyarimana after a 1973 coup, governed for three decades.
+    Tutsi exiles organised as the Rwandan Patriotic Front (RPF) invaded
+    from Uganda in October 1990, and three years of civil war produced the
+    1993 Arusha power-sharing accords, which collapsed when Habyarimana's
+    plane was shot down on 6 April 1994. Over the following roughly 100
+    days, extremist Hutu militias killed an estimated 800,000 Tutsi and
+    moderate Hutu -- among the fastest mass killings in modern history --
+    before the RPF, led by Paul Kagame, captured the country by July 1994.
+    Kagame has governed since, formally as president since 2000, and
+    Rwanda has posted some of Africa's fastest post-conflict growth: the
+    national poverty rate fell from 56.7% (2005-06) to 38.2% (2016-17) and
+    life expectancy rose from roughly 49 to 68 years. Kagame won a fourth
+    term in July 2024 with 99.18% of the vote after courts and the
+    electoral commission barred his most prominent challengers.
+  overview_citations: [c1, c3, c9]
+  colonial_legacy: >
+    context/colonial_history.yaml already credits Belgian racialisation of
+    the Hutu/Tutsi distinction -- via 1933 identity cards -- as the direct
+    colonial root of the 1994 genocide, and notes the 1959-1962 violence
+    as an intermediate step. Worth adding is the specific mechanism
+    connecting the ID cards to the genocide's speed. Before colonisation,
+    Hutu and Tutsi were closer to fluid socioeconomic categories than fixed
+    ethnicities: a Hutu who acquired enough cattle could become Tutsi
+    through a recognised process called kwihutura, and a Tutsi who lost
+    cattle or royal favour could fall the other way. Belgium's 1933 cards
+    fixed ethnicity as an inherited, documented category rather than an
+    achievable status, so the 1994 killers could identify victims
+    instantly at roadblocks by checking a card rather than relying on
+    local knowledge -- a factor historians identify as accelerating the
+    killing's pace to roughly 800,000 deaths in around 100 days. This also
+    explains the post-genocide government's central legitimacy claim: new
+    identity cards no longer record ethnicity, and "genocide ideology" and
+    "sectarianism" laws now criminalise public discussion of Hutu/Tutsi/Twa
+    distinctions. Rights groups document those same laws being used more
+    broadly to silence government critics -- the instrument that once
+    enabled genocide, repurposed as a tool of political control.
+  colonial_legacy_citations: [c1, c10]
+  key_periods:
+    - title: "Colonial racialisation of Hutu and Tutsi identity"
+      period: "1885-1959"
+      summary: >
+        Germany colonised Rwanda from 1885 and Belgium took over
+        administration after 1916, hardening what had been a comparatively
+        fluid Hutu/Tutsi social distinction into a fixed racial category
+        through mandatory identity cards introduced in 1933. Belgian
+        favouritism, initially toward the Tutsi minority, shifted decisively
+        toward the Hutu majority in the 1950s, setting up the violent
+        power transfer that followed at independence.
+      citations: [c1]
+    - title: "Hutu Revolution, independence, and one-party rule"
+      period: "1959-1990"
+      summary: >
+        The 1959-1962 "Hutu Revolution" killed an estimated 20,000-100,000
+        Tutsi and drove roughly 150,000 into exile before independence on
+        1 July 1962. A Hutu-dominated one-party state governed continuously
+        under Grégoire Kayibanda, then Juvénal Habyarimana after a 1973
+        coup, entrenching ethnic quotas that limited Tutsi access to
+        education and civil-service positions for three decades.
+      citations: [c1]
+    - title: "Civil war and the 1994 genocide"
+      period: "1990-1994"
+      summary: >
+        Tutsi exiles organised as the Rwandan Patriotic Front (RPF)
+        invaded from Uganda in October 1990. Three years of civil war
+        produced the August 1993 Arusha power-sharing accords, which
+        collapsed when President Habyarimana's plane was shot down on 6
+        April 1994. Over roughly 100 days, extremist Hutu militias killed
+        an estimated 800,000 Tutsi and moderate Hutu before the RPF,
+        led by Paul Kagame, captured the country by July 1994.
+      citations: [c1]
+    - title: "Post-genocide reconstruction and Kagame's consolidation"
+      period: "1994-2024"
+      summary: >
+        Kagame formed a government of national unity in 1994 and became
+        president in 2000 after his Hutu predecessor was sidelined for
+        criticising the government. Gacaca community courts, which
+        concluded in June 2012, tried lower-level genocide perpetrators
+        alongside the international tribunal. Rwanda posted some of
+        Africa's fastest post-conflict growth, but Kagame won a fourth
+        term in July 2024 with 99.18% of the vote after courts and the
+        electoral commission barred his most prominent challengers.
+      citations: [c1, c3]
+
+pillars:
+  A:
+    summary: >
+      All six governance indicators are directly measured, and Rwanda
+      scores well on five of them -- Control of Corruption, Government
+      Effectiveness, Regulatory Quality and Rule of Law all place among
+      the strongest in the index, consistent with documented state
+      capacity and a low-corruption civil service. Voice and
+      Accountability is the clear outlier: Kagame won a fourth term in
+      July 2024 with 99.18% of the vote after courts and the electoral
+      commission barred his most prominent challengers, Victoire Ingabire
+      and Diane Rwigara, leaving two token candidates who together won
+      under 1%. Freedom House called the election "neither free nor
+      fair." Rwanda's post-genocide "genocide ideology" and "sectarianism"
+      laws, introduced to prevent renewed ethnic mobilisation, are
+      documented by rights groups as also being used to silence
+      government critics more broadly -- the instrument that once enabled
+      genocide, repurposed as a tool of political control.
+    drivers:
+      - "5 of 6 indicators strong (Corruption, Effectiveness, Regulatory Quality, Rule of Law) -- Voice and Accountability the clear outlier"
+      - "July 2024: Kagame re-elected with 99.18%; leading critics (Ingabire, Rwigara) barred from running"
+      - "Freedom House: election 'neither free nor fair'; country rated 'Not Free' overall (23/100)"
+      - "genocide-ideology/sectarianism laws, meant to prevent renewed ethnic violence, documented as also used to silence critics"
+    citations: [c3, c4]
+  B:
+    summary: >
+      All five economic indicators are freshly measured. GDP growth of
+      8.93% (3-year average) scores strongly and is consistent with the
+      World Bank's own figures -- 8.5% average growth in 2022-2024, rising
+      to 9.4% in 2025 -- making Rwanda one of the fastest-growing
+      economies in the index. That headline masks real structural strain
+      the World Bank itself flags: poverty-reduction momentum has weakened
+      in recent years even as growth continues, inequality is rising as
+      the benefits of structural transformation concentrate among more
+      educated workers, and public debt is projected to exceed 77% of GDP
+      by the end of 2026. GDP per capita remains low in absolute terms,
+      reflecting how far growth still has to travel from a very low
+      post-genocide base. The Gini index, at 39.4, is roughly
+      regional-typical rather than an outlier in either direction.
+    drivers:
+      - "all 5 indicators freshly measured -- GDP growth 8.93% (3yr avg), matches World Bank figures (8.5% avg 2022-24, 9.4% in 2025)"
+      - "World Bank itself flags weakening poverty-reduction momentum and rising inequality despite continued growth"
+      - "public debt projected to exceed 77% of GDP by end-2026 -- a real strain behind the growth headline"
+      - "GDP per capita still low in absolute terms; Gini 39.4 roughly regional-typical"
+    citations: [c9]
+  D:
+    summary: >
+      Life expectancy above 67 years and infant mortality of roughly 30
+      per 1,000 live births, both freshly measured, reflect genuine
+      post-genocide health-system gains -- life expectancy has risen from
+      around 49 years in the mid-1990s. Severe food insecurity and safely
+      managed drinking-water access, both estimated from regional peers
+      rather than measured directly this year, pull the pillar's overall
+      score down substantially; safely managed water in particular scores
+      poorly even as the freshly-measured basic water access figure
+      (Pillar G) is considerably higher, pointing to a real gap between
+      water infrastructure reach and water quality this record cannot
+      fully confirm for Rwanda specifically. Two of five indicators were
+      not freshly measured this year, a genuine gap given how much
+      attention Rwanda's health outcomes receive internationally as
+      evidence for its development model.
+    drivers:
+      - "life expectancy >67 years (fresh), up from ~49 in the mid-1990s; infant mortality ~30/1,000 (fresh)"
+      - "severe food insecurity and safely managed water both regional-mean estimates, not fresh -- pull the score down without full country-specific confirmation"
+      - "gap between water infrastructure reach (Pillar G, fresh, higher) and water quality (regional estimate, lower)"
+    citations: [c1, c9]
+  E:
+    summary: >
+      Political Stability, freshly measured, scores well -- domestic
+      security has held since 1994 -- and the intentional-homicide rate,
+      though carried forward, is very low. The pillar's remaining
+      indicator tells a different, externally-directed story: internally
+      displaced persons, estimated from regional peers rather than
+      measured for Rwanda specifically, shows a strikingly high figure
+      this record cannot verify reflects Rwanda's own internal
+      displacement so much as the East African regional average being
+      pulled up by the active conflict in neighbouring DRC -- a conflict
+      UN experts say Rwanda's own military is fuelling. A UN Group of
+      Experts report, finalised in April 2025, documented at least 6,000
+      Rwandan Defence Force soldiers deployed in support of the M23
+      rebellion in eastern DRC, exercising what the report called
+      strategic command and control over the group; Rwanda disputes the
+      characterisation and cites the presence of the FDLR, a remnant of
+      the 1994 genocidal forces, as a legitimate security concern of its
+      own.
+    drivers:
+      - "Political Stability fresh and strong; homicide rate (carried forward) very low"
+      - "IDP figure is a regional-mean estimate, not measured for Rwanda directly -- plausibly reflects the DRC conflict's regional pull rather than Rwanda's own displacement"
+      - "UN Group of Experts (Apr 2025): at least 6,000 RDF troops deployed in DRC, 'strategic command and control' over M23"
+      - "Rwanda disputes this, citing the FDLR (a remnant of the 1994 genocidal forces) as a legitimate security concern"
+    citations: [c2, c7]
+  F:
+    summary: >
+      Only two of four indicators were freshly measured this year.
+      Per-capita CO2 emissions score near the ceiling of the scale at just
+      0.16 tons -- among the lowest recorded anywhere in the index, and,
+      as with several of the region's lowest-income countries
+      (methodology/METHODOLOGY_REVIEW.md), this reflects minimal
+      industrial activity rather than an environmental achievement:
+      electricity access covers only 64% of the population, and of the
+      electricity actually generated, nearly half still comes from oil,
+      gas and coal (a carried-forward figure). Agricultural land share,
+      freshly measured, is high, consistent with Rwanda's densely farmed,
+      hilly terrain. Freshwater withdrawal, carried forward, is low
+      relative to renewable resources.
+    drivers:
+      - "only 2 of 4 indicators freshly measured"
+      - "CO2 pc 0.16 tons (near-ceiling score) is the wealth-proxy artifact again, not policy -- electricity access only 64%"
+      - "nearly half of generated electricity still fossil-fuel sourced (carried forward)"
+      - "agricultural land high (fresh, dense hilly farming); freshwater withdrawal low (carried forward)"
+    citations: [c9]
+  G:
+    summary: >
+      Electricity access (64%) and basic drinking-water access (61%),
+      both freshly measured, are moderate. Handwashing-facility coverage,
+      also freshly measured, is markedly lower at just 18% -- among the
+      weaker readings in this pillar across the index -- pointing to a
+      real, directly-documented gap rather than an estimation artifact.
+      Social protection and labour programme coverage, estimated from
+      regional peers rather than measured directly, covers roughly a
+      fifth of the population. Rwanda's Vision 2050 development strategy
+      explicitly targets closing these infrastructure gaps en route to
+      upper-middle-income status by 2035, though the World Bank's own
+      recent assessment flags weakening momentum on the poverty and
+      inequality side of that same strategy.
+    drivers:
+      - "electricity access 64%, basic water access 61% -- both fresh, moderate"
+      - "handwashing coverage only 18% (fresh, not estimated) -- a real, directly-documented gap"
+      - "social protection coverage (~22%, regional-mean) unconfirmed for Rwanda specifically"
+      - "Vision 2050 targets closing these gaps, against the World Bank's own caution about weakening poverty-reduction momentum"
+    citations: [c9]
+
+recent:
+  primary:
+    - headline: "Rwanda-backed M23 rebels capture Goma; UN documents thousands of Rwandan troops"
+      date: 2025-01-27
+      summary: >
+        M23 rebels, alongside an estimated 4,000-7,000 Rwandan Defence
+        Force soldiers according to UN experts, captured Goma, the
+        provincial capital of DRC's North Kivu, in a rapid offensive
+        between 23-27 January 2025 that killed an estimated 2,900-3,000
+        people. A UN Group of Experts report finalised in April 2025
+        documented at least 6,000 Rwandan troops deployed on Congolese
+        territory, providing training, logistics and sophisticated
+        weaponry, and concluded Rwanda exercised strategic command and
+        control over M23.
+      why_it_matters: >
+        Directly explains Pillar E's externally-driven weakness and the
+        international sanctions and diplomatic pressure that followed
+        through 2025-2026.
+      news_url: "https://www.npr.org/2025/01/26/nx-s1-5275358/rwanda-backed-rebels-claim-to-have-seized-key-city-in-congo"
+      wikipedia_url: "https://en.wikipedia.org/wiki/2025_Goma_offensive"
+      sentiment: negative
+    - headline: "Washington Accords signed, then violated within days as M23 seizes Uvira"
+      date: 2025-12-16
+      summary: >
+        Presidents Kagame and Tshisekedi signed the Washington Accords for
+        Peace and Prosperity on 4 December 2025, witnessed by US President
+        Trump, committing Rwanda to troop withdrawal and an end to M23
+        support. Rwandan-backed M23 forces captured Uvira, DRC's last
+        major government-held city in South Kivu, on 9-10 December -- days
+        after signing -- before withdrawing unilaterally on 16 December
+        under US pressure, with Rwanda's troop deployment estimated by US
+        officials at 5,000-7,000 at the time.
+      why_it_matters: >
+        Shows both a genuine, high-level diplomatic achievement and its
+        immediate practical limits -- the peace framework exists, but
+        enforcement so far has depended on ad hoc pressure rather than the
+        accords' own terms holding automatically.
+      news_url: "https://www.aljazeera.com/news/2025/12/13/residents-emerge-in-dr-congos-tense-uvira-after-m23-rebel-takeover"
+      wikipedia_url: ""
+      sentiment: mixed
+    - headline: "US sanctions Rwandan military commanders over Washington Accords violations"
+      date: 2026-03-02
+      summary: >
+        The US Treasury sanctioned the Rwanda Defence Force and four
+        senior commanders on 2 March 2026 for supporting M23's operations
+        in eastern DRC in violation of the Washington Accords, blocking
+        their US-based assets. Human Rights Watch said M23's territorial
+        gains "would have been impossible without the Rwandan military's
+        direct operational involvement." Rwanda's government called the
+        sanctions "one-sided," arguing they ignored DRC violations and the
+        presence of the FDLR, a remnant of the 1994 genocidal forces, in
+        the conflict zone.
+      why_it_matters: >
+        The clearest current evidence of Rwanda's deteriorating
+        international standing over the DRC conflict, documented here
+        alongside Rwanda's own stated justification rather than only the
+        accusation against it.
+      news_url: "https://www.hrw.org/news/2026/03/03/us-sanctions-rwandan-army-commanders"
+      wikipedia_url: ""
+      sentiment: negative
+  extended:
+    - headline: "Rwanda's parliament remains the world's most female, 63.8% of seats"
+      date: 2024-07-15
+      summary: >
+        Women won 63.8% of seats in Rwanda's Chamber of Deputies in the
+        July 2024 elections, extending the country's decades-long position
+        as the global leader in women's parliamentary representation --
+        more than double the worldwide average of roughly 27% and well
+        above the constitutional floor of 30%. The 2003 constitution's
+        gender quota, adopted alongside the country's post-genocide
+        reconstruction, is the specific mechanism behind the result.
+      why_it_matters: >
+        A genuine, internationally verified counterweight to the same July
+        2024 election cycle's Voice-and-Accountability weaknesses
+        documented under Pillar A -- both are real, and neither cancels
+        the other out.
+      news_url: "https://intelpoint.co/insights/63-8-of-rwandas-parliament-are-women-as-of-2024-highest-in-the-world/"
+      wikipedia_url: ""
+      sentiment: positive
+
+events:
+  - year: 1994
+    type: conflict
+    title: "Genocide against the Tutsi"
+    description: >
+      Following the assassination of President Habyarimana on 6 April
+      1994, extremist Hutu militias killed an estimated 800,000 Tutsi and
+      moderate Hutu over roughly 100 days, one of the fastest mass
+      killings in modern history, before the RPF captured the country in
+      July.
+    url: "https://en.wikipedia.org/wiki/History_of_Rwanda"
+    direction: deteriorate
+  - year: 2000
+    type: constitutional
+    title: "Paul Kagame becomes president"
+    description: >
+      Kagame formally assumed the presidency in 2000 after Hutu president
+      Pasteur Bizimungu, installed in the 1994 government of national
+      unity, became critical of the government and was sidelined.
+    url: "https://en.wikipedia.org/wiki/History_of_Rwanda"
+    direction: mixed
+  - year: 2025
+    type: conflict
+    title: "M23 captures Goma with Rwandan military support"
+    description: >
+      Rwanda-backed M23 rebels captured Goma in January 2025; a UN Group
+      of Experts report documented at least 6,000 Rwandan troops deployed
+      in support of the offensive.
+    url: "https://en.wikipedia.org/wiki/2025_Goma_offensive"
+    direction: deteriorate
+  - year: 2025
+    type: peace_deal
+    title: "Washington Accords signed by Rwanda and DRC"
+    description: >
+      Presidents Kagame and Tshisekedi signed the Washington Accords for
+      Peace and Prosperity on 4 December 2025, committing Rwanda to troop
+      withdrawal and an end to M23 support -- violated within days by
+      M23's capture of Uvira.
+    url: "https://allafrica.com/stories/202512050184.html"
+    direction: mixed
+
+citations:
+  - id: c1
+    url: "https://en.wikipedia.org/wiki/History_of_Rwanda"
+    source_type: wikipedia
+    title: "History of Rwanda"
+    accessed: 2026-08-09
+    verified: true
+  - id: c2
+    url: "https://en.wikipedia.org/wiki/2025_Goma_offensive"
+    source_type: wikipedia
+    title: "2025 Goma offensive"
+    accessed: 2026-08-09
+    verified: true
+  - id: c3
+    url: "https://en.wikipedia.org/wiki/2024_Rwandan_general_election"
+    source_type: wikipedia
+    title: "2024 Rwandan general election"
+    accessed: 2026-08-09
+    verified: true
+  - id: c4
+    url: "https://freedomhouse.org/country/rwanda/freedom-world/2024"
+    source_type: academic
+    title: "Rwanda: Freedom in the World 2024 Country Report (Freedom House)"
+    accessed: 2026-08-09
+    verified: true
+  - id: c5
+    url: "https://www.npr.org/2025/01/26/nx-s1-5275358/rwanda-backed-rebels-claim-to-have-seized-key-city-in-congo"
+    source_type: news
+    title: "Eastern Congolese city on the precipice as Rwanda-backed rebels enter city (NPR)"
+    accessed: 2026-08-09
+    verified: true
+  - id: c6
+    url: "https://www.aljazeera.com/news/2025/12/13/residents-emerge-in-dr-congos-tense-uvira-after-m23-rebel-takeover"
+    source_type: news
+    title: "Residents emerge in DR Congo's tense Uvira after M23 rebel takeover (Al Jazeera)"
+    accessed: 2026-08-09
+    verified: true
+  - id: c7
+    url: "https://www.hrw.org/news/2026/03/03/us-sanctions-rwandan-army-commanders"
+    source_type: academic
+    title: "US Sanctions Rwandan Army, Commanders (Human Rights Watch)"
+    accessed: 2026-08-09
+    verified: true
+  - id: c8
+    url: "https://allafrica.com/stories/202603030069.html"
+    source_type: news
+    title: "Rwanda Regrets 'One-Sided' US Sanctions (AllAfrica)"
+    accessed: 2026-08-09
+    verified: true
+  - id: c9
+    url: "https://www.worldbank.org/en/country/rwanda/overview"
+    source_type: official
+    title: "Rwanda Overview (World Bank)"
+    accessed: 2026-08-09
+    verified: true
+  - id: c10
+    url: "https://www.amnestyusa.org/reports/safer-to-stay-silent-the-chilling-effect-of-rwandas-laws-on-genocide-ideology-and-sectarianism/"
+    source_type: academic
+    title: "Safer to Stay Silent: The Chilling Effect of Rwanda's Laws on 'Genocide Ideology' and 'Sectarianism' (Amnesty International)"
+    accessed: 2026-08-09
+    verified: true
+  - id: c11
+    url: "https://intelpoint.co/insights/63-8-of-rwandas-parliament-are-women-as-of-2024-highest-in-the-world/"
+    source_type: news
+    title: "63.8% of Rwanda's parliament are women as of 2024 - highest in the world (Intelpoint)"
+    accessed: 2026-08-09
+    verified: true
+  - id: c12
+    url: "https://allafrica.com/stories/202512050184.html"
+    source_type: news
+    title: "Full Text of Washington Accords Signed By Kagame, Tshisekedi (AllAfrica)"
+    accessed: 2026-08-09
+    verified: true
+
+balance:
+  n_positive: 1
+  n_negative: 2
+  n_mixed: 1
+  note: >
+    Rwanda is the first first-pass country where strong quantitative
+    scores and a difficult political record pull in different directions,
+    and this record does not resolve that tension by picking a side.
+    Pillar A's five strong governance indicators and Pillar B's genuine
+    growth story are real and documented at full weight; so is the sixth
+    governance indicator's weakness, the barring of Kagame's leading
+    challengers, and Rwanda's documented military role in the DRC conflict
+    that dominates the recent record. The one item coded positive --
+    Rwanda's world-leading share of women in parliament -- is placed in
+    `extended` because it is genuinely a different axis from the Voice and
+    Accountability weakness documented under Pillar A, not a rebuttal of
+    it; the two coexist in the same record because both are true. Nothing
+    here is softened to make the growth story read as uncomplicated
+    success, and nothing is sharpened to make the DRC conflict read as the
+    whole picture.
