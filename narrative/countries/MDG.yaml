@@ -1,0 +1,484 @@
+meta:
+  iso3: MDG
+  name: Madagascar
+  last_updated: 2026-08-10
+  iteration_count: 1
+  next_action: >
+    EXPAND: (1) follow whether Randrianirina's transition roadmap stays
+    on schedule (national consultations through Jan 2027, constitutional
+    referendum June 2027, presidential election October 2027), or slips
+    the way several other regional transitions have; (2) follow the
+    mining-moratorium lift past Jan 2026 -- how many of the 1,600+
+    pending licence applications convert to actual investment, and
+    whether growth recovers past 2025's 3.2%; (3) check whether Pillar E
+    and G's 2023 reference-year data gets superseded by fresh
+    post-crisis measurement, since none of this record's quantitative
+    pillars capture the October 2025 coup itself; (4) check whether
+    Rajoelina's stripped citizenship is contested or has legal
+    consequences for any future return; (5) check if Pillar C has
+    gained coverage.
+  model_used: claude-sonnet-5
+
+historical:
+  overview: >
+    The Merina Kingdom, under Radama I and later Queen Ranavalona I,
+    unified most of the island through the 19th century and resisted
+    European political control even while permitting British missionary
+    influence. France declared a protectorate in 1885, invaded
+    militarily in 1895, captured the royal palace in Antananarivo, and
+    formally annexed Madagascar as a colony in 1896, deporting the queen
+    and abolishing the monarchy outright. French administrators retained
+    much of the existing Merina administrative structure in the central
+    highlands, provoking the 1895-1903 Menalamba rebellion -- directed
+    as much against a Merina elite widely resented for corruption and
+    forced labour as against French rule itself. A far larger nationalist
+    uprising erupted in March 1947 and spread across a third of the
+    island before French forces suppressed it, killing an estimated
+    60,000 to 90,000 Malagasy. Independence followed on 26 June 1960.
+    Post-independence Madagascar cycled through repeated political
+    crises -- 1972, 1991, 2002 -- before a 2009 uprising, backed by the
+    elite CAPSAT military unit, forced President Marc Ravalomanana into
+    exile and installed Andry Rajoelina as transitional leader. Rajoelina
+    stepped down in 2014, secretly obtained French citizenship the same
+    year, won election as president in 2018, and was re-elected in 2023
+    amid fraud allegations and renewed controversy over his dual
+    nationality. In September 2025, youth-led protests over chronic
+    water and electricity shortages in the capital spread nationwide;
+    when CAPSAT again switched sides on 11 October, Rajoelina fled the
+    country, parliament impeached him, and Colonel Michael Randrianirina
+    took power on 14 October, with at least 22 people killed in the
+    unrest. Madagascar stripped Rajoelina of his citizenship on 27
+    October; a transition roadmap targets elections in October 2027.
+  overview_citations: [c1, c2, c3, c6, c7]
+  colonial_legacy: >
+    context/colonial_history.yaml already credits France's 1896 conquest,
+    the destruction of the Merina Kingdom, and the 1947 uprising's
+    brutal suppression -- estimated at 11,000 to 90,000 killed across
+    the sources this record has checked, a range wide enough that
+    different historians' methodologies, not merely rounding, likely
+    account for the spread. Worth adding a nuance the colonial_note's
+    brief mention does not capture: the earlier Menalamba rebellion of
+    1895-1903, often remembered simply as an anti-French revolt, was
+    directed as much against the Merina administrative elite that French
+    colonial rule chose to retain and govern through in the central
+    highlands -- an elite the rebels regarded as corrupt and complicit
+    in a forced-labour regime that predated and then continued under
+    French oversight. That detail matters for how one reads extraction
+    here: France's 64 years of rule layered a new extractive apparatus
+    (vanilla, cloves, graphite, chromite, coffee) onto an existing
+    indigenous hierarchy rather than imposing one from nothing, and
+    post-independence Madagascar's recurring political crises -- 1972,
+    1991, 2002, 2009, and now 2025 -- have consistently centred on
+    exactly the grievance pattern the Menalamba rebels named over a
+    century ago: a governing elite, whatever its origin, perceived as
+    extracting from ordinary Malagasy rather than serving them. The
+    CAPSAT military unit that ended Rajoelina's rule in 2025 is the same
+    unit that installed him in 2009.
+  colonial_legacy_citations: [c1, c4, c5]
+  key_periods:
+    - title: "The Merina Kingdom and French conquest"
+      period: "1817-1896"
+      summary: >
+        The Merina Kingdom, under Radama I and later Queen Ranavalona I,
+        unified most of the island through the 19th century and resisted
+        European political control even while permitting British
+        missionary influence. France declared a protectorate in 1885,
+        invaded militarily in 1895, captured the royal palace in
+        Antananarivo, and formally annexed Madagascar as a colony in
+        1896, deporting the queen and abolishing the monarchy outright.
+      citations: [c1]
+    - title: "Menalamba rebellion and the 1947 uprising"
+      period: "1895-1947"
+      summary: >
+        French administrators retained much of the existing Merina
+        administrative structure in the central highlands, provoking the
+        1895-1903 Menalamba rebellion, directed as much against a
+        resented, forced-labour-enforcing Merina elite as against French
+        rule itself. A far larger nationalist uprising erupted in March
+        1947 and spread across a third of the island before French
+        forces suppressed it, killing an estimated 60,000 to 90,000
+        Malagasy -- one of the deadliest colonial repressions in French
+        Africa.
+      citations: [c4, c3]
+    - title: "Independence, cyclical crises, and Rajoelina's first rise"
+      period: "1960-2018"
+      summary: >
+        Independence followed on 26 June 1960. Madagascar cycled through
+        repeated political crises in 1972, 1991 and 2002 before a 2009
+        uprising, backed by the elite CAPSAT military unit, forced
+        President Marc Ravalomanana into exile and installed Andry
+        Rajoelina as transitional leader; the African Union and SADC
+        suspended Madagascar's membership for four years in response.
+        Rajoelina stepped down in 2014, secretly obtained French
+        citizenship the same year, and won election as president in his
+        own right in 2018.
+      citations: [c5, c8]
+    - title: "Re-election, citizenship controversy, and the 2025 coup"
+      period: "2023-2025"
+      summary: >
+        Rajoelina was re-elected in 2023 amid fraud allegations and
+        renewed controversy over his dual French-Malagasy nationality.
+        In September 2025, youth-led protests over chronic water and
+        electricity shortages in the capital spread nationwide; when
+        CAPSAT again switched sides on 11 October, Rajoelina fled the
+        country, parliament impeached him, and Colonel Michael
+        Randrianirina took power on 14 October, with at least 22 people
+        killed. Madagascar stripped Rajoelina of his citizenship on 27
+        October.
+      citations: [c6, c7, c2]
+
+pillars:
+  A:
+    summary: >
+      All six governance indicators are directly measured this year, and
+      Voice and Accountability is the least weak of the six -- a
+      reversal of the usual pattern in this corpus, where Voice and
+      Accountability is typically the weakest score. Control of
+      Corruption is the single weakest indicator, consistent with the
+      extraction-grievance pattern this record's historical.colonial_legacy
+      traces from the Menalamba rebellion of the 1890s through 2009,
+      2018-2023, and again the October 2025 uprising that ended Andry
+      Rajoelina's presidency. Rajoelina's 2023 re-election, won amid
+      fraud allegations and controversy over French citizenship he had
+      held secretly since 2014, is the immediate governance backdrop the
+      2025 crisis unfolded against; this pillar's 2023 reference year
+      predates the coup itself entirely.
+    drivers:
+      - "all 6 governance indicators directly measured; Voice and Accountability is the LEAST weak of the six -- a reversal of the usual pattern in this corpus"
+      - "Control of Corruption is the single weakest indicator -- consistent with the extraction-grievance pattern traced from the 1890s Menalamba rebellion through 2009, 2023 and 2025"
+      - "2023 re-election won amid fraud allegations and Rajoelina's undisclosed French citizenship controversy; this pillar's 2023 reference year predates the October 2025 coup entirely"
+    citations: [c1, c6, c9]
+  B:
+    summary: >
+      GDP growth and inflation, both freshly measured, are moderate;
+      domestic credit to the private sector, also fresh, is thin, and
+      GDP per capita, at just over $1,800 and also fresh, is among the
+      lower figures recorded in this corpus. Gini, carried forward
+      rather than fresh, indicates substantial inequality. In January
+      2026, Madagascar's transitional government lifted a mining
+      moratorium that had blocked most new licences since 2010, opening
+      more than 1,600 pending applications to nickel, cobalt, graphite
+      and rare-earth investment; the existing Ambatovy nickel-cobalt
+      operation alone repatriated $3.9 billion in 2023. Growth itself
+      slowed in 2025, to roughly 3.2% from 4.3% the year before, as the
+      October crisis disrupted activity and looting caused real economic
+      losses.
+    drivers:
+      - "GDP growth, inflation both fresh, moderate; domestic credit thin (fresh); GDP per capita (fresh) among the lower figures in this corpus; Gini (carried forward) indicates substantial inequality"
+      - "mining moratorium (in place since 2010) lifted Jan 2026 -- 1,600+ pending licence applications opened to nickel/cobalt/graphite/rare-earth investment"
+      - "Ambatovy nickel-cobalt operation alone repatriated $3.9B in 2023 -- genuine existing economic significance, not speculative"
+      - "growth slowed to ~3.2% in 2025 from 4.3% in 2024 -- the October crisis and related looting caused real, current economic losses"
+    citations: [c10, c11]
+  D:
+    summary: >
+      All five health indicators are freshly measured this year, the
+      most complete picture recorded in this corpus so far. Life
+      expectancy, at just under 64 years, and infant mortality, at 43.7
+      per 1,000 live births, are both weak relative to the rest of this
+      corpus. Severe food insecurity, affecting nearly 18% of the
+      population, is comparatively severe as well. This is a genuinely,
+      not thinly, measured severity: unlike several countries in this
+      corpus where a weak health pillar partly reflects missing data,
+      Madagascar's low score here reflects five directly measured
+      indicators all pointing the same direction.
+    drivers:
+      - "all 5 health indicators freshly measured -- the most complete picture recorded in this corpus so far"
+      - "life expectancy ~64 years, infant mortality ~43.7/1,000 -- both weak relative to the rest of this corpus"
+      - "severe food insecurity ~18% -- comparatively severe; genuinely, not thinly, measured -- 5/5 fresh indicators all point the same direction"
+    citations: [c1]
+  E:
+    summary: >
+      Only two of the pillar's four indicators have any data this year,
+      and one of those -- displaced persons, at a near-zero 0.04 per
+      1,000 -- is carried forward rather than fresh; homicide is
+      entirely absent. Political Stability, freshly measured, is the
+      pillar's only current indicator, and is itself moderate rather
+      than either strong or catastrophic. Critically, this pillar's
+      reference year is 2023: none of its data reflects the October 2025
+      crisis, in which security forces' response to youth-led protests,
+      and looting during the unrest, killed at least 22 people and ended
+      Andry Rajoelina's presidency. This pillar's comparatively high
+      score should be read as thin and dated, not as evidence Madagascar
+      has been spared serious instability.
+    drivers:
+      - "only 2 of 4 indicators have any data -- a thin pillar; homicide entirely absent"
+      - "IDPs near-zero (carried forward); Political Stability moderate (fresh) -- the pillar's only current indicator"
+      - "reference year (2023) predates the October 2025 coup entirely -- at least 22 killed in protests/looting/impeachment this score does not capture"
+      - "the comparatively high score should be read as thin and dated, not as evidence of being spared serious instability"
+    citations: [c6, c7]
+  F:
+    summary: >
+      CO2 emissions per capita, freshly measured, are near the lowest
+      recorded anywhere in this corpus -- but this reads as a
+      wealth-proxy artefact rather than an achievement: electricity
+      access itself (Pillar G) covers under 40% of the population, and
+      the carried-forward electricity-generation figure shows roughly
+      two-thirds fossil-sourced power even within that limited grid.
+      Agricultural land share, fresh, is extensive, consistent with an
+      economy still heavily rural and agrarian. Freshwater withdrawal,
+      carried forward, is very low relative to internal renewable
+      resources -- plausibly a genuine reflection of Madagascar's high
+      rainfall and large landmass relative to its population, rather
+      than an artefact of poverty, though this record cannot fully
+      distinguish the two explanations from the data alone.
+    drivers:
+      - "CO2 pc near the lowest recorded in this corpus (fresh) -- reads as a wealth-proxy artefact: electricity access under 40%, and even that grid is ~66% fossil-fuel (carried forward)"
+      - "agricultural land extensive (fresh) -- consistent with a still heavily rural, agrarian economy"
+      - "freshwater withdrawal very low relative to renewable resources (carried forward) -- plausibly genuine (high rainfall, large landmass) rather than purely poverty-driven, though the data can't fully distinguish the two"
+    citations: [c1]
+  G:
+    summary: >
+      Electricity access, at just under 40% and freshly measured, is
+      weak, and directly explains Pillar F's low emissions reading.
+      Basic and safely managed drinking water access, both fresh, are
+      also weak -- safely managed water covers barely a fifth of the
+      population -- and handwashing coverage, also fresh, is similarly
+      low. Social protection and labour programme coverage, the pillar's
+      fifth indicator, is not measured this year. The September-October
+      2025 protests that ended Rajoelina's presidency were triggered
+      specifically by chronic water and electricity shortages in the
+      capital, Antananarivo -- this pillar's weak, but pre-crisis, 2023
+      figures are the measured baseline those protests erupted against.
+    drivers:
+      - "electricity access under 40% (fresh) -- weak, directly explains Pillar F's low emissions reading"
+      - "basic and safely managed drinking water both weak (fresh) -- safely managed water covers barely a fifth of the population; handwashing similarly low (fresh)"
+      - "social protection not measured this year"
+      - "the 2025 protests that ended Rajoelina's presidency were triggered specifically by water/electricity shortages in Antananarivo -- this pillar's 2023 figures are the pre-crisis measured baseline"
+    citations: [c6, c12]
+
+recent:
+  primary:
+    - headline: "Youth-led protests and a military mutiny end Rajoelina's presidency"
+      date: 2025-10-14
+      summary: >
+        Youth-led protests over chronic water and electricity shortages
+        in Antananarivo spread nationwide from late September 2025.
+        President Andry Rajoelina dismissed his prime minister and
+        cabinet on 29 September, but unrest continued; on 11 October the
+        elite CAPSAT military unit -- the same unit that installed
+        Rajoelina in a 2009 coup -- sided with protesters, and Rajoelina
+        fled the country. Parliament impeached him on 14 October, and
+        Colonel Michael Randrianirina took power. At least 22 people
+        were killed in the unrest.
+      why_it_matters: >
+        The clearest, most consequential recent event in this record --
+        an unelected military transition, however popularly welcomed,
+        ended a presidency that every pillar's reference-year data above
+        predates entirely.
+      news_url: "https://www.opb.org/article/2025/10/14/madagascar-president-andry-rajoelina-flees-country-after-military-rebellion/"
+      wikipedia_url: "https://en.wikipedia.org/wiki/2025_Malagasy_protests"
+      sentiment: negative
+    - headline: "Madagascar lifts its 16-year mining moratorium"
+      date: 2026-01-29
+      summary: >
+        Madagascar's transitional government ended, on 29 January 2026,
+        a moratorium on new mining licences that had been in place since
+        2010 (gold excepted), opening more than 1,600 pending
+        applications to investment in nickel, cobalt, graphite, ilmenite
+        and rare-earth elements. The existing Ambatovy nickel-cobalt
+        operation alone repatriated $3.9 billion in foreign currency in
+        2023, accounting for more than 70% of mining exports between
+        2021 and 2023.
+      why_it_matters: >
+        A genuine, substantial economic reform enacted by an unelected
+        transitional government -- a real opportunity for the
+        diversification Pillar B's low GDP-per-capita figure suggests is
+        needed, independent of whether the political transition itself
+        succeeds.
+      news_url: "https://discoveryalert.com.au/strategic-mineral-supply-madagascar-2026/"
+      wikipedia_url: ""
+      sentiment: positive
+    - headline: "Transition roadmap sets Madagascar's next election for October 2027"
+      date: 2026-05-11
+      summary: >
+        Colonel Michael Randrianirina's transitional government
+        published a roadmap in early 2026 setting a two-year transition:
+        national consultations from March 2026 to January 2027, an
+        eleven-month rebuild of the electoral register, a constitutional
+        referendum in June 2027, and a presidential election in October
+        2027.
+      why_it_matters: >
+        A concrete, dated commitment to eventually restore elected
+        government, though it leaves Madagascar without an elected head
+        of state for a full two years after the October 2025 coup.
+      news_url: "https://www.africanews.com/2026/05/11/madagascar-presidential-election-scheduled-for-october-2027/"
+      wikipedia_url: ""
+      sentiment: mixed
+  extended:
+    - headline: "Rajoelina stripped of Malagasy citizenship after fleeing the country"
+      date: 2025-10-27
+      summary: >
+        Madagascar's transitional authorities stripped ousted president
+        Andry Rajoelina of his Malagasy citizenship on 27 October 2025,
+        two weeks after he fled the country during the CAPSAT-backed
+        uprising that ended his presidency. Rajoelina had secretly
+        obtained French citizenship in 2014, a fact that became a major
+        controversy during the disputed 2023 election he won.
+      why_it_matters: >
+        An unusually stark coda to the citizenship controversy already
+        documented in historical.key_periods, and a sign of how
+        completely the transitional authorities have moved to dismantle
+        Rajoelina's political standing.
+      news_url: "https://allafrica.com/stories/202510270306.html"
+      wikipedia_url: ""
+      sentiment: mixed
+
+events:
+  - year: 1947
+    type: conflict
+    title: "1947 uprising suppressed"
+    description: >
+      Malagasy nationalists launched a rebellion in March 1947 that
+      spread across a third of the island before French forces
+      suppressed it, killing an estimated 60,000 to 90,000 people -- one
+      of the deadliest colonial repressions in French Africa.
+    url: "https://localhistories.org/a-brief-history-of-madagascar/"
+    direction: deteriorate
+  - year: 1960
+    type: independence
+    title: "Madagascar gains independence"
+    description: >
+      Madagascar became fully independent from France on 26 June 1960,
+      following two years of autonomy within the French Community.
+    url: "https://www.britannica.com/topic/history-of-Madagascar"
+    direction: improve
+  - year: 2009
+    type: coup
+    title: "CAPSAT-backed uprising installs Rajoelina"
+    description: >
+      A 2009 uprising backed by the elite CAPSAT military unit forced
+      elected President Marc Ravalomanana into exile and installed Andry
+      Rajoelina as transitional leader; the African Union and SADC
+      suspended Madagascar's membership for the next four years.
+    url: "https://www.gisreportsonline.com/r/madagascar-coup/"
+    direction: deteriorate
+  - year: 2025
+    type: coup
+    title: "Rajoelina ousted after youth-led protests and CAPSAT mutiny"
+    description: >
+      Youth-led protests over water and electricity shortages spread
+      nationwide from September 2025; when CAPSAT -- the same unit that
+      installed him in 2009 -- sided with protesters on 11 October,
+      Rajoelina fled the country, parliament impeached him, and Colonel
+      Michael Randrianirina took power, with at least 22 people killed.
+    url: "https://www.opb.org/article/2025/10/14/madagascar-president-andry-rajoelina-flees-country-after-military-rebellion/"
+    direction: mixed
+
+citations:
+  - id: c1
+    url: "https://www.britannica.com/topic/history-of-Madagascar"
+    source_type: academic
+    title: "History of Madagascar (Britannica)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c2
+    url: "https://allafrica.com/stories/202510270306.html"
+    source_type: news
+    title: "Ousted Madagascan President Stripped of Citizenship (AllAfrica)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c3
+    url: "https://localhistories.org/a-brief-history-of-madagascar/"
+    source_type: news
+    title: "A Brief History of Madagascar (Local Histories)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c4
+    url: "https://en.wikipedia.org/wiki/Menalamba_rebellion"
+    source_type: wikipedia
+    title: "Menalamba rebellion"
+    accessed: 2026-08-10
+    verified: true
+  - id: c5
+    url: "https://www.gisreportsonline.com/r/madagascar-coup/"
+    source_type: news
+    title: "Madagascar after the coup (GIS Reports)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c6
+    url: "https://www.opb.org/article/2025/10/14/madagascar-president-andry-rajoelina-flees-country-after-military-rebellion/"
+    source_type: news
+    title: "Madagascar's president flees country in fear for his life after military rebellion (OPB)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c7
+    url: "https://en.wikipedia.org/wiki/2025_Malagasy_protests"
+    source_type: wikipedia
+    title: "2025 Malagasy protests"
+    accessed: 2026-08-10
+    verified: true
+  - id: c8
+    url: "https://thevoiceofafrica.com/2025/10/27/ousted-madagascar-president-andry-rajoelina-stripped-of-citizenship-after-coup/"
+    source_type: news
+    title: "Ousted Madagascar President Andry Rajoelina Stripped of Citizenship After Coup (The Voice of Africa)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c9
+    url: "https://theconversation.com/madagascar-protests-how-ousted-president-andry-rajoelinas-urban-agenda-backfired-267654"
+    source_type: news
+    title: "Madagascar protests: how ousted president Andry Rajoelina's urban agenda backfired (The Conversation)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c10
+    url: "https://discoveryalert.com.au/strategic-mineral-supply-madagascar-2026/"
+    source_type: news
+    title: "Madagascar Lifts Mining Moratorium: Critical Minerals Investment Opportunities Emerge (Discovery Alert)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c11
+    url: "https://www.capmad.com/mining-en/mining-in-madagascar-end-of-the-moratorium-and-opening-to-international-capital/"
+    source_type: news
+    title: "Mining in Madagascar: End of the Moratorium and Opening to International Capital (Capmad)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c12
+    url: "https://www.africanews.com/2026/05/11/madagascar-presidential-election-scheduled-for-october-2027/"
+    source_type: news
+    title: "Madagascar presidential election scheduled for October 2027 (Africanews)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c13
+    url: "https://en.wikipedia.org/wiki/Common_Market_for_Eastern_and_Southern_Africa"
+    source_type: wikipedia
+    title: "Common Market for Eastern and Southern Africa"
+    accessed: 2026-08-10
+    verified: true
+  - id: c14
+    url: "https://www.sadc.int/member-states/madagascar"
+    source_type: official
+    title: "Madagascar (SADC)"
+    accessed: 2026-08-10
+    verified: true
+
+rec_membership:
+  - org: COMESA
+    joined: 1994
+    status: current
+    left: null
+    citations: [c13]
+  - org: SADC
+    joined: 2005
+    status: current
+    left: null
+    citations: [c14]
+
+balance:
+  n_positive: 1
+  n_negative: 1
+  n_mixed: 2
+  note: >
+    The October 2025 coup is coded negative at full weight -- at least
+    22 people killed and an unelected military transition are not
+    softened by the fact that the protests it capped were a genuine,
+    popular response to real hardship. The mining-moratorium lift is
+    coded positive because it is a real, substantial, independently
+    verifiable economic reform with a documented existing track record
+    (Ambatovy's $3.9B), regardless of the transitional government's own
+    lack of an electoral mandate -- the same standard this corpus has
+    applied to other unelected governments' verified policy actions
+    (BFA's SOPAMIB nationalisation, NER's Somair nationalisation). The
+    transition roadmap and the citizenship-stripping are both coded
+    mixed: the former is a real, dated commitment that still leaves a
+    two-year gap without elected government, and the latter is a
+    striking accountability moment that does not, on its own, resolve
+    anything about how the transition itself will govern.

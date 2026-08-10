@@ -26,7 +26,7 @@ An audit is forced early if a single run inflates the citation count by more tha
 
 ## Status
 
-**19 of 54 countries have a record (Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria, Rwanda, Chad, Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco). The first pass is complete; Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger and Morocco are the first ten backlog countries.**
+**20 of 54 countries have a record (Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria, Rwanda, Chad, Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar). The first pass is complete; Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco and Madagascar are the first eleven backlog countries.**
 
 ### First pass — 9 countries
 
@@ -61,14 +61,15 @@ whose ranks swing hardest with the weighting method.
 | BFA | Burkina Faso | completes the AES/ECOWAS-exit pair with MLI (NER remains); accounted for ~1/4 of world extremist attacks in 2024; sharpest disconnect yet between aggregate governance scores and documented atrocities (HRW: own forces killed more civilians than jihadists) | **done — iteration 1** |
 | NER | Niger | completes the AES/ECOWAS-exit trio with MLI and BFA; Niger's own first-ever civilian-to-civilian democratic transfer (Bazoum, 2021) makes the 2023 coup a sharper rupture than in its AES partners; most precisely quantified extraction-imbalance case yet (Orano: 63% stake, 86.3% of production, 1971-2024) resolved by nationalisation | **done — iteration 1** |
 | MAR | Morocco | the corpus's first stable monarchy; a genuine framing-balance counterweight after a run of negative-leaning Sahel records; Western Sahara documented as the one African decolonisation case still legally open (Morocco left the OAU 1984-2017 over exactly this dispute); a genuine positive (AMO health coverage 42%->88%) placed deliberately alongside the Gen Z 212 protesters' own healthcare grievances | **done — iteration 1** |
+| MDG | Madagascar | fills the Islands gap (only MUS previously represented of 5 island backlog states); distinct colonial history (an independent Merina monarchy conquered militarily in 1895-96, not a protectorate); a live current-events thread -- the October 2025 CAPSAT-backed coup that ousted Rajoelina, the same unit that installed him in 2009 -- and a genuine positive (Jan 2026 mining-moratorium lift) found deliberately rather than manufactured | **done — iteration 1** |
 
-### Backlog — the remaining 35
+### Backlog — the remaining 34
 
 Listed in full in `narrative/state.yaml` under `backlog`. They are recorded
 explicitly rather than left implicit: a country with no record should be visibly
 absent, not quietly missing.
 
-Libya, Tunisia, Benin, Cabo Verde, The Gambia, Guinea, Guinea-Bissau, Cote d'Ivoire, Liberia, Mauritania, Senegal, Sierra Leone, Togo, Cameroon, Central African Republic, Republic of Congo, Equatorial Guinea, Gabon, Burundi, Djibouti, Eritrea, Malawi, Mozambique, South Sudan, Tanzania, Uganda, Zambia, Zimbabwe, Lesotho, Namibia, Eswatini, Comoros, Madagascar, Seychelles, Sao Tome & Principe
+Libya, Tunisia, Benin, Cabo Verde, The Gambia, Guinea, Guinea-Bissau, Cote d'Ivoire, Liberia, Mauritania, Senegal, Sierra Leone, Togo, Cameroon, Central African Republic, Republic of Congo, Equatorial Guinea, Gabon, Burundi, Djibouti, Eritrea, Malawi, Mozambique, South Sudan, Tanzania, Uganda, Zambia, Zimbabwe, Lesotho, Namibia, Eswatini, Comoros, Seychelles, Sao Tome & Principe
 
 ---
 
@@ -588,6 +589,45 @@ Append one line per run: date, country, mode, what changed, what was removed.
   or full exoneration their respective stories would need to cross that
   line. Balance: 1 positive, 1 negative, 2 mixed.
 
+- **2026-08-10 — MDG — CREATE. Eleventh backlog country, first
+  Islands record since MUS.** Full baseline built: historical overview,
+  colonial legacy (the 1895-1903 Menalamba rebellion documented as
+  directed as much at the retained Merina administrative elite as at
+  France itself, tied explicitly to a recurring extraction-grievance
+  pattern the record traces through 1972, 1991, 2002, 2009 and 2025), 4
+  key_periods, 6 pillar summaries (Pillar C left empty — greyed at 1/8
+  measured), 3 primary + 1 extended recent items, 4 events,
+  rec_membership (COMESA 1994, SADC 2005 — verified individually, not
+  assumed). 14 sources opened and verified: 3 Wikipedia, 8 news, 1
+  academic/Britannica, 1 official/SADC, 1 more Wikipedia for
+  rec_membership. One citation swap during the run: a Washington Post
+  URL returned a persistent `TimeoutError` under `--links` rather than
+  the usual 403 bot-detection pattern; rather than accept an ambiguous
+  signal, swapped it for an AP-syndicated OPB piece covering the same
+  event, after which all 15 citation URLs resolved cleanly — zero link
+  warnings, a first for this corpus. Colonial history here is genuinely
+  distinct from every prior record: an independent, internationally
+  recognised Merina monarchy under Radama I and Queen Ranavalona I
+  resisted European control through most of the 19th century before
+  France conquered it militarily in 1895-96, not a gradual
+  protectorate-to-colony transition like MAR or most of the corpus. The
+  October 2025 coup that ousted President Andry Rajoelina — via the same
+  CAPSAT military unit that had installed him in a 2009 coup — is an
+  unusually sharp case of this corpus's "reference year predates the
+  crisis" caveat: the underlying index data is dated 2023, so Pillars A,
+  E and G all describe a Madagascar that, as written, no longer exists,
+  flagged explicitly in each pillar's own prose. Followed the SDN/MLI/
+  BFA/NER discipline and found a genuine positive rather than defaulting
+  to coup-only coverage: the January 2026 mining-moratorium lift
+  (Ambatovy alone repatriated $3.9B in 2023), coded positive on the same
+  standard already applied to other unelected transitional governments'
+  policy actions in this corpus (BFA's SOPAMIB, NER's Somair). Balance:
+  1 positive, 1 negative, 2 mixed. Also raised a new pending format
+  proposal: `RECStatus` has no SUSPENDED value, and Madagascar's
+  2009-2013 SADC/AU suspension (distinct from the AES trio's actual
+  ECOWAS withdrawals) doesn't cleanly fit CURRENT or WITHDRAWN — logged,
+  not self-applied, per the self-modifying-format rule.
+
 ---
 
 ## Meta-notes
@@ -923,6 +963,21 @@ Things a future run should know about how to work, not about a specific country.
   assuming TCD/BFA's 1998 founding-member pattern — Morocco joined in
   2001, a genuinely different case (a later joiner, not a founder), and
   would have been wrong if assumed by analogy.
+- **2026-08-10** — MDG confirms the citation-swap discipline should
+  extend beyond the known 403 bot-detection pattern: a `TimeoutError`
+  from `--links` is a different signal (the request never got a response
+  at all, not a blocked-but-live response) and this run treated it the
+  same cautious way as a genuine dead link — swap to a corroborating
+  source rather than assume it's "probably fine like the 403 cases."
+  That produced this corpus's first zero-warning `--links` run. Also
+  worth carrying forward: MDG's Pillars A, E and G all describe a
+  pre-coup Madagascar because the underlying index data's reference year
+  (2023) predates the October 2025 crisis entirely — this is a sharper,
+  more literal version of a caveat this corpus has made before (e.g.
+  BFA's true IDP figure vs. the measured one) and should be checked for
+  every future country whose most consequential recent event postdates
+  its own data's reference year, not just ones already known to have a
+  data-lag problem.
 
 ---
 

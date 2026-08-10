@@ -305,6 +305,27 @@ countries:
       plan (not found this run); check whether the Al Haouz earthquake recovery
       plan''s 5-year, $11.7B target is on schedule; check if Pillar C has gained
       coverage'
+  MDG:
+    name: Madagascar
+    region: Islands
+    first_pass: false
+    reason: eleventh backlog country -- fills the Islands gap (only MUS previously
+      represented out of 5 island backlog states); distinct colonial history (an
+      independent Merina monarchy conquered by France in 1896, not a protectorate);
+      a live, dramatic current-events thread -- the October 2025 CAPSAT-backed coup
+      that ousted Andry Rajoelina, the same military unit that installed him in
+      2009 -- and a genuine positive (the January 2026 mining-moratorium lift)
+      found and placed deliberately rather than manufactured
+    iteration_count: 1
+    last_updated: '2026-08-10'
+    next_action: 'EXPAND: follow whether Randrianirina''s transition roadmap stays
+      on schedule (constitutional referendum June 2027, presidential election
+      October 2027); follow the mining-moratorium lift''s actual investment
+      conversion and whether 2025''s 3.2% growth recovers; check whether Pillars
+      E and G get fresh post-crisis data (this record''s reference year, 2023,
+      predates the October 2025 coup entirely); check whether Rajoelina''s
+      stripped citizenship has further legal consequences; check if Pillar C has
+      gained coverage'
 backlog:
   LBY:
     name: Libya
@@ -562,14 +583,6 @@ backlog:
     iteration_count: 0
     last_updated: null
     next_action: create baseline from blueprint
-  MDG:
-    name: Madagascar
-    region: Islands
-    first_pass: false
-    reason: not yet scheduled
-    iteration_count: 0
-    last_updated: null
-    next_action: create baseline from blueprint
   SYC:
     name: Seychelles
     region: Islands
@@ -591,6 +604,16 @@ pending_format_proposals:
   but has no check for a colonial_legacy_citations field, even though colonial_legacy is a
   substantial prose block making citable claims. Consider adding the same check_refs() call
   used for overview. Raised during MUS CREATE run (2026-08-09), not applied.
+- asi/narrative/schema.py's RECStatus enum only has CURRENT and WITHDRAWN, with
+  no way to represent a temporary SUSPENSION -- Madagascar's SADC and AU
+  membership was suspended for four years (2009-2013) following the 2009 coup
+  but was never withdrawn and is current again today, a genuinely different
+  case from BFA/MLI/NER's actual ECOWAS withdrawals. Represented in the MDG
+  CREATE run with a current status and the suspension mentioned only in
+  historical.key_periods prose rather than in rec_membership structure, since
+  the schema has no field for it. Consider adding a SUSPENDED status value if
+  another suspended-not-withdrawn case comes up. Raised during MDG CREATE run
+  (2026-08-10), not applied.
 meta_notes:
 - '2026-08-09: system built; no research runs yet. First nine designated in `backlog` with
   `first_pass: true`.'
@@ -977,3 +1000,38 @@ meta_notes:
   across records. `--links` passes 0 errors, 1 warning (france24, familiar 403
   bot-detection pattern already confirmed on the DZA run) -- 14/15 resolved.
   Full pytest suite: 106 passed. 19 of 54 countries now have a record.'
+- '2026-08-10: MDG CREATE run complete (14 sources opened and verified: 3
+  Wikipedia, 8 news, 1 academic/Britannica, 1 official/SADC, 1 more Wikipedia
+  for rec_membership -- one citation, Washington Post, was swapped for an
+  AP-syndicated OPB piece covering the same story after --links returned a
+  persistent TimeoutError rather than the usual 403 bot-detection warning;
+  after the swap all 15 citation URLs resolved cleanly, the first MAX
+  first-pass-or-backlog run with zero link warnings at all). First Islands
+  record since MUS, filling a real regional gap (5 island states were still in
+  backlog). Colonial legacy is genuinely distinct from every prior record: an
+  independent, internationally-recognised Merina monarchy under Radama I and
+  Queen Ranavalona I resisted European control through most of the 19th
+  century before France conquered it militarily in 1895-96 -- not a gradual
+  protectorate-to-colony transition like MAR or most of the corpus. Found a
+  nuance the colonial_history.yaml note doesn''t capture and worth carrying
+  forward: the 1895-1903 Menalamba rebellion, often flattened to "anti-French
+  revolt," was directed as much at the Merina administrative elite France
+  chose to retain and govern through as at France itself -- a genuinely
+  different mechanism from the corpus''s usual colonizer-vs-colonized framing,
+  and one this record ties explicitly to the recurring extraction-grievance
+  pattern (1972, 1991, 2002, 2009, 2025) it argues has outlasted colonialism
+  itself. The October 2025 coup that ousted Andry Rajoelina is an unusually
+  sharp case for this corpus''s "reference year predates the crisis" caveat:
+  the underlying index data is dated 2023, so Pillars A, E and G all describe
+  a Madagascar that, as written, no longer exists -- flagged explicitly and
+  repeatedly in pillar prose rather than left for a reader to notice. Followed
+  the established discipline of searching for a genuine positive rather than
+  defaulting to coup-only coverage: found the January 2026 mining-moratorium
+  lift (Ambatovy alone repatriated $3.9B in 2023) and coded it positive on the
+  same standard already applied to unelected transitional governments'' policy
+  actions elsewhere in this corpus (BFA''s SOPAMIB, NER''s Somair). Balance: 1
+  positive, 1 negative, 2 mixed. Also raised a new pending format proposal:
+  RECStatus has no SUSPENDED value, and Madagascar''s 2009-2013 SADC/AU
+  suspension (distinct from the AES trio''s actual ECOWAS withdrawals) doesn''t
+  fit either CURRENT or WITHDRAWN cleanly -- logged rather than self-applied.
+  Full pytest suite: 106 passed. 20 of 54 countries now have a record.'
