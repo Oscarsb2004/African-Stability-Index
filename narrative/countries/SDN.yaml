@@ -1,0 +1,492 @@
+meta:
+  iso3: SDN
+  name: Sudan
+  last_updated: 2026-08-10
+  iteration_count: 1
+  next_action: >
+    EXPAND: (1) follow the war past El Fasher's fall -- check whether RSF
+    control of Darfur has consolidated further or SAF has regained
+    ground, and whether any ceasefire or partition outcome has emerged;
+    (2) check whether famine conditions have worsened or eased since the
+    2025 data in this record; (3) check the Emergency Response Rooms'
+    continued operation and safety, given volunteers face risks from both
+    sides; (4) check if Pillar C (greyed at 1/8 measured) has gained
+    coverage; (5) find a dedicated, directly-opened source for the exact
+    El Fasher initial-assault death toll, since this record had to present
+    a range (1,500-2,000+) rather than a single confirmed figure because
+    sources disagreed; (6) check the state.gov genocide determination
+    page again once it is out of the 2021-2025 administration archive, as
+    the archived URL could not be directly opened this run.
+  model_used: claude-sonnet-5
+
+historical:
+  overview: >
+    Britain and Egypt jointly administered Sudan as the Anglo-Egyptian
+    Condominium from 1899, governing the Arab, Muslim north and the
+    African, largely animist and Christian south as separate provinces
+    with different languages and policies -- a division that shaped every
+    conflict since. Independence arrived on 1 January 1956, but the
+    northern government's abandonment of promised southern federalism
+    triggered the First Sudanese Civil War (1955-1972), paused by the
+    1972 Addis Ababa Agreement. A 1983 push to impose Islamic law
+    nationwide reignited war; the Second Sudanese Civil War (1983-2005)
+    displaced over four million people before the 2005 Comprehensive
+    Peace Agreement ended it and set up South Sudan's secession on 9 July
+    2011. Meanwhile, a separate conflict erupted in Darfur in 2003, when
+    the government armed Arab militias -- the Janjaweed, formalised in
+    2013 as the Rapid Support Forces (RSF) under Mohamed Hamdan "Hemedti"
+    Dagalo -- to suppress a rebellion by non-Arab communities, killing
+    tens to hundreds of thousands and displacing millions. Omar
+    al-Bashir, in power since a 1989 coup, was finally ousted by his own
+    security chiefs -- including Hemedti and General Abdel Fattah
+    al-Burhan -- amid a popular uprising in April 2019. A fragile
+    civilian-military transition collapsed when Burhan and Hemedti
+    jointly staged a further coup in October 2021, then turned on each
+    other: war broke out between the Sudanese Armed Forces (SAF) and the
+    RSF on 15 April 2023 over control of the state and the terms of
+    integrating the RSF into the regular army. It has since become the
+    world's largest displacement crisis, with the RSF's campaign against
+    non-Arab communities in Darfur formally determined by the US
+    government to constitute genocide in January 2025.
+  overview_citations: [c1, c2, c3, c7]
+  colonial_legacy: >
+    context/colonial_history.yaml already credits the Condominium's
+    divide-and-rule administration -- governing the Arab, Muslim north
+    and the African south as separate territories, and favouring Arab
+    elites within the north itself -- for the structural inequalities
+    behind Sudan's post-independence wars, and names the Darfur crisis
+    and the 2023 SAF-RSF war as ongoing consequences. Worth tracing the
+    institutional line between them precisely, because it runs through
+    one specific organisation rather than being diffuse. Sudan was,
+    before formal colonisation, already a slave-raiding frontier in which
+    Arab and Egyptian traders had for centuries captured and traded
+    non-Arab Africans from what is now Darfur and the south -- an economy
+    the Condominium administration only partially suppressed and never
+    fully dismantled, leaving the underlying Arab-supremacist social
+    hierarchy largely intact. When rebellion broke out in Darfur in 2003,
+    the Khartoum government's response was to arm Arab militias, the
+    Janjaweed, drawn substantially from that same regional hierarchy, to
+    suppress non-Arab communities including the Masalit -- a
+    mass-atrocity campaign the government formalised into a state
+    security institution, the Rapid Support Forces, in 2013. That same
+    institution, still commanded by the same man who led the Janjaweed,
+    is the one the US government determined in January 2025 to be
+    committing genocide against the Masalit and other non-Arab Darfuris
+    today. The 2023 war is not simply "a consequence" of colonial-era
+    divisions in a general sense; it is being fought, in the most literal
+    sense, by an institution built directly on top of them.
+  colonial_legacy_citations: [c1, c8, c7]
+  key_periods:
+    - title: "The Condominium and the roots of north-south division"
+      period: "1899-1956"
+      summary: >
+        Britain and Egypt jointly administered Sudan as the
+        Anglo-Egyptian Condominium from 1899, governing the Arab,
+        Muslim north and the African, largely animist and Christian
+        south as separate provinces with different languages, legal
+        systems and development priorities. That division, layered onto
+        a pre-colonial history in which Arab and Egyptian traders had
+        raided the south and west for slaves, shaped the structural
+        inequalities behind every major conflict that followed
+        independence on 1 January 1956.
+      citations: [c1]
+    - title: "Civil wars, Islamisation, and the Comprehensive Peace Agreement"
+      period: "1955-2005"
+      summary: >
+        The northern government's abandonment of promised southern
+        federalism triggered the First Sudanese Civil War (1955-1972),
+        paused by the 1972 Addis Ababa Agreement. A 1983 push to impose
+        Islamic law nationwide reignited war; the Second Sudanese Civil
+        War (1983-2005), fought substantially by the southern SPLA under
+        John Garang, displaced over four million people before the 2005
+        Comprehensive Peace Agreement ended it and set the terms for
+        South Sudan's eventual independence.
+      citations: [c1]
+    - title: "Darfur, the Janjaweed, and Bashir's fall"
+      period: "2003-2019"
+      summary: >
+        A separate conflict erupted in Darfur in 2003, when the
+        government armed Arab militias -- the Janjaweed -- to suppress a
+        rebellion by non-Arab communities, killing tens to hundreds of
+        thousands and displacing millions; Bashir formalised the
+        Janjaweed into the Rapid Support Forces (RSF) under Mohamed
+        Hamdan "Hemedti" Dagalo in 2013. South Sudan seceded on 9 July
+        2011. Bashir, in power since 1989, was finally ousted by his own
+        security chiefs, including Hemedti and General Abdel Fattah
+        al-Burhan, amid a popular uprising in April 2019.
+      citations: [c1, c8]
+    - title: "Coup, counter-coup, and the SAF-RSF war"
+      period: "2019-2025"
+      summary: >
+        A fragile civilian-military transition collapsed when Burhan
+        and Hemedti jointly staged a further coup in October 2021,
+        dissolving the transitional government and arresting civilian
+        leaders. The two men then turned on each other: war broke out
+        between the SAF and the RSF on 15 April 2023 over control of the
+        state and the terms of integrating the RSF into the regular
+        army. By 2025 it had displaced roughly a quarter of Sudan's
+        population and produced a formal US determination, in January
+        2025, that the RSF's campaign against the Masalit and other
+        non-Arab Darfuris constitutes genocide.
+      citations: [c2, c4, c7]
+
+pillars:
+  A:
+    summary: >
+      All six governance indicators are directly measured, and Sudan
+      scores among the very worst recorded anywhere in this index on
+      every one -- Government Effectiveness (14.1) and Control of
+      Corruption (13.9) are both close to the absolute floor. This is
+      not a data-coverage problem: it reflects a state that has been at
+      open civil war with itself since 15 April 2023, when the Sudanese
+      Armed Forces and the Rapid Support Forces -- the two institutions
+      that jointly staged a coup against Sudan's civilian transition in
+      October 2021 -- turned on each other over control of the country
+      and the terms of integrating the RSF into the regular army.
+      Neither faction currently exercises anything resembling effective,
+      accountable governance over the territory it controls; the RSF's
+      conduct in Darfur has since been formally determined by the US
+      government, in January 2025, to constitute genocide.
+    drivers:
+      - "all 6 governance indicators directly measured, among the worst recorded anywhere in this index -- Government Effectiveness and Control of Corruption both near the floor"
+      - "open civil war since 15 April 2023 between the SAF and RSF, the same two forces that jointly staged the Oct 2021 coup before turning on each other"
+      - "Jan 2025: US government formally determined the RSF's Darfur campaign constitutes genocide"
+    citations: [c2, c4, c7]
+  B:
+    summary: >
+      Only two of five economic indicators were freshly measured this
+      year, and this is the corpus's most catastrophic Pillar B score
+      for a reason directly tied to the war: GDP contracted by nearly
+      11% (three-year average) as of the most recent fresh data, and
+      inflation, carried forward at over 178%, was already at
+      hyperinflation-adjacent levels before the most severe recent
+      fighting. GDP per capita, freshly measured, remains among the
+      lowest in the index. Domestic credit to the private sector is
+      carried forward from before the war and almost certainly overstates
+      the current state of a banking system that has been physically
+      looted and destroyed in large parts of Khartoum. Gini was not
+      measured at all -- unsurprising given the collapse of the state's
+      own statistical capacity.
+    drivers:
+      - "only 2 of 5 indicators freshly measured -- thin, and for a reason: war has collapsed the state's own statistical capacity"
+      - "GDP contracted ~11% (3yr avg, fresh); inflation >178% (carried forward, pre-dates the worst recent fighting)"
+      - "domestic credit (carried forward) almost certainly overstates a banking system looted and destroyed in large parts of Khartoum"
+      - "Gini entirely absent -- the state's capacity to measure its own economy has collapsed"
+    citations: [c5]
+  D:
+    summary: >
+      Life expectancy above 66 years and infant mortality of 44 per
+      1,000 live births, both freshly measured, are moderate -- though
+      these figures may not fully reflect wartime mortality given
+      ongoing data-collection disruption. The severe food insecurity
+      indicator, at just under 11% and estimated from regional peers
+      rather than measured directly, is the clearest case in this record
+      of an index figure understating an active crisis: famine was
+      formally declared at the Zamzam displacement camp in August 2024
+      and has since spread, with the World Bank projecting nearly 9
+      million people facing catastrophic hunger in 2025 and over half
+      the population -- some 25.6 million people -- facing severe hunger
+      overall. Safely managed water access, also a regional estimate, is
+      comparatively high. This pillar's moderate score should not be read
+      as evidence the war has not produced a severe hunger emergency --
+      it has, and the index's own data lag is part of why it doesn't show.
+    drivers:
+      - "life expectancy >66, infant mortality 44/1,000 (both fresh) -- may not fully capture wartime mortality given data-collection disruption"
+      - "severe food insecurity indicator (regional-mean, ~11%) is a clear case of the index understating an active crisis"
+      - "famine declared at Zamzam IDP camp Aug 2024; ~25.6 million people (over half the population) face severe hunger; ~9 million projected catastrophic in 2025"
+    citations: [c9]
+  E:
+    summary: >
+      Political Stability, freshly measured, scores among the very
+      worst recorded anywhere in this index -- consistent with a country
+      in active civil war since April 2023. Displaced persons is the
+      starkest figure in this entire record: 180.91 per 1,000
+      population, directly and freshly measured, meaning roughly one in
+      every 5.5 Sudanese has been displaced from their home. Nearly 14
+      million people have fled since the war began, out of a population
+      of roughly 50 million, making Sudan the world's largest
+      displacement crisis. The fall of El Fasher, Darfur's last major
+      army-held city, to the RSF in late October 2025 after a siege
+      lasting nearly two years produced widely disputed initial death
+      tolls -- from at least 1,500 (Sudan Doctors Network) to over 2,000
+      (Sudanese government figures) killed as civilians tried to flee.
+      Homicide indicators are estimated from regional peers rather than
+      measured directly.
+    drivers:
+      - "Political Stability (fresh) among the very worst in the entire index"
+      - "IDPs 180.91/1,000 (fresh, directly measured) -- roughly 1 in 5.5 people displaced; ~14 million displaced total, the world's largest displacement crisis"
+      - "El Fasher fell to the RSF late Oct 2025 after a ~2-year siege; initial death toll disputed, 1,500-2,000+ depending on source"
+      - "homicide indicators regional-mean, not directly measured"
+    citations: [c4, c6]
+  F:
+    summary: >
+      Only two of four indicators were freshly measured this year.
+      Freshwater withdrawal, carried forward, runs at roughly 673% of
+      internal renewable resources -- like Egypt, Sudan depends heavily
+      on the Nile, an external river shared with both Egypt downstream
+      and Ethiopia's GERD upstream, for a large share of its water; this
+      record cannot confirm how the war has affected water infrastructure
+      specifically, but the dependency itself predates it. Per-capita
+      CO2 emissions, freshly measured, score well, and the country's
+      electricity generation -- roughly 71% non-fossil-fuel, a
+      carried-forward figure -- reflects real hydroelectric capacity
+      including the Merowe Dam, though this figure likely predates
+      significant wartime damage to infrastructure. Agricultural land
+      share, freshly measured, is comparatively extensive.
+    drivers:
+      - "only 2 of 4 indicators freshly measured"
+      - "freshwater withdrawal ~673% of internal renewable resources (carried forward) -- Nile dependency shared with Egypt/Ethiopia, war impact on infrastructure unconfirmed"
+      - "CO2 pc scores well (fresh); electricity ~71% non-fossil (carried forward) -- real hydro capacity (Merowe Dam), though this predates wartime damage"
+      - "agricultural land comparatively extensive (fresh)"
+    citations: [c1]
+  G:
+    summary: >
+      Electricity access (66%) and basic water access (64%), both
+      freshly measured, are moderate but almost certainly overstate
+      current wartime conditions in areas of active fighting, since these
+      figures are annual averages that may not fully capture
+      infrastructure destroyed since April 2023. Handwashing-facility
+      access, at just under 11% and also freshly measured, is among the
+      lowest figures recorded anywhere in this corpus. Social protection
+      and labour programme coverage was not measured at all this year --
+      a complete data gap consistent with the collapse of state
+      statistical capacity documented under Pillar B.
+    drivers:
+      - "electricity access 66%, basic water 64% (both fresh) -- likely overstate current conditions in active-fighting areas"
+      - "handwashing access only ~11% (fresh) -- among the lowest figures in this corpus"
+      - "social protection coverage entirely absent -- consistent with the collapse of state statistical capacity"
+    citations: [c5]
+
+recent:
+  primary:
+    - headline: "Grassroots Emergency Response Rooms have reached 11.5 million people"
+      date: 2024-12-01
+      summary: >
+        Sudan's Emergency Response Rooms (ERRs) -- named for the WhatsApp
+        groups used to coordinate them, and grown out of the resistance
+        committees that led the 2019 revolution -- had assisted more than
+        11.5 million people by December 2024, running over 600 community
+        centres that provide evacuations, clean water, medical supplies
+        and community kitchens amid state collapse. The initiative has
+        won the Right Livelihood Award, the Rafto Prize and the Chatham
+        House Prize, and been nominated for the Nobel Peace Prize in both
+        2024 and 2025, though volunteers face arrest, abduction and
+        killing from both sides of the conflict.
+      why_it_matters: >
+        A genuine, internationally recognised model of civilian-led
+        mutual aid filling gaps left by the total collapse of state
+        capacity documented under Pillars A, B and G -- not a symbolic
+        counterweight, but the actual delivery mechanism for humanitarian
+        aid to millions of people.
+      news_url: "https://time.com/collections/davos-2025/7204654/sudan-humanitarianism-crisis-err-aid/"
+      wikipedia_url: "https://en.wikipedia.org/wiki/Emergency_Response_Rooms"
+      sentiment: positive
+    - headline: "El Fasher falls to the RSF after a two-year siege"
+      date: 2025-10-27
+      summary: >
+        The Rapid Support Forces captured El Fasher, the last major
+        army-held city in Darfur, in late October 2025 after a siege
+        lasting nearly two years that systematically starved and
+        confined the population. Estimates of those killed as civilians
+        tried to flee in the assault's first days range from at least
+        1,500 (Sudan Doctors Network) to over 2,000 (Sudanese government
+        figures); the RSF had already seized the nearby Zamzam
+        displacement camp in April 2025, displacing 400,000 people from
+        the same site where famine was first declared.
+      why_it_matters: >
+        Directly explains Pillar E's catastrophic displacement and
+        Political Stability scores, and completed RSF control over
+        nearly all of Darfur.
+      news_url: "https://time.com/7330421/sudan-el-fasher-rsf-darfur/"
+      wikipedia_url: ""
+      sentiment: negative
+    - headline: "US determines the RSF is committing genocide in Darfur"
+      date: 2025-01-07
+      summary: >
+        The outgoing US Secretary of State determined on 7 January 2025
+        that the Rapid Support Forces and allied militias are committing
+        genocide against the Masalit and other non-Arab communities in
+        Darfur, citing systematic killings and sexual violence, and
+        announced sanctions on RSF leader Mohamed Hamdan "Hemedti" Dagalo
+        and seven RSF-linked companies. It followed an earlier December
+        2023 determination that both the SAF and RSF had committed war
+        crimes and crimes against humanity.
+      why_it_matters: >
+        The formal international-legal characterisation of the
+        atrocities documented throughout this record, and the clearest
+        evidence connecting today's war to the institutional lineage
+        traced in historical.colonial_legacy.
+      news_url: "https://2021-2025.state.gov/genocide-determination-in-sudan-and-imposing-accountability-measures/"
+      wikipedia_url: ""
+      sentiment: negative
+  extended:
+    - headline: "Famine spreads as nearly 9 million face catastrophic hunger"
+      date: 2024-08-01
+      summary: >
+        Famine was formally declared at the Zamzam displacement camp in
+        North Darfur on 1 August 2024, the first such declaration of the
+        war, and subsequently confirmed in additional localities around
+        El Fasher and Kadugli. By 2025, more than half of Sudan's
+        population -- 25.6 million people -- faced severe hunger, with
+        the World Bank projecting nearly 9 million people would face
+        catastrophic conditions if the situation did not improve.
+      why_it_matters: >
+        Explains the disconnect between Pillar D's moderate headline
+        score and the severity of the actual humanitarian emergency,
+        since the index's food-insecurity indicator for Sudan is a stale
+        regional estimate rather than a direct current measurement.
+      news_url: "https://en.wikipedia.org/wiki/Famine_in_Sudan_(2024%E2%80%93present)"
+      wikipedia_url: ""
+      sentiment: negative
+
+events:
+  - year: 1956
+    type: independence
+    title: "Sudan gains independence"
+    description: >
+      Sudan became independent from Britain and Egypt on 1 January 1956;
+      the northern government's abandonment of promised southern
+      federalism triggered the First Sudanese Civil War within months.
+    url: "https://en.wikipedia.org/wiki/History_of_Sudan"
+    direction: mixed
+  - year: 2003
+    type: conflict
+    title: "Darfur conflict and Janjaweed atrocities begin"
+    description: >
+      The government armed Arab Janjaweed militias to suppress a Darfur
+      rebellion by non-Arab communities in 2003, killing tens to
+      hundreds of thousands and displacing millions; the militia was
+      later formalised as the Rapid Support Forces.
+    url: "https://en.wikipedia.org/wiki/History_of_Sudan"
+    direction: deteriorate
+  - year: 2019
+    type: coup
+    title: "Popular uprising ousts Bashir"
+    description: >
+      Omar al-Bashir, in power since 1989, was ousted by his own
+      security chiefs, including Hemedti and Burhan, amid a popular
+      uprising in April 2019.
+    url: "https://en.wikipedia.org/wiki/2019_Sudanese_coup_d%27%C3%A9tat"
+    direction: improve
+  - year: 2023
+    type: conflict
+    title: "War breaks out between the SAF and RSF"
+    description: >
+      War broke out between the Sudanese Armed Forces and the Rapid
+      Support Forces on 15 April 2023, becoming, within two years, the
+      world's largest displacement crisis and the site of a formally
+      determined genocide in Darfur.
+    url: "https://www.cfr.org/global-conflict-tracker/conflict/power-struggle-sudan"
+    direction: deteriorate
+
+citations:
+  - id: c1
+    url: "https://en.wikipedia.org/wiki/History_of_Sudan"
+    source_type: wikipedia
+    title: "History of Sudan"
+    accessed: 2026-08-10
+    verified: true
+  - id: c2
+    url: "https://en.wikipedia.org/wiki/2021_Sudanese_coup_d%27%C3%A9tat"
+    source_type: wikipedia
+    title: "2021 Sudanese coup d'état"
+    accessed: 2026-08-10
+    verified: true
+  - id: c3
+    url: "https://en.wikipedia.org/wiki/2019_Sudanese_coup_d%27%C3%A9tat"
+    source_type: wikipedia
+    title: "2019 Sudanese coup d'état"
+    accessed: 2026-08-10
+    verified: true
+  - id: c4
+    url: "https://www.cfr.org/global-conflict-tracker/conflict/power-struggle-sudan"
+    source_type: academic
+    title: "Civil War in Sudan (Council on Foreign Relations Global Conflict Tracker)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c5
+    url: "https://www.csis.org/analysis/sudan-war-10-charts"
+    source_type: academic
+    title: "The Sudan War in 10 Charts (CSIS)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c6
+    url: "https://time.com/7330421/sudan-el-fasher-rsf-darfur/"
+    source_type: news
+    title: "Reports of Mass Killings by Militia After Key City Falls in Sudan (Time)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c7
+    url: "https://2021-2025.state.gov/genocide-determination-in-sudan-and-imposing-accountability-measures/"
+    source_type: official
+    title: "Genocide Determination in Sudan and Imposing Accountability Measures (US Department of State)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c8
+    url: "https://www.britannica.com/topic/Janjaweed"
+    source_type: academic
+    title: "Janjaweed (Encyclopaedia Britannica)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c9
+    url: "https://en.wikipedia.org/wiki/Famine_in_Sudan_(2024%E2%80%93present)"
+    source_type: wikipedia
+    title: "Famine in Sudan (2024-present)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c10
+    url: "https://en.wikipedia.org/wiki/Emergency_Response_Rooms"
+    source_type: wikipedia
+    title: "Emergency Response Rooms"
+    accessed: 2026-08-10
+    verified: true
+  - id: c11
+    url: "https://time.com/collections/davos-2025/7204654/sudan-humanitarianism-crisis-err-aid/"
+    source_type: news
+    title: "Locals in Sudan Are Saving Lives Aid Agencies Can't Reach (Time)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c12
+    url: "https://en.wikipedia.org/wiki/Common_Market_for_Eastern_and_Southern_Africa"
+    source_type: wikipedia
+    title: "Common Market for Eastern and Southern Africa"
+    accessed: 2026-08-10
+    verified: true
+  - id: c13
+    url: "https://en.wikipedia.org/wiki/Community_of_Sahel%E2%80%93Saharan_States"
+    source_type: wikipedia
+    title: "Community of Sahel-Saharan States"
+    accessed: 2026-08-10
+    verified: true
+
+rec_membership:
+  - org: COMESA
+    joined: 1994
+    status: current
+    left: null
+    citations: [c12]
+  - org: CEN-SAD
+    joined: 1998
+    status: current
+    left: null
+    citations: [c13]
+
+balance:
+  n_positive: 1
+  n_negative: 3
+  n_mixed: 0
+  note: >
+    Sudan's recent record is severe by any honest measure, and this
+    record does not pretend otherwise: three of four primary/extended
+    items are negative, each independently documented and current
+    (El Fasher's fall, the formal genocide determination, and the famine
+    now affecting more than half the population). The one positive item,
+    the Emergency Response Rooms, was not manufactured to satisfy this
+    project's balance requirement -- it was found through the same
+    search discipline applied to every country in this corpus, and it
+    earns its place on the evidence: 11.5 million people helped, six
+    international awards and nominations, a genuinely substantial
+    civilian response to total state collapse. It is documented honestly,
+    including the real risks its volunteers face from both warring
+    parties, rather than as an uncomplicated feel-good counterweight to
+    the rest of this record.

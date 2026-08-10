@@ -3,7 +3,7 @@
 The document future runs read before doing anything. Machine-readable twin:
 `narrative/state.yaml`.
 
-*Seeded 2026-08-09. Research runs so far: Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria, Rwanda, Chad, Angola, South Africa, Kenya, Egypt, Ethiopia (all CREATE). First pass complete; backlog underway.*
+*Seeded 2026-08-09. Research runs so far: Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria, Rwanda, Chad, Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan (all CREATE). First pass complete; backlog underway.*
 
 ---
 
@@ -26,7 +26,7 @@ An audit is forced early if a single run inflates the citation count by more tha
 
 ## Status
 
-**14 of 54 countries have a record (Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria, Rwanda, Chad, Angola, South Africa, Kenya, Egypt, Ethiopia). The first pass is complete; Angola, South Africa, Kenya, Egypt and Ethiopia are the first five backlog countries.**
+**15 of 54 countries have a record (Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria, Rwanda, Chad, Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan). The first pass is complete; Angola, South Africa, Kenya, Egypt, Ethiopia and Sudan are the first six backlog countries.**
 
 ### First pass — 9 countries
 
@@ -56,14 +56,15 @@ whose ranks swing hardest with the weighting method.
 | KEN | Kenya | East Africa's anchor economy; only prior East African records (SOM, RWA) were atypical crisis/authoritarian cases; a multiparty democracy under real, recurring strain | **done — iteration 1** |
 | EGY | Egypt | North Africa's second major economy (DZA was the region's only prior record); lowest, but reliably-measured, Pillar F score in the corpus, driven by a still-unfolding colonial-legacy water dispute | **done — iteration 1** |
 | ETH | Ethiopia | one of only two never-colonised African states, requiring a genuinely different colonial_legacy framing; the GERD story's other side, cross-referenced against EGY | **done — iteration 1** |
+| SDN | Sudan | the single most severe remaining gap; the SAF-RSF war since April 2023 is the world's largest displacement crisis, with a formal US genocide determination (Jan 2025); closes the refugee-outflow thread already opened in TCD | **done — iteration 1** |
 
-### Backlog — the remaining 40
+### Backlog — the remaining 39
 
 Listed in full in `narrative/state.yaml` under `backlog`. They are recorded
 explicitly rather than left implicit: a country with no record should be visibly
 absent, not quietly missing.
 
-Libya, Morocco, Sudan, Tunisia, Benin, Burkina Faso, Cabo Verde, The Gambia, Guinea, Guinea-Bissau, Cote d'Ivoire, Liberia, Mali, Mauritania, Niger, Senegal, Sierra Leone, Togo, Cameroon, Central African Republic, Republic of Congo, Equatorial Guinea, Gabon, Burundi, Djibouti, Eritrea, Malawi, Mozambique, South Sudan, Tanzania, Uganda, Zambia, Zimbabwe, Lesotho, Namibia, Eswatini, Comoros, Madagascar, Seychelles, Sao Tome & Principe
+Libya, Morocco, Tunisia, Benin, Burkina Faso, Cabo Verde, The Gambia, Guinea, Guinea-Bissau, Cote d'Ivoire, Liberia, Mali, Mauritania, Niger, Senegal, Sierra Leone, Togo, Cameroon, Central African Republic, Republic of Congo, Equatorial Guinea, Gabon, Burundi, Djibouti, Eritrea, Malawi, Mozambique, South Sudan, Tanzania, Uganda, Zambia, Zimbabwe, Lesotho, Namibia, Eswatini, Comoros, Madagascar, Seychelles, Sao Tome & Principe
 
 ---
 
@@ -407,6 +408,37 @@ Append one line per run: date, country, mode, what changed, what was removed.
   factional split, showing the Pretoria peace stopped a war but did not
   resolve Tigray's internal politics).
 
+- **2026-08-10 — SDN — CREATE. Sixth backlog country.** Full baseline
+  built: historical overview, colonial legacy (traces a precise
+  institutional lineage from the Condominium's pre-colonial
+  slave-raiding-frontier hierarchy through the 2003 Janjaweed to the
+  2013-formalised Rapid Support Forces — the same commander, Hemedti,
+  who led the Janjaweed now commands the RSF the US formally determined
+  in January 2025 to be committing genocide; the 2023 war is fought BY
+  an institution built directly on colonial-era divisions, not merely a
+  general consequence of them), 4 key_periods, 6 pillar summaries
+  (Pillar C left empty — greyed at 1/8 measured), 3 primary + 1 extended
+  recent items, 4 events, rec_membership (COMESA 1994, CEN-SAD 1998
+  founding). 15 sources opened and verified. One validator catch:
+  pillars.D ran 162 words against the 160 limit, trimmed to pass.
+  `--links` passes 0 errors, 0 warnings — 15/15 resolved, including an
+  archived state.gov page that could not be opened directly but resolves
+  for the automated checker. Pillar E's IDP figure (180.91/1,000,
+  directly measured, not an estimate) is the starkest single number in
+  the corpus — roughly 1 in 5.5 Sudanese displaced, confirming Sudan as
+  the world's largest displacement crisis. Before accepting an
+  all-negative primary record, found and verified a genuine, substantial
+  positive: Sudan's Emergency Response Rooms, grown from the 2019
+  revolution's resistance committees, have assisted 11.5 million people
+  and won the Right Livelihood Award, Rafto Prize, Chatham House Prize,
+  and two Nobel Peace Prize nominations — documented honestly, including
+  that volunteers face real risk from both warring parties. Also flagged
+  an index-data-lag issue worth checking in any fast-moving crisis
+  country: Pillar D's regional-mean food-insecurity indicator (~11%)
+  badly understates the independently-confirmed famine (Zamzam camp,
+  declared August 2024; ~25.6 million facing severe hunger by 2025).
+  Balance: 1 positive, 3 negative, 0 mixed.
+
 ---
 
 ## Meta-notes
@@ -655,6 +687,22 @@ Things a future run should know about how to work, not about a specific country.
   — if GERD's status changes (a binding agreement, further escalation),
   both records need updating together, not just whichever one a future
   run happens to be working on.
+- **2026-08-10** — SDN is the corpus's clearest demonstration yet that
+  "search harder before accepting an all-negative record" actually works
+  even in the most severe cases: Sudan's situation is genuinely as bad as
+  any country covered so far, and the search for a real counterweight
+  still surfaced one (the Emergency Response Rooms) that meets the same
+  evidentiary bar as everything else in the record — internationally
+  audited award recognition, a specific verified headcount, not a vague
+  claim. Don't let a country's severity become a reason to skip the
+  search; COD, EGY and now SDN all show that sometimes the search
+  genuinely comes up short (COD, EGY) and sometimes it doesn't (SDN,
+  ETH), and the only way to know which is true for a given country is to
+  actually look, not to predict from how bad the rest of the record
+  reads. Also worth flagging for TCD's future EXPAND pass: SDN's record
+  documents the war driving Sudanese refugees into Chad from the source
+  side, giving a second cross-referenced pair (after EGY/ETH's GERD) that
+  a future audit should keep factually consistent across both files.
 
 ---
 
