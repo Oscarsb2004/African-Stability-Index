@@ -186,6 +186,24 @@ countries:
       and whether foreign debt has continued past ~$164B; check the Rafah crossing/Gaza-border
       situation past mid-2025; check if Pillar C has gained coverage; find a dedicated
       source for Ahmed Tantawi''s post-2023-election status'
+  ETH:
+    name: Ethiopia
+    region: East
+    first_pass: false
+    reason: fifth backlog country -- one of only two African states never colonised,
+      requiring a genuinely different colonial_legacy framing (Menelik''s own internal
+      imperial expansion, not external colonisation); the GERD story''s other side,
+      cross-referenced directly against EGY''s record; a country where a single
+      infrastructure project (GERD) is simultaneously a genuine national-unity
+      achievement and the trigger for a severe international dispute
+    iteration_count: 1
+    last_updated: '2026-08-10'
+    next_action: 'EXPAND: follow the TPLF factional dispute and Tigray''s fragile
+      peace past mid-2026; check whether the Amhara/Fano insurgency has escalated
+      or de-escalated and whether the Gedeb drone strike casualty dispute has been
+      independently resolved; check the birr''s trajectory and inflation past this
+      run''s data; check if Pillar C has gained coverage; keep this record factually
+      consistent with EGY''s on the shared GERD dispute'
 backlog:
   LBY:
     name: Libya
@@ -389,14 +407,6 @@ backlog:
     next_action: create baseline from blueprint
   ERI:
     name: Eritrea
-    region: East
-    first_pass: false
-    reason: not yet scheduled
-    iteration_count: 0
-    last_updated: null
-    next_action: create baseline from blueprint
-  ETH:
-    name: Ethiopia
     region: East
     first_pass: false
     reason: not yet scheduled
@@ -736,3 +746,26 @@ meta_notes:
   evidence of democratic opening; checked rather than assumed. Balance: 0 positive,
   3 negative, 1 mixed. `--links` passes 0 errors, 1 warning (France24, familiar 403
   pattern) -- 11/12 resolved.'
+- '2026-08-10: ETH CREATE run complete -- fifth backlog country. 14 sources opened
+  and verified. Ethiopia is one of only two African states never colonised (with
+  Liberia), which forced a genuinely different colonial_legacy approach: rather than
+  expanding on external exploitation, this record expands on Menelik II''s OWN
+  imperial expansion (1878-1904), which historians -- including Oxford''s Richard
+  Reid and the Encyclopaedia Aethiopica -- directly compare to European colonial
+  methods (the neftenya-gabbar settler system, forced Amharic imposition, violent
+  suppression of the Oromo, Somali and other southern peoples). This is the direct
+  root of the ethnic-federal fault lines now driving the Tigray War and Amhara/Fano
+  insurgency -- an internally-generated conflict history, not one imposed from
+  outside. GERD is the standout finding: cross-references directly against EGY''s
+  record (the same dam is Ethiopia''s primary environmental achievement AND Egypt''s
+  primary environmental catastrophe). Documented as a genuine positive at full
+  weight -- ordinary Ethiopians crowdfunded a real share of its $4.5B cost (bonds,
+  salary pledges, diaspora contributions), a detail that gives Pillar F''s
+  near-ceiling CO2 score real substance rather than treating it as another
+  wealth-proxy artifact. Balance: 1 positive (GERD), 2 negative (Amhara/Fano
+  insurgency and disputed April 2025 drone strike, currency crisis), 1 mixed (TPLF
+  factional split showing Pretoria''s peace remains incomplete). `--links` passes 0
+  errors, 1 warning (AllAfrica, familiar 403 pattern) -- 13/14 resolved. Confirmed
+  COMESA (1994) and IGAD (1986, founding) via direct verification rather than
+  pattern-matching to Kenya''s identical REC list, continuing the discipline
+  established after the AGO/ECCAS error.'

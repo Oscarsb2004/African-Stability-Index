@@ -3,7 +3,7 @@
 The document future runs read before doing anything. Machine-readable twin:
 `narrative/state.yaml`.
 
-*Seeded 2026-08-09. Research runs so far: Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria, Rwanda, Chad, Angola, South Africa, Kenya, Egypt (all CREATE). First pass complete; backlog underway.*
+*Seeded 2026-08-09. Research runs so far: Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria, Rwanda, Chad, Angola, South Africa, Kenya, Egypt, Ethiopia (all CREATE). First pass complete; backlog underway.*
 
 ---
 
@@ -26,7 +26,7 @@ An audit is forced early if a single run inflates the citation count by more tha
 
 ## Status
 
-**13 of 54 countries have a record (Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria, Rwanda, Chad, Angola, South Africa, Kenya, Egypt). The first pass is complete; Angola, South Africa, Kenya and Egypt are the first four backlog countries.**
+**14 of 54 countries have a record (Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria, Rwanda, Chad, Angola, South Africa, Kenya, Egypt, Ethiopia). The first pass is complete; Angola, South Africa, Kenya, Egypt and Ethiopia are the first five backlog countries.**
 
 ### First pass — 9 countries
 
@@ -55,14 +55,15 @@ whose ranks swing hardest with the weighting method.
 | ZAF | South Africa | anchors the Southern Africa/anchor-economy gap; first reliable-tier (not thin) composite score in the corpus; sharpest test yet of framing balance in the positive direction | **done — iteration 1** |
 | KEN | Kenya | East Africa's anchor economy; only prior East African records (SOM, RWA) were atypical crisis/authoritarian cases; a multiparty democracy under real, recurring strain | **done — iteration 1** |
 | EGY | Egypt | North Africa's second major economy (DZA was the region's only prior record); lowest, but reliably-measured, Pillar F score in the corpus, driven by a still-unfolding colonial-legacy water dispute | **done — iteration 1** |
+| ETH | Ethiopia | one of only two never-colonised African states, requiring a genuinely different colonial_legacy framing; the GERD story's other side, cross-referenced against EGY | **done — iteration 1** |
 
-### Backlog — the remaining 41
+### Backlog — the remaining 40
 
 Listed in full in `narrative/state.yaml` under `backlog`. They are recorded
 explicitly rather than left implicit: a country with no record should be visibly
 absent, not quietly missing.
 
-Libya, Morocco, Sudan, Tunisia, Benin, Burkina Faso, Cabo Verde, The Gambia, Guinea, Guinea-Bissau, Cote d'Ivoire, Liberia, Mali, Mauritania, Niger, Senegal, Sierra Leone, Togo, Cameroon, Central African Republic, Republic of Congo, Equatorial Guinea, Gabon, Burundi, Djibouti, Eritrea, Ethiopia, Malawi, Mozambique, South Sudan, Tanzania, Uganda, Zambia, Zimbabwe, Lesotho, Namibia, Eswatini, Comoros, Madagascar, Seychelles, Sao Tome & Principe
+Libya, Morocco, Sudan, Tunisia, Benin, Burkina Faso, Cabo Verde, The Gambia, Guinea, Guinea-Bissau, Cote d'Ivoire, Liberia, Mali, Mauritania, Niger, Senegal, Sierra Leone, Togo, Cameroon, Central African Republic, Republic of Congo, Equatorial Guinea, Gabon, Burundi, Djibouti, Eritrea, Malawi, Mozambique, South Sudan, Tanzania, Uganda, Zambia, Zimbabwe, Lesotho, Namibia, Eswatini, Comoros, Madagascar, Seychelles, Sao Tome & Principe
 
 ---
 
@@ -379,6 +380,33 @@ Append one line per run: date, country, mode, what changed, what was removed.
   ballot via harassment and spyware targeting before voting even began.
   Balance: 0 positive, 3 negative, 1 mixed.
 
+- **2026-08-10 — ETH — CREATE. Fifth backlog country.** Full baseline
+  built: historical overview, colonial legacy (a genuinely different
+  approach for a genuinely different case — Ethiopia is one of only two
+  African states never colonised, so this expands on Menelik II's own
+  1878-1904 imperial expansion, which historians including Oxford's
+  Richard Reid directly compare to European colonial methods: the
+  neftenya-gabbar settler system, forced Amharic imposition, violent
+  suppression of the Oromo, Somali and other southern peoples — the
+  direct root of today's ethnic-federal fault lines), 4 key_periods, 6
+  pillar summaries (Pillar C left empty — greyed at 1/8 measured), 3
+  primary + 1 extended recent items, 4 events, rec_membership (COMESA
+  1994, IGAD 1986 founding — both verified directly rather than
+  pattern-matched to Kenya's identical REC list). 14 sources opened and
+  verified. `--links` passes 0 errors, 1 warning (AllAfrica, familiar 403
+  pattern) — 13/14 resolved. GERD is the standout cross-reference: the
+  same dam is Ethiopia's primary environmental achievement (near-ceiling
+  Pillar F score, largely self-financed by ordinary Ethiopians —
+  teachers, students, diaspora — rather than external debt) and Egypt's
+  primary environmental catastrophe (documented in EGY's record), giving
+  both records a shared factual anchor rather than treating the dispute
+  as two separate stories. Balance: 1 positive (GERD, documented at full
+  weight rather than folded only into the international dispute), 2
+  negative (Amhara/Fano insurgency and the disputed April 2025 Gedeb
+  drone strike, the July 2024 currency crisis), 1 mixed (the TPLF
+  factional split, showing the Pretoria peace stopped a war but did not
+  resolve Tigray's internal politics).
+
 ---
 
 ## Meta-notes
@@ -611,6 +639,22 @@ Things a future run should know about how to work, not about a specific country.
   achievement (AGO, KEN) — three now-distinct categories worth checking
   against explicitly rather than defaulting to whichever explanation was
   used most recently.
+- **2026-08-10** — ETH adds a fourth category to that F-pillar typology,
+  and it doesn't fit cleanly into any of the three from the EGY note:
+  Ethiopia's near-ceiling score is neither a pure wealth-proxy artifact
+  nor a pure achievement like Kenya's — it's genuinely both at once (real
+  GERD/hydro investment) AND still partly poverty-driven (electricity
+  access only ~55%), and the record says so explicitly rather than
+  forcing a single explanation. General lesson: don't assume a country
+  will cleanly fit one of the categories logged from prior countries —
+  check whether it's actually a blend before writing the pillar as though
+  it must be one or the other. Also worth flagging structurally: EGY and
+  ETH are the first pair of records in this corpus that share a single
+  live event (GERD) from opposite sides. Any future EXPAND/AUDIT pass on
+  either record should check the other for continued factual consistency
+  — if GERD's status changes (a binding agreement, further escalation),
+  both records need updating together, not just whichever one a future
+  run happens to be working on.
 
 ---
 

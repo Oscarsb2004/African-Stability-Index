@@ -1,0 +1,481 @@
+meta:
+  iso3: ETH
+  name: Ethiopia
+  last_updated: 2026-08-10
+  iteration_count: 1
+  next_action: >
+    EXPAND: (1) follow the TPLF factional dispute and Tigray's fragile
+    peace past mid-2026, given hornreview.org's August 2026 reporting on
+    "renewed military push" signals; (2) check whether the Amhara/Fano
+    insurgency has escalated or de-escalated, and whether an independent
+    investigation into the April 2025 Gedeb drone strike casualty dispute
+    has concluded; (3) check the birr's trajectory and inflation past this
+    run's data; (4) check if Pillar C (greyed at 1/8 measured) has gained
+    coverage; (5) check GERD's downstream diplomatic status alongside the
+    EGY record's own next_action on the same dispute -- the two records
+    should stay factually consistent with each other on shared events.
+  model_used: claude-sonnet-5
+
+historical:
+  overview: >
+    Ethiopia and Liberia are the only African states never subjected to
+    formal European colonial rule. Emperor Menelik II's decisive victory
+    over an invading Italian army at the Battle of Adwa on 1 March 1896 --
+    inflicting over 6,000 Italian deaths against a force roughly five
+    times its size -- forced Italy to recognise Ethiopian sovereignty and
+    made the country a global symbol of African resistance during the
+    Scramble for Africa. Italy briefly occupied Ethiopia from 1936 to
+    1941, a period classified as military occupation rather than
+    colonisation. Menelik's own conquests (1878-1904), however,
+    incorporated the Oromo, Somali, Sidama and dozens of other southern
+    peoples into a centralised, Amhara-dominated empire through methods
+    historians -- including Oxford's Richard Reid -- have directly
+    compared to European colonial expansion. A 1974 military coup,
+    eventually led by Mengistu Haile Mariam, overthrew Emperor Haile
+    Selassie and installed a Marxist junta, the Derg, whose 1976-1978 Red
+    Terror campaign killed an estimated 500,000 people. The Tigray
+    People's Liberation Front-led Ethiopian People's Revolutionary
+    Democratic Front overthrew the Derg in 1991, and Eritrea won formal
+    independence in 1993 after a 30-year war. Abiy Ahmed became prime
+    minister in 2018, won the 2019 Nobel Peace Prize for ending Eritrea's
+    border stalemate, then presided over the 2020-2022 Tigray War against
+    his former TPLF allies -- one of the 21st century's deadliest
+    conflicts, with credible civilian death estimates ranging from
+    162,000 to over 600,000 -- and, since April 2023, a separate war
+    against Amhara Fano militias that continues today.
+  overview_citations: [c1, c2, c3, c4, c5, c6]
+  colonial_legacy: >
+    context/colonial_history.yaml already notes that Ethiopia's own
+    19th-century imperial expansion under Menelik II and Haile Selassie is
+    "a distinct but related historical dynamic" to the colonisation the
+    rest of this project documents. Worth expanding on how directly
+    related it actually is. Menelik's conquests (1878-1904) incorporated
+    the Oromo, Somali, Sidama, Wolaita and dozens of other southern
+    peoples through the neftenya-gabbar system: armed Amhara and
+    Tigrayan settlers were granted land and authority over conquered
+    populations from fortified garrison towns, extracting tribute and
+    labour much as European settler-colonial administrations did
+    elsewhere on the continent. The Encyclopaedia Aethiopica and
+    historians including Oxford's Richard Reid describe the campaigns as
+    closely mirroring European colonial expansion in method and violence;
+    some estimates suggest the Oromo population fell by roughly half
+    between 1870 and 1900, though pre-modern demographic figures for the
+    region carry wide uncertainty. Amharic was imposed as the state
+    language and the Orthodox Church expanded alongside conquest.
+    Ethiopia's 1995 constitution's ethnic-federal structure was designed
+    explicitly to manage the legacy of this internal expansion, and the
+    fault lines it drew are the same ones now driving the Tigray War, the
+    Amhara/Fano insurgency, and decades of Oromo and Somali-region unrest
+    documented under Pillars A and E -- Ethiopia's central conflict story
+    traces to an empire it built itself, not one built upon it.
+  colonial_legacy_citations: [c1, c10]
+  key_periods:
+    - title: "Menelik's conquests and the Battle of Adwa"
+      period: "1878-1913"
+      summary: >
+        Emperor Menelik II's conquests between 1878 and 1904 incorporated
+        the Oromo, Somali, Sidama and dozens of other southern peoples
+        into a centralised empire through forced settlement and violent
+        suppression that historians have compared directly to European
+        colonial expansion. In 1896, Menelik's forces decisively defeated
+        an invading Italian army at the Battle of Adwa -- the only case
+        of an African army permanently repelling a European colonial
+        conquest -- forcing Italy to recognise Ethiopian sovereignty.
+      citations: [c2, c10]
+    - title: "Italian occupation and Haile Selassie's later reign"
+      period: "1936-1974"
+      summary: >
+        Italy occupied Ethiopia from 1936 to 1941 after a second
+        invasion, a period classified as military occupation rather than
+        colonisation since sovereignty was restored with British
+        assistance during the Second World War. Emperor Haile Selassie
+        then ruled until 1974, presiding over Ethiopia's post-war
+        modernisation and its founding role in the Organisation of
+        African Unity, headquartered in Addis Ababa from 1963.
+      citations: [c1]
+    - title: "The Derg, the Red Terror, and Eritrea's independence war"
+      period: "1974-1993"
+      summary: >
+        Widespread military mutinies and mass protests brought down
+        Haile Selassie in a 1974 coup, installing a Marxist military
+        junta, the Derg, eventually dominated by Mengistu Haile Mariam.
+        The Derg's 1976-1978 Red Terror campaign against opposition
+        groups killed an estimated 500,000 people. A parallel,
+        three-decade war for Eritrean independence, begun in 1961, ended
+        with Eritrean rebel victory the same month the Derg fell in 1991;
+        formal independence followed a 99.83% referendum result in 1993.
+      citations: [c3, c4]
+    - title: "Abiy Ahmed: Eritrea peace, the Tigray War, and Amhara conflict"
+      period: "2018-2025"
+      summary: >
+        The TPLF-dominated EPRDF governed until Abiy Ahmed became prime
+        minister in 2018 amid mass Oromo-led protests; Abiy won the 2019
+        Nobel Peace Prize for ending a 16-year military stalemate with
+        Eritrea. He then led federal forces against his former TPLF
+        allies in the 2020-2022 Tigray War, one of the 21st century's
+        deadliest conflicts, before the November 2022 Pretoria agreement
+        ended active fighting. A separate insurgency by Amhara Fano
+        militias, opposed to the federal government they accuse of
+        marginalising Amhara interests, began in April 2023 and
+        continues today.
+      citations: [c5, c6, c7]
+
+pillars:
+  A:
+    summary: >
+      All six governance indicators are directly measured, and Ethiopia
+      scores weakly across the board -- Voice and Accountability, at
+      35.5, is the pillar's weakest indicator. That weakness reflects a
+      country fighting, or recently having fought, multiple simultaneous
+      internal conflicts along the ethnic-federal fault lines documented
+      in historical.colonial_legacy: the 2020-2022 Tigray War, one of the
+      deadliest conflicts of the 21st century, and a separate Amhara
+      Fano insurgency that has continued since April 2023. Accountability
+      for both remains contested rather than resolved -- an April 2025
+      drone strike near a primary school in Gedeb, East Gojjam, killed
+      more than 100 people, and Ethiopian authorities and local Fano
+      officials gave directly conflicting accounts of whether those
+      killed were militants or civilians conducting community work.
+    drivers:
+      - "all 6 governance indicators directly measured, all weak -- Voice and Accountability (35.5) the pillar's weakest"
+      - "fighting or recently having fought multiple simultaneous internal conflicts along ethnic-federal fault lines: Tigray War (2020-22), ongoing Amhara/Fano insurgency (since April 2023)"
+      - "April 2025 Gedeb drone strike: 100+ killed, government and local Fano officials give directly conflicting accounts of who died"
+    citations: [c6, c7, c8]
+  B:
+    summary: >
+      GDP growth, freshly measured, is comparatively strong, but GDP per
+      capita is among the lowest recorded in this index, and inflation --
+      averaging over 25% across five years -- scores at the absolute
+      bottom of the scale. That reflects a currency crisis the government
+      triggered deliberately: the National Bank floated the birr on 29
+      July 2024 as a condition of a $10 billion IMF programme, and the
+      currency lost roughly half its value within the following two
+      weeks, alongside the removal of fuel subsidies and the
+      part-privatisation of Ethio Telecom and Ethiopian Airlines.
+      Domestic credit is estimated from regional peers rather than
+      measured directly. Gini, carried forward, shows unusually low
+      measured inequality for the region -- a figure, similar to Egypt's,
+      this record cannot fully reconcile with the severity of the
+      cost-of-living pressure documented elsewhere.
+    drivers:
+      - "GDP growth strong (fresh); GDP per capita among the lowest in the index; inflation (>25% 5yr avg) scores at the absolute bottom"
+      - "birr floated 29 July 2024 as an IMF condition ($10B programme); lost roughly half its value within two weeks"
+      - "fuel subsidies removed, Ethio Telecom/Ethiopian Airlines part-privatised as part of the same reform package"
+      - "domestic credit regional-mean estimate; Gini (carried forward) unusually low for the region, similar to Egypt's unreconciled case"
+    citations: [c9]
+  D:
+    summary: >
+      All five health indicators are freshly measured, and Ethiopia
+      scores poorly on most of them -- this is a well-evidenced picture,
+      not a data-coverage gap. Handwashing-facility access, at just over
+      6% of the population, is among the lowest figures recorded anywhere
+      in this project, and safely managed drinking water reaches only
+      13%. Life expectancy above 67 years and infant mortality of
+      roughly 39 per 1,000 live births are less severe than the pillar's
+      weakest indicators but still moderate at best. Severe food
+      insecurity affects around a fifth of the population, consistent
+      with recurring drought and the displacement documented under
+      Pillar E.
+    drivers:
+      - "all 5 indicators freshly measured -- a well-evidenced picture, not a coverage gap"
+      - "handwashing access only ~6% -- among the lowest figures recorded anywhere in this project; safely managed water only 13%"
+      - "life expectancy >67, infant mortality ~39/1,000 -- moderate; severe food insecurity ~19%, tied to drought and displacement"
+    citations: [c1]
+  E:
+    summary: >
+      Political Stability, freshly measured, scores among the weakest
+      recorded in this index, and displaced persons -- over 22 per 1,000
+      population, also freshly measured -- are among the highest
+      directly-measured figures in the corpus. Both are direct, current
+      consequences of overlapping internal conflicts: the 2020-2022
+      Tigray War displaced millions before the November 2022 Pretoria
+      agreement ended active fighting, and the separate Amhara Fano
+      insurgency, ongoing since April 2023, has continued generating
+      fresh displacement and disputed civilian casualties, including the
+      April 2025 Gedeb drone strike documented under Pillar A. Homicide
+      indicators, estimated from regional peers rather than measured
+      directly, are the pillar's only unmeasured component.
+    drivers:
+      - "Political Stability among the weakest in the index (fresh); IDPs >22/1,000 (fresh), among the highest directly-measured figures in the corpus"
+      - "Tigray War (2020-22) displaced millions before the Nov 2022 Pretoria agreement; Amhara/Fano insurgency (since April 2023) continues generating fresh displacement"
+      - "homicide indicators (regional-mean) are the pillar's only unmeasured component"
+    citations: [c6, c7]
+  F:
+    summary: >
+      Per-capita CO2 emissions, freshly measured, score near the ceiling
+      of the scale, and the carried-forward electricity-generation
+      figure shows essentially none of Ethiopia's power comes from
+      fossil fuels -- a genuine reflection of substantial hydroelectric
+      investment, led by the Grand Ethiopian Renaissance Dam, Africa's
+      largest hydroelectric project at roughly 5,150 megawatts capacity,
+      inaugurated in September 2025 (see historical.colonial_legacy and
+      the record for Egypt, which depends on the same river). That said,
+      this is not a purely clean-energy achievement in the way documented
+      for Kenya elsewhere in this corpus: electricity access itself
+      covers only 55% of Ethiopia's population, so a genuinely clean grid
+      coexists with genuinely low overall consumption, and it is
+      difficult to fully separate real policy achievement from the low
+      energy use of a still-poor country. Agricultural land share and
+      freshwater withdrawal were not freshly measured this year.
+    drivers:
+      - "CO2 pc near-ceiling score (fresh); electricity generation ~0% fossil-fuel (carried forward) -- driven by real hydro investment, especially GERD (Africa's largest hydro project, ~5,150MW, inaugurated Sept 2025)"
+      - "unlike Kenya's cleaner case, electricity access is still only ~55% -- a clean grid coexists with low overall consumption, hard to fully separate achievement from poverty"
+      - "agricultural land and freshwater withdrawal not freshly measured this year"
+    citations: [c1, c11]
+  G:
+    summary: >
+      Electricity access, at 55% and freshly measured, is moderate but
+      below the corpus median, and basic drinking-water access, also
+      fresh, is weaker still at 54%. Both sit meaningfully below the
+      infrastructure levels recorded for South Africa, Kenya or Egypt
+      elsewhere in this corpus, consistent with a lower-income economy
+      still building out basic services. Domestic credit and social
+      protection coverage are both estimated from regional peers or
+      carried forward rather than freshly measured, leaving a real gap
+      in current evidence for exactly the safety-net capacity most
+      relevant during the currency crisis documented under Pillar B.
+    drivers:
+      - "electricity access 55%, basic water access 54% -- both fresh, moderate, below the corpus median"
+      - "well below ZAF/KEN/EGY infrastructure levels -- consistent with a lower-income economy still building out services"
+      - "social protection coverage not freshly measured -- a real gap given the currency crisis's effect on need"
+    citations: [c1]
+
+recent:
+  primary:
+    - headline: "GERD completed and inaugurated -- a largely self-financed national achievement"
+      date: 2025-09-09
+      summary: >
+        Ethiopia formally inaugurated the Grand Ethiopian Renaissance Dam
+        on 9 September 2025, Africa's largest hydroelectric project at
+        roughly 5,150 megawatts capacity, completed in July 2025 after
+        14 years of construction. Unlike many large African
+        infrastructure projects, GERD was substantially financed
+        domestically: ordinary Ethiopians -- teachers, students, civil
+        servants and the diaspora -- purchased bonds and pledged salary
+        contributions, raising some $21 million domestically and $10
+        million from the diaspora in 2023-2024 alone. The dam already
+        supplies roughly 16% of Ethiopia's electricity.
+      why_it_matters: >
+        A genuine source of national pride that has "galvanised
+        Ethiopians" across ideological lines despite the country's
+        internal conflicts, and the direct explanation for Pillar F's
+        strong score -- though the same dam is simultaneously the trigger
+        for the international dispute documented in historical.colonial_legacy.
+      news_url: "https://www.aljazeera.com/features/2025/9/9/from-haile-selassie-to-crowdfunding-how-ethiopias-gerd-dam-was-born"
+      wikipedia_url: ""
+      sentiment: positive
+    - headline: "Amhara Fano insurgency continues; April 2025 drone strike casualties disputed"
+      date: 2025-04-17
+      summary: >
+        A drone strike near Gedeb Primary School in East Gojjam zone,
+        Amhara region, on 17 April 2025 killed more than 100 people
+        gathered for what witnesses described as school maintenance
+        work. Local Fano officials and eyewitnesses said all those
+        killed were unarmed civilians; Ethiopian authorities told the
+        BBC the strike targeted Fano militants who had gathered in the
+        area. No independent investigation had resolved the discrepancy
+        as of this record.
+      why_it_matters: >
+        Directly explains Pillar A's weak Voice and Accountability score
+        and Pillar E's high displacement and low Political Stability
+        figures -- and illustrates why this record cannot simply adopt
+        either side's casualty characterisation as fact.
+      news_url: "https://allafrica.com/stories/202504240267.html"
+      wikipedia_url: "https://en.wikipedia.org/wiki/War_in_Amhara"
+      sentiment: negative
+    - headline: "Birr floated, loses roughly half its value within weeks"
+      date: 2024-07-29
+      summary: >
+        Ethiopia's National Bank floated the birr on 29 July 2024 as a
+        condition of a $10 billion IMF programme, ending a decade-long
+        fixed exchange rate. The currency fell 30% against the dollar on
+        the first day and continued sliding to roughly double its
+        pre-float exchange rate within two weeks, alongside the removal
+        of fuel subsidies and the part-privatisation of Ethio Telecom and
+        Ethiopian Airlines.
+      why_it_matters: >
+        Explains Pillar B's near-bottom inflation score and the fiscal
+        pressure now bearing on the social-protection gap documented
+        under Pillar G.
+      news_url: "https://money.usnews.com/investing/news/articles/2024-07-29/ethiopia-shifts-to-market-based-foreign-exchange-system"
+      wikipedia_url: "https://en.wikipedia.org/wiki/2024_Ethiopian_foreign_exchange_rate_policy"
+      sentiment: negative
+  extended:
+    - headline: "TPLF factional split fractures Tigray's fragile post-war peace"
+      date: 2025-03-01
+      summary: >
+        A hardline TPLF faction led by Debretsion Gebremichael forcibly
+        took control of Tigray's interim administrative headquarters in
+        Mekelle in March 2025, physically removing President Getachew
+        Reda's more Addis Ababa-cooperative administration after months
+        of disputed party congresses and a January 2025 declaration of
+        support from over 200 Tigray Defense Forces commanders. Getachew
+        was subsequently appointed to a federal advisory role and
+        registered a new political party.
+      why_it_matters: >
+        Shows the November 2022 Pretoria agreement ended active
+        fighting but did not resolve Tigray's internal political
+        divisions, which remain a live risk to the peace documented in
+        historical.key_periods.
+      news_url: "https://en.wikipedia.org/wiki/TPLF_factional_dispute"
+      wikipedia_url: ""
+      sentiment: mixed
+
+events:
+  - year: 1896
+    type: conflict
+    title: "Battle of Adwa"
+    description: >
+      Emperor Menelik II's forces decisively defeated an invading
+      Italian army at Adwa on 1 March 1896, the only case of an African
+      army permanently repelling a European colonial conquest.
+    url: "https://en.wikipedia.org/wiki/Battle_of_Adwa"
+    direction: improve
+  - year: 1991
+    type: constitutional
+    title: "Derg overthrown; Eritrean independence secured"
+    description: >
+      The Tigray People's Liberation Front-led EPRDF overthrew the Derg
+      military junta in May 1991, the same month Eritrean rebel forces
+      secured de facto independence after a 30-year war.
+    url: "https://en.wikipedia.org/wiki/Derg"
+    direction: mixed
+  - year: 2020
+    type: conflict
+    title: "Tigray War begins"
+    description: >
+      Federal forces under Abiy Ahmed launched an offensive against the
+      Tigray People's Liberation Front in November 2020, beginning one
+      of the 21st century's deadliest conflicts; credible civilian death
+      estimates range from 162,000 to over 600,000 before the war ended
+      in November 2022.
+    url: "https://en.wikipedia.org/wiki/Tigray_genocide"
+    direction: deteriorate
+  - year: 2023
+    type: conflict
+    title: "Amhara Fano insurgency begins"
+    description: >
+      Fighting between Amhara Fano militias and federal forces began in
+      April 2023 and escalated into a full insurgency by August, a
+      conflict that continues today.
+    url: "https://en.wikipedia.org/wiki/War_in_Amhara"
+    direction: deteriorate
+
+citations:
+  - id: c1
+    url: "https://en.wikipedia.org/wiki/History_of_Ethiopia"
+    source_type: wikipedia
+    title: "History of Ethiopia"
+    accessed: 2026-08-10
+    verified: true
+  - id: c2
+    url: "https://en.wikipedia.org/wiki/Battle_of_Adwa"
+    source_type: wikipedia
+    title: "Battle of Adwa"
+    accessed: 2026-08-10
+    verified: true
+  - id: c3
+    url: "https://en.wikipedia.org/wiki/Derg"
+    source_type: wikipedia
+    title: "Derg"
+    accessed: 2026-08-10
+    verified: true
+  - id: c4
+    url: "https://en.wikipedia.org/wiki/Eritrean_War_of_Independence"
+    source_type: wikipedia
+    title: "Eritrean War of Independence"
+    accessed: 2026-08-10
+    verified: true
+  - id: c5
+    url: "https://www.nobelprize.org/prizes/peace/2019/abiy/facts/"
+    source_type: official
+    title: "The Nobel Peace Prize 2019: Abiy Ahmed Ali"
+    accessed: 2026-08-10
+    verified: true
+  - id: c6
+    url: "https://en.wikipedia.org/wiki/Tigray_genocide"
+    source_type: wikipedia
+    title: "Tigray genocide"
+    accessed: 2026-08-10
+    verified: true
+  - id: c7
+    url: "https://en.wikipedia.org/wiki/War_in_Amhara"
+    source_type: wikipedia
+    title: "War in Amhara (Fano insurgency)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c8
+    url: "https://allafrica.com/stories/202504240267.html"
+    source_type: news
+    title: "Ethiopia: More Than 100 People Killed in Drone Strike in East Gojjam Zone, Amhara Region (AllAfrica)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c9
+    url: "https://en.wikipedia.org/wiki/2024_Ethiopian_foreign_exchange_rate_policy"
+    source_type: wikipedia
+    title: "2024 Ethiopian foreign exchange rate policy"
+    accessed: 2026-08-10
+    verified: true
+  - id: c10
+    url: "https://en.wikipedia.org/wiki/Menelik_II%27s_conquests"
+    source_type: wikipedia
+    title: "Menelik II's conquests"
+    accessed: 2026-08-10
+    verified: true
+  - id: c11
+    url: "https://www.aljazeera.com/features/2025/9/9/from-haile-selassie-to-crowdfunding-how-ethiopias-gerd-dam-was-born"
+    source_type: news
+    title: "From Haile Selassie to crowdfunding, how Ethiopia's GERD dam was born (Al Jazeera)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c12
+    url: "https://en.wikipedia.org/wiki/TPLF_factional_dispute"
+    source_type: wikipedia
+    title: "TPLF factional dispute"
+    accessed: 2026-08-10
+    verified: true
+  - id: c13
+    url: "https://en.wikipedia.org/wiki/Common_Market_for_Eastern_and_Southern_Africa"
+    source_type: wikipedia
+    title: "Common Market for Eastern and Southern Africa"
+    accessed: 2026-08-10
+    verified: true
+  - id: c14
+    url: "https://en.wikipedia.org/wiki/Intergovernmental_Authority_on_Development"
+    source_type: wikipedia
+    title: "Intergovernmental Authority on Development"
+    accessed: 2026-08-10
+    verified: true
+
+rec_membership:
+  - org: COMESA
+    joined: 1994
+    status: current
+    left: null
+    citations: [c13]
+  - org: IGAD
+    joined: 1986
+    status: current
+    left: null
+    citations: [c14]
+
+balance:
+  n_positive: 1
+  n_negative: 2
+  n_mixed: 1
+  note: >
+    GERD is documented as a genuine, substantial positive at full weight
+    -- a largely self-financed national achievement that has brought
+    Ethiopians together across the same ethnic-federal divides driving
+    the negative items elsewhere in this record -- rather than folded
+    only into the international dispute it also triggered. That dispute,
+    the Amhara/Fano insurgency, and the currency crisis are each
+    documented as genuinely severe and current; none is softened to
+    offset GERD's positive framing. The TPLF factional split is coded
+    mixed rather than negative because it is fundamentally a story about
+    the incompleteness of a peace agreement (Pretoria) that did
+    genuinely stop a war, not a story with no positive dimension at all.
+    This record does not treat Ethiopia's story as either a triumph of
+    self-reliant development or a country defined solely by internal
+    conflict -- both are true, about the same country, often about the
+    same institutions, sometimes about the same dam.
