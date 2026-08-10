@@ -1,0 +1,466 @@
+meta:
+  iso3: BFA
+  name: Burkina Faso
+  last_updated: 2026-08-10
+  iteration_count: 1
+  next_action: >
+    EXPAND: (1) follow the HRW-documented atrocities past April 2026 --
+    check whether any accountability process has begun for either
+    government/VDP forces or JNIM; (2) check whether the true IDP figure
+    (diplomats estimate 3-5 million against the index's directly-measured
+    89.60/1,000, roughly 2 million) has been reconciled, and follow the
+    displacement trend; (3) check whether gold production continued
+    rising past the 2025 record and whether the Raffinor refinery
+    (expected complete by end-2026) came online; (4) check if Pillar C
+    has gained coverage; (5) check the AES's further institutional
+    development alongside MLI and (once written) NER, keeping shared
+    facts consistent across all three records.
+  model_used: claude-sonnet-5
+
+historical:
+  overview: >
+    France claimed the territory from 1896, folding it into French West
+    Africa as Upper Volta. Facing the Depression-era collapse of
+    cash-crop export prices and Côte d'Ivoire's chronic shortage of
+    plantation labour, France dissolved Upper Volta as an administrative
+    entity on 5 September 1932 and partitioned its population among
+    Côte d'Ivoire, French Sudan and Niger; forced labour continued under
+    the indigénat system until 1946. Mossi political pressure forced
+    reconstitution on 4 September 1947, and independence followed on 5
+    August 1960 under Maurice Yaméogo, who was deposed in a 1966 coup
+    that began a cycle of military governments. Captain Thomas Sankara
+    seized power in a 1983 coup and, over four years, launched a radical
+    programme of mass vaccination, land reform, women's rights expansion
+    and self-reliance, renaming the country Burkina Faso -- "land of
+    upright people" -- in 1984; his former comrade Blaise Compaoré
+    assassinated him on 15 October 1987 and ruled for the next 27 years.
+    Compaoré fled into exile after a popular uprising in October 2014
+    over his attempt to extend term limits; a 2022 military tribunal
+    convicted him in absentia, alongside ten co-defendants, of complicity
+    in Sankara's murder, sentencing him to life imprisonment. A jihadist
+    insurgency that began in 2019 overwhelmed the state's response and
+    drove two coups in 2022: Paul-Henri Damiba ousted President Roch
+    Kaboré in January, and Captain Ibrahim Traoré then ousted Damiba in
+    September, becoming, at 34, one of the world's youngest heads of
+    state. Under Traoré, Burkina Faso accounted for roughly a quarter of
+    all extremist attacks recorded worldwide in 2024, and both the army
+    and allied civilian militias have been separately documented
+    committing atrocities against Fulani communities that human rights
+    investigators characterise as ethnic cleansing.
+  overview_citations: [c1, c2, c3, c4]
+  colonial_legacy: >
+    context/colonial_history.yaml already credits the territory's role as
+    a labour reserve for Côte d'Ivoire's plantations and forced labour
+    under the indigénat system, and names the 1932 dissolution and 1947
+    reconstitution. Worth stating precisely how stark that dissolution
+    was: France abolished the colony of Upper Volta outright on 5
+    September 1932, explicitly because the Great Depression's collapse
+    in cash-crop export prices meant the territory could not meet the
+    fundamental requirement France imposed on its colonies -- paying for
+    its own administration -- and because Côte d'Ivoire, chronically
+    short of plantation labour, stood to benefit directly from formalising
+    Upper Volta's people as a captive labour supply. For fifteen years,
+    until Mossi political pressure forced reconstitution on 4 September
+    1947, Upper Volta simply did not exist as an administrative entity:
+    its population was partitioned among Côte d'Ivoire, French Sudan and
+    Niger purely because the colonial ledger did not judge it worth
+    governing separately. That episode -- an entire territory erased
+    because it was not profitable enough to keep -- is a uniquely stark
+    instance of the extractive logic this project documents throughout,
+    and it left Upper Volta, and independent Burkina Faso after it,
+    starting from one of the thinnest administrative and infrastructure
+    bases of any former French colony, a deficit still visible in Pillar
+    G's low electricity-access figure today.
+  colonial_legacy_citations: [c1, c8]
+  key_periods:
+    - title: "Colonial erasure: the 1932 dissolution and 1947 reconstitution"
+      period: "1896-1947"
+      summary: >
+        France claimed the territory from 1896, folding it into French
+        West Africa as Upper Volta. Facing the Depression-era collapse of
+        cash-crop exports and Côte d'Ivoire's chronic shortage of
+        plantation labour, France dissolved Upper Volta as an
+        administrative entity on 5 September 1932 and partitioned its
+        population among Côte d'Ivoire, French Sudan and Niger; forced
+        labour continued under the indigénat system until 1946. Mossi
+        political pressure forced reconstitution on 4 September 1947.
+      citations: [c8]
+    - title: "Independence, coup cycles, and Sankara's revolution"
+      period: "1960-1987"
+      summary: >
+        Independence arrived on 5 August 1960 under Maurice Yaméogo, who
+        was deposed in a 1966 coup that began a cycle of military
+        governments through the 1970s. Captain Thomas Sankara seized
+        power in a 1983 coup and, over four years, launched a radical
+        programme of mass vaccination, land reform, women's rights
+        expansion and national self-reliance, renaming the country
+        Burkina Faso -- "land of upright people" -- in 1984. His former
+        comrade Blaise Compaoré assassinated him on 15 October 1987 and
+        seized power the same day.
+      citations: [c1]
+    - title: "Compaoré's 27 years and the 2014 uprising"
+      period: "1987-2014"
+      summary: >
+        Compaoré ruled for 27 years, winning repeated elections with
+        margins exceeding 80%, before mass protests over his attempt to
+        remove presidential term limits forced him into exile on 31
+        October 2014. A 2022 military tribunal convicted Compaoré in
+        absentia, alongside ten co-defendants including a former army
+        chief, of complicity in Sankara's assassination, sentencing him
+        to life imprisonment after a six-month trial.
+      citations: [c1, c3]
+    - title: "Jihadist insurgency, two 2022 coups, and Traoré"
+      period: "2014-2025"
+      summary: >
+        A jihadist insurgency beginning in 2019 overwhelmed the state's
+        response and drove two coups in 2022: Paul-Henri Damiba ousted
+        elected President Roch Kaboré in January over the government's
+        failure to contain the insurgency, and Captain Ibrahim Traoré
+        then ousted Damiba in September for the same reason. Under
+        Traoré, the insurgency worsened rather than improved: Burkina
+        Faso accounted for roughly a quarter of all extremist attacks
+        recorded worldwide in 2024, and the country formally withdrew
+        from ECOWAS in January 2025 alongside Mali and Niger.
+      citations: [c2, c4, c10]
+
+pillars:
+  A:
+    summary: >
+      All six governance indicators are directly measured, and Burkina
+      Faso's aggregate scores are moderate rather than catastrophic --
+      Voice and Accountability (50.0) and Regulatory Quality (56.6) both
+      clear the midpoint. Those aggregate scores sit uneasily beside
+      specific, independently documented findings: a Human Rights Watch
+      report published in April 2026 found that Burkina Faso's own
+      military and allied civilian militias (the VDP) killed more
+      Burkinabe civilians than jihadist groups did between 2023 and
+      2025 -- including an operation that killed over 400 people across
+      roughly 16 villages near Djibo in December 2023 -- and
+      characterised the pattern against Fulani communities as ethnic
+      cleansing. The government has denied or downplayed the allegations
+      and conducted no credible investigations. Captain Ibrahim Traoré,
+      in power since a September 2022 coup, governs without an elected
+      mandate.
+    drivers:
+      - "all 6 governance indicators directly measured; Voice and Accountability/Regulatory Quality both moderate -- aggregate scores sit uneasily beside specific atrocity findings"
+      - "HRW (April 2026): Burkina Faso's own military and VDP militias killed more civilians than jihadists, 2023-2025, including 400+ killed near Djibo in Dec 2023"
+      - "HRW characterises the pattern against Fulani communities as ethnic cleansing; government has denied/downplayed, no credible investigations"
+      - "Traoré governs without an elected mandate since the Sept 2022 coup"
+    citations: [c6, c7]
+  B:
+    summary: >
+      GDP growth, inflation and domestic credit, all freshly measured,
+      are moderate to comparatively decent -- an odd contrast with the
+      severity of the security crisis documented under Pillar E, though
+      gold mining has continued operating in many areas even as the
+      insurgency has displaced millions. The junta has moved aggressively
+      to capture more of that gold wealth for the state: it nationalised
+      the Boungou and Wahgnion mines in August 2024, raised the state's
+      minimum free stake in mining projects to 15% (with an option for
+      30% more) under a 2024 mining code, and created a state vehicle,
+      SOPAMIB, that had been granted 11 mining assets by 2025. Gold
+      production reached a record 94 tonnes in 2025, up more than 30
+      tonnes from 2024. GDP per capita remains among the lower figures in
+      the index; Gini, carried forward, is not fresh.
+    drivers:
+      - "GDP growth, inflation and domestic credit all fresh, moderate to decent -- an odd contrast with Pillar E's severity"
+      - "junta nationalised Boungou/Wahgnion mines (Aug 2024); 2024 mining code raised state minimum stake to 15% (option for 30% more); SOPAMIB granted 11 mining assets by 2025"
+      - "gold production hit a record 94 tonnes in 2025, up 30+ tonnes from 2024"
+      - "GDP per capita among the lower figures in the index; Gini not freshly measured"
+    citations: [c11]
+  D:
+    summary: >
+      Life expectancy just above 61 years and infant mortality of
+      roughly 45 per 1,000 live births, both freshly measured, are among
+      the more severe readings in the index. Severe food insecurity,
+      affecting just over 7% of the population and also fresh, is less
+      severe than the security situation might suggest, though this
+      figure may not fully capture conditions in areas cut off by the
+      insurgency and displacement documented under Pillar E. Safely
+      managed drinking water access, estimated from regional peers rather
+      than measured directly, is comparatively low. One of five
+      indicators was not freshly measured this year.
+    drivers:
+      - "life expectancy ~61 years, infant mortality ~45/1,000 -- both fresh, among the more severe readings in the index"
+      - "severe food insecurity ~7% (fresh) -- may not fully capture conditions in areas cut off by the insurgency"
+      - "safely managed water low (regional-mean estimate)"
+    citations: [c1]
+  E:
+    summary: >
+      Political Stability, freshly measured, scores among the very
+      worst recorded anywhere in this index, and displaced persons --
+      89.60 per 1,000 population, also freshly measured -- means roughly
+      one in eleven Burkinabe has been displaced, though diplomats and
+      humanitarian officials estimate the true figure could be
+      substantially higher, between 3 and 5 million out of a population
+      of roughly 23 million. Burkina Faso accounted for roughly a
+      quarter of all extremist attacks recorded worldwide in 2024,
+      including nine of the year's 20 deadliest single attacks, according
+      to the Global Terrorism Index. JNIM has also directly targeted
+      civilians it accuses of supporting government forces, killing at
+      least 133 people in Barsalogho in August 2024. Homicide indicators
+      are estimated from regional peers.
+    drivers:
+      - "Political Stability among the very worst in the entire index (fresh)"
+      - "IDPs 89.60/1,000 (fresh, directly measured) -- ~1 in 11 displaced; diplomats estimate the true figure at 3-5 million of ~23 million population"
+      - "Burkina Faso: ~1/4 of all extremist attacks worldwide in 2024, 9 of the year's 20 deadliest, per the Global Terrorism Index"
+      - "JNIM massacre at Barsalogho, Aug 2024: 133+ killed, targeting a community accused of supporting the VDP"
+    citations: [c4, c5, c6]
+  F:
+    summary: >
+      Only two of four indicators were freshly measured this year.
+      Per-capita CO2 emissions score well, but the carried-forward
+      electricity-generation figure -- roughly 86% fossil-fuel sourced --
+      indicates this is closer to the wealth-proxy pattern documented for
+      several other lower-income countries in this project than to a
+      genuine clean-energy achievement: electricity access itself (Pillar
+      G) covers barely a fifth of the population, so low emissions
+      largely reflect how little energy the country as a whole consumes
+      rather than a clean generation mix. Agricultural land share, freshly
+      measured, is comparatively extensive. Freshwater withdrawal, carried
+      forward, is low relative to renewable resources.
+    drivers:
+      - "only 2 of 4 indicators freshly measured"
+      - "CO2 pc scores well (fresh), but electricity generation is ~86% fossil-fuel (carried forward) -- closer to the wealth-proxy pattern than a genuine clean-energy case"
+      - "electricity access only ~22% (Pillar G) -- low emissions mostly reflect low overall consumption"
+      - "agricultural land extensive (fresh); freshwater withdrawal low (carried forward)"
+    citations: [c1]
+  G:
+    summary: >
+      Electricity access, at just under 22% and freshly measured, is
+      among the lowest figures recorded anywhere in this corpus --
+      roughly four in five Burkinabe have no access to electricity at
+      all, a deficit traceable in part to the colonial-era neglect
+      documented in historical.colonial_legacy. Basic drinking-water
+      access, also fresh, covers under half the population. Social
+      protection and labour programme coverage, carried forward rather
+      than fresh, is moderate. Four of five indicators are current,
+      making this pillar's severity a substantiated, not merely
+      estimated, result.
+    drivers:
+      - "electricity access only ~22% (fresh) -- among the lowest figures in this corpus, roughly 4 in 5 people lack access"
+      - "basic water access under 50% (fresh)"
+      - "social protection coverage moderate (carried forward); 4 of 5 indicators fresh -- a substantiated, not estimated, severity"
+    citations: [c1]
+
+recent:
+  primary:
+    - headline: "HRW: Burkina Faso's own forces killed more civilians than jihadists, 2023-2025"
+      date: 2026-04-02
+      summary: >
+        Human Rights Watch documented at least 1,800 civilian deaths in
+        Burkina Faso between 2023 and 2025, finding that the country's
+        own military and allied VDP civilian militias were responsible
+        for more of those deaths than JNIM and other jihadist groups
+        combined -- including an operation that killed more than 400
+        people across roughly 16 villages near Djibo in December 2023.
+        HRW characterised the pattern of attacks against Fulani
+        communities, including forced displacement and looting, as
+        ethnic cleansing, and said government officials had denied or
+        downplayed the allegations without conducting credible
+        investigations.
+      why_it_matters: >
+        The clearest, most current evidence behind Pillar A's disconnect
+        between moderate aggregate governance scores and severe
+        documented human rights abuses.
+      news_url: "https://www.hrw.org/news/2026/04/02/burkina-faso-crimes-against-humanity-by-all-sides"
+      wikipedia_url: ""
+      sentiment: negative
+    - headline: "Burkina Faso accounts for a quarter of world's extremist attacks in 2024"
+      date: 2026-03-01
+      summary: >
+        The Global Terrorism Index found that Burkina Faso accounted for
+        roughly a quarter of all extremist attacks recorded worldwide in
+        2024, including nine of the year's 20 deadliest single attacks.
+        Displacement has continued rising under President Traoré's rule;
+        diplomats and humanitarian officials estimate the true number of
+        internally displaced people at between 3 and 5 million, well
+        above the index's own directly-measured figure, with roughly 6
+        million people requiring humanitarian assistance in 2025.
+      why_it_matters: >
+        Directly explains Pillar E's catastrophic security score and
+        shows the insurgency has worsened, not improved, since Traoré's
+        2022 coup was justified by the promise of defeating it.
+      news_url: "https://adf-magazine.com/2026/03/terrorism-worsens-in-burkina-faso/"
+      wikipedia_url: ""
+      sentiment: negative
+    - headline: "Gold production hits a record 94 tonnes as the state expands its mining stake"
+      date: 2026-02-01
+      summary: >
+        Burkina Faso produced a record 94 tonnes of gold in 2025, up more
+        than 30 tonnes from 2024, driven partly by the state mining
+        vehicle SOPAMIB taking control of 11 mining assets and closer
+        monitoring of the country's 15 industrial mines. The government
+        nationalised the Boungou and Wahgnion mines in August 2024 and
+        adopted a 2024 mining code raising its minimum free stake in
+        projects to 15%, with an option to acquire 30% more.
+      why_it_matters: >
+        A genuine, substantial economic achievement running alongside
+        the security crisis documented elsewhere in this record, and
+        part of the same state-driven resource-control pattern
+        documented for neighbouring Mali's Barrick Gold dispute.
+      news_url: "https://apanews.net/burkina-reports-record-94-ton-gold-output-in-2025/"
+      wikipedia_url: ""
+      sentiment: positive
+  extended:
+    - headline: "Traoré declares a 'Progressive and Popular Revolution' invoking Sankara"
+      date: 2025-04-01
+      summary: >
+        President Ibrahim Traoré declared a "Progressive and Popular
+        Revolution" in April 2025, explicitly invoking the legacy of
+        Thomas Sankara, whose 1983-1987 government pursued similar
+        self-reliance and anti-imperialist policies before his 1987
+        assassination. The declaration coincided with the acceleration
+        of the mining nationalisation drive documented under Pillar B.
+      why_it_matters: >
+        Shows how directly Traoré's government frames its policies
+        against the specific historical episode documented in
+        historical.key_periods, for a population among whom Sankara
+        remains a powerful symbol.
+      news_url: "https://en.wikipedia.org/wiki/Popular_Progressive_Revolution"
+      wikipedia_url: ""
+      sentiment: mixed
+
+events:
+  - year: 1987
+    type: coup
+    title: "Sankara assassinated; Compaoré seizes power"
+    description: >
+      Blaise Compaoré assassinated his former comrade Thomas Sankara on
+      15 October 1987 and seized power, ruling for the next 27 years; a
+      2022 military tribunal later convicted Compaoré in absentia of
+      complicity in the murder.
+    url: "https://en.wikipedia.org/wiki/History_of_Burkina_Faso"
+    direction: deteriorate
+  - year: 2014
+    type: election
+    title: "Popular uprising ousts Compaoré"
+    description: >
+      Mass protests over Compaoré's attempt to remove presidential term
+      limits forced him into exile on 31 October 2014, ending 27 years
+      of rule.
+    url: "https://en.wikipedia.org/wiki/History_of_Burkina_Faso"
+    direction: improve
+  - year: 2022
+    type: coup
+    title: "Two coups in one year; Traoré takes power"
+    description: >
+      A jihadist insurgency overwhelming the state's response drove two
+      coups in 2022: Paul-Henri Damiba ousted President Roch Kaboré in
+      January, and Captain Ibrahim Traoré then ousted Damiba in
+      September, becoming one of the world's youngest heads of state.
+    url: "https://en.wikipedia.org/wiki/September_2022_Burkina_Faso_coup_d%27%C3%A9tat"
+    direction: deteriorate
+  - year: 2025
+    type: economic
+    title: "ECOWAS exit and gold nationalisation accelerate"
+    description: >
+      Burkina Faso formally withdrew from ECOWAS in January 2025
+      alongside Mali and Niger, while accelerating a state-driven gold
+      mining nationalisation drive that produced a record 94 tonnes of
+      gold output by year's end.
+    url: "https://www.aljazeera.com/news/2025/1/29/military-governments-lead-west-african-trio-out-of-ecowas-regional-bloc"
+    direction: mixed
+
+citations:
+  - id: c1
+    url: "https://en.wikipedia.org/wiki/History_of_Burkina_Faso"
+    source_type: wikipedia
+    title: "History of Burkina Faso"
+    accessed: 2026-08-10
+    verified: true
+  - id: c2
+    url: "https://en.wikipedia.org/wiki/September_2022_Burkina_Faso_coup_d%27%C3%A9tat"
+    source_type: wikipedia
+    title: "September 2022 Burkina Faso coup d'état"
+    accessed: 2026-08-10
+    verified: true
+  - id: c3
+    url: "https://www.aljazeera.com/news/2022/4/6/hold-burkina-faso-sankara-trial"
+    source_type: news
+    title: "Life sentence for Burkinabe ex-leader Compaoré for Sankara murder (Al Jazeera)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c4
+    url: "https://adf-magazine.com/2026/03/terrorism-worsens-in-burkina-faso/"
+    source_type: news
+    title: "Terrorism Worsens in Burkina Faso (Africa Defense Forum)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c5
+    url: "https://www.thenewhumanitarian.org/investigations/2026/07/06/burkina-fasos-army-accused-preventing-civilians-leaving-jihadist-besieged"
+    source_type: news
+    title: "Burkina Faso's army accused of preventing civilians from leaving jihadist-besieged towns (The New Humanitarian)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c6
+    url: "https://www.hrw.org/news/2026/04/02/burkina-faso-crimes-against-humanity-by-all-sides"
+    source_type: academic
+    title: "Burkina Faso: Crimes Against Humanity by All Sides (Human Rights Watch)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c7
+    url: "https://www.aljazeera.com/news/2026/4/2/burkina-faso-military-allies-committing-horrific-civilian-abuses-hrw"
+    source_type: news
+    title: "Burkina Faso military, allies committing 'horrific' civilian abuses: HRW (Al Jazeera)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c8
+    url: "https://en.wikipedia.org/wiki/French_Upper_Volta"
+    source_type: wikipedia
+    title: "French Upper Volta"
+    accessed: 2026-08-10
+    verified: true
+  - id: c9
+    url: "https://allafrica.com/stories/202204060545.html"
+    source_type: news
+    title: "Burkina Faso: Ex-President Blaise Compaoré Sentenced to Life Imprisonment (AllAfrica)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c10
+    url: "https://www.aljazeera.com/news/2025/1/29/military-governments-lead-west-african-trio-out-of-ecowas-regional-bloc"
+    source_type: news
+    title: "Military governments lead West African trio out of ECOWAS regional bloc (Al Jazeera)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c11
+    url: "https://apanews.net/burkina-reports-record-94-ton-gold-output-in-2025/"
+    source_type: news
+    title: "Burkina reports record 94-ton gold output in 2025 (APAnews)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c12
+    url: "https://en.wikipedia.org/wiki/Community_of_Sahel%E2%80%93Saharan_States"
+    source_type: wikipedia
+    title: "Community of Sahel-Saharan States"
+    accessed: 2026-08-10
+    verified: true
+
+rec_membership:
+  - org: CEN-SAD
+    joined: 1998
+    status: current
+    left: null
+    citations: [c12]
+  - org: ECOWAS
+    joined: 1975
+    status: withdrawn
+    left: 2025
+    citations: [c10]
+
+balance:
+  n_positive: 1
+  n_negative: 2
+  n_mixed: 1
+  note: >
+    The HRW-documented atrocities and the scale of the terrorism crisis
+    are each independently severe and current, and neither is softened
+    to make room for the positive item. Gold production's record 2025
+    figure is genuine and substantial, not manufactured to offset the
+    rest of the record -- it is placed in primary at full weight because
+    it is a real, current, verified development, the same standard
+    applied to every negative item here. The Traoré government's
+    invocation of Sankara is coded mixed rather than positive because it
+    is a rhetorical and political framing choice, not itself a verified
+    outcome, and this record does not treat a government's stated
+    self-image as equivalent to a documented achievement.

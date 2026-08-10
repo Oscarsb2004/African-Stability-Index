@@ -3,7 +3,7 @@
 The document future runs read before doing anything. Machine-readable twin:
 `narrative/state.yaml`.
 
-*Seeded 2026-08-09. Research runs so far: Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria, Rwanda, Chad, Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali (all CREATE). First pass complete; backlog underway.*
+*Seeded 2026-08-09. Research runs so far: Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria, Rwanda, Chad, Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso (all CREATE). First pass complete; backlog underway.*
 
 ---
 
@@ -26,7 +26,7 @@ An audit is forced early if a single run inflates the citation count by more tha
 
 ## Status
 
-**16 of 54 countries have a record (Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria, Rwanda, Chad, Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali). The first pass is complete; Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan and Mali are the first seven backlog countries.**
+**17 of 54 countries have a record (Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria, Rwanda, Chad, Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso). The first pass is complete; Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali and Burkina Faso are the first eight backlog countries.**
 
 ### First pass — 9 countries
 
@@ -58,14 +58,15 @@ whose ranks swing hardest with the weighting method.
 | ETH | Ethiopia | one of only two never-colonised African states, requiring a genuinely different colonial_legacy framing; the GERD story's other side, cross-referenced against EGY | **done — iteration 1** |
 | SDN | Sudan | the single most severe remaining gap; the SAF-RSF war since April 2023 is the world's largest displacement crisis, with a formal US genocide determination (Jan 2025); closes the refugee-outflow thread already opened in TCD | **done — iteration 1** |
 | MLI | Mali | opens the Sahel coup-belt/ECOWAS-exit category entirely new to this corpus; a fourth distinct resource-governance pattern (coercive renegotiation, Barrick Gold); a case where searching again after an all-negative draft found a genuine positive | **done — iteration 1** |
+| BFA | Burkina Faso | completes the AES/ECOWAS-exit pair with MLI (NER remains); accounted for ~1/4 of world extremist attacks in 2024; sharpest disconnect yet between aggregate governance scores and documented atrocities (HRW: own forces killed more civilians than jihadists) | **done — iteration 1** |
 
-### Backlog — the remaining 38
+### Backlog — the remaining 37
 
 Listed in full in `narrative/state.yaml` under `backlog`. They are recorded
 explicitly rather than left implicit: a country with no record should be visibly
 absent, not quietly missing.
 
-Libya, Morocco, Tunisia, Benin, Burkina Faso, Cabo Verde, The Gambia, Guinea, Guinea-Bissau, Cote d'Ivoire, Liberia, Mauritania, Niger, Senegal, Sierra Leone, Togo, Cameroon, Central African Republic, Republic of Congo, Equatorial Guinea, Gabon, Burundi, Djibouti, Eritrea, Malawi, Mozambique, South Sudan, Tanzania, Uganda, Zambia, Zimbabwe, Lesotho, Namibia, Eswatini, Comoros, Madagascar, Seychelles, Sao Tome & Principe
+Libya, Morocco, Tunisia, Benin, Cabo Verde, The Gambia, Guinea, Guinea-Bissau, Cote d'Ivoire, Liberia, Mauritania, Niger, Senegal, Sierra Leone, Togo, Cameroon, Central African Republic, Republic of Congo, Equatorial Guinea, Gabon, Burundi, Djibouti, Eritrea, Malawi, Mozambique, South Sudan, Tanzania, Uganda, Zambia, Zimbabwe, Lesotho, Namibia, Eswatini, Comoros, Madagascar, Seychelles, Sao Tome & Principe
 
 ---
 
@@ -468,6 +469,44 @@ Append one line per run: date, country, mode, what changed, what was removed.
   food-insecurity score, plausibly a genuine strong-harvest effect
   rather than an anomaly). Balance: 1 positive, 2 negative, 1 mixed.
 
+- **2026-08-10 — BFA — CREATE. Eighth backlog country.** Full baseline
+  built: historical overview, colonial legacy (documents the 1932
+  dissolution of Upper Volta — France abolished the colony outright for
+  15 years because Depression-era cash-crop collapse meant it failed
+  France's own profitability requirement, partitioning its population
+  among three neighbours partly to formalise them as captive labour for
+  Côte d'Ivoire's plantations; reconstituted only in 1947 after Mossi
+  political pressure), 4 key_periods, 6 pillar summaries (Pillar C left
+  empty — greyed at 1/8 measured), 3 primary + 1 extended recent items,
+  4 events, rec_membership (CEN-SAD 1998 founding; ECOWAS withdrawn —
+  founding 1975, left 2025 — matching the index's own current registry).
+  12 sources opened and verified. `--links` passes 0 errors, 1 warning
+  (APAnews, familiar 403 pattern) — 11/12 resolved. This is the sharpest
+  disconnect yet in this corpus between aggregate WGI-style governance
+  scores (moderate: Voice and Accountability 50.0, Regulatory Quality
+  56.6) and specific documented atrocities: an April 2026 HRW report
+  found Burkina Faso's own military and allied VDP militias killed more
+  civilians than jihadist groups did between 2023 and 2025 — including
+  400+ killed near Djibo in December 2023 — characterised as ethnic
+  cleansing against Fulani communities. Confirmed Burkina Faso accounted
+  for roughly a quarter of all extremist attacks worldwide in 2024 (Global
+  Terrorism Index) and 9 of that year's 20 deadliest single attacks.
+  Caught a genuine dead link before it shipped: africanewsdesk.net,
+  cited for the "94-tonne gold record" figure, returned a real 404, not
+  a 403 — the third confirmed genuine dead link in the corpus after
+  COD's and ZAF's — replaced with a directly corroborated source
+  (APAnews) before committing. A separate YAML syntax error was caught
+  and fixed in state.yaml itself during this run: an unquoted colon
+  inside a plain-scalar `reason` field ("(HRW: government/VDP...")
+  broke the parser; fixed by rewording rather than adding quotes, since
+  the file's existing convention uses single-quoted scalars with doubled
+  apostrophes throughout, not bare colons in unquoted text. Following the
+  SDN/MLI pattern, found a genuine positive: gold production hit a record
+  94 tonnes in 2025 (up 30+ tonnes from 2024), driven by the junta's
+  SOPAMIB state mining vehicle and 2024 mine nationalisations — a
+  distinct-but-related resource-governance pattern from MLI's Barrick
+  Gold coercion. Balance: 1 positive, 2 negative, 1 mixed.
+
 ---
 
 ## Meta-notes
@@ -748,6 +787,25 @@ Things a future run should know about how to work, not about a specific country.
   (1975) and CEN-SAD (1998) research rather than re-deriving it, and all
   three records should stay consistent on shared AES developments the
   way EGY/ETH and TCD/SDN already do on their shared events.
+- **2026-08-10** — BFA confirms MLI's ECOWAS (1975) and CEN-SAD (1998)
+  research reused cleanly with zero re-verification needed — the "reuse
+  shared REC facts across AES records" plan from the MLI note works in
+  practice. When Niger is eventually written, its ECOWAS/CEN-SAD entries
+  should follow the same pattern. Also: a genuine YAML syntax bug was
+  introduced and caught in this run — an unquoted colon inside a
+  plain-scalar block in state.yaml broke the parser. Every meta_notes
+  entry and every `reason`/`next_action` field in this file uses
+  single-quoted scalars specifically so colons, apostrophes and other
+  punctuation don't need special handling beyond doubling apostrophes —
+  a future run drafting one of these fields as an unquoted plain scalar
+  (easy to do by accident when appending via a script rather than the
+  Edit tool) should quote it from the start rather than debugging a
+  parse failure after the fact. Finally: this is the third run to log a
+  genuine (not bot-detection) dead link mid-session rather than only
+  during a scheduled AUDIT pass (after COD's World Bank PDF and ZAF's
+  BBC feed URL) — dead links are being caught reliably by the existing
+  workflow without needing to wait for the 4th-iteration audit rotation
+  to find them.
 
 ---
 

@@ -242,6 +242,25 @@ countries:
       has scaled toward its 500,000-tonne annual target and any measurable effect
       on Pillar B/G; check whether the 2.60% severe food insecurity figure holds
       in the next survey round'
+  BFA:
+    name: Burkina Faso
+    region: West
+    first_pass: false
+    reason: eighth backlog country -- completes the AES/ECOWAS-exit pair alongside
+      MLI (Niger remains); accounted for ~1/4 of all extremist attacks worldwide in
+      2024 per the Global Terrorism Index; the sharpest disconnect yet in this corpus
+      between moderate WGI-style aggregate governance scores and specific,
+      independently documented atrocities (HRW found government/VDP forces killed
+      more civilians than jihadists, 2023-2025); a genuine, verified positive (record
+      2025 gold production) found through the same search discipline as MLI/SDN
+    iteration_count: 1
+    last_updated: '2026-08-10'
+    next_action: 'EXPAND: follow the HRW-documented atrocities past April 2026 --
+      check for any accountability process; check whether the true IDP figure
+      (diplomats estimate 3-5 million against the index''s directly-measured
+      ~2 million) has been reconciled; check whether gold production continued
+      rising and whether the Raffinor refinery came online; check if Pillar C has
+      gained coverage; keep AES facts consistent with MLI and NER'
 backlog:
   LBY:
     name: Libya
@@ -269,14 +288,6 @@ backlog:
     next_action: create baseline from blueprint
   BEN:
     name: Benin
-    region: West
-    first_pass: false
-    reason: not yet scheduled
-    iteration_count: 0
-    last_updated: null
-    next_action: create baseline from blueprint
-  BFA:
-    name: Burkina Faso
     region: West
     first_pass: false
     reason: not yet scheduled
@@ -848,3 +859,32 @@ meta_notes:
   registry (asi.core.countries.py already excludes ECOWAS for Mali). Balance: 1
   positive, 2 negative, 1 mixed. `--links` passes 0 errors, 1 warning (France24,
   familiar 403 pattern) -- 10/11 resolved.'
+- '2026-08-10: BFA CREATE run complete -- eighth backlog country, completing the
+  AES/ECOWAS-exit pair alongside MLI (Niger remains). 12 sources opened and verified.
+  The 1932 dissolution of Upper Volta is the starkest colonial mechanism found in
+  this corpus so far: France abolished the colony outright for 15 years (1932-1947)
+  because the Depression-era collapse in cash-crop prices meant it failed France''s
+  own profitability requirement, and partitioned its population among 3 neighbours
+  partly to formalise its people as captive labour for Cote d''Ivoire''s plantations
+  -- an entire territory erased for not being profitable enough to keep governing.
+  Sharpest disconnect yet between aggregate WGI-style governance scores (moderate:
+  Voice and Accountability 50.0, Regulatory Quality 56.6) and specific documented
+  atrocities: an April 2026 HRW report found Burkina Faso''s OWN military and VDP
+  militias killed MORE civilians than jihadist groups, 2023-2025 (1,800+ total
+  deaths), including 400+ killed near Djibo in Dec 2023, characterised as ethnic
+  cleansing against Fulani communities -- a finding the aggregate governance
+  indicators do not capture at all. Confirmed Burkina Faso accounted for ~1/4 of
+  ALL extremist attacks worldwide in 2024 (Global Terrorism Index) and 9 of the
+  year''s 20 deadliest single attacks. Caught one genuine dead link before it
+  shipped: africanewsdesk.net (cited for the "94-tonne gold record" figure)
+  returned a real 404, not a 403 -- the third confirmed genuine dead link in the
+  corpus after COD and ZAF -- replaced with a directly corroborated source
+  (APAnews) before committing. Following the SDN/MLI pattern, searched for and
+  found a genuine positive before finalizing: gold production hit a record 94
+  tonnes in 2025 (up 30+ tonnes from 2024), driven by the junta''s SOPAMIB state
+  mining vehicle and mine nationalisations (Boungou/Wahgnion, Aug 2024) -- a
+  distinct-but-related resource-governance pattern from MLI''s Barrick Gold
+  coercion, both West African juntas asserting more state control over extractive
+  wealth via different mechanisms. Balance: 1 positive, 2 negative, 1 mixed.
+  `--links` passes 0 errors, 1 warning (APAnews, familiar 403 pattern) -- 11/12
+  resolved.'
