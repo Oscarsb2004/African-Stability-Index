@@ -1,0 +1,490 @@
+meta:
+  iso3: KEN
+  name: Kenya
+  last_updated: 2026-08-10
+  iteration_count: 1
+  next_action: >
+    EXPAND: (1) check whether the June 2026 warnings of renewed Gen Z
+    protests materialised, and whether the 16 people HRW reported missing
+    from 2025's protests have been accounted for; (2) check progress on
+    accountability for police officers implicated in 2024-2025 protest
+    deaths; (3) check whether Kenya's renewable-electricity share and
+    2030 universal-access target are on track; (4) check if Pillar C
+    (greyed at 2/8 measured) has gained coverage; (5) find a dedicated
+    source for the current state of land-inequality reform, which
+    context/colonial_history.yaml flags as a live political issue this
+    record has not yet followed up on with specifics.
+  model_used: claude-sonnet-5
+
+historical:
+  overview: >
+    Britain established the East Africa Protectorate in 1895, becoming a
+    Crown Colony in 1920, and opened the fertile central highlands to
+    European settlement, displacing the Kikuyu and other communities into
+    "Native Reserves." The 1952-1960 Mau Mau uprising, the largest and
+    most successful anti-colonial armed movement in British Africa, was
+    suppressed through the detention of an estimated 1.5 million Kenyans
+    in camps and fortified villages where torture was systematic; Jomo
+    Kenyatta, later Kenya's first president, was imprisoned from 1953 to
+    1961 despite no proven direct role in the uprising. Independence
+    arrived in 1963, and Kenya operated as a one-party state under
+    Kenyatta's KANU, then under Daniel arap Moi for 24 years (1978-2002)
+    amid endemic corruption -- most notoriously the Goldenberg scandal --
+    before international pressure forced a return to multiparty politics
+    in 1991. The disputed December 2007 election between incumbent Mwai
+    Kibaki and challenger Raila Odinga triggered ethnic violence that
+    killed an estimated 1,300 people and displaced up to 600,000 before a
+    power-sharing accord created a coalition government in February 2008;
+    a new, more decentralised constitution followed in 2010. William Ruto
+    and Uhuru Kenyatta, on opposing sides of the 2007-08 crisis, were
+    both among six suspects the International Criminal Court charged with
+    crimes against humanity in 2010-2011 -- the "Ocampo Six" -- charges
+    later dropped or dismissed by 2014-2016 for lack of evidence and
+    witness intimidation, before Kenyatta became president in 2013 and
+    Ruto succeeded him in 2022. In June 2024, a leaderless, largely Gen
+    Z-led protest movement organised through social media forced Ruto to
+    withdraw a tax-heavy Finance Bill after police killed at least 23
+    demonstrators and protesters stormed and partially burned Parliament.
+  overview_citations: [c1, c2, c3, c5]
+  colonial_legacy: >
+    context/colonial_history.yaml already credits the 1952-1960 Mau Mau
+    suppression and the 2013 UK apology and compensation as a direct
+    colonial legacy. Worth adding is how that acknowledgment came about,
+    since the mechanism says as much as the outcome. For decades the
+    British government denied systematic abuse, a position that held
+    until lawyers acting for elderly Mau Mau survivors forced the
+    disclosure of some 8,800 files from 37 former colonies, including
+    Kenya, that colonial administrators had secretly shipped to the UK
+    rather than hand over to the independence government in 1963,
+    specifically to keep them out of Kenyan hands. Those files documented
+    systematic torture in detail the government had spent fifty years
+    denying. The June 2013 settlement that followed was, even so, narrow:
+    Foreign Secretary William Hague expressed "sincere regret" rather
+    than a formal apology, and the GBP19.9 million payment -- roughly
+    GBP3,000 per person -- reached only 5,228 living survivors, not the
+    estates of the roughly 1.5 million Kenyans who passed through
+    detention, nor any collective compensation for land. Land inequality
+    rooted in the same colonial expropriation this settlement only
+    partially addressed remains, as the baseline file already notes, a
+    live political issue today.
+  colonial_legacy_citations: [c1, c4]
+  key_periods:
+    - title: "Settler colonisation and the Mau Mau uprising"
+      period: "1895-1963"
+      summary: >
+        Britain established the East Africa Protectorate in 1895,
+        becoming a Crown Colony in 1920, and opened the fertile
+        highlands to European settlers, displacing the Kikuyu and other
+        communities into "Native Reserves." The 1952-1960 Mau Mau
+        uprising, the largest anti-colonial armed movement in British
+        Africa, was suppressed through the detention of an estimated 1.5
+        million Kenyans, with systematic torture documented decades
+        later in secretly retained colonial files. Independence arrived
+        in 1963 under Jomo Kenyatta, imprisoned by the British from 1953
+        to 1961 despite no proven direct role in the uprising.
+      citations: [c1]
+    - title: "Independence, one-party rule, and Moi's 24 years"
+      period: "1963-2002"
+      summary: >
+        Kenya operated as a one-party state under Kenyatta's KANU after
+        independence, and Daniel arap Moi extended that arrangement for
+        24 years (1978-2002) amid endemic corruption, most notoriously
+        the Goldenberg gold-and-foreign-exchange scandal. International
+        pressure forced a return to multiparty politics in 1991, though
+        Moi remained in power for another decade under the new rules.
+      citations: [c1]
+    - title: "Multiparty democracy and the 2007-08 crisis"
+      period: "2002-2013"
+      summary: >
+        The disputed December 2007 election between incumbent Mwai
+        Kibaki and challenger Raila Odinga triggered ethnic violence,
+        concentrated against Kikuyu communities outside their
+        traditional areas, that killed an estimated 1,300 people and
+        displaced up to 600,000. A February 2008 power-sharing accord
+        made Odinga prime minister under Kibaki's presidency; a new,
+        more decentralised constitution followed in 2010. The
+        International Criminal Court charged six individuals, including
+        future presidents Uhuru Kenyatta and William Ruto, with crimes
+        against humanity over the violence; the charges were dropped or
+        dismissed by 2014-2016 for lack of evidence and witness
+        intimidation.
+      citations: [c2, c3]
+    - title: "Kenyatta to Ruto, and the 2024 Gen Z protests"
+      period: "2013-2025"
+      summary: >
+        Uhuru Kenyatta became president in 2013 and William Ruto
+        succeeded him in 2022, the two men having stood on opposite
+        sides of the 2007-08 crisis before allying to contest and win
+        the 2013 election together. In June 2024, a leaderless, largely
+        Gen Z-led protest movement organised through social media forced
+        Ruto to withdraw a tax-heavy Finance Bill after police killed at
+        least 23 demonstrators and protesters stormed and partially
+        burned Parliament on 25 June; commemorative protests recurred in
+        2025 and again threatened to in 2026.
+      citations: [c5, c6, c7]
+
+pillars:
+  A:
+    summary: >
+      All six governance indicators are directly measured, and Kenya
+      scores moderately across the board -- Control of Corruption, at
+      36.0, is the clear weak point, consistent with a political system
+      where two of the last four presidents (Uhuru Kenyatta and William
+      Ruto) were once ICC crimes-against-humanity suspects from the
+      2007-08 election crisis, before charges were dropped. Voice and
+      Accountability and Rule of Law both clear 58, reflecting a
+      genuinely competitive multiparty system and an active civil
+      society. That civil society showed its strength directly in June
+      2024, when a leaderless, digitally organised Gen Z movement forced
+      President Ruto to withdraw a Finance Bill after storming
+      Parliament -- though police killed at least 23 protesters in the
+      process, and commemorative protests have recurred in 2025 and
+      2026, suggesting the underlying grievances remain unresolved rather
+      than settled by the bill's withdrawal.
+    drivers:
+      - "all 6 governance indicators directly measured; Control of Corruption weakest (36.0), Voice and Accountability/Rule of Law both clear 58"
+      - "2 of last 4 presidents (Uhuru Kenyatta, Ruto) were once ICC crimes-against-humanity suspects from 2007-08, charges later dropped"
+      - "June 2024: leaderless Gen Z movement forced withdrawal of the Finance Bill after storming Parliament; police killed at least 23"
+      - "protests recurred in 2025 and 2026 -- underlying grievances not resolved by the bill's withdrawal alone"
+    citations: [c2, c3, c5, c7]
+  B:
+    summary: >
+      GDP growth, at just over 6% (3-year average) and freshly measured,
+      is among the stronger results in the index, and domestic credit
+      and inflation both score reasonably well. GDP per capita, while
+      moderate in absolute terms, sits above several regional peers,
+      consistent with Kenya's role as East Africa's financial and
+      diplomatic hub -- Nairobi hosts the UN's only African headquarters
+      and a substantial regional technology sector. The June 2024
+      Finance Bill crisis was fundamentally a fiscal-policy story: the
+      bill aimed to raise $2.7 billion to address Kenya's debt burden,
+      and its withdrawal, while a political necessity, left that
+      underlying fiscal pressure unresolved. Gini, at 38.5 and carried
+      forward rather than fresh, indicates moderate inequality, markedly
+      lower than South Africa's.
+    drivers:
+      - "GDP growth ~6% (3yr avg, fresh) among the stronger results in the index; domestic credit and inflation both decent"
+      - "Nairobi is East Africa's financial/diplomatic hub -- UN's only African HQ, substantial tech sector"
+      - "the Finance Bill aimed to raise $2.7B for debt relief; its withdrawal left the underlying fiscal pressure unresolved"
+      - "Gini 38.5 (carried forward) -- moderate inequality, markedly lower than ZAF's"
+    citations: [c5]
+  D:
+    summary: >
+      Life expectancy above 63 years and infant mortality of roughly 35
+      per 1,000 live births, both freshly measured, are moderate. Severe
+      food insecurity, also fresh, affects over a quarter of the
+      population -- the pillar's weakest indicator, and consistent with
+      recurring drought pressure in Kenya's arid and semi-arid counties.
+      Safely managed drinking water access, estimated from regional
+      peers rather than measured directly this year, is comparatively
+      low as an estimate. One of five indicators was not freshly
+      measured this year.
+    drivers:
+      - "life expectancy >63, infant mortality ~35/1,000 -- both fresh, moderate"
+      - "severe food insecurity affects >25% of population (fresh) -- the pillar's weakest indicator, tied to drought in arid/semi-arid counties"
+    citations: [c1]
+  E:
+    summary: >
+      Political Stability, freshly measured, scores only moderately --
+      lower than the pillar's overall score would suggest, and a direct
+      legacy of the 2007-08 post-election crisis and the recurring cycle
+      of election-linked unrest it set in motion, most recently the June
+      2024 and 2025 protest waves. Displaced persons, also fresh, is
+      low, reflecting the absence of active civil conflict since 2008
+      despite that political volatility. The homicide rate, carried
+      forward rather than fresh, is comparatively low by regional
+      standards. The female homicide rate is also carried forward rather
+      than fresh.
+    drivers:
+      - "Political Stability moderate (fresh) -- reflects the 2007-08 crisis legacy and recurring election-linked unrest, most recently 2024-2025"
+      - "IDPs low (fresh) -- no active civil conflict since 2008 despite political volatility"
+      - "homicide rate comparatively low (carried forward)"
+    citations: [c2]
+  F:
+    summary: >
+      Kenya's low per-capita CO2 emissions, freshly measured, are a
+      genuine policy achievement rather than the energy-poverty artefact
+      documented for several other countries in this project: the
+      national grid was roughly 92% renewable-sourced by 2024 (43%
+      geothermal, 28% hydro, 14% wind, 4% solar), up from about 50% in
+      2000, driven by real investment in geothermal power at Olkaria
+      (Africa's largest geothermal field) and the Lake Turkana Wind
+      Power project, the continent's largest wind farm. The
+      carried-forward electricity-generation figure -- just 10%
+      fossil-fuel sourced -- corroborates this directly. Agricultural
+      land share, freshly measured, is moderate. Freshwater withdrawal,
+      carried forward, is comparatively high relative to renewable
+      resources.
+    drivers:
+      - "CO2 pc score is a genuine achievement, not the usual wealth-proxy artifact -- grid ~92% renewable by 2024 (43% geothermal, 28% hydro, 14% wind, 4% solar), up from ~50% in 2000"
+      - "driven by real investment: Olkaria geothermal (Africa's largest geothermal field), Lake Turkana Wind Power (Africa's largest wind farm)"
+      - "electricity generation only ~10% fossil-fuel (carried forward), directly corroborating the emissions figure"
+    citations: [c10]
+  G:
+    summary: >
+      Electricity access (76%), basic water access (65%) and
+      handwashing coverage (53%), all freshly measured, are moderate.
+      Social protection and labour programme coverage, estimated from
+      regional peers rather than measured directly, is thin. Kenya's
+      infrastructure profile sits between the stronger results recorded
+      for South Africa and the weaker ones recorded for Chad elsewhere
+      in this corpus -- a reasonably typical middle case for the index,
+      four of five indicators of which are current rather than stale.
+      The renewable-energy investment documented under Pillar F has not
+      yet translated into universal access: roughly a quarter of the
+      population still lacks electricity despite the grid itself being
+      clean.
+    drivers:
+      - "electricity access 76%, basic water 65%, handwashing 53% -- all fresh, moderate, a middle case for the corpus"
+      - "social protection coverage thin (regional-mean estimate)"
+      - "clean grid (Pillar F) has not yet reached universal access -- ~24% still lack electricity"
+    citations: [c10]
+
+recent:
+  primary:
+    - headline: "Gen Z-led protests force withdrawal of Kenya's Finance Bill"
+      date: 2024-06-26
+      summary: >
+        A leaderless, largely Gen Z-led movement organised through
+        TikTok, Instagram and X forced President Ruto to reject Kenya's
+        Finance Bill 2024 on 26 June, a day after thousands of
+        protesters stormed and partially burned Parliament. Police
+        killed at least 23 demonstrators, according to the Kenya Medical
+        Association, and Kenya Defence Forces were deployed onto the
+        streets, prompting legal challenges over constitutional
+        violations from the Law Society of Kenya. The bill had aimed to
+        raise $2.7 billion in new tax revenue to address Kenya's debt
+        burden.
+      why_it_matters: >
+        Directly explains Pillar A's weak Control of Corruption/governance
+        texture and Pillar B's unresolved fiscal pressure, and established
+        a template for youth-led protest that recurred in 2025.
+      news_url: "https://www.csis.org/analysis/taking-charge-gen-z-leads-historic-protests-kenya"
+      wikipedia_url: "https://en.wikipedia.org/wiki/2024_storming_of_the_Kenyan_Parliament"
+      sentiment: mixed
+    - headline: "Commemorative protests turn deadly again in 2025; 16 remain missing"
+      date: 2025-06-25
+      summary: >
+        Protests marking the first anniversary of the 2024 parliament
+        storming resumed on 17 June 2025 and continued through the
+        anniversary itself on 25 June, when at least 8 people were killed;
+        the broader protest period saw a reported 65 deaths in total,
+        including a bystander shot at close range by police (captured on
+        camera, leading to two arrests) and a 12-year-old killed by a
+        stray bullet through her home. Human Rights Watch's World Report
+        2026 found that 16 people abducted during the 2025 protests
+        remained missing as of early 2026.
+      why_it_matters: >
+        Shows the 2024 crisis was not a single event but the start of a
+        recurring cycle, directly relevant to Pillar E's Political
+        Stability score and Pillar A's Control of Corruption weakness.
+      news_url: "https://www.aljazeera.com/features/2026/6/24/kenya-braces-for-return-of-gen-z-protests-how-did-they-begin"
+      wikipedia_url: "https://en.wikipedia.org/wiki/2025_Kenyan_protests"
+      sentiment: negative
+    - headline: "Kenya's electricity grid reaches roughly 92% renewable"
+      date: 2025-07-08
+      summary: >
+        Kenya's electricity generation mix reached approximately 92%
+        renewable sources by 2024-2025, up from about 50% in 2000, led
+        by geothermal power (43% of the grid) from the Olkaria field and
+        wind power (14%) from the Lake Turkana Wind Power project,
+        Africa's largest wind farm. Total electricity production has
+        grown roughly 40% over the past decade, and the government has
+        set a target of universal electricity access on a fully
+        renewable grid by 2030.
+      why_it_matters: >
+        A genuine, substantially verified policy achievement behind
+        Pillar F's strong score -- not the energy-poverty pattern
+        documented for several other countries in this corpus.
+      news_url: "https://theprogressplaybook.com/2025/07/08/kenyas-march-towards-100-clean-electricity-expands-energy-access/"
+      wikipedia_url: ""
+      sentiment: positive
+  extended:
+    - headline: "US designates Kenya its first sub-Saharan African Major Non-NATO Ally"
+      date: 2024-05-23
+      summary: >
+        President Biden announced on 23 May 2024, during President
+        Ruto's state visit, that the US would designate Kenya a Major
+        Non-NATO Ally -- the first such designation for a sub-Saharan
+        African country, formally completed the following month. The
+        status grants access to US defence cooperation and advanced
+        weapons sales without carrying a mutual-defence commitment.
+      why_it_matters: >
+        A striking juxtaposition with the rest of this record: the
+        designation was formalised roughly a day before police killed
+        protesters storming Parliament, underscoring how international
+        standing and domestic governance strain can move in opposite
+        directions at once.
+      news_url: "https://www.aljazeera.com/amp/news/2024/5/23/us-to-designate-kenya-as-non-nato-ally-during-rutos-state-visit"
+      wikipedia_url: ""
+      sentiment: positive
+
+events:
+  - year: 1963
+    type: independence
+    title: "Kenya gains independence"
+    description: >
+      Kenya became independent from Britain in 1963 under Jomo Kenyatta,
+      who had been imprisoned by the colonial government from 1953 to
+      1961 during the Mau Mau uprising despite no proven direct role in
+      it.
+    url: "https://en.wikipedia.org/wiki/History_of_Kenya"
+    direction: improve
+  - year: 2007
+    type: conflict
+    title: "Disputed election triggers ethnic violence"
+    description: >
+      The disputed December 2007 election between Mwai Kibaki and Raila
+      Odinga triggered ethnic violence that killed an estimated 1,300
+      people and displaced up to 600,000 before a February 2008
+      power-sharing accord ended it.
+    url: "https://en.wikipedia.org/wiki/2007%E2%80%932008_Kenyan_crisis"
+    direction: deteriorate
+  - year: 2010
+    type: constitutional
+    title: "New constitution adopted"
+    description: >
+      A new, more decentralised constitution was adopted in 2010,
+      following the 2007-08 crisis and the power-sharing government it
+      produced.
+    url: "https://en.wikipedia.org/wiki/2007%E2%80%932008_Kenyan_crisis"
+    direction: improve
+  - year: 2024
+    type: conflict
+    title: "Gen Z protests storm Parliament over Finance Bill"
+    description: >
+      A leaderless, digitally organised protest movement stormed and
+      partially burned Parliament on 25 June 2024 over a tax-heavy
+      Finance Bill; police killed at least 23 people before President
+      Ruto withdrew the bill.
+    url: "https://en.wikipedia.org/wiki/2024_storming_of_the_Kenyan_Parliament"
+    direction: deteriorate
+
+citations:
+  - id: c1
+    url: "https://en.wikipedia.org/wiki/History_of_Kenya"
+    source_type: wikipedia
+    title: "History of Kenya"
+    accessed: 2026-08-10
+    verified: true
+  - id: c2
+    url: "https://en.wikipedia.org/wiki/2007%E2%80%932008_Kenyan_crisis"
+    source_type: wikipedia
+    title: "2007-2008 Kenyan crisis"
+    accessed: 2026-08-10
+    verified: true
+  - id: c3
+    url: "https://en.wikipedia.org/wiki/International_Criminal_Court_investigation_in_Kenya"
+    source_type: wikipedia
+    title: "International Criminal Court investigation in Kenya"
+    accessed: 2026-08-10
+    verified: true
+  - id: c4
+    url: "https://www.aljazeera.com/news/africa/2013/06/20136663243850762.html"
+    source_type: news
+    title: "Britain to compensate tortured Kenyans (Al Jazeera)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c5
+    url: "https://en.wikipedia.org/wiki/Kenya_Finance_Bill_protests"
+    source_type: wikipedia
+    title: "Kenya Finance Bill protests"
+    accessed: 2026-08-10
+    verified: true
+  - id: c6
+    url: "https://en.wikipedia.org/wiki/2024_storming_of_the_Kenyan_Parliament"
+    source_type: wikipedia
+    title: "2024 storming of the Kenyan Parliament"
+    accessed: 2026-08-10
+    verified: true
+  - id: c7
+    url: "https://www.csis.org/analysis/taking-charge-gen-z-leads-historic-protests-kenya"
+    source_type: academic
+    title: "Taking Charge: Gen Z Leads Historic Protests in Kenya (CSIS)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c8
+    url: "https://en.wikipedia.org/wiki/2025_Kenyan_protests"
+    source_type: wikipedia
+    title: "2025 Kenyan protests"
+    accessed: 2026-08-10
+    verified: true
+  - id: c9
+    url: "https://www.aljazeera.com/features/2026/6/24/kenya-braces-for-return-of-gen-z-protests-how-did-they-begin"
+    source_type: news
+    title: "Kenya braces for return of Gen Z protests -- how did they begin? (Al Jazeera)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c10
+    url: "https://theprogressplaybook.com/2025/07/08/kenyas-march-towards-100-clean-electricity-expands-energy-access/"
+    source_type: news
+    title: "Kenya's march towards 100% clean electricity expands energy access"
+    accessed: 2026-08-10
+    verified: true
+  - id: c11
+    url: "https://www.aljazeera.com/amp/news/2024/5/23/us-to-designate-kenya-as-non-nato-ally-during-rutos-state-visit"
+    source_type: news
+    title: "US to designate Kenya as non-NATO ally during Ruto's state visit (Al Jazeera)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c12
+    url: "https://en.wikipedia.org/wiki/Common_Market_for_Eastern_and_Southern_Africa"
+    source_type: wikipedia
+    title: "Common Market for Eastern and Southern Africa"
+    accessed: 2026-08-10
+    verified: true
+  - id: c13
+    url: "https://en.wikipedia.org/wiki/East_African_Community"
+    source_type: wikipedia
+    title: "East African Community"
+    accessed: 2026-08-10
+    verified: true
+  - id: c14
+    url: "https://en.wikipedia.org/wiki/Intergovernmental_Authority_on_Development"
+    source_type: wikipedia
+    title: "Intergovernmental Authority on Development"
+    accessed: 2026-08-10
+    verified: true
+
+rec_membership:
+  - org: COMESA
+    joined: 1994
+    status: current
+    left: null
+    citations: [c12]
+  - org: EAC
+    joined: 1967
+    status: withdrawn
+    left: 1977
+    citations: [c13]
+  - org: EAC
+    joined: 2000
+    status: current
+    left: null
+    citations: [c13]
+  - org: IGAD
+    joined: 1986
+    status: current
+    left: null
+    citations: [c14]
+
+balance:
+  n_positive: 2
+  n_negative: 1
+  n_mixed: 1
+  note: >
+    Kenya's recent record is genuinely mixed in a way this record does
+    not resolve into a single verdict: the same June 2024 event (the
+    storming of Parliament) is both a story of democratic responsiveness
+    -- a leaderless youth movement forcing a president to reverse fiscal
+    policy -- and a story of deadly state violence, which is exactly why
+    it is coded mixed rather than assigned to either extreme. The 2025
+    recurrence, with people still missing as of 2026, is documented as a
+    negative in its own right rather than folded into 2024's mixed
+    framing, because the abductions and unresolved deaths are a distinct,
+    ongoing harm. The renewable-energy achievement and the Major
+    Non-NATO Ally designation are both real and substantial, and are not
+    softened to make the governance story read as more uniformly
+    negative than the evidence supports -- Kenya's international standing
+    and its domestic accountability problems are not the same axis, and
+    both are true.

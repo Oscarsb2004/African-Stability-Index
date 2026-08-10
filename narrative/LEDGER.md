@@ -3,7 +3,7 @@
 The document future runs read before doing anything. Machine-readable twin:
 `narrative/state.yaml`.
 
-*Seeded 2026-08-09. Research runs so far: Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria, Rwanda, Chad, Angola, South Africa (all CREATE). First pass complete; backlog underway.*
+*Seeded 2026-08-09. Research runs so far: Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria, Rwanda, Chad, Angola, South Africa, Kenya (all CREATE). First pass complete; backlog underway.*
 
 ---
 
@@ -26,7 +26,7 @@ An audit is forced early if a single run inflates the citation count by more tha
 
 ## Status
 
-**11 of 54 countries have a record (Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria, Rwanda, Chad, Angola, South Africa). The first pass is complete; Angola and South Africa are the first two backlog countries.**
+**12 of 54 countries have a record (Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria, Rwanda, Chad, Angola, South Africa, Kenya). The first pass is complete; Angola, South Africa and Kenya are the first three backlog countries.**
 
 ### First pass — 9 countries
 
@@ -53,14 +53,15 @@ whose ranks swing hardest with the weighting method.
 |---|---|---|---|
 | AGO | Angola | fills the corpus's clearest gap (Lusophone Africa, previously unrepresented); third resource-economy (oil) case alongside DZA and TCD | **done — iteration 1** |
 | ZAF | South Africa | anchors the Southern Africa/anchor-economy gap; first reliable-tier (not thin) composite score in the corpus; sharpest test yet of framing balance in the positive direction | **done — iteration 1** |
+| KEN | Kenya | East Africa's anchor economy; only prior East African records (SOM, RWA) were atypical crisis/authoritarian cases; a multiparty democracy under real, recurring strain | **done — iteration 1** |
 
-### Backlog — the remaining 43
+### Backlog — the remaining 42
 
 Listed in full in `narrative/state.yaml` under `backlog`. They are recorded
 explicitly rather than left implicit: a country with no record should be visibly
 absent, not quietly missing.
 
-Egypt, Libya, Morocco, Sudan, Tunisia, Benin, Burkina Faso, Cabo Verde, The Gambia, Guinea, Guinea-Bissau, Cote d'Ivoire, Liberia, Mali, Mauritania, Niger, Senegal, Sierra Leone, Togo, Cameroon, Central African Republic, Republic of Congo, Equatorial Guinea, Gabon, Burundi, Djibouti, Eritrea, Ethiopia, Kenya, Malawi, Mozambique, South Sudan, Tanzania, Uganda, Zambia, Zimbabwe, Lesotho, Namibia, Eswatini, Comoros, Madagascar, Seychelles, Sao Tome & Principe
+Egypt, Libya, Morocco, Sudan, Tunisia, Benin, Burkina Faso, Cabo Verde, The Gambia, Guinea, Guinea-Bissau, Cote d'Ivoire, Liberia, Mali, Mauritania, Niger, Senegal, Sierra Leone, Togo, Cameroon, Central African Republic, Republic of Congo, Equatorial Guinea, Gabon, Burundi, Djibouti, Eritrea, Ethiopia, Malawi, Mozambique, South Sudan, Tanzania, Uganda, Zambia, Zimbabwe, Lesotho, Namibia, Eswatini, Comoros, Madagascar, Seychelles, Sao Tome & Principe
 
 ---
 
@@ -320,6 +321,33 @@ Append one line per run: date, country, mode, what changed, what was removed.
   is reported as exactly that, a real crisis, not a targeted one.
   Balance: 2 positive, 1 negative, 1 mixed.
 
+- **2026-08-10 — KEN — CREATE. Third backlog country.** Full baseline
+  built: historical overview, colonial legacy (expands
+  context/colonial_history.yaml with the Hanslope Park disclosure — the
+  8,800 secretly retained colonial files that forced Britain's 2013
+  "sincere regret" and GBP19.9m settlement after fifty years of denial,
+  and the narrowness of that settlement: GBP3,000 per surviving claimant,
+  no collective compensation for land), 4 key_periods, 6 pillar summaries
+  (Pillar C left empty — greyed at 2/8 measured), 3 primary + 1 extended
+  recent items, 4 events, rec_membership (COMESA 1994; EAC twice — 1967
+  founding through its 1977 collapse, then 2000 refounding; IGAD 1986
+  founding). 14 sources opened and verified. `--links` passes 0 errors, 0
+  warnings — 14/14 resolved, the cleanest link check in the corpus so
+  far. A striking documented throughline: two of Kenya's last four
+  presidents (Uhuru Kenyatta, William Ruto) were once named among the
+  "Ocampo Six" ICC crimes-against-humanity suspects from the 2007-08
+  post-election violence, before charges were dropped or dismissed by
+  2014-2016 — Ruto then presided over his own deadly protest crackdown in
+  2024-2025. Pillar F is a second genuine (not wealth-proxy-artefact)
+  clean-energy case after Angola's partial-hydro story: Kenya's grid is
+  ~92% renewable (43% geothermal via Olkaria, Africa's largest geothermal
+  field; 14% wind via Lake Turkana, Africa's largest wind farm), up from
+  ~50% in 2000 — real, substantial infrastructure investment. Balance: 2
+  positive (the renewable grid, Major Non-NATO Ally status), 1 negative
+  (2025's protest recurrence, people still missing), 1 mixed (the 2024
+  parliament storming itself, genuinely both democratic responsiveness
+  and deadly state violence at once).
+
 ---
 
 ## Meta-notes
@@ -515,6 +543,21 @@ Things a future run should know about how to work, not about a specific country.
   (the 2024 political transition, the Eskom turnaround) were simply real
   and substantial. The rule is the same in both directions: count what
   actually happened, don't average toward a target ratio.
+- **2026-08-10** — KEN's rec_membership entry is worth citing as a model
+  for future runs handling any REC with a discontinuous history: rather
+  than flattening Kenya's EAC membership to a single "joined" date, it
+  recorded two entries (founding 1967 through the 1977 collapse, then
+  founding again in 2000) because the schema supports multiple entries
+  per org and the two-entry version is more accurate, not just more
+  detailed. Check other RECs' histories for similar discontinuities
+  before defaulting to one entry — CEN-SAD and IGAD both have named
+  predecessor organisations (IGADD, 1986) that could have similar cases
+  worth surfacing rather than assuming continuity. Also worth noting: KEN
+  is the first run with a completely clean link check (14/14, zero 403s,
+  zero 404s) since SOM in the first pass — a reminder that most citation
+  friction in this corpus comes from specific domains (IMF, UNDP, Crisis
+  Group, AllAfrica, CDC) rather than being evenly distributed, so a
+  citation set that happens to avoid those domains will simply run clean.
 
 ---
 

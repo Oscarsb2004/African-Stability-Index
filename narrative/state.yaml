@@ -153,6 +153,22 @@ countries:
       prosecution and recovery progress; check if Pillar C has gained coverage; check
       whether any expropriations without compensation have occurred under the Expropriation
       Act since its Jan 2025 signing'
+  KEN:
+    name: Kenya
+    region: East
+    first_pass: false
+    reason: third backlog country -- East Africa's anchor economy, filling a gap where
+      the only prior East African records (SOM, RWA) were both atypical crisis/authoritarian
+      cases; reliable-tier composite score, a genuine multiparty democracy under real
+      and recurring strain rather than either extreme
+    iteration_count: 1
+    last_updated: '2026-08-10'
+    next_action: 'EXPAND: check whether the June 2026 warnings of renewed Gen Z protests
+      materialised, and whether the 16 people HRW reported missing from 2025''s protests
+      have been accounted for; check accountability progress for police officers implicated
+      in 2024-2025 protest deaths; check whether the renewable-electricity/2030 universal-access
+      target is on track; check if Pillar C has gained coverage; find a dedicated source
+      for the current state of land-inequality reform'
 backlog:
   EGY:
     name: Egypt
@@ -372,14 +388,6 @@ backlog:
     next_action: create baseline from blueprint
   ETH:
     name: Ethiopia
-    region: East
-    first_pass: false
-    reason: not yet scheduled
-    iteration_count: 0
-    last_updated: null
-    next_action: create baseline from blueprint
-  KEN:
-    name: Kenya
     region: East
     first_pass: false
     reason: not yet scheduled
@@ -665,3 +673,31 @@ meta_notes:
   the SECOND confirmed genuine dead link in the corpus after COD''s), replaced with a
   working citation (Corruption Watch) for the same claim before commit; 1 warning
   remains (IMF, familiar 403 pattern).'
+- '2026-08-10: KEN CREATE run complete -- third backlog country, chosen to anchor
+  East Africa with a genuine multiparty-democracy-under-strain case, since the only
+  prior East African records (SOM, RWA) were both atypical (state collapse,
+  genocide-legacy authoritarianism). 14 sources opened and verified, cleanest link
+  check in the corpus so far: 14/14 resolved, zero 403s, zero 404s. A striking,
+  well-documented throughline: two of Kenya''s last four presidents (Uhuru Kenyatta,
+  William Ruto) were once named among the "Ocampo Six" ICC crimes-against-humanity
+  suspects from the 2007-08 post-election violence, before charges were dropped or
+  dismissed by 2014-2016 -- Ruto then presided over his own deadly protest crackdown
+  in 2024-2025. Pillar F is a genuine, substantially-verified clean-energy achievement,
+  not the usual wealth-proxy artifact: Kenya''s grid is ~92% renewable (43% geothermal
+  via Olkaria, Africa''s largest geothermal field; 14% wind via Lake Turkana, Africa''s
+  largest wind farm), up from ~50% in 2000 -- real infrastructure investment, joining
+  Angola''s partial-hydro case as a second genuine (not artefactual) exception to the
+  co2_pc pattern. rec_membership surfaced a genuinely richer fact than a single join
+  date could capture: Kenya was a FOUNDING member of the original 1967 East African
+  Community (with Tanzania and Uganda), which collapsed in 1977 partly over a Kenya
+  seat-allocation dispute, then a founding member again of the REVIVED EAC (treaty
+  signed Nov 1999, in force July 2000) -- represented as two separate entries (one
+  withdrawn 1977, one current since 2000) rather than flattened to one date, since the
+  schema supports multiple entries per org and this is a case where doing so is more
+  accurate, not just more detailed. Balance: 2 positive (renewable energy grid, Major
+  Non-NATO Ally status), 1 negative (2025 protest recurrence, people still missing), 1
+  mixed (the 2024 storming itself, genuinely both democratic responsiveness and deadly
+  state violence at once). Next: no country pre-selected -- Egypt (North Africa''s
+  second major economy, still absent) remains the clearest single gap, though the
+  corpus increasingly has enough coverage that any choice should now be justified on
+  its own variance merits rather than defaulting to the largest visible gap.'
