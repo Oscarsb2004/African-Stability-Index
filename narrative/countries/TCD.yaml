@@ -1,0 +1,448 @@
+meta:
+  iso3: TCD
+  name: Chad
+  last_updated: 2026-08-09
+  iteration_count: 1
+  next_action: >
+    EXPAND: (1) follow the "Chad Connexion 2030" plan into 2026-2027 --
+    check whether financing commitments are actually disbursed and whether
+    they show any early sign of avoiding the Chad-Cameroon pipeline's
+    outcome; (2) check the Lake Chad Basin security situation past May
+    2026 for further Boko Haram/JAS escalation or a genuine reversal; (3)
+    check the Sudanese refugee population's trajectory as Sudan's civil war
+    continues; (4) check if Pillar C (greyed at 1/8 measured) has gained
+    coverage; (5) both intentional-homicide indicators are absent this
+    year -- check whether they have since been measured; (6) find a
+    dedicated source for accountability progress (or its absence) on the
+    October 2022 "Black Thursday" killings following the November 2023
+    amnesty.
+  model_used: claude-sonnet-5
+
+historical:
+  overview: >
+    Chad's pre-colonial era was shaped by three major Sahelian trading
+    empires -- Kanem-Bornu, Baguirmi, and the Wadai Sultanate, which
+    resisted French conquest until 1909-1912. France declared Chad a
+    colony in 1920 after the decisive 1900 Battle of Kousséri, but treated
+    it as the least valuable territory in French Equatorial Africa: a
+    source of raw cotton and forced labour rather than a place for
+    investment, with large areas -- especially the northern BET
+    Prefecture -- never effectively governed from the capital.
+    Independence arrived on 11 August 1960 under François Tombalbaye,
+    whose 1962 ban on opposition parties and discrimination against the
+    north provoked a 1965 tax revolt that grew into a civil war led by the
+    FROLINAT rebel movement. Tombalbaye was killed in a 1975 coup; a
+    fractured military government eventually allied with rebel leader
+    Hissène Habré, who seized power in June 1982 with CIA backing and
+    ruled through brutal repression -- he was convicted of crimes against
+    humanity by a Senegalese court in 2016 -- while fighting Libya over
+    the Aouzou Strip until 1994. Zaghawa general Idriss Déby overthrew
+    Habré in December 1990 and ruled for three decades, surviving a
+    2005-2010 civil war that diverted an estimated $4 billion in oil
+    revenue toward military spending. Déby was killed on the battlefield
+    in April 2021, a day after claiming a sixth term; his son Mahamat
+    Idriss Déby led a constitutionally irregular military transition,
+    violently suppressed pro-democracy protests in October 2022, and was
+    elected president in May 2024 with 61% of the vote after his most
+    serious rival was killed by security forces that February.
+  overview_citations: [c1, c2, c3]
+  colonial_legacy: >
+    context/colonial_history.yaml already credits Chad's status as the
+    least valuable, most neglected territory in French Equatorial Africa,
+    and the colonial sharpening of the north-south divide for the
+    near-continuous conflict since independence. Worth adding is how
+    severe that neglect and exploitation actually was, and how directly
+    its geography maps onto Chad's later civil war. France treated a
+    colonial posting to Chad as something close to a demotion, staffed by
+    administrators the metropole considered novices or adventurers, and
+    the territory received almost no investment in infrastructure or
+    education. Its forced-labour demands fell hardest on the south:
+    roughly 10,000 Sara Chadians died building the Congo-Ocean Railway
+    between 1921 and 1934, part of a French Equatorial Africa-wide death
+    toll of 20,000-30,000, and cotton cultivation was imposed on southern
+    farmers from the 1930s under a quota system administered through
+    local chiefs the colonial state had turned into forced-labour
+    enforcers. The arid north, by contrast, received minimal French
+    interest and retained indirect, largely nominal governance. That
+    split later became the FROLINAT rebellion's literal front line: a
+    northern periphery the colonial state had never really incorporated,
+    fighting a southern, French-administered centre it had heavily taxed
+    and conscripted. France did not leave that military relationship at
+    independence in 1960; it re-entered whenever a client government in
+    N'Djamena needed propping up, formalised as Opération Épervier from
+    1986 -- an arrangement that outlasted three changes of Chadian leader
+    until Chad itself ended it in November 2024.
+  colonial_legacy_citations: [c1, c11]
+  key_periods:
+    - title: "Colonial neglect and forced labour"
+      period: "1900-1960"
+      summary: >
+        France declared Chad a colony in 1920 after the 1900 Battle of
+        Kousséri but treated it as the least valuable territory in French
+        Equatorial Africa, with roughly 10,000 Sara Chadians dying in
+        forced labour on the Congo-Ocean Railway (1921-1934) and cotton
+        cultivation imposed on the south from the 1930s under a
+        chief-enforced quota system. The arid north received minimal
+        colonial investment and retained largely nominal indirect rule,
+        entrenching a divide that outlasted independence.
+      citations: [c11]
+    - title: "Independence, civil war, and Habré"
+      period: "1960-1990"
+      summary: >
+        Chad gained independence on 11 August 1960 under François
+        Tombalbaye, whose 1962 opposition ban and anti-northern
+        discrimination provoked a 1965 tax revolt that grew into a
+        FROLINAT-led civil war. Tombalbaye was killed in a 1975 coup;
+        Hissène Habré seized power in 1982 with CIA backing, ruled through
+        repression later found to constitute crimes against humanity, and
+        fought Libya over the Aouzou Strip until 1994.
+      citations: [c1]
+    - title: "The Déby era"
+      period: "1990-2021"
+      summary: >
+        Idriss Déby overthrew Habré in December 1990 and governed for
+        three decades, winning multiparty elections from 1996 while
+        surviving a 2005-2010 civil war that diverted an estimated $4
+        billion in oil revenue -- intended for poverty reduction under a
+        World Bank-backed pipeline agreement -- toward military spending.
+        Déby was killed in combat in April 2021, a day after claiming a
+        sixth presidential term.
+      citations: [c1, c9]
+    - title: "Mahamat Déby's transition and the 2024 election"
+      period: "2021-2024"
+      summary: >
+        Mahamat Idriss Déby led a military transition the constitution did
+        not provide for, violently suppressing an October 2022 protest
+        movement that killed at least 50 people by the government's own
+        count. His most serious electoral rival, Yaya Dillo, was killed by
+        security forces on 28 February 2024, months before Déby won the
+        presidency outright with 61% of the vote in May.
+      citations: [c2, c3]
+
+pillars:
+  A:
+    summary: >
+      All six governance indicators are directly measured, and Chad
+      scores poorly on every one -- Control of Corruption is the weakest
+      in the pillar, and none clears even a moderate threshold. This is
+      the most uniformly weak governance profile of any first-pass
+      country: unlike Nigeria or Rwanda, where strength on some
+      dimensions coexists with weakness on others, Chad has no comparable
+      bright spot. The record since 2021 explains why: Idriss Déby was
+      killed in combat in April 2021, a day after claiming a sixth term,
+      and his son Mahamat Déby led a military transition the constitution
+      did not provide for. An October 2022 crackdown killed at least 50
+      by the government's own count, and HRW believes the true toll was
+      higher -- an amnesty for the perpetrators followed in November
+      2023. Yaya Dillo, Déby's cousin and most serious rival, was killed
+      by security forces in February 2024, months before
+      Déby won the presidency with 61% of the vote.
+    drivers:
+      - "all 6 indicators directly measured, all score poorly -- no bright-spot dimension, unlike NGA or RWA"
+      - "April 2021: Déby Sr. killed in combat a day after claiming a 6th term; constitutionally irregular military transition followed"
+      - "Oct 2022 crackdown: at least 50 killed (govt count), HRW believes the true toll was higher; amnesty for perpetrators passed Nov 2023"
+      - "Feb 2024: Yaya Dillo, Déby's leading rival, killed by security forces months before the May 2024 election (61% win)"
+    citations: [c2, c3, c4]
+  B:
+    summary: >
+      GDP growth and GDP per capita, both freshly measured, are weak but
+      not the pillar's worst signal -- inflation, also fresh, is
+      comparatively low and scores well. The larger story is what oil
+      revenue was supposed to prevent and did not: the World Bank backed
+      the 2000-2003 Chad-Cameroon pipeline as an explicit experiment in
+      escrow-managed, poverty-targeted oil-revenue spending, intended to
+      avoid the resource curse the way Botswana's Pula Fund is credited
+      with doing elsewhere in this project. Déby spent the first oil
+      revenue installment on arms in 2003, prompting the World Bank to
+      freeze the account; a 2006 renegotiation gutted the poverty-fund
+      provisions in favour of "security" spending, and Chad repaid the
+      Bank in full and exited the arrangement in 2007. Domestic credit to
+      the private sector and the Gini index were not freshly measured
+      this year.
+    drivers:
+      - "GDP growth and GDP per capita weak but fresh; inflation (3.87%, fresh) is comparatively low and scores well"
+      - "Chad-Cameroon pipeline (2000-2003): the World Bank's explicit anti-resource-curse experiment, unlike Botswana's Pula Fund"
+      - "Déby violated the arms-spending restriction in 2003; a 2006 renegotiation gutted the poverty-fund provisions; Chad exited the deal in 2007"
+      - "domestic credit and Gini not freshly measured this year"
+    citations: [c9, c1]
+  D:
+    summary: >
+      All five health indicators are freshly measured, and each is
+      severe. Life expectancy just above 55 years and infant mortality of
+      58 per 1,000 live births are among the more severe readings in the
+      index. Safely managed drinking water reaches barely 6% of the
+      population -- one of the lowest figures recorded anywhere in this
+      project -- even though basic water access (Pillar G) is dramatically
+      higher, an enormous gap between having access to water at all and
+      having water that meets a safe standard. Severe food insecurity
+      affects roughly a quarter of the population. As with Nigeria, this
+      is a fully and freshly evidenced crisis rather than a
+      data-coverage artifact.
+    drivers:
+      - "all 5 indicators freshly measured -- a well-evidenced crisis, not a coverage artifact"
+      - "life expectancy ~55 years; infant mortality 58/1,000 -- among the more severe readings in the index"
+      - "safely managed water only ~6% -- one of the lowest figures in the project; a huge gap versus basic water access (Pillar G)"
+    citations: [c1]
+  E:
+    summary: >
+      Political Stability, freshly measured, scores poorly, and displaced
+      persons -- 23.40 per 1,000, also freshly measured -- reflect two
+      overlapping security pressures. In the Lake Chad Basin, a resurgent
+      Boko Haram/JAS faction has escalated attacks on Chadian military
+      positions: roughly 40 soldiers were killed in an October 2024 raid,
+      and at least 23 more in a single ambush in May 2026, despite a
+      government counteroffensive that concluded in February 2025
+      claiming to have denied the group sanctuary on Chadian soil.
+      Separately, and on a larger scale, Chad is hosting one of Africa's
+      fastest-growing refugee crises: more than 800,000 Sudanese have
+      crossed into eastern Chad since Sudan's civil war began in April
+      2023, with arrivals in some periods exceeding 1,400 people a day.
+      Both homicide indicators were not measured this year.
+    drivers:
+      - "Political Stability and IDPs both freshly measured, both poor"
+      - "Boko Haram/JAS: ~40 soldiers killed Oct 2024, 23+ in a May 2026 ambush despite a Feb 2025 counteroffensive"
+      - "800,000+ Sudanese refugees hosted since April 2023, one of Africa's fastest-growing displacement crises"
+      - "both homicide indicators absent this year"
+    citations: [c6, c7, c8]
+  F:
+    summary: >
+      Only two of four indicators were freshly measured this year.
+      Per-capita CO2 emissions, at just 0.15 tons, score near the ceiling
+      of the scale -- among the lowest recorded anywhere in this project
+      -- but this is the wealth-proxy artifact documented elsewhere in
+      this project (methodology/METHODOLOGY_REVIEW.md) in its starkest
+      form yet: only 12% of Chad's population has electricity access at
+      all (Pillar G), and of the small amount of electricity actually
+      generated, 98% comes from oil, gas or diesel generation (a
+      carried-forward figure scoring near the very bottom of the scale).
+      There is essentially no clean-energy transition to credit here --
+      there is barely an energy system. Agricultural land share, freshly
+      measured, is moderate. Freshwater withdrawal, carried forward, is
+      low relative to renewable resources.
+    drivers:
+      - "only 2 of 4 indicators freshly measured"
+      - "CO2 pc 0.15 tons (near-ceiling score) is the wealth-proxy artifact at its starkest -- only 12% have electricity access at all"
+      - "of the tiny electricity supply that exists, 98% is fossil-fuel generated (carried forward, scores near zero)"
+      - "agricultural land moderate (fresh); freshwater withdrawal low (carried forward)"
+    citations: [c1]
+  G:
+    summary: >
+      Electricity access, at just 12%, is freshly measured and among the
+      very lowest recorded anywhere in this project -- roughly seven in
+      eight Chadians have no access to electricity at all. Basic
+      drinking-water access, also freshly measured, reaches close to half
+      the population, and handwashing-facility coverage is lower still.
+      Social protection and labour programme coverage, carried forward
+      rather than fresh, covers roughly one in nine people. This is
+      Chad's weakest pillar in the index, and unlike several other low
+      scores documented in this record, it is not primarily a
+      security-conflict story -- it is a direct continuation of the
+      chronic colonial-era underinvestment documented in
+      historical.colonial_legacy, largely unbroken since.
+    drivers:
+      - "electricity access only 12% (fresh) -- among the lowest in the project; basic water ~52%, handwashing ~26%"
+      - "social protection coverage ~11% (carried forward)"
+      - "Chad's single weakest pillar; traces directly to the chronic underinvestment documented in colonial_legacy"
+    citations: [c1]
+
+recent:
+  primary:
+    - headline: "Chad ends France's military presence after 125 years"
+      date: 2025-01-31
+      summary: >
+        Chad terminated its defence-cooperation agreement with France in
+        November 2024, and the last French troops departed by 31 January
+        2025 after a formal handover ceremony in N'Djamena, ending a
+        continuous French military presence dating to Opération Épervier
+        in 1986 and, before that, to the 1900 conquest itself. President
+        Mahamat Déby cited France's failure to deliver security results
+        and a desire to diversify partnerships, including with Russia,
+        Turkey and the UAE; the withdrawal followed similar breaks by
+        Mali, Burkina Faso and Niger.
+      why_it_matters: >
+        The clearest single marker of how much Chad's external
+        relationships have changed since Déby's father's death, and a
+        direct rupture with the colonial-military relationship documented
+        in historical.colonial_legacy.
+      news_url: "https://www.newsweek.com/france-military-withdrawal-chad-counterterrrorism-1998902"
+      wikipedia_url: ""
+      sentiment: mixed
+    - headline: "Boko Haram kills dozens of Chadian soldiers in escalating Lake Chad Basin attacks"
+      date: 2026-05-05
+      summary: >
+        A Boko Haram/JAS ambush killed at least 23 Chadian soldiers and
+        wounded 26 more on Chad's Barka Tolorom island in the Lake Chad
+        region in early May 2026, prompting a national mourning
+        declaration -- the latest in an escalating series that killed
+        roughly 40 soldiers in October 2024 despite a government
+        counteroffensive that concluded in February 2025 claiming to have
+        denied the group sanctuary on Chadian territory.
+      why_it_matters: >
+        Directly explains Pillar E's weak security score and shows the
+        limits of Chad's own recent counter-insurgency claims.
+      news_url: "https://www.aljazeera.com/news/2026/5/5/boko-haram-attack-kills-23-soldiers-in-chads-lake-chad-region"
+      wikipedia_url: ""
+      sentiment: negative
+    - headline: "Sudanese refugee crisis in Chad tops 1 million amid strained resources"
+      date: 2025-12-06
+      summary: >
+        More than 800,000 Sudanese have crossed into eastern Chad since
+        Sudan's civil war began in April 2023, joining Chad's existing
+        refugee population of over 1 million, with arrivals in some
+        periods exceeding 1,400 people a day and camps such as Adre and
+        Tine each hosting well over 200,000 people in conditions with
+        severely limited water, food and shelter.
+      why_it_matters: >
+        The largest single humanitarian pressure on a country already
+        scoring poorly across health and infrastructure, and a crisis
+        driven entirely by an external conflict Chad did not cause.
+      news_url: "https://www.aljazeera.com/gallery/2025/12/6/chad-struggles-as-new-sudanese-refugees-strain-resources-and-infrastructure"
+      wikipedia_url: ""
+      sentiment: negative
+  extended:
+    - headline: "Chad secures $20.5 billion toward its $30 billion 'Connexion 2030' development plan"
+      date: 2025-11-14
+      summary: >
+        Chad mobilised $20.5 billion in financing commitments in the
+        first year of its Chad Connexion 2030 plan -- roughly two-thirds
+        of its $30 billion target -- from 30 international donors
+        including the World Bank and African Development Bank, plus $4.1
+        billion in private investment, covering energy, agriculture,
+        mining and industrialisation. The plan targets 8% average annual
+        growth and middle-income status by 2030; S&P separately confirmed
+        Chad's sovereign credit rating in March 2026, citing robust growth
+        and moderate debt.
+      why_it_matters: >
+        A genuine, internationally-backed counterweight to the
+        Chad-Cameroon pipeline's failed resource-revenue experiment
+        documented under Pillar B -- whether this one avoids the same
+        outcome is not yet knowable, but the financing commitments
+        themselves are real.
+      news_url: "https://www.financialafrik.com/en/2025/11/14/chad-connection-2030-country-secures-20-5-billion-and-already-closes-two-thirds-of-the-financing-for-its-national-development-plan/"
+      wikipedia_url: ""
+      sentiment: positive
+
+events:
+  - year: 1960
+    type: independence
+    title: "Chad gains independence"
+    description: >
+      Chad became independent from France on 11 August 1960 under
+      President François Tombalbaye, inheriting a north-south
+      administrative divide sharpened by six decades of colonial neglect
+      and forced labour.
+    url: "https://en.wikipedia.org/wiki/History_of_Chad"
+    direction: improve
+  - year: 1990
+    type: coup
+    title: "Idriss Déby seizes power"
+    description: >
+      Zaghawa general Idriss Déby overthrew Hissène Habré in December
+      1990 with Libyan backing and began a three-decade rule.
+    url: "https://en.wikipedia.org/wiki/History_of_Chad"
+    direction: mixed
+  - year: 2021
+    type: coup
+    title: "Idriss Déby killed; constitutionally irregular military transition begins"
+    description: >
+      Idriss Déby was killed in combat in April 2021, a day after
+      claiming a sixth presidential term; his son Mahamat Idriss Déby led
+      a military council transition the constitution did not provide for.
+    url: "https://www.hrw.org/news/2024/05/13/chad-political-transition-ends-debys-election"
+    direction: deteriorate
+  - year: 2025
+    type: constitutional
+    title: "France completes its military withdrawal from Chad"
+    description: >
+      France completed its military withdrawal from Chad by 31 January
+      2025, ending a continuous French military presence dating to
+      1986's Opération Épervier, after Chad terminated the
+      defence-cooperation agreement in November 2024.
+    url: "https://www.newsweek.com/france-military-withdrawal-chad-counterterrrorism-1998902"
+    direction: mixed
+
+citations:
+  - id: c1
+    url: "https://en.wikipedia.org/wiki/History_of_Chad"
+    source_type: wikipedia
+    title: "History of Chad"
+    accessed: 2026-08-09
+    verified: true
+  - id: c2
+    url: "https://www.hrw.org/news/2024/05/13/chad-political-transition-ends-debys-election"
+    source_type: academic
+    title: "Chad: Political Transition Ends with Déby's Election (Human Rights Watch)"
+    accessed: 2026-08-09
+    verified: true
+  - id: c3
+    url: "https://www.hrw.org/news/2023/01/23/chad-justice-needed-october-crackdown"
+    source_type: academic
+    title: "Chad: Justice Needed for October Crackdown (Human Rights Watch)"
+    accessed: 2026-08-09
+    verified: true
+  - id: c4
+    url: "https://monitor.civicus.org/explore/chad-black-thursday-at-least-50-killed-in-protests-against-extension-military-transitional-period-qhf1/"
+    source_type: news
+    title: "\"Black Thursday\": at least 50 killed in protests against extension of military transitional period (CIVICUS Monitor)"
+    accessed: 2026-08-09
+    verified: true
+  - id: c6
+    url: "https://www.aljazeera.com/news/2026/5/5/boko-haram-attack-kills-23-soldiers-in-chads-lake-chad-region"
+    source_type: news
+    title: "Boko Haram attack kills 23 soldiers in Chad's Lake Chad region (Al Jazeera)"
+    accessed: 2026-08-09
+    verified: true
+  - id: c7
+    url: "https://www.aljazeera.com/gallery/2025/12/6/chad-struggles-as-new-sudanese-refugees-strain-resources-and-infrastructure"
+    source_type: news
+    title: "Chad struggles as new Sudanese refugees strain resources and infrastructure (Al Jazeera)"
+    accessed: 2026-08-09
+    verified: true
+  - id: c8
+    url: "https://www.unrefugees.org/news/unhcr-warns-crisis-reaching-breaking-point-as-sudanese-refugee-numbers-triple-in-chad/"
+    source_type: official
+    title: "UNHCR warns crisis reaching breaking point as Sudanese refugee numbers triple in Chad"
+    accessed: 2026-08-09
+    verified: true
+  - id: c9
+    url: "https://ips-dc.org/the_world_bank_takes_the_money_and_runs_from_chad/"
+    source_type: academic
+    title: "The World Bank Takes the Money and Runs from Chad (Institute for Policy Studies)"
+    accessed: 2026-08-09
+    verified: true
+  - id: c10
+    url: "https://www.financialafrik.com/en/2025/11/14/chad-connection-2030-country-secures-20-5-billion-and-already-closes-two-thirds-of-the-financing-for-its-national-development-plan/"
+    source_type: news
+    title: "Chad Connection 2030: country secures $20.5 billion (Financial Afrik)"
+    accessed: 2026-08-09
+    verified: true
+  - id: c11
+    url: "https://www.sciencespo.fr/mass-violence-war-massacre-resistance/en/document/colonial-violence-and-resistance-chad-1900-1960.html"
+    source_type: academic
+    title: "Colonial violence and resistance in Chad (1900-1960) (Sciences Po Mass Violence and Resistance Research Network)"
+    accessed: 2026-08-09
+    verified: true
+
+balance:
+  n_positive: 1
+  n_negative: 2
+  n_mixed: 1
+  note: >
+    Chad's index scores are the most uniformly severe of any first-pass
+    country, and this record does not manufacture balance it did not
+    find: two of three recent.primary items are negative (an escalating
+    Boko Haram/JAS insurgency, a refugee crisis Chad did not cause but
+    must absorb) and the third, France's military withdrawal, is coded
+    mixed because it is a genuine sovereignty milestone bought at the cost
+    of an uncertain security partnership going forward. The one positive
+    -- $20.5 billion in financing commitments toward the Chad Connexion
+    2030 plan -- is real, verified, and placed in extended rather than
+    primary because its outcome is not yet known; the Chad-Cameroon
+    pipeline was also, at signing, presented as a resource-curse solution,
+    and this record does not claim the new plan will avoid that
+    precedent, only that the commitments themselves exist. A further
+    structural counterweight worth naming even though it falls outside
+    the recent window: the equal-weight composite score rose from 31.8 to
+    36.0 (+4.1) between 2000 and 2023 -- a modest but real improvement,
+    not the flat or worsening trajectory a reader might assume from the
+    recent record alone.

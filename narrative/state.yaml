@@ -105,15 +105,22 @@ countries:
       coverage; find a dedicated source confirming or correcting the reading of the
       IDP figure as reflecting the DRC conflict''s regional pull rather than Rwanda''s
       own displacement; find a second source for the kwihutura mechanism in colonial_legacy'
-backlog:
   TCD:
     name: Chad
     region: Central
     first_pass: true
     reason: Sahel; 2021 coup; the worked example used in the blueprint
-    iteration_count: 0
-    last_updated: null
-    next_action: create baseline from blueprint
+    iteration_count: 1
+    last_updated: '2026-08-09'
+    next_action: 'EXPAND: follow "Chad Connexion 2030" into 2026-2027 -- check whether
+      commitments are disbursed and whether it shows early signs of avoiding the
+      Chad-Cameroon pipeline''s outcome; check the Lake Chad Basin security situation
+      past May 2026; check the Sudanese refugee trajectory as Sudan''s civil war
+      continues; check if Pillar C has gained coverage; both intentional-homicide
+      indicators are absent this year -- check if they have since been measured;
+      find a dedicated source on accountability progress (or its absence) for the
+      October 2022 "Black Thursday" killings following the Nov 2023 amnesty'
+backlog:
   EGY:
     name: Egypt
     region: North
@@ -611,3 +618,4 @@ meta_notes:
   worked example (see narrative/BLUEPRINT.md); a useful check of whether the metaprompt as
   actually used in practice, six countries in, still matches the illustration it was designed
   around.'
+- '2026-08-09: TCD CREATE run complete -- THE FIRST PASS IS DONE (all 9 of MUS/GHA/DZA/COD/SOM/BWA/NGA/RWA/TCD now have iteration-1 records). 11 sources opened and verified: 1 Wikipedia, 5 news, 4 academic/think-tank, 1 official. One validator catch this run: pillars.A was 177 words against the 160 limit on first draft -- trimmed to 164, still over, trimmed again to pass. Worth noting for future runs: a summary covering this much (6 measured indicators + 3 dated events) runs long by default; front-load the index-derived claim and cut connective tissue first, not content. Chad is the most uniformly severe first-pass country -- unlike every other country in this pass, there is no single strong governance dimension to point to (contrast RWA''s 5-of-6, NGA''s split pillars). Also the SECOND resource-revenue-governance case in this pass, and the direct negative counterpart to BWA''s Pula Fund: the World Bank''s 2000 Chad-Cameroon pipeline was an explicit, designed anti-resource-curse mechanism (escrow accounts, earmarked poverty spending) and it failed within 3 years -- Deby spent the first revenue installment on arms in 2003, and the Bank exited the arrangement entirely by 2007-2008. Two resource-governance experiments in one first pass, one succeeded long-term with a recent stress test (BWA), one failed early and completely (TCD) -- worth a cross-reference note when auditing either country later. Also notable: this is the first record where "the same mechanism, inverted" appears twice in one file -- colonial forced-cotton administration mapping onto the FROLINAT civil war''s literal geography, AND France''s post-independence military-guarantee relationship (Opération Épervier, 1986) lasting until Chad itself ended it in November 2024, 125 years after the 1900 conquest. A genuine, verified positive was found despite the country''s severity: $20.5B in financing commitments toward the "Chad Connexion 2030" plan (Nov 2025) -- placed in extended with an explicit caveat that the pipeline was also presented as a solution at signing, so this record does not claim the new plan will succeed where that one failed. Balance: 1 positive, 2 negative, 1 mixed. `--links` passes 0 errors, 0 warnings, 11/11 resolved.'

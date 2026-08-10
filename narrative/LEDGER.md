@@ -3,7 +3,7 @@
 The document future runs read before doing anything. Machine-readable twin:
 `narrative/state.yaml`.
 
-*Seeded 2026-08-09. Research runs so far: Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria, Rwanda (all CREATE).*
+*Seeded 2026-08-09. Research runs so far: Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria, Rwanda, Chad (all CREATE). First pass complete.*
 
 ---
 
@@ -26,7 +26,7 @@ An audit is forced early if a single run inflates the citation count by more tha
 
 ## Status
 
-**8 of 54 countries have a record (Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria, Rwanda). 1 of the first pass remains.**
+**9 of 54 countries have a record (Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria, Rwanda, Chad). The first pass is complete.**
 
 ### First pass — 9 countries
 
@@ -45,7 +45,7 @@ whose ranks swing hardest with the weighting method.
 | BWA | Botswana | high and stable; landlocked; resource governance counter-example | **done — iteration 1** |
 | NGA | Nigeria | largest population; federal; mixed signals across pillars | **done — iteration 1** |
 | RWA | Rwanda | strong development indicators alongside contested governance | **done — iteration 1** |
-| TCD | Chad | Sahel; 2021 coup; the worked example used in the blueprint | backlog |
+| TCD | Chad | Sahel; 2021 coup; the worked example used in the blueprint | **done — iteration 1** |
 
 ### Backlog — the remaining 45
 
@@ -224,6 +224,29 @@ Append one line per run: date, country, mode, what changed, what was removed.
   parliament, a genuinely different axis from the Voice-and-Accountability
   weakness, not a rebuttal of it), 2 negative, 1 mixed.
 
+- **2026-08-09 — TCD — CREATE. First pass complete.** Full baseline built:
+  historical overview, colonial legacy (expands context/colonial_history.yaml
+  with the Congo-Ocean Railway forced-labour death toll — ~10,000 Sara
+  Chadians among 20,000-30,000 total deaths, 1921-1934 — and the
+  chief-enforced cotton quota system, tracing both directly onto the
+  FROLINAT rebellion's north-south front line), 4 key_periods, 6 pillar
+  summaries (Pillar C left empty — greyed at 1/8 measured), 3 primary + 1
+  extended recent items, 4 events. 11 sources opened and verified: 1
+  Wikipedia, 5 news, 4 academic/think-tank, 1 official. `--links` passes 0
+  errors, 0 warnings — 11/11 resolved. One validator catch: pillars.A ran
+  177 words against the 160 limit on first draft, trimmed twice to pass.
+  Chad is the most uniformly severe first-pass country — unlike Nigeria or
+  Rwanda, no single governance dimension stands out as comparatively
+  strong. The direct negative counterpart to BWA's Pula Fund: the World
+  Bank's 2000 Chad-Cameroon pipeline was an explicit, designed
+  anti-resource-curse mechanism, and it failed within three years — Déby
+  spent the first oil-revenue installment on arms in 2003, and the Bank
+  exited the arrangement by 2007-2008. A genuine positive was still found
+  and given real weight: $20.5 billion in financing commitments toward the
+  "Chad Connexion 2030" plan (November 2025), placed in extended with an
+  explicit caveat that the pipeline was also presented as a solution at
+  signing. Balance: 1 positive, 2 negative, 1 mixed.
+
 ---
 
 ## Meta-notes
@@ -334,6 +357,35 @@ Things a future run should know about how to work, not about a specific country.
   (narrative/BLUEPRINT.md cites it directly). Worth checking whether the
   metaprompt as actually practiced across eight countries still produces
   the kind of record the blueprint's illustration implied it would.
+- **2026-08-09 — FIRST PASS COMPLETE.** All nine countries chosen for
+  variance (MUS, GHA, DZA, COD, SOM, BWA, NGA, RWA, TCD) now have
+  iteration-1 CREATE records, and TCD confirms the metaprompt still
+  produces what BLUEPRINT.md's own worked example implied it would: a
+  country with no bright-spot pillar, a colonial-legacy section that
+  traces two distinct mechanisms (forced-labour/cotton administration and
+  the France military relationship) onto present-day events, and a
+  genuine — not manufactured — positive counterweight found through actual
+  search rather than assumed absent. Patterns worth carrying into the
+  45-country backlog: (1) check country_facts.py directly every time,
+  never infer coverage or severity from rank (established after DZA,
+  reconfirmed by COD/SOM/NGA); (2) the co2_pc wealth-proxy pattern is real
+  and recurs (DZA, COD, NGA, TCD) but is not universal (BWA) — check the
+  underlying indicator each run, don't pattern-match to the last similar
+  score; (3) regional-mean and carried-forward values can be actively
+  misleading, not just imprecise, when the region's average is distorted
+  by a conflict the country itself is party to (RWA's IDP figure) — flag
+  this explicitly rather than treating every imputed value as a neutral
+  placeholder; (4) strong quantitative scores and a difficult political
+  history can coexist in the same record without the narrative needing to
+  net them into one verdict (RWA); (5) a genuine positive is sometimes
+  genuinely absent (COD) and the validator's balance warning exists
+  precisely to catch a run that gave up searching rather than a run that
+  found nothing. Next: begin the 45-country backlog. No single "logical
+  next country" argument applies the way it did within the first pass —
+  future runs should pick based on the region/variance balance already
+  visible in the corpus (the corpus is entirely Anglophone/Francophone
+  sub-Saharan plus one Arabophone North African
+  country; Lusophone and small-island states remain fully unrepresented).
 
 ---
 
