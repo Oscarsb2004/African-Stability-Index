@@ -3,7 +3,7 @@
 The document future runs read before doing anything. Machine-readable twin:
 `narrative/state.yaml`.
 
-*Seeded 2026-08-09. Research runs so far: Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria, Rwanda, Chad, Angola, South Africa, Kenya (all CREATE). First pass complete; backlog underway.*
+*Seeded 2026-08-09. Research runs so far: Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria, Rwanda, Chad, Angola, South Africa, Kenya, Egypt (all CREATE). First pass complete; backlog underway.*
 
 ---
 
@@ -26,7 +26,7 @@ An audit is forced early if a single run inflates the citation count by more tha
 
 ## Status
 
-**12 of 54 countries have a record (Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria, Rwanda, Chad, Angola, South Africa, Kenya). The first pass is complete; Angola, South Africa and Kenya are the first three backlog countries.**
+**13 of 54 countries have a record (Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria, Rwanda, Chad, Angola, South Africa, Kenya, Egypt). The first pass is complete; Angola, South Africa, Kenya and Egypt are the first four backlog countries.**
 
 ### First pass — 9 countries
 
@@ -54,14 +54,15 @@ whose ranks swing hardest with the weighting method.
 | AGO | Angola | fills the corpus's clearest gap (Lusophone Africa, previously unrepresented); third resource-economy (oil) case alongside DZA and TCD | **done — iteration 1** |
 | ZAF | South Africa | anchors the Southern Africa/anchor-economy gap; first reliable-tier (not thin) composite score in the corpus; sharpest test yet of framing balance in the positive direction | **done — iteration 1** |
 | KEN | Kenya | East Africa's anchor economy; only prior East African records (SOM, RWA) were atypical crisis/authoritarian cases; a multiparty democracy under real, recurring strain | **done — iteration 1** |
+| EGY | Egypt | North Africa's second major economy (DZA was the region's only prior record); lowest, but reliably-measured, Pillar F score in the corpus, driven by a still-unfolding colonial-legacy water dispute | **done — iteration 1** |
 
-### Backlog — the remaining 42
+### Backlog — the remaining 41
 
 Listed in full in `narrative/state.yaml` under `backlog`. They are recorded
 explicitly rather than left implicit: a country with no record should be visibly
 absent, not quietly missing.
 
-Egypt, Libya, Morocco, Sudan, Tunisia, Benin, Burkina Faso, Cabo Verde, The Gambia, Guinea, Guinea-Bissau, Cote d'Ivoire, Liberia, Mali, Mauritania, Niger, Senegal, Sierra Leone, Togo, Cameroon, Central African Republic, Republic of Congo, Equatorial Guinea, Gabon, Burundi, Djibouti, Eritrea, Ethiopia, Malawi, Mozambique, South Sudan, Tanzania, Uganda, Zambia, Zimbabwe, Lesotho, Namibia, Eswatini, Comoros, Madagascar, Seychelles, Sao Tome & Principe
+Libya, Morocco, Sudan, Tunisia, Benin, Burkina Faso, Cabo Verde, The Gambia, Guinea, Guinea-Bissau, Cote d'Ivoire, Liberia, Mali, Mauritania, Niger, Senegal, Sierra Leone, Togo, Cameroon, Central African Republic, Republic of Congo, Equatorial Guinea, Gabon, Burundi, Djibouti, Eritrea, Ethiopia, Malawi, Mozambique, South Sudan, Tanzania, Uganda, Zambia, Zimbabwe, Lesotho, Namibia, Eswatini, Comoros, Madagascar, Seychelles, Sao Tome & Principe
 
 ---
 
@@ -348,6 +349,36 @@ Append one line per run: date, country, mode, what changed, what was removed.
   parliament storming itself, genuinely both democratic responsiveness
   and deadly state violence at once).
 
+- **2026-08-10 — EGY — CREATE. Fourth backlog country.** Full baseline
+  built: historical overview, colonial legacy (expands
+  context/colonial_history.yaml with the 1929 Anglo-Egyptian Nile Waters
+  Agreement — 48 bcm/year to Egypt plus veto power over upstream
+  projects — and the 1959 Egypt-Sudan treaty, both negotiated by Britain
+  without Ethiopia, which contributes over 85% of the Nile's flow but was
+  never colonised and never a party; this is the specific legal root of
+  the GERD dispute), 4 key_periods, 6 pillar summaries (Pillar C left
+  empty — greyed at 1/8 measured), 3 primary + 1 extended recent items, 4
+  events, rec_membership (COMESA 1998, CEN-SAD 2001). 12 sources opened
+  and verified. One validator catch: historical.overview ran 301 words
+  against the 300 limit, trimmed to pass. `--links` passes 0 errors, 1
+  warning (France24, the familiar 403 bot-detection pattern) — 11/12
+  resolved. Pillar F (8.7) is the lowest score recorded anywhere in this
+  corpus, and unlike most extreme-low-F cases it is reliably measured
+  (3/4 fresh), not thin — annual freshwater withdrawal runs roughly
+  7,750% of internal renewable resources, possible only because Egypt
+  depends on the external Nile for about 90% of its freshwater, now
+  acutely exposed by Ethiopia's September 2025 GERD inauguration without
+  a binding agreement. First genuinely all-negative recent-primary record
+  since DR Congo's: the GERD dispute, the currency/debt crisis, and the
+  uncompetitive December 2023 election are each independently severe and
+  current, and this record does not manufacture a counterweight it did
+  not find. Also checked rather than assumed: Sisi's 2023 result (89.65%)
+  was numerically smaller than his 2018 landslide (97%), but multiple
+  sources confirm this reflects reduced state mobilisation, not increased
+  competition — his strongest potential challenger was blocked from the
+  ballot via harassment and spyware targeting before voting even began.
+  Balance: 0 positive, 3 negative, 1 mixed.
+
 ---
 
 ## Meta-notes
@@ -558,6 +589,28 @@ Things a future run should know about how to work, not about a specific country.
   friction in this corpus comes from specific domains (IMF, UNDP, Crisis
   Group, AllAfrica, CDC) rather than being evenly distributed, so a
   citation set that happens to avoid those domains will simply run clean.
+- **2026-08-10** — EGY confirms an important discipline point from a
+  different angle than ZAF: where ZAF required resisting false balance
+  when the record was genuinely positive, EGY required accepting a
+  genuinely all-negative primary record (0/3/1) without straining to
+  invent a fourth "positive" item just to avoid looking like COD's
+  all-negative case again. The temptation with EGY specifically would
+  have been to promote a structural strength (Pillar D's health outcomes,
+  Pillar G's near-universal infrastructure access) into `recent.primary`
+  just to balance the sentiment count — resisted, because neither is a
+  recent development the primary/extended format is built to track, and
+  forcing one in would blur the distinction between "this country has
+  real strengths" (true, and documented in the pillars) and "something
+  positive happened recently" (not true for this record, checked
+  honestly). Also worth flagging for future North African / water-stressed
+  countries (Libya, Tunisia, Morocco, Sudan all remain in backlog):
+  Egypt's Nile-dependency mechanism is a template for checking whether a
+  country's F-pillar extremity is a genuine geographic/geopolitical
+  vulnerability (Egypt, ZAF's coal economy) versus a wealth-proxy scoring
+  artifact (NGA, TCD, most of the corpus) versus a real clean-energy
+  achievement (AGO, KEN) — three now-distinct categories worth checking
+  against explicitly rather than defaulting to whichever explanation was
+  used most recently.
 
 ---
 

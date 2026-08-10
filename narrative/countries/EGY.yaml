@@ -1,0 +1,470 @@
+meta:
+  iso3: EGY
+  name: Egypt
+  last_updated: 2026-08-10
+  iteration_count: 1
+  next_action: >
+    EXPAND: (1) follow the GERD dispute past the September 2025
+    inauguration -- check whether Egypt, Sudan and Ethiopia reach any
+    binding agreement or whether the dispute escalates further; (2) check
+    whether the currency and inflation crisis has stabilised since the
+    March 2024 float, and whether foreign debt has continued rising past
+    the ~$164B figure recorded here; (3) check the Rafah crossing and
+    Gaza-border situation past mid-2025; (4) check if Pillar C (greyed at
+    1/8 measured) has gained coverage; (5) find a dedicated source for
+    Ahmed Tantawi's post-2023-election status and any subsequent
+    opposition activity, since this record could only document his
+    exclusion from the ballot, not what followed.
+  model_used: claude-sonnet-5
+
+historical:
+  overview: >
+    Britain occupied Egypt in 1882 after defeating Egyptian forces at
+    Tel el-Kebir, ostensibly to restore order but remaining for seven
+    decades; the country had already fallen under effective European
+    financial control in the 1870s, when debt forced the sale of Egypt's
+    Suez Canal shares to Britain. Nationalist unrest culminated in the
+    1919 revolution, after which Britain issued a unilateral declaration
+    of nominal independence in 1922, though British troops and canal
+    control remained. The 1952 Free Officers coup, eventually led by
+    Gamal Abdel Nasser, ended the monarchy; Nasser nationalised the Suez
+    Canal on 26 July 1956, triggering the Suez Crisis and finally
+    expelling British military power. His pan-Arabist project suffered a
+    catastrophic defeat in the 1967 Six-Day War, losing Sinai to Israel.
+    Anwar Sadat's 1973 October War restored leverage, leading to a 1979
+    peace treaty with Israel that returned Sinai but got Egypt expelled
+    from the Arab League and, in 1981, Sadat assassinated. Hosni
+    Mubarak ruled for 30 years until the 25 January 2011 revolution
+    forced his resignation. Mohamed Morsi, the country's first freely
+    elected and Muslim Brotherhood-affiliated president, was removed by
+    General Abdel Fattah el-Sisi in a July 2013 coup after mass protests
+    against his rule. Sisi has governed since, re-elected with 97% in
+    2018 and, after a 2019 constitutional amendment extended presidential
+    terms, again in December 2023 with 89.65% -- a smaller margin widely
+    attributed to reduced state mobilisation rather than genuine
+    competition, since his strongest potential challenger was blocked
+    from the ballot after facing harassment and spyware targeting. His
+    decade in power has combined tight political control with a severe,
+    unresolved economic crisis: foreign debt quadrupled to roughly $164
+    billion, and the currency was devalued repeatedly between 2022 and
+    March 2024, when it was fully floated and lost roughly a third of its
+    value in a single announcement.
+  overview_citations: [c1, c2, c3]
+  colonial_legacy: >
+    context/colonial_history.yaml already covers British occupation from
+    1882, cotton monoculture reshaping agriculture, and the distinction
+    between nominal 1922 independence and the 1956 Suez Crisis as the
+    real end of British power. Worth adding is a colonial-era legal
+    legacy that is not about Suez at all, and that is driving the single
+    most severe number in this record: the 1929 Anglo-Egyptian Nile
+    Waters Agreement, negotiated by Britain on behalf of Egypt and its
+    other Nile-basin colonies, allocated Egypt 48 billion cubic metres of
+    water annually and gave it veto power over any upstream construction
+    project; a 1959 Egypt-Sudan treaty, agreed after Sudanese
+    independence, reallocated the flow to 55.5 bcm (66%) for Egypt and
+    18.5 bcm (22%) for Sudan. Neither agreement recognised any water
+    right for Ethiopia, despite Ethiopian territory contributing more
+    than 85% of the Nile's flow -- because Ethiopia was never colonised
+    and was never a party to either treaty. That is the specific legal
+    root of the Grand Ethiopian Renaissance Dam dispute: Ethiopia
+    inaugurated the dam in September 2025 without a binding agreement,
+    arguing the colonial-era treaties never bound it in the first place,
+    while Egypt -- which depends on the Nile for roughly 90% of its
+    freshwater -- maintains those agreements still define its water
+    rights and warned the UN Security Council that Ethiopia's "unilateral
+    actions" violate international law. Pillar F's near-zero
+    environmental score is, in this specific and still-unfolding sense, a
+    direct colonial legacy, not solely a geographic one.
+  colonial_legacy_citations: [c1, c4, c5]
+  key_periods:
+    - title: "British occupation and nominal independence"
+      period: "1882-1952"
+      summary: >
+        Britain occupied Egypt in 1882, remaining for seven decades
+        despite issuing a unilateral declaration of nominal independence
+        in 1922 following the 1919 revolution; British troops and canal
+        control persisted regardless. The 1936 Anglo-Egyptian Treaty
+        formalised but did not end British influence. The 1952 Free
+        Officers coup, which forced King Farouk's abdication, ended the
+        monarchy and set up the conditions for Nasser's rise.
+      citations: [c1]
+    - title: "Nasser, Suez, and the 1967 defeat"
+      period: "1952-1970"
+      summary: >
+        Gamal Abdel Nasser nationalised the Suez Canal on 26 July 1956,
+        triggering the Suez Crisis and finally expelling British military
+        power from Egypt. His pan-Arabist project, including the
+        short-lived United Arab Republic with Syria (1958-1961), suffered
+        a catastrophic defeat in the 1967 Six-Day War, in which Israel
+        occupied Sinai and Gaza. Nasser died in 1970 with that territory
+        still unrecovered.
+      citations: [c1]
+    - title: "Sadat, peace with Israel, and Mubarak's 30 years"
+      period: "1970-2011"
+      summary: >
+        Anwar Sadat's 1973 October War restored enough leverage to
+        negotiate a 1979 peace treaty with Israel that returned Sinai,
+        at the cost of Egypt's expulsion from the Arab League and, in
+        1981, Sadat's assassination. Hosni Mubarak then ruled for 30
+        years through sustained authoritarian control and US-backed
+        security cooperation, until the 25 January 2011 revolution forced
+        his resignation on 11 February.
+      citations: [c1]
+    - title: "Morsi, Sisi's coup, and consolidated authoritarian rule"
+      period: "2011-2023"
+      summary: >
+        Mohamed Morsi, Egypt's first freely elected president and a
+        Muslim Brotherhood figure, took office in 2012 but was removed by
+        General Abdel Fattah el-Sisi in a July 2013 coup after mass
+        protests against his rule. Sisi has governed since, winning
+        landslide re-elections in 2014, 2018 and, after a 2019
+        constitutional amendment extended presidential terms from four
+        years to six, again in December 2023 with 89.65% of the vote
+        against no serious challenger.
+      citations: [c1, c3]
+
+pillars:
+  A:
+    summary: >
+      All six governance indicators are directly measured, and Egypt
+      shows the starkest split of any pillar in the corpus so far:
+      Government Effectiveness scores a comparatively strong 65.9,
+      reflecting real technocratic and security-state capacity, while
+      Voice and Accountability scores just 22.8, among the weakest
+      recorded anywhere in this index. Sisi won a third six-year term in
+      December 2023 with 89.65% of the vote -- a smaller margin than his
+      97% in 2018, but international observers and media described the
+      election as fundamentally uncompetitive rather than more
+      democratic: his strongest potential challenger, Ahmed Tantawi, was
+      blocked from the ballot after facing harassment and spyware
+      targeting, and opposition figures reported voter coercion and
+      payment. Control of Corruption and Rule of Law both score weakly,
+      consistent with a state that governs effectively in a narrow,
+      technical sense while allowing very little genuine political
+      contestation.
+    drivers:
+      - "all 6 governance indicators directly measured -- the starkest split in the corpus: Government Effectiveness 65.9 vs Voice and Accountability just 22.8"
+      - "Dec 2023: Sisi won a third term with 89.65%, but described as uncompetitive -- strongest challenger (Tantawi) blocked from the ballot via harassment/spyware"
+      - "Control of Corruption and Rule of Law both weak"
+    citations: [c1, c3]
+  B:
+    summary: >
+      GDP per capita, freshly measured, is comparatively strong, but
+      inflation -- averaging over 13% across five years and having
+      peaked above 36% in 2023 -- scores poorly and reflects a currency
+      crisis a decade in the making. Egypt devalued its currency
+      repeatedly from March 2022, then fully floated it in March 2024,
+      when it lost roughly a third of its value in a single
+      announcement; an $8 billion IMF bailout and a $35 billion UAE
+      development deal for the Ras El Hekma coastal zone followed within
+      weeks. Foreign debt has quadrupled to roughly $164 billion since
+      Sisi took office, and debt servicing now consumes a large share of
+      annual state expenditure. Domestic credit scores moderately. Gini,
+      carried forward at 28.5, indicates unusually low measured
+      inequality for the region -- a figure this record cannot fully
+      reconcile with the depth of the cost-of-living crisis documented
+      elsewhere.
+    drivers:
+      - "GDP per capita fresh, comparatively strong; inflation (>13% 5yr avg, peaked >36% in 2023) scores poorly"
+      - "currency floated March 2024, lost ~1/3 of value in a single announcement; $8B IMF deal and $35B UAE Ras El Hekma deal followed within weeks"
+      - "foreign debt quadrupled to ~$164B since Sisi took office; debt servicing consumes a large share of state spending"
+      - "Gini 28.5 (carried forward) unusually low for the region -- hard to reconcile with the documented cost-of-living crisis"
+    citations: [c2, c6]
+  D:
+    summary: >
+      All five health indicators are freshly measured, and Egypt scores
+      strongly on every one -- the best combination recorded in this
+      pillar anywhere in the corpus so far. Life expectancy above 71
+      years, infant mortality of roughly 21 per 1,000 live births, severe
+      food insecurity affecting only 12% of the population, and safely
+      managed water and handwashing access both near-universal all
+      reflect substantial, sustained investment in health infrastructure
+      rather than a data-coverage artefact -- none of the five figures is
+      an estimate. This is a genuine outlier worth noting precisely
+      because most low-Voice-and-Accountability states in this corpus do
+      not also show this level of basic-needs delivery.
+    drivers:
+      - "all 5 indicators freshly measured, all score strongly -- the best D-pillar combination in the corpus so far"
+      - "life expectancy >71, infant mortality ~21/1,000, severe food insecurity only 12% -- none of these figures is an estimate"
+      - "a genuine outlier: strong basic-needs delivery alongside very low Voice and Accountability, not the pattern usually seen together"
+    citations: [c1]
+  E:
+    summary: >
+      Political Stability, freshly measured, scores only moderately,
+      reflecting Egypt's exposure to regional spillover -- an active
+      Sinai insurgency history, the Gaza war on its northeastern border,
+      Libyan instability to the west, and Sudan's civil war to the south
+      -- more than acute internal unrest. Displaced persons, carried
+      forward rather than fresh, is near zero, though this measures
+      internally displaced Egyptian citizens specifically and does not
+      capture the large Sudanese refugee population Egypt has hosted
+      since Sudan's 2023 civil war began, a distinct figure this pillar
+      does not track. Homicide indicators, both estimated rather than
+      freshly measured, score well by regional standards.
+    drivers:
+      - "Political Stability moderate (fresh) -- reflects regional spillover risk (Sinai, Gaza, Libya, Sudan) more than internal unrest"
+      - "IDPs near-zero (carried forward) -- measures Egyptian citizens specifically, does not capture the Sudanese refugee population Egypt hosts"
+      - "homicide indicators (regional-mean/carried forward) score well by regional standards"
+    citations: [c7]
+  F:
+    summary: >
+      This is the lowest Pillar F score recorded anywhere in this
+      corpus, and it is reliably, not thinly, measured -- three of four
+      indicators are current. Annual freshwater withdrawal is recorded at
+      roughly 7,750% of internal renewable resources, an extreme figure
+      possible only because Egypt depends on an external river, the
+      Nile, for about 90% of its freshwater rather than on water
+      generated within its own borders; that dependency is now acutely
+      exposed by the Grand Ethiopian Renaissance Dam, inaugurated in
+      September 2025 without the binding agreement Egypt has demanded
+      (see historical.colonial_legacy). Agricultural land covers just 4%
+      of Egypt's territory, reflecting a country that is roughly 96%
+      desert. Electricity generation remains heavily fossil-fuel
+      dependent (a carried-forward figure). This pillar's catastrophic
+      score is a real, structural, and currently escalating vulnerability
+      -- not a data or methodology artefact.
+    drivers:
+      - "lowest F score in the corpus, reliably measured (3/4 fresh) -- a real vulnerability, not a data artefact"
+      - "freshwater withdrawal ~7,750% of internal renewable resources -- Egypt depends on the external Nile for ~90% of freshwater"
+      - "GERD inaugurated Sept 2025 without a binding agreement -- directly, acutely threatens this dependency"
+      - "agricultural land only ~4% of territory (desert geography); electricity generation still heavily fossil-fuel dependent (carried forward)"
+    citations: [c4, c5, c8]
+  G:
+    summary: >
+      Electricity access is at 100% -- the ceiling of the index -- and
+      basic water and handwashing access are both near-universal, all
+      freshly measured except handwashing. Social protection and labour
+      programme coverage, carried forward rather than fresh, also scores
+      at the ceiling, consistent with Egypt's long-standing state subsidy
+      programmes for bread, fuel and other essentials, though those same
+      subsidies are under direct fiscal pressure from the currency and
+      debt crisis documented under Pillar B. Four of five indicators are
+      current, making this pillar's strength a substantiated, not
+      estimated, result.
+    drivers:
+      - "electricity access 100% (fresh) -- the index ceiling; basic water and handwashing both near-universal"
+      - "social protection coverage at the ceiling (carried forward) -- reflects long-standing state subsidy programmes now under fiscal pressure"
+      - "4 of 5 indicators fresh -- a substantiated, not estimated, result"
+    citations: [c1]
+
+recent:
+  primary:
+    - headline: "Ethiopia inaugurates the GERD without a binding agreement; Egypt warns the UN"
+      date: 2025-09-09
+      summary: >
+        Ethiopia formally inaugurated the Grand Ethiopian Renaissance Dam
+        on 9 September 2025, Africa's largest hydroelectric project, with
+        its reservoir filling completed a year earlier. Neither Egyptian
+        nor Sudanese officials attended. Egypt's foreign minister told
+        the UN Security Council that Ethiopia's "unilateral actions"
+        violated international law and that Egypt would "not allow its
+        water rights to be compromised," while Ethiopia maintains it is
+        not bound by colonial-era treaties it never signed.
+      why_it_matters: >
+        The direct, currently escalating cause of Pillar F's catastrophic
+        score and the clearest unresolved external security risk facing
+        Egypt today.
+      news_url: "https://www.dailynewsegypt.com/2025/09/09/egypt-warns-unsc-that-ethiopian-nile-dam-threatens-its-water-security/"
+      wikipedia_url: ""
+      sentiment: negative
+    - headline: "Egypt floats its currency and secures an $8 billion IMF bailout"
+      date: 2024-03-06
+      summary: >
+        Egypt's central bank fully floated the pound on 6 March 2024,
+        and the currency lost roughly a third of its value within hours;
+        the move followed a $35 billion UAE development deal for the
+        Ras El Hekma coastal zone and preceded an IMF agreement to
+        increase its bailout loan from $3 billion to $8 billion. Foreign
+        debt had by then quadrupled to roughly $164 billion since Sisi
+        took office, with inflation having peaked above 36% the previous
+        year.
+      why_it_matters: >
+        Explains Pillar B's weak inflation score and the fiscal pressure
+        now bearing on the subsidy programmes documented under Pillar G.
+      news_url: "https://www.middleeasteye.net/news/imf-more-doubles-egypt-bailout-deal-8-billion-following-pound-devaluation"
+      wikipedia_url: "https://en.wikipedia.org/wiki/2023%E2%80%932024_Egyptian_financial_crisis"
+      sentiment: negative
+    - headline: "Sisi wins a third term with his smallest-ever margin, amid a blocked opposition"
+      date: 2023-12-18
+      summary: >
+        Abdel Fattah el-Sisi won Egypt's December 2023 presidential
+        election with 89.65% of the vote and 66.8% turnout, a smaller
+        margin than his 97% victories in 2014 and 2018. International
+        observers and media described the contest as fundamentally
+        uncompetitive: his strongest potential challenger, Ahmed
+        Tantawi, was unable to secure the endorsements needed to appear
+        on the ballot after facing harassment and spyware targeting, and
+        opposition figures reported voter coercion and payment.
+      why_it_matters: >
+        Directly explains Pillar A's near-bottom Voice and Accountability
+        score, and clarifies that the smaller margin reflects reduced
+        state mobilisation rather than any genuine democratic opening.
+      news_url: "https://www.france24.com/en/middle-east/20231218-egypt-s-sisi-sweeps-to-third-presidential-term"
+      wikipedia_url: "https://en.wikipedia.org/wiki/2023_Egyptian_presidential_election"
+      sentiment: negative
+  extended:
+    - headline: "Rafah crossing dynamics amid the Gaza war"
+      date: 2024-05-01
+      summary: >
+        Egypt kept the Rafah crossing open from its own side throughout
+        the Gaza war, and President Sisi repeatedly and publicly rejected
+        any plan for the forced displacement of Palestinians from Gaza
+        into Sinai. The crossing's Palestinian side was seized by Israeli
+        forces in early May 2024, sharply reducing aid flows into Gaza
+        regardless of Egypt's position.
+      why_it_matters: >
+        A case where Egypt's stated policy (rejecting displacement,
+        keeping its side of the crossing open) and the crossing's actual
+        humanitarian function diverged for reasons outside Egypt's
+        control -- worth documenting precisely rather than assigning
+        Egypt sole responsibility either way.
+      news_url: "https://www.cnn.com/2023/12/09/middleeast/egypt-presidential-election-sisi-gaza-war-intl"
+      wikipedia_url: ""
+      sentiment: mixed
+
+events:
+  - year: 1956
+    type: economic
+    title: "Nasser nationalises the Suez Canal"
+    description: >
+      Gamal Abdel Nasser nationalised the Suez Canal on 26 July 1956,
+      triggering the Suez Crisis and finally expelling British military
+      power from Egypt after 74 years of occupation.
+    url: "https://en.wikipedia.org/wiki/History_of_Egypt"
+    direction: improve
+  - year: 1967
+    type: conflict
+    title: "Six-Day War defeat"
+    description: >
+      Israel occupied Sinai and Gaza during the June 1967 Six-Day War,
+      a catastrophic military and political defeat for Nasser's
+      pan-Arabist project.
+    url: "https://en.wikipedia.org/wiki/History_of_Egypt"
+    direction: deteriorate
+  - year: 2011
+    type: election
+    title: "Mubarak resigns after the 25 January revolution"
+    description: >
+      Mass protests beginning 25 January 2011 forced President Hosni
+      Mubarak to resign on 11 February after 30 years in power.
+    url: "https://en.wikipedia.org/wiki/History_of_Egypt"
+    direction: improve
+  - year: 2013
+    type: coup
+    title: "Sisi removes Morsi in a military coup"
+    description: >
+      General Abdel Fattah el-Sisi removed Egypt's first freely elected
+      president, Mohamed Morsi, in a coup on 3 July 2013 following mass
+      protests against Morsi's rule, beginning over a decade of
+      consolidated military-backed authoritarian government.
+    url: "https://en.wikipedia.org/wiki/History_of_Egypt"
+    direction: deteriorate
+
+citations:
+  - id: c1
+    url: "https://en.wikipedia.org/wiki/History_of_Egypt"
+    source_type: wikipedia
+    title: "History of Egypt"
+    accessed: 2026-08-10
+    verified: true
+  - id: c2
+    url: "https://en.wikipedia.org/wiki/2023%E2%80%932024_Egyptian_financial_crisis"
+    source_type: wikipedia
+    title: "2023-2024 Egyptian financial crisis"
+    accessed: 2026-08-10
+    verified: true
+  - id: c3
+    url: "https://en.wikipedia.org/wiki/2023_Egyptian_presidential_election"
+    source_type: wikipedia
+    title: "2023 Egyptian presidential election"
+    accessed: 2026-08-10
+    verified: true
+  - id: c4
+    url: "https://theconversation.com/colonial-era-treaties-are-to-blame-for-the-unresolved-dispute-over-ethiopias-dam-133538"
+    source_type: news
+    title: "Colonial-era treaties are to blame for the unresolved dispute over Ethiopia's dam (The Conversation)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c5
+    url: "https://www.dailynewsegypt.com/2025/09/09/egypt-warns-unsc-that-ethiopian-nile-dam-threatens-its-water-security/"
+    source_type: news
+    title: "Egypt warns UNSC that Ethiopian Nile Dam threatens its water security (Daily News Egypt)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c6
+    url: "https://www.middleeasteye.net/news/imf-more-doubles-egypt-bailout-deal-8-billion-following-pound-devaluation"
+    source_type: news
+    title: "IMF more than doubles Egypt bailout deal to $8bn following devaluation (Middle East Eye)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c7
+    url: "https://www.crisisgroup.org/brf/middle-east-north-africa/north-africa/egypt-israelpalestine/b91-egypts-gaza-dilemmas"
+    source_type: academic
+    title: "Egypt's Gaza Dilemmas (International Crisis Group)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c8
+    url: "https://water.fanack.com/gerd-dispute-nile-flood-2025/"
+    source_type: news
+    title: "Surging Nile Waters Rekindle the GERD Dispute Between Egypt, Sudan, and Ethiopia (Fanack Water)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c9
+    url: "https://www.france24.com/en/middle-east/20231218-egypt-s-sisi-sweeps-to-third-presidential-term"
+    source_type: news
+    title: "Egypt's Sisi sweeps to third presidential term with 89.6% of vote (France 24)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c10
+    url: "https://www.cnn.com/2023/12/09/middleeast/egypt-presidential-election-sisi-gaza-war-intl"
+    source_type: news
+    title: "Egypt's president expected to secure third term as the world's eyes are fixed on Gaza (CNN)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c11
+    url: "https://www.comesa.int/egypt-and-comesa/"
+    source_type: official
+    title: "Egypt and COMESA"
+    accessed: 2026-08-10
+    verified: true
+  - id: c12
+    url: "https://en.wikipedia.org/wiki/Community_of_Sahel%E2%80%93Saharan_States"
+    source_type: wikipedia
+    title: "Community of Sahel-Saharan States"
+    accessed: 2026-08-10
+    verified: true
+
+rec_membership:
+  - org: COMESA
+    joined: 1998
+    status: current
+    left: null
+    citations: [c11]
+  - org: CEN-SAD
+    joined: 2001
+    status: current
+    left: null
+    citations: [c12]
+
+balance:
+  n_positive: 0
+  n_negative: 3
+  n_mixed: 1
+  note: >
+    Every primary item in this record is negative, and this record does
+    not manufacture a counterweight it did not find: the GERD dispute,
+    the currency and debt crisis, and the uncompetitive 2023 election are
+    each independently documented, severe, and current. The one item
+    coded mixed -- the Rafah crossing situation -- is placed there
+    because Egypt's own stated position and the crossing's actual
+    function genuinely diverged for reasons partly outside Egypt's
+    control, not because this record is straining to find something
+    positive to report. Real structural strengths do exist and are
+    documented in full elsewhere in this record -- Pillar D's health
+    outcomes are the strongest in the corpus so far, and Pillar G's
+    infrastructure access is near-universal -- but neither rises to the
+    level of a "recent development" the blueprint's primary/extended
+    format is built to track, so they are not forced into this section
+    to offset the negative recent record. A record can be structurally
+    strong in places and have a genuinely all-negative recent news cycle
+    at the same time; this one does.

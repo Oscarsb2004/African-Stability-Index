@@ -169,15 +169,24 @@ countries:
       in 2024-2025 protest deaths; check whether the renewable-electricity/2030 universal-access
       target is on track; check if Pillar C has gained coverage; find a dedicated source
       for the current state of land-inequality reform'
-backlog:
   EGY:
     name: Egypt
     region: North
     first_pass: false
-    reason: not yet scheduled
-    iteration_count: 0
-    last_updated: null
-    next_action: create baseline from blueprint
+    reason: fourth backlog country -- North Africa's second major economy, filling a
+      gap where DZA was the region's only record; the corpus's lowest-ever Pillar F
+      score (8.7, reliably measured), driven by a still-unfolding colonial-legacy
+      water dispute (GERD) rather than a data artefact; first genuinely all-negative
+      recent-primary record since COD
+    iteration_count: 1
+    last_updated: '2026-08-10'
+    next_action: 'EXPAND: follow the GERD dispute past the Sept 2025 inauguration --
+      check whether a binding agreement is reached or the dispute escalates; check
+      whether the currency/inflation crisis has stabilised since the March 2024 float
+      and whether foreign debt has continued past ~$164B; check the Rafah crossing/Gaza-border
+      situation past mid-2025; check if Pillar C has gained coverage; find a dedicated
+      source for Ahmed Tantawi''s post-2023-election status'
+backlog:
   LBY:
     name: Libya
     region: North
@@ -701,3 +710,29 @@ meta_notes:
   second major economy, still absent) remains the clearest single gap, though the
   corpus increasingly has enough coverage that any choice should now be justified on
   its own variance merits rather than defaulting to the largest visible gap.'
+- '2026-08-10: EGY CREATE run complete -- fourth backlog country, chosen to fill North
+  Africa''s second-major-economy gap (DZA was the region''s only prior record). 12
+  sources opened and verified. Pillar F (8.7) is the lowest score recorded anywhere
+  in this corpus, and unlike most extreme-low-F cases, it is RELIABLY measured (3/4
+  fresh), not thin: annual freshwater withdrawal runs ~7,750% of internal renewable
+  resources, possible only because Egypt gets ~90% of its freshwater from the
+  external Nile. Traced this to a colonial-legacy legal mechanism distinct from
+  Suez: the 1929 Anglo-Egyptian Nile Waters Agreement (48 bcm/yr to Egypt + upstream
+  veto power) and the 1959 Egypt-Sudan treaty (55.5/18.5 bcm split) were both
+  negotiated by Britain without any upstream state -- crucially including Ethiopia,
+  never colonised, contributing >85% of the Nile''s flow -- as a party. That is the
+  specific legal root of the Grand Ethiopian Renaissance Dam dispute: Ethiopia
+  inaugurated the dam in Sept 2025 without a binding agreement, arguing the
+  colonial-era treaties never bound it. First genuinely all-negative recent-primary
+  record since COD (0 positive / 3 negative / 1 mixed) -- GERD, the currency/debt
+  crisis, and the uncompetitive Dec 2023 election are each independently severe and
+  current; the mixed item (Rafah crossing) was placed there because Egypt''s stated
+  position and the crossing''s actual function genuinely diverged, not to manufacture
+  balance. Also caught a real nuance worth flagging: Sisi''s 2023 result (89.65%)
+  was numerically smaller than his 2018 97%, but multiple sources confirm this
+  reflects reduced state mobilisation, not increased competition -- his strongest
+  challenger was blocked from the ballot via harassment and spyware targeting before
+  voting even began. A lower percentage in an authoritarian landslide is not itself
+  evidence of democratic opening; checked rather than assumed. Balance: 0 positive,
+  3 negative, 1 mixed. `--links` passes 0 errors, 1 warning (France24, familiar 403
+  pattern) -- 11/12 resolved.'
