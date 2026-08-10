@@ -3,7 +3,7 @@
 The document future runs read before doing anything. Machine-readable twin:
 `narrative/state.yaml`.
 
-*Seeded 2026-08-09. Research runs so far: Mauritius, Ghana (both CREATE).*
+*Seeded 2026-08-09. Research runs so far: Mauritius, Ghana, Algeria (all CREATE).*
 
 ---
 
@@ -26,7 +26,7 @@ An audit is forced early if a single run inflates the citation count by more tha
 
 ## Status
 
-**2 of 54 countries have a record (Mauritius, Ghana). 7 of the first pass remain.**
+**3 of 54 countries have a record (Mauritius, Ghana, Algeria). 6 of the first pass remain.**
 
 ### First pass — 9 countries
 
@@ -39,7 +39,7 @@ whose ranks swing hardest with the weighting method.
 |---|---|---|---|
 | MUS | Mauritius | top of the index; island state; long democratic continuity | **done — iteration 1** |
 | GHA | Ghana | mid-high; Anglophone West Africa; repeated peaceful transfers of power | **done — iteration 1** |
-| DZA | Algeria | rank swings 9-45 with weighting method; Arabophone; hydrocarbon economy | backlog |
+| DZA | Algeria | rank swings 9-45 with weighting method; Arabophone; hydrocarbon economy | **done — iteration 1** |
 | COD | Democratic Rep. Congo | bottom decile; vast and low-coverage; long conflict history | backlog |
 | SOM | Somalia | lowest ranks; state reconstitution; sparse data is the hard case | backlog |
 | BWA | Botswana | high and stable; landlocked; resource governance counter-example | backlog |
@@ -120,6 +120,11 @@ Things a future run should know about how to work, not about a specific country.
   though that field makes citable claims (see pending format proposals below).
   Populate the field anyway on future CREATE runs for consistency; do not treat
   its absence from validation as license to leave it uncited.
+- **2026-08-09** — Three CREATE runs in (MUS, GHA, DZA) and the link-checker fix
+  keeps holding across new bot-blocked domains without a false negative. Next
+  country: DR Congo (COD) — bottom-decile, vast, low-coverage; expect much
+  thinner sourcing and more greyed pillars than the first three, which is a
+  useful contrast to log rather than something to route around.
 
 ---
 

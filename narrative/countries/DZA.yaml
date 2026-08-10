@@ -1,0 +1,430 @@
+meta:
+  iso3: DZA
+  name: Algeria
+  last_updated: 2026-08-09
+  iteration_count: 1
+  next_action: >
+    EXPAND: (1) check whether the fiscal-deficit trend flagged by the IMF's
+    September 2025 Article IV continues in the next review, and whether the
+    planned early-2026 sukuk issuance went ahead; (2) find a second source for
+    the scale and speed of the pieds-noirs exodus in 1962 to strengthen
+    colonial_legacy; (3) check for appeal outcomes in the Tadjadit/Gleizes
+    cases documented in the HRW 2026 report; (4) check whether Pillar C
+    (greyed at 2/8 measured) has gained enough coverage to write.
+  model_used: claude-sonnet-5
+
+historical:
+  overview: >
+    Algeria's modern political history is defined by two prolonged, costly
+    conflicts a generation apart. The War of Independence (1954-1962), fought
+    by the National Liberation Front (FLN) against French colonial rule,
+    ended when 99.72% of Algerian voters approved independence in a 1 July
+    1962 referendum following the Evian Accords. The FLN then governed as the
+    sole legal party until 1989, under a military-backed state whose defining
+    economic act was President Houari Boumediene's 1971 nationalisation of
+    French-owned oil and gas assets into the state company Sonatrach -- a
+    decision that structured Algeria's economy around hydrocarbon rents for
+    the following half-century. Political liberalisation in 1988-89
+    introduced multiparty elections, but the military annulled the vote in
+    January 1992 after the Islamic Salvation Front appeared set to win,
+    triggering a civil war -- remembered as the Black Decade -- that killed
+    an estimated 100,000 to 200,000 people before ending in 2002. President
+    Abdelaziz Bouteflika, in office from 1999, used hydrocarbon revenue to
+    underwrite two decades of relative stability, but his bid for a fifth
+    term in 2019 triggered the Hirak, a mass peaceful protest movement that
+    forced his resignation within weeks. The military nonetheless retained
+    control, installing Abdelmadjid Tebboune as president later that year;
+    Tebboune won a contested re-election in September 2024.
+  overview_citations: [c1, c2, c3, c7]
+  colonial_legacy: >
+    Algeria's colonial relationship with France was structurally unlike most
+    of the continent's: annexed in 1830 and administered from 1848 as an
+    integral part of metropolitan France rather than a separate colony, it
+    received a settler population that reached roughly one million
+    pieds-noirs by the 1950s, who held the best agricultural land and
+    dominated administration, commerce and the professions. Independence in
+    1962 triggered the near-total departure of this population within months,
+    stripping the new state of most of its technical and administrative
+    capacity at the moment it most needed it -- a disruption distinct from,
+    and compounding, the war's direct human cost already noted in
+    context/colonial_history.yaml. The post-independence state's economic
+    answer was to nationalise hydrocarbons rather than diversify away from
+    resource extraction: Boumediene's 1971 nationalisation of French oil and
+    gas assets into Sonatrach replaced colonial-era commodity extraction
+    (wheat, olive oil, phosphates, iron ore) with a new one, and hydrocarbons
+    still account for roughly 90-95% of export earnings today. That
+    structural dependence is the direct explanation for the index's
+    near-zero Environmental pillar score (see below): it did not begin with
+    independence, but independence changed which resource anchored it.
+  colonial_legacy_citations: [c1, c3, c11]
+  key_periods:
+    - title: "War of Independence"
+      period: "1954-1962"
+      summary: >
+        The National Liberation Front (FLN) launched an armed uprising
+        against French rule on 1 November 1954. The war, marked by
+        widespread use of torture on both sides and the urban Battle of
+        Algiers (1956-57), ended with the Evian Accords in March 1962 and a
+        referendum on 1 July in which 99.72% of Algerian voters chose
+        independence.
+      citations: [c1]
+    - title: "One-party rule and hydrocarbon nationalisation"
+      period: "1962-1988"
+      summary: >
+        The FLN governed as Algeria's sole legal party from independence
+        until 1989, under a state structure dominated by the military since
+        Houari Boumediene's 1965 coup. Boumediene's most consequential act
+        was the 24 February 1971 nationalisation of French-owned oil and gas
+        assets into the new state company Sonatrach, which by the mid-1970s
+        supplied 25-30% of GDP and 90-95% of export earnings and funded a
+        socialist industrialisation drive.
+      citations: [c3, c11]
+    - title: "The Black Decade"
+      period: "1991-2002"
+      summary: >
+        Political liberalisation in 1988-89 produced Algeria's first
+        multiparty elections, but the military annulled the vote in January
+        1992 after the Islamic Salvation Front's first-round victory,
+        triggering a civil war between the state and Islamist armed groups.
+        The conflict killed an estimated 100,000 to 200,000 people before
+        winding down by 2002; Algerians have largely avoided public
+        reckoning with the period since.
+      citations: [c2]
+    - title: "Hirak and the end of the Bouteflika era"
+      period: "2019-present"
+      summary: >
+        President Abdelaziz Bouteflika's bid for a fifth term triggered mass
+        peaceful protests -- the Hirak -- beginning 22 February 2019; the
+        military forced his resignation on 2 April. The movement's demand
+        for civilian rule beyond Bouteflika went unmet: the military
+        installed Abdelmadjid Tebboune as president later that year, and
+        protests continued into 2021 under the slogan "Yetnahaw Gaa" ("they
+        all must go"). Tebboune won a contested re-election in September
+        2024, with initial 95% results revised down to 84.3% after
+        opposition challenges.
+      citations: [c4, c5, c6, c7]
+
+pillars:
+  A:
+    summary: >
+      Governance scores are weak across the board, and Voice and
+      Accountability is the weakest single WGI component the index tracks
+      for Algeria -- consistent with a political system still substantially
+      controlled by the military establishment Algerians call "le pouvoir."
+      The September 2024 re-election of President Tebboune illustrates the
+      pattern directly: initial results claiming 95% support were revised
+      down to 84.3% after opposition candidates disputed the count. Human
+      Rights Watch's 2026 report documents continued prosecution of online
+      political speech through 2025, including multi-year sentences for
+      social media posts. The 2019 Hirak protest movement forced Bouteflika's
+      resignation and demonstrated real capacity for peaceful mass
+      mobilisation, but its central demand -- a transition to genuine
+      civilian rule -- has not been met six years on.
+    drivers:
+      - "Voice and Accountability is the weakest single indicator"
+      - "September 2024 election: initial 95% revised to 84.3% after disputes"
+      - "HRW documents continued prosecution of online political speech (2025)"
+      - "2019 Hirak forced Bouteflika's resignation but not civilian rule"
+    citations: [c4, c6, c7, c12]
+  B:
+    summary: >
+      Algeria's economic score benefits from high GDP per capita (driven by
+      hydrocarbon rents) and moderating inflation, but domestic credit to the
+      private sector is weak, reflecting an economy still organised around
+      state hydrocarbon revenue rather than private investment. That
+      structure has a live upside: Algeria is now the second-largest
+      pipeline gas supplier to Europe after Norway, with exports climbing
+      from 39 billion cubic metres in 2020 to 49 billion in 2024 as European
+      buyers diversified away from Russian gas. It also has a live downside:
+      the IMF's September 2025 review found falling hydrocarbon prices had
+      widened the fiscal deficit and depleted buffers, pushing Algeria toward
+      a rare debt issuance in 2026. Gini/inequality data was not available
+      for this pillar.
+    drivers:
+      - "high GDP per capita and moderating inflation, both hydrocarbon-linked"
+      - "2nd-largest pipeline gas supplier to Europe after Norway (2024)"
+      - "falling hydrocarbon prices widened the fiscal deficit through 2025"
+      - "domestic credit weak: economy organised around state rents, not private investment"
+    citations: [c8, c13]
+  D:
+    summary: >
+      Health is Algeria's strongest pillar and its most completely measured:
+      all five indicators are direct, current observations. Life expectancy
+      of over 76 years and a handwashing-facilities score of 100 place
+      Algeria among the continent's stronger health performers, consistent
+      with decades of hydrocarbon-funded public health and education
+      spending that began under Boumediene's socialist industrialisation
+      programme (see historical.key_periods). Severe food insecurity is
+      comparatively low. This pillar is a useful corrective to the
+      governance and environmental scores elsewhere: hydrocarbon rents have
+      bought genuine material welfare gains even where they have not bought
+      accountable government.
+    drivers:
+      - "all 5 indicators directly measured -- most complete non-greyed pillar"
+      - "life expectancy 76+ years, low severe food insecurity"
+      - "hydrocarbon-funded welfare spending since the 1970s"
+    citations: [c3]
+  E:
+    summary: >
+      Algeria's homicide indicators score very well, but Political Stability
+      and Absence of Violence -- the index's broadest, most current security
+      measure -- scores weakly, likely reflecting the legacy of the
+      1991-2002 civil war and regional tension rather than active domestic
+      conflict today. The displacement indicator requires a specific
+      caution: the figure the index carries for Algeria is not Algeria's own
+      measured value but a regional estimate, filled in because no direct
+      data was available, and should not be read as evidence of large-scale
+      internal displacement, which Algeria has not experienced since the
+      civil war ended. Separately -- and not captured by this indicator at
+      all -- Algeria has hosted roughly 174,000 Sahrawi refugees from the
+      Western Sahara conflict in Tindouf camps for five decades, one of the
+      world's most protracted refugee situations.
+    drivers:
+      - "homicide indicators strong; Political Stability weak (civil war legacy)"
+      - "displacement figure is a regional estimate, not measured Algerian data"
+      - "hosts ~174,000 Sahrawi refugees, uncounted by this pillar"
+    citations: [c2, c9, c10]
+  F:
+    summary: >
+      Algeria records the lowest pillar score anywhere in this edition of
+      the index, and it is not a data-quality artefact: three of four
+      indicators are directly measured. Electricity generation is 99.24%
+      fossil-fuelled, freshwater withdrawal exceeds renewable internal
+      supply by over 90% (likely fossil-aquifer extraction in an arid
+      country), and per-capita CO2 emissions score at the very bottom of the
+      scale. All three trace to the hydrocarbon-centred economy Boumediene
+      built in 1971 (see historical.colonial_legacy), which still supplies
+      90-95% of export earnings. This is also why Algeria's overall rank
+      varies so sharply by method -- 9th under PCA weighting, 45th under
+      geometric mean in this edition: geometric aggregation is
+      non-compensatory, so one near-zero pillar drags the whole composite
+      down regardless of strength elsewhere, while PCA effectively discounts
+      this pillar because it loads inversely against the general stability
+      factor (see methodology/METHODOLOGY_REVIEW.md). Both methods describe
+      the same fact; they disagree only on how much weight a catastrophic
+      outlier pillar should carry.
+    drivers:
+      - "99.24% fossil-fuelled electricity; freshwater withdrawal >90% over renewable supply"
+      - "CO2 per capita scores at the bottom of the scale"
+      - "same hydrocarbon dependence as Pillar B's strength, opposite sign"
+      - "explains the 9th-to-45th rank swing across scoring methods"
+    citations: [c3, c8, c11]
+  G:
+    summary: >
+      Complete electrification (100% access) and strong domestic-credit
+      access reflect hydrocarbon-funded infrastructure investment sustained
+      since Boumediene's socialist industrialisation programme in the 1970s.
+      Basic drinking-water access and safely managed water services both
+      score well, though these coexist with the extreme freshwater
+      over-extraction recorded under Pillar F: infrastructure to deliver
+      water and the long-term sustainability of the water being delivered
+      are measured separately here, and Algeria performs very differently
+      on each. Social protection and labour programme coverage data was not
+      available for this pillar this year.
+    drivers:
+      - "100% electrification; strong domestic credit access"
+      - "strong water-access scores coexist with unsustainable withdrawal (Pillar F)"
+      - "social protection coverage data unavailable"
+    citations: [c3, c11]
+
+recent:
+  primary:
+    - headline: "Tebboune re-elected amid contested vote count"
+      date: 2024-09-14
+      summary: >
+        President Abdelmadjid Tebboune won a second term in the 7 September
+        2024 election. Initial results from the electoral authority claimed
+        95% support, but after all three candidates publicly disputed the
+        count as implausible, the Constitutional Court issued revised final
+        results: 84.3% for Tebboune, 9.56% for Abdelaali Hassani Cherif, and
+        6.14% for Youcef Aouchiche.
+      why_it_matters: >
+        An election whose own count was publicly disputed by every
+        candidate is a direct, current illustration of the weak Voice and
+        Accountability and Rule of Law scores in Pillar A.
+      news_url: "https://www.france24.com/en/africa/20240914-algeria-s-tebboune-re-elected-with-84-of-vote-according-to-official-results"
+      wikipedia_url: "https://en.wikipedia.org/wiki/2024_Algerian_presidential_election"
+      sentiment: negative
+    - headline: "Human Rights Watch documents continued crackdown on dissent, alongside one high-profile pardon"
+      date: 2026-01-01
+      summary: >
+        Human Rights Watch's 2026 World Report documented multiple prison
+        sentences for online political expression through 2025: activist
+        Mohamed Tadjadit received five years in January for social media
+        posts, French journalist Christophe Gleizes seven years in June for
+        contacts with opposition sources, and novelist Boualem Sansal five
+        years in July for comments on Algeria's border situation. Sansal
+        was pardoned and released in November 2025 after international
+        pressure.
+      why_it_matters: >
+        Concrete, dated cases behind the index's low Voice and
+        Accountability score (39.4, the weakest single governance
+        indicator); the Sansal pardon shows the system remains responsive
+        to pressure even as it continues to prosecute dissent.
+      news_url: "https://www.hrw.org/world-report/2026/country-chapters/algeria"
+      wikipedia_url: ""
+      sentiment: mixed
+    - headline: "Algeria becomes Europe's second-largest pipeline gas supplier"
+      date: 2025-03-01
+      summary: >
+        Pipeline gas exports climbed from 39 billion cubic metres in 2020 to
+        49 billion in 2024, making Algeria the second-largest pipeline gas
+        supplier to Europe after Norway, as European buyers diversified away
+        from Russian supply following the invasion of Ukraine. New
+        agreements extend deliveries to Italy through 2026 and add German
+        deliveries from 2027.
+      why_it_matters: >
+        Explains the genuine strength in Pillar B and is the direct flip
+        side of Pillar F's catastrophic score: the same hydrocarbon
+        dependence that devastates the environmental indicators is
+        currently a geopolitical and economic asset.
+      news_url: "https://www.realinstitutoelcano.org/en/analyses/another-round-of-algerian-gas-for-europe/"
+      wikipedia_url: ""
+      sentiment: positive
+  extended:
+    - headline: "Falling hydrocarbon prices push Algeria toward a rare Islamic bond sale"
+      date: 2025-12-03
+      summary: >
+        Algeria plans a rare sukuk (Islamic bond) issuance in early 2026,
+        unusual for an OPEC member that has historically relied on
+        hydrocarbon revenue rather than debt markets. The IMF's September
+        2025 Article IV consultation found the 2024 fiscal expansion,
+        combined with falling hydrocarbon prices, had widened the fiscal
+        deficit and depleted buffers built up in earlier years.
+      why_it_matters: >
+        A caution against reading the gas-export story above as unqualified
+        strength: the same hydrocarbon dependence exposes Algeria's fiscal
+        position to global price swings largely outside its control.
+      news_url: "https://www.bloomberg.com/news/articles/2025-12-03/algeria-plans-rare-sukuk-sale-at-start-of-2026-document-shows"
+      wikipedia_url: ""
+      sentiment: mixed
+
+events:
+  - year: 2019
+    type: constitutional
+    title: "Hirak protests force Bouteflika's resignation"
+    description: >
+      Mass peaceful protests beginning 22 February 2019 against President
+      Bouteflika's bid for a fifth term forced his resignation on 2 April.
+      The military retained control and installed Abdelmadjid Tebboune as
+      president later that year.
+    url: "https://foreignpolicy.com/2021/10/14/algeria-bouteflika-death-fln-hirak-oil-military-pouvoir/"
+    direction: mixed
+  - year: 2022
+    type: economic
+    title: "Pipeline gas exports to Europe begin climbing sharply"
+    description: >
+      Following Russia's invasion of Ukraine, European buyers accelerated
+      diversification toward Algerian pipeline gas, part of a climb from 39
+      billion cubic metres in 2020 to 49 billion by 2024.
+    url: "https://www.realinstitutoelcano.org/en/analyses/another-round-of-algerian-gas-for-europe/"
+    direction: improve
+  - year: 2024
+    type: election
+    title: "Tebboune re-elected amid contested vote count"
+    description: >
+      Tebboune won a second term on 7 September 2024; initial results
+      claiming 95% support were revised to 84.3% after all three candidates
+      disputed the count.
+    url: "https://en.wikipedia.org/wiki/2024_Algerian_presidential_election"
+    direction: mixed
+
+citations:
+  - id: c1
+    url: "https://en.wikipedia.org/wiki/Algerian_War"
+    source_type: wikipedia
+    title: "Algerian War"
+    accessed: 2026-08-09
+    verified: true
+  - id: c2
+    url: "https://en.wikipedia.org/wiki/Algerian_Civil_War"
+    source_type: wikipedia
+    title: "Algerian Civil War"
+    accessed: 2026-08-09
+    verified: true
+  - id: c3
+    url: "https://en.wikipedia.org/wiki/Sonatrach"
+    source_type: wikipedia
+    title: "Sonatrach"
+    accessed: 2026-08-09
+    verified: true
+  - id: c4
+    url: "https://en.wikipedia.org/wiki/2024_Algerian_presidential_election"
+    source_type: wikipedia
+    title: "2024 Algerian presidential election"
+    accessed: 2026-08-09
+    verified: true
+  - id: c5
+    url: "https://en.wikipedia.org/wiki/2021_Algerian_protests"
+    source_type: wikipedia
+    title: "2021 Algerian protests"
+    accessed: 2026-08-09
+    verified: true
+  - id: c6
+    url: "https://www.france24.com/en/africa/20240914-algeria-s-tebboune-re-elected-with-84-of-vote-according-to-official-results"
+    source_type: news
+    title: "Algeria's Tebboune re-elected with 84% of vote, according to official results"
+    accessed: 2026-08-09
+    verified: true
+  - id: c7
+    url: "https://foreignpolicy.com/2021/10/14/algeria-bouteflika-death-fln-hirak-oil-military-pouvoir/"
+    source_type: news
+    title: "Bouteflika Represented Everything Algeria's Hirak Movement Is Fighting Against"
+    accessed: 2026-08-09
+    verified: true
+  - id: c8
+    url: "https://www.realinstitutoelcano.org/en/analyses/another-round-of-algerian-gas-for-europe/"
+    source_type: academic
+    title: "Another round of Algerian gas for Europe (Real Instituto Elcano)"
+    accessed: 2026-08-09
+    verified: true
+  - id: c9
+    url: "https://www.migrationpolicy.org/article/western-sahara-sahrawi-refugees"
+    source_type: academic
+    title: "Western Sahara's Sahrawi Refugees Face an Uncertain Future after 50 Years of Exile (Migration Policy Institute)"
+    accessed: 2026-08-09
+    verified: true
+  - id: c10
+    url: "https://reliefweb.int/report/algeria/acaps-briefing-note-algeria-sahrawi-refugees-tindouf-19-january-2022"
+    source_type: academic
+    title: "ACAPS Briefing Note: Algeria: Sahrawi refugees in Tindouf"
+    accessed: 2026-08-09
+    verified: true
+  - id: c11
+    url: "https://history.state.gov/historicaldocuments/frus1969-76ve05p2/d27"
+    source_type: official
+    title: "Nationalization of hydrocarbons in Algeria, 1971 (US State Department, Office of the Historian)"
+    accessed: 2026-08-09
+    verified: true
+  - id: c12
+    url: "https://www.hrw.org/world-report/2026/country-chapters/algeria"
+    source_type: news
+    title: "World Report 2026: Algeria (Human Rights Watch)"
+    accessed: 2026-08-09
+    verified: true
+  - id: c13
+    url: "https://www.bloomberg.com/news/articles/2025-12-03/algeria-plans-rare-sukuk-sale-at-start-of-2026-document-shows"
+    source_type: news
+    title: "Algeria Plans Rare Sukuk Sale at Start of 2026, Document Shows"
+    accessed: 2026-08-09
+    verified: true
+
+balance:
+  n_positive: 1
+  n_negative: 1
+  n_mixed: 2
+  note: >
+    The recent record skews toward genuine concerns rather than being forced
+    even: a disputed election, continued prosecution of online political
+    speech, and fiscal strain from falling hydrocarbon prices, against one
+    clearly positive development (gas-export growth) and one genuinely mixed
+    one (the Sansal pardon amid continued arrests). Nothing was softened to
+    balance this -- Pillar F's near-zero score and Pillar A's weak Voice and
+    Accountability score are the two most negative pillar readings in this
+    country's record, and both are real. Structural counterweights worth
+    naming even though they fall outside the "recent" window: the 2019 Hirak
+    was one of the largest sustained peaceful protest movements in the
+    region's recent history, and Algeria's health outcomes (Pillar D) are
+    among the strongest in the index, both a reminder that hydrocarbon rents
+    have bought genuine welfare gains even where they have not bought
+    accountable government.
