@@ -283,17 +283,31 @@ countries:
       toll trend past ~1,300-of-1,939 (2025); check whether extreme poverty kept
       falling past 51%->49% (2023-2024); check if Pillar C has gained coverage;
       keep AES facts consistent with MLI and BFA'
+  MAR:
+    name: Morocco
+    region: North
+    first_pass: false
+    reason: tenth backlog country -- the corpus's first stable monarchy, and a
+      genuine framing-balance counterweight after a run of negative-leaning Sahel
+      records; distinct colonial history (dual French/Spanish protectorate) whose
+      still-unresolved Western Sahara dispute is the one African decolonisation
+      case still legally open (Morocco left the OAU 1984-2017 over exactly this
+      dispute); a genuine positive (AMO health coverage 42%->88%) found deliberately
+      alongside the Gen Z 212 protesters' own healthcare grievances rather than
+      presented as resolving them
+    iteration_count: 1
+    last_updated: '2026-08-10'
+    next_action: 'EXPAND: follow whether Gen Z 212 resumes street protests or
+      stays in the courts, and how the 2,400+ pending prosecutions are resolved;
+      follow whether the AMO 100%-by-2030 target stays on track past 88% (Dec
+      2025); check whether Algeria/Polisario respond further to UN Security
+      Council Resolution 2797, and clarify Germany''s position on the autonomy
+      plan (not found this run); check whether the Al Haouz earthquake recovery
+      plan''s 5-year, $11.7B target is on schedule; check if Pillar C has gained
+      coverage'
 backlog:
   LBY:
     name: Libya
-    region: North
-    first_pass: false
-    reason: not yet scheduled
-    iteration_count: 0
-    last_updated: null
-    next_action: create baseline from blueprint
-  MAR:
-    name: Morocco
     region: North
     first_pass: false
     reason: not yet scheduled
@@ -928,3 +942,38 @@ meta_notes:
   independently by AJOT''s syndication of the same story) -- 8/9 resolved. Full
   pytest suite: 106 passed. This closes out the nine-country first-pass backlog
   entirely; 18 of 54 countries now have a record.'
+- '2026-08-10: MAR CREATE run complete (15 sources opened and verified: 5
+  Wikipedia, 6 news, 1 official/ICJ, 1 official/CIF, 2 more Wikipedia for
+  rec_membership). First stable-monarchy record in the corpus, and a deliberate
+  pick for framing balance after AGO/ZAF/KEN/EGY/ETH/SDN/MLI/BFA/NER skewed
+  negative-to-mixed. Distinct colonial_legacy angle: dual French/Spanish
+  protectorate (1912-1956), and Western Sahara documented as the one African
+  decolonisation case still legally open -- Spain''s 1975 Madrid Accords
+  transferred administration, not sovereignty, per the ICJ''s own October 1975
+  advisory opinion (directly fetched and cited, not assumed), and no referendum
+  has ever been held. Found and verified a genuinely striking colonial-legacy-
+  adjacent fact not previously in this corpus: Morocco withdrew from the OAU in
+  November 1984 rather than sit alongside the Polisario''s SADR, and remained
+  outside the AU entirely -- unique among every AU member recorded so far -- for
+  33 years, rejoining only in January 2017. Followed the established discipline
+  of searching for a genuine positive rather than defaulting to the geopolitics-
+  only framing: found Morocco''s AMO health-insurance reform reaching 88%
+  coverage (up from 42%) by December 2025, and deliberately placed it in
+  recent.primary ALONGSIDE the Gen Z 212 protesters'' own healthcare grievances
+  rather than treating one as resolving the other -- both are true and current
+  at once. UN Security Council Resolution 2797 (Oct 2025, endorsing Morocco''s
+  Western Sahara autonomy plan) and the July 2024 journalist pardons (Radi,
+  Raissouni, Bouachrine, jailed since 2020 on charges RSF called politically
+  motivated) were both coded mixed rather than positive, since neither delivers
+  the referendum or full exoneration their respective stories would need to
+  be genuinely positive. Balance: 1 positive, 1 negative, 2 mixed -- the first
+  record since ZAF where the mix leans away from all-negative by design rather
+  than by search-triggered correction. rec_membership verified individually
+  rather than assumed from DZA''s UMA precedent: UMA 1989 founding member
+  (shared with DZA, reused cleanly), but CEN-SAD required fresh research --
+  Morocco joined in 2001, not as a founding member (unlike TCD/BFA''s 1998
+  founding-member status), confirming the "verify, don''t pattern-match"
+  discipline still matters even for REC entries that look superficially similar
+  across records. `--links` passes 0 errors, 1 warning (france24, familiar 403
+  bot-detection pattern already confirmed on the DZA run) -- 14/15 resolved.
+  Full pytest suite: 106 passed. 19 of 54 countries now have a record.'

@@ -26,7 +26,7 @@ An audit is forced early if a single run inflates the citation count by more tha
 
 ## Status
 
-**18 of 54 countries have a record (Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria, Rwanda, Chad, Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger). The first pass is complete; Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso and Niger are the first nine backlog countries.**
+**19 of 54 countries have a record (Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria, Rwanda, Chad, Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco). The first pass is complete; Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger and Morocco are the first ten backlog countries.**
 
 ### First pass — 9 countries
 
@@ -60,14 +60,15 @@ whose ranks swing hardest with the weighting method.
 | MLI | Mali | opens the Sahel coup-belt/ECOWAS-exit category entirely new to this corpus; a fourth distinct resource-governance pattern (coercive renegotiation, Barrick Gold); a case where searching again after an all-negative draft found a genuine positive | **done — iteration 1** |
 | BFA | Burkina Faso | completes the AES/ECOWAS-exit pair with MLI (NER remains); accounted for ~1/4 of world extremist attacks in 2024; sharpest disconnect yet between aggregate governance scores and documented atrocities (HRW: own forces killed more civilians than jihadists) | **done — iteration 1** |
 | NER | Niger | completes the AES/ECOWAS-exit trio with MLI and BFA; Niger's own first-ever civilian-to-civilian democratic transfer (Bazoum, 2021) makes the 2023 coup a sharper rupture than in its AES partners; most precisely quantified extraction-imbalance case yet (Orano: 63% stake, 86.3% of production, 1971-2024) resolved by nationalisation | **done — iteration 1** |
+| MAR | Morocco | the corpus's first stable monarchy; a genuine framing-balance counterweight after a run of negative-leaning Sahel records; Western Sahara documented as the one African decolonisation case still legally open (Morocco left the OAU 1984-2017 over exactly this dispute); a genuine positive (AMO health coverage 42%->88%) placed deliberately alongside the Gen Z 212 protesters' own healthcare grievances | **done — iteration 1** |
 
-### Backlog — the remaining 36
+### Backlog — the remaining 35
 
 Listed in full in `narrative/state.yaml` under `backlog`. They are recorded
 explicitly rather than left implicit: a country with no record should be visibly
 absent, not quietly missing.
 
-Libya, Morocco, Tunisia, Benin, Cabo Verde, The Gambia, Guinea, Guinea-Bissau, Cote d'Ivoire, Liberia, Mauritania, Senegal, Sierra Leone, Togo, Cameroon, Central African Republic, Republic of Congo, Equatorial Guinea, Gabon, Burundi, Djibouti, Eritrea, Malawi, Mozambique, South Sudan, Tanzania, Uganda, Zambia, Zimbabwe, Lesotho, Namibia, Eswatini, Comoros, Madagascar, Seychelles, Sao Tome & Principe
+Libya, Tunisia, Benin, Cabo Verde, The Gambia, Guinea, Guinea-Bissau, Cote d'Ivoire, Liberia, Mauritania, Senegal, Sierra Leone, Togo, Cameroon, Central African Republic, Republic of Congo, Equatorial Guinea, Gabon, Burundi, Djibouti, Eritrea, Malawi, Mozambique, South Sudan, Tanzania, Uganda, Zambia, Zimbabwe, Lesotho, Namibia, Eswatini, Comoros, Madagascar, Seychelles, Sao Tome & Principe
 
 ---
 
@@ -550,6 +551,43 @@ Append one line per run: date, country, mode, what changed, what was removed.
   attack within its first four months, only resuming in August 2024).
   Balance: 1 positive, 2 negative, 1 mixed.
 
+- **2026-08-10 — MAR — CREATE. Tenth backlog country, first stable
+  monarchy in the corpus.** Full baseline built: historical overview,
+  colonial legacy (the dual French/Spanish protectorate, and Western
+  Sahara documented precisely as the one African decolonisation case
+  still legally open — the 1975 Madrid Accords transferred
+  administration, not sovereignty, exactly as the ICJ's own October 1975
+  advisory opinion required, and no referendum has ever been held), 4
+  key_periods, 6 pillar summaries (Pillar C left empty — greyed at 2/8
+  measured), 3 primary + 1 extended recent items, 4 events,
+  rec_membership (UMA 1989 founding member, reused cleanly from DZA;
+  CEN-SAD 2001 — verified fresh rather than assumed founding-member
+  status from TCD/BFA's 1998 precedent). 15 sources opened and verified:
+  5 Wikipedia, 6 news, 1 ICJ, 1 Climate Investment Funds, 2 more
+  Wikipedia for rec_membership. `--links` passes 0 errors, 1 warning
+  (france24, familiar 403 pattern already confirmed on DZA) — 14/15
+  resolved. Deliberately chosen for framing balance after nine
+  consecutive negative-to-mixed Sahel/Horn/Southern Africa records:
+  Morocco's aggregate indicators are genuinely strong (highest
+  non-island GDP per capita in the corpus, 100% electricity access,
+  strongest health pillar recorded so far), and a real, current,
+  substantial positive was found and placed deliberately alongside a
+  real, current negative rather than either one crowding out the other —
+  the AMO health-insurance reform reaching 88% coverage (up from 42%) by
+  December 2025 sits in recent.primary next to the Gen Z 212 youth
+  protests over exactly that same healthcare system, both true and
+  current at once. Also found and verified a striking colonial-legacy-
+  adjacent fact new to this corpus: Morocco withdrew from the OAU in
+  November 1984 rather than sit alongside the Polisario Front's SADR as
+  a fellow member, and remained outside the AU entirely for 33 years,
+  unique among every AU member recorded so far, rejoining only in
+  January 2017. The UN Security Council's October 2025 endorsement of
+  Morocco's Western Sahara autonomy plan (Resolution 2797) and the July
+  2024 pardon of jailed journalists Radi, Raissouni and Bouachrine were
+  both coded mixed rather than positive: neither delivers the referendum
+  or full exoneration their respective stories would need to cross that
+  line. Balance: 1 positive, 1 negative, 2 mixed.
+
 ---
 
 ## Meta-notes
@@ -867,6 +905,24 @@ Things a future run should know about how to work, not about a specific country.
   paired with almost no actual clean generation or access) — worth citing
   as the reference example if a future country's Pillar F story needs a
   clear contrast to argue against.
+- **2026-08-10** — MAR is a useful test of the framing-balance discipline
+  from the opposite direction than usual: instead of searching for a
+  positive to avoid an all-negative record (the SDN/MLI/BFA/NER pattern),
+  this run deliberately picked a country likely to *supply* a strong
+  positive after nine records in a row skewed negative-to-mixed, and then
+  had to resist the opposite failure mode — letting a genuine achievement
+  (AMO health coverage) quietly cancel out a genuine, current grievance
+  about the same system (Gen Z 212) instead of stating both at full
+  weight side by side. Worth carrying forward as its own checkpoint,
+  distinct from the "search again at 0 positive" rule: when a positive
+  and a negative item share the same underlying subject, place them next
+  to each other rather than letting either one soften the other. Also
+  confirms the REC "verify, don't pattern-match" discipline generalises
+  past the AES trio: MAR's UMA membership reused DZA's 1989 founding-year
+  research cleanly, but CEN-SAD needed its own fresh search rather than
+  assuming TCD/BFA's 1998 founding-member pattern — Morocco joined in
+  2001, a genuinely different case (a later joiner, not a founder), and
+  would have been wrong if assumed by analogy.
 
 ---
 

@@ -1,0 +1,497 @@
+meta:
+  iso3: MAR
+  name: Morocco
+  last_updated: 2026-08-10
+  iteration_count: 1
+  next_action: >
+    EXPAND: (1) follow whether the Gen Z 212 movement resumes street
+    protests or stays in the courts, and how the 2,400+ pending criminal
+    cases are resolved; (2) follow whether the AMO health-coverage
+    programme's stated 100%-by-2030 target stays on track past the 88%
+    (Dec 2025) figure; (3) check whether Algeria or the Polisario Front
+    respond further to UN Security Council Resolution 2797, and whether
+    Germany's position on the autonomy plan (not found this run) has
+    been clarified; (4) check whether the Al Haouz earthquake recovery
+    plan's five-year, $11.7B target is on schedule; (5) check if Pillar C
+    has gained coverage.
+  model_used: claude-sonnet-5
+
+historical:
+  overview: >
+    France established a protectorate over Morocco under the 1912 Treaty
+    of Fez, with Spain administering separate northern and southern
+    zones under the same agreement. France's 1953 exile of Sultan
+    Mohammed V to Madagascar and popular resistance to his unpopular
+    replacement accelerated nationalist pressure; his 1955 return led to
+    independence negotiations, and the French protectorate ended in
+    March 1956, followed by Spain's northern zone in April. Mohammed V
+    died in 1961 and was succeeded by his son Hassan II, whose reign
+    until 1999 is remembered for the "Years of Lead" -- decades of state
+    violence against political dissidents involving secret detention,
+    torture and forced disappearance. In November 1975, as Spain
+    withdrew from its remaining Western Sahara colony, Hassan II
+    organised the Green March, sending 350,000 unarmed civilians into
+    the territory to press Morocco's claim; Spain transferred
+    administration, not sovereignty, to Morocco and Mauritania, and a war
+    with the Sahrawi Polisario Front followed until a 1991 ceasefire that
+    has never been followed by the referendum it promised. Mohammed VI
+    succeeded his father in 1999 and eased some repression, though
+    prosecutions of journalists and activists continued. In December
+    2020 the United States recognised Moroccan sovereignty over Western
+    Sahara in exchange for Morocco normalising relations with Israel;
+    France followed with full recognition in July 2024, and the UN
+    Security Council endorsed Morocco's autonomy plan as the basis for a
+    political solution in October 2025. That same autumn, youth-led "Gen
+    Z 212" protests over healthcare, education and World Cup stadium
+    spending swept the country, and security forces shot dead three
+    people in Lqliaa on 1 October.
+  overview_citations: [c1, c2, c3, c4, c7]
+  colonial_legacy: >
+    context/colonial_history.yaml already credits Lyautey's "association"
+    governing philosophy, the 1930 Berber Dahir's role in sparking early
+    nationalism, and Mohammed V's exile and return as the direct catalyst
+    for independence, and names Morocco as the only African Union member
+    with an active territorial dispute. Worth stating precisely why:
+    when Spain withdrew from Spanish Sahara in 1975, the Madrid Accords
+    it signed under pressure from the Green March transferred
+    administration of the territory to Morocco and Mauritania, not
+    sovereignty. The International Court of Justice had ruled weeks
+    earlier, in its October 1975 advisory opinion, that while historical
+    ties of allegiance existed between some Sahrawi tribes and the
+    Moroccan sultanate, they fell short of establishing territorial
+    sovereignty, and that self-determination -- meaning a referendum --
+    should decide the territory's status; no such referendum has ever
+    been held. The dispute's weight on Morocco's own regional standing
+    is concrete, not abstract: Morocco withdrew from the Organisation of
+    African Unity in November 1984, rather than sit alongside the
+    Polisario's Sahrawi Arab Democratic Republic as a fellow member, and
+    remained outside the pan-African body -- unique among AU member
+    states in this corpus -- for 33 years, rejoining only in January
+    2017 on the express condition that the SADR's own membership was
+    left undisturbed.
+  colonial_legacy_citations: [c3, c11, c12]
+  key_periods:
+    - title: "Dual protectorate and the road to independence"
+      period: "1912-1956"
+      summary: >
+        France established a protectorate over Morocco under the 1912
+        Treaty of Fez, with Spain administering separate northern and
+        southern zones under the same agreement. French Resident-General
+        Lyautey governed through existing Moroccan institutions, and the
+        1930 Berber Dahir, extending French law to Berber communities,
+        sparked early nationalist resistance. France's 1953 exile of
+        Sultan Mohammed V and his 1955 return accelerated independence
+        negotiations; the French protectorate ended in March 1956 and
+        Spain's northern zone followed in April.
+      citations: [c1]
+    - title: "Hassan II, the Years of Lead, and the Green March"
+      period: "1961-1999"
+      summary: >
+        Hassan II succeeded his father in 1961 and ruled until 1999, a
+        reign remembered for the "Years of Lead" -- decades of state
+        violence against political dissidents, alongside two attempted
+        military coups against him in 1971 and 1972. In November 1975,
+        as Spain withdrew from Western Sahara, Hassan II organised the
+        Green March, sending 350,000 unarmed civilians into the
+        territory to press Morocco's claim; a war with the Sahrawi
+        Polisario Front followed until a 1991 ceasefire.
+      citations: [c2, c3]
+    - title: "Mohammed VI, continued prosecutions, and US recognition"
+      period: "1999-2020"
+      summary: >
+        Mohammed VI succeeded his father in 1999 and eased some Years of
+        Lead-era repression, while prosecutions of journalists and
+        activists continued: journalists including Omar Radi and
+        Soulaiman Raissouni were jailed in 2020 on charges press-freedom
+        organisations including RSF characterised as politically
+        motivated. In December 2020 the United States recognised
+        Moroccan sovereignty over Western Sahara in exchange for Morocco
+        normalising relations with Israel.
+      citations: [c4, c5]
+    - title: "International recognition, earthquake, and the 2025 protests"
+      period: "2023-2025"
+      summary: >
+        A 6.8-magnitude earthquake struck the High Atlas Mountains on 8
+        September 2023, killing nearly 3,000 people and prompting a
+        five-year, roughly $11.7 billion recovery plan. France fully
+        recognised Moroccan sovereignty over Western Sahara in July
+        2024, and jailed journalists Radi, Raissouni and Taoufik
+        Bouachrine were released the same month under royal pardon. The
+        UN Security Council endorsed Morocco's autonomy plan for Western
+        Sahara in October 2025; that same autumn, youth-led "Gen Z 212"
+        protests over healthcare, education and World Cup spending swept
+        the country.
+      citations: [c6, c5, c7, c8]
+
+pillars:
+  A:
+    summary: >
+      All six governance indicators are directly measured this year.
+      Voice and Accountability is the weakest of the six, consistent
+      with a pattern of prosecutions of journalists and activists that
+      continued well into the Mohammed VI era: Omar Radi, Soulaiman
+      Raissouni and Taoufik Bouachrine were jailed in 2020 on charges
+      press-freedom organisations including RSF characterised as
+      politically motivated, and were released only in July 2024 under a
+      royal pardon that stopped short of exonerating them. Government
+      Effectiveness, Regulatory Quality and Rule of Law all clear the
+      midpoint; Control of Corruption is the second-weakest score. More
+      than 2,400 protesters faced criminal charges after the 2025 Gen Z
+      212 demonstrations, an unusually large prosecution total for a
+      movement whose organisers repeatedly stated a commitment to
+      nonviolence.
+    drivers:
+      - "all 6 governance indicators directly measured; Voice and Accountability is the weakest score in the pillar"
+      - "Radi, Raissouni and Bouachrine jailed 2020 on charges RSF/press-freedom groups called politically motivated; released July 2024 under royal pardon, not full exoneration"
+      - "Government Effectiveness, Regulatory Quality, Rule of Law all clear the midpoint; Control of Corruption second-weakest"
+      - "2,400+ protesters faced criminal charges after the 2025 Gen Z 212 protests, despite organisers' stated nonviolence commitment"
+    citations: [c4, c5, c9]
+  B:
+    summary: >
+      GDP growth, inflation and domestic credit to the private sector,
+      all freshly measured, are strong -- domestic credit tops out the
+      pillar's scoring range -- and GDP per capita, also fresh, is
+      comfortably the highest recorded so far in this corpus among
+      non-island states. Gini, the pillar's fifth indicator, is not
+      measured this year. That aggregate strength sits against the
+      specific grievance driving 2025's Gen Z 212 protests: youth
+      unemployment reached a record 37% in 2025, more than 1.5 million
+      young people unable to find work, while demonstrators criticised
+      government spending on 2030 World Cup stadiums and the 2025 Africa
+      Cup of Nations as prioritised over healthcare and education.
+    drivers:
+      - "GDP growth, inflation, domestic credit all fresh and strong -- domestic credit tops the pillar's scoring range"
+      - "GDP per capita (fresh) comfortably the highest recorded so far in this corpus among non-island states; Gini not measured this year"
+      - "youth unemployment hit a record 37% in 2025 (1.5M+ unable to find work) -- the core Gen Z 212 grievance against otherwise strong aggregate growth"
+      - "protesters criticised World Cup stadium and AFCON 2025 spending as prioritised over healthcare and education"
+    citations: [c9, c10]
+  D:
+    summary: >
+      Life expectancy, at just over 75 years, and infant mortality, at
+      15.3 per 1,000 live births, are both freshly measured and among
+      the strongest readings recorded in this corpus. Severe food
+      insecurity, at 10.9% and estimated from regional peers rather than
+      measured directly, is more middling. Two of the pillar's five
+      indicators are not measured this year. This is the strongest
+      health pillar recorded so far in this project, though it sits
+      alongside the Gen Z 212 protesters' specific complaint that public
+      healthcare access and quality lag the headline outcome statistics
+      -- a tension partly addressed by the AMO health-insurance
+      expansion documented under recent developments.
+    drivers:
+      - "life expectancy ~75 years, infant mortality ~15.3/1,000 -- both fresh, among the strongest readings in this corpus"
+      - "severe food insecurity 10.9% (regional-mean estimate) -- more middling; 2 of 5 indicators not measured this year"
+      - "strongest health pillar recorded so far in this project, despite Gen Z 212's specific complaint about public healthcare access and quality"
+    citations: [c1, c9]
+  E:
+    summary: >
+      Political Stability, freshly measured, is moderate rather than
+      severe -- a real contrast with most of the Sahel and Horn records
+      in this corpus -- but still reflects a low tolerance for organised
+      dissent, evident when security forces shot dead three people in
+      the town of Lqliaa on 1 October 2025 during the Gen Z 212 protests,
+      in circumstances state media and protesters have disputed.
+      Intentional homicide, freshly and directly measured rather than
+      estimated from regional peers, is comparatively low. Displaced
+      persons, estimated from regional peers, is a weak reading, though
+      Morocco is not itself host to a large internal displacement crisis
+      on the scale seen elsewhere in this corpus -- the figure reflects
+      the regional-estimate methodology more than a directly documented
+      one. One of the pillar's four indicators is not measured this
+      year.
+    drivers:
+      - "Political Stability moderate (fresh) -- a real contrast with the Sahel/Horn records elsewhere in this corpus"
+      - "3 killed by security forces in Lqliaa, 1 Oct 2025, during the Gen Z 212 protests -- circumstances disputed"
+      - "intentional homicide low (fresh, directly measured, not a regional estimate)"
+      - "IDPs weak (regional-mean estimate) -- reflects the estimation methodology, not a directly documented Moroccan displacement crisis"
+    citations: [c8, c9]
+  F:
+    summary: >
+      Per-capita CO2 emissions, freshly measured, are moderate.
+      Electricity generation from fossil fuels, at just over 76% and
+      also fresh, is high but markedly lower than the near-total fossil
+      dependence seen in several Sahel records in this corpus, reflecting
+      real renewable investment including the Noor Ouarzazate complex,
+      the world's largest concentrated solar power plant, which alone
+      supplies clean electricity to more than a million Moroccan homes.
+      Agricultural land share, fresh, is extensive. Freshwater
+      withdrawal, carried forward rather than fresh, runs at over a
+      third of internal renewable resources. This is a genuine middling
+      case rather than either a wealth-proxy artefact or a clear
+      achievement: real clean-energy investment sits alongside real and
+      continuing fossil dependence.
+    drivers:
+      - "CO2 per capita moderate (fresh); electricity generation ~76% fossil-fuel (fresh) -- high, but well below the near-total fossil dependence seen in several Sahel records in this corpus"
+      - "Noor Ouarzazate: world's largest concentrated solar complex, supplies clean power to 1M+ Moroccan homes -- a genuine, not wealth-proxy, clean-energy investment"
+      - "agricultural land extensive (fresh); freshwater withdrawal over a third of renewable resources (carried forward)"
+      - "a genuine middling case: real clean investment alongside real continuing fossil dependence, not an artefact of poverty or a clear achievement either way"
+    citations: [c9, c13]
+  G:
+    summary: >
+      Electricity access is complete -- 100% and freshly measured, the
+      ceiling score, a sharp contrast with several West African records
+      in this corpus where access sits below a quarter of the
+      population. Basic and safely managed drinking water access, both
+      fresh, are strong; handwashing coverage, estimated from regional
+      peers, is more middling. Social protection and labour programme
+      coverage, the pillar's fifth indicator, is not measured this year.
+      This is among the strongest infrastructure pillars recorded in
+      this project so far -- part of what Gen Z 212 protesters argued
+      should extend further into public services, with healthcare and
+      education receiving the same sustained investment electricity and
+      water access clearly have.
+    drivers:
+      - "electricity access 100% (fresh) -- the ceiling score, sharp contrast with West African records elsewhere in this corpus where access sits below 25%"
+      - "basic and safely managed drinking water both strong (fresh); handwashing more middling (regional-mean estimate)"
+      - "social protection not measured this year; among the strongest infrastructure pillars recorded in this project so far"
+      - "Gen Z 212 protesters argued healthcare/education should receive the same investment level as electricity and water infrastructure"
+    citations: [c9, c10]
+
+recent:
+  primary:
+    - headline: "Youth-led Gen Z 212 protests sweep Morocco over healthcare, education and World Cup spending"
+      date: 2025-10-02
+      summary: >
+        Youth-led "Gen Z 212" protests broke out across more than a
+        dozen Moroccan cities from late September 2025, demanding
+        improved public healthcare and education and criticising
+        government spending on 2030 World Cup stadiums and the 2025
+        Africa Cup of Nations. Security forces shot dead three people in
+        Lqliaa on 1 October; more than 400 people were detained within
+        four days, and more than 2,400 protesters ultimately faced
+        criminal charges. King Mohammed VI addressed the demands in a
+        rare televised speech, after which the movement paused street
+        protests.
+      why_it_matters: >
+        Directly explains Pillar A's Voice and Accountability weakness
+        and Pillar B's youth-unemployment driver, and shows a genuine,
+        currently unresolved tension between Morocco's strong aggregate
+        indicators and lived public-service experience.
+      news_url: "https://www.middleeasteye.net/news/morocco-two-people-killed-police-during-genz-212-protests"
+      wikipedia_url: "https://en.wikipedia.org/wiki/2025_Moroccan_Gen_Z_protests"
+      sentiment: negative
+    - headline: "Morocco's universal health insurance reform reaches 88% coverage"
+      date: 2025-12-06
+      summary: >
+        Morocco's health minister announced in December 2025 that the
+        AMO basic health insurance system had reached 88% of the
+        population, more than 32 million people, up from 42% coverage
+        before the reform began. The AMO Tadamon programme alone brought
+        roughly 11 million previously uninsured people into the system,
+        and the health ministry's budget more than quadrupled between
+        2010 and 2026. The government has committed to full universal
+        coverage by 2030.
+      why_it_matters: >
+        A genuine, substantial and independently verifiable social-
+        policy achievement running directly alongside the Gen Z 212
+        protesters' healthcare grievances documented in the same
+        record -- both are real and current, and neither cancels the
+        other out.
+      news_url: "https://www.moroccoworldnews.com/2025/12/270802/tehraoui-morocco-expands-universal-health-coverage-to-88-of-population/"
+      wikipedia_url: ""
+      sentiment: positive
+    - headline: "UN Security Council endorses Morocco's Western Sahara autonomy plan"
+      date: 2025-10-31
+      summary: >
+        The UN Security Council adopted Resolution 2797 on 31 October
+        2025, endorsing Morocco's autonomy proposal as the basis for a
+        "just, lasting, and mutually acceptable" political solution to
+        the Western Sahara dispute, with 11 votes in favour, none
+        against, and three abstentions (China, Russia, Pakistan). France
+        had fully recognised Moroccan sovereignty over the territory in
+        July 2024, and the UK endorsed the autonomy plan in June 2025;
+        Morocco declared a public holiday to mark the resolution.
+      why_it_matters: >
+        The most significant international recognition Morocco's
+        five-decade territorial claim has received, though it endorses a
+        starting point for negotiation rather than the referendum
+        documented in historical.colonial_legacy, and the Polisario
+        Front and Algeria continue to reject it.
+      news_url: "https://www.france24.com/en/africa/20251031-un-security-council-backs-moroccan-plan-for-disputed-western-sahara"
+      wikipedia_url: ""
+      sentiment: mixed
+  extended:
+    - headline: "Jailed journalists Radi, Raissouni and Bouachrine released under royal pardon"
+      date: 2024-07-29
+      summary: >
+        Journalists Omar Radi, Soulaiman Raissouni and Taoufik
+        Bouachrine were released from prison on 29 July 2024 under a
+        royal pardon, having been jailed since 2020 on charges --
+        including sexual-assault allegations Raissouni denied as
+        retaliatory -- that press-freedom organisations including RSF
+        and PEN International characterised as politically motivated.
+        The pardon stopped short of exonerating them; their convictions
+        were not overturned.
+      why_it_matters: >
+        A genuine, verified improvement in a specific, long-documented
+        human rights case underlying Pillar A's weak Voice and
+        Accountability score, though the underlying convictions still
+        stand.
+      news_url: "https://rsf.org/en/morocco-journalists-taoufik-bouachrine-omar-radi-and-soulaimane-raissouni-free-last"
+      wikipedia_url: ""
+      sentiment: mixed
+
+events:
+  - year: 1956
+    type: independence
+    title: "Morocco regains independence"
+    description: >
+      France ended its protectorate over Morocco in March 1956, followed
+      by Spain's northern zone in April, after Sultan Mohammed V's 1953
+      exile and 1955 return had accelerated nationalist pressure for
+      independence.
+    url: "https://en.wikipedia.org/wiki/French_protectorate_in_Morocco"
+    direction: improve
+  - year: 1975
+    type: conflict
+    title: "Green March and the start of the Western Sahara war"
+    description: >
+      Hassan II organised the Green March in November 1975, sending
+      350,000 unarmed Moroccans into the Spanish-held territory to press
+      Morocco's claim; Spain transferred administration to Morocco and
+      Mauritania without transferring sovereignty, and a war with the
+      Sahrawi Polisario Front followed until a 1991 ceasefire.
+    url: "https://en.wikipedia.org/wiki/Western_Sahara_War"
+    direction: mixed
+  - year: 2023
+    type: disaster
+    title: "Al Haouz earthquake kills nearly 3,000"
+    description: >
+      A 6.8-magnitude earthquake struck the High Atlas Mountains on 8
+      September 2023, killing nearly 3,000 people and prompting a
+      five-year, roughly $11.7 billion government recovery plan.
+    url: "https://en.wikipedia.org/wiki/2023_Al_Haouz_earthquake"
+    direction: deteriorate
+  - year: 2025
+    type: peace_deal
+    title: "UN Security Council endorses Morocco's Western Sahara autonomy plan"
+    description: >
+      The UN Security Council adopted Resolution 2797 on 31 October
+      2025, endorsing Morocco's autonomy proposal as the basis for a
+      political solution to the five-decade Western Sahara dispute, with
+      the Polisario Front and Algeria continuing to reject it.
+    url: "https://www.france24.com/en/africa/20251031-un-security-council-backs-moroccan-plan-for-disputed-western-sahara"
+    direction: mixed
+
+citations:
+  - id: c1
+    url: "https://en.wikipedia.org/wiki/French_protectorate_in_Morocco"
+    source_type: wikipedia
+    title: "French protectorate in Morocco"
+    accessed: 2026-08-10
+    verified: true
+  - id: c2
+    url: "https://en.wikipedia.org/wiki/Years_of_Lead_(Morocco)"
+    source_type: wikipedia
+    title: "Years of Lead (Morocco)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c3
+    url: "https://en.wikipedia.org/wiki/Western_Sahara_War"
+    source_type: wikipedia
+    title: "Western Sahara War"
+    accessed: 2026-08-10
+    verified: true
+  - id: c4
+    url: "https://www.aljazeera.com/news/2020/12/10/israel-morocco-agree-to-normalise-relations-in-us-brokered-deal"
+    source_type: news
+    title: "Israel, Morocco agree to normalise relations in US-brokered deal (Al Jazeera)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c5
+    url: "https://rsf.org/en/morocco-journalists-taoufik-bouachrine-omar-radi-and-soulaimane-raissouni-free-last"
+    source_type: news
+    title: "Morocco: Journalists Taoufik Bouachrine, Omar Radi and Soulaimane Raissouni Free at Last (RSF)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c6
+    url: "https://en.wikipedia.org/wiki/2023_Al_Haouz_earthquake"
+    source_type: wikipedia
+    title: "2023 Al Haouz earthquake"
+    accessed: 2026-08-10
+    verified: true
+  - id: c7
+    url: "https://www.france24.com/en/africa/20251031-un-security-council-backs-moroccan-plan-for-disputed-western-sahara"
+    source_type: news
+    title: "UN Security Council backs Moroccan plan for disputed Western Sahara (France 24)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c8
+    url: "https://www.middleeasteye.net/news/morocco-two-people-killed-police-during-genz-212-protests"
+    source_type: news
+    title: "Morocco: Police kill three during GenZ 212 protests (Middle East Eye)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c9
+    url: "https://en.wikipedia.org/wiki/2025_Moroccan_Gen_Z_protests"
+    source_type: wikipedia
+    title: "2025 Moroccan Gen Z protests"
+    accessed: 2026-08-10
+    verified: true
+  - id: c10
+    url: "https://www.moroccoworldnews.com/2025/12/270802/tehraoui-morocco-expands-universal-health-coverage-to-88-of-population/"
+    source_type: news
+    title: "Tehraoui: Morocco Expands Universal Health Coverage to 88% of Population (Morocco World News)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c11
+    url: "https://www.icj-cij.org/node/103799"
+    source_type: official
+    title: "Summary of the Advisory Opinion of 16 October 1975 -- Western Sahara (International Court of Justice)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c12
+    url: "https://www.aljazeera.com/news/2017/1/31/morocco-rejoins-the-african-union-after-33-years"
+    source_type: news
+    title: "Morocco rejoins the African Union after 33 years (Al Jazeera)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c13
+    url: "https://www.cif.org/news/worlds-largest-concentrated-solar-plant-opened-morocco"
+    source_type: official
+    title: "World's largest concentrated solar plant opened in Morocco (Climate Investment Funds)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c14
+    url: "https://en.wikipedia.org/wiki/Arab_Maghreb_Union"
+    source_type: wikipedia
+    title: "Arab Maghreb Union"
+    accessed: 2026-08-10
+    verified: true
+  - id: c15
+    url: "https://simple.wikipedia.org/wiki/Community_of_Sahel-Saharan_States"
+    source_type: wikipedia
+    title: "Community of Sahel-Saharan States"
+    accessed: 2026-08-10
+    verified: true
+
+rec_membership:
+  - org: UMA
+    joined: 1989
+    status: current
+    left: null
+    citations: [c14]
+  - org: CEN-SAD
+    joined: 2001
+    status: current
+    left: null
+    citations: [c15]
+
+balance:
+  n_positive: 1
+  n_negative: 1
+  n_mixed: 2
+  note: >
+    The Gen Z 212 protests are coded negative at full weight -- three
+    people killed by security forces, 2,400+ criminal prosecutions, and
+    a still-unresolved youth-unemployment crisis are not softened to
+    make room for other items. The AMO health-coverage expansion is
+    coded positive because it is a genuine, independently verifiable,
+    substantial achievement (42% to 88% coverage), placed deliberately
+    alongside the Gen Z 212 protesters' own healthcare complaints rather
+    than presented as resolving them -- both are true at once. The UN
+    Security Council's endorsement of Morocco's autonomy plan and the
+    journalist pardons are both coded mixed rather than positive: the
+    former is a real diplomatic achievement that does not deliver the
+    referendum documented in historical.colonial_legacy, and the latter
+    is a real release that left the underlying convictions standing.
