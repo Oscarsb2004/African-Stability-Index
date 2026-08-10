@@ -1,0 +1,463 @@
+meta:
+  iso3: NGA
+  name: Nigeria
+  last_updated: 2026-08-09
+  iteration_count: 1
+  next_action: >
+    EXPAND: (1) check whether the WFP's 33-million food-insecurity
+    projection for 2025 was met, exceeded, or eased once outturn data is
+    available; (2) check whether Rivers State has stayed stable since the
+    September 2025 restoration of Governor Fubara or whether the political
+    crisis resumed; (3) check the Boko Haram/northwest-bandit conflict
+    trajectory into 2026, and whether the "over 6,000 killed in 2025"
+    figure has a more precise, single-source citation than the Soufan
+    Center's aggregate; (4) check if Pillar C (greyed at 2/8 measured) has
+    gained coverage; (5) find a dedicated source on IPOB/Igbo secessionist
+    sentiment to deepen the colonial_legacy connection to the Biafra war,
+    which this run left as a plausible but not separately-sourced link.
+  model_used: claude-sonnet-5
+
+historical:
+  overview: >
+    Britain amalgamated the separately administered Northern and Southern
+    Nigeria protectorates in 1914 under Governor Frederick Lugard, joining
+    more than 250 ethnic groups and a sharp religious divide -- a largely
+    Muslim north, a largely Christian south -- inside a single colonial
+    boundary. Independence arrived on 1 October 1960, but the First
+    Republic collapsed within six years: a January 1966 coup was followed
+    by a July 1966 counter-coup that brought Yakubu Gowon to power, and
+    anti-Igbo pogroms killing an estimated 10,000-30,000 people preceded
+    the Eastern Region's May 1967 declaration of independence as Biafra.
+    The resulting civil war, fought substantially over control of the
+    region's oil fields, killed between 500,000 and three million people --
+    most of them civilians who starved under a federal blockade -- before
+    Biafra's surrender in January 1970. Oil revenue, discovered in
+    commercial quantities in 1956, funded both rapid development and a
+    near-continuous cycle of military coups through the 1970s, 1980s and
+    1990s, including Sani Abacha's especially repressive 1993-1998
+    dictatorship. Nigeria returned to civilian rule in 1999 under the
+    Fourth Republic and has since completed five consecutive peaceful
+    presidential transitions -- in 2007, 2010, 2015 and 2023 -- despite
+    recurring institutional strain. Bola Tinubu won the February 2023
+    election with 36.61% of the vote on a record-low 26.71% turnout and,
+    within weeks of taking office, ended the decades-old fuel subsidy and
+    floated the naira, reforms that triggered the country's most severe
+    cost-of-living crisis in a generation.
+  overview_citations: [c1, c2, c4, c7]
+  colonial_legacy: >
+    context/colonial_history.yaml already credits the 1914 amalgamation
+    with creating a state whose internal contradictions -- over 250 ethnic
+    groups, a north-south religious divide -- were never resolved. The
+    administrative mechanism worth adding is how unevenly indirect rule
+    actually worked across that amalgamated territory. In the north, Lugard
+    governed through the pre-existing, centralised Sokoto Caliphate emirate
+    system: emirs retained real authority, backed by existing Islamic
+    courts and taxation, under British "Residents." Igboland in the
+    southeast had no comparable centralised hierarchy to co-opt, so British
+    administrators manufactured "warrant chiefs" with no traditional
+    legitimacy and imposed tax-collection duties on them; the mismatch
+    provoked the 1929 Aba Women's Revolt, one of colonial Nigeria's largest
+    anti-colonial uprisings, and left the southeast without the kind of
+    embedded traditional authority the north, and to a lesser extent
+    Yorubaland, retained. That asymmetric institutional inheritance is a
+    plausible structural contributor to the region's later marginalisation
+    after the Biafra war and to the persistence of Igbo secessionist
+    sentiment today -- distinct from, though related to, the oil-control
+    dispute this file already documents.
+  colonial_legacy_citations: [c1, c3, c2]
+  key_periods:
+    - title: "Colonial amalgamation and divergent indirect rule"
+      period: "1914-1960"
+      summary: >
+        Britain amalgamated the Northern and Southern protectorates in
+        1914 under Governor Frederick Lugard, joining more than 250 ethnic
+        groups within one colonial boundary. Indirect rule worked unevenly
+        across the new territory: emirs retained real authority in the
+        centralised, pre-existing Sokoto Caliphate system of the north,
+        while British administrators manufactured "warrant chiefs" with no
+        traditional legitimacy in the decentralised southeast, provoking
+        the 1929 Aba Women's Revolt. Nigeria gained independence on 1
+        October 1960 as a federation still shaped by that asymmetric
+        administrative inheritance.
+      citations: [c1, c3]
+    - title: "First Republic collapse and the Biafra War"
+      period: "1960-1970"
+      summary: >
+        A January 1966 coup was followed by a July 1966 counter-coup
+        bringing Yakubu Gowon to power; anti-Igbo pogroms killing an
+        estimated 10,000-30,000 people preceded the Eastern Region's May
+        1967 declaration of independence as Biafra, driven substantially
+        by the federal government's move to strip the region of control
+        over its oil fields. The resulting civil war killed between
+        500,000 and three million people, most from starvation under a
+        federal blockade, before Biafra's surrender in January 1970. No
+        Nigerian president has been of Igbo ethnicity since.
+      citations: [c2]
+    - title: "Oil boom, military rule, and the return to democracy"
+      period: "1970-1999"
+      summary: >
+        Oil revenue, discovered in commercial quantities in 1956, funded
+        both rapid development and a near-continuous cycle of military
+        government from the 1970s through the 1990s, including Sani
+        Abacha's especially repressive 1993-1998 dictatorship. Nigeria
+        transitioned to civilian rule in 1999 under the Fourth Republic,
+        establishing a federal system and beginning what has become the
+        country's longest sustained period of electoral government.
+      citations: [c1]
+    - title: "Fourth Republic consolidation and the 2023-2025 economic shock"
+      period: "2015-2025"
+      summary: >
+        Nigeria completed peaceful presidential transitions in 2015 and
+        again in February 2023, when Bola Tinubu won with 36.61% of the
+        vote on a record-low 26.71% turnout; a seven-justice Supreme Court
+        panel unanimously dismissed both opposition candidates' challenges
+        to the result in October 2023. Within weeks of taking office,
+        Tinubu ended the fuel subsidy and floated the naira, which lost
+        roughly 25% of its value in a single day and has fallen further
+        since, triggering the country's most severe cost-of-living crisis
+        in a generation and costing Nigeria its long-held title as
+        Africa's largest economy.
+      citations: [c4, c5, c7, c11]
+
+pillars:
+  A:
+    summary: >
+      All six governance indicators are directly measured, and Nigeria
+      scores poorly on each -- Political Stability and Control of
+      Corruption both score around 25, among the weaker results in the
+      index. This is not primarily a story about coups: Nigeria has
+      completed five consecutive peaceful presidential transitions since
+      1999, most recently in 2023, when a seven-justice Supreme Court panel
+      unanimously dismissed both opposition candidates' challenges to Bola
+      Tinubu's victory in October 2023 -- a functioning judicial check,
+      even though the underlying result (36.61% of the vote on a
+      record-low 26.71% turnout) was itself narrow. The 2025 Rivers State
+      crisis tested that institutional record differently: Tinubu declared
+      a state of emergency in March, suspending the elected governor and
+      legislature for six months -- a measure that survived over 40
+      separate court challenges -- before restoring them in September, an
+      unprecedented federal intervention that split opinion between
+      necessary crisis response and executive overreach.
+    drivers:
+      - "all 6 governance indicators directly measured, all score poorly -- Political Stability and Control of Corruption weakest"
+      - "5 consecutive peaceful transitions since 1999; Oct 2023 Supreme Court unanimously upheld Tinubu's election against 2 challenges"
+      - "2023 result itself narrow: 36.61% of the vote on a record-low 26.71% turnout"
+      - "March-Sept 2025 Rivers State emergency rule survived 40+ court challenges -- unprecedented federal suspension of an elected state government"
+    citations: [c4, c5, c6]
+  B:
+    summary: >
+      GDP per capita and GDP growth are freshly measured and moderate, but
+      the pillar's real story is the reform shock since Tinubu's May 2023
+      inauguration: ending the fuel subsidy and floating the naira that
+      June. The naira lost roughly 25% of its value in a single day and
+      has fallen further since; petrol prices rose 196% almost
+      immediately; and overall inflation reached nearly 30%, with food
+      inflation at 35.4%, against a monthly minimum wage of just ₦30,000.
+      Nigeria's dollar-denominated GDP fell from $477 billion (2022) to
+      $375 billion (2023) as a direct result of the devaluation, even
+      though the economy grew in local-currency terms -- a currency
+      effect, not a production collapse -- and Nigeria lost its "Africa's
+      largest economy" title to South Africa. Domestic credit and the Gini
+      index were not freshly measured this year, the latter a real gap
+      given how much the reforms have plausibly reshaped inequality since
+      it was last recorded.
+    drivers:
+      - "GDP per capita and growth freshly measured, moderate"
+      - "naira fell ~25% in a single day (June 2023) and further since; petrol prices +196%; inflation ~30%, food inflation 35.4%"
+      - "dollar GDP fell $477B to $375B (2022-23) -- a currency effect, not a production collapse; lost 'Africa's largest economy' title to South Africa"
+      - "domestic credit and Gini not freshly measured -- the latter a real gap given the reform shock's likely effect on inequality"
+    citations: [c7, c11]
+  D:
+    summary: >
+      All five health indicators are freshly measured this year, and
+      Nigeria scores poorly on every one -- unlike several other
+      low-scoring countries in this index, this is not a data-sparsity
+      story. Life expectancy at just under 55 years and infant mortality
+      above 70 per 1,000 live births are both among the more severe
+      readings in the index. Severe food insecurity, also freshly
+      measured, affects roughly a quarter of the population, and the World
+      Food Programme projects the number of food-insecure Nigerians will
+      reach 33 million in 2025 -- driven by triple-digit food-price
+      inflation, flooding, and 15 years of northeastern insurgency -- with
+      1.8 million children facing severe acute malnutrition. Safely
+      managed drinking water reaches under 30% of the population. The
+      fully-measured nature of this pillar is itself informative:
+      Nigeria's health burden is a directly documented, well-evidenced
+      crisis, not an artefact of thin data coverage.
+    drivers:
+      - "all 5 indicators freshly measured -- a well-evidenced crisis, not a data-coverage artifact"
+      - "life expectancy <55 years; infant mortality >70/1,000 -- among the more severe readings in the index"
+      - "WFP projects 33 million Nigerians food-insecure in 2025; 1.8 million children facing severe acute malnutrition"
+    citations: [c12, c9]
+  E:
+    summary: >
+      All four security indicators are freshly measured, and each is
+      severe: Political Stability scores near the bottom of the index, the
+      homicide rate scores poorly, and displaced persons -- 14.66 per
+      1,000, directly measured -- sit well above the regional norm. This
+      reflects two overlapping conflicts. In the northeast, a resurgent
+      Boko Haram/JAS faction escalated attacks through 2025, killing at
+      least 57 people in a single May raid on two Borno State villages. In
+      the northwest, banditry rooted in farmer-herder conflict has
+      hardened into organised insurgency: nearly 400 people, including 287
+      schoolchildren, were kidnapped in Kaduna State in March 2025 alone,
+      and Lakurawa fighters -- designated a terrorist group in 2025, with
+      links to Islamic State Sahel Province -- killed 59 civilians across
+      Sokoto and Kebbi States by mid-2025. Analysts describe the two
+      theatres as converging. Combined, Nigeria's active conflicts killed
+      more than 6,000 people in 2025.
+    drivers:
+      - "all 4 indicators freshly measured -- a well-evidenced crisis, not a data gap"
+      - "IDPs 14.66/1,000, directly measured, well above the regional norm"
+      - "northeast: resurgent Boko Haram/JAS, May 2025 Borno State attack killed 57"
+      - "northwest: banditry hardening into insurgency (March 2025 Kaduna kidnapping of 287 schoolchildren); 6,000+ combined conflict deaths in 2025"
+    citations: [c8, c9]
+  F:
+    summary: >
+      Only two of four indicators were freshly measured this year.
+      Per-capita CO2 emissions score near the ceiling of the scale at just
+      0.55 tons -- among the lowest recorded anywhere in the index -- but
+      this again reflects the CO2-per-capita "wealth proxy" pattern
+      documented elsewhere in this project (methodology/METHODOLOGY_REVIEW.md)
+      rather than genuine decarbonisation: roughly 45-50% of Nigerians lack
+      electricity access at all, the world's largest such gap for a single
+      country, and of the electricity actually generated, over 75% still
+      comes from oil, gas and coal (a carried-forward figure). A major
+      oil-producing and -exporting nation nonetheless has one of the
+      index's lowest per-capita emissions simply because so much of the
+      population consumes so little energy. Agricultural land share,
+      freshly measured, is high. Freshwater withdrawal, carried forward,
+      is low relative to renewable resources -- a genuine strength, though
+      not one this record can confirm is still current.
+    drivers:
+      - "only 2 of 4 indicators freshly measured"
+      - "CO2 pc 0.55 tons (near-ceiling score) is the wealth-proxy artifact again, not policy -- ~45-50% lack electricity access at all"
+      - "a major oil producer/exporter with one of the index's lowest per-capita emissions -- energy poverty, not decarbonisation"
+      - "agricultural land high (fresh); freshwater withdrawal low (carried forward, unconfirmed currency)"
+    citations: [c10]
+  G:
+    summary: >
+      Electricity access (61%) and basic drinking-water access (81%) are
+      both freshly measured and moderate. Handwashing-facility coverage,
+      also freshly measured this year (unlike the regional-mean estimates
+      used for several other countries in this pass), is markedly lower at
+      31%, a directly documented gap between basic and higher-quality
+      service delivery. Social protection and labour programme coverage,
+      carried forward rather than fresh, covers roughly a fifth of the
+      population -- a genuine gap given how directly the 2023-2025
+      subsidy removal and currency devaluation increased the population's
+      need for exactly this kind of safety net.
+    drivers:
+      - "electricity access 61%, basic water access 81% -- both fresh, moderate"
+      - "handwashing coverage directly measured (not a regional estimate) at 31% -- a real, not imputed, quality gap"
+      - "social protection coverage (~21%, carried forward) is a real gap given the 2023-2025 economic shock's effect on need"
+    citations: [c7]
+
+recent:
+  primary:
+    - headline: "WFP: 33 million Nigerians projected food-insecure in 2025 amid inflation, floods and insurgency"
+      date: 2024-11-08
+      summary: >
+        The World Food Programme projected in November 2024 that 33
+        million Nigerians -- up from 25 million currently receiving
+        assistance -- would face food insecurity in 2025, driven by
+        triple-digit food-price inflation following the 2023 fuel-subsidy
+        removal and naira float, flood damage, and 15 years of insurgency
+        concentrated in the northeast. An estimated 5.4 million children
+        are at risk of acute malnutrition, including 1.8 million facing
+        the most severe form and requiring critical treatment.
+      why_it_matters: >
+        Directly explains the poor Pillar D food-insecurity score and ties
+        Nigeria's economic reforms to a measurable humanitarian outcome
+        rather than an abstract inflation statistic.
+      news_url: "https://www.wfp.org/news/wfp-calls-urgent-life-saving-support-nigeria-33-million-people-face-food-insecurity-2025"
+      wikipedia_url: ""
+      sentiment: negative
+    - headline: "Tinubu declares, then lifts, unprecedented state of emergency in Rivers State"
+      date: 2025-09-18
+      summary: >
+        President Tinubu declared a state of emergency in oil-producing
+        Rivers State in March 2025, suspending elected Governor Siminalayi
+        Fubara, his deputy, and the state legislature amid political
+        infighting and pipeline-security concerns, and appointing a sole
+        federal administrator. The measure survived more than 40 separate
+        court challenges before Tinubu restored Fubara and the assembly to
+        office on 18 September 2025, citing sufficient reconciliation among
+        the state's political stakeholders.
+      why_it_matters: >
+        An unprecedented federal suspension of an elected state government,
+        testing Nigeria's federalism and civilian-democratic norms even
+        though it was ultimately time-limited and reversed.
+      news_url: "https://allafrica.com/stories/202509180065.html"
+      wikipedia_url: ""
+      sentiment: mixed
+    - headline: "Bandit-jihadist convergence opens a second insurgency front in Nigeria's northwest"
+      date: 2025-08-22
+      summary: >
+        A Soufan Center analysis published in August 2025 documented the
+        convergence of criminal banditry and jihadist networks in
+        Nigeria's northwest, including Lakurawa fighters -- designated a
+        terrorist group by Abuja in 2025 with links to Islamic State Sahel
+        Province -- who killed 59 civilians across Sokoto and Kebbi States
+        between January and June alone. Combined with a resurgent Boko
+        Haram/JAS faction in the northeast, which killed at least 57
+        people in a single May 2025 raid on two Borno State villages,
+        Nigeria's overlapping conflicts killed more than 6,000 people in
+        2025.
+      why_it_matters: >
+        Directly explains Pillar E's fully-measured but severe security
+        score and the country's high, directly-measured displaced-persons
+        rate.
+      news_url: "https://thesoufancenter.org/intelbrief-2025-august-22/"
+      wikipedia_url: ""
+      sentiment: negative
+  extended:
+    - headline: "Supreme Court unanimously upholds Tinubu's 2023 election victory"
+      date: 2023-10-27
+      summary: >
+        A seven-justice Supreme Court panel led by Justice Inyang Okoro
+        unanimously dismissed appeals from both leading opposition
+        candidates, Atiku Abubakar and Peter Obi, against Bola Tinubu's
+        February 2023 election victory, rejecting arguments over the
+        INEC results-transmission portal, the 25%-of-Federal-Capital-Territory
+        requirement, and unproven rigging allegations.
+      why_it_matters: >
+        A functioning judicial check on a contested election, and the
+        strongest institutional counterweight to the otherwise difficult
+        recent record documented elsewhere in this file.
+      news_url: "https://www.vanguardngr.com/2023/10/supreme-court-affirms-tinubus-election-dismisses-atiku-obis-appeals/"
+      wikipedia_url: "https://en.wikipedia.org/wiki/2023_Nigerian_general_election"
+      sentiment: positive
+
+events:
+  - year: 1960
+    type: independence
+    title: "Nigeria gains independence"
+    description: >
+      Nigeria became independent from Britain on 1 October 1960 as a
+      federation of regions still shaped by the uneven indirect-rule
+      system imposed after the 1914 amalgamation.
+    url: "https://en.wikipedia.org/wiki/History_of_Nigeria"
+    direction: improve
+  - year: 1967
+    type: conflict
+    title: "Biafra declares independence; civil war begins"
+    description: >
+      The Eastern Region declared independence as Biafra in May 1967
+      following anti-Igbo pogroms and a dispute over control of the
+      region's oil fields; the resulting civil war killed between 500,000
+      and three million people before Biafra's surrender in January 1970.
+    url: "https://en.wikipedia.org/wiki/Nigerian_Civil_War"
+    direction: deteriorate
+  - year: 1999
+    type: constitutional
+    title: "Return to civilian rule under the Fourth Republic"
+    description: >
+      Nigeria transitioned from military to civilian rule in 1999,
+      beginning what has become the country's longest sustained period of
+      electoral government.
+    url: "https://en.wikipedia.org/wiki/History_of_Nigeria"
+    direction: improve
+  - year: 2023
+    type: economic
+    title: "Fuel subsidy removed and naira floated"
+    description: >
+      Within weeks of his May 2023 inauguration, President Tinubu ended
+      the decades-old fuel subsidy and floated the naira, triggering the
+      country's most severe cost-of-living crisis in a generation.
+    url: "https://theconversation.com/nigeria-botched-economic-reforms-plunge-the-country-into-crisis-224545"
+    direction: deteriorate
+
+citations:
+  - id: c1
+    url: "https://en.wikipedia.org/wiki/History_of_Nigeria"
+    source_type: wikipedia
+    title: "History of Nigeria"
+    accessed: 2026-08-09
+    verified: true
+  - id: c2
+    url: "https://en.wikipedia.org/wiki/Nigerian_Civil_War"
+    source_type: wikipedia
+    title: "Nigerian Civil War"
+    accessed: 2026-08-09
+    verified: true
+  - id: c3
+    url: "https://www.thehistoryville.com/indirect-rule-nigeria/"
+    source_type: news
+    title: "A History of Indirect Rule in Nigeria (HistoryVille)"
+    accessed: 2026-08-09
+    verified: true
+  - id: c4
+    url: "https://en.wikipedia.org/wiki/2023_Nigerian_general_election"
+    source_type: wikipedia
+    title: "2023 Nigerian general election"
+    accessed: 2026-08-09
+    verified: true
+  - id: c5
+    url: "https://www.vanguardngr.com/2023/10/supreme-court-affirms-tinubus-election-dismisses-atiku-obis-appeals/"
+    source_type: news
+    title: "Supreme Court affirms Tinubu's election, dismisses Atiku, Obi's appeals (Vanguard)"
+    accessed: 2026-08-09
+    verified: true
+  - id: c6
+    url: "https://allafrica.com/stories/202509180065.html"
+    source_type: news
+    title: "Nigeria: Tinubu Lifts State of Emergency On Rivers, Restores Democratic Rule (AllAfrica)"
+    accessed: 2026-08-09
+    verified: true
+  - id: c7
+    url: "https://theconversation.com/nigeria-botched-economic-reforms-plunge-the-country-into-crisis-224545"
+    source_type: news
+    title: "Nigeria: botched economic reforms plunge the country into crisis (The Conversation)"
+    accessed: 2026-08-09
+    verified: true
+  - id: c8
+    url: "https://thesoufancenter.org/intelbrief-2025-august-22/"
+    source_type: academic
+    title: "From Criminality to Insurgency: The Convergence of Bandits and Jihadists in Nigeria's Northwest (The Soufan Center)"
+    accessed: 2026-08-09
+    verified: true
+  - id: c9
+    url: "https://www.hrw.org/world-report/2026/country-chapters/nigeria"
+    source_type: academic
+    title: "World Report 2026: Nigeria (Human Rights Watch)"
+    accessed: 2026-08-09
+    verified: true
+  - id: c10
+    url: "https://www.vanguardngr.com/2025/08/nigerias-necessary-energy-transition-to-unlock-prosperity/"
+    source_type: news
+    title: "Nigeria's necessary energy transition to unlock prosperity (Vanguard)"
+    accessed: 2026-08-09
+    verified: true
+  - id: c11
+    url: "https://nairametrics.com/2024/04/19/nigeria-to-become-africas-fourth-largest-economy-in-2024-imf/"
+    source_type: news
+    title: "Nigeria to become Africa's fourth largest economy in 2024 - IMF (Nairametrics)"
+    accessed: 2026-08-09
+    verified: true
+  - id: c12
+    url: "https://www.wfp.org/news/wfp-calls-urgent-life-saving-support-nigeria-33-million-people-face-food-insecurity-2025"
+    source_type: official
+    title: "WFP calls for urgent life-saving support in Nigeria as 33 million people face food insecurity in 2025"
+    accessed: 2026-08-09
+    verified: true
+
+balance:
+  n_positive: 1
+  n_negative: 2
+  n_mixed: 1
+  note: >
+    Nigeria's recent record is genuinely difficult rather than balanced,
+    and this record does not manufacture evenness: two of three
+    recent.primary items are negative (a deepening food-insecurity crisis,
+    a converging northeast/northwest security emergency) and the third is
+    mixed rather than positive (Rivers State's federal emergency rule,
+    resolved but still a real federalism strain). The one clear positive
+    -- the Supreme Court's unanimous, seven-justice rejection of both
+    opposition challenges to the 2023 election -- is real and placed at
+    full weight in extended rather than primary, since it is a judicial
+    event rather than the kind of ongoing development the primary slots
+    are meant to track. Nigeria's institutions functioning under strain is
+    a genuine, documented counterweight; it does not offset the severity
+    of what the other three items describe, and this record does not
+    pretend it does.

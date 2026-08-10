@@ -3,7 +3,7 @@
 The document future runs read before doing anything. Machine-readable twin:
 `narrative/state.yaml`.
 
-*Seeded 2026-08-09. Research runs so far: Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana (all CREATE).*
+*Seeded 2026-08-09. Research runs so far: Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria (all CREATE).*
 
 ---
 
@@ -26,7 +26,7 @@ An audit is forced early if a single run inflates the citation count by more tha
 
 ## Status
 
-**6 of 54 countries have a record (Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana). 3 of the first pass remain.**
+**7 of 54 countries have a record (Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria). 2 of the first pass remain.**
 
 ### First pass — 9 countries
 
@@ -43,7 +43,7 @@ whose ranks swing hardest with the weighting method.
 | COD | Democratic Rep. Congo | bottom decile; vast and low-coverage; long conflict history | **done — iteration 1** |
 | SOM | Somalia | lowest ranks; state reconstitution; sparse data is the hard case | **done — iteration 1** |
 | BWA | Botswana | high and stable; landlocked; resource governance counter-example | **done — iteration 1** |
-| NGA | Nigeria | largest population; federal; mixed signals across pillars | backlog |
+| NGA | Nigeria | largest population; federal; mixed signals across pillars | **done — iteration 1** |
 | RWA | Rwanda | strong development indicators alongside contested governance | backlog |
 | TCD | Chad | Sahel; 2021 coup; the worked example used in the blueprint | backlog |
 
@@ -167,6 +167,32 @@ Append one line per run: date, country, mode, what changed, what was removed.
   intentional-homicide rate (carried forward) scores 0.0 with no source
   found to explain it — logged as `next_action` for the EXPAND pass.
 
+- **2026-08-09 — NGA — CREATE.** Full baseline built: historical overview,
+  colonial legacy (expands context/colonial_history.yaml with the divergent
+  indirect-rule mechanism — centralised Sokoto Caliphate emirates in the
+  north retained real authority, while manufactured "warrant chiefs" with
+  no traditional legitimacy in the decentralised southeast provoked the
+  1929 Aba Women's Revolt, a plausible structural contributor to the
+  region's later marginalisation), 4 key_periods, 6 pillar summaries
+  (Pillar C left empty — greyed at 2/8 measured). 12 sources opened and
+  verified: 4 Wikipedia, 5 news, 2 academic/think-tank, 1 official.
+  `--links` passes 0 errors, 0 warnings — 12/12 resolved on the first
+  attempt, the cleanest link check in the corpus so far. Confirms the
+  "mixed signals across pillars" selection reason directly in the data:
+  Pillars A (38.7), D (39.1), and E (36.6) are all weak and, unlike
+  SOM/COD, fully and freshly measured (6/6, 5/5, 4/4) — the severity is a
+  directly-evidenced crisis, not a coverage artifact. Pillar F (71.5)
+  confirms the co2_pc wealth-proxy pattern flagged after DZA/COD (and
+  ruled out for BWA): Nigeria is a major oil producer/exporter with one of
+  the index's lowest per-capita emissions, because roughly 45-50% of the
+  population has no electricity access at all. Balance: 1 positive, 2
+  negative, 1 mixed — genuinely difficult, not manufactured; the one clear
+  positive (the Supreme Court's October 2023 unanimous rejection of both
+  opposition election challenges) is placed in `extended` rather than
+  `primary` since it is a judicial event rather than an ongoing
+  development, and `balance.note` states explicitly that it does not
+  offset the severity of the other three items.
+
 ---
 
 ## Meta-notes
@@ -237,6 +263,28 @@ Things a future run should know about how to work, not about a specific country.
   signals across pillars; expect a large, heterogeneous federation to
   produce a genuinely different research shape again rather than fitting
   either the crisis-country or stable-country template used so far.
+- **2026-08-09** — NGA confirms the lesson from the note above rather than
+  contradicting it: this time the co2_pc wealth-proxy pattern (DZA/COD)
+  WAS the right explanation for a low-looking-high F score, because a
+  major oil-exporting country with near-ceiling per-capita emissions
+  scores turns out to have ~45-50% of its population without electricity
+  access at all. The pattern is real and recurs — the point standing after
+  BWA is not "don't expect it," it's "don't assume it without checking the
+  underlying indicator each time," and NGA is the case where checking
+  confirmed it. Also notable: NGA is the first first-pass country where
+  three separate pillars (A, D, E) are simultaneously weak AND fully,
+  freshly measured — a useful contrast with SOM/COD, where weak scores
+  often came with thin or carried-forward coverage. Don't assume "severe
+  score" implies "sparse data" any more than the reverse. Next country:
+  Rwanda (RWA) — strong development indicators alongside contested
+  governance. This is a genuinely new kind of challenge for the
+  metaprompt: every country so far has had scores and recent framing
+  pointing in roughly the same direction (BWA good news/NGA hard news);
+  Rwanda's numbers will likely score well while the historical and
+  colonial_legacy sections have to document authoritarian governance and
+  the 1994 genocide without either softening the numbers to match the
+  history or moralising the pillar summaries past what each section's own
+  evidence supports.
 
 ---
 

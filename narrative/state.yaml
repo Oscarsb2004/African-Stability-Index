@@ -77,15 +77,21 @@ countries:
       coverage has since been measured; follow the Feb 2025 ODC/De Beers sales agreement
       for implementation news; check whether the Pula Fund has stabilised past its Aug 2024
       low; check for a resolution in the San/Basarwa land-access case since Dec 2022'
-backlog:
   NGA:
     name: Nigeria
     region: West
     first_pass: true
     reason: largest population; federal; mixed signals across pillars
-    iteration_count: 0
-    last_updated: null
-    next_action: create baseline from blueprint
+    iteration_count: 1
+    last_updated: '2026-08-09'
+    next_action: 'EXPAND: check whether the WFP''s 33-million food-insecurity projection
+      for 2025 was met, exceeded, or eased; check whether Rivers State has stayed stable
+      since the Sept 2025 restoration of Fubara; check the Boko Haram/northwest-bandit
+      trajectory into 2026 and find a more precise single-source citation for the 6,000+
+      combined 2025 conflict-death figure; check if Pillar C has gained coverage; find a
+      dedicated source on IPOB/Igbo secessionist sentiment to deepen the colonial_legacy
+      link to the Biafra war'
+backlog:
   RWA:
     name: Rwanda
     region: East
@@ -551,3 +557,25 @@ meta_notes:
   Next country: Nigeria (NGA) -- largest population, federal, mixed signals across pillars;
   expect this to be a genuinely different shape again (a large, heterogeneous federation rather
   than a single national story).'
+- '2026-08-09: NGA CREATE run complete (12 sources opened and verified: 4 Wikipedia, 5 news,
+  2 academic/think-tank, 1 official). Confirmed the "mixed signals across pillars" reason
+  for choosing this country directly in the data: Pillar A (governance) 38.7, D (health) 39.1,
+  and E (security) 36.6 are all weak and, unlike SOM/COD, FULLY and freshly measured -- 6/6,
+  5/5, and 4/4 respectively -- so the severity is not a coverage artifact here, it is a
+  directly-evidenced crisis. Pillar F (71.5) again shows the co2_pc wealth-proxy pattern
+  flagged after DZA/COD, this time confirmed rather than ruled out (contrast BWA, where the
+  same low-F-score instinct turned out to be wrong): Nigeria is a major oil producer/exporter
+  with one of the index''s lowest per-capita emissions, because ~45-50% of the population has
+  no electricity access at all. The lesson from BWA holds either way -- check the mechanism
+  each time, do not assume the pattern in either direction. Cleanest link check of the corpus
+  so far: 12/12 citations resolved on the first attempt, zero 403s, zero 404s. Balance came
+  out 1 positive / 2 negative / 1 mixed, genuinely difficult rather than manufactured -- the
+  one clear positive (Oct 2023 Supreme Court unanimously rejecting both opposition election
+  challenges) was placed in `extended` rather than `primary` since it is a judicial event, not
+  an ongoing development, and `balance.note` says explicitly that it does not offset the
+  severity of the food-insecurity, security, and Rivers State items. Next country: Rwanda (RWA)
+  -- strong development indicators alongside contested governance; expect a research challenge
+  distinct from every country so far: how to write pillar summaries that score well while the
+  historical and colonial_legacy sections document authoritarian governance and the 1994
+  genocide, without either downplaying the numbers or moralising past what the evidence in
+  each section actually supports.'
