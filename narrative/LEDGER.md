@@ -3,7 +3,7 @@
 The document future runs read before doing anything. Machine-readable twin:
 `narrative/state.yaml`.
 
-*Seeded 2026-08-09. First research run: 2026-08-09 (Mauritius, CREATE).*
+*Seeded 2026-08-09. Research runs so far: Mauritius, Ghana (both CREATE).*
 
 ---
 
@@ -26,7 +26,7 @@ An audit is forced early if a single run inflates the citation count by more tha
 
 ## Status
 
-**1 of 54 countries have a record (Mauritius). 8 of the first pass remain.**
+**2 of 54 countries have a record (Mauritius, Ghana). 7 of the first pass remain.**
 
 ### First pass — 9 countries
 
@@ -38,7 +38,7 @@ whose ranks swing hardest with the weighting method.
 | ISO3 | Country | Why this one | Status |
 |---|---|---|---|
 | MUS | Mauritius | top of the index; island state; long democratic continuity | **done — iteration 1** |
-| GHA | Ghana | mid-high; Anglophone West Africa; repeated peaceful transfers of power | backlog |
+| GHA | Ghana | mid-high; Anglophone West Africa; repeated peaceful transfers of power | **done — iteration 1** |
 | DZA | Algeria | rank swings 9-45 with weighting method; Arabophone; hydrocarbon economy | backlog |
 | COD | Democratic Rep. Congo | bottom decile; vast and low-coverage; long conflict history | backlog |
 | SOM | Somalia | lowest ranks; state reconstitution; sparse data is the hard case | backlog |
@@ -82,6 +82,25 @@ Append one line per run: date, country, mode, what changed, what was removed.
   requests with HTTP 403 (warning, check manually) — the previous version
   would have reported real news/official citations as fabricated.
 
+- **2026-08-09 — GHA — CREATE.** Full baseline built: historical overview,
+  colonial legacy (expands context/colonial_history.yaml by connecting
+  colonial-era gold/cocoa extraction directly to the present galamsey
+  mining crisis, and adding Nkrumah's OAU/Pan-Africanism role as a positive
+  counterweight to his authoritarian domestic turn), 4 key_periods, 6 pillar
+  summaries (Pillar C correctly left empty — greyed at 1/8 measured). 11
+  sources opened and verified: 5 Wikipedia, 3 news, 2 official/academic
+  (IMF, Center for Global Development, Africa Center for Strategic
+  Studies). `narrative_check.py --country GHA` passes 0 errors after one
+  fix (pillars.G was 8 words under the 80-word floor; fixed by adding a
+  real fact -- rural/northern electrification gap -- not padding).
+  `--links` passes 0 errors, 2 warnings (allafrica, IMF: same HTTP-403
+  bot-detection pattern seen on the MUS run, confirmed manually to be real,
+  live sources). Balance: 2 positive, 1 negative, 1 mixed -- the galamsey
+  crisis (negative, still unresolved) sits against the December 2024
+  election and a December 2025 forest-reserve mining restriction
+  (positive), with the Eurobond restructuring coded mixed because it is
+  recovery from a 2022 default, not the absence of one.
+
 ---
 
 ## Meta-notes
@@ -90,8 +109,13 @@ Things a future run should know about how to work, not about a specific country.
 
 - **2026-08-09** — System built: blueprint, schema, validator, this ledger.
 - **2026-08-09** — First CREATE run (Mauritius) surfaced a real bug in the link
-  checker (see run log) rather than a problem with the metaprompt or blueprint
-  itself. Next country: Ghana (GHA), also a CREATE run.
+  checker (see run log), fixed before the second run. Second run (Ghana)
+  confirmed the fix holds under a different set of blocked domains, and the
+  word-count floor caught a genuinely thin section rather than being a false
+  positive. Next country: Algeria (DZA), also a CREATE run -- note DZA is one
+  of the two countries flagged in methodology/MANUAL_REVIEW.md item 9a for
+  wild rank swings across weighting methods (9th-45th), which the research
+  should surface and explain rather than smooth over.
 - **2026-08-09** — The schema has no `colonial_legacy_citations` check even
   though that field makes citable claims (see pending format proposals below).
   Populate the field anyway on future CREATE runs for consistency; do not treat

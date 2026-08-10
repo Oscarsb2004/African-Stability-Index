@@ -25,15 +25,17 @@ countries:
     last_updated: '2026-08-09'
     next_action: 'EXPAND: verify Chagos treaty follow-on news; find a second source for 1965-1968
       unrest; check if social protection coverage has since been measured'
-backlog:
   GHA:
     name: Ghana
     region: West
     first_pass: true
     reason: mid-high; Anglophone West Africa; repeated peaceful transfers of power
-    iteration_count: 0
-    last_updated: null
-    next_action: create baseline from blueprint
+    iteration_count: 1
+    last_updated: '2026-08-09'
+    next_action: 'EXPAND: check for a galamsey state-of-emergency declaration; second source
+      for pre-1966 CPP dissent; check if Pillar C has gained coverage; find a non-PDF source
+      for the debt-restructuring citations'
+backlog:
   DZA:
     name: Algeria
     region: North
@@ -465,3 +467,8 @@ meta_notes:
   look unreachable. Also found the schema has no colonial_legacy_citations check -- MUS record
   populates that field anyway for consistency; logged as a pending format proposal rather
   than silently editing schema.py mid-content-run.'
+- '2026-08-09: GHA CREATE run complete (11 sources opened and verified). Confirms the link-checker
+  fix from the MUS run: same 403 bot-detection pattern on allafrica and IMF, correctly downgraded
+  to warnings, not errors. One length warning caught by the validator (pillars.G at 72 words,
+  8 short of the 80 floor) -- fixed by adding a real fact (rural/northern electrification
+  gap) rather than padding. Next: Algeria (DZA), also CREATE.'

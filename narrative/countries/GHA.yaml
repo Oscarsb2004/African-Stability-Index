@@ -1,0 +1,409 @@
+meta:
+  iso3: GHA
+  name: Ghana
+  last_updated: 2026-08-09
+  iteration_count: 1
+  next_action: >
+    EXPAND: (1) check whether President Mahama declares a formal galamsey
+    state of emergency after this run and update recent/events accordingly;
+    (2) find a second source for the pre-1966 Nkrumah/CPP internal dissent to
+    deepen key_periods[0], currently resting on one Wikipedia citation;
+    (3) check whether Pillar C (currently greyed at 1/8 measured) has gained
+    enough coverage to be written; (4) the economic-pillar citations (c5, c6)
+    are PDF-heavy -- look for a cleaner non-PDF news source covering the same
+    debt-restructuring facts.
+  model_used: claude-sonnet-5
+
+historical:
+  overview: >
+    Ghana became the first sub-Saharan African country to gain independence
+    from colonial rule, on 6 March 1957, with Kwame Nkrumah as prime minister
+    and, from 1960, president of the newly declared republic. Nkrumah's
+    increasingly authoritarian governance -- including preventive-detention
+    laws passed from 1958 -- combined with mounting debt and internal
+    dissent within his own Convention People's Party to produce the February
+    1966 coup that deposed him. Twenty-six years of alternating military and
+    brief civilian rule followed, including the National Redemption Council
+    under Ignatius Kutu Acheampong (1972-79) and two periods of rule by
+    Jerry Rawlings, who seized power in 1979 and again in 1981. Rawlings
+    unexpectedly steered the country back toward democracy, overseeing the
+    1992 constitution that established the Fourth Republic. Since then,
+    political power has alternated peacefully between Ghana's two dominant
+    parties at every election that produced a change in preference, most
+    recently in December 2024, when John Mahama defeated the sitting
+    vice-president by nearly fifteen points and Ghana elected its first
+    female vice-president. That record of alternation, sustained since 1992,
+    distinguishes Ghana within West Africa.
+  overview_citations: [c1, c2]
+  colonial_legacy: >
+    British colonial administration built its Gold Coast economy on gold and
+    cocoa extraction, and both commodities remain central to Ghana's economy
+    today in ways that connect directly to present pressures: gold now
+    accounts for more than 90% of mineral exports, and the same colonial-era
+    gold belt that attracted British mining capital is where unregulated
+    artisanal mining (locally, galamsey) now drives severe river and forest
+    degradation -- discussed further under Pillar F and in recent
+    developments below. Ghana's 1957 independence carried significance
+    beyond its own borders: Kwame Nkrumah was a founding member and leading
+    advocate of the Organisation of African Unity, established in Addis
+    Ababa on 25 May 1963 as the direct institutional predecessor of today's
+    African Union, and argued in his 1963 book Africa Must Unite that a
+    fragmented continent could not defend its own resources. That leadership
+    sits alongside a harder legacy at home: Nkrumah's own increasingly
+    authoritarian rule, including detention without trial under laws passed
+    from 1958, ended in the February 1966 coup that began 26 years of
+    alternating military and civilian government before the 1992 return to
+    multiparty democracy.
+  colonial_legacy_citations: [c1, c9]
+  key_periods:
+    - title: "Independence and the Nkrumah era"
+      period: "1957-1966"
+      summary: >
+        Ghana became independent on 6 March 1957 under Prime Minister (later
+        President) Kwame Nkrumah. He pursued rapid industrialisation and
+        Pan-African leadership -- co-founding the Organisation of African
+        Unity in 1963 -- while governing with growing authoritarianism,
+        including preventive-detention laws from 1958. Mounting debt,
+        economic strain, and internal dissent within his own party preceded
+        his overthrow in the February 1966 military coup.
+      citations: [c1, c9]
+    - title: "Military rule and short-lived republics"
+      period: "1966-1992"
+      summary: >
+        For 26 years Ghana alternated between brief civilian governments
+        (1969-72, 1979-81) and longer periods of military rule, including
+        the National Redemption Council (1972-79) under Ignatius Kutu
+        Acheampong and two periods of rule by Jerry Rawlings, who seized
+        power in 1979 and again in 1981. This instability is the baseline
+        the Fourth Republic's subsequent record is measured against.
+      citations: [c1]
+    - title: "Fourth Republic and democratic consolidation"
+      period: "1992-present"
+      summary: >
+        Rawlings oversaw the 1992 transition to multiparty rule under a new
+        constitution, then won the first two Fourth Republic elections
+        himself before stepping down in 2000. Power has since alternated
+        peacefully between Ghana's two dominant parties (NDC and NPP) at
+        every subsequent election that changed hands, most recently in
+        December 2024, when John Mahama returned to office after eight years
+        out of power.
+      citations: [c1, c2]
+    - title: "The 2022 sovereign debt default and restructuring"
+      period: "2022-2024"
+      summary: >
+        Ghana suspended payment on Eurobonds, most bilateral debt and
+        commercial loans in December 2022 after the cedi lost roughly half
+        its value and inflation exceeded 50%, entering a US$3 billion IMF
+        Extended Credit Facility programme in May 2023. A domestic debt
+        exchange restructured local bonds in 2022-23, and a Eurobond
+        restructuring covering roughly $13 billion was finalised on 9
+        October 2024 with 98.6% bondholder participation, cutting public
+        debt from a 2022 peak of 93% of GDP toward roughly 81% by the end of
+        2024.
+      citations: [c5, c6]
+
+pillars:
+  A:
+    summary: >
+      Ghana's governance indicators are solid across all six WGI dimensions
+      the index tracks, reflecting three decades of Fourth Republic
+      constitutional continuity and, most recently, the December 2024
+      presidential election in which John Mahama defeated the sitting
+      vice-president by nearly fifteen points and the ruling party conceded
+      within a day. Ghana has alternated governing parties peacefully at
+      every election since 1992 that produced a change in preference, a
+      record matched by few states in the region. Control of Corruption is
+      the weakest of the six components, and perceived corruption in
+      resource-sector governance -- most visibly in the licensing failures
+      behind the galamsey mining crisis discussed under Pillar F -- is the
+      most immediate test of that indicator going forward.
+    drivers:
+      - "peaceful multiparty alternation since 1992"
+      - "decisive, undisputed December 2024 election"
+      - "Control of Corruption is the weakest WGI component"
+      - "resource-sector licensing failures underlie the galamsey crisis"
+    citations: [c1, c2, c3]
+  B:
+    summary: >
+      The economic pillar score is held down almost entirely by the visible
+      aftermath of the December 2022 sovereign default: five-year inflation
+      averaged close to 19%, and domestic credit to the private sector
+      remains thin -- both direct consequences of the monetary tightening
+      and bank-balance-sheet damage that followed the debt exchange. GDP
+      growth and per-capita income scored more favourably, consistent with
+      the recovery the IMF programme and October 2024 Eurobond
+      restructuring were designed to support. Coverage of social protection
+      programmes was not measured directly this year and was estimated from
+      regional peers.
+    drivers:
+      - "high inflation and weak private credit trace directly to the 2022 default"
+      - "GDP growth and per-capita income score more favourably: recovery is underway"
+      - "social protection coverage estimated, not measured"
+    citations: [c5, c6]
+  D:
+    summary: >
+      All five health indicators were measured directly rather than
+      estimated, giving this pillar the most complete evidentiary base of
+      any non-greyed pillar. Life expectancy near 65 years and infant
+      mortality of roughly 28 per 1,000 live births place Ghana in the
+      middle of the continental range. Ghana's National Health Insurance
+      Scheme, mandatory since 2003, has raised nominal enrolment to roughly
+      68%, but coverage is uneven by region and income, and catastrophic
+      out-of-pocket health spending has risen sharply -- from about 1% of
+      households in 2012-13 to 11% more recently -- suggesting the scheme's
+      financial-protection function is weaker than enrolment figures alone
+      would imply. Severe food insecurity affects a meaningful share of the
+      population.
+    drivers:
+      - "all five indicators directly measured -- the most complete pillar"
+      - "NHIS enrolment ~68% but coverage uneven and out-of-pocket costs rising"
+      - "severe food insecurity affects a meaningful minority"
+    citations: [c10]
+  E:
+    summary: >
+      Ghana's security indicators are comparatively strong and, unlike
+      several other pillars, mostly current: political stability is
+      measured directly, and displacement is near zero, consistent with
+      Ghana's record of no civil conflict since independence. The homicide
+      indicators are carried forward from earlier years rather than freshly
+      measured, so the pillar's overall reliable rating rests on a partial
+      update rather than a fully current one. Ghana's stability contrasts
+      with instability among Sahelian neighbours to the north, and its
+      security apparatus has increasingly been drawn into managing the
+      galamsey mining crisis, which analysts have described as a national
+      security threat in its own right (see Pillar F).
+    drivers:
+      - "no civil conflict since independence; displacement near zero"
+      - "homicide indicators carried forward, not freshly measured"
+      - "galamsey enforcement is an emerging security burden"
+    citations: [c1, c7]
+  F:
+    summary: >
+      Ghana's environmental pillar score should be read cautiously: only two
+      of its four indicators were measured directly this year, with
+      freshwater withdrawal and fossil-fuel electricity share both carried
+      forward. The current reality the index cannot yet fully capture is the
+      galamsey crisis -- illegal small-scale gold mining that, by 2024-25
+      estimates, had polluted a majority of the country's rivers, destroyed
+      forest reserves across multiple regions, and contaminated more than
+      100,000 acres of cocoa farmland with mercury and cyanide runoff. Gold
+      accounts for more than 90% of Ghana's mineral exports, so the same
+      commodity that anchored colonial-era extraction now drives its most
+      severe active environmental crisis. Public pressure for a formal state
+      of emergency grew through 2025 without the government declaring one,
+      though a December 2025 policy shift restricted mining in forest
+      reserves.
+    drivers:
+      - "only 2 of 4 indicators measured directly this year"
+      - "galamsey: majority of rivers polluted, 100,000+ acres of cocoa farmland damaged"
+      - "gold = 90%+ of mineral exports -- colonial-era extraction, present-day crisis"
+      - "Dec 2025 forest-reserve mining restriction is a partial government response"
+    citations: [c7, c8, c11]
+  G:
+    summary: >
+      Electricity access near 90% and a solid basic-water-access score
+      reflect steady infrastructure investment since the 2000s, though both
+      trail Ghana's stronger governance and security scores; roughly one in
+      ten Ghanaians still lack a grid connection, concentrated in rural and
+      northern areas furthest from the national grid built out since
+      independence. Domestic credit to the private sector is weak -- the
+      same post-default credit contraction visible in the economic pillar --
+      meaning financial infrastructure specifically has not recovered as
+      quickly as physical infrastructure. Social protection and labour
+      programme coverage was estimated from regional peers rather than
+      measured directly.
+    drivers:
+      - "electricity access ~90%, steady investment since the 2000s"
+      - "domestic credit weak: the same post-default contraction as Pillar B"
+      - "social protection coverage estimated, not measured"
+    citations: [c1, c5]
+
+recent:
+  primary:
+    - headline: "John Mahama wins Ghana's December 2024 presidential election in a landslide"
+      date: 2024-12-08
+      summary: >
+        Former president John Mahama defeated Vice-President Mahamudu
+        Bawumia 56.6% to 41.6% in the 7 December 2024 election, a margin of
+        nearly 1.7 million votes and the largest in 24 years. Bawumia
+        conceded within a day, and Jane Naana Opoku-Agyemang became Ghana's
+        first female vice-president. Mahama, who previously led Ghana from
+        2012 to 2017, returned to office after eight years, continuing
+        Ghana's record of peaceful alternation between its two dominant
+        parties.
+      why_it_matters: >
+        Reinforces the governance pillar's strong electoral-turnover record;
+        the rapid, undisputed concession is itself evidence of the
+        institutional maturity the index's WGI-based indicators are
+        measuring.
+      news_url: "https://www.theafricareport.com/371032/infographic-breakdown-of-ghanas-2024-presidential-results/"
+      wikipedia_url: "https://en.wikipedia.org/wiki/2024_Ghanaian_general_election"
+      sentiment: positive
+    - headline: "Ghana finalises $13 billion Eurobond restructuring after 2022 default"
+      date: 2024-10-09
+      summary: >
+        Ghana finalised a $13 billion Eurobond restructuring on 9 October
+        2024, with 98.6% of bondholders accepting principal and interest
+        haircuts, two years after suspending payments in December 2022 amid
+        a currency collapse and inflation above 50%. Combined with an
+        earlier domestic debt exchange and an IMF programme approved in
+        2023, the restructuring is projected to bring public debt down from
+        a 2022 peak of 93% of GDP toward roughly 81% by the end of 2024.
+      why_it_matters: >
+        Explains the specific weakness in the index's economic pillar
+        (46.0): elevated inflation and thin domestic credit are the
+        still-visible aftermath of this default and restructuring, not
+        separate or unrelated problems.
+      news_url: "https://www.cgdev.org/sites/default/files/ghana-sovereign-debt-restructuring-g20-common-framework.pdf"
+      wikipedia_url: ""
+      sentiment: mixed
+    - headline: "Galamsey: mounting pressure for a state of emergency over illegal gold mining"
+      date: 2025-11-20
+      summary: >
+        Illegal small-scale gold mining (galamsey) destroyed more than 5,000
+        hectares of forest reserve in 2025 alone, and an estimated majority
+        of Ghana's rivers have been polluted with mercury and cyanide
+        runoff. Ghana's Catholic Bishops' Conference called for a state of
+        emergency in the worst-affected regions in November 2025 after
+        deaths at an illegal mine; President Mahama has so far declined,
+        citing existing enforcement measures.
+      why_it_matters: >
+        The single most direct explanation for the index's weak, thinly
+        measured Environmental pillar, and a case where the same commodity
+        (gold) that anchored colonial-era extraction still drives the
+        country's most severe active environmental harm.
+      news_url: "https://allafrica.com/stories/202511200041.html"
+      wikipedia_url: "https://en.wikipedia.org/wiki/Galamsey"
+      sentiment: negative
+  extended:
+    - headline: "Mahama administration restricts mining in forest reserves"
+      date: 2025-12-01
+      summary: >
+        In December 2025 the Mahama administration prohibited mining
+        activity within forest reserves and reversed L.I. 2462, a legal
+        framework environmental groups blamed for enabling forest-reserve
+        mining permits, alongside a national excavator-tracking system
+        announced in January 2026 covering more than 1,000 machines.
+      why_it_matters: >
+        A concrete, if late, government response to the galamsey crisis --
+        evidence the political system is capable of correction, which
+        belongs alongside the crisis itself rather than being omitted.
+      news_url: ""
+      wikipedia_url: "https://en.wikipedia.org/wiki/Galamsey"
+      sentiment: positive
+
+events:
+  - year: 2022
+    type: economic
+    title: "Sovereign debt default"
+    description: >
+      Ghana suspended payment on Eurobonds, most bilateral debt and
+      commercial loans in December 2022 after the cedi lost roughly half its
+      value against the US dollar and inflation exceeded 50%.
+    url: "https://www.cgdev.org/sites/default/files/ghana-sovereign-debt-restructuring-g20-common-framework.pdf"
+    direction: deteriorate
+  - year: 2024
+    type: economic
+    title: "Eurobond restructuring finalised"
+    description: >
+      A $13 billion Eurobond restructuring was finalised on 9 October 2024
+      with 98.6% bondholder participation, part of the recovery from the
+      2022 default alongside a 2023 IMF programme and domestic debt
+      exchange.
+    url: "https://www.imf.org/-/media/files/publications/cr/2024/english/1ghaea2024004-print-pdf.pdf"
+    direction: improve
+  - year: 2024
+    type: election
+    title: "Mahama wins presidential election in a landslide"
+    description: >
+      John Mahama defeated Vice-President Mahamudu Bawumia 56.6% to 41.6% on
+      7 December 2024; Bawumia conceded within a day and Jane Naana
+      Opoku-Agyemang became Ghana's first female vice-president.
+    url: "https://en.wikipedia.org/wiki/2024_Ghanaian_general_election"
+    direction: improve
+
+citations:
+  - id: c1
+    url: "https://en.wikipedia.org/wiki/History_of_Ghana"
+    source_type: wikipedia
+    title: "History of Ghana"
+    accessed: 2026-08-09
+    verified: true
+  - id: c2
+    url: "https://en.wikipedia.org/wiki/2024_Ghanaian_general_election"
+    source_type: wikipedia
+    title: "2024 Ghanaian general election"
+    accessed: 2026-08-09
+    verified: true
+  - id: c3
+    url: "https://www.theafricareport.com/371032/infographic-breakdown-of-ghanas-2024-presidential-results/"
+    source_type: news
+    title: "Infographic: Breakdown of Ghana's 2024 presidential results"
+    accessed: 2026-08-09
+    verified: true
+  - id: c4
+    url: "https://allafrica.com/stories/202412090430.html"
+    source_type: news
+    title: "Ghana: Surprises, Jubilation Greet Mahama's Victory"
+    accessed: 2026-08-09
+    verified: true
+  - id: c5
+    url: "https://www.cgdev.org/sites/default/files/ghana-sovereign-debt-restructuring-g20-common-framework.pdf"
+    source_type: academic
+    title: "Ghana: A Case Study of Sovereign Debt Restructuring under the G20 Common Framework (Center for Global Development)"
+    accessed: 2026-08-09
+    verified: true
+  - id: c6
+    url: "https://www.imf.org/-/media/files/publications/cr/2024/english/1ghaea2024004-print-pdf.pdf"
+    source_type: official
+    title: "IMF Country Report No. 24/334: Ghana"
+    accessed: 2026-08-09
+    verified: true
+  - id: c7
+    url: "https://africacenter.org/spotlight/galamsey-ghana-gold-mining-security/"
+    source_type: academic
+    title: "Ghana's Illegal Gold Mining Crisis: A National Security Threat with Regional Implications (Africa Center for Strategic Studies)"
+    accessed: 2026-08-09
+    verified: true
+  - id: c8
+    url: "https://en.wikipedia.org/wiki/Galamsey"
+    source_type: wikipedia
+    title: "Galamsey"
+    accessed: 2026-08-09
+    verified: true
+  - id: c9
+    url: "https://en.wikipedia.org/wiki/Kwame_Nkrumah"
+    source_type: wikipedia
+    title: "Kwame Nkrumah"
+    accessed: 2026-08-09
+    verified: true
+  - id: c10
+    url: "https://en.wikipedia.org/wiki/National_Health_Insurance_Scheme_(Ghana)"
+    source_type: wikipedia
+    title: "National Health Insurance Scheme (Ghana)"
+    accessed: 2026-08-09
+    verified: true
+  - id: c11
+    url: "https://wanep.org/wanep/fighting-illegal-mining-galamsey-in-ghana-is-a-state-of-emergency-enough/"
+    source_type: news
+    title: "Fighting Illegal Mining (Galamsey) in Ghana: Is a State Of Emergency Enough? (WANEP)"
+    accessed: 2026-08-09
+    verified: true
+
+balance:
+  n_positive: 2
+  n_negative: 1
+  n_mixed: 1
+  note: >
+    The recent record includes a genuine, unresolved setback (the galamsey
+    environmental crisis, the main driver of the index's weak Environmental
+    pillar) alongside genuine achievements: a peaceful, decisive election
+    with a historic first female vice-president, and a December 2025
+    government restriction on forest-reserve mining. The completed
+    Eurobond restructuring is coded mixed rather than positive because it
+    represents recovery from a 2022 default, not the absence of a crisis.
+    Nothing was omitted to force this balance -- it is the mix found in
+    reporting from late 2024 through early 2026. Ghana's uninterrupted
+    democratic alternation since 1992 (see historical.key_periods) is a
+    further structural counterweight that falls outside the "recent" window
+    but belongs in the honest picture.
