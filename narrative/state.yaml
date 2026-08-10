@@ -261,6 +261,28 @@ countries:
       ~2 million) has been reconciled; check whether gold production continued
       rising and whether the Raffinor refinery came online; check if Pillar C has
       gained coverage; keep AES facts consistent with MLI and NER'
+  NER:
+    name: Niger
+    region: West
+    first_pass: false
+    reason: ninth backlog country -- completes the AES/ECOWAS-exit trio alongside
+      MLI and BFA; Niger's own first-ever civilian-to-civilian democratic transfer
+      (Bazoum, 2021) makes the 2023 coup a sharper rupture than in its AES
+      partners; clearest six-decade extraction-imbalance case yet (Orano held 63%
+      of Somair but took 86.3% of production, 1971-2024) resolved by nationalisation
+      in June 2025; a genuine, verified positive (the nationalisation itself) found
+      through the same search discipline as SDN/MLI/BFA, alongside a genuinely
+      mixed item (the Niger-Benin oil pipeline's real revenue and real fragility)
+    iteration_count: 1
+    last_updated: '2026-08-10'
+    next_action: 'EXPAND: follow whether Bazoum''s detention resolves after his
+      presidential term ended in April 2026 without resignation, and whether the
+      ICSID order blocking the Somair uranium stockpile sale is litigated further;
+      check whether the oil pipeline has suffered further attacks/closures and
+      whether CNPC debt repayment is on track; check the ACLED Tillabéri death
+      toll trend past ~1,300-of-1,939 (2025); check whether extreme poverty kept
+      falling past 51%->49% (2023-2024); check if Pillar C has gained coverage;
+      keep AES facts consistent with MLI and BFA'
 backlog:
   LBY:
     name: Libya
@@ -344,14 +366,6 @@ backlog:
     next_action: create baseline from blueprint
   MRT:
     name: Mauritania
-    region: West
-    first_pass: false
-    reason: not yet scheduled
-    iteration_count: 0
-    last_updated: null
-    next_action: create baseline from blueprint
-  NER:
-    name: Niger
     region: West
     first_pass: false
     reason: not yet scheduled
@@ -888,3 +902,29 @@ meta_notes:
   wealth via different mechanisms. Balance: 1 positive, 2 negative, 1 mixed.
   `--links` passes 0 errors, 1 warning (APAnews, familiar 403 pattern) -- 11/12
   resolved.'
+- '2026-08-10: NER CREATE run complete (9 sources opened and verified: 2 Wikipedia,
+  6 news, 1 official/World Bank). Completes the AES/ECOWAS-exit trio alongside MLI
+  and BFA. Niger''s own record makes the sharpest version yet of the "democratic
+  rupture" framing used for MLI/BFA: Bazoum''s 2021 election was Niger''s first-ever
+  transfer of power between two democratically elected civilian presidents (unlike
+  its AES partners, whose pre-coup governments were themselves less firmly
+  democratic), which the 2023 coup ended outright -- Bazoum remains detained
+  without trial 3+ years later, never brought before a judge, his presidential
+  term having lapsed in April 2026 without resignation. Sixth resource-governance
+  sub-pattern found: Niger''s Somair uranium mine nationalisation (June 2025) is
+  the most precisely quantified extraction-imbalance case in the corpus yet --
+  Orano held a 63% stake but took 86.3% of production, 1971-2024, a number Niger''s
+  own government cited to justify nationalising outright. Pillar F confirmed as
+  the corpus''s clearest pure wealth-proxy case: lowest CO2-per-capita reading
+  recorded anywhere in this project, paired with ~97% fossil-fuel electricity
+  generation and only ~20% electricity access -- no clean-energy achievement to
+  credit, unlike KEN or the AGO/ETH blend cases. Followed the SDN/MLI/BFA
+  discipline and found a genuine positive before finalizing -- the nationalisation
+  itself -- plus a genuinely mixed item (the Niger-Benin oil pipeline: real new
+  oil revenue, Chinese-financed, that was shut by a border dispute and damaged
+  by a rebel attack within its first four months of operation, only resuming in
+  August 2024). Balance: 1 positive, 2 negative, 1 mixed. `--links` passes 0
+  errors, 1 warning (Bloomberg, familiar 403 bot-detection pattern, corroborated
+  independently by AJOT''s syndication of the same story) -- 8/9 resolved. Full
+  pytest suite: 106 passed. This closes out the nine-country first-pass backlog
+  entirely; 18 of 54 countries now have a record.'

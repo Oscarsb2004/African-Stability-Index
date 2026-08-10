@@ -1,0 +1,466 @@
+meta:
+  iso3: NER
+  name: Niger
+  last_updated: 2026-08-10
+  iteration_count: 1
+  next_action: >
+    EXPAND: (1) follow whether Bazoum's detention resolves after his
+    presidential term formally ended in April 2026 without his
+    resignation, and whether the ICSID tribunal's order blocking Niger
+    from selling the Somair uranium stockpile pending Orano's claims is
+    litigated further; (2) check whether the Niger-Benin oil pipeline
+    has suffered further rebel attacks or closures beyond the June-August
+    2024 disruption, and whether debt repayment to CNPC is on track;
+    (3) check the ACLED Tillabéri death toll trend past the ~1,300-of-
+    1,939 (2025) figure and whether the JNIM-ISSP rivalry has continued
+    to escalate or has been contained; (4) check whether extreme poverty
+    continued falling past the 51%-to-49% (2023-2024) figure; (5) check
+    the AES's further institutional development alongside Mali and
+    Burkina Faso, keeping the shared ECOWAS-exit and Orano/Barrick/
+    SOPAMIB resource-nationalisation facts consistent across all three
+    records; (6) check if Pillar C has gained coverage.
+  model_used: claude-sonnet-5
+
+historical:
+  overview: >
+    France colonised the territory from 1900, formally establishing it
+    as a colony in 1922 after subduing Tuareg and other resistance.
+    Independence followed on 3 August 1960 under Hamani Diori, whose
+    single-party rule lasted 14 years until a 1974 coup led by Seyni
+    Kountché amid Sahelian drought and corruption allegations.
+    French-led uranium mining at Arlit, developed from the 1960s, became
+    central to Niger's economy and to France's own nuclear power
+    programme, but the arrangement left Niger -- among the world's
+    poorest countries -- exporting a strategic resource that generated
+    relatively little domestic revenue for decades. A cycle of further
+    coups followed (1996, 1999, 2010) before Mahamadou Issoufou's 2011
+    election opened a genuine democratic period; Mohamed Bazoum's 2021
+    election marked Niger's first-ever transfer of power between two
+    democratically elected civilian presidents. That record ended
+    abruptly on 26 July 2023, when Presidential Guard commander General
+    Abdourahamane Tiani detained Bazoum and seized power, citing
+    insecurity and bad governance; ECOWAS threatened military
+    intervention within days but never carried it out, and lifted its
+    sanctions in February 2024. Tiani's government revoked France's
+    military cooperation agreements, expelled the French ambassador, and
+    by 2025 had stripped French nuclear company Orano of its uranium
+    mining assets entirely, nationalising the Somair mine in June 2025.
+    Niger formally withdrew from ECOWAS in January 2025 alongside Mali
+    and Burkina Faso. Bazoum himself remains detained without trial
+    three years after the coup, facing potential treason charges that
+    could carry the death penalty.
+  overview_citations: [c1, c2, c3]
+  colonial_legacy: >
+    context/colonial_history.yaml already credits Niger's colonial-era
+    neglect and France's post-independence control of uranium extraction
+    via Areva/Orano as directly relevant to the 2023 coup and Sahel
+    realignment. Worth adding the specific number that made this more
+    than a general grievance: when Niger's government nationalised the
+    Orano-operated Somair mine in June 2025, it stated that Orano,
+    despite holding only a 63% ownership stake (Niger's state-owned
+    Sopamin held the remaining 37%), had taken 86.3% of the mine's
+    actual uranium production between its 1971 launch and 2024. That gap
+    between formal ownership share and actual extracted share is not a
+    colonial-era artefact alone -- Niger has been formally independent
+    since 1960, and Sopamin's minority stake existed on paper throughout
+    -- but it shows how a colonial-era extraction arrangement, once
+    established, can persist in substance for six decades of nominal
+    sovereignty. Niger has never captured proportionate value from the
+    resource for which it is best known internationally: uranium that
+    has powered a large share of France's own electricity grid while, as
+    of the mid-2020s, roughly four in five Nigeriens had no household
+    electricity access at all. The 2023 coup leaders invoked exactly
+    this asymmetry, and Niger's government used exactly this statistic
+    -- calling Orano's conduct "irresponsible, illegal, and unfair" --
+    to justify the 2025 nationalisation.
+  colonial_legacy_citations: [c1, c2]
+  key_periods:
+    - title: "Colonial rule and the discovery of uranium"
+      period: "1900-1974"
+      summary: >
+        France colonised the territory from 1900, formally establishing
+        it as a colony in 1922 after subduing Tuareg and other
+        resistance. Independence followed on 3 August 1960 under Hamani
+        Diori, whose single-party rule lasted 14 years. French-led
+        uranium mining at Arlit, developed from the 1960s, became
+        central to Niger's economy and to France's own nuclear power
+        programme, though the extraction arrangement left Niger
+        capturing a share of production well below its formal ownership
+        stake. Diori was deposed in a 1974 coup led by Seyni Kountché
+        amid Sahelian drought and corruption allegations.
+      citations: [c1]
+    - title: "Coup cycles and Bazoum's historic election"
+      period: "1974-2021"
+      summary: >
+        Military rule persisted through further coups in 1996, 1999 and
+        2010, interspersed with periods of civilian government.
+        Mahamadou Issoufou's 2011 election opened a genuine decade of
+        democratic government, and Mohamed Bazoum's 2021 election marked
+        Niger's first-ever transfer of power between two democratically
+        elected civilian presidents -- a milestone that made the 2023
+        coup a sharper rupture than in neighbouring Mali or Burkina
+        Faso, where the pre-coup governments were themselves less firmly
+        democratic.
+      citations: [c1]
+    - title: "The July 2023 coup and France's ejection"
+      period: "2023"
+      summary: >
+        Presidential Guard commander General Abdourahamane Tiani
+        detained Bazoum on 26 July 2023 and seized power in the days
+        that followed, citing insecurity and bad governance. ECOWAS
+        threatened military intervention within days and imposed border
+        closures and sanctions, but never carried out the threat and
+        lifted sanctions in February 2024. Tiani's government revoked
+        military cooperation with France and expelled its ambassador;
+        President Macron announced French troop and diplomatic
+        withdrawal on 24 September 2023.
+      citations: [c3]
+    - title: "Uranium nationalisation and the ECOWAS exit"
+      period: "2024-2025"
+      summary: >
+        Niger's government progressively stripped French company Orano
+        of its uranium mining assets through 2024 and, on 19-20 June
+        2025, fully nationalised the Somair mine, ending Orano's 63%
+        ownership stake outright over the company's objection that it
+        had taken a disproportionate share of production. Niger formally
+        withdrew from ECOWAS in January 2025 alongside Mali and Burkina
+        Faso, forming the Alliance of Sahel States. Bazoum remained
+        detained without trial throughout, with the ECOWAS Court of
+        Justice and the UN Working Group on Arbitrary Detention both
+        ruling his detention unlawful.
+      citations: [c2, c9, c10]
+
+pillars:
+  A:
+    summary: >
+      All six governance indicators are directly measured, and Niger's
+      scores cluster in a moderate range -- none catastrophic, none
+      strong. That moderate aggregate sits uneasily beside a specific,
+      ongoing fact this record can state precisely: Mohamed Bazoum, the
+      president whose 2021 election represented Niger's first-ever
+      peaceful transfer of power between elected civilians, has been
+      held without trial since the July 2023 coup that removed him --
+      more than three years as of this record -- facing treason charges
+      that could carry the death penalty, and never brought before a
+      judge. Both the ECOWAS Court of Justice (December 2023) and the UN
+      Working Group on Arbitrary Detention (February 2025) have ruled
+      the detention unlawful; Niger's junta has not complied, and
+      General Abdourahamane Tiani has governed without an electoral
+      mandate throughout.
+    drivers:
+      - "all 6 governance indicators directly measured, clustered in a moderate range -- none catastrophic, none strong"
+      - "Mohamed Bazoum, Niger's first elected-to-elected successor, held without trial 3+ years since the July 2023 coup; faces treason charges, potential death penalty, never brought before a judge"
+      - "ECOWAS Court of Justice (Dec 2023) and UN Working Group on Arbitrary Detention (Feb 2025) both ruled the detention unlawful; junta has not complied"
+      - "Tiani has governed without an electoral mandate since July 2023"
+    citations: [c8, c9]
+  B:
+    summary: >
+      GDP growth and inflation, both freshly measured, are comparatively
+      strong, but GDP per capita is among the very lowest recorded in
+      this index and domestic credit to the private sector, also fresh,
+      is thin. Two developments dominate the recent economic story.
+      First, the Niger-Benin oil export pipeline -- built with Chinese
+      financing to repay a $400 million oil-for-cash loan -- began
+      exports in May 2024, was shut down weeks later by a border dispute
+      and a rebel attack, and only resumed in August 2024, illustrating
+      how fragile the new revenue stream remains. Second, Niger's
+      government fully nationalised the Orano-operated Somair uranium
+      mine in June 2025, ending six decades in which Orano held only a
+      63% stake yet took 86.3% of the mine's production, documented in
+      historical.colonial_legacy. The World Bank credits oil exports and
+      a good 2024 harvest with pulling extreme poverty down from 51% to
+      49% of the population. Gini, carried forward, is not fresh.
+    drivers:
+      - "GDP growth and inflation both fresh, comparatively strong; GDP per capita among the very lowest in the index; domestic credit thin (fresh)"
+      - "Niger-Benin oil pipeline (Chinese-financed) began exports May 2024, shut by border dispute/rebel attack, resumed Aug 2024 -- real revenue, real fragility"
+      - "Somair uranium mine fully nationalised June 2025, ending 6 decades of Orano's disproportionate 86.3%-of-production share against a 63% stake"
+      - "World Bank: extreme poverty fell 51%->49% (2023-2024), credited to oil exports and a good harvest; Gini not freshly measured"
+    citations: [c2, c4, c5]
+  D:
+    summary: >
+      Life expectancy just above 61 years, freshly measured, is
+      moderate, but infant mortality -- almost 67 per 1,000 live births,
+      also fresh -- is among the most severe figures recorded anywhere
+      in this corpus. Severe food insecurity, at 7.6% and fresh, is
+      comparatively less severe. Safely managed drinking water access,
+      estimated from regional peers rather than measured directly, is
+      low. Four of the five indicators are freshly measured this year,
+      making this a substantiated picture rather than one where severity
+      partly reflects thin data coverage.
+    drivers:
+      - "life expectancy ~61 years (fresh), moderate; infant mortality ~67/1,000 (fresh) -- among the most severe figures recorded anywhere in this corpus"
+      - "severe food insecurity 7.6% (fresh) -- comparatively less severe"
+      - "safely managed water low (regional-mean estimate); 4 of 5 indicators fresh -- a substantiated, not primarily estimated, severity"
+    citations: [c1]
+  E:
+    summary: >
+      Political Stability, freshly measured, scores poorly, reflecting
+      both the 2023 coup and an active jihadist insurgency along Niger's
+      tri-border area with Mali and Burkina Faso. Niger's Tillabéri
+      region, surrounding the capital Niamey, became the deadliest part
+      of the central Sahel in 2025: of 1,939 conflict deaths recorded in
+      Niger that year by the monitor ACLED, nearly 1,300 occurred in
+      Tillabéri alone, driven by a fierce and escalating turf war
+      between JNIM and the Islamic State Sahel Province (ISSP) for
+      territorial control, with the two groups repeatedly attacking each
+      other as well as government forces and civilians. Displaced
+      persons, also freshly measured, reflect that ongoing conflict.
+      Homicide indicators are estimated from regional peers.
+    drivers:
+      - "Political Stability poor (fresh) -- reflects both the 2023 coup and the tri-border jihadist insurgency"
+      - "Tillabéri: deadliest part of the central Sahel in 2025 -- ~1,300 of Niger's 1,939 ACLED-recorded conflict deaths; JNIM vs ISSP turf war, not only attacks on the state"
+      - "IDPs fresh, reflect ongoing conflict; homicide indicators regional-mean, not directly measured"
+    citations: [c6]
+  F:
+    summary: >
+      Niger has the lowest per-capita CO2 emissions recorded anywhere in
+      this corpus, and unlike Mali or Burkina Faso's partial hydro
+      stories, this is the clearest possible case of the wealth-proxy
+      pattern documented elsewhere in this project: the carried-forward
+      electricity-generation figure shows nearly 97% of what little
+      power is generated comes from fossil fuels, and electricity access
+      itself (Pillar G) covers only about a fifth of the population.
+      There is no meaningful clean-energy achievement to credit here --
+      there is barely an energy system, uranium exports notwithstanding.
+      Freshwater withdrawal, also carried forward, runs at nearly 74% of
+      internal renewable resources, reflecting dependence on the Niger
+      River shared with upstream and downstream neighbours. Agricultural
+      land share, freshly measured, is moderate.
+    drivers:
+      - "lowest CO2 per capita in the corpus so far (fresh, near-ceiling score) -- the clearest wealth-proxy case yet, not a clean-energy achievement"
+      - "electricity generation ~97% fossil-fuel (carried forward); electricity access only ~20% (Pillar G) -- barely an energy system despite uranium exports"
+      - "freshwater withdrawal ~74% of internal renewable resources (carried forward) -- dependence on the shared Niger River"
+      - "agricultural land moderate (fresh)"
+    citations: [c1]
+  G:
+    summary: >
+      Electricity access, at just over 20% and freshly measured, is
+      among the lowest figures recorded anywhere in this corpus --
+      roughly four in five Nigeriens have no household access, a stark
+      contrast with Niger's role as a major global uranium exporter
+      documented in historical.colonial_legacy and Pillar B. Basic
+      drinking-water access, also fresh, covers roughly half the
+      population, and handwashing coverage is lower still. Social
+      protection and labour programme coverage, carried forward rather
+      than fresh, is thin. Four of five indicators are current, making
+      this pillar's severity a substantiated, not merely estimated,
+      result.
+    drivers:
+      - "electricity access only ~20% (fresh) -- among the lowest in the corpus, stark contrast with Niger's role as a major uranium exporter"
+      - "basic water ~53%, handwashing ~22% (both fresh) -- both low"
+      - "social protection thin (carried forward); 4 of 5 indicators fresh -- a substantiated severity"
+    citations: [c1]
+
+recent:
+  primary:
+    - headline: "Niger nationalises the Somair uranium mine, ending Orano's colonial-era arrangement"
+      date: 2025-06-20
+      summary: >
+        Niger's government fully nationalised the Somair uranium mine on
+        19-20 June 2025, ending French nuclear company Orano's 63%
+        ownership stake outright. The government stated that despite
+        that stake, Orano had taken 86.3% of the mine's actual
+        production between its 1971 launch and 2024, calling this
+        "irresponsible, illegal, and unfair behaviour." An ICSID
+        tribunal later ordered Niger not to sell or transfer the mine's
+        stockpiled uranium pending Orano's compensation claims.
+      why_it_matters: >
+        The clearest, most consequential recent expression of the
+        extraction imbalance documented in historical.colonial_legacy,
+        and a genuine assertion of resource sovereignty even as its
+        broader economic payoff for ordinary Nigeriens remains
+        undemonstrated.
+      news_url: "https://www.aljazeera.com/news/2025/6/20/niger-nationalises-uranium-mine-as-spat-with-french-nuclear-giant-worsens"
+      wikipedia_url: ""
+      sentiment: positive
+    - headline: "Niger-Benin oil pipeline resumes after border dispute and rebel attack"
+      date: 2024-08-19
+      summary: >
+        Niger resumed crude oil exports through the Chinese-financed
+        Niger-Benin pipeline in August 2024, months after shipments
+        began in May 2024 and were then halted by a Niger-Benin border
+        dispute stemming from ECOWAS sanctions, followed by a rebel
+        attack that damaged the pipeline in June. Niger depends on the
+        pipeline's revenue to repay a $400 million oil-for-cash loan
+        from the pipeline's builder, China National Petroleum
+        Corporation.
+      why_it_matters: >
+        Shows Niger's new oil revenue as genuinely significant to Pillar
+        B's economic picture but also genuinely fragile -- dependent on
+        regional relations and vulnerable to the same insurgency
+        documented under Pillar E.
+      news_url: "https://www.bloomberg.com/news/articles/2024-08-19/niger-resumes-oil-exports-through-benin-after-pipeline-reopened"
+      wikipedia_url: ""
+      sentiment: mixed
+    - headline: "Bazoum marks three years of detention without trial"
+      date: 2026-07-25
+      summary: >
+        Lawyers renewed calls for Mohamed Bazoum's release in July 2026,
+        three years after the coup that removed him from Niger's
+        presidency. Bazoum and his wife have never been brought before a
+        judge and have not been formally notified of any charges,
+        despite treason accusations that could carry the death penalty;
+        his presidential term officially ended in April 2026, but he has
+        refused to resign, maintaining he remains Niger's legitimate
+        elected leader.
+      why_it_matters: >
+        The clearest ongoing evidence behind Pillar A's governance
+        concerns, and a direct measure of how far Niger has moved from
+        the peaceful democratic transition Bazoum's own 2021 election
+        represented.
+      news_url: "https://www.africanews.com/2026/07/25/lawyers-call-for-former-president-to-be-freed-three-years-after-coup/"
+      wikipedia_url: ""
+      sentiment: negative
+  extended:
+    - headline: "Tillabéri becomes the deadliest region in the central Sahel"
+      date: 2026-03-13
+      summary: >
+        Nearly 1,300 of the 1,939 conflict deaths ACLED recorded in
+        Niger during 2025 occurred in the Tillabéri region alone, driven
+        by an escalating turf war between JNIM and the Islamic State
+        Sahel Province for territorial control along the Mali-Niger-
+        Burkina Faso tri-border area, compounded by counter-offensives
+        from Niger's own army.
+      why_it_matters: >
+        Directly explains Pillar E's weak security score and shows the
+        insurgency the 2023 coup was justified as responding to has
+        instead grown deadlier and more complex, with two rival
+        jihadist groups now fighting each other as well as the state.
+      news_url: "https://www.africanews.com/2026/03/13/nearly-1300-killed-in-nigers-tillaberi-as-jihadist-attacks-surge/"
+      wikipedia_url: ""
+      sentiment: negative
+
+events:
+  - year: 1974
+    type: coup
+    title: "Kountché deposes Diori"
+    description: >
+      Seyni Kountché deposed President Hamani Diori in a 1974 coup amid
+      Sahelian drought and corruption allegations, ending Diori's 14
+      years of single-party rule since independence in 1960.
+    url: "https://en.wikipedia.org/wiki/History_of_Niger"
+    direction: deteriorate
+  - year: 2021
+    type: election
+    title: "Bazoum's election: Niger's first civilian-to-civilian transfer"
+    description: >
+      Mohamed Bazoum's 2021 election marked Niger's first-ever transfer
+      of power between two democratically elected civilian presidents,
+      following Mahamadou Issoufou's decade of democratic government
+      since 2011.
+    url: "https://en.wikipedia.org/wiki/History_of_Niger"
+    direction: improve
+  - year: 2023
+    type: coup
+    title: "Tiani ousts Bazoum; France withdraws"
+    description: >
+      Presidential Guard commander General Abdourahamane Tiani detained
+      President Bazoum on 26 July 2023 and seized power, citing
+      insecurity and bad governance. France announced troop and
+      diplomatic withdrawal in September 2023 after Niger revoked
+      military cooperation agreements.
+    url: "https://en.wikipedia.org/wiki/2023_Nigerien_coup_d%27%C3%A9tat"
+    direction: deteriorate
+  - year: 2025
+    type: economic
+    title: "Somair nationalised; Niger exits ECOWAS"
+    description: >
+      Niger formally withdrew from ECOWAS in January 2025 alongside Mali
+      and Burkina Faso, forming the Alliance of Sahel States, and fully
+      nationalised the Orano-operated Somair uranium mine in June 2025
+      after decades of disputed production-sharing.
+    url: "https://www.aljazeera.com/news/2025/6/20/niger-nationalises-uranium-mine-as-spat-with-french-nuclear-giant-worsens"
+    direction: mixed
+
+citations:
+  - id: c1
+    url: "https://en.wikipedia.org/wiki/History_of_Niger"
+    source_type: wikipedia
+    title: "History of Niger"
+    accessed: 2026-08-10
+    verified: true
+  - id: c2
+    url: "https://www.aljazeera.com/news/2025/6/20/niger-nationalises-uranium-mine-as-spat-with-french-nuclear-giant-worsens"
+    source_type: news
+    title: "Niger to nationalise uranium mine operated by French state-affiliated firm (Al Jazeera)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c3
+    url: "https://en.wikipedia.org/wiki/2023_Nigerien_coup_d%27%C3%A9tat"
+    source_type: wikipedia
+    title: "2023 Nigerien coup d'état"
+    accessed: 2026-08-10
+    verified: true
+  - id: c4
+    url: "https://www.worldbank.org/en/news/press-release/2025/06/12/niger-economy-rebounds-in-2024-thanks-to-large-scale-oil-exports-and-a-good-agricultural-season"
+    source_type: official
+    title: "Niger: Economy Rebounds in 2024 Thanks to Large-Scale Oil Exports and a Good Agricultural Season (World Bank)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c5
+    url: "https://www.bloomberg.com/news/articles/2024-08-19/niger-resumes-oil-exports-through-benin-after-pipeline-reopened"
+    source_type: news
+    title: "Niger Resumes Oil Exports Through Benin After Pipeline Reopened (Bloomberg)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c6
+    url: "https://www.africanews.com/2026/03/13/nearly-1300-killed-in-nigers-tillaberi-as-jihadist-attacks-surge/"
+    source_type: news
+    title: "Nearly 1,300 killed in Niger's Tillabéri as jihadist attacks surge (Africanews)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c8
+    url: "https://www.africanews.com/2026/03/31/niger-coup-leader-bazoum-still-detained-as-presidential-term-ends/"
+    source_type: news
+    title: "Niger coup leader Bazoum still detained as presidential term ends (Africanews)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c9
+    url: "https://www.africanews.com/2026/07/25/lawyers-call-for-former-president-to-be-freed-three-years-after-coup/"
+    source_type: news
+    title: "Lawyers call for former president to be freed three years after coup (Africanews)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c10
+    url: "https://www.aljazeera.com/news/2025/1/29/military-governments-lead-west-african-trio-out-of-ecowas-regional-bloc"
+    source_type: news
+    title: "Military governments lead West African trio out of ECOWAS regional bloc (Al Jazeera)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c11
+    url: "https://en.wikipedia.org/wiki/Community_of_Sahel%E2%80%93Saharan_States"
+    source_type: wikipedia
+    title: "Community of Sahel-Saharan States"
+    accessed: 2026-08-10
+    verified: true
+
+rec_membership:
+  - org: CEN-SAD
+    joined: 1998
+    status: current
+    left: null
+    citations: [c11]
+  - org: ECOWAS
+    joined: 1975
+    status: withdrawn
+    left: 2025
+    citations: [c10]
+
+balance:
+  n_positive: 1
+  n_negative: 2
+  n_mixed: 1
+  note: >
+    The Somair nationalisation is coded positive because it is a
+    genuine, verified assertion of resource sovereignty ending a
+    documented six-decade extraction imbalance -- the same standard
+    applied to Burkina Faso's SOPAMIB mining nationalisations and Mali's
+    Barrick Gold renegotiation elsewhere in this corpus -- even though
+    whether it broadly benefits ordinary Nigeriens is not yet
+    demonstrated. The oil pipeline is coded mixed rather than positive
+    because its real revenue is inseparable from its real fragility:
+    within its first four months of operation it was shut by a
+    cross-border political dispute and damaged by a rebel attack.
+    Bazoum's detention and the Tillabéri death toll are each
+    independently severe and current, and neither is softened to make
+    room for the positive item.

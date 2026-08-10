@@ -26,7 +26,7 @@ An audit is forced early if a single run inflates the citation count by more tha
 
 ## Status
 
-**17 of 54 countries have a record (Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria, Rwanda, Chad, Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso). The first pass is complete; Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali and Burkina Faso are the first eight backlog countries.**
+**18 of 54 countries have a record (Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria, Rwanda, Chad, Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger). The first pass is complete; Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso and Niger are the first nine backlog countries.**
 
 ### First pass — 9 countries
 
@@ -59,14 +59,15 @@ whose ranks swing hardest with the weighting method.
 | SDN | Sudan | the single most severe remaining gap; the SAF-RSF war since April 2023 is the world's largest displacement crisis, with a formal US genocide determination (Jan 2025); closes the refugee-outflow thread already opened in TCD | **done — iteration 1** |
 | MLI | Mali | opens the Sahel coup-belt/ECOWAS-exit category entirely new to this corpus; a fourth distinct resource-governance pattern (coercive renegotiation, Barrick Gold); a case where searching again after an all-negative draft found a genuine positive | **done — iteration 1** |
 | BFA | Burkina Faso | completes the AES/ECOWAS-exit pair with MLI (NER remains); accounted for ~1/4 of world extremist attacks in 2024; sharpest disconnect yet between aggregate governance scores and documented atrocities (HRW: own forces killed more civilians than jihadists) | **done — iteration 1** |
+| NER | Niger | completes the AES/ECOWAS-exit trio with MLI and BFA; Niger's own first-ever civilian-to-civilian democratic transfer (Bazoum, 2021) makes the 2023 coup a sharper rupture than in its AES partners; most precisely quantified extraction-imbalance case yet (Orano: 63% stake, 86.3% of production, 1971-2024) resolved by nationalisation | **done — iteration 1** |
 
-### Backlog — the remaining 37
+### Backlog — the remaining 36
 
 Listed in full in `narrative/state.yaml` under `backlog`. They are recorded
 explicitly rather than left implicit: a country with no record should be visibly
 absent, not quietly missing.
 
-Libya, Morocco, Tunisia, Benin, Cabo Verde, The Gambia, Guinea, Guinea-Bissau, Cote d'Ivoire, Liberia, Mauritania, Niger, Senegal, Sierra Leone, Togo, Cameroon, Central African Republic, Republic of Congo, Equatorial Guinea, Gabon, Burundi, Djibouti, Eritrea, Malawi, Mozambique, South Sudan, Tanzania, Uganda, Zambia, Zimbabwe, Lesotho, Namibia, Eswatini, Comoros, Madagascar, Seychelles, Sao Tome & Principe
+Libya, Morocco, Tunisia, Benin, Cabo Verde, The Gambia, Guinea, Guinea-Bissau, Cote d'Ivoire, Liberia, Mauritania, Senegal, Sierra Leone, Togo, Cameroon, Central African Republic, Republic of Congo, Equatorial Guinea, Gabon, Burundi, Djibouti, Eritrea, Malawi, Mozambique, South Sudan, Tanzania, Uganda, Zambia, Zimbabwe, Lesotho, Namibia, Eswatini, Comoros, Madagascar, Seychelles, Sao Tome & Principe
 
 ---
 
@@ -507,6 +508,48 @@ Append one line per run: date, country, mode, what changed, what was removed.
   distinct-but-related resource-governance pattern from MLI's Barrick
   Gold coercion. Balance: 1 positive, 2 negative, 1 mixed.
 
+- **2026-08-10 — NER — CREATE. Ninth backlog country, completes the
+  nine-country first-pass backlog entirely.** Full baseline built:
+  historical overview, colonial legacy (documents the precise
+  extraction-imbalance figure behind the 2025 uranium nationalisation —
+  Orano held a 63% stake in the Somair mine but took 86.3% of its
+  production between 1971 and 2024, a number Niger's own government
+  cited to justify nationalising outright), 4 key_periods, 6 pillar
+  summaries (Pillar C left empty — greyed at 1/8 measured), 3 primary +
+  1 extended recent items, 4 events, rec_membership (CEN-SAD 1998
+  founding; ECOWAS withdrawn — founding 1975, left 2025 — matching the
+  index's own current registry). 9 sources opened and verified: 2
+  Wikipedia, 6 news, 1 official (World Bank). `narrative_check.py
+  --country NER` passes 0 errors, 0 warnings on the first pass. `--links`
+  passes 0 errors, 1 warning (Bloomberg, familiar 403 bot-detection
+  pattern, independently corroborated by AJOT's syndication of the same
+  story) — 8/9 resolved. Full pytest suite: 106 passed. Niger's own
+  record sharpens the "democratic rupture" framing already used for MLI
+  and BFA: Mohamed Bazoum's 2021 election was Niger's first-ever transfer
+  of power between two democratically elected civilian presidents —
+  unlike its AES partners, whose pre-coup governments were themselves
+  less firmly democratic — which the July 2023 coup ended outright.
+  Bazoum remains detained without trial more than three years later,
+  never brought before a judge, his presidential term having lapsed in
+  April 2026 without resignation; both the ECOWAS Court of Justice and
+  the UN Working Group on Arbitrary Detention have ruled the detention
+  unlawful. A sixth resource-governance sub-pattern for the corpus's
+  running typology (after BWA, TCD, AGO, MLI, BFA): Niger's June 2025
+  Somair nationalisation is the most precisely quantified extraction-
+  imbalance case yet, and Pillar F is confirmed as the corpus's clearest
+  pure wealth-proxy case — the lowest CO2-per-capita reading recorded
+  anywhere in this project, paired with ~97% fossil-fuel electricity
+  generation and only ~20% electricity access, with no clean-energy
+  achievement to credit (unlike KEN's genuine renewable grid or the
+  AGO/ETH blend cases). Following the SDN/MLI/BFA discipline, found a
+  genuine positive before finalizing — the Somair nationalisation itself,
+  coded positive on the same standard applied to BFA's SOPAMIB and MLI's
+  Barrick Gold cases — plus a genuinely mixed item (the Chinese-financed
+  Niger-Benin oil pipeline, whose real new revenue was inseparable from
+  real fragility: shut by a cross-border dispute and damaged by a rebel
+  attack within its first four months, only resuming in August 2024).
+  Balance: 1 positive, 2 negative, 1 mixed.
+
 ---
 
 ## Meta-notes
@@ -806,6 +849,24 @@ Things a future run should know about how to work, not about a specific country.
   BBC feed URL) — dead links are being caught reliably by the existing
   workflow without needing to wait for the 4th-iteration audit rotation
   to find them.
+- **2026-08-10** — NER confirms the ECOWAS (1975) and CEN-SAD (1998)
+  research reused cleanly a third time across all three AES records
+  (MLI, BFA, NER) with zero re-verification needed. This closes the
+  nine-country first-pass backlog (AGO through NER) and, with it, the
+  three-way MLI/BFA/NER cross-reference thread flagged since the MLI
+  run: a future EXPAND or AUDIT pass touching any one of these three
+  should check the shared ECOWAS-exit (Jan 2025) and resource-
+  nationalisation facts stay consistent across all three files, the same
+  discipline already applied to the EGY/ETH GERD pair and the TCD/SDN
+  refugee-outflow pair. The resource-governance typology is now six
+  entries deep (BWA sovereign-wealth success, TCD's failed pipeline,
+  AGO's bilateral debt model, MLI's coercive Barrick renegotiation, BFA's
+  SOPAMIB nationalisation, NER's Somair nationalisation) and the Pillar F
+  wealth-proxy-vs-genuine-achievement-vs-blend typology now has its
+  cleanest pure-artefact case in NER itself (lowest CO2 pc in the corpus,
+  paired with almost no actual clean generation or access) — worth citing
+  as the reference example if a future country's Pillar F story needs a
+  clear contrast to argue against.
 
 ---
 
