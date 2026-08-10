@@ -3,7 +3,7 @@
 The document future runs read before doing anything. Machine-readable twin:
 `narrative/state.yaml`.
 
-*Seeded 2026-08-09. Research runs so far: Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria, Rwanda, Chad (all CREATE). First pass complete.*
+*Seeded 2026-08-09. Research runs so far: Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria, Rwanda, Chad, Angola (all CREATE). First pass complete; backlog underway.*
 
 ---
 
@@ -26,7 +26,7 @@ An audit is forced early if a single run inflates the citation count by more tha
 
 ## Status
 
-**9 of 54 countries have a record (Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria, Rwanda, Chad). The first pass is complete.**
+**10 of 54 countries have a record (Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria, Rwanda, Chad, Angola). The first pass is complete; Angola is the first backlog country.**
 
 ### First pass — 9 countries
 
@@ -47,13 +47,19 @@ whose ranks swing hardest with the weighting method.
 | RWA | Rwanda | strong development indicators alongside contested governance | **done — iteration 1** |
 | TCD | Chad | Sahel; 2021 coup; the worked example used in the blueprint | **done — iteration 1** |
 
-### Backlog — the remaining 45
+### Angola — first backlog country
+
+| ISO3 | Country | Why this one | Status |
+|---|---|---|---|
+| AGO | Angola | fills the corpus's clearest gap (Lusophone Africa, previously unrepresented); third resource-economy (oil) case alongside DZA and TCD | **done — iteration 1** |
+
+### Backlog — the remaining 44
 
 Listed in full in `narrative/state.yaml` under `backlog`. They are recorded
 explicitly rather than left implicit: a country with no record should be visibly
 absent, not quietly missing.
 
-Egypt, Libya, Morocco, Sudan, Tunisia, Benin, Burkina Faso, Cabo Verde, The Gambia, Guinea, Guinea-Bissau, Cote d'Ivoire, Liberia, Mali, Mauritania, Niger, Senegal, Sierra Leone, Togo, Angola, Cameroon, Central African Republic, Republic of Congo, Equatorial Guinea, Gabon, Burundi, Djibouti, Eritrea, Ethiopia, Kenya, Malawi, Mozambique, South Sudan, Tanzania, Uganda, Zambia, Zimbabwe, Lesotho, Namibia, Eswatini, South Africa, Comoros, Madagascar, Seychelles, Sao Tome & Principe
+Egypt, Libya, Morocco, Sudan, Tunisia, Benin, Burkina Faso, Cabo Verde, The Gambia, Guinea, Guinea-Bissau, Cote d'Ivoire, Liberia, Mali, Mauritania, Niger, Senegal, Sierra Leone, Togo, Cameroon, Central African Republic, Republic of Congo, Equatorial Guinea, Gabon, Burundi, Djibouti, Eritrea, Ethiopia, Kenya, Malawi, Mozambique, South Sudan, Tanzania, Uganda, Zambia, Zimbabwe, Lesotho, Namibia, Eswatini, South Africa, Comoros, Madagascar, Seychelles, Sao Tome & Principe
 
 ---
 
@@ -247,6 +253,35 @@ Append one line per run: date, country, mode, what changed, what was removed.
   explicit caveat that the pipeline was also presented as a solution at
   signing. Balance: 1 positive, 2 negative, 1 mixed.
 
+- **2026-08-10 — AGO — CREATE. First backlog country.** Full baseline
+  built: historical overview, colonial legacy (expands
+  context/colonial_history.yaml with the 1885 Treaty of Simulambuco —
+  Cabinda's separate colonial-protectorate status, which is the exact
+  legal basis FLEC has invoked for a five-decade insurgency, most recently
+  a February 2026 independence declaration from exile in Brussels), 4
+  key_periods, 6 pillar summaries (Pillar C left empty — greyed at 2/8
+  measured), 3 primary + 1 extended recent items, 4 events, rec_membership
+  (SADC 1980, ECCAS 1999). 14 sources opened and verified. `--links`
+  passes 0 errors, 2 warnings (FurtherAfrica, IMF — the familiar 403
+  bot-detection pattern). Chosen specifically to fill the corpus's
+  clearest gap (Lusophone Africa, previously fully unrepresented) and to
+  add a third resource-economy case alongside DZA (hydrocarbon, geometric
+  vs PCA rank swing) and TCD (failed World Bank anti-resource-curse
+  pipeline): Angola's China oil-backed-debt model (once $40B+, being paid
+  down toward $7.5-8B by end-2025) is a third distinct pattern, neither a
+  sovereign-wealth-fund success nor an escrow-account failure but a
+  bilateral resource-backed borrowing relationship now being actively
+  unwound. Pillar F is also genuinely distinct from every prior wealth-proxy
+  case: Angola's low per-capita CO2 is partly real hydro investment (only
+  27% fossil-fuel electricity) rather than pure energy poverty, even
+  though electricity access is still only ~51% — a mixed, not purely
+  artefactual, story. One drafting error caught before commit: initially
+  assumed Angola was a 1983 ECCAS founding member by pattern-matching to
+  COD/TCD's founding-member status; a direct Wikipedia fetch showed Angola
+  was actually an ECCAS observer until January 1999. Balance: 1 positive
+  (the 2022 election, closest in Angola's history, placed in extended
+  since it is now three years old), 2 negative, 1 mixed.
+
 ---
 
 ## Meta-notes
@@ -407,6 +442,23 @@ Things a future run should know about how to work, not about a specific country.
   one confirmed-transient timeout (TCD's sciencespo.fr citation, verified
   live and clean on a retry) — 12 warnings remain, all the familiar
   HTTP-403 bot-detection pattern, no new genuine dead links introduced.
+- **2026-08-10** — AGO opens the 45-country backlog and confirms the
+  meta-note above holds outside the first pass too: check the underlying
+  mechanism every time rather than pattern-matching to a similar-looking
+  prior case. Caught in this run specifically: assumed Angola was an
+  ECCAS founding member (1983) because COD and TCD both were, via
+  UDEAC/CEPGL groupings Angola was never part of — a direct source check
+  showed Angola was actually an ECCAS observer until 1999. This applies
+  to REC data exactly as much as it does to pillar narrative or
+  methodology patterns (co2_pc wealth-proxy, IDP regional-mean caveats,
+  etc.) — verify, don't infer from a similar-looking neighbour. Also
+  worth carrying forward: Angola's oil-debt-to-China model is a third,
+  genuinely distinct resource-governance pattern (bilateral resource-backed
+  borrowing, being actively unwound) alongside BWA's sovereign-wealth-fund
+  success and TCD's escrow-account failure — future oil/mineral-economy
+  countries (Republic of Congo, Equatorial Guinea, Gabon, Zambia are all
+  still in backlog) should be checked against all three patterns rather
+  than assumed to fit whichever was used most recently.
 
 ---
 

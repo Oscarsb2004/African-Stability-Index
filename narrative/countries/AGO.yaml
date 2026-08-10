@@ -1,0 +1,476 @@
+meta:
+  iso3: AGO
+  name: Angola
+  last_updated: 2026-08-10
+  iteration_count: 1
+  next_action: >
+    EXPAND: (1) follow the MPLA's 9th Ordinary Congress succession decision
+    and the run-up to the 2027 election; (2) check whether the Cabinda/FLEC
+    conflict escalated further after the February 2026 independence
+    declaration or de-escalated; (3) check whether China oil-backed debt
+    reached the $7.5-8B end-2025 target and what the trajectory looks like
+    into 2026-2027; (4) check if Pillar C (greyed at 2/8 measured) has
+    gained coverage; (5) find a dedicated source for Angola's current
+    (not civil-war-era) internally displaced persons figure to replace the
+    regional-mean estimate flagged in pillars.E.
+  model_used: claude-sonnet-5
+
+historical:
+  overview: >
+    Portugal began colonising Angola in 1575, centred on Luanda, and ruled
+    for four centuries -- the longest colonial occupation in this
+    project's corpus. Angola was the single largest source of enslaved
+    Africans in the Atlantic trade, with an estimated 4-6 million people
+    exported over three centuries; slavery was formally abolished in
+    1869, but Portugal replaced it with chibalo, a forced-labour system
+    enforced through debt bondage, whipping and rape that persisted into
+    the 1960s. On 4 January 1961, cotton workers on a Portuguese-Belgian
+    plantation in Baixa de Cassanje struck over pay and conditions;
+    Portugal's air force responded by bombing nearby villages, killing an
+    estimated 7,000 civilians, and the massacre is widely credited with
+    triggering the broader war of independence that began weeks later.
+    Independence arrived on 11 November 1975, but the country immediately
+    descended into a civil war between the MPLA, UNITA and FNLA that
+    became a Cold War proxy conflict -- Cuba backed the Marxist MPLA
+    government while the United States, apartheid South Africa and Zaire
+    backed UNITA -- fuelled by diamond and, increasingly, oil revenue. The
+    war killed an estimated one million people and displaced four million
+    before UNITA leader Jonas Savimbi was killed in February 2002 and a
+    ceasefire followed. José Eduardo dos Santos ruled for 38 years before
+    stepping down in 2017 in favour of João Lourenço, whose
+    anti-corruption campaigns coincided with a genuine narrowing of the
+    political field: the 2022 election, won by the MPLA with 51.17%
+    against UNITA's 43.95%, was the closest in Angola's history. Lourenço
+    is constitutionally barred from a third term, leaving succession
+    before the 2027 election unresolved.
+  overview_citations: [c1, c2, c4]
+  colonial_legacy: >
+    context/colonial_history.yaml already credits the scale of the slave
+    trade and the chibalo forced-labour system for shaping Angola's
+    colonial experience, and names the civil war's Cold War and diamond
+    financing. Worth adding is a narrower, still-live colonial legacy:
+    Cabinda, the oil-rich exclave separated from the rest of Angola by a
+    strip of Congolese territory, was administered by Portugal as a
+    legally distinct protectorate under the 1885 Treaty of Simulambuco,
+    never formally incorporated into the colony of Angola proper. When
+    Portugal withdrew in 1975, Cabindan leaders argued their territory's
+    decolonisation should be separate from Angola's; Luanda rejected this
+    and annexed it by force, and Cabinda has been under tight military
+    control ever since. The Front for the Liberation of the Enclave of
+    Cabinda (FLEC) has fought a low-intensity insurgency for five decades,
+    funded partly by the same oil wealth Cabinda produces on Angola's
+    behalf -- the exclave generates roughly 60% of national oil output.
+    That conflict escalated through 2025 into its deadliest year since
+    2016, and in February 2026 FLEC proclaimed independence from exile in
+    Brussels. The claim is legally rooted in a colonial-era treaty most of
+    Angola's other territorial history does not share, which is precisely
+    why it has outlasted every other post-independence conflict in the
+    country.
+  colonial_legacy_citations: [c1, c7]
+  key_periods:
+    - title: "Portuguese colonisation and chibalo"
+      period: "1575-1961"
+      summary: >
+        Portugal began colonising Angola in 1575 and ruled for four
+        centuries, the longest colonial occupation in this project.
+        Angola was the single largest source of enslaved Africans in the
+        Atlantic trade, with an estimated 4-6 million people exported;
+        after slavery's formal 1869 abolition, Portugal replaced it with
+        chibalo, a forced-labour system of debt bondage enforced through
+        violence that built colonial infrastructure and grew cotton for
+        export.
+      citations: [c1, c3]
+    - title: "The Baixa de Cassanje revolt and the war of independence"
+      period: "1961-1975"
+      summary: >
+        On 4 January 1961, cotton workers at a Portuguese-Belgian
+        plantation in Baixa de Cassanje struck over pay and conditions;
+        Portugal's air force bombed nearby villages in response, killing
+        an estimated 7,000 civilians. The massacre is widely credited
+        with triggering the broader war of independence that began weeks
+        later and continued until Portugal's own 1974 revolution forced a
+        withdrawal, with Angolan independence declared on 11 November
+        1975.
+      citations: [c2, c1]
+    - title: "Civil war and Cold War proxy conflict"
+      period: "1975-2002"
+      summary: >
+        Independence was immediately followed by civil war among the
+        MPLA, UNITA and FNLA that became a Cold War proxy conflict: Cuba
+        backed the Marxist MPLA government while the United States,
+        apartheid South Africa and Zaire backed UNITA, with diamond and,
+        increasingly, oil revenue funding both sides. The war killed an
+        estimated one million people and displaced four million before
+        UNITA leader Jonas Savimbi was killed in February 2002, ending
+        the conflict.
+      citations: [c1]
+    - title: "Dos Santos to Lourenço, and Angola's closest election"
+      period: "2002-2025"
+      summary: >
+        José Eduardo dos Santos ruled for 38 years after the civil war's
+        end before stepping down in 2017 in favour of João Lourenço,
+        whose anti-corruption campaigns coincided with a genuine
+        narrowing of the political field. The August 2022 general
+        election, won by the MPLA with 51.17% against UNITA's 43.95%, was
+        the closest in Angola's history, and Lourenço -- constitutionally
+        barred from a third term -- faces an unresolved succession
+        question before the 2027 election.
+      citations: [c4, c8]
+
+pillars:
+  A:
+    summary: >
+      All six governance indicators are directly measured, and Angola
+      scores weak-to-moderate on each -- Rule of Law and Voice and
+      Accountability are the weakest, both under 45. The 2022 election
+      was a genuine turning point behind that weak Voice and
+      Accountability score: the MPLA's 51.17%-43.95% margin over UNITA
+      was the closest in Angola's history, down from a 61% landslide in
+      2017, and UNITA has since gained enough confidence to lobby
+      Washington directly for freer 2027 elections. That narrowing has
+      not been matched by tolerance for dissent outside the ballot box:
+      when a July 2025 taxi strike over fuel prices turned into the
+      deadliest unrest since the civil war, security forces killed at
+      least 22-30 people and arrested over 1,500, with Human Rights Watch
+      documenting excessive force against largely peaceful protesters.
+    drivers:
+      - "all 6 governance indicators directly measured, weak-to-moderate -- Rule of Law and Voice and Accountability weakest"
+      - "2022 election: MPLA 51.17% vs UNITA 43.95%, closest in Angola's history, down from a 61% landslide in 2017"
+      - "UNITA now lobbying Washington directly for freer 2027 elections"
+      - "July 2025 fuel protests: 22-30 killed, 1,500+ arrested, HRW documented excessive force -- deadliest unrest since the civil war"
+    citations: [c5, c6, c8, c9]
+  B:
+    summary: >
+      GDP per capita, freshly measured, scores comparatively well for the
+      region, but growth is weak and inflation, at 20% (5-year average),
+      scores poorly -- both consistent with an economy still built almost
+      entirely around one commodity. Oil and gas made up 94% of exports
+      as of late 2024 despite years of official "diversification"
+      rhetoric, and Angola left OPEC in January 2024 after a dispute over
+      its production quota. The clearest sign of both the risk and the
+      recent correction is Angola's debt to China: historically the
+      largest such relationship on the continent, at one point exceeding
+      $40 billion in oil-backed loans, and now being paid down from
+      $10.15 billion (end 2024) toward a targeted $7.5-8 billion by the
+      end of 2025. Domestic credit to the private sector remains thin.
+      Gini, at 51.3, was not freshly measured this year but indicates
+      high inequality even where the oil economy has produced real
+      per-capita income.
+    drivers:
+      - "GDP per capita fresh, comparatively good for the region; growth weak, inflation ~20% (5yr avg) scores poorly"
+      - "oil and gas ~94% of exports (late 2024) despite years of diversification rhetoric; left OPEC Jan 2024 over quota dispute"
+      - "China oil-backed debt: was $40B+ historically, being paid down from $10.15B (end 2024) toward $7.5-8B (end 2025 target)"
+      - "domestic credit thin; Gini 51.3 (not fresh) indicates high inequality despite oil-driven per-capita income"
+    citations: [c10, c11, c12]
+  D:
+    summary: >
+      Life expectancy above 64 years and infant mortality of 33 per 1,000
+      live births, both freshly measured, are moderate by the standards
+      of this index. Severe food insecurity, carried forward rather than
+      fresh, affects nearly a third of the population, and safely managed
+      drinking water, estimated from regional peers, reaches only about
+      18% -- a gap this record cannot confirm is still current given how
+      much Angola's own water infrastructure has changed since. Two of
+      five indicators were not freshly measured this year.
+    drivers:
+      - "life expectancy >64 years, infant mortality 33/1,000 -- both fresh, moderate"
+      - "severe food insecurity (~31%, carried forward) and safely managed water (~18%, regional-mean) both weaker, both stale estimates"
+    citations: [c1]
+  E:
+    summary: >
+      Political Stability, freshly measured, scores moderately well at
+      the national level -- a figure that sits oddly alongside Cabinda,
+      the oil-rich exclave separated from the rest of Angola, where a
+      five-decade FLEC insurgency escalated through 2025 into its
+      deadliest year since 2016 and, in February 2026, produced a
+      unilateral declaration of independence from exile in Brussels. The
+      national aggregate simply does not register a conflict this
+      geographically contained. Displaced persons, estimated from
+      regional peers rather than measured for Angola specifically, is a
+      genuine gap: Angola's own civil war displaced an estimated four
+      million people at its peak, and no directly measured figure exists
+      to show how much of that has actually resolved. Both homicide
+      indicators are absent this year.
+    drivers:
+      - "Political Stability fresh, moderate nationally -- does not register Cabinda's contained conflict"
+      - "Cabinda/FLEC: 2025 deadliest year since 2016; Feb 2026 unilateral independence declaration from Brussels"
+      - "IDP figure is a regional-mean estimate, not measured for Angola -- a real gap given the country's own ~4M peak civil-war displacement"
+      - "both homicide indicators absent this year"
+    citations: [c7]
+  F:
+    summary: >
+      Only two of four indicators were freshly measured this year.
+      Per-capita CO2 emissions score well at 0.74 tons, and unlike the
+      clearest wealth-proxy cases elsewhere in this project, this is not
+      purely an energy-poverty artefact: the carried-forward
+      electricity-generation figure shows only 27% of Angola's power
+      comes from oil, gas or coal, reflecting real hydroelectric
+      investment -- Angola's Laúca Dam is one of Africa's largest. That
+      said, energy poverty is still real here: electricity access
+      (Pillar G) covers only about half the population, so a relatively
+      clean generation mix coexists with a large share of the country
+      simply having no access to the grid at all. Agricultural land
+      share, freshly measured, is moderate. Freshwater withdrawal,
+      carried forward, is very low relative to renewable resources.
+    drivers:
+      - "only 2 of 4 indicators freshly measured"
+      - "CO2 pc 0.74 tons scores well -- genuinely hydro-driven (only 27% fossil-fuel electricity), not just the usual wealth-proxy artifact"
+      - "but electricity access is still only ~51% -- clean generation mix coexists with real energy poverty"
+      - "agricultural land moderate (fresh); freshwater withdrawal very low (carried forward)"
+    citations: [c1]
+  G:
+    summary: >
+      Electricity access (51%), basic water access (67%) and handwashing
+      coverage (37%), all freshly measured, are moderate but consistently
+      mid-table. Social protection and labour programme coverage, carried
+      forward rather than fresh, covers only about one in ten people --
+      among the weaker readings in this pillar across the index, and
+      notable given how directly the July 2025 fuel-subsidy protests were
+      driven by the state's limited capacity to cushion its population
+      from exactly this kind of price shock. Angola's infrastructure gap
+      is not primarily a data problem: four of five indicators are
+      current, and the picture they show is of a state with real but
+      partial reach, decades after a civil war that destroyed much of
+      what existed before it.
+    drivers:
+      - "electricity access 51%, basic water 67%, handwashing 37% -- all fresh, moderate but consistently mid-table"
+      - "social protection coverage ~10% (carried forward) -- weak, and relevant given the July 2025 fuel-subsidy protests"
+      - "4 of 5 indicators fresh -- a real, current infrastructure gap, not a data problem"
+    citations: [c5]
+
+recent:
+  primary:
+    - headline: "Fuel price protests kill dozens in Angola's deadliest unrest since the civil war"
+      date: 2025-07-30
+      summary: >
+        Angola's government raised diesel prices by a third on 1 July
+        2025 as part of subsidy cuts; a three-day taxi-association strike
+        turned violent, and by 30 July the government confirmed at least
+        22 dead and 197 injured, with rights groups reporting figures as
+        high as 30 dead, 277 injured and over 1,500 arrested. President
+        João Lourenço deployed the military to restore order; Human
+        Rights Watch had previously documented police using excessive
+        force, including live ammunition, against largely peaceful
+        demonstrators.
+      why_it_matters: >
+        The clearest recent evidence behind Pillar A's weak governance
+        score and Pillar G's thin social-protection coverage -- a
+        subsidy cut in an oil-rich country with no cushion for the
+        population it fell hardest on.
+      news_url: "https://www.aljazeera.com/news/2025/7/30/at-least-22-killed-at-angola-fuel-price-hike-protests-authorities-say"
+      wikipedia_url: "https://en.wikipedia.org/wiki/July_2025_Angolan_protests"
+      sentiment: negative
+    - headline: "Cabinda separatists declare independence from exile in Brussels"
+      date: 2026-02-01
+      summary: >
+        The Front for the Liberation of the Enclave of Cabinda (FLEC)
+        proclaimed independence for the oil-rich exclave from exile in
+        Brussels in February 2026, following a wave of arrests of
+        Cabindan activists around anniversary commemorations of the 1885
+        Treaty of Simulambuco. The declaration followed 2025's deadliest
+        year of FLEC-Angolan military violence since 2016, though
+        analysts describe it as strategic pressure rather than imminent
+        state formation, given Angola's military superiority and the
+        absence of international recognition.
+      why_it_matters: >
+        Directly explains why Pillar E's national Political Stability
+        score does not capture a real, currently escalating conflict --
+        and traces to a specific colonial-era legal distinction
+        documented in historical.colonial_legacy.
+      news_url: "https://www.africansecurityanalysis.com/reports/cabinda-unilateral-declaration-of-independence-and-the-strategic-fault-lines-of-angola-s-petro-state"
+      wikipedia_url: ""
+      sentiment: negative
+    - headline: "Angola's ruling party faces an unresolved 2027 succession question"
+      date: 2026-01-21
+      summary: >
+        With President João Lourenço constitutionally barred from a
+        third term, the MPLA has no clear succession plan before its 9th
+        Ordinary Congress in early 2026; Lourenço has publicly warned
+        that anyone claiming his backing for the presidential race would
+        be denounced. UNITA leader Adalberto Costa Júnior has confirmed
+        he will contest the 2027 election and has hired a US lobbyist to
+        press Washington for a freer vote, following the closest election
+        in Angola's history in 2022.
+      why_it_matters: >
+        Real political competition is emerging for the first time since
+        independence, but the ruling party's own succession uncertainty
+        is itself a governance risk this record does not resolve either
+        way.
+      news_url: "https://allafrica.com/stories/202601210552.html"
+      wikipedia_url: ""
+      sentiment: mixed
+  extended:
+    - headline: "2022 election narrows the MPLA's hold on power"
+      date: 2022-08-24
+      summary: >
+        Angola's August 2022 general election produced the closest
+        result in the country's history: the MPLA won 51.17% of the vote
+        and 124 of 220 seats, down from a 61% landslide in 2017, while
+        UNITA won 43.95% and 90 seats, a gain of 39. João Lourenço
+        retained the presidency but with substantially diminished
+        support, marking the first real electoral competition Angola has
+        seen since independence.
+      why_it_matters: >
+        A genuine democratic-competition milestone that sits alongside,
+        rather than resolves, the governance weaknesses and unresolved
+        succession question documented elsewhere in this record.
+      news_url: "https://www.aljazeera.com/news/2022/8/29/angola-ruling-party-wins-vote-and-president-a-second-term"
+      wikipedia_url: "https://en.wikipedia.org/wiki/2022_Angolan_general_election"
+      sentiment: positive
+
+events:
+  - year: 1975
+    type: independence
+    title: "Angola gains independence; civil war begins immediately"
+    description: >
+      Angola declared independence from Portugal on 11 November 1975;
+      the MPLA, UNITA and FNLA immediately fell into a civil war that
+      became a Cold War proxy conflict, funded by diamond and oil
+      revenue.
+    url: "https://en.wikipedia.org/wiki/History_of_Angola"
+    direction: deteriorate
+  - year: 2002
+    type: peace_deal
+    title: "Death of Jonas Savimbi ends the civil war"
+    description: >
+      UNITA leader Jonas Savimbi was killed in combat on 22 February
+      2002; a ceasefire followed weeks later, ending a war that had
+      killed an estimated one million people and displaced four million.
+    url: "https://en.wikipedia.org/wiki/History_of_Angola"
+    direction: improve
+  - year: 2017
+    type: constitutional
+    title: "Dos Santos steps down after 38 years; Lourenço takes power"
+    description: >
+      José Eduardo dos Santos stepped down as president in 2017 after 38
+      years in power, succeeded by João Lourenço, who launched
+      anti-corruption campaigns that coincided with a genuine narrowing
+      of the political field.
+    url: "https://en.wikipedia.org/wiki/History_of_Angola"
+    direction: mixed
+  - year: 2022
+    type: election
+    title: "Closest election in Angola's history"
+    description: >
+      The MPLA won the August 2022 general election with 51.17% against
+      UNITA's 43.95%, the narrowest margin in Angola's history and a
+      sharp drop from the MPLA's 61% landslide in 2017.
+    url: "https://en.wikipedia.org/wiki/2022_Angolan_general_election"
+    direction: improve
+
+citations:
+  - id: c1
+    url: "https://en.wikipedia.org/wiki/History_of_Angola"
+    source_type: wikipedia
+    title: "History of Angola"
+    accessed: 2026-08-10
+    verified: true
+  - id: c2
+    url: "https://en.wikipedia.org/wiki/Strike_in_Baixa_do_Cassange"
+    source_type: wikipedia
+    title: "Strike in Baixa do Cassange"
+    accessed: 2026-08-10
+    verified: true
+  - id: c3
+    url: "https://en.wikipedia.org/wiki/Chibalo"
+    source_type: wikipedia
+    title: "Chibalo"
+    accessed: 2026-08-10
+    verified: true
+  - id: c4
+    url: "https://en.wikipedia.org/wiki/2022_Angolan_general_election"
+    source_type: wikipedia
+    title: "2022 Angolan general election"
+    accessed: 2026-08-10
+    verified: true
+  - id: c5
+    url: "https://www.aljazeera.com/news/2025/7/30/at-least-22-killed-at-angola-fuel-price-hike-protests-authorities-say"
+    source_type: news
+    title: "At least 22 killed at Angola fuel price hike protests, authorities say (Al Jazeera)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c6
+    url: "https://monitor.civicus.org/explore/angola-on-protests-against-fuel-price-increase-30-killed-277-injured-and-over-1500-arrested/"
+    source_type: news
+    title: "Angola: Protests against fuel price increase: 30 killed, 277 injured and over 1,500 arrested (CIVICUS Monitor)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c7
+    url: "https://www.africansecurityanalysis.com/reports/cabinda-unilateral-declaration-of-independence-and-the-strategic-fault-lines-of-angola-s-petro-state"
+    source_type: academic
+    title: "Cabinda: Unilateral Declaration of Independence and The Strategic Fault Lines of Angola's Petro-State"
+    accessed: 2026-08-10
+    verified: true
+  - id: c8
+    url: "https://allafrica.com/stories/202601210552.html"
+    source_type: news
+    title: "Who will lead Angola in 2027? The 3 main potential candidates of the MPLA (AllAfrica)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c9
+    url: "https://www.theafricareport.com/421710/angolas-unita-turns-to-cold-war-ally-to-lobby-trump-for-free-elections/"
+    source_type: news
+    title: "Angola's UNITA turns to Cold War ally to lobby Trump for free elections (The Africa Report)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c10
+    url: "https://furtherafrica.com/2025/07/29/angola-plans-major-cut-to-oil-backed-debt-to-china-in-2025/"
+    source_type: news
+    title: "Angola Plans Major Cut to Oil-Backed Debt to China in 2025 (FurtherAfrica)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c11
+    url: "https://www.imf.org/en/news/articles/2023/09/05/pr23303-angola-imf-executive-board-concludes-first-post-financing-discussion-with-angola"
+    source_type: official
+    title: "Angola: IMF Executive Board Concludes First Post-Financing Discussion"
+    accessed: 2026-08-10
+    verified: true
+  - id: c12
+    url: "https://macaonews.org/news/lusofonia/angola-economy-oil-gas-diversification/"
+    source_type: news
+    title: "Export data underscores 'insufficient' economic diversification in Angola (Macao News)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c13
+    url: "https://www.sadc.int/pages/history-and-treaty"
+    source_type: official
+    title: "History and Treaty (SADC)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c14
+    url: "https://en.wikipedia.org/wiki/Economic_Community_of_Central_African_States"
+    source_type: wikipedia
+    title: "Economic Community of Central African States"
+    accessed: 2026-08-10
+    verified: true
+
+rec_membership:
+  - org: SADC
+    joined: 1980
+    status: current
+    left: null
+    citations: [c13]
+  - org: ECCAS
+    joined: 1999
+    status: current
+    left: null
+    citations: [c14]
+
+balance:
+  n_positive: 1
+  n_negative: 2
+  n_mixed: 1
+  note: >
+    Angola's recent record is genuinely mixed rather than balanced by
+    design: two of three primary items are negative (the July 2025 fuel
+    protests, the escalating Cabinda conflict) and the third -- the 2027
+    succession question -- is coded mixed because real political
+    competition and real governance risk are both true at once. The one
+    clear positive, the 2022 election's historic narrowing of the MPLA's
+    margin, is placed in extended because it is now three years old
+    rather than a current development, but it is not omitted: it is the
+    structural fact that explains why UNITA's 2027 positioning (documented
+    in primary) is credible rather than symbolic. Nothing here is
+    softened to make Angola's oil wealth read as straightforward success,
+    and nothing is sharpened to make the Cabinda conflict read as
+    representative of the whole country.
