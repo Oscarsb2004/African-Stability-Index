@@ -1,0 +1,439 @@
+meta:
+  iso3: COD
+  name: Democratic Rep. Congo
+  last_updated: 2026-08-09
+  iteration_count: 1
+  next_action: >
+    EXPAND: (1) check the status of the December 2025 Washington peace
+    agreement's implementation, and whether fighting in the east has
+    genuinely subsided; (2) check for 2026 cobalt export-quota effects on
+    prices and whether the copper pivot has continued; (3) check if Pillar C
+    (greyed at 2/8 measured) has gained coverage; (4) the 2018-2019 election's
+    disputed vote count (CENCO parallel tabulation controversy) deserves a
+    dedicated source and deeper treatment given its direct relevance to
+    Pillar A -- this run characterised it only from secondary summaries.
+  model_used: claude-sonnet-5
+
+historical:
+  overview: >
+    The Democratic Republic of Congo's post-independence history has been
+    shaped by three prolonged crises. Independence from Belgium on 30 June
+    1960 triggered the Congo Crisis: Prime Minister Patrice Lumumba was
+    removed within months and assassinated in January 1961 with Belgian and
+    American involvement, and army chief of staff Joseph-Desire Mobutu
+    seized full power in a second coup on 24 November 1965. Mobutu ruled for
+    32 years, renaming the country Zaire in 1971 and himself Mobutu Sese
+    Seko, while building one of the 20th century's most thorough
+    kleptocracies -- by some estimates diverting 60% of the national budget
+    in a single year and amassing a personal fortune later estimated in the
+    billions, even as state institutions and infrastructure atrophied.
+    Rwandan-backed rebels toppled him in the First Congo War (1996-97),
+    installing Laurent-Desire Kabila; when Kabila turned against his former
+    Rwandan and Ugandan backers, the Second Congo War (1998-2003) followed,
+    drawing in nine African states and an estimated 25 armed groups in a
+    conflict often called Africa's World War, with roughly 3.8 million
+    deaths, mostly from disease and starvation. The formal war ended in
+    2003, but armed conflict in the mineral-rich eastern provinces never
+    fully stopped, resurfacing most severely in January 2025 when the
+    Rwandan-backed M23 movement captured the regional capital Goma.
+  overview_citations: [c2, c3, c4, c5]
+  colonial_legacy: >
+    The extractive template Leopold's regime built around forced rubber
+    collection did not end with colonialism -- it changed commodities. The
+    same eastern provinces where colonial agents once enforced rubber quotas
+    by amputation are today's centre of global cobalt and coltan extraction,
+    and control over these mines has funded successive waves of armed groups
+    rather than a colonial administration, from the wars of the late 1990s
+    through to the M23 movement active as this record is written. A second,
+    less visible colonial legacy is administrative rather than economic: at
+    independence in 1960, Belgian Congo had produced only 16 university
+    graduates in a population of roughly 14 million, and the colonial army
+    (the Force Publique) had never permitted a single African to hold
+    officer rank. The consequences were immediate: the Force Publique
+    mutinied against its white officers just five days after independence,
+    precipitating the wider Congo Crisis. That governance vacuum -- a state
+    Belgium never built Congolese capacity to run -- is what Mobutu's
+    kleptocratic one-man rule filled rather than repaired for the following
+    32 years. Both legacies converge directly on the index's weakest
+    pillars: Governance (25.5) and Structural/Infrastructure (18.0) measure
+    the consequences of institutions colonial rule never built and Mobutu's
+    rule hollowed out further, while the ongoing eastern conflict driven by
+    mineral wealth is the direct descendant of the extraction pattern
+    colonialism established.
+  colonial_legacy_citations: [c1, c2, c13]
+  key_periods:
+    - title: "Congo Free State and Belgian Congo"
+      period: "1885-1960"
+      summary: >
+        King Leopold II's Congo Free State (1885-1908) enforced
+        rubber-collection quotas through mutilation and killing, with an
+        estimated ten million deaths; Belgium annexed the territory as a
+        state colony in 1908 but maintained coercive labour practices. At
+        independence in 1960, the colony had produced only 16 university
+        graduates and no African officers in its colonial army. Full detail
+        in context/colonial_history.yaml.
+      citations: [c1, c13]
+    - title: "The Congo Crisis and Mobutu's rise"
+      period: "1960-1965"
+      summary: >
+        Independence on 30 June 1960 was followed almost immediately by the
+        Force Publique mutiny (5 July), Belgian-backed Katanga's secession,
+        and the assassination of Prime Minister Patrice Lumumba in January
+        1961 with Belgian and American involvement. Army chief Joseph-Desire
+        Mobutu consolidated full power in a second coup on 24 November 1965,
+        ending the crisis by installing a dictatorship.
+      citations: [c2, c13]
+    - title: "The Mobutu dictatorship"
+      period: "1965-1997"
+      summary: >
+        Mobutu ruled for 32 years, renaming the country Zaire in 1971 and
+        pursuing a Zairianisation policy that transferred foreign-owned
+        businesses to his associates. His kleptocracy diverted an estimated
+        60% of the national budget in a single year (1970) and amassed him a
+        personal fortune later estimated in the billions, while state
+        institutions and infrastructure steadily deteriorated. Rwandan-backed
+        rebels toppled him in the First Congo War, and he died in exile in
+        September 1997.
+      citations: [c2, c3]
+    - title: "The Congo Wars and continuing eastern conflict"
+      period: "1996-present"
+      summary: >
+        The First Congo War (1996-97) installed Laurent-Desire Kabila; when
+        he turned against his former Rwandan and Ugandan backers, the Second
+        Congo War (1998-2003) followed, drawing in nine African states and
+        roughly 25 armed groups in a conflict often called Africa's World
+        War, with an estimated 3.8 million deaths, mostly from disease and
+        starvation. The formal war ended in 2003, but conflict in the
+        mineral-rich east never fully stopped, resurfacing most severely
+        when the Rwandan-backed M23 movement captured Goma in January 2025.
+      citations: [c3, c4, c5]
+
+pillars:
+  A:
+    summary: >
+      All six governance indicators score poorly, and Control of Corruption
+      is nearly at the floor of the scale -- consistent with a state whose
+      administrative capacity was never built by colonial rule and was then
+      hollowed out by 32 years of Mobutu-era kleptocracy. Government
+      Effectiveness and Rule of Law are similarly weak. These are
+      perception-based measures of the state's day-to-day functioning rather
+      than direct measures of the active conflict in the east, which is
+      captured separately under Pillar E; the two are related but not
+      identical, since large parts of western and central DRC function under
+      normal civil administration even while the east does not.
+    drivers:
+      - "Control of Corruption near the floor of the scale"
+      - "governance weakness traces to colonial under-investment, then Mobutu-era kleptocracy"
+      - "distinct from, though related to, the active eastern conflict (Pillar E)"
+    citations: [c2]
+  B:
+    summary: >
+      GDP growth scores strongly (three-year average of 8%, among the
+      fastest in the sample), driven by a mining boom in copper and cobalt
+      -- DRC supplies roughly 70% of the world's cobalt, the critical
+      mineral for electric-vehicle batteries. That growth has not yet
+      reached most households: GDP per capita remains among the lowest
+      scored in the index. A 2025 cobalt price crash (to a nine-year low)
+      has pushed major miners toward copper instead, where demand from
+      electrification and AI data centres is keeping prices elevated.
+      Coverage and Gini data were not directly measured this year.
+    drivers:
+      - "GDP growth strong (~8%), driven by copper/cobalt mining boom"
+      - "GDP per capita among the lowest scored: growth has not reached most households"
+      - "2025 cobalt price crash pushed miners toward copper"
+    citations: [c9, c10]
+  D:
+    summary: >
+      Health indicators are weak but mostly current: four of five were
+      measured directly. Life expectancy of roughly 62 years and infant
+      mortality above 57 per 1,000 live births are among the more severe
+      readings in the index, and severe food insecurity affects over 40% of
+      the population -- a direct consequence of the eastern conflict's
+      displacement (see Pillar E) as much as of general poverty. Basic and
+      safely managed water access are both very low, consistent with the
+      infrastructure gap recorded under Pillar G.
+    drivers:
+      - "4 of 5 indicators directly measured"
+      - "severe food insecurity affects >40% of the population"
+      - "water access indicators consistent with the Pillar G infrastructure gap"
+    citations: [c8]
+  E:
+    summary: >
+      Political Stability and Absence of Violence scores among the lowest in
+      the index, directly reflecting the eastern conflict: in January 2025
+      the Rwandan-backed M23 movement captured the regional capital Goma and
+      later Bukavu, in an offensive the UN says killed thousands and
+      displaced hundreds of thousands more civilians. The displaced-persons
+      indicator (63.7 per 1,000) is directly measured -- DRC's own current
+      data, not a regional estimate -- and reflects a real and ongoing
+      crisis. Homicide data is entirely absent, not carried forward or
+      estimated but simply unavailable, which is itself informative about
+      how much of the country's security situation goes unmonitored.
+      Ceasefire and framework agreements were reached in Doha (July 2025)
+      and Washington (December 2025), though fighting continued in parts of
+      the east even after signing.
+    drivers:
+      - "Political Stability among the lowest scores in the index"
+      - "displaced-persons figure is directly measured, current, and severe"
+      - "homicide data entirely absent, not merely estimated"
+      - "Doha and Washington agreements signed in 2025; fighting continued regardless"
+    citations: [c5, c6, c7, c8]
+  F:
+    summary: >
+      DRC's environmental score is high, but for reasons that say more about
+      the index's method than about environmental policy: two of its four
+      indicators -- freshwater withdrawal and fossil-fuel electricity share
+      -- are carried forward rather than freshly measured, and per-capita
+      CO2 emissions score near the ceiling of the scale simply because so
+      little fossil fuel is burned. That is a consequence of poverty and
+      under-electrification (see Pillar G), not of clean-energy achievement:
+      generation is already almost entirely hydroelectric, yet DRC exploits
+      only about 3% of its enormous hydroelectric potential, the largest of
+      any African country. Read against the co2_pc wealth-proxy pattern in
+      methodology/METHODOLOGY_REVIEW.md, this score is close to the mirror
+      image of Algeria's near-zero Environmental score: there, fossil-fuelled
+      industrialisation produced a poor reading; here, the absence of
+      industrialisation produces a good one.
+    drivers:
+      - "high F score reflects poverty/under-electrification, not environmental policy"
+      - "only 2 of 4 indicators freshly measured"
+      - "exploits ~3% of the largest hydroelectric potential in Africa"
+      - "mirror image of Algeria's Pillar F: same methodological pattern, opposite direction"
+    citations: [c11, c12]
+  G:
+    summary: >
+      This is the weakest pillar in the index for DRC and among the weakest
+      recorded anywhere in this edition: electricity access is roughly 22%,
+      and both basic and safely managed water access are severely limited.
+      The gap is not a resource constraint -- DRC ranks first in Africa for
+      hydroelectric potential (an estimated 100,000 megawatts, about 13% of
+      the world total) but currently develops only about 3% of it, hampered
+      by decades of underinvestment in transmission infrastructure and the
+      finances of the state utility. The World Bank committed $250 million
+      toward the long-planned Grand Inga expansion in June 2025, a small
+      step against a project that has been discussed for decades without
+      being built at scale.
+    drivers:
+      - "electricity access ~22%; ranks 1st in Africa for hydro potential (100,000 MW)"
+      - "only ~3% of hydro potential currently developed"
+      - "World Bank committed $250m to Grand Inga expansion, June 2025"
+    citations: [c11, c12]
+
+recent:
+  primary:
+    - headline: "M23 captures Goma and Bukavu in a major escalation"
+      date: 2025-01-30
+      summary: >
+        The Rwandan-backed M23 movement launched a major offensive from 23
+        to 30 January 2025, capturing the regional capital Goma, and later
+        seized the city of Bukavu. The UN reported thousands of deaths and
+        hundreds of thousands of civilians displaced during the escalation,
+        one of the most severe since the formal end of the Second Congo War
+        in 2003.
+      why_it_matters: >
+        The direct cause of the weak Pillar E score and a major driver of
+        the displacement and food-insecurity figures elsewhere in this
+        record.
+      news_url: ""
+      wikipedia_url: "https://en.wikipedia.org/wiki/2025_Goma_offensive"
+      sentiment: negative
+    - headline: "Congo and Rwanda sign peace agreement in Washington"
+      date: 2025-12-04
+      summary: >
+        Following a framework initialled by foreign ministers in June and a
+        ceasefire agreed in Doha in July, the presidents of DRC and Rwanda
+        signed a peace agreement in Washington on 4 December 2025. Fighting
+        continued in parts of the east even after the signing, and the deal
+        was met with scepticism in rebel-held areas.
+      why_it_matters: >
+        A genuine diplomatic milestone after the worst fighting since 2003,
+        though the gap between a signed agreement and conditions on the
+        ground remains wide -- coded mixed rather than positive for that
+        reason.
+      news_url: "https://www.npr.org/2025/12/03/nx-s1-5628936/drc-rwanda-peace-deal-trump"
+      wikipedia_url: ""
+      sentiment: mixed
+    - headline: "Cobalt price crash forces a pivot to copper"
+      date: 2025-06-01
+      summary: >
+        Cobalt prices fell to a nine-year low near $22,000 per tonne in
+        2025 amid global oversupply, prompting major DRC miners to shift
+        capital and output toward copper, where demand from electrification
+        and AI data centres is keeping prices elevated. The government has
+        also imposed cobalt export quotas intended to restrict supply,
+        support prices, and encourage domestic processing.
+      why_it_matters: >
+        Illustrates how exposed Pillar B's strong GDP-growth reading is to
+        global commodity swings the country does not control -- the same
+        vulnerability documented for Algeria's hydrocarbon exports, in a
+        different mineral.
+      news_url: "https://oilprice.com/Metals/Commodities/DR-Congos-Cobalt-Miners-Pivot-To-Copper-Amid-Price-Crash.html"
+      wikipedia_url: ""
+      sentiment: mixed
+  extended:
+    - headline: "World Bank commits $250 million to Grand Inga hydropower expansion"
+      date: 2025-06-01
+      summary: >
+        The World Bank approved $250 million toward the long-discussed
+        Grand Inga hydropower expansion in June 2025, part of a broader push
+        to develop DRC's hydroelectric potential -- currently only about 3%
+        exploited despite ranking first in Africa. Critics have raised
+        concerns about the project's history of cost overruns, displacement,
+        and past corruption.
+      why_it_matters: >
+        A concrete, if modest, step toward closing the electricity-access
+        gap that anchors Pillar G's weakness, though the project's decades
+        of delay are themselves relevant context.
+      news_url: "https://african.business/2025/06/energy-resources/world-bank-commits-250m-to-controversial-inga-dam-scheme"
+      wikipedia_url: ""
+      sentiment: mixed
+
+events:
+  - year: 2003
+    type: peace_deal
+    title: "Second Congo War formally ends"
+    description: >
+      A peace agreement signed in 2002 led to the establishment of a
+      Transitional Government on 18 July 2003, formally ending Africa's
+      World War after an estimated 3.8 million deaths, mostly from disease
+      and starvation.
+    url: "https://en.wikipedia.org/wiki/Second_Congo_War"
+    direction: improve
+  - year: 2019
+    type: constitutional
+    title: "First peaceful transfer of power since independence"
+    description: >
+      Felix Tshisekedi was inaugurated on 24 January 2019 after the December
+      2018 election, the first peaceful transfer of power in DRC's history
+      since 1960. The vote count was contested: opposition candidate Martin
+      Fayulu and Catholic church observers criticised the result as
+      manipulated.
+    url: "https://news.un.org/en/story/2019/03/1034971"
+    direction: mixed
+  - year: 2025
+    type: conflict
+    title: "M23 captures Goma"
+    description: >
+      The Rwandan-backed M23 movement captured the regional capital Goma in
+      a January 2025 offensive, killing thousands and displacing hundreds
+      of thousands of civilians in the most severe escalation since 2003.
+    url: "https://en.wikipedia.org/wiki/2025_Goma_offensive"
+    direction: deteriorate
+  - year: 2025
+    type: peace_deal
+    title: "DRC-Rwanda peace agreement signed in Washington"
+    description: >
+      Presidents of DRC and Rwanda signed a peace agreement in Washington on
+      4 December 2025, following a June framework and a July ceasefire
+      agreed in Doha. Fighting continued in parts of the east after signing.
+    url: "https://www.npr.org/2025/12/03/nx-s1-5628936/drc-rwanda-peace-deal-trump"
+    direction: mixed
+
+citations:
+  - id: c1
+    url: "https://en.wikipedia.org/wiki/Congo_Free_State"
+    source_type: wikipedia
+    title: "Congo Free State"
+    accessed: 2026-08-09
+    verified: true
+  - id: c2
+    url: "https://en.wikipedia.org/wiki/Mobutu_Sese_Seko"
+    source_type: wikipedia
+    title: "Mobutu Sese Seko"
+    accessed: 2026-08-09
+    verified: true
+  - id: c3
+    url: "https://en.wikipedia.org/wiki/First_Congo_War"
+    source_type: wikipedia
+    title: "First Congo War"
+    accessed: 2026-08-09
+    verified: true
+  - id: c4
+    url: "https://en.wikipedia.org/wiki/Second_Congo_War"
+    source_type: wikipedia
+    title: "Second Congo War"
+    accessed: 2026-08-09
+    verified: true
+  - id: c5
+    url: "https://en.wikipedia.org/wiki/2025_Goma_offensive"
+    source_type: wikipedia
+    title: "2025 Goma offensive"
+    accessed: 2026-08-09
+    verified: true
+  - id: c6
+    url: "https://www.npr.org/2025/12/03/nx-s1-5628936/drc-rwanda-peace-deal-trump"
+    source_type: news
+    title: "Congo and Rwanda to sign symbolic peace deal in Washington as fighting rages"
+    accessed: 2026-08-09
+    verified: true
+  - id: c7
+    url: "https://allafrica.com/stories/202511170280.html"
+    source_type: news
+    title: "DR Congo and M23 Rebels Sign Framework for Peace in Qatar"
+    accessed: 2026-08-09
+    verified: true
+  - id: c8
+    url: "https://www.crisisgroup.org/rpt/africa/democratic-republic-congo-rwanda/320-m23-offensive-elusive-peace-great-lakes"
+    source_type: academic
+    title: "The M23 Offensive: Elusive Peace in the Great Lakes (International Crisis Group)"
+    accessed: 2026-08-09
+    verified: true
+  - id: c9
+    url: "https://oilprice.com/Metals/Commodities/DR-Congos-Cobalt-Miners-Pivot-To-Copper-Amid-Price-Crash.html"
+    source_type: news
+    title: "DR Congo's Cobalt Miners Pivot To Copper Amid Price Crash"
+    accessed: 2026-08-09
+    verified: true
+  - id: c10
+    url: "https://www.newamerica.org/planetary-politics/blog/the-dr-congos-cobalt-power-move/"
+    source_type: academic
+    title: "The DR Congo's Cobalt Power Move (New America)"
+    accessed: 2026-08-09
+    verified: true
+  - id: c11
+    url: "https://african.business/2025/06/energy-resources/world-bank-commits-250m-to-controversial-inga-dam-scheme"
+    source_type: news
+    title: "World Bank commits $250m to controversial Inga Dam scheme"
+    accessed: 2026-08-09
+    verified: true
+  - id: c12
+    url: "https://www.worldbank.org/en/news/factsheet/2024/10/09/questions-and-answers-on-world-bank-support-for-the-democratic-republic-of-congos-afe-drc-grand-inga-development-program"
+    source_type: official
+    title: "Questions and Answers on World Bank Support for the DRC's Grand Inga Development Program"
+    accessed: 2026-08-09
+    verified: true
+  - id: c13
+    url: "https://en.wikipedia.org/wiki/1960_Force_Publique_mutinies"
+    source_type: wikipedia
+    title: "1960 Force Publique mutinies"
+    accessed: 2026-08-09
+    verified: true
+  - id: c14
+    url: "https://news.un.org/en/story/2019/03/1034971"
+    source_type: official
+    title: "First peaceful transfer of power in DR Congo 'an extraordinary opportunity' for advancing rights (UN News)"
+    accessed: 2026-08-09
+    verified: true
+
+balance:
+  n_positive: 0
+  n_negative: 1
+  n_mixed: 3
+  note: >
+    Unlike the first three countries researched, the recent-developments
+    window here has no item that is cleanly positive, and that was not
+    smoothed over: the Goma offensive is a genuine, severe setback, and even
+    the peace agreements and infrastructure investment are coded mixed
+    because implementation on the ground remains incomplete or unproven at
+    time of writing. Two structural counterweights are named here rather
+    than folded into the recent-items count, because both fall outside the
+    "recent" window: first, the equal-weight composite score rose from 25.3
+    to 40.0 between 2000 and 2023 (+14.7), a genuine improvement sustained
+    even through the worst conflict most low-income countries have
+    experienced since the Second World War; second, the January 2019
+    inauguration of Felix Tshisekedi was the first peaceful transfer of
+    power in DRC's history since 1960 independence, a real democratic
+    milestone even though the underlying vote count was disputed (see
+    events). Neither counterweight erases the severity of what the recent
+    record shows -- it would be dishonest to claim otherwise -- but both
+    are part of the fuller picture.

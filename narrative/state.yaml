@@ -45,15 +45,17 @@ countries:
     next_action: 'EXPAND: check IMF fiscal trend + sukuk outcome; second source for pieds-noirs
       exodus scale; check appeal outcomes (Tadjadit/Gleizes); check if Pillar C has gained
       coverage'
-backlog:
   COD:
     name: Democratic Rep. Congo
     region: Central
     first_pass: true
     reason: bottom decile; vast and low-coverage; long conflict history
-    iteration_count: 0
-    last_updated: null
-    next_action: create baseline from blueprint
+    iteration_count: 1
+    last_updated: '2026-08-09'
+    next_action: 'EXPAND: check Washington peace agreement implementation; check 2026 cobalt
+      quota effects; check if Pillar C has gained coverage; deepen the 2018-2019 disputed-election
+      vote-count characterization with a dedicated source'
+backlog:
   SOM:
     name: Somalia
     region: East
@@ -486,3 +488,19 @@ meta_notes:
   own measured value -- flagged explicitly in pillars.E rather than left to mislead a reader.
   Link checker: 2 more bot-blocked domains (france24, bloomberg) confirmed real, same pattern
   as MUS/GHA runs -- the fix is holding across a growing set of domains.'
+- '2026-08-09: COD CREATE run complete (14 sources opened and verified). First run with a
+  genuine dead link caught: narrative_check.py --links correctly flagged a World Bank PDF
+  (documents1.worldbank.org) as a real HTTP 404, independently confirmed via curl -- this
+  is different from the MUS/GHA/DZA 403 bot-detection pattern; here the resource is actually
+  gone. Replaced with a working citation for the same claim rather than removing the claim,
+  since the underlying fact (DRC ~70% of global cobalt supply) is well corroborated elsewhere.
+  First run to trigger the balance warning as a TRUE POSITIVE: 0 positive / 1 negative / 3
+  mixed recent items, left as-is rather than forced to a nicer ratio -- this is exactly the
+  scenario the blueprint anticipates ("if genuinely none, write that finding into balance.note"),
+  and the note names two real structural counterweights (23-year +14.7-point score improvement;
+  the 2019 first peaceful transfer of power) that fall outside the recent window without pretending
+  they belong inside it. Also notable: Pillar F is DRC''s HIGHEST-scoring pillar (78.4) for
+  the same underlying reason Algeria''s is its lowest (4.4) -- co2_pc as a wealth-proxy artifact,
+  in mirror image. Worth keeping in mind for future countries: extreme Pillar F scores in
+  either direction likely trace to the same methodological pattern, not a real environmental
+  story.'
