@@ -1,0 +1,462 @@
+meta:
+  iso3: BDI
+  name: Burundi
+  last_updated: 2026-08-11
+  iteration_count: 1
+  next_action: >
+    EXPAND: (1) follow whether the eastern DRC refugee influx
+    continues at its December 2025 pace or eases, and how it affects
+    Burundi's own strained public services; (2) follow whether
+    Rwasa's call for a national conference produces any concession
+    from the CNDD-FDD; (3) follow whether the coffee-sector recovery
+    and 2025 growth rate continue into fresh index data; (4) check
+    whether Pillars D/E/F/G carried-forward and regional-mean
+    indicators gain fresh coverage; (5) check if Pillar C has gained
+    coverage.
+  model_used: claude-sonnet-5
+
+historical:
+  overview: >
+    Germany colonized the kingdom of Burundi as part of Ruanda-Urundi
+    from 1890; Belgium took control after 1916 under a League of
+    Nations mandate. Belgian administrators hardened the pre-colonial,
+    more fluid distinction between Hutu and Tutsi by requiring racial
+    identity cards from 1933, a system that fixed social categories
+    into rigid, inherited ones. Burundi gained independence in 1962
+    as a constitutional monarchy, which a 1966 coup replaced with a
+    Tutsi-dominated republic. In April 1972, a Hutu insurrection
+    killed roughly 3,000 Tutsi civilians and soldiers; the
+    government's reprisal, known as the Ikiza, killed an estimated
+    150,000 to 300,000 people, systematically targeting educated
+    Hutu -- schoolchildren, civil servants, anyone wearing glasses.
+    Burundi held its first democratic election in 1993, electing
+    Melchior Ndadaye as its first Hutu president, but Tutsi-led
+    soldiers assassinated him after just four months in office,
+    igniting a civil war that killed an estimated 300,000 people over
+    the next twelve years. The August 2000 Arusha Peace and
+    Reconciliation Agreement, mediated by Julius Nyerere and then
+    Nelson Mandela, ended most of the fighting by 2005. President
+    Pierre Nkurunziza's pursuit of a disputed third term in 2015
+    triggered a failed coup and a new crisis that killed at least
+    1,200 people and displaced 400,000; he ruled until his sudden
+    death in June 2020, succeeded by Evariste Ndayishimiye, whose
+    government has since faced a deepening refugee crisis from the
+    war in eastern DR Congo.
+  overview_citations: [c1, c2, c4, c5, c6, c7]
+  colonial_legacy: >
+    context/colonial_history.yaml already credits Belgium's 1933
+    identity-card system as the direct root of Burundi's cycles of
+    mass violence, culminating in the 1972 Ikiza and the 1993-2005
+    civil war -- the same mechanism this corpus's Rwanda record
+    documents as the kwihutura system, hardening a pre-colonial,
+    fluid, cattle-based social distinction into a fixed and inherited
+    one. Worth stating the parallel and the divergence precisely:
+    Rwanda and Burundi share the identical colonial cause,
+    administered by the same power under the same Ruanda-Urundi
+    mandate, but produced genocides against opposite ethnic groups
+    roughly two decades apart -- Burundi's Tutsi-led army killed an
+    estimated 150,000-300,000 Hutu in 1972, while Rwanda's Hutu-led
+    government killed an estimated 800,000 Tutsi and moderate Hutu in
+    1994. Burundi's 1972 killings are also far less internationally
+    documented and memorialised than Rwanda's 1994 genocide, despite
+    comparable severity -- no international tribunal, truth-commission
+    finding, or widely-taught history followed it the way Rwanda's
+    did, a disparity in global attention this record treats as itself
+    part of the story.
+  colonial_legacy_citations: [c1, c2, c3]
+  key_periods:
+    - title: "Belgian rule and the 1933 identity cards"
+      period: "1916-1962"
+      summary: >
+        Belgium administered Ruanda-Urundi under a League of Nations
+        mandate from 1916, and required racial identity cards from
+        1933 that hardened a previously fluid Hutu/Tutsi distinction
+        into a fixed, inherited category. Burundi gained independence
+        as a constitutional monarchy in 1962, replaced by a
+        Tutsi-dominated republic after a 1966 coup.
+      citations: [c1]
+    - title: "The 1972 Ikiza"
+      period: "1972"
+      summary: >
+        A Hutu insurrection in April 1972 killed roughly 3,000 Tutsi
+        civilians and soldiers. The government's reprisal, the Ikiza,
+        killed an estimated 150,000 to 300,000 people, systematically
+        targeting educated Hutu -- schoolchildren, civil servants,
+        anyone wearing glasses -- in a killing campaign far less
+        internationally documented than Rwanda's 1994 genocide.
+      citations: [c2, c3]
+    - title: "Ndadaye's assassination and the civil war"
+      period: "1993-2005"
+      summary: >
+        Melchior Ndadaye, elected Burundi's first Hutu president in
+        1993, was assassinated by Tutsi-led soldiers after four
+        months in office, igniting a civil war that killed an
+        estimated 300,000 people. The August 2000 Arusha Peace and
+        Reconciliation Agreement, mediated by Julius Nyerere and
+        Nelson Mandela, ended most of the fighting by 2005.
+      citations: [c4, c5]
+    - title: "Nkurunziza's third term and Ndayishimiye's succession"
+      period: "2015-2020"
+      summary: >
+        President Pierre Nkurunziza's pursuit of a disputed third
+        term in 2015 triggered a failed coup and a crisis that killed
+        at least 1,200 people and displaced 400,000. Nkurunziza ruled
+        until his sudden death from cardiac arrest in June 2020,
+        succeeded by Evariste Ndayishimiye.
+      citations: [c6, c7]
+
+pillars:
+  A:
+    summary: >
+      All six World Governance Indicators are directly measured this
+      year, and the aggregate is severe -- Control of Corruption
+      (19.0) and Voice and Accountability (31.4) are both close to
+      the scale's floor. That severity reflects a government that has
+      consolidated power since President Evariste Ndayishimiye's 2020
+      succession: Human Rights Watch documented deteriorating
+      conditions through 2025, including restrictions on free
+      expression, assembly and opposition participation during that
+      year's local and legislative elections, continuing patterns
+      first entrenched during Pierre Nkurunziza's disputed 2015 third
+      term.
+    drivers:
+      - "all 6 WGI indicators directly measured; Control of Corruption (19.0) and Voice and Accountability (31.4) both close to the scale's floor"
+      - "government consolidated power since Ndayishimiye's 2020 succession; HRW documented deteriorating conditions through 2025, including restrictions during that year's local/legislative elections"
+      - "continues patterns first entrenched during Nkurunziza's disputed 2015 third term (see historical.key_periods)"
+    citations: [c8, c11]
+  B:
+    summary: >
+      GDP growth, GDP per capita, inflation and domestic credit, all
+      freshly measured, are thin -- GDP per capita, at $1,147 PPP, is
+      among the lowest recorded anywhere in this corpus. Gini,
+      carried forward, is comparatively strong. This pillar's 2023
+      reference year understates a modest recent recovery: growth
+      reached 4.6% in 2025, up from 4.1% in 2024, helped by mining,
+      new hydropower dams, and a 7% rebound in coffee production
+      after years of decline -- real, if fragile, progress in an
+      economy still constrained by chronic fuel and foreign-currency
+      shortages.
+    drivers:
+      - "GDP growth, GDP per capita, inflation, domestic credit all fresh, thin -- GDP per capita ($1,147 PPP) among the lowest recorded anywhere in this corpus"
+      - "Gini comparatively strong (carried forward)"
+      - "2023 reference year understates a modest recent recovery: growth reached 4.6% in 2025 (from 4.1% in 2024), helped by mining, new hydropower, and a 7% coffee-production rebound"
+    citations: [c9, c13]
+  D:
+    summary: >
+      Four of five indicators are directly measured this year, and
+      the aggregate is weak: life expectancy and infant mortality are
+      both comparatively poor, and handwashing-facility access, at
+      just 6.36% of the population, is among the lowest recorded
+      anywhere in this corpus. Severe food insecurity, also fresh, is
+      similarly weak. Safely managed drinking water, the pillar's
+      only regional-mean estimate, is comparatively stronger. Four of
+      the pillar's five indicators are current, a fully-measured
+      pillar whose severity reflects genuine deprivation rather than
+      a data-coverage gap.
+    drivers:
+      - "4 of 5 indicators directly measured; life expectancy and infant mortality both comparatively poor"
+      - "handwashing-facility access just 6.36% of the population (fresh) -- among the lowest recorded anywhere in this corpus; severe food insecurity similarly weak (fresh)"
+      - "safely managed drinking water comparatively stronger (regional-mean estimate, the pillar's only imputed figure); 4 of 5 indicators current"
+    citations: [c9]
+  E:
+    summary: >
+      Displaced persons, at 0.59 per 1,000 and directly measured, is
+      low -- but this measures Burundi's own population, not the
+      roughly 100,000 Congolese refugees who crossed into Burundi in
+      December 2025 alone fleeing renewed M23 fighting in eastern DR
+      Congo, documented under recent developments. Political
+      Stability and Rule of Law, both fresh and shared with Pillar A,
+      are more middling. Intentional homicide, estimated from
+      regional peers rather than measured directly, is comparatively
+      more middling too. Three of the pillar's four indicators are
+      current.
+    drivers:
+      - "displaced persons 0.59/1,000 (fresh, directly measured) -- low, but measures Burundi's own population, not the ~100,000 Congolese refugees who arrived in Dec 2025 alone (see recent developments)"
+      - "Political Stability and Rule of Law (shared with Pillar A) both more middling, fresh"
+      - "intentional homicide more middling (regional-mean estimate, not directly measured); 3 of 4 indicators current"
+    citations: [c10]
+  F:
+    summary: >
+      CO2 emissions per capita, freshly measured, are the lowest
+      recorded anywhere in this corpus, but this is a stark
+      wealth-proxy artefact rather than any kind of achievement:
+      electricity access, documented in Pillar G, reaches just 11.6%
+      of the population, among the lowest in this corpus, and the
+      carried-forward electricity-generation figure shows nearly 39%
+      of what little power exists still comes from fossil sources.
+      Agricultural land share, fresh, is extensive. Freshwater
+      withdrawal, carried forward, is very low relative to renewable
+      resources. Only two of the pillar's four indicators are
+      current.
+    drivers:
+      - "CO2 pc the lowest recorded anywhere in this corpus (fresh) -- a stark wealth-proxy artefact, not an achievement: electricity access just 11.6% of the population (Pillar G)"
+      - "electricity generation nearly 39% fossil-fuel even at this tiny scale (carried forward)"
+      - "agricultural land extensive (fresh); freshwater withdrawal very low relative to renewable resources (carried forward); only 2 of 4 indicators current"
+    citations: [c9]
+  G:
+    summary: >
+      Electricity access, at just 11.6% of the population and freshly
+      measured, is among the lowest recorded anywhere in this
+      corpus -- Burundi's weakest pillar. Basic drinking water
+      access, also fresh, is comparatively better but still thin.
+      Government Effectiveness and Control of Corruption, shared with
+      Pillar A, are both severe. Social protection coverage, carried
+      forward rather than fresh, is similarly weak. Four of the
+      pillar's five indicators are current, describing one of the
+      least-electrified states recorded in this entire corpus, a
+      condition that predates and will likely outlast this year's
+      political crisis.
+    drivers:
+      - "electricity access just 11.6% of the population (fresh) -- among the lowest recorded anywhere in this corpus, Burundi's weakest pillar"
+      - "basic drinking water comparatively better but still thin (fresh); Government Effectiveness and Control of Corruption (shared with Pillar A) both severe"
+      - "social protection similarly weak (carried forward); 4 of 5 indicators current -- one of the least-electrified states in this entire corpus"
+    citations: [c9]
+
+recent:
+  primary:
+    - headline: "Over 100,000 Congolese refugees cross into Burundi as M23 fighting intensifies"
+      date: 2025-12-16
+      summary: >
+        A renewed M23 rebel offensive in eastern DR Congo's South
+        Kivu province displaced roughly 500,000 people in December
+        2025 alone, driving more than 100,000 Congolese refugees
+        across the border into Burundi that month. The Kavimvira
+        border crossing, closed for two months by the fighting, did
+        not reopen until 23 February 2026, straining a Burundian
+        economy already facing chronic fuel and foreign-currency
+        shortages.
+      why_it_matters: >
+        A direct, current consequence of the same eastern DRC conflict
+        already documented in this corpus's COD and RWA records, and a
+        test of Burundi's own limited capacity -- Pillar G's
+        electricity access is among the lowest recorded anywhere in
+        this corpus -- to absorb a large, sudden refugee population.
+      news_url: "https://civil-protection-humanitarian-aid.ec.europa.eu/news-stories/news/unprecedented-influx-eu-responds-burundi-dr-congo-border-crisis-2025-12-16_en"
+      wikipedia_url: ""
+      sentiment: negative
+    - headline: "Ruling party wins every parliamentary seat in a June 2025 election with no real opposition"
+      date: 2025-06-05
+      summary: >
+        Burundi's ruling CNDD-FDD party won 96.5% of the vote and
+        every contested seat in the National Assembly, Senate and
+        nearly all commune-level councils in parliamentary,
+        senatorial and local elections held in June and July 2025.
+        The main opposition party, the National Congress for Liberty
+        (CNL), was barred from contesting in some polls, and
+        international observers noted significant irregularities.
+      why_it_matters: >
+        Directly explains Pillar A's severity and shows the
+        CNDD-FDD's post-Nkurunziza consolidation of power under
+        Ndayishimiye reaching its most complete point yet -- an
+        election with, in practice, no opposition at all.
+      news_url: "https://www.france24.com/en/africa/20250611-burundi-s-ruling-party-wins-all-seats-in-parliamentary-vote-as-opposition-cries-foul"
+      wikipedia_url: "https://en.wikipedia.org/wiki/2025_Burundian_parliamentary_election"
+      sentiment: negative
+    - headline: "Coffee production rebounds after years of decline"
+      date: 2025-07-01
+      summary: >
+        Burundi's 2024/25 coffee harvest reached 150,000 60kg bags, a
+        7% increase over 2023 and the first meaningful rebound after
+        years of steady decline, contributing to the country's 4.6%
+        GDP growth in 2025. A new Burundi Better Coffee Initiative
+        aims to help 60,000 coffee-farming households, including 30%
+        women and 30% youth, raise farm income by more than 40%.
+      why_it_matters: >
+        A genuine, verifiable economic gain in one of the world's
+        poorest countries, credited independent of the severe
+        governance and refugee crises documented alongside it.
+      news_url: "https://www.technoserve.org/news/major-new-initiative-aims-to-make-burundis-coffee-sector-more-profitable-and-resilient/"
+      wikipedia_url: ""
+      sentiment: positive
+  extended:
+    - headline: "Opposition leader calls for national conference amid 'CNDD-FDD show' election"
+      date: 2025-06-04
+      summary: >
+        Ahead of the June 2025 elections, opposition leader Agathon
+        Rwasa, one of the few remaining prominent opposition figures
+        still operating inside Burundi, called the vote "not an
+        election, it's a CNDD-FDD show" and urged a national
+        conference to avoid full authoritarian consolidation.
+      why_it_matters: >
+        A rare instance of open domestic dissent surviving inside
+        Burundi's shrinking political space, though the call went
+        unanswered and CNDD-FDD went on to win every contested seat
+        days later.
+      news_url: "https://www.sosmediasburundi.org/en/2025/06/04/burundi-agathon-rwasa-this-is-not-an-election-its-a-cndd-fdd-show-the-opposition-leader-calls-for-a-national-conference-to-avoid-authoritarianism/"
+      wikipedia_url: ""
+      sentiment: mixed
+
+events:
+  - year: 1972
+    type: conflict
+    title: "The Ikiza kills up to 300,000 people"
+    description: >
+      Following a Hutu insurrection that killed roughly 3,000 Tutsi
+      civilians and soldiers in April 1972, the Tutsi-dominated
+      government's reprisal killed an estimated 150,000 to 300,000
+      people, systematically targeting educated Hutu.
+    url: "https://en.wikipedia.org/wiki/Ikiza"
+    direction: deteriorate
+  - year: 1993
+    type: coup
+    title: "President Ndadaye assassinated, igniting civil war"
+    description: >
+      Melchior Ndadaye, Burundi's first Hutu president, was
+      assassinated by Tutsi-led soldiers on 21 October 1993, four
+      months after taking office, igniting a civil war that killed
+      an estimated 300,000 people over the next twelve years.
+    url: "https://en.wikipedia.org/wiki/Melchior_Ndadaye"
+    direction: deteriorate
+  - year: 2000
+    type: peace_deal
+    title: "Arusha Peace and Reconciliation Agreement signed"
+    description: >
+      The Arusha Peace and Reconciliation Agreement, mediated by
+      Julius Nyerere and Nelson Mandela, was signed on 28 August 2000,
+      ending most of Burundi's civil war fighting by 2005.
+    url: "https://en.wikipedia.org/wiki/Arusha_Accords_(Burundi)"
+    direction: improve
+  - year: 2025
+    type: election
+    title: "CNDD-FDD wins every contested seat"
+    description: >
+      Burundi's ruling CNDD-FDD party won 96.5% of the vote and every
+      contested seat in parliamentary, senatorial and local elections
+      held in June-July 2025, after barring the main opposition party
+      from some polls.
+    url: "https://www.france24.com/en/africa/20250611-burundi-s-ruling-party-wins-all-seats-in-parliamentary-vote-as-opposition-cries-foul"
+    direction: deteriorate
+
+citations:
+  - id: c1
+    url: "https://en.wikipedia.org/wiki/Ikiza"
+    source_type: wikipedia
+    title: "Ikiza"
+    accessed: 2026-08-11
+    verified: true
+  - id: c2
+    url: "https://en.wikipedia.org/wiki/Burundian_genocide"
+    source_type: wikipedia
+    title: "Burundian genocide"
+    accessed: 2026-08-11
+    verified: true
+  - id: c3
+    url: "https://www.ebsco.com/research-starters/history/ikiza-or-burundi-killings-1972"
+    source_type: news
+    title: "Ikiza or Burundi Killings of 1972 (EBSCO Research Starters)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c4
+    url: "https://en.wikipedia.org/wiki/Melchior_Ndadaye"
+    source_type: wikipedia
+    title: "Melchior Ndadaye"
+    accessed: 2026-08-11
+    verified: true
+  - id: c5
+    url: "https://en.wikipedia.org/wiki/Arusha_Accords_(Burundi)"
+    source_type: wikipedia
+    title: "Arusha Accords (Burundi)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c6
+    url: "https://www.ktpress.rw/2020/06/burundis-nkurunziza-dies/"
+    source_type: news
+    title: "Burundi's Nkurunziza Dies (KT Press)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c7
+    url: "https://www.amnesty.org/en/latest/news/2025/07/ten-years-on-reflections-on-the-silent-crisis-in-burundi/"
+    source_type: news
+    title: "Ten Years On: Reflections on the Silent Crisis in Burundi (Amnesty International)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c8
+    url: "https://www.hrw.org/world-report/2026/country-chapters/burundi"
+    source_type: news
+    title: "World Report 2026: Burundi (Human Rights Watch)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c9
+    url: "https://www.afdb.org/en/countries/east-africa/burundi/burundi-economic-outlook"
+    source_type: official
+    title: "Burundi Economic Outlook (African Development Bank)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c10
+    url: "https://civil-protection-humanitarian-aid.ec.europa.eu/news-stories/news/unprecedented-influx-eu-responds-burundi-dr-congo-border-crisis-2025-12-16_en"
+    source_type: official
+    title: "'An unprecedented influx': the EU responds to the Burundi-DR Congo border crisis"
+    accessed: 2026-08-11
+    verified: true
+  - id: c11
+    url: "https://www.france24.com/en/africa/20250611-burundi-s-ruling-party-wins-all-seats-in-parliamentary-vote-as-opposition-cries-foul"
+    source_type: news
+    title: "Burundi's ruling party wins all seats in parliamentary vote as opposition cries foul (France 24)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c12
+    url: "https://www.sosmediasburundi.org/en/2025/06/04/burundi-agathon-rwasa-this-is-not-an-election-its-a-cndd-fdd-show-the-opposition-leader-calls-for-a-national-conference-to-avoid-authoritarianism/"
+    source_type: news
+    title: "Burundi - Agathon Rwasa: 'This is not an election, it's a CNDD-FDD show' (SOS Médias Burundi)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c13
+    url: "https://www.technoserve.org/news/major-new-initiative-aims-to-make-burundis-coffee-sector-more-profitable-and-resilient/"
+    source_type: news
+    title: "Major New Initiative Aims to Make Burundi's Coffee Sector More Profitable and Resilient (TechnoServe)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c14
+    url: "https://en.wikipedia.org/wiki/Common_Market_for_Eastern_and_Southern_Africa"
+    source_type: wikipedia
+    title: "Common Market for Eastern and Southern Africa"
+    accessed: 2026-08-11
+    verified: true
+  - id: c15
+    url: "https://en.wikipedia.org/wiki/East_African_Community"
+    source_type: wikipedia
+    title: "East African Community"
+    accessed: 2026-08-11
+    verified: true
+  - id: c16
+    url: "https://au.int/en/recs/eccas"
+    source_type: official
+    title: "ECCAS (African Union)"
+    accessed: 2026-08-11
+    verified: true
+
+rec_membership:
+  - org: COMESA
+    joined: 1994
+    status: current
+    left: null
+    citations: [c14]
+  - org: EAC
+    joined: 2007
+    status: current
+    left: null
+    citations: [c15]
+  - org: ECCAS
+    joined: 1983
+    status: current
+    left: null
+    citations: [c16]
+
+balance:
+  n_positive: 1
+  n_negative: 2
+  n_mixed: 1
+  note: >
+    The refugee-influx item and the election item are kept as two
+    distinct negatives rather than merged into one, because they
+    document different domains -- an external humanitarian shock
+    Burundi did not cause, and a domestic governance failure it did.
+    The coffee-sector recovery is credited at full positive weight,
+    independent of the governance and refugee crises documented
+    alongside it -- the same standard this corpus applies to crediting
+    a genuine economic gain without letting surrounding political
+    conduct discount it. Rwasa's national-conference call is coded
+    mixed rather than positive: it demonstrates that some space for
+    domestic dissent still exists, but the record does not treat an
+    unanswered call for reform, issued days before an election with no
+    real opposition, as an achievement in its own right.

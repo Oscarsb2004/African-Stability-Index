@@ -798,6 +798,36 @@ countries:
       succession planning becomes a more prominent story before 2032;
       check whether Pillars B/E/F thin or carried-forward indicators
       gain fresh coverage; check if Pillar C has gained coverage'
+  BDI:
+    name: Burundi
+    region: East
+    first_pass: false
+    reason: thirtieth backlog country -- fills East Africa's biggest
+      gap (10 of 14 done); a deliberate cross-reference with RWA --
+      the identical Belgian colonial mechanism (1933 identity cards
+      hardening a fluid Hutu/Tutsi distinction) that RWA''s own record
+      documents as kwihutura produced genocides against opposite
+      ethnic groups two decades apart, and Burundi''s 1972 Ikiza
+      (150,000-300,000 Hutu killed) is far less internationally
+      documented than Rwanda''s 1994 genocide despite comparable
+      severity; the second corpus case, after SSD, of a country whose
+      current refugee crisis is caused by a neighbor''s conflict
+      already documented in this corpus (COD''s M23/eastern DRC war,
+      also shared with RWA); among the poorest and least-electrified
+      countries recorded in this corpus (GDP per capita $1,147 PPP,
+      electricity access 11.6%); a genuine positive (coffee-sector
+      recovery) credited alongside a June 2025 election in which the
+      ruling party won every single contested seat
+    iteration_count: 1
+    last_updated: '2026-08-11'
+    next_action: 'EXPAND: follow whether the eastern DRC refugee
+      influx continues at its December 2025 pace or eases, and how it
+      affects Burundi''s own strained public services; follow whether
+      Rwasa''s call for a national conference produces any concession
+      from the CNDD-FDD; follow whether the coffee-sector recovery and
+      2025 growth rate continue into fresh index data; check whether
+      Pillars D/E/F/G carried-forward and regional-mean indicators
+      gain fresh coverage; check if Pillar C has gained coverage'
 backlog:
   LBY:
     name: Libya
@@ -866,14 +896,6 @@ backlog:
   GAB:
     name: Gabon
     region: Central
-    first_pass: false
-    reason: not yet scheduled
-    iteration_count: 0
-    last_updated: null
-    next_action: create baseline from blueprint
-  BDI:
-    name: Burundi
-    region: East
     first_pass: false
     reason: not yet scheduled
     iteration_count: 0
@@ -2018,3 +2040,48 @@ meta_notes:
   Full-corpus check: 0 errors, 2 pre-existing warnings (COD, EGY
   all-negative balance, unrelated to this run). 38 of 54 countries
   now have a record.'
+- '2026-08-11: BDI CREATE run complete (16 sources opened and
+  verified: 5 Wikipedia, 8 news, 2 official (AfDB, EU), 1 more
+  Wikipedia for rec_membership). Fills East Africa''s biggest gap (10
+  of 14 done after this run). A deliberate cross-reference with RWA:
+  colonial_legacy states the parallel and divergence precisely --
+  Belgium administered both countries under the same Ruanda-Urundi
+  mandate and imposed the identical 1933 identity-card mechanism
+  (documented in RWA''s own record as kwihutura), yet the two
+  produced genocides against opposite ethnic groups roughly two
+  decades apart: Burundi''s Tutsi-led army killed an estimated
+  150,000-300,000 Hutu in the 1972 Ikiza, while Rwanda''s Hutu-led
+  government killed an estimated 800,000 Tutsi and moderate Hutu in
+  1994. Explicitly noted that Burundi''s 1972 killings remain far
+  less internationally documented and memorialised than Rwanda''s,
+  despite comparable severity -- a disparity in global attention
+  treated as itself part of the record, not just a footnote. Opens a
+  second corpus case, after SSD, of a country''s current crisis being
+  driven by a neighbor''s conflict already documented elsewhere in
+  this corpus: over 100,000 Congolese refugees crossed into Burundi
+  in December 2025 alone, fleeing the same M23/eastern-DRC war
+  already told from COD''s and RWA''s own sides. Burundi is among the
+  poorest and least-electrified countries recorded in this corpus
+  (GDP per capita $1,147 PPP; electricity access 11.6%, Pillar G''s
+  weakest reading yet), and Pillar F''s near-zero CO2 per capita is
+  confirmed as a stark wealth-proxy artefact, not an achievement,
+  given how little power the country generates at all. Following the
+  established discipline, found a genuine positive: coffee production
+  rebounded 7% in the 2024/25 harvest after years of decline,
+  contributing to 4.6% GDP growth in 2025, credited independent of
+  the governance and refugee crises documented alongside it. The
+  dominant negative is current: a June 2025 election in which the
+  ruling CNDD-FDD party won 96.5% of the vote and every single
+  contested seat, after barring the main opposition party from some
+  polls -- kept distinct from the refugee-influx item since the two
+  document different domains (a domestic governance failure vs. an
+  external humanitarian shock). Balance: 1 positive, 2 negative, 1
+  mixed. One word-count fix (pillars.G, 79->80+, fixed by adding a
+  real fact). One citation swap: a Sciences Po URL for the 1972
+  killings returned a genuine URLError timeout under `--links`;
+  replaced with an EBSCO Research Starters article covering the same
+  claim, which resolved cleanly. `--links` then passed 0 errors, 1
+  warning (France24, familiar 403 bot-detection pattern) -- 15/16
+  resolved. Full pytest suite: 106 passed. Full-corpus check: 0
+  errors, 2 pre-existing warnings (COD, EGY all-negative balance,
+  unrelated to this run). 39 of 54 countries now have a record.'

@@ -26,7 +26,7 @@ An audit is forced early if a single run inflates the citation count by more tha
 
 ## Status
 
-**38 of 54 countries have a record (Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria, Rwanda, Chad, Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic, Mauritania, Zimbabwe, Comoros, Uganda, Sierra Leone, Equatorial Guinea, The Gambia, Mozambique, Guinea, South Sudan, Lesotho, Sao Tome & Principe, Togo, Cameroon). The first pass is complete; Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic, Mauritania, Zimbabwe, Comoros, Uganda, Sierra Leone, Equatorial Guinea, The Gambia, Mozambique, Guinea, South Sudan, Lesotho, Sao Tome & Principe, Togo and Cameroon are the first twenty-nine backlog countries.**
+**39 of 54 countries have a record (Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria, Rwanda, Chad, Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic, Mauritania, Zimbabwe, Comoros, Uganda, Sierra Leone, Equatorial Guinea, The Gambia, Mozambique, Guinea, South Sudan, Lesotho, Sao Tome & Principe, Togo, Cameroon, Burundi). The first pass is complete; Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic, Mauritania, Zimbabwe, Comoros, Uganda, Sierra Leone, Equatorial Guinea, The Gambia, Mozambique, Guinea, South Sudan, Lesotho, Sao Tome & Principe, Togo, Cameroon and Burundi are the first thirty backlog countries.**
 
 ### First pass — 9 countries
 
@@ -80,14 +80,15 @@ whose ranks swing hardest with the weighting method.
 | STP | Sao Tome & Principe | fills the Islands region, now the corpus's lowest proportionally (4 of 5 done); the longest colonial period in the corpus (490 years, Portugal from 1485, surpassing MOZ's 477); a distinctive colonial angle -- the early-1900s "cocoa slavery" scandal, in which nominally-free contract labourers were documented as enslaved in all but name, triggering a Cadbury boycott around 1909; a naturally positive-skewed record (Pillar A and E both among the strongest in this corpus); Pillar F explicitly contrasted against LSO's genuine hydropower case as a wealth-proxy, not achievement; a live current-events thread -- July 2026's election, in which an incumbent won as an independent after splitting from his own former ruling party | **done — iteration 1** |
 | TGO | Togo | fills West Africa's remaining gap (11 of 16 done); the corpus's most procedurally sophisticated entrenchment mechanism yet -- a May 2024 constitution converted Togo to a parliamentary system, and in May 2025 Faure Gnassingbé was sworn in as a new, term-limit-free "President of the Council of Ministers", entrenching a dynasty ruling since his father's 1967 coup; a genuine cross-reference with GHA -- a 1956 plebiscite attached British Togoland to Ghana rather than reunifying it with French Togo, permanently splitting the Ewe people; a genuine positive (50% coffee/cocoa export growth, Port of Lomé's regional lead) credited alongside the deadly June 2025 crackdown on protests against the overhaul | **done — iteration 1** |
 | CMR | Cameroon | fills Central Africa, now the corpus's lowest region proportionally (6 of 8 done); a striking continuity with TGO -- the same German colony split between France and Britain after WWI, but Cameroon's 1961 reunification held for a decade before a 99.99%-margin 1972 referendum abolished the federal structure that gave the Anglophone territories autonomy, the direct traceable root of the 2016 Anglophone Crisis (6,500+ killed, 600,000+ displaced); Paul Biya, in power since 1982, is Africa's oldest and longest-serving head of state, and a disputed October 2025 election produced deadly protests and opposition leader Tchiroma's flight into exile; a genuine positive (32% malaria case decline from a 2024 vaccine rollout) credited alongside the unfolding crises | **done — iteration 1** |
+| BDI | Burundi | fills East Africa's biggest gap (10 of 14 done); a deliberate cross-reference with RWA -- the identical Belgian 1933 identity-card mechanism produced genocides against opposite ethnic groups two decades apart, and Burundi's 1972 Ikiza (150,000-300,000 Hutu killed) remains far less internationally documented than Rwanda's 1994 genocide despite comparable severity; a second corpus case, after SSD, of a current refugee crisis caused by a neighbor's conflict already in this corpus (COD/RWA's own M23/eastern-DRC war); among the poorest and least-electrified countries recorded here (GDP per capita $1,147 PPP, electricity access 11.6%); a genuine positive (coffee-sector recovery) credited alongside a June 2025 election in which the ruling party won every contested seat | **done — iteration 1** |
 
-### Backlog — the remaining 16
+### Backlog — the remaining 15
 
 Listed in full in `narrative/state.yaml` under `backlog`. They are recorded
 explicitly rather than left implicit: a country with no record should be visibly
 absent, not quietly missing.
 
-Libya, Tunisia, Benin, Cabo Verde, Guinea-Bissau, Cote d'Ivoire, Senegal, Republic of Congo, Gabon, Burundi, Djibouti, Malawi, Tanzania, Zambia, Eswatini, Seychelles
+Libya, Tunisia, Benin, Cabo Verde, Guinea-Bissau, Cote d'Ivoire, Senegal, Republic of Congo, Gabon, Djibouti, Malawi, Tanzania, Zambia, Eswatini, Seychelles
 
 ---
 
@@ -1345,6 +1346,48 @@ Append one line per run: date, country, mode, what changed, what was removed.
   passes 0 errors, 0 warnings — 15/15 resolved, a clean link check.
   Full pytest suite: 106 passed.
 
+- **2026-08-11 — BDI — CREATE. Thirtieth backlog country, fills East
+  Africa's biggest gap (10 of 14 done).** Full baseline built:
+  historical overview, colonial legacy (states a deliberate
+  cross-reference with RWA precisely: Belgium administered both
+  countries under the same Ruanda-Urundi mandate and imposed the
+  identical 1933 identity-card mechanism, documented in RWA's own
+  record as kwihutura, yet the two produced genocides against
+  opposite ethnic groups roughly two decades apart — explicitly notes
+  that Burundi's 1972 killings remain far less internationally
+  documented than Rwanda's 1994 genocide, despite comparable
+  severity), 4 key_periods, 6 pillar summaries (Pillar C left empty —
+  greyed at 1/8 measured), 3 primary + 1 extended recent items, 4
+  events, rec_membership (COMESA 1994, EAC 2007, ECCAS 1983 founding
+  member via CEPGL). 16 sources opened and verified: 5 Wikipedia, 8
+  news, 2 official (AfDB, EU), 1 more Wikipedia for rec_membership.
+  Opens a second corpus case, after SSD, of a country's current
+  crisis being driven by a neighbor's conflict already documented
+  elsewhere in this corpus: over 100,000 Congolese refugees crossed
+  into Burundi in December 2025 alone, fleeing the same M23/eastern-
+  DRC war already told from COD's and RWA's own sides. Burundi is
+  among the poorest and least-electrified countries recorded in this
+  corpus (GDP per capita $1,147 PPP; electricity access 11.6%,
+  Pillar G's weakest reading yet), and Pillar F's near-zero CO2 per
+  capita is confirmed as a stark wealth-proxy artefact, not an
+  achievement. Following the established discipline, found a genuine
+  positive: coffee production rebounded 7% in the 2024/25 harvest
+  after years of decline, contributing to 4.6% GDP growth in 2025,
+  credited independent of the governance and refugee crises
+  documented alongside it. The dominant negative is current: a June
+  2025 election in which the ruling CNDD-FDD party won 96.5% of the
+  vote and every single contested seat, after barring the main
+  opposition party from some polls — kept distinct from the
+  refugee-influx item since the two document different domains (a
+  domestic governance failure vs. an external humanitarian shock).
+  Balance: 1 positive, 2 negative, 1 mixed. One word-count fix
+  (pillars.G, 79→80+). One citation swap: a Sciences Po URL for the
+  1972 killings returned a genuine URLError timeout under `--links`;
+  replaced with an EBSCO Research Starters article covering the same
+  claim, which resolved cleanly. `--links` then passed 0 errors, 1
+  warning (France24, familiar 403 bot-detection pattern) — 15/16
+  resolved. Full pytest suite: 106 passed.
+
 ---
 
 ## Meta-notes
@@ -2033,6 +2076,23 @@ Things a future run should know about how to work, not about a specific country.
   compiling a running list of these results across the corpus as a
   distinct governance-fabrication marker, separate from ordinary
   election-fraud allegations.
+- **2026-08-11** — BDI confirms the deliberate-cross-reference
+  discipline (LBR/SLE, GNQ/GMB, MOZ/ZWE, MOZ/ZAF, EGY/ETH, ETH/ERI,
+  TCD/SDN, SDN/SSD) generalizes well to a "same colonial mechanism,
+  divergent outcome" pairing, not just "shared historical event" or
+  "shared current conflict" pairings already used. Worth stating
+  explicitly as its own sub-type: RWA and BDI had the identical
+  colonial cause (same administering power, same 1933 identity-card
+  policy, same mandate territory) and produced comparably severe but
+  asymmetric outcomes (opposite ethnic groups targeted, decades
+  apart, wildly different levels of international memory). The
+  disparity in global attention between the two genocides was worth
+  stating as a finding in its own right, not just background — a
+  reminder that this project's own dataset and sourcing will
+  necessarily reflect that same disparity (more, better, more
+  recent English-language sourcing exists for RWA's 1994 genocide
+  than for BDI's 1972 one), which future AUDIT passes on both records
+  should keep in mind when judging citation quality by volume alone.
 
 ---
 
