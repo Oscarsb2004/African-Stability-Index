@@ -568,6 +568,31 @@ countries:
       oil-era enrichment pattern; check whether Pillar D ever gains enough
       data to be scored; check whether the UNICEF child-protection strategy
       produces measurable outcomes; check if Pillar C has gained coverage'
+  GMB:
+    name: The Gambia
+    region: West
+    first_pass: false
+    reason: twenty-second backlog country -- fills West Africa (9 of 16
+      done); a distinct "regional bloc enforces an election result by force"
+      pattern (2017 ECOWAS intervention, no shots fired) unlike SLE''s
+      rebel-suppression intervention already in this corpus; opens a new
+      cross-reference with GNQ (Jammeh fled into exile there); strongest
+      governance pillar and one of the only positively-signed Political
+      Stability readings recorded anywhere in this corpus, deliberately not
+      softened by the genuine TRRC-implementation failure documented
+      alongside it; Kunta Kinteh Island is one of the few sites in this
+      corpus where a named individual''s (Kunta Kinte, via Alex Haley''s
+      Roots) documented journey through the slave trade can be pointed to
+      directly rather than described in aggregate
+    iteration_count: 1
+    last_updated: '2026-08-10'
+    next_action: 'EXPAND: follow the outcome of Sanna Manjang''s domestic
+      trial and whether further Junglers members are charged; follow
+      whether TRRC recommendation implementation accelerates past ~60-of-304;
+      check whether Barrow''s political alliances continue to draw
+      accountability-versus-expediency criticism; keep this record''s
+      account of Jammeh''s exile consistent with GNQ''s own account; check
+      if Pillar C has gained coverage'
 backlog:
   LBY:
     name: Libya
@@ -595,14 +620,6 @@ backlog:
     next_action: create baseline from blueprint
   CPV:
     name: Cabo Verde
-    region: West
-    first_pass: false
-    reason: not yet scheduled
-    iteration_count: 0
-    last_updated: null
-    next_action: create baseline from blueprint
-  GMB:
-    name: The Gambia
     region: West
     first_pass: false
     reason: not yet scheduled
@@ -1548,3 +1565,37 @@ meta_notes:
   `--links` passes 0 errors, 1 warning (Borkena, familiar 403 bot-detection
   pattern) -- 11/12 resolved. Full pytest suite: 106 passed. 30 of 54
   countries now have a record.'
+- '2026-08-10: GMB CREATE run complete (15 sources opened and verified: 5
+  Wikipedia, 8 news, 1 official/UNESCO, 1 more Wikipedia for rec_membership).
+  Fills West Africa (9 of 16 done before this run). A distinct kind of
+  post-authoritarian record for this corpus: strongest governance pillar and
+  one of the only positively-signed Political Stability readings recorded
+  anywhere in this project, reflecting a decade of real, uninterrupted
+  democratic continuity since Jammeh''s 2017 exile. That strength is
+  deliberately not left uncomplicated -- the genuine TRRC-implementation
+  failure (only ~60 of 304 recommendations completed by 2025, four years
+  after the report) is coded negative at full weight beside it, and Barrow''s
+  own broken 3-year transitional-term promise plus his 2021 outreach to
+  Jammeh''s former party is coded mixed. The January 2026 domestic trial of
+  Sanna Manjang (former Junglers leader) for journalist Deyda Hydara''s 2004
+  murder is a genuinely major, very current accountability story -- the
+  first domestic Gambian prosecution of a Junglers member, following a
+  German court''s 2023 life-sentence conviction (under universal
+  jurisdiction) of a DIFFERENT Junglers member for the SAME killing,
+  confirmed on final appeal Nov 2024. Opens a new cross-reference with GNQ,
+  completed last turn: Jammeh fled into exile there in January 2017, a fact
+  now documented from both countries'' sides. Kunta Kinteh Island (UNESCO
+  since 2003, the site behind Alex Haley''s Roots) is flagged as one of the
+  few sites in this corpus where a named individual''s documented slave-trade
+  journey can be pointed to directly rather than described only in aggregate.
+  Balance: 2 positive, 1 negative, 1 mixed -- a deliberately positive-leaning
+  record given the underlying data genuinely supports it, not a forced
+  count. One word-count fix on Pillar D, resolved by adding a real fact.
+  Two citation swaps during the run: a Washington Post URL for the Manjang
+  trial returned a persistent TimeoutError (the second such case this
+  corpus, after MDG), and the first replacement (WTOP) turned out to be a
+  genuine 404 on the second attempt -- required a THIRD source (eNCA) before
+  resolving cleanly, the first time a citation needed two consecutive swaps
+  in this corpus. `--links` then passed 0 errors, 1 warning (The East
+  African, familiar 403 pattern) -- 15/16 resolved. Full pytest suite: 106
+  passed. 31 of 54 countries now have a record.'

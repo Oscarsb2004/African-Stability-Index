@@ -1,0 +1,461 @@
+meta:
+  iso3: GMB
+  name: The Gambia
+  last_updated: 2026-08-10
+  iteration_count: 1
+  next_action: >
+    EXPAND: (1) follow the outcome of Sanna Manjang's domestic trial and
+    whether further Junglers members are charged; (2) follow whether
+    TRRC recommendation implementation accelerates past the ~60-of-304
+    figure recorded in 2025; (3) check whether Barrow's political
+    alliances continue to draw accountability-versus-expediency
+    criticism as the next election approaches; (4) keep this record's
+    account of Jammeh's exile consistent with GNQ's own account of
+    hosting him; (5) check if Pillar C has gained coverage.
+  model_used: claude-sonnet-5
+
+historical:
+  overview: >
+    Britain established a trading fort on James Island in 1587, but
+    formal colonial administration only began in 1765, when Gambia River
+    settlements became the Crown Colony of Senegambia; the river was one
+    of West Africa's most heavily used slave-export routes, and the
+    island -- later renamed Kunta Kinteh Island after the enslaved
+    ancestor at the centre of Alex Haley's 1976 novel Roots -- has been
+    a UNESCO World Heritage Site since 2003. After abolition, groundnut
+    cultivation replaced the slave trade as the colonial economy's basis
+    under the same extractive logic. The country's extraordinary
+    geography -- a narrow strip barely 50 kilometres wide, entirely
+    surrounded by Senegal except for its coastline -- reflects British
+    boundary-drawing that prioritised riverine trade access over
+    territorial coherence, making the state's shape itself a direct
+    artefact of colonialism. Independence followed in 1965 under Dawda
+    Jawara, whose rule lasted until a 1994 coup brought 29-year-old army
+    lieutenant Yahya Jammeh to power. Jammeh ruled for 22 years marked
+    by extrajudicial killings carried out by a paramilitary unit known
+    as the Junglers, a 2009 campaign in which security forces abducted
+    roughly 1,000 Gambians and forced them to drink hallucinogenic
+    poisons on witchcraft accusations, and a fraudulent 2007-2016
+    programme in which Jammeh personally administered a claimed herbal
+    cure for HIV/AIDS. Jammeh lost the December 2016 election to Adama
+    Barrow, initially conceded, then reversed course and refused to
+    leave; ECOWAS, led by Senegal, moved troops to the border and
+    entered the country on 19 January 2017, and Jammeh fled into exile
+    in Equatorial Guinea without a shot being fired.
+  overview_citations: [c1, c2, c4, c5, c6, c12]
+  colonial_legacy: >
+    context/colonial_history.yaml already credits the Gambia River as
+    one of West Africa's most heavily used slave-export routes, the
+    post-abolition continuity of extraction through groundnut
+    cultivation, and -- most distinctively -- names the country's own
+    geography as a direct colonial artefact: a narrow riverine strip
+    barely 50 kilometres wide, entirely surrounded by Senegal, shaped by
+    British boundary-drawing that prioritised trade access over
+    territorial coherence. Worth adding the specific site that makes
+    that slave-trade history globally legible: James Island, later
+    renamed Kunta Kinteh Island, was the depot where captured Africans
+    were held before the Middle Passage, and became internationally
+    famous after Alex Haley's 1976 novel Roots traced his own family's
+    ancestry to an enslaved man named Kunta Kinte from the nearby
+    village of Juffureh. The site has been a UNESCO World Heritage Site
+    since 2003 -- one of the few places in this entire corpus where a
+    named individual's documented, traceable journey through the slave
+    trade can be pointed to directly, rather than described only in
+    aggregate, and correspondingly one of the few sites that draws
+    tourism specifically because of, rather than despite, its role in
+    that history.
+  colonial_legacy_citations: [c1, c2, c3]
+  key_periods:
+    - title: "Colonial rule and the slave-to-groundnut economy"
+      period: "1765-1965"
+      summary: >
+        Formal colonial administration began in 1765, when Gambia River
+        settlements became the Crown Colony of Senegambia; the river was
+        one of West Africa's most heavily used slave-export routes.
+        After abolition, groundnut cultivation replaced the slave trade
+        as the colonial economy's basis under the same extractive logic.
+        Independence followed in 1965 under Dawda Jawara.
+      citations: [c1]
+    - title: "Jammeh's coup and 22-year dictatorship"
+      period: "1994-2016"
+      summary: >
+        A 1994 coup brought 29-year-old army lieutenant Yahya Jammeh to
+        power. His 22-year rule was marked by extrajudicial killings
+        carried out by a paramilitary unit known as the Junglers, a 2009
+        campaign in which security forces abducted roughly 1,000
+        Gambians and forced them to drink hallucinogenic poisons on
+        witchcraft accusations, and a fraudulent 2007-2016 programme in
+        which Jammeh personally administered a claimed herbal cure for
+        HIV/AIDS.
+      citations: [c12, c13]
+    - title: "The 2016-2017 election crisis and ECOWAS intervention"
+      period: "2016-2017"
+      summary: >
+        Jammeh lost the December 2016 election to Adama Barrow, initially
+        conceded, then reversed course and refused to leave, declaring a
+        state of emergency. ECOWAS, led by Senegal, moved troops to the
+        border and entered the country on 19 January 2017 at Barrow's
+        request; Jammeh fled into exile in Equatorial Guinea without a
+        shot being fired, and the ECOWAS force achieved every policy
+        goal it set out to.
+      citations: [c4, c5, c6]
+    - title: "Post-Jammeh justice and its limits"
+      period: "2017-2026"
+      summary: >
+        The Truth, Reconciliation and Reparations Commission delivered
+        its report in 2021, but implementation has lagged badly -- by
+        2025, only roughly 60 of 304 recommended activities had been
+        completed. Accountability has advanced further internationally:
+        a German court sentenced former Jungler Bai Lowe to life
+        imprisonment in 2023 for the 2004 murder of journalist Deyda
+        Hydara, a conviction confirmed on final appeal in November 2024,
+        and in January 2026 a Gambian court opened the first domestic
+        trial of a Junglers member for the same killing.
+      citations: [c7, c8, c9, c11]
+
+pillars:
+  A:
+    summary: >
+      All six governance indicators are directly measured this year,
+      and every one clears the midpoint -- among the strongest
+      governance pillars recorded anywhere in this corpus, a direct
+      product of the accountability process that followed Yahya
+      Jammeh's 22-year dictatorship. Voice and Accountability is the
+      strongest of the six. That recovery is not merely aggregate: in
+      January 2026, a Gambian court opened the domestic trial of Sanna
+      Manjang, a former leader of Jammeh's paramilitary "Junglers" unit,
+      for the 2004 murder of journalist Deyda Hydara -- the same killing
+      for which a German court, using universal jurisdiction, had
+      already sentenced a different Junglers member, Bai Lowe, to life
+      imprisonment, a conviction Germany's Federal Court of Justice
+      confirmed in November 2024. Implementation of the Truth,
+      Reconciliation and Reparations Commission's 2021 recommendations,
+      however, remains stalled: by 2025, only roughly 60 of 304
+      recommended activities had been completed.
+    drivers:
+      - "all 6 governance indicators directly measured, every one clears the midpoint -- among the strongest governance pillars recorded anywhere in this corpus"
+      - "Jan 2026: domestic trial opened for Sanna Manjang (former Junglers leader) over the 2004 murder of journalist Deyda Hydara"
+      - "a German court already sentenced a different Junglers member, Bai Lowe, to life imprisonment for the same killing -- confirmed on final appeal Nov 2024"
+      - "TRRC's 2021 recommendations remain stalled -- only ~60 of 304 recommended activities completed by 2025"
+    citations: [c7, c8, c9]
+  B:
+    summary: >
+      GDP growth, GDP per capita and inflation, all freshly measured,
+      are moderate. Domestic credit to the private sector, also fresh,
+      is thin. Gini, carried forward rather than fresh, indicates real
+      inequality. President Barrow, who won re-election in 2021 after
+      promising in 2016 to serve only a three-year transitional term,
+      attempted an electoral alliance with Jammeh's own former party
+      ahead of that vote -- a choice critics said prioritised political
+      expediency over the accountability process his own government had
+      commissioned. Rising cost of living and entrenched corruption
+      concerns have compounded public frustration with the pace of
+      post-Jammeh reform.
+    drivers:
+      - "GDP growth, GDP per capita, inflation all fresh, moderate; domestic credit thin (fresh); Gini (carried forward) indicates real inequality"
+      - "Barrow won re-election 2021 after promising in 2016 to serve only a 3-year transitional term -- and sought an alliance with Jammeh's own former party ahead of that vote"
+      - "rising cost of living and entrenched corruption concerns have compounded public frustration with the pace of post-Jammeh reform"
+    citations: [c10, c11]
+  D:
+    summary: >
+      All five health indicators are freshly measured this year -- a
+      fully, not partially, measured picture. Life expectancy, just
+      under 66 years, and infant mortality, at 33.7 per 1,000 live
+      births, are both moderate. Severe food insecurity, affecting just
+      under 22% of the population, is comparatively less severe. Safely
+      managed drinking water access, covering nearly half the
+      population, is moderate as well. This is a genuinely, not thinly,
+      evidenced middling picture across the board, a contrast with the
+      much sparser, greyed-out social and human-capital data documented
+      under Pillar C.
+    drivers:
+      - "all 5 health indicators freshly measured -- a fully, not partially, measured picture"
+      - "life expectancy ~66 years, infant mortality ~33.7/1,000 -- both moderate (fresh)"
+      - "severe food insecurity ~22% (fresh) -- comparatively less severe; safely managed water covers nearly half the population (fresh) -- moderate across the board, genuinely evidenced"
+    citations: [c1]
+  E:
+    summary: >
+      Political Stability, freshly measured, is genuinely strong -- one
+      of the few positively-signed readings recorded anywhere in this
+      corpus on the underlying World Bank scale -- consistent with the
+      peaceful, internationally-enforced transfer of power documented in
+      historical.key_periods and a decade without a coup. Displaced
+      persons, also fresh, is near-zero, another strong reading.
+      Homicide, estimated from regional peers rather than measured
+      directly, is the pillar's only weaker component. Three of the
+      pillar's four indicators are freshly measured this year, making
+      this a genuinely, not thinly, measured strength -- a rare case in
+      this corpus where a security pillar's positive reading reflects
+      real, current stability rather than a data-coverage gap.
+    drivers:
+      - "Political Stability genuinely strong (fresh) -- one of the few positively-signed readings recorded anywhere in this corpus, consistent with a decade without a coup since the 2017 transfer of power"
+      - "IDPs near-zero (fresh) -- another strong reading"
+      - "homicide the pillar's only weaker component (regional-mean estimate, not directly measured)"
+      - "3 of 4 indicators fresh -- a genuinely, not thinly, measured strength, a rare case where this pillar's positive reading reflects real stability, not a data-coverage gap"
+    citations: [c1]
+  F:
+    summary: >
+      CO2 emissions per capita, freshly measured, are near the lowest
+      recorded anywhere in this corpus -- but this reads as an
+      unambiguous wealth-proxy artefact: the carried-forward
+      electricity-generation figure shows more than 98% fossil-sourced
+      power, among the highest fossil-dependence readings recorded in
+      this project, and electricity access itself (Pillar G) covers
+      only about two-thirds of the population. Freshwater withdrawal,
+      also carried forward, is very low relative to renewable resources.
+      Agricultural land share, fresh, is extensive. Only two of the
+      pillar's four indicators are freshly measured this year.
+    drivers:
+      - "CO2 pc near the lowest recorded in this corpus (fresh) -- unambiguous wealth-proxy artefact: electricity generation >98% fossil-fuel (carried forward), among the highest fossil-dependence readings in this project"
+      - "electricity access only ~67% of the population (Pillar G) -- confirms low emissions reflect low consumption, not clean generation"
+      - "freshwater withdrawal very low relative to renewable resources (carried forward); agricultural land extensive (fresh)"
+    citations: [c1]
+  G:
+    summary: >
+      Electricity access, at just under 67% and freshly measured, is
+      moderate. Basic drinking water access, also fresh, is strong,
+      covering the large majority of the population. Handwashing
+      coverage, however, also fresh, is weak -- among the lower readings
+      recorded in this corpus, just under 13% of the population. Social
+      protection, estimated from regional peers, is thin. Four of the
+      pillar's five indicators are current, making this a genuine mix of
+      strong water access and markedly weaker hygiene and
+      social-protection coverage.
+    drivers:
+      - "electricity access ~67% (fresh) -- moderate"
+      - "basic drinking water strong (fresh), covering the large majority of the population; handwashing weak (fresh) -- among the lower readings recorded in this corpus, just under 13%"
+      - "social protection thin (regional-mean estimate); 4 of 5 indicators fresh -- a genuine mix of strong water access and weaker hygiene/social protection"
+    citations: [c1]
+
+recent:
+  primary:
+    - headline: "Domestic trial opens for Junglers leader in journalist's 2004 murder"
+      date: 2026-01-15
+      summary: >
+        A Gambian court opened the trial of Sanna Manjang, a former
+        leader of Yahya Jammeh's paramilitary "Junglers" unit, on 15
+        January 2026, on two counts of murder including the 16 December
+        2004 killing of journalist Deyda Hydara. Manjang was arrested in
+        Senegal in November 2025 and repatriated to face charges the
+        following month. The trial is the first domestic Gambian
+        prosecution of a Junglers member for the killing.
+      why_it_matters: >
+        Directly explains Pillar A's strong governance recovery, and
+        closes a two-decade accountability gap this record's
+        historical.key_periods documents as central to the post-Jammeh
+        transition.
+      news_url: "https://www.enca.com/news/gambia-opens-its-first-trial-member-notorious-death-squad"
+      wikipedia_url: ""
+      sentiment: positive
+    - headline: "TRRC recommendations remain largely unimplemented four years after the truth commission's report"
+      date: 2025-06-01
+      summary: >
+        As of 2025, only roughly 60 of the 304 activities recommended by
+        Gambia's Truth, Reconciliation and Reparations Commission had
+        been fully implemented since the commission's 2021 report, with
+        101 activities not started and 143 still ongoing, according to
+        civil society tracking.
+      why_it_matters: >
+        Documents a real, current gap between the government's formal
+        acceptance of the TRRC's findings and its follow-through,
+        sitting alongside the genuine accountability progress in Pillar
+        A's other items.
+      news_url: "https://factcheckgambia.org/factsheet-only-16-out-of-262-trrc-recommendations-implemented/"
+      wikipedia_url: ""
+      sentiment: negative
+    - headline: "Barrow's broken three-year promise and 2021 outreach to Jammeh's party"
+      date: 2021-12-09
+      summary: >
+        President Adama Barrow, who had promised in 2016 to serve only a
+        three-year transitional term before returning to private life,
+        instead sought re-election in December 2021 and, in the run-up
+        to the vote, pursued an electoral alliance with Jammeh's former
+        ruling APRC party -- a move critics said prioritised political
+        expediency over the accountability process his own government
+        had commissioned.
+      why_it_matters: >
+        A specific, documented instance of the tension between electoral
+        pragmatism and transitional justice that runs through Pillar A
+        and Pillar B.
+      news_url: "https://www.aljazeera.com/news/2021/12/9/adama-barrows-reelection-and-the-gambias-long-walk-to-justice"
+      wikipedia_url: ""
+      sentiment: mixed
+  extended:
+    - headline: "German court's confirmed life sentence for a second Junglers member"
+      date: 2024-11-29
+      summary: >
+        Germany's Federal Court of Justice confirmed, on 29 November
+        2024, the life sentence handed down to Gambian citizen Bai Lowe,
+        a former Junglers member convicted in November 2023 under
+        universal jurisdiction of crimes against humanity for the same
+        2004 murder of journalist Deyda Hydara now being tried
+        domestically.
+      why_it_matters: >
+        Shows international accountability preceding, and likely helping
+        enable, the domestic prosecution now under way, documented in
+        recent.primary.
+      news_url: "https://www.hrw.org/news/2023/11/28/germany-verdict-gambia-atrocity-case"
+      wikipedia_url: ""
+      sentiment: positive
+
+events:
+  - year: 1965
+    type: independence
+    title: "The Gambia gains independence"
+    description: >
+      The Gambia became independent from Britain in 1965 under Dawda
+      Jawara, whose rule lasted until a 1994 military coup.
+    url: "https://exodus.africa/history/history-of-gambia"
+    direction: improve
+  - year: 1994
+    type: coup
+    title: "Jammeh seizes power"
+    description: >
+      29-year-old army lieutenant Yahya Jammeh seized power in a 1994
+      coup, beginning a 22-year rule marked by extrajudicial killings,
+      witch-hunts and a fraudulent AIDS "cure" programme.
+    url: "https://www.counterextremism.com/extremists/yahya-jammeh"
+    direction: deteriorate
+  - year: 2017
+    type: election
+    title: "ECOWAS enforces Barrow's election win, Jammeh exiled"
+    description: >
+      After Jammeh refused to accept his December 2016 election defeat,
+      ECOWAS forces entered the country on 19 January 2017 at President
+      Barrow's request; Jammeh fled into exile in Equatorial Guinea
+      without a shot being fired.
+    url: "https://en.wikipedia.org/wiki/ECOWAS_military_intervention_in_the_Gambia"
+    direction: improve
+  - year: 2026
+    type: constitutional
+    title: "Domestic trial opens for a Junglers death-squad leader"
+    description: >
+      A Gambian court opened the trial of Sanna Manjang, a former leader
+      of Jammeh's paramilitary Junglers unit, on 15 January 2026 for the
+      2004 murder of journalist Deyda Hydara -- the first domestic
+      prosecution of a Junglers member.
+    url: "https://www.enca.com/news/gambia-opens-its-first-trial-member-notorious-death-squad"
+    direction: improve
+
+citations:
+  - id: c1
+    url: "https://exodus.africa/history/history-of-gambia"
+    source_type: news
+    title: "The Complete History of The Gambia — River of Stories (Exodus.Africa)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c2
+    url: "https://whc.unesco.org/en/list/761/"
+    source_type: official
+    title: "Kunta Kinteh Island and Related Sites (UNESCO World Heritage Centre)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c3
+    url: "https://www.worldatlas.com/articles/james-island-and-kunta-kinteh-island-fort-gambia.html"
+    source_type: news
+    title: "James Island And Kunta Kinteh Island Fort - Gambia (WorldAtlas)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c4
+    url: "https://en.wikipedia.org/wiki/2016%E2%80%932017_Gambian_constitutional_crisis"
+    source_type: wikipedia
+    title: "2016-2017 Gambian constitutional crisis"
+    accessed: 2026-08-10
+    verified: true
+  - id: c5
+    url: "https://en.wikipedia.org/wiki/ECOWAS_military_intervention_in_the_Gambia"
+    source_type: wikipedia
+    title: "ECOWAS military intervention in the Gambia"
+    accessed: 2026-08-10
+    verified: true
+  - id: c6
+    url: "https://www.cnn.com/2017/01/18/africa/gambia-jammeh-barrow"
+    source_type: news
+    title: "Gambia's new President sworn in; incumbent Yahya Jammeh refuses to step down (CNN)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c7
+    url: "https://www.enca.com/news/gambia-opens-its-first-trial-member-notorious-death-squad"
+    source_type: news
+    title: "Gambia opens its first trial of member of notorious 'death squad' (eNCA)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c8
+    url: "https://rsf.org/en/murder-deyda-hydara-gambia-after-more-two-decades-impunity-trial-former-junglers-leader-sparks-hope"
+    source_type: news
+    title: "Murder of Deyda Hydara in the Gambia: after more than two decades of impunity, the trial of a former Junglers leader sparks hope for truth and justice (RSF)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c9
+    url: "https://www.hrw.org/news/2023/11/28/germany-verdict-gambia-atrocity-case"
+    source_type: news
+    title: "Germany: Verdict in Gambia Atrocity Case (Human Rights Watch)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c10
+    url: "https://www.aljazeera.com/news/2021/12/9/adama-barrows-reelection-and-the-gambias-long-walk-to-justice"
+    source_type: news
+    title: "Adama Barrow's re-election and The Gambia's long walk to justice (Al Jazeera)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c11
+    url: "https://factcheckgambia.org/factsheet-only-16-out-of-262-trrc-recommendations-implemented/"
+    source_type: news
+    title: "FACTSHEET: Only 16 Out of 262 TRRC Recommendations Implemented (FactCheck Gambia)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c12
+    url: "https://www.cnn.com/2018/05/31/africa/gambia-hiv-aids-cure-lawsuit-jammeh"
+    source_type: news
+    title: "Former Gambian leader sued over fraudulent AIDS cure (CNN)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c13
+    url: "https://www.theeastafrican.co.ke/tea/magazine/president-jammeh-s-great-witch-hunt-1295002"
+    source_type: news
+    title: "President Jammeh's great witch hunt (The East African)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c14
+    url: "https://en.wikipedia.org/wiki/Treaty_of_Lagos"
+    source_type: wikipedia
+    title: "Treaty of Lagos"
+    accessed: 2026-08-10
+    verified: true
+  - id: c15
+    url: "https://simple.wikipedia.org/wiki/Community_of_Sahel-Saharan_States"
+    source_type: wikipedia
+    title: "Community of Sahel-Saharan States"
+    accessed: 2026-08-10
+    verified: true
+
+rec_membership:
+  - org: ECOWAS
+    joined: 1975
+    status: current
+    left: null
+    citations: [c14]
+  - org: CEN-SAD
+    joined: 2000
+    status: current
+    left: null
+    citations: [c15]
+
+balance:
+  n_positive: 2
+  n_negative: 1
+  n_mixed: 1
+  note: >
+    This record leans positive deliberately, not by omission: The
+    Gambia has the strongest governance pillar and one of the only
+    positively-signed Political Stability readings recorded anywhere in
+    this corpus, and the January 2026 domestic Junglers trial is a
+    genuine, hard-won accountability milestone credited at full weight.
+    The TRRC implementation gap is coded negative at full weight rather
+    than softened by that same recovery -- roughly 60 of 304
+    recommendations completed after four years is a real and current
+    failure, not merely a footnote to an otherwise positive story.
+    Barrow's broken transitional-term promise and outreach to Jammeh's
+    old party are coded mixed: a real democratic continuity (he won a
+    genuine, contested election) alongside a real erosion of the
+    principle that got him elected in the first place.

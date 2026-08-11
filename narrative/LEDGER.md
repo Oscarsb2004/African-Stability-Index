@@ -26,7 +26,7 @@ An audit is forced early if a single run inflates the citation count by more tha
 
 ## Status
 
-**30 of 54 countries have a record (Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria, Rwanda, Chad, Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic, Mauritania, Zimbabwe, Comoros, Uganda, Sierra Leone, Equatorial Guinea). The first pass is complete; Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic, Mauritania, Zimbabwe, Comoros, Uganda, Sierra Leone and Equatorial Guinea are the first twenty-one backlog countries.**
+**31 of 54 countries have a record (Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria, Rwanda, Chad, Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic, Mauritania, Zimbabwe, Comoros, Uganda, Sierra Leone, Equatorial Guinea, The Gambia). The first pass is complete; Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic, Mauritania, Zimbabwe, Comoros, Uganda, Sierra Leone, Equatorial Guinea and The Gambia are the first twenty-two backlog countries.**
 
 ### First pass — 9 countries
 
@@ -72,14 +72,15 @@ whose ranks swing hardest with the weighting method.
 | UGA | Uganda | fills East Africa's biggest gap (6 of 14 done); the 1972 Asian expulsion reframed as a colonial demographic arrangement (Britain recruited the labour, built the merchant class) violently inverted by the post-colonial state; the most severe CURRENT-EVENTS story found in this corpus to date -- Museveni's Jan 2026 seventh-term election amid fraud and an internet blackout, with his own son/military chief publicly threatening to kill the opposition leader; a genuine positive (World Bank's $350M+ resumed lending) credited on its own terms, separate from the judgment of whether the Bank should have resumed lending at all | **done — iteration 1** |
 | SLE | Sierra Leone | fills West Africa's biggest gap (8 of 16 done); opens a new cross-referenced pair with LBR (Special Court for Sierra Leone convicted Charles Taylor for arming the RUF, told here from Sierra Leone's side); Freetown's 1787 founding as a British-organized freed-slave settlement set explicitly against Liberia's 1822 American-organized one in colonial_legacy -- same premise, opposite outcome; a genuine positive (Bio elected ECOWAS chair, June 2025) credited independent of the domestic governance concerns raised by the Nov 2023 failed coup attempt | **done — iteration 1** |
 | GNQ | Equatorial Guinea | fills Central Africa (5 of 8 done); the starkest oil-wealth-vs-governance gap in the corpus; Pillar D (Health) greyed alongside C, the first second-pillar gap since ERI but for a different reason (wealthy state simply not publishing data, not a closed state suppressing it); Obiang, in power since 1979, is the world's longest-serving current non-royal head of state; heir-apparent Teodorin's asset-laundering conviction/seizures across three continents turn this corpus's usual "ruling family enrichment" inference into actual court judgments; a genuine positive (UNICEF child-protection strategy) found despite the severity | **done — iteration 1** |
+| GMB | The Gambia | fills West Africa (9 of 16 done); a distinct "regional bloc enforces an election by force" pattern (2017 ECOWAS intervention, no shots fired), unlike SLE's rebel-suppression intervention already in this corpus; opens a cross-reference with GNQ (Jammeh's exile there); strongest governance pillar and one of the only positive Political Stability readings in this corpus, deliberately not softened by a genuine TRRC-implementation failure documented alongside it; Kunta Kinteh Island is one of the few sites here where a named individual's (Kunta Kinte, via Roots) slave-trade journey is traceable directly, not just described in aggregate | **done — iteration 1** |
 
-### Backlog — the remaining 24
+### Backlog — the remaining 23
 
 Listed in full in `narrative/state.yaml` under `backlog`. They are recorded
 explicitly rather than left implicit: a country with no record should be visibly
 absent, not quietly missing.
 
-Libya, Tunisia, Benin, Cabo Verde, The Gambia, Guinea, Guinea-Bissau, Cote d'Ivoire, Senegal, Togo, Cameroon, Republic of Congo, Gabon, Burundi, Djibouti, Malawi, Mozambique, South Sudan, Tanzania, Zambia, Lesotho, Eswatini, Seychelles, Sao Tome & Principe
+Libya, Tunisia, Benin, Cabo Verde, Guinea, Guinea-Bissau, Cote d'Ivoire, Senegal, Togo, Cameroon, Republic of Congo, Gabon, Burundi, Djibouti, Malawi, Mozambique, South Sudan, Tanzania, Zambia, Lesotho, Eswatini, Seychelles, Sao Tome & Principe
 
 ---
 
@@ -1013,6 +1014,47 @@ Append one line per run: date, country, mode, what changed, what was removed.
   than padding. `--links` passes 0 errors, 1 warning (Borkena, familiar
   403 bot-detection pattern) — 11/12 resolved.
 
+- **2026-08-10 — GMB — CREATE. Twenty-second backlog country, fills
+  West Africa (9 of 16 done).** Full baseline built: historical
+  overview, colonial legacy (Kunta Kinteh Island, formerly James
+  Island, flagged as one of the few sites in this corpus where a named
+  individual's documented slave-trade journey — Kunta Kinte, via Alex
+  Haley's Roots — can be pointed to directly rather than described only
+  in aggregate; UNESCO World Heritage status confirmed 2003), 4
+  key_periods, 6 pillar summaries (Pillar C left empty — greyed at
+  1/8 measured; Pillars D and E both fully/highly measured, 5/5 and
+  3/4), 3 primary + 1 extended recent items, 4 events, rec_membership
+  (ECOWAS 1975 founding member, CEN-SAD 2000). 16 sources opened and
+  verified: 5 Wikipedia, 8 news, 1 UNESCO official, 2 more for
+  rec_membership. A distinct kind of post-authoritarian record for this
+  corpus: strongest governance pillar and one of the only positively-
+  signed Political Stability readings recorded anywhere in this
+  project, reflecting a decade of real, uninterrupted democratic
+  continuity since Jammeh's January 2017 exile. That strength is
+  deliberately not left uncomplicated — the genuine TRRC-implementation
+  failure (only ~60 of 304 recommendations completed by 2025) is coded
+  negative at full weight beside it, and Barrow's own broken three-year
+  transitional-term promise plus his 2021 outreach to Jammeh's former
+  party is coded mixed. The January 2026 domestic trial of Sanna
+  Manjang (former Junglers leader) for journalist Deyda Hydara's 2004
+  murder is a genuinely major, current accountability story — the first
+  domestic Gambian prosecution of a Junglers member, following a German
+  court's 2023 life-sentence conviction (universal jurisdiction) of a
+  DIFFERENT Junglers member for the SAME killing, confirmed on final
+  appeal November 2024. Opens a new cross-reference with GNQ, completed
+  last turn: Jammeh fled into exile there in January 2017, now
+  documented from both countries' sides. Balance: 2 positive, 1
+  negative, 1 mixed — a deliberately positive-leaning record given the
+  underlying data genuinely supports it, not a forced count. One
+  word-count fix on Pillar D. Two citation swaps during the run: a
+  Washington Post URL for the Manjang trial returned a persistent
+  TimeoutError (the second such case in this corpus, after MDG), and
+  the first replacement (WTOP) turned out to be a genuine 404 on the
+  second check — required a THIRD source (eNCA) before resolving
+  cleanly, the first time a citation needed two consecutive swaps in
+  this corpus. `--links` then passed 0 errors, 1 warning (The East
+  African, familiar 403 pattern) — 15/16 resolved.
+
 ---
 
 ## Meta-notes
@@ -1560,6 +1602,24 @@ Things a future run should know about how to work, not about a specific country.
   project, and worth flagging as a model for how strong a
   colonial_legacy argument CAN be when the documentation exists, as a
   benchmark against which thinner-evidenced records can be judged.
+- **2026-08-10** — GMB confirms citation-swap failures can cascade, and
+  the response should too: a Washington Post timeout led to a WTOP
+  replacement that turned out to be a genuine 404 on the actual check,
+  requiring a third source before the record was clean. The discipline
+  held — verify the replacement with `--links`, don't just assume a
+  swap fixed it — but it's worth noting explicitly for future runs that
+  "first replacement resolves" is not guaranteed, especially for
+  very-recent (days-to-weeks-old) news stories still propagating across
+  syndication partners; budget for a second swap attempt rather than
+  being surprised by it. Also worth logging as a genuine pattern now
+  visible across GMB and GNQ together, picked in sequence: this corpus
+  is starting to accumulate cross-references organically even when a
+  country isn't chosen specifically to complete one (GNQ wasn't picked
+  because it would receive Jammeh; that Gambia's own record would later
+  need to reference it was discovered only once GMB was underway).
+  Future EXPAND passes should periodically re-scan completed records for
+  this kind of incidentally-discovered connection, not just the
+  deliberately-engineered ones (LBR/SLE, CAF's Wagner thread).
 
 ---
 
