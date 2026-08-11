@@ -1,0 +1,470 @@
+meta:
+  iso3: ZWE
+  name: Zimbabwe
+  last_updated: 2026-08-10
+  iteration_count: 1
+  next_action: >
+    EXPAND: (1) follow whether the Mnangagwa-Chiwenga rift produces
+    further open conflict, a formal ouster, or a negotiated exit before
+    2030; (2) follow whether ZiG's single-digit inflation holds or
+    reverts, given the currency's rocky first 18 months; (3) check
+    whether Pillars A/E/B get fresh post-CAB3, post-ZiG data superseding
+    the 2023 reference year; (4) follow whether the 2023 election fraud
+    allegations produce any formal legal outcome; (5) check if Pillar C
+    has gained coverage.
+  model_used: claude-sonnet-5
+
+historical:
+  overview: >
+    Cecil Rhodes' British South Africa Company occupied Mashonaland in
+    1890 and conquered the Ndebele Kingdom in 1893; the 1896-97 First
+    Chimurenga, a joint Ndebele and Shona uprising, was suppressed.
+    Britain took direct control as Southern Rhodesia in 1923, but the
+    colony's white settler minority resisted decolonisation: on 11
+    November 1965, Prime Minister Ian Smith unilaterally declared
+    independence from Britain specifically to avoid Black majority
+    rule, an act Britain deemed rebellion but did not suppress by
+    force. A guerrilla war -- the Second Chimurenga, fought by Robert
+    Mugabe's ZANLA and Joshua Nkomo's ZIPRA against Smith's government
+    -- lasted until the Lancaster House Agreement of 21 December 1979,
+    and Zimbabwe achieved internationally recognised independence under
+    Prime Minister Mugabe on 18 April 1980. Mugabe's government backed
+    a "fast-track" land reform from February 2000, in which
+    self-described war veterans occupied white-owned commercial farms;
+    within two years most of the country's 4,500 large farms had been
+    seized, evicting roughly 4,000 white farmers and resettling some
+    170,000 new farm families, but agricultural output collapsed by
+    roughly half by 2008 and tax revenue fell from 28% to 4% of GDP. The
+    resulting economic collapse produced Zimbabwe's 2008 hyperinflation,
+    which peaked at an estimated 79.6 billion percent monthly, prices
+    doubling roughly every 25 hours, before the Zimbabwean dollar was
+    abandoned for foreign currencies in 2009. The military ousted Mugabe
+    in November 2017's Operation Restore Legacy, installing Emmerson
+    Mnangagwa; Mnangagwa was re-elected in a disputed 2023 vote the
+    opposition called fraudulent, and in July 2026 signed a
+    constitutional amendment extending his own term to 2030, sidelining
+    the general who had installed him.
+  overview_citations: [c1, c2, c4, c5, c6, c8]
+  colonial_legacy: >
+    context/colonial_history.yaml already credits the 1890 BSAC
+    occupation, the 1893 conquest of the Ndebele Kingdom, the suppressed
+    1896-97 First Chimurenga, and frames the 2000-2002 fast-track land
+    reform as an attempt to reverse colonial land theft that collapsed
+    agricultural production and triggered hyperinflation. Worth adding
+    what made Zimbabwe's decolonisation itself unusual within this
+    corpus: nowhere else in this project did the colonised territory's
+    own settler minority unilaterally declare independence specifically
+    to prevent majority rule. Ian Smith's 1965 UDI inverted the pattern
+    seen everywhere else in this corpus, where a colonial power either
+    negotiated independence or was forced out by an independence
+    movement; here, Rhodesia's white minority government seceded from
+    Britain precisely to keep the racial hierarchy Britain itself was
+    under some, limited, international pressure to dismantle. That
+    inversion matters for reading the land reform that followed two
+    decades later: the 4,500 large commercial farms seized in 2000-2002
+    were themselves the direct, undisturbed inheritance of 1890s-era
+    land alienation, still overwhelmingly white-owned twenty years after
+    a Black-majority government took power, because the Lancaster House
+    Agreement that ended the Bush War had itself protected existing
+    property rights for a decade. The reform's catastrophic economic
+    execution does not erase the genuine grievance -- unresolved land
+    distribution from ninety years of settler colonialism -- that gave
+    it its initial political support.
+  colonial_legacy_citations: [c1, c2, c4]
+  key_periods:
+    - title: "BSAC occupation and the First Chimurenga"
+      period: "1890-1923"
+      summary: >
+        Cecil Rhodes' British South Africa Company occupied Mashonaland
+        in 1890 and conquered the Ndebele Kingdom in 1893; the 1896-97
+        First Chimurenga, a joint Ndebele and Shona uprising against
+        company rule, was suppressed. Britain assumed direct colonial
+        administration as Southern Rhodesia in 1923.
+      citations: [c3]
+    - title: "UDI and the Second Chimurenga"
+      period: "1965-1980"
+      summary: >
+        On 11 November 1965, Prime Minister Ian Smith unilaterally
+        declared independence from Britain specifically to avoid Black
+        majority rule. A guerrilla war -- the Second Chimurenga, fought
+        by Robert Mugabe's ZANLA and Joshua Nkomo's ZIPRA -- followed
+        until the Lancaster House Agreement of 21 December 1979, and
+        Zimbabwe achieved internationally recognised independence under
+        Mugabe on 18 April 1980.
+      citations: [c1, c2]
+    - title: "Fast-track land reform and hyperinflation"
+      period: "2000-2009"
+      summary: >
+        Mugabe's government backed a "fast-track" land reform from
+        February 2000, in which war veterans occupied white-owned
+        commercial farms; within two years most of the country's 4,500
+        large farms had been seized, evicting roughly 4,000 white
+        farmers. Agricultural output collapsed by roughly half by 2008,
+        and the resulting economic crisis produced hyperinflation that
+        peaked at an estimated 79.6 billion percent monthly before the
+        Zimbabwean dollar was abandoned in 2009.
+      citations: [c4, c5]
+    - title: "Mugabe's fall and Mnangagwa's consolidation"
+      period: "2017-2026"
+      summary: >
+        The military ousted Mugabe in November 2017's Operation Restore
+        Legacy, installing Emmerson Mnangagwa. Mnangagwa was re-elected
+        in a disputed 2023 vote the opposition called fraudulent, and in
+        July 2026 signed a constitutional amendment extending his own
+        presidential term to 2030, a move that sidelined Vice President
+        Constantino Chiwenga, the general who had led the 2017 operation
+        that brought him to power.
+      citations: [c6, c7, c8]
+
+pillars:
+  A:
+    summary: >
+      All six governance indicators are directly measured this year,
+      and the aggregate score is severely weak -- Voice and
+      Accountability and Rule of Law are the two weakest indicators.
+      That severity sits against a specific, current development: in
+      July 2026, President Mnangagwa signed a constitutional amendment
+      extending presidential and legislative terms from five to seven
+      years, prolonging his own tenure to 2030 and effectively
+      suspending the election that would otherwise have tested his
+      mandate. The amendment sidelined Vice President Constantino
+      Chiwenga -- the general who led the 2017 military operation that
+      installed Mnangagwa in the first place -- reportedly through
+      security-service reshuffles rather than open political contest, an
+      echo of the same military-centred power dynamics that ended
+      Mugabe's rule.
+    drivers:
+      - "all 6 governance indicators directly measured; Voice and Accountability and Rule of Law are the two weakest"
+      - "July 2026: Mnangagwa signed a constitutional amendment extending his term to 2030, effectively suspending the election that would have tested his mandate"
+      - "the amendment sidelined VP Chiwenga, the general who led the 2017 coup that installed Mnangagwa -- via security-service reshuffles, not open political contest"
+      - "echoes the same military-centred power dynamics that ended Mugabe's own rule in 2017"
+    citations: [c7, c8, c9]
+  B:
+    summary: >
+      GDP growth and GDP per capita, both freshly measured, are
+      comparatively strong for this corpus. Domestic credit to the
+      private sector, also fresh, is extremely thin -- among the
+      weakest readings recorded in this project. Inflation, carried
+      forward at 253.94%, is severe, though this pillar's 2023 reference
+      year predates Zimbabwe's most recent currency reset entirely: the
+      gold-backed ZiG currency, launched in April 2024 after a rocky
+      first year that included a 43% devaluation, reached single-digit
+      year-on-year inflation for the first time in nearly 30 years by
+      January 2026 (4.1%), falling further to 3.2% by July 2026. Gini,
+      also carried forward, indicates substantial inequality.
+    drivers:
+      - "GDP growth and GDP per capita both fresh, comparatively strong for this corpus"
+      - "domestic credit extremely thin (fresh) -- among the weakest readings recorded in this project"
+      - "inflation 253.94% (carried forward) is severe, but predates the April 2024 ZiG currency reset entirely -- ZiG inflation fell to single digits (4.1%) by Jan 2026, first time in ~30 years, then 3.2% by July 2026"
+      - "Gini (carried forward) indicates substantial inequality"
+    citations: [c10, c11]
+  D:
+    summary: >
+      All five health indicators are freshly measured this year -- a
+      fully, not partially, measured picture. Life expectancy, just
+      under 63 years, and infant mortality, at 62.2 per 1,000 live
+      births, are both severe. Severe food insecurity, affecting
+      roughly a quarter of the population, is comparatively severe as
+      well. Safely managed drinking water access is weak. This severity
+      is not a data-coverage artefact -- a genuinely, fully evidenced
+      picture rather than one where thin data does some of the work of
+      a severe reading.
+    drivers:
+      - "all 5 health indicators freshly measured -- a fully, not partially, measured picture"
+      - "life expectancy ~63 years, infant mortality ~62.2/1,000 -- both severe (fresh)"
+      - "severe food insecurity ~25% (fresh) -- comparatively severe; safely managed water weak (fresh); genuinely, not thinly, evidenced severity"
+    citations: [c1]
+  E:
+    summary: >
+      Political Stability, freshly measured, is weak, consistent with
+      the succession tension documented in Pillar A. Displaced persons,
+      estimated from regional peers rather than measured directly, is a
+      more middling reading. Homicide, carried forward, is comparatively
+      moderate. Only two of the pillar's four indicators are freshly
+      measured this year, and none of this pillar's data reflects the
+      July 2026 constitutional amendment or the Mnangagwa-Chiwenga power
+      struggle documented under recent developments, both of which
+      postdate this pillar's 2023 reference year by several years.
+    drivers:
+      - "Political Stability weak (fresh) -- consistent with the succession tension documented in Pillar A"
+      - "IDPs more middling (regional-mean estimate); homicide comparatively moderate (carried forward)"
+      - "only 2 of 4 indicators fresh; none of this pillar's data reflects the July 2026 constitutional amendment or Mnangagwa-Chiwenga power struggle, both of which postdate this pillar's reference year"
+    citations: [c7]
+  F:
+    summary: >
+      CO2 emissions per capita, freshly measured, are comparatively
+      low, and unlike the clearest wealth-proxy cases in this corpus,
+      this reads as at least partly genuine: the carried-forward
+      electricity-generation figure shows less than a third of power
+      from fossil sources, reflecting Zimbabwe's substantial hydropower
+      capacity at Kariba Dam, and electricity access itself (Pillar G)
+      covers a majority of the population -- not the severe constraint
+      seen in the corpus's clearest artefact cases. Freshwater
+      withdrawal, also carried forward, is moderate relative to
+      renewable resources. Agricultural land share, fresh, is moderate.
+      Only two of the pillar's four indicators are freshly measured this
+      year.
+    drivers:
+      - "CO2 pc comparatively low (fresh) -- reads as at least partly genuine: electricity generation is under a third fossil-fuel (carried forward), reflecting Kariba Dam hydropower"
+      - "electricity access covers a majority of the population (Pillar G) -- not the severe constraint seen in the corpus's clearest wealth-proxy cases"
+      - "freshwater withdrawal moderate relative to renewable resources (carried forward); agricultural land moderate (fresh)"
+      - "only 2 of 4 indicators freshly measured this year"
+    citations: [c1]
+  G:
+    summary: >
+      Electricity access, at 62% and freshly measured, is moderate --
+      among the better readings recorded in this corpus, consistent
+      with Kariba Dam's hydropower capacity documented in Pillar F.
+      Basic drinking water access, also fresh, is comparatively decent;
+      handwashing coverage, also fresh, is moderate. Safely managed
+      water access, also fresh, is markedly weaker than the other water
+      indicators here. Social protection, carried forward rather than
+      fresh, is moderate. Four of the pillar's five indicators are
+      current -- a genuinely, not thinly, measured infrastructure
+      picture overall, though one considerably stronger on electricity
+      and basic access than on the safely-managed standard.
+    drivers:
+      - "electricity access 62% (fresh) -- among the better readings in this corpus, consistent with Kariba Dam hydropower documented in Pillar F"
+      - "basic drinking water comparatively decent (fresh); handwashing moderate (fresh); safely managed water markedly weaker than the other water indicators (fresh)"
+      - "social protection moderate (carried forward); 4 of 5 indicators fresh -- a genuinely, not thinly, measured picture"
+    citations: [c1]
+
+recent:
+  primary:
+    - headline: "Mnangagwa signs constitutional amendment extending his term to 2030"
+      date: 2026-07-07
+      summary: >
+        President Emmerson Mnangagwa signed Constitutional Amendment
+        Bill No. 3 into law on 7 July 2026, extending presidential and
+        legislative terms from five to seven years and prolonging his
+        own time in office by two years, to 2030. The move effectively
+        removed Vice President Constantino Chiwenga -- the general who
+        led the 2017 military operation that installed Mnangagwa -- from
+        the succession race; Chiwenga's wife was separately reassigned
+        from her position in military intelligence the previous March.
+      why_it_matters: >
+        Directly explains Pillar A's severity and shows the same
+        military-centred power dynamics that ended Mugabe's rule in
+        2017 now shaping Mnangagwa's own succession, a full election
+        cycle before it would otherwise have been tested.
+      news_url: "https://www.crisisgroup.org/qna/africa/zimbabwe/zimbabwe-constitutional-change-and-fight-succession"
+      wikipedia_url: ""
+      sentiment: negative
+    - headline: "ZiG currency reaches single-digit inflation for the first time in nearly 30 years"
+      date: 2026-01-27
+      summary: >
+        Zimbabwe's gold-backed ZiG currency, launched in April 2024
+        after a turbulent first year that included a 43% devaluation,
+        recorded year-on-year inflation of 4.1% in January 2026 -- the
+        first time Zimbabwe's domestic currency had achieved
+        single-digit inflation in almost three decades. The rate fell
+        further, to 3.2%, by July 2026, with the Reserve Bank's gold and
+        foreign-currency backing growing from roughly $100 million at
+        launch to over $900 million by September 2025.
+      why_it_matters: >
+        A genuine, substantial economic stabilisation entirely outside
+        the 2023 reference year Pillar B's inflation figure describes,
+        credited at full weight independent of the political severity
+        documented elsewhere in this record.
+      news_url: "https://allafrica.com/stories/202601270279.html"
+      wikipedia_url: ""
+      sentiment: positive
+    - headline: "Opposition alleges 'gigantic fraud' as Mnangagwa wins a disputed second term"
+      date: 2023-08-28
+      summary: >
+        Zimbabwe's Electoral Commission declared President Mnangagwa the
+        winner of the 23-24 August 2023 election with 52.6% of the vote
+        against 44% for Nelson Chamisa of the Citizens Coalition for
+        Change. Chamisa's party alleged "blatant and gigantic fraud" and
+        said results were released hastily without proper verification;
+        international observers reported an atmosphere of voter
+        intimidation.
+      why_it_matters: >
+        The immediate governance backdrop against which Mnangagwa's July
+        2026 term-extension amendment must be read -- a second term
+        itself won amid credible, unresolved fraud allegations.
+      news_url: "https://www.aljazeera.com/news/2023/8/28/zimbabwe-opposition-alleges-blatant-and-gigantic-fraud-in-election"
+      wikipedia_url: ""
+      sentiment: negative
+  extended:
+    - headline: "General Chiwenga breaks silence, admits 2017 Mugabe ouster was a coup"
+      date: 2026-08-01
+      summary: >
+        Vice President Constantino Chiwenga, who commanded the Zimbabwe
+        Defence Forces during the November 2017 operation that removed
+        Robert Mugabe, publicly acknowledged for the first time that the
+        intervention was in fact a coup, breaking with the government's
+        official "not a coup" framing amid his own escalating rift with
+        President Mnangagwa.
+      why_it_matters: >
+        An unusually direct admission from within the ruling elite
+        itself, corroborating what historical.key_periods already
+        documents as a military-driven succession rather than a
+        democratic transition.
+      news_url: "https://zambianobserver.com/chiwenga-admits-2017-event-was-a-coup/"
+      wikipedia_url: ""
+      sentiment: mixed
+
+events:
+  - year: 1965
+    type: constitutional
+    title: "Ian Smith's Rhodesia declares UDI to avoid majority rule"
+    description: >
+      On 11 November 1965, Prime Minister Ian Smith unilaterally
+      declared Rhodesia's independence from Britain specifically to
+      avoid Black majority rule, an act Britain deemed rebellion but did
+      not suppress by force, triggering the guerrilla war that followed.
+    url: "https://en.wikipedia.org/wiki/Rhodesia's_Unilateral_Declaration_of_Independence"
+    direction: deteriorate
+  - year: 1980
+    type: independence
+    title: "Zimbabwe achieves independence under Mugabe"
+    description: >
+      Following the Lancaster House Agreement, Zimbabwe achieved
+      internationally recognised independence under Prime Minister
+      Robert Mugabe on 18 April 1980, ending the Second Chimurenga.
+    url: "https://en.wikipedia.org/wiki/Lancaster_House_Agreement"
+    direction: improve
+  - year: 2000
+    type: economic
+    title: "Fast-track land reform begins"
+    description: >
+      From February 2000, Mugabe's government backed war veterans'
+      occupation of white-owned commercial farms; within two years most
+      of the country's 4,500 large farms had been seized, evicting
+      roughly 4,000 white farmers, but agricultural output subsequently
+      collapsed by roughly half.
+    url: "https://www.hrw.org/reports/2002/zimbabwe/ZimLand0302.pdf"
+    direction: mixed
+  - year: 2017
+    type: coup
+    title: "Military ousts Mugabe in Operation Restore Legacy"
+    description: >
+      The military ousted Robert Mugabe in November 2017's Operation
+      Restore Legacy, ending his 37-year rule and installing Emmerson
+      Mnangagwa, in an intervention senior officers have since
+      acknowledged was a coup.
+    url: "https://www.aljazeera.com/news/2017/11/27/zimbabwe-army-operation-that-led-to-mugabe-ouster-ends"
+    direction: mixed
+
+citations:
+  - id: c1
+    url: "https://en.wikipedia.org/wiki/Rhodesia's_Unilateral_Declaration_of_Independence"
+    source_type: wikipedia
+    title: "Rhodesia's Unilateral Declaration of Independence"
+    accessed: 2026-08-10
+    verified: true
+  - id: c2
+    url: "https://en.wikipedia.org/wiki/Lancaster_House_Agreement"
+    source_type: wikipedia
+    title: "Lancaster House Agreement"
+    accessed: 2026-08-10
+    verified: true
+  - id: c3
+    url: "https://www.britannica.com/place/Zimbabwe/Rhodesia-and-the-UDI"
+    source_type: academic
+    title: "Zimbabwe -- Rhodesia and the UDI (Britannica)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c4
+    url: "https://www.hrw.org/reports/2002/zimbabwe/ZimLand0302.pdf"
+    source_type: news
+    title: "Fast Track Land Reform in Zimbabwe (Human Rights Watch, March 2002)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c5
+    url: "https://www.markethistories.com/en/the-zimbabwe-hyperinflation-how-a-nation-printed-100-trillion-dollar-notes-2007-2009"
+    source_type: news
+    title: "The Zimbabwe Hyperinflation: How a Nation Printed 100 Trillion Dollar Notes (2007-2009) (Market Histories)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c6
+    url: "https://www.aljazeera.com/news/2017/11/27/zimbabwe-army-operation-that-led-to-mugabe-ouster-ends"
+    source_type: news
+    title: "Zimbabwe: Army operation that led to Mugabe ouster ends (Al Jazeera)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c7
+    url: "https://www.crisisgroup.org/qna/africa/zimbabwe/zimbabwe-constitutional-change-and-fight-succession"
+    source_type: news
+    title: "Zimbabwe: Constitutional Change and the Fight for Succession (International Crisis Group)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c8
+    url: "https://www.myzimbabwe.co.zw/news/188594-goodbye-chiwenga-succession-problem-solved-as-president-mnangagwa-signs-cab-3-into-law-here-is-whats-next.html"
+    source_type: news
+    title: "Goodbye Chiwenga: succession problem 'solved' as President Mnangagwa signs CAB 3 into law (My Zimbabwe News)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c9
+    url: "https://bulawayo24.com/index-id-news-sc-local-byo-250927.html"
+    source_type: news
+    title: "Mnangagwa, Chiwenga clash over succession plans (Bulawayo24 News)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c10
+    url: "https://allafrica.com/stories/202601270279.html"
+    source_type: news
+    title: "Zimbabwe Hits Single-Digit Inflation Milestone (AllAfrica)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c11
+    url: "https://www.weforum.org/stories/2024/05/zimbabwe-zig-new-currency-inflation-dollar/"
+    source_type: news
+    title: "The ZiG: Zimbabwe rolls out world's newest currency (World Economic Forum)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c12
+    url: "https://www.aljazeera.com/news/2023/8/28/zimbabwe-opposition-alleges-blatant-and-gigantic-fraud-in-election"
+    source_type: news
+    title: "Zimbabwe opposition alleges 'blatant and gigantic fraud' in election (Al Jazeera)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c13
+    url: "https://zambianobserver.com/chiwenga-admits-2017-event-was-a-coup/"
+    source_type: news
+    title: "Chiwenga admits 2017 event was a coup (Zambian Observer)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c14
+    url: "https://www.sadc.int/member-states/zimbabwe"
+    source_type: official
+    title: "Zimbabwe (SADC)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c15
+    url: "https://en.wikipedia.org/wiki/Common_Market_for_Eastern_and_Southern_Africa"
+    source_type: wikipedia
+    title: "Common Market for Eastern and Southern Africa"
+    accessed: 2026-08-10
+    verified: true
+
+rec_membership:
+  - org: SADC
+    joined: 1980
+    status: current
+    left: null
+    citations: [c14]
+  - org: COMESA
+    joined: 1994
+    status: current
+    left: null
+    citations: [c15]
+
+balance:
+  n_positive: 1
+  n_negative: 2
+  n_mixed: 1
+  note: >
+    The July 2026 term-extension amendment and the disputed 2023
+    election are both coded negative at full weight -- neither is
+    softened by the genuine currency stabilisation documented alongside
+    them. ZiG's single-digit inflation is coded positive because it is a
+    real, verified, substantial achievement, independent of the severe
+    political record documented elsewhere in this pillar and in Pillar
+    A; a government can achieve real monetary stabilisation while also
+    extending its own hold on power, and this record states both rather
+    than letting one imply the other is less true. Chiwenga's admission
+    that 2017 was a coup is coded mixed: a genuine moment of elite
+    candour, but one occurring amid his own power struggle with
+    Mnangagwa rather than as disinterested testimony.

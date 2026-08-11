@@ -26,7 +26,7 @@ An audit is forced early if a single run inflates the citation count by more tha
 
 ## Status
 
-**25 of 54 countries have a record (Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria, Rwanda, Chad, Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic, Mauritania). The first pass is complete; Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic and Mauritania are the first sixteen backlog countries.**
+**26 of 54 countries have a record (Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria, Rwanda, Chad, Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic, Mauritania, Zimbabwe). The first pass is complete; Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic, Mauritania and Zimbabwe are the first seventeen backlog countries.**
 
 ### First pass — 9 countries
 
@@ -67,14 +67,15 @@ whose ranks swing hardest with the weighting method.
 | ERI | Eritrea | fills East Africa's biggest gap (4 of 14 done); the only country in the corpus with zero national elections since independence (1993); most extreme data-sparsity case yet -- 3 of 6 non-C pillars greyed entirely, directly tied to the same closed-state pattern behind the corpus's lowest-ever single indicator score (Voice and Accountability, 4.9); opens a new cross-referenced pair with ETH (GERD, Tigray War, Pretoria Agreement, 2025 Red Sea tension); a genuine positive (UN-verified 2025 health/nutrition gains) credited at full weight, not treated as suspect by association | **done — iteration 1** |
 | CAF | Central African Republic | fills Central Africa's biggest gap (3 of 8 done); Bokassa's 1976-1979 self-declared Empire; the corpus's first major Russian paramilitary presence (Wagner, since 2018), argued as structurally continuous with the colonial-era concessionary companies that produced the 1928-1931 Kongo-Wara Rebellion; two new corpus superlatives (56.3% severe food insecurity, 99.37/1,000 directly-measured IDPs); a genuine positive (2024 Kimberley Process reintegration) credited alongside, not instead of, Wagner-atrocity findings in the same mining sector | **done — iteration 1** |
 | MRT | Mauritania | fills West Africa's biggest gap (6 of 16 done); the last country in the world to formally abolish slavery (1981, criminalized 2007), with France's own colonial administration having declared abolition in 1905 and knowingly declined to enforce it -- a distinct colonial-complicity mechanism new to this corpus; left ECOWAS entirely in 2000, decades before the AES trio's 2025 exit; a genuine positive (Greater Tortue Ahmeyim gas field reaching full production) placed alongside a genuinely unresolved current negative (2025 State Dept trafficking report on persistent hereditary slavery) | **done — iteration 1** |
+| ZWE | Zimbabwe | fills East Africa's biggest gap (5 of 14 done); the only country in the corpus whose settler minority unilaterally declared independence FROM the colonizer to avoid majority rule (Rhodesia's 1965 UDI), inverting every other decolonization pattern here; the 2000-2002 land reform read as a catastrophically-executed response to a genuine, unresolved colonial grievance rather than dismissed outright; a genuine positive (ZiG currency's first single-digit inflation in ~30 years) credited independent of a severe, escalating political record (July 2026 term-limit extension, sidelined VP/General Chiwenga) | **done — iteration 1** |
 
-### Backlog — the remaining 29
+### Backlog — the remaining 28
 
 Listed in full in `narrative/state.yaml` under `backlog`. They are recorded
 explicitly rather than left implicit: a country with no record should be visibly
 absent, not quietly missing.
 
-Libya, Tunisia, Benin, Cabo Verde, The Gambia, Guinea, Guinea-Bissau, Cote d'Ivoire, Senegal, Sierra Leone, Togo, Cameroon, Republic of Congo, Equatorial Guinea, Gabon, Burundi, Djibouti, Malawi, Mozambique, South Sudan, Tanzania, Uganda, Zambia, Zimbabwe, Lesotho, Eswatini, Comoros, Seychelles, Sao Tome & Principe
+Libya, Tunisia, Benin, Cabo Verde, The Gambia, Guinea, Guinea-Bissau, Cote d'Ivoire, Senegal, Sierra Leone, Togo, Cameroon, Republic of Congo, Equatorial Guinea, Gabon, Burundi, Djibouti, Malawi, Mozambique, South Sudan, Tanzania, Uganda, Zambia, Lesotho, Eswatini, Comoros, Seychelles, Sao Tome & Principe
 
 ---
 
@@ -826,6 +827,34 @@ Append one line per run: date, country, mode, what changed, what was removed.
   403 pattern already confirmed on multiple prior runs) — 13/14
   resolved.
 
+- **2026-08-10 — ZWE — CREATE. Seventeenth backlog country, fills
+  East Africa's biggest gap.** Full baseline built: historical
+  overview, colonial legacy (Ian Smith's 1965 UDI documented as the
+  only inverted decolonization pattern in this corpus -- the settler
+  minority, not the colonial power, resisting majority rule -- used to
+  reframe the 2000-2002 fast-track land reform as a catastrophically-
+  executed response to a genuine, unresolved colonial-era grievance
+  rather than dismissed outright), 4 key_periods, 6 pillar summaries
+  (Pillar C left empty — greyed at 1/8 measured; Pillar D fully
+  measured, 5/5, unusually complete), 3 primary + 1 extended recent
+  items, 4 events, rec_membership (SADC 1980 founding member, COMESA
+  1994). 13 sources opened and verified: 3 Wikipedia, 8 news, 1
+  Britannica, 1 HRW PDF, 2 more for rec_membership. This is the fourth
+  "reference year predates the current reality" case in this corpus
+  (after MDG, ERI, MRT): Pillar B's carried-forward 253.94% inflation
+  figure is genuinely severe for 2023, but is now superseded by the
+  April 2024 gold-backed ZiG currency, which reached single-digit
+  inflation (4.1%) by January 2026 — the first time in roughly 30
+  years — credited as a genuine positive independent of, not despite,
+  a severe and currently escalating political story: Mnangagwa's July
+  2026 constitutional amendment extending his own term to 2030,
+  sidelining Vice President Constantino Chiwenga, the same general who
+  led the 2017 coup that installed him. Balance: 1 positive, 2
+  negative, 1 mixed. One word-count fix: Pillar E was 3 words under the
+  80-word floor, fixed by adding a real fact rather than padding.
+  `--links` passes 0 errors, 2 warnings (Britannica and WEF, both
+  familiar 403 bot-detection patterns) — 13/15 resolved.
+
 ---
 
 ## Meta-notes
@@ -1272,6 +1301,26 @@ Things a future run should know about how to work, not about a specific country.
   opposite things depending on the country's actual hydrology, and
   should be checked against that context each time rather than
   defaulted to one reading.
+- **2026-08-10** — ZWE confirms the "reference year predates the
+  current reality" pattern first flagged on MDG is now recurring
+  reliably enough to actively search for on every run, not just notice
+  when stumbled on: this is the fourth instance (MDG's coup, ERI's Red
+  Sea tension, MRT's gas field, ZWE's currency reset) in eight runs.
+  Worth naming the check explicitly for future CREATE passes: after
+  drafting the pillar summaries from country_facts.py's reference year,
+  search specifically for "what changed in this country after [year]"
+  before finalizing recent.primary, rather than only surfacing whatever
+  turns up in the course of researching historical events. Also: ZWE's
+  UDI is the sixth distinct colonial/decolonization-relationship
+  pattern logged in this corpus (after MDG's conquered monarchy, ETH's
+  own imperial expansion, LBR's settler-project-by-the-formerly-
+  enslaved, CAF/ERI's post-colonial domestic institutions echoing
+  colonial structure, MRT's declared-but-unenforced abolition) — and
+  the first where the settler population itself, rather than the
+  metropole or a successor state, is the party resisting decolonization.
+  The typology is now diverse enough that future country picks should
+  actively ask "which pattern would this add" rather than defaulting to
+  the most obvious reading of a country's colonial history.
 
 ---
 

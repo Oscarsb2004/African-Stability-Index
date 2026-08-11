@@ -447,6 +447,30 @@ countries:
       migration crackdown documented by HRW continues; check for any update
       to the 2025 State Department trafficking finding; check if Pillar C
       has gained coverage'
+  ZWE:
+    name: Zimbabwe
+    region: East
+    first_pass: false
+    reason: seventeenth backlog country -- fills East Africa's biggest gap (5
+      of 14 done); the only backlog country whose settler minority
+      unilaterally declared independence FROM the colonizer specifically to
+      avoid majority rule (Rhodesia's 1965 UDI), inverting the pattern seen
+      everywhere else in this corpus; the 2000-2002 fast-track land reform
+      read as a catastrophically-executed response to a genuine, unresolved
+      colonial-era grievance rather than dismissed outright; a genuine
+      positive (ZiG currency reaching single-digit inflation for the first
+      time in ~30 years) credited independent of a severe, currently
+      escalating political record (July 2026 term-limit extension, sidelined
+      VP/general Chiwenga)
+    iteration_count: 1
+    last_updated: '2026-08-10'
+    next_action: 'EXPAND: follow whether the Mnangagwa-Chiwenga rift produces
+      further open conflict, a formal ouster, or a negotiated exit before
+      2030; follow whether ZiG''s single-digit inflation holds or reverts,
+      given the currency''s rocky first 18 months; check whether Pillars
+      A/E/B get fresh post-CAB3, post-ZiG data superseding the 2023 reference
+      year; follow whether the 2023 election fraud allegations produce any
+      formal legal outcome; check if Pillar C has gained coverage'
 backlog:
   LBY:
     name: Libya
@@ -626,14 +650,6 @@ backlog:
     next_action: create baseline from blueprint
   ZMB:
     name: Zambia
-    region: East
-    first_pass: false
-    reason: not yet scheduled
-    iteration_count: 0
-    last_updated: null
-    next_action: create baseline from blueprint
-  ZWE:
-    name: Zimbabwe
     region: East
     first_pass: false
     reason: not yet scheduled
@@ -1301,3 +1317,33 @@ meta_notes:
   familiar 403 bot-detection pattern already confirmed on multiple prior
   runs) -- 13/14 resolved. Full pytest suite: 106 passed. 25 of 54 countries
   now have a record.'
+- '2026-08-10: ZWE CREATE run complete (13 sources opened and verified: 3
+  Wikipedia, 8 news, 1 academic/Britannica, 1 HRW PDF, 2 more for
+  rec_membership -- reusing the SADC pattern from NAM/ZAF/BWA). Fills East
+  Africa''s biggest gap (5 of 14 done before this run). Genuinely inverted
+  decolonisation pattern, new to this corpus: Ian Smith''s Rhodesia
+  unilaterally declared independence FROM Britain in 1965 specifically to
+  avoid Black majority rule -- the only case in the corpus where the local
+  settler minority, not the colonial power, resisted decolonisation.
+  colonial_legacy uses that inversion to reframe the 2000-2002 fast-track
+  land reform: the 4,500 large commercial farms seized were the direct,
+  undisturbed inheritance of 1890s land alienation, still overwhelmingly
+  white-owned 20 years after Black-majority rule because Lancaster House had
+  protected existing property rights for a decade -- the reform''s
+  catastrophic execution (agricultural output -51% by 2008, hyperinflation
+  peaking at 79.6 billion percent monthly) is stated plainly without letting
+  it erase the genuine, unresolved grievance that gave the policy its
+  initial support. Found and used a strong "reference year predates the
+  current reality" case, joining MDG/ERI/MRT: Pillar B''s carried-forward
+  253.94% inflation figure is real for 2023 but is now superseded by the
+  April 2024 ZiG gold-backed currency, which reached single-digit inflation
+  (4.1%) in January 2026 for the first time in ~30 years -- credited as a
+  genuine positive independent of, not despite, the severe and currently
+  escalating political story (Mnangagwa''s July 2026 constitutional
+  amendment extending his term to 2030, sidelining VP/General Chiwenga, the
+  same figure who led the 2017 coup that installed him). Balance: 1
+  positive, 2 negative, 1 mixed. One word-count fix: Pillar E was 3 words
+  under the 80-word floor, fixed by adding a real fact rather than padding.
+  `--links` passes 0 errors, 2 warnings (Britannica and WEF, both familiar
+  403 bot-detection patterns) -- 13/15 resolved. Full pytest suite: 106
+  passed. 26 of 54 countries now have a record.'
