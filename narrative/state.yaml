@@ -371,6 +371,33 @@ countries:
       criticism, and whether the July 2025 protests recur; check whether Gini
       or the pillar E/F thin indicators gain fresh measurement; check if
       Pillar C has gained coverage'
+  ERI:
+    name: Eritrea
+    region: East
+    first_pass: false
+    reason: fourteenth backlog country -- fills East Africa's biggest gap (4 of
+      14 done); the only country in the corpus that has never held a national
+      election since independence (1993), and the most extreme data-sparsity
+      case yet -- 3 of 6 non-C pillars (B, C, D) greyed out entirely, not just
+      thin, a direct consequence of the same closed-state pattern Pillar A
+      documents; Voice and Accountability (4.9) is the single lowest indicator
+      score recorded anywhere in this project to date; opens a new
+      cross-referenced pair with ETH (GERD/Tigray War/Pretoria Agreement/2025
+      Red Sea tension, all shared events told from Eritrea's side here);
+      genuine positive (UN-verified 2025 health/nutrition gains) found and
+      credited at full weight despite the severe governance record, rather
+      than treated as suspect by association
+    iteration_count: 1
+    last_updated: '2026-08-10'
+    next_action: 'EXPAND: follow whether the renewed Ethiopia-Eritrea tension
+      over Red Sea access escalates into open conflict in 2026, and whether
+      Egypt''s/UAE''s alignment shifts further; check whether Colluli potash
+      comes online as projected and whether its revenue claims can be
+      independently verified; check whether any of Pillars B, C or D gain
+      enough coverage to be scored at all; check whether the 2016 UN
+      Commission of Inquiry''s findings have been updated by a more recent
+      investigation; keep this record''s account of Eritrea-Ethiopia relations
+      consistent with ETH''s own account of the same events'
 backlog:
   LBY:
     name: Libya
@@ -518,14 +545,6 @@ backlog:
     next_action: create baseline from blueprint
   DJI:
     name: Djibouti
-    region: East
-    first_pass: false
-    reason: not yet scheduled
-    iteration_count: 0
-    last_updated: null
-    next_action: create baseline from blueprint
-  ERI:
-    name: Eritrea
     region: East
     first_pass: false
     reason: not yet scheduled
@@ -1128,3 +1147,42 @@ meta_notes:
   claim (positive) and the corruption protests (negative) both concern the
   same period, deliberately not left to cancel each other out. Full pytest
   suite: 106 passed. 22 of 54 countries now have a record.'
+- '2026-08-10: ERI CREATE run complete (12 sources opened and verified: 1
+  EBSCO/academic, 6 news, 2 official [Nobel, UN Eritrea], 1 Business & Human
+  Rights Centre, 2 more Wikipedia for rec_membership). Fills East Africa''s
+  biggest gap (4 of 14 done before this run) and is the most extreme
+  data-sparsity case yet: only Pillars A, E, F and G could be written at all
+  -- B (Economic), C, and D (Health) are ALL greyed out (0/5, 1/8, 2/5
+  measured respectively), the first record where more than just C is
+  unwritten. This is directly connected to Pillar A''s own finding rather
+  than a separate coincidence: Eritrea has held zero national elections since
+  1993, Voice and Accountability scores 4.9 -- the single lowest indicator
+  score recorded anywhere in this project to date -- and the same closed-state
+  pattern that produces that score is exactly why the country publishes too
+  little verifiable data for three other pillars to be scored. Colonial
+  legacy required a genuinely different structure again (third distinct case
+  after ETH and LBR''s "never/differently colonized" framings): Eritrea WAS
+  formally colonized (Italy, then Britain, then annexed by Ethiopia), but the
+  post-independence PFDJ one-party state -- entirely a domestic construction,
+  not a colonial inheritance -- has reproduced a forced-labour extraction
+  pattern (the national service system, and Segen Construction''s alleged use
+  of conscript labour at the PFDJ-owned Bisha mine subcontractor) strikingly
+  similar to the colonial patterns documented elsewhere in this corpus.
+  Opens a new cross-referenced pair with ETH: the GERD dispute, the 2018
+  Nobel-winning peace deal, Eritrea''s uncredited role in the 2020-2022
+  Tigray War, its refusal to sign the Pretoria Agreement, and the sharply
+  renewed Nov 2025 Red Sea tension are all told from Eritrea''s side here and
+  must stay factually consistent with ETH''s own account in any future
+  EXPAND/AUDIT pass -- alongside the existing EGY/ETH, TCD/SDN, and
+  MLI/BFA/NER cross-reference threads. Followed the SDN/MLI/BFA/NER/MDG
+  discipline and found a genuine positive despite Eritrea''s severity:
+  UN Eritrea''s own 2025 Annual Results Report documents real, verified
+  immunisation, nutrition and water-access gains, credited at full weight
+  specifically to avoid the failure mode of treating a repressive state''s
+  documented humanitarian achievements as inherently suspect. Balance: 1
+  positive, 2 negative, 1 mixed. One word-count fix: recent.extended was 2
+  words under the 40-word floor, fixed by adding a real fact (HRW''s "no sign
+  of reform" characterisation) rather than padding. `--links` passes 0
+  errors, 0 warnings -- all 12 citations resolved cleanly, the second
+  zero-warning `--links` run in this corpus after MDG. Full pytest suite: 106
+  passed. 23 of 54 countries now have a record.'

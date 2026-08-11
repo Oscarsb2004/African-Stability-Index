@@ -26,7 +26,7 @@ An audit is forced early if a single run inflates the citation count by more tha
 
 ## Status
 
-**22 of 54 countries have a record (Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria, Rwanda, Chad, Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia). The first pass is complete; Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia and Liberia are the first thirteen backlog countries.**
+**23 of 54 countries have a record (Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria, Rwanda, Chad, Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea). The first pass is complete; Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia and Eritrea are the first fourteen backlog countries.**
 
 ### First pass — 9 countries
 
@@ -64,14 +64,15 @@ whose ranks swing hardest with the weighting method.
 | MDG | Madagascar | fills the Islands gap (only MUS previously represented of 5 island backlog states); distinct colonial history (an independent Merina monarchy conquered militarily in 1895-96, not a protectorate); a live current-events thread -- the October 2025 CAPSAT-backed coup that ousted Rajoelina, the same unit that installed him in 2009 -- and a genuine positive (Jan 2026 mining-moratorium lift) found deliberately rather than manufactured | **done — iteration 1** |
 | NAM | Namibia | fills Southern Africa's biggest gap (only ZAF and BWA previously done of 5 in the region); colonized by two different powers in sequence (Germany, then South Africa), including the Herero and Nama genocide (1904-1908), formally recognised by Germany only in 2021; strongest governance pillar recorded in this corpus so far, deliberately paired against a genuinely unresolved current fact (a 2023 reparations lawsuit still undecided as of mid-2026) rather than treating 2021 recognition as closure | **done — iteration 1** |
 | LBR | Liberia | fills West Africa's biggest absolute gap (5 of 16 done); the only country in the corpus never formally colonized by a foreign state, yet the Americo-Liberian settler elite (freed American slaves, from 1822) held internal-colonial dominance over the indigenous majority for 133 years, and Firestone's 1926 rubber lease shows the same extractive pattern operating without any formal colonizer at all; a 20+-year-overdue War and Economic Crimes Court coded mixed, not positive, since no prosecution has yet followed | **done — iteration 1** |
+| ERI | Eritrea | fills East Africa's biggest gap (4 of 14 done); the only country in the corpus with zero national elections since independence (1993); most extreme data-sparsity case yet -- 3 of 6 non-C pillars greyed entirely, directly tied to the same closed-state pattern behind the corpus's lowest-ever single indicator score (Voice and Accountability, 4.9); opens a new cross-referenced pair with ETH (GERD, Tigray War, Pretoria Agreement, 2025 Red Sea tension); a genuine positive (UN-verified 2025 health/nutrition gains) credited at full weight, not treated as suspect by association | **done — iteration 1** |
 
-### Backlog — the remaining 32
+### Backlog — the remaining 31
 
 Listed in full in `narrative/state.yaml` under `backlog`. They are recorded
 explicitly rather than left implicit: a country with no record should be visibly
 absent, not quietly missing.
 
-Libya, Tunisia, Benin, Cabo Verde, The Gambia, Guinea, Guinea-Bissau, Cote d'Ivoire, Mauritania, Senegal, Sierra Leone, Togo, Cameroon, Central African Republic, Republic of Congo, Equatorial Guinea, Gabon, Burundi, Djibouti, Eritrea, Malawi, Mozambique, South Sudan, Tanzania, Uganda, Zambia, Zimbabwe, Lesotho, Eswatini, Comoros, Seychelles, Sao Tome & Principe
+Libya, Tunisia, Benin, Cabo Verde, The Gambia, Guinea, Guinea-Bissau, Cote d'Ivoire, Mauritania, Senegal, Sierra Leone, Togo, Cameroon, Central African Republic, Republic of Congo, Equatorial Guinea, Gabon, Burundi, Djibouti, Malawi, Mozambique, South Sudan, Tanzania, Uganda, Zambia, Zimbabwe, Lesotho, Eswatini, Comoros, Seychelles, Sao Tome & Principe
 
 ---
 
@@ -705,6 +706,46 @@ Append one line per run: date, country, mode, what changed, what was removed.
   (negative) both concern the same period, deliberately not left to
   cancel each other out.
 
+- **2026-08-10 — ERI — CREATE. Fourteenth backlog country, most
+  extreme data-sparsity case yet.** Full baseline built: historical
+  overview, colonial legacy (Italy/Britain/Ethiopia's sequential
+  control, then a genuinely domestic PFDJ one-party construction
+  reproducing a forced-labour extraction pattern via the national
+  service system and Segen Construction's alleged use of conscript
+  labour at the PFDJ-owned Bisha mine subcontractor), 4 key_periods, 4
+  pillar summaries only (A, E, F, G — Pillars B, C and D are ALL greyed
+  out entirely, 0/5, 1/8 and 2/5 measured respectively, the first
+  record in this corpus where more than just C is unwritten), 3
+  primary + 1 extended recent items, 4 events, rec_membership (COMESA
+  1994, CEN-SAD 1999 — verified individually; Eritrea also suspended
+  and then formally withdrew from IGAD as of December 2025, correctly
+  absent from the index's own current registry and therefore not
+  included here). 12 sources opened and verified: 1 EBSCO, 6 news, 2
+  official (Nobel, UN Eritrea), 1 Business & Human Rights Centre, 2
+  more Wikipedia for rec_membership. Eritrea has held zero national
+  elections since 1993, and Voice and Accountability scores 4.9 — the
+  single lowest indicator score recorded anywhere in this project to
+  date — directly connected, not coincidental, to why three other
+  pillars couldn't be scored at all: the same closed-state pattern that
+  produces the governance score is why the country publishes too little
+  verifiable data for the rest of the index. Opens a new cross-
+  referenced pair with ETH: the GERD dispute, the 2018 Nobel-winning
+  peace deal, Eritrea's uncredited role in the 2020-2022 Tigray War, its
+  refusal to sign the Pretoria Agreement, and the sharply renewed
+  November 2025 Red Sea tension are all told from Eritrea's side here
+  and must stay consistent with ETH's own account in any future
+  EXPAND/AUDIT pass, alongside the existing EGY/ETH, TCD/SDN and
+  MLI/BFA/NER threads. Following the SDN/MLI/BFA/NER/MDG discipline,
+  found a genuine positive despite Eritrea's severity: UN Eritrea's own
+  2025 Annual Results Report documents real, verified immunisation,
+  nutrition and water-access gains, credited at full weight
+  specifically to avoid treating a repressive state's documented
+  humanitarian achievements as inherently suspect. Balance: 1 positive,
+  2 negative, 1 mixed. One word-count fix: recent.extended was 2 words
+  under the 40-word floor, fixed by adding a real fact rather than
+  padding. `--links` passes 0 errors, 0 warnings — the second
+  zero-warning `--links` run in this corpus after MDG.
+
 ---
 
 ## Meta-notes
@@ -1088,6 +1129,28 @@ Things a future run should know about how to work, not about a specific country.
   worth treating with extra suspicion in future citation checks, since
   their content can rotate or expire independent of the underlying
   story still existing elsewhere.
+- **2026-08-10** — ERI adds a fourth distinct "how do we frame this
+  country's relationship to colonization" pattern to the three already
+  logged (MDG's conquered independent monarchy, ETH's own imperial
+  expansion, LBR's settler-project-by-the-formerly-enslaved): Eritrea
+  WAS formally colonized in the ordinary sense, but the record's most
+  important extraction story — the national service system — is a
+  purely post-independence, domestically-generated institution with no
+  colonial-era antecedent at all. The lesson for future runs generalizes
+  further than "check what filled the space where colonization would
+  otherwise have been" (the LBR lesson): sometimes the most damaging
+  extraction pattern in a country's history isn't colonial at all, and
+  forcing every record's colonial_legacy section to be the single place
+  a country's worst governance story lives would be a mistake. Also
+  worth carrying forward as a genuine methodological finding, not just
+  a caveat: greyed pillars are not independent of the pillars that DO
+  get written. ERI's Pillar A finding (worst Voice and Accountability
+  score in the project) and its three greyed pillars (B, C, D) are the
+  same underlying fact — a state that suppresses information about
+  itself — observed from two different angles. A future EXPAND pass on
+  any heavily-greyed record should check for this connection explicitly
+  rather than treating "why is this pillar greyed" as a separate
+  question from "what does the written pillar say."
 
 ---
 

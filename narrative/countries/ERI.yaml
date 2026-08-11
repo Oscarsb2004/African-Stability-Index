@@ -1,0 +1,430 @@
+meta:
+  iso3: ERI
+  name: Eritrea
+  last_updated: 2026-08-10
+  iteration_count: 1
+  next_action: >
+    EXPAND: (1) follow whether the renewed Ethiopia-Eritrea tension over
+    Red Sea access actually escalates into open conflict in 2026, and
+    whether Egypt's or the UAE's alignment shifts further; (2) check
+    whether Colluli potash comes online as projected and whether its
+    revenue claims can be independently verified given Eritrea's own
+    data-sparsity problem; (3) check whether any of Pillars B, C or D
+    gain enough coverage to be scored at all; (4) check whether the 2016
+    UN Commission of Inquiry's findings have been updated by a more
+    recent international investigation; (5) keep this record's account
+    of Eritrea-Ethiopia relations consistent with the ETH record's own
+    account of the same events (GERD dispute, Tigray War, Pretoria
+    Agreement, and now Red Sea tension) as a new cross-referenced pair
+    for future EXPAND/AUDIT passes.
+  model_used: claude-sonnet-5
+
+historical:
+  overview: >
+    Italy formally established Eritrea as a colony in 1890, later using
+    it as a staging ground for its failed 1896 invasion of Ethiopia at
+    Adwa. Following Italy's WWII defeat, Britain administered the
+    territory from 1941 until 1952, when the UN federated it with
+    Ethiopia against most Eritreans' preferences; Ethiopia unilaterally
+    dissolved the federation and annexed Eritrea outright in 1962,
+    triggering a 30-year armed liberation struggle led by the Eritrean
+    People's Liberation Front under Isaias Afwerki. Eritrean forces
+    defeated the Ethiopian army in May 1991, and a UN-supervised
+    referendum confirmed independence on 24 May 1993 with a reported
+    99.8% vote in favour. Isaias has ruled without interruption since,
+    and Eritrea has never held a national election; the ruling PFDJ
+    party governs through an indefinite national service system a 2016
+    UN Commission of Inquiry found routinely involves enslavement,
+    torture and enforced disappearance, and that the Global Slavery
+    Index ranks as the world's second-worst rate of modern slavery. A
+    border war with Ethiopia over the town of Badme killed an estimated
+    80,000 people between 1998 and 2000 and left the two countries in a
+    "no war, no peace" stalemate until 2018, when Ethiopian Prime
+    Minister Abiy Ahmed ceded Badme to Eritrea and signed a peace
+    agreement with Isaias -- Abiy alone won the 2019 Nobel Peace Prize
+    for it. Eritrean troops fought alongside Ethiopia's federal
+    government against Tigrayan forces from 2020 to 2022, were
+    separately accused of committing atrocities against Tigrayan
+    civilians, and never signed the November 2022 Pretoria Agreement
+    that ended the war; Eritrean forces remain in disputed border areas
+    today. By late 2025, renewed tension over Ethiopia's demand for Red
+    Sea access again raised the prospect of a new Ethiopia-Eritrea war.
+  overview_citations: [c1, c3, c5, c6, c7]
+  colonial_legacy: >
+    context/colonial_history.yaml already credits Italy's 1890
+    colonisation, Britain's 1941-1952 administration, the UN's 1952
+    federation with Ethiopia against Eritrean preferences, Ethiopia's
+    1962 annexation, and the 30-year liberation war that followed -- and
+    names the PFDJ's post-independence rule as having produced one of
+    the world's most closed states. Worth adding the specific fact that
+    gives "Africa's North Korea" its substance: Eritrea has held zero
+    national elections since independence in 1993, and its indefinite
+    national service system -- nominally 18 months, in practice
+    open-ended, with some conscripts serving more than two decades --
+    was found by a 2016 UN Commission of Inquiry to routinely involve
+    enslavement, torture, and enforced disappearance. That system is
+    also directly, not incidentally, tied to Eritrea's post-independence
+    economy: Segen Construction, the subcontractor whose alleged use of
+    forced labour at the Canadian-co-owned Bisha gold mine produced a
+    landmark 2020 Canadian Supreme Court ruling permitting a lawsuit
+    against Nevsun Resources to proceed, is itself owned by the ruling
+    PFDJ party. The same state structure Italy's colonial administration
+    never created -- Eritrea's political institutions are entirely a
+    post-independence PFDJ construction -- has nonetheless reproduced a
+    coercive-labour extraction pattern strikingly similar to what
+    colonisation imposed on other countries in this corpus, just under
+    indigenous rather than foreign control.
+  colonial_legacy_citations: [c3, c11]
+  key_periods:
+    - title: "Italian colonisation and British administration"
+      period: "1890-1952"
+      summary: >
+        Italy formally established Eritrea as a colony in 1890, later
+        using it as a staging ground for its failed 1896 invasion of
+        Ethiopia at Adwa. Following Italy's defeat in WWII, Britain
+        administered the territory from 1941 until 1952, when the UN
+        federated it with Ethiopia against most Eritreans' own
+        preferences.
+      citations: [c1]
+    - title: "Ethiopian annexation and the liberation war"
+      period: "1962-1993"
+      summary: >
+        Ethiopia unilaterally dissolved the federation and annexed
+        Eritrea outright in 1962, triggering a 30-year armed liberation
+        struggle led by the Eritrean People's Liberation Front under
+        Isaias Afwerki. Eritrean forces defeated the Ethiopian army in
+        May 1991, and a UN-supervised referendum confirmed independence
+        on 24 May 1993 with a reported 99.8% vote in favour.
+      citations: [c1]
+    - title: "PFDJ one-party rule and indefinite national service"
+      period: "1993-present"
+      summary: >
+        Isaias Afwerki has ruled without interruption since
+        independence, and Eritrea has never held a national election.
+        The ruling PFDJ party governs through an indefinite national
+        service system a 2016 UN Commission of Inquiry found routinely
+        involves enslavement, torture and enforced disappearance, with
+        some conscripts serving more than two decades.
+      citations: [c3]
+    - title: "War, peace, and renewed war with Ethiopia"
+      period: "1998-2026"
+      summary: >
+        A border war with Ethiopia over the town of Badme killed an
+        estimated 80,000 people between 1998 and 2000, followed by a
+        "no war, no peace" stalemate until 2018, when Prime Minister
+        Abiy Ahmed ceded Badme to Eritrea and made peace; Abiy alone won
+        the 2019 Nobel Peace Prize. Eritrean troops fought alongside
+        Ethiopia against Tigrayan forces from 2020 to 2022, never signed
+        the war-ending Pretoria Agreement, and remain in disputed border
+        areas; by late 2025, Ethiopia's demand for Red Sea access had
+        again raised the prospect of a new war.
+      citations: [c5, c6, c7]
+
+pillars:
+  A:
+    summary: >
+      All six governance indicators are directly measured this year,
+      and Eritrea's aggregate score -- 22.2 -- is the weakest recorded
+      anywhere in this corpus so far. Voice and Accountability, at 4.9,
+      is not merely the weakest indicator in this pillar but the single
+      lowest score recorded for any indicator in this entire project to
+      date, a direct reflection of a state that has held zero national
+      elections since independence in 1993. Regulatory Quality and Rule
+      of Law are almost as severe. This is not a data-coverage problem:
+      unusually for a country this closed, all six WGI-style indicators
+      are fresh, meaning the severity here is a directly measured
+      finding, not an estimate standing in for missing information.
+      Three of this record's other six pillars -- Economic, Social/Human
+      Capital, and Health -- are greyed out entirely: the index judged
+      Eritrea's own data too sparse or unreliable to score them at all,
+      itself a consequence of the same closed-state pattern this pillar
+      documents.
+    drivers:
+      - "all 6 governance indicators directly measured; aggregate score (22.2) is the weakest recorded anywhere in this corpus so far"
+      - "Voice and Accountability (4.9) is the single lowest indicator score recorded anywhere in this entire project to date -- zero national elections held since 1993 independence"
+      - "Regulatory Quality and Rule of Law almost as severe; unusually, all 6 indicators are FRESH -- this severity is directly measured, not estimated"
+      - "3 of this record's other 6 pillars (B, C, D) are greyed out entirely -- the index judged Eritrea's own data too sparse to score, itself a consequence of the same closed-state pattern"
+    citations: [c3, c8]
+  E:
+    summary: >
+      Political Stability, freshly measured, is moderate -- an
+      unexpectedly middling reading for a state that fought Ethiopia as
+      recently as 2020-2022 and remains in disputed border territory
+      today. Displaced persons, estimated from regional peers rather
+      than measured directly, is a considerably weaker reading.
+      Intentional homicide, also estimated from regional peers, is
+      comparatively low. Only two of the pillar's four indicators are
+      freshly measured this year, and none of this pillar's data
+      reflects the sharply renewed Ethiopia-Eritrea tension documented
+      under recent developments, which only escalated through late 2025
+      and into 2026 -- after this record's reference year.
+    drivers:
+      - "Political Stability moderate (fresh) -- an unexpectedly middling reading given Eritrea's 2020-2022 Tigray War involvement and continued disputed-border presence"
+      - "IDPs considerably weaker (regional-mean estimate); intentional homicide comparatively low (regional-mean estimate)"
+      - "only 2 of 4 indicators fresh; none of this pillar's data reflects the renewed Ethiopia-Eritrea tension that escalated through late 2025 into 2026, after this record's reference year"
+    citations: [c7]
+  F:
+    summary: >
+      CO2 emissions per capita, freshly measured, are near the lowest
+      recorded anywhere in this corpus -- but this is unambiguously a
+      wealth-proxy artefact rather than an achievement: the
+      carried-forward electricity-generation figure shows more than 97%
+      fossil-sourced power, among the highest fossil-dependence figures
+      recorded in this project, and electricity access itself (Pillar
+      G) covers barely half the population. Agricultural land share,
+      fresh, is extensive, consistent with a still largely rural,
+      subsistence-agricultural economy. Freshwater withdrawal, carried
+      forward, is moderate relative to renewable resources. Only two of
+      the pillar's four indicators are freshly measured this year.
+    drivers:
+      - "CO2 pc near the lowest recorded in this corpus (fresh) -- unambiguously a wealth-proxy artefact: electricity generation is >97% fossil-fuel (carried forward), among the highest fossil-dependence figures in this project"
+      - "electricity access barely half the population (Pillar G) -- confirms low emissions reflect low consumption, not clean generation"
+      - "agricultural land extensive (fresh), consistent with a largely rural, subsistence-agricultural economy; freshwater withdrawal moderate (carried forward)"
+      - "only 2 of 4 indicators freshly measured this year"
+    citations: [c8]
+  G:
+    summary: >
+      Electricity access, at just under 55% and freshly measured, is
+      weak. Every other indicator in this pillar -- basic and safely
+      managed drinking water, handwashing, and social protection
+      coverage -- is estimated from regional peers rather than measured
+      directly for Eritrea specifically, all landing in a similarly weak
+      range. That pattern, unlike almost anywhere else in this corpus,
+      extends well beyond this one pillar: Eritrea's government
+      publishes little of the data international institutions rely on,
+      which is why three of this record's other six pillars are greyed
+      out entirely rather than merely thin. This pillar's weak reading
+      should be read as a genuine best estimate, not a confident
+      measurement.
+    drivers:
+      - "electricity access under 55% (fresh) -- weak, the only indicator directly measured for Eritrea specifically in this pillar"
+      - "basic/safely managed water, handwashing, and social protection all estimated from regional peers, not measured directly -- all in a similarly weak range"
+      - "this data-sparsity pattern extends well beyond this one pillar -- 3 of this record's other 6 pillars are greyed out entirely, not just thin, because Eritrea publishes so little of the underlying data"
+    citations: [c8]
+
+recent:
+  primary:
+    - headline: "Renewed Ethiopia-Eritrea tension over Red Sea access raises fears of war"
+      date: 2025-11-26
+      summary: >
+        Tensions between Ethiopia and Eritrea escalated sharply through
+        late 2025 over Ethiopian Prime Minister Abiy Ahmed's demand for
+        access to the Red Sea, which Ethiopia has lacked since Eritrea's
+        1993 independence. Abiy called regaining the Eritrean port of
+        Assab "a matter of survival" and said it was "only a matter of
+        time." Egypt, in a separate dispute with Ethiopia over the Nile
+        dam GERD, publicly reaffirmed support for Eritrea's territorial
+        integrity in October 2025, while the UAE has backed Ethiopia's
+        ambitions.
+      why_it_matters: >
+        A direct three-way geopolitical link to this corpus's Egypt and
+        Ethiopia records -- Egypt's GERD dispute with Ethiopia is now
+        shaping its alignment with Eritrea -- and the most severe
+        current threat to the peace Abiy won a Nobel Prize for in 2019.
+      news_url: "https://foreignpolicy.com/2025/11/26/ethiopia-eritrea-tensions-red-sea-access-conflict/"
+      wikipedia_url: ""
+      sentiment: negative
+    - headline: "UN Eritrea reports genuine health and nutrition gains for 2025"
+      date: 2025-12-01
+      summary: >
+        The United Nations' Eritrea country office reported in its 2025
+        Annual Results Report that routine immunisation coverage
+        remained above 95%, skilled birth attendance rose from 81% to
+        85%, more than 38,000 children requiring therapeutic nutrition
+        care recovered at internationally recognised cure rates, and
+        roughly 250,000 people gained access to more reliable
+        solar-powered water systems. Progress on ending female genital
+        mutilation also accelerated, with 992 villages now recognised as
+        FGM-free.
+      why_it_matters: >
+        A genuine, UN-verified set of humanitarian gains that this
+        record credits at full weight, separate from and not
+        contradicted by the governance findings documented in Pillar A.
+      news_url: "https://eritrea.un.org/en/314387-un-eritrea-annual-results-report-2025"
+      wikipedia_url: ""
+      sentiment: positive
+    - headline: "Bisha mine's mineral wealth grows alongside unresolved forced-labour allegations"
+      date: 2026-02-01
+      summary: >
+        Eritrea's mining sector, led by the Bisha and Sheba mines and
+        the soon-to-open Colluli potash project, now accounts for
+        roughly a fifth of GDP and over 90% of exports, with Colluli
+        alone projected to add up to 10% of GDP once operational. The
+        sector's growth continues alongside the legacy of a 2014 lawsuit
+        alleging Segen Construction -- a Bisha subcontractor owned by
+        the ruling PFDJ party -- used forced labour from Eritrea's
+        national service system; Nevsun Resources settled the case in
+        October 2020 without admitting wrongdoing.
+      why_it_matters: >
+        Shows real economic diversification proceeding through the same
+        state-linked labour system documented in
+        historical.colonial_legacy, rather than resolving it.
+      news_url: "https://www.intellinews.com/can-eritrea-s-mining-sector-flourish-under-autocratic-rule-365073/"
+      wikipedia_url: ""
+      sentiment: mixed
+  extended:
+    - headline: "HRW documents continued crackdown on draft evaders' families"
+      date: 2023-02-09
+      summary: >
+        Human Rights Watch documented in February 2023 that Eritrean
+        authorities continued detaining and punishing family members of
+        young people who evade the country's indefinite national
+        service, a practice consistent with findings from the UN's 2016
+        Commission of Inquiry and one HRW said had continued for years
+        without any sign of reform.
+      why_it_matters: >
+        Extends the national-service system documented in
+        historical.colonial_legacy from a historical finding into an
+        ongoing, still-current practice.
+      news_url: "https://www.hrw.org/news/2023/02/09/eritrea-crackdown-draft-evaders-families"
+      wikipedia_url: ""
+      sentiment: negative
+
+events:
+  - year: 1962
+    type: conflict
+    title: "Ethiopia annexes Eritrea, sparking a 30-year war"
+    description: >
+      Ethiopia unilaterally dissolved its UN-mandated federation with
+      Eritrea and annexed the territory outright in 1962, triggering a
+      30-year armed liberation struggle led by the Eritrean People's
+      Liberation Front.
+    url: "https://www.ebsco.com/research-starters/history/eritrea-secedes-ethiopia"
+    direction: deteriorate
+  - year: 1993
+    type: independence
+    title: "Eritrea gains independence"
+    description: >
+      A UN-supervised referendum confirmed Eritrean independence on 24
+      May 1993 with a reported 99.8% vote in favour, following the
+      Eritrean People's Liberation Front's May 1991 defeat of the
+      Ethiopian army.
+    url: "https://www.ebsco.com/research-starters/history/eritrea-secedes-ethiopia"
+    direction: improve
+  - year: 2018
+    type: peace_deal
+    title: "Abiy and Isaias make peace, ending a 20-year stalemate"
+    description: >
+      Ethiopian Prime Minister Abiy Ahmed ceded the disputed town of
+      Badme to Eritrea and signed a peace agreement with President
+      Isaias Afwerki in 2018, ending a "no war, no peace" stalemate that
+      had persisted since the 1998-2000 border war; Abiy alone won the
+      2019 Nobel Peace Prize for the deal.
+    url: "https://www.nobelprize.org/prizes/peace/2019/abiy/speedread/"
+    direction: improve
+  - year: 2025
+    type: conflict
+    title: "Renewed war fears over Ethiopia's demand for Red Sea access"
+    description: >
+      Tensions between Ethiopia and Eritrea escalated sharply through
+      late 2025 as Prime Minister Abiy Ahmed pressed Ethiopia's demand
+      for access to the Red Sea, calling the loss of the Eritrean port
+      of Assab at independence "a mistake"; Egypt and the UAE have taken
+      opposing sides.
+    url: "https://foreignpolicy.com/2025/11/26/ethiopia-eritrea-tensions-red-sea-access-conflict/"
+    direction: deteriorate
+
+citations:
+  - id: c1
+    url: "https://www.ebsco.com/research-starters/history/eritrea-secedes-ethiopia"
+    source_type: academic
+    title: "Eritrea Secedes from Ethiopia (EBSCO)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c3
+    url: "https://www.hrw.org/report/2019/08/09/they-are-making-us-slaves-not-educating-us/how-indefinite-conscription-restricts"
+    source_type: news
+    title: "\"They Are Making Us into Slaves, Not Educating Us\": How Indefinite Conscription Restricts Young People's Rights, Access to Education in Eritrea (Human Rights Watch)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c5
+    url: "https://www.nobelprize.org/prizes/peace/2019/abiy/speedread/"
+    source_type: official
+    title: "Abiy Ahmed -- Speed Read (NobelPrize.org)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c6
+    url: "https://www.genocidewatch.com/single-post/eritrean-forces-still-occupy-border-2-years-after-tigray-war"
+    source_type: news
+    title: "Eritrean Forces Still Occupy Border 2 Years After Tigray War (Genocide Watch)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c7
+    url: "https://foreignpolicy.com/2025/11/26/ethiopia-eritrea-tensions-red-sea-access-conflict/"
+    source_type: news
+    title: "Ethiopia-Eritrea Tensions Trigger Fears of a Fresh Regional Conflict (Foreign Policy)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c8
+    url: "https://www.ebsco.com/research-starters/history/eritrea-secedes-ethiopia"
+    source_type: academic
+    title: "Eritrea Secedes from Ethiopia (EBSCO)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c9
+    url: "https://eritrea.un.org/en/314387-un-eritrea-annual-results-report-2025"
+    source_type: official
+    title: "UN Eritrea Annual Results Report 2025 (United Nations in Eritrea)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c10
+    url: "https://www.intellinews.com/can-eritrea-s-mining-sector-flourish-under-autocratic-rule-365073/"
+    source_type: news
+    title: "Can Eritrea's mining sector flourish under autocratic rule? (bne IntelliNews)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c11
+    url: "https://www.business-humanrights.org/en/latest-news/nevsun-lawsuit-re-bisha-mine-eritrea/"
+    source_type: news
+    title: "Nevsun lawsuit (re Bisha mine, Eritrea) (Business & Human Rights Resource Centre)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c12
+    url: "https://www.hrw.org/news/2023/02/09/eritrea-crackdown-draft-evaders-families"
+    source_type: news
+    title: "Eritrea: Crackdown on Draft Evaders' Families (Human Rights Watch)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c13
+    url: "https://en.wikipedia.org/wiki/Common_Market_for_Eastern_and_Southern_Africa"
+    source_type: wikipedia
+    title: "Common Market for Eastern and Southern Africa"
+    accessed: 2026-08-10
+    verified: true
+  - id: c14
+    url: "https://simple.wikipedia.org/wiki/Community_of_Sahel-Saharan_States"
+    source_type: wikipedia
+    title: "Community of Sahel-Saharan States"
+    accessed: 2026-08-10
+    verified: true
+
+rec_membership:
+  - org: COMESA
+    joined: 1994
+    status: current
+    left: null
+    citations: [c13]
+  - org: CEN-SAD
+    joined: 1999
+    status: current
+    left: null
+    citations: [c14]
+
+balance:
+  n_positive: 1
+  n_negative: 2
+  n_mixed: 1
+  note: >
+    The renewed Ethiopia-Eritrea war tension and the ongoing national-
+    service crackdown are both coded negative at full weight, not
+    softened by anything else in this record. The UN's 2025 health and
+    nutrition findings are coded positive because they are genuine,
+    UN-verified, and independently significant -- this record does not
+    discount them just because Eritrea's governance record is severe;
+    a closed and repressive state can still deliver real immunisation
+    and nutrition outcomes, and crediting that plainly is more honest
+    than either ignoring it or treating it as somehow suspect by
+    association. The Bisha mining story is coded mixed rather than
+    positive because its real economic growth and its documented
+    forced-labour entanglement are inseparable in the reporting this
+    record found -- one does not cancel the other.
