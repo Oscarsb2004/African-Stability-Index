@@ -1,0 +1,464 @@
+meta:
+  iso3: CMR
+  name: Cameroon
+  last_updated: 2026-08-11
+  iteration_count: 1
+  next_action: >
+    EXPAND: (1) follow whether Tchiroma's June 2026 Paris legal
+    complaint produces any investigation or diplomatic consequence;
+    (2) follow whether the Anglophone Crisis sees any further
+    ceasefire attempt, or reverts fully to the pre-April-2026 pattern;
+    (3) follow whether Biya's health or succession planning becomes a
+    more prominent story before 2032; (4) check whether Pillars B/E/F
+    thin or carried-forward indicators gain fresh coverage; (5) check
+    if Pillar C has gained coverage.
+  model_used: claude-sonnet-5
+
+historical:
+  overview: >
+    Germany colonized Kamerun from 1884, using brutal forced labour
+    to build railways and plantations, until Britain and France
+    partitioned it after World War I -- France took roughly 80% of
+    the territory, Britain the remaining 20% along the Nigerian
+    border. French Cameroun became independent on 1 January 1960
+    under President Ahmadou Ahidjo. A UN-supervised plebiscite in
+    February 1961 then split British Cameroons itself: the south
+    voted to reunify with the now-independent French Cameroun,
+    forming the Federal Republic of Cameroon in October 1961, while
+    the north voted to join Nigeria instead. That federal structure,
+    which had given the Anglophone southwest and northwest genuine
+    autonomy, lasted barely a decade: a 20 May 1972 referendum,
+    passed with an implausible 99.99% in favour, abolished it and
+    created a unitary state, folding the former Southern Cameroons
+    into two ordinary regions. Ahidjo resigned in November 1982 and
+    was succeeded by Prime Minister Paul Biya; when Biya later moved
+    against his predecessor's continued influence, palace guards
+    loyal to Ahidjo staged an unsuccessful coup in April 1984.
+    Grievances over the 1972 centralisation resurfaced in late 2016,
+    when Anglophone lawyers' and teachers' protests met a violent
+    crackdown and escalated into an armed separatist conflict that
+    has since killed more than 6,500 people and displaced over
+    600,000. On 27 October 2025, the Constitutional Council declared
+    92-year-old Biya -- in power for 43 years -- the winner of an
+    eighth presidential term, a result opposition candidate Issa
+    Tchiroma Bakary rejected as fraudulent, triggering deadly protests
+    and his own flight into exile.
+  overview_citations: [c1, c2, c3, c4, c5, c7, c8]
+  colonial_legacy: >
+    context/colonial_history.yaml already credits the
+    Anglophone/Francophone merger as the origin of the political
+    cleavage that erupted into armed conflict in 2016. Worth tracing
+    the mechanism one step further: the 1961 reunification gave the
+    former British Southern Cameroons genuine federal autonomy inside
+    the new Federal Republic of Cameroon, so the merger itself did
+    not immediately produce conflict. The rupture came eleven years
+    later, when Ahidjo's 20 May 1972 referendum -- passed with a
+    99.99% margin no credible electoral process produces -- abolished
+    the federal structure outright and folded the Anglophone
+    territories into an ordinary, centrally-governed state. Germany's
+    original 80/20 partition of the colony between France and Britain
+    is therefore not, by itself, the direct cause of the Anglophone
+    Crisis; the direct cause is a specific, dateable post-colonial
+    decision that erased the one structural protection reunification
+    had built in. That distinction matters for how the current crisis
+    should be read: it is not an inevitable consequence of Cameroon's
+    mixed colonial inheritance, but of a choice made a decade after
+    independence to dismantle the arrangement meant to accommodate
+    it.
+  colonial_legacy_citations: [c1, c2]
+  key_periods:
+    - title: "Partition, reunification, and the 1972 abolition of federalism"
+      period: "1884-1972"
+      summary: >
+        Germany's Kamerun was divided between France (80%) and
+        Britain (20%) after WWI. French Cameroun became independent
+        in 1960; a February 1961 plebiscite then split British
+        Cameroons, with the south reunifying with French Cameroun as
+        a federal state and the north joining Nigeria. A 20 May 1972
+        referendum, passed with an implausible 99.99%, abolished that
+        federal structure entirely.
+      citations: [c1, c2]
+    - title: "Ahidjo's resignation and the 1984 coup attempt"
+      period: "1982-1984"
+      summary: >
+        President Ahmadou Ahidjo resigned in November 1982 and was
+        succeeded by Prime Minister Paul Biya. A power struggle
+        developed as Ahidjo continued to wield influence from exile;
+        in April 1984, palace guards loyal to Ahidjo staged an
+        unsuccessful coup against Biya, who then fully consolidated
+        power.
+      citations: [c3, c4]
+    - title: "The Anglophone Crisis"
+      period: "2016-2026"
+      summary: >
+        Protests by Anglophone lawyers and teachers against
+        marginalisation met a violent crackdown in late 2016 and
+        escalated into an armed separatist conflict that has killed
+        more than 6,500 people and displaced over 600,000. Mediation
+        attempts by Switzerland (2019-2022) and Canada (2023) both
+        collapsed; a brief April 2026 ceasefire during a papal visit
+        to Bamenda broke down within days.
+      citations: [c5, c6, c14]
+    - title: "The disputed 2025 election"
+      period: "2025-2026"
+      summary: >
+        On 27 October 2025, the Constitutional Council declared
+        92-year-old Paul Biya -- in power since 1982 -- the winner of
+        an eighth presidential term with 53.66% of the vote.
+        Opposition candidate Issa Tchiroma Bakary rejected the
+        result, fled into exile after deadly protests, and in June
+        2026 filed a crimes-against-humanity complaint against
+        Cameroonian authorities in Paris.
+      citations: [c7, c8, c11]
+
+pillars:
+  A:
+    summary: >
+      All six World Governance Indicators are directly measured this
+      year, and the aggregate is weak -- Voice and Accountability
+      (33.6) and Political Stability (33.2) are both severe. That
+      severity reflects a currently escalating crisis, not only a
+      historical pattern: on 27 October 2025, the Constitutional
+      Council declared 92-year-old Paul Biya -- in power since 1982
+      and the world's oldest sitting head of state -- the winner of
+      an eighth term with 53.66% of the vote, a result opposition
+      candidate Issa Tchiroma Bakary rejected as fraudulent,
+      triggering deadly protests documented under recent
+      developments.
+    drivers:
+      - "all 6 WGI indicators directly measured; Voice and Accountability (33.6) and Political Stability (33.2) both severe"
+      - "27 Oct 2025: Constitutional Council declared 92-year-old Biya -- in power since 1982, the world's oldest sitting head of state -- winner of an 8th term with 53.66%"
+      - "opposition candidate Tchiroma rejected the result as fraudulent, triggering deadly protests (see recent developments)"
+    citations: [c7, c8]
+  B:
+    summary: >
+      GDP growth, GDP per capita and inflation, all freshly measured,
+      are middling for this corpus. Domestic credit and Gini, both
+      carried forward rather than fresh, are thin, and social
+      protection coverage documented in Pillar G confirms that little
+      of this growth has yet reached formal safety-net programmes.
+      This pillar's 2023 reference year understates a modest recent
+      acceleration: growth reached 3.7% in 2025, up from 3.5% in
+      2024, helped by the new 420-megawatt Nachtigal hydropower dam
+      and a more than tripling of container traffic at the Port of
+      Kribi, which now offers landlocked Central African neighbours
+      direct maritime access.
+    drivers:
+      - "GDP growth, GDP per capita, inflation all fresh, middling for this corpus; domestic credit and Gini both thin (carried forward)"
+      - "2023 reference year understates a modest recent acceleration: growth reached 3.7% in 2025 (from 3.5% in 2024)"
+      - "helped by the new 420MW Nachtigal hydropower dam and more than tripled container traffic at the Port of Kribi, offering landlocked Central African neighbours direct maritime access"
+    citations: [c13, c14]
+  D:
+    summary: >
+      Four of five indicators are directly measured this year, and
+      the aggregate is weak: life expectancy and infant mortality are
+      both comparatively poor, and severe food insecurity is
+      similarly weak. Handwashing-facility access, also fresh, is
+      thin. Safely managed drinking water, the pillar's only
+      regional-mean estimate, is the weakest figure. This pillar's
+      2023 reference year predates a genuine, independently verified
+      recent gain: routine malaria-vaccine rollout reached roughly
+      60% three-dose coverage among children in 2025, contributing to
+      a documented 32% decline in reported malaria cases and nearly
+      halving child malaria deaths.
+    drivers:
+      - "4 of 5 indicators directly measured; life expectancy and infant mortality both comparatively poor; severe food insecurity similarly weak"
+      - "handwashing access thin (fresh); safely managed drinking water the pillar's only regional-mean estimate, its weakest figure"
+      - "2023 reference year predates a genuine gain: malaria-vaccine rollout reached ~60% coverage in 2025, contributing to a documented 32% case decline (see recent developments)"
+    citations: [c12]
+  E:
+    summary: >
+      Displaced persons, at 36.80 per 1,000 people and directly
+      measured, is severe -- a direct consequence of the Anglophone
+      Crisis and Boko Haram's presence in the Far North, both
+      documented under historical.key_periods and recent
+      developments, and a figure that places Cameroon among the more
+      severely displaced countries recorded in this corpus. Political
+      Stability and Rule of Law, both fresh and shared with Pillar A,
+      are similarly severe. Intentional homicide, carried forward
+      rather than fresh, is comparatively more middling. Three of the
+      pillar's four indicators are current.
+    drivers:
+      - "displaced persons 36.80/1,000 (fresh, directly measured) -- severe, a direct consequence of the Anglophone Crisis and Boko Haram's Far North presence"
+      - "Political Stability and Rule of Law (shared with Pillar A) both similarly severe, fresh"
+      - "intentional homicide more middling (carried forward, not fresh); 3 of 4 indicators current"
+    citations: [c5, c6]
+  F:
+    summary: >
+      CO2 emissions per capita, freshly measured, score comparatively
+      well, and unlike the clearest wealth-proxy cases elsewhere in
+      this corpus, this reads as a genuine partial achievement: the
+      carried-forward electricity-generation figure shows just under
+      29% of Cameroon's own power from fossil sources, reflecting
+      real hydropower capacity, including the newly-online
+      420-megawatt Nachtigal dam documented in Pillar B. Agricultural
+      land share, fresh, is thin, reflecting the country's dense
+      equatorial forest cover rather than a data gap. Freshwater
+      withdrawal, carried forward, is very low relative to renewable
+      resources. Only two of the pillar's four indicators are
+      current.
+    drivers:
+      - "CO2 pc scores comparatively well (fresh) -- reads as a genuine partial achievement: electricity generation just under 29% fossil-fuel (carried forward), reflecting real hydropower including the new Nachtigal dam"
+      - "closer to AGO/ETH's genuine hydro-blend pattern than to STP/TGO's small-economy artefact elsewhere in this corpus"
+      - "agricultural land thin (fresh); freshwater withdrawal very low relative to renewable resources (carried forward); only 2 of 4 indicators current"
+    citations: [c13]
+  G:
+    summary: >
+      Electricity access, at 72% of the population and freshly
+      measured, is comparatively decent for this corpus, helped by
+      the hydropower capacity documented in Pillar F. Basic drinking
+      water access, also fresh, is similarly solid. Government
+      Effectiveness and Control of Corruption, shared with Pillar A,
+      are both poor. Social protection coverage, the pillar's only
+      carried-forward figure, is thin. Four of the pillar's five
+      indicators are current, describing genuine infrastructure reach
+      sitting uneasily beside the governance weakness Pillar A
+      documents in far greater detail.
+    drivers:
+      - "electricity access 72% of the population (fresh) -- comparatively decent for this corpus; basic drinking water similarly solid (fresh)"
+      - "Government Effectiveness and Control of Corruption (shared with Pillar A) both poor; social protection the pillar's only carried-forward figure, thin"
+      - "4 of 5 indicators current -- genuine infrastructure reach sitting uneasily beside the governance weakness Pillar A documents"
+    citations: [c13]
+
+recent:
+  primary:
+    - headline: "92-year-old Biya wins eighth term amid disputed results and deadly protests"
+      date: 2025-10-27
+      summary: >
+        Cameroon's Constitutional Council declared 92-year-old
+        President Paul Biya, in power since 1982, the winner of an
+        eighth term on 27 October 2025 with 53.66% of the vote.
+        Opposition candidate Issa Tchiroma Bakary, officially placed
+        second with 35.2%, rejected the result as fraudulent and
+        claimed victory himself. Security forces killed at least four
+        protesters in Douala on 26 October alone, as protests spread
+        across major cities.
+      why_it_matters: >
+        Directly explains Pillar A's severity and extends Biya's
+        rule, already the longest of any sitting African head of
+        state, to a potential 50 years by the end of this new term in
+        2032.
+      news_url: "https://www.npr.org/2025/10/27/nx-s1-5586685/cameroon-biya-old-africa-youth"
+      wikipedia_url: "https://en.wikipedia.org/wiki/Paul_Biya"
+      sentiment: negative
+    - headline: "Opposition leader flees into exile, files crimes-against-humanity complaint in Paris"
+      date: 2026-06-12
+      summary: >
+        Issa Tchiroma Bakary fled Cameroon for Nigeria days after the
+        disputed October 2025 election, was placed under house arrest
+        in Garoua before escaping, and has since been sheltered in
+        Nigeria and The Gambia after Nigerian authorities refused a
+        Cameroonian extradition request. On 12 June 2026, Tchiroma
+        filed a legal complaint with the Paris prosecutor's office
+        accusing Cameroonian authorities of crimes against humanity,
+        torture, arbitrary detention and extrajudicial executions
+        during the post-election crackdown.
+      why_it_matters: >
+        A still-unresolved accountability question nearly a year
+        after the election, and a rare case in this corpus of formal
+        international legal action initiated by an opposition figure
+        rather than only human-rights organizations.
+      news_url: "https://www.camer.be/93632/40:1/cameroun-issa-tchiroma-porte-plainte-a-paris-cameroon.html"
+      wikipedia_url: ""
+      sentiment: negative
+    - headline: "Malaria vaccine rollout shows measurable early gains"
+      date: 2026-05-03
+      summary: >
+        By 2026, roughly 60% of Cameroonian children had received at
+        least three doses of the routine malaria vaccine introduced
+        in January 2024, contributing to a documented 32% decline in
+        reported malaria cases between 2024 and 2025 and a
+        near-halving of malaria deaths among children under five,
+        according to WHO and Gavi reporting.
+      why_it_matters: >
+        A genuine, independently verified public-health gain credited
+        at full weight, arriving the same year as Pillar A's most
+        severe political crisis -- a reminder that state capacity in
+        one domain does not automatically track state capacity in
+        another.
+      news_url: "https://africanews.dz/eng/index.php/2026/05/03/cameroon-encouraging-progress-following-the-introduction-of-the-malaria-vaccine/"
+      wikipedia_url: ""
+      sentiment: positive
+  extended:
+    - headline: "Brief separatist ceasefire during papal visit collapses within days"
+      date: 2026-04-15
+      summary: >
+        A separatist alliance declared a three-day ceasefire from
+        15-17 April 2026 to coincide with Pope Leo XIV's visit to
+        Bamenda, the Anglophone Crisis's epicentre. Fresh clashes
+        resumed by 22 April, leaving soldiers and civilians dead,
+        following a decade in which Swiss (2019-2022) and Canadian
+        (2023) mediation attempts both collapsed and President Biya
+        rejected a May 2025 mediation offer from a group of former
+        African heads of state led by Thabo Mbeki.
+      why_it_matters: >
+        The closest the conflict has come to a negotiated pause in
+        years, immediately undercut by its own brevity -- a measure
+        of how far a genuine ceasefire remains from a durable peace
+        process.
+      news_url: "https://en.wikipedia.org/wiki/Timeline_of_the_Anglophone_Crisis_(2026)"
+      wikipedia_url: ""
+      sentiment: mixed
+
+events:
+  - year: 1961
+    type: election
+    title: "British Cameroons plebiscite splits north and south"
+    description: >
+      A UN-supervised plebiscite in February 1961 saw Southern
+      Cameroons vote to reunify with newly independent French
+      Cameroun, forming the Federal Republic of Cameroon, while
+      Northern Cameroons voted to join Nigeria instead.
+    url: "https://en.wikipedia.org/wiki/1961_British_Cameroons_referendum"
+    direction: mixed
+  - year: 1972
+    type: constitutional
+    title: "Referendum abolishes federalism"
+    description: >
+      A 20 May 1972 referendum, passed with an implausible 99.99% in
+      favour, abolished the federal structure that had given the
+      former British Southern Cameroons autonomy, folding it into a
+      unitary state -- the root grievance behind the 2016 Anglophone
+      Crisis.
+    url: "https://en.wikipedia.org/wiki/1972_Cameroonian_constitutional_referendum"
+    direction: deteriorate
+  - year: 2016
+    type: conflict
+    title: "The Anglophone Crisis begins"
+    description: >
+      Protests by Anglophone lawyers and teachers against
+      marginalisation met a violent government crackdown in late
+      2016, escalating into an armed separatist conflict that has
+      since killed more than 6,500 people and displaced over 600,000.
+    url: "https://en.wikipedia.org/wiki/Anglophone_Crisis"
+    direction: deteriorate
+  - year: 2025
+    type: election
+    title: "Biya wins a disputed eighth term"
+    description: >
+      The Constitutional Council declared 92-year-old Paul Biya the
+      winner of an eighth presidential term on 27 October 2025, a
+      result opposition candidate Issa Tchiroma Bakary rejected as
+      fraudulent, triggering deadly protests and his own flight into
+      exile.
+    url: "https://www.npr.org/2025/10/27/nx-s1-5586685/cameroon-biya-old-africa-youth"
+    direction: deteriorate
+
+citations:
+  - id: c1
+    url: "https://en.wikipedia.org/wiki/1961_British_Cameroons_referendum"
+    source_type: wikipedia
+    title: "1961 British Cameroons referendum"
+    accessed: 2026-08-11
+    verified: true
+  - id: c2
+    url: "https://en.wikipedia.org/wiki/1972_Cameroonian_constitutional_referendum"
+    source_type: wikipedia
+    title: "1972 Cameroonian constitutional referendum"
+    accessed: 2026-08-11
+    verified: true
+  - id: c3
+    url: "https://en.wikipedia.org/wiki/Paul_Biya"
+    source_type: wikipedia
+    title: "Paul Biya"
+    accessed: 2026-08-11
+    verified: true
+  - id: c4
+    url: "https://en.wikipedia.org/wiki/1984_Cameroonian_coup_attempt"
+    source_type: wikipedia
+    title: "1984 Cameroonian coup attempt"
+    accessed: 2026-08-11
+    verified: true
+  - id: c5
+    url: "https://en.wikipedia.org/wiki/Anglophone_Crisis"
+    source_type: wikipedia
+    title: "Anglophone Crisis"
+    accessed: 2026-08-11
+    verified: true
+  - id: c6
+    url: "https://www.globalr2p.org/countries/cameroon/"
+    source_type: news
+    title: "Cameroon (Global Centre for the Responsibility to Protect)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c7
+    url: "https://www.npr.org/2025/10/27/nx-s1-5586685/cameroon-biya-old-africa-youth"
+    source_type: news
+    title: "Cameroon's 92-year-old President wins 8th term amid protests (NPR)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c8
+    url: "https://www.aljazeera.com/news/2025/10/27/biya-declared-victor-of-cameroon-election-why-deadly-protests-broke-out"
+    source_type: news
+    title: "Biya declared victor of Cameroon election: Why deadly protests broke out (Al Jazeera)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c9
+    url: "https://www.africanews.com/2025/11/10/cameroon-tchiroma-gives-authorities-48-hour-ultimatum-to-release-post-election-detainees/"
+    source_type: news
+    title: "Cameroon: Tchiroma gives authorities 48-hour ultimatum to release post-election detainees (Africanews)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c10
+    url: "https://allafrica.com/stories/202511180211.html"
+    source_type: news
+    title: "Cameroon: Nigeria Refuses to Hand Over Bakary to Cameroon (AllAfrica)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c11
+    url: "https://www.camer.be/93632/40:1/cameroun-issa-tchiroma-porte-plainte-a-paris-cameroon.html"
+    source_type: news
+    title: "Cameroun : Issa Tchiroma porte plainte à Paris (Camer.be)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c12
+    url: "https://africanews.dz/eng/index.php/2026/05/03/cameroon-encouraging-progress-following-the-introduction-of-the-malaria-vaccine/"
+    source_type: news
+    title: "Cameroon: Encouraging Progress Following the Introduction of the Malaria Vaccine (Africanews.dz)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c13
+    url: "https://www.afdb.org/en/countries-central-africa-republic-cameroun/cameroon-economic-outlook"
+    source_type: official
+    title: "Cameroon Economic Outlook (African Development Bank)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c14
+    url: "https://en.wikipedia.org/wiki/Timeline_of_the_Anglophone_Crisis_(2026)"
+    source_type: wikipedia
+    title: "Timeline of the Anglophone Crisis (2026)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c15
+    url: "https://au.int/en/recs/eccas"
+    source_type: official
+    title: "ECCAS (African Union)"
+    accessed: 2026-08-11
+    verified: true
+
+rec_membership:
+  - org: ECCAS
+    joined: 1983
+    status: current
+    left: null
+    citations: [c15]
+
+balance:
+  n_positive: 1
+  n_negative: 2
+  n_mixed: 1
+  note: >
+    The disputed-election item and Tchiroma's exile/Paris-complaint
+    item are kept as two distinct negatives rather than merged into
+    one, because they document different things at different times: a
+    single disputed election result, and a still-unresolved
+    accountability question that continued escalating for nearly a
+    year afterward. The malaria-vaccine gain is credited at full
+    positive weight, independent of the same year's political crisis
+    -- the same standard this corpus applies to crediting a genuine
+    public-health or economic achievement without letting surrounding
+    political conduct discount it. The April 2026 ceasefire is coded
+    mixed rather than positive: a real, if brief, moment of
+    de-escalation that collapsed within days does not meet the bar
+    this record sets for a credited gain, but is not simply another
+    instance of the conflict's ordinary violence either.

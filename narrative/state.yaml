@@ -768,6 +768,36 @@ countries:
       rate and cocoa/coffee export gains continue into fresh index
       data; check whether Pillars E/F/G thin indicators gain fresh
       coverage; check if Pillar C has gained coverage'
+  CMR:
+    name: Cameroon
+    region: Central
+    first_pass: false
+    reason: twenty-ninth backlog country -- fills Central Africa, now
+      the corpus's lowest region proportionally (5 of 8 done before
+      this run); a striking continuity with TGO, the immediately
+      preceding country -- the same German colony split between
+      France and Britain after WWI, but where Togo's split became
+      permanent, Cameroon's 1961 reunification held for a decade
+      before a 99.99%-margin 1972 referendum abolished the federal
+      structure that had given the Anglophone territories autonomy,
+      the direct traceable root of the 2016 Anglophone Crisis
+      (6,500+ killed, 600,000+ displaced); Paul Biya, in power since
+      1982, is Africa's oldest and longest-serving current head of
+      state, and a disputed October 2025 election extending his rule
+      to a potential 50 years produced deadly protests and opposition
+      leader Tchiroma's flight into exile; a genuine positive (32%
+      malaria case decline from a 2024 vaccine rollout) credited
+      alongside the unfolding political and separatist crises
+    iteration_count: 1
+    last_updated: '2026-08-11'
+    next_action: 'EXPAND: follow whether Tchiroma''s June 2026 Paris
+      legal complaint produces any investigation or diplomatic
+      consequence; follow whether the Anglophone Crisis sees any
+      further ceasefire attempt, or reverts fully to the
+      pre-April-2026 pattern; follow whether Biya''s health or
+      succession planning becomes a more prominent story before 2032;
+      check whether Pillars B/E/F thin or carried-forward indicators
+      gain fresh coverage; check if Pillar C has gained coverage'
 backlog:
   LBY:
     name: Libya
@@ -820,14 +850,6 @@ backlog:
   SEN:
     name: Senegal
     region: West
-    first_pass: false
-    reason: not yet scheduled
-    iteration_count: 0
-    last_updated: null
-    next_action: create baseline from blueprint
-  CMR:
-    name: Cameroon
-    region: Central
     first_pass: false
     reason: not yet scheduled
     iteration_count: 0
@@ -1959,3 +1981,40 @@ meta_notes:
   Full pytest suite: 106 passed. Full-corpus check: 0 errors, 2
   pre-existing warnings (COD, EGY all-negative balance, unrelated to
   this run). 37 of 54 countries now have a record.'
+- '2026-08-11: CMR CREATE run complete (15 sources opened and
+  verified: 7 Wikipedia, 6 news, 1 official/AfDB, 1 official/AU).
+  Fills Central Africa, now the corpus''s lowest region proportionally
+  (6 of 8 done after this run). A striking continuity with TGO, the
+  immediately preceding run: the same German colony split between
+  France and Britain after WWI, but the two records diverge sharply
+  from there -- Togo''s split became permanent, while Cameroon''s 1961
+  reunification held for a decade before a 20 May 1972 referendum,
+  passed with an implausible 99.99% margin, abolished the federal
+  structure that had given the Anglophone southwest/northwest
+  autonomy. colonial_legacy traces the mechanism precisely: the 1961
+  merger itself did not cause conflict, since federal autonomy was
+  real; the 1972 referendum is the specific, dateable decision that
+  erased it, and is the direct traceable root of the 2016 Anglophone
+  Crisis (6,500+ killed, 600,000+ displaced, still active with a
+  brief April 2026 ceasefire during a papal visit collapsing within
+  days). Paul Biya, in power since 1982, is Africa''s oldest and
+  longest-serving current head of state; a disputed 27 October 2025
+  election extending his rule toward a potential 50 years produced
+  deadly protests and opposition leader Tchiroma''s flight into exile,
+  followed by a June 2026 crimes-against-humanity complaint filed in
+  Paris -- kept as two distinct negatives (the disputed result itself,
+  then the still-unresolved accountability question) rather than
+  merged into one. Pillar F is a genuine partial hydropower-achievement
+  case, closer to AGO/ETH''s blend pattern than to STP/TGO''s
+  small-economy artefact pattern documented in the two immediately
+  preceding runs. Following the established discipline, found a
+  genuine positive: a malaria-vaccine rollout begun in January 2024
+  produced a documented 32% case decline by 2025, credited at full
+  weight independent of the same year''s political crisis. Balance: 1
+  positive, 2 negative, 1 mixed. Four word-count fixes (pillars.B, E,
+  F, G, all 70-77->80+), each resolved by adding real cross-pillar
+  facts rather than padding. `--links` passes 0 errors, 0 warnings --
+  15/15 resolved, a clean link check. Full pytest suite: 106 passed.
+  Full-corpus check: 0 errors, 2 pre-existing warnings (COD, EGY
+  all-negative balance, unrelated to this run). 38 of 54 countries
+  now have a record.'

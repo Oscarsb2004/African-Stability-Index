@@ -26,7 +26,7 @@ An audit is forced early if a single run inflates the citation count by more tha
 
 ## Status
 
-**37 of 54 countries have a record (Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria, Rwanda, Chad, Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic, Mauritania, Zimbabwe, Comoros, Uganda, Sierra Leone, Equatorial Guinea, The Gambia, Mozambique, Guinea, South Sudan, Lesotho, Sao Tome & Principe, Togo). The first pass is complete; Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic, Mauritania, Zimbabwe, Comoros, Uganda, Sierra Leone, Equatorial Guinea, The Gambia, Mozambique, Guinea, South Sudan, Lesotho, Sao Tome & Principe and Togo are the first twenty-eight backlog countries.**
+**38 of 54 countries have a record (Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria, Rwanda, Chad, Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic, Mauritania, Zimbabwe, Comoros, Uganda, Sierra Leone, Equatorial Guinea, The Gambia, Mozambique, Guinea, South Sudan, Lesotho, Sao Tome & Principe, Togo, Cameroon). The first pass is complete; Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic, Mauritania, Zimbabwe, Comoros, Uganda, Sierra Leone, Equatorial Guinea, The Gambia, Mozambique, Guinea, South Sudan, Lesotho, Sao Tome & Principe, Togo and Cameroon are the first twenty-nine backlog countries.**
 
 ### First pass — 9 countries
 
@@ -79,14 +79,15 @@ whose ranks swing hardest with the weighting method.
 | LSO | Lesotho | fills Southern Africa's remaining gap (4 of 5 done); the only country in the corpus entirely enclosed by another (South Africa); a colonial mechanism distinct from most of the corpus -- Moshoeshoe I requested British protection in 1868 to prevent Boer annexation, not because Britain sought to extract the territory; a triple cross-reference with ZAF and BWA (the 1998 SADC intervention, Operation Boleas, was led by South Africa and joined by Botswana); a genuine positive (reaching all three UNAIDS 95-95-95 HIV targets by end-2024) on the same standard as BWA's own HIV/AIDS achievement; the corpus's sharpest single-country trade-shock case (April 2025's 50% US tariff collapsed the textile sector) | **done — iteration 1** |
 | STP | Sao Tome & Principe | fills the Islands region, now the corpus's lowest proportionally (4 of 5 done); the longest colonial period in the corpus (490 years, Portugal from 1485, surpassing MOZ's 477); a distinctive colonial angle -- the early-1900s "cocoa slavery" scandal, in which nominally-free contract labourers were documented as enslaved in all but name, triggering a Cadbury boycott around 1909; a naturally positive-skewed record (Pillar A and E both among the strongest in this corpus); Pillar F explicitly contrasted against LSO's genuine hydropower case as a wealth-proxy, not achievement; a live current-events thread -- July 2026's election, in which an incumbent won as an independent after splitting from his own former ruling party | **done — iteration 1** |
 | TGO | Togo | fills West Africa's remaining gap (11 of 16 done); the corpus's most procedurally sophisticated entrenchment mechanism yet -- a May 2024 constitution converted Togo to a parliamentary system, and in May 2025 Faure Gnassingbé was sworn in as a new, term-limit-free "President of the Council of Ministers", entrenching a dynasty ruling since his father's 1967 coup; a genuine cross-reference with GHA -- a 1956 plebiscite attached British Togoland to Ghana rather than reunifying it with French Togo, permanently splitting the Ewe people; a genuine positive (50% coffee/cocoa export growth, Port of Lomé's regional lead) credited alongside the deadly June 2025 crackdown on protests against the overhaul | **done — iteration 1** |
+| CMR | Cameroon | fills Central Africa, now the corpus's lowest region proportionally (6 of 8 done); a striking continuity with TGO -- the same German colony split between France and Britain after WWI, but Cameroon's 1961 reunification held for a decade before a 99.99%-margin 1972 referendum abolished the federal structure that gave the Anglophone territories autonomy, the direct traceable root of the 2016 Anglophone Crisis (6,500+ killed, 600,000+ displaced); Paul Biya, in power since 1982, is Africa's oldest and longest-serving head of state, and a disputed October 2025 election produced deadly protests and opposition leader Tchiroma's flight into exile; a genuine positive (32% malaria case decline from a 2024 vaccine rollout) credited alongside the unfolding crises | **done — iteration 1** |
 
-### Backlog — the remaining 17
+### Backlog — the remaining 16
 
 Listed in full in `narrative/state.yaml` under `backlog`. They are recorded
 explicitly rather than left implicit: a country with no record should be visibly
 absent, not quietly missing.
 
-Libya, Tunisia, Benin, Cabo Verde, Guinea-Bissau, Cote d'Ivoire, Senegal, Cameroon, Republic of Congo, Gabon, Burundi, Djibouti, Malawi, Tanzania, Zambia, Eswatini, Seychelles
+Libya, Tunisia, Benin, Cabo Verde, Guinea-Bissau, Cote d'Ivoire, Senegal, Republic of Congo, Gabon, Burundi, Djibouti, Malawi, Tanzania, Zambia, Eswatini, Seychelles
 
 ---
 
@@ -1307,6 +1308,43 @@ Append one line per run: date, country, mode, what changed, what was removed.
   and AllAfrica, familiar 403 bot-detection pattern) — 11/13 resolved.
   Full pytest suite: 106 passed.
 
+- **2026-08-11 — CMR — CREATE. Twenty-ninth backlog country, fills
+  Central Africa, now the corpus's lowest region proportionally (6 of
+  8 done).** Full baseline built: historical overview, colonial
+  legacy (traces the Anglophone Crisis to a specific, dateable
+  post-colonial decision rather than the colonial partition itself —
+  the 1961 reunification gave the former British Southern Cameroons
+  genuine federal autonomy, and it was Ahidjo's 20 May 1972
+  referendum, passed with an implausible 99.99% margin, that abolished
+  that structure and folded the Anglophone territories into a unitary
+  state), 4 key_periods, 6 pillar summaries (Pillar C left empty —
+  greyed at 1/8 measured), 3 primary + 1 extended recent items, 4
+  events, rec_membership (ECCAS 1983 founding member). 15 sources
+  opened and verified: 7 Wikipedia, 6 news, 1 official/AfDB, 1
+  official/AU. A striking continuity with TGO, the immediately
+  preceding run: the same German colony split between France and
+  Britain after WWI, but the two records diverge from there — Togo's
+  split became permanent, Cameroon's did not, only to produce its own
+  crisis decades later through a different mechanism. Paul Biya, in
+  power since 1982, is Africa's oldest and longest-serving current
+  head of state; a disputed 27 October 2025 election extending his
+  rule toward a potential 50 years produced deadly protests and
+  opposition leader Tchiroma's flight into exile, followed by a June
+  2026 crimes-against-humanity complaint filed in Paris — kept as two
+  distinct negatives (the disputed result, then the still-unresolved
+  accountability question) rather than merged into one. Pillar F is a
+  genuine partial hydropower-achievement case, closer to AGO/ETH's
+  blend pattern than to STP/TGO's small-economy artefact pattern
+  documented in the two immediately preceding runs. Following the
+  established discipline, found a genuine positive: a malaria-vaccine
+  rollout begun in January 2024 produced a documented 32% case decline
+  by 2025, credited at full weight independent of the same year's
+  political crisis. Balance: 1 positive, 2 negative, 1 mixed. Four
+  word-count fixes (pillars.B, E, F, G, all 70-77→80+), each resolved
+  by adding real cross-pillar facts rather than padding. `--links`
+  passes 0 errors, 0 warnings — 15/15 resolved, a clean link check.
+  Full pytest suite: 106 passed.
+
 ---
 
 ## Meta-notes
@@ -1977,6 +2015,24 @@ Things a future run should know about how to work, not about a specific country.
   pass to see whether the 1956 plebiscite is already documented from
   Ghana's own side, and added if not — the same lesson MOZ's run
   drew about not waiting for a deliberately-engineered pairing.
+- **2026-08-11** — CMR sharpens a distinction worth generalizing for
+  colonial partition cases: a colonial-era border split (Germany's
+  80/20 France/Britain division) is not, by itself, a sufficient
+  explanation for a later crisis if a genuine post-colonial remedy
+  (1961's federal reunification) existed and was later deliberately
+  undone (1972's referendum). The temptation is to write
+  colonial_legacy as "colonial partition caused this conflict" in one
+  step; the more accurate and more useful claim, here and probably in
+  other partition cases still in the backlog (Cameroon and Togo both
+  done now; watch for this again in any remaining former-German or
+  multiply-partitioned territory), is to locate the specific
+  post-colonial decision that closed off the remedy the reunification
+  had created. Also: CMR's 99.99% 1972 referendum result is now the
+  second implausible near-unanimous vote in this corpus after BFA's
+  1932 dissolution-era precedent and others; worth eventually
+  compiling a running list of these results across the corpus as a
+  distinct governance-fabrication marker, separate from ordinary
+  election-fraud allegations.
 
 ---
 
