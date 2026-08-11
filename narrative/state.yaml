@@ -679,6 +679,36 @@ countries:
       Sudan is ever established, nearly a decade after it was first
       proposed; check whether Pillars B, C or F ever gain enough data
       to be scored; check if Pillar C has gained coverage'
+  LSO:
+    name: Lesotho
+    region: South
+    first_pass: false
+    reason: twenty-sixth backlog country -- fills Southern Africa's
+      remaining gap (4 of 5 done); the only country in the corpus
+      entirely enclosed by another (South Africa), a colonial mechanism
+      distinct from most of the corpus -- Moshoeshoe I requested
+      British protection in 1868 specifically to prevent Boer
+      annexation, not because Britain sought to extract the territory;
+      a triple cross-reference with ZAF and BWA (the 1998 SADC
+      military intervention, Operation Boleas, was led by South Africa
+      and joined by Botswana); a genuine, independently verified
+      positive (reaching all three UNAIDS 95-95-95 HIV treatment
+      targets by end-2024) on the same standard as BWA's own HIV/AIDS
+      achievement, credited despite Pillar D's otherwise weak
+      aggregate; the corpus's sharpest single-country trade-shock case
+      (April 2025's 50% US tariff collapsed the textile sector,
+      triggering a two-year State of Disaster)
+    iteration_count: 1
+    last_updated: '2026-08-11'
+    next_action: 'EXPAND: follow whether the two-year State of
+      Disaster over the textile-industry collapse produces measurable
+      job recovery by its June 2027 expiry; follow whether the
+      African Development Bank complaint over Highlands Water Project
+      Phase II compensation produces a resolution, and whether Phase
+      II stays on schedule for 2028/29 water delivery; check whether
+      Matekane''s coalition survives further no-confidence attempts;
+      check whether Lesotho''s 95-95-95 HIV treatment achievement is
+      sustained past 2024; check if Pillar C has gained coverage'
 backlog:
   LBY:
     name: Libya
@@ -803,14 +833,6 @@ backlog:
   ZMB:
     name: Zambia
     region: East
-    first_pass: false
-    reason: not yet scheduled
-    iteration_count: 0
-    last_updated: null
-    next_action: create baseline from blueprint
-  LSO:
-    name: Lesotho
-    region: South
     first_pass: false
     reason: not yet scheduled
     iteration_count: 0
@@ -1776,3 +1798,45 @@ meta_notes:
   Full pytest suite: 106 passed. Full-corpus check: 0 errors, 2
   pre-existing warnings (COD, EGY all-negative balance, unrelated to
   this run). 34 of 54 countries now have a record.'
+- '2026-08-11: LSO CREATE run complete (14 sources opened and verified:
+  6 Wikipedia, 6 news, 1 official/SADC, 1 official/UNAIDS). Fills
+  Southern Africa (4 of 5 done after this run). Lesotho is the only
+  country in the corpus entirely enclosed by another (South Africa), a
+  colonial mechanism distinct from most of this corpus: Moshoeshoe I
+  requested British protection in 1868 specifically to prevent Boer
+  annexation of Basotho territory, not because Britain sought to
+  extract it -- colonial_legacy argues the mechanism that mattered most
+  for Lesotho''s long-term trajectory was geography, not extraction,
+  since British protection fixed the enclave that still shapes
+  Lesotho''s economy today (migrant labour to South African mines, and
+  now the Lesotho Highlands Water Project supplying Gauteng). Opens a
+  triple cross-reference with ZAF and BWA: the 1998 SADC military
+  intervention (Operation Boleas), which killed at least 113 people and
+  destroyed roughly 80% of Maseru''s commercial infrastructure, was
+  led by South Africa and joined by Botswana, both already documented
+  in this corpus. Pillar F confirms a genuine (not wealth-proxy)
+  clean-energy case: electricity generation is barely 0.2% fossil-fuel,
+  powered by the Muela hydropower station that is part of the same
+  Highlands Water Project exporting water to South Africa. Following
+  the established discipline, found a genuine positive: Lesotho
+  reached all three UNAIDS 95-95-95 HIV treatment targets by end-2024,
+  credited at full weight on the same standard as BWA''s own gold-tier
+  HIV/AIDS achievement already in this corpus, despite Pillar D''s
+  otherwise weak aggregate (the world''s second-highest HIV
+  prevalence). The dominant negative is current and severe: an April
+  2025 US tariff of 50%, the highest imposed on any country, collapsed
+  Lesotho''s textile sector (its largest private employer, ~75% of
+  exports), triggering a two-year State of Disaster. The Highlands
+  Water Project Phase II item is coded mixed rather than positive: real
+  infrastructure achievement credited in Pillars F and G sits alongside
+  a real, ongoing pattern of inadequate compensation for displaced
+  communities, documented together rather than letting one overshadow
+  the other. Balance: 1 positive, 1 negative, 2 mixed. Clean first
+  pass except one schema catch: the 1868 British-protection event used
+  an invalid `type: colonial`, not in schema.py''s EventType enum;
+  fixed by using `constitutional` instead. `--links` passes 0 errors, 2
+  warnings (informativenews.co.ls and AllAfrica, familiar 403
+  bot-detection pattern) -- 12/14 resolved. Full pytest suite: 106
+  passed. Full-corpus check: 0 errors, 2 pre-existing warnings (COD,
+  EGY all-negative balance, unrelated to this run). 35 of 54 countries
+  now have a record.'

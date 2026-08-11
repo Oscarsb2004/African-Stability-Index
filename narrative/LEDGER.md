@@ -26,7 +26,7 @@ An audit is forced early if a single run inflates the citation count by more tha
 
 ## Status
 
-**34 of 54 countries have a record (Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria, Rwanda, Chad, Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic, Mauritania, Zimbabwe, Comoros, Uganda, Sierra Leone, Equatorial Guinea, The Gambia, Mozambique, Guinea, South Sudan). The first pass is complete; Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic, Mauritania, Zimbabwe, Comoros, Uganda, Sierra Leone, Equatorial Guinea, The Gambia, Mozambique, Guinea and South Sudan are the first twenty-five backlog countries.**
+**35 of 54 countries have a record (Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria, Rwanda, Chad, Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic, Mauritania, Zimbabwe, Comoros, Uganda, Sierra Leone, Equatorial Guinea, The Gambia, Mozambique, Guinea, South Sudan, Lesotho). The first pass is complete; Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic, Mauritania, Zimbabwe, Comoros, Uganda, Sierra Leone, Equatorial Guinea, The Gambia, Mozambique, Guinea, South Sudan and Lesotho are the first twenty-six backlog countries.**
 
 ### First pass — 9 countries
 
@@ -76,14 +76,15 @@ whose ranks swing hardest with the weighting method.
 | MOZ | Mozambique | fills East Africa (7 of 14 done); longest continuous colonial period in this corpus (477 years, Portugal from 1498); RENAMO documented as literally created by the same Rhodesian intelligence service already in ZWE's Bush War record, then continued by apartheid South Africa; SADCC Frontline State founding (1980) cross-references ZAF's own apartheid record; the most lethal single post-election-violence episode recorded here yet (300+ killed, Amnesty International); a genuine positive (Oct 2025 FATF grey-list exit) shared the same review with ZAF/NGA/BFA already in this corpus | **done — iteration 1** |
 | GIN | Guinea | fills West Africa (10 of 16 done); the most distinctive decolonisation mechanism in the corpus -- the only French African colony to vote "Non" in the 1958 referendum, met with France's punitive infrastructure-destroying withdrawal rather than a negotiated transition; Guinea's two most severe periods of state violence (French retaliation, then Sékou Touré's Camp Boiro) fall within two years of each other; Pillar D greyed alongside C, the third corpus case of a second non-C pillar unwritten (after ERI, GNQ); a genuine positive (Simandou's first iron-ore shipment, Dec 2025, decades in the making) credited independent of Doumbouya's broken no-candidacy promise and Camara's pardon | **done — iteration 1** |
 | SSD | South Sudan | fills East Africa's biggest proportional gap (9 of 14 done); the world's newest country (2011), cross-referencing SDN directly (SSD's oil exports depend on Sudanese pipelines repeatedly disrupted by Sudan's own civil war); a colonial mechanism distinct from every other case in the corpus -- Britain's "Southern Policy" administered the south separately, then handed it to Khartoum without southern consent at 1956 Sudanese independence; the second corpus case, after ERI, of three non-C pillars greyed entirely (B, C, F); two new corpus superlatives, both directly measured (severe food insecurity 63.10%, displaced persons 97.62/1,000); a genuine positive (Dec 2025 tripartite oil-security agreement) credited alongside the unfolding Machar-arrest/Jonglei-offensive crisis | **done — iteration 1** |
+| LSO | Lesotho | fills Southern Africa's remaining gap (4 of 5 done); the only country in the corpus entirely enclosed by another (South Africa); a colonial mechanism distinct from most of the corpus -- Moshoeshoe I requested British protection in 1868 to prevent Boer annexation, not because Britain sought to extract the territory; a triple cross-reference with ZAF and BWA (the 1998 SADC intervention, Operation Boleas, was led by South Africa and joined by Botswana); a genuine positive (reaching all three UNAIDS 95-95-95 HIV targets by end-2024) on the same standard as BWA's own HIV/AIDS achievement; the corpus's sharpest single-country trade-shock case (April 2025's 50% US tariff collapsed the textile sector) | **done — iteration 1** |
 
-### Backlog — the remaining 20
+### Backlog — the remaining 19
 
 Listed in full in `narrative/state.yaml` under `backlog`. They are recorded
 explicitly rather than left implicit: a country with no record should be visibly
 absent, not quietly missing.
 
-Libya, Tunisia, Benin, Cabo Verde, Guinea-Bissau, Cote d'Ivoire, Senegal, Togo, Cameroon, Republic of Congo, Gabon, Burundi, Djibouti, Malawi, Tanzania, Zambia, Lesotho, Eswatini, Seychelles, Sao Tome & Principe
+Libya, Tunisia, Benin, Cabo Verde, Guinea-Bissau, Cote d'Ivoire, Senegal, Togo, Cameroon, Republic of Congo, Gabon, Burundi, Djibouti, Malawi, Tanzania, Zambia, Eswatini, Seychelles, Sao Tome & Principe
 
 ---
 
@@ -1180,6 +1181,48 @@ Append one line per run: date, country, mode, what changed, what was removed.
   bot-detection warning rather than an error. Full pytest suite: 106
   passed.
 
+- **2026-08-11 — LSO — CREATE. Twenty-sixth backlog country, fills
+  Southern Africa's remaining gap (4 of 5 done).** Full baseline
+  built: historical overview, colonial legacy (Moshoeshoe I requested
+  British protection in 1868 specifically to prevent Boer annexation
+  of Basotho territory, not because Britain sought to extract it --
+  argues the mechanism that mattered most for Lesotho's trajectory was
+  geography, not extraction, since British protection fixed the
+  enclave that still shapes the economy today), 4 key_periods, 6
+  pillar summaries (Pillar C left empty — greyed at 1/8 measured), 3
+  primary + 1 extended recent items, 4 events, rec_membership (SADC
+  1980 founding member via SADCC). 14 sources opened and verified: 6
+  Wikipedia, 6 news, 1 official/SADC, 1 official/UNAIDS. Lesotho is
+  the only country in the corpus entirely enclosed by another (South
+  Africa). Opens a triple cross-reference with ZAF and BWA: the 1998
+  SADC military intervention (Operation Boleas), which killed at
+  least 113 people and destroyed roughly 80% of Maseru's commercial
+  infrastructure, was led by South Africa and joined by Botswana,
+  both already documented in this corpus. Pillar F confirms a
+  genuine, not wealth-proxy, clean-energy case: electricity
+  generation is barely 0.2% fossil-fuel, powered by the Muela
+  hydropower station that is part of the same Highlands Water Project
+  exporting water to South Africa. Following the established
+  discipline, found a genuine positive: Lesotho reached all three
+  UNAIDS 95-95-95 HIV treatment targets by end-2024, credited at full
+  weight on the same standard as BWA's own gold-tier HIV/AIDS
+  achievement already in this corpus, despite Pillar D's otherwise
+  weak aggregate (the world's second-highest HIV prevalence). The
+  dominant negative is current and severe: an April 2025 US tariff of
+  50%, the highest imposed on any country, collapsed Lesotho's
+  textile sector (its largest private employer, ~75% of exports),
+  triggering a two-year State of Disaster. The Highlands Water
+  Project Phase II item is coded mixed rather than positive: real
+  infrastructure achievement credited in Pillars F and G sits
+  alongside a real, ongoing pattern of inadequate compensation for
+  displaced communities. Balance: 1 positive, 1 negative, 2 mixed.
+  Clean first pass except one schema catch: the 1868 British-
+  protection event initially used an invalid `type: colonial`, not in
+  schema.py's EventType enum; fixed by using `constitutional` instead.
+  `--links` passes 0 errors, 2 warnings (informativenews.co.ls and
+  AllAfrica, familiar 403 bot-detection pattern) — 12/14 resolved.
+  Full pytest suite: 106 passed.
+
 ---
 
 ## Meta-notes
@@ -1799,6 +1842,23 @@ Things a future run should know about how to work, not about a specific country.
   cross-reference worth watching for elsewhere (e.g. landlocked
   countries whose exports run through a neighbour already in this
   corpus).
+- **2026-08-11** — LSO is the corpus's cleanest example yet of a
+  single piece of infrastructure appearing in three different places
+  at once and meaning something different each time: the Lesotho
+  Highlands Water Project is Pillar F's genuine clean-energy evidence
+  (Muela hydropower), part of Pillar G's electricity-access figure,
+  and a recent.primary item about unresolved community displacement,
+  all the same project. Cross-referencing it across all three
+  locations in its own prose, rather than only in one pillar or only
+  in recent developments, made the record more honest than treating
+  it as three separate facts would have. Also worth naming: LSO is
+  now the third country (after ZAF, BWA) implicated in the 1998 SADC
+  intervention in a single country's own record -- a genuinely
+  three-way cross-reference, the corpus's first, rather than the
+  usual pairs (LBR/SLE, GNQ/GMB, MOZ/ZWE, MOZ/ZAF, EGY/ETH, ETH/ERI,
+  TCD/SDN, SDN/SSD). Future EXPAND passes on ZAF and BWA should check
+  whether Operation Boleas is already documented from their own side,
+  and add it if not.
 
 ---
 

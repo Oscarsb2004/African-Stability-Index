@@ -1,0 +1,466 @@
+meta:
+  iso3: LSO
+  name: Lesotho
+  last_updated: 2026-08-11
+  iteration_count: 1
+  next_action: >
+    EXPAND: (1) follow whether the two-year State of Disaster over the
+    textile-industry collapse produces measurable job recovery by its
+    June 2027 expiry; (2) follow whether the African Development Bank
+    complaint over Highlands Water Project Phase II compensation
+    produces a resolution, and whether Phase II stays on schedule for
+    2028/29 water delivery; (3) check whether Matekane's coalition
+    survives further no-confidence attempts; (4) check whether
+    Lesotho's 95-95-95 HIV treatment achievement is sustained past
+    2024; (5) check if Pillar C has gained coverage.
+  model_used: claude-sonnet-5
+
+historical:
+  overview: >
+    Paramount chief Moshoeshoe I united scattered Sotho communities,
+    dispersed by Zulu and Ndebele raids, into the Basotho nation in
+    the early 19th century. From 1858, his kingdom fought a series of
+    wars against Boer settlers from the Orange Free State over land,
+    culminating in the 1865-1868 Seqiti War, in which Boer forces
+    overran most of Moshoeshoe's territory. Rather than be absorbed
+    into the Boer republic, Moshoeshoe petitioned Britain for
+    protection, and on 12 March 1868 Basutoland became a British
+    protectorate, fixing the country's current borders and, crucially,
+    keeping it separate from the territory that would later become
+    South Africa. Britain governed through indirect rule, preserving
+    Sotho chieftaincy structures, until Basutoland became independent
+    as the Kingdom of Lesotho on 4 October 1966. Independence brought
+    instability rather than stability: Prime Minister Leabua Jonathan
+    annulled the 1970 election when his party lost and ruled by decree
+    for sixteen years, until a 1986 military coup led by General
+    Justin Lekhanya installed King Moshoeshoe II with executive power.
+    Democracy returned in 1993, but collapsed again after the 1998
+    election: when the ruling party won 79 of 80 seats amid fraud
+    allegations, rioting broke out and South African and Botswanan
+    troops entered Lesotho under SADC's banner in Operation Boleas,
+    killing at least 113 people and destroying roughly 80% of the
+    capital Maseru's commercial infrastructure. In 2022, political
+    outsider Sam Matekane's seven-month-old Revolution for Prosperity
+    party won power in a peaceful election, forming a coalition
+    government that has since had to fight off a 2023 no-confidence
+    attempt and, in 2025, a devastating US tariff that collapsed
+    Lesotho's textile industry.
+  overview_citations: [c1, c2, c3, c4, c5, c6, c7]
+  colonial_legacy: >
+    context/colonial_history.yaml documents a colonial mechanism
+    distinct from most of this corpus: Moshoeshoe I requested British
+    protection in 1868 specifically to prevent Boer annexation of
+    Basotho territory, not because Britain sought to extract it.
+    Britain accepted for its own reasons -- regional stability along
+    the Cape Colony's frontier -- and then governed largely through
+    indirect rule, preserving Sotho chieftaincy structures rather than
+    dismantling them, and colonial_history.yaml records no slave
+    trade. The mechanism that mattered most for Lesotho's long-term
+    trajectory was not extraction but geography: British protection
+    fixed Lesotho's borders as a landlocked enclave entirely
+    surrounded by what would become South Africa, permanently
+    separating it from the territory it might otherwise have been
+    absorbed into. That enclosure produced the two resources
+    colonial_history.yaml lists in place of the corpus's usual
+    minerals or cash crops -- labour for South African mines and water
+    -- and both still define Lesotho's economy today: generations of
+    Basotho men migrated to the Witwatersrand's gold mines, and the
+    Lesotho Highlands Water Project now supplies South Africa's
+    Gauteng province under a binational treaty, documented further
+    under recent developments.
+  colonial_legacy_citations: [c1, c2]
+  key_periods:
+    - title: "Moshoeshoe I, the Basotho Wars, and British protection"
+      period: "1822-1868"
+      summary: >
+        Paramount chief Moshoeshoe I united scattered Sotho communities
+        into the Basotho nation in the early 19th century. From 1858,
+        his kingdom fought a series of wars against Boer settlers from
+        the Orange Free State, culminating in the 1865-1868 Seqiti War,
+        in which Boer forces overran most of his territory. Moshoeshoe
+        petitioned Britain for protection, and on 12 March 1868
+        Basutoland became a British protectorate, fixing Lesotho's
+        current borders and separating it from the future South Africa.
+      citations: [c1, c2]
+    - title: "Independence and the coup era"
+      period: "1966-1993"
+      summary: >
+        Basutoland became independent as the Kingdom of Lesotho on 4
+        October 1966. Prime Minister Leabua Jonathan annulled the 1970
+        election when his party lost and ruled by decree for sixteen
+        years, until a 1986 military coup led by General Justin
+        Lekhanya installed King Moshoeshoe II with executive power.
+        Multiparty democracy returned in 1993.
+      citations: [c3, c4]
+    - title: "The 1998 election crisis and Operation Boleas"
+      period: "1998"
+      summary: >
+        After the ruling party won 79 of 80 seats in the 1998 election
+        amid fraud allegations, rioting broke out in Maseru and South
+        African and Botswanan troops entered Lesotho under SADC's
+        banner in Operation Boleas. At least 113 people were killed and
+        roughly 80% of Maseru's commercial infrastructure was destroyed
+        before the elected government was restored.
+      citations: [c5, c6]
+    - title: "Matekane's coalition government"
+      period: "2022-2025"
+      summary: >
+        Political outsider Sam Matekane's seven-month-old Revolution
+        for Prosperity party won power in a peaceful October 2022
+        election, forming a coalition government that survived a 2023
+        no-confidence attempt and a February 2024 Constitutional Court
+        ruling striking down an amendment designed to blunt such
+        challenges, before a devastating US tariff collapsed Lesotho's
+        textile industry in 2025.
+      citations: [c7, c8, c9]
+
+pillars:
+  A:
+    summary: >
+      All six World Governance Indicators are directly measured this
+      year, and the aggregate is Lesotho's strongest pillar -- Voice
+      and Accountability (65.6) and Political Stability (67.3) are the
+      standouts, reflecting a functioning multiparty democracy where a
+      2022 election brought political outsider Sam Matekane's
+      Revolution for Prosperity party to power within seven months of
+      its founding. That stability has been tested rather than assumed
+      since: opposition parties attempted a no-confidence vote against
+      Matekane in 2023, and Lesotho's Constitutional Court struck down
+      an amendment in 2024 that would have let a prime minister be
+      removed without triggering a snap election -- a check this record
+      reads as democratic institutions functioning under real strain
+      rather than failing.
+    drivers:
+      - "all 6 WGI indicators directly measured; Voice and Accountability (65.6) and Political Stability (67.3) the standouts -- Lesotho's strongest pillar"
+      - "2022: political outsider Sam Matekane's Revolution for Prosperity party won power within 7 months of its founding, forming a coalition government"
+      - "2023-2024: a no-confidence attempt and a Constitutional Court ruling striking down an amendment designed to blunt such challenges -- democratic checks functioning under strain, not failing"
+    citations: [c7, c8]
+  B:
+    summary: >
+      GDP growth, GDP per capita, inflation and domestic credit, all
+      freshly measured, sit in a middling range for this corpus. Gini
+      is absent, unmeasured this year. This pillar's 2023 reference
+      year predates the single sharpest economic shock in Lesotho's
+      modern history: a 50% US tariff imposed in April 2025 devastated
+      the textile sector, the country's largest private employer and
+      source of roughly three-quarters of its exports, pushing youth
+      unemployment toward 50% and prompting a two-year national State
+      of Disaster declared that July.
+    drivers:
+      - "GDP growth, GDP per capita, inflation, domestic credit all fresh, middling for this corpus; Gini absent, unmeasured"
+      - "2023 reference year predates April 2025's 50% US tariff, which devastated the textile sector -- Lesotho's largest private employer and ~75% of exports"
+      - "youth unemployment pushed toward 50%; a two-year national State of Disaster declared July 2025 (see recent developments)"
+    citations: [c10]
+  D:
+    summary: >
+      All five indicators are directly measured this year, and the
+      aggregate is weak: life expectancy and infant mortality both
+      score poorly, consistent with a disease burden this record's
+      recent developments trace to Lesotho's HIV epidemic -- the
+      world's second-highest prevalence, at roughly one in five
+      adults. Severe food insecurity and handwashing-facility access
+      are similarly weak. Safely managed drinking water is
+      comparatively the strongest of the five, though still thin. This
+      pillar's low aggregate sits awkwardly beside a genuine,
+      independently verified achievement: Lesotho reached all three
+      UNAIDS 95-95-95 HIV treatment targets by the end of 2024,
+      credited in full under recent developments rather than left
+      implicit in this pillar's raw numbers.
+    drivers:
+      - "all 5 indicators directly measured; life expectancy and infant mortality both weak, consistent with the world's second-highest HIV prevalence (~1 in 5 adults)"
+      - "severe food insecurity and handwashing access also weak; safely managed water comparatively the strongest of the five, still thin"
+      - "this pillar's raw numbers don't yet reflect Lesotho reaching all three UNAIDS 95-95-95 HIV treatment targets by end-2024 (see recent developments)"
+    citations: [c11]
+  E:
+    summary: >
+      Political Stability and Rule of Law, both fresh and shared with
+      Pillar A, are comparatively decent. Intentional homicide,
+      estimated from regional peers rather than measured directly, and
+      displaced persons, entirely unmeasured this year, leave the
+      pillar thin. Only two of four indicators have any current
+      measurement, so this pillar's moderate reading should not be
+      read as a full picture of Lesotho's security record -- notably,
+      it does not capture the 1998 SADC military intervention
+      documented in historical.key_periods, in which at least 113
+      people were killed and roughly 80% of Maseru's commercial
+      infrastructure was destroyed.
+    drivers:
+      - "Political Stability and Rule of Law (shared with Pillar A) both comparatively decent, fresh"
+      - "intentional homicide estimated from regional peers, not measured directly; displaced persons entirely unmeasured -- only 2 of 4 indicators current"
+      - "does not capture the 1998 SADC intervention (see historical.key_periods): at least 113 killed, ~80% of Maseru's commercial infrastructure destroyed"
+    citations: [c5]
+  F:
+    summary: >
+      CO2 emissions per capita, freshly measured, are very low, and
+      this reads as genuinely earned rather than a pure wealth-proxy
+      artefact: the carried-forward electricity-generation figure
+      shows barely 0.2% of Lesotho's own power comes from fossil
+      sources, because its Muela hydropower station -- part of the
+      same Lesotho Highlands Water Project that supplies South Africa
+      -- runs domestically on the same water it exports. Agricultural
+      land share, also fresh, is extensive. Freshwater withdrawal,
+      carried forward, is very low relative to renewable resources.
+      Only two of the pillar's four indicators are current this year.
+    drivers:
+      - "CO2 pc very low (fresh) -- reads as genuinely earned: electricity generation barely 0.2% fossil-fuel (carried forward), powered by the Muela hydropower station"
+      - "the same Lesotho Highlands Water Project that supplies clean electricity domestically also exports water to South Africa (see colonial_legacy, recent developments)"
+      - "agricultural land extensive (fresh); freshwater withdrawal very low relative to renewable resources (carried forward); only 2 of 4 indicators current"
+    citations: [c12]
+  G:
+    summary: >
+      Electricity access, at just over half the population and
+      freshly measured, is moderate. Basic drinking water access,
+      also fresh, is comparatively decent. Government Effectiveness
+      and Control of Corruption, shared with Pillar A, sit in a
+      middling range. Social protection coverage is entirely
+      unmeasured this year, the pillar's only gap. Four of the
+      pillar's five indicators are current -- a comparatively
+      data-complete pillar for this corpus, though it says nothing
+      about the roughly 1,600 people documented in recent developments
+      as displaced by the same water infrastructure that helps power
+      this pillar's own electricity-access figure.
+    drivers:
+      - "electricity access just over half the population (fresh) -- moderate; basic drinking water comparatively decent (fresh)"
+      - "Government Effectiveness and Control of Corruption (shared with Pillar A) middling; social protection entirely unmeasured, the pillar's only gap"
+      - "4 of 5 indicators current, but says nothing about the ~1,600 people displaced by the same water infrastructure partly powering this pillar's electricity-access figure (see recent developments)"
+    citations: [c13]
+
+recent:
+  primary:
+    - headline: "US tariff collapses Lesotho's textile industry, triggering a national State of Disaster"
+      date: 2025-07-14
+      summary: >
+        A 50% US tariff imposed on 3 April 2025 -- the highest rate
+        imposed on any country -- devastated Lesotho's textile
+        industry, the country's largest private employer and source of
+        roughly 75% of its exports to the US under AGOA. The
+        government declared a two-year national State of Disaster on
+        14 July 2025, as youth unemployment climbed toward 50% and
+        thousands of laid-off workers, many of them women, returned to
+        subsistence farming or crossed into South Africa's illegal
+        mining sector.
+      why_it_matters: >
+        Directly explains Pillar B's 2023-reference-year gap and is
+        the single sharpest economic shock in Lesotho's modern
+        history, exposing how completely the country's manufacturing
+        base depended on one trade preference with one buyer.
+      news_url: "https://allafrica.com/stories/202507140140.html"
+      wikipedia_url: ""
+      sentiment: negative
+    - headline: "Lesotho reaches all three UNAIDS 95-95-95 HIV treatment targets"
+      date: 2024-12-31
+      summary: >
+        Lesotho became one of only a handful of countries -- alongside
+        Botswana, Eswatini, Namibia, Rwanda, Zambia and Zimbabwe -- to
+        reach all three UNAIDS 95-95-95 HIV treatment targets by the
+        end of 2024, despite having the world's second-highest HIV
+        prevalence rate, with roughly one in five adults living with
+        HIV. The government allocated 233 million maloti (about $15
+        million) to antiretroviral therapy for the 2024/2025 fiscal
+        year.
+      why_it_matters: >
+        A genuine, independently verified public-health achievement
+        credited at full weight, on the same standard already applied
+        to Botswana's own gold-tier HIV/AIDS certification elsewhere
+        in this corpus, despite Pillar D's otherwise weak aggregate
+        score.
+      news_url: "https://www.unaids.org/sites/default/files/2025-07/2025-global-aids-update-JC3153_en.pdf"
+      wikipedia_url: ""
+      sentiment: positive
+    - headline: "Highlands Water Project advances toward 2028 delivery as communities demand halted construction over unpaid compensation"
+      date: 2025-09-15
+      summary: >
+        Construction on Phase II of the Lesotho Highlands Water
+        Project -- which will expand the binational scheme supplying
+        South Africa's Gauteng province and generating hydropower for
+        Lesotho -- continued through 2025 toward a planned 2028
+        water-delivery date, even as roughly 1,600 people filed a
+        formal complaint with the African Development Bank in
+        September 2025 alleging inadequate compensation,
+        tunnel-blasting damage to homes, and unresolved decades-old
+        compensation claims dating back to the project's first phase.
+      why_it_matters: >
+        The same infrastructure this record credits for Pillar F's
+        genuinely low emissions and Pillar G's electricity access has,
+        since the 1980s, displaced communities this record does not
+        let the project's larger successes overshadow.
+      news_url: "https://allafrica.com/stories/202509220102.html"
+      wikipedia_url: ""
+      sentiment: mixed
+  extended:
+    - headline: "Constitutional Court strikes down amendment shielding the PM from snap elections"
+      date: 2024-02-21
+      summary: >
+        Lesotho's Constitutional Court nullified the Ninth Amendment
+        to the Constitution on 21 February 2024, a provision that
+        would have let Parliament remove a prime minister via a
+        no-confidence vote without triggering a snap election unless
+        two-thirds of MPs supported one. The Court of Appeal later
+        upheld the ruling, applying the Basic Structure Doctrine to
+        find the amendment violated the constitution's foundational
+        principles.
+      why_it_matters: >
+        A concrete example of judicial independence checking
+        executive-friendly constitutional engineering, following a
+        2023 no-confidence attempt against Matekane that the amendment
+        had been partly designed to blunt.
+      news_url: "https://informativenews.co.ls/2024/02/21/concourt-nullifies-constitutions-9th-amendment/"
+      wikipedia_url: ""
+      sentiment: mixed
+
+events:
+  - year: 1868
+    type: constitutional
+    title: "Moshoeshoe secures British protection against Boer annexation"
+    description: >
+      Following the 1865-1868 Seqiti War, in which Boer forces overran
+      most of his territory, Moshoeshoe I petitioned Britain for
+      protection. On 12 March 1868 Basutoland became a British
+      protectorate, fixing Lesotho's current borders and separating it
+      from the future South Africa.
+    url: "https://sahistory.org.za/dated-event/basutoland-now-lesotho-becomes-british-territory"
+    direction: mixed
+  - year: 1966
+    type: independence
+    title: "Basutoland becomes the independent Kingdom of Lesotho"
+    description: >
+      Basutoland gained independence from Britain on 4 October 1966,
+      renamed the Kingdom of Lesotho under King Moshoeshoe II and
+      Prime Minister Leabua Jonathan.
+    url: "https://www.britannica.com/topic/history-of-Lesotho"
+    direction: improve
+  - year: 1998
+    type: conflict
+    title: "SADC intervention after a disputed election"
+    description: >
+      After the ruling party won 79 of 80 seats amid fraud allegations,
+      rioting broke out in Maseru and South African and Botswanan
+      troops entered Lesotho under SADC's banner in Operation Boleas.
+      At least 113 people were killed and roughly 80% of Maseru's
+      commercial infrastructure was destroyed.
+    url: "https://en.wikipedia.org/wiki/South_African_intervention_in_Lesotho"
+    direction: deteriorate
+  - year: 2025
+    type: economic
+    title: "US tariff triggers a national State of Disaster"
+    description: >
+      A 50% US tariff imposed in April 2025 devastated Lesotho's
+      textile industry, its largest private employer, prompting a
+      two-year national State of Disaster declared in July 2025.
+    url: "https://allafrica.com/stories/202507140140.html"
+    direction: deteriorate
+
+citations:
+  - id: c1
+    url: "https://sahistory.org.za/dated-event/basutoland-now-lesotho-becomes-british-territory"
+    source_type: news
+    title: "Basutoland (now Lesotho) becomes British territory (South African History Online)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c2
+    url: "https://www.britannica.com/place/Lesotho/The-Sotho-kingdom-1824-69"
+    source_type: news
+    title: "Lesotho - The Sotho kingdom, 1824-69 (Britannica)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c3
+    url: "https://en.wikipedia.org/wiki/1970_Lesotho_coup_d%27%C3%A9tat"
+    source_type: wikipedia
+    title: "1970 Lesotho coup d'état"
+    accessed: 2026-08-11
+    verified: true
+  - id: c4
+    url: "https://en.wikipedia.org/wiki/1986_Lesotho_coup_d%27%C3%A9tat"
+    source_type: wikipedia
+    title: "1986 Lesotho coup d'état"
+    accessed: 2026-08-11
+    verified: true
+  - id: c5
+    url: "https://en.wikipedia.org/wiki/South_African_intervention_in_Lesotho"
+    source_type: wikipedia
+    title: "South African intervention in Lesotho"
+    accessed: 2026-08-11
+    verified: true
+  - id: c6
+    url: "https://historyrise.com/the-1998-political-crisis-and-sadc-military-intervention-in-lesotho/"
+    source_type: news
+    title: "The 1998 Political Crisis And SADC Military Intervention In Lesotho: Causes, Action, And Impact"
+    accessed: 2026-08-11
+    verified: true
+  - id: c7
+    url: "https://en.wikipedia.org/wiki/Sam_Matekane"
+    source_type: wikipedia
+    title: "Sam Matekane"
+    accessed: 2026-08-11
+    verified: true
+  - id: c8
+    url: "https://informativenews.co.ls/2024/02/21/concourt-nullifies-constitutions-9th-amendment/"
+    source_type: news
+    title: "ConCourt nullifies Constitution's 9th Amendment (Informative News Lesotho)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c9
+    url: "https://allafrica.com/stories/202507140140.html"
+    source_type: news
+    title: "Lesotho Declares 'State of Disaster' As It Struggles With US Policy Changes (AllAfrica)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c10
+    url: "https://texfash.com/special/lesotho-declares-state-of-disaster-as-trump-tariff-wipes-out-textiles-industry"
+    source_type: news
+    title: "Lesotho Declares State of Disaster as Trump Tariff Wipes Out Textiles Industry (texfash.com)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c11
+    url: "https://www.unaids.org/sites/default/files/2025-07/2025-global-aids-update-JC3153_en.pdf"
+    source_type: official
+    title: "UNAIDS Global AIDS Update 2025"
+    accessed: 2026-08-11
+    verified: true
+  - id: c12
+    url: "https://theconversation.com/the-lesotho-highlands-water-project-is-40-years-old-and-going-strong-but-history-weighs-on-its-successes-277860"
+    source_type: news
+    title: "The Lesotho Highlands Water project is 40 years old and going strong: but history weighs on its successes (The Conversation)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c13
+    url: "https://allafrica.com/stories/202509220102.html"
+    source_type: news
+    title: "Lesotho: Villagers Lodge Complaint With African Development Bank Against Lesotho Highlands Water Project (AllAfrica)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c14
+    url: "https://www.sadc.int/pages/history-and-treaty"
+    source_type: official
+    title: "History and Treaty (SADC)"
+    accessed: 2026-08-11
+    verified: true
+
+rec_membership:
+  - org: SADC
+    joined: 1980
+    status: current
+    left: null
+    citations: [c14]
+
+balance:
+  n_positive: 1
+  n_negative: 1
+  n_mixed: 2
+  note: >
+    The Highlands Water Project item is coded mixed rather than
+    positive or negative: the project genuinely underpins Pillar F's
+    low emissions and part of Pillar G's electricity access, and
+    genuinely supplies South Africa under a binational treaty, but its
+    decades-long pattern of inadequate compensation for displaced
+    communities is real and ongoing, documented alongside the
+    infrastructure achievement rather than omitted from it. The
+    constitutional-amendment item is also coded mixed: a court striking
+    down executive-friendly constitutional engineering is a genuine
+    institutional strength, but it exists only because the amendment
+    was attempted in the first place, following a real no-confidence
+    threat against the sitting government. The HIV treatment
+    achievement is credited at full positive weight independent of
+    Pillar D's otherwise weak aggregate score, on the same standard
+    already applied to Botswana's own HIV/AIDS achievement elsewhere in
+    this corpus.
