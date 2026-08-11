@@ -26,7 +26,7 @@ An audit is forced early if a single run inflates the citation count by more tha
 
 ## Status
 
-**32 of 54 countries have a record (Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria, Rwanda, Chad, Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic, Mauritania, Zimbabwe, Comoros, Uganda, Sierra Leone, Equatorial Guinea, The Gambia, Mozambique). The first pass is complete; Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic, Mauritania, Zimbabwe, Comoros, Uganda, Sierra Leone, Equatorial Guinea, The Gambia and Mozambique are the first twenty-three backlog countries.**
+**33 of 54 countries have a record (Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria, Rwanda, Chad, Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic, Mauritania, Zimbabwe, Comoros, Uganda, Sierra Leone, Equatorial Guinea, The Gambia, Mozambique, Guinea). The first pass is complete; Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic, Mauritania, Zimbabwe, Comoros, Uganda, Sierra Leone, Equatorial Guinea, The Gambia, Mozambique and Guinea are the first twenty-four backlog countries.**
 
 ### First pass — 9 countries
 
@@ -74,14 +74,15 @@ whose ranks swing hardest with the weighting method.
 | GNQ | Equatorial Guinea | fills Central Africa (5 of 8 done); the starkest oil-wealth-vs-governance gap in the corpus; Pillar D (Health) greyed alongside C, the first second-pillar gap since ERI but for a different reason (wealthy state simply not publishing data, not a closed state suppressing it); Obiang, in power since 1979, is the world's longest-serving current non-royal head of state; heir-apparent Teodorin's asset-laundering conviction/seizures across three continents turn this corpus's usual "ruling family enrichment" inference into actual court judgments; a genuine positive (UNICEF child-protection strategy) found despite the severity | **done — iteration 1** |
 | GMB | The Gambia | fills West Africa (9 of 16 done); a distinct "regional bloc enforces an election by force" pattern (2017 ECOWAS intervention, no shots fired), unlike SLE's rebel-suppression intervention already in this corpus; opens a cross-reference with GNQ (Jammeh's exile there); strongest governance pillar and one of the only positive Political Stability readings in this corpus, deliberately not softened by a genuine TRRC-implementation failure documented alongside it; Kunta Kinteh Island is one of the few sites here where a named individual's (Kunta Kinte, via Roots) slave-trade journey is traceable directly, not just described in aggregate | **done — iteration 1** |
 | MOZ | Mozambique | fills East Africa (7 of 14 done); longest continuous colonial period in this corpus (477 years, Portugal from 1498); RENAMO documented as literally created by the same Rhodesian intelligence service already in ZWE's Bush War record, then continued by apartheid South Africa; SADCC Frontline State founding (1980) cross-references ZAF's own apartheid record; the most lethal single post-election-violence episode recorded here yet (300+ killed, Amnesty International); a genuine positive (Oct 2025 FATF grey-list exit) shared the same review with ZAF/NGA/BFA already in this corpus | **done — iteration 1** |
+| GIN | Guinea | fills West Africa (10 of 16 done); the most distinctive decolonisation mechanism in the corpus -- the only French African colony to vote "Non" in the 1958 referendum, met with France's punitive infrastructure-destroying withdrawal rather than a negotiated transition; Guinea's two most severe periods of state violence (French retaliation, then Sékou Touré's Camp Boiro) fall within two years of each other; Pillar D greyed alongside C, the third corpus case of a second non-C pillar unwritten (after ERI, GNQ); a genuine positive (Simandou's first iron-ore shipment, Dec 2025, decades in the making) credited independent of Doumbouya's broken no-candidacy promise and Camara's pardon | **done — iteration 1** |
 
-### Backlog — the remaining 22
+### Backlog — the remaining 21
 
 Listed in full in `narrative/state.yaml` under `backlog`. They are recorded
 explicitly rather than left implicit: a country with no record should be visibly
 absent, not quietly missing.
 
-Libya, Tunisia, Benin, Cabo Verde, Guinea, Guinea-Bissau, Cote d'Ivoire, Senegal, Togo, Cameroon, Republic of Congo, Gabon, Burundi, Djibouti, Malawi, South Sudan, Tanzania, Zambia, Lesotho, Eswatini, Seychelles, Sao Tome & Principe
+Libya, Tunisia, Benin, Cabo Verde, Guinea-Bissau, Cote d'Ivoire, Senegal, Togo, Cameroon, Republic of Congo, Gabon, Burundi, Djibouti, Malawi, South Sudan, Tanzania, Zambia, Lesotho, Eswatini, Seychelles, Sao Tome & Principe
 
 ---
 
@@ -1093,6 +1094,43 @@ Append one line per run: date, country, mode, what changed, what was removed.
   `--links` passes 0 errors, 2 warnings (BlackPast.org and France24,
   both familiar 403 bot-detection patterns) — 11/13 resolved.
 
+- **2026-08-10 — GIN — CREATE. Twenty-fourth backlog country, fills
+  West Africa (10 of 16 done).** Full baseline built: historical
+  overview, colonial legacy (the most distinctive decolonisation
+  mechanism in the corpus — on 28 September 1958, Guinea was the only
+  French African colony to vote "Non" in de Gaulle's referendum on the
+  French Community, and France retaliated within weeks by withdrawing
+  its officials and deliberately destroying infrastructure it could
+  not remove, including unscrewing light bulbs, tearing up Conakry's
+  sewage-pipeline plans, and burning medicine; argues Guinea's two most
+  severe periods of state violence — French retaliation and Sékou
+  Touré's 26-year Camp Boiro dictatorship — fall within two years of
+  each other, an unusually compressed severity pattern new to this
+  corpus), 4 key_periods, 5 pillar summaries only (A, B, E, F, G —
+  Pillar D is greyed alongside C, the third corpus case of a second
+  non-C pillar unwritten, after ERI and GNQ), 3 primary + 1 extended
+  recent items, 4 events, rec_membership (ECOWAS 1975 founding member,
+  reused directly from LBR-era research; CEN-SAD 2007). 13 sources
+  opened and verified: 4 Wikipedia, 6 news, 2 official/NGO, 1 more
+  Wikipedia for rec_membership. Following the established discipline,
+  found a genuine positive: Simandou's first iron-ore shipment left
+  Guinea in December 2025, a concrete milestone for a project stalled
+  by corruption and competing claims for decades, credited at full
+  weight independent of Doumbouya's December 2025 election win (which
+  broke his own 2021 promise not to seek the presidency, repeating
+  almost exactly the manoeuvre that justified his coup against Condé)
+  and Moussa Dadis Camara's March 2025 pardon despite a 2024
+  crimes-against-humanity conviction for the 2009 stadium massacre.
+  The bauxite export record (up 36% to a record 99.8Mt, H1 2025) is
+  coded mixed rather than positive: real growth, but colonial_legacy
+  gives direct historical reason to withhold judgment on whether
+  mineral revenue reaches beyond the mining sector. Balance: 1
+  positive, 2 negative, 1 mixed. Two word-count fixes (pillars.E,
+  recent.extended), both resolved by adding real facts rather than
+  padding. `--links` passes 0 errors, 1 warning (S&P Global, familiar
+  403 bot-detection pattern) — 12/13 resolved. Full pytest suite: 106
+  passed.
+
 ---
 
 ## Meta-notes
@@ -1678,6 +1716,22 @@ Things a future run should know about how to work, not about a specific country.
   eventually TZA and ZMB once written, all share this specific
   1980-founding, anti-apartheid-pressure history and should stay
   mutually consistent on it.
+- **2026-08-10** — GIN sharpens a distinction worth naming for future
+  colonial_legacy sections: France's punitive 1958 withdrawal was a
+  single, deliberate, time-bounded act of destruction, while Sékou
+  Touré's subsequent Camp Boiro dictatorship was a sustained 26-year
+  domestic one — and the two are usually easy to conflate into one
+  vague "colonial-era harm plus post-colonial dictatorship" narrative.
+  Naming the near-zero interval between them (less than two years)
+  made the distinction sharper rather than blurrier: readers can see
+  that Guinea barely had a chance at functioning governance between
+  an external punishment and an internal one. Also confirms the
+  resource-governance typology (BWA, TCD, AGO, MLI, BFA, NER) has a
+  seventh member: Guinea's Simandou/bauxite case is a "wealth as
+  contested prize" pattern distinct from all six prior sub-cases,
+  since — unlike SOPAMIB or Somair — no nationalisation or coercive
+  renegotiation occurred; the resource itself was simply stalled for
+  decades by competing claims and corruption before finally shipping.
 
 ---
 

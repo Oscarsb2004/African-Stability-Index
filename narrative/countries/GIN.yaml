@@ -1,0 +1,434 @@
+meta:
+  iso3: GIN
+  name: Guinea
+  last_updated: 2026-08-10
+  iteration_count: 1
+  next_action: >
+    EXPAND: (1) follow whether Doumbouya's post-election government
+    faces any domestic or international accountability for the
+    self-authored referendum path to his own candidacy; (2) follow
+    whether Camara's pardon draws further international response,
+    given the 2024 conviction was widely covered as a rare regional
+    accountability milestone; (3) follow whether Simandou's revenue
+    is transparently managed or repeats the "competition rather than
+    development" pattern historical.colonial_legacy documents; (4)
+    check whether Pillars D and C ever gain enough data to be scored;
+    (5) check if Pillar C has gained coverage.
+  model_used: claude-sonnet-5
+
+historical:
+  overview: >
+    France colonised Guinea from 1891. On 28 September 1958, Guinea
+    voted 95% against Charles de Gaulle's proposed French Community, the
+    only French African colony to reject it outright; France retaliated
+    within weeks by withdrawing its officials and, according to
+    contemporary accounts, deliberately destroying what infrastructure
+    it could not remove -- unscrewing light bulbs, tearing up
+    sewage-pipeline plans for Conakry, and burning medicine rather than
+    leave it behind. Guinea declared full independence on 2 October
+    1958, the first French African colony to do so. President Ahmed
+    Sékou Touré then ruled as a one-party dictator for 26 years, running
+    Camp Boiro, a concentration camp where estimates of those tortured,
+    starved or executed range from roughly 5,000 to as many as 50,000.
+    Touré died in 1984; Lansana Conté ruled until his own death in 2008.
+    A military junta under Moussa Dadis Camara then took power, and on
+    28 September 2009 -- the referendum's 51st anniversary -- Camara's
+    Presidential Guard massacred at least 150 opposition supporters in a
+    Conakry stadium and raped more than 100 women; a trial did not open
+    until 2022, and Camara was convicted of crimes against humanity in
+    2024, only to be pardoned in March 2025. Alpha Condé, elected in
+    2010 as Guinea's first freely chosen president, pushed through a
+    2020 referendum to secure a third term amid deadly protests, before
+    Mamady Doumbouya, a special forces commander Condé himself had
+    appointed, overthrew him in September 2021. Doumbouya promised not
+    to seek the presidency himself, then won a December 2025 election
+    after his own September 2025 referendum reopened the door to his
+    candidacy.
+  overview_citations: [c1, c2, c3, c6, c8, c9]
+  colonial_legacy: >
+    context/colonial_history.yaml already credits Guinea's unique 1958
+    "Non" vote, France's retaliatory withdrawal and infrastructure
+    destruction, Sékou Touré's subsequent dictatorship, and names
+    bauxite wealth as having "fuelled competition rather than
+    development." Worth stating precisely how far that retaliation
+    went, since it shapes how the record's later governance failures
+    should be read: contemporary reporting, including in the Washington
+    Post, describes French personnel unscrewing light bulbs from
+    government buildings, tearing up the blueprints for Conakry's
+    sewage system, and burning stockpiled medicine rather than leave
+    any of it for the newly independent government. Guinea began its
+    sovereignty with less functioning infrastructure than it had the
+    week before independence, not merely without a transition period --
+    a uniquely severe version of the "punitive decolonisation" pattern
+    this corpus has not documented so starkly anywhere else. That
+    immediate, deliberate impoverishment sits uneasily beside what came
+    after: Sékou Touré's Camp Boiro killed on a scale rivalling the
+    worst colonial-era atrocities documented elsewhere in this project,
+    meaning Guinea's two most severe periods of state violence -- French
+    retaliation and Touré's own dictatorship -- are separated by less
+    than two years, with almost no interval of functioning governance
+    between them.
+  colonial_legacy_citations: [c1, c2, c3]
+  key_periods:
+    - title: "The 1958 'Non' vote and France's retaliation"
+      period: "1958"
+      summary: >
+        On 28 September 1958, Guinea voted 95% against Charles de
+        Gaulle's proposed French Community, the only French African
+        colony to reject it outright. France retaliated within weeks,
+        withdrawing its officials and deliberately destroying
+        infrastructure it could not remove -- unscrewing light bulbs,
+        tearing up Conakry's sewage-pipeline plans, and burning medicine
+        rather than leave it behind. Guinea declared full independence
+        on 2 October 1958, the first French African colony to do so.
+      citations: [c1, c2]
+    - title: "Sékou Touré's dictatorship and Camp Boiro"
+      period: "1958-1984"
+      summary: >
+        President Ahmed Sékou Touré ruled as a one-party dictator for
+        26 years, running Camp Boiro, a concentration camp where
+        estimates of those tortured, starved or executed range from
+        roughly 5,000 to as many as 50,000. Touré died in office in
+        1984.
+      citations: [c3]
+    - title: "The 2009 stadium massacre and its delayed justice"
+      period: "2008-2025"
+      summary: >
+        A military junta under Moussa Dadis Camara took power in 2008,
+        and on 28 September 2009 -- the referendum's 51st anniversary --
+        Camara's Presidential Guard massacred at least 150 opposition
+        supporters gathered in a Conakry stadium and raped more than 100
+        women. A trial did not open until 2022; Camara was convicted of
+        crimes against humanity in 2024, only to be pardoned in March
+        2025.
+      citations: [c4, c5, c6]
+    - title: "Condé's third term, Doumbouya's coup, and his own election"
+      period: "2010-2025"
+      summary: >
+        Alpha Condé, elected in 2010 as Guinea's first freely chosen
+        president, pushed through a 2020 constitutional referendum to
+        secure a third term amid deadly protests. Special forces
+        commander Mamady Doumbouya, whom Condé himself had appointed,
+        overthrew him in September 2021 and promised not to seek the
+        presidency, then won a December 2025 election after his own
+        September 2025 referendum reopened the door to his candidacy.
+      citations: [c7, c8, c9]
+
+pillars:
+  A:
+    summary: >
+      All six governance indicators are directly measured this year,
+      and the aggregate score is weak -- Control of Corruption is the
+      weakest, Voice and Accountability nearly as severe. That weakness
+      reflects a genuinely current pattern, not only a historical one:
+      Mamady Doumbouya, who overthrew President Alpha Condé in September
+      2021 for pursuing an unconstitutional third term, pushed through
+      his own constitutional referendum in September 2025 and won a
+      December 2025 presidential election himself, breaking his earlier
+      promise not to run -- repeating, almost exactly, the manoeuvre
+      that justified his own coup. In March 2025, Moussa Dadis Camara,
+      convicted of crimes against humanity for premeditating the 2009
+      stadium massacre and sentenced to 20 years, was pardoned.
+    drivers:
+      - "all 6 governance indicators directly measured; Control of Corruption weakest, Voice and Accountability nearly as severe"
+      - "Doumbouya overthrew Condé (Sept 2021) for an unconstitutional 3rd term, then pushed his own Sept 2025 referendum and won Dec 2025's election himself -- repeating almost exactly the manoeuvre that justified his own coup"
+      - "March 2025: Camara, convicted of crimes against humanity for the 2009 stadium massacre and sentenced to 20 years, was pardoned"
+    citations: [c6, c8, c9]
+  B:
+    summary: >
+      GDP growth, GDP per capita and inflation, all freshly measured,
+      are comparatively decent for this corpus, reflecting real
+      bauxite-driven momentum: exports rose 36% to a record 99.8 million
+      tonnes in the first half of 2025 alone. Domestic credit to the
+      private sector, also fresh, is thin. Gini, carried forward, is
+      comparatively low, though this figure should be treated cautiously
+      given how much of Guinea's mineral wealth this record's
+      colonial_legacy documents as having "fuelled competition rather
+      than development" historically. In December 2025, the first
+      shipment left Guinea from the long-delayed Simandou iron ore
+      project -- one of the world's largest untapped deposits, decades
+      in development, that could make Guinea Africa's second-largest
+      mining country by the end of the decade.
+    drivers:
+      - "GDP growth, GDP per capita, inflation all fresh, comparatively decent -- real bauxite momentum: exports up 36% to a record 99.8Mt in H1 2025"
+      - "domestic credit thin (fresh); Gini (carried forward) comparatively low, though treated cautiously given this record's own history of mineral wealth fuelling competition, not development"
+      - "Dec 2025: first shipment left Guinea from the long-delayed Simandou iron ore project -- could make Guinea Africa's 2nd-largest mining country by decade's end"
+    citations: [c10, c11]
+  E:
+    summary: >
+      Political Stability, freshly measured, is moderate -- neither
+      catastrophic nor strong, and this pillar's 2023 reference year
+      predates both Doumbouya's 2025 election and Camara's pardon
+      documented under recent developments. Displaced persons and
+      homicide, both estimated from regional peers rather than measured
+      directly, are more middling. Only two of the pillar's four
+      indicators have any measurement at all, so this pillar's moderate
+      reading should be treated as thin and dated rather than a current
+      assessment of Guinea's political trajectory, and should not be
+      read as evidence against the governance concerns Pillar A
+      documents in far greater and more current detail.
+    drivers:
+      - "Political Stability moderate (fresh) -- neither catastrophic nor strong; predates both Doumbouya's 2025 election and Camara's pardon"
+      - "IDPs and homicide both more middling (regional-mean estimates, not directly measured)"
+      - "only 2 of 4 indicators have any measurement -- thin and dated, not a current assessment"
+    citations: [c8]
+  F:
+    summary: >
+      CO2 emissions per capita, freshly measured, are comparatively low,
+      and unlike the clearest wealth-proxy cases in this corpus, this
+      reads as at least partly genuine: the carried-forward
+      electricity-generation figure shows under 12% of power from
+      fossil sources. Electricity access itself (Pillar G), however,
+      covers barely half the population, so energy poverty remains part
+      of the explanation too. Freshwater withdrawal, also carried
+      forward, is very low relative to renewable resources. Agricultural
+      land share, fresh, is extensive. Only two of the pillar's four
+      indicators are freshly measured this year.
+    drivers:
+      - "CO2 pc comparatively low (fresh) -- reads as partly genuine: electricity generation under 12% fossil-fuel (carried forward)"
+      - "but electricity access (Pillar G) covers barely half the population -- energy poverty remains part of the explanation, a genuine blend case"
+      - "freshwater withdrawal very low relative to renewable resources (carried forward); agricultural land extensive (fresh); only 2 of 4 indicators freshly measured this year"
+    citations: [c1]
+  G:
+    summary: >
+      Electricity access, at just over half the population and freshly
+      measured, is moderate. Basic drinking water access, also fresh,
+      is comparatively decent. Safely managed water, estimated from
+      regional peers, and handwashing and social protection, both
+      carried forward rather than fresh, are all considerably weaker.
+      Only two of the pillar's five indicators are current, making this
+      pillar's overall picture thinner than the moderate headline score
+      might suggest -- a reminder that Guinea's real bauxite and
+      iron-ore wealth, documented in Pillar B, has not yet translated
+      into infrastructure investment at the pace the mining sector
+      itself has grown.
+    drivers:
+      - "electricity access just over half the population (fresh) -- moderate"
+      - "basic drinking water comparatively decent (fresh); safely managed water, handwashing, social protection all weaker (regional-mean/carried-forward)"
+      - "only 2 of 5 indicators current -- thinner than the moderate headline score suggests; a reminder that mineral wealth (Pillar B) hasn't yet translated into infrastructure investment at pace"
+    citations: [c1]
+
+recent:
+  primary:
+    - headline: "Doumbouya wins presidential election, breaking his own promise not to run"
+      date: 2025-12-30
+      summary: >
+        Mamady Doumbouya, who seized power in a September 2021 coup
+        against President Alpha Condé's own unconstitutional third-term
+        bid, won Guinea's December 2025 presidential election in a
+        landslide, after a September 2025 constitutional referendum he
+        championed reopened the door to his candidacy despite his
+        earlier promise not to run himself.
+      why_it_matters: >
+        Directly explains Pillar A's severity, and shows the exact
+        manoeuvre that justified Doumbouya's own coup -- a leader
+        extending his rule via a self-authored referendum -- repeating
+        within his own transitional government.
+      news_url: "https://www.aljazeera.com/news/2025/12/30/guinea-coup-leader-mamdi-doumbouya-wins-presidential-election"
+      wikipedia_url: ""
+      sentiment: negative
+    - headline: "Convicted mastermind of 2009 stadium massacre pardoned"
+      date: 2025-03-28
+      summary: >
+        Former junta leader Moussa Dadis Camara, convicted in 2024 of
+        crimes against humanity and sentenced to 20 years for
+        premeditating the 28 September 2009 stadium massacre -- in
+        which his Presidential Guard killed at least 150 people and
+        raped more than 100 women -- was pardoned on 28 March 2025, less
+        than a year after his conviction.
+      why_it_matters: >
+        A specific, current reversal of the accountability process this
+        record's historical.key_periods documents as having taken 13
+        years to even begin, directly undermining the verdict's stated
+        purpose.
+      news_url: "https://www.fidh.org/en/region/Africa/guinea-conakry/the-28-september-2009-stadium-killings-trial-the-pardoning-of-moussa"
+      wikipedia_url: ""
+      sentiment: negative
+    - headline: "First shipment leaves Guinea from the long-delayed Simandou iron ore project"
+      date: 2025-12-01
+      summary: >
+        The first shipment of iron ore left Guinea from the Simandou
+        mine in December 2025, decades after the deposit -- one of the
+        world's largest untapped reserves -- was first identified,
+        following years of stalled development, corruption scandals and
+        competing claims. Rio Tinto expects the project to reach
+        roughly 60 million tonnes of annual capacity within five years.
+      why_it_matters: >
+        A genuine, concrete milestone for Pillar B's economy, though
+        whether its revenue breaks or repeats the "competition rather
+        than development" pattern historical.colonial_legacy documents
+        remains to be seen.
+      news_url: "https://www.spglobal.com/market-intelligence/en/news-insights/research/2025/09/simandou-iron-ore-project-a-game-changer-for-global-supply"
+      wikipedia_url: ""
+      sentiment: positive
+  extended:
+    - headline: "Bauxite exports hit a record high in 2025"
+      date: 2025-07-01
+      summary: >
+        Guinea's bauxite exports rose 36% to a record 99.8 million
+        tonnes in the first half of 2025, driven largely by Chinese
+        demand, continuing the country's position as the world's
+        largest bauxite exporter and reinforcing its role as the
+        single most important overseas supplier to China's aluminium
+        industry, ahead of Australia.
+      why_it_matters: >
+        Real, current economic growth documented in Pillar B, though
+        this record's own colonial_legacy section provides direct
+        historical reason to withhold judgment on whether that revenue
+        reaches beyond the mining sector.
+      news_url: "https://www.ntu.edu.sg/cas/news-events/news/details/how-asia-is-driving-the-mining-boom-in-guinea"
+      wikipedia_url: ""
+      sentiment: mixed
+
+events:
+  - year: 1958
+    type: independence
+    title: "Guinea votes 'Non' and gains immediate independence"
+    description: >
+      Guinea voted 95% against Charles de Gaulle's proposed French
+      Community on 28 September 1958, the only French African colony to
+      reject it outright, and declared full independence on 2 October
+      1958, prompting France to retaliate by withdrawing officials and
+      destroying infrastructure.
+    url: "https://en.wikipedia.org/wiki/1958_Guinean_constitutional_referendum"
+    direction: improve
+  - year: 2009
+    type: conflict
+    title: "Stadium massacre kills at least 150"
+    description: >
+      Moussa Dadis Camara's Presidential Guard massacred at least 150
+      opposition supporters gathered in a Conakry stadium on 28
+      September 2009 and raped more than 100 women, in what Human
+      Rights Watch determined was premeditated.
+    url: "https://www.hrw.org/news/2009/10/27/guinea-september-28-massacre-was-premeditated"
+    direction: deteriorate
+  - year: 2021
+    type: coup
+    title: "Doumbouya overthrows Condé's third term"
+    description: >
+      Special forces commander Mamady Doumbouya overthrew President
+      Alpha Condé in a September 2021 coup, ending Condé's
+      constitutionally-engineered third term amid deadly protests
+      against it.
+    url: "https://en.wikipedia.org/wiki/2021_Guinean_coup_d'%C3%A9tat"
+    direction: mixed
+  - year: 2025
+    type: election
+    title: "Doumbouya wins the presidency himself"
+    description: >
+      Mamady Doumbouya won Guinea's December 2025 presidential election,
+      breaking his 2021 promise not to seek the presidency after a
+      September 2025 referendum he championed reopened the door to his
+      own candidacy.
+    url: "https://www.aljazeera.com/news/2025/12/30/guinea-coup-leader-mamdi-doumbouya-wins-presidential-election"
+    direction: deteriorate
+
+citations:
+  - id: c1
+    url: "https://face2faceafrica.com/article/guinea-france"
+    source_type: news
+    title: "When Guinea wanted freedom, colonialist France destroyed buildings out of spite - Here's the story (Face2Face Africa)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c2
+    url: "https://en.wikipedia.org/wiki/1958_Guinean_constitutional_referendum"
+    source_type: wikipedia
+    title: "1958 Guinean constitutional referendum"
+    accessed: 2026-08-10
+    verified: true
+  - id: c3
+    url: "https://en.wikipedia.org/wiki/Camp_Boiro"
+    source_type: wikipedia
+    title: "Camp Boiro"
+    accessed: 2026-08-10
+    verified: true
+  - id: c4
+    url: "https://www.hrw.org/news/2009/10/27/guinea-september-28-massacre-was-premeditated"
+    source_type: news
+    title: "Guinea: September 28 Massacre Was Premeditated (Human Rights Watch)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c5
+    url: "https://www.hrw.org/news/2024/07/26/guineas-2009-stadium-massacre-trial"
+    source_type: news
+    title: "Guinea's 2009 Stadium Massacre Trial (Human Rights Watch)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c6
+    url: "https://www.fidh.org/en/region/Africa/guinea-conakry/the-28-september-2009-stadium-killings-trial-the-pardoning-of-moussa"
+    source_type: news
+    title: "The 28 September 2009 stadium killings trial: The pardoning of Moussa Dadis Camara is an affront to justice (FIDH)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c7
+    url: "https://en.wikipedia.org/wiki/2021_Guinean_coup_d'%C3%A9tat"
+    source_type: wikipedia
+    title: "2021 Guinean coup d'état"
+    accessed: 2026-08-10
+    verified: true
+  - id: c8
+    url: "https://www.aljazeera.com/news/2025/12/30/guinea-coup-leader-mamdi-doumbouya-wins-presidential-election"
+    source_type: news
+    title: "Guinea coup leader Mamady Doumbouya wins presidential election (Al Jazeera)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c9
+    url: "https://en.wikipedia.org/wiki/Mamady_Doumbouya"
+    source_type: wikipedia
+    title: "Mamady Doumbouya"
+    accessed: 2026-08-10
+    verified: true
+  - id: c10
+    url: "https://www.ntu.edu.sg/cas/news-events/news/details/how-asia-is-driving-the-mining-boom-in-guinea"
+    source_type: news
+    title: "How Asia is driving the mining boom in Guinea (NTU-SBF Centre for African Studies)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c11
+    url: "https://www.spglobal.com/market-intelligence/en/news-insights/research/2025/09/simandou-iron-ore-project-a-game-changer-for-global-supply"
+    source_type: news
+    title: "Simandou iron ore project: A game changer for global supply (S&P Global)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c12
+    url: "https://en.wikipedia.org/wiki/Treaty_of_Lagos"
+    source_type: wikipedia
+    title: "Treaty of Lagos"
+    accessed: 2026-08-10
+    verified: true
+  - id: c13
+    url: "https://simple.wikipedia.org/wiki/Community_of_Sahel-Saharan_States"
+    source_type: wikipedia
+    title: "Community of Sahel-Saharan States"
+    accessed: 2026-08-10
+    verified: true
+
+rec_membership:
+  - org: ECOWAS
+    joined: 1975
+    status: current
+    left: null
+    citations: [c12]
+  - org: CEN-SAD
+    joined: 2007
+    status: current
+    left: null
+    citations: [c13]
+
+balance:
+  n_positive: 1
+  n_negative: 2
+  n_mixed: 1
+  note: >
+    Doumbouya's self-authored path to the presidency and Camara's
+    pardon are both coded negative at full weight, not softened by the
+    genuine Simandou milestone documented alongside them. Simandou's
+    first shipment is coded positive because it is a real, concrete,
+    verifiable event decades in the making, independent of the
+    political severity documented in Pillar A -- the same standard this
+    corpus applies to crediting a genuine economic achievement without
+    letting political conduct discount it. The bauxite export record is
+    coded mixed rather than positive: the growth is real, but this
+    record's own colonial_legacy section gives direct historical reason
+    to withhold judgment on whether mineral revenue reaches beyond the
+    mining sector itself.

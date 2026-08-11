@@ -618,6 +618,33 @@ countries:
       300+ killings; keep this record''s account of RENAMO''s Rhodesian
       origins consistent with ZWE''s account, and the SADCC founding
       consistent with ZAF''s; check if Pillar C has gained coverage'
+  GIN:
+    name: Guinea
+    region: West
+    first_pass: false
+    reason: twenty-fourth backlog country -- fills West Africa's biggest gap
+      (10 of 16 done); the most distinctive decolonisation mechanism in the
+      corpus -- the only French African colony to vote "Non" in the 1958
+      referendum, met with a uniquely vindictive punitive withdrawal (France
+      stripped infrastructure on its way out) rather than a negotiated
+      transition; Guinea's two most severe periods of state violence (French
+      retaliation, then Sékou Touré's Camp Boiro) fall within two years of
+      each other, an unusually compressed severity pattern; Pillar D greyed
+      alongside C, the third corpus case of a second non-C pillar unwritten
+      (after ERI, GNQ); a genuine positive (Simandou's first iron-ore
+      shipment, Dec 2025, decades in the making) credited independent of
+      Doumbouya's own broken no-candidacy promise and Camara's pardon
+    iteration_count: 1
+    last_updated: '2026-08-10'
+    next_action: 'EXPAND: follow whether Doumbouya''s government faces any
+      domestic or international accountability for the self-authored
+      referendum path to his own candidacy; follow whether Camara''s pardon
+      draws further international response, given the 2024 conviction was
+      widely covered as a rare regional accountability milestone; follow
+      whether Simandou''s revenue is transparently managed or repeats the
+      "competition rather than development" pattern documented in
+      colonial_legacy; check whether Pillars C and D ever gain enough data
+      to be scored; check if Pillar C has gained coverage'
 backlog:
   LBY:
     name: Libya
@@ -645,14 +672,6 @@ backlog:
     next_action: create baseline from blueprint
   CPV:
     name: Cabo Verde
-    region: West
-    first_pass: false
-    reason: not yet scheduled
-    iteration_count: 0
-    last_updated: null
-    next_action: create baseline from blueprint
-  GIN:
-    name: Guinea
     region: West
     first_pass: false
     reason: not yet scheduled
@@ -1649,3 +1668,36 @@ meta_notes:
   errors, 2 warnings (BlackPast.org and France24, both familiar 403
   bot-detection patterns) -- 11/13 resolved. Full pytest suite: 106 passed.
   32 of 54 countries now have a record.'
+- '2026-08-10: GIN CREATE run complete (13 sources opened and verified: 4
+  Wikipedia, 6 news, 2 official/NGO, 1 more Wikipedia for rec_membership).
+  Fills West Africa (10 of 16 done after this run). The most distinctive
+  decolonisation mechanism recorded in this corpus: on 28 September 1958,
+  Guinea was the only French African colony to vote "Non" in de Gaulle''s
+  referendum on the French Community, and France retaliated within weeks by
+  withdrawing its officials and deliberately destroying infrastructure it
+  could not remove -- contemporary reporting describes officials unscrewing
+  light bulbs, tearing up Conakry''s sewage-pipeline plans, and burning
+  medicine rather than leave it behind. colonial_legacy draws out the
+  consequence directly: Guinea''s two most severe periods of state violence
+  -- French retaliation and Sékou Touré''s 26-year dictatorship running Camp
+  Boiro (est. 5,000-50,000 killed) -- fall within two years of each other,
+  with almost no interval of functioning governance between them. Pillar D
+  (Health) is greyed alongside C, the third corpus case of a second non-C
+  pillar unwritten (after ERI, GNQ). Followed the established discipline
+  and found a genuine positive: Simandou''s first iron-ore shipment left
+  Guinea in December 2025, a concrete milestone for a project stalled by
+  corruption and competing claims for decades -- credited at full weight,
+  independent of Doumbouya''s December 2025 election win (which broke his
+  own 2021 promise not to seek the presidency, repeating almost exactly the
+  manoeuvre that justified his coup against Condé) and Moussa Dadis
+  Camara''s March 2025 pardon despite a 2024 crimes-against-humanity
+  conviction for the 2009 stadium massacre. Balance: 1 positive, 2 negative,
+  1 mixed -- the bauxite export record is coded mixed rather than positive
+  since colonial_legacy gives direct historical reason to withhold judgment
+  on whether mineral revenue reaches beyond the mining sector. Two
+  word-count fixes (pillars.E, recent.extended), both resolved by adding
+  real facts. `--links` passes 0 errors, 1 warning (S&P Global, familiar
+  403 bot-detection pattern) -- 12/13 resolved. Full pytest suite: 106
+  passed. Full-corpus check: 0 errors, 2 pre-existing warnings (COD, EGY
+  all-negative balance, unrelated to this run). 33 of 54 countries now have
+  a record.'
