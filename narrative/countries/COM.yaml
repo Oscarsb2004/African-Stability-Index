@@ -1,0 +1,471 @@
+meta:
+  iso3: COM
+  name: Comoros
+  last_updated: 2026-08-10
+  iteration_count: 1
+  next_action: >
+    EXPAND: (1) follow whether the vanilla/clove export crisis and the
+    October 2025 national consultations produce any measurable
+    recovery; (2) follow whether Azali's consolidated control (CRC
+    sweeping parliament and municipalities in early 2025) produces
+    further constitutional changes; (3) resolve, if possible, the
+    discrepancy this record flags between this pillar's 89.80%
+    electricity-access figure and a separate source's 71% (2025)
+    figure; (4) follow whether Comoros' March 2026 NDC climate pledge
+    translates into further renewable capacity beyond the 6.3MW solar
+    plant; (5) check if Pillar C has gained coverage.
+  model_used: claude-sonnet-5
+
+historical:
+  overview: >
+    France annexed the Comoros islands progressively from 1841 and
+    developed plantation agriculture using enslaved and indentured
+    labour. Ahmed Abdallah declared independence on 6 July 1975, but
+    Mayotte, one of the archipelago's four main islands, voted
+    separately to remain French and remains a French territory today.
+    Abdallah's presidency lasted just 27 days before French mercenary
+    Bob Denard, acting on orders from a French government official,
+    overthrew him. Denard staged a further coup in 1978 that restored
+    Abdallah to power, then commanded the Presidential Guard and ruled
+    as de facto leader for the next decade. Abdallah was shot dead in
+    his office in 1989 under disputed circumstances; Denard, who was
+    also wounded, was later cleared of involvement. Denard staged a
+    fourth and final coup in September 1995, prompting a French military
+    intervention, Operation Azalee, that forced his surrender within a
+    day. Comoros has recorded more than 20 coups or coup attempts since
+    independence -- the highest rate of any country in the world. The
+    islands of Anjouan and Mohéli seceded in 1997; Anjouan's leader
+    Mohamed Bacar defied a federal reunification and re-declared
+    independence in 2007, prompting an African Union military
+    intervention in March 2008 that forced him to flee to Mayotte
+    disguised as a woman. Azali Assoumani, who first seized power in
+    his own 1999 coup and stepped down in 2006, returned via election in
+    2016; a 2018 referendum he orchestrated dismantled the country's
+    rotating-presidency system and term limits, enabling contested third
+    and fourth terms in 2019 and January 2024.
+  overview_citations: [c1, c2, c3, c4, c5, c6]
+  colonial_legacy: >
+    context/colonial_history.yaml already credits France's
+    plantation-agriculture colonisation, Mayotte's 1975 separation, and
+    Comoros' world-leading coup rate, naming Bob Denard's interventions
+    specifically. Worth adding the mechanism that made Denard's rule
+    possible rather than merely noting it occurred: Denard's first coup,
+    against Comoros' own first president just 27 days into independence,
+    was carried out on direct orders from Jacques Foccart, the architect
+    of France's broader postcolonial Africa policy -- meaning the very
+    first rupture of Comorian sovereignty was itself a French state
+    decision, executed through a nominally private mercenary, immediately
+    after formal independence was granted. Denard subsequently ruled the
+    islands in practice for over a decade (1978-1989) as commander of
+    the Presidential Guard, funded in part by apartheid-era South Africa
+    and Rhodesia -- an arrangement in which a colonial-adjacent foreign
+    actor retained effective control of the state Comoros had just
+    become sovereign over. Mayotte's continued status as French
+    territory, rather than joining the 1975 independence, is the direct
+    root of the Mayotte migration dynamic documented under recent
+    developments: Comorians moving to a nearby island still governed as
+    part of France, decades after the rest of their own archipelago
+    became independent.
+  colonial_legacy_citations: [c1, c2]
+  key_periods:
+    - title: "Colonisation, independence, and Mayotte's separation"
+      period: "1841-1975"
+      summary: >
+        France annexed the Comoros islands progressively from 1841 and
+        developed plantation agriculture using enslaved and indentured
+        labour. Ahmed Abdallah declared independence on 6 July 1975,
+        but Mayotte, one of the archipelago's four main islands, voted
+        separately to remain French and remains a French territory
+        today, fragmenting the newly independent state from its first
+        day.
+      citations: [c1]
+    - title: "Bob Denard's coups and de facto rule"
+      period: "1975-1995"
+      summary: >
+        Abdallah's presidency lasted just 27 days before French
+        mercenary Bob Denard, acting on orders from French official
+        Jacques Foccart, overthrew him. Denard staged a further coup in
+        1978 that restored Abdallah, then commanded the Presidential
+        Guard and ruled as de facto leader for the next decade; Abdallah
+        was shot dead in 1989 under disputed circumstances. Denard's
+        fourth and final coup attempt in September 1995 prompted a
+        French military intervention that forced his surrender within a
+        day.
+      citations: [c2, c3]
+    - title: "The Anjouan secession crisis"
+      period: "1997-2008"
+      summary: >
+        The islands of Anjouan and Mohéli seceded from Comoros in 1997.
+        Anjouan's leader Mohamed Bacar defied efforts at reunification
+        and re-declared independence in 2007 after a disputed election;
+        an African Union military intervention in March 2008 retook the
+        island, forcing Bacar to flee to Mayotte disguised as a woman.
+      citations: [c4]
+    - title: "Azali Assoumani's return and the end of power rotation"
+      period: "1999-2024"
+      summary: >
+        Azali Assoumani, who first seized power in his own 1999 coup and
+        stepped down in 2006 after Comoros adopted a rotating presidency
+        among its three islands, returned to power via election in
+        2016. A 2018 referendum he orchestrated dismantled that rotation
+        system and presidential term limits, enabling contested third
+        and fourth terms in 2019 and January 2024, the latter with
+        62.97% of the vote.
+      citations: [c5, c6]
+
+pillars:
+  A:
+    summary: >
+      All six governance indicators are directly measured this year,
+      and the aggregate score is severely weak -- Regulatory Quality
+      and Voice and Accountability are the two weakest. That severity
+      is a direct, current governance story, not merely historical:
+      President Azali Assoumani secured a fourth term in January 2024
+      with 62.97% of the vote, an election opposition parties rejected
+      as fraudulent, made possible by a 2018 referendum that dismantled
+      both the country's rotating-presidency system -- designed after
+      the Anjouan secession crisis to share power among the three
+      islands -- and presidential term limits. His party then swept both
+      parliamentary elections in January 2025 and municipal elections
+      the following month, consolidating control across every level of
+      government.
+    drivers:
+      - "all 6 governance indicators directly measured; Regulatory Quality and Voice and Accountability are the two weakest"
+      - "Azali secured a 4th term Jan 2024 (62.97%, opposition alleged fraud), made possible by a 2018 referendum dismantling both the post-Anjouan-crisis rotating presidency and term limits"
+      - "Azali's CRC party swept parliamentary elections (Jan 2025) and municipal elections (Feb 2025), consolidating control across every level of government"
+    citations: [c5, c6, c7]
+  B:
+    summary: >
+      GDP growth and GDP per capita, both freshly measured, are
+      moderate. Inflation, also fresh, is comparatively moderate as
+      well. Domestic credit to the private sector, also fresh, is thin.
+      Gini, carried forward rather than fresh, indicates real
+      inequality. Comoros' vanilla and clove exports -- long central to
+      the economy -- have struggled badly in recent years: vanilla
+      prices have fallen more than 80% since 2019, and clove exports
+      collapsed in early 2025, prompting the government to convene
+      national consultations in October 2025 to define a recovery
+      strategy, though stronger ylang-ylang exports have partly offset
+      the losses.
+    drivers:
+      - "GDP growth, GDP per capita, inflation all fresh, moderate; domestic credit thin (fresh); Gini (carried forward) indicates real inequality"
+      - "vanilla prices down 80%+ since 2019; clove exports collapsed early 2025 -- a genuine structural crisis for two of the country's core exports"
+      - "government convened national consultations Oct 2025 to define a recovery strategy; stronger ylang-ylang exports partly offset losses, but the recovery effort's outcome remains unproven"
+    citations: [c8, c9]
+  D:
+    summary: >
+      Life expectancy, just under 67 years, and infant mortality, at
+      36.0 per 1,000 live births, are both freshly measured and
+      moderate. Severe food insecurity, also fresh, is comparatively
+      severe, affecting over a quarter of the population. Safely
+      managed drinking water access, estimated from regional peers, is
+      weak. Four of the pillar's five indicators are current -- moderate
+      outcomes on the two most-measured indicators sitting alongside a
+      genuinely severe food-security reading that a thinner dataset
+      elsewhere in this corpus might have left obscured.
+    drivers:
+      - "life expectancy ~67 years, infant mortality ~36.0/1,000 -- both fresh, moderate"
+      - "severe food insecurity affects over a quarter of the population (fresh) -- comparatively severe"
+      - "safely managed water weak (regional-mean estimate); 4 of 5 indicators fresh -- a largely, not thinly, measured picture"
+    citations: [c1]
+  E:
+    summary: >
+      Political Stability, freshly measured, is comparatively decent --
+      a notable reading given Comoros' status as the world's most
+      coup-prone country, though the reference year likely reflects the
+      relative calm since Azali's 2016 return rather than the full
+      sweep of the country's history. Homicide and displaced persons
+      are both entirely absent from this year's data. Only two of the
+      pillar's four indicators have any measurement at all, so this
+      pillar's comparatively favourable score should be read as thin,
+      not as evidence Comoros' documented instability has ended.
+    drivers:
+      - "Political Stability comparatively decent (fresh) -- notable given Comoros' status as the world's most coup-prone country; likely reflects relative calm since 2016, not the full historical record"
+      - "homicide and IDPs both entirely absent from this year's data"
+      - "only 2 of 4 indicators have any measurement -- this pillar's favourable score should be read as thin, not as evidence instability has ended"
+    citations: [c2]
+  F:
+    summary: >
+      CO2 emissions per capita, freshly measured, are comparatively
+      low. Electricity generation from fossil fuels, carried forward,
+      was 100% at this pillar's 2023 reference year -- the worst
+      possible reading -- though a 6.3-megawatt solar plant inaugurated
+      in April 2025, documented under recent developments, has since
+      begun supplying clean power to the capital, Moroni, an
+      improvement this pillar's data does not yet reflect. Freshwater
+      withdrawal, also carried forward, is very low relative to
+      renewable resources, plausibly reflecting genuine abundance on a
+      volcanic island archipelago. Only two of the pillar's four
+      indicators are freshly measured this year.
+    drivers:
+      - "CO2 pc comparatively low (fresh)"
+      - "electricity generation 100% fossil-fuel at the 2023 reference year (carried forward) -- the worst possible reading, though a 6.3MW solar plant (April 2025) has since begun supplying Moroni, an improvement not yet reflected here"
+      - "freshwater withdrawal very low relative to renewable resources (carried forward) -- plausibly genuine abundance on a volcanic island archipelago"
+      - "only 2 of 4 indicators freshly measured this year"
+    citations: [c10]
+  G:
+    summary: >
+      Electricity access, at just under 90% and freshly measured, is
+      strong -- among the better readings recorded in this corpus. A
+      separate, more recent source reports a considerably lower figure,
+      national access rising from 46% in 2017 to 71% by 2025 -- a real
+      discrepancy this record cannot resolve from the data available,
+      though both readings describe improvement over the same
+      solar-expansion period documented in Pillar F, not a decline.
+      Basic drinking water access, also fresh, is comparatively decent;
+      safely managed water and handwashing are both weaker. Social
+      protection, carried forward, is thin. Four of the pillar's five
+      indicators are current.
+    drivers:
+      - "electricity access just under 90% (fresh) -- among the better readings in this corpus; a separate 2025 source reports a lower 71% figure, a genuine unresolved discrepancy noted rather than silently picked between"
+      - "basic drinking water comparatively decent (fresh); safely managed water and handwashing both weaker (regional-mean estimate and fresh respectively)"
+      - "social protection thin (carried forward); 4 of 5 indicators fresh"
+    citations: [c10, c11]
+
+recent:
+  primary:
+    - headline: "Azali Assoumani secures a fourth term as opposition alleges fraud"
+      date: 2024-01-17
+      summary: >
+        President Azali Assoumani won a fourth term in Comoros' 14
+        January 2024 presidential election with 62.97% of the vote,
+        made possible by a 2018 referendum he orchestrated that
+        dismantled the country's rotating presidency and abolished term
+        limits. Opposition parties rejected the results as fraudulent.
+        His Convention for the Renewal of the Comoros party went on to
+        sweep parliamentary elections in January 2025 and municipal
+        elections the following month.
+      why_it_matters: >
+        Directly explains Pillar A's severity, and shows the dismantling
+        of the rotating-presidency system historical.key_periods
+        documents as designed specifically to prevent the kind of
+        single-island, single-leader dominance now consolidated.
+      news_url: "https://www.aljazeera.com/news/2024/1/11/comoros-president-assoumani-seeks-fourth-term-in-january-13-election"
+      wikipedia_url: ""
+      sentiment: negative
+    - headline: "Comoros inaugurates its first major solar plant, cutting fossil-fuel dependence"
+      date: 2025-04-23
+      summary: >
+        Comoros inaugurated a 6.3-megawatt solar plant in April 2025,
+        funded by the Abu Dhabi Fund for Development, supplying clean
+        electricity to the capital Moroni and surrounding areas and
+        expected to cut carbon dioxide emissions by roughly 10,000
+        tonnes annually. The plant follows a 2023 Electricity Code
+        establishing a legal framework for renewable-energy expansion,
+        and Comoros submitted a revised national climate pledge to the
+        UN in March 2026 targeting up to 57% conditional emissions cuts
+        by 2035.
+      why_it_matters: >
+        A genuine, verifiable step away from the 100% fossil-fuel
+        electricity generation documented in Pillar F, credited at full
+        weight independent of the severe governance record documented
+        elsewhere in this record.
+      news_url: "https://solarquarter.com/2025/04/23/adfd-inaugurates-6-3-mw-solar-plant-in-comoros-to-drive-clean-energy-transition-and-economic-growth/"
+      wikipedia_url: ""
+      sentiment: positive
+    - headline: "Vanilla and clove export collapse prompts national economic consultations"
+      date: 2025-10-26
+      summary: >
+        Comoros' government convened national consultations from 24 to
+        26 October 2025, bringing together producers and exporters to
+        define a recovery strategy after vanilla prices fell more than
+        80% since 2019 and clove exports collapsed in early 2025 -- two
+        of the country's most important agricultural exports. Stronger
+        ylang-ylang exports partly offset the losses.
+      why_it_matters: >
+        A real structural economic crisis met with a genuine, if still
+        unproven, government response, documented in Pillar B.
+      news_url: "https://www.ecofinagency.com/news-agriculture/2910-49933-comoros-outlines-new-reforms-to-revive-its-struggling-vanilla-industry"
+      wikipedia_url: ""
+      sentiment: mixed
+  extended:
+    - headline: "Cyclone Chido devastates Mayotte, exposing the depth of Comoros-Mayotte migration ties"
+      date: 2024-12-15
+      summary: >
+        Cyclone Chido, the strongest storm to hit Mayotte in over 90
+        years, killed as many as several hundred people when it struck
+        the French territory on 14 December 2024; authorities estimate
+        roughly a third of Mayotte's population -- many living in
+        informal settlements -- originates from Comoros. The storm also
+        affected the Comoros islands directly, part of a wider regional
+        impact that later killed dozens more in Mozambique and Malawi.
+      why_it_matters: >
+        A stark, current illustration of the Mayotte separation
+        documented in historical.colonial_legacy: decades after
+        independence, hundreds of thousands of Comorians' lives remain
+        entangled with a neighbouring island still governed as part of
+        France.
+      news_url: "https://www.aljazeera.com/news/2024/12/18/mayotte-toll-still-unknown-as-french-territory-reels-from-chido-devastation"
+      wikipedia_url: ""
+      sentiment: negative
+
+events:
+  - year: 1975
+    type: coup
+    title: "Denard ousts Comoros' first president after 27 days"
+    description: >
+      French mercenary Bob Denard, acting on orders from French official
+      Jacques Foccart, overthrew President Ahmed Abdallah just 27 days
+      after Comoros declared independence, the first of Denard's four
+      Comorian coups.
+    url: "https://en.wikipedia.org/wiki/Bob_Denard"
+    direction: deteriorate
+  - year: 1995
+    type: coup
+    title: "France ends Denard's rule in Operation Azalee"
+    description: >
+      Denard staged a fourth and final coup in September 1995; French
+      forces launched Operation Azalee on 3-4 October 1995, forcing his
+      surrender within a day and ending two decades of his intermittent
+      de facto rule over the islands.
+    url: "https://en.wikipedia.org/wiki/Operation_Azalee"
+    direction: improve
+  - year: 2008
+    type: conflict
+    title: "African Union intervenes to end Anjouan's secession"
+    description: >
+      An African Union military intervention on 25 March 2008 retook
+      the island of Anjouan from Colonel Mohamed Bacar, who had
+      re-declared independence in 2007 after a disputed election;
+      Bacar fled to Mayotte disguised as a woman.
+    url: "https://en.wikipedia.org/wiki/2008_invasion_of_Anjouan"
+    direction: improve
+  - year: 2018
+    type: constitutional
+    title: "Referendum ends power rotation and term limits"
+    description: >
+      A 2018 referendum orchestrated by President Azali Assoumani
+      dismantled Comoros' rotating presidency among its three islands
+      and abolished presidential term limits, enabling his contested
+      third and fourth terms in 2019 and 2024.
+    url: "https://en.wikipedia.org/wiki/Azali_Assoumani"
+    direction: deteriorate
+
+citations:
+  - id: c1
+    url: "https://en.wikipedia.org/wiki/History_of_the_Comoros"
+    source_type: wikipedia
+    title: "History of the Comoros"
+    accessed: 2026-08-10
+    verified: true
+  - id: c2
+    url: "https://en.wikipedia.org/wiki/Bob_Denard"
+    source_type: wikipedia
+    title: "Bob Denard"
+    accessed: 2026-08-10
+    verified: true
+  - id: c3
+    url: "https://en.wikipedia.org/wiki/Operation_Azalee"
+    source_type: wikipedia
+    title: "Operation Azalee"
+    accessed: 2026-08-10
+    verified: true
+  - id: c4
+    url: "https://en.wikipedia.org/wiki/2008_invasion_of_Anjouan"
+    source_type: wikipedia
+    title: "2008 invasion of Anjouan"
+    accessed: 2026-08-10
+    verified: true
+  - id: c5
+    url: "https://en.wikipedia.org/wiki/Azali_Assoumani"
+    source_type: wikipedia
+    title: "Azali Assoumani"
+    accessed: 2026-08-10
+    verified: true
+  - id: c6
+    url: "https://www.aljazeera.com/news/2024/1/11/comoros-president-assoumani-seeks-fourth-term-in-january-13-election"
+    source_type: news
+    title: "Comoros President Assoumani seeks fourth term in January 13 election (Al Jazeera)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c7
+    url: "https://africacenter.org/spotlight/comoros-election-exercise-promises-more-of-the-same/"
+    source_type: news
+    title: "Comoros Election Exercise Promises More of the Same (Africa Center for Strategic Studies)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c8
+    url: "https://www.ecofinagency.com/news-agriculture/2910-49933-comoros-outlines-new-reforms-to-revive-its-struggling-vanilla-industry"
+    source_type: news
+    title: "Comoros outlines new reforms to revive its struggling vanilla industry (Ecofin Agency)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c9
+    url: "https://www.afdb.org/en/countries/east-africa/comoros/comoros-economic-outlook"
+    source_type: official
+    title: "Comoros Economic Outlook (African Development Bank)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c10
+    url: "https://solarquarter.com/2025/04/23/adfd-inaugurates-6-3-mw-solar-plant-in-comoros-to-drive-clean-energy-transition-and-economic-growth/"
+    source_type: news
+    title: "ADFD Inaugurates 6.3 MW Solar Plant in Comoros to Drive Clean Energy Transition and Economic Growth (SolarQuarter)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c11
+    url: "https://www.preventionweb.net/news/how-comoros-taking-climate-action-promise-progress"
+    source_type: news
+    title: "How the Comoros is taking climate action from promise to progress (PreventionWeb)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c12
+    url: "https://www.aljazeera.com/news/2024/12/18/mayotte-toll-still-unknown-as-french-territory-reels-from-chido-devastation"
+    source_type: news
+    title: "Mayotte toll still unknown as French territory reels from Chido devastation (Al Jazeera)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c13
+    url: "https://en.wikipedia.org/wiki/Common_Market_for_Eastern_and_Southern_Africa"
+    source_type: wikipedia
+    title: "Common Market for Eastern and Southern Africa"
+    accessed: 2026-08-10
+    verified: true
+  - id: c14
+    url: "https://simple.wikipedia.org/wiki/Community_of_Sahel-Saharan_States"
+    source_type: wikipedia
+    title: "Community of Sahel-Saharan States"
+    accessed: 2026-08-10
+    verified: true
+  - id: c15
+    url: "https://www.sadc.int/member-states/comoros"
+    source_type: official
+    title: "Comoros (SADC)"
+    accessed: 2026-08-10
+    verified: true
+
+rec_membership:
+  - org: COMESA
+    joined: 1994
+    status: current
+    left: null
+    citations: [c13]
+  - org: CEN-SAD
+    joined: 2007
+    status: current
+    left: null
+    citations: [c14]
+  - org: SADC
+    joined: 2018
+    status: current
+    left: null
+    citations: [c15]
+
+balance:
+  n_positive: 1
+  n_negative: 2
+  n_mixed: 1
+  note: >
+    Azali's consolidated fourth term and Cyclone Chido's exposure of the
+    Mayotte migration entanglement are both coded negative at full
+    weight, not softened by the genuine solar-energy achievement placed
+    alongside them. The solar plant is coded positive because it is a
+    real, substantial, verifiable step toward reducing the 100%
+    fossil-fuel electricity generation documented in Pillar F,
+    independent of the severe governance record documented in Pillar A
+    -- the same standard this corpus applies elsewhere (NAM's Noor-style
+    reasoning, ZWE's ZiG currency) to crediting a real achievement
+    without letting political severity discount it. The vanilla/clove
+    crisis and the government's consultative response are coded mixed:
+    the crisis is real and current, and the response is a genuine
+    institutional step whose actual effectiveness this record does not
+    yet have evidence to judge either way.

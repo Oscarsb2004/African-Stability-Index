@@ -471,6 +471,30 @@ countries:
       A/E/B get fresh post-CAB3, post-ZiG data superseding the 2023 reference
       year; follow whether the 2023 election fraud allegations produce any
       formal legal outcome; check if Pillar C has gained coverage'
+  COM:
+    name: Comoros
+    region: Islands
+    first_pass: false
+    reason: eighteenth backlog country -- fills the Islands gap further (3 of
+      5 done); the world's most coup-prone country (20+ coups/attempts since
+      1975), several orchestrated by French mercenary Bob Denard who ruled as
+      de facto leader for over a decade; the first coup, against Comoros' own
+      first president just 27 days into independence, was carried out on
+      direct orders from a French official -- the earliest and most direct
+      instance of external interference in a country's sovereignty in this
+      corpus; Mayotte's continued status as French territory (root of the
+      Dec 2024 Cyclone Chido migration story) is a live territorial-fragment
+      dispute parallel to MAR's Western Sahara; a genuine positive (April
+      2025 solar plant) credited against a 100%-fossil-fuel baseline
+    iteration_count: 1
+    last_updated: '2026-08-10'
+    next_action: 'EXPAND: follow whether the vanilla/clove export crisis and
+      the October 2025 national consultations produce any measurable
+      recovery; follow whether Azali''s consolidated control produces further
+      constitutional changes; resolve, if possible, the discrepancy this
+      record flags between the 89.80% and 71% electricity-access figures;
+      follow whether the March 2026 NDC climate pledge translates into
+      further renewable capacity; check if Pillar C has gained coverage'
 backlog:
   LBY:
     name: Libya
@@ -667,14 +691,6 @@ backlog:
   SWZ:
     name: Eswatini
     region: South
-    first_pass: false
-    reason: not yet scheduled
-    iteration_count: 0
-    last_updated: null
-    next_action: create baseline from blueprint
-  COM:
-    name: Comoros
-    region: Islands
     first_pass: false
     reason: not yet scheduled
     iteration_count: 0
@@ -1347,3 +1363,39 @@ meta_notes:
   `--links` passes 0 errors, 2 warnings (Britannica and WEF, both familiar
   403 bot-detection patterns) -- 13/15 resolved. Full pytest suite: 106
   passed. 26 of 54 countries now have a record.'
+- '2026-08-10: COM CREATE run complete (15 sources opened and verified: 5
+  Wikipedia, 6 news, 1 academic/Africa Center, 1 official/World Bank-derived
+  [swapped after a genuine 404 -- see below], 2 more for rec_membership). The
+  halfway point of the corpus: 27 of 54 countries now have a record. Fills
+  the Islands gap further (3 of 5 done). Comoros is the world''s most
+  coup-prone country -- 20+ coups or attempts since 1975 -- and the
+  colonial_legacy section makes the earliest and most direct instance of
+  external sovereignty interference found in this corpus yet: the FIRST
+  coup, against Comoros'' own first president just 27 days after
+  independence, was carried out by mercenary Bob Denard on direct orders
+  from Jacques Foccart, the architect of France''s broader postcolonial
+  Africa policy -- meaning the very first rupture of Comorian sovereignty
+  was itself a French state decision, not merely a domestic political
+  failure. Denard then ruled the islands in practice for over a decade
+  (1978-1989) as Presidential Guard commander, funded partly by
+  apartheid-era South Africa and Rhodesia. Mayotte''s continued status as
+  French territory (voted to remain French in 1975 rather than join
+  independence) is documented as the direct root of the Dec 2024 Cyclone
+  Chido migration story -- a live territorial-fragment dispute genuinely
+  comparable in shape to MAR''s Western Sahara case, though smaller in
+  scale and without the same international-recognition dimension. One
+  genuine dead link caught: a World Bank PDF (thedocs.worldbank.org)
+  returned a real HTTP 404 -- the fifth confirmed genuine dead link in this
+  corpus (after COD, ZAF, BFA, LBR) -- replaced with the AfDB Comoros
+  Economic Outlook page before committing; all 15 citations then resolved
+  cleanly. Followed the established discipline and found a genuine positive:
+  an April 2025 6.3MW solar plant, credited explicitly against the 100%-
+  fossil-fuel baseline documented at the pillar''s own 2023 reference year.
+  Also flagged, rather than silently resolved, a genuine data discrepancy:
+  the index''s own 89.80% electricity-access figure and a separate 2025
+  source''s considerably lower 71% figure describe the same underlying
+  reality differently -- noted explicitly in Pillar G as an unresolved
+  discrepancy rather than picked between without comment. Balance: 1
+  positive, 2 negative, 1 mixed. `--links` passes 0 errors, 0 warnings after
+  the c9 swap -- the fourth zero-warning run in this corpus (after MDG, ERI,
+  CAF). Full pytest suite: 106 passed.'

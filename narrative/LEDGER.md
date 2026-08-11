@@ -26,7 +26,7 @@ An audit is forced early if a single run inflates the citation count by more tha
 
 ## Status
 
-**26 of 54 countries have a record (Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria, Rwanda, Chad, Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic, Mauritania, Zimbabwe). The first pass is complete; Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic, Mauritania and Zimbabwe are the first seventeen backlog countries.**
+**27 of 54 countries have a record — the halfway point (Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria, Rwanda, Chad, Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic, Mauritania, Zimbabwe, Comoros). The first pass is complete; Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic, Mauritania, Zimbabwe and Comoros are the first eighteen backlog countries.**
 
 ### First pass — 9 countries
 
@@ -68,14 +68,15 @@ whose ranks swing hardest with the weighting method.
 | CAF | Central African Republic | fills Central Africa's biggest gap (3 of 8 done); Bokassa's 1976-1979 self-declared Empire; the corpus's first major Russian paramilitary presence (Wagner, since 2018), argued as structurally continuous with the colonial-era concessionary companies that produced the 1928-1931 Kongo-Wara Rebellion; two new corpus superlatives (56.3% severe food insecurity, 99.37/1,000 directly-measured IDPs); a genuine positive (2024 Kimberley Process reintegration) credited alongside, not instead of, Wagner-atrocity findings in the same mining sector | **done — iteration 1** |
 | MRT | Mauritania | fills West Africa's biggest gap (6 of 16 done); the last country in the world to formally abolish slavery (1981, criminalized 2007), with France's own colonial administration having declared abolition in 1905 and knowingly declined to enforce it -- a distinct colonial-complicity mechanism new to this corpus; left ECOWAS entirely in 2000, decades before the AES trio's 2025 exit; a genuine positive (Greater Tortue Ahmeyim gas field reaching full production) placed alongside a genuinely unresolved current negative (2025 State Dept trafficking report on persistent hereditary slavery) | **done — iteration 1** |
 | ZWE | Zimbabwe | fills East Africa's biggest gap (5 of 14 done); the only country in the corpus whose settler minority unilaterally declared independence FROM the colonizer to avoid majority rule (Rhodesia's 1965 UDI), inverting every other decolonization pattern here; the 2000-2002 land reform read as a catastrophically-executed response to a genuine, unresolved colonial grievance rather than dismissed outright; a genuine positive (ZiG currency's first single-digit inflation in ~30 years) credited independent of a severe, escalating political record (July 2026 term-limit extension, sidelined VP/General Chiwenga) | **done — iteration 1** |
+| COM | Comoros | the halfway point of the corpus; the world's most coup-prone country (20+ since 1975); its first coup, 27 days into independence, was carried out on direct orders from a French official -- the most direct instance of external sovereignty interference found in this corpus yet; Mayotte's continued French status is a live territorial-fragment dispute paralleling MAR's Western Sahara; a genuine positive (April 2025 solar plant) credited against a 100%-fossil-fuel baseline; flagged rather than silently resolved a genuine data discrepancy between two electricity-access figures | **done — iteration 1** |
 
-### Backlog — the remaining 28
+### Backlog — the remaining 27
 
 Listed in full in `narrative/state.yaml` under `backlog`. They are recorded
 explicitly rather than left implicit: a country with no record should be visibly
 absent, not quietly missing.
 
-Libya, Tunisia, Benin, Cabo Verde, The Gambia, Guinea, Guinea-Bissau, Cote d'Ivoire, Senegal, Sierra Leone, Togo, Cameroon, Republic of Congo, Equatorial Guinea, Gabon, Burundi, Djibouti, Malawi, Mozambique, South Sudan, Tanzania, Uganda, Zambia, Lesotho, Eswatini, Comoros, Seychelles, Sao Tome & Principe
+Libya, Tunisia, Benin, Cabo Verde, The Gambia, Guinea, Guinea-Bissau, Cote d'Ivoire, Senegal, Sierra Leone, Togo, Cameroon, Republic of Congo, Equatorial Guinea, Gabon, Burundi, Djibouti, Malawi, Mozambique, South Sudan, Tanzania, Uganda, Zambia, Lesotho, Eswatini, Seychelles, Sao Tome & Principe
 
 ---
 
@@ -855,6 +856,43 @@ Append one line per run: date, country, mode, what changed, what was removed.
   `--links` passes 0 errors, 2 warnings (Britannica and WEF, both
   familiar 403 bot-detection patterns) — 13/15 resolved.
 
+- **2026-08-10 — COM — CREATE. Eighteenth backlog country, the
+  halfway point of the corpus (27 of 54).** Full baseline built:
+  historical overview, colonial legacy (the first coup against Comoros'
+  own first president, 27 days into independence, was carried out by
+  mercenary Bob Denard on direct orders from Jacques Foccart, architect
+  of France's broader postcolonial Africa policy -- the most direct
+  instance of external sovereignty interference documented in this
+  corpus, a French state decision rather than a domestic political
+  failure), 4 key_periods, 6 pillar summaries (Pillar C left empty —
+  greyed at 1/8 measured), 3 primary + 1 extended recent items, 4
+  events, rec_membership (COMESA 1994, CEN-SAD 2007, SADC 2018 —
+  Comoros belongs to all three, verified individually). 15 sources
+  opened and verified: 5 Wikipedia, 6 news, 1 Africa Center, 1
+  AfDB (after a citation swap), 2 more for rec_membership. Comoros is
+  the world's most coup-prone country — 20+ coups or attempts since
+  1975, several orchestrated by Denard, who ruled the islands in
+  practice for over a decade (1978-1989) as Presidential Guard
+  commander, funded partly by apartheid-era South Africa and Rhodesia.
+  Mayotte's continued status as French territory (voted to remain
+  French in 1975 rather than join independence) is documented as the
+  direct root of the December 2024 Cyclone Chido migration story — a
+  live territorial-fragment dispute genuinely comparable in shape to
+  MAR's Western Sahara case, though smaller in scale. One genuine dead
+  link caught: a World Bank PDF returned a real HTTP 404 — the fifth
+  confirmed genuine dead link in this corpus (after COD, ZAF, BFA,
+  LBR) — replaced with the AfDB Comoros Economic Outlook page before
+  committing; all 15 citations then resolved cleanly, the fourth
+  zero-warning run in this corpus (after MDG, ERI, CAF). Following the
+  established discipline, found a genuine positive: an April 2025
+  6.3MW solar plant, credited explicitly against the 100%-fossil-fuel
+  baseline documented at the pillar's own 2023 reference year. Also
+  flagged, rather than silently resolved, a genuine data discrepancy:
+  the index's own 89.80% electricity-access figure and a separate 2025
+  source's considerably lower 71% figure describe the same underlying
+  reality differently — noted explicitly in Pillar G rather than picked
+  between without comment. Balance: 1 positive, 2 negative, 1 mixed.
+
 ---
 
 ## Meta-notes
@@ -1321,6 +1359,25 @@ Things a future run should know about how to work, not about a specific country.
   The typology is now diverse enough that future country picks should
   actively ask "which pattern would this add" rather than defaulting to
   the most obvious reading of a country's colonial history.
+- **2026-08-10** — COM adds a seventh colonial-relationship pattern,
+  and it's the sharpest yet: not a colonial-era mechanism echoed by a
+  successor state (CAF/ERI), and not an ambiguous rhyme, but a single,
+  dateable, named event — Foccart personally ordering the coup that
+  ended Comoros' first president's 27-day tenure — that makes "the
+  colonizer directly ended the newly independent country's own choice
+  of leader" a literal fact rather than an interpretation. Worth
+  checking on every future record whether a comparably direct,
+  attributable act exists before settling for the more diffuse
+  "colonial structures persisted" framing that most records default to.
+  Also worth logging as a genuine first: this run flagged an unresolved
+  numeric discrepancy between the index's own data (89.80% electricity
+  access) and a separate reputable source (71%) rather than silently
+  preferring one. That is the right instinct — do not quietly pick
+  between two real numbers when they disagree and the discrepancy
+  itself might be meaningful (different methodologies, different
+  years, different definitions of "access") — but a future AUDIT pass
+  should try to actually resolve it rather than let the flag stand
+  indefinitely as the final word.
 
 ---
 
