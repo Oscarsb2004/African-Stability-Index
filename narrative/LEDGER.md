@@ -26,7 +26,7 @@ An audit is forced early if a single run inflates the citation count by more tha
 
 ## Status
 
-**39 of 54 countries have a record (Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria, Rwanda, Chad, Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic, Mauritania, Zimbabwe, Comoros, Uganda, Sierra Leone, Equatorial Guinea, The Gambia, Mozambique, Guinea, South Sudan, Lesotho, Sao Tome & Principe, Togo, Cameroon, Burundi). The first pass is complete; Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic, Mauritania, Zimbabwe, Comoros, Uganda, Sierra Leone, Equatorial Guinea, The Gambia, Mozambique, Guinea, South Sudan, Lesotho, Sao Tome & Principe, Togo, Cameroon and Burundi are the first thirty backlog countries.**
+**40 of 54 countries have a record (Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria, Rwanda, Chad, Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic, Mauritania, Zimbabwe, Comoros, Uganda, Sierra Leone, Equatorial Guinea, The Gambia, Mozambique, Guinea, South Sudan, Lesotho, Sao Tome & Principe, Togo, Cameroon, Burundi, Tunisia). The first pass is complete; Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic, Mauritania, Zimbabwe, Comoros, Uganda, Sierra Leone, Equatorial Guinea, The Gambia, Mozambique, Guinea, South Sudan, Lesotho, Sao Tome & Principe, Togo, Cameroon, Burundi and Tunisia are the first thirty-one backlog countries.**
 
 ### First pass — 9 countries
 
@@ -81,14 +81,15 @@ whose ranks swing hardest with the weighting method.
 | TGO | Togo | fills West Africa's remaining gap (11 of 16 done); the corpus's most procedurally sophisticated entrenchment mechanism yet -- a May 2024 constitution converted Togo to a parliamentary system, and in May 2025 Faure Gnassingbé was sworn in as a new, term-limit-free "President of the Council of Ministers", entrenching a dynasty ruling since his father's 1967 coup; a genuine cross-reference with GHA -- a 1956 plebiscite attached British Togoland to Ghana rather than reunifying it with French Togo, permanently splitting the Ewe people; a genuine positive (50% coffee/cocoa export growth, Port of Lomé's regional lead) credited alongside the deadly June 2025 crackdown on protests against the overhaul | **done — iteration 1** |
 | CMR | Cameroon | fills Central Africa, now the corpus's lowest region proportionally (6 of 8 done); a striking continuity with TGO -- the same German colony split between France and Britain after WWI, but Cameroon's 1961 reunification held for a decade before a 99.99%-margin 1972 referendum abolished the federal structure that gave the Anglophone territories autonomy, the direct traceable root of the 2016 Anglophone Crisis (6,500+ killed, 600,000+ displaced); Paul Biya, in power since 1982, is Africa's oldest and longest-serving head of state, and a disputed October 2025 election produced deadly protests and opposition leader Tchiroma's flight into exile; a genuine positive (32% malaria case decline from a 2024 vaccine rollout) credited alongside the unfolding crises | **done — iteration 1** |
 | BDI | Burundi | fills East Africa's biggest gap (10 of 14 done); a deliberate cross-reference with RWA -- the identical Belgian 1933 identity-card mechanism produced genocides against opposite ethnic groups two decades apart, and Burundi's 1972 Ikiza (150,000-300,000 Hutu killed) remains far less internationally documented than Rwanda's 1994 genocide despite comparable severity; a second corpus case, after SSD, of a current refugee crisis caused by a neighbor's conflict already in this corpus (COD/RWA's own M23/eastern-DRC war); among the poorest and least-electrified countries recorded here (GDP per capita $1,147 PPP, electricity access 11.6%); a genuine positive (coffee-sector recovery) credited alongside a June 2025 election in which the ruling party won every contested seat | **done — iteration 1** |
+| TUN | Tunisia | fills North Africa, now the corpus's lowest region proportionally (5 of 6 done); a genuinely distinct trajectory shape -- the birthplace of the Arab Spring built the only enduring post-Arab-Spring democratic transition (2015 Nobel Peace Prize) before Kais Saied dismantled it in a single-day constitutional self-coup, 25 July 2021; one of the rare corpus records with a declining 2000-2023 trend; Pillar D (health) remains Tunisia's strongest pillar even as Pillar A records a severe reversal, evidence Bourguiba's human-development legacy outlasted the democracy built atop it; a genuine positive (first 120MW solar plant, Dec 2025) credited alongside the 2024 re-election held after jailing nearly all opposition | **done — iteration 1** |
 
-### Backlog — the remaining 15
+### Backlog — the remaining 14
 
 Listed in full in `narrative/state.yaml` under `backlog`. They are recorded
 explicitly rather than left implicit: a country with no record should be visibly
 absent, not quietly missing.
 
-Libya, Tunisia, Benin, Cabo Verde, Guinea-Bissau, Cote d'Ivoire, Senegal, Republic of Congo, Gabon, Djibouti, Malawi, Tanzania, Zambia, Eswatini, Seychelles
+Libya, Benin, Cabo Verde, Guinea-Bissau, Cote d'Ivoire, Senegal, Republic of Congo, Gabon, Djibouti, Malawi, Tanzania, Zambia, Eswatini, Seychelles
 
 ---
 
@@ -1388,6 +1389,48 @@ Append one line per run: date, country, mode, what changed, what was removed.
   warning (France24, familiar 403 bot-detection pattern) — 15/16
   resolved. Full pytest suite: 106 passed.
 
+- **2026-08-11 — TUN — CREATE. Thirty-first backlog country, fills
+  North Africa, now the corpus's lowest region proportionally (5 of 6
+  done).** Full baseline built: historical overview, colonial legacy
+  (traces why Pillar D remains Tunisia's strongest pillar despite
+  Pillar A's severe reversal — Bourguiba's Code of Personal Status and
+  post-independence institution-building were a deliberate
+  nation-building choice whose health/education legacy has outlasted
+  the four-year-old constitution Saied dismantled), 4 key_periods, 6
+  pillar summaries (Pillar C left empty — greyed at 2/8 measured), 3
+  primary + 1 extended recent items, 4 events, rec_membership (UMA
+  1989 founding member, CEN-SAD 2001, COMESA 2018 — not a founding
+  member of either later bloc). 14 sources opened and verified: 6
+  Wikipedia, 5 news, 1 official/AfDB, 2 more Wikipedia for
+  rec_membership. Tunisia is a genuinely distinct trajectory shape not
+  yet in this corpus: the birthplace of the Arab Spring built the only
+  enduring post-Arab-Spring democratic transition, earning the
+  National Dialogue Quartet the 2015 Nobel Peace Prize, only for
+  President Kais Saied to dismantle it in a rapid, single-day
+  constitutional self-coup on 25 July 2021 — a rise-then-reversal arc
+  rather than long-entrenched autocracy or coup-only history. One of
+  the rare corpus records with a declining 2000-2023 trend (-4.2,
+  equal weights). Flagged a genuine data-provenance issue in Pillar E,
+  consistent with the DZA-run discipline: the displaced-persons figure
+  (65.74/1,000) is a regional-mean estimate, not Tunisia's own
+  measured value, most plausibly reflecting Libya's civil war next
+  door pulling the North Africa average upward. Following the
+  established discipline, found a genuine positive: Tunisia's first
+  120MW solar plant (Kairouan) entered commercial operation 16
+  December 2025, credited at full weight independent of the political
+  and economic crisis documented alongside it. The dominant negative
+  thread is the 2024 re-election held after jailing or barring nearly
+  all opposition (including Ennahdha leader Ghannouchi, sentenced to
+  life) and the March 2025 dismissal of Saied's third prime minister
+  in under two years — kept as two distinct negatives (an electoral
+  process, and a governing-instability pattern) rather than merged
+  into one. Balance: 1 positive, 2 negative, 1 mixed. One validator
+  catch: pillars.E initially had an empty citations list, fixed by
+  citing the Al Jazeera piece already used for broader political
+  context. `--links` passes 0 errors, 1 warning (AllAfrica, familiar
+  403 bot-detection pattern) — 13/14 resolved. Full pytest suite: 106
+  passed.
+
 ---
 
 ## Meta-notes
@@ -2093,6 +2136,22 @@ Things a future run should know about how to work, not about a specific country.
   recent English-language sourcing exists for RWA's 1994 genocide
   than for BDI's 1972 one), which future AUDIT passes on both records
   should keep in mind when judging citation quality by volume alone.
+- **2026-08-11** — TUN adds a trajectory shape worth naming as its own
+  category alongside the corpus's existing typologies (long-entrenched
+  autocracy; coup-belt/AES exit; dynastic entrenchment; state
+  collapse/reconstitution): the rise-then-reversal democracy, where a
+  genuine multiparty transition was built, internationally recognised
+  (a Nobel Peace Prize, not just domestic praise), and then dismantled
+  through ostensibly legal/constitutional means rather than a
+  military coup. Worth checking whether any remaining backlog country
+  fits this shape too, rather than assuming it is unique to Tunisia.
+  Also confirms a second instance (after MRT/GNQ's Pillar D-adjacent
+  cases) of a "human-development legacy outlives the political system
+  that built it" pattern: TUN's Pillar D stayed strongest even as
+  Pillar A collapsed, the same kind of institutional-durability
+  observation worth watching for whenever a pillar gap this wide opens
+  up between governance and health/education scores in future
+  countries.
 
 ---
 

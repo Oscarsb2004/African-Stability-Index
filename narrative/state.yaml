@@ -828,17 +828,40 @@ countries:
       2025 growth rate continue into fresh index data; check whether
       Pillars D/E/F/G carried-forward and regional-mean indicators
       gain fresh coverage; check if Pillar C has gained coverage'
+  TUN:
+    name: Tunisia
+    region: North
+    first_pass: false
+    reason: thirty-first backlog country -- fills North Africa, now
+      the corpus's lowest region proportionally (4 of 6 done before
+      this run); a genuinely distinct trajectory shape not yet in the
+      corpus -- the birthplace of the Arab Spring (Bouazizi''s 2010
+      self-immolation) built the only enduring post-Arab-Spring
+      democratic transition, earning the National Dialogue Quartet
+      the 2015 Nobel Peace Prize, only for President Kais Saied to
+      dismantle it in a rapid, single-day constitutional self-coup on
+      25 July 2021 -- a rise-then-reversal arc rather than
+      long-entrenched autocracy or coup-only history; a rare corpus
+      case with a declining 2000-2023 trend (-4.2); Pillar D (health)
+      is Tunisia''s strongest pillar by a wide margin even as Pillar A
+      records a severe reversal, evidence the human-development
+      legacy built under Bourguiba outlasted the democracy built atop
+      it; a genuine positive (first 120MW solar plant, Dec 2025)
+      credited alongside the 2024 re-election held after jailing
+      nearly all opposition
+    iteration_count: 1
+    last_updated: '2026-08-11'
+    next_action: 'EXPAND: follow whether Saied''s government sees
+      further prime ministerial turnover or any stabilisation; follow
+      whether the 2025 solar milestone converts into measurable
+      progress toward the 35%-clean-energy-by-2030 target; follow
+      whether tourism revenue growth continues or is disrupted by
+      regional instability; follow whether any jailed opposition
+      figures, including Ghannouchi, are released or see their
+      sentences reviewed; check if Pillar C has gained coverage'
 backlog:
   LBY:
     name: Libya
-    region: North
-    first_pass: false
-    reason: not yet scheduled
-    iteration_count: 0
-    last_updated: null
-    next_action: create baseline from blueprint
-  TUN:
-    name: Tunisia
     region: North
     first_pass: false
     reason: not yet scheduled
@@ -2085,3 +2108,44 @@ meta_notes:
   resolved. Full pytest suite: 106 passed. Full-corpus check: 0
   errors, 2 pre-existing warnings (COD, EGY all-negative balance,
   unrelated to this run). 39 of 54 countries now have a record.'
+- '2026-08-11: TUN CREATE run complete (14 sources opened and
+  verified: 6 Wikipedia, 5 news, 1 official/AfDB, 2 more Wikipedia for
+  rec_membership). Fills North Africa, now the corpus''s lowest region
+  proportionally (5 of 6 done after this run). Tunisia is a genuinely
+  distinct trajectory shape not yet in this corpus: the birthplace of
+  the Arab Spring built the only enduring post-Arab-Spring democratic
+  transition, earning the National Dialogue Quartet the 2015 Nobel
+  Peace Prize, only for President Kais Saied to dismantle it in a
+  rapid, single-day constitutional self-coup on 25 July 2021 -- a
+  rise-then-reversal arc rather than long-entrenched autocracy or
+  coup-only history. One of the rare corpus records with a declining
+  2000-2023 trend (-4.2, equal weights). colonial_legacy traces why
+  Pillar D (Health) remains Tunisia''s strongest pillar by a wide
+  margin even as Pillar A records a severe reversal: Bourguiba''s Code
+  of Personal Status and post-independence institution-building were
+  a deliberate nation-building choice whose health/education legacy
+  has proven more durable than the four-year-old constitution Saied
+  dismantled. Flagged a genuine data-provenance issue in Pillar E,
+  consistent with the DZA-run discipline: the displaced-persons figure
+  (65.74/1,000) is a REGIONAL-MEAN estimate, not Tunisia''s own
+  measured value, and most plausibly reflects Libya''s civil war next
+  door pulling the North Africa average upward rather than any
+  Tunisian reality. Following the established discipline, found a
+  genuine positive: Tunisia''s first 120MW solar plant (Kairouan)
+  entered commercial operation 16 December 2025, credited at full
+  weight independent of the same period''s political and economic
+  crisis. The dominant negative thread is the 2024 re-election held
+  after jailing or barring nearly all opposition (including Ennahdha
+  leader Ghannouchi, sentenced to life) and the March 2025 dismissal
+  of Saied''s third prime minister in under two years -- kept as two
+  distinct negatives (an electoral process, and a governing-
+  instability pattern) rather than merged into one. Balance: 1
+  positive, 2 negative, 1 mixed. One validator catch: pillars.E
+  initially had an empty citations list (data-provenance analysis
+  without a direct source), fixed by citing the Al Jazeera piece
+  already used for broader political/regional context rather than
+  leaving it uncited. `--links` passes 0 errors, 1 warning (AllAfrica,
+  familiar 403 bot-detection pattern) -- 13/14 resolved. Full pytest
+  suite: 106 passed. Full-corpus check: 0 errors, 2 pre-existing
+  warnings (COD, EGY all-negative balance, unrelated to this run). 40
+  of 54 countries now have a record.'

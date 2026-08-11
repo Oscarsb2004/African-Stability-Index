@@ -1,0 +1,461 @@
+meta:
+  iso3: TUN
+  name: Tunisia
+  last_updated: 2026-08-11
+  iteration_count: 1
+  next_action: >
+    EXPAND: (1) follow whether Saied's government sees further prime
+    ministerial turnover or any stabilisation; (2) follow whether the
+    2025 solar milestone converts into measurable progress toward the
+    35%-clean-energy-by-2030 target; (3) follow whether tourism
+    revenue growth continues or is disrupted by regional instability;
+    (4) follow whether any jailed opposition figures, including
+    Ghannouchi, are released or see their sentences reviewed; (5)
+    check if Pillar C has gained coverage.
+  model_used: claude-sonnet-5
+
+historical:
+  overview: >
+    France established a protectorate over Tunisia in 1881, preserving
+    the ruling Beylical dynasty while French settlers acquired
+    agricultural land; the Neo-Destour independence movement under
+    Habib Bourguiba achieved independence in 1956. Five months later,
+    Bourguiba's government enacted the Code of Personal Status,
+    outlawing polygamy and granting women some of the most progressive
+    legal rights in the Arab world at the time. Bourguiba ruled for 31
+    years until 7 November 1987, when his prime minister, Zine El
+    Abidine Ben Ali, removed him in a bloodless "medical coup" citing
+    his failing health, then ruled as an authoritarian president
+    himself for the next 23 years. On 17 December 2010, street vendor
+    Mohamed Bouazizi set himself on fire in Sidi Bouzid in protest at
+    police harassment; his death on 4 January 2011 ignited the Jasmine
+    Revolution, the first uprising of the Arab Spring, and Ben Ali
+    fled the country on 14 January 2011. Tunisia built the only
+    enduring democratic transition to follow the Arab Spring, adopting
+    a new constitution in 2014; the National Dialogue Quartet that
+    mediated the process won the 2015 Nobel Peace Prize. That
+    transition ended on 25 July 2021, when President Kais Saied
+    suspended parliament and, within a year, replaced the 2014
+    constitution with one concentrating power in the presidency, in
+    what is widely described as a constitutional self-coup. Saied won
+    re-election in October 2024 after jailing or barring nearly all
+    opposition candidates, and has since presided over a deepening
+    economic crisis and repeated changes of prime minister.
+  overview_citations: [c1, c2, c3, c4, c5, c6, c7]
+  colonial_legacy: >
+    context/colonial_history.yaml already frames Tunisia's
+    post-independence trajectory precisely: one of North Africa's most
+    developed middle classes, women's rights, and educational systems,
+    making the 2010-2011 Jasmine Revolution and subsequent democratic
+    experiment "all the more notable, though democracy has since been
+    reversed by Saied." Worth tracing why that human-development
+    legacy proved more durable than the democracy built on top of it.
+    Bourguiba's Code of Personal Status, enacted within five months of
+    independence, was not merely a colonial-era reform surviving into
+    the present -- it was a deliberate post-colonial nation-building
+    choice, distinguishing Tunisia from neighbours where French rule
+    left weaker post-independence state institutions. That
+    institutional strength is a plausible reason Pillar D (Health)
+    remains this record's strongest pillar even as Pillar A
+    (Governance) records a severe political reversal: bureaucracies,
+    schools, and health systems built over six decades do not unwind
+    at the speed a single presidential decree can unwind a
+    four-year-old constitution.
+  colonial_legacy_citations: [c3]
+  key_periods:
+    - title: "French protectorate and independence"
+      period: "1881-1956"
+      summary: >
+        France established a protectorate in 1881, preserving the
+        Beylical dynasty while French settlers acquired agricultural
+        land. The Neo-Destour independence movement under Habib
+        Bourguiba achieved independence on 20 March 1956; five months
+        later, Bourguiba's government enacted the Code of Personal
+        Status, granting women some of the most progressive legal
+        rights in the Arab world at the time.
+      citations: [c3]
+    - title: "Bourguiba's rule and Ben Ali's coup"
+      period: "1956-1987"
+      summary: >
+        Bourguiba ruled for 31 years, building Tunisia's education
+        and health systems alongside its women's-rights reforms. On 7
+        November 1987, his prime minister, Zine El Abidine Ben Ali,
+        removed him in a bloodless "medical coup" citing his failing
+        health, then ruled as an authoritarian president for the next
+        23 years.
+      citations: [c4]
+    - title: "The Jasmine Revolution and the democratic transition"
+      period: "2010-2015"
+      summary: >
+        Street vendor Mohamed Bouazizi's self-immolation on 17
+        December 2010 ignited the Jasmine Revolution, the first
+        uprising of the Arab Spring; Ben Ali fled the country on 14
+        January 2011. Tunisia adopted a new constitution in 2014, and
+        the National Dialogue Quartet that mediated the transition won
+        the 2015 Nobel Peace Prize.
+      citations: [c1, c2]
+    - title: "Saied's self-coup and its aftermath"
+      period: "2021-2025"
+      summary: >
+        President Kais Saied suspended parliament on 25 July 2021 and,
+        within a year, replaced the 2014 constitution with one
+        concentrating power in the presidency. He won re-election in
+        October 2024 after jailing or barring nearly all opposition
+        candidates, and has since sacked three prime ministers amid a
+        deepening economic crisis.
+      citations: [c5, c6, c7]
+
+pillars:
+  A:
+    summary: >
+      All six World Governance Indicators are directly measured this
+      year, and the aggregate is Tunisia's second-strongest pillar,
+      though still only moderate -- Voice and Accountability (55.7)
+      and Rule of Law (62.0) are the least weak. That moderate reading
+      understates a genuine reversal already well underway by 2023:
+      President Kais Saied's 25 July 2021 self-coup suspended
+      parliament and, by 2022, replaced the 2014 constitution -- the
+      cornerstone of the country's post-2011 democratic transition --
+      with one concentrating power in the presidency, a trajectory
+      that has since deepened through the 2024 re-election and
+      mass-imprisonment of opposition figures documented under recent
+      developments.
+    drivers:
+      - "all 6 WGI indicators directly measured; Voice and Accountability (55.7) and Rule of Law (62.0) the least weak -- Tunisia's second-strongest pillar, though still only moderate"
+      - "25 July 2021: Saied's self-coup suspended parliament; by 2022, replaced the 2014 constitution -- cornerstone of the post-2011 democratic transition -- with one concentrating power in the presidency"
+      - "the trajectory has since deepened through the 2024 re-election and mass imprisonment of opposition figures (see recent developments)"
+    citations: [c5, c7]
+  B:
+    summary: >
+      GDP growth, GDP per capita, inflation and domestic credit, all
+      freshly measured, make this Tunisia's second-highest pillar for
+      this corpus -- domestic credit scores at the scale's ceiling.
+      Gini, carried forward, is comparatively strong. This pillar's
+      2023 reference year predates a genuine, if narrow, bright spot:
+      tourism revenue rose roughly 40% between November 2022 and 2025,
+      even as the economic-mismanagement pattern documented under
+      recent developments -- Saied sacked his third prime minister in
+      less than two years in March 2025 -- has driven investment down
+      and unemployment, especially among university graduates, sharply
+      up.
+    drivers:
+      - "GDP growth, GDP per capita, inflation, domestic credit all fresh -- Tunisia's second-highest pillar for this corpus; domestic credit at the scale's ceiling"
+      - "Gini comparatively strong (carried forward)"
+      - "2023 reference year predates a genuine bright spot: tourism revenue rose ~40% (Nov 2022-2025), even as Saied sacked his third PM in less than 2 years (March 2025) amid deepening economic mismanagement (see recent developments)"
+    citations: [c8, c9]
+  D:
+    summary: >
+      All five indicators are directly measured this year, and the
+      aggregate is Tunisia's strongest pillar by a wide margin -- life
+      expectancy (76.51 years) and infant mortality (10.50 per 1,000)
+      are both among the best recorded anywhere in this corpus, and
+      handwashing-facility access is at the scale's ceiling. Severe
+      food insecurity and safely managed drinking water are similarly
+      strong. Five of the pillar's five indicators are current,
+      describing a country whose health system and human-development
+      legacy -- built substantially under Bourguiba's post-independence
+      reforms -- has held up despite the severe political reversal
+      documented in Pillar A.
+    drivers:
+      - "all 5 indicators directly measured; life expectancy (76.51 years) and infant mortality (10.50/1,000) both among the best recorded anywhere in this corpus; handwashing access at the scale's ceiling"
+      - "severe food insecurity and safely managed drinking water both similarly strong; 5 of 5 indicators current -- Tunisia's strongest pillar by a wide margin"
+      - "a human-development legacy built substantially under Bourguiba's post-independence reforms (see historical.key_periods), holding up despite the severe political reversal documented in Pillar A"
+    citations: [c3]
+  E:
+    summary: >
+      Political Stability and Rule of Law, both fresh and shared with
+      Pillar A, are middling. Intentional homicide, carried forward
+      rather than fresh, is comparatively more middling too. Displaced
+      persons, at 65.74 per 1,000, is a regional-mean estimate rather
+      than a direct measurement of Tunisia -- Tunisia has no active
+      internal conflict producing displacement at this scale, and the
+      figure most plausibly reflects North Africa's regional average
+      being pulled upward by Libya's ongoing civil war next door, not
+      Tunisia's own reality. Only two of the pillar's four indicators
+      are current.
+    drivers:
+      - "Political Stability and Rule of Law (shared with Pillar A) both middling, fresh; intentional homicide more middling (carried forward)"
+      - "displaced persons 65.74/1,000 is a regional-mean estimate, not a direct measurement -- Tunisia has no active internal conflict at this scale, and the figure most plausibly reflects Libya's civil war pulling the regional average upward"
+      - "only 2 of 4 indicators current"
+    citations: [c9]
+  F:
+    summary: >
+      CO2 emissions per capita, freshly measured, are weak. Freshwater
+      withdrawal, carried forward, is severe -- Tunisia draws over 92%
+      of its internal renewable water resources annually, among the
+      most acute water-stress readings recorded in this corpus.
+      Electricity generation from fossil sources, also carried
+      forward, is nearly total at 95.93%. Agricultural land share,
+      fresh, is comparatively extensive. Only two of the pillar's four
+      indicators are current, but this is Tunisia's weakest pillar by
+      a wide margin, and its severity reads as a genuine, current
+      environmental vulnerability rather than a data artefact.
+    drivers:
+      - "CO2 pc weak (fresh); freshwater withdrawal severe -- over 92% of internal renewable resources drawn annually (carried forward), among the most acute water-stress readings in this corpus"
+      - "electricity generation nearly total fossil-fuel, 95.93% (carried forward)"
+      - "agricultural land comparatively extensive (fresh); only 2 of 4 indicators current -- Tunisia's weakest pillar by a wide margin, a genuine vulnerability not a data artefact"
+    citations: [c10]
+  G:
+    summary: >
+      Electricity access, at 100% of the population and freshly
+      measured, is at the scale's ceiling. Basic drinking water
+      access, also fresh, is comparatively near-total. Government
+      Effectiveness and Control of Corruption, shared with Pillar A,
+      are middling. Social protection coverage, the pillar's only
+      carried-forward figure, is comparatively weak. Four of the
+      pillar's five indicators are current, describing genuinely
+      strong infrastructure reach sitting alongside the severe
+      environmental cost documented in Pillar F -- that universal
+      electricity access is built almost entirely on imported fossil
+      fuel.
+    drivers:
+      - "electricity access 100% of the population (fresh) -- at the scale's ceiling; basic drinking water comparatively near-total (fresh)"
+      - "Government Effectiveness and Control of Corruption (shared with Pillar A) middling; social protection the pillar's only carried-forward figure, comparatively weak"
+      - "4 of 5 indicators current -- strong infrastructure reach built almost entirely on the fossil-fuel dependence documented in Pillar F"
+    citations: [c10]
+
+recent:
+  primary:
+    - headline: "Saied wins re-election after jailing nearly all opposition candidates"
+      date: 2024-10-06
+      summary: >
+        President Kais Saied won a second five-year term in Tunisia's
+        6 October 2024 election, held in a tightly controlled
+        environment where independent electoral oversight was blocked
+        and nearly all his would-be opponents were in jail, in exile,
+        or barred from running. One of his two remaining rivals,
+        Ayachi Zammel, was imprisoned days before the vote. Rached
+        Ghannouchi, the 85-year-old former parliament speaker and
+        leader of the Ennahdha party, was among those sentenced to
+        life in prison.
+      why_it_matters: >
+        Directly explains Pillar A's severity and marks the most
+        complete point yet in the reversal of the democratic
+        transition that earned Tunisia's National Dialogue Quartet the
+        2015 Nobel Peace Prize.
+      news_url: "https://www.npr.org/2024/10/08/g-s1-26834/tunisia-kais-saied-election-2024-arab-spring"
+      wikipedia_url: "https://en.wikipedia.org/wiki/2024_Tunisian_presidential_election"
+      sentiment: negative
+    - headline: "Saied sacks his third prime minister in under two years as the economy deteriorates"
+      date: 2025-03-21
+      summary: >
+        President Kais Saied dismissed his prime minister on 21 March
+        2025, the third such dismissal in under two years, as
+        Tunisia's economic crisis deepened -- falling investment,
+        rising taxes, food inflation, and unemployment concentrated
+        among university graduates have pushed many to emigrate. The
+        instability came despite the concentration of power in the
+        presidency that the 2021 self-coup and 2022 constitution were
+        meant to stabilise.
+      why_it_matters: >
+        Undercuts the self-coup's own stated justification -- that
+        concentrating power would deliver stability -- with a
+        governing pattern that has, if anything, produced more
+        turnover at the top.
+      news_url: "https://www.aljazeera.com/news/2025/3/21/tunisias-saeid-sacks-premier-as-economic-and-political-crisis-deepens"
+      wikipedia_url: ""
+      sentiment: negative
+    - headline: "Tunisia's first 120-megawatt solar plant enters commercial operation"
+      date: 2025-12-16
+      summary: >
+        Tunisia's first utility-scale solar photovoltaic plant, a
+        120-megawatt-peak facility in Kairouan developed by AMEA
+        Power with African Development Bank backing, entered
+        commercial operation on 16 December 2025, becoming the first
+        renewable project to inject power into the national
+        225-kilovolt high-voltage grid. It is expected to generate
+        roughly 222 GWh annually, enough to power around 43,000 homes,
+        as Tunisia works toward a 35% clean-energy target by 2030.
+      why_it_matters: >
+        A concrete, verifiable step toward addressing Pillar F's
+        severe near-total fossil-fuel dependence, credited independent
+        of the political crisis documented alongside it.
+      news_url: "https://www.afdb.org/en/news-and-events/press-releases/tunisia-african-development-bank-welcomes-commissioning-120-mwp-kairouan-solar-photovoltaic-project-major-milestone-89873"
+      wikipedia_url: "https://en.wikipedia.org/wiki/Kairouan_Solar_Power_Station"
+      sentiment: positive
+  extended:
+    - headline: "New constitution formalizes presidential system on a referendum with just 30% turnout"
+      date: 2022-07-25
+      summary: >
+        A referendum on 25 July 2022 -- exactly one year after Saied's
+        self-coup -- approved a new constitution replacing the 2014
+        charter with one concentrating power in the presidency, with
+        roughly 94% of voters in favour. Turnout was estimated at just
+        under 30%, reflecting an opposition boycott and widespread
+        public disengagement from a process critics said Saied
+        designed and wrote largely alone.
+      why_it_matters: >
+        The formal legal foundation for the governance structure this
+        record's Pillar A and 2024/2025 items describe, its own
+        legitimacy already contested by the low turnout at the moment
+        of its adoption.
+      news_url: "https://en.wikipedia.org/wiki/2022_Tunisian_constitutional_referendum"
+      wikipedia_url: ""
+      sentiment: mixed
+
+events:
+  - year: 2010
+    type: conflict
+    title: "The Jasmine Revolution begins"
+    description: >
+      Mohamed Bouazizi's self-immolation on 17 December 2010 ignited
+      nationwide protests against Ben Ali's authoritarian rule, the
+      first uprising of the Arab Spring; Ben Ali fled the country on
+      14 January 2011.
+    url: "https://en.wikipedia.org/wiki/Mohamed_Bouazizi"
+    direction: improve
+  - year: 2015
+    type: constitutional
+    title: "National Dialogue Quartet wins the Nobel Peace Prize"
+    description: >
+      The National Dialogue Quartet -- the trade union UGTT, employers'
+      organization UTICA, the Tunisian League of Human Rights, and the
+      National Bar Association -- won the 2015 Nobel Peace Prize for
+      mediating Tunisia's democratic transition following the 2014
+      constitution.
+    url: "https://en.wikipedia.org/wiki/2021_Tunisian_self-coup"
+    direction: improve
+  - year: 2021
+    type: coup
+    title: "Saied's self-coup suspends parliament"
+    description: >
+      President Kais Saied dismissed the government, suspended
+      parliament, and revoked lawmakers' immunity on 25 July 2021, in
+      what is widely described as a constitutional self-coup that
+      ended Tunisia's post-2011 democratic transition.
+    url: "https://en.wikipedia.org/wiki/2021_Tunisian_self-coup"
+    direction: deteriorate
+  - year: 2024
+    type: election
+    title: "Saied re-elected after jailing nearly all opposition"
+    description: >
+      President Kais Saied won a second term on 6 October 2024 in an
+      election held after nearly all potential opponents were jailed,
+      exiled, or barred from running.
+    url: "https://www.npr.org/2024/10/08/g-s1-26834/tunisia-kais-saied-election-2024-arab-spring"
+    direction: deteriorate
+
+citations:
+  - id: c1
+    url: "https://en.wikipedia.org/wiki/Mohamed_Bouazizi"
+    source_type: wikipedia
+    title: "Mohamed Bouazizi"
+    accessed: 2026-08-11
+    verified: true
+  - id: c2
+    url: "https://www.ebsco.com/research-starters/politics-and-government/tunisian-uprising"
+    source_type: news
+    title: "Tunisian Uprising (EBSCO Research Starters)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c3
+    url: "https://en.wikipedia.org/wiki/Code_of_Personal_Status_in_Tunisia"
+    source_type: wikipedia
+    title: "Code of Personal Status in Tunisia"
+    accessed: 2026-08-11
+    verified: true
+  - id: c4
+    url: "https://en.wikipedia.org/wiki/1987_Tunisian_coup_d'%C3%A9tat"
+    source_type: wikipedia
+    title: "1987 Tunisian coup d'état"
+    accessed: 2026-08-11
+    verified: true
+  - id: c5
+    url: "https://en.wikipedia.org/wiki/2021_Tunisian_self-coup"
+    source_type: wikipedia
+    title: "2021 Tunisian self-coup"
+    accessed: 2026-08-11
+    verified: true
+  - id: c6
+    url: "https://carnegieendowment.org/posts/2022/07/one-year-later-tunisias-president-has-reversed-nearly-a-decade-of-democratic-gains?lang=en"
+    source_type: news
+    title: "One Year Later, Tunisia's President Has Reversed Nearly a Decade of Democratic Gains (Carnegie Endowment)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c7
+    url: "https://www.npr.org/2024/10/08/g-s1-26834/tunisia-kais-saied-election-2024-arab-spring"
+    source_type: news
+    title: "Tunisia's President Saied wins reelection after cracking down on opposition (NPR)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c8
+    url: "https://www.aljazeera.com/news/2025/3/21/tunisias-saeid-sacks-premier-as-economic-and-political-crisis-deepens"
+    source_type: news
+    title: "Tunisia's president sacks third prime minister in less than two years (Al Jazeera)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c9
+    url: "https://www.aljazeera.com/economy/2026/7/26/tunisia-grapples-with-five-years-of-crisis-since-saieds-power-grab"
+    source_type: news
+    title: "Tunisia grapples with five years of crisis since Saied's power grab (Al Jazeera)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c10
+    url: "https://www.afdb.org/en/news-and-events/press-releases/tunisia-african-development-bank-welcomes-commissioning-120-mwp-kairouan-solar-photovoltaic-project-major-milestone-89873"
+    source_type: official
+    title: "Tunisia: African Development Bank Welcomes the Commissioning of 120 MWp Kairouan Solar Photovoltaic Project (AfDB)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c11
+    url: "https://en.wikipedia.org/wiki/2022_Tunisian_constitutional_referendum"
+    source_type: wikipedia
+    title: "2022 Tunisian constitutional referendum"
+    accessed: 2026-08-11
+    verified: true
+  - id: c12
+    url: "https://en.wikipedia.org/wiki/Arab_Maghreb_Union"
+    source_type: wikipedia
+    title: "Arab Maghreb Union"
+    accessed: 2026-08-11
+    verified: true
+  - id: c13
+    url: "https://simple.wikipedia.org/wiki/Community_of_Sahel-Saharan_States"
+    source_type: wikipedia
+    title: "Community of Sahel-Saharan States"
+    accessed: 2026-08-11
+    verified: true
+  - id: c14
+    url: "https://allafrica.com/stories/201807200097.html"
+    source_type: news
+    title: "East Africa: Tunisia Becomes Comesa's 20th Member State (AllAfrica)"
+    accessed: 2026-08-11
+    verified: true
+
+rec_membership:
+  - org: UMA
+    joined: 1989
+    status: current
+    left: null
+    citations: [c12]
+  - org: CEN-SAD
+    joined: 2001
+    status: current
+    left: null
+    citations: [c13]
+  - org: COMESA
+    joined: 2018
+    status: current
+    left: null
+    citations: [c14]
+
+balance:
+  n_positive: 1
+  n_negative: 2
+  n_mixed: 1
+  note: >
+    The re-election item and the prime-minister-dismissal item are
+    kept as two distinct negatives rather than merged into one,
+    because they document different things: an electoral process that
+    eliminated real opposition, and a pattern of governing instability
+    that has persisted despite -- and arguably because of -- the same
+    concentration of power. The Kairouan solar plant is credited at
+    full positive weight, independent of the same period's political
+    and economic crisis -- the same standard this corpus applies to
+    crediting a genuine infrastructure achievement without letting
+    surrounding political conduct discount it. The 2022 constitutional
+    referendum is coded mixed rather than negative: it is the direct
+    legal instrument of the reversal Pillar A documents, but this
+    record treats the referendum's own contested legitimacy (an
+    opposition boycott, roughly 30% turnout) as a distinct fact worth
+    stating on its own terms rather than folding entirely into the
+    2021 self-coup item.
