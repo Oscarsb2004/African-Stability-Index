@@ -26,7 +26,7 @@ An audit is forced early if a single run inflates the citation count by more tha
 
 ## Status
 
-**27 of 54 countries have a record — the halfway point (Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria, Rwanda, Chad, Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic, Mauritania, Zimbabwe, Comoros). The first pass is complete; Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic, Mauritania, Zimbabwe and Comoros are the first eighteen backlog countries.**
+**28 of 54 countries have a record (Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria, Rwanda, Chad, Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic, Mauritania, Zimbabwe, Comoros, Uganda). The first pass is complete; Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic, Mauritania, Zimbabwe, Comoros and Uganda are the first nineteen backlog countries.**
 
 ### First pass — 9 countries
 
@@ -69,14 +69,15 @@ whose ranks swing hardest with the weighting method.
 | MRT | Mauritania | fills West Africa's biggest gap (6 of 16 done); the last country in the world to formally abolish slavery (1981, criminalized 2007), with France's own colonial administration having declared abolition in 1905 and knowingly declined to enforce it -- a distinct colonial-complicity mechanism new to this corpus; left ECOWAS entirely in 2000, decades before the AES trio's 2025 exit; a genuine positive (Greater Tortue Ahmeyim gas field reaching full production) placed alongside a genuinely unresolved current negative (2025 State Dept trafficking report on persistent hereditary slavery) | **done — iteration 1** |
 | ZWE | Zimbabwe | fills East Africa's biggest gap (5 of 14 done); the only country in the corpus whose settler minority unilaterally declared independence FROM the colonizer to avoid majority rule (Rhodesia's 1965 UDI), inverting every other decolonization pattern here; the 2000-2002 land reform read as a catastrophically-executed response to a genuine, unresolved colonial grievance rather than dismissed outright; a genuine positive (ZiG currency's first single-digit inflation in ~30 years) credited independent of a severe, escalating political record (July 2026 term-limit extension, sidelined VP/General Chiwenga) | **done — iteration 1** |
 | COM | Comoros | the halfway point of the corpus; the world's most coup-prone country (20+ since 1975); its first coup, 27 days into independence, was carried out on direct orders from a French official -- the most direct instance of external sovereignty interference found in this corpus yet; Mayotte's continued French status is a live territorial-fragment dispute paralleling MAR's Western Sahara; a genuine positive (April 2025 solar plant) credited against a 100%-fossil-fuel baseline; flagged rather than silently resolved a genuine data discrepancy between two electricity-access figures | **done — iteration 1** |
+| UGA | Uganda | fills East Africa's biggest gap (6 of 14 done); the 1972 Asian expulsion reframed as a colonial demographic arrangement (Britain recruited the labour, built the merchant class) violently inverted by the post-colonial state; the most severe CURRENT-EVENTS story found in this corpus to date -- Museveni's Jan 2026 seventh-term election amid fraud and an internet blackout, with his own son/military chief publicly threatening to kill the opposition leader; a genuine positive (World Bank's $350M+ resumed lending) credited on its own terms, separate from the judgment of whether the Bank should have resumed lending at all | **done — iteration 1** |
 
-### Backlog — the remaining 27
+### Backlog — the remaining 26
 
 Listed in full in `narrative/state.yaml` under `backlog`. They are recorded
 explicitly rather than left implicit: a country with no record should be visibly
 absent, not quietly missing.
 
-Libya, Tunisia, Benin, Cabo Verde, The Gambia, Guinea, Guinea-Bissau, Cote d'Ivoire, Senegal, Sierra Leone, Togo, Cameroon, Republic of Congo, Equatorial Guinea, Gabon, Burundi, Djibouti, Malawi, Mozambique, South Sudan, Tanzania, Uganda, Zambia, Lesotho, Eswatini, Seychelles, Sao Tome & Principe
+Libya, Tunisia, Benin, Cabo Verde, The Gambia, Guinea, Guinea-Bissau, Cote d'Ivoire, Senegal, Sierra Leone, Togo, Cameroon, Republic of Congo, Equatorial Guinea, Gabon, Burundi, Djibouti, Malawi, Mozambique, South Sudan, Tanzania, Zambia, Lesotho, Eswatini, Seychelles, Sao Tome & Principe
 
 ---
 
@@ -893,6 +894,49 @@ Append one line per run: date, country, mode, what changed, what was removed.
   reality differently — noted explicitly in Pillar G rather than picked
   between without comment. Balance: 1 positive, 2 negative, 1 mixed.
 
+- **2026-08-10 — UGA — CREATE. Nineteenth backlog country, fills
+  East Africa's biggest gap.** Full baseline built: historical
+  overview, colonial legacy (the 1972 Asian expulsion reframed
+  precisely, not as a standalone atrocity: Britain recruited Indian
+  labour to build the Uganda Railway from the 1890s, and the resulting
+  merchant class -- 90% of businesses, 90% of tax revenue, built under
+  colonial protection with little formal political power -- was
+  violently expelled by the independent state that inherited both the
+  economy they built and the resentment their privileged position had
+  generated; Amin's own stated justification makes the connection
+  explicit rather than inferred), 4 key_periods, 6 pillar summaries
+  (Pillar C left empty — greyed at 3/8 measured; Pillars D and E both
+  fully measured, 5/5 and 4/4 respectively, unusually complete), 3
+  primary + 1 extended recent items, 4 events, rec_membership (EAC
+  recorded as two entries — 1967 founding→1977 collapse, 2000
+  founding→current — following the KEN precedent; COMESA 1994; IGAD
+  1986). 15 sources opened and verified: 3 Wikipedia, 8 news, 2
+  Britannica, 2 more for rec_membership. Verified a genuine,
+  non-obvious historical connection: the original 1967 EAC's 1977
+  collapse happened partly because Idi Amin's 1971 coup broke the
+  personal relationship between Presidents Nyerere and Obote/Amin at
+  the bloc's core -- a direct link between this record's own narrative
+  and its own REC data, not a coincidence. This is the most severe
+  CURRENT-EVENTS story found in this corpus to date, not historical:
+  Museveni won a seventh term in the 15 January 2026 election amid
+  fraud allegations and a nationwide internet blackout, and the
+  post-election crackdown included his own son and military chief,
+  Muhoozi Kainerugaba, publicly claiming "we have killed 30 NUP
+  terrorists" and ordering troops to bring opposition leader Bobi Wine
+  in "dead or alive" -- a direct, attributable, publicly stated threat
+  of political violence from within the ruling family, corroborated by
+  HRW reporting and a 514-3 European Parliament resolution. Followed
+  the established discipline deliberately: rather than let the World
+  Bank's resumed $350M+ lending (June 2025, after a ~2-year
+  Anti-Homosexuality Act suspension) get coded mixed by the temptation
+  to average it against the controversy, coded it positive on its own
+  terms -- the actual financing and programmes are real and
+  substantial, and whether the Bank should have resumed lending is a
+  separate judgment this record states belongs to the reader, not to a
+  sentiment label. Balance: 1 positive, 2 negative, 1 mixed. `--links`
+  passes 0 errors, 3 warnings (Britannica, Monitor.co.ug, Bloomberg —
+  all familiar 403 bot-detection patterns) — 12/15 resolved.
+
 ---
 
 ## Meta-notes
@@ -1378,6 +1422,26 @@ Things a future run should know about how to work, not about a specific country.
   years, different definitions of "access") — but a future AUDIT pass
   should try to actually resolve it rather than let the flag stand
   indefinitely as the final word.
+- **2026-08-10** — UGA is the clearest test yet of a distinction worth
+  naming explicitly: crediting a genuine achievement "on its own terms"
+  versus crediting it "despite" surrounding controversy are not the
+  same move, and this run chose the former deliberately. The World
+  Bank's resumed Uganda lending could easily have been coded mixed by
+  default — averaging a real $350M+ financing commitment against
+  the real, ongoing criticism of resuming it at all under an
+  active death-penalty law. Instead it was coded positive, with the
+  balance.note stating explicitly that whether the Bank *should* have
+  resumed lending is a judgment call left to the reader, not folded
+  into the sentiment label itself. Worth applying consistently: a
+  sentiment label should describe whether the underlying fact is a
+  genuine gain or loss, not smuggle in this record's own opinion about
+  whether that gain was earned or deserved. Also worth carrying
+  forward: this is the first record where a specific, attributable,
+  publicly-quoted threat from a named current official (Kainerugaba's
+  "dead or alive" order) anchors the negative side of the balance,
+  rather than a general finding or statistic — a useful bar for how
+  concrete a negative item can and should be when the sourcing supports
+  it.
 
 ---
 

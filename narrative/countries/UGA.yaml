@@ -1,0 +1,482 @@
+meta:
+  iso3: UGA
+  name: Uganda
+  last_updated: 2026-08-10
+  iteration_count: 1
+  next_action: >
+    EXPAND: (1) follow whether Bobi Wine is captured, formally charged,
+    or reaches a negotiated safety, and whether the "2,000 detained /
+    30 killed" NUP figures are independently verified by a human
+    rights body; (2) follow whether Muhoozi Kainerugaba's role
+    consolidates further as a formal succession signal; (3) check
+    whether the World Bank's resumed lending produces measurable
+    outcomes in the three funded programmes (social protection,
+    education, refugee services); (4) check whether Pillars A/E get
+    fresh post-election data superseding the 2023 reference year; (5)
+    check if Pillar C has gained coverage.
+  model_used: claude-sonnet-5
+
+historical:
+  overview: >
+    Buganda entered the British sphere of influence in 1894, becoming a
+    formal protectorate in 1900; Britain governed the wider territory
+    through indirect rule via Buganda's existing kingdom, creating a
+    privileged status that fed post-independence resentment. Uganda
+    gained independence on 9 October 1962 under Prime Minister Milton
+    Obote, with Buganda granted special federal autonomy. That
+    arrangement collapsed in 1966, when Obote accused the Buganda
+    kingdom of plotting against him, suspended the constitution, and
+    sent troops -- commanded by army officer Idi Amin -- to storm the
+    Kabaka's palace; Kabaka Mutesa II escaped into exile in London,
+    where he died three years later, and Obote abolished all of
+    Uganda's traditional kingdoms in 1967. Amin himself seized power in
+    a 1971 coup and, on 4 August 1972, ordered the expulsion of
+    Uganda's roughly 80,000-strong Asian community within 90 days,
+    claiming God had told him in a dream that their purpose -- building
+    the colonial-era Uganda Railway -- was fulfilled; the Asian
+    community had owned 90% of Uganda's businesses and generated 90% of
+    its tax revenue, and the expulsion devastated the economy. Amin's
+    eight-year rule killed an estimated 100,000 to 500,000 people before
+    Yoweri Museveni's National Resistance Army took power in 1986.
+    Museveni's own government then fought the Lord's Resistance Army,
+    led by Joseph Kony, whose two-decade insurgency in northern Uganda
+    killed and abducted tens of thousands before largely subsiding; the
+    ICC indicted Kony in 2005. Museveni's parliament passed the
+    Anti-Homosexuality Act in March 2023, prescribing the death penalty
+    for "aggravated homosexuality"; the World Bank suspended new
+    financing over the law in August 2023 and resumed lending only in
+    June 2025. Museveni won a seventh term in January 2026 amid fraud
+    allegations, an internet blackout, and a post-election crackdown.
+  overview_citations: [c1, c2, c3, c4, c6, c7]
+  colonial_legacy: >
+    context/colonial_history.yaml already credits Britain's preservation
+    of the Buganda Kingdom for indirect rule and names the resulting
+    post-independence resentment; it also credits Amin's expulsion of
+    the Asian community. Worth connecting those two facts more
+    precisely: the Asian community Amin expelled in 1972 did not
+    migrate to Uganda independently -- Britain recruited Indian
+    labourers specifically to build the Uganda Railway from the 1890s,
+    and the merchant class that followed built the colonial-era
+    economy's commercial backbone under British protection, coming to
+    own an estimated 90% of Uganda's businesses and generate 90% of its
+    tax revenue by the early 1970s while holding little formal
+    political power. Amin's own justification for the expulsion -- that
+    Asians had come only "to build the railway," now finished, and
+    "must leave" -- inverted the colonial demographic engineering into a
+    post-colonial one: a population Britain had imported as economically
+    useful but politically marginal was violently expelled by the
+    independent state that inherited both the economy they built and the
+    resentment their privileged position had generated. The economic
+    collapse that followed -- GDP fell roughly 5% from 1972 to 1975,
+    manufacturing output fell by nearly two-thirds by 1979 --
+    demonstrates how completely that colonial-era demographic
+    arrangement had come to structure the post-independence economy.
+  colonial_legacy_citations: [c1, c3]
+  key_periods:
+    - title: "Indirect rule and the Buganda kingdom"
+      period: "1894-1962"
+      summary: >
+        Buganda entered the British sphere of influence in 1894,
+        becoming a formal protectorate in 1900; Britain governed the
+        wider territory through indirect rule via Buganda's existing
+        kingdom structure, creating a privileged status that fed
+        post-independence resentment among Uganda's other regions.
+        Independence followed on 9 October 1962 under Prime Minister
+        Milton Obote, with Buganda granted special federal autonomy.
+      citations: [c1]
+    - title: "The Mengo Crisis and Amin's rise"
+      period: "1966-1972"
+      summary: >
+        In 1966, Obote accused the Buganda kingdom of plotting against
+        him, suspended the constitution, and sent troops commanded by
+        army officer Idi Amin to storm the Kabaka's palace; Kabaka
+        Mutesa II fled into exile, and Obote abolished all of Uganda's
+        traditional kingdoms in 1967. Amin seized power in his own coup
+        in 1971 and, in August 1972, ordered the expulsion of Uganda's
+        roughly 80,000-strong Asian community within 90 days.
+      citations: [c2, c3]
+    - title: "Amin's rule and Museveni's takeover"
+      period: "1971-1986"
+      summary: >
+        Amin's eight-year rule killed an estimated 100,000 to 500,000
+        people and devastated the economy the Asian expulsion had
+        already crippled. Yoweri Museveni's National Resistance Army
+        took power in 1986 after overthrowing Amin's eventual successor,
+        beginning a rule that has now lasted four decades.
+      citations: [c4]
+    - title: "The LRA insurgency and the Anti-Homosexuality Act"
+      period: "1986-2026"
+      summary: >
+        Museveni's government fought the Lord's Resistance Army, led by
+        Joseph Kony, whose two-decade insurgency in northern Uganda
+        killed and abducted tens of thousands before largely subsiding;
+        the ICC indicted Kony in 2005. Museveni's parliament passed the
+        Anti-Homosexuality Act in March 2023, prescribing the death
+        penalty for "aggravated homosexuality"; the World Bank suspended
+        new financing over the law in August 2023 and resumed lending in
+        June 2025. Museveni won a seventh term in January 2026 amid a
+        disputed election and violent post-election crackdown.
+      citations: [c5, c6, c7]
+
+pillars:
+  A:
+    summary: >
+      All six governance indicators are directly measured this year,
+      and the scores cluster in a moderate-to-weak range -- Control of
+      Corruption is the weakest, Government Effectiveness and
+      Regulatory Quality the least weak. That moderate aggregate sits
+      uneasily beside the specific severity of Uganda's January 2026
+      election: President Museveni won a seventh term with 71.65% of
+      the vote amid widespread fraud allegations, a nationwide internet
+      blackout, and a post-election crackdown in which military chief
+      Muhoozi Kainerugaba -- Museveni's own son and presumed heir --
+      publicly claimed his forces had "killed 30 NUP terrorists" and
+      ordered troops to bring opposition leader Bobi Wine in "dead or
+      alive." The European Parliament adopted a resolution condemning
+      the crackdown by a margin of 514 votes to 3.
+    drivers:
+      - "all 6 governance indicators directly measured, clustered moderate-to-weak; Control of Corruption weakest, Government Effectiveness/Regulatory Quality least weak"
+      - "Jan 2026: Museveni won a 7th term (71.65%) amid fraud allegations, a nationwide internet blackout, and violent post-election crackdown"
+      - "military chief Muhoozi Kainerugaba (Museveni's son, presumed heir) publicly claimed forces 'killed 30 NUP terrorists' and ordered Bobi Wine brought in 'dead or alive'"
+      - "European Parliament adopted a resolution condemning the crackdown, 514 votes to 3"
+    citations: [c8, c9, c10]
+  B:
+    summary: >
+      GDP growth, GDP per capita and inflation, all freshly measured,
+      are moderate. Domestic credit to the private sector, also fresh,
+      is thin. Gini, carried forward, indicates real inequality. In June
+      2025, the World Bank resumed new lending to Uganda after a nearly
+      two-year suspension over the Anti-Homosexuality Act, approving
+      more than $350 million in new development support -- including
+      $150 million for social protection, $120 million for education,
+      and $90 million for refugee and displacement services -- after
+      Uganda implemented project-level safeguards the Bank said mitigate
+      harm to LGBTQ people; human rights organisations remain critical
+      of the decision to resume lending at all.
+    drivers:
+      - "GDP growth, GDP per capita, inflation all fresh, moderate; domestic credit thin (fresh); Gini (carried forward) indicates real inequality"
+      - "World Bank resumed lending June 2025 after a ~2-year suspension over the Anti-Homosexuality Act -- $350M+ in new support (social protection, education, refugee services)"
+      - "resumption followed Uganda implementing project-level LGBTQ-harm-mitigation safeguards; human rights groups remain critical of resuming lending at all"
+    citations: [c11, c12]
+  D:
+    summary: >
+      All five health indicators are freshly measured this year -- a
+      fully, not partially, measured picture. Life expectancy, just
+      over 68 years, and infant mortality, at 36.2 per 1,000 live
+      births, are both moderate. Severe food insecurity, affecting just
+      under 15% of the population, is comparatively less severe. Safely
+      managed drinking water access, however, is weak, covering well
+      under a fifth of the population. This is a genuinely, not thinly,
+      evidenced mix of moderate health outcomes alongside weak
+      water-safety infrastructure.
+    drivers:
+      - "all 5 health indicators freshly measured -- a fully, not partially, measured picture"
+      - "life expectancy ~68 years, infant mortality ~36.2/1,000 -- both moderate (fresh)"
+      - "severe food insecurity ~15% (fresh) -- comparatively less severe; safely managed water weak (fresh), covering well under a fifth of the population"
+    citations: [c1]
+  E:
+    summary: >
+      All four security indicators are freshly measured this year -- a
+      fully, not thinly, measured picture, unusual for this pillar
+      across this corpus. Displaced persons, at a near-zero 0.10 per
+      1,000, is the strongest reading, reflecting how far conditions
+      have improved in northern Uganda since the Lord's Resistance Army
+      insurgency documented in historical.key_periods largely subsided.
+      Political Stability, also fresh, is weaker, and does not yet
+      reflect the January 2026 post-election crackdown documented under
+      recent developments, which postdates this pillar's reference
+      year. Intentional homicide, also fresh, is moderate.
+    drivers:
+      - "all 4 security indicators freshly measured -- unusual full coverage for this pillar across this corpus"
+      - "IDPs near-zero (fresh) -- reflects how far northern Uganda has improved since the LRA insurgency largely subsided"
+      - "Political Stability weaker (fresh) -- does not yet reflect the January 2026 post-election crackdown, which postdates this pillar's reference year"
+      - "intentional homicide moderate (fresh)"
+    citations: [c1, c9]
+  F:
+    summary: >
+      CO2 emissions per capita, freshly measured, are near the lowest
+      recorded anywhere in this corpus. Unlike the clearest wealth-proxy
+      cases elsewhere in this project, Uganda's low emissions read as
+      at least partly genuine: the carried-forward electricity-
+      generation figure shows under 3% of power from fossil sources,
+      reflecting substantial hydropower capacity on the Nile, though
+      electricity access itself (Pillar G) still covers only about half
+      the population, so energy poverty remains part of the explanation
+      too. Freshwater withdrawal, also carried forward, is very low
+      relative to renewable resources. Agricultural land share, fresh,
+      is extensive. Only two of the pillar's four indicators are
+      freshly measured this year.
+    drivers:
+      - "CO2 pc near the lowest recorded in this corpus (fresh) -- reads as partly genuine: electricity generation under 3% fossil-fuel (carried forward), reflecting Nile hydropower"
+      - "but electricity access (Pillar G) still covers only ~half the population -- energy poverty remains part of the explanation, a genuine blend case like AGO/ETH"
+      - "freshwater withdrawal very low relative to renewable resources (carried forward); agricultural land extensive (fresh)"
+      - "only 2 of 4 indicators freshly measured this year"
+    citations: [c1]
+  G:
+    summary: >
+      Electricity access, at just over half the population and freshly
+      measured, is moderate, consistent with the partial hydropower
+      story documented in Pillar F. Basic drinking water access, also
+      fresh, is weak; safely managed water, also fresh, is markedly
+      weaker still, covering under a fifth of the population.
+      Handwashing coverage, also fresh, is weak as well. Social
+      protection, estimated from regional peers, is thin. Four of the
+      pillar's five indicators are current -- a genuinely, not thinly,
+      measured picture of infrastructure that has expanded access to
+      electricity faster than it has expanded safe water and
+      sanitation.
+    drivers:
+      - "electricity access just over half the population (fresh) -- moderate, consistent with the partial hydropower story in Pillar F"
+      - "basic drinking water weak (fresh); safely managed water markedly weaker still, under a fifth of the population (fresh); handwashing weak (fresh)"
+      - "social protection thin (regional-mean estimate); 4 of 5 indicators fresh -- electricity access has expanded faster than safe water and sanitation"
+    citations: [c1]
+
+recent:
+  primary:
+    - headline: "Museveni wins a seventh term amid fraud allegations and an internet blackout"
+      date: 2026-01-18
+      summary: >
+        President Yoweri Museveni was declared the winner of Uganda's
+        15 January 2026 presidential election with 71.65% of the vote,
+        extending his rule to 40 years and a seventh term. His closest
+        challenger, Robert Kyagulanyi Ssentamu (Bobi Wine) of the
+        National Unity Platform, took 24.72%. International observers
+        and opposition parties reported widespread fraud, intimidation,
+        and a nationwide internet shutdown; at least seven people were
+        killed in clashes the night after voting.
+      why_it_matters: >
+        Directly explains Pillar A's severity and marks the sharpest
+        test yet of Uganda's democratic institutions after four decades
+        under a single leader.
+      news_url: "https://allafrica.com/stories/202601190400.html"
+      wikipedia_url: ""
+      sentiment: negative
+    - headline: "Military chief threatens to kill Bobi Wine as post-election crackdown escalates"
+      date: 2026-01-28
+      summary: >
+        Military chief Muhoozi Kainerugaba, President Museveni's son
+        and presumed successor, said on 23 January 2026 that his forces
+        had detained roughly 2,000 supporters of the opposition National
+        Unity Platform and claimed "we have killed 30 NUP terrorists,"
+        later saying troops had orders to bring opposition leader Bobi
+        Wine in "dead or alive." Wine went into hiding after the
+        disputed election; the European Parliament adopted a resolution
+        condemning the crackdown by 514 votes to 3.
+      why_it_matters: >
+        An unusually direct, publicly stated threat of political
+        violence from within the ruling family itself, and a specific,
+        current test of the succession dynamics historical.key_periods
+        flags as central to Uganda's political future.
+      news_url: "https://www.hrw.org/news/2026/01/28/uganda-post-election-assault-on-political-opposition"
+      wikipedia_url: ""
+      sentiment: negative
+    - headline: "World Bank resumes lending to Uganda after nearly two-year suspension"
+      date: 2025-06-05
+      summary: >
+        The World Bank announced on 5 June 2025 that it would resume
+        new financing to Uganda, approving more than $350 million in
+        development support after the government implemented
+        project-level safeguards intended to prevent harm to LGBTQ
+        people under the 2023 Anti-Homosexuality Act. The Bank had
+        suspended all new public financing in August 2023 over the law,
+        which prescribes the death penalty for "aggravated
+        homosexuality."
+      why_it_matters: >
+        A genuine, substantial resumption of development financing,
+        credited at full weight, even as human rights organisations
+        continue to criticise the decision and the underlying law
+        remains in force.
+      news_url: "https://www.africanews.com/2025/06/06/world-bank-resumes-uganda-loans-after-anti-gay-law-freeze/"
+      wikipedia_url: ""
+      sentiment: positive
+  extended:
+    - headline: "Constitutional Court upholds the Anti-Homosexuality Act's core provisions"
+      date: 2024-04-03
+      summary: >
+        Uganda's Constitutional Court ruled on 3 April 2024 that the
+        2023 Anti-Homosexuality Act, including its death penalty
+        provision for "aggravated homosexuality," would remain in
+        force, rejecting a petition to strike it down. The court did
+        strike out narrower provisions that had restricted LGBT people's
+        healthcare access, criminalised renting property to them, and
+        created a legal duty to report suspected homosexuality.
+      why_it_matters: >
+        Shows the law's most severe provisions surviving judicial review
+        even as its most clearly unworkable ancillary provisions were
+        narrowed -- a partial but not fundamental check on the
+        legislation.
+      news_url: "https://www.hrw.org/news/2024/04/04/uganda-court-upholds-anti-homosexuality-act"
+      wikipedia_url: ""
+      sentiment: mixed
+
+events:
+  - year: 1966
+    type: coup
+    title: "Mengo Crisis: Obote abolishes Buganda's autonomy"
+    description: >
+      Obote suspended the constitution and sent troops commanded by
+      Idi Amin to storm the Kabaka's palace in May 1966, forcing Kabaka
+      Mutesa II into exile; Obote abolished all of Uganda's traditional
+      kingdoms the following year.
+    url: "https://en.wikipedia.org/wiki/Mengo_Crisis"
+    direction: deteriorate
+  - year: 1972
+    type: economic
+    title: "Amin expels Uganda's Asian community"
+    description: >
+      President Idi Amin ordered the expulsion of Uganda's roughly
+      80,000-strong Asian community on 4 August 1972, giving them 90
+      days to leave; the community had owned 90% of Uganda's businesses
+      and generated 90% of its tax revenue.
+    url: "https://en.wikipedia.org/wiki/Expulsion_of_Asians_from_Uganda"
+    direction: deteriorate
+  - year: 1986
+    type: coup
+    title: "Museveni's NRA takes power"
+    description: >
+      Yoweri Museveni's National Resistance Army seized power in 1986,
+      ending years of post-Amin instability but triggering the Lord's
+      Resistance Army insurgency in northern Uganda that followed.
+    url: "https://www.britannica.com/topic/history-of-Uganda"
+    direction: mixed
+  - year: 2026
+    type: election
+    title: "Museveni wins a seventh term amid a violent crackdown"
+    description: >
+      Museveni won a seventh presidential term on 15 January 2026 amid
+      fraud allegations and an internet blackout; the post-election
+      crackdown included the military chief's public threat to kill
+      opposition leader Bobi Wine.
+    url: "https://allafrica.com/stories/202601190400.html"
+    direction: deteriorate
+
+citations:
+  - id: c1
+    url: "https://www.britannica.com/topic/history-of-Uganda"
+    source_type: academic
+    title: "History of Uganda (Britannica)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c2
+    url: "https://en.wikipedia.org/wiki/Mengo_Crisis"
+    source_type: wikipedia
+    title: "Mengo Crisis"
+    accessed: 2026-08-10
+    verified: true
+  - id: c3
+    url: "https://en.wikipedia.org/wiki/Expulsion_of_Asians_from_Uganda"
+    source_type: wikipedia
+    title: "Expulsion of Asians from Uganda"
+    accessed: 2026-08-10
+    verified: true
+  - id: c4
+    url: "https://www.monitor.co.ug/uganda/special-reports/uganda-s-brutal-lord-s-resistance-army-past-and-present-3392914"
+    source_type: news
+    title: "Uganda's brutal Lord's Resistance Army, past and present (Monitor)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c5
+    url: "https://www.britannica.com/topic/Lords-Resistance-Army"
+    source_type: academic
+    title: "Lord's Resistance Army (Britannica)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c6
+    url: "https://www.hrw.org/news/2024/04/04/uganda-court-upholds-anti-homosexuality-act"
+    source_type: news
+    title: "Uganda: Court Upholds Anti-Homosexuality Act (Human Rights Watch)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c7
+    url: "https://allafrica.com/stories/202601190400.html"
+    source_type: news
+    title: "Uganda: Yoweri Museveni Extends 40-Year Rule With 71.65 Percent Victory (AllAfrica)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c8
+    url: "https://allafrica.com/stories/202601180054.html"
+    source_type: news
+    title: "Uganda: Museveni Declared Presidential Elect 2026-2031 (AllAfrica)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c9
+    url: "https://www.hrw.org/news/2026/01/28/uganda-post-election-assault-on-political-opposition"
+    source_type: news
+    title: "Uganda: Post Election Assault on Political Opposition (Human Rights Watch)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c10
+    url: "https://peoplesdispatch.org/2026/01/29/ugandan-military-continues-post-election-manhunt-for-main-opposition-leader-bobi-wine/"
+    source_type: news
+    title: "Ugandan military continues post-election manhunt for main opposition leader Bobi Wine (Peoples Dispatch)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c11
+    url: "https://www.africanews.com/2025/06/06/world-bank-resumes-uganda-loans-after-anti-gay-law-freeze/"
+    source_type: news
+    title: "World Bank resumes Uganda loans after anti-gay law freeze (Africanews)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c12
+    url: "https://www.bloomberg.com/news/articles/2025-10-21/uganda-secures-2-billion-from-world-bank-after-funding-freeze"
+    source_type: news
+    title: "Uganda Secures $2 Billion From World Bank After Funding Freeze (Bloomberg)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c13
+    url: "https://en.wikipedia.org/wiki/East_African_Community"
+    source_type: wikipedia
+    title: "East African Community"
+    accessed: 2026-08-10
+    verified: true
+  - id: c14
+    url: "https://en.wikipedia.org/wiki/Common_Market_for_Eastern_and_Southern_Africa"
+    source_type: wikipedia
+    title: "Common Market for Eastern and Southern Africa"
+    accessed: 2026-08-10
+    verified: true
+  - id: c15
+    url: "https://au.int/en/recs/igad"
+    source_type: official
+    title: "Intergovernmental Authority for Development (IGAD) (African Union)"
+    accessed: 2026-08-10
+    verified: true
+
+rec_membership:
+  - org: EAC
+    joined: 1967
+    status: withdrawn
+    left: 1977
+    citations: [c13]
+  - org: EAC
+    joined: 2000
+    status: current
+    left: null
+    citations: [c13]
+  - org: COMESA
+    joined: 1994
+    status: current
+    left: null
+    citations: [c14]
+  - org: IGAD
+    joined: 1986
+    status: current
+    left: null
+    citations: [c15]
+
+balance:
+  n_positive: 1
+  n_negative: 2
+  n_mixed: 1
+  note: >
+    The disputed election and the post-election crackdown are both
+    coded negative at full weight -- neither is softened by the
+    genuine development financing documented alongside them. The World
+    Bank's resumed lending is coded positive because it is a real,
+    substantial, verified financial commitment to concrete programmes
+    (social protection, education, refugee services), independent of
+    whether the Bank should have resumed lending at all -- a judgment
+    call this record states plainly belongs to the reader, not to a
+    sentiment label. The Constitutional Court ruling is coded mixed:
+    a genuine partial narrowing of the law alongside its most severe
+    provisions surviving intact.

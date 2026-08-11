@@ -495,6 +495,30 @@ countries:
       record flags between the 89.80% and 71% electricity-access figures;
       follow whether the March 2026 NDC climate pledge translates into
       further renewable capacity; check if Pillar C has gained coverage'
+  UGA:
+    name: Uganda
+    region: East
+    first_pass: false
+    reason: nineteenth backlog country -- fills East Africa's biggest gap (6
+      of 14 done); the 1972 Asian expulsion reframed as a colonial demographic
+      arrangement (Britain recruited the labour, built the merchant class
+      under colonial protection) violently inverted by the post-colonial
+      state; Museveni's January 2026 seventh-term election amid fraud
+      allegations, an internet blackout, and a post-election crackdown in
+      which his own son and military chief publicly threatened to kill the
+      opposition leader is the most severe current-events story found in this
+      corpus to date; a genuine positive (World Bank's $350M+ resumed
+      lending) credited on its own terms, separate from the judgment of
+      whether the Bank should have resumed lending at all
+    iteration_count: 1
+    last_updated: '2026-08-10'
+    next_action: 'EXPAND: follow whether Bobi Wine is captured, formally
+      charged, or reaches a negotiated safety, and whether the "2,000
+      detained / 30 killed" NUP figures are independently verified; follow
+      whether Muhoozi Kainerugaba''s role consolidates further as a formal
+      succession signal; check whether the World Bank''s resumed lending
+      produces measurable outcomes; check whether Pillars A/E get fresh
+      post-election data; check if Pillar C has gained coverage'
 backlog:
   LBY:
     name: Libya
@@ -658,14 +682,6 @@ backlog:
     next_action: create baseline from blueprint
   TZA:
     name: Tanzania
-    region: East
-    first_pass: false
-    reason: not yet scheduled
-    iteration_count: 0
-    last_updated: null
-    next_action: create baseline from blueprint
-  UGA:
-    name: Uganda
     region: East
     first_pass: false
     reason: not yet scheduled
@@ -1399,3 +1415,39 @@ meta_notes:
   positive, 2 negative, 1 mixed. `--links` passes 0 errors, 0 warnings after
   the c9 swap -- the fourth zero-warning run in this corpus (after MDG, ERI,
   CAF). Full pytest suite: 106 passed.'
+- '2026-08-10: UGA CREATE run complete (15 sources opened and verified: 3
+  Wikipedia, 8 news, 2 Britannica, 2 more for rec_membership). Fills East
+  Africa''s biggest gap (6 of 14 done before this run). Colonial legacy
+  reframes the 1972 Asian expulsion precisely rather than treating it as a
+  standalone atrocity: Britain recruited Indian labour specifically to build
+  the Uganda Railway from the 1890s, and the resulting merchant class -- 90%
+  of businesses, 90% of tax revenue by the early 1970s, built under colonial
+  protection with little formal political power -- was violently expelled by
+  the independent state that inherited both the economy they built and the
+  resentment their privileged position had generated; Amin''s own stated
+  justification ("they came to build the railway...they must leave") makes
+  this connection explicit rather than inferred. Verified the EAC''s
+  genuinely two-part membership history for Uganda -- founding member of the
+  original 1967 EAC (which collapsed 1977 partly because Amin''s 1971 coup
+  broke the Kenyatta-Nyerere-Amin relationship at the heart of the bloc, a
+  direct link between this record''s own historical narrative and the REC
+  data) -- and founding member again of the revived 2000 EAC, recorded as
+  two separate rec_membership entries following the KEN precedent. This is
+  the most severe CURRENT-EVENTS story found in this corpus to date, not
+  historical: Museveni won a seventh term in the 15 January 2026 election
+  amid fraud allegations and a nationwide internet blackout, and the
+  post-election crackdown included his own son and military chief, Muhoozi
+  Kainerugaba, publicly claiming "we have killed 30 NUP terrorists" and
+  ordering troops to bring opposition leader Bobi Wine in "dead or alive" --
+  a direct, attributable, publicly stated threat of political violence from
+  within the ruling family, corroborated by HRW reporting and a 514-3
+  European Parliament resolution. Followed the established discipline:
+  rather than let the World Bank''s resumed $350M+ lending (June 2025, after
+  a ~2-year Anti-Homosexuality Act suspension) get coded mixed by the
+  temptation to average it against the controversy, coded it positive on its
+  own terms -- the actual financing and programmes are real and substantial,
+  and whether the Bank should have resumed lending is a separate judgment
+  this record states belongs to the reader. Balance: 1 positive, 2 negative,
+  1 mixed. `--links` passes 0 errors, 3 warnings (Britannica, Monitor.co.ug,
+  Bloomberg -- all familiar 403 bot-detection patterns) -- 12/15 resolved.
+  Full pytest suite: 106 passed. 28 of 54 countries now have a record.'
