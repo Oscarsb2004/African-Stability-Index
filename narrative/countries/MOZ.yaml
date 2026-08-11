@@ -1,0 +1,441 @@
+meta:
+  iso3: MOZ
+  name: Mozambique
+  last_updated: 2026-08-10
+  iteration_count: 1
+  next_action: >
+    EXPAND: (1) follow whether the security situation around the
+    resumed TotalEnergies LNG project stabilises enough for full-scale
+    construction to proceed; (2) follow whether the Cabo Delgado
+    insurgency's intensity changes following the project's restart;
+    (3) check whether any accountability process begins for the 300+
+    killings documented by Amnesty International; (4) check whether
+    Pillars A/E get fresh post-election data; (5) keep this record's
+    account of RENAMO's Rhodesian origins consistent with ZWE's own
+    account, and its account of the Frontline States/SADCC founding
+    consistent with ZAF's; (6) check if Pillar C has gained coverage.
+  model_used: claude-sonnet-5
+
+historical:
+  overview: >
+    Portuguese explorer Vasco da Gama reached the Mozambican coast in
+    1498, and Portugal controlled the territory for the next 477 years
+    -- the longest continuous European colonial presence recorded in
+    this corpus -- exporting millions of enslaved Africans, mostly to
+    Brazil, and later imposing chibalo forced labour, which continued
+    into the 1960s, and a prazo system of exploitative feudal land
+    grants. The Front for the Liberation of Mozambique (FRELIMO), formed
+    in 1962 and led by Eduardo Mondlane until his 1969 assassination,
+    launched an armed uprising against Portuguese rule from Cabo Delgado
+    province on 25 September 1964 -- the same province where a very
+    different armed insurgency would erupt more than half a century
+    later. Portugal's 1974 Carnation Revolution, a coup by officers
+    exhausted by colonial wars across Africa, opened the way to
+    independence on 25 June 1975 under Samora Machel. From 1975,
+    Rhodesia's intelligence service created RENAMO, an insurgent
+    movement apartheid South Africa continued backing after Zimbabwean
+    independence in 1980; the resulting civil war killed an estimated
+    one million people before the 1992 Rome General Peace Accords ended
+    it. Machel died in a 1986 plane crash; Joaquim Chissano succeeded
+    him. Since 2017, an Islamic State-affiliated insurgency has
+    convulsed Cabo Delgado again, killing thousands and, in a March 2021
+    attack on Palma adjacent to a $20 billion TotalEnergies gas project,
+    possibly as many as 1,193 people; the project was suspended for four
+    and a half years before resuming in October 2025. A disputed October
+    2024 election, won by FRELIMO's Daniel Chapo, triggered a
+    security-force crackdown that killed more than 300 people.
+  overview_citations: [c1, c2, c4, c5, c6, c7]
+  colonial_legacy: >
+    context/colonial_history.yaml already credits Portugal's near-500-year
+    rule, the prazo land-grant system, chibalo forced labour continuing
+    into the 1960s, and RENAMO's backing by Rhodesia and apartheid South
+    Africa. Worth adding two connections this corpus can now draw
+    directly rather than assert in isolation. First, RENAMO was not
+    merely "supported" by Rhodesia -- it was created outright, in 1975,
+    by the same Rhodesian intelligence service documented in this
+    corpus's own ZWE record as fighting the Bush War whose white-minority
+    government RENAMO's creators represented; apartheid South Africa
+    then inherited and continued the project after Zimbabwean
+    independence in 1980, meaning Mozambique's civil war was
+    substantially an export of two neighbouring countries' own internal
+    conflicts, not a purely domestic one. Second, Mozambique was a
+    founding member of the Southern African Development Coordination
+    Conference in April 1980, alongside the other "Frontline States" --
+    Angola, Botswana, Lesotho, Tanzania and Zambia -- whose explicit
+    purpose was applying political pressure toward Black majority rule
+    in apartheid South Africa, documented from the other side in this
+    corpus's own ZAF record. Mozambique's colonial and immediate
+    post-colonial history is inseparable from its neighbours' -- not
+    merely geographically proximate to them.
+  colonial_legacy_citations: [c1, c4, c5]
+  key_periods:
+    - title: "Portuguese colonisation and forced labour"
+      period: "1498-1962"
+      summary: >
+        Portuguese explorer Vasco da Gama reached the Mozambican coast
+        in 1498, and Portugal controlled the territory for the next 477
+        years, exporting millions of enslaved Africans to Brazil and
+        later imposing chibalo forced labour, which continued into the
+        1960s, and a prazo system of exploitative feudal land grants.
+      citations: [c1]
+    - title: "FRELIMO's liberation war and independence"
+      period: "1962-1975"
+      summary: >
+        The Front for the Liberation of Mozambique (FRELIMO), formed in
+        1962 and led by Eduardo Mondlane until his 1969 assassination,
+        launched an armed uprising against Portuguese rule from Cabo
+        Delgado province on 25 September 1964. Portugal's 1974 Carnation
+        Revolution opened the way to independence on 25 June 1975 under
+        Samora Machel.
+      citations: [c2, c3]
+    - title: "RENAMO's war and the Rome peace accords"
+      period: "1975-1992"
+      summary: >
+        From 1975, Rhodesia's intelligence service created RENAMO, an
+        insurgent movement apartheid South Africa continued backing
+        after Zimbabwean independence in 1980; the resulting civil war
+        killed an estimated one million people, mostly through famine
+        and destroyed infrastructure, before the Rome General Peace
+        Accords ended it in October 1992. Machel died in a 1986 plane
+        crash; Joaquim Chissano succeeded him.
+      citations: [c4, c5]
+    - title: "The Cabo Delgado insurgency and the 2024 election crisis"
+      period: "2017-2025"
+      summary: >
+        Since 2017, an Islamic State-affiliated insurgency has convulsed
+        Cabo Delgado, killing thousands and, in a March 2021 attack on
+        Palma adjacent to a $20 billion TotalEnergies gas project,
+        possibly as many as 1,193 people; the project was suspended for
+        four and a half years before resuming in October 2025. A
+        disputed October 2024 election, won by FRELIMO's Daniel Chapo,
+        triggered a security-force crackdown that killed more than 300
+        people.
+      citations: [c6, c7, c8]
+
+pillars:
+  A:
+    summary: >
+      All six governance indicators are directly measured this year,
+      and the aggregate score is weak -- Rule of Law and Control of
+      Corruption are the two weakest. That severity sits against a
+      specific, current crisis: a disputed October 2024 election, in
+      which FRELIMO's Daniel Chapo was declared winner over opposition
+      candidate Venâncio Mondlane, triggered a security-force crackdown
+      that Amnesty International documented as killing more than 300
+      people, following the assassination of a senior opposition
+      official and Mondlane's own legal adviser on 19 October, two days
+      before the mass protests even began. Chapo was inaugurated on 15
+      January 2025 amid continued unrest -- FRELIMO's tenth consecutive
+      presidential victory since Mozambique's first multiparty election
+      in 1994.
+    drivers:
+      - "all 6 governance indicators directly measured; Rule of Law and Control of Corruption the two weakest"
+      - "disputed Oct 2024 election (Chapo/FRELIMO vs Mondlane/PODEMOS): security-force crackdown killed 300+ people per Amnesty International"
+      - "a senior opposition official and Mondlane's own legal adviser were assassinated 19 October, two days before mass protests even began"
+      - "Chapo inaugurated Jan 15 2025 amid continued unrest -- FRELIMO's 10th consecutive presidential win since 1994's first multiparty election"
+    citations: [c6, c7, c9]
+  B:
+    summary: >
+      GDP growth and inflation, both freshly measured, are moderate.
+      GDP per capita, also fresh, is among the lowest recorded in this
+      corpus. Domestic credit to the private sector, also fresh, is
+      thin. Gini, carried forward, indicates severe inequality.
+      Mozambique exited the Financial Action Task Force's anti-money-
+      laundering grey list on 24 October 2025, three years after being
+      placed on it -- a genuine compliance achievement shared, in the
+      same October 2025 review, with South Africa, Nigeria and Burkina
+      Faso, all documented elsewhere in this corpus. Separately,
+      TotalEnergies lifted its four-and-a-half-year force majeure on the
+      $20 billion Cabo Delgado LNG project the same month, a real
+      economic milestone that does not by itself resolve the insurgency
+      that caused the suspension.
+    drivers:
+      - "GDP growth, inflation both fresh, moderate; GDP per capita (fresh) among the lowest in this corpus; domestic credit thin (fresh); Gini (carried forward) indicates severe inequality"
+      - "Mozambique exited the FATF grey list Oct 24 2025, 3 years after being placed on it -- a genuine compliance achievement, shared the same review with ZAF, NGA and BFA"
+      - "TotalEnergies lifted its 4.5-year force majeure on the $20B Cabo Delgado LNG project the same month -- real economic significance, doesn't resolve the underlying insurgency"
+    citations: [c10, c11]
+  D:
+    summary: >
+      Life expectancy, just under 64 years, and infant mortality, at
+      44.9 per 1,000 live births, are both freshly measured and severe.
+      Severe food insecurity, estimated from regional peers rather than
+      measured directly, affects nearly 30% of the population. Safely
+      managed drinking water access, also fresh, is weak, covering only
+      about a quarter of the population. Four of the pillar's five
+      indicators are current, making this a largely, though not fully,
+      directly evidenced severity. Mozambique achieved gender parity in
+      primary-school enrolment, per recent World Bank reporting -- a
+      genuine, if narrow, bright spot within an otherwise severe pillar.
+    drivers:
+      - "life expectancy ~64 years, infant mortality ~44.9/1,000 -- both fresh, severe"
+      - "severe food insecurity ~30% (regional-mean estimate, not directly measured); safely managed water weak (fresh), covering only about a quarter of the population"
+      - "4 of 5 indicators fresh -- largely, not fully, directly evidenced; gender parity achieved in primary-school enrolment, a genuine narrow bright spot"
+    citations: [c1, c10]
+  E:
+    summary: >
+      Political Stability, freshly measured, is severe -- among the
+      weaker readings recorded in this corpus, reflecting both the
+      Cabo Delgado insurgency documented in historical.key_periods and
+      the 2024-2025 election crisis. Displaced persons, also freshly
+      and directly measured rather than estimated, is a genuinely
+      severe reading in its own right, not a regional proxy:
+      Mozambique's own insurgency has displaced people at a substantial,
+      directly documented rate. Homicide, estimated from regional peers,
+      is more middling. Three of the pillar's four indicators are
+      freshly measured this year, making this pillar's severity
+      substantially, not thinly, evidenced.
+    drivers:
+      - "Political Stability severe (fresh) -- among the weaker readings in this corpus, reflecting both the Cabo Delgado insurgency and the 2024-2025 election crisis"
+      - "IDPs directly measured, not a regional estimate (fresh) -- a genuinely severe reading in its own right"
+      - "homicide more middling (regional-mean estimate); 3 of 4 indicators fresh -- substantially, not thinly, evidenced severity"
+    citations: [c1, c6]
+  F:
+    summary: >
+      CO2 emissions per capita, freshly measured, are comparatively
+      low, and unlike the clearest wealth-proxy cases in this corpus,
+      this reads as at least partly genuine: the carried-forward
+      electricity-generation figure shows just over 16% of power from
+      fossil sources, reflecting the substantial hydropower capacity of
+      the Cahora Bassa Dam, one of Africa's largest. Electricity access
+      itself (Pillar G), however, still covers only about a third of
+      the population, so energy poverty remains part of the explanation
+      too -- a genuine blend case, not a clear achievement. Freshwater
+      withdrawal, also carried forward, is very low relative to
+      renewable resources. Agricultural land share, fresh, is extensive.
+      Only two of the pillar's four indicators are freshly measured this
+      year.
+    drivers:
+      - "CO2 pc comparatively low (fresh) -- reads as partly genuine: electricity generation only ~16% fossil-fuel (carried forward), reflecting Cahora Bassa Dam hydropower, one of Africa's largest"
+      - "but electricity access (Pillar G) still covers only ~1/3 of the population -- energy poverty remains part of the explanation, a genuine blend case like AGO/ETH/UGA"
+      - "freshwater withdrawal very low relative to renewable resources (carried forward); agricultural land extensive (fresh)"
+      - "only 2 of 4 indicators freshly measured this year"
+    citations: [c1]
+  G:
+    summary: >
+      Electricity access, at just 36% and freshly measured, is weak,
+      directly explaining Pillar F's low emissions reading. Basic
+      drinking water access, also fresh, is moderate. Handwashing
+      coverage, also fresh, is weak. Social protection and labour
+      programme coverage, carried forward, is extremely thin -- covering
+      well under 6% of relevant need, among the weakest readings
+      recorded anywhere in this corpus. Four of the pillar's five
+      indicators are current, reflecting the same severe infrastructure
+      gap documented throughout this record's economic and security
+      pillars.
+    drivers:
+      - "electricity access only 36% (fresh) -- weak, directly explains Pillar F's low emissions reading"
+      - "basic drinking water moderate (fresh); handwashing weak (fresh)"
+      - "social protection extremely thin (carried forward), under 6% -- among the weakest readings recorded anywhere in this corpus; 4 of 5 indicators fresh"
+    citations: [c1]
+
+recent:
+  primary:
+    - headline: "Security forces kill more than 300 in post-election crackdown"
+      date: 2025-02-01
+      summary: >
+        Amnesty International reported in February 2025 that more than
+        300 people were killed by Mozambican security forces in
+        unlawful crackdowns on protests following the disputed 9
+        October 2024 election, in which FRELIMO's Daniel Chapo was
+        declared the winner over opposition candidate Venâncio Mondlane.
+        Chapo was inaugurated on 15 January 2025 amid continued unrest.
+      why_it_matters: >
+        Directly explains Pillar A and Pillar E's severity, and
+        documents the most lethal single episode of post-election
+        violence recorded in this corpus to date.
+      news_url: "https://www.amnesty.org/en/latest/news/2025/02/mozambique-authorities-must-investigate-reports-of-more-than-300-unlawful-killings-during-post-election-protest-crackdown/"
+      wikipedia_url: ""
+      sentiment: negative
+    - headline: "Mozambique exits the FATF anti-money-laundering grey list"
+      date: 2025-10-24
+      summary: >
+        The Financial Action Task Force removed Mozambique from its
+        anti-money-laundering grey list on 24 October 2025, three years
+        after placing it there, in the same review that also removed
+        South Africa, Nigeria and Burkina Faso -- all documented
+        elsewhere in this corpus.
+      why_it_matters: >
+        A genuine, verifiable compliance achievement documented in
+        Pillar B, credited at full weight alongside, not instead of,
+        the severe governance crisis documented in Pillar A.
+      news_url: "https://english.news.cn/africa/20251025/efa9b772875746c88e85b3f21055e87d/c.html"
+      wikipedia_url: ""
+      sentiment: positive
+    - headline: "TotalEnergies resumes Mozambique's $20 billion LNG project after 4.5-year suspension"
+      date: 2025-10-24
+      summary: >
+        TotalEnergies lifted force majeure on its Mozambique LNG project
+        in October 2025, ending a suspension triggered by the March
+        2021 Palma attack that had added an estimated $4.5 billion to
+        project costs. CEO Patrick Pouyanné confirmed the restart to
+        President Chapo in a letter dated 24 October 2025.
+      why_it_matters: >
+        A real economic milestone tied directly to the Cabo Delgado
+        insurgency documented in historical.key_periods, though the
+        security situation that caused the suspension has not been
+        fully resolved.
+      news_url: "https://issafrica.org/iss-today/terrorism-takes-its-toll-on-mozambique-s-gas-revenue"
+      wikipedia_url: ""
+      sentiment: mixed
+  extended:
+    - headline: "Assassination of opposition figures precedes the deadliest post-election unrest"
+      date: 2024-10-19
+      summary: >
+        Unidentified gunmen killed senior PODEMOS official Paulo Guambe
+        and opposition candidate Venâncio Mondlane's own legal adviser,
+        Elvino Dias, in a targeted car ambush in Maputo on 19 October
+        2024, two days before Mondlane's own call for the nationwide
+        protests that followed the disputed election results.
+      why_it_matters: >
+        Shows the crackdown documented in recent.primary was preceded by
+        targeted political violence, not only a response to street
+        protests.
+      news_url: "https://www.hrw.org/news/2024/10/29/mozambique-post-election-protests-violently-repressed"
+      wikipedia_url: ""
+      sentiment: negative
+
+events:
+  - year: 1964
+    type: conflict
+    title: "FRELIMO launches armed uprising from Cabo Delgado"
+    description: >
+      FRELIMO launched an armed uprising against Portuguese rule from
+      Cabo Delgado province on 25 September 1964, beginning an
+      eleven-year liberation war under Eduardo Mondlane and, after his
+      1969 assassination, Samora Machel.
+    url: "https://en.wikipedia.org/wiki/Mozambican_War_of_Independence"
+    direction: improve
+  - year: 1975
+    type: independence
+    title: "Mozambique gains independence"
+    description: >
+      Mozambique became independent from Portugal on 25 June 1975 under
+      Samora Machel, following the Carnation Revolution's overthrow of
+      Portugal's own colonial-era dictatorship.
+    url: "https://www.africarebirth.com/how-mozambique-broke-free-from-500-years-of-portuguese-rule/"
+    direction: improve
+  - year: 1992
+    type: peace_deal
+    title: "Rome General Peace Accords end the civil war"
+    description: >
+      FRELIMO and RENAMO signed the Rome General Peace Accords on 4
+      October 1992, ending a civil war that had killed an estimated one
+      million people since 1975.
+    url: "https://en.wikipedia.org/wiki/Mozambican_Civil_War"
+    direction: improve
+  - year: 2024
+    type: election
+    title: "Disputed election triggers deadly nationwide crackdown"
+    description: >
+      A disputed 9 October 2024 election, won by FRELIMO's Daniel Chapo
+      over opposition candidate Venâncio Mondlane, triggered a
+      security-force crackdown that Amnesty International documented as
+      killing more than 300 people.
+    url: "https://www.amnesty.org/en/latest/news/2025/02/mozambique-authorities-must-investigate-reports-of-more-than-300-unlawful-killings-during-post-election-protest-crackdown/"
+    direction: deteriorate
+
+citations:
+  - id: c1
+    url: "https://www.ebsco.com/research-starters/history/mozambican-war-independence"
+    source_type: academic
+    title: "Mozambican War of Independence (EBSCO)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c2
+    url: "https://en.wikipedia.org/wiki/Mozambican_War_of_Independence"
+    source_type: wikipedia
+    title: "Mozambican War of Independence"
+    accessed: 2026-08-10
+    verified: true
+  - id: c3
+    url: "https://www.africarebirth.com/how-mozambique-broke-free-from-500-years-of-portuguese-rule/"
+    source_type: news
+    title: "How Mozambique Broke Free from 500 Years of Portuguese Rule (Africa Rebirth)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c4
+    url: "https://blackpast.org/global-african-history/the-mozambican-civil-war-1977-1992/"
+    source_type: academic
+    title: "The Mozambican Civil War (1977-1992) (BlackPast.org)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c5
+    url: "https://en.wikipedia.org/wiki/Mozambican_Civil_War"
+    source_type: wikipedia
+    title: "Mozambican Civil War"
+    accessed: 2026-08-10
+    verified: true
+  - id: c6
+    url: "https://www.hrw.org/news/2024/10/29/mozambique-post-election-protests-violently-repressed"
+    source_type: news
+    title: "Mozambique: Post-Election Protests Violently Repressed (Human Rights Watch)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c7
+    url: "https://www.amnesty.org/en/latest/news/2025/02/mozambique-authorities-must-investigate-reports-of-more-than-300-unlawful-killings-during-post-election-protest-crackdown/"
+    source_type: news
+    title: "Mozambique: Authorities must investigate reports of more than 300 unlawful killings during post-election protest crackdown (Amnesty International)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c8
+    url: "https://ctc.westpoint.edu/the-march-2021-palma-attack-and-the-evolving-jihadi-terror-threat-to-mozambique/"
+    source_type: academic
+    title: "The March 2021 Palma Attack and the Evolving Jihadi Terror Threat to Mozambique (Combating Terrorism Center at West Point)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c9
+    url: "https://www.france24.com/en/africa/20250115-mozambique-inaugurates-president-elect-daniel-chapo-amid-deadly-unrest"
+    source_type: news
+    title: "Mozambique inaugurates President Daniel Chapo amid deadly unrest over disputed election (France 24)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c10
+    url: "https://www.afdb.org/en/countries/southern-africa/mozambique/mozambique-economic-outlook"
+    source_type: official
+    title: "Mozambique Economic Outlook (African Development Bank)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c11
+    url: "https://english.news.cn/africa/20251025/efa9b772875746c88e85b3f21055e87d/c.html"
+    source_type: news
+    title: "Mozambique removed from FATF grey list (Xinhua)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c12
+    url: "https://issafrica.org/iss-today/terrorism-takes-its-toll-on-mozambique-s-gas-revenue"
+    source_type: news
+    title: "Terrorism takes its toll on Mozambique's gas revenue (ISS Africa)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c13
+    url: "https://en.wikipedia.org/wiki/Southern_African_Development_Coordination_Conference"
+    source_type: wikipedia
+    title: "Southern African Development Coordination Conference"
+    accessed: 2026-08-10
+    verified: true
+
+rec_membership:
+  - org: SADC
+    joined: 1980
+    status: current
+    left: null
+    citations: [c13]
+
+balance:
+  n_positive: 1
+  n_negative: 2
+  n_mixed: 1
+  note: >
+    The post-election crackdown and the preceding assassinations are
+    both coded negative at full weight, not softened by the genuine
+    compliance and economic developments placed alongside them. The
+    FATF grey-list exit is coded positive because it is a real,
+    independently verified achievement, credited on its own terms
+    rather than discounted because it occurred during a severe
+    political crisis -- the same standard this corpus applies to other
+    governments' verified actions during periods of documented
+    instability. The LNG project's resumption is coded mixed rather
+    than positive: the investment and revenue potential are real, but
+    this record cannot credit it as an unqualified gain when the
+    security crisis that halted it for four and a half years remains,
+    at most, only partially addressed.

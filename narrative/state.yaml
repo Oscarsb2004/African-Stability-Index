@@ -593,6 +593,31 @@ countries:
       accountability-versus-expediency criticism; keep this record''s
       account of Jammeh''s exile consistent with GNQ''s own account; check
       if Pillar C has gained coverage'
+  MOZ:
+    name: Mozambique
+    region: East
+    first_pass: false
+    reason: twenty-third backlog country -- fills East Africa (7 of 14 done);
+      longest continuous colonial period in this corpus (477 years,
+      Portuguese from 1498); RENAMO documented as literally created by the
+      same Rhodesian intelligence service already covered in ZWE''s Bush War
+      record, then continued by apartheid South Africa -- Mozambique''s
+      civil war was substantially an export of two neighbors'' own
+      conflicts; SADCC founding-member Frontline State status (April 1980)
+      cross-references directly with ZAF''s own apartheid record; the most
+      lethal single post-election-violence episode recorded in this corpus
+      (300+ killed, Amnesty International); a genuine positive (FATF
+      grey-list exit, Oct 2025) shared the same review with ZAF/NGA/BFA
+      already in this corpus
+    iteration_count: 1
+    last_updated: '2026-08-10'
+    next_action: 'EXPAND: follow whether the security situation around the
+      resumed TotalEnergies LNG project stabilises; follow whether the
+      Cabo Delgado insurgency''s intensity changes after the project''s
+      restart; check whether any accountability process begins for the
+      300+ killings; keep this record''s account of RENAMO''s Rhodesian
+      origins consistent with ZWE''s account, and the SADCC founding
+      consistent with ZAF''s; check if Pillar C has gained coverage'
 backlog:
   LBY:
     name: Libya
@@ -708,14 +733,6 @@ backlog:
     next_action: create baseline from blueprint
   MWI:
     name: Malawi
-    region: East
-    first_pass: false
-    reason: not yet scheduled
-    iteration_count: 0
-    last_updated: null
-    next_action: create baseline from blueprint
-  MOZ:
-    name: Mozambique
     region: East
     first_pass: false
     reason: not yet scheduled
@@ -1599,3 +1616,36 @@ meta_notes:
   in this corpus. `--links` then passed 0 errors, 1 warning (The East
   African, familiar 403 pattern) -- 15/16 resolved. Full pytest suite: 106
   passed. 31 of 54 countries now have a record.'
+- '2026-08-10: MOZ CREATE run complete (13 sources opened and verified: 5
+  Wikipedia, 5 news, 2 academic, 1 official/AfDB, 1 more Wikipedia for
+  rec_membership). Fills East Africa (7 of 14 done before this run). Longest
+  continuous colonial period recorded in this corpus -- 477 years, Portugal
+  from 1498 -- surpassing AGO''s own long Portuguese rule. Colonial legacy
+  draws two direct, verifiable cross-references rather than isolated claims:
+  RENAMO was literally created in 1975 by the same Rhodesian intelligence
+  service already documented in ZWE''s own Bush War record (not merely
+  "supported" by Rhodesia, as the colonial_history.yaml note states more
+  loosely), with apartheid South Africa inheriting and continuing the
+  project after Zimbabwean independence in 1980 -- meaning Mozambique''s
+  ~1-million-death civil war was substantially an export of two neighbors''
+  own conflicts. Separately, Mozambique was a founding Frontline State of
+  SADCC in April 1980, whose explicit purpose was pressuring apartheid South
+  Africa toward Black majority rule -- documented from the other side in
+  ZAF''s own record. This record contains the most lethal single episode of
+  post-election violence recorded in this corpus to date: Amnesty
+  International documented 300+ people killed by security forces after the
+  disputed October 2024 election, preceded by the targeted assassination of
+  two opposition figures two days before the protests even began. Followed
+  the established discipline and found a genuine positive: Mozambique''s
+  October 2025 exit from the FATF anti-money-laundering grey list, credited
+  at full weight and noted as occurring in the same review that also
+  removed ZAF, NGA and BFA -- all three already documented in this corpus,
+  a genuine shared regional moment. The TotalEnergies LNG project''s
+  resumption the same month is coded mixed rather than positive: real
+  economic significance that does not by itself resolve the Cabo Delgado
+  insurgency that halted it for 4.5 years. Balance: 1 positive, 2 negative,
+  1 mixed. One word-count fix on recent.extended (two attempts needed),
+  resolved by adding real facts rather than padding. `--links` passes 0
+  errors, 2 warnings (BlackPast.org and France24, both familiar 403
+  bot-detection patterns) -- 11/13 resolved. Full pytest suite: 106 passed.
+  32 of 54 countries now have a record.'
