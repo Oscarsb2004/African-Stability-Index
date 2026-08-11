@@ -1,0 +1,498 @@
+meta:
+  iso3: CAF
+  name: Central African Republic
+  last_updated: 2026-08-10
+  iteration_count: 1
+  next_action: >
+    EXPAND: (1) follow whether Touadera's disputed third term produces
+    further opposition unrest or international pressure; (2) follow
+    whether the 2025 mining-code reforms and Kimberley Process
+    reintegration translate into measurable revenue for ordinary
+    Central Africans, or remain captured by Wagner-linked and other
+    armed-group extraction; (3) check for further UN Panel of Experts
+    or State Department findings on Wagner/Africa Corps conduct past
+    the April 2023-March 2024 reporting period cited here; (4) check
+    whether MINUSCA's mandate has changed; (5) check if Pillar C has
+    gained coverage.
+  model_used: claude-sonnet-5
+
+historical:
+  overview: >
+    France colonised Ubangi-Shari from 1887, leasing much of the
+    territory to concessionary companies that extracted rubber and
+    ivory through forced labour and violence contemporaries compared to
+    the Belgian Congo; novelist André Gide's 1927 Voyage au Congo
+    exposed men tied to trees and shot, women maimed, and children
+    burned alive for missing rubber quotas, provoking a scandal in
+    France but only modest reform. An estimated 350,000 people across
+    the region rose in the 1928-1931 Kongo-Wara Rebellion against the
+    concessionary system -- perhaps the largest anti-colonial uprising
+    in interwar Africa -- before French machine guns and aerial
+    bombardment crushed it. Independence followed in 1960 under
+    Barthélemy Boganda's movement, though Boganda himself died in a
+    plane crash the previous year. Jean-Bédel Bokassa seized power in a
+    1966 coup and, in 1976, declared himself Emperor of Central Africa,
+    crowning himself Bokassa I in a 1977 ceremony costing more than $20
+    million; French troops overthrew him in Operation Barracuda in
+    September 1979 after his security forces massacred an estimated 100
+    schoolchildren protesting mandatory uniforms. Decades of further
+    coups and instability followed. The Séléka coalition, a mostly
+    Muslim rebel alliance, seized the capital Bangui in March 2013,
+    forcing President François Bozizé into exile; the mostly Christian
+    anti-balaka militia's retaliation turned the conflict openly
+    sectarian, killing thousands and displacing hundreds of thousands
+    before a UN peacekeeping mission deployed in 2014. Since 2018, the
+    Russian Wagner Group has provided President Faustin-Archange
+    Touadéra's personal security and propped up his government in
+    exchange for gold and diamond mining concessions, while being
+    separately accused of massacring civilians and using child
+    soldiers. A 2023 referendum, boycotted by the opposition, abolished
+    presidential term limits; Touadéra was sworn in for a third term in
+    early 2026 after a December 2025 election the opposition rejected
+    as fraudulent.
+  overview_citations: [c1, c2, c3, c4, c5, c6]
+  colonial_legacy: >
+    context/colonial_history.yaml already credits the concessionary
+    company system's rubber-extraction violence -- explicitly compared
+    to the Belgian Congo -- and André Gide's 1927 exposure of it. Worth
+    adding two things the note's brevity omits. First, scale: an
+    estimated 350,000 people across multiple ethnic groups rose in the
+    1928-1931 Kongo-Wara ("War of the Hoe Handle") Rebellion against the
+    concessionary companies and forced labour, one of the largest
+    anti-colonial uprisings in French Equatorial Africa, though French
+    forces suppressed it with machine guns and aerial bombardment and
+    Gide's own revelations produced only modest reform. Second, and more
+    consequential for reading this record's recent developments: the
+    concessionary-company template -- a foreign actor granted extractive
+    rights over CAR's minerals, providing its own security, operating
+    largely outside ordinary state accountability -- did not end with
+    decolonisation. Since 2018, the Russian Wagner Group has occupied a
+    strikingly similar structural position, trading military support for
+    President Touadéra's government for gold and diamond mining
+    concessions including the Ndassima mine, generating hundreds of
+    millions of dollars while UN investigators separately accuse its
+    forces of massacring civilians and disproportionately targeting
+    Fulani communities. This record treats that resemblance as
+    substantive, not merely rhetorical: both are extraction-for-security
+    arrangements that place a foreign armed actor's economic interests
+    ahead of Central African civilians' safety.
+  colonial_legacy_citations: [c1, c2, c8, c10]
+  key_periods:
+    - title: "Concessionary companies and the Kongo-Wara Rebellion"
+      period: "1887-1931"
+      summary: >
+        France colonised Ubangi-Shari from 1887, leasing much of the
+        territory to concessionary companies that extracted rubber and
+        ivory through forced labour and violence contemporaries compared
+        to the Belgian Congo; novelist André Gide's 1927 Voyage au Congo
+        exposed the abuses, provoking a scandal in France but only
+        modest reform. An estimated 350,000 people across the region
+        rose in the 1928-1931 Kongo-Wara Rebellion against the
+        concessionary system.
+      citations: [c1, c2]
+    - title: "Independence and Bokassa's Empire"
+      period: "1960-1979"
+      summary: >
+        Independence followed in 1960 under Barthélemy Boganda's
+        movement, though Boganda died in a plane crash the previous
+        year. Jean-Bédel Bokassa seized power in a 1966 coup and, in
+        1976, declared himself Emperor of Central Africa, crowning
+        himself Bokassa I in a 1977 ceremony costing more than $20
+        million. French troops overthrew him in Operation Barracuda in
+        September 1979 after his security forces massacred an estimated
+        100 schoolchildren protesting mandatory uniforms.
+      citations: [c3, c4]
+    - title: "The Séléka-anti-balaka civil war"
+      period: "2012-2016"
+      summary: >
+        The Séléka coalition, a mostly Muslim rebel alliance, seized the
+        capital Bangui in March 2013, forcing President François
+        Bozizé into exile; the mostly Christian anti-balaka militia's
+        retaliation turned the conflict openly sectarian, killing
+        thousands and displacing hundreds of thousands before a UN
+        peacekeeping mission (MINUSCA) deployed in 2014 and
+        Faustin-Archange Touadéra won election in 2016.
+      citations: [c5]
+    - title: "Wagner's arrival and Touadéra's third term"
+      period: "2018-2026"
+      summary: >
+        Since 2018, the Russian Wagner Group has provided President
+        Touadéra's personal security and propped up his government in
+        exchange for gold and diamond mining concessions, while being
+        separately accused of massacring civilians and using child
+        soldiers. A 2023 referendum, boycotted by the opposition,
+        abolished presidential term limits; Touadéra was sworn in for a
+        third term in early 2026 after a December 2025 election the
+        opposition rejected as fraudulent.
+      citations: [c6, c7, c8]
+
+pillars:
+  A:
+    summary: >
+      All six governance indicators are directly measured this year,
+      and the aggregate score -- 25.1 -- is among the most severe
+      recorded in this corpus. Government Effectiveness and Rule of Law
+      are both severely weak; Voice and Accountability is comparatively
+      less catastrophic but still far below the midpoint. That severity
+      sits against a specific, current fact: President Touadéra was
+      sworn in for a third term in early 2026, made possible by a 2023
+      constitutional referendum -- boycotted by the opposition -- that
+      abolished presidential term limits, following a December 2025
+      election the opposition rejected as fraudulent and the
+      Constitutional Council credited him with 77.9% of the vote. Since
+      2018, Touadéra's own government has depended on the Russian
+      Wagner Group for personal security, an arrangement documented in
+      historical.colonial_legacy as structurally continuous with the
+      colonial-era concessionary company system.
+    drivers:
+      - "all 6 governance indicators directly measured; aggregate score (25.1) among the most severe recorded in this corpus"
+      - "Government Effectiveness and Rule of Law both severely weak; Voice and Accountability comparatively less catastrophic but still far below the midpoint"
+      - "Touadera sworn in for a third term early 2026, enabled by a 2023 term-limit referendum the opposition boycotted, after a Dec 2025 election (77.9%) the opposition rejected as fraudulent"
+      - "Touadera's government has depended on Russia's Wagner Group for personal security since 2018 -- a structural continuity with the colonial-era concessionary system documented in historical.colonial_legacy"
+    citations: [c6, c7, c9]
+  B:
+    summary: >
+      GDP growth, freshly measured, is severely weak -- among the
+      lowest recorded in this corpus -- and GDP per capita, also fresh,
+      is among the lowest as well. Inflation, also fresh, is
+      comparatively moderate. Domestic credit to the private sector and
+      Gini, both carried forward rather than fresh, point respectively
+      to a thin financial sector and substantial inequality. In 2024,
+      the Kimberley Process lifted an 11-year embargo on CAR's rough
+      diamond exports, and by 2025 the government had issued more than
+      50 new industrial mining licences and created two state mineral
+      companies, supporting an estimated 150,000 to 300,000 artisanal
+      miners -- a genuine reform, though large parts of the same mining
+      sector remain entangled with Wagner-linked extraction documented
+      in historical.colonial_legacy.
+    drivers:
+      - "GDP growth (fresh) among the lowest recorded in this corpus; GDP per capita (fresh) also among the lowest; inflation (fresh) comparatively moderate"
+      - "domestic credit and Gini both carried forward -- thin financial sector, substantial inequality"
+      - "Kimberley Process lifted its 11-year CAR diamond embargo in 2024; 50+ new mining licences issued by 2025, supporting 150,000-300,000 artisanal miners -- a genuine reform"
+      - "large parts of the same mining sector remain entangled with Wagner-linked extraction (historical.colonial_legacy) -- the reform and the entanglement coexist, not cancel out"
+    citations: [c11, c12]
+  D:
+    summary: >
+      Life expectancy, just over 57 years, and infant mortality, at
+      60.8 per 1,000 live births, are both freshly measured and among
+      the most severe readings recorded in this corpus. Severe food
+      insecurity, carried forward rather than fresh, is the starkest
+      figure of all: 56.3% of the population, the single worst
+      severe-food-insecurity reading recorded anywhere in this project
+      to date. Safely managed drinking water access, also fresh, is
+      extremely weak. Four of the pillar's five indicators are current,
+      making this a largely, not thinly, measured severity.
+    drivers:
+      - "life expectancy ~57 years, infant mortality ~60.8/1,000 -- both fresh, among the most severe readings recorded in this corpus"
+      - "severe food insecurity 56.3% (carried forward) -- the single worst reading recorded anywhere in this project to date"
+      - "safely managed water extremely weak (fresh); 4 of 5 indicators fresh -- a largely, not thinly, measured severity"
+    citations: [c13]
+  E:
+    summary: >
+      Displaced persons, freshly and directly measured at 99.37 per
+      1,000 population, is among the most severe readings recorded
+      anywhere in this corpus -- roughly one in ten Central Africans
+      displaced, a figure this record does not need to caveat as a
+      regional estimate, because it is a direct measurement. Political
+      Stability, also fresh, is similarly severe. Homicide is entirely
+      absent from this year's data. Three of the pillar's four
+      indicators are current, and this pillar's low aggregate score is a
+      directly evidenced finding, not primarily a data-coverage
+      artefact.
+    drivers:
+      - "IDPs 99.37/1,000 (fresh, directly measured) -- roughly 1 in 10 displaced, among the most severe readings recorded anywhere in this corpus, and not a regional estimate"
+      - "Political Stability similarly severe (fresh); homicide entirely absent from this year's data"
+      - "3 of 4 indicators fresh -- this pillar's severity is directly evidenced, not primarily a data-coverage artefact"
+    citations: [c13]
+  F:
+    summary: >
+      CO2 emissions per capita, freshly measured, are among the very
+      lowest recorded anywhere in this corpus -- but this is an
+      unambiguous wealth-proxy artefact: electricity access itself
+      (Pillar G) covers under a fifth of the population, and the
+      carried-forward electricity-generation figure shows well over 90%
+      of what little power exists comes from fossil sources. Freshwater
+      withdrawal, carried forward, is close to zero relative to
+      renewable resources, plausibly reflecting genuinely abundant
+      rainfall and low industrial water use rather than restraint. Only
+      two of the pillar's four indicators are freshly measured this
+      year.
+    drivers:
+      - "CO2 pc among the very lowest recorded in this corpus (fresh) -- unambiguous wealth-proxy artefact: electricity access under a fifth of the population (Pillar G)"
+      - "electricity generation >90% fossil-fuel even within that tiny grid (carried forward)"
+      - "freshwater withdrawal near zero relative to renewable resources (carried forward) -- plausibly genuine abundance, not scarcity-driven restraint"
+      - "only 2 of 4 indicators freshly measured this year"
+    citations: [c13]
+  G:
+    summary: >
+      Electricity access, at just under 18% and freshly measured, is
+      among the very lowest figures recorded anywhere in this corpus.
+      Basic and safely managed drinking water access, both fresh, are
+      similarly severe -- safely managed water covers barely 6% of the
+      population, among the worst readings recorded in this project.
+      Handwashing coverage, also fresh, is weak as well. Social
+      protection, estimated from regional peers, is thin. Four of the
+      pillar's five indicators are current, making this the most
+      severely and reliably measured infrastructure pillar recorded in
+      this corpus so far.
+    drivers:
+      - "electricity access under 18% (fresh) -- among the very lowest figures recorded anywhere in this corpus"
+      - "basic and safely managed drinking water both severe (fresh) -- safely managed water barely 6%, among the worst readings recorded in this project"
+      - "handwashing weak (fresh); social protection thin (regional-mean estimate); 4 of 5 indicators fresh -- a reliably, not thinly, measured severity"
+    citations: [c13]
+
+recent:
+  primary:
+    - headline: "Touadéra sworn in for a disputed third term"
+      date: 2026-03-01
+      summary: >
+        President Faustin-Archange Touadéra was sworn in for a third
+        term in early 2026, three months after a disputed December 2025
+        general election the Constitutional Council said he won with
+        77.9% of the vote. Opposition parties and civil society rejected
+        the results. The new seven-year term was made possible by a
+        2023 constitutional referendum, boycotted by the main
+        opposition, that abolished the previous two-term limit and
+        lengthened presidential terms from five to seven years.
+      why_it_matters: >
+        Directly explains Pillar A's severity and shows the
+        accountability gap this record's historical.colonial_legacy
+        traces to the Wagner-backed security arrangement continuing into
+        2026.
+      news_url: "https://www.barchart.com/story/news/1045157/central-african-republic-s-president-sworn-in-for-a-third-term-after-disputed-election"
+      wikipedia_url: ""
+      sentiment: negative
+    - headline: "Kimberley Process reforms open CAR's diamond sector to legal trade"
+      date: 2025-08-01
+      summary: >
+        Following the Kimberley Process's 2024 decision to lift an
+        11-year embargo on CAR's rough diamond exports, the government
+        created two new state mineral companies in 2025 and issued more
+        than 50 new industrial mining licences, part of a mining-code
+        overhaul intended to support an estimated 150,000 to 300,000
+        artisanal miners' livelihoods.
+      why_it_matters: >
+        A genuine, verifiable economic reform documented in Pillar B,
+        credited at full weight even though Wagner-linked actors remain
+        active in other parts of the same sector.
+      news_url: "https://www.irreview.org/articles/2025/10/26/the-central-african-republic-a-story-of-blood-diamonds-and-poor-policy"
+      wikipedia_url: ""
+      sentiment: positive
+    - headline: "US State Department documents continued Wagner atrocities and child-soldier use"
+      date: 2024-08-01
+      summary: >
+        The US State Department's human rights reporting found that
+        Russia's Wagner Group, operating as a government-supported armed
+        force in CAR, recruited and used child soldiers between April
+        2023 and March 2024. Separately, researchers documented more
+        than 362 incidents of Wagner violence against civilians in CAR
+        between 2018 and 2024, with a UN Panel of Experts finding Wagner
+        forces disproportionately targeted Fulani communities.
+      why_it_matters: >
+        Directly substantiates the historical.colonial_legacy comparison
+        between Wagner's extraction-for-security arrangement and the
+        colonial-era concessionary company system, with a specific,
+        dated, current finding rather than a general characterisation.
+      news_url: "https://www.state.gov/reports/2024-country-reports-on-human-rights-practices/central-african-republic"
+      wikipedia_url: ""
+      sentiment: negative
+  extended:
+    - headline: "UN Panel of Experts finds Wagner forces target Fulani communities"
+      date: 2024-01-01
+      summary: >
+        A UN Panel of Experts report found that Wagner Group forces in
+        CAR have disproportionately targeted Fulani communities,
+        appearing to indiscriminately associate them with armed groups
+        such as the Union for Peace militia, rather than distinguishing
+        combatants from civilians in day-to-day security operations.
+      why_it_matters: >
+        Adds an ethnic-targeting dimension to the general
+        Wagner-atrocities finding documented in recent.primary, relevant
+        to understanding which Central African communities bear the
+        heaviest cost of the mining-for-security arrangement.
+      news_url: "https://reliefweb.int/report/central-african-republic/wagner-group-poses-fundamental-challenges-protection-civilians-un-peacekeeping-operations"
+      wikipedia_url: ""
+      sentiment: negative
+
+events:
+  - year: 1928
+    type: conflict
+    title: "Kongo-Wara Rebellion against concessionary companies"
+    description: >
+      An estimated 350,000 Africans across multiple ethnic groups rose
+      in the 1928-1931 Kongo-Wara Rebellion against French concessionary
+      companies and forced labour, perhaps the largest anti-colonial
+      uprising in interwar Africa, before French forces crushed it with
+      machine guns and aerial bombardment.
+    url: "https://en.wikipedia.org/wiki/Kongo-Wara_rebellion"
+    direction: deteriorate
+  - year: 1979
+    type: coup
+    title: "France ends Bokassa's Empire in Operation Barracuda"
+    description: >
+      French troops overthrew self-declared Emperor Bokassa I in
+      Operation Barracuda in September 1979, restoring the republic
+      after his security forces massacred an estimated 100 schoolchildren
+      protesting mandatory uniforms earlier that year.
+    url: "https://en.wikipedia.org/wiki/Operation_Barracuda"
+    direction: improve
+  - year: 2013
+    type: coup
+    title: "Séléka coalition ousts Bozizé, sparking sectarian civil war"
+    description: >
+      The mostly Muslim Séléka rebel coalition seized Bangui in March
+      2013, forcing President François Bozizé into exile; retaliation
+      from the mostly Christian anti-balaka militia turned the conflict
+      openly sectarian, killing thousands.
+    url: "https://en.wikipedia.org/wiki/Central_African_Republic_Civil_War"
+    direction: deteriorate
+  - year: 2023
+    type: constitutional
+    title: "Referendum abolishes presidential term limits"
+    description: >
+      A July 2023 constitutional referendum, boycotted by the main
+      opposition, abolished presidential term limits and extended
+      presidential terms from five to seven years, enabling Touadéra's
+      2025 re-election bid.
+    url: "https://en.wikipedia.org/wiki/2023_Central_African_constitutional_referendum"
+    direction: deteriorate
+
+citations:
+  - id: c1
+    url: "https://en.wikipedia.org/wiki/Company_of_the_Upper_Ubangi_Sultanates"
+    source_type: wikipedia
+    title: "Company of the Upper Ubangi Sultanates"
+    accessed: 2026-08-10
+    verified: true
+  - id: c2
+    url: "https://en.wikipedia.org/wiki/Kongo-Wara_rebellion"
+    source_type: wikipedia
+    title: "Kongo-Wara rebellion"
+    accessed: 2026-08-10
+    verified: true
+  - id: c3
+    url: "https://en.wikipedia.org/wiki/Jean-B%C3%A9del_Bokassa"
+    source_type: wikipedia
+    title: "Jean-Bédel Bokassa"
+    accessed: 2026-08-10
+    verified: true
+  - id: c4
+    url: "https://en.wikipedia.org/wiki/Operation_Barracuda"
+    source_type: wikipedia
+    title: "Operation Barracuda"
+    accessed: 2026-08-10
+    verified: true
+  - id: c5
+    url: "https://en.wikipedia.org/wiki/Central_African_Republic_Civil_War"
+    source_type: wikipedia
+    title: "Central African Republic Civil War"
+    accessed: 2026-08-10
+    verified: true
+  - id: c6
+    url: "https://www.barchart.com/story/news/1045157/central-african-republic-s-president-sworn-in-for-a-third-term-after-disputed-election"
+    source_type: news
+    title: "Central African Republic's president sworn in for a third term after disputed election (Barchart)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c7
+    url: "https://en.wikipedia.org/wiki/2023_Central_African_constitutional_referendum"
+    source_type: wikipedia
+    title: "2023 Central African constitutional referendum"
+    accessed: 2026-08-10
+    verified: true
+  - id: c8
+    url: "https://www.nbcnews.com/news/africa/wagner-ukraine-russia-central-african-republic-gold-mine-putin-rcna86392"
+    source_type: news
+    title: "Russian mercenaries exploit African country as they fight in Ukraine (NBC News)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c9
+    url: "https://www.aljazeera.com/news/2023/7/29/car-braces-for-referendum-that-may-extend-president-touaderas-rule"
+    source_type: news
+    title: "CAR braces for referendum that may extend President Touadera's rule (Al Jazeera)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c10
+    url: "https://www.occrp.org/en/news/report-wagner-mercenaries-profit-from-central-africas-blood-diamonds"
+    source_type: news
+    title: "Report: Wagner Mercenaries Profit from Central Africa's Blood Diamonds (OCCRP)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c11
+    url: "https://www.irreview.org/articles/2025/10/26/the-central-african-republic-a-story-of-blood-diamonds-and-poor-policy"
+    source_type: news
+    title: "The Central African Republic: A Story of Blood Diamonds and Poor Policy (International Relations Review)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c12
+    url: "https://www.jckonline.com/editorial-article/kimberley-central-african-republic/"
+    source_type: news
+    title: "Kimberley Process Lifts Embargo on Central African Republic (JCK)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c13
+    url: "https://en.wikipedia.org/wiki/History_of_the_Central_African_Republic"
+    source_type: wikipedia
+    title: "History of the Central African Republic"
+    accessed: 2026-08-10
+    verified: true
+  - id: c14
+    url: "https://www.state.gov/reports/2024-country-reports-on-human-rights-practices/central-african-republic"
+    source_type: official
+    title: "Central African Republic 2024 Country Report on Human Rights Practices (US Department of State)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c15
+    url: "https://www.rferl.org/a/russia-wagner-mercenaries-central-african-republic-crimes/33306858.html"
+    source_type: news
+    title: "Wagner's Successors Wage Campaign Of Terror In Central African Republic (RFE/RL)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c16
+    url: "https://reliefweb.int/report/central-african-republic/wagner-group-poses-fundamental-challenges-protection-civilians-un-peacekeeping-operations"
+    source_type: news
+    title: "Wagner Group Poses Fundamental Challenges for the Protection of Civilians by UN Peacekeeping Operations (ReliefWeb)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c17
+    url: "https://en.wikipedia.org/wiki/Economic_Community_of_Central_African_States"
+    source_type: wikipedia
+    title: "Economic Community of Central African States"
+    accessed: 2026-08-10
+    verified: true
+  - id: c18
+    url: "https://simple.wikipedia.org/wiki/Community_of_Sahel-Saharan_States"
+    source_type: wikipedia
+    title: "Community of Sahel-Saharan States"
+    accessed: 2026-08-10
+    verified: true
+
+rec_membership:
+  - org: ECCAS
+    joined: 1983
+    status: current
+    left: null
+    citations: [c17]
+  - org: CEN-SAD
+    joined: 1999
+    status: current
+    left: null
+    citations: [c18]
+
+balance:
+  n_positive: 1
+  n_negative: 3
+  n_mixed: 0
+  note: >
+    The disputed third term and the two Wagner-atrocity items are each
+    independently severe, current, and well documented, and none is
+    softened to make room for the positive item. The Kimberley Process
+    reform is coded positive at full weight because it is a genuine,
+    independently verifiable policy change with a real economic
+    mechanism (150,000-300,000 artisanal miners' livelihoods), not
+    manufactured to offset the rest of the record -- the same standard
+    applied to other verified reforms by governments with severe
+    governance records elsewhere in this corpus (BFA's SOPAMIB, NER's
+    Somair, MDG's mining-moratorium lift). That the same mining sector
+    also hosts Wagner-linked extraction is stated plainly in Pillar B
+    rather than left for a reader to reconcile alone.

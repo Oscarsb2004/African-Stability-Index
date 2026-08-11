@@ -26,7 +26,7 @@ An audit is forced early if a single run inflates the citation count by more tha
 
 ## Status
 
-**23 of 54 countries have a record (Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria, Rwanda, Chad, Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea). The first pass is complete; Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia and Eritrea are the first fourteen backlog countries.**
+**24 of 54 countries have a record (Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria, Rwanda, Chad, Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic). The first pass is complete; Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea and Central African Republic are the first fifteen backlog countries.**
 
 ### First pass — 9 countries
 
@@ -65,14 +65,15 @@ whose ranks swing hardest with the weighting method.
 | NAM | Namibia | fills Southern Africa's biggest gap (only ZAF and BWA previously done of 5 in the region); colonized by two different powers in sequence (Germany, then South Africa), including the Herero and Nama genocide (1904-1908), formally recognised by Germany only in 2021; strongest governance pillar recorded in this corpus so far, deliberately paired against a genuinely unresolved current fact (a 2023 reparations lawsuit still undecided as of mid-2026) rather than treating 2021 recognition as closure | **done — iteration 1** |
 | LBR | Liberia | fills West Africa's biggest absolute gap (5 of 16 done); the only country in the corpus never formally colonized by a foreign state, yet the Americo-Liberian settler elite (freed American slaves, from 1822) held internal-colonial dominance over the indigenous majority for 133 years, and Firestone's 1926 rubber lease shows the same extractive pattern operating without any formal colonizer at all; a 20+-year-overdue War and Economic Crimes Court coded mixed, not positive, since no prosecution has yet followed | **done — iteration 1** |
 | ERI | Eritrea | fills East Africa's biggest gap (4 of 14 done); the only country in the corpus with zero national elections since independence (1993); most extreme data-sparsity case yet -- 3 of 6 non-C pillars greyed entirely, directly tied to the same closed-state pattern behind the corpus's lowest-ever single indicator score (Voice and Accountability, 4.9); opens a new cross-referenced pair with ETH (GERD, Tigray War, Pretoria Agreement, 2025 Red Sea tension); a genuine positive (UN-verified 2025 health/nutrition gains) credited at full weight, not treated as suspect by association | **done — iteration 1** |
+| CAF | Central African Republic | fills Central Africa's biggest gap (3 of 8 done); Bokassa's 1976-1979 self-declared Empire; the corpus's first major Russian paramilitary presence (Wagner, since 2018), argued as structurally continuous with the colonial-era concessionary companies that produced the 1928-1931 Kongo-Wara Rebellion; two new corpus superlatives (56.3% severe food insecurity, 99.37/1,000 directly-measured IDPs); a genuine positive (2024 Kimberley Process reintegration) credited alongside, not instead of, Wagner-atrocity findings in the same mining sector | **done — iteration 1** |
 
-### Backlog — the remaining 31
+### Backlog — the remaining 30
 
 Listed in full in `narrative/state.yaml` under `backlog`. They are recorded
 explicitly rather than left implicit: a country with no record should be visibly
 absent, not quietly missing.
 
-Libya, Tunisia, Benin, Cabo Verde, The Gambia, Guinea, Guinea-Bissau, Cote d'Ivoire, Mauritania, Senegal, Sierra Leone, Togo, Cameroon, Central African Republic, Republic of Congo, Equatorial Guinea, Gabon, Burundi, Djibouti, Malawi, Mozambique, South Sudan, Tanzania, Uganda, Zambia, Zimbabwe, Lesotho, Eswatini, Comoros, Seychelles, Sao Tome & Principe
+Libya, Tunisia, Benin, Cabo Verde, The Gambia, Guinea, Guinea-Bissau, Cote d'Ivoire, Mauritania, Senegal, Sierra Leone, Togo, Cameroon, Republic of Congo, Equatorial Guinea, Gabon, Burundi, Djibouti, Malawi, Mozambique, South Sudan, Tanzania, Uganda, Zambia, Zimbabwe, Lesotho, Eswatini, Comoros, Seychelles, Sao Tome & Principe
 
 ---
 
@@ -746,6 +747,44 @@ Append one line per run: date, country, mode, what changed, what was removed.
   padding. `--links` passes 0 errors, 0 warnings — the second
   zero-warning `--links` run in this corpus after MDG.
 
+- **2026-08-10 — CAF — CREATE. Fifteenth backlog country, fills
+  Central Africa's biggest gap.** Full baseline built: historical
+  overview, colonial legacy (the Ubangi-Shari concessionary company
+  system's rubber/ivory extraction, compared directly to the Belgian
+  Congo, exposed by André Gide's 1927 Voyage au Congo, and resisted by
+  an estimated 350,000 people in the 1928-1931 Kongo-Wara Rebellion —
+  perhaps the largest anti-colonial uprising in interwar Africa), 4
+  key_periods, 6 pillar summaries (Pillar C left empty — greyed at
+  1/8 measured), 3 primary + 1 extended recent items, 4 events,
+  rec_membership (ECCAS 1983 founding member via UDEAC, CEN-SAD 1999).
+  18 sources opened and verified: 9 Wikipedia, 6 news, 1 State
+  Department, 2 more Wikipedia for rec_membership. This is the corpus's
+  first record with a major Russian paramilitary presence: the
+  colonial_legacy section argues, with specific 2024 State Department
+  and UN Panel of Experts findings, that Wagner's since-2018 role —
+  foreign armed actor granted mineral extraction rights in exchange for
+  providing the state's own security, operating outside ordinary
+  accountability — is structurally continuous with, not merely
+  analogous to, the colonial-era concessionary company template. Two
+  new corpus superlatives: severe food insecurity at 56.3% is the
+  single worst reading recorded anywhere in this project to date, and
+  displaced persons at 99.37/1,000 is both the most severe AND,
+  unusually, directly fresh-measured rather than a regional-mean
+  estimate — roughly 1 in 10 Central Africans displaced, stated as a
+  direct finding rather than softened as an estimate. Following the
+  established discipline, found a genuine positive despite the
+  severity: the 2024 Kimberley Process embargo lift and 2025
+  mining-code reforms are real and credited at full weight in Pillar B,
+  explicitly placed alongside — not instead of — the Wagner-entanglement
+  finding in the same sector, applying the MAR/NAM "positive and
+  negative on the same subject side by side" discipline within a single
+  pillar rather than across two recent-development items. Balance: 1
+  positive, 3 negative, 0 mixed — comparable in severity distribution
+  to SDN's record, not forced toward a nicer ratio. One word-count fix:
+  recent.extended was 1 word under the 40-word floor, fixed by adding a
+  real fact rather than padding. `--links` passes 0 errors, 0 warnings
+  — the third zero-warning run in this corpus after MDG and ERI.
+
 ---
 
 ## Meta-notes
@@ -1151,6 +1190,25 @@ Things a future run should know about how to work, not about a specific country.
   any heavily-greyed record should check for this connection explicitly
   rather than treating "why is this pillar greyed" as a separate
   question from "what does the written pillar say."
+- **2026-08-10** — CAF confirms a pattern worth naming: this is the
+  third record in a row (after MDG and ERI) to pass `--links` with zero
+  warnings. That is not evidence the citation-quality bar has loosened —
+  if anything the opposite, since this run also swapped out a
+  Washington Post link for MDG and caught a genuine PressReader 404 for
+  LBR. It more likely reflects that Wikipedia and major wire services
+  now make up a larger share of citations than in the earliest runs
+  (MUS/GHA/DZA), which leaned more on official/NGO/think-tank PDFs that
+  are more prone to bot-detection blocking. Worth watching whether this
+  holds as an emerging pattern or is coincidence across a few runs.
+  Also: CAF's Wagner-as-concessionary-company argument is the most
+  structurally direct colonial-legacy claim made in this corpus so far
+  — not "this rhymes with colonialism" but "this occupies the literal
+  same institutional position colonialism did, with a different foreign
+  power." Worth checking in a future AUDIT pass whether the specific
+  claim (extraction rights traded for security provision, operating
+  outside ordinary state accountability) holds up as precisely as
+  written, since it is doing real argumentative work rather than
+  serving as background color.
 
 ---
 

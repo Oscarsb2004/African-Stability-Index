@@ -398,6 +398,32 @@ countries:
       Commission of Inquiry''s findings have been updated by a more recent
       investigation; keep this record''s account of Eritrea-Ethiopia relations
       consistent with ETH''s own account of the same events'
+  CAF:
+    name: Central African Republic
+    region: Central
+    first_pass: false
+    reason: fifteenth backlog country -- fills Central Africa's biggest gap (3
+      of 8 done); Bokassa's 1976-1979 self-declared Empire is one of the
+      stranger episodes in postcolonial African history; the corpus's first
+      case of a major Russian paramilitary presence (Wagner Group, since 2018),
+      argued in colonial_legacy as structurally continuous with the colonial-era
+      concessionary company system that produced the 1928-1931 Kongo-Wara
+      Rebellion; single worst severe-food-insecurity reading (56.3%) and most
+      severe directly-measured (not estimated) IDP figure (99.37/1000) recorded
+      in this corpus so far; a genuine positive (2024 Kimberley Process
+      reintegration) credited alongside, not instead of, the Wagner-atrocity
+      findings occurring in the same mining sector
+    iteration_count: 1
+    last_updated: '2026-08-10'
+    next_action: 'EXPAND: follow whether Touadera''s disputed third term
+      produces further opposition unrest or international pressure; follow
+      whether the 2025 mining-code reforms and Kimberley Process reintegration
+      translate into measurable revenue for ordinary Central Africans, or
+      remain captured by Wagner-linked and other armed-group extraction; check
+      for further UN Panel of Experts or State Department findings on
+      Wagner/Africa Corps conduct past the April 2023-March 2024 reporting
+      period cited here; check whether MINUSCA''s mandate has changed; check
+      if Pillar C has gained coverage'
 backlog:
   LBY:
     name: Libya
@@ -497,14 +523,6 @@ backlog:
     next_action: create baseline from blueprint
   CMR:
     name: Cameroon
-    region: Central
-    first_pass: false
-    reason: not yet scheduled
-    iteration_count: 0
-    last_updated: null
-    next_action: create baseline from blueprint
-  CAF:
-    name: Central African Republic
     region: Central
     first_pass: false
     reason: not yet scheduled
@@ -1186,3 +1204,47 @@ meta_notes:
   errors, 0 warnings -- all 12 citations resolved cleanly, the second
   zero-warning `--links` run in this corpus after MDG. Full pytest suite: 106
   passed. 23 of 54 countries now have a record.'
+- '2026-08-10: CAF CREATE run complete (18 sources opened and verified: 9
+  Wikipedia, 6 news, 1 official/State Dept, 1 more Wikipedia + 1 more
+  Wikipedia for rec_membership). Fills Central Africa''s biggest gap (3 of 8
+  done before this run). Colonial legacy centres on the Ubangi-Shari
+  concessionary company system -- rubber/ivory extraction through violence
+  contemporaries compared directly to the Belgian Congo, exposed by Andre
+  Gide''s 1927 Voyage au Congo, and resisted by an estimated 350,000 people in
+  the 1928-1931 Kongo-Wara Rebellion (perhaps the largest anti-colonial
+  uprising in interwar Africa, crushed with machine guns and aerial
+  bombardment). The colonial_legacy section makes a direct structural
+  argument, not just a historical parallel: since 2018 Russia''s Wagner Group
+  has occupied the same position the concessionary companies once did --
+  foreign armed actor granted mineral extraction rights in exchange for
+  providing the state''s own security, operating outside ordinary
+  accountability -- documented with specific 2024 State Department findings
+  (child soldier recruitment, 362+ civilian-violence incidents 2018-2024) and
+  a UN Panel of Experts finding of disproportionate targeting of Fulani
+  communities. This is the corpus''s first major-Russian-paramilitary-presence
+  record, a genuinely new actor-type distinct from the Sahel trio''s
+  France-to-domestic-junta realignment. CAF also sets two new corpus
+  superlatives: severe food insecurity at 56.3% (carried forward) is the
+  single worst reading recorded anywhere in this project to date, and
+  displaced persons at 99.37/1,000 is both the most severe AND, unusually,
+  directly fresh-measured rather than a regional-mean estimate -- roughly 1
+  in 10 Central Africans displaced, stated as a direct finding rather than
+  softened as an estimate. Followed the established discipline and found a
+  genuine positive despite the severity: the 2024 Kimberley Process embargo
+  lift and 2025 mining-code reforms are real, credited at full weight in
+  Pillar B, explicitly alongside (not instead of) the Wagner-entanglement
+  finding in the same sector -- the same "place the positive and negative
+  concerning the same underlying subject side by side" discipline used for
+  MAR (Gen Z 212/AMO) and NAM (governance score/reparations lawsuit), applied
+  here to a single pillar''s two halves rather than two separate items. Also
+  logged that ERI''s "never/differently colonized" typology needed a fourth,
+  more standard entry here: CAF WAS straightforwardly colonized, and its
+  colonial_legacy section is the most conventional one written since NER/BFA,
+  which makes the deliberate post-colonial Wagner parallel land harder, not
+  softer. Balance: 1 positive, 3 negative, 0 mixed -- comparable in severity
+  distribution to SDN''s record, and not forced toward a nicer ratio. One
+  word-count fix: recent.extended was 1 word under the 40-word floor, fixed
+  by adding a real fact (day-to-day security operations framing) rather than
+  padding. `--links` passes 0 errors, 0 warnings -- all 18 citations resolved
+  cleanly, the third zero-warning run in this corpus after MDG and ERI. Full
+  pytest suite: 106 passed. 24 of 54 countries now have a record.'
