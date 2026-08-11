@@ -1,0 +1,446 @@
+meta:
+  iso3: TGO
+  name: Togo
+  last_updated: 2026-08-11
+  iteration_count: 1
+  next_action: >
+    EXPAND: (1) follow whether the M66 movement's December 2025 planned
+    demonstration and any further protests produce accountability for
+    the June 2025 deaths; (2) follow whether the international arrest
+    warrants against exiled M66 leaders are executed or challenged;
+    (3) follow whether Togo's 6.3% 2025 growth rate and cocoa/coffee
+    export gains continue into fresh index data; (4) check whether
+    Pillars E/F/G thin indicators gain fresh coverage; (5) check if
+    Pillar C has gained coverage.
+  model_used: claude-sonnet-5
+
+historical:
+  overview: >
+    Germany colonized Togoland from 1884 until World War I, when
+    Britain and France divided it between their own administrations
+    as League of Nations mandates: French Togo in the east, British
+    Togoland in the west, governed as an extension of the
+    neighbouring Gold Coast. On 9 May 1956, a UN-supervised plebiscite
+    asked British Togoland's residents whether to join the
+    soon-to-be-independent Gold Coast or remain a trust territory
+    pending French Togo's own future; 58% voted for union, and
+    British Togoland became part of Ghana at Ghana's independence on
+    6 March 1957 -- splitting the Ewe people, who had campaigned
+    instead for a single reunified Ewe state, permanently between two
+    different countries. French Togo became independent on 27 April
+    1960 under President Sylvanus Olympio. On 13 January 1963,
+    Olympio was assassinated outside the American embassy in Lomé by
+    soldiers led by Étienne Eyadéma, a French army veteran Olympio
+    had refused to enlist in Togo's own military. Eyadéma seized full
+    power himself in a bloodless coup in January 1967 and ruled for
+    38 years, until his death in February 2005. The military
+    immediately installed his son, Faure Gnassingbé, in violation of
+    the constitution; international pressure forced an election
+    within two months, which Gnassingbé won and has held power ever
+    since. In May 2024, Gnassingbé signed a new constitution
+    converting Togo to a parliamentary system, and in May 2025 he was
+    sworn in as the country's first "President of the Council of
+    Ministers," a new, term-limit-free office that now holds Togo's
+    real executive power.
+  overview_citations: [c1, c2, c3, c5, c6]
+  colonial_legacy: >
+    context/colonial_history.yaml records that Germany's Togoland was
+    divided between France and Britain after WWI, and that the
+    Gnassingbé family has ruled since 1967 -- one of Africa's
+    longest-lasting dynastic political systems. The schema entry does
+    not spell out how directly that colonial partition shaped the
+    country's present borders: British Togoland, administered as an
+    extension of the Gold Coast rather than as its own territory, was
+    never reunified with French Togo. Instead, a 1956 plebiscite --
+    opposed by the Ewe-based Togoland Congress, which wanted a single
+    reunified Ewe state -- attached it permanently to newly
+    independent Ghana, splitting the Ewe people between two different
+    post-colonial states along a line Germany, not any Togolese or
+    Ghanaian community, had originally drawn. Modern Togo's western
+    border with Ghana is that same colonial partition line, made
+    permanent by a vote the affected population's own preferred
+    outcome lost. The Gnassingbé dynasty's persistence since 1967 --
+    most recently entrenched further by 2024's conversion to a
+    parliamentary system -- has unfolded entirely within the smaller,
+    partitioned Togo that plebiscite produced.
+  colonial_legacy_citations: [c1]
+  key_periods:
+    - title: "Partition after WWI and the 1956 plebiscite"
+      period: "1884-1957"
+      summary: >
+        Germany's Togoland was divided between France and Britain as
+        League of Nations mandates after WWI. A UN-supervised
+        plebiscite on 9 May 1956 asked British Togoland's residents
+        whether to join the Gold Coast; 58% voted for union, splitting
+        the Ewe people permanently between British Togoland (joining
+        Ghana in 1957) and French Togo, over the Ewe-based Togoland
+        Congress's own objections.
+      citations: [c1]
+    - title: "Independence, Olympio's assassination, and Eyadéma's coup"
+      period: "1960-1967"
+      summary: >
+        French Togo became independent on 27 April 1960 under
+        President Sylvanus Olympio. On 13 January 1963, Olympio was
+        assassinated outside the American embassy in Lomé by soldiers
+        led by Étienne Eyadéma. Eyadéma seized full power in a
+        bloodless coup in January 1967 and began a 38-year rule.
+      citations: [c2, c3]
+    - title: "The Gnassingbé dynasty's succession"
+      period: "2005"
+      summary: >
+        Eyadéma died in February 2005 after 38 years in power. The
+        military immediately installed his son, Faure Gnassingbé, in
+        violation of the constitution; international pressure forced
+        an election within two months, which Gnassingbé won,
+        beginning two decades of continuous rule.
+      citations: [c3]
+    - title: "The 2024 constitutional overhaul"
+      period: "2024-2025"
+      summary: >
+        In May 2024, Gnassingbé signed a new constitution converting
+        Togo from a presidential to a parliamentary system. Following
+        an April 2024 parliamentary election his party won by a wide
+        margin, Gnassingbé was sworn in on 3 May 2025 as the new,
+        term-limit-free "President of the Council of Ministers," the
+        office now holding Togo's real executive power.
+      citations: [c5, c6]
+
+pillars:
+  A:
+    summary: >
+      All six World Governance Indicators are directly measured this
+      year, and the aggregate is weak -- Government Effectiveness
+      (39.7) and Voice and Accountability (45.0) are both
+      particularly poor. That weakness has deepened since this
+      pillar's 2023 reference year: in May 2024, President Faure
+      Gnassingbé signed a new constitution converting Togo from a
+      presidential to a parliamentary system, and in May 2025 he was
+      sworn in as "President of the Council of Ministers" -- a new,
+      term-limit-free office that now holds the executive power the
+      presidency formally held, while the presidency itself became
+      largely ceremonial. Opposition and international observers have
+      called the change a "constitutional coup."
+    drivers:
+      - "all 6 WGI indicators directly measured; Government Effectiveness (39.7) and Voice and Accountability (45.0) both particularly poor"
+      - "May 2024: new constitution converts Togo to a parliamentary system; May 2025: Gnassingbé sworn in as 'President of the Council of Ministers', a new term-limit-free office holding real executive power"
+      - "opposition and international observers have called the change a 'constitutional coup' (see recent developments)"
+    citations: [c5, c6]
+  B:
+    summary: >
+      GDP growth, GDP per capita, inflation and domestic credit, all
+      freshly measured, are comparatively decent for this corpus.
+      Gini, carried forward, is comparatively strong. This pillar's
+      2023 reference year understates a genuine recent acceleration:
+      the economy grew 6.3% in 2025, and coffee and cocoa exports
+      rose roughly 50% in the 2024-2025 season. The Port of Lomé, the
+      only sub-Saharan African port ranked in Lloyd's List's global
+      top 100, handled 2.06 million TEUs in 2024, up 8% -- real
+      infrastructure underpinning this growth rather than a
+      coincidence alongside it.
+    drivers:
+      - "GDP growth, GDP per capita, inflation, domestic credit all fresh, comparatively decent for this corpus; Gini comparatively strong (carried forward)"
+      - "2023 reference year understates a genuine recent acceleration: economy grew 6.3% in 2025; coffee and cocoa exports rose ~50% in the 2024-2025 season"
+      - "Port of Lomé, the only sub-Saharan African port in Lloyd's List's global top 100, handled 2.06M TEUs in 2024 (+8%) -- real infrastructure underpinning this growth"
+    citations: [c10, c11]
+  D:
+    summary: >
+      All five indicators are directly measured this year, and the
+      aggregate is weak: life expectancy, at 62.74 years, and infant
+      mortality are both comparatively poor, and handwashing-facility
+      access and safely managed drinking water are similarly weak.
+      Severe food insecurity, by contrast, is comparatively low for
+      this corpus, closer to Mauritius than to Togo's own Sahel-belt
+      neighbours. Five of the pillar's five indicators are current, a
+      fully-measured pillar whose weakness is not a data-coverage
+      artefact, unlike several thinner pillars elsewhere in this
+      record.
+    drivers:
+      - "all 5 indicators directly measured; life expectancy and infant mortality both comparatively poor; handwashing access and safely managed water similarly weak"
+      - "severe food insecurity comparatively low for this corpus, the pillar's one clear strength"
+      - "5 of 5 indicators current -- a fully-measured pillar; the weakness is not a data-coverage artefact"
+    citations: [c3]
+  E:
+    summary: >
+      Political Stability and Rule of Law, both fresh and shared
+      with Pillar A, are middling. Displaced persons, at 2.19 per
+      1,000 and directly measured, is comparatively low, well below
+      the region's conflict-driven averages elsewhere in this corpus.
+      Intentional homicide, estimated from regional peers rather than
+      measured directly, is more middling. Three of the pillar's four
+      indicators are current, though this pillar's 2023 reference
+      year predates the deadly crackdown on the June 2025 M66
+      protests documented under recent developments, in which at
+      least seven people died, including a minor, with some bodies
+      recovered from lagoons.
+    drivers:
+      - "Political Stability and Rule of Law (shared with Pillar A) both middling, fresh"
+      - "displaced persons comparatively low (fresh, directly measured); intentional homicide more middling (regional-mean estimate)"
+      - "3 of 4 indicators current; 2023 reference year predates the deadly June 2025 M66 protest crackdown (see recent developments): at least 7 dead"
+    citations: [c7, c8]
+  F:
+    summary: >
+      CO2 emissions per capita, freshly measured, score comparatively
+      well, but the carried-forward electricity-generation figure
+      complicates a clean-energy reading: nearly 80% of Togo's own
+      power still comes from fossil sources, so the low emissions
+      reading reflects a small, energy-poor economy more than a
+      decarbonised grid, closer to Sao Tome and Principe's
+      small-economy pattern elsewhere in this corpus than to
+      Lesotho's genuine hydropower case. Agricultural land share,
+      also fresh, is extensive. Freshwater withdrawal, carried
+      forward, is very low relative to renewable resources. Only two
+      of the pillar's four indicators are current.
+    drivers:
+      - "CO2 pc scores comparatively well (fresh), but electricity generation nearly 80% fossil-fuel (carried forward) -- reflects a small, energy-poor economy, not a decarbonised grid"
+      - "closer to STP's small-economy pattern than to LSO's genuine hydropower case elsewhere in this corpus"
+      - "agricultural land extensive (fresh); freshwater withdrawal very low relative to renewable resources (carried forward); only 2 of 4 indicators current"
+    citations: [c10]
+  G:
+    summary: >
+      Electricity access, at just under 60% of the population and
+      freshly measured, is thin. Basic drinking water access, also
+      fresh, is similarly weak. Government Effectiveness and Control
+      of Corruption, shared with Pillar A, are both poor. Social
+      protection coverage, carried forward rather than fresh, is the
+      pillar's weakest figure, reflecting how little of the growth
+      documented in Pillar B has yet reached formal safety-net
+      programmes. Four of the pillar's five indicators are current,
+      describing a state whose institutional weakness (Pillar A)
+      extends directly into the infrastructure it can deliver.
+    drivers:
+      - "electricity access just under 60% of the population (fresh) -- thin; basic drinking water similarly weak (fresh)"
+      - "Government Effectiveness and Control of Corruption (shared with Pillar A) both poor; social protection the pillar's weakest figure (carried forward)"
+      - "4 of 5 indicators current -- institutional weakness (Pillar A) extends directly into infrastructure delivery"
+    citations: [c5]
+
+recent:
+  primary:
+    - headline: "Gnassingbé becomes 'President of the Council of Ministers' under a new constitution"
+      date: 2025-05-03
+      summary: >
+        President Faure Gnassingbé, in power since 2005, was sworn in
+        on 3 May 2025 as Togo's first "President of the Council of
+        Ministers" -- a new executive office created by the May 2024
+        constitution that replaced Togo's presidential system with a
+        parliamentary one. The role carries no term limit and was
+        awarded to the leader of the National Assembly's majority
+        party, while the presidency itself, now filled by Jean-Lucien
+        Savi de Tové, became largely ceremonial.
+      why_it_matters: >
+        The Gnassingbé family has now held power continuously since
+        1967; this is the corpus's most procedurally sophisticated
+        entrenchment mechanism yet -- converting the entire system of
+        government, rather than merely amending a term-limit clause
+        -- to keep the same leader in office indefinitely.
+      news_url: "https://english.news.cn/africa/20250503/3f2c407e84a542e18d5eee26597f8fbb/c.html"
+      wikipedia_url: "https://en.wikipedia.org/wiki/Faure_Gnassingb%C3%A9"
+      sentiment: negative
+    - headline: "Deadly crackdown on protests against the constitutional overhaul"
+      date: 2025-06-28
+      summary: >
+        The M66 Citizens' Movement organized nationwide protests on
+        6, 26, 27 and 28 June 2025 against the 2024 constitutional
+        overhaul, rising living costs, and the arrest of government
+        critics. Security forces killed at least seven people,
+        including a minor, with some bodies recovered from lagoons;
+        the government later issued international arrest warrants
+        for M66's exiled organizers and described the protests as
+        "acts of subversion" comparable to terrorism.
+      why_it_matters: >
+        Directly explains Pillar E's thin, dated reading and
+        demonstrates the scale of domestic opposition to the same
+        constitutional change Pillar A identifies as this year's
+        central governance event.
+      news_url: "https://allafrica.com/stories/202507020038.html"
+      wikipedia_url: "https://en.wikipedia.org/wiki/2025_Togolese_Gen_Z_protests"
+      sentiment: negative
+    - headline: "Coffee and cocoa exports jump 50% as the Port of Lomé cements its regional lead"
+      date: 2025-09-30
+      summary: >
+        Togo's coffee and cocoa exports rose by roughly 50% in the
+        2024-2025 marketing season -- cocoa from 11,182 to 24,000
+        tonnes, coffee from 2,618 to 4,400 tonnes -- following
+        government development plans to improve smallholder
+        productivity and processing. The growth came alongside a
+        strong year for the Port of Lomé, which handled 2.06 million
+        TEUs in 2024, an 8% increase, remaining the only sub-Saharan
+        African port ranked in Lloyd's List's global top 100.
+      why_it_matters: >
+        A genuine, verifiable economic gain credited independent of
+        the political crisis unfolding the same year, and the same
+        cocoa economy this record's colonial_legacy traces back to
+        the German and French plantation era.
+      news_url: "https://www.togofirst.com/en/agriculture/2909-17170-togo-s-coffee-and-cocoa-exports-jump-50-in-2024-2025-season"
+      wikipedia_url: ""
+      sentiment: positive
+  extended:
+    - headline: "Delayed parliamentary election hands Gnassingbé's party the majority that enabled the power shift"
+      date: 2024-04-29
+      summary: >
+        Togo held parliamentary elections on 29 April 2024, delayed
+        from December 2023 after the same National Assembly extended
+        its own mandate. Gnassingbé's ruling UNIR party won a large
+        majority, which the new constitution -- adopted the previous
+        month -- used to select him as President of the Council of
+        Ministers the following year. Opposition parties and
+        observers questioned both the delay and the vote's
+        competitiveness.
+      why_it_matters: >
+        The single election result that made the entire 2024-2025
+        constitutional transition possible, illustrating how a
+        parliamentary majority, not a popular presidential vote, now
+        determines who holds Togo's real executive power.
+      news_url: "https://www.africanews.com/2024/04/01/togo-after-public-outcry-president-gnassingbe-orders-constitutional-reform-back-to-parliam/"
+      wikipedia_url: ""
+      sentiment: mixed
+
+events:
+  - year: 1956
+    type: election
+    title: "British Togoland votes to join Ghana, splitting the Ewe people"
+    description: >
+      A UN-supervised plebiscite on 9 May 1956 saw 58% of British
+      Togoland's residents vote to join the soon-to-be-independent
+      Gold Coast rather than reunify with French Togo, over the
+      Ewe-based Togoland Congress's objections. British Togoland
+      became part of Ghana at Ghana's 1957 independence.
+    url: "https://en.wikipedia.org/wiki/1956_British_Togoland_status_plebiscite"
+    direction: mixed
+  - year: 1963
+    type: coup
+    title: "President Olympio assassinated"
+    description: >
+      Togo's first president, Sylvanus Olympio, was assassinated
+      outside the American embassy in Lomé on 13 January 1963 by
+      soldiers led by Étienne Eyadéma, a demobilized French army
+      veteran Olympio had refused to enlist in Togo's own military.
+    url: "https://en.wikipedia.org/wiki/1963_Togolese_coup_d'%C3%A9tat"
+    direction: deteriorate
+  - year: 1967
+    type: coup
+    title: "Eyadéma seizes full power"
+    description: >
+      Étienne Eyadéma, by then army chief of staff, ousted President
+      Nicolas Grunitzky in a bloodless coup in January 1967, named
+      himself president, and began a 38-year rule that founded the
+      Gnassingbé dynasty.
+    url: "https://en.wikipedia.org/wiki/1967_Togolese_coup_d'%C3%A9tat"
+    direction: deteriorate
+  - year: 2025
+    type: constitutional
+    title: "Gnassingbé sworn in as President of the Council of Ministers"
+    description: >
+      Faure Gnassingbé was sworn in on 3 May 2025 under Togo's new
+      parliamentary constitution as President of the Council of
+      Ministers, a term-limit-free office holding the country's real
+      executive power, while the presidency became largely
+      ceremonial.
+    url: "https://english.news.cn/africa/20250503/3f2c407e84a542e18d5eee26597f8fbb/c.html"
+    direction: deteriorate
+
+citations:
+  - id: c1
+    url: "https://en.wikipedia.org/wiki/1956_British_Togoland_status_plebiscite"
+    source_type: wikipedia
+    title: "1956 British Togoland status plebiscite"
+    accessed: 2026-08-11
+    verified: true
+  - id: c2
+    url: "https://en.wikipedia.org/wiki/1963_Togolese_coup_d'%C3%A9tat"
+    source_type: wikipedia
+    title: "1963 Togolese coup d'état"
+    accessed: 2026-08-11
+    verified: true
+  - id: c3
+    url: "https://en.wikipedia.org/wiki/1967_Togolese_coup_d'%C3%A9tat"
+    source_type: wikipedia
+    title: "1967 Togolese coup d'état"
+    accessed: 2026-08-11
+    verified: true
+  - id: c5
+    url: "https://www.loc.gov/item/global-legal-monitor/2024-05-16/togo-new-constitution-promulgated/"
+    source_type: official
+    title: "Togo: New Constitution Promulgated (Library of Congress)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c6
+    url: "https://english.news.cn/africa/20250503/3f2c407e84a542e18d5eee26597f8fbb/c.html"
+    source_type: news
+    title: "Gnassingbe sworn in as president of Togo's Council of Ministers (Xinhua)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c7
+    url: "https://www.africanews.com/2025/06/11/togos-president-faces-calls-to-resign-after-protests-over-new-role-allowing-indefinite-rul/"
+    source_type: news
+    title: "Togo's president faces calls to resign after protests over new role allowing indefinite rule (Africanews)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c8
+    url: "https://allafrica.com/stories/202507020038.html"
+    source_type: news
+    title: "West Africa: Bloody Crackdown On Protests in Togo - 7 Dead, Over 60 Arrested (AllAfrica)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c9
+    url: "https://www.myjoyonline.com/togo-issues-international-arrest-warrants-for-leaders-behind-civil-protests/"
+    source_type: news
+    title: "Togo issues international arrest warrants for leaders behind civil protests (MyJoyOnline)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c10
+    url: "https://www.togofirst.com/en/agriculture/2909-17170-togo-s-coffee-and-cocoa-exports-jump-50-in-2024-2025-season"
+    source_type: news
+    title: "Togo's Coffee and Cocoa Exports Jump 50% in 2024-2025 Season (Togo First)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c11
+    url: "https://www.togofirst.com/en/economic-governance/2205-19043-togo-s-economy-expands-6-3-in-2025-gdp-exceeds-5-6-trillion-cfa-francs"
+    source_type: news
+    title: "Togo's Economy Expands 6.3% in 2025, GDP Exceeds 5.6 Trillion CFA Francs (Togo First)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c12
+    url: "https://en.wikipedia.org/wiki/ECOWAS"
+    source_type: wikipedia
+    title: "ECOWAS"
+    accessed: 2026-08-11
+    verified: true
+  - id: c13
+    url: "https://simple.wikipedia.org/wiki/Community_of_Sahel-Saharan_States"
+    source_type: wikipedia
+    title: "Community of Sahel-Saharan States"
+    accessed: 2026-08-11
+    verified: true
+
+rec_membership:
+  - org: ECOWAS
+    joined: 1975
+    status: current
+    left: null
+    citations: [c12]
+  - org: CEN-SAD
+    joined: 2002
+    status: current
+    left: null
+    citations: [c13]
+
+balance:
+  n_positive: 1
+  n_negative: 2
+  n_mixed: 1
+  note: >
+    The constitutional-overhaul item and the protest-crackdown item
+    are kept as two distinct negatives, not merged into one, because
+    they document different things: the first is an institutional
+    mechanism (a new, term-limit-free office), the second is a
+    specific, dateable episode of lethal state violence against
+    people opposing it, weeks apart and separately verifiable. The
+    cocoa/coffee export growth and Port of Lomé figures are credited
+    at full positive weight, independent of the political crisis
+    unfolding the same year -- the same standard this corpus applies
+    to crediting a genuine economic achievement without letting
+    surrounding political conduct discount it. The April 2024
+    parliamentary election is coded mixed rather than positive: an
+    election did occur, but this record does not treat the vote that
+    enabled the whole entrenchment mechanism as an achievement in its
+    own right.

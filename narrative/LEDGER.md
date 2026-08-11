@@ -26,7 +26,7 @@ An audit is forced early if a single run inflates the citation count by more tha
 
 ## Status
 
-**36 of 54 countries have a record (Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria, Rwanda, Chad, Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic, Mauritania, Zimbabwe, Comoros, Uganda, Sierra Leone, Equatorial Guinea, The Gambia, Mozambique, Guinea, South Sudan, Lesotho, Sao Tome & Principe). The first pass is complete; Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic, Mauritania, Zimbabwe, Comoros, Uganda, Sierra Leone, Equatorial Guinea, The Gambia, Mozambique, Guinea, South Sudan, Lesotho and Sao Tome & Principe are the first twenty-seven backlog countries.**
+**37 of 54 countries have a record (Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria, Rwanda, Chad, Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic, Mauritania, Zimbabwe, Comoros, Uganda, Sierra Leone, Equatorial Guinea, The Gambia, Mozambique, Guinea, South Sudan, Lesotho, Sao Tome & Principe, Togo). The first pass is complete; Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic, Mauritania, Zimbabwe, Comoros, Uganda, Sierra Leone, Equatorial Guinea, The Gambia, Mozambique, Guinea, South Sudan, Lesotho, Sao Tome & Principe and Togo are the first twenty-eight backlog countries.**
 
 ### First pass — 9 countries
 
@@ -78,14 +78,15 @@ whose ranks swing hardest with the weighting method.
 | SSD | South Sudan | fills East Africa's biggest proportional gap (9 of 14 done); the world's newest country (2011), cross-referencing SDN directly (SSD's oil exports depend on Sudanese pipelines repeatedly disrupted by Sudan's own civil war); a colonial mechanism distinct from every other case in the corpus -- Britain's "Southern Policy" administered the south separately, then handed it to Khartoum without southern consent at 1956 Sudanese independence; the second corpus case, after ERI, of three non-C pillars greyed entirely (B, C, F); two new corpus superlatives, both directly measured (severe food insecurity 63.10%, displaced persons 97.62/1,000); a genuine positive (Dec 2025 tripartite oil-security agreement) credited alongside the unfolding Machar-arrest/Jonglei-offensive crisis | **done — iteration 1** |
 | LSO | Lesotho | fills Southern Africa's remaining gap (4 of 5 done); the only country in the corpus entirely enclosed by another (South Africa); a colonial mechanism distinct from most of the corpus -- Moshoeshoe I requested British protection in 1868 to prevent Boer annexation, not because Britain sought to extract the territory; a triple cross-reference with ZAF and BWA (the 1998 SADC intervention, Operation Boleas, was led by South Africa and joined by Botswana); a genuine positive (reaching all three UNAIDS 95-95-95 HIV targets by end-2024) on the same standard as BWA's own HIV/AIDS achievement; the corpus's sharpest single-country trade-shock case (April 2025's 50% US tariff collapsed the textile sector) | **done — iteration 1** |
 | STP | Sao Tome & Principe | fills the Islands region, now the corpus's lowest proportionally (4 of 5 done); the longest colonial period in the corpus (490 years, Portugal from 1485, surpassing MOZ's 477); a distinctive colonial angle -- the early-1900s "cocoa slavery" scandal, in which nominally-free contract labourers were documented as enslaved in all but name, triggering a Cadbury boycott around 1909; a naturally positive-skewed record (Pillar A and E both among the strongest in this corpus); Pillar F explicitly contrasted against LSO's genuine hydropower case as a wealth-proxy, not achievement; a live current-events thread -- July 2026's election, in which an incumbent won as an independent after splitting from his own former ruling party | **done — iteration 1** |
+| TGO | Togo | fills West Africa's remaining gap (11 of 16 done); the corpus's most procedurally sophisticated entrenchment mechanism yet -- a May 2024 constitution converted Togo to a parliamentary system, and in May 2025 Faure Gnassingbé was sworn in as a new, term-limit-free "President of the Council of Ministers", entrenching a dynasty ruling since his father's 1967 coup; a genuine cross-reference with GHA -- a 1956 plebiscite attached British Togoland to Ghana rather than reunifying it with French Togo, permanently splitting the Ewe people; a genuine positive (50% coffee/cocoa export growth, Port of Lomé's regional lead) credited alongside the deadly June 2025 crackdown on protests against the overhaul | **done — iteration 1** |
 
-### Backlog — the remaining 18
+### Backlog — the remaining 17
 
 Listed in full in `narrative/state.yaml` under `backlog`. They are recorded
 explicitly rather than left implicit: a country with no record should be visibly
 absent, not quietly missing.
 
-Libya, Tunisia, Benin, Cabo Verde, Guinea-Bissau, Cote d'Ivoire, Senegal, Togo, Cameroon, Republic of Congo, Gabon, Burundi, Djibouti, Malawi, Tanzania, Zambia, Eswatini, Seychelles
+Libya, Tunisia, Benin, Cabo Verde, Guinea-Bissau, Cote d'Ivoire, Senegal, Cameroon, Republic of Congo, Gabon, Burundi, Djibouti, Malawi, Tanzania, Zambia, Eswatini, Seychelles
 
 ---
 
@@ -1265,6 +1266,47 @@ Append one line per run: date, country, mode, what changed, what was removed.
   passed 0 errors, 0 warnings — 12/12 resolved, a clean link check.
   Full pytest suite: 106 passed.
 
+- **2026-08-11 — TGO — CREATE. Twenty-eighth backlog country, fills
+  West Africa's remaining gap (11 of 16 done).** Full baseline built:
+  historical overview, colonial legacy (British Togoland, administered
+  as an extension of the Gold Coast rather than its own territory, was
+  never reunified with French Togo; a 1956 UN-supervised plebiscite
+  attached it permanently to newly independent Ghana instead, over the
+  Ewe-based Togoland Congress's own objections, splitting the Ewe
+  people along a colonial partition line — a genuine cross-reference
+  with GHA, whose own record already documents the western half of
+  this same border), 4 key_periods, 6 pillar summaries (Pillar C left
+  empty — greyed at 1/8 measured), 3 primary + 1 extended recent
+  items, 4 events, rec_membership (ECOWAS 1975 founding member,
+  CEN-SAD 2002). 13 sources opened and verified: 6 Wikipedia, 5 news,
+  1 official/Library of Congress, 1 more Wikipedia for rec_membership.
+  This is the corpus's most procedurally sophisticated entrenchment
+  mechanism yet: a May 2024 constitution converted Togo from a
+  presidential to a parliamentary system, and in May 2025 Faure
+  Gnassingbé — in power since 2005, continuing a dynasty his father
+  founded in a 1967 coup — was sworn in as a new, term-limit-free
+  "President of the Council of Ministers" holding the country's real
+  executive power, while the presidency itself became ceremonial;
+  unlike GIN's Doumbouya or MLI/BFA/NER's coup-belt cases, this
+  entrenchment converts the entire system of government rather than
+  amending a single term-limit clause. Following the established
+  discipline, found a genuine positive: coffee and cocoa exports rose
+  ~50% in the 2024-2025 season, and the Port of Lomé remained the only
+  sub-Saharan African port in Lloyd's List's global top 100, credited
+  at full weight independent of the political crisis unfolding the
+  same year. The dominant negative is current and severe: the June
+  2025 M66 protest crackdown killed at least seven people, including a
+  minor, with some bodies recovered from lagoons, followed by
+  international arrest warrants for exiled organisers — kept as a
+  distinct negative from the constitutional-overhaul item itself
+  (institutional mechanism vs. its human cost), consistent with the
+  GIN/SSD/STP precedent of not merging sequential-but-distinct events.
+  Balance: 1 positive, 2 negative, 1 mixed. Three word-count fixes
+  (pillars.D, E, G, all 62-75→80+), each resolved by adding real
+  facts. `--links` passes 0 errors, 2 warnings (Library of Congress
+  and AllAfrica, familiar 403 bot-detection pattern) — 11/13 resolved.
+  Full pytest suite: 106 passed.
+
 ---
 
 ## Meta-notes
@@ -1916,6 +1958,25 @@ Things a future run should know about how to work, not about a specific country.
   bot-detection, since a timeout gives no signal about whether the
   page is actually reachable and always needs the same treatment: try
   a second source rather than assume either outcome.
+- **2026-08-11** — TGO adds a new entrenchment-mechanism sub-type
+  worth naming in the corpus's own typology, alongside GIN's
+  referendum-reopens-candidacy pattern and MLI/BFA/NER's coup-then-
+  indefinite-transition pattern: converting the entire system of
+  government (presidential to parliamentary) so that a new,
+  term-limit-free office absorbs the outgoing leader's real power
+  while the old office becomes a figurehead. This is more durable
+  than a term-limit amendment, since it does not require ever
+  revisiting the same clause again. Worth checking for elsewhere:
+  any future backlog country with a long-serving leader approaching a
+  term limit is a candidate for this specific mechanism, not just the
+  more familiar referendum-or-coup patterns already documented.
+  Also confirms the GHA cross-reference discipline established with
+  MOZ/ZAF and LBR/SLE: GHA's own record, written early in this
+  project (2026-08-09), did not anticipate a future British-Togoland
+  cross-reference, so it should be checked in a future GHA EXPAND
+  pass to see whether the 1956 plebiscite is already documented from
+  Ghana's own side, and added if not — the same lesson MOZ's run
+  drew about not waiting for a deliberately-engineered pairing.
 
 ---
 

@@ -738,6 +738,36 @@ countries:
       2018 baseline of ~8%; check whether 2025''s economic recovery
       (2.1% GDP growth) continues into fresh index data; check if
       Pillar C has gained coverage'
+  TGO:
+    name: Togo
+    region: West
+    first_pass: false
+    reason: twenty-eighth backlog country -- fills West Africa's
+      remaining gap (11 of 16 done); the corpus's most procedurally
+      sophisticated entrenchment mechanism yet -- a May 2024
+      constitution converted Togo from a presidential to a
+      parliamentary system, and in May 2025 Faure Gnassingbé, in
+      power since 2005, was sworn in as a new, term-limit-free
+      "President of the Council of Ministers" holding the country's
+      real executive power, entrenching a dynasty that has ruled
+      since his father's 1967 coup; a colonial mechanism that
+      produced a genuine cross-reference with GHA already in this
+      corpus -- a 1956 plebiscite attached British Togoland to Ghana
+      rather than reunifying it with French Togo, permanently
+      splitting the Ewe people along a line Germany originally drew;
+      a genuine positive (50% coffee/cocoa export growth, Port of
+      Lomé's regional lead) credited alongside the deadly June 2025
+      crackdown on protests against the constitutional overhaul
+    iteration_count: 1
+    last_updated: '2026-08-11'
+    next_action: 'EXPAND: follow whether the M66 movement''s December
+      2025 planned demonstration and any further protests produce
+      accountability for the June 2025 deaths; follow whether the
+      international arrest warrants against exiled M66 leaders are
+      executed or challenged; follow whether Togo''s 6.3% 2025 growth
+      rate and cocoa/coffee export gains continue into fresh index
+      data; check whether Pillars E/F/G thin indicators gain fresh
+      coverage; check if Pillar C has gained coverage'
 backlog:
   LBY:
     name: Libya
@@ -789,14 +819,6 @@ backlog:
     next_action: create baseline from blueprint
   SEN:
     name: Senegal
-    region: West
-    first_pass: false
-    reason: not yet scheduled
-    iteration_count: 0
-    last_updated: null
-    next_action: create baseline from blueprint
-  TGO:
-    name: Togo
     region: West
     first_pass: false
     reason: not yet scheduled
@@ -1902,3 +1924,38 @@ meta_notes:
   Full-corpus check: 0 errors, 2 pre-existing warnings (COD, EGY
   all-negative balance, unrelated to this run). 36 of 54 countries
   now have a record.'
+- '2026-08-11: TGO CREATE run complete (13 sources opened and verified:
+  6 Wikipedia, 5 news, 1 official/Library of Congress, 1 more
+  Wikipedia for rec_membership). Fills West Africa''s remaining gap
+  (11 of 16 done after this run). The corpus''s most procedurally
+  sophisticated entrenchment mechanism yet: a May 2024 constitution
+  converted Togo from a presidential to a parliamentary system, and
+  in May 2025 Faure Gnassingbé -- in power since 2005, continuing a
+  dynasty his father founded in a 1967 coup -- was sworn in as a new,
+  term-limit-free "President of the Council of Ministers" holding the
+  country''s real executive power, while the presidency itself became
+  ceremonial. colonial_legacy connects this directly to a genuine
+  cross-reference with GHA already in this corpus: a 1956
+  UN-supervised plebiscite attached British Togoland to Ghana rather
+  than reunifying it with French Togo, permanently splitting the Ewe
+  people along a colonial partition line neither community had drawn
+  -- modern Togo''s western border with Ghana is that same line.
+  Following the established discipline, found a genuine positive:
+  coffee and cocoa exports rose ~50% in the 2024-2025 season, and the
+  Port of Lomé remained the only sub-Saharan African port in Lloyd''s
+  List''s global top 100 -- credited at full weight independent of the
+  political crisis unfolding the same year. The dominant negative
+  thread is current and severe: the June 2025 M66 protest crackdown
+  killed at least seven people, including a minor, with some bodies
+  recovered from lagoons, followed by international arrest warrants
+  for exiled organisers -- kept as a distinct negative from the
+  constitutional-overhaul item itself (institutional mechanism vs. its
+  human cost), consistent with the GIN/SSD/STP precedent of not
+  merging sequential-but-distinct events. Balance: 1 positive, 2
+  negative, 1 mixed. Three word-count fixes (pillars.D, E, G, all
+  62-75->80+), each resolved by adding real facts rather than padding.
+  `--links` passes 0 errors, 2 warnings (Library of Congress and
+  AllAfrica, familiar 403 bot-detection pattern) -- 11/13 resolved.
+  Full pytest suite: 106 passed. Full-corpus check: 0 errors, 2
+  pre-existing warnings (COD, EGY all-negative balance, unrelated to
+  this run). 37 of 54 countries now have a record.'
