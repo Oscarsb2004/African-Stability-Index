@@ -1,0 +1,426 @@
+meta:
+  iso3: GNQ
+  name: Equatorial Guinea
+  last_updated: 2026-08-10
+  iteration_count: 1
+  next_action: >
+    EXPAND: (1) follow whether Obiang's declining health accelerates a
+    formal handover to Teodorin, and what that means for the asset-
+    forfeiture cases still pending in France, the US and Switzerland;
+    (2) follow whether the gas/LNG diversification deals (Chevron,
+    EG-27, ConocoPhillips) deliver broader development or repeat the
+    oil-era enrichment pattern documented in historical.colonial_legacy;
+    (3) check whether Pillar D (Health) ever gains enough published
+    data to be scored at all; (4) check whether the UNICEF child-
+    protection strategy produces measurable outcomes; (5) check if
+    Pillar C has gained coverage.
+  model_used: claude-sonnet-5
+
+historical:
+  overview: >
+    Spain colonised the territory from 1778, developing Fernando Poo
+    (now Bioko island) as a cocoa plantation economy worked by contract
+    labourers recruited from Nigeria and São Tomé under conditions
+    widely documented as harsh and coercive. Independence followed on
+    12 October 1968 under Francisco Macías Nguema, whose rule rapidly
+    descended into one of postcolonial Africa's most extreme
+    dictatorships: an estimated 50,000 to 80,000 people were killed and
+    roughly a third of the population fled the country by the mid-1970s,
+    with the Bubi ethnic minority specifically targeted in a campaign
+    later prosecuted as genocide. Macías's own nephew, Teodoro Obiang
+    Nguema Mbasogo, overthrew him in an August 1979 coup; Macías was
+    captured fleeing toward Cameroon, tried, and executed by firing
+    squad. Obiang has ruled ever since -- 46 years and counting, making
+    him the world's longest-serving current non-royal head of state.
+    Large offshore oil discoveries in the 1990s made Equatorial Guinea
+    one of Africa's wealthiest countries by GDP per capita, but enriched
+    the ruling family rather than the broader population: Obiang's son
+    and now First Vice President, Teodoro Nguema Obiang Mangue
+    ("Teodorin"), was convicted in absentia by a French court in 2017 of
+    embezzling and laundering tens of millions of euros, with France
+    seizing a 101-room Paris mansion worth over €100 million and a €5.7
+    million supercar collection; the US and Switzerland separately
+    seized further assets worth tens of millions more. In September
+    2025, the International Court of Justice rejected, for the second
+    time, Equatorial Guinea's claim that the mansion held diplomatic
+    immunity. Oil production has meanwhile collapsed from 241,000
+    barrels a day in 2010 to roughly 55,000 in 2025.
+  overview_citations: [c1, c2, c3, c4, c5, c8]
+  colonial_legacy: >
+    context/colonial_history.yaml already credits Spain's Fernando Poo
+    cocoa-plantation economy, its use of contract labourers from Nigeria
+    and São Tomé under harsh conditions, and names Macías Nguema's
+    post-independence killings and Obiang's subsequent 46-year rule
+    enriched by 1990s oil discoveries "without broader development."
+    Worth stating precisely how directly that pattern has been
+    documented, not merely alleged: Obiang's own son and First Vice
+    President, Teodoro Nguema Obiang Mangue, has been convicted or had
+    assets seized across four separate jurisdictions for laundering
+    oil-linked public funds into personal luxury -- a French court's
+    2017 conviction and the seizure of a €100-million-plus Paris mansion
+    and a €5.7 million supercar collection; a 2014 US settlement over a
+    $30 million Malibu mansion; and a 2017 Swiss seizure of a $100
+    million superyacht and 25 cars. This is not a case where "the ruling
+    family benefited disproportionately" must be inferred from aggregate
+    statistics, as it often must be elsewhere in this corpus -- it has
+    been established, asset by asset, in court judgments across three
+    continents, while the colonial-era plantation-to-oil-extraction
+    throughline runs directly from Fernando Poo's contract labourers to
+    a country where, as of this record, the government does not even
+    publish enough health data for this index to score Pillar D at all.
+  colonial_legacy_citations: [c1, c4, c5, c8]
+  key_periods:
+    - title: "Spanish plantation colonisation"
+      period: "1778-1968"
+      summary: >
+        Spain colonised the territory from 1778, developing Fernando
+        Poo (now Bioko island) as a cocoa plantation economy worked by
+        contract labourers recruited from Nigeria and São Tomé under
+        conditions widely documented as harsh and coercive. Independence
+        followed on 12 October 1968 under Francisco Macías Nguema.
+      citations: [c1]
+    - title: "Macías Nguema's dictatorship and genocide"
+      period: "1968-1979"
+      summary: >
+        Macías Nguema's rule rapidly descended into one of postcolonial
+        Africa's most extreme dictatorships: an estimated 50,000 to
+        80,000 people were killed and roughly a third of the population
+        fled the country by the mid-1970s, with the Bubi ethnic minority
+        specifically targeted in a campaign later prosecuted as
+        genocide. His nephew, Teodoro Obiang Nguema Mbasogo, overthrew
+        him in an August 1979 coup; Macías was captured fleeing toward
+        Cameroon, tried, and executed by firing squad.
+      citations: [c2, c3]
+    - title: "Oil wealth and the Obiang family's enrichment"
+      period: "1990s-2017"
+      summary: >
+        Large offshore oil discoveries in the 1990s made Equatorial
+        Guinea one of Africa's wealthiest countries by GDP per capita,
+        but enriched the ruling family rather than the broader
+        population. Obiang's son Teodorin was convicted in absentia by a
+        French court in 2017 of embezzling and laundering tens of
+        millions of euros, with France seizing a 101-room Paris mansion
+        worth over €100 million and a €5.7 million supercar collection;
+        the US and Switzerland separately seized further assets.
+      citations: [c4, c5]
+    - title: "Dynastic succession and oil decline"
+      period: "2016-2026"
+      summary: >
+        Obiang institutionalised a dynastic succession plan in 2016 by
+        appointing Teodorin as Vice President; now 84 and reportedly in
+        declining health, Obiang is widely believed to have ceded
+        day-to-day governance to his son. Oil production has meanwhile
+        collapsed from 241,000 barrels a day in 2010 to roughly 55,000
+        in 2025, and in September 2025 the International Court of
+        Justice rejected, for the second time, Equatorial Guinea's claim
+        that the seized Paris mansion held diplomatic immunity.
+      citations: [c6, c7, c8]
+
+pillars:
+  A:
+    summary: >
+      All six governance indicators are directly measured this year,
+      and the aggregate score is severely weak -- Voice and
+      Accountability, at 19.0, is among the lowest recorded anywhere in
+      this corpus, and Control of Corruption is nearly as severe. That
+      severity is not an abstraction: Obiang's son and First Vice
+      President, Teodorin, has been convicted or had assets seized
+      across France, the United States and Switzerland for laundering
+      public funds into personal luxury, and in September 2025 the
+      International Court of Justice rejected, for the second time,
+      Equatorial Guinea's own attempt to reclaim a seized Paris mansion
+      by 13 votes to 2. Obiang, in power since 1979, is the world's
+      longest-serving current non-royal head of state; his son's
+      position as Vice President since 2016 formalises a dynastic
+      succession.
+    drivers:
+      - "all 6 governance indicators directly measured; Voice and Accountability (19.0) among the lowest recorded anywhere in this corpus; Control of Corruption nearly as severe"
+      - "Teodorin (Obiang's son, First VP) convicted/had assets seized across France, US and Switzerland for laundering public funds into personal luxury"
+      - "Sept 2025: ICJ rejected EG's claim to the seized Paris mansion for the second time, 13-2"
+      - "Obiang (since 1979) is the world's longest-serving current non-royal head of state; Teodorin's VP role since 2016 formalises dynastic succession"
+    citations: [c6, c8, c9]
+  B:
+    summary: >
+      GDP per capita, freshly measured, is among the highest recorded
+      anywhere in this corpus -- a direct product of the oil wealth
+      documented in historical.colonial_legacy -- but GDP growth, also
+      fresh, is negative, reflecting a sharp production decline: oil
+      output has fallen from 241,000 barrels a day in 2010 to roughly
+      55,000 in 2025, and the economy contracted by an estimated 5.4%
+      in 2025 alone. Inflation, also fresh, is comparatively low.
+      Domestic credit to the private sector, also fresh, is extremely
+      thin. Gini, carried forward, indicates substantial inequality --
+      unsurprising given a national wealth figure this high coexists
+      with a health pillar too data-poor for this index to score at
+      all.
+    drivers:
+      - "GDP per capita (fresh) among the highest recorded anywhere in this corpus -- direct product of oil wealth; GDP growth (fresh) is NEGATIVE, reflecting production collapse (241,000 bpd in 2010 to ~55,000 in 2025)"
+      - "economy contracted an estimated 5.4% in 2025 alone; inflation (fresh) comparatively low; domestic credit (fresh) extremely thin"
+      - "Gini (carried forward) indicates substantial inequality -- unsurprising given wealth this concentrated coexists with a health pillar too data-poor to score at all"
+    citations: [c10]
+  E:
+    summary: >
+      Political Stability, freshly measured, is comparatively decent --
+      an unexpected reading given the severity documented in Pillar A,
+      though it may reflect the absence of active armed conflict rather
+      than genuine political openness. Displaced persons, estimated
+      from regional peers rather than measured directly, is a weaker
+      reading. Homicide is entirely absent from this year's data. Only
+      two of the pillar's four indicators have any measurement at all,
+      and this pillar's comparatively favourable score should not be
+      read as evidence of the political freedom Pillar A's Voice and
+      Accountability figure shows is genuinely absent.
+    drivers:
+      - "Political Stability comparatively decent (fresh) -- likely reflects the absence of active armed conflict, not genuine political openness given Pillar A's severity"
+      - "IDPs weaker (regional-mean estimate); homicide entirely absent from this year's data"
+      - "only 2 of 4 indicators have any measurement -- this pillar's favourable score should not be read as evidence of political freedom Pillar A shows is genuinely absent"
+    citations: [c9]
+  F:
+    summary: >
+      CO2 emissions per capita, freshly measured, are comparatively high
+      for this corpus -- a genuine reflection of oil and gas extraction
+      and processing activity, not a wealth-proxy artefact in reverse:
+      unlike most lower-income countries in this project, Equatorial
+      Guinea's emissions are elevated precisely because of the
+      hydrocarbon economy documented in Pillar B, not despite a lack of
+      one. Electricity generation from fossil fuels, carried forward, is
+      high. Agricultural land share, fresh, is the lowest recorded
+      anywhere in this corpus, reflecting an economy that has been
+      overwhelmingly hydrocarbon-dependent rather than agrarian for
+      decades. Freshwater withdrawal, carried forward, is very low
+      relative to renewable resources. Only two of the pillar's four
+      indicators are freshly measured this year.
+    drivers:
+      - "CO2 pc comparatively high (fresh) -- a genuine reflection of oil/gas extraction, not a wealth-proxy artefact in reverse; elevated BECAUSE of the hydrocarbon economy, unlike most lower-income countries in this corpus"
+      - "electricity generation high fossil-fuel share (carried forward)"
+      - "agricultural land the lowest recorded anywhere in this corpus (fresh) -- an economy overwhelmingly hydrocarbon-dependent, not agrarian, for decades"
+      - "freshwater withdrawal very low relative to renewable resources (carried forward); only 2 of 4 indicators freshly measured this year"
+    citations: [c10]
+  G:
+    summary: >
+      Electricity access, at just under 67% and freshly measured, is
+      comparatively decent -- a genuine benefit of the oil-and-gas
+      infrastructure documented in Pillar B reaching at least the
+      electricity grid, if not broader development. Safely managed
+      drinking water, handwashing coverage and social protection, all
+      estimated from regional peers rather than measured directly, are
+      considerably weaker. Only one of the pillar's five indicators is
+      freshly measured this year, making this pillar's overall picture
+      notably thinner than most other pillars recorded in this project.
+    drivers:
+      - "electricity access ~67% (fresh) -- comparatively decent, a genuine benefit of oil/gas infrastructure reaching the grid even if not broader development"
+      - "safely managed water, handwashing, social protection all regional-mean estimates, not directly measured -- considerably weaker"
+      - "only 1 of 5 indicators freshly measured this year -- thinner than most other pillars in this record"
+    citations: [c10]
+
+recent:
+  primary:
+    - headline: "Oil production collapse drives Equatorial Guinea's economy into contraction"
+      date: 2025-11-01
+      summary: >
+        Equatorial Guinea's economy contracted by an estimated 5.4% in
+        2025 as oil production continued a long decline, from 241,000
+        barrels a day in 2010 to roughly 55,000-62,000 in 2025, driven
+        primarily by a lack of new discoveries. The IMF forecasts
+        average annual growth of just 0.9% between 2025 and 2030,
+        directly tied to the hydrocarbon sector's continued decline.
+      why_it_matters: >
+        Directly explains Pillar B's negative GDP growth figure and
+        shows the oil-wealth model documented in
+        historical.colonial_legacy entering genuine structural decline,
+        not just uneven distribution.
+      news_url: "https://www.gisreportsonline.com/r/equatorial-guineas-oil-and-gas-industry/"
+      wikipedia_url: ""
+      sentiment: negative
+    - headline: "ICJ rejects Equatorial Guinea's claim over Teodorin's seized Paris mansion, again"
+      date: 2025-09-12
+      summary: >
+        The International Court of Justice ruled 13 votes to 2 on 12
+        September 2025 that Equatorial Guinea had not shown a plausible
+        right to the return of a 101-room Paris mansion France seized
+        from Vice President Teodorin Obiang, the second time the ICJ has
+        ruled against Equatorial Guinea's diplomatic-immunity claim over
+        the property since the dispute began in 2016.
+      why_it_matters: >
+        A specific, current, internationally adjudicated confirmation of
+        the asset-laundering pattern documented in
+        historical.colonial_legacy, not merely a historical allegation.
+      news_url: "https://www.courthousenews.com/equatorial-guinea-loses-world-court-bid-over-seized-paris-mansion/"
+      wikipedia_url: ""
+      sentiment: negative
+    - headline: "UNICEF-backed child protection strategy approved amid Equatorial Guinea's data gaps"
+      date: 2025-08-01
+      summary: >
+        Equatorial Guinea's Ministry of Social Affairs approved a new
+        national strategy to strengthen child protection social services
+        in August 2025, following UNICEF's first-ever diagnostic
+        assessment of the country's child protection workforce; UNICEF
+        also raised $1 million for 2025-2026 child protection and mental
+        health programming.
+      why_it_matters: >
+        A genuine, verifiable social-development step in a country where
+        this index's own Pillar D (Health) cannot be scored at all for
+        lack of published data -- credited at full weight despite the
+        severe governance record documented in Pillar A.
+      news_url: "https://open.unicef.org/download-pdf?country-name=Equatorial+Guinea&year=2025"
+      wikipedia_url: ""
+      sentiment: positive
+  extended:
+    - headline: "Equatorial Guinea pursues gas megaprojects to offset oil's decline"
+      date: 2026-02-01
+      summary: >
+        Equatorial Guinea signed a $690 million deal with Chevron to
+        develop the Aseng project and is advancing Block EG-27, a $4.5
+        billion, Afreximbank-backed gas project including a planned LNG
+        facility, while preparing to finalise production-sharing
+        contracts with ConocoPhillips in 2026 that could unlock $9
+        billion in capital.
+      why_it_matters: >
+        Real new investment in the same extractive model
+        historical.colonial_legacy documents as having enriched the
+        ruling family rather than the broader population for three
+        decades already -- whether this diversification breaks that
+        pattern or repeats it remains to be seen.
+      news_url: "https://energycapitalpower.com/equatorial-guinea-bets-on-gas-to-offset-oil-decline-in-2026/"
+      wikipedia_url: ""
+      sentiment: mixed
+
+events:
+  - year: 1968
+    type: independence
+    title: "Equatorial Guinea gains independence"
+    description: >
+      Equatorial Guinea became independent from Spain on 12 October
+      1968 under Francisco Macías Nguema, whose rule would rapidly
+      descend into one of postcolonial Africa's most extreme
+      dictatorships.
+    url: "https://en.wikipedia.org/wiki/Francisco_Mac%C3%ADas_Nguema"
+    direction: improve
+  - year: 1979
+    type: coup
+    title: "Obiang overthrows and executes his uncle Macías"
+    description: >
+      Teodoro Obiang Nguema Mbasogo overthrew his uncle, President
+      Francisco Macías Nguema, in an August 1979 coup; Macías was
+      captured, tried for genocide against the Bubi people, and executed
+      by firing squad.
+    url: "https://en.wikipedia.org/wiki/1979_Equatorial_Guinea_coup_d'%C3%A9tat"
+    direction: mixed
+  - year: 2017
+    type: economic
+    title: "French court convicts Teodorin Obiang of corruption"
+    description: >
+      A Paris court convicted Vice President Teodorin Obiang in absentia
+      on 27 October 2017 of embezzling and laundering tens of millions
+      of euros, seizing a 101-room Paris mansion and a multimillion-euro
+      supercar collection.
+    url: "https://www.occrp.org/en/news/french-court-convicts-equatorial-guinea-princeling-of-graft"
+    direction: improve
+  - year: 2025
+    type: economic
+    title: "Oil production collapse drives the economy into contraction"
+    description: >
+      Equatorial Guinea's economy contracted by an estimated 5.4% in
+      2025 as oil output continued its decline from 241,000 barrels a
+      day in 2010 to roughly 55,000 in 2025.
+    url: "https://www.gisreportsonline.com/r/equatorial-guineas-oil-and-gas-industry/"
+    direction: deteriorate
+
+citations:
+  - id: c1
+    url: "https://en.wikipedia.org/wiki/Francisco_Mac%C3%ADas_Nguema"
+    source_type: wikipedia
+    title: "Francisco Macías Nguema"
+    accessed: 2026-08-10
+    verified: true
+  - id: c2
+    url: "https://en.wikipedia.org/wiki/Republic_of_Equatorial_Guinea_(1968%E2%80%931979)"
+    source_type: wikipedia
+    title: "Republic of Equatorial Guinea (1968-1979)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c3
+    url: "https://en.wikipedia.org/wiki/1979_Equatorial_Guinea_coup_d'%C3%A9tat"
+    source_type: wikipedia
+    title: "1979 Equatorial Guinea coup d'état"
+    accessed: 2026-08-10
+    verified: true
+  - id: c4
+    url: "https://www.hrw.org/news/2017/10/29/equatorial-guinea-presidents-son-convicted-laundering-millions"
+    source_type: news
+    title: "Equatorial Guinea: President's Son Convicted of Laundering Millions (Human Rights Watch)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c5
+    url: "https://www.occrp.org/en/news/french-court-convicts-equatorial-guinea-princeling-of-graft"
+    source_type: news
+    title: "French Court Convicts Equatorial Guinea Princeling of Graft (OCCRP)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c6
+    url: "https://en.wikipedia.org/wiki/Teodoro_Nguema_Obiang_Mangue"
+    source_type: wikipedia
+    title: "Teodoro Nguema Obiang Mangue"
+    accessed: 2026-08-10
+    verified: true
+  - id: c7
+    url: "https://borkena.com/2025/11/01/immortal-leader-of-equatorial-guinea-teodoro-obiang-dynastic-rule-and-the-costs-of-46-years-in-power/"
+    source_type: news
+    title: "Immortal Leader of Equatorial Guinea: Teodoro Obiang, Dynastic Rule, and the Costs of 46 Years in Power (Borkena)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c8
+    url: "https://www.courthousenews.com/equatorial-guinea-loses-world-court-bid-over-seized-paris-mansion/"
+    source_type: news
+    title: "Equatorial Guinea loses world court bid over seized Paris mansion (Courthouse News Service)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c9
+    url: "https://www.hrw.org/news/2021/07/28/france-equatorial-guinea-vice-presidents-conviction-upheld"
+    source_type: news
+    title: "France: Equatorial Guinea Vice President's Conviction Upheld (Human Rights Watch)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c10
+    url: "https://www.gisreportsonline.com/r/equatorial-guineas-oil-and-gas-industry/"
+    source_type: news
+    title: "Equatorial Guinea's oil and gas industry continues to shrink (GIS Reports)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c11
+    url: "https://open.unicef.org/download-pdf?country-name=Equatorial+Guinea&year=2025"
+    source_type: official
+    title: "UNICEF Equatorial Guinea Annual Report 2025"
+    accessed: 2026-08-10
+    verified: true
+  - id: c12
+    url: "https://en.wikipedia.org/wiki/Economic_Community_of_Central_African_States"
+    source_type: wikipedia
+    title: "Economic Community of Central African States"
+    accessed: 2026-08-10
+    verified: true
+
+rec_membership:
+  - org: ECCAS
+    joined: 1983
+    status: current
+    left: null
+    citations: [c12]
+
+balance:
+  n_positive: 1
+  n_negative: 2
+  n_mixed: 1
+  note: >
+    The oil-production collapse and the ICJ's rejection of Equatorial
+    Guinea's mansion claim are both coded negative at full weight, not
+    softened by the genuine social-development item placed alongside
+    them. The UNICEF-backed child protection strategy is coded positive
+    because it is real, verifiable, and independently significant given
+    how little social data this country otherwise publishes -- crediting
+    it plainly is more honest than treating every development in a
+    kleptocracy as suspect by association. The gas-megaproject push is
+    coded mixed rather than positive: the investment is real, but this
+    record has direct, documented reason (the Obiang family's oil-era
+    enrichment) to withhold judgment on whether it will broaden
+    development or simply repeat the pattern.

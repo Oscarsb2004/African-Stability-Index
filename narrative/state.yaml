@@ -543,6 +543,31 @@ countries:
       coverage; keep this record''s account of the Taylor/RUF relationship
       consistent with LBR''s own account; check if Pillar C has gained
       coverage'
+  GNQ:
+    name: Equatorial Guinea
+    region: Central
+    first_pass: false
+    reason: twenty-first backlog country -- fills Central Africa (5 of 8
+      done); the starkest oil-wealth-vs-governance gap in the corpus (GDP per
+      capita among the highest recorded, Voice and Accountability among the
+      lowest); Pillar D (Health) greyed entirely alongside C, the first time
+      a second non-C pillar has been unwritten since ERI; Obiang, in power
+      since 1979, is the world''s longest-serving current non-royal head of
+      state, and his son/heir-apparent Teodorin''s asset-laundering
+      conviction/seizures across France, the US and Switzerland make the
+      "ruling family enrichment" pattern this corpus usually infers from
+      statistics into a set of actual court judgments; a genuine positive
+      (UNICEF child-protection strategy) found and credited despite the
+      severe governance record
+    iteration_count: 1
+    last_updated: '2026-08-10'
+    next_action: 'EXPAND: follow whether Obiang''s declining health
+      accelerates a formal handover to Teodorin, and what that means for the
+      pending asset-forfeiture cases; follow whether the gas/LNG
+      diversification deals deliver broader development or repeat the
+      oil-era enrichment pattern; check whether Pillar D ever gains enough
+      data to be scored; check whether the UNICEF child-protection strategy
+      produces measurable outcomes; check if Pillar C has gained coverage'
 backlog:
   LBY:
     name: Libya
@@ -634,14 +659,6 @@ backlog:
     next_action: create baseline from blueprint
   COG:
     name: Republic of Congo
-    region: Central
-    first_pass: false
-    reason: not yet scheduled
-    iteration_count: 0
-    last_updated: null
-    next_action: create baseline from blueprint
-  GNQ:
-    name: Equatorial Guinea
     region: Central
     first_pass: false
     reason: not yet scheduled
@@ -1498,3 +1515,36 @@ meta_notes:
   errors, 1 warning (BlackPast.org, familiar 403 bot-detection pattern) --
   13/14 resolved. Full pytest suite: 106 passed. 29 of 54 countries now have
   a record.'
+- '2026-08-10: GNQ CREATE run complete (12 sources opened and verified: 5
+  Wikipedia, 5 news, 1 official/UNICEF, 1 more Wikipedia for rec_membership).
+  Fills Central Africa (5 of 8 done before this run). The starkest oil-wealth-
+  vs-governance gap recorded in this corpus: GDP per capita among the highest
+  recorded anywhere in this project, Voice and Accountability (19.0) among
+  the lowest. Pillar D (Health) is greyed entirely alongside C -- the first
+  time a second non-C pillar has been unwritten since ERI, though for a
+  different reason: ERI''s data-sparsity reflects a closed state suppressing
+  information about itself, GNQ''s reflects an oil-wealthy state that simply
+  does not publish health data despite having the resources to. Obiang, in
+  power since 1979 after overthrowing and executing his own uncle (Macias
+  Nguema, prosecuted for genocide against the Bubi people), is the world''s
+  longest-serving current non-royal head of state. The colonial_legacy
+  section makes an unusually direct evidentiary claim for this corpus: the
+  "ruling family enrichment" pattern used elsewhere as an inference from
+  aggregate statistics is, for GNQ, a set of actual court judgments --
+  Obiang''s son and heir-apparent Teodorin has been convicted (France, 2017,
+  in absentia) or had assets seized (US 2014, Switzerland 2017, and again
+  France via the Sept 2025 ICJ ruling) across three continents for laundering
+  oil-linked public funds into personal luxury (a EUR100M+ Paris mansion, a
+  EUR5.7M supercar collection, a $100M superyacht). Followed the established
+  discipline and found a genuine positive despite the severity: a UNICEF-
+  backed child protection strategy approved August 2025, credited at full
+  weight specifically because so little else about this closed, wealthy
+  state is independently verifiable. The Chevron/EG-27/ConocoPhillips gas
+  diversification push is coded mixed rather than positive: real new
+  investment in the same extractive model this record has direct, documented
+  reason (Teodorin''s own court record) to withhold judgment on. Balance: 1
+  positive, 2 negative, 1 mixed. One word-count fix: Pillar G was 1 word
+  under the 80-word floor, fixed by adding a real fact rather than padding.
+  `--links` passes 0 errors, 1 warning (Borkena, familiar 403 bot-detection
+  pattern) -- 11/12 resolved. Full pytest suite: 106 passed. 30 of 54
+  countries now have a record.'

@@ -26,7 +26,7 @@ An audit is forced early if a single run inflates the citation count by more tha
 
 ## Status
 
-**29 of 54 countries have a record (Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria, Rwanda, Chad, Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic, Mauritania, Zimbabwe, Comoros, Uganda, Sierra Leone). The first pass is complete; Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic, Mauritania, Zimbabwe, Comoros, Uganda and Sierra Leone are the first twenty backlog countries.**
+**30 of 54 countries have a record (Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria, Rwanda, Chad, Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic, Mauritania, Zimbabwe, Comoros, Uganda, Sierra Leone, Equatorial Guinea). The first pass is complete; Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic, Mauritania, Zimbabwe, Comoros, Uganda, Sierra Leone and Equatorial Guinea are the first twenty-one backlog countries.**
 
 ### First pass — 9 countries
 
@@ -71,14 +71,15 @@ whose ranks swing hardest with the weighting method.
 | COM | Comoros | the halfway point of the corpus; the world's most coup-prone country (20+ since 1975); its first coup, 27 days into independence, was carried out on direct orders from a French official -- the most direct instance of external sovereignty interference found in this corpus yet; Mayotte's continued French status is a live territorial-fragment dispute paralleling MAR's Western Sahara; a genuine positive (April 2025 solar plant) credited against a 100%-fossil-fuel baseline; flagged rather than silently resolved a genuine data discrepancy between two electricity-access figures | **done — iteration 1** |
 | UGA | Uganda | fills East Africa's biggest gap (6 of 14 done); the 1972 Asian expulsion reframed as a colonial demographic arrangement (Britain recruited the labour, built the merchant class) violently inverted by the post-colonial state; the most severe CURRENT-EVENTS story found in this corpus to date -- Museveni's Jan 2026 seventh-term election amid fraud and an internet blackout, with his own son/military chief publicly threatening to kill the opposition leader; a genuine positive (World Bank's $350M+ resumed lending) credited on its own terms, separate from the judgment of whether the Bank should have resumed lending at all | **done — iteration 1** |
 | SLE | Sierra Leone | fills West Africa's biggest gap (8 of 16 done); opens a new cross-referenced pair with LBR (Special Court for Sierra Leone convicted Charles Taylor for arming the RUF, told here from Sierra Leone's side); Freetown's 1787 founding as a British-organized freed-slave settlement set explicitly against Liberia's 1822 American-organized one in colonial_legacy -- same premise, opposite outcome; a genuine positive (Bio elected ECOWAS chair, June 2025) credited independent of the domestic governance concerns raised by the Nov 2023 failed coup attempt | **done — iteration 1** |
+| GNQ | Equatorial Guinea | fills Central Africa (5 of 8 done); the starkest oil-wealth-vs-governance gap in the corpus; Pillar D (Health) greyed alongside C, the first second-pillar gap since ERI but for a different reason (wealthy state simply not publishing data, not a closed state suppressing it); Obiang, in power since 1979, is the world's longest-serving current non-royal head of state; heir-apparent Teodorin's asset-laundering conviction/seizures across three continents turn this corpus's usual "ruling family enrichment" inference into actual court judgments; a genuine positive (UNICEF child-protection strategy) found despite the severity | **done — iteration 1** |
 
-### Backlog — the remaining 25
+### Backlog — the remaining 24
 
 Listed in full in `narrative/state.yaml` under `backlog`. They are recorded
 explicitly rather than left implicit: a country with no record should be visibly
 absent, not quietly missing.
 
-Libya, Tunisia, Benin, Cabo Verde, The Gambia, Guinea, Guinea-Bissau, Cote d'Ivoire, Senegal, Togo, Cameroon, Republic of Congo, Equatorial Guinea, Gabon, Burundi, Djibouti, Malawi, Mozambique, South Sudan, Tanzania, Zambia, Lesotho, Eswatini, Seychelles, Sao Tome & Principe
+Libya, Tunisia, Benin, Cabo Verde, The Gambia, Guinea, Guinea-Bissau, Cote d'Ivoire, Senegal, Togo, Cameroon, Republic of Congo, Gabon, Burundi, Djibouti, Malawi, Mozambique, South Sudan, Tanzania, Zambia, Lesotho, Eswatini, Seychelles, Sao Tome & Principe
 
 ---
 
@@ -974,6 +975,44 @@ Append one line per run: date, country, mode, what changed, what was removed.
   errors, 1 warning (BlackPast.org, familiar 403 bot-detection pattern)
   — 13/14 resolved.
 
+- **2026-08-10 — GNQ — CREATE. Twenty-first backlog country, fills
+  Central Africa (5 of 8 done).** Full baseline built: historical
+  overview, colonial legacy (an unusually direct evidentiary claim for
+  this corpus — the "ruling family enrichment" pattern used elsewhere
+  as an inference from aggregate statistics is, for GNQ, a set of
+  actual court judgments: heir-apparent Teodorin Obiang convicted or
+  had assets seized across France, the US and Switzerland for
+  laundering oil-linked public funds, tracing directly back to Fernando
+  Poo's colonial-era contract-labour cocoa economy), 4 key_periods, 5
+  pillar summaries (Pillars C AND D left empty — the first time a
+  second non-C pillar has been unwritten since ERI, though for a
+  different reason: ERI's data-sparsity reflects a closed state
+  suppressing information about itself, GNQ's reflects an oil-wealthy
+  state that simply does not publish health data despite having the
+  resources to), 3 primary + 1 extended recent items, 4 events,
+  rec_membership (ECCAS 1983 founding member via UDEAC, reused cleanly
+  from COD/TCD/CAF's research). 12 sources opened and verified: 5
+  Wikipedia, 5 news, 1 UNICEF official, 1 more Wikipedia for
+  rec_membership. This is the starkest oil-wealth-vs-governance gap
+  recorded in this corpus: GDP per capita among the highest recorded
+  anywhere in this project, Voice and Accountability (19.0) among the
+  lowest. Obiang, in power since 1979 after overthrowing and executing
+  his own uncle (Macías Nguema, prosecuted for genocide against the
+  Bubi people, having killed an estimated 50,000-80,000 and driven a
+  third of the population into exile), is the world's longest-serving
+  current non-royal head of state. Following the established
+  discipline, found a genuine positive despite the severity: a
+  UNICEF-backed child protection strategy approved August 2025,
+  credited at full weight specifically because so little else about
+  this closed, wealthy state is independently verifiable. The Chevron/
+  EG-27/ConocoPhillips gas diversification push is coded mixed rather
+  than positive: real new investment in the same extractive model this
+  record has direct, documented reason (Teodorin's own court record)
+  to withhold judgment on. Balance: 1 positive, 2 negative, 1 mixed.
+  One word-count fix on Pillar G, resolved by adding a real fact rather
+  than padding. `--links` passes 0 errors, 1 warning (Borkena, familiar
+  403 bot-detection pattern) — 11/12 resolved.
+
 ---
 
 ## Meta-notes
@@ -1500,6 +1539,27 @@ Things a future run should know about how to work, not about a specific country.
   alone, and future EXPAND passes on either LBR or SLE should keep
   referencing the other explicitly rather than let the comparison go
   stale.
+- **2026-08-10** — GNQ is the clearest case yet that "greyed pillar"
+  and "closed state" are not the same diagnosis, even though ERI made
+  it look that way. ERI's three greyed pillars (B, C, D) and its worst-
+  in-corpus governance score are the same underlying fact — a state
+  that suppresses information about itself generally. GNQ's two greyed
+  pillars (C, D) sit beside a GDP-per-capita figure among the highest
+  in the corpus: this is a state that could easily publish health
+  data — it has the money, the administrative capacity, and a
+  functioning oil economy that generates plenty of other statistics
+  (Pillar B is fully reliable) — and simply doesn't bother, or doesn't
+  want the comparison drawn. Worth naming the distinction for future
+  heavily-greyed records: ask not just "why is data missing" but
+  "could this government produce it if it wanted to," since the answer
+  changes what the gap itself is evidence of. Also worth logging: GNQ
+  is the first record in this corpus where a Pillar A/B contrast this
+  extreme (near-highest wealth, near-lowest voice) made the colonial_
+  legacy section's central claim provable with court records rather
+  than merely arguable from inference — a genuinely rare case in this
+  project, and worth flagging as a model for how strong a
+  colonial_legacy argument CAN be when the documentation exists, as a
+  benchmark against which thinner-evidenced records can be judged.
 
 ---
 
