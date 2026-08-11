@@ -1,0 +1,464 @@
+meta:
+  iso3: SLE
+  name: Sierra Leone
+  last_updated: 2026-08-10
+  iteration_count: 1
+  next_action: >
+    EXPAND: (1) follow whether further individuals connected to the
+    November 2023 attack are charged or convicted, and whether the
+    government's "failed coup" characterisation is independently
+    corroborated further; (2) follow whether Feed Salone's agriculture-
+    budget increase (2%->7%->target 10%+) translates into measurable
+    food-import reduction; (3) follow Bio's ECOWAS chairmanship agenda
+    (constitutional order, regional security) through its one-year term;
+    (4) check whether Pillars E/F thin indicators (2/4 each) gain
+    coverage; (5) keep this record's account of the Charles Taylor/RUF
+    relationship consistent with LBR's own account of the same events,
+    the corpus's newest cross-referenced pair; (6) check if Pillar C has
+    gained coverage.
+  model_used: claude-sonnet-5
+
+historical:
+  overview: >
+    British abolitionists led by Granville Sharp founded Freetown in
+    1787 as the "Province of Freedom," a settlement for roughly 400
+    formerly enslaved and destitute Black people from London; further
+    waves of freed and recaptured slaves arrived over the following
+    century, forming a distinct Krio (Creole) community. Freetown became
+    a British Crown Colony in 1808 and a base for Royal Navy patrols
+    against the Atlantic slave trade, while Britain only extended a
+    protectorate over the inland territory in 1896, granting the Krio
+    and indigenous peoples different legal rights. Sierra Leone gained
+    independence within the Commonwealth on 27 April 1961. Siaka
+    Stevens' All People's Congress won power in 1967 and, after a brief
+    military interlude, imposed one-party rule from 1978. On 23 March
+    1991, the Revolutionary United Front, backed by Liberian warlord
+    Charles Taylor in exchange for diamonds, launched a rebellion that
+    became an eleven-year civil war notorious for the RUF's signature
+    tactic of amputating civilians' limbs and its extensive use of child
+    soldiers, funded throughout by illicitly traded "blood diamonds."
+    British forces intervened in May 2000 under Operation Palliser after
+    the RUF violated the July 1999 Lomé Peace Accord and again advanced
+    on Freetown; widely regarded as a rare success for Western military
+    intervention, Palliser helped force the RUF's eventual disarmament
+    and end the war in 2002, having killed an estimated 50,000 people.
+    On 26 November 2023, gunmen attacked military barracks and prisons
+    in Freetown in what the government called a failed coup attempt,
+    killing 16 people and freeing nearly 2,000 prisoners; eleven people
+    were later convicted, one sentenced to 182 years as the alleged
+    mastermind.
+  overview_citations: [c1, c2, c3, c4, c6, c8]
+  colonial_legacy: >
+    context/colonial_history.yaml already credits Freetown's 1787
+    founding as a freed-slave settlement, the 1808 Crown Colony, the
+    1896 hinterland protectorate's differentiated rights for Krio and
+    indigenous peoples, and diamond mining's role in funding the civil
+    war. Worth setting Sierra Leone's founding explicitly against
+    Liberia's, documented elsewhere in this corpus: both began as
+    British- or American-organised settlements for people freed from
+    slavery, but the outcomes diverged sharply. In Liberia, the American
+    Colonization Society deliberately withdrew, and the freed-slave
+    settlers became Africa's first independent republic's own ruling
+    elite, dominating the indigenous majority for 133 years without any
+    external colonial power ever governing them directly. In Sierra
+    Leone, Britain never relinquished control: Freetown remained a
+    Crown Colony under direct British administration for 153 years, and
+    when Britain added the interior as a protectorate in 1896, it
+    formalised a legal distinction between the Krio -- the freed-slave
+    descendants who had built Freetown -- and the indigenous peoples of
+    the hinterland, embedding a coastal-versus-interior divide that
+    outlasted colonial rule. Where Liberia's freed-slave settlers became
+    the colonisers, Sierra Leone's became a colonially-administered
+    intermediary class -- two different outcomes from a strikingly
+    similar founding premise, on the same West African coastline and in
+    the same historical current of the Atlantic slave trade's abolition.
+  colonial_legacy_citations: [c1, c2]
+  key_periods:
+    - title: "Freetown's founding and colonial rule"
+      period: "1787-1961"
+      summary: >
+        British abolitionists founded Freetown in 1787 as the "Province
+        of Freedom" for freed and destitute Black settlers from London;
+        further waves of freed and recaptured slaves arrived over the
+        following century, forming the Krio community. Freetown became
+        a British Crown Colony in 1808, and Britain extended a
+        protectorate over the interior in 1896, granting Krio and
+        indigenous peoples different legal rights. Independence followed
+        on 27 April 1961.
+      citations: [c1, c2]
+    - title: "Siaka Stevens and one-party rule"
+      period: "1967-1991"
+      summary: >
+        Siaka Stevens' All People's Congress won power in 1967 and,
+        after a brief military interlude, imposed one-party rule from
+        1978 until the early 1990s, entrenching patronage networks and
+        marginalising the rural interior that later observers linked
+        directly to the grievances the civil war then exploited.
+      citations: [c3]
+    - title: "The RUF war and Operation Palliser"
+      period: "1991-2002"
+      summary: >
+        The Revolutionary United Front, backed by Liberian warlord
+        Charles Taylor in exchange for diamonds, launched a rebellion on
+        23 March 1991 that became an eleven-year civil war notorious for
+        the RUF's signature amputation tactic and extensive use of
+        child soldiers, funded by illicitly traded diamonds. British
+        forces intervened in May 2000 under Operation Palliser after the
+        RUF violated the July 1999 Lomé Peace Accord; the war formally
+        ended in 2002, having killed an estimated 50,000 people.
+      citations: [c4, c5, c6]
+    - title: "Post-war politics and the 2023 coup attempt"
+      period: "2002-2023"
+      summary: >
+        Sierra Leone rebuilt its democratic institutions after the war,
+        with the Special Court for Sierra Leone later convicting Charles
+        Taylor in 2012 for arming the RUF. On 26 November 2023, gunmen
+        attacked military barracks and prisons in Freetown in what the
+        government called a failed coup attempt, killing 16 people and
+        freeing nearly 2,000 prisoners; eleven people were later
+        convicted, one sentenced to 182 years.
+      citations: [c7, c8]
+
+pillars:
+  A:
+    summary: >
+      All six governance indicators are directly measured this year,
+      and the scores cluster in a moderate range -- Government
+      Effectiveness and Regulatory Quality are the weakest, while Voice
+      and Accountability clears the midpoint, consistent with President
+      Bio's genuinely competitive June 2023 re-election (56%+ of the
+      vote, no run-off required) just five months before the November
+      2023 attack that the government characterised as a failed coup
+      attempt: gunmen struck military barracks and prisons in Freetown,
+      killing 16 people and freeing nearly 2,000 prisoners, before
+      eleven people were convicted, one sentenced to 182 years as the
+      alleged mastermind. Bio was elected chair of ECOWAS in June 2025,
+      a marker of the country's return to regional standing after
+      decades of war and instability.
+    drivers:
+      - "all 6 governance indicators directly measured, clustered moderate; Government Effectiveness/Regulatory Quality weakest, Voice and Accountability clears the midpoint"
+      - "Bio re-elected June 2023 (56%+, no run-off); Nov 2023 attack on Freetown barracks/prisons (16 killed, ~2,000 prisoners freed) government called a failed coup -- 11 later convicted, one to 182 years"
+      - "Bio elected ECOWAS chair June 2025 -- a marker of the country's return to regional standing after decades of war and instability"
+    citations: [c8, c9, c10]
+  B:
+    summary: >
+      GDP growth and GDP per capita, both freshly measured, are
+      moderate. Domestic credit to the private sector, also fresh, is
+      extremely thin -- among the weakest readings recorded in this
+      corpus. Inflation, carried forward at 23%, is severe, though more
+      recent reporting suggests it has since fallen to its lowest level
+      in nearly two decades before partially rebounding on higher global
+      oil prices. President Bio's Feed Salone programme, launched in
+      October 2023, raised the agriculture budget from 2% to 7% of
+      national spending by 2024, targeting a 25% cut in food imports
+      within five years -- a real investment against a food-inflation
+      crisis that exceeded 50% in 2023 and has been worsened by repeated
+      flooding in 2022, 2023 and 2024.
+    drivers:
+      - "GDP growth, GDP per capita both fresh, moderate; domestic credit extremely thin (fresh) -- among the weakest readings recorded in this corpus"
+      - "inflation 23% (carried forward) severe, though more recent reporting suggests it fell to a near-two-decade low before partially rebounding on oil prices"
+      - "Feed Salone (Oct 2023): agriculture budget raised 2%->7% of national spending by 2024, targeting 25% food-import cut in 5 years -- real investment against a food-inflation crisis that hit 50%+ in 2023"
+      - "repeated flooding (2022, 2023, 2024) has worsened the same food-security crisis Feed Salone targets"
+    citations: [c11, c12]
+  D:
+    summary: >
+      All five health indicators are freshly measured this year -- a
+      fully, not partially, measured severity. Life expectancy, just
+      under 62 years, and infant mortality, at 56.3 per 1,000 live
+      births, are both severe. Severe food insecurity, affecting nearly
+      34% of the population, is comparatively severe as well, directly
+      connected to the food-inflation crisis documented in Pillar B.
+      Safely managed drinking water access, at just over 10%, is among
+      the weakest readings recorded anywhere in this corpus. This
+      severity is genuinely, not thinly, evidenced.
+    drivers:
+      - "life expectancy ~62 years, infant mortality ~56.3/1,000 -- both severe (fresh)"
+      - "severe food insecurity ~34% (fresh) -- comparatively severe, directly connected to the food-inflation crisis in Pillar B"
+      - "safely managed water ~10.6% (fresh) -- among the weakest readings recorded anywhere in this corpus; all 5 indicators fresh -- genuinely, not thinly, evidenced severity"
+    citations: [c1]
+  E:
+    summary: >
+      Political Stability, freshly measured, is moderate. Displaced
+      persons, carried forward, is near-zero, a strong reading
+      reflecting the two decades since the civil war's end documented in
+      historical.key_periods. Intentional homicide, also carried
+      forward, is comparatively decent, though not fresh enough to
+      confirm whether it has held since the last direct measurement.
+      Only two of
+      the pillar's four indicators are freshly measured this year, and
+      this pillar's own 2023 reference year coincides with, but cannot
+      be cleanly separated from, the November 2023 Freetown attack
+      documented under recent developments.
+    drivers:
+      - "Political Stability moderate (fresh)"
+      - "IDPs near-zero (carried forward) -- reflects the two decades since the civil war's end"
+      - "intentional homicide comparatively decent (carried forward); only 2 of 4 indicators fresh"
+      - "this pillar's 2023 reference year coincides with, but can't be cleanly separated from, the November 2023 Freetown attack documented under recent developments"
+    citations: [c1, c8]
+  F:
+    summary: >
+      CO2 emissions per capita, freshly measured, are near the lowest
+      recorded anywhere in this corpus -- but this reads as a
+      wealth-proxy artefact rather than an achievement: electricity
+      access itself (Pillar G) covers barely a third of the population.
+      Electricity generation from fossil fuels, carried forward, is a
+      comparatively modest quarter of the mix, suggesting some genuine
+      hydropower contribution, though the overall picture remains
+      dominated by how little energy the country consumes rather than a
+      clean generation mix. Freshwater withdrawal, also carried forward,
+      is close to zero relative to renewable resources, plausibly
+      reflecting genuine abundance given Sierra Leone's high rainfall.
+      Agricultural land share, fresh, is moderate. Only two of the
+      pillar's four indicators are freshly measured this year.
+    drivers:
+      - "CO2 pc near the lowest recorded in this corpus (fresh) -- reads as a wealth-proxy artefact: electricity access barely a third of the population (Pillar G)"
+      - "electricity generation ~25% fossil-fuel (carried forward) -- a comparatively modest share, suggesting some genuine hydropower, but low overall consumption still dominates the picture"
+      - "freshwater withdrawal near zero relative to renewable resources (carried forward) -- plausibly genuine abundance given Sierra Leone's high rainfall"
+      - "agricultural land moderate (fresh); only 2 of 4 indicators freshly measured this year"
+    citations: [c1]
+  G:
+    summary: >
+      Electricity access, at just over a third of the population and
+      freshly measured, is weak. Basic drinking water access, also
+      fresh, is comparatively decent, covering roughly two-thirds of the
+      population. Handwashing coverage, also fresh, is weak. Social
+      protection and labour programme coverage, carried forward, is
+      thin. Four of the pillar's five indicators are current, making
+      this pillar's severity substantially, though not entirely, freshly
+      measured -- a genuine gap between comparatively strong basic water
+      access and markedly weaker electricity and social-protection
+      coverage.
+    drivers:
+      - "electricity access just over a third of the population (fresh) -- weak"
+      - "basic drinking water comparatively decent (fresh), covering roughly two-thirds of the population; handwashing weak (fresh)"
+      - "social protection thin (carried forward); 4 of 5 indicators fresh -- a genuine gap between decent water access and weaker electricity/social protection"
+    citations: [c1]
+
+recent:
+  primary:
+    - headline: "Gunmen attack Freetown barracks and prisons in a failed coup attempt"
+      date: 2023-11-27
+      summary: >
+        Gunmen attacked military barracks, an armoury and prisons in
+        Freetown on 26 November 2023, killing 13 soldiers, a police
+        officer, a civilian and a security guard, and freeing nearly
+        2,000 prisoners before security forces regained control. The
+        government characterised the attack as a failed coup attempt;
+        eleven people were later convicted, including a bodyguard of
+        former president Ernest Bai Koroma sentenced to 182 years as the
+        alleged mastermind.
+      why_it_matters: >
+        The clearest recent evidence behind Pillar A's governance
+        concerns, and a stark reminder that Sierra Leone's post-civil-war
+        stability, documented in historical.key_periods, remains
+        genuinely contested rather than settled.
+      news_url: "https://www.aljazeera.com/amp/news/2023/11/27/sierra-leone-says-20-people-killed-in-weekend-attack-on-military-barracks"
+      wikipedia_url: "https://en.wikipedia.org/wiki/2023_Sierra_Leone_coup_attempt"
+      sentiment: negative
+    - headline: "Feed Salone programme raises agriculture spending amid a food-inflation crisis"
+      date: 2025-01-15
+      summary: >
+        President Bio's Feed Salone food security programme, launched in
+        October 2023, drove Sierra Leone's agriculture budget from 2% to
+        7% of national spending by 2024, with a target of exceeding 10%
+        and cutting food imports by 25% within five years. The
+        investment responds to a food-inflation crisis that exceeded 50%
+        in 2023 and has been worsened by repeated flooding in 2022, 2023
+        and 2024.
+      why_it_matters: >
+        A real, substantial government investment in a genuine and
+        continuing crisis, documented in Pillars B and D, rather than
+        either a full solution or an empty promise.
+      news_url: "https://westafricareport.com/sierra-leone/feed-salone-can-bios-initiative-achieve-food-security-for-sierra-leone/"
+      wikipedia_url: ""
+      sentiment: mixed
+    - headline: "Bio elected ECOWAS chair, marking Sierra Leone's return to regional standing"
+      date: 2025-06-22
+      summary: >
+        President Julius Maada Bio was elected chair of ECOWAS on 22
+        June 2025 at the bloc's 67th summit in Abuja, the first
+        Sierra Leonean head of state to hold the role, succeeding
+        Nigeria's Bola Tinubu for a one-year term. Bio said he would
+        prioritise restoring constitutional order, regional security
+        cooperation, and economic integration.
+      why_it_matters: >
+        A genuine marker of Sierra Leone's rehabilitated international
+        standing decades after the civil war and years after its own
+        2023 coup scare, credited independent of the domestic governance
+        concerns documented in Pillar A.
+      news_url: "https://www.ecowas.int/67th-ecowas-summit-h-e-julius-maada-bio-president-of-sierra-leone-is-the-new-chairman-of-the-authority-of-heads-of-state-and-government-for-a-one-year-term/"
+      wikipedia_url: ""
+      sentiment: positive
+  extended:
+    - headline: "Repeated flooding compounds Sierra Leone's food security crisis"
+      date: 2024-08-01
+      summary: >
+        Sierra Leone experienced devastating floods in 2022, 2023 and
+        2024, displacing thousands of people and repeatedly damaging
+        crops, compounding the food-inflation crisis the Feed Salone
+        programme documented in Pillar B is intended to address, and
+        adding further strain to families already struggling with the
+        severe food insecurity documented in Pillar D.
+      why_it_matters: >
+        Shows the structural, climate-driven headwind facing the same
+        food-security investment credited elsewhere in this record.
+      news_url: "https://agra.org/news/breaking-the-cycle-sierra-leones-way-to-transforming-its-food-systems/"
+      wikipedia_url: ""
+      sentiment: negative
+
+events:
+  - year: 1961
+    type: independence
+    title: "Sierra Leone gains independence"
+    description: >
+      Sierra Leone became an independent state within the Commonwealth
+      on 27 April 1961, following 153 years as a British Crown Colony
+      and protectorate.
+    url: "https://en.wikipedia.org/wiki/Sierra_Leone_Colony_and_Protectorate"
+    direction: improve
+  - year: 1991
+    type: conflict
+    title: "RUF launches civil war"
+    description: >
+      The Revolutionary United Front, backed by Liberian warlord Charles
+      Taylor in exchange for diamonds, launched a rebellion on 23 March
+      1991 that became an eleven-year civil war notorious for
+      amputations and child-soldier recruitment.
+    url: "https://en.wikipedia.org/wiki/Sierra_Leone_Civil_War"
+    direction: deteriorate
+  - year: 2000
+    type: conflict
+    title: "Britain's Operation Palliser turns the war's tide"
+    description: >
+      British forces intervened in May 2000 under Operation Palliser
+      after the RUF violated the 1999 Lomé Peace Accord and again
+      advanced on Freetown, widely regarded as a rare success for
+      Western military intervention that helped force the RUF's
+      eventual disarmament.
+    url: "https://en.wikipedia.org/wiki/British_military_intervention_in_the_Sierra_Leone_Civil_War"
+    direction: improve
+  - year: 2023
+    type: coup
+    title: "Failed coup attempt shakes Freetown"
+    description: >
+      Gunmen attacked military barracks and prisons in Freetown on 26
+      November 2023, killing 16 people and freeing nearly 2,000
+      prisoners, in what the government characterised as a failed coup
+      attempt.
+    url: "https://en.wikipedia.org/wiki/2023_Sierra_Leone_coup_attempt"
+    direction: deteriorate
+
+citations:
+  - id: c1
+    url: "https://en.wikipedia.org/wiki/Sierra_Leone_Colony_and_Protectorate"
+    source_type: wikipedia
+    title: "Sierra Leone Colony and Protectorate"
+    accessed: 2026-08-10
+    verified: true
+  - id: c2
+    url: "https://www.newworldencyclopedia.org/entry/Freetown"
+    source_type: academic
+    title: "Freetown (New World Encyclopedia)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c3
+    url: "https://www.thenewhumanitarian.org/feature/1999/05/12/sierra-leone-chronology"
+    source_type: news
+    title: "Sierra Leone: Chronology (The New Humanitarian)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c4
+    url: "https://en.wikipedia.org/wiki/Sierra_Leone_Civil_War"
+    source_type: wikipedia
+    title: "Sierra Leone Civil War"
+    accessed: 2026-08-10
+    verified: true
+  - id: c5
+    url: "https://blackpast.org/global-african-history/revolutionary-united-front-1991-2002/"
+    source_type: academic
+    title: "Revolutionary United Front (1991-2002) (BlackPast.org)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c6
+    url: "https://en.wikipedia.org/wiki/British_military_intervention_in_the_Sierra_Leone_Civil_War"
+    source_type: wikipedia
+    title: "British military intervention in the Sierra Leone Civil War"
+    accessed: 2026-08-10
+    verified: true
+  - id: c7
+    url: "https://www.globalwitness.org/en/archive/charles-taylor-verdict-global-witness-briefing-dictator-blood-diamonds-and-timber-and-two/"
+    source_type: news
+    title: "The Charles Taylor Verdict: A Global Witness briefing on a dictator, blood diamonds and timber, and two countries in recovery (Global Witness)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c8
+    url: "https://en.wikipedia.org/wiki/2023_Sierra_Leone_coup_attempt"
+    source_type: wikipedia
+    title: "2023 Sierra Leone coup attempt"
+    accessed: 2026-08-10
+    verified: true
+  - id: c9
+    url: "https://www.aljazeera.com/news/2023/6/27/sierra-leones-bio-declared-winner-of-presidential-election"
+    source_type: news
+    title: "Sierra Leone's Bio re-elected as president, avoids run-off (Al Jazeera)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c10
+    url: "https://www.ecowas.int/67th-ecowas-summit-h-e-julius-maada-bio-president-of-sierra-leone-is-the-new-chairman-of-the-authority-of-heads-of-state-and-government-for-a-one-year-term/"
+    source_type: official
+    title: "67th ECOWAS Summit: Julius Maada Bio is the new chairman (ECOWAS)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c11
+    url: "https://agra.org/news/breaking-the-cycle-sierra-leones-way-to-transforming-its-food-systems/"
+    source_type: news
+    title: "Breaking the Cycle: Sierra Leone's Way to Transforming its Food Systems (AGRA)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c12
+    url: "https://westafricareport.com/sierra-leone/feed-salone-can-bios-initiative-achieve-food-security-for-sierra-leone/"
+    source_type: news
+    title: "Feed Salone: can Bio's initiative achieve food security for Sierra Leone? (West Africa Report)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c13
+    url: "https://en.wikipedia.org/wiki/Treaty_of_Lagos"
+    source_type: wikipedia
+    title: "Treaty of Lagos"
+    accessed: 2026-08-10
+    verified: true
+  - id: c14
+    url: "https://simple.wikipedia.org/wiki/Community_of_Sahel-Saharan_States"
+    source_type: wikipedia
+    title: "Community of Sahel-Saharan States"
+    accessed: 2026-08-10
+    verified: true
+
+rec_membership:
+  - org: ECOWAS
+    joined: 1975
+    status: current
+    left: null
+    citations: [c13]
+  - org: CEN-SAD
+    joined: 2005
+    status: current
+    left: null
+    citations: [c14]
+
+balance:
+  n_positive: 1
+  n_negative: 2
+  n_mixed: 1
+  note: >
+    The November 2023 attack and the repeated flooding are both coded
+    negative at full weight, not softened by the genuine positives
+    documented alongside them. Bio's ECOWAS chairmanship is coded
+    positive because it is a real, substantial diplomatic achievement,
+    credited independent of the domestic governance concerns raised
+    elsewhere in this record -- the same standard this corpus applies
+    to crediting a genuine gain without erasing a genuine problem. Feed
+    Salone is coded mixed rather than positive because the investment
+    is real but the crisis it targets remains genuinely severe and
+    ongoing; this record does not yet have evidence the programme has
+    resolved what it set out to address.

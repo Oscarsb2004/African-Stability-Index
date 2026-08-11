@@ -26,7 +26,7 @@ An audit is forced early if a single run inflates the citation count by more tha
 
 ## Status
 
-**28 of 54 countries have a record (Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria, Rwanda, Chad, Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic, Mauritania, Zimbabwe, Comoros, Uganda). The first pass is complete; Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic, Mauritania, Zimbabwe, Comoros and Uganda are the first nineteen backlog countries.**
+**29 of 54 countries have a record (Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria, Rwanda, Chad, Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic, Mauritania, Zimbabwe, Comoros, Uganda, Sierra Leone). The first pass is complete; Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic, Mauritania, Zimbabwe, Comoros, Uganda and Sierra Leone are the first twenty backlog countries.**
 
 ### First pass — 9 countries
 
@@ -70,14 +70,15 @@ whose ranks swing hardest with the weighting method.
 | ZWE | Zimbabwe | fills East Africa's biggest gap (5 of 14 done); the only country in the corpus whose settler minority unilaterally declared independence FROM the colonizer to avoid majority rule (Rhodesia's 1965 UDI), inverting every other decolonization pattern here; the 2000-2002 land reform read as a catastrophically-executed response to a genuine, unresolved colonial grievance rather than dismissed outright; a genuine positive (ZiG currency's first single-digit inflation in ~30 years) credited independent of a severe, escalating political record (July 2026 term-limit extension, sidelined VP/General Chiwenga) | **done — iteration 1** |
 | COM | Comoros | the halfway point of the corpus; the world's most coup-prone country (20+ since 1975); its first coup, 27 days into independence, was carried out on direct orders from a French official -- the most direct instance of external sovereignty interference found in this corpus yet; Mayotte's continued French status is a live territorial-fragment dispute paralleling MAR's Western Sahara; a genuine positive (April 2025 solar plant) credited against a 100%-fossil-fuel baseline; flagged rather than silently resolved a genuine data discrepancy between two electricity-access figures | **done — iteration 1** |
 | UGA | Uganda | fills East Africa's biggest gap (6 of 14 done); the 1972 Asian expulsion reframed as a colonial demographic arrangement (Britain recruited the labour, built the merchant class) violently inverted by the post-colonial state; the most severe CURRENT-EVENTS story found in this corpus to date -- Museveni's Jan 2026 seventh-term election amid fraud and an internet blackout, with his own son/military chief publicly threatening to kill the opposition leader; a genuine positive (World Bank's $350M+ resumed lending) credited on its own terms, separate from the judgment of whether the Bank should have resumed lending at all | **done — iteration 1** |
+| SLE | Sierra Leone | fills West Africa's biggest gap (8 of 16 done); opens a new cross-referenced pair with LBR (Special Court for Sierra Leone convicted Charles Taylor for arming the RUF, told here from Sierra Leone's side); Freetown's 1787 founding as a British-organized freed-slave settlement set explicitly against Liberia's 1822 American-organized one in colonial_legacy -- same premise, opposite outcome; a genuine positive (Bio elected ECOWAS chair, June 2025) credited independent of the domestic governance concerns raised by the Nov 2023 failed coup attempt | **done — iteration 1** |
 
-### Backlog — the remaining 26
+### Backlog — the remaining 25
 
 Listed in full in `narrative/state.yaml` under `backlog`. They are recorded
 explicitly rather than left implicit: a country with no record should be visibly
 absent, not quietly missing.
 
-Libya, Tunisia, Benin, Cabo Verde, The Gambia, Guinea, Guinea-Bissau, Cote d'Ivoire, Senegal, Sierra Leone, Togo, Cameroon, Republic of Congo, Equatorial Guinea, Gabon, Burundi, Djibouti, Malawi, Mozambique, South Sudan, Tanzania, Zambia, Lesotho, Eswatini, Seychelles, Sao Tome & Principe
+Libya, Tunisia, Benin, Cabo Verde, The Gambia, Guinea, Guinea-Bissau, Cote d'Ivoire, Senegal, Togo, Cameroon, Republic of Congo, Equatorial Guinea, Gabon, Burundi, Djibouti, Malawi, Mozambique, South Sudan, Tanzania, Zambia, Lesotho, Eswatini, Seychelles, Sao Tome & Principe
 
 ---
 
@@ -937,6 +938,42 @@ Append one line per run: date, country, mode, what changed, what was removed.
   passes 0 errors, 3 warnings (Britannica, Monitor.co.ug, Bloomberg —
   all familiar 403 bot-detection patterns) — 12/15 resolved.
 
+- **2026-08-10 — SLE — CREATE. Twentieth backlog country, fills
+  West Africa's biggest gap.** Full baseline built: historical overview,
+  colonial legacy (a genuinely precise comparative argument, not just a
+  parallel observation: Freetown's 1787 British-organised freed-slave
+  settlement and Liberia's 1822 American-organised one shared a
+  strikingly similar founding premise but diverged sharply — Liberia's
+  colonizing society withdrew and the freed settlers became the rulers
+  themselves, while Britain never relinquished control of Sierra Leone,
+  and the 1896 protectorate formalised a legal Krio-versus-indigenous
+  distinction that outlasted colonial rule), 4 key_periods, 6 pillar
+  summaries (Pillar C left empty — greyed at 1/8 measured; Pillar D
+  fully measured, 5/5), 3 primary + 1 extended recent items, 4 events,
+  rec_membership (ECOWAS 1975 founding member, reused cleanly from
+  LBR's research; CEN-SAD 2005). 14 sources opened and verified: 5
+  Wikipedia, 6 news, 2 academic, 1 official/ECOWAS, 2 more for
+  rec_membership. Opens a new cross-referenced pair with LBR: the
+  Special Court for Sierra Leone convicted Charles Taylor in 2012 for
+  arming the RUF with weapons in exchange for diamonds, already
+  documented from Liberia's own side in this corpus — this record
+  tells the Sierra Leonean side and must stay factually consistent with
+  LBR's account in any future EXPAND/AUDIT pass, alongside the existing
+  EGY/ETH, TCD/SDN, MLI/BFA/NER, and ETH/ERI threads. Following the
+  established discipline, found a genuine positive: Bio's June 2025
+  election as ECOWAS chair, credited independent of the domestic
+  governance concerns raised by the November 2023 failed coup attempt
+  (16 killed, ~2,000 prisoners freed, 11 later convicted including a
+  182-year sentence). The Feed Salone food-security programme
+  (agriculture budget 2%→7%, 2024) is coded mixed rather than positive:
+  the investment is real, but the crisis it targets (50%+ food
+  inflation in 2023, repeated flooding 2022-2024) remains genuinely
+  severe and unresolved. Balance: 1 positive, 2 negative, 1 mixed.
+  Three word-count fixes (a key_period, Pillar E, recent.extended), all
+  resolved by adding real facts rather than padding. `--links` passes 0
+  errors, 1 warning (BlackPast.org, familiar 403 bot-detection pattern)
+  — 13/14 resolved.
+
 ---
 
 ## Meta-notes
@@ -1442,6 +1479,27 @@ Things a future run should know about how to work, not about a specific country.
   rather than a general finding or statistic — a useful bar for how
   concrete a negative item can and should be when the sourcing supports
   it.
+- **2026-08-10** — SLE demonstrates that cross-referenced pairs can be
+  chosen deliberately, not just discovered in passing (the EGY/ETH and
+  TCD/SDN pairs both emerged from researching a country that happened
+  to share history with one already done; this run picked Sierra Leone
+  specifically because it would pair with LBR). Worth doing this more:
+  when choosing the next backlog country, check whether any already-
+  completed record has an unfinished "other side of the story" — CAF's
+  Wagner thread, ERI's Ethiopia thread, and now LBR's RUF/Taylor thread
+  are all candidates other countries could eventually complete from
+  their own side, and actively picking for that connection produces
+  richer colonial_legacy arguments than picking for regional balance
+  alone. Also worth logging: Freetown/Liberia is the first genuine
+  "matched pair" of colonial founding premises in this corpus — two
+  countries with essentially the same starting mechanism (a colonial-
+  or ex-colonial-power-organised freed-slave settlement) whose outcomes
+  diverged entirely depending on one variable (whether the organising
+  power actually withdrew). That kind of matched comparison is more
+  persuasive than either country's colonial_legacy section could be
+  alone, and future EXPAND passes on either LBR or SLE should keep
+  referencing the other explicitly rather than let the comparison go
+  stale.
 
 ---
 

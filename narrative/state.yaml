@@ -519,6 +519,30 @@ countries:
       succession signal; check whether the World Bank''s resumed lending
       produces measurable outcomes; check whether Pillars A/E get fresh
       post-election data; check if Pillar C has gained coverage'
+  SLE:
+    name: Sierra Leone
+    region: West
+    first_pass: false
+    reason: twentieth backlog country -- fills West Africa's biggest gap (8
+      of 16 done); opens a new cross-referenced pair with LBR (the Special
+      Court for Sierra Leone convicted Charles Taylor for arming the RUF,
+      already documented from Liberia''s own side); Freetown''s 1787 founding
+      as a freed-slave settlement set explicitly against Liberia''s in
+      colonial_legacy -- same founding premise, opposite outcome (Britain
+      never relinquished control vs. the freed settlers becoming the
+      colonizers themselves); a genuine positive (Bio elected ECOWAS chair,
+      June 2025) credited independent of domestic governance concerns raised
+      by the November 2023 failed coup attempt
+    iteration_count: 1
+    last_updated: '2026-08-10'
+    next_action: 'EXPAND: follow whether further individuals connected to the
+      November 2023 attack are charged or convicted; follow whether Feed
+      Salone''s agriculture-budget increase translates into measurable food-
+      import reduction; follow Bio''s ECOWAS chairmanship agenda through its
+      one-year term; check whether Pillars E/F thin indicators gain
+      coverage; keep this record''s account of the Taylor/RUF relationship
+      consistent with LBR''s own account; check if Pillar C has gained
+      coverage'
 backlog:
   LBY:
     name: Libya
@@ -586,14 +610,6 @@ backlog:
     next_action: create baseline from blueprint
   SEN:
     name: Senegal
-    region: West
-    first_pass: false
-    reason: not yet scheduled
-    iteration_count: 0
-    last_updated: null
-    next_action: create baseline from blueprint
-  SLE:
-    name: Sierra Leone
     region: West
     first_pass: false
     reason: not yet scheduled
@@ -1451,3 +1467,34 @@ meta_notes:
   1 mixed. `--links` passes 0 errors, 3 warnings (Britannica, Monitor.co.ug,
   Bloomberg -- all familiar 403 bot-detection patterns) -- 12/15 resolved.
   Full pytest suite: 106 passed. 28 of 54 countries now have a record.'
+- '2026-08-10: SLE CREATE run complete (14 sources opened and verified: 5
+  Wikipedia, 6 news, 1 academic/BlackPast, 1 academic/New World Encyclopedia,
+  1 official/ECOWAS, 2 more for rec_membership). Fills West Africa''s biggest
+  gap (8 of 16 done before this run). Opens a new cross-referenced pair with
+  LBR: the Special Court for Sierra Leone convicted Charles Taylor in 2012
+  for arming the RUF with weapons in exchange for diamonds, a fact already
+  documented from Liberia''s own side in this corpus -- this record tells the
+  Sierra Leonean side and must stay factually consistent with LBR''s account
+  in any future EXPAND/AUDIT pass, alongside the existing EGY/ETH, TCD/SDN,
+  MLI/BFA/NER, and ETH/ERI threads. Colonial legacy makes a genuinely precise
+  comparative argument, not just a parallel observation: Freetown (1787,
+  British-organised freed-slave settlement) and Liberia (1822,
+  American-organised freed-slave settlement) shared a strikingly similar
+  founding premise but diverged sharply -- in Liberia the colonizing power
+  withdrew and the freed settlers became the rulers themselves (documented in
+  LBR''s own colonial_legacy); in Sierra Leone, Britain never relinquished
+  control, and the 1896 protectorate formalised a legal Krio-versus-
+  indigenous distinction that outlasted colonial rule. Followed the
+  established discipline and found a genuine positive: Bio''s June 2025
+  election as ECOWAS chair, credited independent of the domestic governance
+  concerns raised by the November 2023 failed coup attempt (16 killed, ~2,000
+  prisoners freed, 11 later convicted including a 182-year sentence). The
+  Feed Salone food-security programme (agriculture budget 2%->7%, 2024) is
+  coded mixed rather than positive: the investment is real, but the crisis it
+  targets (50%+ food inflation in 2023, repeated flooding 2022-2024) remains
+  genuinely severe and unresolved. Balance: 1 positive, 2 negative, 1 mixed.
+  Three word-count fixes (a key_period, Pillar E, and recent.extended), all
+  resolved by adding real facts rather than padding. `--links` passes 0
+  errors, 1 warning (BlackPast.org, familiar 403 bot-detection pattern) --
+  13/14 resolved. Full pytest suite: 106 passed. 29 of 54 countries now have
+  a record.'
