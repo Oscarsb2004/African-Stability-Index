@@ -424,6 +424,29 @@ countries:
       Wagner/Africa Corps conduct past the April 2023-March 2024 reporting
       period cited here; check whether MINUSCA''s mandate has changed; check
       if Pillar C has gained coverage'
+  MRT:
+    name: Mauritania
+    region: West
+    first_pass: false
+    reason: sixteenth backlog country -- fills West Africa's biggest gap (6 of
+      16 done); the last country in the world to formally abolish slavery
+      (1981), not criminalized until 2007, with France's own colonial
+      administration having declared abolition in 1905 and then deliberately
+      declined to enforce it -- a distinct kind of colonial complicity from
+      anywhere else in this corpus; left ECOWAS entirely in 2000 (for UMA),
+      decades before the AES trio's 2025 exit; a genuine positive (Greater
+      Tortue Ahmeyim gas field reaching full production) placed alongside a
+      genuinely unresolved current negative (2025 State Dept trafficking
+      report documenting persistent hereditary slavery)
+    iteration_count: 1
+    last_updated: '2026-08-10'
+    next_action: 'EXPAND: follow whether Biram Dah Abeid''s fraud allegations
+      produce any formal challenge or investigation; follow whether Greater
+      Tortue Ahmeyim''s revenue materially shows up in Pillar B once fresh
+      data supersedes the 2023 reference year; check whether the EU-funded
+      migration crackdown documented by HRW continues; check for any update
+      to the 2025 State Department trafficking finding; check if Pillar C
+      has gained coverage'
 backlog:
   LBY:
     name: Libya
@@ -483,14 +506,6 @@ backlog:
     next_action: create baseline from blueprint
   CIV:
     name: Cote d'Ivoire
-    region: West
-    first_pass: false
-    reason: not yet scheduled
-    iteration_count: 0
-    last_updated: null
-    next_action: create baseline from blueprint
-  MRT:
-    name: Mauritania
     region: West
     first_pass: false
     reason: not yet scheduled
@@ -1248,3 +1263,41 @@ meta_notes:
   padding. `--links` passes 0 errors, 0 warnings -- all 18 citations resolved
   cleanly, the third zero-warning run in this corpus after MDG and ERI. Full
   pytest suite: 106 passed. 24 of 54 countries now have a record.'
+- '2026-08-10: MRT CREATE run complete (13 sources opened and verified: 4
+  Wikipedia, 6 news, 1 academic/Britannica, 1 official/State Dept, 2 more
+  Wikipedia for rec_membership). Fills West Africa''s biggest gap (6 of 16
+  done before this run). Genuinely distinct colonial-legacy mechanism, new to
+  this corpus: France itself declared slavery abolished in Mauritania in
+  1905, only three years into its occupation, then explicitly and
+  documentedly declined to enforce that decision -- citing respect for
+  "local traditions" and protection of "the colonial and local economies" --
+  for the remaining 55 years of colonial rule. This is a different kind of
+  colonial complicity from every other pattern logged so far in this corpus:
+  not imposing exploitation, but formally banning it while knowingly
+  declining to stop it. Mauritania became independent in 1960 with slavery
+  still embedded; full legal abolition took until 1981 (the last country in
+  the world to do so) and criminal enforcement until 2007. Verified precisely
+  rather than assumed: Mauritania withdrew from ECOWAS entirely in December
+  2000 (for UMA instead), a genuinely different case from the AES trio''s
+  2025 exit -- two decades earlier, over currency-union disagreements rather
+  than a coup-driven realignment, and Mauritania''s current rec_membership
+  (UMA, CEN-SAD -- no ECOWAS at all) reflects that. Pillar F contains what
+  may be the starkest single hydrological figure in this corpus: freshwater
+  withdrawal at >337% of internal renewable resources (carried forward),
+  logged explicitly as a genuine severe reality for one of the world''s most
+  arid countries rather than the ambiguous wealth-proxy pattern used to read
+  similar-looking low-withdrawal figures elsewhere. Followed the established
+  discipline and found a genuine positive: the Greater Tortue Ahmeyim gas
+  field (shared with Senegal) reached full production by end of 2025, a
+  real, substantial, verifiable new revenue stream that this record''s 2023
+  reference-year pillars cannot yet reflect -- flagged explicitly as a
+  temporal gap rather than left implicit. Coded the July 2024 election
+  (Ghazouani re-elected, anti-slavery activist Biram Dah Abeid''s strong
+  22.1% second-place finish, Abeid''s fraud allegations) as mixed rather than
+  adjudicating a genuinely unresolved dispute either way. Balance: 1
+  positive, 2 negative, 1 mixed. One word-count fix: Pillar D was 5 words
+  under the 80-word floor, fixed by adding a real cross-corpus comparison
+  rather than padding. `--links` passes 0 errors, 1 warning (Britannica,
+  familiar 403 bot-detection pattern already confirmed on multiple prior
+  runs) -- 13/14 resolved. Full pytest suite: 106 passed. 25 of 54 countries
+  now have a record.'

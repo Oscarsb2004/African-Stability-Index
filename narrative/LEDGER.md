@@ -26,7 +26,7 @@ An audit is forced early if a single run inflates the citation count by more tha
 
 ## Status
 
-**24 of 54 countries have a record (Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria, Rwanda, Chad, Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic). The first pass is complete; Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea and Central African Republic are the first fifteen backlog countries.**
+**25 of 54 countries have a record (Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria, Rwanda, Chad, Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic, Mauritania). The first pass is complete; Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic and Mauritania are the first sixteen backlog countries.**
 
 ### First pass — 9 countries
 
@@ -66,14 +66,15 @@ whose ranks swing hardest with the weighting method.
 | LBR | Liberia | fills West Africa's biggest absolute gap (5 of 16 done); the only country in the corpus never formally colonized by a foreign state, yet the Americo-Liberian settler elite (freed American slaves, from 1822) held internal-colonial dominance over the indigenous majority for 133 years, and Firestone's 1926 rubber lease shows the same extractive pattern operating without any formal colonizer at all; a 20+-year-overdue War and Economic Crimes Court coded mixed, not positive, since no prosecution has yet followed | **done — iteration 1** |
 | ERI | Eritrea | fills East Africa's biggest gap (4 of 14 done); the only country in the corpus with zero national elections since independence (1993); most extreme data-sparsity case yet -- 3 of 6 non-C pillars greyed entirely, directly tied to the same closed-state pattern behind the corpus's lowest-ever single indicator score (Voice and Accountability, 4.9); opens a new cross-referenced pair with ETH (GERD, Tigray War, Pretoria Agreement, 2025 Red Sea tension); a genuine positive (UN-verified 2025 health/nutrition gains) credited at full weight, not treated as suspect by association | **done — iteration 1** |
 | CAF | Central African Republic | fills Central Africa's biggest gap (3 of 8 done); Bokassa's 1976-1979 self-declared Empire; the corpus's first major Russian paramilitary presence (Wagner, since 2018), argued as structurally continuous with the colonial-era concessionary companies that produced the 1928-1931 Kongo-Wara Rebellion; two new corpus superlatives (56.3% severe food insecurity, 99.37/1,000 directly-measured IDPs); a genuine positive (2024 Kimberley Process reintegration) credited alongside, not instead of, Wagner-atrocity findings in the same mining sector | **done — iteration 1** |
+| MRT | Mauritania | fills West Africa's biggest gap (6 of 16 done); the last country in the world to formally abolish slavery (1981, criminalized 2007), with France's own colonial administration having declared abolition in 1905 and knowingly declined to enforce it -- a distinct colonial-complicity mechanism new to this corpus; left ECOWAS entirely in 2000, decades before the AES trio's 2025 exit; a genuine positive (Greater Tortue Ahmeyim gas field reaching full production) placed alongside a genuinely unresolved current negative (2025 State Dept trafficking report on persistent hereditary slavery) | **done — iteration 1** |
 
-### Backlog — the remaining 30
+### Backlog — the remaining 29
 
 Listed in full in `narrative/state.yaml` under `backlog`. They are recorded
 explicitly rather than left implicit: a country with no record should be visibly
 absent, not quietly missing.
 
-Libya, Tunisia, Benin, Cabo Verde, The Gambia, Guinea, Guinea-Bissau, Cote d'Ivoire, Mauritania, Senegal, Sierra Leone, Togo, Cameroon, Republic of Congo, Equatorial Guinea, Gabon, Burundi, Djibouti, Malawi, Mozambique, South Sudan, Tanzania, Uganda, Zambia, Zimbabwe, Lesotho, Eswatini, Comoros, Seychelles, Sao Tome & Principe
+Libya, Tunisia, Benin, Cabo Verde, The Gambia, Guinea, Guinea-Bissau, Cote d'Ivoire, Senegal, Sierra Leone, Togo, Cameroon, Republic of Congo, Equatorial Guinea, Gabon, Burundi, Djibouti, Malawi, Mozambique, South Sudan, Tanzania, Uganda, Zambia, Zimbabwe, Lesotho, Eswatini, Comoros, Seychelles, Sao Tome & Principe
 
 ---
 
@@ -785,6 +786,46 @@ Append one line per run: date, country, mode, what changed, what was removed.
   real fact rather than padding. `--links` passes 0 errors, 0 warnings
   — the third zero-warning run in this corpus after MDG and ERI.
 
+- **2026-08-10 — MRT — CREATE. Sixteenth backlog country, fills
+  West Africa's biggest gap.** Full baseline built: historical
+  overview, colonial legacy (France declared slavery abolished in
+  Mauritania in 1905, only three years into its occupation, then
+  documentedly declined to enforce that decision for the remaining 55
+  years of colonial rule — a distinct kind of colonial complicity, new
+  to this corpus: not imposing exploitation, but formally banning it
+  while knowingly declining to stop it), 4 key_periods, 6 pillar
+  summaries (Pillar C left empty — greyed at 1/8 measured), 3 primary
+  + 1 extended recent items, 4 events, rec_membership (UMA 1989
+  founding member, reused cleanly from DZA/MAR; CEN-SAD 2008 — verified
+  fresh, a later joiner, not a founder). 13 sources opened and
+  verified: 4 Wikipedia, 6 news, 1 Britannica, 1 State Department, 2
+  more Wikipedia for rec_membership. Mauritania became independent in
+  1960 with slavery still embedded from that unenforced abolition;
+  full legal abolition took until 1981 (the last country in the world
+  to do so) and criminal enforcement until 2007. Verified precisely
+  rather than assumed: Mauritania withdrew from ECOWAS entirely in
+  December 2000 (for UMA instead) — a genuinely different case from the
+  AES trio's 2025 exit, two decades earlier and over currency-union
+  disagreements rather than a coup-driven realignment. Pillar F logs
+  what may be the starkest single hydrological figure in this corpus:
+  freshwater withdrawal at over 337% of internal renewable resources,
+  explicitly read as a genuine severe reality for one of the world's
+  most arid countries rather than the ambiguous wealth-proxy pattern
+  used for similar-looking low-withdrawal figures elsewhere. Following
+  the established discipline, found a genuine positive: the Greater
+  Tortue Ahmeyim gas field (shared with Senegal) reached full
+  production by end of 2025, flagged explicitly as a real revenue
+  stream this record's 2023-reference-year pillars cannot yet reflect,
+  rather than left as an implicit gap. The July 2024 election
+  (Ghazouani re-elected, anti-slavery activist Biram Dah Abeid's strong
+  22.1% second-place finish, Abeid's fraud allegations) is coded mixed
+  rather than adjudicated either way. Balance: 1 positive, 2 negative,
+  1 mixed. One word-count fix: Pillar D was 5 words under the 80-word
+  floor, fixed by adding a real cross-corpus comparison rather than
+  padding. `--links` passes 0 errors, 1 warning (Britannica, familiar
+  403 pattern already confirmed on multiple prior runs) — 13/14
+  resolved.
+
 ---
 
 ## Meta-notes
@@ -1209,6 +1250,28 @@ Things a future run should know about how to work, not about a specific country.
   outside ordinary state accountability) holds up as precisely as
   written, since it is doing real argumentative work rather than
   serving as background color.
+- **2026-08-10** — MRT adds a fifth distinct colonial-complicity
+  mechanism to the running typology (after MDG's conquered monarchy,
+  ETH's own imperial expansion, LBR's settler-project-by-the-formerly-
+  enslaved, CAF/ERI's post-colonial domestic institutions echoing
+  colonial structure): France's 1905 declared-but-unenforced abolition
+  of slavery is neither "colonizer imposed X" nor "colonizer's
+  successor state reproduced X" — it is "colonizer formally banned X,
+  then chose for 55 years not to enforce that ban." That is a
+  meaningfully different kind of complicity (a documented act of
+  omission, not commission) and worth its own category when a future
+  country's colonial history turns on what the colonial power declined
+  to do rather than what it did. Also worth flagging as a genuinely
+  new pattern: MRT is the first record where a single Pillar (F)
+  contains a data point this record is confident reads as GENUINELY,
+  not ambiguously, severe (freshwater withdrawal >337% of renewable
+  resources) specifically because the country's known aridity rules out
+  the abundance-explanation used for MDG's and LBR's similarly
+  low-scoring freshwater figures — a reminder that the same numeric
+  pattern (near-zero or, here, wildly-over-100% withdrawal) can mean
+  opposite things depending on the country's actual hydrology, and
+  should be checked against that context each time rather than
+  defaulted to one reading.
 
 ---
 

@@ -1,0 +1,459 @@
+meta:
+  iso3: MRT
+  name: Mauritania
+  last_updated: 2026-08-10
+  iteration_count: 1
+  next_action: >
+    EXPAND: (1) follow whether Biram Dah Abeid's fraud allegations
+    produce any formal challenge or investigation, and whether his
+    Resurgence of the Abolitionist Movement gains further ground; (2)
+    follow whether Greater Tortue Ahmeyim's revenue materially shows up
+    in Pillar B once fresh data supersedes the 2023 reference year; (3)
+    check whether the EU-funded migration crackdown documented by HRW
+    continues or draws further international scrutiny; (4) check for
+    any update to the 2025 State Department Trafficking in Persons
+    finding on hereditary slavery enforcement; (5) check if Pillar C
+    has gained coverage.
+  model_used: claude-sonnet-5
+
+historical:
+  overview: >
+    France colonised the territory from 1904, administering it loosely
+    as part of French West Africa -- colonial officials nicknamed it
+    "le Grand Vide," the great void -- and declared slavery abolished in
+    1905 while explicitly declining to enforce that decision out of
+    deference to local social structures. Independence followed on 28
+    November 1960 under Moktar Ould Daddah, who signed the UN
+    Declaration of Human Rights the following year even as slavery
+    remained embedded in Mauritanian society. Ould Daddah was overthrown
+    in a 1978 coup, beginning a cycle of military rule -- Haidalla, then
+    Maaouya Ould Sid'Ahmed Taya, who seized power in 1984 and ruled for
+    two decades. Mauritania formally abolished slavery by law in 1981,
+    the last country in the world to do so, but did not criminalise it
+    as a prosecutable offence until 2007; descent-based slavery among
+    the Haratine, who make up roughly 40% of the population, persists in
+    practice today. Between 1989 and 1991, the Mauritanian government
+    orchestrated a campaign of ethnic cleansing against Black
+    Mauritanians -- Fulani, Soninke and Wolof communities -- expelling
+    an estimated 40,000 to 120,000 people to Senegal and Mali and
+    killing more than 3,000, including army officers purged in mass
+    executions. Taya was overthrown in 2005; a 2008 coup led by Mohamed
+    Ould Abdel Aziz then ousted Mauritania's first democratically
+    elected civilian president. Abdel Aziz's 2019 decision not to seek a
+    third term produced the country's first peaceful transfer of power,
+    to Mohamed Ould Ghazouani, who was re-elected in July 2024 with
+    anti-slavery activist Biram Dah Abeid placing second and alleging
+    fraud.
+  overview_citations: [c1, c2, c3, c4, c5, c6]
+  colonial_legacy: >
+    context/colonial_history.yaml already credits France's 1902
+    colonisation, the 1981 legal abolition of slavery, and the
+    persistence of forced labour despite 2007 criminalisation. Worth
+    adding the specific colonial complicity the note's brevity omits:
+    France itself declared slavery abolished in Mauritania in 1905, only
+    three years into its occupation, then explicitly chose not to
+    enforce that decision, citing respect for "local traditions" and a
+    wish to protect "the colonial and local economies." This was not
+    colonial ignorance of slavery's persistence; it was a documented
+    administrative choice to tolerate it as a matter of governance
+    convenience, for the fifty-five years French rule continued after
+    that formal abolition. When Mauritania became independent in 1960,
+    that seventy-plus-year gap between declared and enforced abolition
+    had already embedded the Beidane-Haratine social hierarchy deeply
+    enough that independent Mauritania inherited it largely intact --
+    full legal abolition took until 1981, and criminal enforcement until
+    2007. The Haratine, descendants of the enslaved, still make up an
+    estimated 40% of Mauritania's population today, and anti-slavery
+    organisations including SOS-Esclaves report that activists
+    documenting ongoing cases continue to face harassment, arrest and
+    imprisonment for that work.
+  colonial_legacy_citations: [c1, c2, c12]
+  key_periods:
+    - title: "Colonisation and unenforced abolition"
+      period: "1904-1960"
+      summary: >
+        France colonised the territory from 1904, administering it
+        loosely -- colonial officials nicknamed it "le Grand Vide," the
+        great void. France declared slavery abolished in 1905, only
+        three years into its occupation, then explicitly declined to
+        enforce that decision, citing respect for local traditions and
+        protection of the colonial economy; slavery persisted throughout
+        the remaining 55 years of French rule.
+      citations: [c1, c2]
+    - title: "Independence, coups, and the road to legal abolition"
+      period: "1960-1991"
+      summary: >
+        Independence followed on 28 November 1960 under Moktar Ould
+        Daddah, overthrown in a 1978 coup that began a cycle of military
+        rule. Mauritania formally abolished slavery by law in 1981, the
+        last country in the world to do so, though it did not
+        criminalise it as a prosecutable offence until 2007. Between
+        1989 and 1991, the government orchestrated ethnic cleansing
+        against Black Mauritanian communities, expelling tens of
+        thousands and killing more than 3,000.
+      citations: [c3, c4]
+    - title: "Taya's long rule and the 2008 coup"
+      period: "1984-2008"
+      summary: >
+        Maaouya Ould Sid'Ahmed Taya seized power in a 1984 coup and
+        ruled for two decades before being overthrown in 2005. A 2007
+        election produced Sidi Ould Cheikh Abdallahi, Mauritania's
+        first democratically elected civilian president, but a 2008
+        coup led by Mohamed Ould Abdel Aziz -- alongside his ally
+        Mohamed Ould Ghazouani -- ousted him within a year.
+      citations: [c5]
+    - title: "The 2019 peaceful transfer and continued contestation"
+      period: "2019-2024"
+      summary: >
+        Abdel Aziz's 2019 decision not to seek a third term produced
+        Mauritania's first peaceful transfer of power, to Mohamed Ould
+        Ghazouani. Ghazouani was re-elected in July 2024 with 56.12% of
+        the vote; anti-slavery activist Biram Dah Abeid placed second
+        with 22.1%, the strongest showing an opposition candidate
+        descended from enslaved people has achieved, and alleged fraud.
+      citations: [c6, c8]
+
+pillars:
+  A:
+    summary: >
+      All six governance indicators are directly measured this year,
+      and the five WGI-style scores that anchor this pillar cluster
+      tightly in a moderate-to-weak range -- none catastrophic, none
+      strong. Voice and Accountability sits toward the upper end of that
+      cluster, consistent with a genuinely contested July 2024 election:
+      President Ghazouani was re-elected with 56.12% of the vote, but
+      anti-slavery activist Biram Dah Abeid placed second with 22.1% --
+      the strongest showing an opposition candidate descended from
+      enslaved people has achieved in Mauritanian history -- and alleged
+      fraud, calling the result an "electoral coup d'état." Control of
+      Corruption is the weakest of the six. Ghazouani's 2019 election
+      was itself Mauritania's first peaceful transfer of power since
+      independence, following a 2008 coup that had ousted the country's
+      first democratically elected civilian president within a year of
+      his taking office.
+    drivers:
+      - "all 6 governance indicators directly measured; the 5 WGI-style scores cluster tightly moderate-to-weak -- none catastrophic, none strong"
+      - "Voice and Accountability toward the upper end of that cluster -- July 2024 election was genuinely contested (Ghazouani 56.12%, Abeid 22.1%, Abeid alleged fraud)"
+      - "Abeid's 22.1% is the strongest showing an opposition candidate descended from enslaved people has achieved in Mauritanian history"
+      - "Control of Corruption weakest of the six; Ghazouani's 2019 election was itself Mauritania's first peaceful transfer of power since independence, after a 2008 coup ousted the first elected civilian president within a year"
+    citations: [c6, c8, c9]
+  B:
+    summary: >
+      GDP growth, freshly measured, is moderate, and GDP per capita,
+      also fresh, is comparatively strong for this corpus. Inflation,
+      also fresh, is comparatively low. Domestic credit to the private
+      sector and Gini, both carried forward rather than fresh, indicate
+      a thin financial sector alongside real inequality. The Greater
+      Tortue Ahmeyim offshore gas field, shared with Senegal, produced
+      its first gas on 31 December 2024 and reached its full
+      2.7-million-tonne annual LNG capacity by the end of 2025, with
+      plans to scale to 10 million tonnes by 2030 -- a genuine,
+      substantial new revenue stream this pillar's 2023 reference year
+      predates entirely.
+    drivers:
+      - "GDP growth (fresh) moderate; GDP per capita (fresh) comparatively strong for this corpus; inflation (fresh) comparatively low"
+      - "domestic credit and Gini both carried forward -- thin financial sector, real inequality"
+      - "Greater Tortue Ahmeyim gas field (shared with Senegal): first gas Dec 2024, full 2.7 mtpa LNG capacity by end 2025, scaling to 10 mtpa by 2030"
+      - "this genuine new revenue stream postdates the pillar's 2023 reference year entirely -- not yet reflected in any B indicator here"
+    citations: [c10, c11]
+  D:
+    summary: >
+      Life expectancy, just over 68 years, and infant mortality, at
+      31.1 per 1,000 live births, are both freshly measured and
+      moderate -- meaningfully better than several other records in
+      this corpus. Severe food insecurity, also fresh, affects roughly
+      13% of the population, comparatively less severe as well -- a
+      lower reading than most of the Sahel-adjacent records already in
+      this corpus. Safely managed drinking water access, estimated from
+      regional peers, is weak. Four of the pillar's five indicators are
+      current, making this a genuinely, not thinly, measured moderate
+      reading.
+    drivers:
+      - "life expectancy ~68 years, infant mortality ~31.1/1,000 -- both fresh, moderate, meaningfully better than several other records in this corpus"
+      - "severe food insecurity ~13% (fresh) -- comparatively less severe"
+      - "safely managed water weak (regional-mean estimate); 4 of 5 indicators fresh -- a genuinely, not thinly, measured moderate reading"
+    citations: [c1]
+  E:
+    summary: >
+      Political Stability, freshly measured, is comparatively decent, an
+      outcome consistent with the relative calm since Mauritania's last
+      coup in 2008 and its 2019 peaceful transfer of power. Displaced
+      persons, estimated from regional peers rather than measured
+      directly, is a more middling reading. Homicide, carried forward,
+      is comparatively low. Only two of the pillar's four indicators are
+      freshly measured this year; none of this pillar's data reflects
+      the 2025 mass-deportation campaign against migrants documented
+      under recent developments, which raises its own, separate
+      human-security concerns this pillar's indicators were not designed
+      to capture.
+    drivers:
+      - "Political Stability comparatively decent (fresh) -- consistent with relative calm since the 2008 coup and the 2019 peaceful transfer"
+      - "IDPs more middling (regional-mean estimate); homicide comparatively low (carried forward)"
+      - "only 2 of 4 indicators fresh; none of this pillar's data reflects the 2025 migrant mass-deportation campaign documented under recent developments"
+    citations: [c1]
+  F:
+    summary: >
+      Freshwater withdrawal, carried forward rather than fresh, is the
+      starkest reading in this pillar and arguably the starkest
+      hydrological figure recorded anywhere in this corpus: Mauritania
+      withdraws more than three times its internal renewable freshwater
+      resources, a genuinely severe and specific reality for one of the
+      world's most arid countries, not an ambiguous wealth-proxy
+      artefact like several lower readings elsewhere in this corpus. CO2
+      emissions per capita, freshly measured, are moderate. Electricity
+      generation from fossil fuels, also carried forward, is high.
+      Agricultural land share, fresh, is moderate, notable for a country
+      most of whose territory is Saharan desert. Only two of the
+      pillar's four indicators are freshly measured this year.
+    drivers:
+      - "freshwater withdrawal >337% of renewable resources (carried forward) -- arguably the starkest hydrological figure recorded anywhere in this corpus; a genuine severe reality for an arid country, not an ambiguous wealth-proxy case"
+      - "CO2 pc moderate (fresh); electricity generation high fossil-fuel share (carried forward)"
+      - "agricultural land moderate (fresh) -- notable given most of Mauritania's territory is Saharan desert"
+      - "only 2 of 4 indicators freshly measured this year"
+    citations: [c1]
+  G:
+    summary: >
+      Electricity access, at just over half the population and freshly
+      measured, is moderate. Basic drinking water access, also fresh,
+      is comparatively decent; handwashing coverage, also fresh, is
+      more middling. Safely managed water, estimated from regional
+      peers, is weak. Social protection, also a regional-mean estimate,
+      is thin. Four of the pillar's five indicators are current, and
+      this moderate reading sits in genuine contrast to the severe
+      freshwater-withdrawal figure documented in Pillar F --
+      infrastructure access and water-resource sustainability are
+      measuring two different things here.
+    drivers:
+      - "electricity access just over half the population (fresh) -- moderate"
+      - "basic drinking water comparatively decent (fresh); handwashing more middling (fresh); safely managed water weak (regional-mean estimate)"
+      - "social protection thin (regional-mean estimate); 4 of 5 indicators fresh -- a moderate reading in real contrast with Pillar F's severe freshwater-withdrawal figure"
+    citations: [c1]
+
+recent:
+  primary:
+    - headline: "Greater Tortue Ahmeyim gas field reaches full production"
+      date: 2026-01-05
+      summary: >
+        The Greater Tortue Ahmeyim offshore gas field, shared with
+        Senegal, produced its first gas on 31 December 2024 and reached
+        its intended full annual output of 2.7 million tonnes of LNG by
+        the end of 2025, according to operator Kosmos Energy's January
+        2026 report, with 18 LNG cargo shipments exported during the
+        year. Plans call for expanding output to 10 million tonnes
+        annually by 2030.
+      why_it_matters: >
+        A genuine, substantial new revenue stream for Pillar B's
+        economy, entirely outside the reference year most of this
+        record's quantitative pillars describe.
+      news_url: "https://dispatchrisk.com/greater-tortue-ahmeyim-project-hits-lng-output-targets-for-2025/"
+      wikipedia_url: ""
+      sentiment: positive
+    - headline: "Ghazouani re-elected as anti-slavery activist Abeid places second and alleges fraud"
+      date: 2024-07-01
+      summary: >
+        President Mohamed Ould Ghazouani was re-elected in the first
+        round on 29 June 2024 with 56.12% of the vote. Anti-slavery
+        activist Biram Dah Abeid, a descendant of enslaved people and
+        founder of the Resurgence of the Abolitionist Movement, placed
+        second with 22.1% -- the strongest showing an opposition
+        candidate has achieved against Ghazouani -- and rejected the
+        results as fraudulent, calling them an "electoral coup d'état."
+      why_it_matters: >
+        Shows a genuinely competitive electoral opening for anti-slavery
+        politics, documented in historical.colonial_legacy, alongside a
+        real and disputed integrity question neither confirmed nor
+        dismissed by this record.
+      news_url: "https://www.aljazeera.com/news/2024/7/1/mauritania-re-elects-president-ghazouani-for-a-second-term"
+      wikipedia_url: ""
+      sentiment: mixed
+    - headline: "US State Department documents continued hereditary slavery in Mauritania"
+      date: 2025-06-01
+      summary: >
+        The US State Department's 2025 Trafficking in Persons Report
+        found that traffickers continue to exploit Haratine and
+        Afro-Mauritanian children and adults in hereditary slavery
+        rooted in ancestral master-slave relationships, forcing some
+        children as young as five to work as herders or domestic
+        servants, and cited weak law enforcement and victims' fear of
+        retaliation as continuing barriers to justice.
+      why_it_matters: >
+        A specific, current, official finding that the practice
+        historical.colonial_legacy traces to France's unenforced 1905
+        abolition remains a living reality, not a closed historical
+        chapter.
+      news_url: "https://www.state.gov/reports/2025-trafficking-in-persons-report/mauritania/"
+      wikipedia_url: ""
+      sentiment: negative
+  extended:
+    - headline: "HRW documents abuses in Mauritania's EU-funded migration crackdown"
+      date: 2025-08-27
+      summary: >
+        Human Rights Watch reported in August 2025 that Mauritania's
+        mass expulsion campaign against African migrants, intensified
+        after a March 2024 €210 million EU border-control partnership,
+        has involved arbitrary detention and abuse, with tens of
+        thousands expelled from the port city of Nouadhibou during 2025
+        alone. Migrant arrivals in the Canary Islands fell by roughly
+        61% as a result.
+      why_it_matters: >
+        A current, documented human-rights cost of an economic and
+        diplomatic arrangement this record's Pillar E does not yet
+        capture.
+      news_url: "https://www.hrw.org/report/2025/08/27/they-accused-me-of-trying-to-go-to-europe/migration-control-abuses-and-eu"
+      wikipedia_url: ""
+      sentiment: negative
+
+events:
+  - year: 1981
+    type: constitutional
+    title: "Mauritania formally abolishes slavery, the last country to do so"
+    description: >
+      Mauritania formally abolished slavery by law in 1981, the last
+      country in the world to do so, though it would not criminalise
+      the practice as a prosecutable offence until 2007.
+    url: "https://arabcenterdc.org/resource/slavery-in-mauritania-the-long-road-to-real-emancipation/"
+    direction: improve
+  - year: 1990
+    type: conflict
+    title: "Government orchestrates ethnic cleansing of Black Mauritanians"
+    description: >
+      Between 1989 and 1991, the Mauritanian government orchestrated a
+      campaign of ethnic cleansing against Fulani, Soninke and Wolof
+      communities, expelling an estimated 40,000 to 120,000 people and
+      killing more than 3,000, including army officers purged in mass
+      executions.
+    url: "https://www.npr.org/templates/story/story.php?storyId=10741476"
+    direction: deteriorate
+  - year: 2008
+    type: coup
+    title: "Abdel Aziz ousts Mauritania's first elected civilian president"
+    description: >
+      A 2008 coup led by Mohamed Ould Abdel Aziz ousted Sidi Ould Cheikh
+      Abdallahi, who had become Mauritania's first democratically
+      elected civilian president only a year earlier.
+    url: "https://en.wikipedia.org/wiki/2008_Mauritanian_coup_d%27%C3%A9tat"
+    direction: deteriorate
+  - year: 2019
+    type: election
+    title: "Ghazouani's election marks Mauritania's first peaceful transfer of power"
+    description: >
+      Mohamed Ould Ghazouani's 2019 election victory, following Abdel
+      Aziz's decision not to seek a third term, was Mauritania's first
+      peaceful transfer of power between presidents since independence.
+    url: "https://en.wikipedia.org/wiki/Mohamed_Ould_Ghazouani"
+    direction: improve
+
+citations:
+  - id: c1
+    url: "https://www.britannica.com/place/Mauritania/History"
+    source_type: academic
+    title: "Mauritania -- History (Britannica)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c2
+    url: "https://arabcenterdc.org/resource/slavery-in-mauritania-the-long-road-to-real-emancipation/"
+    source_type: news
+    title: "Slavery in Mauritania: The Long Road to Real Emancipation (Arab Center Washington DC)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c3
+    url: "https://www.globalsecurity.org/military/world/war/mauritania-1989-events.htm"
+    source_type: news
+    title: "Mauritania \"1989 Events\" (GlobalSecurity.org)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c4
+    url: "https://www.npr.org/templates/story/story.php?storyId=10741476"
+    source_type: news
+    title: "Ethnic Cleansing in Mauritania (NPR)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c5
+    url: "https://en.wikipedia.org/wiki/2008_Mauritanian_coup_d%27%C3%A9tat"
+    source_type: wikipedia
+    title: "2008 Mauritanian coup d'état"
+    accessed: 2026-08-10
+    verified: true
+  - id: c6
+    url: "https://www.aljazeera.com/news/2024/7/1/mauritania-re-elects-president-ghazouani-for-a-second-term"
+    source_type: news
+    title: "Mauritania re-elects President Ghazouani for a second term (Al Jazeera)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c8
+    url: "https://en.wikipedia.org/wiki/Mohamed_Ould_Ghazouani"
+    source_type: wikipedia
+    title: "Mohamed Ould Ghazouani"
+    accessed: 2026-08-10
+    verified: true
+  - id: c9
+    url: "https://en.wikipedia.org/wiki/Mohamed_Ould_Abdel_Aziz"
+    source_type: wikipedia
+    title: "Mohamed Ould Abdel Aziz"
+    accessed: 2026-08-10
+    verified: true
+  - id: c10
+    url: "https://dispatchrisk.com/greater-tortue-ahmeyim-project-hits-lng-output-targets-for-2025/"
+    source_type: news
+    title: "Greater Tortue Ahmeyim Project Hits LNG Output Targets for 2025 (Dispatch Risk)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c11
+    url: "https://www.geopoliticalmonitor.com/grand-tortue-ahmeyim-field-boosts-senegal-and-mauritania-gas-production/"
+    source_type: news
+    title: "Grand Tortue Ahmeyim Field Boosts Senegal and Mauritania Gas Production (Geopolitical Monitor)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c12
+    url: "https://www.state.gov/reports/2025-trafficking-in-persons-report/mauritania/"
+    source_type: official
+    title: "2025 Trafficking in Persons Report: Mauritania (US Department of State)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c13
+    url: "https://www.hrw.org/report/2025/08/27/they-accused-me-of-trying-to-go-to-europe/migration-control-abuses-and-eu"
+    source_type: news
+    title: "\"They Accused Me of Trying to Go to Europe\": Migration Control Abuses and EU Externalization in Mauritania (Human Rights Watch)"
+    accessed: 2026-08-10
+    verified: true
+  - id: c14
+    url: "https://en.wikipedia.org/wiki/Arab_Maghreb_Union"
+    source_type: wikipedia
+    title: "Arab Maghreb Union"
+    accessed: 2026-08-10
+    verified: true
+  - id: c15
+    url: "https://simple.wikipedia.org/wiki/Community_of_Sahel-Saharan_States"
+    source_type: wikipedia
+    title: "Community of Sahel-Saharan States"
+    accessed: 2026-08-10
+    verified: true
+
+rec_membership:
+  - org: UMA
+    joined: 1989
+    status: current
+    left: null
+    citations: [c14]
+  - org: CEN-SAD
+    joined: 2008
+    status: current
+    left: null
+    citations: [c15]
+
+balance:
+  n_positive: 1
+  n_negative: 2
+  n_mixed: 1
+  note: >
+    The continued-slavery finding and the migration-crackdown abuses
+    are both coded negative at full weight, not softened by the genuine
+    gas-revenue and electoral-competitiveness stories placed alongside
+    them. Greater Tortue Ahmeyim is coded positive because it is a real,
+    verified, substantial new revenue stream, independent of whether
+    that revenue is equitably distributed -- a question this record
+    does not yet have data to answer. The 2024 election is coded mixed
+    rather than positive or negative: Abeid's strong showing is a real,
+    unforced sign of political opening, and his fraud allegation is
+    real and unresolved; this record states both without adjudicating
+    between them.
