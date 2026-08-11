@@ -26,7 +26,7 @@ An audit is forced early if a single run inflates the citation count by more tha
 
 ## Status
 
-**35 of 54 countries have a record (Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria, Rwanda, Chad, Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic, Mauritania, Zimbabwe, Comoros, Uganda, Sierra Leone, Equatorial Guinea, The Gambia, Mozambique, Guinea, South Sudan, Lesotho). The first pass is complete; Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic, Mauritania, Zimbabwe, Comoros, Uganda, Sierra Leone, Equatorial Guinea, The Gambia, Mozambique, Guinea, South Sudan and Lesotho are the first twenty-six backlog countries.**
+**36 of 54 countries have a record (Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria, Rwanda, Chad, Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic, Mauritania, Zimbabwe, Comoros, Uganda, Sierra Leone, Equatorial Guinea, The Gambia, Mozambique, Guinea, South Sudan, Lesotho, Sao Tome & Principe). The first pass is complete; Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic, Mauritania, Zimbabwe, Comoros, Uganda, Sierra Leone, Equatorial Guinea, The Gambia, Mozambique, Guinea, South Sudan, Lesotho and Sao Tome & Principe are the first twenty-seven backlog countries.**
 
 ### First pass — 9 countries
 
@@ -77,14 +77,15 @@ whose ranks swing hardest with the weighting method.
 | GIN | Guinea | fills West Africa (10 of 16 done); the most distinctive decolonisation mechanism in the corpus -- the only French African colony to vote "Non" in the 1958 referendum, met with France's punitive infrastructure-destroying withdrawal rather than a negotiated transition; Guinea's two most severe periods of state violence (French retaliation, then Sékou Touré's Camp Boiro) fall within two years of each other; Pillar D greyed alongside C, the third corpus case of a second non-C pillar unwritten (after ERI, GNQ); a genuine positive (Simandou's first iron-ore shipment, Dec 2025, decades in the making) credited independent of Doumbouya's broken no-candidacy promise and Camara's pardon | **done — iteration 1** |
 | SSD | South Sudan | fills East Africa's biggest proportional gap (9 of 14 done); the world's newest country (2011), cross-referencing SDN directly (SSD's oil exports depend on Sudanese pipelines repeatedly disrupted by Sudan's own civil war); a colonial mechanism distinct from every other case in the corpus -- Britain's "Southern Policy" administered the south separately, then handed it to Khartoum without southern consent at 1956 Sudanese independence; the second corpus case, after ERI, of three non-C pillars greyed entirely (B, C, F); two new corpus superlatives, both directly measured (severe food insecurity 63.10%, displaced persons 97.62/1,000); a genuine positive (Dec 2025 tripartite oil-security agreement) credited alongside the unfolding Machar-arrest/Jonglei-offensive crisis | **done — iteration 1** |
 | LSO | Lesotho | fills Southern Africa's remaining gap (4 of 5 done); the only country in the corpus entirely enclosed by another (South Africa); a colonial mechanism distinct from most of the corpus -- Moshoeshoe I requested British protection in 1868 to prevent Boer annexation, not because Britain sought to extract the territory; a triple cross-reference with ZAF and BWA (the 1998 SADC intervention, Operation Boleas, was led by South Africa and joined by Botswana); a genuine positive (reaching all three UNAIDS 95-95-95 HIV targets by end-2024) on the same standard as BWA's own HIV/AIDS achievement; the corpus's sharpest single-country trade-shock case (April 2025's 50% US tariff collapsed the textile sector) | **done — iteration 1** |
+| STP | Sao Tome & Principe | fills the Islands region, now the corpus's lowest proportionally (4 of 5 done); the longest colonial period in the corpus (490 years, Portugal from 1485, surpassing MOZ's 477); a distinctive colonial angle -- the early-1900s "cocoa slavery" scandal, in which nominally-free contract labourers were documented as enslaved in all but name, triggering a Cadbury boycott around 1909; a naturally positive-skewed record (Pillar A and E both among the strongest in this corpus); Pillar F explicitly contrasted against LSO's genuine hydropower case as a wealth-proxy, not achievement; a live current-events thread -- July 2026's election, in which an incumbent won as an independent after splitting from his own former ruling party | **done — iteration 1** |
 
-### Backlog — the remaining 19
+### Backlog — the remaining 18
 
 Listed in full in `narrative/state.yaml` under `backlog`. They are recorded
 explicitly rather than left implicit: a country with no record should be visibly
 absent, not quietly missing.
 
-Libya, Tunisia, Benin, Cabo Verde, Guinea-Bissau, Cote d'Ivoire, Senegal, Togo, Cameroon, Republic of Congo, Gabon, Burundi, Djibouti, Malawi, Tanzania, Zambia, Eswatini, Seychelles, Sao Tome & Principe
+Libya, Tunisia, Benin, Cabo Verde, Guinea-Bissau, Cote d'Ivoire, Senegal, Togo, Cameroon, Republic of Congo, Gabon, Burundi, Djibouti, Malawi, Tanzania, Zambia, Eswatini, Seychelles
 
 ---
 
@@ -1223,6 +1224,47 @@ Append one line per run: date, country, mode, what changed, what was removed.
   AllAfrica, familiar 403 bot-detection pattern) — 12/14 resolved.
   Full pytest suite: 106 passed.
 
+- **2026-08-11 — STP — CREATE. Twenty-seventh backlog country, fills
+  the Islands region, now the corpus's lowest proportionally (4 of 5
+  done).** Full baseline built: historical overview, colonial legacy
+  (the cocoa plantations that replaced sugar in the 20th century
+  relied on "contract labourers" that British investigator Henry
+  Nevinson's 1905-1906 reports documented as enslaved in all but
+  name, prompting Cadbury to boycott São Tomé cocoa around 1909, one
+  of the earliest documented consumer-driven supply-chain
+  labour-rights campaigns), 4 key_periods, 6 pillar summaries (Pillar
+  C left empty — greyed at 1/8 measured), 3 primary + 1 extended
+  recent items, 4 events, rec_membership (ECCAS 1983 founding
+  member). 12 sources opened and verified: 4 Wikipedia, 6 news, 2
+  official (World Bank, ECCAS/AU). Sao Tome and Principe holds a new
+  corpus superlative: 490 years of Portuguese colonization, the
+  longest of any record so far, surpassing MOZ's 477. A naturally
+  positive-skewed record: Pillar A (governance) and Pillar E
+  (security) are both among the strongest recorded anywhere in this
+  corpus, a deliberate counterweight after a run of more severe
+  records. Pillar F is a genuine wealth-proxy-not-achievement case,
+  explicitly contrasted against LSO's genuine hydropower case
+  documented immediately before it: low CO2 per capita reflects a
+  tiny economy, not a decarbonised grid, since ~94% of the country's
+  own electricity generation is oil-fired. A live current-events
+  thread: President Vila Nova dismissed PM Trovoada in January 2025,
+  split from his own ADI party, and won re-election as an independent
+  in July 2026 — literally this month — defeating ADI's own candidate
+  at the polls, credited as a genuine positive demonstration of
+  Pillar A's strength. The Nov 2022 coup attempt (the country's
+  fourth since 1995) is kept as a distinct current negative rather
+  than folded into historical.key_periods, because credible
+  allegations that captured suspects were tortured and killed
+  afterward remain an unresolved accountability question. Balance: 1
+  positive, 1 negative, 2 mixed. One word-count fix (pillars.D,
+  73→80+, fixed with a real cross-corpus comparison). One citation
+  swap: a US News URL for the July 2026 election returned a genuine
+  TimeoutError under `--links` (the third such timeout case in this
+  corpus, after MDG and GMB); replaced with a Plataforma Media article
+  covering the same event, which resolved cleanly. `--links` then
+  passed 0 errors, 0 warnings — 12/12 resolved, a clean link check.
+  Full pytest suite: 106 passed.
+
 ---
 
 ## Meta-notes
@@ -1859,6 +1901,21 @@ Things a future run should know about how to work, not about a specific country.
   TCD/SDN, SDN/SSD). Future EXPAND passes on ZAF and BWA should check
   whether Operation Boleas is already documented from their own side,
   and add it if not.
+- **2026-08-11** — STP confirms it's worth deliberately picking a
+  naturally positive-skewed country every several runs, not just
+  searching for one positive item within an otherwise severe country.
+  MUS and BWA established this pattern early; STP is the first case
+  since then where the strength shows up structurally (Pillar A and E
+  both near the top of the corpus, not just one good recent headline
+  against several bad ones), and it landed right after LSO's own more
+  severe economic-shock record — the contrast between adjacent runs
+  reads better than either would in isolation. Also: this is the
+  third citation TimeoutError in the corpus (after MDG, GMB), all
+  three on different domains (Washington Post twice, US News once) —
+  worth tracking as its own category distinct from HTTP 403
+  bot-detection, since a timeout gives no signal about whether the
+  page is actually reachable and always needs the same treatment: try
+  a second source rather than assume either outcome.
 
 ---
 

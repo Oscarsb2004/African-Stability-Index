@@ -1,0 +1,430 @@
+meta:
+  iso3: STP
+  name: Sao Tome & Principe
+  last_updated: 2026-08-11
+  iteration_count: 1
+  next_action: >
+    EXPAND: (1) follow whether the investigation into alleged torture
+    of detained 2022 coup suspects produces any accountability
+    outcome; (2) follow whether President Vila Nova's break from ADI
+    produces lasting realignment in the concurrent parliamentary
+    election, or a return to cohabitation-style tension; (3) follow
+    whether the Least Cost Power Development Plan's 50%-renewable-
+    by-2030 target shows measurable progress past its 2018 baseline
+    of ~8%; (4) check whether 2025's economic recovery (2.1% GDP
+    growth) continues into fresh index data; (5) check if Pillar C
+    has gained coverage.
+  model_used: claude-sonnet-5
+
+historical:
+  overview: >
+    Portugal colonized the previously uninhabited islands of São
+    Tomé and Príncipe from 1485, developing them as sugar plantations
+    worked by enslaved West and Central Africans; São Tomé briefly
+    became the world's largest sugar producer before the crop's
+    decline turned the islands into a transhipment point for
+    enslaved people bound for the Americas. Cocoa plantations
+    replaced sugar in the 20th century, worked under a
+    contract-labour system that British investigator Henry Nevinson
+    exposed as slavery in all but name in his 1905-1906 reports for
+    Harper's Magazine, later published as A Modern Slavery. Cadbury,
+    then one of Britain's largest cocoa buyers, commissioned its own
+    investigation before joining a boycott of São Tomé cocoa around
+    1909. Portugal held the islands until independence on 12 July
+    1975, when Manuel Pinto da Costa's MLSTP took power under a
+    one-party, Eastern Bloc-aligned system; foreign troops were
+    stationed on the islands in 1978 after an alleged coup plot, and
+    a prime minister was arrested for attempting to seize power in
+    1979. Economic decline drove a transition to multiparty democracy
+    in 1990, and the country has held competitive elections since,
+    despite four coup attempts, in 1988, 1995, 2003 and 2022. In July
+    2026, President Carlos Vila Nova won re-election as an
+    independent after splitting from his own former ruling party the
+    previous year, defeating that party's own candidate at the polls.
+  overview_citations: [c1, c2, c3, c4, c6, c8, c9]
+  colonial_legacy: >
+    context/colonial_history.yaml records 490 years of Portuguese
+    colonization -- the longest of any country in this corpus,
+    surpassing Mozambique's 477 -- and notes the islands' transition
+    from a sugar economy to a cocoa economy in the 20th century. What
+    the schema entry does not spell out is that this transition did
+    not end the forced-labour system it replaced: British journalist
+    Henry Nevinson's 1905-1906 investigation, published as A Modern
+    Slavery, documented that cocoa plantation workers -- nominally
+    free "contract labourers" recruited from Angola and Mozambique --
+    were in practice bought, sold, and prevented from ever returning
+    home, a continuation of slavery under a different legal label
+    decades after Portugal's own formal abolition. The resulting
+    international scandal forced Cadbury, then one of Britain's
+    largest cocoa buyers, to commission its own investigation and
+    ultimately boycott São Tomé cocoa around 1909, one of the
+    earliest documented cases of a consumer-facing company altering
+    its supply chain in response to a labour-rights campaign.
+  colonial_legacy_citations: [c1, c2]
+  key_periods:
+    - title: "Portuguese colonization and the cocoa slavery scandal"
+      period: "1485-1909"
+      summary: >
+        Portugal colonized the previously uninhabited islands from
+        1485, developing sugar plantations worked by enslaved
+        Africans before cocoa replaced sugar in the 20th century.
+        British investigator Henry Nevinson's 1905-1906 reports
+        documented that cocoa plantation "contract labourers" were in
+        practice enslaved, prompting an international boycott
+        campaign that forced Cadbury to stop buying São Tomé cocoa
+        around 1909.
+      citations: [c1, c2]
+    - title: "Independence and one-party rule"
+      period: "1975-1990"
+      summary: >
+        Portugal granted independence on 12 July 1975, and Manuel
+        Pinto da Costa's MLSTP established one-party, Eastern
+        Bloc-aligned rule. Foreign troops were stationed on the
+        islands in 1978 after an alleged coup plot, and Prime
+        Minister Miguel Trovoada was arrested in 1979 on accusations
+        of attempting to seize power. Economic decline drove a
+        transition to multiparty democracy in 1990.
+      citations: [c3]
+    - title: "Coup attempts under multiparty democracy"
+      period: "1995-2022"
+      summary: >
+        Despite competitive elections since 1990, São Tomé and
+        Príncipe has weathered four coup attempts: a bloodless 1995
+        mutiny reversed within a week under threat of losing foreign
+        aid, a 2003 coup reversed through international negotiation,
+        and a violent November 2022 attempt in which at least five
+        people died, several allegedly tortured and killed while in
+        government custody.
+      citations: [c4, c6, c7]
+    - title: "The 2025 ruling-party split and 2026 election"
+      period: "2025-2026"
+      summary: >
+        President Carlos Vila Nova dismissed Prime Minister Patrice
+        Trovoada on 6 January 2025, splitting from his own ADI party;
+        Trovoada called the dismissal unconstitutional. In July 2026,
+        Vila Nova won re-election running as an independent,
+        defeating ADI's own candidate at the polls.
+      citations: [c9, c8]
+
+pillars:
+  A:
+    summary: >
+      All six World Governance Indicators are directly measured this
+      year, and the aggregate is Sao Tome and Principe's strongest
+      pillar and among the strongest recorded anywhere in this
+      corpus -- Political Stability (84.7) and Voice and
+      Accountability (74.5) both score highly. That strength reflects
+      a democracy that has survived four coup attempts (1995, 2003,
+      2022) and a 2025 executive-legislative rupture without any of
+      them derailing its underlying multiparty competitiveness: in
+      July 2026, President Carlos Vila Nova won re-election running
+      as an independent after splitting from his own former party,
+      defeating that party's own candidate in a competitive, peaceful
+      vote.
+    drivers:
+      - "all 6 WGI indicators directly measured; Political Stability (84.7) and Voice and Accountability (74.5) both score highly -- Sao Tome's strongest pillar and among the strongest in this corpus"
+      - "survived 4 coup attempts (1995, 2003, 2022) without derailing multiparty competitiveness"
+      - "July 2026: Vila Nova won re-election as an independent after splitting from his own former party, defeating that party's own candidate"
+    citations: [c8, c6]
+  B:
+    summary: >
+      GDP growth, GDP per capita, inflation and domestic credit, all
+      freshly measured, sit in a middling-to-thin range for this
+      corpus, reflecting a small, import-dependent economy. Gini,
+      estimated from regional peers rather than measured directly, is
+      comparatively strong. This pillar's 2023 reference year
+      predates a real recovery: GDP growth accelerated to 2.1% in
+      2025, up from 1.1% in 2024, helped by tourism's rebound and
+      elevated cocoa prices -- the same crop, under a different
+      labour system, that colonial_legacy documents as the islands'
+      original 20th-century colonial export.
+    drivers:
+      - "GDP growth, GDP per capita, inflation, domestic credit all fresh, middling-to-thin for this corpus, reflecting a small import-dependent economy"
+      - "Gini comparatively strong (regional-mean estimate, not measured directly)"
+      - "2023 reference year predates a real recovery: GDP growth accelerated to 2.1% in 2025 (from 1.1% in 2024), helped by tourism's rebound and elevated cocoa prices"
+    citations: [c10]
+  D:
+    summary: >
+      Four of five indicators are directly measured this year, and
+      the aggregate is Sao Tome and Principe's second-strongest
+      pillar: infant mortality, at 9.50 per 1,000 live births, is
+      among the lowest recorded anywhere in this corpus -- closer to
+      Mauritius than to its Central African ECCAS peers -- and life
+      expectancy is comparably strong. Handwashing-facility access
+      and safely managed drinking water, both fresh, are more
+      middling. Severe food insecurity, the pillar's only
+      carried-forward figure, is comparatively low. Four of the
+      pillar's five indicators are current, a small-island health
+      profile this record's small population likely helps explain.
+    drivers:
+      - "4 of 5 indicators directly measured; infant mortality 9.50/1,000 among the lowest recorded anywhere in this corpus; life expectancy comparably strong"
+      - "handwashing access and safely managed water both more middling (fresh)"
+      - "severe food insecurity comparatively low (carried forward, the pillar's only non-fresh figure); 4 of 5 indicators current"
+    citations: [c3]
+  E:
+    summary: >
+      Political Stability and Rule of Law, both fresh and shared with
+      Pillar A, score highly, among the strongest readings in this
+      corpus. Intentional homicide and displaced persons are both
+      entirely unmeasured this year, leaving the pillar thin despite
+      its high score. Only two of four indicators have any current
+      measurement, so this pillar's strength should be read as a real
+      but partial picture -- it says nothing about the November 2022
+      coup attempt documented under recent developments, in which at
+      least five people died, several while in government custody.
+    drivers:
+      - "Political Stability and Rule of Law (shared with Pillar A) both score highly, among the strongest readings in this corpus"
+      - "intentional homicide and displaced persons both entirely unmeasured -- only 2 of 4 indicators current, a partial picture despite the high score"
+      - "says nothing about the November 2022 coup attempt (see recent developments): at least 5 dead, several while in government custody"
+    citations: [c6, c7]
+  F:
+    summary: >
+      CO2 emissions per capita, freshly measured, score comparatively
+      well, but unlike Lesotho's genuine hydropower case elsewhere in
+      this corpus, this reads as a small-economy artefact rather than
+      a clean-energy achievement: the carried-forward
+      electricity-generation figure shows nearly 94% of Sao Tome and
+      Principe's own power comes from imported oil, the country's low
+      absolute emissions simply reflecting its tiny population and
+      economy rather than a decarbonised grid. Agricultural land
+      share, also fresh, is middling. Freshwater withdrawal, carried
+      forward, is very low relative to renewable resources. Only two
+      of the pillar's four indicators are current.
+    drivers:
+      - "CO2 pc scores comparatively well (fresh), but reads as a small-economy artefact, not a clean-energy achievement: electricity generation nearly 94% oil-fired (carried forward)"
+      - "contrast with LSO's genuine hydropower case elsewhere in this corpus -- STP's low emissions reflect a tiny economy, not a decarbonised grid"
+      - "agricultural land middling (fresh); freshwater withdrawal very low relative to renewable resources (carried forward); only 2 of 4 indicators current"
+    citations: [c11]
+  G:
+    summary: >
+      Electricity access, at just over 81% of the population and
+      freshly measured, is comparatively strong for this corpus.
+      Basic drinking water access, also fresh, is similarly solid.
+      Government Effectiveness and Control of Corruption, shared with
+      Pillar A, are middling. Social protection coverage is entirely
+      unmeasured this year, the pillar's only gap. Four of the
+      pillar's five indicators are current, though the
+      electricity-access figure sits alongside the near-total oil
+      dependence documented in Pillar F -- broad access to power that
+      remains expensive and import-vulnerable.
+    drivers:
+      - "electricity access just over 81% of the population (fresh) -- comparatively strong for this corpus; basic drinking water similarly solid (fresh)"
+      - "Government Effectiveness and Control of Corruption (shared with Pillar A) middling; social protection entirely unmeasured, the pillar's only gap"
+      - "broad electricity access (Pillar G) sits alongside near-total oil dependence (Pillar F) -- access that remains expensive and import-vulnerable"
+    citations: [c11]
+
+recent:
+  primary:
+    - headline: "Vila Nova wins re-election as an independent after splitting from his own party"
+      date: 2026-07-20
+      summary: >
+        President Carlos Vila Nova won a second term with 55.94% of
+        the vote in the 19 July 2026 presidential election, running
+        as an independent after his January 2025 dismissal of Prime
+        Minister Patrice Trovoada led to a split from his former
+        party, the Independent Democratic Action (ADI). Vila Nova
+        defeated ADI's own candidate, Nito D'Abreu, who took 41.42%,
+        without the runoff a closer race would have required.
+      why_it_matters: >
+        A concrete demonstration of Pillar A's strength: an incumbent
+        president can break from his own party, run independently
+        against it, and still win a competitive, peaceful election --
+        a rare outcome anywhere in this corpus.
+      news_url: "https://www.plataformamedia.com/en/2026/07/20/carlos-vila-nova-reelected-president-sao-tome-and-principe/"
+      wikipedia_url: "https://en.wikipedia.org/wiki/2026_S%C3%A3o_Tom%C3%A9an_presidential_election"
+      sentiment: positive
+    - headline: "Coup attempt killed at least five, several while in custody"
+      date: 2022-11-25
+      summary: >
+        A faction of soldiers and civilians attempted to seize the
+        army headquarters in the capital on 24-25 November 2022, in
+        the country's fourth coup attempt since 1995. At least five
+        people died, and the government later opened an investigation
+        into "inhumane acts" after reports that several suspects had
+        been tortured and killed after being taken into custody
+        rather than during the fighting itself.
+      why_it_matters: >
+        The most severe episode in Pillar E's otherwise thin,
+        high-scoring record, and a case where the state's own
+        response, not just the coup attempt, raised human-rights
+        concerns.
+      news_url: "https://www.africanews.com/2022/12/02/sao-tome-to-probe-inhumane-acts-in-aftermath-of-attempted-coup/"
+      wikipedia_url: "https://en.wikipedia.org/wiki/2022_S%C3%A3o_Tom%C3%A9_and_Pr%C3%ADncipe_coup_attempt"
+      sentiment: negative
+    - headline: "President dismisses prime minister, triggering a ruling-party split"
+      date: 2025-01-06
+      summary: >
+        President Carlos Vila Nova dismissed Prime Minister Patrice
+        Trovoada on 6 January 2025, citing prolonged absences and
+        unresolved governance problems, and appointed Américo Ramos,
+        also from the ruling ADI party, as his replacement. Trovoada
+        called the dismissal "illegal" and "unconstitutional". The
+        rupture split Vila Nova from his own ADI party ahead of the
+        2026 election, in which he ran and won as an independent.
+      why_it_matters: >
+        A genuine constitutional dispute between president and prime
+        minister, resolved through the electoral process documented
+        in the previous item rather than through force -- though
+        whether the dismissal itself was lawful was never
+        definitively settled.
+      news_url: "https://www.trtafrika.com/english/article/18251377"
+      wikipedia_url: "https://en.wikipedia.org/wiki/Patrice_Trovoada"
+      sentiment: mixed
+  extended:
+    - headline: "Economy recovers on tourism and cocoa prices, but electricity stays nearly all oil-fired"
+      date: 2025-08-01
+      summary: >
+        Sao Tome and Principe's economy grew 2.1% in 2025, up from
+        1.1% in 2024, helped by a tourism rebound and high cocoa
+        prices, according to an August 2025 World Bank economic
+        update. The country still generates nearly 94% of its own
+        electricity from imported oil, and its Least Cost Power
+        Development Plan's target of 50% renewable generation by 2030
+        remains a long way from the roughly 8% renewable share
+        recorded when the plan was adopted in 2018.
+      why_it_matters: >
+        Real, if modest, economic recovery documented in Pillar B
+        sits beside a genuine structural vulnerability -- near-total
+        dependence on imported fuel -- that this record's Pillar F
+        summary explicitly declines to read as a clean-energy
+        achievement.
+      news_url: "https://www.worldbank.org/en/country/saotome/publication/stp-economic-update-august-2025"
+      wikipedia_url: ""
+      sentiment: mixed
+
+events:
+  - year: 1975
+    type: independence
+    title: "Independence from Portugal"
+    description: >
+      Portugal granted independence to São Tomé and Príncipe on 12
+      July 1975, and Manuel Pinto da Costa's MLSTP took power under a
+      one-party, Eastern Bloc-aligned system.
+    url: "https://www.britannica.com/topic/history-of-Sao-Tome-and-Principe"
+    direction: improve
+  - year: 1995
+    type: coup
+    title: "First coup attempt reversed within a week"
+    description: >
+      Junior military officers seized power on 25 August 1995 in the
+      country's first coup, motivated by the armed forces' poor
+      condition; President Miguel Trovoada was reinstated a week
+      later after coup leaders faced the threat of losing foreign aid.
+    url: "https://en.wikipedia.org/wiki/1995_S%C3%A3o_Tom%C3%A9_and_Pr%C3%ADncipe_coup_d'%C3%A9tat"
+    direction: deteriorate
+  - year: 2022
+    type: coup
+    title: "Coup attempt kills at least five"
+    description: >
+      A faction of soldiers and civilians attempted to seize the army
+      headquarters on 24-25 November 2022. At least five people died,
+      with credible reports that several suspects were tortured and
+      killed after being taken into custody.
+    url: "https://en.wikipedia.org/wiki/2022_S%C3%A3o_Tom%C3%A9_and_Pr%C3%ADncipe_coup_attempt"
+    direction: deteriorate
+  - year: 2026
+    type: election
+    title: "Vila Nova wins re-election as an independent"
+    description: >
+      President Carlos Vila Nova won a second term with 55.94% of the
+      vote on 19 July 2026, running as an independent after splitting
+      from his own former ruling party, and defeating that party's
+      own candidate at the polls.
+    url: "https://en.wikipedia.org/wiki/2026_S%C3%A3o_Tom%C3%A9an_presidential_election"
+    direction: improve
+
+citations:
+  - id: c1
+    url: "https://britishandirishhistory.wordpress.com/2016/05/11/william-cadbury-chocolate-and-slavery-in-portuguese-west-africa/"
+    source_type: news
+    title: "William Cadbury, Chocolate, and Slavery in Portuguese West Africa (Isles Abroad)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c2
+    url: "https://wa-cadbury.org.uk/the-campaign-against-island-slavery-1901-1908-adapted-from-the-account-by-john-f-crosfield/"
+    source_type: news
+    title: "The Campaign against Island Slavery 1901-1908 (William A Cadbury Charitable Trust)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c3
+    url: "https://www.britannica.com/topic/history-of-Sao-Tome-and-Principe"
+    source_type: news
+    title: "History of Sao Tome and Principe (Britannica)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c4
+    url: "https://en.wikipedia.org/wiki/1995_S%C3%A3o_Tom%C3%A9_and_Pr%C3%ADncipe_coup_d'%C3%A9tat"
+    source_type: wikipedia
+    title: "1995 São Tomé and Príncipe coup d'état"
+    accessed: 2026-08-11
+    verified: true
+  - id: c6
+    url: "https://en.wikipedia.org/wiki/2022_S%C3%A3o_Tom%C3%A9_and_Pr%C3%ADncipe_coup_attempt"
+    source_type: wikipedia
+    title: "2022 São Tomé and Príncipe coup attempt"
+    accessed: 2026-08-11
+    verified: true
+  - id: c7
+    url: "https://www.africanews.com/2022/12/02/sao-tome-to-probe-inhumane-acts-in-aftermath-of-attempted-coup/"
+    source_type: news
+    title: "Sao Tome to probe 'inhumane acts' in aftermath of attempted coup (Africanews)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c8
+    url: "https://www.plataformamedia.com/en/2026/07/20/carlos-vila-nova-reelected-president-sao-tome-and-principe/"
+    source_type: news
+    title: "São Tomé: Carlos Vila Nova re-elected President with 55.94% of the votes (Plataforma Media)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c9
+    url: "https://www.trtafrika.com/english/article/18251377"
+    source_type: news
+    title: "Sao Tome and Principe president dismisses government (TRT Afrika)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c10
+    url: "https://www.worldbank.org/en/country/saotome/publication/stp-economic-update-august-2025"
+    source_type: official
+    title: "São Tomé and Príncipe Economic Update, August 2025 (World Bank)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c11
+    url: "https://borgenproject.org/renewable-energy-in-sao-tome-and-principe/"
+    source_type: news
+    title: "Renewable Energy in Sao Tome and Principe (The Borgen Project)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c12
+    url: "https://au.int/en/recs/eccas"
+    source_type: official
+    title: "ECCAS (African Union)"
+    accessed: 2026-08-11
+    verified: true
+
+rec_membership:
+  - org: ECCAS
+    joined: 1983
+    status: current
+    left: null
+    citations: [c12]
+
+balance:
+  n_positive: 1
+  n_negative: 1
+  n_mixed: 2
+  note: >
+    This record leans less severe than most of this corpus because
+    the evidence genuinely supports it: Pillar A and Pillar E are
+    among the strongest recorded anywhere here, and the 2026 election
+    is a real, verifiable case of a sitting president losing his own
+    party's backing and still winning at the polls, credited at full
+    positive weight rather than downgraded to mixed by default. The
+    2022 coup attempt is kept as a distinct negative rather than
+    folded into the historical key_periods, because the credible
+    allegations of custodial killings afterward are a current,
+    unresolved accountability question, not only a historical
+    security incident. The prime-minister dismissal and the
+    economic-recovery/energy-dependence item are both coded mixed on
+    the same standard: each contains a real institutional or economic
+    gain alongside a genuine, unresolved complication that this record
+    does not let the gain overshadow.

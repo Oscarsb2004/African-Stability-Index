@@ -709,6 +709,35 @@ countries:
       Matekane''s coalition survives further no-confidence attempts;
       check whether Lesotho''s 95-95-95 HIV treatment achievement is
       sustained past 2024; check if Pillar C has gained coverage'
+  STP:
+    name: Sao Tome & Principe
+    region: Islands
+    first_pass: false
+    reason: twenty-seventh backlog country -- fills the Islands region,
+      now the corpus's lowest proportionally (3 of 5 done before this
+      run); the longest colonial period in the corpus (490 years,
+      Portugal from 1485, surpassing MOZ's 477); a distinctive colonial
+      angle not yet covered -- the early-1900s "cocoa slavery" scandal,
+      in which nominally-free contract labourers were documented as
+      enslaved in all but name, triggering a Cadbury boycott around
+      1909; a naturally positive-skewed record (Pillar A and E both
+      among the strongest in this corpus) providing a counterweight
+      after a run of more severe records; a live current-events thread
+      -- July 2026's presidential election, in which an incumbent won
+      re-election as an independent after splitting from his own former
+      ruling party
+    iteration_count: 1
+    last_updated: '2026-08-11'
+    next_action: 'EXPAND: follow whether the investigation into
+      alleged torture of detained 2022 coup suspects produces any
+      accountability outcome; follow whether President Vila Nova''s
+      break from ADI produces lasting realignment in the concurrent
+      parliamentary election, or a return to cohabitation-style
+      tension; follow whether the Least Cost Power Development Plan''s
+      50%-renewable-by-2030 target shows measurable progress past its
+      2018 baseline of ~8%; check whether 2025''s economic recovery
+      (2.1% GDP growth) continues into fresh index data; check if
+      Pillar C has gained coverage'
 backlog:
   LBY:
     name: Libya
@@ -848,14 +877,6 @@ backlog:
     next_action: create baseline from blueprint
   SYC:
     name: Seychelles
-    region: Islands
-    first_pass: false
-    reason: not yet scheduled
-    iteration_count: 0
-    last_updated: null
-    next_action: create baseline from blueprint
-  STP:
-    name: Sao Tome & Principe
     region: Islands
     first_pass: false
     reason: not yet scheduled
@@ -1839,4 +1860,45 @@ meta_notes:
   bot-detection pattern) -- 12/14 resolved. Full pytest suite: 106
   passed. Full-corpus check: 0 errors, 2 pre-existing warnings (COD,
   EGY all-negative balance, unrelated to this run). 35 of 54 countries
+  now have a record.'
+- '2026-08-11: STP CREATE run complete (12 sources opened and verified:
+  4 Wikipedia, 6 news, 2 official (World Bank, ECCAS/AU)). Fills the
+  Islands region, now tied for the corpus''s lowest proportionally
+  before this run (3 of 5). Sao Tome and Principe holds a new corpus
+  superlative: 490 years of Portuguese colonization, the longest of
+  any record so far, surpassing MOZ''s 477. colonial_legacy adds a
+  fact the schema note itself omits: the cocoa plantations that
+  replaced sugar in the 20th century relied on "contract labourers"
+  that British investigator Henry Nevinson''s 1905-1906 reports
+  documented as enslaved in all but name, prompting Cadbury -- then
+  one of Britain''s largest cocoa buyers -- to boycott São Tomé cocoa
+  around 1909, one of the earliest documented consumer-driven
+  supply-chain labour-rights campaigns. This is a naturally
+  positive-skewed record: Pillar A (governance) and Pillar E
+  (security) are both among the strongest recorded anywhere in this
+  corpus, a deliberate counterweight after a run of more severe
+  records. Pillar F is a genuine wealth-proxy-not-achievement case,
+  explicitly contrasted against LSO''s genuine hydropower case
+  documented immediately before it in this corpus: low CO2 per capita
+  reflects a tiny economy, not a decarbonised grid, since ~94% of the
+  country''s own electricity generation is oil-fired. A live current-
+  events thread: President Vila Nova dismissed PM Trovoada in January
+  2025, split from his own ADI party, and won re-election as an
+  independent in July 2026 -- literally this month -- defeating ADI''s
+  own candidate at the polls, credited as a genuine positive
+  demonstration of Pillar A''s strength. The Nov 2022 coup attempt
+  (the country''s fourth since 1995) is kept as a distinct current
+  negative rather than folded into historical.key_periods, because
+  credible allegations that captured suspects were tortured and
+  killed afterward remain an unresolved accountability question.
+  Balance: 1 positive, 1 negative, 2 mixed. One word-count fix
+  (pillars.D, 73->80+, fixed with a real cross-corpus comparison).
+  One citation swap: a US News URL for the July 2026 election
+  returned a genuine TimeoutError under `--links` (the third such
+  timeout case in this corpus, after MDG and GMB); replaced with a
+  Plataforma Media article covering the same event, which resolved
+  cleanly. `--links` then passed 0 errors, 0 warnings -- 12/12
+  resolved, a clean link check. Full pytest suite: 106 passed.
+  Full-corpus check: 0 errors, 2 pre-existing warnings (COD, EGY
+  all-negative balance, unrelated to this run). 36 of 54 countries
   now have a record.'
