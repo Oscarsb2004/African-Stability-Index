@@ -26,7 +26,7 @@ An audit is forced early if a single run inflates the citation count by more tha
 
 ## Status
 
-**33 of 54 countries have a record (Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria, Rwanda, Chad, Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic, Mauritania, Zimbabwe, Comoros, Uganda, Sierra Leone, Equatorial Guinea, The Gambia, Mozambique, Guinea). The first pass is complete; Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic, Mauritania, Zimbabwe, Comoros, Uganda, Sierra Leone, Equatorial Guinea, The Gambia, Mozambique and Guinea are the first twenty-four backlog countries.**
+**34 of 54 countries have a record (Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria, Rwanda, Chad, Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic, Mauritania, Zimbabwe, Comoros, Uganda, Sierra Leone, Equatorial Guinea, The Gambia, Mozambique, Guinea, South Sudan). The first pass is complete; Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic, Mauritania, Zimbabwe, Comoros, Uganda, Sierra Leone, Equatorial Guinea, The Gambia, Mozambique, Guinea and South Sudan are the first twenty-five backlog countries.**
 
 ### First pass — 9 countries
 
@@ -75,14 +75,15 @@ whose ranks swing hardest with the weighting method.
 | GMB | The Gambia | fills West Africa (9 of 16 done); a distinct "regional bloc enforces an election by force" pattern (2017 ECOWAS intervention, no shots fired), unlike SLE's rebel-suppression intervention already in this corpus; opens a cross-reference with GNQ (Jammeh's exile there); strongest governance pillar and one of the only positive Political Stability readings in this corpus, deliberately not softened by a genuine TRRC-implementation failure documented alongside it; Kunta Kinteh Island is one of the few sites here where a named individual's (Kunta Kinte, via Roots) slave-trade journey is traceable directly, not just described in aggregate | **done — iteration 1** |
 | MOZ | Mozambique | fills East Africa (7 of 14 done); longest continuous colonial period in this corpus (477 years, Portugal from 1498); RENAMO documented as literally created by the same Rhodesian intelligence service already in ZWE's Bush War record, then continued by apartheid South Africa; SADCC Frontline State founding (1980) cross-references ZAF's own apartheid record; the most lethal single post-election-violence episode recorded here yet (300+ killed, Amnesty International); a genuine positive (Oct 2025 FATF grey-list exit) shared the same review with ZAF/NGA/BFA already in this corpus | **done — iteration 1** |
 | GIN | Guinea | fills West Africa (10 of 16 done); the most distinctive decolonisation mechanism in the corpus -- the only French African colony to vote "Non" in the 1958 referendum, met with France's punitive infrastructure-destroying withdrawal rather than a negotiated transition; Guinea's two most severe periods of state violence (French retaliation, then Sékou Touré's Camp Boiro) fall within two years of each other; Pillar D greyed alongside C, the third corpus case of a second non-C pillar unwritten (after ERI, GNQ); a genuine positive (Simandou's first iron-ore shipment, Dec 2025, decades in the making) credited independent of Doumbouya's broken no-candidacy promise and Camara's pardon | **done — iteration 1** |
+| SSD | South Sudan | fills East Africa's biggest proportional gap (9 of 14 done); the world's newest country (2011), cross-referencing SDN directly (SSD's oil exports depend on Sudanese pipelines repeatedly disrupted by Sudan's own civil war); a colonial mechanism distinct from every other case in the corpus -- Britain's "Southern Policy" administered the south separately, then handed it to Khartoum without southern consent at 1956 Sudanese independence; the second corpus case, after ERI, of three non-C pillars greyed entirely (B, C, F); two new corpus superlatives, both directly measured (severe food insecurity 63.10%, displaced persons 97.62/1,000); a genuine positive (Dec 2025 tripartite oil-security agreement) credited alongside the unfolding Machar-arrest/Jonglei-offensive crisis | **done — iteration 1** |
 
-### Backlog — the remaining 21
+### Backlog — the remaining 20
 
 Listed in full in `narrative/state.yaml` under `backlog`. They are recorded
 explicitly rather than left implicit: a country with no record should be visibly
 absent, not quietly missing.
 
-Libya, Tunisia, Benin, Cabo Verde, Guinea-Bissau, Cote d'Ivoire, Senegal, Togo, Cameroon, Republic of Congo, Gabon, Burundi, Djibouti, Malawi, South Sudan, Tanzania, Zambia, Lesotho, Eswatini, Seychelles, Sao Tome & Principe
+Libya, Tunisia, Benin, Cabo Verde, Guinea-Bissau, Cote d'Ivoire, Senegal, Togo, Cameroon, Republic of Congo, Gabon, Burundi, Djibouti, Malawi, Tanzania, Zambia, Lesotho, Eswatini, Seychelles, Sao Tome & Principe
 
 ---
 
@@ -1131,6 +1132,54 @@ Append one line per run: date, country, mode, what changed, what was removed.
   403 bot-detection pattern) — 12/13 resolved. Full pytest suite: 106
   passed.
 
+- **2026-08-11 — SSD — CREATE. Twenty-fifth backlog country, closes
+  East Africa's biggest proportional gap (9 of 14 done).** Full
+  baseline built: historical overview, colonial legacy (Britain's
+  "Southern Policy" administered the south separately from the
+  Arab-majority north, then abruptly reversed at 1956 Sudanese
+  independence, handing the whole territory to Khartoum without
+  southern consent -- the schema deliberately counts South Sudan as
+  colonised until 2011, not 1956, since a change of ruler was not
+  liberation for a population with no say in it), 4 key_periods, 4
+  pillar summaries only (A, D, E, G -- Pillars B, C and F are ALL
+  greyed, the second corpus case after ERI of three non-C pillars
+  unwritten), 3 primary + 1 extended recent items, 4 events,
+  rec_membership (EAC 2016, IGAD 2011 -- joined on independence, not a
+  founding member). 14 sources opened and verified: 2 Wikipedia, 8
+  news, 2 official/NGO (IGAD, UNICEF), 1 Britannica, 1 more for
+  rec_membership. South Sudan is the world's newest country (2011).
+  Two new corpus superlatives, both directly measured rather than
+  estimated: severe food insecurity at 63.10% (exceeding CAF's prior
+  high of 56.3%) and displaced persons at 97.62/1,000 (second only to
+  CAF's 99.37/1,000) -- named explicitly in each other's pillar prose
+  as a consistent picture of crisis, not two isolated data points.
+  Opens a live cross-reference with SDN: South Sudan's oil exports
+  depend on Sudanese pipelines that Sudan's own 2023-present civil war
+  has repeatedly disrupted, most recently resolved by an 11 December
+  2025 tripartite security agreement between South Sudan's own SSPDF
+  and Sudan's warring SAF and RSF. Following the established
+  discipline, found a genuine positive: that oil-export resumption,
+  credited at full weight independent of the domestic political
+  crisis, with its dependency on continued cooperation between Sudan's
+  warring parties (not South Sudan's own government) stated plainly.
+  The dominant negative thread is current and still unfolding:
+  President Kiir placed Machar under house arrest on 26 March 2025,
+  charged him with murder, treason and crimes against humanity that
+  September, and South Sudan returned to open warfare in the January
+  2026 Jonglei offensive -- kept as two distinct recent items
+  (institutional collapse, then its battlefield consequence) rather
+  than merged into one. The December 2026 first-ever election date is
+  coded mixed, not positive: a firm date exists, but the record does
+  not treat a scheduled date as an achievement when the government
+  whose signatories set it has since collapsed. Balance: 1 positive, 2
+  negative, 1 mixed. Clean first pass: `narrative_check.py --country
+  SSD` passed 0 errors, 0 warnings with no fixes needed. One citation
+  swap: a Zawya URL for the oil-resumption story returned a genuine
+  HTTP 400 error under `--links`; replaced with a Sudan Tribune article
+  covering the same event, which resolved as a familiar HTTP 403
+  bot-detection warning rather than an error. Full pytest suite: 106
+  passed.
+
 ---
 
 ## Meta-notes
@@ -1732,6 +1781,24 @@ Things a future run should know about how to work, not about a specific country.
   since — unlike SOPAMIB or Somair — no nationalisation or coercive
   renegotiation occurred; the resource itself was simply stalled for
   decades by competing claims and corruption before finally shipping.
+- **2026-08-11** — SSD confirms a pattern worth naming as its own
+  discipline: when a country's index reference year (2023) sits
+  upstream of a still-unfolding crisis, the sharpest way to show that
+  is not just a caveat sentence but a direct numeric comparison across
+  records — stating SSD's food-insecurity and displacement figures
+  against CAF's prior corpus highs made both records more legible than
+  either would have been read in isolation. Worth checking systematically
+  in future EXPAND/AUDIT passes: this corpus now has enough entries that
+  a "superlative claim" (worst, most severe, lowest) should be verified
+  against the actual prior record-holder rather than asserted from
+  memory — done here by pulling CAF's exact figures from its own LEDGER
+  entry before writing the comparison, not by recalling them
+  approximately. Also: SSD/SDN is now the corpus's clearest live
+  economic-interdependence cross-reference (oil pipeline routing, not
+  a shared historical event like GERD or RENAMO) — a new category of
+  cross-reference worth watching for elsewhere (e.g. landlocked
+  countries whose exports run through a neighbour already in this
+  corpus).
 
 ---
 

@@ -645,6 +645,40 @@ countries:
       "competition rather than development" pattern documented in
       colonial_legacy; check whether Pillars C and D ever gain enough data
       to be scored; check if Pillar C has gained coverage'
+  SSD:
+    name: South Sudan
+    region: East
+    first_pass: false
+    reason: twenty-fifth backlog country -- fills East Africa's biggest
+      proportional gap (8 of 14 done before this run, the lowest
+      completion rate of any region); the world's newest country
+      (2011), directly cross-referencing SDN's own record (SSD's oil
+      exports depend on Sudanese pipelines, repeatedly disrupted by
+      Sudan's 2023-present civil war); a distinct colonial mechanism --
+      Britain's "Southern Policy" administered the south separately,
+      then handed it to Khartoum without southern consent at 1956
+      Sudanese independence, the direct origin of the First and Second
+      Sudanese Civil Wars; the most extreme data-sparsity case in the
+      corpus after ERI (Pillars B, C and F all greyed, only A, D, E, G
+      scored); the corpus's most severe directly-measured food-
+      insecurity figure (63.10%, exceeding CAF's prior high of 56.3%)
+      and second-most-severe directly-measured displacement figure
+      (97.62/1,000, just behind CAF's 99.37/1,000); a live current-
+      events thread -- Machar's March 2025 house arrest collapsing the
+      2018 unity government, followed by South Sudan's return to open
+      warfare in the 2026 Jonglei offensive
+    iteration_count: 1
+    last_updated: '2026-08-11'
+    next_action: 'EXPAND: follow whether the December 2026 election
+      actually occurs given the 2026 Jonglei offensive, or is
+      postponed a third time; follow whether Machar''s treason trial
+      reaches a verdict and whether he remains under arrest or is
+      released; follow whether the December 2025 tripartite oil-
+      security agreement holds or the pipeline is disrupted again by
+      Sudan''s own civil war; check whether the Hybrid Court for South
+      Sudan is ever established, nearly a decade after it was first
+      proposed; check whether Pillars B, C or F ever gain enough data
+      to be scored; check if Pillar C has gained coverage'
 backlog:
   LBY:
     name: Libya
@@ -752,14 +786,6 @@ backlog:
     next_action: create baseline from blueprint
   MWI:
     name: Malawi
-    region: East
-    first_pass: false
-    reason: not yet scheduled
-    iteration_count: 0
-    last_updated: null
-    next_action: create baseline from blueprint
-  SSD:
-    name: South Sudan
     region: East
     first_pass: false
     reason: not yet scheduled
@@ -1701,3 +1727,52 @@ meta_notes:
   passed. Full-corpus check: 0 errors, 2 pre-existing warnings (COD, EGY
   all-negative balance, unrelated to this run). 33 of 54 countries now have
   a record.'
+- '2026-08-11: SSD CREATE run complete (14 sources opened and verified: 2
+  Wikipedia, 8 news, 2 official/NGO (IGAD, UNICEF), 1 Britannica, 1 more
+  for rec_membership). Fills East Africa (9 of 14 done after this run,
+  closing the region''s biggest proportional gap). South Sudan is the
+  world''s newest country (2011) and the second corpus case, after ERI,
+  of three non-C pillars greyed out entirely (B, C, F all unscored; only
+  A, D, E, G written). colonial_legacy documents a mechanism distinct
+  from every other case in this corpus: Britain''s "Southern Policy"
+  administered the south separately from the Arab-majority north for
+  decades, then abruptly reversed course at 1956 Sudanese independence,
+  handing the whole territory to Khartoum without southern consent --
+  the schema deliberately counts South Sudan as colonised until 2011,
+  not 1956, on the reasoning that a change of ruler was not liberation
+  for a population with no say in it. That reversal directly produced
+  the First and Second Sudanese Civil Wars (1955-1972, 1983-2005; ~2.5M
+  deaths), and South Sudan''s own 2013-2018 civil war reproduced the
+  same center-versus-periphery structure internally (Kiir''s Dinka-
+  aligned government against Machar''s Nuer-aligned opposition). Two new
+  corpus superlatives, both directly measured rather than estimated:
+  severe food insecurity at 63.10% (exceeding CAF''s prior high of
+  56.3%) and displaced persons at 97.62/1,000 (second only to CAF''s
+  99.37/1,000). Opens a live cross-reference with SDN: South Sudan''s
+  oil exports depend on Sudanese pipelines that Sudan''s own 2023-
+  present civil war has repeatedly disrupted, most recently resolved by
+  a 11 December 2025 tripartite security agreement between South
+  Sudan''s SSPDF and Sudan''s warring SAF and RSF. Followed the
+  established discipline and found a genuine positive: that oil-export
+  resumption, credited at full weight independent of the domestic
+  political crisis, with its own fragility (dependent on continued
+  cooperation between Sudan''s warring parties, not South Sudan''s own
+  government) stated plainly rather than glossed over. The dominant
+  negative thread is current and still unfolding: President Kiir placed
+  Machar under house arrest on 26 March 2025, charged him with murder,
+  treason and crimes against humanity that September, and South Sudan
+  returned to open warfare in the January 2026 Jonglei offensive --
+  kept as two distinct recent items (institutional collapse, then its
+  battlefield consequence) rather than merged into one. The December
+  2026 first-ever election date is coded mixed, not positive: a firm
+  date exists, but the record does not treat a scheduled date as an
+  achievement when the government whose signatories set it has since
+  collapsed. Balance: 1 positive, 2 negative, 1 mixed. Clean first pass:
+  `narrative_check.py --country SSD` passed 0 errors, 0 warnings with no
+  fixes needed. One citation swap: a Zawya URL for the oil-resumption
+  story returned a genuine HTTP 400 error under `--links`; replaced with
+  a Sudan Tribune article covering the same event, which then resolved
+  as a familiar HTTP 403 bot-detection warning rather than an error.
+  Full pytest suite: 106 passed. Full-corpus check: 0 errors, 2
+  pre-existing warnings (COD, EGY all-negative balance, unrelated to
+  this run). 34 of 54 countries now have a record.'

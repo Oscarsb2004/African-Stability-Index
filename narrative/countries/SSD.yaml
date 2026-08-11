@@ -1,0 +1,423 @@
+meta:
+  iso3: SSD
+  name: South Sudan
+  last_updated: 2026-08-11
+  iteration_count: 1
+  next_action: >
+    EXPAND: (1) follow whether the December 2026 election actually
+    occurs given the 2026 Jonglei offensive, or is postponed a third
+    time; (2) follow whether Machar's treason trial reaches a verdict
+    and whether he remains under arrest or is released; (3) follow
+    whether the December 2025 tripartite oil-security agreement holds
+    or the pipeline is disrupted again by Sudan's own civil war; (4)
+    check whether the Hybrid Court for South Sudan is ever established,
+    nearly a decade after it was first proposed; (5) check whether
+    Pillars B, C or F ever gain enough data to be scored; (6) check
+    if Pillar C has gained coverage.
+  model_used: claude-sonnet-5
+
+historical:
+  overview: >
+    Britain and Egypt jointly administered the territory that is now
+    South Sudan as part of Anglo-Egyptian Sudan from 1899, running a
+    "Southern Policy" that restricted Arab and Muslim influence in the
+    south and administered it separately from the Arab-majority north.
+    When Sudan gained independence in 1956, Britain reversed this
+    policy and handed control of the whole territory, south included,
+    to the Arab-dominated government in Khartoum without southern
+    consent -- a decision southern figures had already begun resisting
+    the previous year, in the August 1955 Torit mutiny. That grievance
+    produced the First Sudanese Civil War (1955-1972) and, after a
+    fragile peace, the Second Sudanese Civil War (1983-2005), the two
+    conflicts killing an estimated 2.5 million people combined. The
+    2005 Comprehensive Peace Agreement, negotiated in Naivasha, Kenya,
+    ended the second war and set a six-year interim period culminating
+    in a January 2011 independence referendum, in which 98.83% of
+    voters chose secession. South Sudan became the world's newest
+    country on 9 July 2011. Independence did not bring peace: in
+    December 2013, President Salva Kiir accused his own vice president,
+    Riek Machar, of plotting a coup, igniting a civil war fought
+    substantially along Dinka-Nuer lines that caused an estimated
+    400,000 deaths and a 2017 famine declaration before a September
+    2018 peace agreement brought Machar back into a unity government in
+    February 2020. That unity government collapsed in March 2025, when
+    Kiir placed Machar under house arrest; South Sudan returned to open
+    warfare in early 2026.
+  overview_citations: [c1, c2, c3, c4, c5, c6]
+  colonial_legacy: >
+    context/colonial_history.yaml documents a colonial mechanism
+    distinct from every other case in this corpus: the Anglo-Egyptian
+    Condominium's "Southern Policy" administered the south separately
+    from the Arab-majority north for decades, restricting Arab and
+    Muslim influence there, then abruptly reversed course at Sudanese
+    independence in 1956, handing the whole territory to the Khartoum
+    government without any southern consent. The schema deliberately
+    counts South Sudan as colonised until 2011, not 1956, on the
+    reasoning that a change of ruler from London to Khartoum was not
+    liberation for southern communities who had no say in it -- an
+    argument this record adopts directly rather than treating 1956 as
+    the end of colonial-era harm. That reversal is the specific,
+    traceable origin of the August 1955 Torit mutiny, which predates
+    formal Sudanese independence by several months, and of the First
+    and Second Sudanese Civil Wars that followed it (1955-1972,
+    1983-2005; an estimated 2.5 million deaths combined). South Sudan's
+    own 2013-2018 civil war then reproduced a comparable center-versus-
+    periphery structure, this time internally: Kiir's Dinka-aligned
+    government against Machar's Nuer-aligned opposition, rather than
+    Khartoum against the south.
+  colonial_legacy_citations: [c1, c2]
+  key_periods:
+    - title: "Anglo-Egyptian rule and Sudan's civil wars"
+      period: "1899-2005"
+      summary: >
+        Britain and Egypt jointly administered the south separately
+        from the Arab-majority north under a "Southern Policy", then
+        handed the whole territory to Khartoum without southern
+        consent when Sudan became independent in 1956. Southern
+        resistance, beginning with the August 1955 Torit mutiny,
+        produced the First (1955-1972) and Second (1983-2005) Sudanese
+        Civil Wars, killing an estimated 2.5 million people combined.
+      citations: [c1, c2]
+    - title: "The 2005 peace agreement and 2011 independence"
+      period: "2005-2011"
+      summary: >
+        The Comprehensive Peace Agreement, negotiated in Naivasha,
+        Kenya, ended the Second Sudanese Civil War and set a six-year
+        interim period. In January 2011, 98.83% of voters chose
+        independence in a referendum, and South Sudan became the
+        world's newest country on 9 July 2011.
+      citations: [c3]
+    - title: "The 2013-2018 civil war and the Revitalized Agreement"
+      period: "2013-2020"
+      summary: >
+        In December 2013, President Salva Kiir accused Vice President
+        Riek Machar of plotting a coup, igniting a civil war fought
+        substantially along Dinka-Nuer lines that caused an estimated
+        400,000 deaths, three million displaced, and a February 2017
+        famine declaration. A September 2018 peace agreement, the
+        Revitalized Agreement on the Resolution of the Conflict,
+        brought Machar back into a unity government sworn in February
+        2020.
+      citations: [c4, c5, c6]
+    - title: "Unity government collapse and renewed war"
+      period: "2025-2026"
+      summary: >
+        President Kiir placed Machar under house arrest on 26 March
+        2025 and charged him with murder, treason and crimes against
+        humanity that September, collapsing the unity government.
+        South Sudan returned to open warfare in early 2026, with a
+        government offensive against opposition and allied militia
+        forces in Jonglei state displacing more than 230,000 people
+        within a month.
+      citations: [c7, c8, c9]
+
+pillars:
+  A:
+    summary: >
+      All six World Governance Indicators are directly measured this
+      year, and the aggregate is severe -- Government Effectiveness
+      (1.1) and Control of Corruption (0.3) both score near zero,
+      close to the scale's practical floor. That severity is a live,
+      worsening pattern rather than only historical: President Salva
+      Kiir placed First Vice President Riek Machar under house arrest
+      on 26 March 2025 and had him charged with murder, treason and
+      crimes against humanity that September, collapsing the
+      power-sharing unity government the 2018 peace agreement had
+      built and directly preceding South Sudan's return to open
+      warfare, documented under recent developments.
+    drivers:
+      - "all 6 WGI indicators directly measured; Government Effectiveness (1.1) and Control of Corruption (0.3) both near the scale's practical floor"
+      - "26 March 2025: Kiir placed Machar under house arrest; September 2025: charged with murder, treason and crimes against humanity, collapsing the unity government"
+      - "the collapse directly preceded South Sudan's return to open warfare in early 2026 (see recent developments)"
+    citations: [c7, c8]
+  D:
+    summary: >
+      Severe food insecurity, freshly measured at 63.10% of the
+      population, is the single most severe reading of this indicator
+      recorded anywhere in this corpus, exceeding even the Central
+      African Republic's previous high of 56.3%. Life expectancy and
+      infant mortality, both fresh, are similarly weak. Handwashing-
+      facility access, also fresh, is thin. Safely managed drinking
+      water, estimated from regional peers rather than measured
+      directly, is the pillar's only imputed figure. Four of the
+      pillar's five indicators are current, and the severe-food-
+      insecurity reading sits alongside a directly-measured, near-record
+      displacement figure in Pillar E -- a consistent picture of acute
+      humanitarian crisis, not an isolated data anomaly.
+    drivers:
+      - "severe food insecurity 63.10% (fresh) -- the single most severe reading of this indicator recorded anywhere in this corpus, exceeding CAF's previous high of 56.3%"
+      - "life expectancy and infant mortality both weak (fresh); handwashing-facility access thin (fresh)"
+      - "safely managed drinking water the pillar's only imputed figure (regional mean); 4 of 5 indicators current"
+    citations: [c11]
+  E:
+    summary: >
+      Displaced persons, at 97.62 per 1,000 people and directly
+      measured rather than estimated, is the second most severe such
+      figure recorded anywhere in this corpus, just behind the Central
+      African Republic's 99.37 per 1,000. Political Stability and Rule
+      of Law, both fresh, are similarly weak, though this pillar's
+      2023 reference year predates the unity government's March 2025
+      collapse and the renewed warfare documented under recent
+      developments. Intentional homicide, estimated from regional
+      peers rather than measured directly, is comparatively more
+      middling. Three of the pillar's four indicators are current.
+    drivers:
+      - "displaced persons 97.62/1,000 (fresh, directly measured) -- second most severe such figure in this corpus, just behind CAF's 99.37/1,000"
+      - "Political Stability and Rule of Law both weak (fresh); 2023 reference year predates the March 2025 unity-government collapse and 2026 renewed warfare"
+      - "intentional homicide more middling (regional-mean estimate, not directly measured); 3 of 4 indicators current"
+    citations: [c7]
+  G:
+    summary: >
+      Electricity access, at just 5.40% of the population and freshly
+      measured, is severe, among the lowest levels recorded in this
+      corpus. Basic drinking water access, also fresh, is similarly
+      weak. Government Effectiveness and Control of Corruption --
+      shared with Pillar A -- both score near the scale's floor.
+      Social protection coverage, estimated from regional peers rather
+      than measured directly, is the pillar's only imputed figure.
+      Four of the pillar's five indicators are current, describing a
+      state with limited capacity to build infrastructure for its own
+      citizens.
+    drivers:
+      - "electricity access just 5.40% of the population (fresh) -- severe, among the lowest levels recorded in this corpus"
+      - "basic drinking water access also weak (fresh); Government Effectiveness and Control of Corruption (shared with Pillar A) both near the scale's floor"
+      - "social protection the pillar's only imputed figure (regional mean); 4 of 5 indicators current"
+    citations: [c7]
+
+recent:
+  primary:
+    - headline: "Kiir places Machar under house arrest, collapsing the unity government"
+      date: 2025-03-26
+      summary: >
+        President Salva Kiir placed First Vice President Riek Machar
+        under house arrest on 26 March 2025 following clashes in
+        Nasir County, and in September 2025 the government charged
+        him with murder, treason and crimes against humanity. The move
+        effectively ended the power-sharing unity government the 2018
+        Revitalized Agreement had built.
+      why_it_matters: >
+        Directly explains Pillar A's severity and precedes South
+        Sudan's return to open warfare documented in the next item;
+        Human Rights Watch and other observers have called for due
+        process and a fair trial.
+      news_url: "https://www.cnn.com/2025/09/12/africa/south-sudan-vp-machar-treason-charge-intl"
+      wikipedia_url: "https://en.wikipedia.org/wiki/Riek_Machar"
+      sentiment: negative
+    - headline: "Government launches Jonglei offensive as civil war resumes"
+      date: 2026-01-27
+      summary: >
+        The South Sudan People's Defence Forces launched a large-scale
+        operation against opposition and allied White Army forces in
+        Jonglei state on 27 January 2026, following weeks of clashes
+        that killed at least 200 people and displaced more than
+        230,000 -- the country's most serious return to open conflict
+        since the 2018 peace agreement.
+      why_it_matters: >
+        A direct, current consequence of the unity government's
+        collapse, and the sharpest test yet of whether the 2018 peace
+        agreement's gains can survive Kiir and Machar's renewed
+        confrontation.
+      news_url: "https://www.aljazeera.com/news/2026/1/28/south-sudan-launches-offensive-against-opposition-forces-what-to-know"
+      wikipedia_url: ""
+      sentiment: negative
+    - headline: "Oil exports resume after a tripartite security agreement with Sudan's warring factions"
+      date: 2025-12-11
+      summary: >
+        South Sudan's oil production resumed after an 11 December 2025
+        security agreement between South Sudan's own defence forces
+        and Sudan's warring Sudan Armed Forces and Rapid Support
+        Forces, jointly securing the export pipeline route. The
+        pipeline had been repeatedly disrupted since March 2024 by
+        Sudan's civil war, contributing to a 23.8% contraction of
+        South Sudan's economy in 2025.
+      why_it_matters: >
+        A concrete, verifiable economic recovery, credited independent
+        of the domestic political crisis documented alongside it --
+        though it depends entirely on continued cooperation between
+        Sudan's own warring parties, a fragility this record does not
+        overstate.
+      news_url: "https://sudantribune.com/article/308313"
+      wikipedia_url: ""
+      sentiment: positive
+  extended:
+    - headline: "South Sudan sets December 2026 date for its first-ever national election"
+      date: 2024-09-18
+      summary: >
+        Signatories to the 2018 peace agreement, including President
+        Kiir and Vice President Machar, agreed on 18 September 2024 to
+        postpone South Sudan's first-ever national election -- already
+        delayed twice since independence -- to 22 December 2026,
+        extending the transitional period originally meant to end in
+        February 2020.
+      why_it_matters: >
+        A firm date exists for an election South Sudan has never held,
+        but the March 2025 unity-government collapse and the Jonglei
+        offensive documented in recent.primary raise serious questions
+        about whether the vote can credibly proceed on schedule.
+      news_url: "https://www.ictj.org/latest-news/south-sudan-postpones-december-election-two-years"
+      wikipedia_url: "https://en.wikipedia.org/wiki/2026_South_Sudanese_general_election"
+      sentiment: mixed
+
+events:
+  - year: 2011
+    type: independence
+    title: "South Sudan becomes the world's newest country"
+    description: >
+      Following a January 2011 referendum in which 98.83% of voters
+      chose independence, South Sudan formally seceded from Sudan on 9
+      July 2011, ending the interim period set by the 2005
+      Comprehensive Peace Agreement.
+    url: "https://www.britannica.com/place/South-Sudan/The-2005-Comprehensive-Peace-Agreement"
+    direction: improve
+  - year: 2013
+    type: conflict
+    title: "Civil war erupts between Kiir and Machar"
+    description: >
+      In December 2013, President Salva Kiir accused Vice President
+      Riek Machar of plotting a coup, igniting a civil war fought
+      substantially along Dinka-Nuer lines that killed an estimated
+      400,000 people and displaced three million by the time of the
+      2018 peace agreement.
+    url: "https://www.cfr.org/global-conflict-tracker/conflict/civil-war-south-sudan"
+    direction: deteriorate
+  - year: 2018
+    type: constitutional
+    title: "Revitalized peace agreement signed"
+    description: >
+      The Revitalized Agreement on the Resolution of the Conflict in
+      the Republic of South Sudan was signed on 12 September 2018 in
+      Addis Ababa, leading to a unity government sworn in with Machar
+      as first vice president in February 2020.
+    url: "https://www.accord.org.za/conflict-trends/the-formation-of-the-revitalized-transitional-government-of-national-unity-in-south-sudan/"
+    direction: improve
+  - year: 2025
+    type: coup
+    title: "Machar's house arrest collapses the unity government"
+    description: >
+      President Kiir placed Machar under house arrest on 26 March 2025
+      and charged him with murder, treason and crimes against humanity
+      that September, ending the power-sharing arrangement the 2018
+      peace agreement had built and preceding a return to open warfare.
+    url: "https://www.cnn.com/2025/09/12/africa/south-sudan-vp-machar-treason-charge-intl"
+    direction: deteriorate
+
+citations:
+  - id: c1
+    url: "https://en.wikipedia.org/wiki/First_Sudanese_Civil_War"
+    source_type: wikipedia
+    title: "First Sudanese Civil War"
+    accessed: 2026-08-11
+    verified: true
+  - id: c2
+    url: "https://www.britannica.com/question/What-led-to-the-secession-of-South-Sudan-in-2011"
+    source_type: news
+    title: "What led to the secession of South Sudan in 2011? (Britannica)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c3
+    url: "https://www.britannica.com/place/South-Sudan/The-2005-Comprehensive-Peace-Agreement"
+    source_type: news
+    title: "South Sudan - The 2005 Comprehensive Peace Agreement (Britannica)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c4
+    url: "https://www.cfr.org/global-conflict-tracker/conflict/civil-war-south-sudan"
+    source_type: news
+    title: "Instability in South Sudan (Council on Foreign Relations, Global Conflict Tracker)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c5
+    url: "https://www.thenewhumanitarian.org/in-depth/south-sudan-humanitarian-toll-half-decade-war"
+    source_type: news
+    title: "South Sudan: The humanitarian toll of half a decade of war (The New Humanitarian)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c6
+    url: "https://www.accord.org.za/conflict-trends/the-formation-of-the-revitalized-transitional-government-of-national-unity-in-south-sudan/"
+    source_type: news
+    title: "The Formation of the Revitalized Transitional Government of National Unity in South Sudan (ACCORD)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c7
+    url: "https://www.cnn.com/2025/09/12/africa/south-sudan-vp-machar-treason-charge-intl"
+    source_type: news
+    title: "South Sudan's vice president charged with treason and murder (CNN)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c8
+    url: "https://www.aljazeera.com/news/2026/1/28/south-sudan-launches-offensive-against-opposition-forces-what-to-know"
+    source_type: news
+    title: "South Sudan launches offensive against opposition forces: What to know (Al Jazeera)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c9
+    url: "https://www.thenewhumanitarian.org/news-feature/2026/03/12/south-sudan-power-sharing-collapse-drives-violence-mass-displacement"
+    source_type: news
+    title: "South Sudan power-sharing collapse drives violence and mass displacement (The New Humanitarian)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c10
+    url: "https://sudantribune.com/article/308313"
+    source_type: news
+    title: "South Sudan, Sudan agree to resume production at Heglig, Bamboo oil fields (Sudan Tribune)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c11
+    url: "https://www.unicef.org/press-releases/hunger-intensifies-south-sudan-78-million-people-face-high-acute-food-insecurity-0"
+    source_type: news
+    title: "Hunger intensifies in South Sudan as 7.8 million people face high acute food insecurity (UNICEF)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c12
+    url: "https://www.ictj.org/latest-news/south-sudan-postpones-december-election-two-years"
+    source_type: news
+    title: "South Sudan Postpones December Election by Two Years (International Center for Transitional Justice)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c13
+    url: "https://www.wvi.org/south-sudan/article/south-sudan-joins-east-african-community-bloc"
+    source_type: news
+    title: "South Sudan Joins East African Community Bloc (World Vision International)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c14
+    url: "https://igad.int/about/"
+    source_type: official
+    title: "About IGAD"
+    accessed: 2026-08-11
+    verified: true
+
+rec_membership:
+  - org: EAC
+    joined: 2016
+    status: current
+    left: null
+    citations: [c13]
+  - org: IGAD
+    joined: 2011
+    status: current
+    left: null
+    citations: [c14]
+
+balance:
+  n_positive: 1
+  n_negative: 2
+  n_mixed: 1
+  note: >
+    Machar's arrest/treason-charge item and the Jonglei-offensive item
+    are kept as two distinct negatives rather than merged into one,
+    because they document different things: the first is an
+    institutional and political collapse, the second is its
+    battlefield consequence, weeks apart and separately verifiable.
+    The oil-pipeline resumption is coded positive at full weight
+    because it is a real, concrete, verifiable economic recovery,
+    independent of the political crisis unfolding at the same time --
+    the same standard this corpus applies to crediting a genuine
+    achievement without letting surrounding turmoil discount it -- but
+    its own fragility (it depends on a security agreement between
+    Sudan's warring SAF and RSF, not South Sudan's own government) is
+    stated plainly rather than glossed over. The December 2026 election
+    date is coded mixed, not positive: a firm date exists for a vote
+    South Sudan has never held, but the record does not treat a
+    scheduled date as an achievement when the unity government whose
+    signatories set it has since collapsed.
