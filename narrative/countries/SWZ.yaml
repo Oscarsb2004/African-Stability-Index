@@ -1,0 +1,448 @@
+meta:
+  iso3: SWZ
+  name: Eswatini
+  last_updated: 2026-08-11
+  iteration_count: 1
+  next_action: >
+    EXPAND: (1) follow whether the HRW report on unaccountability for
+    the June 2021 crackdown produces any diplomatic or regional
+    consequence; (2) follow whether the fiscal deficit's sharp
+    widening (1.1% to 6.1% of GDP) continues or is corrected; (3)
+    follow whether Eswatini's 95-95-95 HIV achievement is sustained
+    past 2024; (4) check whether Pillars A/E/F carried-forward and
+    absent indicators gain fresh coverage; (5) check if Pillar C has
+    gained coverage.
+  model_used: claude-sonnet-5
+
+historical:
+  overview: >
+    Britain established a protectorate over Swaziland in 1902,
+    administering it alongside Bechuanaland (now Botswana) and
+    Basutoland (now Lesotho) as one of three High Commission
+    Territories, preserving the Swazi monarchy under indirect rule
+    throughout. Swaziland gained independence in 1968 under King
+    Sobhuza II, who had reigned since 1921, with a Westminster-style
+    constitution permitting multiparty politics. Sobhuza tolerated
+    this only until 1972, when an opposition party won three seats in
+    the House of Assembly; on 12 April 1973 he repealed the
+    constitution outright, banning political parties, dissolving
+    parliament, and declaring that "all legislative, executive and
+    judicial power" was vested in himself. In 1977 he abolished the
+    parliamentary system entirely in favour of rule through
+    traditional institutions. Sobhuza died in 1982; his son Mswati III
+    succeeded him in 1986 and has ruled under the terms of the 1973
+    decree ever since, appointing the prime minister, cabinet, and
+    commanding the military and police directly. In 2018, on the
+    fiftieth anniversary of independence, Mswati renamed the country
+    from Swaziland to Eswatini. Pro-democracy protests erupted in May
+    and June 2021 after the suspicious death of a young law student in
+    police custody; security forces killed at least 46 people in the
+    ensuing crackdown, and more than four years later, no member of
+    the security forces has been held accountable for any of the
+    deaths, torture or abductions documented during the unrest.
+  overview_citations: [c1, c2, c3, c4, c5]
+  colonial_legacy: >
+    context/colonial_history.yaml already notes that Swaziland was
+    administered alongside Bechuanaland and Basutoland as British High
+    Commission Territories, with the Swazi monarchy preserved under
+    indirect rule -- the same colonial arrangement this corpus's
+    Botswana and Lesotho records document from their own sides. All
+    three territories emerged from an identical colonial structure and
+    comparable timelines (Eswatini independent 1968, Botswana and
+    Lesotho both in 1966), yet took the most sharply divergent
+    post-independence paths of any comparable group in this corpus:
+    Botswana became one of Africa's most durable multiparty
+    democracies, Lesotho weathered repeated coup attempts but retained
+    competitive elections throughout, and Eswatini alone became, and
+    remains, Africa's last absolute monarchy. That divergence did not
+    come from the colonial structure itself, which preserved all three
+    monarchies equally; it came from a specific post-independence
+    choice, Sobhuza II's 1973 decision to repeal Eswatini's own
+    Westminster constitution rather than govern within it. Indirect
+    rule preserved the institutional raw material for a king to seize
+    full power if he chose to; only Eswatini's did.
+  colonial_legacy_citations: [c1, c2]
+  key_periods:
+    - title: "British protection and the High Commission Territories"
+      period: "1902-1968"
+      summary: >
+        Britain established a protectorate over Swaziland in 1902,
+        administering it alongside Bechuanaland and Basutoland as one
+        of three High Commission Territories, preserving the Swazi
+        monarchy under indirect rule. Swaziland gained independence in
+        1968 under King Sobhuza II, who had reigned since 1921, with a
+        Westminster-style constitution permitting multiparty politics.
+      citations: [c1, c2]
+    - title: "The 1973 repeal of the constitution"
+      period: "1972-1977"
+      summary: >
+        Sobhuza II tolerated multiparty politics only until 1972, when
+        an opposition party won three seats; on 12 April 1973 he
+        repealed the constitution outright, banning political parties
+        and vesting all legislative, executive and judicial power in
+        himself. In 1977 he abolished the parliamentary system
+        entirely in favour of rule through traditional institutions.
+      citations: [c2]
+    - title: "Mswati III's succession and the 2018 name change"
+      period: "1986-2018"
+      summary: >
+        Sobhuza died in 1982; his son Mswati III succeeded him in 1986
+        and has ruled under the terms of the 1973 decree ever since,
+        appointing the prime minister, cabinet, and commanding the
+        military and police directly. In 2018, on the fiftieth
+        anniversary of independence, Mswati renamed the country from
+        Swaziland to Eswatini.
+      citations: [c3]
+    - title: "The 2021 pro-democracy crackdown"
+      period: "2021-2025"
+      summary: >
+        Pro-democracy protests erupted in May and June 2021 after the
+        suspicious death of a young law student in police custody;
+        security forces killed at least 46 people in the ensuing
+        crackdown. More than four years later, an October 2025 Human
+        Rights Watch report found no member of the security forces had
+        been held accountable for any of the deaths, torture or
+        abductions.
+      citations: [c4, c5]
+
+pillars:
+  A:
+    summary: >
+      All six World Governance Indicators are directly measured this
+      year, and the aggregate is weak -- Voice and Accountability
+      (32.4), close to the scale's floor, is by far the weakest,
+      consistent with Africa's last absolute monarchy: King Mswati III
+      has ruled by decree since 1986 under a 1973 royal proclamation
+      that abolished multiparty politics outright, banning political
+      parties and vesting all legislative, executive and judicial
+      power in the crown. Political Stability and Rule of Law are
+      comparatively less severe, though this pillar's 2023 reference
+      year predates the ongoing accountability failure documented
+      under recent developments.
+    drivers:
+      - "all 6 WGI indicators directly measured; Voice and Accountability (32.4), close to the scale's floor, by far the weakest -- consistent with Africa's last absolute monarchy"
+      - "King Mswati III has ruled by decree since 1986 under a 1973 royal proclamation that abolished multiparty politics and vested all power in the crown"
+      - "Political Stability and Rule of Law comparatively less severe; 2023 reference year predates the ongoing accountability failure documented under recent developments"
+    citations: [c2, c4]
+  B:
+    summary: >
+      GDP growth, GDP per capita and domestic credit, all freshly
+      measured, show real middle-income status -- GDP per capita
+      ($11,309 PPP) is comparatively high for this corpus. Inflation,
+      carried forward, is comparatively strong. Gini is entirely
+      unmeasured this year. This pillar's 2023 reference year predates
+      a genuine, if narrow, bright spot: the sugar industry, one of
+      Eswatini's largest export earners, generated E8 billion in the
+      2025/26 financial year, up from E7.7 billion the year before,
+      even as the country's overall fiscal deficit widened sharply
+      amid rising public wages and investment.
+    drivers:
+      - "GDP growth, GDP per capita, domestic credit all fresh -- GDP per capita ($11,309 PPP) comparatively high for this corpus, real middle-income status"
+      - "inflation comparatively strong (carried forward); Gini entirely unmeasured this year"
+      - "2023 reference year predates a genuine bright spot: sugar-industry revenue reached E8bn in 2025/26 (from E7.7bn), even as the fiscal deficit widened sharply"
+    citations: [c9]
+  D:
+    summary: >
+      All five indicators are directly measured this year, and the
+      aggregate is weak but not the corpus's most severe: life
+      expectancy and infant mortality are both comparatively poor.
+      Severe food insecurity, handwashing-facility access and safely
+      managed drinking water are all similarly weak. Five of the
+      pillar's five indicators are current, a fully-measured pillar
+      whose weakness sits alongside a genuine, independently verified
+      achievement documented under recent developments: Eswatini
+      reached all three UNAIDS 95-95-95 HIV treatment targets by the
+      end of 2024, despite having one of the world's highest HIV
+      prevalence rates.
+    drivers:
+      - "all 5 indicators directly measured; life expectancy and infant mortality both comparatively poor; severe food insecurity, handwashing access, safely managed water all similarly weak"
+      - "5 of 5 indicators current -- weak but not the corpus's most severe"
+      - "this pillar's raw numbers don't yet reflect Eswatini reaching all three UNAIDS 95-95-95 HIV treatment targets by end-2024, despite one of the world's highest HIV prevalence rates (see recent developments)"
+    citations: [c7]
+  E:
+    summary: >
+      Political Stability and Rule of Law, both fresh and shared with
+      Pillar A, are middling. Intentional homicide, carried forward
+      rather than fresh, is comparatively severe, well above what a
+      country without active conflict would typically register. Displaced
+      persons is entirely unmeasured this year. Only two of the
+      pillar's four indicators are current, and none of them capture
+      the June 2021 pro-democracy crackdown documented under recent
+      developments, in which security forces killed at least 46
+      people, with civil society estimates running considerably
+      higher.
+    drivers:
+      - "Political Stability and Rule of Law (shared with Pillar A) both middling, fresh"
+      - "intentional homicide comparatively severe (carried forward, not fresh); displaced persons entirely unmeasured"
+      - "only 2 of 4 indicators current -- none capture the June 2021 pro-democracy crackdown (see recent developments): at least 46 killed"
+    citations: [c4]
+  F:
+    summary: >
+      CO2 emissions per capita, freshly measured, are comparatively
+      low, and this reads as at least partly genuine: the
+      carried-forward electricity-generation figure shows just 2.71%
+      of Eswatini's own power from fossil sources, among the lowest
+      fossil shares recorded anywhere in this corpus. Freshwater
+      withdrawal, also carried forward, is comparatively severe --
+      Eswatini draws over 40% of its internal renewable water
+      resources annually, a genuine water-stress signal rather than an
+      artefact. Agricultural land share, fresh, is extensive. Only two
+      of the pillar's four indicators are current.
+    drivers:
+      - "CO2 pc comparatively low (fresh) -- reads as at least partly genuine: electricity generation just 2.71% fossil-fuel (carried forward), among the lowest fossil shares recorded anywhere in this corpus"
+      - "freshwater withdrawal comparatively severe (carried forward) -- over 40% of internal renewable resources drawn annually, a genuine water-stress signal"
+      - "agricultural land extensive (fresh); only 2 of 4 indicators current"
+    citations: [c9]
+  G:
+    summary: >
+      Electricity access, at 86% of the population and freshly
+      measured, is comparatively strong for this corpus, helped by the
+      low-fossil generation mix documented in Pillar F. Basic drinking
+      water access, also fresh, is comparatively decent. Government
+      Effectiveness and Control of Corruption, shared with Pillar A,
+      are both weak. Social protection coverage is entirely unmeasured
+      this year. Four of the pillar's five indicators are current,
+      describing infrastructure reach that has outpaced the governance
+      weakness documented in Pillar A, even as the King's control over
+      the state remains total.
+    drivers:
+      - "electricity access 86% of the population (fresh) -- comparatively strong for this corpus; basic drinking water comparatively decent (fresh)"
+      - "Government Effectiveness and Control of Corruption (shared with Pillar A) both weak; social protection entirely unmeasured"
+      - "4 of 5 indicators current -- infrastructure reach has outpaced the governance weakness documented in Pillar A"
+    citations: [c2]
+
+recent:
+  primary:
+    - headline: "Four years on, no accountability for the June 2021 pro-democracy crackdown"
+      date: 2025-10-30
+      summary: >
+        Pro-democracy protests, triggered by the suspicious May 2021
+        death of law student Thabani Nkomonye at the hands of police,
+        escalated into nationwide unrest in June and July 2021;
+        security forces killed at least 46 people, with civil society
+        groups estimating the true toll exceeds 100. A Human Rights
+        Watch report published 30 October 2025 found that, more than
+        four years later, no security force member has been held
+        accountable for any of the killings, torture, or abductions
+        documented during the crackdown.
+      why_it_matters: >
+        Directly explains Pillar A's severity and Pillar E's thin,
+        dated reading, and demonstrates that the absence of political
+        accountability documented in this record's governance scores
+        extends to the justice system's response to its own state
+        violence.
+      news_url: "https://www.hrw.org/news/2025/10/30/eswatini-no-justice-for-june-2021-security-force-violence"
+      wikipedia_url: ""
+      sentiment: negative
+    - headline: "Eswatini reaches all three UNAIDS HIV treatment targets"
+      date: 2024-12-31
+      summary: >
+        Eswatini became one of the first countries in the world to
+        reach all three UNAIDS 95-95-95 HIV treatment targets by the
+        end of 2024, despite having one of the world's highest HIV
+        prevalence rates. A 2021 national survey found treatment and
+        viral-suppression rates of 94-97-96, already surpassing the
+        UNAIDS targets ahead of the 2025 deadline, with HIV incidence
+        having fallen 44% over the preceding decade.
+      why_it_matters: >
+        A genuine, independently verified public-health achievement
+        credited at full weight, on the same standard already applied
+        to Botswana's and Lesotho's own HIV/AIDS achievements elsewhere
+        in this corpus, despite the severe governance record documented
+        in Pillar A.
+      news_url: "https://2021-2025.state.gov/eswatini-surpasses-unaids-fast-track-targets-for-treatment-and-viral-suppression/"
+      wikipedia_url: ""
+      sentiment: positive
+    - headline: "Sugar revenue hits record E8 billion as the fiscal deficit widens sharply"
+      date: 2026-02-01
+      summary: >
+        Eswatini's sugar industry, one of the country's largest export
+        earners, generated E8 billion in revenue in the 2025/26
+        financial year, up from E7.7 billion the year before, despite
+        falling global sugar prices and adverse weather. Over the same
+        period, the national fiscal deficit rose sharply to 6.1% of
+        GDP, from 1.1% the previous year, driven by public-sector wage
+        increases and higher public investment, pushing public debt
+        from 40% to 44.7% of GDP.
+      why_it_matters: >
+        A real export success sitting alongside a genuine and rapidly
+        worsening fiscal picture, illustrating that revenue from a
+        single sector cannot by itself offset broader public-spending
+        pressures.
+      news_url: "https://www.fas.usda.gov/data/eswatini-sugar-annual-0"
+      wikipedia_url: ""
+      sentiment: mixed
+  extended:
+    - headline: "Parliamentary election proceeds with no political parties on the ballot"
+      date: 2023-09-29
+      summary: >
+        Eswatini held a general election on 29 September 2023 under
+        the Tinkhundla system, in which all candidates ran as
+        individuals rather than under any political party -- parties
+        remain banned outright, with no legal path to register. The
+        election filled 55 of the House of Assembly's 66 seats; the
+        King appoints the remaining 10 directly, along with the entire
+        cabinet and prime minister, regardless of the election's
+        outcome.
+      why_it_matters: >
+        A functioning electoral process that nonetheless cannot
+        produce a change of government, since the monarchy retains
+        full executive appointment power independent of any vote -- a
+        structural, permanent version of the exclusion mechanisms
+        documented as one-off events elsewhere in this corpus (CMR,
+        TUN, CIV).
+      news_url: "https://en.wikipedia.org/wiki/2023_Swazi_general_election"
+      wikipedia_url: ""
+      sentiment: negative
+
+events:
+  - year: 1968
+    type: independence
+    title: "Independence from Britain"
+    description: >
+      Swaziland gained independence from Britain on 6 September 1968
+      under King Sobhuza II, who had reigned since 1921, with a
+      Westminster-style constitution permitting multiparty politics.
+    url: "https://en.wikipedia.org/wiki/Sobhuza_II"
+    direction: improve
+  - year: 1973
+    type: constitutional
+    title: "Sobhuza II repeals the constitution"
+    description: >
+      King Sobhuza II repealed Swaziland's constitution on 12 April
+      1973, banning political parties, dissolving parliament, and
+      vesting all legislative, executive and judicial power in
+      himself, establishing the absolute monarchy that continues today.
+    url: "https://en.wikipedia.org/wiki/Constitution_of_Eswatini"
+    direction: deteriorate
+  - year: 2021
+    type: conflict
+    title: "Security forces kill dozens in a pro-democracy crackdown"
+    description: >
+      Pro-democracy protests in May-June 2021, triggered by a young law
+      student's suspicious death in police custody, were met with a
+      crackdown that killed at least 46 people.
+    url: "https://www.amnesty.org/en/latest/press-release/2021/07/eswatini-dozens-killed-tortured-abducted-as-pro-democracy-protests-intensify/"
+    direction: deteriorate
+  - year: 2023
+    type: election
+    title: "Election held with no political parties permitted"
+    description: >
+      Eswatini held a general election on 29 September 2023 under the
+      Tinkhundla system, in which all candidates ran as individuals;
+      political parties remain banned, and the King retains full
+      executive appointment power regardless of the result.
+    url: "https://en.wikipedia.org/wiki/2023_Swazi_general_election"
+    direction: mixed
+
+citations:
+  - id: c1
+    url: "https://en.wikipedia.org/wiki/Constitution_of_Eswatini"
+    source_type: wikipedia
+    title: "Constitution of Eswatini"
+    accessed: 2026-08-11
+    verified: true
+  - id: c2
+    url: "https://en.wikipedia.org/wiki/Sobhuza_II"
+    source_type: wikipedia
+    title: "Sobhuza II"
+    accessed: 2026-08-11
+    verified: true
+  - id: c3
+    url: "https://en.wikipedia.org/wiki/Mswati_III"
+    source_type: wikipedia
+    title: "Mswati III"
+    accessed: 2026-08-11
+    verified: true
+  - id: c4
+    url: "https://www.hrw.org/news/2025/10/30/eswatini-no-justice-for-june-2021-security-force-violence"
+    source_type: news
+    title: "Eswatini: No Justice for June 2021 Security Force Violence (Human Rights Watch)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c5
+    url: "https://www.amnesty.org/en/latest/press-release/2021/07/eswatini-dozens-killed-tortured-abducted-as-pro-democracy-protests-intensify/"
+    source_type: news
+    title: "Eswatini: Dozens killed, tortured, abducted as pro-democracy protests intensify (Amnesty International)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c6
+    url: "https://www.aljazeera.com/news/2021/7/2/as-tension-prevails-relatives-mourn-eswatini-crackdown-victims"
+    source_type: news
+    title: "As tension prevails, relatives mourn Eswatini crackdown victims (Al Jazeera)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c7
+    url: "https://2021-2025.state.gov/eswatini-surpasses-unaids-fast-track-targets-for-treatment-and-viral-suppression/"
+    source_type: official
+    title: "Eswatini surpasses UNAIDS Fast-track Targets for treatment and viral suppression (US State Department)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c8
+    url: "https://www.unaids.org/en/resources/presscentre/featurestories/2024/april/20240425_eswatini"
+    source_type: official
+    title: "How communities led in the HIV response, saving lives in Eswatini (UNAIDS)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c9
+    url: "https://www.fas.usda.gov/data/eswatini-sugar-annual-0"
+    source_type: news
+    title: "Eswatini: Sugar Annual (USDA Foreign Agricultural Service)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c10
+    url: "https://www.channelafrica.co.za/channelafrica/news/eswatini-growth-to-slow-after-strong-2025-performance-imf/"
+    source_type: news
+    title: "eSwatini growth to slow after strong 2025 performance: IMF (Channel Africa)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c11
+    url: "https://en.wikipedia.org/wiki/2023_Swazi_general_election"
+    source_type: wikipedia
+    title: "2023 Swazi general election"
+    accessed: 2026-08-11
+    verified: true
+  - id: c12
+    url: "https://www.sadc.int/pages/history-and-treaty"
+    source_type: official
+    title: "History and Treaty (SADC)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c13
+    url: "https://en.wikipedia.org/wiki/Common_Market_for_Eastern_and_Southern_Africa"
+    source_type: wikipedia
+    title: "Common Market for Eastern and Southern Africa"
+    accessed: 2026-08-11
+    verified: true
+
+rec_membership:
+  - org: SADC
+    joined: 1980
+    status: current
+    left: null
+    citations: [c12]
+  - org: COMESA
+    joined: 1994
+    status: current
+    left: null
+    citations: [c13]
+
+balance:
+  n_positive: 1
+  n_negative: 2
+  n_mixed: 1
+  note: >
+    The June 2021 crackdown-accountability item and the 2023
+    no-parties-permitted election are kept as two distinct negatives
+    rather than merged into one, because they document different
+    things: a specific episode of lethal state violence and its
+    continuing impunity, and the permanent structural mechanism that
+    excludes any electoral path to change the government at all. The
+    HIV treatment achievement is credited at full positive weight,
+    independent of the severe governance record documented elsewhere
+    in this record -- the same standard this corpus applies to
+    crediting a genuine public-health achievement without letting
+    surrounding political conduct discount it. The sugar-revenue item
+    is coded mixed rather than positive: real export growth sits
+    beside a fiscal deficit that widened more than fivefold in the
+    same period, and this record credits neither in isolation.

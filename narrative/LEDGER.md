@@ -26,7 +26,7 @@ An audit is forced early if a single run inflates the citation count by more tha
 
 ## Status
 
-**45 of 54 countries have a record (Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria, Rwanda, Chad, Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic, Mauritania, Zimbabwe, Comoros, Uganda, Sierra Leone, Equatorial Guinea, The Gambia, Mozambique, Guinea, South Sudan, Lesotho, Sao Tome & Principe, Togo, Cameroon, Burundi, Tunisia, Cote d'Ivoire, Zambia, Senegal, Gabon, Malawi). The first pass is complete; Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic, Mauritania, Zimbabwe, Comoros, Uganda, Sierra Leone, Equatorial Guinea, The Gambia, Mozambique, Guinea, South Sudan, Lesotho, Sao Tome & Principe, Togo, Cameroon, Burundi, Tunisia, Cote d'Ivoire, Zambia, Senegal, Gabon and Malawi are the first thirty-six backlog countries.**
+**46 of 54 countries have a record (Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria, Rwanda, Chad, Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic, Mauritania, Zimbabwe, Comoros, Uganda, Sierra Leone, Equatorial Guinea, The Gambia, Mozambique, Guinea, South Sudan, Lesotho, Sao Tome & Principe, Togo, Cameroon, Burundi, Tunisia, Cote d'Ivoire, Zambia, Senegal, Gabon, Malawi, Eswatini). The first pass is complete; Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic, Mauritania, Zimbabwe, Comoros, Uganda, Sierra Leone, Equatorial Guinea, The Gambia, Mozambique, Guinea, South Sudan, Lesotho, Sao Tome & Principe, Togo, Cameroon, Burundi, Tunisia, Cote d'Ivoire, Zambia, Senegal, Gabon, Malawi and Eswatini are the first thirty-seven backlog countries.**
 
 ### First pass — 9 countries
 
@@ -87,14 +87,15 @@ whose ranks swing hardest with the weighting method.
 | SEN | Senegal | fills West Africa (13 of 16 done); a reliable-tier composite score, joining ZAF/KEN/EGY as the corpus's non-thin countries; a genuinely distinct trajectory shape -- a term-limit crisis resolved through domestic courts and civic pressure, not a coup or entrenchment, when Sall's Feb 2024 postponement was overturned and Faye rose from prison to the presidency in 20 days; the same reform government fractured just over two years later when Faye fired his own mentor Sonko as PM in May 2026; a genuine boom (Sangomar oil field) arriving alongside a genuine crisis (a hidden-debt scandal revealing $7-13B concealed); a distinctive colonial mechanism -- the Quatre Communes' partial citizenship rights, not uniform exclusion | **done — iteration 1** |
 | GAB | Gabon | fills Central Africa (7 of 8 done); the corpus's clearest comparative pair with GIN -- coup leader Oligui Nguema promised only a transition, then won the resulting 2025 election himself with 90.35%, this time via a constitution engineered in advance to exclude the family he deposed; France's 1964 intervention to restore M'ba is an earlier, more explicit precedent than CIV's 2011 Licorne mission, its 2023 absence reading as confirmation of waning French intervention appetite across the same coup wave as MLI/BFA/NER; a genuine positive (rainforest ecosystem services valued at $75.1B) that Pillar F cannot fully capture, since the index measures emissions, not carbon absorption | **done — iteration 1** |
 | MWI | Malawi | fills East Africa (12 of 14 done); the corpus's strongest sustained democratic-accountability throughline, tested and confirmed functional three separate times since 1994 -- Parliament rejected Muluzi's 2002 third-term bid by 3 votes, the Constitutional Court annulled a fraudulent 2019 election in 2020 (correction fluid on tally sheets, only the third such African judicial annulment after Kenya and CIV), and the same electorate voted the resulting Chakwera government out again in Sept 2025; a distinctive colonial mechanism -- Nyasaland's protectorate framed around anti-slavery yet became a conventional labour-extraction colony supplying Rhodesian mines; near-record severe food insecurity (55.60%, second only to SSD) | **done — iteration 1** |
+| SWZ | Eswatini | completes Southern Africa (5 of 5 done); genuinely unique in this corpus -- Africa's last absolute monarchy, unrepresented anywhere else among the countries done so far; a deliberate triangular cross-reference with BWA and LSO -- all three were British High Commission Territories with an identical colonial arrangement, yet took the most sharply divergent post-independence paths of any comparable group, traced to Sobhuza II's specific 1973 choice to repeal the Westminster constitution rather than a colonial-structure difference; a genuine positive (95-95-95 HIV achievement) on the same standard as BWA/LSO's own HIV milestones, credited despite an ongoing accountability failure for the June 2021 crackdown that killed at least 46 protesters | **done — iteration 1** |
 
-### Backlog — the remaining 9
+### Backlog — the remaining 8
 
 Listed in full in `narrative/state.yaml` under `backlog`. They are recorded
 explicitly rather than left implicit: a country with no record should be visibly
 absent, not quietly missing.
 
-Libya, Benin, Cabo Verde, Guinea-Bissau, Republic of Congo, Djibouti, Tanzania, Eswatini, Seychelles
+Libya, Benin, Cabo Verde, Guinea-Bissau, Republic of Congo, Djibouti, Tanzania, Seychelles
 
 ---
 
@@ -1608,6 +1609,42 @@ Append one line per run: date, country, mode, what changed, what was removed.
   bot-detection pattern) — 11/12 resolved. Full pytest suite: 106
   passed.
 
+- **2026-08-11 — SWZ — CREATE. Thirty-seventh backlog country,
+  completes Southern Africa (5 of 5 done).** Full baseline built:
+  historical overview, colonial legacy (a deliberate triangular
+  cross-reference with BWA and LSO — all three were British High
+  Commission Territories with an identical colonial arrangement
+  (monarchy preserved under indirect rule) and comparable independence
+  timelines, yet took the most sharply divergent post-independence
+  paths of any comparable group in the corpus, traced to Sobhuza II's
+  specific 1973 choice to repeal Eswatini's own Westminster
+  constitution rather than a colonial-structure difference), 4
+  key_periods, 6 pillar summaries (Pillar C left empty — greyed at 1/8
+  measured), 3 primary + 1 extended recent items, 4 events,
+  rec_membership (SADC 1980 founding member, COMESA 1994 founding
+  member). 13 sources opened and verified: 4 Wikipedia, 7 news, 2
+  official (US State Dept/UNAIDS, SADC). Genuinely unique in this
+  corpus: Africa's last absolute monarchy, a governance type
+  unrepresented anywhere else among the 46 countries done so far.
+  Following the established discipline, found a genuine positive:
+  Eswatini reached all three UNAIDS 95-95-95 HIV treatment targets by
+  end-2024, credited on the same standard as BWA's and LSO's own HIV
+  milestones already in this corpus, despite one of the world's
+  highest HIV prevalence rates and an ongoing accountability failure
+  for the June 2021 crackdown (at least 46 killed, zero
+  security-force accountability more than four years later per an
+  October 2025 HRW report). The 2023 Tinkhundla election is documented
+  as a structural, permanent version of the exclusion mechanisms this
+  corpus has otherwise seen as one-off events (CMR, TUN, CIV). Balance:
+  1 positive, 2 negative, 1 mixed. Two word-count fixes (pillars.E, G,
+  the latter needing two attempts). One citation swap: a Times of
+  Eswatini URL for the sugar-revenue story returned a genuine URLError
+  timeout under `--links` (the fourth such timeout case in this corpus,
+  after MDG, GMB, STP); replaced with the USDA Foreign Agricultural
+  Service's Eswatini Sugar Annual report, which resolved as a familiar
+  403 bot-detection warning rather than an error. Full pytest suite:
+  106 passed.
+
 ---
 
 ## Meta-notes
@@ -2405,6 +2442,22 @@ Things a future run should know about how to work, not about a specific country.
   poverty fact from Pillar G — a country can be both a low-carbon
   success and an energy-poverty case at once, and naming both is more
   accurate than picking one framing.
+- **2026-08-11** — SWZ completes the corpus's first three-way
+  "identical colonial structure, divergent outcome" trio (BWA, LSO,
+  SWZ, all British High Commission Territories), a stronger version of
+  the two-way pattern already named for RWA/BDI (same colonial cause,
+  different outcome). Worth stating explicitly now that there are
+  three real instances of this typology (RWA/BDI's ethnic-
+  classification pair; BWA/LSO/SWZ's monarchy-preservation trio, plus
+  CMR/TGO's WWI-partition pair): the corpus is accumulating a genuine
+  "colonial structure is necessary but not sufficient" case library,
+  worth a dedicated cross-cutting note or index if the project reaches
+  a synthesis/AUDIT phase across all 54 records. Also: SWZ is the
+  fourth citation-timeout case (after MDG, GMB, STP), all so far
+  resolved by a second swap rather than a first-attempt failure —
+  strong enough a pattern now to treat "budget for a second swap" as a
+  standing expectation, not a surprising exception, for any citation
+  covering very recent news.
 
 ---
 

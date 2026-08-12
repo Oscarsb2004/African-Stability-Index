@@ -1014,6 +1014,35 @@ countries:
       measurement; check whether Pillars E/F carried-forward and
       regional-mean indicators gain fresh coverage; check if Pillar C
       has gained coverage'
+  SWZ:
+    name: Eswatini
+    region: South
+    first_pass: false
+    reason: thirty-seventh backlog country -- completes Southern Africa
+      (5 of 5 done); genuinely unique in this corpus -- Africa's last
+      absolute monarchy, a governance type unrepresented anywhere else
+      among the countries done so far; a deliberate triangular cross-
+      reference with BWA and LSO -- all three were British High
+      Commission Territories with the identical colonial arrangement
+      (monarchy preserved under indirect rule) and comparable
+      independence timelines, yet took the most sharply divergent
+      post-independence paths of any comparable group in the corpus,
+      traced to Sobhuza II''s specific 1973 choice to repeal the
+      Westminster constitution rather than a difference in colonial
+      structure; a genuine positive (95-95-95 HIV achievement) on the
+      same standard as BWA/LSO''s own HIV milestones, credited despite
+      an ongoing accountability failure for the June 2021 crackdown
+      that killed at least 46 protesters
+    iteration_count: 1
+    last_updated: '2026-08-11'
+    next_action: 'EXPAND: follow whether the HRW report on
+      unaccountability for the June 2021 crackdown produces any
+      diplomatic or regional consequence; follow whether the fiscal
+      deficit''s sharp widening (1.1% to 6.1% of GDP) continues or is
+      corrected; follow whether Eswatini''s 95-95-95 HIV achievement is
+      sustained past 2024; check whether Pillars A/E/F carried-forward
+      and absent indicators gain fresh coverage; check if Pillar C has
+      gained coverage'
 backlog:
   LBY:
     name: Libya
@@ -1066,14 +1095,6 @@ backlog:
   TZA:
     name: Tanzania
     region: East
-    first_pass: false
-    reason: not yet scheduled
-    iteration_count: 0
-    last_updated: null
-    next_action: create baseline from blueprint
-  SWZ:
-    name: Eswatini
-    region: South
     first_pass: false
     reason: not yet scheduled
     iteration_count: 0
@@ -2432,3 +2453,39 @@ meta_notes:
   Full pytest suite: 106 passed. Full-corpus check: 0 errors, 2
   pre-existing warnings (COD, EGY all-negative balance, unrelated to
   this run). 45 of 54 countries now have a record.'
+- '2026-08-11: SWZ CREATE run complete (13 sources opened and
+  verified: 4 Wikipedia, 7 news, 2 official (US State Dept/UNAIDS,
+  SADC)). Completes Southern Africa (5 of 5 done). Genuinely unique
+  in this corpus: Africa''s last absolute monarchy, a governance type
+  unrepresented anywhere else among the 46 countries done so far. A
+  deliberate triangular cross-reference with BWA and LSO: all three
+  were British High Commission Territories with an identical colonial
+  arrangement (monarchy preserved under indirect rule) and comparable
+  independence timelines (1966, 1966, 1968), yet took the most
+  sharply divergent post-independence paths of any comparable group
+  in the corpus. colonial_legacy traces the divergence not to the
+  colonial structure itself, which preserved all three monarchies
+  equally, but to Sobhuza II''s specific 1973 choice to repeal
+  Eswatini''s own Westminster constitution -- a post-independence
+  decision, not a colonial-era one. Following the established
+  discipline, found a genuine positive: Eswatini reached all three
+  UNAIDS 95-95-95 HIV treatment targets by end-2024, credited on the
+  same standard as BWA''s and LSO''s own HIV milestones already in
+  this corpus, despite one of the world''s highest HIV prevalence
+  rates and an ongoing accountability failure for the June 2021
+  crackdown (at least 46 killed, zero security-force accountability
+  more than four years later per an October 2025 HRW report). The
+  2023 Tinkhundla election (no political parties permitted, King
+  retains full executive appointment power regardless of result) is
+  documented as a structural, permanent version of the exclusion
+  mechanisms this corpus has otherwise seen as one-off events (CMR,
+  TUN, CIV). Balance: 1 positive, 2 negative, 1 mixed. Two word-count
+  fixes (pillars.E, G, the latter needing two attempts). One citation
+  swap: a Times of Eswatini URL for the sugar-revenue story returned a
+  genuine URLError timeout under `--links` (the fourth such timeout
+  case in this corpus, after MDG, GMB, STP); replaced with the USDA
+  Foreign Agricultural Service''s Eswatini Sugar Annual report, which
+  resolved as a familiar 403 bot-detection warning rather than an
+  error. Full pytest suite: 106 passed. Full-corpus check: 0 errors, 2
+  pre-existing warnings (COD, EGY all-negative balance, unrelated to
+  this run). 46 of 54 countries now have a record.'
