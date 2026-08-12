@@ -1,0 +1,441 @@
+meta:
+  iso3: COG
+  name: Republic of the Congo
+  last_updated: 2026-08-12
+  iteration_count: 1
+  next_action: >
+    EXPAND: (1) follow whether the IMF's Extended Credit Facility
+    programme is renewed, replaced or allowed to lapse given the debt
+    crisis documented here; (2) follow whether the two imprisoned
+    opposition leaders are released or remain jailed through the next
+    electoral cycle; (3) check whether the TotalEnergies/COGO
+    investments show up as a measurable Pillar B improvement once
+    fresher GDP-growth data is available; (4) check if Pillars C and D
+    have gained enough coverage to be written.
+  model_used: claude-sonnet-5
+
+historical:
+  overview: >
+    France colonized Middle Congo as part of French Equatorial Africa
+    from 1880, subjecting it to the same concessionary-company rubber
+    system as neighbouring territories: historian Adam Hochschild
+    estimates the combined population of French Congo and Gabon fell
+    by roughly half under the system, a demographic collapse
+    comparable to King Leopold's Congo Free State. Construction of
+    the Congo-Ocean railway (1921-1934), denounced by journalist
+    Albert Londres as costing "as many deaths as crossties," killed
+    an estimated 17,000-25,000 of the roughly 120,000-150,000
+    conscripted workers. Congo gained independence from France in
+    1960. Denis Sassou Nguesso first seized power in a 1979 coup and
+    ruled under single-party Marxist government until losing Congo's
+    first multiparty election in 1992 to Pascal Lissouba. Civil war
+    broke out in June 1997 when Lissouba's forces moved against
+    Sassou Nguesso's political-military faction; Angolan military
+    intervention, backed politically by France, restored him to power
+    by December 1999. He has ruled continuously since, winning
+    re-election in 2002, 2009, 2016 and 2021, the latter two after a
+    2015 constitutional change removed the presidential age limit and
+    reset term limits. On 15 March 2026, Sassou Nguesso won a fifth
+    consecutive term with 94.90% of the vote after major opposition
+    parties boycotted, two of the country's best-known opposition
+    leaders remained imprisoned, and the government imposed a
+    nationwide internet blackout on election day. Oil, roughly 90% of
+    exports, has not translated into diversified growth: public debt
+    reached 97.2% of GDP by the end of 2025, forcing three Eurobond
+    issuances between November 2025 and February 2026.
+  overview_citations: [c1, c2, c3, c4, c6, c9]
+  colonial_legacy: >
+    context/colonial_history.yaml already frames Middle Congo's
+    colonial period as extractive and names the same concessionary
+    rubber system already documented in this corpus's Central African
+    Republic record, where it triggered the 1928-1931 Kongo-Wara
+    Rebellion. Congo's own version of that system did not produce a
+    comparably large rebellion, but its demographic toll was, if
+    anything, more severe: Adam Hochschild's research estimates the
+    combined population of French Congo and Gabon fell by roughly
+    half under concessionary-company rule, a collapse of the same
+    order as the Congo Free State atrocities under Belgian King
+    Leopold II just across the river -- worth stating plainly rather
+    than treating as a lesser, secondary case simply because it
+    produced fewer headline rebellions. The Congo-Ocean railway, built
+    between 1921 and 1934 specifically to move the same rubber, ivory
+    and timber to the coast for export, killed an estimated
+    17,000-25,000 conscripted labourers, a mortality rate journalist
+    Albert Londres compared directly to the railway's own crosstie
+    count. Brazzaville's status as French Equatorial Africa's
+    administrative capital left Congo with a comparatively more
+    developed colonial-era bureaucracy than most FEA territories, a
+    foundation Sassou Nguesso's post-independence single-party and
+    oil-patronage state built directly on top of rather than replaced.
+  colonial_legacy_citations: [c1, c2]
+  key_periods:
+    - title: "The concessionary rubber system and Congo-Ocean railway"
+      period: "1880-1934"
+      summary: >
+        France's concessionary-company system subjected Middle Congo
+        to the same forced rubber extraction documented elsewhere in
+        this corpus, with a demographic toll historian Adam Hochschild
+        estimates halved the combined population of French Congo and
+        Gabon. Construction of the Congo-Ocean railway (1921-1934) to
+        move that rubber to the coast killed an estimated
+        17,000-25,000 of the roughly 120,000-150,000 conscripted
+        labourers.
+      citations: [c1, c2]
+    - title: "Independence and Sassou Nguesso's first rule"
+      period: "1960-1992"
+      summary: >
+        Congo gained independence from France in 1960, followed by a
+        series of one-party governments under shifting ideological
+        banners. Denis Sassou Nguesso seized power in a 1979 coup and
+        ruled under single-party Marxist government for thirteen
+        years, until Congo's first multiparty election in 1992, which
+        he lost to Pascal Lissouba.
+      citations: [c3]
+    - title: "Civil war and Sassou Nguesso's return"
+      period: "1997-1999"
+      summary: >
+        Civil war broke out in June 1997 when President Lissouba's
+        forces moved against Sassou Nguesso's political-military
+        faction. Angolan military intervention, combined with French
+        political support, restored Sassou Nguesso to power by
+        December 1999, beginning a rule that has continued unbroken
+        since.
+      citations: [c4, c5]
+    - title: "Constitutional entrenchment and the 2026 election"
+      period: "2015-2026"
+      summary: >
+        A 2015 constitutional referendum removed the presidential age
+        limit and reset term limits, clearing the way for Sassou
+        Nguesso to win re-election in 2016 and 2021. On 15 March 2026
+        he won a fifth consecutive term with 94.90% of the vote after
+        major opposition parties boycotted, activists were arrested,
+        and the government imposed an internet blackout on election
+        day.
+      citations: [c6, c7, c8]
+
+pillars:
+  A:
+    summary: >
+      All six World Governance Indicators are directly measured this
+      year, and the aggregate is weak: Control of Corruption (15.4),
+      near the scale's floor, and Voice and Accountability (32.4) are
+      the most severe. This weak reading directly reflects Congo's
+      governance structure, in which Denis Sassou Nguesso has ruled
+      almost continuously since 1979 -- and unbroken since a 1997
+      civil war restored him to power -- most recently extending his
+      rule to a fifth consecutive term on 15 March 2026 with 94.90% of
+      the vote, after major opposition parties boycotted and the
+      government imposed an election-day internet blackout.
+    drivers:
+      - "all 6 WGI indicators directly measured; Control of Corruption (15.4), near the scale's floor, and Voice and Accountability (32.4) the most severe"
+      - "reflects a governance structure in which Sassou Nguesso has ruled almost continuously since 1979, unbroken since a 1997 civil war restored him to power"
+      - "extended to a fifth consecutive term on 15 March 2026 with 94.90% of the vote after major opposition parties boycotted and an election-day internet blackout (see recent developments)"
+    citations: [c7, c8]
+  B:
+    summary: >
+      GDP growth, GDP per capita, inflation and domestic credit, all
+      freshly measured, are middling to weak for this corpus -- GDP
+      growth (34.7) is particularly weak despite Congo's oil wealth.
+      Gini is a regional-mean estimate rather than a direct
+      measurement. This pillar's 2023 reference year predates a
+      severe, still-unfolding debt crisis documented under recent
+      developments: public debt reached 97.2% of GDP by the end of
+      2025, forcing the government to issue three Eurobonds totalling
+      $1.63 billion between November 2025 and February 2026 simply to
+      refinance short-term debt, even as oil, roughly 90% of exports,
+      continued attracting fresh foreign investment.
+    drivers:
+      - "GDP growth, GDP per capita, inflation, domestic credit all fresh; GDP growth (34.7) particularly weak despite Congo's oil wealth; Gini a regional-mean estimate"
+      - "2023 reference year predates a severe, still-unfolding debt crisis: public debt reached 97.2% of GDP by end-2025"
+      - "three Eurobonds totalling $1.63B issued Nov 2025-Feb 2026 simply to refinance short-term debt, even as oil (~90% of exports) continued attracting fresh foreign investment (see recent developments)"
+    citations: [c9, c10]
+  E:
+    summary: >
+      Political Stability and Rule of Law, both fresh and shared with
+      Pillar A, diverge sharply -- Political Stability (65.8) is
+      comparatively decent, reflecting nearly three decades of peace
+      since the 1997-1999 civil war ended, while Rule of Law (37.5)
+      remains weak. Displaced persons, carried forward rather than
+      fresh, is comparatively low, consistent with that same
+      post-1999 peace. Intentional homicide is entirely unmeasured
+      this year. Only two of the pillar's four indicators are
+      current, but both directly-measured indicators point the same
+      direction: a country that has avoided renewed civil conflict
+      without building strong rule-of-law institutions in its place.
+    drivers:
+      - "Political Stability and Rule of Law (shared with Pillar A) diverge: Political Stability (65.8) comparatively decent, reflecting ~3 decades of peace since the 1997-1999 civil war; Rule of Law (37.5) remains weak"
+      - "displaced persons comparatively low (carried forward), consistent with that same post-1999 peace; intentional homicide entirely unmeasured this year"
+      - "only 2 of 4 indicators current, but both point the same direction: peace without strong rule-of-law institutions built in its place"
+    citations: [c4, c5]
+  F:
+    summary: >
+      CO2 emissions per capita, freshly measured, are moderate.
+      Freshwater withdrawal, carried forward, is effectively unlimited
+      relative to renewable resources, reflecting Congo's position
+      within the Congo Basin, the world's second-largest rainforest.
+      Electricity generation from fossil sources, also carried
+      forward, is severe at 77.46% -- a striking irony for a major oil
+      producer whose own population still depends heavily on
+      fossil-based power. Agricultural land share, fresh, is minimal,
+      reflecting how much of Congo's territory remains forested rather
+      than a data-coverage gap. Only two of the pillar's four
+      indicators are current.
+    drivers:
+      - "CO2 pc moderate (fresh); freshwater withdrawal effectively unlimited relative to renewable resources (carried forward), reflecting Congo's position in the Congo Basin, the world's second-largest rainforest"
+      - "electricity generation severe, 77.46% fossil-fuel (carried forward) -- a striking irony for a major oil producer"
+      - "agricultural land minimal (fresh), reflecting how much of the territory remains forested rather than a data-coverage gap; only 2 of 4 indicators current"
+    citations: [c9]
+  G:
+    summary: >
+      Electricity access, at just over half the population and
+      freshly measured, is moderate. Basic drinking water access,
+      carried forward, is more decent. Government Effectiveness and
+      Control of Corruption, shared with Pillar A, are both weak,
+      Control of Corruption near the scale's floor. Social protection
+      coverage, estimated from regional peers rather than measured
+      directly, is severe. Three of the pillar's five indicators are
+      current, describing an infrastructure picture that -- like
+      Pillar B's oil wealth -- has not translated the country's
+      resource base into broad-based public-service delivery.
+    drivers:
+      - "electricity access just over half the population (fresh) -- moderate; basic drinking water more decent (carried forward)"
+      - "Government Effectiveness and Control of Corruption (shared with Pillar A) both weak, Control of Corruption near the scale's floor"
+      - "social protection severe (regional-mean estimate); 3 of 5 indicators current -- resource wealth has not translated into broad-based public-service delivery"
+    citations: [c7]
+
+recent:
+  primary:
+    - headline: "Sassou Nguesso wins a fifth consecutive term with 94.90% after major opposition boycotts and an internet blackout"
+      date: 2026-03-15
+      summary: >
+        President Denis Sassou Nguesso, in power almost continuously
+        since 1979, was declared winner of the 15 March 2026 election
+        with 94.90% of the vote against six minor candidates, his
+        closest challenger taking just 1.5%. Major opposition parties
+        boycotted the vote, two of the country's best-known
+        opposition leaders remained imprisoned and others were in
+        exile, and the government imposed a nationwide internet
+        blackout on election day itself; Sassou Nguesso was the only
+        candidate permitted to campaign freely across the country.
+      why_it_matters: >
+        Directly explains Pillar A's severity and extends a rule now
+        approaching three unbroken decades, itself restored by a 1997
+        civil war rather than won outright at the ballot box.
+      news_url: "https://www.aljazeera.com/news/2026/3/17/congos-president-nguesso-to-secure-fifth-term-provisional-results-predict"
+      wikipedia_url: "https://en.wikipedia.org/wiki/2026_Republic_of_the_Congo_presidential_election"
+      sentiment: negative
+    - headline: "Public debt reaches 97.2% of GDP, forcing $1.63 billion in emergency Eurobond issuance"
+      date: 2026-03-16
+      summary: >
+        The IMF estimates Congo's public debt reached approximately
+        97.2% of GDP by the end of 2025, driven by fiscal slippage,
+        mounting liquidity pressures and slow structural reform under
+        the government's Extended Credit Facility programme. Between
+        November 2025 and February 2026, the government issued three
+        Eurobonds totalling $1.63 billion specifically to refinance
+        short-term debt, a stopgap the IMF's March 2026 post-financing
+        assessment described as leaving fiscal and external
+        vulnerabilities intensified rather than resolved.
+      why_it_matters: >
+        A severe, still-unfolding fiscal crisis in one of the corpus's
+        most oil-dependent economies (oil is roughly 90% of exports),
+        showing that resource wealth alone has not insulated Congo
+        from debt pressures documented in less resource-rich countries
+        elsewhere in this corpus.
+      news_url: "https://www.imf.org/en/news/articles/2026/03/16/pr26079-imf-executive-board-concludes-2026-post-financing-assessment-with-the-republic-of-congo"
+      wikipedia_url: ""
+      sentiment: negative
+    - headline: "TotalEnergies commits $500 million to boost production at the Moho Nord offshore field"
+      date: 2025-04-17
+      summary: >
+        TotalEnergies CEO Patrick Pouyanné committed USD 500 million
+        in new wells at Congo's Moho Nord offshore field during an
+        April 2025 meeting with President Sassou Nguesso, aiming to
+        raise output by 40,000 barrels per day at a field that already
+        supplies roughly half the country's oil production. China Oil
+        Natural Gas Overseas Holding separately committed USD 150
+        million over three years to develop other fields.
+      why_it_matters: >
+        A genuine, concrete sign of continued international investor
+        confidence in Congo's oil sector specifically, credited here
+        on its own terms even though it does not address the economic
+        diversification away from oil that Pillar B's weak growth
+        score suggests is overdue.
+      news_url: "https://angolanminingoilandgas.com/totalenergies-commits-500-million-to-boost-production-at-congos-moho-nord-field/"
+      wikipedia_url: ""
+      sentiment: positive
+  extended:
+    - headline: "Reported turnout jumps to 84.99% despite widespread boycott and empty polling stations"
+      date: 2026-03-16
+      summary: >
+        Congo's electoral commission reported turnout at 84.99% for
+        the 15 March 2026 election, up sharply from 67.57% in 2016
+        when more opposition candidates competed, even though
+        journalists and observers described polling stations across
+        the country's 6,620 booths as largely empty amid the
+        opposition boycott. NetBlocks, which monitored the
+        election-day internet shutdown, called it a "go-to digital
+        tactic" the government has used repeatedly during past
+        election periods already marred by opposition arrests.
+      why_it_matters: >
+        A specific, documented discrepancy between the official
+        process and what was observed on the ground, evidence this
+        record states directly rather than accepting the official
+        turnout figure at face value.
+      news_url: "https://theconversation.com/congo-brazzaville-election-boycotts-blackouts-and-growing-dissent-but-denis-sassou-nguesso-held-on-to-power-279539"
+      wikipedia_url: ""
+      sentiment: negative
+
+events:
+  - year: 1921
+    type: disaster
+    title: "Congo-Ocean railway construction begins"
+    description: >
+      France began construction of the Congo-Ocean railway in 1921 to
+      move rubber, ivory and timber from the interior to the coast for
+      export, using conscripted forced labour. By its 1934 completion,
+      an estimated 17,000-25,000 of the roughly 120,000-150,000
+      conscripted workers had died, a toll journalist Albert Londres
+      compared directly to the railway's own crosstie count.
+    url: "https://news.stanford.edu/stories/2021/07/deadly-railroad-project-congo-reveals-colonial-era-abuses"
+    direction: deteriorate
+  - year: 1960
+    type: independence
+    title: "Congo gains independence from France"
+    description: >
+      The Republic of the Congo gained independence from France on 15
+      August 1960, beginning a series of one-party governments under
+      shifting ideological banners before Denis Sassou Nguesso's 1979
+      coup.
+    url: "https://en.wikipedia.org/wiki/Denis_Sassou_Nguesso"
+    direction: improve
+  - year: 1997
+    type: conflict
+    title: "Civil war restores Sassou Nguesso to power"
+    description: >
+      Civil war broke out in June 1997 when President Lissouba's
+      forces moved against Sassou Nguesso's political-military
+      faction. Angolan military intervention, backed politically by
+      France, restored Sassou Nguesso to power by December 1999,
+      beginning a rule that has continued unbroken since.
+    url: "https://en.wikipedia.org/wiki/Republic_of_the_Congo_Civil_War_(1997%E2%80%931999)"
+    direction: deteriorate
+  - year: 2026
+    type: election
+    title: "Sassou Nguesso wins fifth consecutive term"
+    description: >
+      President Denis Sassou Nguesso won a fifth consecutive term on
+      15 March 2026 with 94.90% of the vote, after major opposition
+      parties boycotted the election, two prominent opposition leaders
+      remained imprisoned, and the government imposed a nationwide
+      internet blackout on election day.
+    url: "https://en.wikipedia.org/wiki/2026_Republic_of_the_Congo_presidential_election"
+    direction: deteriorate
+
+citations:
+  - id: c1
+    url: "https://en.wikipedia.org/wiki/List_of_concessionnaires_of_the_French_Congo"
+    source_type: wikipedia
+    title: "List of concessionnaires of the French Congo"
+    accessed: 2026-08-12
+    verified: true
+  - id: c2
+    url: "https://news.stanford.edu/stories/2021/07/deadly-railroad-project-congo-reveals-colonial-era-abuses"
+    source_type: news
+    title: "Deadly railroad project in Congo reveals colonial-era abuses (Stanford Report)"
+    accessed: 2026-08-12
+    verified: true
+  - id: c3
+    url: "https://en.wikipedia.org/wiki/Denis_Sassou_Nguesso"
+    source_type: wikipedia
+    title: "Denis Sassou Nguesso"
+    accessed: 2026-08-12
+    verified: true
+  - id: c4
+    url: "https://en.wikipedia.org/wiki/Republic_of_the_Congo_Civil_War_(1997%E2%80%931999)"
+    source_type: wikipedia
+    title: "Republic of the Congo Civil War (1997-1999)"
+    accessed: 2026-08-12
+    verified: true
+  - id: c5
+    url: "https://1997-2001.state.gov/global/human_rights/1998_hrp_report/congorep.html"
+    source_type: official
+    title: "1998 Human Rights Report: Republic of Congo (US Department of State)"
+    accessed: 2026-08-12
+    verified: true
+  - id: c6
+    url: "https://en.wikipedia.org/wiki/2026_Republic_of_the_Congo_presidential_election"
+    source_type: wikipedia
+    title: "2026 Republic of the Congo presidential election"
+    accessed: 2026-08-12
+    verified: true
+  - id: c7
+    url: "https://www.aljazeera.com/news/2026/3/17/congos-president-nguesso-to-secure-fifth-term-provisional-results-predict"
+    source_type: news
+    title: "Congolese President Nguesso wins fifth term: Provisional results (Al Jazeera)"
+    accessed: 2026-08-12
+    verified: true
+  - id: c8
+    url: "https://www.aljazeera.com/news/2026/3/15/republic-of-congo-votes-in-election-that-could-extend-sassous-42-year-rule"
+    source_type: news
+    title: "Republic of Congo votes in election that could extend Sassou's 42-year rule (Al Jazeera)"
+    accessed: 2026-08-12
+    verified: true
+  - id: c9
+    url: "https://www.imf.org/en/news/articles/2026/03/16/pr26079-imf-executive-board-concludes-2026-post-financing-assessment-with-the-republic-of-congo"
+    source_type: official
+    title: "IMF Executive Board Concludes 2026 Post-Financing Assessment with the Republic of Congo"
+    accessed: 2026-08-12
+    verified: true
+  - id: c10
+    url: "https://www.coface.com/news-economy-and-insights/business-risk-dashboard/country-risk-files/congo-republic-of-the"
+    source_type: news
+    title: "Republic of the Congo: Country Risk File (Coface)"
+    accessed: 2026-08-12
+    verified: true
+  - id: c11
+    url: "https://angolanminingoilandgas.com/totalenergies-commits-500-million-to-boost-production-at-congos-moho-nord-field/"
+    source_type: news
+    title: "TotalEnergies Commits $500 Million to Boost Production at Congo's Moho Nord Field"
+    accessed: 2026-08-12
+    verified: true
+  - id: c12
+    url: "https://theconversation.com/congo-brazzaville-election-boycotts-blackouts-and-growing-dissent-but-denis-sassou-nguesso-held-on-to-power-279539"
+    source_type: news
+    title: "Congo-Brazzaville election: boycotts, blackouts and growing dissent (The Conversation)"
+    accessed: 2026-08-12
+    verified: true
+  - id: c13
+    url: "https://en.wikipedia.org/wiki/Economic_Community_of_Central_African_States"
+    source_type: wikipedia
+    title: "Economic Community of Central African States"
+    accessed: 2026-08-12
+    verified: true
+
+rec_membership:
+  - org: ECCAS
+    joined: 1983
+    status: current
+    left: null
+    citations: [c13]
+
+balance:
+  n_positive: 1
+  n_negative: 3
+  n_mixed: 0
+  note: >
+    The election result and the debt crisis are kept as two distinct
+    primary negatives rather than merged, because they document
+    different domains -- a fraudulent, unbroken political entrenchment,
+    and a separate, severe fiscal crisis rooted in oil dependency
+    rather than governance conduct specifically. The disputed-turnout
+    item is kept as a distinct extended entry rather than folded into
+    the election item itself, because it is a specific, independently
+    documented statistical anomaly (67.57% to 84.99% despite a boycott
+    and visibly empty polling stations), not merely restating the
+    result. The TotalEnergies investment is credited at full positive
+    weight because it is a real, concrete commitment, not merely an
+    announcement -- the same standard this corpus applies to crediting
+    genuine achievements independent of the surrounding political and
+    fiscal conduct, even though it reinforces rather than resolves the
+    oil dependency Pillar B's own weak growth score documents.

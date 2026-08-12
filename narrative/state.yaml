@@ -1167,6 +1167,39 @@ countries:
       electricity-access indicators once fresher data is available;
       check whether CHADEMA is permitted to contest the next election
       cycle; check if Pillar C has gained coverage'
+  COG:
+    name: Republic of Congo
+    region: Central
+    first_pass: false
+    reason: forty-second backlog country -- completes Central Africa
+      (8 of 8 done); a demographic-collapse colonial mechanism
+      distinct from CAF''s Kongo-Wara rebellion already in this
+      corpus -- historian Adam Hochschild estimates the same
+      concessionary rubber system halved the combined population of
+      French Congo and Gabon, a toll of the same order as the Congo
+      Free State atrocities across the river; the Congo-Ocean railway
+      (1921-1934) killed an estimated 17,000-25,000 conscripted
+      labourers; Denis Sassou Nguesso''s rule (1979-1992, then
+      unbroken since a 1997 civil war Angola''s military intervention
+      resolved in his favour) is an entrenchment mechanism distinct
+      from TGO/CMR/GAB''s constitutional engineering -- restoration by
+      foreign military intervention rather than domestic legal
+      manoeuvre; a fifth consecutive term won 15 March 2026 with
+      94.90% amid an opposition boycott, two imprisoned opposition
+      leaders, and an election-day internet blackout; a severe debt
+      crisis (97.2% of GDP, three emergency Eurobonds) credited
+      alongside a genuine TotalEnergies investment in the country''s
+      oil sector specifically
+    iteration_count: 1
+    last_updated: '2026-08-12'
+    next_action: 'EXPAND: follow whether the IMF''s Extended Credit
+      Facility programme is renewed, replaced or allowed to lapse
+      given the debt crisis documented here; follow whether the two
+      imprisoned opposition leaders are released or remain jailed
+      through the next electoral cycle; check whether the
+      TotalEnergies/COGO investments show up as a measurable Pillar B
+      improvement once fresher GDP-growth data is available; check if
+      Pillars C and D have gained enough coverage to be written'
 backlog:
   CPV:
     name: Cabo Verde
@@ -1179,14 +1212,6 @@ backlog:
   GNB:
     name: Guinea-Bissau
     region: West
-    first_pass: false
-    reason: not yet scheduled
-    iteration_count: 0
-    last_updated: null
-    next_action: create baseline from blueprint
-  COG:
-    name: Republic of Congo
-    region: Central
     first_pass: false
     reason: not yet scheduled
     iteration_count: 0
@@ -2735,3 +2760,32 @@ meta_notes:
   practice. Full pytest suite: 106 passed. Full-corpus check: 0
   errors, expected pre-existing warnings only. 50 of 54 countries now
   have a record.'
+- '2026-08-12: COG CREATE run complete (13 sources opened and
+  verified: 5 Wikipedia, 6 news, 2 official (US State Dept, IMF)).
+  Completes Central Africa (8 of 8 done). Adds a demographic-collapse
+  colonial mechanism distinct from CAF''s Kongo-Wara rebellion already
+  in this corpus: historian Adam Hochschild estimates the same
+  concessionary rubber system halved the combined population of
+  French Congo and Gabon, a toll of the same order as the Congo Free
+  State atrocities under Leopold II across the river, despite
+  producing no comparably large rebellion -- worth stating plainly
+  rather than treating as a lesser case for lacking a headline
+  uprising. Sassou Nguesso''s rule (1979-1992, then unbroken since a
+  1997 civil war Angola''s military intervention resolved in his
+  favour) is a fourth named entrenchment mechanism in this corpus''s
+  typology, distinct from TGO/CMR''s constitutional engineering,
+  GIN/GAB''s coup-leader-wins-the-election pattern, and BEN''s
+  chosen-successor handover: restoration to power by foreign military
+  intervention rather than any domestic legal or electoral mechanism.
+  Both C and D pillars greyed (2/5 measured for D), the fourth corpus
+  case of a second non-C pillar unwritten after ERI, GNQ and GIN.
+  Following the established discipline, found a genuine positive: a
+  April 2025 TotalEnergies $500M investment in the Moho Nord field,
+  credited on its own terms despite reinforcing rather than resolving
+  the oil dependency Pillar B''s weak growth score documents.
+  Balance: 1 positive, 3 negative, 0 mixed. No word-count or citation
+  fixes needed -- validated clean on the first pass. `--links` flagged
+  1 URL (IMF) as HTTP 403, confirmed bot-detection on inspection, left
+  as a warning per standing practice. Full pytest suite: 106 passed.
+  Full-corpus check: 0 errors, 2 pre-existing unrelated warnings (COD,
+  EGY). 51 of 54 countries now have a record.'

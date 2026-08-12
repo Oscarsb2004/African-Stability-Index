@@ -26,7 +26,7 @@ An audit is forced early if a single run inflates the citation count by more tha
 
 ## Status
 
-**50 of 54 countries have a record (Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria, Rwanda, Chad, Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic, Mauritania, Zimbabwe, Comoros, Uganda, Sierra Leone, Equatorial Guinea, The Gambia, Mozambique, Guinea, South Sudan, Lesotho, Sao Tome & Principe, Togo, Cameroon, Burundi, Tunisia, Cote d'Ivoire, Zambia, Senegal, Gabon, Malawi, Eswatini, Seychelles, Benin, Libya, Tanzania). The first pass is complete; Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic, Mauritania, Zimbabwe, Comoros, Uganda, Sierra Leone, Equatorial Guinea, The Gambia, Mozambique, Guinea, South Sudan, Lesotho, Sao Tome & Principe, Togo, Cameroon, Burundi, Tunisia, Cote d'Ivoire, Zambia, Senegal, Gabon, Malawi, Eswatini, Seychelles, Benin, Libya and Tanzania are the first forty-one backlog countries.**
+**51 of 54 countries have a record (Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria, Rwanda, Chad, Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic, Mauritania, Zimbabwe, Comoros, Uganda, Sierra Leone, Equatorial Guinea, The Gambia, Mozambique, Guinea, South Sudan, Lesotho, Sao Tome & Principe, Togo, Cameroon, Burundi, Tunisia, Cote d'Ivoire, Zambia, Senegal, Gabon, Malawi, Eswatini, Seychelles, Benin, Libya, Tanzania, Republic of Congo). The first pass is complete; Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic, Mauritania, Zimbabwe, Comoros, Uganda, Sierra Leone, Equatorial Guinea, The Gambia, Mozambique, Guinea, South Sudan, Lesotho, Sao Tome & Principe, Togo, Cameroon, Burundi, Tunisia, Cote d'Ivoire, Zambia, Senegal, Gabon, Malawi, Eswatini, Seychelles, Benin, Libya, Tanzania and Republic of Congo are the first forty-two backlog countries.**
 
 ### First pass — 9 countries
 
@@ -92,14 +92,15 @@ whose ranks swing hardest with the weighting method.
 | BEN | Benin | fills West Africa (14 of 16 done); a genuinely two-sided colonial history the schema states plainly -- the Kingdom of Dahomey was itself a major slave-trading state before French conquest, and Behanzin surrendered in 1894 at Ouidah, the same port his kingdom's slave trade had passed through; the pioneering 1990 National Conference (Africa's first) set the template other Francophone states copied; researched immediately after surviving a December 2025 coup attempt, with Talon genuinely honouring his own two-term limit in May 2026 -- a real departure from TGO/CMR/GAB -- but succeeded by his own finance minister in an election the opposition was structurally excluded from entirely | **done — iteration 1** |
 | LBY | Libya | completes North Africa (6 of 6 done); a settler-colony mechanism distinct from most of the corpus -- Italy's Cyrenaica pacification (1923-1932) interned over 100,000 Cyrenaicans and killed an estimated 50,000-100,000 people specifically to clear land for Italian settlers, one of Africa's most violent colonial campaigns; the first country to gain independence via UN resolution (1951); Pillar F (1.6) is now the lowest single-pillar score recorded anywhere in this corpus, surpassing EGY's prior record; a genuine positive (first unified national budget since 2013, April 2026) credited alongside a UN report documenting systematic state-linked migrant trafficking and an oil-refinery shutdown from armed clashes | **done — iteration 1** |
 | TZA | Tanzania | East Africa's second-to-last gap (13 of 14 done, only DJI remains); a nation-building mechanism distinct from every other independence pattern in this corpus -- the April 1964 union of Tanganyika and Zanzibar merged two already-sovereign states into one, rather than a single territory gaining independence; the 1905-1907 Maji Maji Rebellion's German scorched-earth suppression killed an estimated 75,000-300,000 people through deliberate famine, a third named colonial-atrocity mechanism alongside LBY's land-clearance settler violence and RWA/BDI's ethnic-classification genocides; SADC membership confirms MOZ's own predicted Frontline States/SADCC cross-reference; two genuine positives (Julius Nyerere Hydropower Project reaching full capacity; record 2025 gold/tourism/mining growth) credited alongside a severe October-November 2025 election crisis (CHADEMA disqualified, Lissu charged with treason, Hassan re-elected with 97.66%, a crackdown with a genuinely disputed death toll from hundreds into the thousands) | **done — iteration 1** |
+| COG | Republic of Congo | completes Central Africa (8 of 8 done); a demographic-collapse colonial mechanism distinct from CAF's Kongo-Wara rebellion already in this corpus -- historian Adam Hochschild estimates the same concessionary rubber system halved the combined population of French Congo and Gabon, a toll of the same order as the Congo Free State atrocities across the river, despite producing no comparably large rebellion; the Congo-Ocean railway (1921-1934) killed an estimated 17,000-25,000 conscripted labourers; Denis Sassou Nguesso's rule (1979-1992, then unbroken since a 1997 civil war Angola's military intervention resolved in his favour) is a fourth named entrenchment mechanism, distinct from TGO/CMR/GAB/BEN's own patterns -- restoration by foreign military intervention rather than domestic legal or electoral manoeuvre; a fifth consecutive term won 15 March 2026 with 94.90% amid an opposition boycott, two imprisoned opposition leaders, and an election-day internet blackout; a severe debt crisis (97.2% of GDP) credited alongside a genuine TotalEnergies investment | **done — iteration 1** |
 
-### Backlog — the remaining 4
+### Backlog — the remaining 3
 
 Listed in full in `narrative/state.yaml` under `backlog`. They are recorded
 explicitly rather than left implicit: a country with no record should be visibly
 absent, not quietly missing.
 
-Cabo Verde, Guinea-Bissau, Republic of Congo, Djibouti
+Cabo Verde, Guinea-Bissau, Djibouti
 
 ---
 
@@ -1809,6 +1810,37 @@ Append one line per run: date, country, mode, what changed, what was removed.
   left as warnings per standing practice. Full pytest suite: 106
   passed.
 
+- **2026-08-12 — COG (Republic of Congo), CREATE.** Chosen as the
+  forty-second backlog country: Central Africa's last remaining gap
+  (8 of 8 done once complete), tied proportionally with West Africa's
+  own two-country gap but offering a full-region close. 13 sources
+  opened and verified: 5 Wikipedia, 6 news, 2 official (US State
+  Dept, IMF). Adds a demographic-collapse colonial mechanism distinct
+  from CAF's Kongo-Wara rebellion already in this corpus — historian
+  Adam Hochschild estimates the same concessionary rubber system
+  halved the combined population of French Congo and Gabon, a toll
+  of the same order as the Congo Free State atrocities under Leopold
+  II just across the river, despite producing no comparably large
+  rebellion; worth stating plainly rather than treating as a lesser
+  case for lacking a headline uprising. Sassou Nguesso's rule
+  (1979-1992, then unbroken since a 1997 civil war Angola's military
+  intervention resolved in his favour) is a fourth named entrenchment
+  mechanism in this corpus's typology, distinct from TGO/CMR's
+  constitutional engineering, GIN/GAB's coup-leader-wins-the-election
+  pattern, and BEN's chosen-successor handover: restoration to power
+  by foreign military intervention rather than any domestic legal or
+  electoral mechanism. Both C and D pillars greyed (D at 2/5
+  measured), the fourth corpus case of a second non-C pillar
+  unwritten after ERI, GNQ and GIN. Following the established
+  discipline, found a genuine positive: an April 2025 TotalEnergies
+  $500M investment in the Moho Nord field, credited on its own terms
+  despite reinforcing rather than resolving the oil dependency Pillar
+  B's own weak growth score documents. Balance: 1 positive, 3
+  negative, 0 mixed. No word-count or citation fixes needed —
+  validated clean on the first pass. `--links` flagged 1 URL (IMF) as
+  HTTP 403, confirmed bot-detection on inspection, left as a warning
+  per standing practice. Full pytest suite: 106 passed.
+
 ---
 
 ## Meta-notes
@@ -2687,6 +2719,24 @@ Things a future run should know about how to work, not about a specific country.
   a schema workaround here, but a future country merger case (if any
   exists in the remaining backlog) should be checked against this
   same category of representational gap.
+- **2026-08-12** — COG completes Central Africa and adds a fourth
+  named colonial-atrocity mechanism to the corpus's typology:
+  demographic collapse through concessionary-company forced labour
+  without a comparably large rebellion, distinct from CAF's Kongo-Wara
+  case (same system, but CAF's record centres a 350,000-person
+  uprising while COG's centres a population that Hochschild estimates
+  fell by roughly half territory-wide). Worth naming this pairing
+  explicitly as a corpus lesson: two neighbouring territories under
+  the identical colonial mechanism can produce very differently
+  shaped historical records — one dominated by resistance, one by
+  sheer demographic loss — and both deserve to be stated at full
+  severity rather than the quieter one being treated as secondary.
+  Also adds a fourth entrenchment-mechanism sub-type: restoration to
+  power via foreign military intervention (Angola, 1997-1999) rather
+  than TGO/CMR's constitutional engineering, GIN/GAB's coup-then-win-
+  the-election pattern, or BEN's chosen-successor handover — worth
+  watching for a fifth sub-type as the remaining backlog (CPV, GNB,
+  DJI) is completed.
 
 ---
 
