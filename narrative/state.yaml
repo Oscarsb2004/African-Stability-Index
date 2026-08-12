@@ -1133,6 +1133,39 @@ countries:
       produce any accountability process; check whether Pillars A/E/F
       fresh indicators show any improvement; check if Pillar C has
       gained coverage'
+  TZA:
+    name: Tanzania
+    region: East
+    first_pass: false
+    reason: forty-first backlog country -- completes East Africa (14
+      of 14 done); a distinct nation-building mechanism -- the April
+      1964 union of Tanganyika and Zanzibar merged two sovereign
+      states into one, rather than one territory gaining independence
+      alone; the German suppression of the 1905-1907 Maji Maji
+      Rebellion killed an estimated 75,000-300,000 people through
+      deliberate famine, a scorched-earth mechanism distinct from
+      Libya''s land-clearance settler violence; Julius Nyerere''s
+      Ujamaa experiment is one of the corpus''s most influential and
+      costly development projects; the October-November 2025 election
+      crisis (CHADEMA disqualified, Lissu charged with treason, Hassan
+      re-elected with 97.66%, and a crackdown killing a disputed
+      number from hundreds into the thousands) is credited alongside
+      two genuine economic achievements -- the Julius Nyerere
+      Hydropower Project reaching full capacity, and record gold
+      exports and tourism arrivals -- kept as distinct items per this
+      corpus''s standard of crediting real achievements independent of
+      surrounding political conduct
+    iteration_count: 1
+    last_updated: '2026-08-12'
+    next_action: 'EXPAND: follow whether the Hassan government''s
+      November 2025 commission of inquiry produces an official death
+      toll or any accountability process, or is quietly shelved;
+      follow Tundu Lissu''s treason trial to verdict; check whether
+      the Julius Nyerere Hydropower Project''s full capacity shows up
+      as a measurable improvement in Pillar F/G fossil-generation and
+      electricity-access indicators once fresher data is available;
+      check whether CHADEMA is permitted to contest the next election
+      cycle; check if Pillar C has gained coverage'
 backlog:
   CPV:
     name: Cabo Verde
@@ -1160,14 +1193,6 @@ backlog:
     next_action: create baseline from blueprint
   DJI:
     name: Djibouti
-    region: East
-    first_pass: false
-    reason: not yet scheduled
-    iteration_count: 0
-    last_updated: null
-    next_action: create baseline from blueprint
-  TZA:
-    name: Tanzania
     region: East
     first_pass: false
     reason: not yet scheduled
@@ -2662,3 +2687,50 @@ meta_notes:
   pytest suite: 106 passed. Full-corpus check: 0 errors, 2 pre-existing
   warnings (COD, EGY all-negative balance, unrelated to this run). 49
   of 54 countries now have a record.'
+- '2026-08-12: TZA CREATE run complete (21 sources opened and
+  verified: 6 Wikipedia, 12 news, 2 official (UNICEF, HRW), 1 more
+  official (SADC)). Completes East Africa (14 of 14 done, only DJI in
+  East had been outstanding and TZA was chosen ahead of it for size
+  and material richness). Confirmed the Tanganyika-Zanzibar union
+  (April 1964) as a nation-building mechanism genuinely distinct from
+  every other independence pattern in this corpus so far: two already-
+  sovereign states merging into one, rather than a single territory
+  gaining independence -- Zanzibar had its own separate 1963
+  independence and January 1964 revolution before the merger, unlike
+  any federation-of-colonies case documented elsewhere. The 1905-1907
+  Maji Maji Rebellion''s German scorched-earth suppression (an
+  estimated 75,000-300,000 dead through deliberate famine) is a
+  distinct colonial-violence mechanism from LBY''s land-clearance
+  settler violence and RWA/BDI''s ethnic-classification mechanism --
+  a third named type of documented colonial atrocity mechanism in this
+  corpus. EAC membership represented with the same two-entry
+  founding/collapse/refounding pattern established for KEN (1967
+  founding, 1977 collapse, 2000 refounding), and SADC represented as a
+  1980 SADCC founding member, confirming MOZ''s own ledger entry
+  prediction that TZA would eventually complete a wider Frontline
+  States/SADCC cross-reference. Following the established discipline,
+  found two genuine positives -- the Julius Nyerere Hydropower
+  Project (East Africa''s largest dam, 2,115MW, reached full capacity
+  April 2025) and record 2025 gold-export/tourism/mining growth --
+  credited at full weight independent of the same year''s severe
+  political crisis: CHADEMA''s disqualification and Tundu Lissu''s
+  treason charge (April 2025), Hassan''s re-election with 97.66% of
+  the vote (29 October 2025), and a security-force crackdown whose
+  death toll remains genuinely disputed across sources (CHADEMA
+  alleges 1,000-2,000, other rights groups cite figures into the
+  thousands, more cautious outlets report at least hundreds) -- kept
+  as a disputed range rather than resolved into one unverified figure.
+  Balance: 2 positive, 3 negative, 0 mixed. Word-count fixes: three
+  pillars (B, D, G) initially under the 80-word floor, each resolved
+  by adding real facts found via further search (mining GDP share and
+  the $42B LNG project for B; the UNICEF WASH baseline and rural
+  water/sanitation program for D; the REA rural-electrification target
+  and TASAF cash-transfer programme for G) rather than padding. Pillar
+  D also required a citation fix: it had none in the first draft
+  (schema requires >=1 per written pillar), resolved by citing the new
+  UNICEF WASH source. `--links` flagged 4 URLs as HTTP 403 (Travel And
+  Tour World, Further Africa x2, UNICEF) -- all confirmed bot-detection
+  on inspection, not dead links, left as warnings per standing
+  practice. Full pytest suite: 106 passed. Full-corpus check: 0
+  errors, expected pre-existing warnings only. 50 of 54 countries now
+  have a record.'

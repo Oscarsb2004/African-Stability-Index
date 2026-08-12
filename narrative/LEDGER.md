@@ -26,7 +26,7 @@ An audit is forced early if a single run inflates the citation count by more tha
 
 ## Status
 
-**49 of 54 countries have a record (Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria, Rwanda, Chad, Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic, Mauritania, Zimbabwe, Comoros, Uganda, Sierra Leone, Equatorial Guinea, The Gambia, Mozambique, Guinea, South Sudan, Lesotho, Sao Tome & Principe, Togo, Cameroon, Burundi, Tunisia, Cote d'Ivoire, Zambia, Senegal, Gabon, Malawi, Eswatini, Seychelles, Benin, Libya). The first pass is complete; Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic, Mauritania, Zimbabwe, Comoros, Uganda, Sierra Leone, Equatorial Guinea, The Gambia, Mozambique, Guinea, South Sudan, Lesotho, Sao Tome & Principe, Togo, Cameroon, Burundi, Tunisia, Cote d'Ivoire, Zambia, Senegal, Gabon, Malawi, Eswatini, Seychelles, Benin and Libya are the first forty backlog countries.**
+**50 of 54 countries have a record (Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria, Rwanda, Chad, Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic, Mauritania, Zimbabwe, Comoros, Uganda, Sierra Leone, Equatorial Guinea, The Gambia, Mozambique, Guinea, South Sudan, Lesotho, Sao Tome & Principe, Togo, Cameroon, Burundi, Tunisia, Cote d'Ivoire, Zambia, Senegal, Gabon, Malawi, Eswatini, Seychelles, Benin, Libya, Tanzania). The first pass is complete; Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic, Mauritania, Zimbabwe, Comoros, Uganda, Sierra Leone, Equatorial Guinea, The Gambia, Mozambique, Guinea, South Sudan, Lesotho, Sao Tome & Principe, Togo, Cameroon, Burundi, Tunisia, Cote d'Ivoire, Zambia, Senegal, Gabon, Malawi, Eswatini, Seychelles, Benin, Libya and Tanzania are the first forty-one backlog countries.**
 
 ### First pass — 9 countries
 
@@ -91,14 +91,15 @@ whose ranks swing hardest with the weighting method.
 | SYC | Seychelles | completes the Islands region (5 of 5 done); ranks #2-3 across composite methods, among the corpus's very strongest records, though the schema's own note flags that comparisons with continental Africa are methodologically problematic given its tiny population and island insularity; two genuine peaceful transfers of power since 1993 (2020, 2025); the world's first sovereign debt-for-nature swap (2016-2018); the corpus's most striking discipline catch -- the world's highest heroin addiction rate (~10% of the working-age population) sits entirely underneath an otherwise exceptional composite score, credited at full negative weight rather than let the strong aggregate imply no severe crisis exists | **done — iteration 1** |
 | BEN | Benin | fills West Africa (14 of 16 done); a genuinely two-sided colonial history the schema states plainly -- the Kingdom of Dahomey was itself a major slave-trading state before French conquest, and Behanzin surrendered in 1894 at Ouidah, the same port his kingdom's slave trade had passed through; the pioneering 1990 National Conference (Africa's first) set the template other Francophone states copied; researched immediately after surviving a December 2025 coup attempt, with Talon genuinely honouring his own two-term limit in May 2026 -- a real departure from TGO/CMR/GAB -- but succeeded by his own finance minister in an election the opposition was structurally excluded from entirely | **done — iteration 1** |
 | LBY | Libya | completes North Africa (6 of 6 done); a settler-colony mechanism distinct from most of the corpus -- Italy's Cyrenaica pacification (1923-1932) interned over 100,000 Cyrenaicans and killed an estimated 50,000-100,000 people specifically to clear land for Italian settlers, one of Africa's most violent colonial campaigns; the first country to gain independence via UN resolution (1951); Pillar F (1.6) is now the lowest single-pillar score recorded anywhere in this corpus, surpassing EGY's prior record; a genuine positive (first unified national budget since 2013, April 2026) credited alongside a UN report documenting systematic state-linked migrant trafficking and an oil-refinery shutdown from armed clashes | **done — iteration 1** |
+| TZA | Tanzania | completes East Africa (14 of 14 done); a nation-building mechanism distinct from every other independence pattern in this corpus -- the April 1964 union of Tanganyika and Zanzibar merged two already-sovereign states into one, rather than a single territory gaining independence; the 1905-1907 Maji Maji Rebellion's German scorched-earth suppression killed an estimated 75,000-300,000 people through deliberate famine, a third named colonial-atrocity mechanism alongside LBY's land-clearance settler violence and RWA/BDI's ethnic-classification genocides; SADC membership confirms MOZ's own predicted Frontline States/SADCC cross-reference; two genuine positives (Julius Nyerere Hydropower Project reaching full capacity; record 2025 gold/tourism/mining growth) credited alongside a severe October-November 2025 election crisis (CHADEMA disqualified, Lissu charged with treason, Hassan re-elected with 97.66%, a crackdown with a genuinely disputed death toll from hundreds into the thousands) | **done — iteration 1** |
 
-### Backlog — the remaining 5
+### Backlog — the remaining 4
 
 Listed in full in `narrative/state.yaml` under `backlog`. They are recorded
 explicitly rather than left implicit: a country with no record should be visibly
 absent, not quietly missing.
 
-Cabo Verde, Guinea-Bissau, Republic of Congo, Djibouti, Tanzania
+Cabo Verde, Guinea-Bissau, Republic of Congo, Djibouti
 
 ---
 
@@ -1760,6 +1761,54 @@ Append one line per run: date, country, mode, what changed, what was removed.
   then passed 0 errors, 0 warnings — 14/14 resolved, a clean link
   check. Full pytest suite: 106 passed.
 
+- **2026-08-12 — TZA (Tanzania), CREATE.** Chosen as the forty-first
+  backlog country: East Africa's last remaining gap besides Djibouti
+  (14 of 14 done once complete), and the stronger pick given its size,
+  significance, and unusually rich material — the 1964
+  Tanganyika-Zanzibar union, Nyerere's Ujamaa experiment, and a severe
+  October-November 2025 election crisis. 21 sources opened and
+  verified: 6 Wikipedia, 12 news, 2 official (UNICEF, HRW), 1 more
+  official (SADC). The April 1964 union of Tanganyika and Zanzibar is
+  a nation-building mechanism genuinely distinct from every other
+  independence pattern in this corpus so far — two already-sovereign
+  states merging into one (Zanzibar had its own separate 1963
+  independence and January 1964 revolution before the merger), rather
+  than a single territory gaining independence alone. The 1905-1907
+  Maji Maji Rebellion's German scorched-earth suppression (an
+  estimated 75,000-300,000 dead through deliberate famine) is a third
+  named colonial-atrocity mechanism in this corpus, distinct from
+  LBY's land-clearance settler violence and RWA/BDI's
+  ethnic-classification genocides. EAC membership represented with the
+  same two-entry founding/collapse/refounding pattern established for
+  KEN (1967 founding, 1977 collapse, 2000 refounding); SADC
+  represented as a 1980 SADCC founding member, confirming MOZ's own
+  ledger-entry prediction that TZA would eventually complete a wider
+  Frontline States/SADCC cross-reference. Following the established
+  discipline, found two genuine positives — the Julius Nyerere
+  Hydropower Project (East Africa's largest dam, 2,115MW, reached full
+  capacity April 2025) and record 2025 gold-export/tourism/mining
+  growth — credited at full weight independent of the same year's
+  severe political crisis: CHADEMA's disqualification and Tundu
+  Lissu's treason charge (April 2025), Hassan's re-election with
+  97.66% of the vote (29 October 2025), and a security-force crackdown
+  whose death toll remains genuinely disputed across sources (CHADEMA
+  alleges 1,000-2,000, other rights groups cite figures into the
+  thousands, more cautious outlets report at least hundreds dead) —
+  kept as a disputed range rather than resolved into one unverified
+  figure. Balance: 2 positive, 3 negative, 0 mixed. Three word-count
+  fixes (pillars B, D, G, each initially under the 80-word floor),
+  each resolved by adding real facts found via further search: mining's
+  GDP share and the $42B LNG project for B; the UNICEF WASH baseline
+  and rural water/sanitation programme for D; the REA
+  rural-electrification target and TASAF cash-transfer programme for
+  G. Pillar D also required a citation fix — it had none in the first
+  draft (schema requires ≥1 per written pillar) — resolved by citing
+  the new UNICEF WASH source rather than leaving it empty. `--links`
+  flagged 4 URLs as HTTP 403 (Travel And Tour World, Further Africa x2,
+  UNICEF), all confirmed bot-detection on inspection, not dead links,
+  left as warnings per standing practice. Full pytest suite: 106
+  passed.
+
 ---
 
 ## Meta-notes
@@ -2618,6 +2667,26 @@ Things a future run should know about how to work, not about a specific country.
   established enough that future runs should treat a timeout as
   routine, not alarming, and move directly to finding an alternate
   source rather than re-attempting the same URL.
+- **2026-08-12** — TZA completes East Africa and adds a third named
+  colonial-atrocity mechanism to the corpus's typology, alongside
+  LBY's land-clearance settler violence and RWA/BDI's
+  ethnic-classification genocides: Germany's deliberate-famine
+  scorched-earth suppression of the Maji Maji Rebellion, destroying
+  the food supply itself as the killing mechanism rather than direct
+  battlefield violence or engineered ethnic conflict. Also confirms
+  MOZ's own prediction (logged in MOZ's ledger entry) that TZA would
+  eventually complete a wider SADCC/Frontline States cross-reference
+  once researched — worth continuing to check earlier entries'
+  stated predictions against later countries as they're written,
+  rather than only discovering cross-references by accident. TZA's
+  1964 union with Zanzibar is also worth flagging as a candidate
+  precedent for the same "single continuous membership stint" schema
+  gap already logged for MDG (SUSPENDED) and SYC (join/withdraw/
+  rejoin): unlike those, TZA's union is a merger of sovereignty
+  itself rather than a REC membership history, so it didn't require
+  a schema workaround here, but a future country merger case (if any
+  exists in the remaining backlog) should be checked against this
+  same category of representational gap.
 
 ---
 

@@ -1,0 +1,552 @@
+meta:
+  iso3: TZA
+  name: Tanzania
+  last_updated: 2026-08-12
+  iteration_count: 1
+  next_action: >
+    EXPAND: (1) follow whether the Hassan government's November 2025
+    commission of inquiry produces an official death toll or any
+    accountability process, or is quietly shelved; (2) follow Tundu
+    Lissu's treason trial to verdict; (3) check whether the Julius
+    Nyerere Hydropower Project's full capacity shows up as a measurable
+    improvement in Pillar F/G fossil-generation and electricity-access
+    indicators once fresher data is available; (4) check whether
+    CHADEMA is permitted to contest the next election cycle; (5) check
+    if Pillar C has gained coverage.
+  model_used: claude-sonnet-5
+
+historical:
+  overview: >
+    German colonial rule over Tanganyika (1885-1919) was shaken by the
+    Maji Maji Rebellion (1905-1907), inspired by the prophet
+    Kinjikitile Ngwale's promise that a sacred water (maji) would turn
+    German bullets to water, and spreading across some 20 ethnic
+    groups. German forces suppressed it with a scorched-earth campaign
+    that destroyed crops, granaries and villages, triggering a famine
+    that killed an estimated 75,000-300,000 people. Britain
+    administered the territory after Germany's WWI defeat, and
+    Tanganyika gained independence in 1961 under Julius Nyerere. In
+    April 1964, months after a revolution overthrew Zanzibar's Sultan,
+    Tanganyika united with the newly independent island state to form
+    Tanzania -- two sovereign states merging into one, a genuinely
+    distinct nation-building mechanism from the single-territory
+    independence most African states experienced. Nyerere's Ujamaa
+    ("familyhood") policy pursued African socialism through compulsory
+    villagisation, widely credited for building national unity and
+    criticised for economic stagnation. Tanzania has since been
+    governed continuously by the same party lineage, now Chama Cha
+    Mapinduzi. President Samia Suluhu Hassan was re-elected on 29
+    October 2025 with 97.66% of the vote after the electoral
+    commission disqualified the main opposition party and charged its
+    leader with treason; the ensuing crackdown on protests killed a
+    disputed number of people, estimated by opposition parties in the
+    hundreds to low thousands. The same year, gold exports and tourism
+    arrivals reached record highs, and the Julius Nyerere Hydropower
+    Project, East Africa's largest dam, reached full operational
+    capacity.
+  overview_citations: [c1, c2, c3, c9, c10, c14]
+  colonial_legacy: >
+    context/colonial_history.yaml already frames German rule as
+    extractive with medium-level slave-trade involvement, and
+    Tanzania's colonial period splits cleanly into two distinct
+    regimes rather than one continuous project. German East Africa
+    (1885-1919) was the more violent of the two: the Maji Maji
+    Rebellion's suppression alone killed an estimated 75,000-300,000
+    people through deliberate destruction of the food supply, a
+    scorched-earth mechanism -- not simply battlefield casualties --
+    this record states directly. Britain's subsequent League of
+    Nations mandate (1919-1961) was comparatively less violent but
+    built the same extractive infrastructure: ivory, rubber, sisal,
+    coffee and gold flowed outward under both administrations.
+    Independence in 1961 and the 1964 union with Zanzibar gave Julius
+    Nyerere a rare opportunity most newly independent African states
+    lacked -- a single, dominant, unchallenged nationalist leader able
+    to impose a coherent post-colonial project (Ujamaa) across the
+    whole territory rather than contest it with rival factions. That
+    coherence produced unusual national cohesion, and Tanzania has
+    never suffered the ethnic-based civil conflict several of its
+    neighbours have, but it also entrenched single-party rule that
+    persists today under CCM, the same party lineage Nyerere founded --
+    a direct throughline from his nation-building project to the
+    opposition-exclusion mechanics documented under recent
+    developments.
+  colonial_legacy_citations: [c1, c2]
+  key_periods:
+    - title: "The Maji Maji Rebellion and German suppression"
+      period: "1905-1907"
+      summary: >
+        Inspired by the prophet Kinjikitile Ngwale's promise that
+        sacred water (maji) would turn German bullets to water, the
+        Maji Maji Rebellion spread across roughly 20 ethnic groups in
+        German East Africa. German forces suppressed it with a
+        scorched-earth campaign that destroyed crops, granaries and
+        villages, triggering a famine that killed an estimated
+        75,000-300,000 people.
+      citations: [c1]
+    - title: "Independence and the Tanganyika-Zanzibar union"
+      period: "1961-1964"
+      summary: >
+        Tanganyika gained independence from Britain in 1961 under
+        Julius Nyerere. In April 1964, months after a revolution
+        overthrew Zanzibar's Sultan, Tanganyika united with the newly
+        independent island state to form Tanzania -- two sovereign
+        states merging into one, a genuinely distinct nation-building
+        mechanism from the single-territory independence most African
+        states experienced.
+      citations: [c2]
+    - title: "Nyerere's Ujamaa experiment"
+      period: "1967-1985"
+      summary: >
+        The 1967 Arusha Declaration launched Nyerere's Ujamaa
+        ("familyhood") policy of African socialism, nationalising
+        major industries and pursuing compulsory villagisation to
+        concentrate the rural population into planned communal
+        villages. The policy is widely credited for building unusual
+        national cohesion and a shared Swahili national identity, but
+        is also blamed for prolonged economic stagnation and
+        agricultural decline.
+      citations: [c3]
+    - title: "The 2025 election crisis"
+      period: "2025"
+      summary: >
+        The electoral commission disqualified CHADEMA, the main
+        opposition party, in April 2025 after it refused to sign an
+        election code of ethics, and charged its leader Tundu Lissu
+        with treason. President Hassan was re-elected on 29 October
+        2025 with 97.66% of the vote; the ensuing security-force
+        crackdown on protests killed a disputed number of people, and
+        the government announced an investigative commission in
+        November 2025.
+      citations: [c4, c5, c8, c9]
+
+pillars:
+  A:
+    summary: >
+      All six World Governance Indicators are directly measured this
+      year, and the aggregate is moderate -- Rule of Law (56.9) and
+      Political Stability (64.9) are the least weak, Voice and
+      Accountability (52.1) more severe. That moderate reading
+      predates a severe, still-unfolding crisis documented under
+      recent developments: President Samia Suluhu Hassan won
+      re-election on 29 October 2025 with 97.66% of the vote after
+      barring her strongest rivals, and a subsequent security-force
+      crackdown on protests killed a disputed number of people, a toll
+      the government has neither confirmed nor released its own
+      figure for.
+    drivers:
+      - "all 6 WGI indicators directly measured; Rule of Law (56.9) and Political Stability (64.9) the least weak, Voice and Accountability (52.1) more severe"
+      - "2023 reference year predates a severe, still-unfolding crisis: Hassan won re-election 29 Oct 2025 with 97.66% after barring her strongest rivals"
+      - "a subsequent security-force crackdown killed a disputed number of people, a toll the government has neither confirmed nor released its own figure for (see recent developments)"
+    citations: [c4, c6]
+  B:
+    summary: >
+      GDP growth, GDP per capita, inflation and domestic credit, all
+      freshly measured, are middling for this corpus. Gini, carried
+      forward, is more middling too. This pillar's 2023 reference
+      year substantially understates real recent growth: mining's
+      share of GDP rose from 7.8% to 10.3% in 2025, driven by record
+      gold exports (roughly $4.7 billion, up 37.4%) and a broader
+      minerals push that saw mineral exports overtake tourism as the
+      country's leading source of foreign exchange. A long-delayed
+      $42 billion LNG export project, drawing on offshore reserves
+      operated by Shell and Equinor, also moved toward finalisation
+      in 2025 after nearly 15 years of stalled negotiations.
+    drivers:
+      - "GDP growth, GDP per capita, inflation, domestic credit all fresh, middling for this corpus; Gini more middling (carried forward)"
+      - "2023 reference year substantially understates real recent growth: mining's GDP share rose from 7.8% to 10.3% in 2025, driven by record gold exports (~$4.7B, up 37.4%)"
+      - "mineral exports overtook tourism as the leading source of foreign exchange; a long-delayed $42B LNG export project (Shell, Equinor) also moved toward finalisation in 2025 after nearly 15 years of stalled talks"
+    citations: [c11, c19]
+  D:
+    summary: >
+      All five indicators are directly measured this year, and the
+      aggregate is weak: handwashing-facility access, at just 17.41%
+      of the population, is severe -- far below even the 41.5% rural
+      baseline UNICEF recorded in 2021, let alone the government's
+      own 2025 target of 95% rural sanitation access. Life expectancy
+      and infant mortality are both comparatively poor. Safely
+      managed drinking water and severe food insecurity are similarly
+      weak. A government-run Sustainable Rural Water and Sanitation
+      Program has extended improved water access to 4.7 million
+      people and improved sanitation to 6.6 million, progress this
+      pillar's aggregate has not yet caught up to. Five of the
+      pillar's five indicators are current, a fully-measured pillar
+      whose weakness is not a data-coverage artefact.
+    drivers:
+      - "all 5 indicators directly measured; handwashing-facility access just 17.41% of the population -- severe, far below even UNICEF's 2021 rural baseline of 41.5%"
+      - "life expectancy and infant mortality both comparatively poor; safely managed drinking water and severe food insecurity similarly weak"
+      - "a government Sustainable Rural Water and Sanitation Program has extended improved water access to 4.7M people and improved sanitation to 6.6M, progress this pillar's aggregate has not yet caught up to; 5 of 5 indicators current"
+    citations: [c18]
+  E:
+    summary: >
+      Political Stability and Rule of Law, both fresh and shared with
+      Pillar A, are comparatively decent. Intentional homicide,
+      carried forward rather than fresh, is more middling. Displaced
+      persons, a regional-mean estimate rather than a direct
+      measurement, is high -- Tanzania has no comparable internal
+      conflict, and the figure most plausibly reflects the Burundi and
+      eastern-DRC conflicts already documented elsewhere in this
+      corpus pulling the regional average upward. Only two of the
+      pillar's four indicators are current, and none of them capture
+      the October-November 2025 election crackdown documented under
+      recent developments.
+    drivers:
+      - "Political Stability and Rule of Law (shared with Pillar A) both comparatively decent, fresh"
+      - "intentional homicide more middling (carried forward, not fresh); displaced persons high, a regional-mean estimate most plausibly reflecting the Burundi and eastern-DRC conflicts (both in this corpus) pulling the regional average upward"
+      - "only 2 of 4 indicators current -- none capture the October-November 2025 election crackdown (see recent developments)"
+    citations: [c6]
+  F:
+    summary: >
+      CO2 emissions per capita, freshly measured, are comparatively
+      low. Freshwater withdrawal, carried forward, is very low
+      relative to renewable resources. Electricity generation from
+      fossil sources, also carried forward, is moderate at just under
+      70% -- a figure this pillar's 2023 reference year predates a
+      real, current improvement to: the Julius Nyerere Hydropower
+      Project, East Africa's largest dam at 2,115 megawatts, reached
+      full operational capacity in April 2025, documented under
+      recent developments. Agricultural land share, fresh, is more
+      middling. Only two of the pillar's four indicators are current.
+    drivers:
+      - "CO2 pc comparatively low (fresh); freshwater withdrawal very low relative to renewable resources (carried forward)"
+      - "electricity generation moderate, just under 70% fossil-fuel (carried forward) -- 2023 reference year predates a real improvement: the Julius Nyerere Hydropower Project, East Africa's largest dam, reached full capacity April 2025 (see recent developments)"
+      - "agricultural land more middling (fresh); only 2 of 4 indicators current"
+    citations: [c14, c15]
+  G:
+    summary: >
+      Electricity access, at just under half the population and
+      freshly measured, is moderate -- well below the Rural Energy
+      Agency's own target of 75% rural coverage by 2025 and full
+      coverage by 2030. Basic drinking water access, also fresh, is
+      more middling. Government Effectiveness and Control of
+      Corruption, shared with Pillar A, are middling. Social
+      protection coverage, estimated from regional peers rather than
+      measured directly, is comparatively weaker, despite a
+      long-running government cash-transfer vehicle (TASAF,
+      established 2000) currently running a nutrition-focused
+      programme through 2026. Four of the pillar's five indicators
+      are current, describing infrastructure access that the
+      newly-completed hydropower project documented in Pillar F
+      should measurably improve in future data.
+    drivers:
+      - "electricity access just under half the population (fresh) -- moderate, well below REA's own target of 75% rural coverage by 2025 and full coverage by 2030"
+      - "basic drinking water more middling (fresh); Government Effectiveness and Control of Corruption (shared with Pillar A) middling"
+      - "social protection comparatively weaker (regional-mean estimate), despite a long-running government cash-transfer vehicle (TASAF, est. 2000) currently running a nutrition programme through 2026; 4 of 5 indicators current"
+    citations: [c14, c21]
+
+recent:
+  primary:
+    - headline: "Hassan re-elected with 97.66% of the vote in an election opposition parties call a sham"
+      date: 2025-10-29
+      summary: >
+        President Samia Suluhu Hassan was declared winner of the 29
+        October 2025 election with 97.66% of the vote, after
+        CHADEMA's April 2025 disqualification left no credible
+        opposition challenger on the ballot. Protests broke out
+        nationwide on election day, with demonstrators burning
+        government buildings and tearing down Hassan's campaign
+        banners; police responded with tear gas and, according to
+        multiple accounts, live gunfire. International observers and
+        opposition parties denounced the result as fraudulent.
+      why_it_matters: >
+        The election that triggered the deadly crackdown documented
+        in the next item, and a case where the process irregularities
+        preceding the vote make the result itself, not just its
+        aftermath, part of the recorded harm.
+      news_url: "https://www.cnn.com/2025/11/01/africa/tanzania-hassan-landslide-election-intl"
+      wikipedia_url: ""
+      sentiment: negative
+    - headline: "Security-force crackdown on post-election protests kills a disputed number, from hundreds into the thousands"
+      date: 2025-11-05
+      summary: >
+        Protests following the 29 October election were met with a
+        security-force crackdown whose death toll the government has
+        never officially confirmed. CHADEMA alleges 1,000-2,000
+        killed and told CNN that police disposed of hundreds of
+        bodies at an undisclosed location; other rights groups cited
+        figures ranging into the thousands, while more cautious
+        outlets reported at least hundreds dead. President Hassan
+        defended the security forces, alleged without evidence that
+        protesters had been paid to try to overthrow her government,
+        and announced a commission of inquiry on 14 November 2025.
+      why_it_matters: >
+        One of the most severe and least-verified episodes of state
+        violence recorded anywhere in this corpus; the two-orders-of-
+        magnitude spread across sources is recorded here rather than
+        collapsed into a single unverified figure.
+      news_url: "https://www.cnn.com/2025/11/05/world/tanzania-election-protest-deaths-intl"
+      wikipedia_url: "https://en.wikipedia.org/wiki/2025_Tanzanian_election_protests"
+      sentiment: negative
+    - headline: "Julius Nyerere Hydropower Project, East Africa's largest dam, reaches full operational capacity"
+      date: 2025-04-08
+      summary: >
+        The Julius Nyerere Hydropower Project on the Rufiji River
+        reached full operational capacity in April 2025 when its
+        ninth and final turbine came online, delivering a combined
+        2,115 megawatts -- the largest installed capacity of any
+        power station in East Africa. Named for Tanzania's founding
+        president, the dam roughly doubles the country's total
+        generating capacity and is intended to sharply cut reliance
+        on fossil-fuel generation, which supplied nearly 70% of
+        electricity as recently as this record's most recent measured
+        year.
+      why_it_matters: >
+        A genuine, concrete infrastructure achievement, credited here
+        on its own terms independent of the same year's severe
+        political crisis; it directly targets the fossil-fuel
+        dependence and moderate electricity access this record's
+        Pillars F and G both document.
+      news_url: "https://furtherafrica.com/2025/04/08/tanzanias-julius-nyerere-hydropower-achieves-full-operational-capacity/"
+      wikipedia_url: "https://en.wikipedia.org/wiki/Julius_Nyerere_Hydropower_Station"
+      sentiment: positive
+  extended:
+    - headline: "Electoral commission disqualifies CHADEMA and charges its leader with treason"
+      date: 2025-04-13
+      summary: >
+        Tanzania's Independent National Elections Commission
+        disqualified CHADEMA, the country's largest opposition party,
+        from the 2025 election on 12 April 2025, after it refused to
+        sign the government's Election Code of Ethics pending
+        electoral reforms it had demanded. Days earlier, CHADEMA
+        leader Tundu Lissu had been arrested and charged with treason
+        -- a non-bailable offence carrying a potential death sentence
+        -- over social-media posts calling for an election boycott.
+      why_it_matters: >
+        Directly explains Pillar A's severity and set the stage for
+        the disputed election and crackdown documented under primary
+        developments; human rights groups called it a coordinated
+        effort to eliminate the strongest challenge to CCM's
+        continuous rule.
+      news_url: "https://www.africanews.com/2025/04/13/tanzanias-main-opposition-party-chadema-disqualified-from-elections/"
+      wikipedia_url: ""
+      sentiment: negative
+    - headline: "Gold exports and tourism arrivals both reach record highs in 2025"
+      date: 2025-11-07
+      summary: >
+        Tanzania's gold exports reached a record USD 4.7 billion in
+        2025, up 37.4% on rising global prices and increased
+        production, cushioning the economy against global trade
+        volatility. Tourism performed similarly well: international
+        arrivals passed 5 million between January and November 2025,
+        a 9% increase on the prior year, and Tanzania was named
+        Africa's Leading Destination at the World Travel Awards in
+        June 2025 and World's Leading Safari Destination for a second
+        consecutive year in December 2025.
+      why_it_matters: >
+        A genuine broadening of the export base beyond gold-and-
+        tourism reliance alone, credited independently of the same
+        year's political crisis.
+      news_url: "https://financeinafrica.com/news/tanzania-gold-exports-hit-record/"
+      wikipedia_url: ""
+      sentiment: positive
+
+events:
+  - year: 1905
+    type: conflict
+    title: "Maji Maji Rebellion begins"
+    description: >
+      Inspired by the prophet Kinjikitile Ngwale's promise that sacred
+      water (maji) would turn German bullets to water, the Maji Maji
+      Rebellion spread across roughly 20 ethnic groups in German East
+      Africa. German forces suppressed it with a scorched-earth
+      campaign that killed an estimated 75,000-300,000 people through
+      deliberate famine.
+    url: "https://en.wikipedia.org/wiki/Maji_Maji_Rebellion"
+    direction: deteriorate
+  - year: 1961
+    type: independence
+    title: "Tanganyika gains independence"
+    description: >
+      Tanganyika gained independence from Britain on 9 December 1961
+      under Julius Nyerere, who became prime minister and then, a
+      year later, the country's first president.
+    url: "https://en.wikipedia.org/wiki/Julius_Nyerere"
+    direction: improve
+  - year: 1964
+    type: constitutional
+    title: "Tanganyika and Zanzibar unite to form Tanzania"
+    description: >
+      Months after a revolution overthrew Zanzibar's Sultan,
+      Tanganyika united with the newly independent island state on 26
+      April 1964 to form Tanzania -- two sovereign states merging into
+      one, a distinct nation-building mechanism from the
+      single-territory independence most African states experienced.
+    url: "https://en.wikipedia.org/wiki/Articles_of_Union"
+    direction: improve
+  - year: 2025
+    type: election
+    title: "Disputed re-election and deadly crackdown"
+    description: >
+      President Samia Suluhu Hassan was re-elected on 29 October 2025
+      with 97.66% of the vote after the main opposition party was
+      disqualified; the ensuing security-force crackdown on protests
+      killed a disputed number of people, estimated by opposition
+      parties in the hundreds to low thousands.
+    url: "https://en.wikipedia.org/wiki/2025_Tanzanian_election_protests"
+    direction: deteriorate
+
+citations:
+  - id: c1
+    url: "https://en.wikipedia.org/wiki/Maji_Maji_Rebellion"
+    source_type: wikipedia
+    title: "Maji Maji Rebellion"
+    accessed: 2026-08-12
+    verified: true
+  - id: c2
+    url: "https://en.wikipedia.org/wiki/Articles_of_Union"
+    source_type: wikipedia
+    title: "Articles of Union (Tanganyika-Zanzibar)"
+    accessed: 2026-08-12
+    verified: true
+  - id: c3
+    url: "https://en.wikipedia.org/wiki/Julius_Nyerere"
+    source_type: wikipedia
+    title: "Julius Nyerere"
+    accessed: 2026-08-12
+    verified: true
+  - id: c4
+    url: "https://www.cnn.com/2025/11/01/africa/tanzania-hassan-landslide-election-intl"
+    source_type: news
+    title: "Tanzania's Hassan declared landslide winner in election marred by violence (CNN)"
+    accessed: 2026-08-12
+    verified: true
+  - id: c5
+    url: "https://www.aljazeera.com/news/2025/11/1/tanzanian-president-samia-suluhu-hassan-declared-winner-of-election"
+    source_type: news
+    title: "Tanzanian President Hassan declared winner of disputed vote with 98 percent (Al Jazeera)"
+    accessed: 2026-08-12
+    verified: true
+  - id: c6
+    url: "https://en.wikipedia.org/wiki/2025_Tanzanian_election_protests"
+    source_type: wikipedia
+    title: "2025 Tanzanian election protests"
+    accessed: 2026-08-12
+    verified: true
+  - id: c7
+    url: "https://www.cnn.com/2025/11/05/world/tanzania-election-protest-deaths-intl"
+    source_type: news
+    title: "Tanzanian police disposed of bodies after election violence, opposition alleges (CNN)"
+    accessed: 2026-08-12
+    verified: true
+  - id: c8
+    url: "https://www.aljazeera.com/news/2025/11/14/tanzanias-president-announces-probe-into-post-election-protest-deaths"
+    source_type: news
+    title: "Tanzania's president announces probe into post-election protest deaths (Al Jazeera)"
+    accessed: 2026-08-12
+    verified: true
+  - id: c9
+    url: "https://www.africanews.com/2025/04/13/tanzanias-main-opposition-party-chadema-disqualified-from-elections/"
+    source_type: news
+    title: "Tanzania's main opposition party CHADEMA disqualified from elections (Africanews)"
+    accessed: 2026-08-12
+    verified: true
+  - id: c10
+    url: "https://www.hrw.org/news/2025/04/15/tanzanian-opposition-leaders-arrest-spells-trouble-elections"
+    source_type: official
+    title: "Tanzanian Opposition Leader's Arrest Spells Trouble for Elections (Human Rights Watch)"
+    accessed: 2026-08-12
+    verified: true
+  - id: c11
+    url: "https://financeinafrica.com/news/tanzania-gold-exports-hit-record/"
+    source_type: news
+    title: "Tanzania gold exports hit record $4.7 billion in 2025 (Finance in Africa)"
+    accessed: 2026-08-12
+    verified: true
+  - id: c12
+    url: "https://www.travelandtourworld.com/news/article/tanzania-triumphs-at-world-travel-awards-2025-worlds-leading-safari-destination-and-more/"
+    source_type: news
+    title: "Tanzania Triumphs At World Travel Awards 2025 (Travel And Tour World)"
+    accessed: 2026-08-12
+    verified: true
+  - id: c13
+    url: "https://www.tanzaniainvest.com/tourism/dar-es-salaam-africa-leading-destination-award-2025"
+    source_type: news
+    title: "Tanzania Wins Africa's Leading Destination 2025 Award (TanzaniaInvest)"
+    accessed: 2026-08-12
+    verified: true
+  - id: c14
+    url: "https://furtherafrica.com/2025/04/08/tanzanias-julius-nyerere-hydropower-achieves-full-operational-capacity/"
+    source_type: news
+    title: "Tanzania's Julius Nyerere Hydropower Achieves Full Operational Capacity (Further Africa)"
+    accessed: 2026-08-12
+    verified: true
+  - id: c15
+    url: "https://en.wikipedia.org/wiki/Julius_Nyerere_Hydropower_Station"
+    source_type: wikipedia
+    title: "Julius Nyerere Hydropower Station"
+    accessed: 2026-08-12
+    verified: true
+  - id: c16
+    url: "https://www.sadc.int/member-states/united-republic-tanzania"
+    source_type: official
+    title: "United Republic of Tanzania (SADC)"
+    accessed: 2026-08-12
+    verified: true
+  - id: c17
+    url: "https://en.wikipedia.org/wiki/East_African_Community"
+    source_type: wikipedia
+    title: "East African Community"
+    accessed: 2026-08-12
+    verified: true
+  - id: c18
+    url: "https://www.unicef.org/tanzania/topics/water-sanitation-and-hygiene"
+    source_type: official
+    title: "Water, sanitation and hygiene (UNICEF Tanzania)"
+    accessed: 2026-08-12
+    verified: true
+  - id: c19
+    url: "https://furtherafrica.com/2025/05/07/tanzania-aims-to-launch-42-billion-lng-project-by-end-of-2025/"
+    source_type: news
+    title: "Tanzania Aims to Launch $42 Billion LNG Project by End of 2025 (Further Africa)"
+    accessed: 2026-08-12
+    verified: true
+  - id: c20
+    url: "https://www.tanzaniainvest.com/mining"
+    source_type: news
+    title: "Tanzania Mining Sector 2026: Gold, Critical Minerals (TanzaniaInvest)"
+    accessed: 2026-08-12
+    verified: true
+  - id: c21
+    url: "https://www.tanzaniainvest.com/rural-electrification"
+    source_type: news
+    title: "Rural Electrification (TanzaniaInvest)"
+    accessed: 2026-08-12
+    verified: true
+
+rec_membership:
+  - org: EAC
+    joined: 1967
+    status: withdrawn
+    left: 1977
+    citations: [c17]
+  - org: EAC
+    joined: 2000
+    status: current
+    left: null
+    citations: [c17]
+  - org: SADC
+    joined: 1980
+    status: current
+    left: null
+    citations: [c16]
+
+balance:
+  n_positive: 2
+  n_negative: 3
+  n_mixed: 0
+  note: >
+    The election result and the crackdown are kept as two distinct
+    negatives rather than merged into one, because they document
+    different domains -- a fraudulent process, and a separate,
+    still-uninvestigated act of state violence whose scale remains
+    genuinely disputed across sources. The CHADEMA disqualification is
+    kept as a third, extended-list negative rather than folded into
+    the election item, because it is the specific mechanism (party
+    banned, leader charged with a capital, non-bailable offence) that
+    made the election's lack of a credible challenger possible, not
+    merely background to it. Both the hydropower project and the
+    gold/tourism export records are credited at full positive weight
+    because they are real, concrete, verifiable achievements, not
+    merely announcements -- the same standard this corpus applies to
+    crediting genuine achievements on their own terms independent of
+    the surrounding political conduct, most recently applied to LBY's
+    unified budget.
