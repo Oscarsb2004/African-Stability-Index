@@ -1,0 +1,448 @@
+meta:
+  iso3: ZMB
+  name: Zambia
+  last_updated: 2026-08-11
+  iteration_count: 1
+  next_action: >
+    EXPAND: (1) record the result of the 13 August 2026 presidential
+    election once announced (due 17 August), and whether Zambia's
+    unbroken pattern of peaceful transfers since 1991 holds; (2)
+    follow whether the Lungu burial dispute is resolved and how; (3)
+    follow whether victims of the Sino-Metals spill secure
+    compensation, and whether the Kafue River's contamination eases;
+    (4) check whether Pillars E/G regional-mean indicators gain fresh
+    coverage; (5) check if Pillar C has gained coverage.
+  model_used: claude-sonnet-5
+
+historical:
+  overview: >
+    Britain chartered Northern Rhodesia to Cecil Rhodes's British
+    South Africa Company from 1889, and the Copperbelt became one of
+    Africa's most productive mining regions, initially worked by
+    migrant labour under brutal compound conditions. Kenneth Kaunda
+    led the country to independence in 1964 and implemented a
+    "humanist" one-party socialism, nationalising the copper mines;
+    falling copper prices in the 1970s devastated the economy Kaunda
+    had built around them. Facing a pro-democracy movement, Kaunda
+    permitted a 1991 multiparty election, which Frederick Chiluba's
+    Movement for Multi-Party Democracy won in a landslide; Kaunda
+    conceded and transferred power peacefully, making Zambia the
+    first sub-Saharan African country to achieve a peaceful electoral
+    transfer of power. Decades of heavy borrowing under the Patriotic
+    Front government, in power from 2011, pushed public debt from 36%
+    of GDP in 2014 toward 118%, and in November 2020 Zambia became the
+    first African country to default on its sovereign debt during the
+    COVID-19 pandemic. In August 2021, opposition leader Hakainde
+    Hichilema defeated incumbent Edgar Lungu in a second peaceful
+    transfer of power, inheriting the default and beginning debt
+    negotiations that produced a restructuring agreement with
+    bondholders in June 2024. Hichilema sought a second term in a
+    general election held on 13 August 2026, facing Brian Mundubile, a
+    former ally of Lungu, who died in June 2025 amid a still-unresolved
+    dispute over his burial.
+  overview_citations: [c1, c2, c3, c4, c9]
+  colonial_legacy: >
+    context/colonial_history.yaml already states the two facts most
+    worth pairing: the Copperbelt's colonial-era migrant-labour
+    compound system, and Zambia's status as the first sub-Saharan
+    African country to achieve a peaceful electoral transfer of power,
+    in 1991. Worth noting how directly the copper economy still shapes
+    the country's present-day inequality: this record's Pillar B shows
+    a Gini coefficient of 51.50, among the more severe readings in
+    this corpus, alongside comparatively strong governance and
+    political-stability scores -- a resource-curse pattern where
+    democratic institutions have proven durable even as the wealth the
+    same colonial-era industry generates remains unevenly shared. The
+    February 2025 Sino-Metals Leach dam disaster, documented under
+    recent developments, is a direct continuation of the same
+    Copperbelt extraction this record's colonial history begins with,
+    now under Chinese rather than British ownership but producing a
+    comparably severe environmental and human cost to the communities
+    living closest to the mines.
+  colonial_legacy_citations: [c1]
+  key_periods:
+    - title: "The British South Africa Company and colonial copper mining"
+      period: "1889-1964"
+      summary: >
+        Britain chartered Northern Rhodesia to Cecil Rhodes's British
+        South Africa Company from 1889, and the Copperbelt became one
+        of Africa's most productive mining regions, initially worked
+        by migrant labour under brutal compound conditions. Kenneth
+        Kaunda led the country to independence in 1964 and nationalised
+        the copper mines under a "humanist" one-party socialism.
+      citations: [c1]
+    - title: "The 1991 multiparty transition"
+      period: "1991"
+      summary: >
+        Facing economic collapse after 1970s copper-price declines and
+        a pro-democracy movement, Kaunda permitted a 1991 multiparty
+        election, which Frederick Chiluba's Movement for Multi-Party
+        Democracy won in a landslide. Kaunda conceded and transferred
+        power peacefully, making Zambia the first sub-Saharan African
+        country to achieve a peaceful electoral transfer of power.
+      citations: [c2]
+    - title: "The 2020 default and the 2021 transfer of power"
+      period: "2020-2021"
+      summary: >
+        Heavy borrowing under the Patriotic Front government pushed
+        public debt from 36% of GDP in 2014 toward 118%, and in
+        November 2020 Zambia became the first African country to
+        default on its sovereign debt during the COVID-19 pandemic. In
+        August 2021, opposition leader Hakainde Hichilema defeated
+        incumbent Edgar Lungu, Zambia's second peaceful electoral
+        transfer of power, inheriting the default.
+      citations: [c3, c4]
+    - title: "Debt restructuring and Hichilema's re-election bid"
+      period: "2024-2026"
+      summary: >
+        Zambia reached a debt-restructuring agreement with bondholders
+        in June 2024, and Hichilema sought a second term in a general
+        election held on 13 August 2026, facing Brian Mundubile, a
+        former ally of Edgar Lungu, whose death in June 2025 produced
+        a still-unresolved burial dispute.
+      citations: [c9, c11]
+
+pillars:
+  A:
+    summary: >
+      All six World Governance Indicators are directly measured this
+      year, and the aggregate is moderate -- Political Stability
+      (70.1) is comparatively strong, among the better readings
+      recorded in this corpus, while Control of Corruption (47.6) is
+      the weakest. That relative strength reflects a genuine
+      institutional pattern: Zambia was the first sub-Saharan African
+      country to achieve a peaceful electoral transfer of power, in
+      1991, and repeated it in 2021, when Hakainde Hichilema defeated
+      incumbent Edgar Lungu after a country in sovereign default
+      handed him a landslide. Hichilema sought a second term in an
+      election held on 13 August 2026, documented under recent
+      developments.
+    drivers:
+      - "all 6 WGI indicators directly measured; Political Stability (70.1) comparatively strong, among the better readings in this corpus; Control of Corruption (47.6) the weakest"
+      - "Zambia was the first sub-Saharan African country to achieve a peaceful electoral transfer of power, in 1991, and repeated it in 2021 (Hichilema defeated incumbent Lungu)"
+      - "Hichilema sought a second term in a general election held 13 August 2026 (see recent developments)"
+    citations: [c2, c4]
+  B:
+    summary: >
+      GDP growth, GDP per capita and inflation, all freshly measured,
+      are middling for this corpus. Domestic credit, also fresh, is
+      thin. Gini, carried forward at 51.50, is severe -- among the
+      more unequal readings recorded in this corpus, a resource-curse
+      signature this record's colonial_legacy traces to Zambia's
+      copper economy. This pillar's 2023 reference year predates a
+      genuine institutional achievement: a June 2024 agreement with
+      bondholders wrote off roughly $840 million of Zambia's Eurobond
+      claims and restored an active IMF programme, following the
+      country's November 2020 default -- the first African sovereign
+      default of the COVID era.
+    drivers:
+      - "GDP growth, GDP per capita, inflation all fresh, middling for this corpus; domestic credit thin (fresh)"
+      - "Gini 51.50 (carried forward) -- severe, among the more unequal readings in this corpus, a resource-curse signature traced to the copper economy in colonial_legacy"
+      - "2023 reference year predates a genuine achievement: June 2024 bondholder agreement wrote off ~$840M, restoring an IMF programme after Zambia's Nov 2020 default -- the first African COVID-era sovereign default"
+    citations: [c9]
+  D:
+    summary: >
+      Four of five indicators are directly measured this year, and the
+      aggregate is weak: life expectancy and infant mortality are both
+      comparatively poor, and handwashing-facility access is similarly
+      weak. Severe food insecurity, also fresh, is more middling.
+      Safely managed drinking water, the pillar's only regional-mean
+      estimate, is comparatively weaker still. Four of the pillar's
+      five indicators are current, though none of them yet capture the
+      February 2025 Sino-Metals acid spill documented under recent
+      developments, which contaminated a river supplying more than
+      half the country's population.
+    drivers:
+      - "4 of 5 indicators directly measured; life expectancy and infant mortality both comparatively poor; handwashing access similarly weak"
+      - "severe food insecurity more middling (fresh); safely managed drinking water the pillar's only regional-mean estimate, comparatively weaker still"
+      - "4 of 5 indicators current, but none capture the February 2025 Sino-Metals acid spill (see recent developments), which contaminated a river supplying over half the population"
+    citations: [c5, c6]
+  E:
+    summary: >
+      Political Stability and Rule of Law, both fresh and shared with
+      Pillar A, are middling to comparatively strong. Displaced
+      persons, at 49.87 per 1,000, is a regional-mean estimate rather
+      than a direct measurement -- Zambia has no comparable internal
+      conflict producing displacement at this scale, and the figure
+      most plausibly reflects the DRC conflict already documented
+      elsewhere in this corpus pulling the regional average upward.
+      Intentional homicide, also a regional-mean estimate, is
+      comparatively more middling. Only two of the pillar's four
+      indicators are current.
+    drivers:
+      - "Political Stability and Rule of Law (shared with Pillar A) both middling to comparatively strong, fresh"
+      - "displaced persons 49.87/1,000 is a regional-mean estimate, not a direct measurement -- Zambia has no comparable internal conflict, and the figure most plausibly reflects the DRC conflict (see COD, RWA, BDI records) pulling the regional average upward"
+      - "intentional homicide also a regional-mean estimate; only 2 of 4 indicators current"
+    citations: [c1]
+  F:
+    summary: >
+      CO2 emissions per capita, freshly measured, score comparatively
+      well, and unlike several wealth-proxy cases elsewhere in this
+      corpus, this reads as genuinely earned: the carried-forward
+      electricity-generation figure shows just over 11% of Zambia's
+      own power comes from fossil sources, reflecting real hydropower
+      capacity from the Kariba and Kafue Gorge dams -- closer to
+      Lesotho's genuine hydropower case elsewhere in this corpus than
+      to a small-economy artefact. Agricultural land share, fresh, is
+      thin. Freshwater withdrawal, carried forward, is very low
+      relative to renewable resources. Only two of the pillar's four
+      indicators are current.
+    drivers:
+      - "CO2 pc scores comparatively well (fresh) -- reads as genuinely earned: electricity generation just over 11% fossil-fuel (carried forward), reflecting real hydropower from Kariba and Kafue Gorge"
+      - "closer to LSO's genuine hydropower case elsewhere in this corpus than to a small-economy artefact"
+      - "agricultural land thin (fresh); freshwater withdrawal very low relative to renewable resources (carried forward); only 2 of 4 indicators current"
+    citations: [c1]
+  G:
+    summary: >
+      Electricity access, at just over half the population and
+      freshly measured, is moderate. Basic drinking water access, also
+      fresh, is comparatively decent. Government Effectiveness and
+      Control of Corruption, shared with Pillar A, are middling.
+      Social protection coverage, estimated from regional peers rather
+      than measured directly, is comparatively weaker. Four of the
+      pillar's five indicators are current, describing infrastructure
+      access that, unlike Pillar F's genuine hydropower story, still
+      leaves roughly half the population without power despite the
+      country's own electricity-generation capacity and copper-export
+      earnings.
+    drivers:
+      - "electricity access just over half the population (fresh) -- moderate; basic drinking water comparatively decent (fresh)"
+      - "Government Effectiveness and Control of Corruption (shared with Pillar A) middling; social protection comparatively weaker (regional-mean estimate)"
+      - "4 of 5 indicators current -- roughly half the population still lacks power despite the generation capacity documented in Pillar F"
+    citations: [c1]
+
+recent:
+  primary:
+    - headline: "Chinese-owned mine's tailings dam collapse poisons the Kafue River"
+      date: 2025-02-18
+      summary: >
+        A tailings dam collapsed on 18 February 2025 at a copper mine
+        owned by Sino-Metals Leach Zambia, a subsidiary of a Chinese
+        state-owned mining group, releasing roughly 50 million litres
+        of acidic waste into the Kafue River -- the water source for
+        more than half of Zambia's population. Fish, crops and
+        livestock died along the river, and months later residents
+        were still reporting headaches, skin lesions and other health
+        effects, prompting the US and Finnish governments to advise
+        their citizens to evacuate the area.
+      why_it_matters: >
+        The most severe documented environmental disaster in this
+        record, exposing the same resource-dependency this record's
+        colonial_legacy traces to the colonial-era Copperbelt, now
+        recurring under different ownership.
+      news_url: "https://www.hrw.org/news/2025/09/11/zambia-acid-spill-jeopardizes-residents-health"
+      wikipedia_url: "https://en.wikipedia.org/wiki/2025_Sino-Metals_Leach_Zambia_dam_disaster"
+      sentiment: negative
+    - headline: "Debt restructuring agreement completed after 2020's historic default"
+      date: 2024-06-01
+      summary: >
+        Zambia reached an agreement with holders of $3 billion in
+        Eurobonds in June 2024, writing off roughly $840 million of
+        their claims and restructuring the remainder into new bonds
+        with lower near-term payments, after becoming the first
+        African country to default on its sovereign debt during the
+        COVID-19 pandemic in November 2020. The deal restored an
+        active IMF programme and helped return the economy to growth.
+      why_it_matters: >
+        A genuine, verifiable fiscal achievement credited independent
+        of the environmental and political controversies documented
+        alongside it, and a direct result of the change in government
+        the 2021 election delivered.
+      news_url: "https://www.mofnp.gov.zm/?p=7786"
+      wikipedia_url: ""
+      sentiment: positive
+    - headline: "Former president Lungu's burial remains unresolved eight months after his death"
+      date: 2025-12-11
+      summary: >
+        Edgar Lungu, Zambia's president from 2015 to 2021 and
+        Hichilema's bitter political rival, died in South Africa on 5
+        June 2025. His family, citing his explicit wish that Hichilema
+        not attend his funeral, has refused to allow a
+        government-planned state burial in Lusaka; a Gauteng High
+        Court ruling authorising Zambia to take custody of his body
+        was itself put on hold when South Africa's Supreme Court of
+        Appeal granted the family permission to challenge it on 11
+        December 2025, leaving the dispute unresolved.
+      why_it_matters: >
+        A dispute nominally about funeral arrangements that has become
+        a proxy for the same political rivalry now shaping the August
+        2026 election, testing whether Zambia's courts can resolve a
+        conflict between a sitting government and a private family
+        without either side simply prevailing by force.
+      news_url: "https://www.aljazeera.com/news/2025/8/8/zambia-ex-president-must-be-sent-home-for-burial-south-african-court-rules"
+      wikipedia_url: "https://en.wikipedia.org/wiki/Death_and_state_funeral_of_Edgar_Lungu"
+      sentiment: mixed
+  extended:
+    - headline: "Hichilema seeks a second term as Zambia votes on 13 August 2026"
+      date: 2026-08-13
+      summary: >
+        Zambia held a general election on 13 August 2026, with
+        incumbent Hakainde Hichilema facing Brian Mundubile, a former
+        ally of the late Edgar Lungu who consolidated a fragmented
+        opposition coalition behind his candidacy. Presidential
+        results were due 17 August. The vote was widely framed as a
+        referendum on Hichilema's economic record -- the 2024 debt
+        restructuring and renewed growth against continued hardship
+        from inflation and the Sino-Metals disaster's aftermath.
+      why_it_matters: >
+        The outcome, not yet known at the time of this record's
+        research, will determine whether Zambia's pattern of peaceful
+        electoral transfers, unbroken since 1991, continues under a
+        second consecutive contested but orderly vote.
+      news_url: "https://allafrica.com/stories/202608110117.html"
+      wikipedia_url: "https://en.wikipedia.org/wiki/2026_Zambian_general_election"
+      sentiment: mixed
+
+events:
+  - year: 1991
+    type: election
+    title: "Kaunda concedes in Zambia's first multiparty election"
+    description: >
+      Frederick Chiluba's Movement for Multi-Party Democracy won a
+      landslide victory in Zambia's October 1991 election, and
+      President Kenneth Kaunda conceded defeat, making Zambia the
+      first sub-Saharan African country to achieve a peaceful
+      electoral transfer of power.
+    url: "https://en.wikipedia.org/wiki/Frederick_Chiluba"
+    direction: improve
+  - year: 2020
+    type: economic
+    title: "Zambia defaults on its sovereign debt"
+    description: >
+      In November 2020, Zambia became the first African country to
+      default on its sovereign debt during the COVID-19 pandemic,
+      after public debt had risen from 36% of GDP in 2014 toward 118%
+      under the Patriotic Front government.
+    url: "https://www.mofnp.gov.zm/?p=7786"
+    direction: deteriorate
+  - year: 2021
+    type: election
+    title: "Hichilema defeats Lungu in a second peaceful transfer of power"
+    description: >
+      Opposition leader Hakainde Hichilema defeated incumbent Edgar
+      Lungu in the August 2021 election, Zambia's second peaceful
+      electoral transfer of power, inheriting a country in sovereign
+      default.
+    url: "https://www.france24.com/en/africa/20210816-opposition-candidate-hichilema-wins-zambia-presidential-election"
+    direction: improve
+  - year: 2025
+    type: disaster
+    title: "Sino-Metals dam collapse poisons the Kafue River"
+    description: >
+      A tailings dam collapse at a Chinese-owned copper mine on 18
+      February 2025 released roughly 50 million litres of acidic waste
+      into the Kafue River, the water source for more than half of
+      Zambia's population.
+    url: "https://en.wikipedia.org/wiki/2025_Sino-Metals_Leach_Zambia_dam_disaster"
+    direction: deteriorate
+
+citations:
+  - id: c1
+    url: "https://en.wikipedia.org/wiki/History_of_Zambia"
+    source_type: wikipedia
+    title: "History of Zambia"
+    accessed: 2026-08-11
+    verified: true
+  - id: c2
+    url: "https://en.wikipedia.org/wiki/Frederick_Chiluba"
+    source_type: wikipedia
+    title: "Frederick Chiluba"
+    accessed: 2026-08-11
+    verified: true
+  - id: c3
+    url: "https://en.wikipedia.org/wiki/2021_Zambian_general_election"
+    source_type: wikipedia
+    title: "2021 Zambian general election"
+    accessed: 2026-08-11
+    verified: true
+  - id: c4
+    url: "https://www.france24.com/en/africa/20210816-opposition-candidate-hichilema-wins-zambia-presidential-election"
+    source_type: news
+    title: "Opposition candidate Hichilema wins Zambia presidential election (France 24)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c5
+    url: "https://en.wikipedia.org/wiki/2025_Sino-Metals_Leach_Zambia_dam_disaster"
+    source_type: wikipedia
+    title: "2025 Sino-Metals Leach Zambia dam disaster"
+    accessed: 2026-08-11
+    verified: true
+  - id: c6
+    url: "https://www.hrw.org/news/2025/09/11/zambia-acid-spill-jeopardizes-residents-health"
+    source_type: news
+    title: "Zambia: Acid Spill Jeopardizes Residents' Health (Human Rights Watch)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c7
+    url: "https://www.aljazeera.com/news/2025/8/8/zambia-ex-president-must-be-sent-home-for-burial-south-african-court-rules"
+    source_type: news
+    title: "Zambia ex-president must be sent home for burial, South African court rules (Al Jazeera)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c8
+    url: "https://en.wikipedia.org/wiki/Death_and_state_funeral_of_Edgar_Lungu"
+    source_type: wikipedia
+    title: "Death and state funeral of Edgar Lungu"
+    accessed: 2026-08-11
+    verified: true
+  - id: c9
+    url: "https://www.mofnp.gov.zm/?p=7786"
+    source_type: official
+    title: "Government of the Republic of Zambia Reaches Agreement on Debt Restructuring Terms (Ministry of Finance and National Planning)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c10
+    url: "https://allafrica.com/stories/202608110117.html"
+    source_type: news
+    title: "Zambia Vote to Test Hichilema's Economic Record (AllAfrica)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c11
+    url: "https://en.wikipedia.org/wiki/2026_Zambian_general_election"
+    source_type: wikipedia
+    title: "2026 Zambian general election"
+    accessed: 2026-08-11
+    verified: true
+  - id: c12
+    url: "https://www.sadc.int/pages/history-and-treaty"
+    source_type: official
+    title: "History and Treaty (SADC)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c13
+    url: "https://en.wikipedia.org/wiki/Common_Market_for_Eastern_and_Southern_Africa"
+    source_type: wikipedia
+    title: "Common Market for Eastern and Southern Africa"
+    accessed: 2026-08-11
+    verified: true
+
+rec_membership:
+  - org: SADC
+    joined: 1980
+    status: current
+    left: null
+    citations: [c12]
+  - org: COMESA
+    joined: 1994
+    status: current
+    left: null
+    citations: [c13]
+
+balance:
+  n_positive: 1
+  n_negative: 1
+  n_mixed: 2
+  note: >
+    This record leans less severe than several of its recent
+    neighbours in the corpus because the evidence genuinely supports
+    it: Zambia's two peaceful electoral transfers (1991, 2021) and the
+    2024 debt restructuring are real, verifiable achievements credited
+    at full weight rather than softened into "mixed" by default. The
+    Sino-Metals disaster is coded a full negative given its severity
+    and direct harm to over half the country's water supply. The
+    Lungu funeral dispute and the 13 August 2026 election are both
+    coded mixed rather than forced into positive or negative: the
+    former is a genuinely unresolved conflict between institutions and
+    a private family, and the latter's outcome was not yet known at
+    the time of this record's research -- this record states plainly
+    what is and is not yet known rather than predicting a result.

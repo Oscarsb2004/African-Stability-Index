@@ -26,7 +26,7 @@ An audit is forced early if a single run inflates the citation count by more tha
 
 ## Status
 
-**41 of 54 countries have a record (Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria, Rwanda, Chad, Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic, Mauritania, Zimbabwe, Comoros, Uganda, Sierra Leone, Equatorial Guinea, The Gambia, Mozambique, Guinea, South Sudan, Lesotho, Sao Tome & Principe, Togo, Cameroon, Burundi, Tunisia, Cote d'Ivoire). The first pass is complete; Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic, Mauritania, Zimbabwe, Comoros, Uganda, Sierra Leone, Equatorial Guinea, The Gambia, Mozambique, Guinea, South Sudan, Lesotho, Sao Tome & Principe, Togo, Cameroon, Burundi, Tunisia and Cote d'Ivoire are the first thirty-two backlog countries.**
+**42 of 54 countries have a record (Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria, Rwanda, Chad, Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic, Mauritania, Zimbabwe, Comoros, Uganda, Sierra Leone, Equatorial Guinea, The Gambia, Mozambique, Guinea, South Sudan, Lesotho, Sao Tome & Principe, Togo, Cameroon, Burundi, Tunisia, Cote d'Ivoire, Zambia). The first pass is complete; Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic, Mauritania, Zimbabwe, Comoros, Uganda, Sierra Leone, Equatorial Guinea, The Gambia, Mozambique, Guinea, South Sudan, Lesotho, Sao Tome & Principe, Togo, Cameroon, Burundi, Tunisia, Cote d'Ivoire and Zambia are the first thirty-three backlog countries.**
 
 ### First pass — 9 countries
 
@@ -83,14 +83,15 @@ whose ranks swing hardest with the weighting method.
 | BDI | Burundi | fills East Africa's biggest gap (10 of 14 done); a deliberate cross-reference with RWA -- the identical Belgian 1933 identity-card mechanism produced genocides against opposite ethnic groups two decades apart, and Burundi's 1972 Ikiza (150,000-300,000 Hutu killed) remains far less internationally documented than Rwanda's 1994 genocide despite comparable severity; a second corpus case, after SSD, of a current refugee crisis caused by a neighbor's conflict already in this corpus (COD/RWA's own M23/eastern-DRC war); among the poorest and least-electrified countries recorded here (GDP per capita $1,147 PPP, electricity access 11.6%); a genuine positive (coffee-sector recovery) credited alongside a June 2025 election in which the ruling party won every contested seat | **done — iteration 1** |
 | TUN | Tunisia | fills North Africa, now the corpus's lowest region proportionally (5 of 6 done); a genuinely distinct trajectory shape -- the birthplace of the Arab Spring built the only enduring post-Arab-Spring democratic transition (2015 Nobel Peace Prize) before Kais Saied dismantled it in a single-day constitutional self-coup, 25 July 2021; one of the rare corpus records with a declining 2000-2023 trend; Pillar D (health) remains Tunisia's strongest pillar even as Pillar A records a severe reversal, evidence Bourguiba's human-development legacy outlasted the democracy built atop it; a genuine positive (first 120MW solar plant, Dec 2025) credited alongside the 2024 re-election held after jailing nearly all opposition | **done — iteration 1** |
 | CIV | Cote d'Ivoire | fills West Africa (12 of 16 done); a deliberate cross-reference with BFA -- French administrators dissolved Upper Volta partly to formalise its population as captive labour for Cote d'Ivoire's plantations, the same arrangement ivoirité later weaponised against those labourers' own descendants; a distinct international-intervention mechanism -- France's own Licorne mission acted directly, not through a regional bloc, to remove Gbagbo and install Ouattara in 2011; Ouattara's October 2025 fourth term (89.8%) came after barring Gbagbo (a domestic conviction surviving ICC acquittal) and Thiam (a 1987 citizenship technicality); a genuine positive (new $235M cocoa processing plant) credited alongside the exclusions | **done — iteration 1** |
+| ZMB | Zambia | fills East Africa (11 of 14 done); a genuine positive counterweight after a run of severe recent records -- the first sub-Saharan African country to achieve a peaceful electoral transfer of power (1991) and repeated it in 2021, completing a genuine debt-restructuring achievement in June 2024 after 2020's historic default; an eighth distinct resource-governance case (copper); Pillar F confirms a second genuine hydropower case after LSO; researched two days before a 13 August 2026 election, reported factually without a result since none existed yet; a severe negative (Feb 2025 Sino-Metals acid-spill disaster) and an unresolved mixed item (Lungu's still-unresolved burial dispute) round out the balance | **done — iteration 1** |
 
-### Backlog — the remaining 13
+### Backlog — the remaining 12
 
 Listed in full in `narrative/state.yaml` under `backlog`. They are recorded
 explicitly rather than left implicit: a country with no record should be visibly
 absent, not quietly missing.
 
-Libya, Benin, Cabo Verde, Guinea-Bissau, Senegal, Republic of Congo, Gabon, Djibouti, Malawi, Tanzania, Zambia, Eswatini, Seychelles
+Libya, Benin, Cabo Verde, Guinea-Bissau, Senegal, Republic of Congo, Gabon, Djibouti, Malawi, Tanzania, Eswatini, Seychelles
 
 ---
 
@@ -1468,6 +1469,36 @@ Append one line per run: date, country, mode, what changed, what was removed.
   warnings (France24 and FurtherAfrica, familiar 403 bot-detection
   pattern) — 11/13 resolved. Full pytest suite: 106 passed.
 
+- **2026-08-11 — ZMB — CREATE. Thirty-third backlog country, fills
+  East Africa (11 of 14 done).** Full baseline built: historical
+  overview, colonial legacy (connects the February 2025 Sino-Metals
+  Leach acid-spill disaster directly to the same Copperbelt extraction
+  the colonial history begins with, now under Chinese rather than
+  British ownership, and notes a resource-curse inequality pattern --
+  severe Gini alongside comparatively strong governance scores), 4
+  key_periods, 6 pillar summaries (Pillar C left empty — greyed at 1/8
+  measured), 3 primary + 1 extended recent items, 4 events,
+  rec_membership (SADC 1980 founding member — Zambia hosted SADCC's
+  founding meeting in Lusaka; COMESA 1994 founding member). 13 sources
+  opened and verified: 6 Wikipedia, 5 news, 1 official/Ministry of
+  Finance, 1 official/SADC. A genuine positive counterweight after a
+  run of severe recent records (CMR, BDI, TUN, CIV): Zambia was the
+  first sub-Saharan African country to achieve a peaceful electoral
+  transfer of power (1991, Kaunda conceding to Chiluba) and repeated
+  it in 2021 (Hichilema defeating Lungu), and completed a genuine
+  debt-restructuring achievement in June 2024 (~$840M written off)
+  after 2020's historic default. Adds an eighth distinct
+  resource-governance case to the corpus's running typology (copper,
+  after BWA, TCD, AGO, MLI, BFA, NER, GIN), and Pillar F confirms a
+  second genuine hydropower case after LSO. Researched two days before
+  Zambia's 13 August 2026 general election; the pending vote is
+  reported factually as unresolved rather than assuming or predicting
+  a result, since none existed at research time. Balance: 1 positive,
+  1 negative, 2 mixed. One word-count fix (pillars.G, 79→80+).
+  `--links` passes 0 errors, 1 warning (France24, familiar 403
+  bot-detection pattern) — 12/13 resolved. Full pytest suite: 106
+  passed.
+
 ---
 
 ## Meta-notes
@@ -2206,6 +2237,17 @@ Things a future run should know about how to work, not about a specific country.
   (e.g. any remaining French Sahel/coastal states) should be checked
   against this same distinction rather than assumed to fit the
   regional-bloc pattern by default.
+- **2026-08-11** — ZMB confirms it's worth deliberately alternating a
+  positive-leaning country back in after a run of severe ones, the
+  same lesson STP taught after LSO — but this time the positive case
+  arrived with a genuinely live, unresolved event attached (the 13
+  August 2026 election, two days out at research time). Worth a
+  standing discipline for any future country researched this close to
+  its own election: state plainly that the result is not yet known
+  rather than guessing, hedging vaguely, or silently omitting the
+  election from the record. The EXPAND pass that eventually picks
+  this record back up should treat recording the actual result as its
+  first task, not an optional addition.
 
 ---
 

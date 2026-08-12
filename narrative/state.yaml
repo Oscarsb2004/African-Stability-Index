@@ -889,6 +889,37 @@ countries:
       thin or carried-forward indicators gain fresh coverage,
       especially the stale displaced-persons figure; check if Pillar
       C has gained coverage'
+  ZMB:
+    name: Zambia
+    region: East
+    first_pass: false
+    reason: thirty-third backlog country -- fills East Africa (11 of
+      14 done); a genuine positive counterweight after a run of severe
+      recent records -- Zambia was the first sub-Saharan African
+      country to achieve a peaceful electoral transfer of power (1991)
+      and repeated it in 2021, and completed a genuine debt-
+      restructuring achievement in June 2024 after 2020''s historic
+      default; an eighth distinct resource-governance case (copper,
+      alongside BWA, TCD, AGO, MLI, BFA, NER, GIN); Pillar F confirms
+      a second genuine hydropower case after LSO (electricity
+      generation just 11% fossil-fuel); researched two days before a
+      13 August 2026 general election, reported factually without a
+      result since none existed yet; a severe negative (Feb 2025
+      Sino-Metals acid-spill disaster poisoning the Kafue River,
+      water source for over half the population) and a genuinely
+      unresolved mixed item (Edgar Lungu''s still-unresolved burial
+      dispute, 8+ months after his June 2025 death) round out the
+      balance
+    iteration_count: 1
+    last_updated: '2026-08-11'
+    next_action: 'EXPAND: record the result of the 13 August 2026
+      presidential election once announced (due 17 August), and
+      whether Zambia''s unbroken pattern of peaceful transfers since
+      1991 holds; follow whether the Lungu burial dispute is resolved
+      and how; follow whether victims of the Sino-Metals spill secure
+      compensation, and whether the Kafue River''s contamination eases;
+      check whether Pillars E/G regional-mean indicators gain fresh
+      coverage; check if Pillar C has gained coverage'
 backlog:
   LBY:
     name: Libya
@@ -964,14 +995,6 @@ backlog:
     next_action: create baseline from blueprint
   TZA:
     name: Tanzania
-    region: East
-    first_pass: false
-    reason: not yet scheduled
-    iteration_count: 0
-    last_updated: null
-    next_action: create baseline from blueprint
-  ZMB:
-    name: Zambia
     region: East
     first_pass: false
     reason: not yet scheduled
@@ -2208,3 +2231,31 @@ meta_notes:
   passed. Full-corpus check: 0 errors, 2 pre-existing warnings (COD,
   EGY all-negative balance, unrelated to this run). 41 of 54 countries
   now have a record.'
+- '2026-08-11: ZMB CREATE run complete (13 sources opened and
+  verified: 6 Wikipedia, 5 news, 1 official/Ministry of Finance, 1
+  official/SADC). Fills East Africa (11 of 14 done after this run). A
+  genuine positive counterweight after a run of severe recent records
+  (CMR, BDI, TUN, CIV): Zambia was the first sub-Saharan African
+  country to achieve a peaceful electoral transfer of power (1991,
+  Kaunda conceding to Chiluba) and repeated it in 2021 (Hichilema
+  defeating Lungu), and completed a genuine debt-restructuring
+  achievement in June 2024 (~$840M written off) after 2020''s historic
+  default -- the first African COVID-era sovereign default. Adds an
+  eighth distinct resource-governance case to the corpus''s running
+  typology (copper, alongside BWA, TCD, AGO, MLI, BFA, NER, GIN), and
+  Pillar F confirms a second genuine hydropower case after LSO
+  (electricity generation just 11% fossil-fuel, Kariba/Kafue Gorge).
+  colonial_legacy directly connects the Feb 2025 Sino-Metals Leach
+  acid-spill disaster to the same Copperbelt extraction the colonial
+  history begins with, now under Chinese rather than British
+  ownership. Researched two days before Zambia''s 13 August 2026
+  general election; the pending vote is reported factually as
+  unresolved rather than assuming or predicting a result, since none
+  existed at research time -- a discipline worth repeating for any
+  future country researched this close to its own election date.
+  Balance: 1 positive, 1 negative, 2 mixed. One word-count fix
+  (pillars.G, 79->80+). `--links` passes 0 errors, 1 warning (France24,
+  familiar 403 bot-detection pattern) -- 12/13 resolved. Full pytest
+  suite: 106 passed. Full-corpus check: 0 errors, 2 pre-existing
+  warnings (COD, EGY all-negative balance, unrelated to this run). 42
+  of 54 countries now have a record.'
