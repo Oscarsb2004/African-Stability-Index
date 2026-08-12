@@ -1200,6 +1200,38 @@ countries:
       TotalEnergies/COGO investments show up as a measurable Pillar B
       improvement once fresher GDP-growth data is available; check if
       Pillars C and D have gained enough coverage to be written'
+  DJI:
+    name: Djibouti
+    region: East
+    first_pass: false
+    reason: forty-third backlog country -- completes East Africa (14
+      of 14 done); a strategic-location colonial mechanism distinct
+      from most of this corpus -- France valued the territory
+      chiefly for its port and the Addis Ababa-Djibouti railway
+      rather than any commodity, and the colonial-history entry
+      records no significant slave trade; French administration
+      grouped the Afar and Issa-Somali under one territory and
+      favoured Issa leadership, the specific root of the 1991-2001
+      civil war; Guelleh''s 1999 succession from his own uncle,
+      followed by an unbroken rule now extended via a 2025
+      constitutional age-limit removal to a sixth term (10 April
+      2026, 97.81%), is a near-exact structural echo of COG''s own
+      2015 age-limit removal researched immediately prior; a
+      genuinely adjudicated rule-of-law failure (the DP World Doraleh
+      arbitration, $685M unpaid) credited alongside a genuine,
+      measured renewable-energy achievement (~80% of current
+      electricity) rather than only a stated target
+    iteration_count: 1
+    last_updated: '2026-08-12'
+    next_action: 'EXPAND: follow whether the DP World arbitration
+      awards are ever paid, or the dispute drags on toward a decade;
+      follow whether the 100 MW Green Port Solar Project reaches
+      financial close and construction; follow whether the mid-2025
+      acute food insecurity and malnutrition crisis worsens or is
+      brought under control by year-end 2025 projections already
+      flagged here; check whether port-traffic volumes recover in
+      2026 as Red Sea shipping conditions evolve; check if Pillar C
+      has gained coverage'
 backlog:
   CPV:
     name: Cabo Verde
@@ -1212,14 +1244,6 @@ backlog:
   GNB:
     name: Guinea-Bissau
     region: West
-    first_pass: false
-    reason: not yet scheduled
-    iteration_count: 0
-    last_updated: null
-    next_action: create baseline from blueprint
-  DJI:
-    name: Djibouti
-    region: East
     first_pass: false
     reason: not yet scheduled
     iteration_count: 0
@@ -2789,3 +2813,39 @@ meta_notes:
   as a warning per standing practice. Full pytest suite: 106 passed.
   Full-corpus check: 0 errors, 2 pre-existing unrelated warnings (COD,
   EGY). 51 of 54 countries now have a record.'
+- '2026-08-12: DJI CREATE run complete (17 sources opened and
+  verified: 8 Wikipedia, 8 news, 1 official (UNICEF)). Completes East
+  Africa (14 of 14 done). A strategic-location colonial mechanism
+  distinct from most of this corpus -- France valued the territory
+  chiefly for its port and the Addis Ababa-Djibouti railway rather
+  than any commodity, and the colonial-history entry records no
+  significant slave trade. Guelleh''s 1999 succession from his own
+  uncle Hassan Gouled Aptidon, followed by an unbroken rule now
+  extended via a 2025 constitutional age-limit removal to a sixth
+  term (10 April 2026, 97.81%), is a near-exact structural echo of
+  COG''s own 2015 age-limit removal researched immediately prior --
+  worth naming as a shared entrenchment mechanism rather than
+  coincidence, and a fifth named entrenchment sub-type in this
+  corpus''s typology (foreign-military-restoration for COG,
+  constitutional age-limit removal for DJI, distinct from TGO/CMR''s
+  parliamentary conversion, GIN/GAB''s coup-then-win pattern, and
+  BEN''s chosen-successor handover). Only Pillar C greyed, the
+  fullest pillar set written in some time (A, B, D, E, F, G all
+  written). Following the established discipline, found a genuine
+  positive that required real digging past the political and
+  fiscal negatives: Djibouti already generates roughly 80% of its
+  electricity from renewables (Ethiopian hydropower imports, the
+  2023 Ghoubet wind farm), en route to a 100% target by 2035, a real
+  measured shift rather than only a stated goal, similar in kind to
+  TZA''s hydropower story two runs ago. One word-count fix
+  (key_periods[1], one word short of the 40-word floor), resolved by
+  adding a real fact (Gouled''s single-party rule through the 1980s)
+  rather than padding. Two citation swaps: a usnews.com URL timed out
+  under `--links` (the sixth such timeout case in this corpus, after
+  MDG, GMB, STP, SWZ, LBY) and a thedocs.worldbank.org PDF returned a
+  genuine HTTP 404; both replaced with live alternates (SABC News,
+  Coface) rather than left broken. Balance: 1 positive, 3 negative, 1
+  mixed. Full pytest suite: 106 passed. Full-corpus check: 0 errors,
+  2 pre-existing unrelated warnings (COD, EGY). 52 of 54 countries
+  now have a record -- only Cabo Verde and Guinea-Bissau remain, both
+  in West Africa.'

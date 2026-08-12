@@ -26,7 +26,7 @@ An audit is forced early if a single run inflates the citation count by more tha
 
 ## Status
 
-**51 of 54 countries have a record (Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria, Rwanda, Chad, Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic, Mauritania, Zimbabwe, Comoros, Uganda, Sierra Leone, Equatorial Guinea, The Gambia, Mozambique, Guinea, South Sudan, Lesotho, Sao Tome & Principe, Togo, Cameroon, Burundi, Tunisia, Cote d'Ivoire, Zambia, Senegal, Gabon, Malawi, Eswatini, Seychelles, Benin, Libya, Tanzania, Republic of Congo). The first pass is complete; Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic, Mauritania, Zimbabwe, Comoros, Uganda, Sierra Leone, Equatorial Guinea, The Gambia, Mozambique, Guinea, South Sudan, Lesotho, Sao Tome & Principe, Togo, Cameroon, Burundi, Tunisia, Cote d'Ivoire, Zambia, Senegal, Gabon, Malawi, Eswatini, Seychelles, Benin, Libya, Tanzania and Republic of Congo are the first forty-two backlog countries.**
+**52 of 54 countries have a record (Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria, Rwanda, Chad, Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic, Mauritania, Zimbabwe, Comoros, Uganda, Sierra Leone, Equatorial Guinea, The Gambia, Mozambique, Guinea, South Sudan, Lesotho, Sao Tome & Principe, Togo, Cameroon, Burundi, Tunisia, Cote d'Ivoire, Zambia, Senegal, Gabon, Malawi, Eswatini, Seychelles, Benin, Libya, Tanzania, Republic of Congo, Djibouti). The first pass is complete; Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic, Mauritania, Zimbabwe, Comoros, Uganda, Sierra Leone, Equatorial Guinea, The Gambia, Mozambique, Guinea, South Sudan, Lesotho, Sao Tome & Principe, Togo, Cameroon, Burundi, Tunisia, Cote d'Ivoire, Zambia, Senegal, Gabon, Malawi, Eswatini, Seychelles, Benin, Libya, Tanzania, Republic of Congo and Djibouti are the first forty-three backlog countries.**
 
 ### First pass — 9 countries
 
@@ -93,14 +93,15 @@ whose ranks swing hardest with the weighting method.
 | LBY | Libya | completes North Africa (6 of 6 done); a settler-colony mechanism distinct from most of the corpus -- Italy's Cyrenaica pacification (1923-1932) interned over 100,000 Cyrenaicans and killed an estimated 50,000-100,000 people specifically to clear land for Italian settlers, one of Africa's most violent colonial campaigns; the first country to gain independence via UN resolution (1951); Pillar F (1.6) is now the lowest single-pillar score recorded anywhere in this corpus, surpassing EGY's prior record; a genuine positive (first unified national budget since 2013, April 2026) credited alongside a UN report documenting systematic state-linked migrant trafficking and an oil-refinery shutdown from armed clashes | **done — iteration 1** |
 | TZA | Tanzania | East Africa's second-to-last gap (13 of 14 done, only DJI remains); a nation-building mechanism distinct from every other independence pattern in this corpus -- the April 1964 union of Tanganyika and Zanzibar merged two already-sovereign states into one, rather than a single territory gaining independence; the 1905-1907 Maji Maji Rebellion's German scorched-earth suppression killed an estimated 75,000-300,000 people through deliberate famine, a third named colonial-atrocity mechanism alongside LBY's land-clearance settler violence and RWA/BDI's ethnic-classification genocides; SADC membership confirms MOZ's own predicted Frontline States/SADCC cross-reference; two genuine positives (Julius Nyerere Hydropower Project reaching full capacity; record 2025 gold/tourism/mining growth) credited alongside a severe October-November 2025 election crisis (CHADEMA disqualified, Lissu charged with treason, Hassan re-elected with 97.66%, a crackdown with a genuinely disputed death toll from hundreds into the thousands) | **done — iteration 1** |
 | COG | Republic of Congo | completes Central Africa (8 of 8 done); a demographic-collapse colonial mechanism distinct from CAF's Kongo-Wara rebellion already in this corpus -- historian Adam Hochschild estimates the same concessionary rubber system halved the combined population of French Congo and Gabon, a toll of the same order as the Congo Free State atrocities across the river, despite producing no comparably large rebellion; the Congo-Ocean railway (1921-1934) killed an estimated 17,000-25,000 conscripted labourers; Denis Sassou Nguesso's rule (1979-1992, then unbroken since a 1997 civil war Angola's military intervention resolved in his favour) is a fourth named entrenchment mechanism, distinct from TGO/CMR/GAB/BEN's own patterns -- restoration by foreign military intervention rather than domestic legal or electoral manoeuvre; a fifth consecutive term won 15 March 2026 with 94.90% amid an opposition boycott, two imprisoned opposition leaders, and an election-day internet blackout; a severe debt crisis (97.2% of GDP) credited alongside a genuine TotalEnergies investment | **done — iteration 1** |
+| DJI | Djibouti | completes East Africa (14 of 14 done); a strategic-location colonial mechanism distinct from most of the corpus -- France valued the territory chiefly for its port and the Addis Ababa-Djibouti railway rather than any commodity, with no significant slave trade recorded; French administration grouped the Afar and Issa-Somali under one territory and favoured Issa leadership, the specific root of the 1991-2001 civil war; Guelleh's 1999 succession from his own uncle, followed by an unbroken rule extended via a 2025 constitutional age-limit removal to a sixth term (10 April 2026, 97.81%), is a near-exact structural echo of COG's own 2015 age-limit removal researched immediately prior; a genuinely adjudicated rule-of-law failure (the DP World Doraleh arbitration, $685M unpaid) credited alongside a genuine, measured renewable-energy achievement (~80% of current electricity, not merely a stated target) | **done — iteration 1** |
 
-### Backlog — the remaining 3
+### Backlog — the remaining 2
 
 Listed in full in `narrative/state.yaml` under `backlog`. They are recorded
 explicitly rather than left implicit: a country with no record should be visibly
 absent, not quietly missing.
 
-Cabo Verde, Guinea-Bissau, Djibouti
+Cabo Verde, Guinea-Bissau
 
 ---
 
@@ -1841,6 +1842,41 @@ Append one line per run: date, country, mode, what changed, what was removed.
   HTTP 403, confirmed bot-detection on inspection, left as a warning
   per standing practice. Full pytest suite: 106 passed.
 
+- **2026-08-12 — DJI (Djibouti), CREATE.** Chosen as the forty-third
+  backlog country: East Africa's last remaining gap (14 of 14 done
+  once complete), the clear strongest pick since it closes a full
+  region. 17 sources opened and verified: 8 Wikipedia, 8 news, 1
+  official (UNICEF). A strategic-location colonial mechanism distinct
+  from most of this corpus — France valued the territory chiefly for
+  its port and the Addis Ababa-Djibouti railway rather than any
+  commodity, with no significant slave trade recorded. Guelleh's 1999
+  succession from his own uncle Hassan Gouled Aptidon, followed by an
+  unbroken rule now extended via a 2025 constitutional age-limit
+  removal to a sixth term (10 April 2026, 97.81%), is a near-exact
+  structural echo of COG's own 2015 age-limit removal researched
+  immediately prior — worth naming as a shared entrenchment mechanism
+  rather than coincidence, and a fifth named entrenchment sub-type in
+  this corpus's typology alongside COG's foreign-military-restoration,
+  TGO/CMR's parliamentary conversion, GIN/GAB's coup-then-win pattern,
+  and BEN's chosen-successor handover. Only Pillar C greyed — the
+  fullest pillar set written in some time (A, B, D, E, F, G all
+  written). Following the established discipline, found a genuine
+  positive that required real digging past the political and fiscal
+  negatives: Djibouti already generates roughly 80% of its
+  electricity from renewables (Ethiopian hydropower imports, the 2023
+  Ghoubet wind farm), en route to a 100% target by 2035 — a real,
+  measured shift rather than only a stated goal. One word-count fix
+  (one key_period, one word short of the 40-word floor), resolved by
+  adding a real fact rather than padding. Two citation swaps: a
+  usnews.com URL timed out under `--links` (the sixth such timeout
+  case in this corpus, after MDG, GMB, STP, SWZ, LBY) and a
+  thedocs.worldbank.org PDF returned a genuine HTTP 404; both replaced
+  with live alternates. Balance: 1 positive, 3 negative, 1 mixed. Full
+  pytest suite: 106 passed. Full-corpus check: 0 errors, 2
+  pre-existing unrelated warnings (COD, EGY). 52 of 54 countries now
+  have a record — only Cabo Verde and Guinea-Bissau remain, both in
+  West Africa.
+
 ---
 
 ## Meta-notes
@@ -2737,6 +2773,26 @@ Things a future run should know about how to work, not about a specific country.
   the-election pattern, or BEN's chosen-successor handover — worth
   watching for a fifth sub-type as the remaining backlog (CPV, GNB,
   DJI) is completed.
+- **2026-08-12** — DJI completes East Africa and delivers that fifth
+  entrenchment sub-type immediately, one country later: constitutional
+  age-limit removal used specifically to permit an ageing incumbent's
+  continued candidacy, a mechanism DJI's 2025 amendment (Guelleh, then
+  78) and COG's 2015 amendment (Sassou Nguesso) share almost exactly,
+  even though the two records were researched back-to-back by
+  coincidence of backlog ordering rather than deliberate pairing —
+  worth treating as a reminder that this typology-building sometimes
+  finds its strongest matches by proximity, not just by deliberate
+  cross-referencing, and worth checking adjacent-run pairs
+  specifically for this kind of echo going forward. DJI also confirms
+  a colonial mechanism new to this corpus: colonization valued purely
+  for strategic/geopolitical position (a port, a chokepoint) rather
+  than any commodity or settler land, with the colonial-history entry
+  itself recording no significant slave trade — worth contrasting
+  explicitly with SYC's own methodologically-flagged smallness rather
+  than treated as a lesser case; a country can be colonized for
+  reasons other than extraction, and DJI's present-day military-base
+  rent economy (~18% of GDP) is a direct, traceable continuation of
+  the exact same strategic logic 160 years later.
 
 ---
 

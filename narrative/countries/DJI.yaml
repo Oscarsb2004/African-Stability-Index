@@ -1,0 +1,526 @@
+meta:
+  iso3: DJI
+  name: Djibouti
+  last_updated: 2026-08-12
+  iteration_count: 1
+  next_action: >
+    EXPAND: (1) follow whether the DP World arbitration awards are
+    ever paid, or the dispute drags on toward a decade; (2) follow
+    whether the 100 MW Green Port Solar Project reaches financial
+    close and construction; (3) follow whether the mid-2025 acute
+    food insecurity and malnutrition crisis worsens or is brought
+    under control by year-end 2025 projections already flagged here;
+    (4) check whether port-traffic volumes recover in 2026 as Red Sea
+    shipping conditions evolve; (5) check if Pillar C has gained
+    coverage.
+  model_used: claude-sonnet-5
+
+historical:
+  overview: >
+    France established a coaling station at Obock in 1862 and expanded
+    it into French Somaliland, valuing the territory chiefly for
+    Djibouti's port and the Addis Ababa-Djibouti railway rather than
+    any commodity extraction -- a strategic rather than resource-driven
+    colonization distinct from most of this corpus. French
+    administration grouped two ethnically distinct populations, the
+    Afar and the Issa-Somali, under a single territory; political
+    power shifted toward the Issa after independence in 1977 under
+    Hassan Gouled Aptidon. Perceived Afar exclusion from government
+    fuelled a civil war from 1991, when the Afar-led Front for the
+    Restoration of Unity and Democracy (FRUD) came to control roughly
+    two-thirds of the country's rural territory before a 1994
+    power-sharing agreement ended most fighting; a final peace accord
+    followed in 2001. Gouled's chief of staff and nephew, Ismail Omar
+    Guelleh, succeeded him in 1999 and has ruled since. A 2025
+    constitutional amendment removed the presidential age limit of 75
+    specifically to allow the 78-year-old Guelleh to seek a sixth
+    term, which he won on 10 April 2026 with 97.81% of the vote.
+    Djibouti's economy depends overwhelmingly on its strategic
+    location: port and logistics activity account for nearly 70% of
+    GDP, and the country hosts the world's densest concentration of
+    foreign military bases -- American, French, Chinese, Japanese and
+    Italian -- generating over $125 million a year in rent. A London
+    arbitration court ruled in October 2025 that Djibouti's 2018
+    seizure of the DP World-run Doraleh Container Terminal was
+    unlawful, leaving roughly $685 million in awards still unpaid.
+  overview_citations: [c1, c2, c3, c5, c8, c15]
+  colonial_legacy: >
+    context/colonial_history.yaml already frames Djibouti's
+    colonization as strategic rather than extractive -- France valued
+    the territory for its port and the Addis Ababa-Djibouti railway
+    rather than any commodity, and the schema entry records no
+    significant slave-trade involvement, a genuinely different
+    colonial mechanism from most of this corpus. That strategic
+    framing has a direct throughline to the present: the same port and
+    Red Sea chokepoint France valued in 1862 is why the country hosts
+    five foreign militaries' bases today, generating rent equivalent
+    to roughly 18% of GDP. But French rule also left a specific
+    structural grievance the schema note does not spell out: French
+    Somaliland administered two ethnically and culturally distinct
+    populations, the pastoralist Afar and the Somali-speaking Issa, as
+    a single territory, and colonial-era political structures favoured
+    the Issa, whose leaders inherited the state at independence in
+    1977. That imbalance, not a colonial boundary dispute with a
+    neighbouring state, is the specific root of the 1991-1994 civil
+    war -- a mechanism closer to Rwanda and Burundi's colonial
+    administrative favouritism than to the arbitrary-partition
+    mechanism documented in Togo or Cameroon's records, though
+    considerably less lethal than either genocide.
+  colonial_legacy_citations: [c1, c3]
+  key_periods:
+    - title: "Strategic colonization and the Afar-Issa territorial union"
+      period: "1862-1977"
+      summary: >
+        France established a coaling station at Obock in 1862 and
+        expanded it into French Somaliland, valued chiefly for
+        Djibouti's port and the Addis Ababa-Djibouti railway rather
+        than any commodity. French administration grouped the
+        pastoralist Afar and the Somali-speaking Issa under one
+        territory and favoured Issa political leadership, a structural
+        imbalance that persisted after independence.
+      citations: [c1]
+    - title: "Independence and Gouled's rule"
+      period: "1977-1991"
+      summary: >
+        Djibouti gained independence from France on 27 June 1977 under
+        Hassan Gouled Aptidon, an Issa leader who had led independence
+        negotiations. Gouled ruled as head of a single-party state
+        through the 1980s; his nephew and chief of staff, Ismail Omar
+        Guelleh, effectively ran day-to-day government from the late
+        1980s onward.
+      citations: [c2]
+    - title: "The Djiboutian Civil War"
+      period: "1991-2001"
+      summary: >
+        The Afar-led Front for the Restoration of Unity and Democracy
+        (FRUD) launched a civil war in November 1991 over perceived
+        Afar exclusion from government, at its peak controlling
+        roughly two-thirds of the country's rural territory. A 1994
+        power-sharing agreement ended most fighting and brought FRUD
+        into government; a final peace accord followed in 2001.
+      citations: [c3, c4]
+    - title: "Guelleh's succession and constitutional entrenchment"
+      period: "1999-2026"
+      summary: >
+        Guelleh succeeded his uncle as president in 1999 and has since
+        won five re-elections. A 2025 constitutional amendment removed
+        the presidential age limit of 75 specifically to allow the
+        78-year-old Guelleh to seek a sixth term, which he won on 10
+        April 2026 with 97.81% of the vote.
+      citations: [c2, c7, c8]
+
+pillars:
+  A:
+    summary: >
+      All six World Governance Indicators are directly measured this
+      year, and the aggregate is weak -- Voice and Accountability
+      (34.1) and Control of Corruption (31.4) are the most severe.
+      That weak reading directly reflects a governance structure now
+      approaching five decades under two men from the same family:
+      Ismail Omar Guelleh, who succeeded his uncle Hassan Gouled
+      Aptidon in 1999, won a sixth consecutive term on 10 April 2026
+      with 97.81% of the vote after a 2025 constitutional amendment
+      removed the presidential age limit specifically to permit his
+      candidacy at 78.
+    drivers:
+      - "all 6 WGI indicators directly measured; Voice and Accountability (34.1) and Control of Corruption (31.4) the most severe"
+      - "reflects a governance structure now approaching five decades under two men from the same family -- Guelleh succeeded his uncle Gouled in 1999"
+      - "won a sixth term 10 April 2026 with 97.81% after a 2025 constitutional amendment removed the age limit specifically to permit his candidacy at 78 (see recent developments)"
+    citations: [c7, c8]
+  B:
+    summary: >
+      GDP growth, GDP per capita, inflation and domestic credit, all
+      freshly measured, are comparatively strong for this corpus.
+      Gini is a regional-mean estimate rather than a direct
+      measurement. This pillar's 2023 reference year understates how
+      narrowly concentrated that growth is: port and logistics
+      activity alone account for nearly 70% of GDP, and 2025 growth
+      held at a robust 6.7% even as container-terminal traffic fell
+      7-10.5% amid US tariff changes and regional trade uncertainty, a
+      resilience this record credits directly rather than assuming
+      Red Sea disruption would automatically register as an economic
+      negative.
+    drivers:
+      - "GDP growth, GDP per capita, inflation, domestic credit all fresh, comparatively strong for this corpus; Gini a regional-mean estimate"
+      - "2023 reference year understates how narrowly concentrated growth is: port and logistics activity alone account for nearly 70% of GDP"
+      - "2025 growth held at a robust 6.7% even as container-terminal traffic fell 7-10.5% amid US tariff changes and regional trade uncertainty (see recent developments)"
+    citations: [c10, c11]
+  D:
+    summary: >
+      Four of the pillar's five indicators are directly measured this
+      year, and the aggregate is middling: life expectancy and infant
+      mortality are both comparatively weak, while handwashing-facility
+      access, at just over half the population, is more middling.
+      Severe food insecurity, at 16.50%, reads as comparatively decent
+      for this corpus, but this pillar's 2023 reference year predates a
+      worsening drought and water crisis: a 2024 multisectoral survey
+      found acute malnutrition among children under five had risen to
+      14.7% (from 13% in 2023), and by mid-2025 roughly 194,000 people
+      faced high levels of acute food insecurity, including 44,000 in
+      the emergency phase. Safely managed drinking water, the pillar's
+      only regional-mean estimate, is comparatively weak regardless.
+      Four of the pillar's five indicators are current.
+    drivers:
+      - "4 of 5 indicators directly measured; life expectancy and infant mortality both comparatively weak; handwashing-facility access just over half the population, more middling"
+      - "severe food insecurity (16.50%) reads comparatively decent, but 2023 reference year predates a worsening drought: 2024 acute malnutrition among under-5s rose to 14.7% (from 13% in 2023)"
+      - "by mid-2025 roughly 194,000 people faced high acute food insecurity, including 44,000 in the emergency phase; 4 of 5 indicators current (see recent developments)"
+    citations: [c12]
+  E:
+    summary: >
+      Political Stability and Rule of Law, both fresh and shared with
+      Pillar A, diverge -- Political Stability (59.7) is comparatively
+      decent, reflecting more than two decades of peace since the
+      1994 power-sharing agreement, while Rule of Law (41.5) remains
+      weak. Intentional homicide and displaced persons, both
+      regional-mean estimates rather than direct measurements, are
+      middling and severe respectively -- the displaced-persons figure
+      most plausibly reflects neighbouring Somalia's and Yemen's own
+      crises, both of which have sent refugees into Djibouti, rather
+      than any current internal Djiboutian conflict. Only two of the
+      pillar's four indicators are current.
+    drivers:
+      - "Political Stability and Rule of Law (shared with Pillar A) diverge: Political Stability (59.7) comparatively decent, reflecting 2+ decades of peace since the 1994 power-sharing agreement; Rule of Law (41.5) remains weak"
+      - "intentional homicide middling, displaced persons severe (both regional-mean estimates) -- the displaced-persons figure most plausibly reflects neighbouring Somalia's and Yemen's own crises rather than internal Djiboutian conflict"
+      - "only 2 of 4 indicators current"
+    citations: [c3]
+  F:
+    summary: >
+      CO2 emissions per capita and agricultural land share, both
+      freshly measured, are Djibouti's strongest readings in this
+      corpus -- agricultural land (84.4) is near the scale's ceiling,
+      though this reflects the country's near-total aridity and
+      minimal arable land rather than a genuine environmental
+      achievement. Freshwater withdrawal, carried forward, is very
+      low relative to renewable resources. Electricity generation
+      from fossil sources, carried forward at nearly 65%, is this
+      pillar's weakest reading, but the 2023 reference year
+      understates a genuine and rapid improvement documented under
+      recent developments: Djibouti now generates roughly 80% of its
+      electricity from renewable sources, chiefly hydropower imported
+      from Ethiopia and the 2023 Ghoubet wind farm, en route to a
+      stated 100%-renewable target by 2035. Only two of the pillar's
+      four indicators are current.
+    drivers:
+      - "CO2 pc and agricultural land both fresh, Djibouti's strongest readings in this corpus -- agricultural land (84.4) near the scale's ceiling, though this reflects near-total aridity rather than genuine environmental achievement"
+      - "freshwater withdrawal very low relative to renewable resources (carried forward)"
+      - "electricity generation weak on paper, nearly 65% fossil-fuel (carried forward), but 2023 reference year understates a rapid shift: Djibouti now generates ~80% of electricity from renewables (Ethiopian hydropower imports, 2023 Ghoubet wind farm), targeting 100% by 2035 (see recent developments)"
+    citations: [c13, c14]
+  G:
+    summary: >
+      Electricity access, at 65.20% of the population and freshly
+      measured, is comparatively decent for this corpus. Basic
+      drinking water access, also fresh, is stronger still.
+      Government Effectiveness and Control of Corruption, shared with
+      Pillar A, are both weak. Social protection coverage, estimated
+      from regional peers rather than measured directly, is
+      comparatively weaker. Four of the pillar's five indicators are
+      current, describing an infrastructure picture stronger than
+      Pillar A's weak governance scores alone would predict -- port
+      revenue and military-base rents (over $125 million a year,
+      roughly 18% of GDP) have funded real service delivery even under
+      a government this record's own governance pillar scores harshly.
+    drivers:
+      - "electricity access 65.20% of the population (fresh) -- comparatively decent for this corpus; basic drinking water stronger still (fresh)"
+      - "Government Effectiveness and Control of Corruption (shared with Pillar A) both weak; social protection comparatively weaker (regional-mean estimate)"
+      - "4 of 5 indicators current -- port revenue and military-base rents (over $125M/year, ~18% of GDP) have funded real service delivery even under weak governance scores"
+    citations: [c5]
+
+recent:
+  primary:
+    - headline: "Guelleh wins a sixth term with 97.81% after a 2025 constitutional amendment lifted the age limit that would have barred him"
+      date: 2026-04-10
+      summary: >
+        President Ismail Omar Guelleh, in power since 1999, won a
+        sixth consecutive term on 10 April 2026 with 97.81% of the
+        vote. A 2025 constitutional amendment had removed the
+        presidential age limit of 75 specifically to permit Guelleh,
+        now 78, to stand again; no serious opposition candidate
+        contested the race.
+      why_it_matters: >
+        Directly explains Pillar A's severity and is a near-exact
+        structural echo of the Republic of Congo's own 2015 age-limit
+        removal, documented elsewhere in this corpus -- worth naming
+        as a shared entrenchment mechanism rather than a coincidence.
+      news_url: "https://www.sabcnews.com/sabcnews/djiboutis-guelleh-expected-to-win-sixth-term-after-age-limits-lifted/"
+      wikipedia_url: "https://en.wikipedia.org/wiki/2026_Djiboutian_presidential_election"
+      sentiment: negative
+    - headline: "London court confirms Djibouti unlawfully seized the Doraleh Container Terminal, leaving $685 million in awards unpaid"
+      date: 2025-10-02
+      summary: >
+        The London Court of International Arbitration ruled in
+        October 2025 that Djibouti's 2018 seizure of the DP
+        World-operated Doraleh Container Terminal was unlawful and
+        that DP World's 50-year concession remains legally binding.
+        The government has so far refused to honour roughly $685
+        million in existing arbitration awards, and a further $1
+        billion in DP World and China Merchants Port Holding claims
+        remain active.
+      why_it_matters: >
+        A specific, adjudicated instance of the same weak
+        rule-of-law and contract-enforcement pattern Pillar A's Rule
+        of Law score already documents, made concrete by an
+        international court's own repeated rulings against the
+        government over roughly seven years of litigation.
+      news_url: "https://www.mediaoffice.ae/en/news/2025/october/02-10/london-court-confirms-djibouti-acted-illegally-in-seizing-dp-world-built-terminal"
+      wikipedia_url: ""
+      sentiment: negative
+    - headline: "Djibouti reaches roughly 80% renewable electricity, with a 100 MW solar project signed toward its 2035 target"
+      date: 2025-11-01
+      summary: >
+        Djibouti now generates roughly 80% of its electricity from
+        renewable sources, chiefly hydropower imported from Ethiopia
+        and the 2023 Ghoubet wind farm, the country's first
+        utility-scale renewable plant. Commercial agreements signed in
+        late 2025 envision a further 100 MW Green Port Solar Project
+        at the container terminal, part of a national strategy
+        targeting 100% renewable electricity by 2035.
+      why_it_matters: >
+        A genuine, verifiable environmental achievement, credited
+        independently of the same period's severe political
+        entrenchment and unresolved arbitration dispute -- a
+        resource-poor country turning its geography (wind, sun, and a
+        hydropower-rich neighbour) into a real energy transition
+        rather than an aspiration.
+      news_url: "https://african.business/2024/05/dossier/how-djibouti-will-produce-100-green-energy-by-2035"
+      wikipedia_url: ""
+      sentiment: positive
+  extended:
+    - headline: "Economy grows 6.7% in 2025 even as Red Sea disruption cuts port traffic 7-10.5%"
+      date: 2025-12-01
+      summary: >
+        Djibouti's economy grew an estimated 6.7% in 2025, driven by
+        port and logistics activity, telecommunications, energy and
+        public works, even as container-terminal traffic fell 7% in
+        the first quarter and 10.5% by mid-year amid US tariff
+        changes, regional tensions and the broader Red Sea shipping
+        crisis. Djibouti had earlier benefited from ships rerouting
+        away from Houthi attacks after 2023, before renewed
+        uncertainty depressed volumes through 2025.
+      why_it_matters: >
+        Shows Djibouti's port-dependent economy as simultaneously
+        resilient (growth held up) and structurally exposed (a
+        security crisis unfolding far away in Yemen can still move
+        Djiboutian trade volumes directly) -- neither purely a
+        positive nor a negative story on its own.
+      news_url: "https://www.africanleadershipmagazine.co.uk/djiboutis-economic-outlook-after-imf-review-ports-growth-and-regional-risks/"
+      wikipedia_url: ""
+      sentiment: mixed
+    - headline: "Drought pushes child acute malnutrition to 14.7% amid a deepening water crisis"
+      date: 2025-06-01
+      summary: >
+        A 2024 multisectoral survey found global acute malnutrition
+        among children had risen to 14.7%, up from 13% in 2023, as
+        prolonged drought and structural water stress affected rural
+        areas. By mid-2025, roughly 194,000 people faced high levels
+        of acute food insecurity, including 44,000 in the emergency
+        phase, with numbers projected to rise further by year-end --
+        a crisis driven partly by Djibouti's dependence on imports for
+        90% of its food needs.
+      why_it_matters: >
+        A severe, current humanitarian crisis this pillar's own
+        reference-year food-insecurity figure (16.50%, comparatively
+        decent for this corpus) does not capture, evidence that a
+        single-year snapshot can understate a worsening trend already
+        visible in more recent data.
+      news_url: "https://www.unicef.org/djibouti/en/stories/malnutrition-reaching-children-last-mile"
+      wikipedia_url: ""
+      sentiment: negative
+
+events:
+  - year: 1977
+    type: independence
+    title: "Djibouti gains independence from France"
+    description: >
+      Djibouti gained independence from France on 27 June 1977 under
+      Hassan Gouled Aptidon, an Issa leader who had led the territory's
+      independence negotiations.
+    url: "https://en.wikipedia.org/wiki/Hassan_Gouled_Aptidon"
+    direction: improve
+  - year: 1991
+    type: conflict
+    title: "Djiboutian Civil War begins"
+    description: >
+      The Afar-led Front for the Restoration of Unity and Democracy
+      (FRUD) launched a civil war in November 1991 over perceived Afar
+      exclusion from government, at its peak controlling roughly
+      two-thirds of the country's rural territory before a 1994
+      power-sharing agreement ended most fighting.
+    url: "https://en.wikipedia.org/wiki/Djiboutian_Civil_War"
+    direction: deteriorate
+  - year: 1999
+    type: election
+    title: "Guelleh succeeds his uncle as president"
+    description: >
+      Ismail Omar Guelleh, Hassan Gouled Aptidon's nephew and former
+      chief of staff, won the 1999 presidential election after his
+      uncle declined to seek re-election, continuing single-family
+      political dominance under a formally democratic process.
+    url: "https://en.wikipedia.org/wiki/1999_Djiboutian_presidential_election"
+    direction: mixed
+  - year: 2026
+    type: election
+    title: "Guelleh wins sixth term after age-limit removal"
+    description: >
+      President Ismail Omar Guelleh won a sixth consecutive term on 10
+      April 2026 with 97.81% of the vote, after a 2025 constitutional
+      amendment removed the presidential age limit of 75 specifically
+      to permit his candidacy at 78.
+    url: "https://en.wikipedia.org/wiki/2026_Djiboutian_presidential_election"
+    direction: deteriorate
+
+citations:
+  - id: c1
+    url: "https://www.britannica.com/topic/history-of-Djibouti"
+    source_type: news
+    title: "History of Djibouti (Britannica)"
+    accessed: 2026-08-12
+    verified: true
+  - id: c2
+    url: "https://en.wikipedia.org/wiki/Hassan_Gouled_Aptidon"
+    source_type: wikipedia
+    title: "Hassan Gouled Aptidon"
+    accessed: 2026-08-12
+    verified: true
+  - id: c3
+    url: "https://en.wikipedia.org/wiki/Djiboutian_Civil_War"
+    source_type: wikipedia
+    title: "Djiboutian Civil War"
+    accessed: 2026-08-12
+    verified: true
+  - id: c4
+    url: "https://www.britannica.com/place/Djibouti/Multiparty-politics-and-civil-war"
+    source_type: news
+    title: "Djibouti - Multiparty politics and civil war (Britannica)"
+    accessed: 2026-08-12
+    verified: true
+  - id: c5
+    url: "https://www.peoplesworld.org/article/why-do-so-many-countries-have-military-bases-in-djibouti/"
+    source_type: news
+    title: "Why do so many countries have military bases in Djibouti? (People's World)"
+    accessed: 2026-08-12
+    verified: true
+  - id: c6
+    url: "https://en.wikipedia.org/wiki/Foreign_military_bases_in_Djibouti"
+    source_type: wikipedia
+    title: "Foreign military bases in Djibouti"
+    accessed: 2026-08-12
+    verified: true
+  - id: c7
+    url: "https://en.wikipedia.org/wiki/2026_Djiboutian_presidential_election"
+    source_type: wikipedia
+    title: "2026 Djiboutian presidential election"
+    accessed: 2026-08-12
+    verified: true
+  - id: c8
+    url: "https://www.sabcnews.com/sabcnews/djiboutis-guelleh-expected-to-win-sixth-term-after-age-limits-lifted/"
+    source_type: news
+    title: "Djibouti's Guelleh Expected to Win Sixth Term After Age Limits Lifted (SABC News)"
+    accessed: 2026-08-12
+    verified: true
+  - id: c9
+    url: "https://www.france24.com/en/africa/20260409-djibouti-election-expected-extend-incumbent-27-years-presidential-office"
+    source_type: news
+    title: "Djibouti election expected to extend incumbent's 27 years in office (France 24)"
+    accessed: 2026-08-12
+    verified: true
+  - id: c10
+    url: "https://www.africanleadershipmagazine.co.uk/djiboutis-economic-outlook-after-imf-review-ports-growth-and-regional-risks/"
+    source_type: news
+    title: "Djibouti's Economic Outlook After IMF Review (African Leadership Magazine)"
+    accessed: 2026-08-12
+    verified: true
+  - id: c11
+    url: "https://www.coface.com/news-economy-and-insights/business-risk-dashboard/country-risk-files/djibouti"
+    source_type: news
+    title: "Djibouti: Country Risk File (Coface)"
+    accessed: 2026-08-12
+    verified: true
+  - id: c12
+    url: "https://www.unicef.org/djibouti/en/stories/malnutrition-reaching-children-last-mile"
+    source_type: official
+    title: "Malnutrition: Reaching Children in the Last Mile (UNICEF Djibouti)"
+    accessed: 2026-08-12
+    verified: true
+  - id: c13
+    url: "https://african.business/2024/05/dossier/how-djibouti-will-produce-100-green-energy-by-2035"
+    source_type: news
+    title: "How Djibouti will produce 100% green energy by 2035 (African Business)"
+    accessed: 2026-08-12
+    verified: true
+  - id: c14
+    url: "https://africa-energy-portal.org/news/djibouti-secures-first-renewables-project-60mw-wind-farm"
+    source_type: news
+    title: "Djibouti secures first renewables project: 60MW wind farm (Africa Energy Portal)"
+    accessed: 2026-08-12
+    verified: true
+  - id: c15
+    url: "https://www.mediaoffice.ae/en/news/2025/october/02-10/london-court-confirms-djibouti-acted-illegally-in-seizing-dp-world-built-terminal"
+    source_type: news
+    title: "London Court confirms Djibouti acted illegally in seizing DP World-built terminal"
+    accessed: 2026-08-12
+    verified: true
+  - id: c16
+    url: "https://arbitrationmonitor.com/dp-worlds-1-billion-battle-in-djibouti-deepens-after-arbitration-setback/"
+    source_type: news
+    title: "DP World's $1 Billion Battle in Djibouti Deepens After Arbitration (Arbitration Monitor)"
+    accessed: 2026-08-12
+    verified: true
+  - id: c17
+    url: "https://en.wikipedia.org/wiki/Common_Market_for_Eastern_and_Southern_Africa"
+    source_type: wikipedia
+    title: "Common Market for Eastern and Southern Africa"
+    accessed: 2026-08-12
+    verified: true
+  - id: c18
+    url: "https://simple.wikipedia.org/wiki/Community_of_Sahel-Saharan_States"
+    source_type: wikipedia
+    title: "Community of Sahel-Saharan States"
+    accessed: 2026-08-12
+    verified: true
+  - id: c19
+    url: "https://en.wikipedia.org/wiki/Intergovernmental_Authority_on_Development"
+    source_type: wikipedia
+    title: "Intergovernmental Authority on Development"
+    accessed: 2026-08-12
+    verified: true
+
+rec_membership:
+  - org: IGAD
+    joined: 1986
+    status: current
+    left: null
+    citations: [c19]
+  - org: COMESA
+    joined: 1994
+    status: current
+    left: null
+    citations: [c17]
+  - org: CEN-SAD
+    joined: 1999
+    status: current
+    left: null
+    citations: [c18]
+
+balance:
+  n_positive: 1
+  n_negative: 3
+  n_mixed: 1
+  note: >
+    The election and the Doraleh arbitration ruling are kept as two
+    distinct primary negatives rather than merged, because they
+    document different domains -- political entrenchment via a
+    constitutional age-limit removal, and a separate, adjudicated
+    contract-enforcement failure with its own multi-year litigation
+    history. The drought/malnutrition item is kept as a distinct
+    extended negative rather than folded into Pillar D's own prose,
+    because it is a specific, dated humanitarian development this
+    pillar's 2023 reference year does not and cannot capture. The
+    renewable-energy item is credited at full positive weight because
+    it is a real, measured shift (roughly 80% of current electricity
+    generation) rather than only a stated target, the same standard
+    this corpus applies to crediting genuine achievements independent
+    of surrounding political conduct. The economic-resilience item is
+    coded mixed rather than positive or negative, because growth
+    holding up and port traffic declining are both true and pull in
+    different directions -- this record does not resolve that tension
+    into a single verdict.
