@@ -1075,18 +1075,38 @@ countries:
       2008-rejoin history, only current status and a single joined
       year -- flagged, not resolved; check if Pillar C has gained
       coverage'
+  BEN:
+    name: Benin
+    region: West
+    first_pass: false
+    reason: thirty-ninth backlog country -- fills West Africa (14 of
+      16 done); a genuinely two-sided colonial history the schema
+      states plainly rather than softens -- the Kingdom of Dahomey was
+      itself a major slave-trading state before French conquest, not
+      only a victim of it, and King Behanzin surrendered in 1894 at
+      Ouidah, the same port his kingdom''s slave trade had passed
+      through; the pioneering 1990 National Conference (Africa''s
+      first) set the template other Francophone states copied, and
+      Kerekou''s 1991 concession/1996 democratic comeback are both
+      rare, distinct patterns; researched immediately after surviving
+      a December 2025 coup attempt, with Talon genuinely honouring his
+      own two-term limit in May 2026 -- a real departure from TGO/CMR/
+      GAB -- but succeeded by his own finance minister in an election
+      the opposition was structurally excluded from entirely
+    iteration_count: 1
+    last_updated: '2026-08-11'
+    next_action: 'EXPAND: follow whether the December 2025 coup
+      plotters face trial and what sentences result; follow whether
+      Wadagni''s government shows any sign of political opening toward
+      the excluded opposition, or entrenches the exclusion pattern
+      further; follow whether the Parakou dry port''s cotton shipments
+      and Cotonou''s cargo growth continue at their 2025-2026 pace;
+      check whether Pillars D/F/G weak indicators gain fresh coverage;
+      check if Pillar C has gained coverage'
 backlog:
   LBY:
     name: Libya
     region: North
-    first_pass: false
-    reason: not yet scheduled
-    iteration_count: 0
-    last_updated: null
-    next_action: create baseline from blueprint
-  BEN:
-    name: Benin
-    region: West
     first_pass: false
     reason: not yet scheduled
     iteration_count: 0
@@ -2552,3 +2572,37 @@ meta_notes:
   pytest suite: 106 passed. Full-corpus check: 0 errors, 2
   pre-existing warnings (COD, EGY all-negative balance, unrelated to
   this run). 47 of 54 countries now have a record.'
+- '2026-08-11: BEN CREATE run complete (12 sources opened and
+  verified: 4 Wikipedia, 6 news, 2 more Wikipedia/news for
+  rec_membership). Fills West Africa (14 of 16 done after this run).
+  colonial_legacy states a genuinely two-sided history most colonial-
+  history entries in this corpus soften: the Kingdom of Dahomey was
+  itself a major participant in the slave trade before French
+  conquest, not only a victim of it, and King Behanzin surrendered in
+  January 1894 at Ouidah, the same port his kingdom''s slave trade had
+  passed through -- French conquest ended Dahomey''s sovereignty by
+  defeating the same state the trade had helped make militarily
+  powerful. The 1990 National Conference (Africa''s first of its kind)
+  set the template other Francophone states copied for their own
+  transitions, and Kerekou''s 1991 concession followed by his 1996
+  democratic comeback are both rare, distinct patterns not yet
+  documented elsewhere in this corpus. Researched immediately after
+  Benin survived a December 2025 coup attempt (foiled within hours by
+  loyalist forces with Nigerian and French backing); Talon genuinely
+  honoured his own two-term limit in May 2026, a real departure from
+  TGO/CMR/GAB''s entrenchment patterns already in this corpus, but was
+  succeeded by his own finance minister in an election the opposition
+  was structurally excluded from entirely, following its own complete
+  loss of every parliamentary seat three months earlier -- coded mixed
+  rather than negative or positive, crediting the genuine adherence to
+  term limits without letting it imply a competitive election.
+  Following the established discipline, found a genuine positive: the
+  Port of Cotonou''s cargo volume rose 63% in H1 2025, credited
+  independent of the political turbulence documented alongside it.
+  Balance: 1 positive, 2 negative, 1 mixed. Five word-count fixes
+  (pillars.B/D/E/G, recent extended item), each resolved by adding
+  real facts. `--links` passes 0 errors, 1 warning (France24, familiar
+  403 bot-detection pattern) -- 11/12 resolved. Full pytest suite: 106
+  passed. Full-corpus check: 0 errors, 2 pre-existing warnings (COD,
+  EGY all-negative balance, unrelated to this run). 48 of 54 countries
+  now have a record.'

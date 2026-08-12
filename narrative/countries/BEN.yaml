@@ -1,0 +1,448 @@
+meta:
+  iso3: BEN
+  name: Benin
+  last_updated: 2026-08-11
+  iteration_count: 1
+  next_action: >
+    EXPAND: (1) follow whether the December 2025 coup plotters face
+    trial and what sentences result; (2) follow whether Wadagni's
+    government shows any sign of political opening toward the
+    excluded opposition, or entrenches the exclusion pattern further;
+    (3) follow whether the Parakou dry port's cotton shipments and
+    Cotonou's cargo growth continue at their 2025-2026 pace; (4)
+    check whether Pillars D/F/G weak indicators gain fresh coverage;
+    (5) check if Pillar C has gained coverage.
+  model_used: claude-sonnet-5
+
+historical:
+  overview: >
+    The Kingdom of Dahomey, centred on Abomey, was itself a major
+    participant in the transatlantic slave trade for over two
+    centuries, exporting captives through the port of Ouidah in
+    exchange for firearms that fuelled further wars of capture; King
+    Gezo accepted a British-imposed treaty ending the trade only in
+    1852. Dahomey's army included the Agojie, an elite corps of
+    thousands of women soldiers Europeans called the "Dahomey
+    Amazons." King Béhanzin resisted French encroachment after 1889,
+    but French forces occupied the capital Abomey in November 1892,
+    and Béhanzin surrendered at Ouidah -- the same port his kingdom's
+    slave trade had passed through -- in January 1894. Benin gained
+    independence from France in 1960 and endured a decade of coups
+    before Mathieu Kérékou seized power in 1972 and declared
+    Marxism-Leninism the state ideology in 1974, renaming the country
+    the People's Republic of Benin. Economic collapse and popular
+    protest forced Kérékou to convene a National Conference in
+    February 1990, the first of its kind in Africa, which stripped him
+    of most power and set a template other Francophone African states
+    soon copied for their own transitions. Kérékou lost the 1991
+    election and left office peacefully, then won back the presidency
+    democratically in 1996, serving two further terms. Patrice Talon,
+    a cotton-industry businessman, became president in 2016 and, after
+    surviving a foiled coup attempt in December 2025, honoured Benin's
+    two-term limit and stepped down in May 2026 -- succeeded by his own
+    finance minister, Romuald Wadagni, who won an April 2026 election
+    the main opposition party was unable to contest at all.
+  overview_citations: [c1, c3, c4, c5, c7]
+  colonial_legacy: >
+    context/colonial_history.yaml already states plainly what many
+    colonial-history entries in this corpus soften: the Kingdom of
+    Dahomey was itself a major participant in the slave trade before
+    French conquest, not simply a victim of it, and French rule then
+    reorganised the same coercive labour patterns through forced
+    porterage and taxation rather than introducing them. The schema
+    entry also names the Dahomey Gap -- a savanna corridor breaking
+    the West African forest belt -- as a specific geographic reason
+    this stretch of coast was among the most heavily raided for
+    Atlantic slave exports: the gap gave both African and European
+    traders easier access inland than the dense forest covering
+    neighbouring coastlines did. That two-sided history is worth
+    stating honestly rather than resolving into either a simple victim
+    or simple perpetrator narrative: Dahomey's kings profited from and
+    organised the trade using an army built partly around it, and
+    French conquest in 1894 ended Dahomey's sovereignty specifically by
+    defeating the same state that trade had helped make militarily
+    powerful in the first place.
+  colonial_legacy_citations: [c1]
+  key_periods:
+    - title: "The Kingdom of Dahomey and the slave trade"
+      period: "1600s-1852"
+      summary: >
+        The Kingdom of Dahomey, centred on Abomey, was a major
+        participant in the transatlantic slave trade for over two
+        centuries, exporting captives through the port of Ouidah in
+        exchange for firearms. Dahomey's army included the Agojie, an
+        elite corps of thousands of women soldiers Europeans called
+        the "Dahomey Amazons." King Gezo accepted a British-imposed
+        treaty ending the trade in 1852.
+      citations: [c1]
+    - title: "French conquest and Béhanzin's resistance"
+      period: "1889-1894"
+      summary: >
+        King Béhanzin resisted French encroachment after 1889, but
+        French forces occupied the capital Abomey in November 1892
+        after a two-year military campaign. Béhanzin surrendered at
+        Ouidah -- the same port his kingdom's slave trade had passed
+        through -- in January 1894, ending Dahomey's sovereignty.
+      citations: [c1]
+    - title: "Kérékou's Marxist rule and the 1990 National Conference"
+      period: "1972-1991"
+      summary: >
+        Mathieu Kérékou seized power in a 1972 coup and declared
+        Marxism-Leninism the state ideology in 1974. Economic collapse
+        and popular protest forced him to convene a National
+        Conference in February 1990, the first of its kind in Africa,
+        which stripped him of most power and set a template other
+        Francophone African states soon copied. Kérékou lost the March
+        1991 election and left office peacefully.
+      citations: [c3]
+    - title: "Talon's presidency and the 2025-2026 transition"
+      period: "2016-2026"
+      summary: >
+        Patrice Talon, a cotton-industry businessman, became president
+        in 2016. After surviving a foiled coup attempt in December
+        2025, he honoured Benin's two-term limit and stepped down in
+        May 2026, succeeded by his own finance minister, Romuald
+        Wadagni, who won an April 2026 election the main opposition
+        party was unable to contest.
+      citations: [c5, c7]
+
+pillars:
+  A:
+    summary: >
+      All six World Governance Indicators are directly measured this
+      year, and the aggregate is moderate -- Regulatory Quality (63.2)
+      and Political Stability (63.2) are the least weak, Rule of Law
+      (59.9) the most severe. That moderate reading understates a
+      genuine current test: on 7 December 2025, soldiers briefly
+      announced they had overthrown President Patrice Talon before
+      loyalist forces, backed by Nigerian air power and French special
+      forces, restored control within hours, and Talon himself stepped
+      down on schedule the following May after two constitutionally
+      limited terms -- succeeded, however, by his own finance minister
+      in an election opposition parties were structurally excluded
+      from.
+    drivers:
+      - "all 6 WGI indicators directly measured; Regulatory Quality (63.2) and Political Stability (63.2) the least weak, Rule of Law (59.9) the most severe"
+      - "7 Dec 2025: a coup attempt against Talon was foiled within hours by loyalist forces backed by Nigerian air power and French special forces"
+      - "Talon stepped down on schedule in May 2026 after two terms -- succeeded by his own finance minister in an election opposition parties were structurally excluded from (see recent developments)"
+    citations: [c5, c7]
+  B:
+    summary: >
+      GDP growth, GDP per capita, inflation and domestic credit, all
+      freshly measured, are comparatively decent for this corpus --
+      GDP growth (64.9) is comparatively strong. Gini, carried
+      forward, is comparatively strong too. This pillar's 2023
+      reference year understates continued acceleration: the
+      Autonomous Port of Cotonou handled 6.7 million tonnes of cargo
+      in the first half of 2025 alone, a 63% increase over the same
+      period in 2024, cementing Benin's role as a regional logistics
+      hub for landlocked neighbours including Niger and Burkina Faso.
+    drivers:
+      - "GDP growth, GDP per capita, inflation, domestic credit all fresh, comparatively decent for this corpus; GDP growth (64.9) comparatively strong"
+      - "Gini comparatively strong (carried forward)"
+      - "2023 reference year understates continued acceleration: Port of Cotonou handled 6.7M tonnes in H1 2025 alone, a 63% increase over H1 2024"
+    citations: [c10]
+  D:
+    summary: >
+      All five indicators are directly measured this year, and the
+      aggregate is Benin's weakest pillar: handwashing-facility
+      access, at just 12.39% of the population, is among the lowest
+      recorded anywhere in this corpus. Life expectancy and infant
+      mortality are both comparatively poor. Severe food insecurity
+      and safely managed drinking water are similarly weak. Five of
+      the pillar's five indicators are current, a fully-measured
+      pillar whose weakness is not a data-coverage artefact, sitting
+      awkwardly beside Pillar B's comparatively strong economic growth
+      and the port expansion documented under recent developments.
+    drivers:
+      - "all 5 indicators directly measured; handwashing-facility access just 12.39% of the population -- among the lowest recorded anywhere in this corpus"
+      - "life expectancy and infant mortality both comparatively poor; severe food insecurity and safely managed drinking water similarly weak"
+      - "5 of 5 indicators current -- Benin's weakest pillar, and the weakness is not a data-coverage artefact"
+    citations: [c1]
+  E:
+    summary: >
+      Displaced persons, at 0.62 per 1,000 and directly measured, is
+      among the lowest recorded anywhere in this corpus, a sharp
+      contrast with several coastal and Sahel-belt neighbours. Political
+      Stability and Rule of Law, both fresh and shared with Pillar A,
+      are comparatively decent. Intentional homicide, estimated from
+      regional peers rather than measured directly, is more middling.
+      Three of the pillar's four indicators are current, though none
+      of them capture the December 2025 coup attempt documented under
+      recent developments, since this pillar's 2023 reference year
+      predates it.
+    drivers:
+      - "displaced persons 0.62/1,000 (fresh, directly measured) -- among the lowest recorded anywhere in this corpus"
+      - "Political Stability and Rule of Law (shared with Pillar A) both comparatively decent, fresh"
+      - "intentional homicide more middling (regional-mean estimate); 3 of 4 indicators current, though none capture the December 2025 coup attempt (see recent developments)"
+    citations: [c5]
+  F:
+    summary: >
+      Electricity generation from fossil sources, carried forward at
+      96.60%, is severe and Benin's weakest single reading -- among
+      the most fossil-dependent electricity mixes recorded anywhere in
+      this corpus. CO2 emissions per capita, freshly measured, are
+      comparatively low, though this reflects overall energy poverty
+      as much as any clean-energy achievement, since electricity
+      access itself reaches barely over half the population.
+      Freshwater withdrawal, also carried forward, is very low
+      relative to renewable resources. Agricultural land share, fresh,
+      is more middling. Only two of the pillar's four indicators are
+      current.
+    drivers:
+      - "electricity generation 96.60% fossil-fuel (carried forward) -- Benin's weakest single reading, among the most fossil-dependent electricity mixes recorded anywhere in this corpus"
+      - "CO2 pc comparatively low (fresh), but reflects energy poverty as much as achievement -- electricity access (Pillar G) reaches barely over half the population"
+      - "freshwater withdrawal very low relative to renewable resources (carried forward); agricultural land more middling (fresh); only 2 of 4 indicators current"
+    citations: [c10]
+  G:
+    summary: >
+      Electricity access, at 57% of the population and freshly
+      measured, is moderate. Basic drinking water access, also fresh,
+      is comparatively decent. Government Effectiveness and Control of
+      Corruption, shared with Pillar A, are middling. Social
+      protection coverage, carried forward, is severe -- among the
+      lowest recorded anywhere in this corpus. Four of the pillar's
+      five indicators are current, describing infrastructure access
+      that has not kept pace with the port-driven economic growth
+      documented in Pillar B, nor with Pillar A's comparatively decent
+      governance scores.
+    drivers:
+      - "electricity access 57% of the population (fresh) -- moderate; basic drinking water comparatively decent (fresh)"
+      - "Government Effectiveness and Control of Corruption (shared with Pillar A) middling; social protection severe (carried forward) -- among the lowest recorded anywhere in this corpus"
+      - "4 of 5 indicators current -- infrastructure access has not kept pace with the port-driven economic growth documented in Pillar B"
+    citations: [c1]
+
+recent:
+  primary:
+    - headline: "Soldiers briefly announce Talon's overthrow before loyalist forces regain control"
+      date: 2025-12-07
+      summary: >
+        Soldiers led by Lieutenant Colonel Pascal Tigri announced on
+        national television on 7 December 2025 that they had
+        overthrown President Patrice Talon, following an attack on his
+        Cotonou residence. Loyalist forces, backed by the Nigerian air
+        force and French special forces, restored control within
+        hours; the government requested and received an ECOWAS
+        Standby Force deployment, and around 30 people, mostly
+        soldiers, were jailed in connection with the plot by
+        mid-December.
+      why_it_matters: >
+        Directly explains Pillar A's severity and Pillar E's thin
+        coverage of a genuinely current threat, and demonstrates that
+        even Benin's comparatively stable governance record faced a
+        real, near-successful challenge just months before a scheduled
+        transfer of power.
+      news_url: "https://www.france24.com/en/africa/20251216-benin-jails-30-people-with-links-to-thwarted-coup-attempt-legal-sources-say"
+      wikipedia_url: "https://en.wikipedia.org/wiki/2025_Beninese_coup_attempt"
+      sentiment: negative
+    - headline: "Talon steps down on schedule, but his handpicked successor wins 94% in an election with no real opposition"
+      date: 2026-04-13
+      summary: >
+        President Patrice Talon honoured Benin's two-term
+        constitutional limit and stepped down on 24 May 2026, having
+        repeatedly ruled out amending the constitution to extend his
+        rule -- a notable departure from several regional peers. His
+        finance minister and chosen successor, Romuald Wadagni, won
+        the 12 April 2026 presidential election with more than 94% of
+        the vote after the main opposition party, the Democrats,
+        failed to gather enough signatures to field a candidate at
+        all, following its own complete loss of parliamentary seats in
+        a January 2026 vote. International observers characterised the
+        contest as neither free nor fair.
+      why_it_matters: >
+        A genuine two-sided outcome: Talon respected the term limit he
+        himself had strengthened, avoiding the entrenchment pattern
+        documented elsewhere in this corpus (TGO, CMR, GAB), but the
+        succession delivered continuity of power to his own ally
+        rather than a genuine political alternation, since no credible
+        opposition candidate was ever able to compete.
+      news_url: "https://www.aljazeera.com/news/2026/4/13/government-candidate-wadagni-on-course-to-win-benin-presidential-vote"
+      wikipedia_url: "https://en.wikipedia.org/wiki/2026_Beninese_presidential_election"
+      sentiment: mixed
+    - headline: "Port of Cotonou cargo volume jumps 63% in the first half of 2025"
+      date: 2025-07-01
+      summary: >
+        The Autonomous Port of Cotonou handled 6.7 million tonnes of
+        cargo between January and June 2025, a 63% increase over the
+        same period in 2024, reinforcing Benin's role as a regional
+        logistics hub for landlocked neighbours including Niger and
+        Burkina Faso, both already documented in this corpus.
+      why_it_matters: >
+        A concrete, verifiable economic achievement credited
+        independent of the political turbulence documented alongside
+        it, and a modern echo of the same coastal-access role Ouidah
+        once played in the transatlantic economy this record's
+        colonial_legacy documents.
+      news_url: "https://www.ecofinagency.com/news-infrastructures/1409-48662-benin-cotonou-port-handles-6-7-million-tons-in-h1-2025-despite-q2-slowdown"
+      wikipedia_url: ""
+      sentiment: positive
+  extended:
+    - headline: "Opposition loses every parliamentary seat in January 2026 legislative election"
+      date: 2026-01-18
+      summary: >
+        Benin's governing coalition won every seat in the National
+        Assembly in a January 2026 legislative election, after the
+        main opposition party, the Democrats, failed to clear the 20%
+        national vote-share threshold required to enter parliament at
+        all. Voter turnout was itself modest, reflecting a
+        widely-shared sense among observers that the outcome was not
+        genuinely in doubt.
+      why_it_matters: >
+        The direct precursor to the presidential election's own
+        opposition exclusion three months later, showing the pattern
+        was structural and sustained rather than a single election's
+        anomaly, and leaving the incoming government facing no
+        organised opposition in either chamber of government.
+      news_url: "https://www.aljazeera.com/news/2026/1/18/benin-opposition-loses-all-parliamentary-seats-provisional-results-show"
+      wikipedia_url: ""
+      sentiment: negative
+
+events:
+  - year: 1894
+    type: conflict
+    title: "Béhanzin surrenders, ending Dahomey's sovereignty"
+    description: >
+      King Béhanzin resisted French forces after 1889, but French
+      troops occupied the capital Abomey in November 1892, and
+      Béhanzin surrendered at Ouidah in January 1894, ending the
+      Kingdom of Dahomey's independence.
+    url: "https://www.britannica.com/place/Dahomey-historical-kingdom-Africa"
+    direction: deteriorate
+  - year: 1990
+    type: constitutional
+    title: "National Conference strips Kérékou of power"
+    description: >
+      Facing economic collapse and popular protest, President Mathieu
+      Kérékou convened Africa's first National Conference in February
+      1990, which stripped him of most power and set a template other
+      Francophone African states soon copied for their own democratic
+      transitions.
+    url: "https://en.wikipedia.org/wiki/Mathieu_K%C3%A9r%C3%A9kou"
+    direction: improve
+  - year: 1991
+    type: election
+    title: "Kérékou loses and concedes"
+    description: >
+      Mathieu Kérékou lost Benin's first multiparty presidential
+      election to Nicéphore Soglo in March 1991 and left office
+      peacefully, becoming an early model for African autocrats
+      accepting electoral defeat.
+    url: "https://en.wikipedia.org/wiki/1996_Beninese_presidential_election"
+    direction: improve
+  - year: 2025
+    type: coup
+    title: "Coup attempt against Talon foiled"
+    description: >
+      Soldiers briefly announced they had overthrown President Patrice
+      Talon on 7 December 2025; loyalist forces, backed by Nigerian
+      air power and French special forces, restored control within
+      hours.
+    url: "https://en.wikipedia.org/wiki/2025_Beninese_coup_attempt"
+    direction: deteriorate
+
+citations:
+  - id: c1
+    url: "https://www.britannica.com/place/Dahomey-historical-kingdom-Africa"
+    source_type: news
+    title: "Dahomey (Britannica)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c2
+    url: "https://visitabomey.com/en/pillars/how-did-dahomey-fall"
+    source_type: news
+    title: "How did the Dahomey kingdom fall? France vs Behanzin (Visit Abomey)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c3
+    url: "https://en.wikipedia.org/wiki/Mathieu_K%C3%A9r%C3%A9kou"
+    source_type: wikipedia
+    title: "Mathieu Kérékou"
+    accessed: 2026-08-11
+    verified: true
+  - id: c4
+    url: "https://en.wikipedia.org/wiki/1996_Beninese_presidential_election"
+    source_type: wikipedia
+    title: "1996 Beninese presidential election"
+    accessed: 2026-08-11
+    verified: true
+  - id: c5
+    url: "https://en.wikipedia.org/wiki/2025_Beninese_coup_attempt"
+    source_type: wikipedia
+    title: "2025 Beninese coup attempt"
+    accessed: 2026-08-11
+    verified: true
+  - id: c6
+    url: "https://www.france24.com/en/africa/20251216-benin-jails-30-people-with-links-to-thwarted-coup-attempt-legal-sources-say"
+    source_type: news
+    title: "Benin jails 30 people with links to thwarted coup attempt, legal sources say (France 24)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c7
+    url: "https://www.aljazeera.com/news/2026/4/13/government-candidate-wadagni-on-course-to-win-benin-presidential-vote"
+    source_type: news
+    title: "Benin's Wadagni wins presidential election with landslide 94% of votes (Al Jazeera)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c8
+    url: "https://theconversation.com/benin-election-wadagnis-landslide-win-raises-questions-about-his-legitimacy-281005"
+    source_type: news
+    title: "Benin election: Wadagni's landslide win raises questions about his legitimacy (The Conversation)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c9
+    url: "https://www.aljazeera.com/news/2026/1/18/benin-opposition-loses-all-parliamentary-seats-provisional-results-show"
+    source_type: news
+    title: "Benin's opposition loses all parliamentary seats, provisional results show (Al Jazeera)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c10
+    url: "https://www.ecofinagency.com/news-infrastructures/1409-48662-benin-cotonou-port-handles-6-7-million-tons-in-h1-2025-despite-q2-slowdown"
+    source_type: news
+    title: "Benin: Cotonou Port Handles 6.7 Million Tons in H1 2025 Despite Q2 Slowdown (Ecofin Agency)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c11
+    url: "https://en.wikipedia.org/wiki/ECOWAS"
+    source_type: wikipedia
+    title: "ECOWAS"
+    accessed: 2026-08-11
+    verified: true
+  - id: c12
+    url: "https://simple.wikipedia.org/wiki/Community_of_Sahel-Saharan_States"
+    source_type: wikipedia
+    title: "Community of Sahel-Saharan States"
+    accessed: 2026-08-11
+    verified: true
+
+rec_membership:
+  - org: ECOWAS
+    joined: 1975
+    status: current
+    left: null
+    citations: [c11]
+  - org: CEN-SAD
+    joined: 2002
+    status: current
+    left: null
+    citations: [c12]
+
+balance:
+  n_positive: 1
+  n_negative: 2
+  n_mixed: 1
+  note: >
+    The coup-attempt item and the January 2026 legislative-exclusion
+    item are kept as two distinct negatives rather than merged into
+    one, because they document different mechanisms of institutional
+    strain within the same transition period -- one violent and
+    reversed within hours, one procedural and sustained across two
+    separate votes. The Cotonou port growth is credited at full
+    positive weight, independent of the political turbulence
+    documented alongside it -- the same standard this corpus applies to
+    crediting a genuine economic achievement without letting
+    surrounding political conduct discount it. Talon's own handover is
+    coded mixed rather than negative or positive: this record credits
+    his genuine adherence to the two-term limit he strengthened, a real
+    and comparatively rare choice among regional peers, without
+    letting that choice imply the resulting election was itself
+    competitive.

@@ -26,7 +26,7 @@ An audit is forced early if a single run inflates the citation count by more tha
 
 ## Status
 
-**47 of 54 countries have a record (Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria, Rwanda, Chad, Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic, Mauritania, Zimbabwe, Comoros, Uganda, Sierra Leone, Equatorial Guinea, The Gambia, Mozambique, Guinea, South Sudan, Lesotho, Sao Tome & Principe, Togo, Cameroon, Burundi, Tunisia, Cote d'Ivoire, Zambia, Senegal, Gabon, Malawi, Eswatini, Seychelles). The first pass is complete; Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic, Mauritania, Zimbabwe, Comoros, Uganda, Sierra Leone, Equatorial Guinea, The Gambia, Mozambique, Guinea, South Sudan, Lesotho, Sao Tome & Principe, Togo, Cameroon, Burundi, Tunisia, Cote d'Ivoire, Zambia, Senegal, Gabon, Malawi, Eswatini and Seychelles are the first thirty-eight backlog countries.**
+**48 of 54 countries have a record (Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria, Rwanda, Chad, Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic, Mauritania, Zimbabwe, Comoros, Uganda, Sierra Leone, Equatorial Guinea, The Gambia, Mozambique, Guinea, South Sudan, Lesotho, Sao Tome & Principe, Togo, Cameroon, Burundi, Tunisia, Cote d'Ivoire, Zambia, Senegal, Gabon, Malawi, Eswatini, Seychelles, Benin). The first pass is complete; Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic, Mauritania, Zimbabwe, Comoros, Uganda, Sierra Leone, Equatorial Guinea, The Gambia, Mozambique, Guinea, South Sudan, Lesotho, Sao Tome & Principe, Togo, Cameroon, Burundi, Tunisia, Cote d'Ivoire, Zambia, Senegal, Gabon, Malawi, Eswatini, Seychelles and Benin are the first thirty-nine backlog countries.**
 
 ### First pass — 9 countries
 
@@ -89,14 +89,15 @@ whose ranks swing hardest with the weighting method.
 | MWI | Malawi | fills East Africa (12 of 14 done); the corpus's strongest sustained democratic-accountability throughline, tested and confirmed functional three separate times since 1994 -- Parliament rejected Muluzi's 2002 third-term bid by 3 votes, the Constitutional Court annulled a fraudulent 2019 election in 2020 (correction fluid on tally sheets, only the third such African judicial annulment after Kenya and CIV), and the same electorate voted the resulting Chakwera government out again in Sept 2025; a distinctive colonial mechanism -- Nyasaland's protectorate framed around anti-slavery yet became a conventional labour-extraction colony supplying Rhodesian mines; near-record severe food insecurity (55.60%, second only to SSD) | **done — iteration 1** |
 | SWZ | Eswatini | completes Southern Africa (5 of 5 done); genuinely unique in this corpus -- Africa's last absolute monarchy, unrepresented anywhere else among the countries done so far; a deliberate triangular cross-reference with BWA and LSO -- all three were British High Commission Territories with an identical colonial arrangement, yet took the most sharply divergent post-independence paths of any comparable group, traced to Sobhuza II's specific 1973 choice to repeal the Westminster constitution rather than a colonial-structure difference; a genuine positive (95-95-95 HIV achievement) on the same standard as BWA/LSO's own HIV milestones, credited despite an ongoing accountability failure for the June 2021 crackdown that killed at least 46 protesters | **done — iteration 1** |
 | SYC | Seychelles | completes the Islands region (5 of 5 done); ranks #2-3 across composite methods, among the corpus's very strongest records, though the schema's own note flags that comparisons with continental Africa are methodologically problematic given its tiny population and island insularity; two genuine peaceful transfers of power since 1993 (2020, 2025); the world's first sovereign debt-for-nature swap (2016-2018); the corpus's most striking discipline catch -- the world's highest heroin addiction rate (~10% of the working-age population) sits entirely underneath an otherwise exceptional composite score, credited at full negative weight rather than let the strong aggregate imply no severe crisis exists | **done — iteration 1** |
+| BEN | Benin | fills West Africa (14 of 16 done); a genuinely two-sided colonial history the schema states plainly -- the Kingdom of Dahomey was itself a major slave-trading state before French conquest, and Behanzin surrendered in 1894 at Ouidah, the same port his kingdom's slave trade had passed through; the pioneering 1990 National Conference (Africa's first) set the template other Francophone states copied; researched immediately after surviving a December 2025 coup attempt, with Talon genuinely honouring his own two-term limit in May 2026 -- a real departure from TGO/CMR/GAB -- but succeeded by his own finance minister in an election the opposition was structurally excluded from entirely | **done — iteration 1** |
 
-### Backlog — the remaining 7
+### Backlog — the remaining 6
 
 Listed in full in `narrative/state.yaml` under `backlog`. They are recorded
 explicitly rather than left implicit: a country with no record should be visibly
 absent, not quietly missing.
 
-Libya, Benin, Cabo Verde, Guinea-Bissau, Republic of Congo, Djibouti, Tanzania
+Libya, Cabo Verde, Guinea-Bissau, Republic of Congo, Djibouti, Tanzania
 
 ---
 
@@ -1684,6 +1685,43 @@ Append one line per run: date, country, mode, what changed, what was removed.
   resolved cleanly. `--links` passed 0 errors, 0 warnings — 13/13
   resolved, a clean link check. Full pytest suite: 106 passed.
 
+- **2026-08-11 — BEN — CREATE. Thirty-ninth backlog country, fills
+  West Africa (14 of 16 done).** Full baseline built: historical
+  overview, colonial legacy (states a genuinely two-sided history
+  most colonial-history entries in this corpus soften — the Kingdom
+  of Dahomey was itself a major participant in the slave trade before
+  French conquest, and King Behanzin surrendered in January 1894 at
+  Ouidah, the same port his kingdom's slave trade had passed through
+  — French conquest ended Dahomey's sovereignty by defeating the same
+  state the trade had helped make militarily powerful), 4
+  key_periods, 6 pillar summaries (Pillar C left empty — greyed at
+  1/8 measured), 3 primary + 1 extended recent items, 4 events,
+  rec_membership (ECOWAS 1975 founding member, CEN-SAD 2002). 12
+  sources opened and verified: 4 Wikipedia, 6 news, 2 more
+  Wikipedia/news for rec_membership. The 1990 National Conference
+  (Africa's first of its kind) set the template other Francophone
+  states copied for their own transitions, and Kerekou's 1991
+  concession followed by his 1996 democratic comeback are both rare,
+  distinct patterns not yet documented elsewhere in this corpus.
+  Researched immediately after Benin survived a December 2025 coup
+  attempt (foiled within hours by loyalist forces with Nigerian and
+  French backing); Talon genuinely honoured his own two-term limit in
+  May 2026, a real departure from TGO/CMR/GAB's entrenchment patterns
+  already in this corpus, but was succeeded by his own finance
+  minister in an election the opposition was structurally excluded
+  from entirely, following its own complete loss of every
+  parliamentary seat three months earlier — coded mixed rather than
+  negative or positive, crediting the genuine adherence to term
+  limits without letting it imply a competitive election. Following
+  the established discipline, found a genuine positive: the Port of
+  Cotonou's cargo volume rose 63% in H1 2025, credited independent of
+  the political turbulence documented alongside it. Balance: 1
+  positive, 2 negative, 1 mixed. Five word-count fixes (pillars.B/D/
+  E/G, recent extended item), each resolved by adding real facts.
+  `--links` passes 0 errors, 1 warning (France24, familiar 403
+  bot-detection pattern) — 11/12 resolved. Full pytest suite: 106
+  passed.
+
 ---
 
 ## Meta-notes
@@ -2510,6 +2548,23 @@ Things a future run should know about how to work, not about a specific country.
   — worth folding into the same pending format proposal rather than
   raising as a separate one, since both are instances of "the schema
   assumes a single continuous membership stint."
+- **2026-08-11** — BEN adds a genuinely new entrenchment sub-pattern
+  to the corpus's typology: a leader who honours term limits but
+  hands power to a chosen successor through an election the real
+  opposition cannot contest (signature-gathering barriers, not a
+  court exclusion like CIV/CMR or a citizenship technicality like
+  CIV's Thiam case). Worth distinguishing explicitly from TGO/CMR/
+  GAB's "leader stays" entrenchment and GIN/GAB's "coup leader wins
+  the transition election" pattern — this is closer to a controlled
+  hereditary-style succession without the hereditary part, and "The
+  Real Coup in Benin? Succession Without Political Change" (a source
+  headline found during research) captures the distinction precisely.
+  Also confirms BEN is a second corpus case, after SLE/LBR, of a
+  colonial-history entry stating a precolonial African state's own
+  culpability in the slave trade directly rather than only documenting
+  what was done to it — worth treating as its own honesty-in-sourcing
+  discipline: don't soften a schema entry's own plain statement into a
+  simpler victim narrative during drafting.
 
 ---
 
