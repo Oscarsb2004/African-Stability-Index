@@ -1,0 +1,437 @@
+meta:
+  iso3: GAB
+  name: Gabon
+  last_updated: 2026-08-11
+  iteration_count: 1
+  next_action: >
+    EXPAND: (1) follow whether Oligui Nguema's government shows any
+    sign of the same entrenchment patterns (TGO, CMR) documented
+    elsewhere in this corpus as his own term progresses; (2) follow
+    whether the 20-year in-absentia sentences against Sylvia and
+    Noureddin Bongo produce any extradition attempt or remain
+    symbolic; (3) follow whether the manganese sector's shift toward
+    domestic battery-grade processing materializes; (4) check whether
+    Pillars B/D/E/F carried-forward and regional-mean indicators gain
+    fresh coverage; (5) check if Pillar C has gained coverage.
+  model_used: claude-sonnet-5
+
+historical:
+  overview: >
+    France established its first foothold in equatorial Africa at
+    Gabon from 1839, and Albert Schweitzer built his famous hospital
+    at Lambaréné under French rule. Gabon gained independence in 1960
+    under President Léon M'ba, but on 17-18 February 1964, junior army
+    officers overthrew him in a coup; French President Charles de
+    Gaulle immediately dispatched roughly 2,000 troops from
+    neighbouring colonies, restoring M'ba to power within two days.
+    M'ba's chief of staff, Albert-Bernard Bongo -- later Omar Bongo --
+    succeeded him after his 1967 death and, with French backing, ruled
+    for 42 years, trading oil revenue and uranium access for political
+    stability guarantees under the Françafrique system. His son Ali
+    Bongo succeeded him in 2009 and won two more disputed elections
+    before, on 30 August 2023, his own cousin and security chief,
+    General Brice Oligui Nguema, led a coup that ended the family's
+    56-year rule. A November 2024 constitutional referendum, approved
+    by 91.6% of voters, introduced term limits and barred future
+    dynastic succession, while also permitting Oligui Nguema himself
+    to run for president -- a provision written to exclude Ali Bongo
+    specifically, since it required candidates to have a Gabonese-born
+    parent and a Gabonese spouse, and Bongo's wife is French. Oligui
+    Nguema won the resulting election on 12 April 2025 with 90.35% of
+    the vote. Ali Bongo and his family were released from house arrest
+    the following month and flown into exile in Angola.
+  overview_citations: [c1, c2, c3, c4, c5, c6]
+  colonial_legacy: >
+    context/colonial_history.yaml already names the Françafrique
+    exchange at Gabon's centre: oil revenue and uranium access traded
+    for French political stability guarantees, sustaining the Bongo
+    family's 42-year and then 56-year combined rule. Worth adding the
+    mechanism's founding moment, which the schema entry does not
+    include: Gabon's very first post-independence government was
+    itself saved by direct French military intervention, when de
+    Gaulle sent troops to reverse the February 1964 coup against Léon
+    M'ba within 48 hours. That episode set the template the Bongo era
+    then formalised into policy -- French military and political
+    backing in exchange for guaranteed resource access -- and it is a
+    genuinely earlier and more explicit precedent for direct French
+    intervention than this corpus's Côte d'Ivoire record, where
+    France's 2011 Licorne mission acted without the same open troop
+    deployment to reverse a coup outright. The 2023 coup against Ali
+    Bongo notably did not trigger a comparable French response, a
+    striking absence this record reads as confirmation of the same
+    waning French appetite for direct military intervention documented
+    across the broader 2020s coup wave in Mali, Burkina Faso and
+    Niger, all already in this corpus.
+  colonial_legacy_citations: [c1, c2]
+  key_periods:
+    - title: "France's 1964 intervention and the Bongo era's founding"
+      period: "1839-1967"
+      summary: >
+        France established its first equatorial African foothold at
+        Gabon from 1839. Gabon gained independence in 1960 under Léon
+        M'ba, who was overthrown in a coup on 17-18 February 1964;
+        France immediately restored him to power with roughly 2,000
+        troops. M'ba's chief of staff, Albert-Bernard (later Omar)
+        Bongo, succeeded him after his 1967 death.
+      citations: [c1, c2]
+    - title: "Omar and Ali Bongo's 56-year rule"
+      period: "1967-2023"
+      summary: >
+        Omar Bongo ruled for 42 years with French backing under the
+        Françafrique system, trading oil and uranium access for
+        political stability guarantees. His son Ali Bongo succeeded
+        him in 2009 and won two more disputed elections, extending the
+        family's combined rule to 56 years.
+      citations: [c3]
+    - title: "The 2023 coup"
+      period: "2023"
+      summary: >
+        On 30 August 2023, General Brice Oligui Nguema -- Ali Bongo's
+        own cousin and security chief -- led a coup that ended the
+        Bongo family's 56-year rule, placing Ali Bongo and his family
+        under house arrest. Unlike the 1964 coup, France made no
+        attempt to intervene militarily on the family's behalf.
+      citations: [c3]
+    - title: "The 2024 referendum and 2025 election"
+      period: "2024-2025"
+      summary: >
+        A November 2024 constitutional referendum, approved by 91.6%
+        of voters, introduced term limits, barred future dynastic
+        succession, and specifically excluded Ali Bongo from ever
+        running again through a Gabonese-spouse requirement, while
+        permitting Oligui Nguema's own candidacy. He won the resulting
+        election on 12 April 2025 with 90.35% of the vote.
+      citations: [c10, c5]
+
+pillars:
+  A:
+    summary: >
+      All six World Governance Indicators are directly measured this
+      year, and the aggregate is weak -- Voice and Accountability
+      (36.2) and Rule of Law (40.4) are both severe, Control of
+      Corruption (29.2) the weakest of all six. That weakness reflects
+      a country only two years removed from military rule: a coup on
+      30 August 2023 ended the Bongo family's 56-year dynasty, and the
+      2025 election that formally returned Gabon to civilian
+      government was won by the coup leader himself, Brice Oligui
+      Nguema, with 90.35% of the vote.
+    drivers:
+      - "all 6 WGI indicators directly measured; Voice and Accountability (36.2) and Rule of Law (40.4) both severe, Control of Corruption (29.2) the weakest of all six"
+      - "2 years removed from military rule: 30 Aug 2023 coup ended the Bongo family's 56-year dynasty"
+      - "the April 2025 election that formally returned Gabon to civilian government was won by the coup leader himself, Oligui Nguema, with 90.35% of the vote (see recent developments)"
+    citations: [c3, c4]
+  B:
+    summary: >
+      GDP growth, GDP per capita and inflation, all freshly measured,
+      show real oil wealth -- GDP per capita ($20,773 PPP) is among
+      the highest recorded in this corpus. Domestic credit, carried
+      forward, and Gini, a regional-mean estimate, are both thinner.
+      This pillar's 2023 reference year predates a modest continued
+      expansion: 2.3% growth in 2025, driven partly by a manganese
+      sector now shipping roughly 7 million tonnes of ore annually and
+      moving toward domestic battery-grade processing rather than raw
+      export alone.
+    drivers:
+      - "GDP growth, GDP per capita, inflation all fresh -- GDP per capita ($20,773 PPP) among the highest recorded in this corpus, real oil wealth"
+      - "domestic credit thin (carried forward); Gini a regional-mean estimate, not directly measured"
+      - "2023 reference year predates modest continued expansion: 2.3% growth in 2025, driven partly by manganese (~7M tonnes ore, moving toward domestic battery-grade processing)"
+    citations: [c9]
+  D:
+    summary: >
+      Three of five indicators are directly measured this year: life
+      expectancy, infant mortality and handwashing-facility access are
+      all comparatively decent. Severe food insecurity, a
+      regional-mean estimate rather than measured directly, is severe
+      -- an unusually poor reading for a country with this corpus's
+      second-highest GDP per capita, a resource-curse signature worth
+      reading alongside Pillar B's oil wealth rather than in
+      isolation. Safely managed drinking water, the pillar's other
+      regional-mean figure, is comparatively weaker too. Only three of
+      the pillar's five indicators are current.
+    drivers:
+      - "3 of 5 indicators directly measured; life expectancy, infant mortality, handwashing access all comparatively decent"
+      - "severe food insecurity (regional-mean estimate) unusually poor for this corpus's second-highest GDP per capita -- a resource-curse signature worth reading against Pillar B's oil wealth"
+      - "safely managed drinking water also a regional-mean estimate; only 3 of 5 indicators current"
+    citations: [c8]
+  E:
+    summary: >
+      Political Stability and Rule of Law, both fresh and shared with
+      Pillar A, are middling. Displaced persons, at 45.52 per 1,000,
+      is a regional-mean estimate rather than a direct measurement --
+      Gabon has no comparable internal conflict, and the figure most
+      plausibly reflects instability in neighbouring Cameroon and
+      Central African Republic, both documented elsewhere in this
+      corpus, pulling the regional average upward. Intentional
+      homicide is entirely unmeasured this year. Only two of the
+      pillar's four indicators are current, leaving this pillar
+      thinner than either its score or Gabon's own relative calm would
+      suggest.
+    drivers:
+      - "Political Stability and Rule of Law (shared with Pillar A) both middling, fresh"
+      - "displaced persons 45.52/1,000 is a regional-mean estimate, not a direct measurement -- Gabon has no comparable internal conflict; most plausibly reflects neighbouring CMR and CAF instability (both in this corpus) pulling the regional average upward"
+      - "intentional homicide entirely unmeasured; only 2 of 4 indicators current"
+    citations: [c3]
+  F:
+    summary: >
+      CO2 emissions per capita, freshly measured, are moderate -- a
+      reading this pillar's raw indicators cannot fully contextualise:
+      Gabon is roughly 88% covered by rainforest, part of the Congo
+      Basin, the world's second-largest tropical forest, whose
+      carbon-retention services alone were valued at over $75 billion
+      in 2020, nearly double their 2000 value. The index measures
+      Gabon's own emissions, not the far larger volume its forests
+      absorb, so this pillar's moderate score should not be read as
+      evidence against Gabon's real, substantial role as a global
+      carbon sink. Freshwater withdrawal, carried forward, is at the
+      scale's near-ceiling, reflecting genuine water abundance.
+      Electricity generation from fossil sources, also carried
+      forward, remains roughly half. Agricultural land share, fresh,
+      is very low -- itself a direct reflection of how much of the
+      country the same rainforest covers. Only two of the pillar's
+      four indicators are current.
+    drivers:
+      - "CO2 pc moderate (fresh), but the index measures emissions only, not the ~88% rainforest cover's own absorption -- Congo Basin forest carbon-retention services valued over $75B in 2020, nearly double 2000's value"
+      - "freshwater withdrawal near the scale's ceiling (carried forward), reflecting genuine water abundance; electricity generation roughly half fossil-fuel (carried forward)"
+      - "agricultural land very low (fresh) -- itself a direct reflection of rainforest cover; only 2 of 4 indicators current"
+    citations: [c8]
+  G:
+    summary: >
+      Electricity access, at 94% of the population and freshly
+      measured, is among the strongest recorded anywhere in this
+      corpus. Basic drinking water access, also fresh, is similarly
+      strong. Government Effectiveness and Control of Corruption,
+      shared with Pillar A, are both weak. Social protection coverage,
+      estimated from regional peers rather than measured directly, is
+      comparatively weaker still. Four of the pillar's five indicators
+      are current, describing infrastructure reach built on the same
+      oil wealth documented in Pillar B, wealth that has not
+      translated into comparable governance strength.
+    drivers:
+      - "electricity access 94% of the population (fresh) -- among the strongest recorded anywhere in this corpus; basic drinking water similarly strong (fresh)"
+      - "Government Effectiveness and Control of Corruption (shared with Pillar A) both weak; social protection comparatively weaker still (regional-mean estimate)"
+      - "4 of 5 indicators current -- infrastructure reach built on oil wealth that has not translated into comparable governance strength"
+    citations: [c4]
+
+recent:
+  primary:
+    - headline: "Coup leader Oligui Nguema wins presidency with 90.35% of the vote"
+      date: 2025-04-13
+      summary: >
+        Brice Oligui Nguema, the general who led the August 2023 coup
+        against his own cousin Ali Bongo, won Gabon's presidential
+        election on 12 April 2025 with 90.35% of the vote, formally
+        ending the military transition. His closest competitor took
+        just 3.02%. A new constitution, approved by referendum in
+        November 2024, specifically required candidates to have a
+        Gabonese-born parent and a Gabonese spouse -- a provision that
+        disqualified Ali Bongo, who is married to a French woman, from
+        ever running again.
+      why_it_matters: >
+        The clearest parallel yet in this corpus to Guinea's
+        Doumbouya: a coup leader who promised only a transition
+        instead wins the resulting election himself, this time with a
+        constitutional provision engineered in advance to exclude the
+        family he deposed rather than a broken promise discovered
+        after the fact.
+      news_url: "https://www.africanews.com/2025/04/13/brice-oligui-nguema-wins-gabon-presidential-election-with-9035-of-the-vote/"
+      wikipedia_url: "https://en.wikipedia.org/wiki/2025_Gabonese_presidential_election"
+      sentiment: negative
+    - headline: "Ali Bongo freed after two years, exiled to Angola as his wife and son are convicted in absentia"
+      date: 2025-05-16
+      summary: >
+        Ali Bongo and his family were released from nearly two years
+        of house arrest and flown to exile in Angola on 16 May 2025,
+        following negotiations between Angolan President João Lourenço
+        and Oligui Nguema. Separately, a Gabonese court sentenced
+        former first lady Sylvia Bongo and her son Noureddin to 20
+        years in prison in absentia for embezzling public funds.
+      why_it_matters: >
+        A resolution that avoided further violence and gave the
+        deposed family safe passage, but one that also allowed a
+        20-year corruption sentence to be handed down without the
+        defendants present to answer it -- a due-process question this
+        record does not resolve for the reader.
+      news_url: "https://www.france24.com/en/africa/20250516-gabon-ali-bong-president-angola-junta-coup-released-house-arrest-ngueme-lourenco-luanda"
+      wikipedia_url: ""
+      sentiment: mixed
+    - headline: "Gabon's rainforest ecosystem services value nearly doubles to $75 billion"
+      date: 2025-06-26
+      summary: >
+        A World Bank economic update published 26 June 2025 valued the
+        ecosystem services of Gabon's rainforest -- which covers
+        roughly 88% of the country and forms part of the Congo Basin,
+        the world's second-largest tropical forest -- at $75.1 billion
+        in 2020, nearly double its value in 2000, with about 99% of
+        that value coming from carbon retention. Gabon has pursued
+        sustained conservation policy across both the Bongo and Oligui
+        Nguema governments.
+      why_it_matters: >
+        A genuine, independently verified environmental achievement
+        that this corpus's Pillar F cannot fully capture, since the
+        index measures Gabon's own emissions rather than the much
+        larger volume its forests absorb -- credited at full weight
+        independent of the severe political transition documented
+        alongside it.
+      news_url: "https://www.worldbank.org/en/country/gabon/publication/gabon-economic-update-2025-building-and-preserving-gabon-wealth-for-better-livelihoods"
+      wikipedia_url: ""
+      sentiment: positive
+  extended:
+    - headline: "New constitution approved in referendum, sets stage for coup leader's own candidacy"
+      date: 2024-11-16
+      summary: >
+        A new constitution, approved by 91.6% of voters in a 16
+        November 2024 referendum with 54.2% turnout, introduced a
+        two-seven-year-term limit, eliminated the prime minister's
+        post, and barred dynastic succession -- while also permitting
+        transitional leader Oligui Nguema to run for president
+        himself, a provision opposition figures said was designed
+        specifically to keep him in power.
+      why_it_matters: >
+        The direct legal mechanism behind the 2025 election documented
+        in recent.primary, and a case where genuine anti-dynastic
+        reforms (barring future Bongo-style succession) and
+        self-serving ones (permitting the coup leader's own candidacy)
+        were written into the same document.
+      news_url: "https://www.jurist.org/news/2024/11/gabon-referendum-approves-new-constitution-restoring-civilian-government/"
+      wikipedia_url: "https://en.wikipedia.org/wiki/2024_Gabonese_constitutional_referendum"
+      sentiment: mixed
+
+events:
+  - year: 1964
+    type: coup
+    title: "France restores M'ba after a coup"
+    description: >
+      Junior army officers overthrew President Léon M'ba on 17-18
+      February 1964; French President Charles de Gaulle dispatched
+      roughly 2,000 troops from neighbouring colonies, restoring M'ba
+      to power within two days.
+    url: "https://en.wikipedia.org/wiki/1964_Gabonese_coup_d'%C3%A9tat"
+    direction: mixed
+  - year: 2023
+    type: coup
+    title: "Coup ends the Bongo family's 56-year rule"
+    description: >
+      General Brice Oligui Nguema, Ali Bongo's own cousin and security
+      chief, led a coup on 30 August 2023 that ended 56 years of
+      combined rule by Omar and Ali Bongo, placing the family under
+      house arrest.
+    url: "https://en.wikipedia.org/wiki/2023_Gabonese_coup_d'%C3%A9tat"
+    direction: mixed
+  - year: 2024
+    type: constitutional
+    title: "New constitution approved by referendum"
+    description: >
+      A new constitution introducing term limits and barring dynastic
+      succession, while permitting Oligui Nguema's own candidacy, was
+      approved by 91.6% of voters in a November 2024 referendum.
+    url: "https://en.wikipedia.org/wiki/2024_Gabonese_constitutional_referendum"
+    direction: mixed
+  - year: 2025
+    type: election
+    title: "Oligui Nguema wins the presidency"
+    description: >
+      Coup leader Brice Oligui Nguema won Gabon's presidential election
+      on 12 April 2025 with 90.35% of the vote, formally ending the
+      military transition he had led since 2023.
+    url: "https://en.wikipedia.org/wiki/2025_Gabonese_presidential_election"
+    direction: deteriorate
+
+citations:
+  - id: c1
+    url: "https://en.wikipedia.org/wiki/1964_Gabonese_coup_d'%C3%A9tat"
+    source_type: wikipedia
+    title: "1964 Gabonese coup d'état"
+    accessed: 2026-08-11
+    verified: true
+  - id: c2
+    url: "https://en.wikipedia.org/wiki/L%C3%A9on_M%E2%80%99ba"
+    source_type: wikipedia
+    title: "Léon M'ba"
+    accessed: 2026-08-11
+    verified: true
+  - id: c3
+    url: "https://en.wikipedia.org/wiki/2023_Gabonese_coup_d'%C3%A9tat"
+    source_type: wikipedia
+    title: "2023 Gabonese coup d'état"
+    accessed: 2026-08-11
+    verified: true
+  - id: c4
+    url: "https://www.africanews.com/2025/04/13/brice-oligui-nguema-wins-gabon-presidential-election-with-9035-of-the-vote/"
+    source_type: news
+    title: "Brice Oligui Nguema wins Gabon Presidential election with 90.35% of the Vote (Africanews)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c5
+    url: "https://en.wikipedia.org/wiki/2025_Gabonese_presidential_election"
+    source_type: wikipedia
+    title: "2025 Gabonese presidential election"
+    accessed: 2026-08-11
+    verified: true
+  - id: c6
+    url: "https://www.france24.com/en/africa/20250516-gabon-ali-bong-president-angola-junta-coup-released-house-arrest-ngueme-lourenco-luanda"
+    source_type: news
+    title: "Gabon's ousted leader Bongo released from house arrest, arrives in Angola (France 24)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c7
+    url: "https://allafrica.com/view/group/main/main/id/00094709.html"
+    source_type: news
+    title: "Former First Family of Gabon Get 20 Years in Absentia for Graft (AllAfrica)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c8
+    url: "https://www.worldbank.org/en/country/gabon/publication/gabon-economic-update-2025-building-and-preserving-gabon-wealth-for-better-livelihoods"
+    source_type: official
+    title: "Gabon Economic Update 2025: Building and Preserving Gabon Wealth for Better Livelihoods (World Bank)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c9
+    url: "https://www.miningreview.com/news/gabons-manganese-investment-opportunities/"
+    source_type: news
+    title: "Gabon's Manganese transformation creates new downstream investment opportunities (Mining Review)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c10
+    url: "https://www.jurist.org/news/2024/11/gabon-referendum-approves-new-constitution-restoring-civilian-government/"
+    source_type: news
+    title: "Gabon approves new constitution in referendum restoring civilian government (JURIST)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c11
+    url: "https://theconversation.com/gabons-coup-leaders-have-changed-the-constitution-to-entrench-their-power-its-a-growing-trend-in-west-africa-244182"
+    source_type: news
+    title: "Gabon's coup leaders have changed the constitution to entrench their power (The Conversation)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c12
+    url: "https://en.wikipedia.org/wiki/Economic_Community_of_Central_African_States"
+    source_type: wikipedia
+    title: "Economic Community of Central African States"
+    accessed: 2026-08-11
+    verified: true
+
+rec_membership:
+  - org: ECCAS
+    joined: 1983
+    status: current
+    left: null
+    citations: [c12]
+
+balance:
+  n_positive: 1
+  n_negative: 1
+  n_mixed: 2
+  note: >
+    The 2025 election result is coded negative rather than mixed: a
+    coup leader winning 90.35% of the vote, in an election shaped by a
+    constitution his own transitional government wrote to exclude his
+    predecessor, does not meet this record's bar for a credited
+    democratic gain, however formally civilian the outcome. The Bongo
+    family's exile and in-absentia conviction is coded mixed because
+    it genuinely contains both: a peaceful resolution avoiding further
+    violence, and a due-process shortfall this record states plainly
+    rather than treats as settled. The rainforest valuation is credited
+    at full positive weight, independent of the political transition
+    documented alongside it -- the same standard this corpus applies to
+    crediting a genuine environmental achievement without letting
+    surrounding political conduct discount it.

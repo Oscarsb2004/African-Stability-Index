@@ -953,6 +953,37 @@ countries:
       signing its revised treaty, which conflicts with the index''s
       own current registry -- flagged, not resolved; check if Pillar C
       has gained coverage'
+  GAB:
+    name: Gabon
+    region: Central
+    first_pass: false
+    reason: thirty-fifth backlog country -- fills Central Africa (7
+      of 8 done); the corpus''s clearest comparative pair with GIN --
+      a coup leader (Oligui Nguema) who promised only a transition,
+      then won the resulting 2025 election himself with 90.35% of the
+      vote, this time via a constitution engineered in advance
+      (Gabonese-spouse requirement) to exclude the family he deposed
+      rather than a broken promise discovered after the fact; France''s
+      1964 military intervention to restore Léon M''ba is a genuinely
+      earlier and more explicit precedent for direct French
+      intervention than CIV''s own 2011 Licorne mission, and its
+      absence in 2023 reads as confirmation of waning French appetite
+      for intervention across the same 2020s coup wave as MLI/BFA/NER;
+      a genuine positive (rainforest ecosystem services valued at
+      $75.1B, nearly doubled since 2000) that this corpus''s own
+      Pillar F cannot fully capture, since the index measures
+      emissions, not carbon absorption
+    iteration_count: 1
+    last_updated: '2026-08-11'
+    next_action: 'EXPAND: follow whether Oligui Nguema''s government
+      shows any sign of the same entrenchment patterns (TGO, CMR)
+      documented elsewhere in this corpus as his own term progresses;
+      follow whether the 20-year in-absentia sentences against Sylvia
+      and Noureddin Bongo produce any extradition attempt or remain
+      symbolic; follow whether the manganese sector''s shift toward
+      domestic battery-grade processing materializes; check whether
+      Pillars B/D/E/F carried-forward and regional-mean indicators
+      gain fresh coverage; check if Pillar C has gained coverage'
 backlog:
   LBY:
     name: Libya
@@ -988,14 +1019,6 @@ backlog:
     next_action: create baseline from blueprint
   COG:
     name: Republic of Congo
-    region: Central
-    first_pass: false
-    reason: not yet scheduled
-    iteration_count: 0
-    last_updated: null
-    next_action: create baseline from blueprint
-  GAB:
-    name: Gabon
     region: Central
     first_pass: false
     reason: not yet scheduled
@@ -2323,3 +2346,32 @@ meta_notes:
   check: 0 errors, 2 pre-existing warnings (COD, EGY all-negative
   balance, unrelated to this run). 43 of 54 countries now have a
   record.'
+- '2026-08-11: GAB CREATE run complete (12 sources opened and
+  verified: 5 Wikipedia, 6 news, 1 official/World Bank). Fills Central
+  Africa (7 of 8 done after this run). The corpus''s clearest
+  comparative pair with GIN: coup leader Brice Oligui Nguema promised
+  only a transition, then won the resulting April 2025 election
+  himself with 90.35% of the vote -- this time via a constitution his
+  own government wrote in advance (a Gabonese-spouse requirement) to
+  exclude the family he deposed, rather than a broken promise
+  discovered after the fact as in Guinea. colonial_legacy adds a fact
+  the schema entry omits: France''s 1964 military intervention to
+  restore Léon M''ba, with roughly 2,000 troops within 48 hours, is a
+  genuinely earlier and more explicit precedent for direct French
+  intervention than CIV''s own 2011 Licorne mission -- and its notable
+  absence during the 2023 coup against Ali Bongo reads as confirmation
+  of the same waning French appetite for intervention already visible
+  across the 2020s coup wave in MLI/BFA/NER, all in this corpus.
+  Following the established discipline, found a genuine positive:
+  Gabon''s rainforest (88% cover, part of the Congo Basin) had its
+  ecosystem services valued at $75.1B in a June 2025 World Bank
+  update, nearly double 2000''s value -- explicitly flagged as
+  something Pillar F cannot fully capture, since the index measures
+  Gabon''s own emissions rather than the much larger volume its
+  forests absorb. Balance: 1 positive, 1 negative, 2 mixed. Three
+  word-count fixes (one key_period, pillars.E/G), each resolved by
+  adding real facts. `--links` passes 0 errors, 2 warnings (France24
+  and Mining Review, familiar 403 bot-detection pattern) -- 10/12
+  resolved. Full pytest suite: 106 passed. Full-corpus check: 0
+  errors, 2 pre-existing warnings (COD, EGY all-negative balance,
+  unrelated to this run). 44 of 54 countries now have a record.'

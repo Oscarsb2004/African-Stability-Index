@@ -26,7 +26,7 @@ An audit is forced early if a single run inflates the citation count by more tha
 
 ## Status
 
-**43 of 54 countries have a record (Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria, Rwanda, Chad, Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic, Mauritania, Zimbabwe, Comoros, Uganda, Sierra Leone, Equatorial Guinea, The Gambia, Mozambique, Guinea, South Sudan, Lesotho, Sao Tome & Principe, Togo, Cameroon, Burundi, Tunisia, Cote d'Ivoire, Zambia, Senegal). The first pass is complete; Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic, Mauritania, Zimbabwe, Comoros, Uganda, Sierra Leone, Equatorial Guinea, The Gambia, Mozambique, Guinea, South Sudan, Lesotho, Sao Tome & Principe, Togo, Cameroon, Burundi, Tunisia, Cote d'Ivoire, Zambia and Senegal are the first thirty-four backlog countries.**
+**44 of 54 countries have a record (Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria, Rwanda, Chad, Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic, Mauritania, Zimbabwe, Comoros, Uganda, Sierra Leone, Equatorial Guinea, The Gambia, Mozambique, Guinea, South Sudan, Lesotho, Sao Tome & Principe, Togo, Cameroon, Burundi, Tunisia, Cote d'Ivoire, Zambia, Senegal, Gabon). The first pass is complete; Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic, Mauritania, Zimbabwe, Comoros, Uganda, Sierra Leone, Equatorial Guinea, The Gambia, Mozambique, Guinea, South Sudan, Lesotho, Sao Tome & Principe, Togo, Cameroon, Burundi, Tunisia, Cote d'Ivoire, Zambia, Senegal and Gabon are the first thirty-five backlog countries.**
 
 ### First pass — 9 countries
 
@@ -85,14 +85,15 @@ whose ranks swing hardest with the weighting method.
 | CIV | Cote d'Ivoire | fills West Africa (12 of 16 done); a deliberate cross-reference with BFA -- French administrators dissolved Upper Volta partly to formalise its population as captive labour for Cote d'Ivoire's plantations, the same arrangement ivoirité later weaponised against those labourers' own descendants; a distinct international-intervention mechanism -- France's own Licorne mission acted directly, not through a regional bloc, to remove Gbagbo and install Ouattara in 2011; Ouattara's October 2025 fourth term (89.8%) came after barring Gbagbo (a domestic conviction surviving ICC acquittal) and Thiam (a 1987 citizenship technicality); a genuine positive (new $235M cocoa processing plant) credited alongside the exclusions | **done — iteration 1** |
 | ZMB | Zambia | fills East Africa (11 of 14 done); a genuine positive counterweight after a run of severe recent records -- the first sub-Saharan African country to achieve a peaceful electoral transfer of power (1991) and repeated it in 2021, completing a genuine debt-restructuring achievement in June 2024 after 2020's historic default; an eighth distinct resource-governance case (copper); Pillar F confirms a second genuine hydropower case after LSO; researched two days before a 13 August 2026 election, reported factually without a result since none existed yet; a severe negative (Feb 2025 Sino-Metals acid-spill disaster) and an unresolved mixed item (Lungu's still-unresolved burial dispute) round out the balance | **done — iteration 1** |
 | SEN | Senegal | fills West Africa (13 of 16 done); a reliable-tier composite score, joining ZAF/KEN/EGY as the corpus's non-thin countries; a genuinely distinct trajectory shape -- a term-limit crisis resolved through domestic courts and civic pressure, not a coup or entrenchment, when Sall's Feb 2024 postponement was overturned and Faye rose from prison to the presidency in 20 days; the same reform government fractured just over two years later when Faye fired his own mentor Sonko as PM in May 2026; a genuine boom (Sangomar oil field) arriving alongside a genuine crisis (a hidden-debt scandal revealing $7-13B concealed); a distinctive colonial mechanism -- the Quatre Communes' partial citizenship rights, not uniform exclusion | **done — iteration 1** |
+| GAB | Gabon | fills Central Africa (7 of 8 done); the corpus's clearest comparative pair with GIN -- coup leader Oligui Nguema promised only a transition, then won the resulting 2025 election himself with 90.35%, this time via a constitution engineered in advance to exclude the family he deposed; France's 1964 intervention to restore M'ba is an earlier, more explicit precedent than CIV's 2011 Licorne mission, its 2023 absence reading as confirmation of waning French intervention appetite across the same coup wave as MLI/BFA/NER; a genuine positive (rainforest ecosystem services valued at $75.1B) that Pillar F cannot fully capture, since the index measures emissions, not carbon absorption | **done — iteration 1** |
 
-### Backlog — the remaining 11
+### Backlog — the remaining 10
 
 Listed in full in `narrative/state.yaml` under `backlog`. They are recorded
 explicitly rather than left implicit: a country with no record should be visibly
 absent, not quietly missing.
 
-Libya, Benin, Cabo Verde, Guinea-Bissau, Republic of Congo, Gabon, Djibouti, Malawi, Tanzania, Eswatini, Seychelles
+Libya, Benin, Cabo Verde, Guinea-Bissau, Republic of Congo, Djibouti, Malawi, Tanzania, Eswatini, Seychelles
 
 ---
 
@@ -1538,6 +1539,38 @@ Append one line per run: date, country, mode, what changed, what was removed.
   needing two attempts). `--links` passes 0 errors, 0 warnings —
   14/14 resolved, a clean link check. Full pytest suite: 106 passed.
 
+- **2026-08-11 — GAB — CREATE. Thirty-fifth backlog country, fills
+  Central Africa (7 of 8 done).** Full baseline built: historical
+  overview, colonial legacy (adds a fact the schema entry omits —
+  France's 1964 military intervention to restore Léon M'ba, with
+  roughly 2,000 troops within 48 hours, is a genuinely earlier and
+  more explicit precedent for direct French intervention than CIV's
+  own 2011 Licorne mission; its notable absence during the 2023 coup
+  against Ali Bongo reads as confirmation of waning French
+  intervention appetite across the 2020s coup wave already documented
+  in MLI/BFA/NER), 4 key_periods, 6 pillar summaries (Pillar C left
+  empty — greyed at 1/8 measured), 3 primary + 1 extended recent
+  items, 4 events, rec_membership (ECCAS 1983 founding member — the
+  constitutive treaty was signed in Libreville, Gabon's own capital).
+  12 sources opened and verified: 5 Wikipedia, 6 news, 1
+  official/World Bank. The corpus's clearest comparative pair with
+  GIN: coup leader Brice Oligui Nguema promised only a transition,
+  then won the resulting April 2025 election himself with 90.35% of
+  the vote — this time via a constitution his own government wrote in
+  advance (a Gabonese-spouse requirement) to exclude the family he
+  deposed, rather than a broken promise discovered after the fact as
+  in Guinea. Following the established discipline, found a genuine
+  positive: Gabon's rainforest (88% cover, part of the Congo Basin)
+  had its ecosystem services valued at $75.1B in a June 2025 World
+  Bank update, nearly double 2000's value — explicitly flagged as
+  something Pillar F cannot fully capture, since the index measures
+  Gabon's own emissions rather than the much larger volume its
+  forests absorb. Balance: 1 positive, 1 negative, 2 mixed. Three
+  word-count fixes (one key_period, pillars.E/G), each resolved by
+  adding real facts. `--links` passes 0 errors, 2 warnings (France24
+  and Mining Review, familiar 403 bot-detection pattern) — 10/12
+  resolved. Full pytest suite: 106 passed.
+
 ---
 
 ## Meta-notes
@@ -2306,6 +2339,20 @@ Things a future run should know about how to work, not about a specific country.
   write the positive half first and treat the rupture as an
   afterthought; both were given full standing as separate recent
   items here.
+- **2026-08-11** — GAB confirms the "coup leader wins the transition
+  election himself" typology (GIN, GAB) is worth tracking as its own
+  named pattern going forward, distinct from TGO/CMR's "long-serving
+  leader entrenches via constitutional maneuver" pattern — both end in
+  the same place (one leader holding power indefinitely) but start
+  from opposite positions (a new leader converting a coup into
+  legitimacy vs. an incumbent avoiding ever leaving). Also: GAB is the
+  second corpus case (after CMR/AGO's hydropower-vs-emissions
+  discussion) of explicitly stating that a pillar's raw indicators
+  cannot fully capture a country's real environmental position — here,
+  Gabon's net carbon-negative status as a rainforest nation isn't
+  visible in Pillar F's emissions-only CO2 reading. Worth checking any
+  remaining Congo Basin country (COG, if it reaches the front of the
+  backlog) for the same framing.
 
 ---
 
