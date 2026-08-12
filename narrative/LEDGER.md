@@ -26,7 +26,7 @@ An audit is forced early if a single run inflates the citation count by more tha
 
 ## Status
 
-**52 of 54 countries have a record (Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria, Rwanda, Chad, Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic, Mauritania, Zimbabwe, Comoros, Uganda, Sierra Leone, Equatorial Guinea, The Gambia, Mozambique, Guinea, South Sudan, Lesotho, Sao Tome & Principe, Togo, Cameroon, Burundi, Tunisia, Cote d'Ivoire, Zambia, Senegal, Gabon, Malawi, Eswatini, Seychelles, Benin, Libya, Tanzania, Republic of Congo, Djibouti). The first pass is complete; Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic, Mauritania, Zimbabwe, Comoros, Uganda, Sierra Leone, Equatorial Guinea, The Gambia, Mozambique, Guinea, South Sudan, Lesotho, Sao Tome & Principe, Togo, Cameroon, Burundi, Tunisia, Cote d'Ivoire, Zambia, Senegal, Gabon, Malawi, Eswatini, Seychelles, Benin, Libya, Tanzania, Republic of Congo and Djibouti are the first forty-three backlog countries.**
+**53 of 54 countries have a record (Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria, Rwanda, Chad, Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic, Mauritania, Zimbabwe, Comoros, Uganda, Sierra Leone, Equatorial Guinea, The Gambia, Mozambique, Guinea, South Sudan, Lesotho, Sao Tome & Principe, Togo, Cameroon, Burundi, Tunisia, Cote d'Ivoire, Zambia, Senegal, Gabon, Malawi, Eswatini, Seychelles, Benin, Libya, Tanzania, Republic of Congo, Djibouti, Guinea-Bissau). The first pass is complete; Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic, Mauritania, Zimbabwe, Comoros, Uganda, Sierra Leone, Equatorial Guinea, The Gambia, Mozambique, Guinea, South Sudan, Lesotho, Sao Tome & Principe, Togo, Cameroon, Burundi, Tunisia, Cote d'Ivoire, Zambia, Senegal, Gabon, Malawi, Eswatini, Seychelles, Benin, Libya, Tanzania, Republic of Congo, Djibouti and Guinea-Bissau are the first forty-four backlog countries.**
 
 ### First pass — 9 countries
 
@@ -94,14 +94,15 @@ whose ranks swing hardest with the weighting method.
 | TZA | Tanzania | East Africa's second-to-last gap (13 of 14 done, only DJI remains); a nation-building mechanism distinct from every other independence pattern in this corpus -- the April 1964 union of Tanganyika and Zanzibar merged two already-sovereign states into one, rather than a single territory gaining independence; the 1905-1907 Maji Maji Rebellion's German scorched-earth suppression killed an estimated 75,000-300,000 people through deliberate famine, a third named colonial-atrocity mechanism alongside LBY's land-clearance settler violence and RWA/BDI's ethnic-classification genocides; SADC membership confirms MOZ's own predicted Frontline States/SADCC cross-reference; two genuine positives (Julius Nyerere Hydropower Project reaching full capacity; record 2025 gold/tourism/mining growth) credited alongside a severe October-November 2025 election crisis (CHADEMA disqualified, Lissu charged with treason, Hassan re-elected with 97.66%, a crackdown with a genuinely disputed death toll from hundreds into the thousands) | **done — iteration 1** |
 | COG | Republic of Congo | completes Central Africa (8 of 8 done); a demographic-collapse colonial mechanism distinct from CAF's Kongo-Wara rebellion already in this corpus -- historian Adam Hochschild estimates the same concessionary rubber system halved the combined population of French Congo and Gabon, a toll of the same order as the Congo Free State atrocities across the river, despite producing no comparably large rebellion; the Congo-Ocean railway (1921-1934) killed an estimated 17,000-25,000 conscripted labourers; Denis Sassou Nguesso's rule (1979-1992, then unbroken since a 1997 civil war Angola's military intervention resolved in his favour) is a fourth named entrenchment mechanism, distinct from TGO/CMR/GAB/BEN's own patterns -- restoration by foreign military intervention rather than domestic legal or electoral manoeuvre; a fifth consecutive term won 15 March 2026 with 94.90% amid an opposition boycott, two imprisoned opposition leaders, and an election-day internet blackout; a severe debt crisis (97.2% of GDP) credited alongside a genuine TotalEnergies investment | **done — iteration 1** |
 | DJI | Djibouti | completes East Africa (14 of 14 done); a strategic-location colonial mechanism distinct from most of the corpus -- France valued the territory chiefly for its port and the Addis Ababa-Djibouti railway rather than any commodity, with no significant slave trade recorded; French administration grouped the Afar and Issa-Somali under one territory and favoured Issa leadership, the specific root of the 1991-2001 civil war; Guelleh's 1999 succession from his own uncle, followed by an unbroken rule extended via a 2025 constitutional age-limit removal to a sixth term (10 April 2026, 97.81%), is a near-exact structural echo of COG's own 2015 age-limit removal researched immediately prior; a genuinely adjudicated rule-of-law failure (the DP World Doraleh arbitration, $685M unpaid) credited alongside a genuine, measured renewable-energy achievement (~80% of current electricity, not merely a stated target) | **done — iteration 1** |
+| GNB | Guinea-Bissau | leaves only CPV in the backlog; a slave-export colonial mechanism distinct from the extractive-commodity colonies documented elsewhere -- Portugal valued Portuguese Guinea chiefly as a source of captive people feeding Cape Verde's own plantations, a relationship that reappeared, inverted, as the specific mainland-versus-Cape-Verdean fault line that ended PAIGC's planned single post-colonial state: Amilcar Cabral's own 1973 assassination, then the 1980 coup that deposed his half-brother Luis Cabral and split Guinea-Bissau from Cape Verde permanently in January 1981; nine coups or coup attempts since independence, the most recent on 26 November 2025 when soldiers arrested President Embalo days before results of an election from which PAIGC itself -- the party that won the country's independence -- had been barred; a genuine 2025 cashew-harvest achievement (260,000 tonnes, up 18%) credited independent of the same year's coup and ECOWAS suspension; deliberately researched immediately before CPV to set up their shared PAIGC/1980-split cross-reference | **done — iteration 1** |
 
-### Backlog — the remaining 2
+### Backlog — the remaining 1
 
-Listed in full in `narrative/state.yaml` under `backlog`. They are recorded
+Listed in full in `narrative/state.yaml` under `backlog`. It is recorded
 explicitly rather than left implicit: a country with no record should be visibly
 absent, not quietly missing.
 
-Cabo Verde, Guinea-Bissau
+Cabo Verde
 
 ---
 
@@ -1877,6 +1878,55 @@ Append one line per run: date, country, mode, what changed, what was removed.
   have a record — only Cabo Verde and Guinea-Bissau remain, both in
   West Africa.
 
+- **2026-08-12 — GNB (Guinea-Bissau), CREATE.** Chosen as the
+  forty-fourth backlog country, deliberately researched immediately
+  before CPV: the two share a single founding independence movement
+  (PAIGC) that split in 1980, so sequencing them back-to-back sets up
+  a cross-reference rather than leaving it to chance. 15 sources
+  opened and verified: 7 Wikipedia, 6 news, 1 official (UNICEF), 1
+  more news (The Conversation). A slave-export colonial mechanism
+  distinct from the extractive-commodity colonies documented
+  elsewhere — Portugal valued Portuguese Guinea chiefly as a source of
+  captive people feeding Cape Verde's own plantations, a relationship
+  that reappeared, inverted, as the specific mainland-versus-
+  Cape-Verdean fault line that ended PAIGC's planned single
+  post-colonial state: Amilcar Cabral's own 1973 assassination, then
+  the 1980 coup that deposed his half-brother Luis Cabral and split
+  the two territories permanently in January 1981. Nine coups or coup
+  attempts since independence, the most recent on 26 November 2025,
+  when soldiers arrested President Embalo days before results of an
+  election from which PAIGC itself — the party that won the country's
+  independence — had been barred, a striking historical irony stated
+  directly rather than softened. Following the established
+  discipline, found a genuine positive: the 2025 cashew harvest
+  (260,000 tonnes, up 18% on 2024), credited independent of the same
+  year's coup and ECOWAS suspension, though the near-total
+  single-commodity dependency (93% of export revenue) is stated as a
+  structural vulnerability, not treated as fully resolved by the
+  achievement. Two word-count fixes (pillars A and B, both a few words
+  under the 80-word floor), each resolved by adding real facts rather
+  than padding. A YAML-syntax bug of a new variant was found and fixed
+  in `state.yaml` during this run: a line ending in a bare colon
+  inside an unquoted multi-line `reason:` scalar broke the parse the
+  same way the earlier `#N-M` bug did (SEN, SYC) — caught by
+  re-parsing immediately after the edit rather than waiting for the
+  next full-corpus check, and fixed by rewording to an em-dash. Future
+  `reason:`/`next_action:` prose should avoid ending a wrapped line
+  with a bare colon, not just unquoted `#digit` sequences. A second,
+  unrelated slip was caught the same way: an automated `meta_notes`
+  append landed between two existing entries rather than at the true
+  end of the file, because the marker text used to locate "the end"
+  matched an earlier entry's closing sentence structure rather than
+  the actual last entry's (whose closing sentence had different
+  trailing wording) — fixed by relocating the block to the true end
+  and re-verified with a direct read of the last three entries in
+  order, not just a parse-succeeds check. `--links` flagged 1 URL
+  (UNICEF) as HTTP 403, confirmed bot-detection, left as a warning.
+  Balance: 1 positive, 3 negative, 0 mixed. Full pytest suite: 106
+  passed. Full-corpus check: 0 errors, 2 pre-existing unrelated
+  warnings (COD, EGY). 53 of 54 countries now have a record — only
+  Cabo Verde remains.
+
 ---
 
 ## Meta-notes
@@ -2793,6 +2843,21 @@ Things a future run should know about how to work, not about a specific country.
   reasons other than extraction, and DJI's present-day military-base
   rent economy (~18% of GDP) is a direct, traceable continuation of
   the exact same strategic logic 160 years later.
+- **2026-08-12** — GNB adds a colonial mechanism new to this corpus:
+  a colony valued specifically as a slave-export route to a second,
+  neighbouring colony (Cape Verde's plantations) rather than for
+  extraction on its own soil — distinct from DJI's strategic-position
+  mechanism researched immediately before it, and worth naming as a
+  fourth colonial-economic-logic category alongside commodity
+  extraction, settler land-clearance, and strategic position. GNB also
+  demonstrates that this corpus's cross-reference discipline works
+  both ways: PAIGC's founding ambition to unite Guinea-Bissau and Cape
+  Verde into one state, defeated first by Cabral's own assassination
+  and finally by the 1980 coup, is the clearest case yet of two
+  planned-but-never-realised countries whose shared origin the corpus
+  can trace explicitly once both records exist — worth checking CPV's
+  own record, once written, states the 1980 split from Guinea-Bissau's
+  side as plainly as this record states it from Guinea-Bissau's.
 
 ---
 

@@ -1,0 +1,477 @@
+meta:
+  iso3: GNB
+  name: Guinea-Bissau
+  last_updated: 2026-08-12
+  iteration_count: 1
+  next_action: >
+    EXPAND: (1) follow whether the junta's scheduled 6 December 2026
+    election actually takes place, and whether PAIGC and other barred
+    candidates are permitted to contest it; (2) follow whether ECOWAS
+    sanctions materialise against named individuals or remain a
+    threat; (3) follow whether the 2025 cashew-export gains translate
+    into any measurable Pillar B improvement once fresher data is
+    available; (4) check whether the maternal-mortality and malaria
+    figures documented here worsen under continued military rule; (5)
+    check if Pillar C has gained coverage.
+  model_used: claude-sonnet-5
+
+historical:
+  overview: >
+    Portugal held Portuguese Guinea primarily as a slave-export route
+    feeding plantations on Cape Verde and in the Americas, one of the
+    highest slave-trade intensities recorded in this corpus. Amilcar
+    Cabral founded the PAIGC in 1960 to fight for the joint
+    liberation of Guinea-Bissau and Cape Verde, leading one of
+    Africa's most militarily successful guerrilla campaigns against a
+    NATO-equipped Portuguese army before he was assassinated in
+    January 1973, reportedly amid an internal rift between mainland
+    and Cape Verdean party members. Guinea-Bissau declared
+    independence unilaterally later that year, recognised by Portugal
+    in September 1974; Cape Verde followed in July 1975 under the
+    same PAIGC banner, with a formal union between the two states
+    still planned. That union collapsed in November 1980, when Prime
+    Minister Joao Bernardo Vieira toppled President Luis Cabral
+    (Amilcar's half-brother) in a coup drawing on the same
+    mainland-versus-Cape-Verdean tension that had contributed to
+    Amilcar Cabral's own assassination; Cape Verde formally separated
+    in January 1981. Guinea-Bissau has since endured nine coups or
+    coup attempts, the most recent on 26 November 2025, when soldiers
+    arrested President Umaro Sissoco Embalo days before the results
+    of a disputed election -- one from which PAIGC, the party Cabral
+    himself founded, had been barred -- were due. The junta cited an
+    alleged drug-baron-backed destabilisation plot, suspended the
+    vote, and adopted a 12-month transitional charter targeting
+    elections on 6 December 2026; ECOWAS suspended Guinea-Bissau's
+    membership and rejected the transition timeline in December 2025.
+    The UN has labelled Guinea-Bissau a "narco-state" since 2008, and
+    cashew nuts, roughly 93% of export revenue, remain the economy's
+    dominant genuine growth driver: the 2025 harvest is estimated at
+    260,000 tonnes, up 18% on 2024.
+  overview_citations: [c1, c2, c3, c5, c7, c10]
+  colonial_legacy: >
+    context/colonial_history.yaml already records Portuguese Guinea's
+    slave-trade intensity as "very high," among the highest in this
+    corpus, and names it explicitly as a route feeding plantations in
+    Cape Verde and the Americas rather than a plantation economy in
+    its own right -- worth stating what that distinction means
+    concretely: Guinea-Bissau's colonial value to Portugal was largely
+    as a source of captive people rather than of goods produced on its
+    own soil, a mechanism distinct from the extractive-commodity
+    colonies documented elsewhere in this corpus. The schema entry
+    also credits the PAIGC's 1963-1974 liberation war, led by Amilcar
+    Cabral, as among Africa's most successful guerrilla campaigns,
+    defeating a Portuguese army armed by NATO allies. Cabral founded
+    PAIGC explicitly to liberate Guinea-Bissau and Cape Verde
+    together, envisioning a single post-colonial state -- an ambition
+    this record's own history shows collapsing twice: first with
+    Cabral's own 1973 assassination amid an internal
+    mainland-versus-Cape-Verdean rift, then finally with the 1980 coup
+    that deposed his half-brother Luis Cabral along the same fault
+    line and split the two territories permanently in January 1981.
+    The same slave-trade relationship that once bound Guinea-Bissau to
+    Cape Verde as source and destination reappeared, inverted, as the
+    specific political fracture line that ended their planned union.
+  colonial_legacy_citations: [c1, c2]
+  key_periods:
+    - title: "Slave-export colonization and the PAIGC liberation war"
+      period: "1879-1974"
+      summary: >
+        Portugal held Portuguese Guinea primarily as a slave-export
+        route feeding plantations on Cape Verde and in the Americas.
+        Amilcar Cabral founded the PAIGC in 1960 to fight for the
+        joint liberation of Guinea-Bissau and Cape Verde, leading one
+        of Africa's most militarily successful guerrilla campaigns
+        against a NATO-equipped Portuguese army before independence
+        was unilaterally declared in 1973.
+      citations: [c1, c2]
+    - title: "Cabral's assassination and the planned union's collapse"
+      period: "1973-1981"
+      summary: >
+        Amilcar Cabral was assassinated in January 1973, reportedly
+        amid an internal rift between mainland and Cape Verdean PAIGC
+        members, eight months before Guinea-Bissau's independence.
+        His half-brother Luis Cabral led Guinea-Bissau until a
+        November 1980 coup by Joao Bernardo Vieira, drawing on the
+        same mainland-Cape Verdean tension, permanently ended the
+        planned union with Cape Verde, which separated in January
+        1981.
+      citations: [c3, c4]
+    - title: "Chronic coups and the narco-state designation"
+      period: "1980-2012"
+      summary: >
+        Guinea-Bissau endured repeated coups and coup attempts after
+        1980, including President Joao Bernardo Vieira's own 2009
+        assassination and the 2012 "cocaine coup." The UN and US
+        labelled the country Africa's first narco-state in 2008,
+        describing a pattern in which criminal networks funded
+        politicians to protect cocaine-trafficking routes through the
+        country.
+      citations: [c5, c6]
+    - title: "The 2025 coup and military transition"
+      period: "2025-2026"
+      summary: >
+        Soldiers arrested President Umaro Sissoco Embalo on 26
+        November 2025, days before results of a disputed election --
+        from which PAIGC, the party Cabral founded, had been barred --
+        were due. The junta adopted a 12-month transitional charter
+        targeting elections on 6 December 2026; ECOWAS suspended
+        Guinea-Bissau's membership and rejected the transition
+        timeline that December.
+      citations: [c7, c8, c9]
+
+pillars:
+  A:
+    summary: >
+      All six World Governance Indicators are directly measured this
+      year, and the aggregate is weak -- Government Effectiveness
+      (23.7) and Control of Corruption (23.4) are the most severe,
+      with Regulatory Quality (35.9) and Rule of Law (36.8) close
+      behind. This weak reading predates the most severe governance
+      rupture documented under recent developments: soldiers arrested
+      President Umaro Sissoco Embalo on 26 November 2025, the ninth
+      coup or coup attempt since independence, days before the
+      results of an election from which PAIGC, the party
+      Guinea-Bissau's independence leader Amilcar Cabral himself
+      founded, had been barred.
+    drivers:
+      - "all 6 WGI indicators directly measured; Government Effectiveness (23.7) and Control of Corruption (23.4) the most severe, Regulatory Quality (35.9) and Rule of Law (36.8) close behind"
+      - "2023 reference year predates the most severe governance rupture documented under recent developments: soldiers arrested President Embalo on 26 November 2025, the ninth coup or coup attempt since independence"
+      - "days before results of an election from which PAIGC, the party Amilcar Cabral himself founded, had been barred (see recent developments)"
+    citations: [c7, c8]
+  B:
+    summary: >
+      GDP growth, GDP per capita, inflation and domestic credit, all
+      freshly measured, are middling for this corpus -- domestic
+      credit (24.5) is particularly weak, reflecting a financial
+      sector that reaches only a small share of the economy. Gini,
+      carried forward, is comparatively strong. This pillar's 2023
+      reference year understates a single-commodity dependency this
+      record credits directly: cashews account for roughly 93% of
+      export revenue, and the 2025 harvest is estimated at 260,000
+      tonnes, up 18% on 2024, supporting projected 5.1% growth and a
+      narrowing current-account deficit even as the country's
+      political institutions collapsed around it.
+    drivers:
+      - "GDP growth, GDP per capita, inflation, domestic credit all fresh, middling for this corpus; domestic credit (24.5) particularly weak, a financial sector reaching only a small share of the economy; Gini comparatively strong (carried forward)"
+      - "single-commodity dependency: cashews ~93% of export revenue; 2025 harvest estimated at 260,000 tonnes, up 18% on 2024"
+      - "supported projected 5.1% growth and a narrowing current-account deficit even as the country's political institutions collapsed around it (see recent developments)"
+    citations: [c10, c11]
+  D:
+    summary: >
+      Four of the pillar's five indicators are directly measured this
+      year, and the aggregate is weak: handwashing-facility access, at
+      just 19.73% of the population, is severe. Life expectancy and
+      infant mortality are both comparatively weak, consistent with a
+      maternal mortality ratio of 667 per 100,000 live births -- above
+      the low-income-country average and far from the 2030 SDG target
+      of 70 -- and a health system in which roughly two-thirds of the
+      population must walk over an hour to reach the nearest health
+      centre. Safely managed drinking water is similarly weak. Severe
+      food insecurity, carried forward rather than fresh, reads as
+      comparatively strong at 9.00%, though this may understate
+      current conditions given the political collapse documented in
+      Pillar A. Four of the pillar's five indicators are current.
+    drivers:
+      - "4 of 5 indicators directly measured; handwashing-facility access just 19.73% of the population -- severe"
+      - "life expectancy and infant mortality both comparatively weak, consistent with a maternal mortality ratio of 667/100,000 live births -- far from the 2030 SDG target of 70 -- and a health system where ~66% of the population walks over an hour to reach the nearest health centre"
+      - "severe food insecurity comparatively strong at 9.00% (carried forward, not fresh), though this may understate current conditions given the political collapse in Pillar A; 4 of 5 indicators current"
+    citations: [c12]
+  E:
+    summary: >
+      Political Stability and Rule of Law, both fresh and shared with
+      Pillar A, diverge sharply -- Political Stability (63.0) is
+      comparatively decent, while Rule of Law (36.8) is weak, a gap
+      the November 2025 coup reveals as illusory. Intentional homicide
+      and displaced persons, both regional-mean estimates rather than
+      direct measurements, are middling. Only two of the pillar's four
+      indicators are current, and neither captures the most recent
+      coup -- the ninth in Guinea-Bissau's post-independence history --
+      documented under recent developments.
+    drivers:
+      - "Political Stability and Rule of Law (shared with Pillar A) diverge: Political Stability (63.0) comparatively decent, Rule of Law (36.8) weak -- a gap the November 2025 coup reveals as illusory"
+      - "intentional homicide and displaced persons both middling (regional-mean estimates, not fresh)"
+      - "only 2 of 4 indicators current, and neither captures the ninth post-independence coup documented under recent developments"
+    citations: [c7]
+  F:
+    summary: >
+      CO2 emissions per capita, freshly measured, are near the
+      scale's ceiling -- among the lowest in this corpus. Freshwater
+      withdrawal, carried forward, is very low relative to renewable
+      resources. Electricity generation from fossil sources, also
+      carried forward, is the pillar's weakest reading at nearly 93%,
+      among the most fossil-dependent power grids in this corpus
+      despite the country's minimal overall emissions. Agricultural
+      land share, fresh, is weak, reflecting cashew cultivation's
+      specific land-use footprint rather than diversified farming.
+      Only two of the pillar's four indicators are current.
+    drivers:
+      - "CO2 pc near the scale's ceiling (fresh) -- among the lowest in this corpus"
+      - "freshwater withdrawal very low relative to renewable resources (carried forward); electricity generation nearly 93% fossil-fuel (carried forward), among the most fossil-dependent grids in this corpus despite minimal overall emissions"
+      - "agricultural land weak (fresh), reflecting cashew cultivation's specific land-use footprint rather than diversified farming; only 2 of 4 indicators current"
+    citations: [c10]
+  G:
+    summary: >
+      Electricity access, at just 40.50% of the population and
+      freshly measured, is weak. Basic drinking water access, also
+      fresh, is more middling. Government Effectiveness and Control
+      of Corruption, shared with Pillar A, are both severe, among the
+      weakest readings in this corpus. Social protection coverage,
+      carried forward rather than fresh, is comparatively weak. Four
+      of the pillar's five indicators are current, describing an
+      infrastructure and governance picture consistent with a state
+      now under direct military rule, as documented under recent
+      developments.
+    drivers:
+      - "electricity access just 40.50% of the population (fresh) -- weak; basic drinking water more middling (fresh)"
+      - "Government Effectiveness and Control of Corruption (shared with Pillar A) both severe, among the weakest readings in this corpus"
+      - "social protection comparatively weak (carried forward); 4 of 5 indicators current -- consistent with a state now under direct military rule (see recent developments)"
+    citations: [c7]
+
+recent:
+  primary:
+    - headline: "Soldiers arrest President Embalo in the country's ninth post-independence coup"
+      date: 2025-11-26
+      summary: >
+        Soldiers arrested President Umaro Sissoco Embalo on 26
+        November 2025, days before official results of a 23 November
+        election were due, after PAIGC -- the party Amilcar Cabral
+        founded to win Guinea-Bissau's independence -- had been
+        barred from contesting it. The self-declared High Military
+        Command for the Restoration of National Security and Public
+        Order, led by General Horta Inta-a Na Man, cited an alleged
+        drug-baron-backed plot to destabilise the country, closed the
+        borders, and imposed a curfew.
+      why_it_matters: >
+        Directly explains Pillar A's severity and is the ninth coup
+        or coup attempt in Guinea-Bissau's post-independence history,
+        a striking irony given the ousted election-barred party was
+        the same PAIGC that won the country's independence in the
+        first place.
+      news_url: "https://www.pbs.org/newshour/world/guinea-bissau-soldiers-announce-general-as-junta-leader-cementing-a-coup-days-after-election"
+      wikipedia_url: "https://en.wikipedia.org/wiki/2025_Guinea-Bissau_coup_d'%C3%A9tat"
+      sentiment: negative
+    - headline: "ECOWAS suspends Guinea-Bissau and rejects the junta's 12-month transition plan"
+      date: 2025-12-15
+      summary: >
+        ECOWAS suspended Guinea-Bissau's membership after the
+        November 2025 coup and, at its 15 December 2025 summit in
+        Abuja, formally rejected the junta's 12-month transitional
+        charter, demanding a shorter timeline, the release of
+        political prisoners, and their inclusion in the political
+        process. The bloc threatened targeted sanctions against
+        anyone obstructing a return to constitutional order.
+      why_it_matters: >
+        A concrete regional-accountability mechanism already active
+        rather than merely threatened, though its practical effect on
+        the junta's own scheduled 6 December 2026 election date
+        remained untested as of this record.
+      news_url: "https://www.africanews.com/2025/12/15/ecowas-rejects-guinea-bissau-transition-warns-of-sanctions/"
+      wikipedia_url: ""
+      sentiment: negative
+    - headline: "2025 cashew harvest reaches an estimated 260,000 tonnes, up 18% on 2024"
+      date: 2025-06-27
+      summary: >
+        Guinea-Bissau's 2025 cashew harvest is estimated at 260,000
+        tonnes, up 18.1% from 220,000 tonnes in 2024, with 208,833
+        tonnes already transported to Bissau by mid-year, itself an
+        18.6% increase over the same period in 2024. Cashews account
+        for roughly 93% of the country's export revenue, and the
+        harvest is expected to support 5.1% GDP growth and a
+        narrowing current-account deficit for the year.
+      why_it_matters: >
+        A genuine, concrete economic achievement, credited here on
+        its own terms even as the country's political institutions
+        collapsed around it in the same year -- though the same
+        near-total dependence on a single crop is itself a structural
+        vulnerability this record does not treat as fully resolved.
+      news_url: "https://www.ecofinagency.com/news/3006-47472-cashew-guinea-bissau-on-track-to-meet-2025-export-target-amid-challenges"
+      wikipedia_url: ""
+      sentiment: positive
+  extended:
+    - headline: "PAIGC, the party that won Guinea-Bissau's independence, is barred from the 2025 election"
+      date: 2025-10-01
+      summary: >
+        Guinea-Bissau's electoral authorities barred PAIGC, the
+        historic liberation party founded by Amilcar Cabral, from
+        contesting the 23 November 2025 presidential and legislative
+        elections, alongside disputes over other candidates'
+        eligibility that civil society groups said undermined the
+        vote's credibility even before the coup that followed three
+        days after polls closed.
+      why_it_matters: >
+        The specific procedural exclusion that set the stage for the
+        coup documented under primary developments, and a stark
+        historical irony: the party that fought for Guinea-Bissau's
+        independence excluded from a vote in the country it created.
+      news_url: "https://theconversation.com/guinea-bissau-coup-election-uncertainty-has-triggered-military-takeovers-before-271368"
+      wikipedia_url: ""
+      sentiment: negative
+
+events:
+  - year: 1973
+    type: conflict
+    title: "Amilcar Cabral assassinated"
+    description: >
+      Amilcar Cabral, founder of the PAIGC and leader of the joint
+      liberation struggle for Guinea-Bissau and Cape Verde, was
+      assassinated in Conakry on 20 January 1973, reportedly amid an
+      internal rift between mainland and Cape Verdean party members,
+      eight months before Guinea-Bissau's independence.
+    url: "https://en.wikipedia.org/wiki/Am%C3%ADlcar_Cabral"
+    direction: deteriorate
+  - year: 1974
+    type: independence
+    title: "Portugal recognises Guinea-Bissau's independence"
+    description: >
+      Portugal formally recognised Guinea-Bissau's independence on 10
+      September 1974, a year after the PAIGC's unilateral declaration,
+      following one of Africa's most militarily successful anti-
+      colonial guerrilla campaigns.
+    url: "https://www.britannica.com/place/Guinea-Bissau/Independence"
+    direction: improve
+  - year: 1980
+    type: coup
+    title: "Coup ends the planned union with Cape Verde"
+    description: >
+      Prime Minister Joao Bernardo Vieira toppled President Luis
+      Cabral in a bloodless coup on 14 November 1980, drawing on
+      tension between mainland Guinea-Bissauans and Cape Verdeans;
+      Cape Verde formally separated from the planned union in January
+      1981.
+    url: "https://en.wikipedia.org/wiki/1980_Guinea-Bissau_coup_d'%C3%A9tat"
+    direction: deteriorate
+  - year: 2025
+    type: coup
+    title: "Soldiers arrest President Embalo in the ninth post-independence coup"
+    description: >
+      Soldiers arrested President Umaro Sissoco Embalo on 26 November
+      2025, days before official results of a disputed election were
+      due, installing a military transitional government targeting
+      elections on 6 December 2026.
+    url: "https://en.wikipedia.org/wiki/2025_Guinea-Bissau_coup_d'%C3%A9tat"
+    direction: deteriorate
+
+citations:
+  - id: c1
+    url: "https://www.britannica.com/place/Guinea-Bissau/Independence"
+    source_type: news
+    title: "Guinea-Bissau - Independence (Britannica)"
+    accessed: 2026-08-12
+    verified: true
+  - id: c2
+    url: "https://en.wikipedia.org/wiki/Am%C3%ADlcar_Cabral"
+    source_type: wikipedia
+    title: "Amilcar Cabral"
+    accessed: 2026-08-12
+    verified: true
+  - id: c3
+    url: "https://en.wikipedia.org/wiki/1980_Guinea-Bissau_coup_d'%C3%A9tat"
+    source_type: wikipedia
+    title: "1980 Guinea-Bissau coup d'etat"
+    accessed: 2026-08-12
+    verified: true
+  - id: c4
+    url: "https://en.wikipedia.org/wiki/Lu%C3%ADs_Cabral"
+    source_type: wikipedia
+    title: "Luis Cabral"
+    accessed: 2026-08-12
+    verified: true
+  - id: c5
+    url: "https://adf-magazine.com/2022/09/cocaine-coups-plague-guinea-bissau/"
+    source_type: news
+    title: "Cocaine, Coups Plague Guinea-Bissau (Africa Defense Forum)"
+    accessed: 2026-08-12
+    verified: true
+  - id: c6
+    url: "https://www.cfr.org/articles/united-states-and-drug-trafficking-guinea-bissau"
+    source_type: news
+    title: "United States and Drug Trafficking in Guinea-Bissau (Council on Foreign Relations)"
+    accessed: 2026-08-12
+    verified: true
+  - id: c7
+    url: "https://en.wikipedia.org/wiki/2025_Guinea-Bissau_coup_d'%C3%A9tat"
+    source_type: wikipedia
+    title: "2025 Guinea-Bissau coup d'etat"
+    accessed: 2026-08-12
+    verified: true
+  - id: c8
+    url: "https://www.pbs.org/newshour/world/guinea-bissau-soldiers-announce-general-as-junta-leader-cementing-a-coup-days-after-election"
+    source_type: news
+    title: "Guinea-Bissau soldiers announce general as junta leader (PBS News)"
+    accessed: 2026-08-12
+    verified: true
+  - id: c9
+    url: "https://www.africanews.com/2025/12/15/ecowas-rejects-guinea-bissau-transition-warns-of-sanctions/"
+    source_type: news
+    title: "ECOWAS rejects Guinea-Bissau transition, warns of sanctions (Africanews)"
+    accessed: 2026-08-12
+    verified: true
+  - id: c10
+    url: "https://www.ecofinagency.com/news/3006-47472-cashew-guinea-bissau-on-track-to-meet-2025-export-target-amid-challenges"
+    source_type: news
+    title: "Cashew: Guinea-Bissau on Track to Meet 2025 Export Target (Ecofin Agency)"
+    accessed: 2026-08-12
+    verified: true
+  - id: c11
+    url: "https://english.news.cn/africa/20250627/41ebf69c72dc4108b3576077cf738ef7/c.html"
+    source_type: news
+    title: "Guinea-Bissau aims to export over 200,000 tons of cashew nuts in 2025 (Xinhua)"
+    accessed: 2026-08-12
+    verified: true
+  - id: c12
+    url: "https://www.unicef.org/guineabissau/documents/maternal-newborn-child-adolescent-health"
+    source_type: official
+    title: "Maternal, Newborn, Child & Adolescent Health (UNICEF Guinea-Bissau)"
+    accessed: 2026-08-12
+    verified: true
+  - id: c13
+    url: "https://theconversation.com/guinea-bissau-coup-election-uncertainty-has-triggered-military-takeovers-before-271368"
+    source_type: news
+    title: "Guinea-Bissau coup: election uncertainty has triggered military takeovers before (The Conversation)"
+    accessed: 2026-08-12
+    verified: true
+  - id: c14
+    url: "https://en.wikipedia.org/wiki/Economic_Community_of_West_African_States"
+    source_type: wikipedia
+    title: "Economic Community of West African States"
+    accessed: 2026-08-12
+    verified: true
+  - id: c15
+    url: "https://simple.wikipedia.org/wiki/Community_of_Sahel-Saharan_States"
+    source_type: wikipedia
+    title: "Community of Sahel-Saharan States"
+    accessed: 2026-08-12
+    verified: true
+
+rec_membership:
+  - org: ECOWAS
+    joined: 1975
+    status: current
+    left: null
+    citations: [c14]
+  - org: CEN-SAD
+    joined: 2000
+    status: current
+    left: null
+    citations: [c15]
+
+balance:
+  n_positive: 1
+  n_negative: 3
+  n_mixed: 0
+  note: >
+    The coup and the ECOWAS suspension/rejection are kept as two
+    distinct primary negatives rather than merged, because they
+    document different actors and domains -- a domestic military
+    seizure of power, and a separate, external regional-accountability
+    response to it. The PAIGC exclusion is kept as a distinct extended
+    negative rather than folded into the coup item, because it is the
+    specific procedural mechanism that preceded and helped legitimise
+    (in the junta's own telling) the coup that followed, not merely
+    background to it. The cashew-harvest item is credited at full
+    positive weight because it is a real, measured outcome (metric
+    tonnes moved, a specific year-on-year increase) rather than only a
+    stated target -- the same standard this corpus applies to crediting
+    genuine achievements independent of the surrounding political
+    collapse, most recently applied to DJI's renewable-energy
+    achievement researched immediately prior.

@@ -1232,17 +1232,43 @@ countries:
       flagged here; check whether port-traffic volumes recover in
       2026 as Red Sea shipping conditions evolve; check if Pillar C
       has gained coverage'
+  GNB:
+    name: Guinea-Bissau
+    region: West
+    first_pass: false
+    reason: forty-fourth backlog country -- leaves only CPV in the
+      backlog, the corpus''s final remaining record; a slave-export
+      colonial mechanism distinct from the extractive-commodity
+      colonies documented elsewhere -- Portugal valued Portuguese
+      Guinea chiefly as a source of captive people feeding Cape
+      Verde''s own plantations, a relationship that reappeared,
+      inverted, as the specific mainland-versus-Cape-Verdean fault
+      line that ended PAIGC''s planned single post-colonial state --
+      Amilcar Cabral''s own 1973 assassination, then the 1980 coup
+      that deposed his half-brother Luis Cabral and split Guinea-
+      Bissau from Cape Verde permanently in January 1981; nine coups
+      or coup attempts since independence, the most recent on 26
+      November 2025 when soldiers arrested President Embalo days
+      before results of an election from which PAIGC itself -- the
+      party that won the country''s independence -- had been barred;
+      a genuine 2025 cashew-harvest achievement (260,000 tonnes, up
+      18%) credited independent of the same year''s coup and ECOWAS
+      suspension; deliberately researched immediately before CPV to
+      set up their shared PAIGC/1980-split cross-reference
+    iteration_count: 1
+    last_updated: '2026-08-12'
+    next_action: 'EXPAND: follow whether the junta''s scheduled 6
+      December 2026 election actually takes place, and whether PAIGC
+      and other barred candidates are permitted to contest it; follow
+      whether ECOWAS sanctions materialise against named individuals
+      or remain a threat; follow whether the 2025 cashew-export gains
+      translate into any measurable Pillar B improvement once fresher
+      data is available; check whether the maternal-mortality and
+      malaria figures documented here worsen under continued military
+      rule; check if Pillar C has gained coverage'
 backlog:
   CPV:
     name: Cabo Verde
-    region: West
-    first_pass: false
-    reason: not yet scheduled
-    iteration_count: 0
-    last_updated: null
-    next_action: create baseline from blueprint
-  GNB:
-    name: Guinea-Bissau
     region: West
     first_pass: false
     reason: not yet scheduled
@@ -2849,3 +2875,45 @@ meta_notes:
   2 pre-existing unrelated warnings (COD, EGY). 52 of 54 countries
   now have a record -- only Cabo Verde and Guinea-Bissau remain, both
   in West Africa.'
+- '2026-08-12: GNB CREATE run complete (15 sources opened and
+  verified: 7 Wikipedia, 6 news, 1 official (UNICEF), 1 more news
+  (The Conversation)). Leaves only CPV in the backlog -- the corpus''s
+  final remaining record. A slave-export colonial mechanism distinct
+  from the extractive-commodity colonies documented elsewhere:
+  Portugal valued Portuguese Guinea chiefly as a source of captive
+  people feeding Cape Verde''s own plantations, a relationship that
+  reappeared, inverted, as the specific mainland-versus-Cape-Verdean
+  fault line that ended PAIGC''s planned single post-colonial state --
+  Amilcar Cabral''s own 1973 assassination, then the 1980 coup that
+  deposed his half-brother Luis Cabral and split Guinea-Bissau from
+  Cape Verde permanently in January 1981. Nine coups or coup attempts
+  since independence, the most recent on 26 November 2025, when
+  soldiers arrested President Embalo days before results of an
+  election from which PAIGC itself -- the party that won the
+  country''s independence -- had been barred, a striking historical
+  irony stated directly. Following the established discipline, found
+  a genuine positive: the 2025 cashew harvest (260,000 tonnes, up 18%
+  on 2024), credited independent of the same year''s coup and ECOWAS
+  suspension, though the near-total single-commodity dependency (93%
+  of export revenue) is stated as a structural vulnerability, not
+  treated as fully resolved by the achievement. Two word-count fixes
+  (pillars A and B, both a few words under the 80-word floor), each
+  resolved by adding real facts (additional WGI sub-scores for A;
+  the domestic-credit score''s specific financial-sector implication
+  for B) rather than padding. GNB was deliberately researched
+  immediately before CPV to set up their shared PAIGC/1980-split
+  cross-reference -- the first time in this corpus two records have
+  been sequenced specifically because they were once, briefly, planned
+  as a single country. A YAML-syntax bug of a new variant was found
+  and fixed in this file during this edit: a line ending in a bare
+  colon (`:`) inside an unquoted multi-line `reason:` scalar broke the
+  parse the same way the earlier `#N-M` bug did (SEN, SYC) -- caught
+  immediately by re-parsing after the edit rather than waiting for the
+  next full-corpus check, and fixed by rewording to an em-dash. Future
+  `reason:`/`next_action:` prose should avoid ending a wrapped line
+  with a bare colon, not just avoid unquoted `#digit` sequences.
+  `--links` flagged 1 URL (UNICEF) as HTTP 403, confirmed
+  bot-detection on inspection, left as a warning. Balance: 1 positive,
+  3 negative, 0 mixed. Full pytest suite: 106 passed. Full-corpus
+  check: 0 errors, 2 pre-existing unrelated warnings (COD, EGY). 53 of
+  54 countries now have a record.'
