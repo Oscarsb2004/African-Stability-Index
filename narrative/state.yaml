@@ -984,6 +984,36 @@ countries:
       domestic battery-grade processing materializes; check whether
       Pillars B/D/E/F carried-forward and regional-mean indicators
       gain fresh coverage; check if Pillar C has gained coverage'
+  MWI:
+    name: Malawi
+    region: East
+    first_pass: false
+    reason: thirty-sixth backlog country -- fills East Africa (12 of
+      14 done); the corpus''s strongest sustained democratic-
+      accountability throughline, tested and confirmed functional
+      three separate times since 1994 -- Parliament rejected Muluzi''s
+      2002 third-term bid by 3 votes, the Constitutional Court annulled
+      a fraudulent 2019 election in 2020 (correction fluid used to
+      alter tally sheets, only the third such African judicial
+      annulment after Kenya and CIV), and the same electorate voted
+      the resulting Chakwera government out again in Sept 2025 over
+      economic mismanagement; a distinctive colonial mechanism --
+      Nyasaland''s protectorate was framed around anti-slavery
+      (Livingstone''s legacy) yet became a conventional labour-
+      extraction colony supplying Rhodesian mines, plausibly explaining
+      why strong governance institutions have not by themselves
+      reversed severe poverty; near-record severe food insecurity
+      (55.60%, second only to SSD''s 63.10%)
+    iteration_count: 1
+    last_updated: '2026-08-11'
+    next_action: 'EXPAND: follow whether the Mutharika government''s
+      government-to-government fuel deal (signed under Chakwera)
+      actually eases the forex/fuel crisis; follow whether Mutharika,
+      now 85, signals any succession plan given his age; follow
+      whether the severe food-insecurity figure improves with fresh
+      measurement; check whether Pillars E/F carried-forward and
+      regional-mean indicators gain fresh coverage; check if Pillar C
+      has gained coverage'
 backlog:
   LBY:
     name: Libya
@@ -1027,14 +1057,6 @@ backlog:
     next_action: create baseline from blueprint
   DJI:
     name: Djibouti
-    region: East
-    first_pass: false
-    reason: not yet scheduled
-    iteration_count: 0
-    last_updated: null
-    next_action: create baseline from blueprint
-  MWI:
-    name: Malawi
     region: East
     first_pass: false
     reason: not yet scheduled
@@ -2375,3 +2397,38 @@ meta_notes:
   resolved. Full pytest suite: 106 passed. Full-corpus check: 0
   errors, 2 pre-existing warnings (COD, EGY all-negative balance,
   unrelated to this run). 44 of 54 countries now have a record.'
+- '2026-08-11: MWI CREATE run complete (12 sources opened and
+  verified: 2 Wikipedia, 8 news, 2 official (SADC, and one more
+  Wikipedia for rec_membership)). Fills East Africa (12 of 14 done
+  after this run). The corpus''s strongest sustained democratic-
+  accountability throughline, tested and confirmed functional three
+  separate times since 1994: Parliament rejected Muluzi''s 2002
+  third-term bid by just 3 votes; the Constitutional Court annulled a
+  fraudulent 2019 election in February 2020 after finding correction
+  fluid used to alter tally sheets, only the third such judicial
+  annulment in African history after Kenya and CIV; and the same
+  electorate voted the resulting Chakwera government out again in
+  September 2025 over a severe forex/fuel crisis. colonial_legacy
+  documents a genuinely distinctive mechanism: Nyasaland''s
+  protectorate was framed around anti-slavery (Livingstone''s
+  missionary legacy) yet became, in practice, a conventional
+  labour-extraction colony supplying Rhodesian mines rather than
+  developing independent industry -- plausibly explaining why strong
+  governance institutions, proven functional three times over, have
+  not by themselves reversed severe poverty. A new near-record: severe
+  food insecurity at 55.60%, second only to SSD''s corpus-record
+  63.10%. Pillar F is a genuine partial hydropower case (Shire River)
+  that coexists with severe energy poverty (Pillar G''s 15.6%
+  electricity access, among the lowest in this corpus) -- both facts
+  stated together rather than letting one obscure the other. Balance:
+  2 positive, 1 negative, 1 mixed -- the two positives (2020 rerun win,
+  2025 concession) are two independently verifiable instances of
+  legitimate power change, not one event double-counted. One
+  word-count fix (pillars.D, 74->80+). One citation swap: a BBC feed
+  URL for the 2020 rerun returned a genuine HTTP 404 under `--links`;
+  replaced with an Al Jazeera article covering the same event, which
+  resolved cleanly. `--links` then passed 0 errors, 1 warning
+  (AllAfrica, familiar 403 bot-detection pattern) -- 11/12 resolved.
+  Full pytest suite: 106 passed. Full-corpus check: 0 errors, 2
+  pre-existing warnings (COD, EGY all-negative balance, unrelated to
+  this run). 45 of 54 countries now have a record.'

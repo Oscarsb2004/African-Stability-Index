@@ -1,0 +1,435 @@
+meta:
+  iso3: MWI
+  name: Malawi
+  last_updated: 2026-08-11
+  iteration_count: 1
+  next_action: >
+    EXPAND: (1) follow whether the Mutharika government's
+    government-to-government fuel deal (signed under Chakwera)
+    actually eases the forex/fuel crisis; (2) follow whether Mutharika,
+    now 85, signals any succession plan given his age; (3) follow
+    whether the severe food-insecurity figure improves with fresh
+    measurement; (4) check whether Pillars E/F carried-forward and
+    regional-mean indicators gain fresh coverage; (5) check if Pillar
+    C has gained coverage.
+  model_used: claude-sonnet-5
+
+historical:
+  overview: >
+    Britain established the Nyasaland protectorate over what is now
+    Malawi in 1891, partly in response to Arab slave-trading networks
+    along the coast, and the legacy of missionary David Livingstone's
+    earlier anti-slavery campaigning gave the territory a distinctive
+    colonial narrative among Britain's African possessions. Hastings
+    Banda led the country to independence in 1964 and was declared
+    president for life in 1971, ruling an austere one-party state
+    until economic pressure and a 1993 referendum forced multiparty
+    elections; Bakili Muluzi defeated Banda in May 1994. When Muluzi
+    sought a third term of his own in 2002, Parliament rejected the
+    required constitutional amendment by just three votes, and a
+    renewed attempt collapsed in 2003. Malawi's democratic institutions
+    were tested more severely in 2019, when the Electoral Commission
+    declared incumbent Peter Mutharika the winner of a disputed
+    presidential election; petitioners produced evidence that
+    correction fluid had been used to alter vote-tallying forms after
+    party agents signed them. Malawi's Constitutional Court annulled
+    the result on 3 February 2020 -- only the third such judicial
+    annulment of a presidential election in African history, after
+    Kenya and Cote d'Ivoire -- and Lazarus Chakwera won the June 2020
+    rerun. Chakwera's own government then struggled with chronic
+    inflation, drought, and a foreign-currency and fuel crisis severe
+    enough that Malawi held virtually no strategic fuel reserve from
+    mid-2024 onward; voters removed him in turn, electing 85-year-old
+    Peter Mutharika by a landslide in September 2025.
+  overview_citations: [c1, c2, c3, c4, c5, c7]
+  colonial_legacy: >
+    context/colonial_history.yaml already frames Nyasaland's colonial
+    founding around anti-slavery rather than pure extraction --
+    Britain's protectorate was established partly in response to Arab
+    slave-trading networks, and David Livingstone's earlier missionary
+    campaigning against that trade gave the territory a distinctive
+    narrative other British possessions in this corpus lack. That
+    narrative did not prevent Nyasaland from becoming, in practice, a
+    conventional labour-extraction colony: the schema entry itself
+    lists labour for Rhodesian mines as a primary resource extracted,
+    meaning Nyasaland's own economic role in the British colonial
+    system was to supply migrant workers to a wealthier neighbouring
+    colony rather than to develop independent industry. That
+    structural underdevelopment is a plausible root of the severe
+    poverty this record documents nearly universally across Pillars B,
+    D and G: Malawi's own comparatively strong governance institutions,
+    tested and proven functional three separate times since 1994, have
+    not by themselves been sufficient to reverse an economic starting
+    position colonial administration deliberately built around
+    exporting labour rather than building it.
+  colonial_legacy_citations: [c1]
+  key_periods:
+    - title: "Nyasaland's anti-slavery founding and labour-extraction economy"
+      period: "1891-1964"
+      summary: >
+        Britain established the Nyasaland protectorate in 1891, partly
+        in response to Arab slave-trading networks, following
+        missionary David Livingstone's earlier anti-slavery
+        campaigning. In practice, the colony's main economic role
+        became supplying migrant labour to Rhodesian mines rather than
+        developing independent industry, alongside tobacco and tea
+        cultivation.
+      citations: [c1]
+    - title: "Banda's life presidency and the 1994 transition"
+      period: "1964-1994"
+      summary: >
+        Hastings Banda led Malawi to independence in 1964 and was
+        declared president for life in 1971, ruling an austere
+        one-party state. Economic pressure and a 1993 referendum
+        forced multiparty elections, and Bakili Muluzi defeated Banda
+        in May 1994, Malawi's first multiparty transition.
+      citations: [c1, c2]
+    - title: "Muluzi's defeated third-term bid"
+      period: "2002-2003"
+      summary: >
+        When Muluzi sought a third term of his own in 2002, Parliament
+        rejected the required constitutional amendment by just three
+        votes short of the two-thirds needed. A renewed attempt in
+        early 2003 was withdrawn once it became clear it would fail
+        again.
+      citations: [c3]
+    - title: "The 2019 election annulment and the 2025 defeat"
+      period: "2019-2025"
+      summary: >
+        Malawi's Constitutional Court annulled a disputed 2019
+        presidential election on 3 February 2020, after finding
+        correction fluid had been used to alter tally sheets, and
+        Lazarus Chakwera won the June 2020 rerun. Chakwera lost his own
+        re-election to Peter Mutharika by a landslide in September
+        2025, amid a severe fuel and currency crisis.
+      citations: [c4, c5, c7]
+
+pillars:
+  A:
+    summary: >
+      All six World Governance Indicators are directly measured this
+      year, and the aggregate is Malawi's strongest pillar -- Voice
+      and Accountability (68.8) and Rule of Law (67.1) are both
+      comparatively strong, reflecting a democracy that has repeatedly
+      demonstrated real institutional teeth: Parliament rejected
+      President Muluzi's attempt to amend term limits for a third term
+      in 2002, the Constitutional Court annulled a fraudulent 2019
+      election in 2020 and ordered a rerun that the sitting president
+      lost, and in September 2025 the same electorate voted the
+      resulting government out again over economic mismanagement.
+    drivers:
+      - "all 6 WGI indicators directly measured; Voice and Accountability (68.8) and Rule of Law (67.1) both comparatively strong -- Malawi's strongest pillar"
+      - "Parliament rejected Muluzi's 2002 third-term bid; Constitutional Court annulled a fraudulent 2019 election in 2020 and ordered a rerun the sitting president lost"
+      - "September 2025: the same electorate voted the resulting government out again over economic mismanagement (see recent developments) -- three separate, genuine checks on executive power"
+    citations: [c4, c7]
+  B:
+    summary: >
+      GDP growth, GDP per capita, inflation and domestic credit, all
+      freshly measured, are severe -- GDP per capita ($1,832 PPP) and
+      domestic credit are both among the thinnest recorded in this
+      corpus. Gini, carried forward, is comparatively weak. This
+      pillar's 2023 reference year predates a further deterioration
+      documented under recent developments: a chronic foreign-currency
+      and fuel shortage, still unresolved as of mid-2026, left roughly
+      nine in ten Malawian businesses operating below capacity through
+      2025 and was the single largest driver of President Chakwera's
+      landslide election defeat that September.
+    drivers:
+      - "GDP growth, GDP per capita, inflation, domestic credit all fresh, severe -- GDP per capita ($1,832 PPP) and domestic credit both among the thinnest recorded in this corpus"
+      - "Gini comparatively weak (carried forward)"
+      - "2023 reference year predates further deterioration: a chronic forex/fuel shortage left ~90% of businesses operating below capacity through 2025, the single largest driver of Chakwera's Sept 2025 election defeat (see recent developments)"
+    citations: [c8]
+  D:
+    summary: >
+      All five indicators are directly measured this year, and the
+      aggregate is Malawi's weakest pillar: severe food insecurity, at
+      55.60% of the population, is among the most severe readings
+      recorded anywhere in this corpus, not far behind South Sudan's
+      corpus-record 63.10%. Handwashing-facility access and safely
+      managed drinking water are similarly weak. Life expectancy and
+      infant mortality are comparatively less severe but still weak.
+      Five of the pillar's five indicators are current, a
+      fully-measured pillar whose severity is not a data-coverage
+      artefact.
+    drivers:
+      - "all 5 indicators directly measured; severe food insecurity 55.60% -- among the most severe readings recorded anywhere in this corpus"
+      - "handwashing access and safely managed drinking water similarly weak; life expectancy and infant mortality comparatively less severe but still weak"
+      - "5 of 5 indicators current -- Malawi's weakest pillar, and the severity is not a data-coverage artefact"
+    citations: [c1]
+  E:
+    summary: >
+      Political Stability and Rule of Law, both fresh and shared with
+      Pillar A, are comparatively strong. Displaced persons, at 49.87
+      per 1,000, is a regional-mean estimate rather than a direct
+      measurement -- Malawi has no comparable internal conflict, and
+      the figure most plausibly reflects the Cabo Delgado insurgency
+      in neighbouring Mozambique, documented elsewhere in this corpus,
+      pulling the regional average upward. Intentional homicide, also
+      a regional-mean estimate, is comparatively more middling. Only
+      two of the pillar's four indicators are current.
+    drivers:
+      - "Political Stability and Rule of Law (shared with Pillar A) both comparatively strong, fresh"
+      - "displaced persons 49.87/1,000 is a regional-mean estimate, not a direct measurement -- Malawi has no comparable internal conflict; most plausibly reflects the Cabo Delgado insurgency in neighbouring Mozambique (see MOZ record) pulling the regional average upward"
+      - "intentional homicide also a regional-mean estimate; only 2 of 4 indicators current"
+    citations: [c1]
+  F:
+    summary: >
+      CO2 emissions per capita, freshly measured, are very low, and
+      this reads as a genuine partial achievement rather than a pure
+      wealth-proxy artefact: the carried-forward electricity-generation
+      figure shows just under 20% of Malawi's own power comes from
+      fossil sources, reflecting real hydropower capacity on the Shire
+      River. But that low fossil share coexists with the severe energy
+      poverty documented in Pillar G -- barely 16% of the population
+      has electricity access at all -- so the low emissions also
+      reflect how little power the country generates and consumes in
+      absolute terms. Agricultural land share, fresh, is extensive.
+      Freshwater withdrawal, carried forward, is comparatively high.
+      Only two of the pillar's four indicators are current.
+    drivers:
+      - "CO2 pc very low (fresh) -- a genuine partial achievement: electricity generation just under 20% fossil-fuel (carried forward), reflecting real Shire River hydropower"
+      - "but this coexists with severe energy poverty documented in Pillar G -- barely 16% electricity access -- so low emissions also reflect how little power is generated and consumed at all"
+      - "agricultural land extensive (fresh); freshwater withdrawal comparatively high (carried forward); only 2 of 4 indicators current"
+    citations: [c8]
+  G:
+    summary: >
+      Electricity access, at just 15.6% of the population and freshly
+      measured, is among the lowest recorded anywhere in this corpus
+      -- Malawi's weakest single reading. Basic drinking water access,
+      also fresh, is comparatively decent by contrast. Government
+      Effectiveness and Control of Corruption, shared with Pillar A,
+      are both weak. Social protection coverage, carried forward, is
+      comparatively stronger than the rest of this pillar. Four of the
+      pillar's five indicators are current, describing a country whose
+      severe energy poverty sits alongside comparatively strong
+      governance documented in Pillar A.
+    drivers:
+      - "electricity access just 15.6% of the population (fresh) -- among the lowest recorded anywhere in this corpus, Malawi's weakest single reading"
+      - "basic drinking water comparatively decent by contrast (fresh); Government Effectiveness and Control of Corruption (shared with Pillar A) both weak"
+      - "social protection comparatively stronger (carried forward); 4 of 5 indicators current -- severe energy poverty sitting alongside comparatively strong governance (Pillar A)"
+    citations: [c1]
+
+recent:
+  primary:
+    - headline: "Chakwera concedes defeat to Mutharika in a landslide, extending Malawi's record of peaceful transfers"
+      date: 2025-09-24
+      summary: >
+        President Lazarus Chakwera, who first took office via the 2020
+        court-ordered election rerun, conceded defeat to 85-year-old
+        former president Peter Mutharika on 24 September 2025 after
+        Mutharika won 56.8% of the vote to Chakwera's 33%. Analysts
+        described the result as less a vote for Mutharika than a
+        protest against Chakwera's handling of a worsening economic
+        crisis -- inflation, drought-driven food shortages, and
+        chronic fuel and foreign-currency shortages.
+      why_it_matters: >
+        The same electorate that used a court-ordered rerun to remove
+        one government in 2020 used an ordinary election to remove its
+        successor in 2025 -- a second, independent demonstration that
+        Malawi's democratic mechanisms can actually change who holds
+        power, not just formally exist.
+      news_url: "https://www.timeslive.co.za/news/africa/2025-09-24-malawis-lazarus-chakwera-concedes-election-defeat-to-rival-peter-mutharika/"
+      wikipedia_url: ""
+      sentiment: positive
+    - headline: "Chronic fuel and foreign-currency shortages leave businesses operating below capacity"
+      date: 2025-11-05
+      summary: >
+        Malawi's foreign-currency shortage left the country with
+        virtually no strategic fuel reserve from July 2024 onward,
+        consuming roughly 1.4 million litres of fuel daily with no
+        buffer. A Malawi Confederation of Chambers of Commerce and
+        Industry survey found 74.1% of businesses ranked forex
+        shortages among their top three challenges in 2025, and nearly
+        90% were operating below full capacity as a result.
+      why_it_matters: >
+        The direct, documented cause of Pillar B's severe economic
+        scores and of Chakwera's election defeat, illustrating how a
+        currency and fuel crisis can constrain an economy across every
+        sector at once.
+      news_url: "https://allafrica.com/stories/202511050257.html"
+      wikipedia_url: ""
+      sentiment: negative
+    - headline: "Government-to-government fuel deal offers a partial fix to the crisis"
+      date: 2025-07-16
+      summary: >
+        Malawi signed a government-to-government fuel supply
+        arrangement in mid-2025, intended to secure fuel imports
+        without relying on scarce hard currency through commercial
+        suppliers. Political analysts described it as a potential
+        "game-changer," though the deal was signed by the outgoing
+        Chakwera government just months before its September 2025
+        election defeat, leaving its implementation to the incoming
+        Mutharika administration.
+      why_it_matters: >
+        A genuine attempt to address the root cause of the crisis
+        documented in the previous item, though its success depends on
+        a government that did not design it actually choosing to
+        sustain it.
+      news_url: "https://allafrica.com/stories/202507160086.html"
+      wikipedia_url: ""
+      sentiment: mixed
+  extended:
+    - headline: "Constitutional Court annuls 2019 election after 'Tipp-Ex' fraud found on tally sheets"
+      date: 2020-02-03
+      summary: >
+        Malawi's Constitutional Court nullified the disputed May 2019
+        presidential election on 3 February 2020, citing widespread
+        irregularities including correction fluid used to alter
+        vote-tallying forms after party agents had signed them. The
+        five-judge panel's 500-page ruling ordered a fresh election
+        within 150 days, making Malawi the third African country,
+        after Kenya and Cote d'Ivoire, to judicially annul a
+        presidential election result.
+      why_it_matters: >
+        The single most consequential judicial ruling in this record's
+        history, directly enabling the June 2020 rerun that first
+        brought Chakwera to power and the entire
+        democratic-accountability throughline this record credits in
+        Pillar A.
+      news_url: "https://ohrh.law.ox.ac.uk/the-high-court-of-malawi-nullifies-may-2019-presidential-election-in-landmark-judgment/"
+      wikipedia_url: ""
+      sentiment: positive
+
+events:
+  - year: 1994
+    type: election
+    title: "Muluzi defeats Banda in Malawi's first multiparty election"
+    description: >
+      Bakili Muluzi defeated life-president Hastings Banda in Malawi's
+      first multiparty election in May 1994, following a 1993
+      referendum that ended one-party rule.
+    url: "https://en.wikipedia.org/wiki/Bakili_Muluzi"
+    direction: improve
+  - year: 2002
+    type: constitutional
+    title: "Parliament rejects Muluzi's third-term bid"
+    description: >
+      Parliament rejected President Muluzi's proposed constitutional
+      amendment to allow a third presidential term in July 2002,
+      falling just three votes short of the two-thirds majority the
+      ruling party needed.
+    url: "https://www.thenewhumanitarian.org/news/2002/07/05/no-third-term-muluzi"
+    direction: improve
+  - year: 2020
+    type: election
+    title: "Constitutional Court annuls the 2019 election"
+    description: >
+      Malawi's Constitutional Court annulled the disputed 2019
+      presidential election on 3 February 2020 over tally-sheet fraud,
+      and Lazarus Chakwera won the June 2020 rerun against incumbent
+      Peter Mutharika.
+    url: "https://ohrh.law.ox.ac.uk/the-high-court-of-malawi-nullifies-may-2019-presidential-election-in-landmark-judgment/"
+    direction: improve
+  - year: 2025
+    type: election
+    title: "Chakwera loses re-election to Mutharika"
+    description: >
+      President Lazarus Chakwera conceded defeat to 85-year-old former
+      president Peter Mutharika on 24 September 2025, amid a severe
+      fuel and foreign-currency crisis.
+    url: "https://www.aljazeera.com/news/2025/9/24/malawis-president-chakwera-concedes-election-to-his-predecessor-mutharika"
+    direction: improve
+
+citations:
+  - id: c1
+    url: "https://en.wikipedia.org/wiki/Hastings_Banda"
+    source_type: wikipedia
+    title: "Hastings Banda"
+    accessed: 2026-08-11
+    verified: true
+  - id: c2
+    url: "https://en.wikipedia.org/wiki/Bakili_Muluzi"
+    source_type: wikipedia
+    title: "Bakili Muluzi"
+    accessed: 2026-08-11
+    verified: true
+  - id: c3
+    url: "https://www.thenewhumanitarian.org/news/2002/07/05/no-third-term-muluzi"
+    source_type: news
+    title: "No third term for Muluzi (The New Humanitarian)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c4
+    url: "https://ohrh.law.ox.ac.uk/the-high-court-of-malawi-nullifies-may-2019-presidential-election-in-landmark-judgment/"
+    source_type: news
+    title: "The High Court of Malawi Nullifies May 2019 Presidential Election in Landmark Judgment (Oxford Human Rights Hub)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c5
+    url: "https://www.aljazeera.com/news/2020/6/27/malawi-presidential-election-lazarus-chakwera-declared-winner"
+    source_type: news
+    title: "Malawi presidential election: Lazarus Chakwera declared winner (Al Jazeera)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c6
+    url: "https://www.timeslive.co.za/news/africa/2025-09-24-malawis-lazarus-chakwera-concedes-election-defeat-to-rival-peter-mutharika/"
+    source_type: news
+    title: "Malawi's Lazarus Chakwera concedes election defeat to rival Peter Mutharika (TimesLIVE)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c7
+    url: "https://www.aljazeera.com/news/2025/9/24/malawis-president-chakwera-concedes-election-to-his-predecessor-mutharika"
+    source_type: news
+    title: "Malawi's ex-president Mutharika, 85, wins election by a landslide (Al Jazeera)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c8
+    url: "https://www.nyasatimes.com/rbm-admits-forex-crisis-as-malawi-struggles-to-pay-for-fuel-and-drugs/"
+    source_type: news
+    title: "RBM Admits Forex Crisis as Malawi Struggles to Pay for Fuel and Drugs (Nyasa Times)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c9
+    url: "https://allafrica.com/stories/202511050257.html"
+    source_type: news
+    title: "Malawi: Nation At a Standstill - Fuel Crisis Cripples Malawi (AllAfrica)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c10
+    url: "https://allafrica.com/stories/202507160086.html"
+    source_type: news
+    title: "Malawi: Political Analyst Hails G2G Fuel Deal As a Game-Changer for Malawi's Economy (AllAfrica)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c11
+    url: "https://www.sadc.int/pages/history-and-treaty"
+    source_type: official
+    title: "History and Treaty (SADC)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c12
+    url: "https://en.wikipedia.org/wiki/Common_Market_for_Eastern_and_Southern_Africa"
+    source_type: wikipedia
+    title: "Common Market for Eastern and Southern Africa"
+    accessed: 2026-08-11
+    verified: true
+
+rec_membership:
+  - org: SADC
+    joined: 1980
+    status: current
+    left: null
+    citations: [c11]
+  - org: COMESA
+    joined: 1994
+    status: current
+    left: null
+    citations: [c12]
+
+balance:
+  n_positive: 2
+  n_negative: 1
+  n_mixed: 1
+  note: >
+    This record leans more positive than most of this corpus's
+    recent entries because the evidence genuinely supports it: two
+    separate, independently verifiable removals of a sitting
+    government through legitimate means (the 2020 court-ordered rerun
+    and the 2025 ballot-box defeat) are each credited at full positive
+    weight, not merged into one event or softened by the country's
+    severe poverty documented elsewhere in this record. The
+    forex/fuel crisis is coded a full negative given its direct,
+    well-documented economic harm. The government-to-government fuel
+    deal is coded mixed rather than positive: a genuine attempt at a
+    fix, but one whose success this record cannot yet credit, since it
+    depends on a different government from the one that signed it.

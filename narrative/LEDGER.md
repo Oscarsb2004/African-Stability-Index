@@ -26,7 +26,7 @@ An audit is forced early if a single run inflates the citation count by more tha
 
 ## Status
 
-**44 of 54 countries have a record (Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria, Rwanda, Chad, Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic, Mauritania, Zimbabwe, Comoros, Uganda, Sierra Leone, Equatorial Guinea, The Gambia, Mozambique, Guinea, South Sudan, Lesotho, Sao Tome & Principe, Togo, Cameroon, Burundi, Tunisia, Cote d'Ivoire, Zambia, Senegal, Gabon). The first pass is complete; Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic, Mauritania, Zimbabwe, Comoros, Uganda, Sierra Leone, Equatorial Guinea, The Gambia, Mozambique, Guinea, South Sudan, Lesotho, Sao Tome & Principe, Togo, Cameroon, Burundi, Tunisia, Cote d'Ivoire, Zambia, Senegal and Gabon are the first thirty-five backlog countries.**
+**45 of 54 countries have a record (Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria, Rwanda, Chad, Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic, Mauritania, Zimbabwe, Comoros, Uganda, Sierra Leone, Equatorial Guinea, The Gambia, Mozambique, Guinea, South Sudan, Lesotho, Sao Tome & Principe, Togo, Cameroon, Burundi, Tunisia, Cote d'Ivoire, Zambia, Senegal, Gabon, Malawi). The first pass is complete; Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic, Mauritania, Zimbabwe, Comoros, Uganda, Sierra Leone, Equatorial Guinea, The Gambia, Mozambique, Guinea, South Sudan, Lesotho, Sao Tome & Principe, Togo, Cameroon, Burundi, Tunisia, Cote d'Ivoire, Zambia, Senegal, Gabon and Malawi are the first thirty-six backlog countries.**
 
 ### First pass — 9 countries
 
@@ -86,14 +86,15 @@ whose ranks swing hardest with the weighting method.
 | ZMB | Zambia | fills East Africa (11 of 14 done); a genuine positive counterweight after a run of severe recent records -- the first sub-Saharan African country to achieve a peaceful electoral transfer of power (1991) and repeated it in 2021, completing a genuine debt-restructuring achievement in June 2024 after 2020's historic default; an eighth distinct resource-governance case (copper); Pillar F confirms a second genuine hydropower case after LSO; researched two days before a 13 August 2026 election, reported factually without a result since none existed yet; a severe negative (Feb 2025 Sino-Metals acid-spill disaster) and an unresolved mixed item (Lungu's still-unresolved burial dispute) round out the balance | **done — iteration 1** |
 | SEN | Senegal | fills West Africa (13 of 16 done); a reliable-tier composite score, joining ZAF/KEN/EGY as the corpus's non-thin countries; a genuinely distinct trajectory shape -- a term-limit crisis resolved through domestic courts and civic pressure, not a coup or entrenchment, when Sall's Feb 2024 postponement was overturned and Faye rose from prison to the presidency in 20 days; the same reform government fractured just over two years later when Faye fired his own mentor Sonko as PM in May 2026; a genuine boom (Sangomar oil field) arriving alongside a genuine crisis (a hidden-debt scandal revealing $7-13B concealed); a distinctive colonial mechanism -- the Quatre Communes' partial citizenship rights, not uniform exclusion | **done — iteration 1** |
 | GAB | Gabon | fills Central Africa (7 of 8 done); the corpus's clearest comparative pair with GIN -- coup leader Oligui Nguema promised only a transition, then won the resulting 2025 election himself with 90.35%, this time via a constitution engineered in advance to exclude the family he deposed; France's 1964 intervention to restore M'ba is an earlier, more explicit precedent than CIV's 2011 Licorne mission, its 2023 absence reading as confirmation of waning French intervention appetite across the same coup wave as MLI/BFA/NER; a genuine positive (rainforest ecosystem services valued at $75.1B) that Pillar F cannot fully capture, since the index measures emissions, not carbon absorption | **done — iteration 1** |
+| MWI | Malawi | fills East Africa (12 of 14 done); the corpus's strongest sustained democratic-accountability throughline, tested and confirmed functional three separate times since 1994 -- Parliament rejected Muluzi's 2002 third-term bid by 3 votes, the Constitutional Court annulled a fraudulent 2019 election in 2020 (correction fluid on tally sheets, only the third such African judicial annulment after Kenya and CIV), and the same electorate voted the resulting Chakwera government out again in Sept 2025; a distinctive colonial mechanism -- Nyasaland's protectorate framed around anti-slavery yet became a conventional labour-extraction colony supplying Rhodesian mines; near-record severe food insecurity (55.60%, second only to SSD) | **done — iteration 1** |
 
-### Backlog — the remaining 10
+### Backlog — the remaining 9
 
 Listed in full in `narrative/state.yaml` under `backlog`. They are recorded
 explicitly rather than left implicit: a country with no record should be visibly
 absent, not quietly missing.
 
-Libya, Benin, Cabo Verde, Guinea-Bissau, Republic of Congo, Djibouti, Malawi, Tanzania, Eswatini, Seychelles
+Libya, Benin, Cabo Verde, Guinea-Bissau, Republic of Congo, Djibouti, Tanzania, Eswatini, Seychelles
 
 ---
 
@@ -1571,6 +1572,42 @@ Append one line per run: date, country, mode, what changed, what was removed.
   and Mining Review, familiar 403 bot-detection pattern) — 10/12
   resolved. Full pytest suite: 106 passed.
 
+- **2026-08-11 — MWI — CREATE. Thirty-sixth backlog country, fills
+  East Africa (12 of 14 done).** Full baseline built: historical
+  overview, colonial legacy (documents a genuinely distinctive
+  mechanism — Nyasaland's protectorate was framed around anti-slavery,
+  built on David Livingstone's missionary legacy, yet became in
+  practice a conventional labour-extraction colony supplying Rhodesian
+  mines rather than developing independent industry, plausibly
+  explaining why strong governance institutions have not by themselves
+  reversed severe poverty), 4 key_periods, 6 pillar summaries (Pillar
+  C left empty — greyed at 1/8 measured), 3 primary + 1 extended recent
+  items, 4 events, rec_membership (SADC 1980 founding member, COMESA
+  1994 founding member — the COMESA treaty was ratified in Lilongwe,
+  Malawi's own capital). 12 sources opened and verified: 2 Wikipedia,
+  8 news, 2 official. The corpus's strongest sustained democratic-
+  accountability throughline, tested and confirmed functional three
+  separate times since 1994: Parliament rejected Muluzi's 2002
+  third-term bid by just 3 votes; the Constitutional Court annulled a
+  fraudulent 2019 election in February 2020 after finding correction
+  fluid used to alter tally sheets, only the third such judicial
+  annulment in African history after Kenya and CIV; and the same
+  electorate voted the resulting Chakwera government out again in
+  September 2025 over a severe forex/fuel crisis — kept as two
+  distinct positive recent items (the 2020 rerun win, the 2025
+  concession), not one event double-counted. A new near-record: severe
+  food insecurity at 55.60%, second only to SSD's corpus-record
+  63.10%. Pillar F is a genuine partial hydropower case (Shire River)
+  that coexists with severe energy poverty (Pillar G's 15.6%
+  electricity access, among the lowest in this corpus). Balance: 2
+  positive, 1 negative, 1 mixed. One word-count fix (pillars.D,
+  74→80+). One citation swap: a BBC feed URL for the 2020 rerun
+  returned a genuine HTTP 404 under `--links`; replaced with an Al
+  Jazeera article covering the same event, which resolved cleanly.
+  `--links` then passed 0 errors, 1 warning (AllAfrica, familiar 403
+  bot-detection pattern) — 11/12 resolved. Full pytest suite: 106
+  passed.
+
 ---
 
 ## Meta-notes
@@ -2353,6 +2390,21 @@ Things a future run should know about how to work, not about a specific country.
   visible in Pillar F's emissions-only CO2 reading. Worth checking any
   remaining Congo Basin country (COG, if it reaches the front of the
   backlog) for the same framing.
+- **2026-08-11** — MWI is the strongest single-country case yet for a
+  discipline worth naming explicitly: when a country's own governance
+  record contains multiple, independently verifiable instances of the
+  same positive pattern (here, legitimate removal of a sitting
+  government — 2002 parliamentary rejection, 2020 court-ordered rerun,
+  2025 ballot defeat), each instance should be evaluated and credited
+  on its own terms rather than compressed into a single "Malawi has
+  strong institutions" claim. Compressing them would have understated
+  both the frequency and the reliability of the pattern. Also confirms
+  a generalizable technique for pillars where a raw score understates
+  reality: Pillar F's genuine-hydropower framing was strengthened by
+  stating explicitly, in the same paragraph, the coexisting energy-
+  poverty fact from Pillar G — a country can be both a low-carbon
+  success and an energy-poverty case at once, and naming both is more
+  accurate than picking one framing.
 
 ---
 
