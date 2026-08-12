@@ -859,6 +859,36 @@ countries:
       regional instability; follow whether any jailed opposition
       figures, including Ghannouchi, are released or see their
       sentences reviewed; check if Pillar C has gained coverage'
+  CIV:
+    name: Cote d'Ivoire
+    region: West
+    first_pass: false
+    reason: thirty-second backlog country -- fills West Africa (12 of
+      16 done); a deliberate cross-reference with BFA already in this
+      corpus -- French administrators dissolved Upper Volta partly to
+      formalise its population as captive labour for Cote d''Ivoire''s
+      plantations, the same colonial-era migrant-labour system
+      ivoirité later weaponised against those labourers'' own
+      Ivorian-born descendants, fuelling two civil wars; a distinct
+      international-intervention mechanism -- unlike GMB''s ECOWAS or
+      LSO''s SADC interventions, France''s own Licorne mission acted
+      directly, not through a regional bloc, to help remove Gbagbo and
+      install Ouattara in 2011 after ~3,000 deaths; Ouattara''s
+      October 2025 fourth term (89.8%) came after barring his two
+      strongest rivals -- Gbagbo via a domestic conviction surviving
+      an ICC acquittal, Thiam via a 1987 citizenship technicality; a
+      genuine positive (new $235M cocoa processing plant) credited
+      alongside the exclusions
+    iteration_count: 1
+    last_updated: '2026-08-11'
+    next_action: 'EXPAND: follow whether Thiam or Gbagbo''s exclusion
+      produces further legal appeals or unrest; follow whether the
+      cocoa domestic-processing target (50% by end-2026) is actually
+      reached; follow whether Ouattara signals any succession plan
+      for the end of this fourth term; check whether Pillars D/E/F
+      thin or carried-forward indicators gain fresh coverage,
+      especially the stale displaced-persons figure; check if Pillar
+      C has gained coverage'
 backlog:
   LBY:
     name: Libya
@@ -886,14 +916,6 @@ backlog:
     next_action: create baseline from blueprint
   GNB:
     name: Guinea-Bissau
-    region: West
-    first_pass: false
-    reason: not yet scheduled
-    iteration_count: 0
-    last_updated: null
-    next_action: create baseline from blueprint
-  CIV:
-    name: Cote d'Ivoire
     region: West
     first_pass: false
     reason: not yet scheduled
@@ -2149,3 +2171,40 @@ meta_notes:
   suite: 106 passed. Full-corpus check: 0 errors, 2 pre-existing
   warnings (COD, EGY all-negative balance, unrelated to this run). 40
   of 54 countries now have a record.'
+- '2026-08-11: CIV CREATE run complete (13 sources opened and
+  verified: 3 Wikipedia, 8 news, 1 official/France diplomatie, 1 more
+  Wikipedia for rec_membership). Fills West Africa (12 of 16 done
+  after this run). A deliberate cross-reference with BFA already in
+  this corpus: colonial_legacy traces the migrant-labour system
+  directly -- French administrators dissolved Upper Volta partly to
+  formalise its population as a captive labour pool for Cote
+  d''Ivoire''s plantations, and ivoirité later weaponised that same
+  colonial-era arrangement against the labourers'' own Ivorian-born
+  descendants, fuelling both the 1999 coup and two civil wars. A
+  distinct international-intervention mechanism from anything else in
+  the corpus: unlike GMB''s ECOWAS intervention or LSO''s SADC
+  intervention, France''s own Licorne mission acted directly in 2011,
+  not through a regional African bloc, to help remove Gbagbo and
+  install Ouattara after roughly 3,000 deaths -- argued in
+  colonial_legacy as France acting inside a Françafrique relationship
+  colonial-era economic dependency had never fully severed. Ouattara''s
+  October 2025 fourth term (89.8%) came after barring his two
+  strongest rivals through two different legal mechanisms: Gbagbo via
+  a domestic conviction that survived his own ICC acquittal, and
+  Thiam via a 1987 citizenship technicality he could not reverse in
+  time -- kept as three distinct items (the election result, Thiam''s
+  exclusion, Gbagbo''s exclusion) since each documents a different
+  specific mechanism rather than one general "opposition barred"
+  claim. Following the established discipline, found a genuine
+  positive: a new $235M Transcao cocoa-processing complex opened near
+  Abidjan in June 2025, a concrete step toward the government''s
+  50%-domestic-processing target and a genuine shift up the same
+  cocoa value chain colonial_legacy documents as built on forced and
+  migrant labour. Balance: 1 positive, 2 negative, 1 mixed. Five
+  word-count fixes (one key_period, pillars.D/E/F/G), each resolved by
+  adding real cross-pillar or cross-corpus facts. `--links` passes 0
+  errors, 2 warnings (France24 and FurtherAfrica, familiar 403
+  bot-detection pattern) -- 11/13 resolved. Full pytest suite: 106
+  passed. Full-corpus check: 0 errors, 2 pre-existing warnings (COD,
+  EGY all-negative balance, unrelated to this run). 41 of 54 countries
+  now have a record.'

@@ -26,7 +26,7 @@ An audit is forced early if a single run inflates the citation count by more tha
 
 ## Status
 
-**40 of 54 countries have a record (Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria, Rwanda, Chad, Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic, Mauritania, Zimbabwe, Comoros, Uganda, Sierra Leone, Equatorial Guinea, The Gambia, Mozambique, Guinea, South Sudan, Lesotho, Sao Tome & Principe, Togo, Cameroon, Burundi, Tunisia). The first pass is complete; Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic, Mauritania, Zimbabwe, Comoros, Uganda, Sierra Leone, Equatorial Guinea, The Gambia, Mozambique, Guinea, South Sudan, Lesotho, Sao Tome & Principe, Togo, Cameroon, Burundi and Tunisia are the first thirty-one backlog countries.**
+**41 of 54 countries have a record (Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria, Rwanda, Chad, Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic, Mauritania, Zimbabwe, Comoros, Uganda, Sierra Leone, Equatorial Guinea, The Gambia, Mozambique, Guinea, South Sudan, Lesotho, Sao Tome & Principe, Togo, Cameroon, Burundi, Tunisia, Cote d'Ivoire). The first pass is complete; Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic, Mauritania, Zimbabwe, Comoros, Uganda, Sierra Leone, Equatorial Guinea, The Gambia, Mozambique, Guinea, South Sudan, Lesotho, Sao Tome & Principe, Togo, Cameroon, Burundi, Tunisia and Cote d'Ivoire are the first thirty-two backlog countries.**
 
 ### First pass — 9 countries
 
@@ -82,14 +82,15 @@ whose ranks swing hardest with the weighting method.
 | CMR | Cameroon | fills Central Africa, now the corpus's lowest region proportionally (6 of 8 done); a striking continuity with TGO -- the same German colony split between France and Britain after WWI, but Cameroon's 1961 reunification held for a decade before a 99.99%-margin 1972 referendum abolished the federal structure that gave the Anglophone territories autonomy, the direct traceable root of the 2016 Anglophone Crisis (6,500+ killed, 600,000+ displaced); Paul Biya, in power since 1982, is Africa's oldest and longest-serving head of state, and a disputed October 2025 election produced deadly protests and opposition leader Tchiroma's flight into exile; a genuine positive (32% malaria case decline from a 2024 vaccine rollout) credited alongside the unfolding crises | **done — iteration 1** |
 | BDI | Burundi | fills East Africa's biggest gap (10 of 14 done); a deliberate cross-reference with RWA -- the identical Belgian 1933 identity-card mechanism produced genocides against opposite ethnic groups two decades apart, and Burundi's 1972 Ikiza (150,000-300,000 Hutu killed) remains far less internationally documented than Rwanda's 1994 genocide despite comparable severity; a second corpus case, after SSD, of a current refugee crisis caused by a neighbor's conflict already in this corpus (COD/RWA's own M23/eastern-DRC war); among the poorest and least-electrified countries recorded here (GDP per capita $1,147 PPP, electricity access 11.6%); a genuine positive (coffee-sector recovery) credited alongside a June 2025 election in which the ruling party won every contested seat | **done — iteration 1** |
 | TUN | Tunisia | fills North Africa, now the corpus's lowest region proportionally (5 of 6 done); a genuinely distinct trajectory shape -- the birthplace of the Arab Spring built the only enduring post-Arab-Spring democratic transition (2015 Nobel Peace Prize) before Kais Saied dismantled it in a single-day constitutional self-coup, 25 July 2021; one of the rare corpus records with a declining 2000-2023 trend; Pillar D (health) remains Tunisia's strongest pillar even as Pillar A records a severe reversal, evidence Bourguiba's human-development legacy outlasted the democracy built atop it; a genuine positive (first 120MW solar plant, Dec 2025) credited alongside the 2024 re-election held after jailing nearly all opposition | **done — iteration 1** |
+| CIV | Cote d'Ivoire | fills West Africa (12 of 16 done); a deliberate cross-reference with BFA -- French administrators dissolved Upper Volta partly to formalise its population as captive labour for Cote d'Ivoire's plantations, the same arrangement ivoirité later weaponised against those labourers' own descendants; a distinct international-intervention mechanism -- France's own Licorne mission acted directly, not through a regional bloc, to remove Gbagbo and install Ouattara in 2011; Ouattara's October 2025 fourth term (89.8%) came after barring Gbagbo (a domestic conviction surviving ICC acquittal) and Thiam (a 1987 citizenship technicality); a genuine positive (new $235M cocoa processing plant) credited alongside the exclusions | **done — iteration 1** |
 
-### Backlog — the remaining 14
+### Backlog — the remaining 13
 
 Listed in full in `narrative/state.yaml` under `backlog`. They are recorded
 explicitly rather than left implicit: a country with no record should be visibly
 absent, not quietly missing.
 
-Libya, Benin, Cabo Verde, Guinea-Bissau, Cote d'Ivoire, Senegal, Republic of Congo, Gabon, Djibouti, Malawi, Tanzania, Zambia, Eswatini, Seychelles
+Libya, Benin, Cabo Verde, Guinea-Bissau, Senegal, Republic of Congo, Gabon, Djibouti, Malawi, Tanzania, Zambia, Eswatini, Seychelles
 
 ---
 
@@ -1431,6 +1432,42 @@ Append one line per run: date, country, mode, what changed, what was removed.
   403 bot-detection pattern) — 13/14 resolved. Full pytest suite: 106
   passed.
 
+- **2026-08-11 — CIV — CREATE. Thirty-second backlog country, fills
+  West Africa (12 of 16 done).** Full baseline built: historical
+  overview, colonial legacy (traces the migrant-labour cross-reference
+  with BFA directly — French administrators dissolved Upper Volta
+  partly to formalise its population as captive labour for Cote
+  d'Ivoire's plantations, and ivoirité later weaponised that same
+  arrangement against the labourers' own Ivorian-born descendants),
+  4 key_periods, 6 pillar summaries (Pillar C left empty — greyed at
+  1/8 measured), 3 primary + 1 extended recent items, 4 events,
+  rec_membership (ECOWAS 1975 founding member, CEN-SAD 2004). 13
+  sources opened and verified: 3 Wikipedia, 8 news, 1 official/France
+  diplomatie, 1 more Wikipedia for rec_membership. A distinct
+  international-intervention mechanism from anything else in this
+  corpus: unlike GMB's ECOWAS intervention or LSO's SADC intervention,
+  France's own Licorne mission acted directly in 2011, not through a
+  regional African bloc, to help remove Gbagbo and install Ouattara
+  after roughly 3,000 deaths — argued in colonial_legacy as France
+  acting inside a Françafrique relationship colonial-era economic
+  dependency had never fully severed. Ouattara's October 2025 fourth
+  term (89.8%) came after barring his two strongest rivals through two
+  different legal mechanisms: Gbagbo via a domestic conviction that
+  survived his own ICC acquittal, and Thiam via a 1987 citizenship
+  technicality he could not reverse in time — kept as three distinct
+  items (the election result, Thiam's exclusion, Gbagbo's exclusion)
+  rather than one general "opposition barred" claim. Following the
+  established discipline, found a genuine positive: a new $235M
+  Transcao cocoa-processing complex opened near Abidjan in June 2025,
+  a concrete step toward the government's 50%-domestic-processing
+  target and a genuine shift up the same cocoa value chain
+  colonial_legacy documents as built on forced and migrant labour.
+  Balance: 1 positive, 2 negative, 1 mixed. Five word-count fixes (one
+  key_period, pillars.D/E/F/G), each resolved by adding real
+  cross-pillar or cross-corpus facts. `--links` passes 0 errors, 2
+  warnings (France24 and FurtherAfrica, familiar 403 bot-detection
+  pattern) — 11/13 resolved. Full pytest suite: 106 passed.
+
 ---
 
 ## Meta-notes
@@ -2152,6 +2189,23 @@ Things a future run should know about how to work, not about a specific country.
   observation worth watching for whenever a pillar gap this wide opens
   up between governance and health/education scores in future
   countries.
+- **2026-08-11** — CIV confirms the BFA cross-reference anticipated
+  when BFA's own record was written (its migrant-labour note
+  explicitly named Cote d'Ivoire's plantations as the destination),
+  proving the earlier-flagged-anticipation pattern works: a future
+  country's colonial_legacy can be planned for in advance when an
+  existing record already names it, not only discovered incidentally
+  (GNQ/GMB) or engineered from scratch (LBR/SLE). Also names a new
+  intervention sub-typology worth tracking alongside the corpus's
+  existing "regional bloc enforces an election result" pattern
+  (GMB/ECOWAS, LSO/SADC): a single former colonial power intervening
+  directly and unilaterally, still carrying real military
+  consequences (CIV's ~3,000 deaths in 2011, the highest death toll
+  of any intervention documented in this corpus). Future backlog
+  countries with a comparable former-colonial-power military history
+  (e.g. any remaining French Sahel/coastal states) should be checked
+  against this same distinction rather than assumed to fit the
+  regional-bloc pattern by default.
 
 ---
 

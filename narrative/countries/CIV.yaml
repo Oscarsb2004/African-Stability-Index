@@ -1,0 +1,444 @@
+meta:
+  iso3: CIV
+  name: Cote d'Ivoire
+  last_updated: 2026-08-11
+  iteration_count: 1
+  next_action: >
+    EXPAND: (1) follow whether Thiam or Gbagbo's exclusion produces
+    further legal appeals or unrest; (2) follow whether the cocoa
+    domestic-processing target (50% by end-2026) is actually reached;
+    (3) follow whether Ouattara signals any succession plan for the
+    end of this fourth term; (4) check whether Pillars D/E/F thin or
+    carried-forward indicators gain fresh coverage, especially the
+    stale displaced-persons figure; (5) check if Pillar C has gained
+    coverage.
+  model_used: claude-sonnet-5
+
+historical:
+  overview: >
+    France colonized Côte d'Ivoire from 1893, building the most
+    economically productive territory in French West Africa on cocoa
+    and coffee plantations worked first by forced labour and later by
+    migrant workers recruited from Upper Volta, today's Burkina Faso.
+    Félix Houphouët-Boigny led the country to independence in 1960 and
+    ruled for 33 years, maintaining close ties with France -- a
+    relationship known as Françafrique -- and relative stability until
+    his death in 1993. His successor, Henri Konan Bédié, promoted the
+    concept of ivoirité, questioning the nationality of northerners
+    and immigrants and specifically targeting his rival Alassane
+    Ouattara's eligibility for office. Bédié was overthrown in Côte
+    d'Ivoire's first coup on 24 December 1999, led by General Robert
+    Guéï, who then tried to nullify a 2000 election he was losing to
+    Laurent Gbagbo, triggering mass protests that installed Gbagbo
+    instead. Ivoirité-driven tensions between the Muslim north and
+    Christian south erupted into the First Ivorian Civil War in 2002,
+    splitting the country until a 2007 peace agreement. Gbagbo's
+    refusal to concede the November 2010 election to Ouattara
+    triggered a second, more violent crisis; French and UN forces
+    intervened militarily in April 2011, capturing Gbagbo after
+    roughly 3,000 people had been killed, and Ouattara was sworn in on
+    6 May 2011. Ouattara has since won three more terms, arguing a
+    2016 constitutional change reset his term count, most recently
+    securing a fourth term on 25 October 2025 with 89.8% of the vote
+    after barring his two strongest rivals from the ballot.
+  overview_citations: [c1, c2, c3, c4, c6, c7]
+  colonial_legacy: >
+    context/colonial_history.yaml already credits cocoa and coffee
+    cultivation, first on forced labour and later on migrant workers
+    from Upper Volta, as the foundation of Côte d'Ivoire's colonial-era
+    prosperity, and names ivoirité -- the question of who counts as
+    truly Ivorian -- as the concept that fuelled two civil wars. That
+    migrant-labour system is a direct, documented cross-reference to
+    this corpus's own Burkina Faso record: French administrators
+    dissolved Upper Volta outright between 1932 and 1947 partly to
+    formalise its population as a captive labour pool for Côte
+    d'Ivoire's plantations, the same colonial-era arrangement ivoirité
+    later weaponised against the labourers' own Ivorian-born
+    descendants. Houphouët-Boigny's post-independence Françafrique
+    relationship with Paris did not undo that structure; it preserved
+    it, encouraging continued northern and foreign migration into the
+    cocoa economy while French capital, expertise and military backing
+    remained embedded in the state. When that same French military
+    intervened directly in 2011 -- not at a neighbouring African
+    bloc's request, but through its own Licorne mission -- to help
+    remove Gbagbo and install Ouattara, it was acting inside a
+    relationship colonial-era economic dependency had never fully
+    severed.
+  colonial_legacy_citations: [c4, c5]
+  key_periods:
+    - title: "Colonial cocoa economy and Houphouët-Boigny's rule"
+      period: "1893-1993"
+      summary: >
+        France built Côte d'Ivoire into French West Africa's most
+        economically productive territory on cocoa and coffee
+        cultivation, worked first by forced labour and later by
+        migrant workers from Upper Volta. Félix Houphouët-Boigny led
+        the country to independence in 1960 and ruled for 33 years,
+        maintaining close ties with France until his death in 1993.
+      citations: [c5]
+    - title: "Ivoirité, the 1999 coup, and Gbagbo's rise"
+      period: "1993-2000"
+      summary: >
+        Houphouët-Boigny's successor, Henri Konan Bédié, promoted
+        ivoirité, questioning the nationality of northerners and
+        specifically targeting rival Alassane Ouattara. Bédié was
+        overthrown in Côte d'Ivoire's first coup on 24 December 1999;
+        coup leader Robert Guéï then tried to nullify a 2000 election
+        he was losing to Laurent Gbagbo, triggering protests that
+        installed Gbagbo instead.
+      citations: [c1, c2]
+    - title: "The First Ivorian Civil War"
+      period: "2002-2007"
+      summary: >
+        Ivoirité-driven tensions between the largely Muslim north and
+        Christian south erupted into civil war in September 2002,
+        splitting the country between a government-held south and a
+        rebel-held north for five years, until a 2007 Ouagadougou
+        peace agreement, brokered by Burkina Faso's own president,
+        began reunification and paved the way for elections.
+      citations: [c3]
+    - title: "The 2010-2011 crisis and Ouattara's rise to power"
+      period: "2010-2011"
+      summary: >
+        Laurent Gbagbo's refusal to concede the November 2010 election
+        to Alassane Ouattara triggered a violent crisis; French and UN
+        forces intervened militarily in April 2011, capturing Gbagbo
+        after roughly 3,000 people had been killed. Ouattara was sworn
+        in as president on 6 May 2011.
+      citations: [c4, c5]
+
+pillars:
+  A:
+    summary: >
+      All six World Governance Indicators are directly measured this
+      year, and the aggregate is moderate -- Regulatory Quality (64.5)
+      and Rule of Law (53.9) are the least weak, Voice and
+      Accountability (51.6) the most severe. That moderate reading
+      sits ahead of a further reversal already visible by 2023 and
+      confirmed since: President Alassane Ouattara, in power since
+      2011, won a fourth term on 25 October 2025 with 89.8% of the
+      vote after barring his two strongest rivals, Laurent Gbagbo and
+      Tidjane Thiam, from the ballot -- a re-run of the same
+      third-term maneuver that first extended his rule in 2020.
+    drivers:
+      - "all 6 WGI indicators directly measured; Regulatory Quality (64.5) and Rule of Law (53.9) the least weak, Voice and Accountability (51.6) the most severe"
+      - "25 Oct 2025: Ouattara, in power since 2011, won a 4th term with 89.8% after barring his two strongest rivals, Gbagbo and Thiam, from the ballot"
+      - "a re-run of the same third-term maneuver that first extended his rule in 2020 (see historical.key_periods)"
+    citations: [c7, c6]
+  B:
+    summary: >
+      GDP growth, GDP per capita, inflation and domestic credit, all
+      freshly measured, make this Côte d'Ivoire's strongest pillar --
+      GDP growth (65.5) is comparatively high for this corpus. Gini,
+      carried forward, is comparatively strong. This pillar's 2023
+      reference year understates continued acceleration: growth was
+      projected at 6.2% in 2025, and the government's target of
+      processing at least 50% of national cocoa domestically by the
+      end of 2026 was already 44% met by late 2024, backed by a new
+      EUR200 million processing plant -- a genuine shift up the same
+      cocoa value chain colonial_legacy documents as originally built
+      on forced and migrant labour.
+    drivers:
+      - "GDP growth, GDP per capita, inflation, domestic credit all fresh -- Côte d'Ivoire's strongest pillar; GDP growth (65.5) comparatively high for this corpus"
+      - "Gini comparatively strong (carried forward)"
+      - "2023 reference year understates continued acceleration: 6.2% growth projected for 2025; cocoa domestic-processing target (50% by end-2026) already 44% met by late 2024, backed by a new EUR200M plant"
+    citations: [c11]
+  D:
+    summary: >
+      All five indicators are directly measured this year, and the
+      aggregate is weak: life expectancy and infant mortality are both
+      comparatively poor, and handwashing-facility access is similarly
+      weak. Safely managed drinking water, also fresh, is more
+      middling. Severe food insecurity, by contrast, is comparatively
+      low for this corpus, plausibly reflecting the food security a
+      major cash-crop-exporting economy affords even where broader
+      health infrastructure lags. Five of the pillar's five indicators
+      are current, a fully-measured pillar whose weakness sits at odds
+      with Pillar B's comparatively strong economic growth.
+    drivers:
+      - "all 5 indicators directly measured; life expectancy and infant mortality both comparatively poor; handwashing access similarly weak"
+      - "safely managed drinking water more middling (fresh); severe food insecurity comparatively low for this corpus, the pillar's one clear strength"
+      - "5 of 5 indicators current -- a fully-measured pillar whose weakness sits at odds with Pillar B's comparatively strong economic growth"
+    citations: [c11]
+  E:
+    summary: >
+      Political Stability and Rule of Law, both fresh and shared with
+      Pillar A, are middling. Displaced persons, carried forward
+      rather than fresh, is a stale figure -- most plausibly a
+      residual estimate from the 2010-2011 post-election crisis
+      documented in historical.key_periods, rather than a current
+      measurement, since Côte d'Ivoire has had no comparable
+      displacement event since. Intentional homicide, estimated from
+      regional peers, is comparatively more middling too. Only two of
+      the pillar's four indicators are current, leaving this pillar
+      thinner than its moderate score alone would suggest.
+    drivers:
+      - "Political Stability and Rule of Law (shared with Pillar A) both middling, fresh"
+      - "displaced persons carried forward, not fresh -- most plausibly a stale residual estimate from the 2010-2011 post-election crisis, since no comparable displacement event has followed"
+      - "intentional homicide more middling (regional-mean estimate); only 2 of 4 indicators current"
+    citations: [c4]
+  F:
+    summary: >
+      Agricultural land share, freshly measured, sits at the scale's
+      ceiling -- a direct reflection of the cocoa and coffee
+      cultivation colonial_legacy documents as the country's defining
+      economic activity since the colonial era and Pillar B's
+      cocoa-export economy. CO2 emissions per capita, also fresh, are
+      comparatively weak. Freshwater withdrawal, carried forward, is
+      very low relative to renewable resources. Electricity generation
+      from fossil sources, also carried forward, is high at nearly
+      76%. Only two of the pillar's four indicators are current, the
+      other two carried forward from an earlier measurement year.
+    drivers:
+      - "agricultural land at the scale's ceiling (fresh) -- a direct reflection of the cocoa/coffee cultivation colonial_legacy documents as the country's defining economic activity since the colonial era"
+      - "CO2 pc comparatively weak (fresh); electricity generation nearly 76% fossil-fuel (carried forward)"
+      - "freshwater withdrawal very low relative to renewable resources (carried forward); only 2 of 4 indicators current"
+    citations: [c5]
+  G:
+    summary: >
+      Electricity access, at 72% of the population and freshly
+      measured, is comparatively decent for this corpus. Basic
+      drinking water access, also fresh, is similarly solid.
+      Government Effectiveness and Control of Corruption, shared with
+      Pillar A, are middling. Social protection coverage, the pillar's
+      only carried-forward figure, is comparatively weak, echoing
+      Pillar D's own uneven picture. Four of the pillar's five
+      indicators are current, describing infrastructure reach that has
+      kept pace with Pillar B's economic growth better than Pillar D's
+      health indicators have.
+    drivers:
+      - "electricity access 72% of the population (fresh) -- comparatively decent for this corpus; basic drinking water similarly solid (fresh)"
+      - "Government Effectiveness and Control of Corruption (shared with Pillar A) middling; social protection the pillar's only carried-forward figure, comparatively weak"
+      - "4 of 5 indicators current -- infrastructure reach has kept pace with Pillar B's growth better than Pillar D's health indicators"
+    citations: [c11]
+
+recent:
+  primary:
+    - headline: "Ouattara wins fourth term with 89.8% after barring his strongest rivals"
+      date: 2025-10-25
+      summary: >
+        President Alassane Ouattara, in power since 2011, won a fourth
+        term in the 25 October 2025 election with 89.8% of the vote,
+        after the Constitutional Council barred his two strongest
+        challengers, former President Laurent Gbagbo and businessman
+        Tidjane Thiam, from running. Turnout fell to 50.1% from 53.9%
+        in 2020. Entrepreneur Jean-Louis Billon placed a distant
+        second with 3.1%.
+      why_it_matters: >
+        Directly explains Pillar A's severity and extends a pattern
+        Ouattara's own 2020 third-term bid established -- winning
+        decisively once the most credible opposition has been
+        excluded from the ballot rather than defeated at it.
+      news_url: "https://www.france24.com/en/africa/20251027-alassane-ouattara-wins-ivory-coast-presidential-election-according-to-provisional-results"
+      wikipedia_url: "https://en.wikipedia.org/wiki/2025_Ivorian_presidential_election"
+      sentiment: negative
+    - headline: "Opposition leader Thiam barred over a 1987 citizenship technicality"
+      date: 2025-04-01
+      summary: >
+        An Abidjan court struck former Credit Suisse CEO Tidjane
+        Thiam, the main opposition PDCI's chosen candidate, from the
+        electoral list in April 2025, ruling that his automatic loss
+        of Ivorian nationality when he acquired French citizenship in
+        1987 -- under a code provision requiring prior state
+        authorisation -- was never properly reversed in time for the
+        vote, despite Thiam formally renouncing his French nationality
+        in February 2025. The ruling could not be appealed.
+      why_it_matters: >
+        Removed the opposition's most internationally credible
+        challenger through a decades-old technicality rather than a
+        political or criminal disqualification, a pattern Thiam called
+        "an act of democratic vandalism."
+      news_url: "https://www.theafricareport.com/382123/cote-divoire-tidjiane-thiam-is-barred-from-running-in-elections/"
+      wikipedia_url: ""
+      sentiment: negative
+    - headline: "New $235M cocoa processing complex opens near Abidjan"
+      date: 2025-06-26
+      summary: >
+        The Transcao PK24 industrial complex, a nearly EUR200 million
+        ($235 million) cocoa processing plant backed by Malaysian
+        cocoa processor GCB Cocoa, was inaugurated on 26 June 2025 in
+        the Akoupé-Zeudji industrial zone west of Abidjan. The plant
+        has an initial grinding capacity of 50,000 tonnes, expanding
+        toward 100,000 tonnes, and has created 1,400 jobs so far.
+      why_it_matters: >
+        A concrete, verifiable step toward the government's target of
+        processing 50% of national cocoa production domestically by
+        the end of 2026, credited independent of the same year's
+        political controversies.
+      news_url: "https://furtherafrica.com/2025/07/01/cote-divoire-opens-new-cocoa-processing-complex/"
+      wikipedia_url: ""
+      sentiment: positive
+  extended:
+    - headline: "Gbagbo remains barred from running despite international acquittal"
+      date: 2025-04-28
+      summary: >
+        Laurent Gbagbo, acquitted by the International Criminal Court
+        of crimes against humanity charges in a ruling upheld in March
+        2021, declared his candidacy for the October 2025 election but
+        remained ineligible under a separate 20-year domestic sentence
+        an Ivorian court handed him for his role in the 2010-2011
+        post-election crisis. The African Court on Human and Peoples'
+        Rights denied both his and Thiam's appeals in June 2025.
+      why_it_matters: >
+        A genuine tension this record does not resolve for the reader:
+        Gbagbo's international acquittal on the gravest charges did
+        not override a separate domestic conviction, leaving open
+        whether Ivorian courts applied the law even-handedly or used
+        it to exclude a credible rival.
+      news_url: "https://www.africanews.com/2025/04/28/ineligible-to-stand-gbagbo-enters-the-ivorian-election-by-other-means/"
+      wikipedia_url: ""
+      sentiment: mixed
+
+events:
+  - year: 1999
+    type: coup
+    title: "First coup ousts Bédié"
+    description: >
+      General Robert Guéï overthrew President Henri Konan Bédié on 24
+      December 1999, Côte d'Ivoire's first coup since independence,
+      after Bédié's ivoirité policies deepened divisions between north
+      and south.
+    url: "https://en.wikipedia.org/wiki/1999_Ivorian_coup_d'%C3%A9tat"
+    direction: deteriorate
+  - year: 2002
+    type: conflict
+    title: "First Ivorian Civil War begins"
+    description: >
+      Ivoirité-driven tensions between the largely Muslim north and
+      Christian south erupted into civil war in September 2002,
+      splitting the country until a 2007 peace agreement began
+      reunification.
+    url: "https://en.wikipedia.org/wiki/Ivorian_Civil_War"
+    direction: deteriorate
+  - year: 2011
+    type: conflict
+    title: "French and UN forces install Ouattara after Gbagbo's capture"
+    description: >
+      After Laurent Gbagbo refused to concede the November 2010
+      election, French and UN forces intervened militarily in April
+      2011, capturing Gbagbo after roughly 3,000 people had been
+      killed; Alassane Ouattara was sworn in as president on 6 May
+      2011.
+    url: "https://grokipedia.com/page/2010%E2%80%932011_Ivorian_crisis"
+    direction: mixed
+  - year: 2025
+    type: election
+    title: "Ouattara wins a fourth term"
+    description: >
+      President Alassane Ouattara won a fourth term on 25 October 2025
+      with 89.8% of the vote, after his two strongest rivals, Laurent
+      Gbagbo and Tidjane Thiam, were barred from the ballot.
+    url: "https://www.france24.com/en/africa/20251027-alassane-ouattara-wins-ivory-coast-presidential-election-according-to-provisional-results"
+    direction: deteriorate
+
+citations:
+  - id: c1
+    url: "https://en.wikipedia.org/wiki/1999_Ivorian_coup_d'%C3%A9tat"
+    source_type: wikipedia
+    title: "1999 Ivorian coup d'état"
+    accessed: 2026-08-11
+    verified: true
+  - id: c2
+    url: "https://en.wikipedia.org/wiki/Henri_Konan_B%C3%A9di%C3%A9"
+    source_type: wikipedia
+    title: "Henri Konan Bédié"
+    accessed: 2026-08-11
+    verified: true
+  - id: c3
+    url: "https://en.wikipedia.org/wiki/Ivorian_Civil_War"
+    source_type: wikipedia
+    title: "Ivorian Civil War"
+    accessed: 2026-08-11
+    verified: true
+  - id: c4
+    url: "https://grokipedia.com/page/2010%E2%80%932011_Ivorian_crisis"
+    source_type: news
+    title: "2010-2011 Ivorian crisis (Grokipedia)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c5
+    url: "https://www.diplomatie.gouv.fr/en/country-files/cote-d-ivoire/france-and-cote-d-ivoire-65124"
+    source_type: official
+    title: "France and Côte d'Ivoire (French Ministry for Europe and Foreign Affairs)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c6
+    url: "https://www.aljazeera.com/news/2020/09/15/ivory-coast-court-clears-ouattaras-third-term-bid-amid-protests/"
+    source_type: news
+    title: "Ivory Coast court clears Ouattara's third term bid amid protests (Al Jazeera)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c7
+    url: "https://www.france24.com/en/africa/20251027-alassane-ouattara-wins-ivory-coast-presidential-election-according-to-provisional-results"
+    source_type: news
+    title: "Alassane Ouattara wins Ivory Coast presidential election, according to provisional results (France 24)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c8
+    url: "https://allafrica.com/stories/202511260005.html"
+    source_type: news
+    title: "Côte d'Ivoire's Democratic Backslide - Elections Leave Even Less Space for Freedom (AllAfrica)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c9
+    url: "https://www.theafricareport.com/382123/cote-divoire-tidjiane-thiam-is-barred-from-running-in-elections/"
+    source_type: news
+    title: "Côte d'Ivoire: Tidjiane Thiam is barred from running in elections (The Africa Report)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c10
+    url: "https://www.africanews.com/2025/04/28/ineligible-to-stand-gbagbo-enters-the-ivorian-election-by-other-means/"
+    source_type: news
+    title: "Ineligible to stand, Gbagbo enters the Ivorian election by other means (Africanews)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c11
+    url: "https://furtherafrica.com/2025/07/01/cote-divoire-opens-new-cocoa-processing-complex/"
+    source_type: news
+    title: "Côte d'Ivoire Opens New Cocoa Processing Complex (FurtherAfrica)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c12
+    url: "https://en.wikipedia.org/wiki/ECOWAS"
+    source_type: wikipedia
+    title: "ECOWAS"
+    accessed: 2026-08-11
+    verified: true
+  - id: c13
+    url: "https://simple.wikipedia.org/wiki/Community_of_Sahel-Saharan_States"
+    source_type: wikipedia
+    title: "Community of Sahel-Saharan States"
+    accessed: 2026-08-11
+    verified: true
+
+rec_membership:
+  - org: ECOWAS
+    joined: 1975
+    status: current
+    left: null
+    citations: [c12]
+  - org: CEN-SAD
+    joined: 2004
+    status: current
+    left: null
+    citations: [c13]
+
+balance:
+  n_positive: 1
+  n_negative: 2
+  n_mixed: 1
+  note: >
+    The election item and the Thiam-exclusion item are kept as two
+    distinct negatives rather than merged into one, because they
+    document different mechanisms of the same pattern: an election
+    result, and the specific pre-election legal maneuver that shaped
+    who could contest it. The Transcao cocoa plant is credited at full
+    positive weight, independent of the same year's political
+    controversies -- the same standard this corpus applies to
+    crediting a genuine economic achievement without letting
+    surrounding political conduct discount it. Gbagbo's continued
+    exclusion is coded mixed rather than negative: his international
+    acquittal is a real, verified fact, and this record does not
+    assert that his domestic conviction was necessarily political
+    rather than legitimate, only that the tension between the two
+    outcomes is itself worth stating plainly.
