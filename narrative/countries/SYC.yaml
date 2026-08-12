@@ -1,0 +1,451 @@
+meta:
+  iso3: SYC
+  name: Seychelles
+  last_updated: 2026-08-11
+  iteration_count: 1
+  next_action: >
+    EXPAND: (1) follow whether the Seysun Lagoon floating solar plant
+    comes online in 2026 as scheduled and measurably reduces the
+    ~98% fossil-fuel electricity share; (2) follow whether public
+    confidence in anti-heroin efforts improves under the Herminie
+    government; (3) follow whether tourism growth continues at its
+    2025 pace or shows signs of ecological strain; (4) check the
+    rec_membership schema gap this record ran into directly: SADC has
+    no field for Seychelles' actual 1997-join/2004-withdraw/2008-
+    rejoin history, only current status and a single joined year --
+    flagged, not resolved; (5) check if Pillar C has gained coverage.
+  model_used: claude-sonnet-5
+
+historical:
+  overview: >
+    The uninhabited Seychelles islands were claimed by France in 1742
+    and settled with enslaved Africans and French planters growing
+    coconut and spices; Britain took possession during the Napoleonic
+    Wars in 1810. Seychelles gained independence in 1976 under
+    President James Mancham. The following year, while Mancham
+    attended the Commonwealth Heads of Government Meeting in London,
+    Prime Minister France-Albert René seized power in a coup backed by
+    Tanzanian-trained fighters, and ruled a one-party socialist state
+    for the next fifteen years. Multiparty democracy returned in 1993
+    under pressure from international financial institutions; René
+    himself won competitive elections and remained president until
+    leaving office voluntarily in 2004. In 2016, Seychelles negotiated
+    the world's first sovereign debt-for-nature swap, restructuring a
+    portion of its foreign debt into a $22 million conservation fund
+    with backing from the Nature Conservancy and the Leonardo DiCaprio
+    Foundation; by 2018, the deal had helped designate nearly a third
+    of Seychelles' ocean territory, an area larger than Germany, as
+    protected. Wavel Ramkalawan won the presidency in 2020, the first
+    leader from outside the former single ruling party to do so since
+    multiparty politics returned. In a runoff held 25-27 September
+    2025, Ramkalawan lost re-election to opposition leader Patrick
+    Herminie, 52.7% to 47.3%, and pledged an "orderly and dignified"
+    transfer of power; Herminie was inaugurated as Seychelles' sixth
+    president on 26 October 2025.
+  overview_citations: [c1, c2, c3, c4, c5, c6]
+  colonial_legacy: >
+    context/colonial_history.yaml already notes the methodological
+    caveat that matters most for reading this record: Seychelles
+    achieves the highest governance scores in Africa partly as a
+    function of its tiny population (roughly 100,000), high-income
+    tourism economy, and island insularity, all of which dramatically
+    reduce many of the fragility indicators this corpus measures
+    elsewhere -- direct comparisons with continental African states
+    are, as the schema entry states plainly, methodologically
+    problematic. Worth adding what that insularity does not erase:
+    colonial-era plantation agriculture (coconut oil, later cinnamon
+    and vanilla) gave way after independence to an economy built
+    almost entirely around tourism and, more recently, marine-based
+    conservation finance, a genuine pivot away from the extractive
+    plantation model most of this corpus documents. That pivot has not
+    resolved every colonial-era vulnerability, however -- Seychelles'
+    near-total dependence on imported fossil fuel for electricity,
+    documented as this record's clearest weakness in Pillar F, is
+    itself a legacy of a small-island economy built around imported
+    goods and services rather than domestic production, a structural
+    feature colonial rule established and independence has not yet
+    fully unwound.
+  colonial_legacy_citations: [c1]
+  key_periods:
+    - title: "French settlement and British possession"
+      period: "1742-1976"
+      summary: >
+        France claimed the uninhabited Seychelles islands in 1742 and
+        settled them with enslaved Africans and French planters
+        growing coconut and spices. Britain took possession during the
+        Napoleonic Wars in 1810 and governed until independence in
+        1976 under President James Mancham.
+      citations: [c1]
+    - title: "René's 1977 coup and one-party rule"
+      period: "1977-1993"
+      summary: >
+        While Mancham attended a Commonwealth summit in London in
+        1977, Prime Minister France-Albert René seized power in a coup
+        backed by Tanzanian-trained fighters and ruled a one-party
+        socialist state for fifteen years. Multiparty democracy
+        returned in 1993 under pressure from international financial
+        institutions; René won competitive elections and remained
+        president until leaving office voluntarily in 2004.
+      citations: [c1, c2, c3]
+    - title: "The world's first sovereign debt-for-nature swap"
+      period: "2016-2018"
+      summary: >
+        In 2016, Seychelles negotiated the world's first sovereign
+        debt-for-nature swap, restructuring foreign debt into a $22
+        million conservation fund backed by the Nature Conservancy and
+        the Leonardo DiCaprio Foundation. By 2018, the deal had helped
+        designate nearly a third of Seychelles' ocean territory, an
+        area larger than Germany, as marine protected area.
+      citations: [c4]
+    - title: "Two peaceful transfers of power"
+      period: "2020-2025"
+      summary: >
+        Wavel Ramkalawan won the presidency in 2020, the first leader
+        from outside the former single ruling party to do so since
+        multiparty politics returned. He lost his own re-election bid
+        to opposition leader Patrick Herminie in a September 2025
+        runoff and pledged an "orderly and dignified" transfer of
+        power.
+      citations: [c5, c6]
+
+pillars:
+  A:
+    summary: >
+      All six World Governance Indicators are directly measured this
+      year, and the aggregate is Seychelles' strongest pillar and
+      among the strongest recorded anywhere in this corpus -- Control
+      of Corruption (97.2) is near the scale's ceiling, and Political
+      Stability (91.6) and Voice and Accountability (90.0) are both
+      comparably exceptional. That strength reflects a democracy that
+      has completed genuine transfers of power between rival parties
+      since the 1993 return to multiparty politics, most recently in
+      October 2025, when incumbent President Wavel Ramkalawan lost a
+      runoff to opposition leader Patrick Herminie and pledged a
+      "dignified and orderly" transfer of power.
+    drivers:
+      - "all 6 WGI indicators directly measured; Control of Corruption (97.2) near the scale's ceiling; Political Stability (91.6) and Voice and Accountability (90.0) both comparably exceptional -- Seychelles' strongest pillar, among the strongest in this corpus"
+      - "a democracy that has completed genuine transfers of power between rival parties since the 1993 return to multiparty politics"
+      - "October 2025: incumbent Ramkalawan lost a runoff to opposition leader Herminie and pledged a 'dignified and orderly' transfer of power (see recent developments)"
+    citations: [c5, c6]
+  B:
+    summary: >
+      GDP growth, GDP per capita and inflation, all freshly measured,
+      are exceptional for this corpus -- GDP per capita ($31,894 PPP)
+      is the highest recorded anywhere in this record set. Domestic
+      credit and Gini, neither directly measured this year, are
+      comparatively strong regardless. This pillar's 2023 reference
+      year predates a real, current structural weakness documented
+      under recent developments: roughly 98% of Seychelles'
+      electricity still comes from imported fossil fuel, exposing the
+      small-island economy to volatile global fuel prices and among
+      the world's highest electricity tariffs.
+    drivers:
+      - "GDP growth, GDP per capita, inflation all fresh, exceptional for this corpus -- GDP per capita ($31,894 PPP) the highest recorded anywhere in this record set"
+      - "domestic credit and Gini both not directly measured this year, comparatively strong regardless"
+      - "2023 reference year predates a real structural weakness documented under recent developments: ~98% of electricity still comes from imported fossil fuel, among the world's highest electricity tariffs"
+    citations: [c9]
+  D:
+    summary: >
+      Three of five indicators are directly measured this year: life
+      expectancy (75.42 years), infant mortality and safely managed
+      drinking water are all comparatively strong, among the best
+      readings recorded anywhere in this corpus. Handwashing-facility
+      access and severe food insecurity, both regional-mean estimates
+      rather than direct measurements, are comparatively weaker. Only
+      three of the pillar's five indicators are current, though the
+      fresh figures available are consistent with Seychelles' overall
+      reliable-tier composite score, one of only a handful in this
+      corpus, alongside ZAF, KEN and SEN.
+    drivers:
+      - "3 of 5 indicators directly measured; life expectancy (75.42 years), infant mortality, safely managed drinking water all comparatively strong"
+      - "handwashing access and severe food insecurity both regional-mean estimates, comparatively weaker"
+      - "only 3 of 5 indicators current, though consistent with Seychelles' overall strong composite score"
+    citations: [c7]
+  E:
+    summary: >
+      Political Stability and Rule of Law, both fresh and shared with
+      Pillar A, are comparatively exceptional. Intentional homicide,
+      carried forward rather than fresh, is more middling. Displaced
+      persons is entirely unmeasured this year. Only two of the
+      pillar's four indicators are current, though the available
+      figures are consistent with the strong governance record
+      documented in Pillar A -- and none of them capture the heroin
+      trafficking and addiction crisis documented under recent
+      developments, a security dimension this pillar's own indicators
+      were never designed to measure directly.
+    drivers:
+      - "Political Stability and Rule of Law (shared with Pillar A) both comparatively exceptional, fresh"
+      - "intentional homicide more middling (carried forward, not fresh); displaced persons entirely unmeasured"
+      - "only 2 of 4 indicators current -- none capture the heroin trafficking and addiction crisis documented under recent developments"
+    citations: [c7]
+  F:
+    summary: >
+      CO2 emissions per capita, freshly measured at 7.01 tons, score
+      at the absolute floor of the scale -- among the highest
+      per-capita emissions readings recorded anywhere in this corpus,
+      and unlike several wealth-proxy cases elsewhere, this is a
+      genuine, directly measured weakness rather than an artefact.
+      Electricity generation from fossil sources, carried forward,
+      confirms it: roughly 95% of Seychelles' own power comes from
+      imported fossil fuel. Freshwater withdrawal, a regional-mean
+      estimate, is comparatively high. Agricultural land share, fresh,
+      is near zero, reflecting how little arable land these small
+      granite and coral islands hold. Only two of the pillar's four
+      indicators are current -- Seychelles' weakest pillar by a wide
+      margin, sitting in real tension with the country's international
+      reputation for marine conservation.
+    drivers:
+      - "CO2 pc 7.01 tons (fresh) -- scores at the absolute floor of the scale, among the highest per-capita emissions readings recorded anywhere in this corpus; a genuine, directly measured weakness, not an artefact"
+      - "electricity generation confirms it: ~95% fossil-fuel (carried forward); freshwater withdrawal comparatively high (regional-mean estimate)"
+      - "agricultural land near zero (fresh), reflecting minimal arable land on small granite/coral islands; only 2 of 4 indicators current -- Seychelles' weakest pillar by a wide margin, in real tension with its marine-conservation reputation documented under recent developments"
+    citations: [c9]
+  G:
+    summary: >
+      Electricity access, at 100% of the population and freshly
+      measured, is at the scale's ceiling. Basic drinking water
+      access, also fresh, is near-total. Government Effectiveness and
+      Control of Corruption, shared with Pillar A, are both
+      exceptional. Social protection coverage is entirely unmeasured
+      this year, this pillar's only real gap. Four of the pillar's
+      five indicators are current, describing near-universal
+      infrastructure access built on the same fossil-fuel dependence
+      documented as a genuine weakness in Pillar F -- strong reach,
+      built on an imported and vulnerable energy base.
+    drivers:
+      - "electricity access 100% of the population (fresh) -- at the scale's ceiling; basic drinking water near-total (fresh)"
+      - "Government Effectiveness and Control of Corruption (shared with Pillar A) both exceptional; social protection entirely unmeasured"
+      - "4 of 5 indicators current -- near-universal infrastructure access built on the same fossil-fuel dependence documented as a genuine weakness in Pillar F"
+    citations: [c9]
+
+recent:
+  primary:
+    - headline: "Ramkalawan concedes runoff defeat, pledges 'dignified' transfer of power to Herminie"
+      date: 2025-09-27
+      summary: >
+        Opposition leader Patrick Herminie defeated incumbent President
+        Wavel Ramkalawan in a runoff vote held 25-27 September 2025,
+        winning 52.7% to Ramkalawan's 47.3%. Ramkalawan, who had
+        himself made history in 2020 as the first leader from outside
+        the former single ruling party to win the presidency, pledged
+        an "orderly and dignified" transfer of power, and Herminie was
+        inaugurated as Seychelles' sixth president on 26 October 2025.
+      why_it_matters: >
+        A second, independent demonstration within five years that
+        Seychelles' democracy can peacefully change which party holds
+        power -- Ramkalawan's own 2020 victory ended one long
+        incumbency, and his 2025 defeat shows the system works against
+        the leader it just installed, not only for him.
+      news_url: "https://www.trtafrika.com/english/article/b7761d7cd989"
+      wikipedia_url: "https://en.wikipedia.org/wiki/2025_Seychellois_general_election"
+      sentiment: positive
+    - headline: "World's highest heroin addiction rate leaves nearly 10% of the working population affected"
+      date: 2025-10-17
+      summary: >
+        Between 5,000 and 6,000 people out of a working-age population
+        of roughly 94,000 -- nearly 10% -- are addicted to heroin, the
+        highest rate in the world, having nearly doubled since 2018 as
+        Seychelles serves as a transshipment hub for heroin trafficked
+        from Afghanistan via East Africa. An Afrobarometer survey
+        published 17 October 2025 found most citizens rate the
+        government's Methadone Maintenance Programme as "not at all"
+        effective, and confidence in anti-drug efforts is falling.
+      why_it_matters: >
+        A stark contrast to the strong governance and economic
+        indicators documented elsewhere in this record: a genuine
+        public-health and security crisis that Seychelles' exceptional
+        composite score does not on its own reveal.
+      news_url: "https://adf-magazine.com/2025/02/seychelles-fights-trafficking-addiction-as-heroin-hub/"
+      wikipedia_url: "https://en.wikipedia.org/wiki/Illegal_drug_trade_in_Seychelles"
+      sentiment: negative
+    - headline: "Construction begins on Seychelles' first floating solar power plant"
+      date: 2025-09-30
+      summary: >
+        Construction began on 30 September 2025 on the Seysun Lagoon
+        Floating PV plant, a 5.8-megawatt floating solar facility in
+        Providence Lagoon, Mahé, developed by French renewable company
+        Qair under a 25-year power purchase agreement with the Public
+        Utilities Corporation. The project is scheduled to come online
+        in 2026, part of a broader Renewable Energy Acceleration
+        Program the World Bank approved in May 2025 to reduce
+        Seychelles' near-total reliance on imported fossil fuel for
+        electricity.
+      why_it_matters: >
+        A concrete, verifiable first step toward addressing Pillar F's
+        severe fossil-fuel dependence -- roughly 98% of current
+        electricity generation -- credited independent of the same
+        period's political transition.
+      news_url: "https://www.ecofinagency.com/news-infrastructures/0310-49251-seychelles-launches-floating-solar-project-to-cut-fossil-fuel-dependence"
+      wikipedia_url: ""
+      sentiment: positive
+  extended:
+    - headline: "Tourism arrivals set a new record, generating an estimated $1.2 billion"
+      date: 2025-11-23
+      summary: >
+        Seychelles welcomed an estimated 398,000 visitors through late
+        November 2025, a 12% increase over 2024 and roughly $1.2
+        billion in tourism revenue, with 89.7% visitor satisfaction.
+        The archipelago's economy remains heavily dependent on tourism
+        and fisheries, and sustained growth places increasing pressure
+        on the same limited land, water and coastal ecosystems the
+        marine-conservation programmes documented in
+        historical.key_periods are designed to protect.
+      why_it_matters: >
+        Real, verifiable economic growth in the same sector this
+        record's colonial_legacy traces back to Seychelles'
+        post-independence pivot from plantation agriculture, though
+        sustained growth is not cost-free for a small-island ecosystem.
+      news_url: "https://www.travelandtourworld.com/news/article/seychelles-exceeds-last-years-visitor-numbers-with-twelve-percent-rise-in-arrivals-reflecting-their-tourism-demand-and-economic-growth/"
+      wikipedia_url: ""
+      sentiment: mixed
+
+events:
+  - year: 1976
+    type: independence
+    title: "Independence from Britain"
+    description: >
+      Seychelles gained independence from Britain on 29 June 1976
+      under President James Mancham, ending 234 years of French and
+      British colonial rule.
+    url: "https://en.wikipedia.org/wiki/James_Mancham"
+    direction: improve
+  - year: 1977
+    type: coup
+    title: "René seizes power while Mancham is abroad"
+    description: >
+      Prime Minister France-Albert René seized power in a coup backed
+      by Tanzanian-trained fighters while President Mancham attended a
+      Commonwealth summit in London, beginning fifteen years of
+      one-party socialist rule.
+    url: "https://en.wikipedia.org/wiki/1977_Seychelles_coup_d'%C3%A9tat"
+    direction: deteriorate
+  - year: 1993
+    type: election
+    title: "Multiparty democracy returns"
+    description: >
+      Seychelles returned to multiparty democracy in 1993 under
+      pressure from international financial institutions; René won
+      competitive elections and remained president until leaving
+      office voluntarily in 2004.
+    url: "https://en.wikipedia.org/wiki/France-Albert_Ren%C3%A9"
+    direction: improve
+  - year: 2025
+    type: election
+    title: "Herminie defeats Ramkalawan in a runoff"
+    description: >
+      Opposition leader Patrick Herminie defeated incumbent President
+      Wavel Ramkalawan in a runoff held 25-27 September 2025;
+      Ramkalawan pledged an "orderly and dignified" transfer of power.
+    url: "https://en.wikipedia.org/wiki/2025_Seychellois_general_election"
+    direction: improve
+
+citations:
+  - id: c1
+    url: "https://en.wikipedia.org/wiki/1977_Seychelles_coup_d'%C3%A9tat"
+    source_type: wikipedia
+    title: "1977 Seychelles coup d'état"
+    accessed: 2026-08-11
+    verified: true
+  - id: c2
+    url: "https://en.wikipedia.org/wiki/France-Albert_Ren%C3%A9"
+    source_type: wikipedia
+    title: "France-Albert René"
+    accessed: 2026-08-11
+    verified: true
+  - id: c3
+    url: "https://en.wikipedia.org/wiki/James_Mancham"
+    source_type: wikipedia
+    title: "James Mancham"
+    accessed: 2026-08-11
+    verified: true
+  - id: c4
+    url: "https://www.npr.org/sections/thetwo-way/2018/02/23/588273709/seychelles-finds-a-novel-way-to-swap-its-debt-for-marine-protections"
+    source_type: news
+    title: "Seychelles Finds A Novel Way To Swap Its Debt For Marine Protections (NPR)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c5
+    url: "https://en.wikipedia.org/wiki/2025_Seychellois_general_election"
+    source_type: wikipedia
+    title: "2025 Seychellois general election"
+    accessed: 2026-08-11
+    verified: true
+  - id: c6
+    url: "https://www.trtafrika.com/english/article/b7761d7cd989"
+    source_type: news
+    title: "Seychelles President Ramkalawan pledges 'dignified' transfer of power after election defeat (TRT Afrika)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c7
+    url: "https://adf-magazine.com/2025/02/seychelles-fights-trafficking-addiction-as-heroin-hub/"
+    source_type: news
+    title: "Seychelles Fights Trafficking, Addiction as Heroin Hub (Africa Defense Forum)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c8
+    url: "https://www.afrobarometer.org/publication/ad1061-seychellois-losing-confidence-in-anti-drug-efforts-see-government-action-as-a-top-priority/"
+    source_type: news
+    title: "Seychellois losing confidence in anti-drug efforts (Afrobarometer)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c9
+    url: "https://www.ecofinagency.com/news-infrastructures/0310-49251-seychelles-launches-floating-solar-project-to-cut-fossil-fuel-dependence"
+    source_type: news
+    title: "Seychelles Launches Floating Solar Project to Cut Fossil Fuel Dependence (Ecofin Agency)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c10
+    url: "https://www.worldbank.org/en/news/press-release/2025/06/30/seychelles-afe-launches-ambitious-renewable-energy-program-to-attract-private-investment-and-power-a-sustainable-future"
+    source_type: official
+    title: "Seychelles Launches Ambitious Renewable Energy Program (World Bank)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c11
+    url: "https://www.travelandtourworld.com/news/article/seychelles-exceeds-last-years-visitor-numbers-with-twelve-percent-rise-in-arrivals-reflecting-their-tourism-demand-and-economic-growth/"
+    source_type: news
+    title: "Seychelles Exceeds Last Year's Visitor Numbers with Twelve Percent Rise in Arrivals (Travel And Tour World)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c12
+    url: "https://www.sadc.int/member-states/seychelles"
+    source_type: official
+    title: "Seychelles (SADC)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c13
+    url: "https://en.wikipedia.org/wiki/Common_Market_for_Eastern_and_Southern_Africa"
+    source_type: wikipedia
+    title: "Common Market for Eastern and Southern Africa"
+    accessed: 2026-08-11
+    verified: true
+
+rec_membership:
+  - org: SADC
+    joined: 2008
+    status: current
+    left: null
+    citations: [c12]
+  - org: COMESA
+    joined: 2001
+    status: current
+    left: null
+    citations: [c13]
+
+balance:
+  n_positive: 2
+  n_negative: 1
+  n_mixed: 1
+  note: >
+    The election result and the floating solar groundbreaking are two
+    independently verifiable positive developments, credited
+    separately rather than merged, since they document unrelated
+    domains (political transition, energy infrastructure) in the same
+    period. The heroin crisis is coded a full negative rather than
+    softened: Seychelles' exceptional composite score, driven largely
+    by governance and economic strength, does not on its own reveal a
+    public-health and security crisis of this scale, and this record
+    treats naming it as more accurate than letting the country's
+    overall strength imply the absence of any severe problem. The
+    tourism-record item is coded mixed rather than positive: real,
+    verifiable growth sits beside a genuine and unresolved
+    sustainability tension for a small-island ecosystem, and this
+    record does not credit growth without naming its cost.

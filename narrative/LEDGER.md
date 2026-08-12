@@ -26,7 +26,7 @@ An audit is forced early if a single run inflates the citation count by more tha
 
 ## Status
 
-**46 of 54 countries have a record (Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria, Rwanda, Chad, Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic, Mauritania, Zimbabwe, Comoros, Uganda, Sierra Leone, Equatorial Guinea, The Gambia, Mozambique, Guinea, South Sudan, Lesotho, Sao Tome & Principe, Togo, Cameroon, Burundi, Tunisia, Cote d'Ivoire, Zambia, Senegal, Gabon, Malawi, Eswatini). The first pass is complete; Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic, Mauritania, Zimbabwe, Comoros, Uganda, Sierra Leone, Equatorial Guinea, The Gambia, Mozambique, Guinea, South Sudan, Lesotho, Sao Tome & Principe, Togo, Cameroon, Burundi, Tunisia, Cote d'Ivoire, Zambia, Senegal, Gabon, Malawi and Eswatini are the first thirty-seven backlog countries.**
+**47 of 54 countries have a record (Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria, Rwanda, Chad, Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic, Mauritania, Zimbabwe, Comoros, Uganda, Sierra Leone, Equatorial Guinea, The Gambia, Mozambique, Guinea, South Sudan, Lesotho, Sao Tome & Principe, Togo, Cameroon, Burundi, Tunisia, Cote d'Ivoire, Zambia, Senegal, Gabon, Malawi, Eswatini, Seychelles). The first pass is complete; Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic, Mauritania, Zimbabwe, Comoros, Uganda, Sierra Leone, Equatorial Guinea, The Gambia, Mozambique, Guinea, South Sudan, Lesotho, Sao Tome & Principe, Togo, Cameroon, Burundi, Tunisia, Cote d'Ivoire, Zambia, Senegal, Gabon, Malawi, Eswatini and Seychelles are the first thirty-eight backlog countries.**
 
 ### First pass — 9 countries
 
@@ -88,14 +88,15 @@ whose ranks swing hardest with the weighting method.
 | GAB | Gabon | fills Central Africa (7 of 8 done); the corpus's clearest comparative pair with GIN -- coup leader Oligui Nguema promised only a transition, then won the resulting 2025 election himself with 90.35%, this time via a constitution engineered in advance to exclude the family he deposed; France's 1964 intervention to restore M'ba is an earlier, more explicit precedent than CIV's 2011 Licorne mission, its 2023 absence reading as confirmation of waning French intervention appetite across the same coup wave as MLI/BFA/NER; a genuine positive (rainforest ecosystem services valued at $75.1B) that Pillar F cannot fully capture, since the index measures emissions, not carbon absorption | **done — iteration 1** |
 | MWI | Malawi | fills East Africa (12 of 14 done); the corpus's strongest sustained democratic-accountability throughline, tested and confirmed functional three separate times since 1994 -- Parliament rejected Muluzi's 2002 third-term bid by 3 votes, the Constitutional Court annulled a fraudulent 2019 election in 2020 (correction fluid on tally sheets, only the third such African judicial annulment after Kenya and CIV), and the same electorate voted the resulting Chakwera government out again in Sept 2025; a distinctive colonial mechanism -- Nyasaland's protectorate framed around anti-slavery yet became a conventional labour-extraction colony supplying Rhodesian mines; near-record severe food insecurity (55.60%, second only to SSD) | **done — iteration 1** |
 | SWZ | Eswatini | completes Southern Africa (5 of 5 done); genuinely unique in this corpus -- Africa's last absolute monarchy, unrepresented anywhere else among the countries done so far; a deliberate triangular cross-reference with BWA and LSO -- all three were British High Commission Territories with an identical colonial arrangement, yet took the most sharply divergent post-independence paths of any comparable group, traced to Sobhuza II's specific 1973 choice to repeal the Westminster constitution rather than a colonial-structure difference; a genuine positive (95-95-95 HIV achievement) on the same standard as BWA/LSO's own HIV milestones, credited despite an ongoing accountability failure for the June 2021 crackdown that killed at least 46 protesters | **done — iteration 1** |
+| SYC | Seychelles | completes the Islands region (5 of 5 done); ranks #2-3 across composite methods, among the corpus's very strongest records, though the schema's own note flags that comparisons with continental Africa are methodologically problematic given its tiny population and island insularity; two genuine peaceful transfers of power since 1993 (2020, 2025); the world's first sovereign debt-for-nature swap (2016-2018); the corpus's most striking discipline catch -- the world's highest heroin addiction rate (~10% of the working-age population) sits entirely underneath an otherwise exceptional composite score, credited at full negative weight rather than let the strong aggregate imply no severe crisis exists | **done — iteration 1** |
 
-### Backlog — the remaining 8
+### Backlog — the remaining 7
 
 Listed in full in `narrative/state.yaml` under `backlog`. They are recorded
 explicitly rather than left implicit: a country with no record should be visibly
 absent, not quietly missing.
 
-Libya, Benin, Cabo Verde, Guinea-Bissau, Republic of Congo, Djibouti, Tanzania, Seychelles
+Libya, Benin, Cabo Verde, Guinea-Bissau, Republic of Congo, Djibouti, Tanzania
 
 ---
 
@@ -1645,6 +1646,44 @@ Append one line per run: date, country, mode, what changed, what was removed.
   403 bot-detection warning rather than an error. Full pytest suite:
   106 passed.
 
+- **2026-08-11 — SYC — CREATE. Thirty-eighth backlog country,
+  completes the Islands region (5 of 5 done).** Full baseline built:
+  historical overview, colonial legacy (repeats the schema's own
+  methodological caveat directly — Seychelles' tiny population and
+  island insularity make direct comparisons with continental African
+  states genuinely problematic, not a reason to discount the record
+  but a reason to read it carefully), 4 key_periods, 6 pillar
+  summaries (Pillar C left empty — greyed at 1/8 measured), 3 primary
+  + 1 extended recent items, 4 events, rec_membership (SADC — joined
+  2008 after a 1997-join/2004-withdraw/2008-rejoin history the schema
+  cannot fully represent; COMESA 2001, not founding). 13 sources
+  opened and verified: 5 Wikipedia, 6 news, 2 official (World Bank,
+  SADC). Seychelles ranks #2-3 across composite methods, among the
+  corpus's very strongest records overall. Documents two genuine
+  peaceful transfers of power since 1993 (Ramkalawan's 2020 win, his
+  own 2025 defeat to Herminie) and the world's first sovereign
+  debt-for-nature swap (2016-2018, backed by the Leonardo DiCaprio
+  Foundation, protecting nearly a third of Seychelles' ocean
+  territory). The corpus's most striking discipline catch to date:
+  the world's highest heroin addiction rate (~10% of the working-age
+  population, nearly doubled since 2018) sits entirely underneath an
+  otherwise exceptional composite score — credited at full negative
+  weight specifically because Seychelles' strong aggregate numbers
+  would otherwise imply the absence of any severe crisis. Following
+  the established discipline, found genuine positives independent of
+  the political transition: construction began on Seychelles' first
+  floating solar plant (Sept 2025), a concrete step against Pillar
+  F's ~98% fossil-fuel electricity dependence, itself a genuine (not
+  artefact) weakness confirmed by a directly-measured CO2-per-capita
+  reading at the scale's absolute floor. Balance: 2 positive, 1
+  negative, 1 mixed. Three word-count fixes (pillars.D/E/G, D needing
+  two attempts). One citation swap: a BBC feed URL for the
+  heroin-crisis story returned a genuine HTTP 404 under `--links` (the
+  corpus's second BBC-feed dead link after MWI); replaced with an
+  Africa Defense Forum article covering the same story, which
+  resolved cleanly. `--links` passed 0 errors, 0 warnings — 13/13
+  resolved, a clean link check. Full pytest suite: 106 passed.
+
 ---
 
 ## Meta-notes
@@ -2458,6 +2497,19 @@ Things a future run should know about how to work, not about a specific country.
   strong enough a pattern now to treat "budget for a second swap" as a
   standing expectation, not a surprising exception, for any citation
   covering very recent news.
+- **2026-08-11** — SYC confirms the single most important cross-cutting
+  discipline in the whole corpus, worth restating explicitly now that
+  47 records exist: a strong composite score is a summary of the
+  pillars the index measures, not a claim that no severe problem
+  exists in a dimension it doesn't measure well. Seychelles is the
+  sharpest version of this yet — a top-3 composite score sitting
+  directly on top of the world's highest heroin addiction rate. Also:
+  SYC is the first corpus record where SADC's rec_membership history
+  (join/withdraw/rejoin) couldn't be represented by the schema's
+  joined/status/left fields at all, a step beyond MDG's SUSPENDED gap
+  — worth folding into the same pending format proposal rather than
+  raising as a separate one, since both are instances of "the schema
+  assumes a single continuous membership stint."
 
 ---
 

@@ -1043,6 +1043,38 @@ countries:
       sustained past 2024; check whether Pillars A/E/F carried-forward
       and absent indicators gain fresh coverage; check if Pillar C has
       gained coverage'
+  SYC:
+    name: Seychelles
+    region: Islands
+    first_pass: false
+    reason: thirty-eighth backlog country -- completes the Islands
+      region (5 of 5 done); ranks 2nd-3rd across composite methods,
+      among the corpus''s very strongest records, but the schema''s own
+      colonial-history note flags that direct comparisons with
+      continental Africa are methodologically problematic given
+      Seychelles'' tiny population and island insularity; two genuine
+      peaceful transfers of power since 1993 (2020 and 2025); the
+      world''s first sovereign debt-for-nature swap (2016-2018,
+      backed by the Leonardo DiCaprio Foundation, protecting nearly a
+      third of Seychelles'' ocean territory); a striking corpus-
+      discipline catch -- the world''s highest heroin addiction rate
+      (~10% of the working-age population) sits entirely underneath
+      an otherwise exceptional composite score, demonstrating why
+      strong aggregate numbers should never be read as evidence
+      against a severe, specific crisis
+    iteration_count: 1
+    last_updated: '2026-08-11'
+    next_action: 'EXPAND: follow whether the Seysun Lagoon floating
+      solar plant comes online in 2026 as scheduled and measurably
+      reduces the ~98% fossil-fuel electricity share; follow whether
+      public confidence in anti-heroin efforts improves under the
+      Herminie government; follow whether tourism growth continues at
+      its 2025 pace or shows signs of ecological strain; check the
+      rec_membership schema gap this record ran into directly: SADC
+      has no field for Seychelles'' actual 1997-join/2004-withdraw/
+      2008-rejoin history, only current status and a single joined
+      year -- flagged, not resolved; check if Pillar C has gained
+      coverage'
 backlog:
   LBY:
     name: Libya
@@ -1095,14 +1127,6 @@ backlog:
   TZA:
     name: Tanzania
     region: East
-    first_pass: false
-    reason: not yet scheduled
-    iteration_count: 0
-    last_updated: null
-    next_action: create baseline from blueprint
-  SYC:
-    name: Seychelles
-    region: Islands
     first_pass: false
     reason: not yet scheduled
     iteration_count: 0
@@ -2489,3 +2513,42 @@ meta_notes:
   error. Full pytest suite: 106 passed. Full-corpus check: 0 errors, 2
   pre-existing warnings (COD, EGY all-negative balance, unrelated to
   this run). 46 of 54 countries now have a record.'
+- '2026-08-11: SYC CREATE run complete (13 sources opened and
+  verified: 5 Wikipedia, 6 news, 2 official (World Bank, SADC)).
+  Completes the Islands region (5 of 5 done). Seychelles ranks #2-3
+  across composite methods, among the corpus''s very strongest
+  records overall, but colonial_legacy repeats the schema''s own
+  methodological caveat directly: Seychelles'' tiny population
+  (~100,000) and island insularity make direct comparisons with
+  continental African states genuinely problematic, not a reason to
+  discount the record but a reason to read it carefully. Documents two
+  genuine peaceful transfers of power since 1993 (Ramkalawan''s 2020
+  win, his own 2025 defeat to Herminie) and the world''s first
+  sovereign debt-for-nature swap (2016-2018, backed by the Leonardo
+  DiCaprio Foundation, protecting nearly a third of Seychelles'' ocean
+  territory). The corpus''s most striking discipline catch to date:
+  the world''s highest heroin addiction rate (~10% of the working-age
+  population, nearly doubled since 2018) sits entirely underneath an
+  otherwise exceptional composite score -- credited at full negative
+  weight specifically because Seychelles'' strong aggregate numbers
+  would otherwise imply the absence of any severe crisis, which this
+  record explicitly refuses to let happen. Following the established
+  discipline, found genuine positives independent of the political
+  transition: construction began on Seychelles'' first floating solar
+  plant (Sept 2025), a concrete step against Pillar F''s ~98%
+  fossil-fuel electricity dependence, itself a genuine (not artefact)
+  weakness confirmed by a directly-measured CO2-per-capita reading at
+  the scale''s absolute floor. Balance: 2 positive, 1 negative, 1
+  mixed. Flagged, not resolved: SADC''s rec_membership schema has no
+  field for Seychelles'' actual 1997-join/2004-withdraw/2008-rejoin
+  history, only a single joined year and current status -- matched the
+  index''s own current-membership registry per established practice.
+  Three word-count fixes (pillars.D/E/G, D needing two attempts). One
+  citation swap: a BBC feed URL for the heroin-crisis story returned a
+  genuine HTTP 404 under `--links` (the corpus''s second BBC-feed dead
+  link after MWI); replaced with an Africa Defense Forum article
+  covering the same story, which resolved cleanly. `--links` passed 0
+  errors, 0 warnings -- 13/13 resolved, a clean link check. Full
+  pytest suite: 106 passed. Full-corpus check: 0 errors, 2
+  pre-existing warnings (COD, EGY all-negative balance, unrelated to
+  this run). 47 of 54 countries now have a record.'
