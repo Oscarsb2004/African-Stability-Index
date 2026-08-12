@@ -1,0 +1,460 @@
+meta:
+  iso3: SEN
+  name: Senegal
+  last_updated: 2026-08-11
+  iteration_count: 1
+  next_action: >
+    EXPAND: (1) follow whether the Faye-Sonko split deepens further or
+    is patched over before it threatens the IMF programme; (2) follow
+    whether the hidden-debt accountability process produces any
+    prosecution of former Sall-government officials; (3) follow
+    whether Sangomar/GTA revenue materially improves Pillar F's
+    fossil-heavy domestic electricity generation; (4) check the
+    external claim that Senegal withdrew from CEN-SAD in 2013 by not
+    signing its revised treaty, which conflicts with the index's own
+    current registry -- flagged, not resolved, pending confirmation;
+    (5) check if Pillar C has gained coverage.
+  model_used: claude-sonnet-5
+
+historical:
+  overview: >
+    France colonized Senegal from 1677, one of its oldest African
+    possessions; Dakar served as the capital of French West Africa,
+    and Gorée Island's slave house, though historians debate its exact
+    scale, became a symbol of the Atlantic slave trade. From the 19th
+    century, residents of the Quatre Communes -- Saint-Louis, Gorée,
+    Rufisque and Dakar -- held French citizenship rights unusual for
+    colonial Africa. Léopold Sédar Senghor, a poet and co-founder of
+    the Négritude movement, led Senegal to independence in 1960 and
+    governed for two decades before voluntarily resigning on 31
+    December 1980, a rarity among African leaders, transferring power
+    to his chosen successor Abdou Diouf. In 2000, Diouf lost a free
+    and fair election to opposition leader Abdoulaye Wade, Senegal's
+    second peaceful transfer of power and its first between parties.
+    Macky Sall defeated Wade's own controversial third-term bid in
+    2012, then spent his final years in office facing the same
+    accusation: sustained ambiguity over whether he would seek a third
+    term himself, met by mass protests, the 2021 and 2023 arrests of
+    opposition leader Ousmane Sonko, and dozens of deaths. On 3
+    February 2024, Sall abruptly postponed the scheduled election and
+    moved to extend his own term; Senegal's Constitutional Council
+    overturned the move on 15 February, and Sall complied. Bassirou
+    Diomaye Faye, released from prison alongside Sonko under a
+    political amnesty on 14 March, won the rescheduled election on 24
+    March 2024 and was sworn in on 2 April as Africa's youngest
+    elected president, twenty days after his release.
+  overview_citations: [c1, c2, c3, c4, c5, c6, c7]
+  colonial_legacy: >
+    context/colonial_history.yaml already notes Senegal's unusual
+    centrality in French colonial administration -- Dakar as the
+    capital of French West Africa, and the Quatre Communes granting
+    some Senegalese French citizenship from the 19th century, decades
+    before any comparable right existed elsewhere in French Africa.
+    That partial, selectively-extended citizenship is a genuinely
+    different colonial mechanism from most of this corpus: rather than
+    uniform exclusion, France created a small class of colonial
+    subjects with real, if limited, political standing, and Senegalese
+    politicians used those Quatre Communes institutions -- a
+    functioning, if constrained, electoral tradition -- to build the
+    negotiating leverage that made Senegal's 1960 transition to
+    independence unusually peaceful compared to Guinea's punitive
+    rupture or Algeria's war, both documented elsewhere in this corpus.
+    Léopold Sédar Senghor's 1980 voluntary resignation, transferring
+    power to a chosen successor rather than dying in office or being
+    deposed, set a precedent of institutional continuity this record's
+    Pillar A score and its 2024 democratic resilience both plausibly
+    trace back to -- a colonial-era electoral tradition, however
+    limited and unequal in its own time, that outlasted the colonial
+    power that created it.
+  colonial_legacy_citations: [c1, c2]
+  key_periods:
+    - title: "Colonial centrality and the Quatre Communes"
+      period: "1677-1960"
+      summary: >
+        France colonized Senegal from 1677, one of its oldest African
+        possessions; Dakar served as the capital of French West
+        Africa. From the 19th century, residents of the Quatre
+        Communes held French citizenship rights unusual for colonial
+        Africa, building an electoral tradition Senegalese politicians
+        used to negotiate an unusually peaceful transition to
+        independence in 1960 under poet-president Léopold Sédar
+        Senghor.
+      citations: [c1, c2]
+    - title: "Senghor's voluntary resignation and the Diouf-Wade transition"
+      period: "1980-2000"
+      summary: >
+        Senghor voluntarily resigned on 31 December 1980, a rarity
+        among African leaders, transferring power to his chosen
+        successor Abdou Diouf. In 2000, Diouf lost a free and fair
+        election to opposition leader Abdoulaye Wade, Senegal's second
+        peaceful transfer of power and its first between parties.
+      citations: [c3]
+    - title: "Sall's third-term ambiguity and the Sonko crisis"
+      period: "2012-2023"
+      summary: >
+        Macky Sall defeated Wade's own controversial third-term bid in
+        2012, then spent his final years facing the same accusation:
+        sustained ambiguity over a third term of his own, met by mass
+        protests, the 2021 and 2023 arrests of opposition leader
+        Ousmane Sonko, and dozens of deaths.
+      citations: [c4]
+    - title: "The 2024 constitutional crisis and Faye's election"
+      period: "2024"
+      summary: >
+        President Sall abruptly postponed the scheduled 25 February
+        2024 election and moved to extend his own term; Senegal's
+        Constitutional Council overturned the move on 15 February, and
+        Sall complied. Bassirou Diomaye Faye, released from prison
+        under a political amnesty, won the rescheduled election on 24
+        March 2024 and was sworn in as Africa's youngest elected
+        president.
+      citations: [c5, c6, c7]
+
+pillars:
+  A:
+    summary: >
+      All six World Governance Indicators are directly measured this
+      year, and the aggregate is Senegal's strongest pillar and among
+      the strongest recorded anywhere in this corpus -- Government
+      Effectiveness (71.7) and Voice and Accountability (70.7) are
+      both comparatively high. That strength reflects a democracy
+      tested severely and repeatedly since this pillar's 2023
+      reference year: President Macky Sall's ambiguity over a third
+      term, and his brief February 2024 attempt to postpone the
+      election outright, produced the corpus's sharpest recent test of
+      institutional resilience -- one Senegal's Constitutional Council
+      and its citizens ultimately won, documented in full under recent
+      developments.
+    drivers:
+      - "all 6 WGI indicators directly measured; Government Effectiveness (71.7) and Voice and Accountability (70.7) both comparatively high -- Senegal's strongest pillar, among the strongest in this corpus"
+      - "2023 reference year predates the corpus's sharpest recent institutional-resilience test: Sall's Feb 2024 attempt to postpone the election outright"
+      - "the Constitutional Council overturned the postponement and the election proceeded (see recent developments) -- though the reform government it produced has since fractured (also recent developments)"
+    citations: [c5, c7]
+  B:
+    summary: >
+      GDP growth, GDP per capita, inflation and domestic credit, all
+      freshly measured, are comparatively decent for this corpus.
+      Gini, carried forward, is comparatively strong. This pillar's
+      2023 reference year predates both a genuine boom and a genuine
+      crisis documented under recent developments: Senegal's Sangomar
+      offshore oil field, which began production in 2024, helped drive
+      7.8% GDP growth in 2025, even as an official audit found the
+      previous government had concealed billions of dollars in debt,
+      pushing the real public debt burden above 130% of GDP.
+    drivers:
+      - "GDP growth, GDP per capita, inflation, domestic credit all fresh, comparatively decent for this corpus; Gini comparatively strong (carried forward)"
+      - "2023 reference year predates a genuine boom: Sangomar offshore oil field (began production 2024) helped drive 7.8% GDP growth in 2025"
+      - "also predates a genuine crisis: an official audit found the previous government concealed billions in debt, pushing real public debt above 130% of GDP (see recent developments)"
+    citations: [c12, c8]
+  D:
+    summary: >
+      All five indicators are directly measured this year, and the
+      aggregate is Senegal's second-strongest pillar: severe food
+      insecurity, at just 4.00% of the population, is among the lowest
+      recorded anywhere in this corpus. Life expectancy and infant
+      mortality are both comparatively decent. Handwashing-facility
+      access and safely managed drinking water are more middling,
+      leaving room for improvement even in this record's
+      second-strongest pillar. Five of the pillar's five indicators
+      are current, a fully-measured pillar consistent with Senegal's
+      reliable-tier composite score overall.
+    drivers:
+      - "all 5 indicators directly measured; severe food insecurity just 4.00% of the population -- among the lowest recorded anywhere in this corpus"
+      - "life expectancy and infant mortality both comparatively decent; handwashing access and safely managed water more middling"
+      - "5 of 5 indicators current -- a fully-measured pillar consistent with Senegal's reliable-tier composite score"
+    citations: [c1]
+  E:
+    summary: >
+      Displaced persons, at 0.46 per 1,000 and directly measured, is
+      among the lowest recorded anywhere in this corpus, a sharp
+      contrast with several West African neighbours documented
+      elsewhere in this corpus. Political Stability and Rule of Law,
+      both fresh and shared with Pillar A, are comparatively strong.
+      Intentional homicide, estimated from regional peers rather than
+      measured directly, is more middling. Three of the pillar's four
+      indicators are current, a comparatively strong and comparatively
+      well-measured pillar even after the political turbulence
+      documented under recent developments.
+    drivers:
+      - "displaced persons 0.46/1,000 (fresh, directly measured) -- among the lowest recorded anywhere in this corpus"
+      - "Political Stability and Rule of Law (shared with Pillar A) both comparatively strong, fresh"
+      - "intentional homicide more middling (regional-mean estimate); 3 of 4 indicators current -- comparatively strong even after the political turbulence documented under recent developments"
+    citations: [c5]
+  F:
+    summary: >
+      Electricity generation from fossil sources, freshly measured at
+      86.03%, is Senegal's weakest reading and, unlike some
+      wealth-proxy cases elsewhere in this corpus, a directly current
+      rather than carried-forward figure -- Senegal's own power still
+      runs almost entirely on imported and domestic fossil fuel even
+      as its new Sangomar and Greater Tortue Ahmeyim offshore fields,
+      documented in Pillar B, primarily export rather than power the
+      domestic grid. CO2 emissions per capita, also fresh, are more
+      middling. Freshwater withdrawal, carried forward, is
+      comparatively high. Agricultural land share, fresh, is more
+      middling. Three of the pillar's four indicators are current.
+    drivers:
+      - "electricity generation 86.03% fossil-fuel (fresh, not carried forward) -- Senegal's weakest reading; the new Sangomar/GTA offshore fields (Pillar B) primarily export rather than power the domestic grid"
+      - "CO2 pc more middling (fresh); freshwater withdrawal comparatively high (carried forward)"
+      - "agricultural land more middling (fresh); 3 of 4 indicators current"
+    citations: [c12]
+  G:
+    summary: >
+      Electricity access, at 74% of the population and freshly
+      measured, is comparatively decent for this corpus. Basic
+      drinking water access, also fresh, is comparatively strong.
+      Government Effectiveness and Control of Corruption, shared with
+      Pillar A, are both comparatively high. Social protection
+      coverage, the pillar's only carried-forward figure, is more
+      middling, an area future EXPAND passes should watch for fresh
+      measurement. Four of the pillar's five indicators are current,
+      describing infrastructure access that has kept pace with Pillar
+      A's comparatively strong governance.
+    drivers:
+      - "electricity access 74% of the population (fresh) -- comparatively decent for this corpus; basic drinking water comparatively strong (fresh)"
+      - "Government Effectiveness and Control of Corruption (shared with Pillar A) both comparatively high; social protection the pillar's only carried-forward figure, more middling"
+      - "4 of 5 indicators current -- infrastructure access has kept pace with Pillar A's comparatively strong governance"
+    citations: [c1]
+
+recent:
+  primary:
+    - headline: "Constitutional Council overturns Sall's election postponement; Faye rises from prison to presidency in 20 days"
+      date: 2024-03-24
+      summary: >
+        President Macky Sall's 3 February 2024 attempt to postpone the
+        presidential election and extend his own term to December 2024
+        triggered mass protests and international condemnation;
+        Senegal's Constitutional Council ruled the postponement
+        unconstitutional on 15 February, and Sall complied. Bassirou
+        Diomaye Faye, released from prison on 14 March along with his
+        mentor Ousmane Sonko under a political amnesty, won the
+        rescheduled 24 March election in the first round with 54.3% of
+        the vote and was sworn in on 2 April 2024 as Africa's youngest
+        elected president, just 20 days after his release.
+      why_it_matters: >
+        The sharpest test yet of Senegal's democratic institutions in
+        this corpus's West Africa records, and the rare case where a
+        leader's attempt to entrench power was reversed entirely
+        through domestic legal and civic pressure rather than a coup
+        or foreign intervention.
+      news_url: "https://www.aljazeera.com/features/2024/4/2/from-prisoner-to-president-in-20-days-senegals-diomaye-faye-takes-office"
+      wikipedia_url: "https://en.wikipedia.org/wiki/Bassirou_Diomaye_Faye"
+      sentiment: positive
+    - headline: "Audit reveals the previous government concealed billions in debt"
+      date: 2024-09-01
+      summary: >
+        An audit ordered by President Faye and announced in September
+        2024 found the Sall government had concealed roughly $7-13
+        billion in public debt, pushing Senegal's real debt burden
+        above 130% of GDP -- nearly double what had been officially
+        reported. An IMF delegation confirmed the findings in March
+        2025, with IMF official Edward Gemayel stating there had been
+        "a very deliberate decision to underreport the debt during the
+        preceding years."
+      why_it_matters: >
+        A direct vindication of the reform mandate Faye was elected
+        on, but also the source of a fiscal crisis serious enough to
+        eventually fracture his own governing coalition, documented in
+        the next item.
+      news_url: "https://en.wikipedia.org/wiki/Senegal_hidden_debt_scandal"
+      wikipedia_url: ""
+      sentiment: negative
+    - headline: "Faye fires Sonko as prime minister after months of tension over the debt crisis"
+      date: 2026-05-22
+      summary: >
+        President Faye dismissed Prime Minister Ousmane Sonko -- his
+        own political mentor, who had endorsed his 2024 candidacy --
+        and dissolved the government on 22 May 2026, after months of
+        rising tension over how to handle the debt crisis. Sonko's own
+        PASTEF party responded by having him elected speaker of
+        parliament days later, and announced it would not join Faye's
+        new government, led by economist Ahmadou Al Aminou Lo.
+      why_it_matters: >
+        A genuine fracture within the same reform movement this record
+        credits for Senegal's 2024 democratic resilience, raising real
+        questions about the coalition's durability just over two years
+        after taking power.
+      news_url: "https://www.aljazeera.com/news/2026/5/23/senegals-president-faye-sacks-pm-sonko-and-dissolves-government"
+      wikipedia_url: "https://en.wikipedia.org/wiki/Ousmane_Sonko"
+      sentiment: negative
+  extended:
+    - headline: "Sangomar oil field delivers a bumper first full year of production"
+      date: 2026-01-12
+      summary: >
+        Senegal's offshore Sangomar oil field, which began production
+        in June 2024, produced 36.1 million barrels in 2025,
+        outstripping projections, while the Greater Tortue Ahmeyim gas
+        project ramped up supply to the domestic market. The Faye
+        government has pledged to place a share of hydrocarbon revenue
+        into stabilisation funds for future generations and has
+        launched audits of contracts signed under the previous
+        administration.
+      why_it_matters: >
+        A real, verifiable production success arriving the same period
+        as the hidden-debt revelations documented elsewhere in this
+        record, testing whether a government that campaigned on fiscal
+        transparency can manage a new resource windfall more
+        transparently than its predecessor managed existing debt.
+      news_url: "https://www.semafor.com/article/01/12/2026/senegals-oil-output-enjoys-bumper-year-in-2025"
+      wikipedia_url: ""
+      sentiment: mixed
+
+events:
+  - year: 1960
+    type: independence
+    title: "Independence from France"
+    description: >
+      Senegal gained independence from France on 20 August 1960 under
+      poet-president Léopold Sédar Senghor, following an unusually
+      peaceful transition built on decades of Quatre Communes electoral
+      experience.
+    url: "https://en.wikipedia.org/wiki/Senegal"
+    direction: improve
+  - year: 1980
+    type: constitutional
+    title: "Senghor voluntarily resigns"
+    description: >
+      Léopold Sédar Senghor voluntarily resigned as president on 31
+      December 1980, a rarity among African leaders, transferring
+      power to his chosen successor Abdou Diouf.
+    url: "https://en.wikipedia.org/wiki/L%C3%A9opold_S%C3%A9dar_Senghor"
+    direction: improve
+  - year: 2024
+    type: election
+    title: "Faye elected after Sall's postponement attempt is overturned"
+    description: >
+      Senegal's Constitutional Council overturned President Sall's
+      attempt to postpone the presidential election on 15 February
+      2024. Bassirou Diomaye Faye, freshly released from prison, won
+      the rescheduled 24 March election and was sworn in as Africa's
+      youngest elected president.
+    url: "https://www.aljazeera.com/features/2024/4/2/from-prisoner-to-president-in-20-days-senegals-diomaye-faye-takes-office"
+    direction: improve
+  - year: 2026
+    type: constitutional
+    title: "Faye sacks Sonko and dissolves the government"
+    description: >
+      President Faye dismissed Prime Minister Ousmane Sonko and
+      dissolved the government on 22 May 2026 amid rising tension over
+      the debt crisis, fracturing the coalition that had won the 2024
+      election together.
+    url: "https://www.aljazeera.com/news/2026/5/23/senegals-president-faye-sacks-pm-sonko-and-dissolves-government"
+    direction: deteriorate
+
+citations:
+  - id: c1
+    url: "https://face2faceafrica.com/article/senegal-58-long-struggle-independence"
+    source_type: news
+    title: "Senegal at 58: The long struggle for independence in 1960 (Face2Face Africa)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c2
+    url: "https://en.wikipedia.org/wiki/L%C3%A9opold_S%C3%A9dar_Senghor"
+    source_type: wikipedia
+    title: "Léopold Sédar Senghor"
+    accessed: 2026-08-11
+    verified: true
+  - id: c3
+    url: "https://en.wikipedia.org/wiki/Abdou_Diouf"
+    source_type: wikipedia
+    title: "Abdou Diouf"
+    accessed: 2026-08-11
+    verified: true
+  - id: c4
+    url: "https://en.wikipedia.org/wiki/Ousmane_Sonko"
+    source_type: wikipedia
+    title: "Ousmane Sonko"
+    accessed: 2026-08-11
+    verified: true
+  - id: c5
+    url: "https://www.globalsecurity.org/military/library/news/2024/02/mil-240216-voa07.htm"
+    source_type: news
+    title: "Senegal's Sall to Comply with Court Ruling That Said Election Delay Unconstitutional (VOA)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c6
+    url: "https://www.aljazeera.com/features/2024/4/2/from-prisoner-to-president-in-20-days-senegals-diomaye-faye-takes-office"
+    source_type: news
+    title: "From prisoner to president in 20 days, Senegal's Diomaye Faye takes office (Al Jazeera)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c7
+    url: "https://en.wikipedia.org/wiki/Bassirou_Diomaye_Faye"
+    source_type: wikipedia
+    title: "Bassirou Diomaye Faye"
+    accessed: 2026-08-11
+    verified: true
+  - id: c8
+    url: "https://en.wikipedia.org/wiki/Senegal_hidden_debt_scandal"
+    source_type: wikipedia
+    title: "Senegal hidden debt scandal"
+    accessed: 2026-08-11
+    verified: true
+  - id: c9
+    url: "https://www.theafricareport.com/402385/senegals-hidden-debt-scandal-in-search-of-the-missing-billions/"
+    source_type: news
+    title: "Senegal's 'hidden debt' scandal: In search of the missing billions (The Africa Report)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c10
+    url: "https://www.aljazeera.com/news/2026/5/23/senegals-president-faye-sacks-pm-sonko-and-dissolves-government"
+    source_type: news
+    title: "Senegal's President Faye sacks PM Sonko and dissolves government (Al Jazeera)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c11
+    url: "https://www.aljazeera.com/news/2026/5/26/senegal-lawmakers-elect-ousted-pm-sonko-as-new-parliament-speaker"
+    source_type: news
+    title: "Senegal lawmakers elect ousted PM Sonko as new parliament speaker (Al Jazeera)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c12
+    url: "https://www.semafor.com/article/01/12/2026/senegals-oil-output-enjoys-bumper-year-in-2025"
+    source_type: news
+    title: "Senegal's oil output enjoys bumper year in 2025 (Semafor)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c13
+    url: "https://en.wikipedia.org/wiki/ECOWAS"
+    source_type: wikipedia
+    title: "ECOWAS"
+    accessed: 2026-08-11
+    verified: true
+  - id: c14
+    url: "https://simple.wikipedia.org/wiki/Community_of_Sahel-Saharan_States"
+    source_type: wikipedia
+    title: "Community of Sahel-Saharan States"
+    accessed: 2026-08-11
+    verified: true
+
+rec_membership:
+  - org: ECOWAS
+    joined: 1975
+    status: current
+    left: null
+    citations: [c13]
+  - org: CEN-SAD
+    joined: 2000
+    status: current
+    left: null
+    citations: [c14]
+
+balance:
+  n_positive: 1
+  n_negative: 2
+  n_mixed: 1
+  note: >
+    The 2024 election-crisis-resolution item is credited at full
+    positive weight because the evidence genuinely supports it: a
+    leader's attempt to postpone an election was reversed entirely
+    through domestic courts and civic pressure, and the opposition
+    candidate who benefited took office peacefully. The hidden-debt
+    scandal and the Faye-Sonko split are kept as two distinct
+    negatives rather than merged into one, because they document
+    different things at different times -- a discovery about the
+    previous government, and a rupture within the current one. The
+    Sangomar oil boom is coded mixed rather than positive: the
+    production success is real, but this record does not credit
+    revenue management achievements the same government has not yet
+    demonstrated, given the hidden-debt scandal documented in the same
+    period.

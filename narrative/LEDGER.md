@@ -26,7 +26,7 @@ An audit is forced early if a single run inflates the citation count by more tha
 
 ## Status
 
-**42 of 54 countries have a record (Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria, Rwanda, Chad, Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic, Mauritania, Zimbabwe, Comoros, Uganda, Sierra Leone, Equatorial Guinea, The Gambia, Mozambique, Guinea, South Sudan, Lesotho, Sao Tome & Principe, Togo, Cameroon, Burundi, Tunisia, Cote d'Ivoire, Zambia). The first pass is complete; Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic, Mauritania, Zimbabwe, Comoros, Uganda, Sierra Leone, Equatorial Guinea, The Gambia, Mozambique, Guinea, South Sudan, Lesotho, Sao Tome & Principe, Togo, Cameroon, Burundi, Tunisia, Cote d'Ivoire and Zambia are the first thirty-three backlog countries.**
+**43 of 54 countries have a record (Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria, Rwanda, Chad, Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic, Mauritania, Zimbabwe, Comoros, Uganda, Sierra Leone, Equatorial Guinea, The Gambia, Mozambique, Guinea, South Sudan, Lesotho, Sao Tome & Principe, Togo, Cameroon, Burundi, Tunisia, Cote d'Ivoire, Zambia, Senegal). The first pass is complete; Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic, Mauritania, Zimbabwe, Comoros, Uganda, Sierra Leone, Equatorial Guinea, The Gambia, Mozambique, Guinea, South Sudan, Lesotho, Sao Tome & Principe, Togo, Cameroon, Burundi, Tunisia, Cote d'Ivoire, Zambia and Senegal are the first thirty-four backlog countries.**
 
 ### First pass — 9 countries
 
@@ -84,14 +84,15 @@ whose ranks swing hardest with the weighting method.
 | TUN | Tunisia | fills North Africa, now the corpus's lowest region proportionally (5 of 6 done); a genuinely distinct trajectory shape -- the birthplace of the Arab Spring built the only enduring post-Arab-Spring democratic transition (2015 Nobel Peace Prize) before Kais Saied dismantled it in a single-day constitutional self-coup, 25 July 2021; one of the rare corpus records with a declining 2000-2023 trend; Pillar D (health) remains Tunisia's strongest pillar even as Pillar A records a severe reversal, evidence Bourguiba's human-development legacy outlasted the democracy built atop it; a genuine positive (first 120MW solar plant, Dec 2025) credited alongside the 2024 re-election held after jailing nearly all opposition | **done — iteration 1** |
 | CIV | Cote d'Ivoire | fills West Africa (12 of 16 done); a deliberate cross-reference with BFA -- French administrators dissolved Upper Volta partly to formalise its population as captive labour for Cote d'Ivoire's plantations, the same arrangement ivoirité later weaponised against those labourers' own descendants; a distinct international-intervention mechanism -- France's own Licorne mission acted directly, not through a regional bloc, to remove Gbagbo and install Ouattara in 2011; Ouattara's October 2025 fourth term (89.8%) came after barring Gbagbo (a domestic conviction surviving ICC acquittal) and Thiam (a 1987 citizenship technicality); a genuine positive (new $235M cocoa processing plant) credited alongside the exclusions | **done — iteration 1** |
 | ZMB | Zambia | fills East Africa (11 of 14 done); a genuine positive counterweight after a run of severe recent records -- the first sub-Saharan African country to achieve a peaceful electoral transfer of power (1991) and repeated it in 2021, completing a genuine debt-restructuring achievement in June 2024 after 2020's historic default; an eighth distinct resource-governance case (copper); Pillar F confirms a second genuine hydropower case after LSO; researched two days before a 13 August 2026 election, reported factually without a result since none existed yet; a severe negative (Feb 2025 Sino-Metals acid-spill disaster) and an unresolved mixed item (Lungu's still-unresolved burial dispute) round out the balance | **done — iteration 1** |
+| SEN | Senegal | fills West Africa (13 of 16 done); a reliable-tier composite score, joining ZAF/KEN/EGY as the corpus's non-thin countries; a genuinely distinct trajectory shape -- a term-limit crisis resolved through domestic courts and civic pressure, not a coup or entrenchment, when Sall's Feb 2024 postponement was overturned and Faye rose from prison to the presidency in 20 days; the same reform government fractured just over two years later when Faye fired his own mentor Sonko as PM in May 2026; a genuine boom (Sangomar oil field) arriving alongside a genuine crisis (a hidden-debt scandal revealing $7-13B concealed); a distinctive colonial mechanism -- the Quatre Communes' partial citizenship rights, not uniform exclusion | **done — iteration 1** |
 
-### Backlog — the remaining 12
+### Backlog — the remaining 11
 
 Listed in full in `narrative/state.yaml` under `backlog`. They are recorded
 explicitly rather than left implicit: a country with no record should be visibly
 absent, not quietly missing.
 
-Libya, Benin, Cabo Verde, Guinea-Bissau, Senegal, Republic of Congo, Gabon, Djibouti, Malawi, Tanzania, Eswatini, Seychelles
+Libya, Benin, Cabo Verde, Guinea-Bissau, Republic of Congo, Gabon, Djibouti, Malawi, Tanzania, Eswatini, Seychelles
 
 ---
 
@@ -1499,6 +1500,44 @@ Append one line per run: date, country, mode, what changed, what was removed.
   bot-detection pattern) — 12/13 resolved. Full pytest suite: 106
   passed.
 
+- **2026-08-11 — SEN — CREATE. Thirty-fourth backlog country, fills
+  West Africa (13 of 16 done).** Full baseline built: historical
+  overview, colonial legacy (traces this record's institutional
+  resilience to a genuinely distinct colonial mechanism — the Quatre
+  Communes' partial 19th-century French citizenship rights, rather
+  than uniform exclusion, built an electoral tradition that plausibly
+  explains both the unusually peaceful 1960 transition and Senghor's
+  rare 1980 voluntary resignation), 4 key_periods, 6 pillar summaries
+  (Pillar C left empty — greyed at 2/8 measured), 3 primary + 1
+  extended recent items, 4 events, rec_membership (ECOWAS 1975
+  founding member, CEN-SAD 2000). 14 sources opened and verified: 7
+  Wikipedia, 6 news, 1 more Wikipedia for rec_membership. A
+  reliable-tier composite score (rank #9-13 across methods), joining
+  ZAF, KEN and EGY as the corpus's non-thin countries. A genuinely
+  distinct trajectory shape from anything else in the corpus: a
+  term-limit crisis resolved through domestic courts and civic
+  pressure rather than a coup, exclusion, or constitutional
+  entrenchment — Sall's Feb 2024 election-postponement attempt was
+  overturned by the Constitutional Council, and Bassirou Diomaye Faye
+  rose from prison to the presidency in 20 days. The same reform
+  government then fractured just over two years later: Faye fired his
+  own mentor Sonko as PM on 22 May 2026 amid a debt-crisis rift, and
+  Sonko's own party had him elected parliament speaker days later in
+  an apparent rebuke — kept as a distinct negative from the hidden-
+  debt scandal itself. A genuine boom (Sangomar oil field, 36.1M
+  barrels in 2025) arrived the same period as a genuine crisis (an
+  IMF-confirmed audit finding the previous government concealed
+  $7-13B in debt) — the oil item coded mixed rather than positive
+  since this record does not credit revenue-management achievements
+  the government has not yet demonstrated. Balance: 1 positive, 2
+  negative, 1 mixed. Flagged, not resolved: external sources suggest
+  Senegal withdrew from CEN-SAD in 2013 by not signing its revised
+  treaty, conflicting with the index's own current registry — matched
+  the registry per established practice, logged as a discrepancy for
+  a future EXPAND pass. Three word-count fixes (pillars.D/E/G, each
+  needing two attempts). `--links` passes 0 errors, 0 warnings —
+  14/14 resolved, a clean link check. Full pytest suite: 106 passed.
+
 ---
 
 ## Meta-notes
@@ -2248,6 +2287,25 @@ Things a future run should know about how to work, not about a specific country.
   election from the record. The EXPAND pass that eventually picks
   this record back up should treat recording the actual result as its
   first task, not an optional addition.
+- **2026-08-11** — SEN is the first corpus case of an external source
+  directly contradicting the index's own current registry for
+  rec_membership (Senegal's CEN-SAD status), rather than merely being
+  ambiguous or unconfirmed (as with several earlier join-year
+  searches). Resolved by matching the index's own COUNTRIES registry
+  and logging the discrepancy explicitly in next_action, consistent
+  with the project's rule that rec_membership must cross-validate
+  against the index's own data — but this is a genuinely different
+  case from an ambiguous search result, and worth distinguishing
+  explicitly in future LEDGER entries: "conflicts with the index" is a
+  stronger and more actionable flag than "couldn't find an exact
+  year." Also worth naming as its own pattern: SEN is now the second
+  case (after MDG's CAPSAT/2009 coup) of a positive democratic story
+  immediately complicated by a later rupture discovered in the same
+  research pass — Faye's own government fracturing within the same
+  run that credits his 2024 rise. Worth resisting the temptation to
+  write the positive half first and treat the rupture as an
+  afterthought; both were given full standing as separate recent
+  items here.
 
 ---
 

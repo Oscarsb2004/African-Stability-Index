@@ -920,6 +920,39 @@ countries:
       compensation, and whether the Kafue River''s contamination eases;
       check whether Pillars E/G regional-mean indicators gain fresh
       coverage; check if Pillar C has gained coverage'
+  SEN:
+    name: Senegal
+    region: West
+    first_pass: false
+    reason: thirty-fourth backlog country -- fills West Africa (13 of
+      16 done); a reliable-tier composite score (rank 9th-13th across
+      methods, joining ZAF, KEN, EGY as the corpus''s non-thin
+      countries); a genuinely distinct trajectory shape from anything
+      else in the corpus -- a term-limit crisis resolved through
+      domestic courts and civic pressure rather than a coup, exclusion,
+      or constitutional entrenchment, when Sall''s Feb 2024 election
+      postponement was overturned and Bassirou Diomaye Faye rose from
+      prison to the presidency in 20 days; the same reform government
+      then fractured just over two years later when Faye fired his own
+      mentor Sonko as PM in May 2026; a genuine boom (Sangomar oil
+      field) arriving the same period as a genuine crisis (a hidden-
+      debt scandal revealing the previous government concealed
+      $7-13B); a distinctive colonial mechanism -- the Quatre
+      Communes'' partial 19th-century citizenship rights, rather than
+      uniform exclusion, plausibly explain both the unusually peaceful
+      1960 transition and Senghor''s rare 1980 voluntary resignation
+    iteration_count: 1
+    last_updated: '2026-08-11'
+    next_action: 'EXPAND: follow whether the Faye-Sonko split deepens
+      further or is patched over before it threatens the IMF
+      programme; follow whether the hidden-debt accountability process
+      produces any prosecution of former Sall-government officials;
+      follow whether Sangomar/GTA revenue materially improves Pillar
+      F''s fossil-heavy domestic electricity generation; check the
+      external claim that Senegal withdrew from CEN-SAD in 2013 by not
+      signing its revised treaty, which conflicts with the index''s
+      own current registry -- flagged, not resolved; check if Pillar C
+      has gained coverage'
 backlog:
   LBY:
     name: Libya
@@ -947,14 +980,6 @@ backlog:
     next_action: create baseline from blueprint
   GNB:
     name: Guinea-Bissau
-    region: West
-    first_pass: false
-    reason: not yet scheduled
-    iteration_count: 0
-    last_updated: null
-    next_action: create baseline from blueprint
-  SEN:
-    name: Senegal
     region: West
     first_pass: false
     reason: not yet scheduled
@@ -2259,3 +2284,42 @@ meta_notes:
   suite: 106 passed. Full-corpus check: 0 errors, 2 pre-existing
   warnings (COD, EGY all-negative balance, unrelated to this run). 42
   of 54 countries now have a record.'
+- '2026-08-11: SEN CREATE run complete (14 sources opened and
+  verified: 7 Wikipedia, 6 news, 1 more Wikipedia for rec_membership).
+  Fills West Africa (13 of 16 done after this run). A reliable-tier
+  composite score (rank #9-13 across methods), joining ZAF, KEN and
+  EGY as the corpus''s non-thin countries. A genuinely distinct
+  trajectory shape from anything else in the corpus: a term-limit
+  crisis resolved through domestic courts and civic pressure rather
+  than a coup, exclusion, or constitutional entrenchment -- Sall''s
+  Feb 2024 election-postponement attempt was overturned by the
+  Constitutional Council, and Bassirou Diomaye Faye rose from prison
+  to the presidency in 20 days. colonial_legacy traces this
+  institutional resilience to a genuinely distinct colonial mechanism:
+  the Quatre Communes'' partial 19th-century French citizenship rights
+  (rather than uniform exclusion) built an electoral tradition that
+  plausibly explains both the unusually peaceful 1960 transition and
+  Senghor''s rare 1980 voluntary resignation. The same 2024 reform
+  government then fractured just over two years later: Faye fired his
+  own mentor Sonko as PM on 22 May 2026 amid a debt-crisis rift, and
+  Sonko''s own party had him elected parliament speaker days later in
+  an apparent rebuke, refusing to join the new government -- kept as a
+  distinct negative from the hidden-debt scandal itself (a discovery
+  about the previous government vs. a rupture within the current one).
+  A genuine boom (Sangomar oil field, 36.1M barrels in 2025) arrived
+  the same period as a genuine crisis (an IMF-confirmed audit finding
+  the previous government concealed $7-13B in debt, pushing real debt
+  above 130% of GDP) -- the oil item coded mixed rather than positive
+  since this record does not credit revenue-management achievements
+  the government has not yet demonstrated. Balance: 1 positive, 2
+  negative, 1 mixed. Flagged, not resolved: external sources suggest
+  Senegal withdrew from CEN-SAD in 2013 by not signing its revised
+  treaty, conflicting with the index''s own current registry --
+  matched the index registry per established practice, logged as a
+  discrepancy for a future EXPAND pass rather than silently resolved
+  either way. Three word-count fixes (pillars.D/E/G, each needing two
+  attempts). `--links` passes 0 errors, 0 warnings -- 14/14 resolved,
+  a clean link check. Full pytest suite: 106 passed. Full-corpus
+  check: 0 errors, 2 pre-existing warnings (COD, EGY all-negative
+  balance, unrelated to this run). 43 of 54 countries now have a
+  record.'
