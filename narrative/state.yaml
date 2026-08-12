@@ -1103,15 +1103,37 @@ countries:
       and Cotonou''s cargo growth continue at their 2025-2026 pace;
       check whether Pillars D/F/G weak indicators gain fresh coverage;
       check if Pillar C has gained coverage'
-backlog:
   LBY:
     name: Libya
     region: North
     first_pass: false
-    reason: not yet scheduled
-    iteration_count: 0
-    last_updated: null
-    next_action: create baseline from blueprint
+    reason: fortieth backlog country -- completes North Africa (6 of
+      6 done); a settler-colony mechanism distinct from most of the
+      corpus -- Italy''s Cyrenaica pacification (1923-1932) under
+      Marshal Graziani interned over 100,000 Cyrenaicans in
+      concentration camps and killed an estimated 50,000-100,000
+      people specifically to clear land for Italian settlers, one of
+      Africa''s most violent colonial campaigns; Libya was the first
+      country to gain independence via UN resolution rather than
+      direct colonial negotiation (1951); Pillar F (1.6) is now the
+      lowest single-pillar score recorded anywhere in this corpus,
+      surpassing EGY''s prior record -- freshwater withdrawal over
+      817% of internal renewable resources; a genuine positive (first
+      unified national budget since 2013, April 2026) credited
+      alongside a UN report documenting systematic state-linked
+      migrant trafficking and an oil-refinery shutdown from armed
+      clashes
+    iteration_count: 1
+    last_updated: '2026-08-11'
+    next_action: 'EXPAND: follow whether the April 2026 unified
+      budget produces any further institutional unification, or
+      remains a standalone fiscal deal between rival family networks;
+      follow whether the UN''s three-track roadmap produces an actual
+      election date; follow whether the OHCHR migrant-abuse findings
+      produce any accountability process; check whether Pillars A/E/F
+      fresh indicators show any improvement; check if Pillar C has
+      gained coverage'
+backlog:
   CPV:
     name: Cabo Verde
     region: West
@@ -2606,3 +2628,37 @@ meta_notes:
   passed. Full-corpus check: 0 errors, 2 pre-existing warnings (COD,
   EGY all-negative balance, unrelated to this run). 48 of 54 countries
   now have a record.'
+- '2026-08-11: LBY CREATE run complete (14 sources opened and
+  verified: 5 Wikipedia, 6 news, 2 official (OHCHR, UN News), 1 more
+  Wikipedia for rec_membership). Completes North Africa (6 of 6 done).
+  colonial_legacy documents a settler-colony mechanism distinct from
+  most of this corpus: Italy''s Cyrenaica pacification (1923-1932)
+  under Marshal Graziani interned over 100,000 Cyrenaicans in
+  concentration camps and killed an estimated 50,000-100,000 people
+  specifically to clear land for Italian settlers, one of Africa''s
+  most violent colonial campaigns -- the schema entry itself lists
+  land, not a commodity, as the primary resource extracted, and the
+  record traces that distinction directly. Libya was the first
+  country to gain independence via UN resolution rather than direct
+  colonial negotiation (1951). New corpus superlative: Pillar F (1.6)
+  is now the lowest single-pillar score recorded anywhere in this
+  corpus, surpassing EGY''s prior record -- freshwater withdrawal over
+  817% of internal renewable resources, sustained almost entirely by
+  non-renewable fossil aquifers. Following the established
+  discipline, found a genuine positive: Libya''s two rival governments
+  approved their first unified national budget since 2013 in April
+  2026 (~$30B), credited at full weight as a concrete institutional
+  step, alongside a February 2026 UN report documenting systematic
+  state-linked migrant trafficking and a May 2026 armed-clash shutdown
+  of the Zawiya oil refinery -- kept as two distinct negatives since
+  they document different domains (human trafficking vs. infrastructure
+  security). Balance: 1 positive, 2 negative, 1 mixed. Three word-count
+  fixes (one key_period, pillars.E/G), each resolved by adding real
+  cross-pillar facts. One citation swap: a comesa.int URL returned a
+  genuine URLError timeout under `--links` (the fifth such timeout
+  case in this corpus, after MDG, GMB, STP, SWZ); replaced with the
+  Wikipedia COMESA page, which resolved cleanly. `--links` then passed
+  0 errors, 0 warnings -- 14/14 resolved, a clean link check. Full
+  pytest suite: 106 passed. Full-corpus check: 0 errors, 2 pre-existing
+  warnings (COD, EGY all-negative balance, unrelated to this run). 49
+  of 54 countries now have a record.'

@@ -26,7 +26,7 @@ An audit is forced early if a single run inflates the citation count by more tha
 
 ## Status
 
-**48 of 54 countries have a record (Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria, Rwanda, Chad, Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic, Mauritania, Zimbabwe, Comoros, Uganda, Sierra Leone, Equatorial Guinea, The Gambia, Mozambique, Guinea, South Sudan, Lesotho, Sao Tome & Principe, Togo, Cameroon, Burundi, Tunisia, Cote d'Ivoire, Zambia, Senegal, Gabon, Malawi, Eswatini, Seychelles, Benin). The first pass is complete; Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic, Mauritania, Zimbabwe, Comoros, Uganda, Sierra Leone, Equatorial Guinea, The Gambia, Mozambique, Guinea, South Sudan, Lesotho, Sao Tome & Principe, Togo, Cameroon, Burundi, Tunisia, Cote d'Ivoire, Zambia, Senegal, Gabon, Malawi, Eswatini, Seychelles and Benin are the first thirty-nine backlog countries.**
+**49 of 54 countries have a record (Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria, Rwanda, Chad, Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic, Mauritania, Zimbabwe, Comoros, Uganda, Sierra Leone, Equatorial Guinea, The Gambia, Mozambique, Guinea, South Sudan, Lesotho, Sao Tome & Principe, Togo, Cameroon, Burundi, Tunisia, Cote d'Ivoire, Zambia, Senegal, Gabon, Malawi, Eswatini, Seychelles, Benin, Libya). The first pass is complete; Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic, Mauritania, Zimbabwe, Comoros, Uganda, Sierra Leone, Equatorial Guinea, The Gambia, Mozambique, Guinea, South Sudan, Lesotho, Sao Tome & Principe, Togo, Cameroon, Burundi, Tunisia, Cote d'Ivoire, Zambia, Senegal, Gabon, Malawi, Eswatini, Seychelles, Benin and Libya are the first forty backlog countries.**
 
 ### First pass — 9 countries
 
@@ -90,14 +90,15 @@ whose ranks swing hardest with the weighting method.
 | SWZ | Eswatini | completes Southern Africa (5 of 5 done); genuinely unique in this corpus -- Africa's last absolute monarchy, unrepresented anywhere else among the countries done so far; a deliberate triangular cross-reference with BWA and LSO -- all three were British High Commission Territories with an identical colonial arrangement, yet took the most sharply divergent post-independence paths of any comparable group, traced to Sobhuza II's specific 1973 choice to repeal the Westminster constitution rather than a colonial-structure difference; a genuine positive (95-95-95 HIV achievement) on the same standard as BWA/LSO's own HIV milestones, credited despite an ongoing accountability failure for the June 2021 crackdown that killed at least 46 protesters | **done — iteration 1** |
 | SYC | Seychelles | completes the Islands region (5 of 5 done); ranks #2-3 across composite methods, among the corpus's very strongest records, though the schema's own note flags that comparisons with continental Africa are methodologically problematic given its tiny population and island insularity; two genuine peaceful transfers of power since 1993 (2020, 2025); the world's first sovereign debt-for-nature swap (2016-2018); the corpus's most striking discipline catch -- the world's highest heroin addiction rate (~10% of the working-age population) sits entirely underneath an otherwise exceptional composite score, credited at full negative weight rather than let the strong aggregate imply no severe crisis exists | **done — iteration 1** |
 | BEN | Benin | fills West Africa (14 of 16 done); a genuinely two-sided colonial history the schema states plainly -- the Kingdom of Dahomey was itself a major slave-trading state before French conquest, and Behanzin surrendered in 1894 at Ouidah, the same port his kingdom's slave trade had passed through; the pioneering 1990 National Conference (Africa's first) set the template other Francophone states copied; researched immediately after surviving a December 2025 coup attempt, with Talon genuinely honouring his own two-term limit in May 2026 -- a real departure from TGO/CMR/GAB -- but succeeded by his own finance minister in an election the opposition was structurally excluded from entirely | **done — iteration 1** |
+| LBY | Libya | completes North Africa (6 of 6 done); a settler-colony mechanism distinct from most of the corpus -- Italy's Cyrenaica pacification (1923-1932) interned over 100,000 Cyrenaicans and killed an estimated 50,000-100,000 people specifically to clear land for Italian settlers, one of Africa's most violent colonial campaigns; the first country to gain independence via UN resolution (1951); Pillar F (1.6) is now the lowest single-pillar score recorded anywhere in this corpus, surpassing EGY's prior record; a genuine positive (first unified national budget since 2013, April 2026) credited alongside a UN report documenting systematic state-linked migrant trafficking and an oil-refinery shutdown from armed clashes | **done — iteration 1** |
 
-### Backlog — the remaining 6
+### Backlog — the remaining 5
 
 Listed in full in `narrative/state.yaml` under `backlog`. They are recorded
 explicitly rather than left implicit: a country with no record should be visibly
 absent, not quietly missing.
 
-Libya, Cabo Verde, Guinea-Bissau, Republic of Congo, Djibouti, Tanzania
+Cabo Verde, Guinea-Bissau, Republic of Congo, Djibouti, Tanzania
 
 ---
 
@@ -1722,6 +1723,43 @@ Append one line per run: date, country, mode, what changed, what was removed.
   bot-detection pattern) — 11/12 resolved. Full pytest suite: 106
   passed.
 
+- **2026-08-11 — LBY — CREATE. Fortieth backlog country, completes
+  North Africa (6 of 6 done).** Full baseline built: historical
+  overview, colonial legacy (documents a settler-colony mechanism
+  distinct from most of this corpus — Italy's Cyrenaica pacification
+  under Marshal Graziani interned over 100,000 Cyrenaicans in
+  concentration camps and killed an estimated 50,000-100,000 people
+  specifically to clear land for Italian settlers, one of Africa's
+  most violent colonial campaigns; the schema entry itself lists land,
+  not a commodity, as the primary resource extracted, and the record
+  traces that distinction directly), 4 key_periods, 6 pillar summaries
+  (Pillar C left empty — greyed at 1/8 measured), 3 primary + 1
+  extended recent items, 4 events, rec_membership (UMA 1989 founding
+  member, COMESA 2005, CEN-SAD 1998 founding member — Tripoli hosted
+  CEN-SAD's own founding). 14 sources opened and verified: 5
+  Wikipedia, 6 news, 2 official (OHCHR, UN News), 1 more Wikipedia for
+  rec_membership. Libya was the first country to gain independence via
+  UN resolution rather than direct colonial negotiation (1951). New
+  corpus superlative: Pillar F (1.6) is now the lowest single-pillar
+  score recorded anywhere in this corpus, surpassing EGY's prior
+  record — freshwater withdrawal over 817% of internal renewable
+  resources, sustained almost entirely by non-renewable fossil
+  aquifers. Following the established discipline, found a genuine
+  positive: Libya's two rival governments approved their first
+  unified national budget since 2013 in April 2026 (~$30B), credited
+  at full weight as a concrete institutional step, alongside a
+  February 2026 UN report documenting systematic state-linked migrant
+  trafficking and a May 2026 armed-clash shutdown of the Zawiya oil
+  refinery — kept as two distinct negatives since they document
+  different domains. Balance: 1 positive, 2 negative, 1 mixed. Three
+  word-count fixes (one key_period, pillars.E/G), each resolved by
+  adding real cross-pillar facts. One citation swap: a comesa.int URL
+  returned a genuine URLError timeout under `--links` (the fifth such
+  timeout case in this corpus, after MDG, GMB, STP, SWZ); replaced
+  with the Wikipedia COMESA page, which resolved cleanly. `--links`
+  then passed 0 errors, 0 warnings — 14/14 resolved, a clean link
+  check. Full pytest suite: 106 passed.
+
 ---
 
 ## Meta-notes
@@ -2565,6 +2603,21 @@ Things a future run should know about how to work, not about a specific country.
   what was done to it — worth treating as its own honesty-in-sourcing
   discipline: don't soften a schema entry's own plain statement into a
   simpler victim narrative during drafting.
+- **2026-08-11** — LBY completes North Africa and confirms the
+  "record-breaking pillar score" discipline is worth checking
+  proactively, not just noticing by accident: this record explicitly
+  checked whether Pillar F's 1.6 beat EGY's previously-documented 8.7
+  record-low before asserting the superlative, the same discipline
+  used for SSD's food-insecurity and displacement superlatives against
+  CAF's prior records. Worth formalizing as a standing step for any
+  future extreme-looking pillar score: before calling something a
+  corpus record, check the specific prior record-holder's exact figure
+  from its own LEDGER entry, not from memory. Also: LBY is the fifth
+  citation-timeout case in the corpus (after MDG, GMB, STP, SWZ), all
+  five now resolved by a second-source swap — this pattern is
+  established enough that future runs should treat a timeout as
+  routine, not alarming, and move directly to finding an alternate
+  source rather than re-attempting the same URL.
 
 ---
 

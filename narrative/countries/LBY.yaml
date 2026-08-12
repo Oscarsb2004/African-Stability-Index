@@ -1,0 +1,459 @@
+meta:
+  iso3: LBY
+  name: Libya
+  last_updated: 2026-08-11
+  iteration_count: 1
+  next_action: >
+    EXPAND: (1) follow whether the April 2026 unified budget produces
+    any further institutional unification, or remains a standalone
+    fiscal deal between rival family networks; (2) follow whether the
+    UN's three-track roadmap produces an actual election date; (3)
+    follow whether the OHCHR migrant-abuse findings produce any
+    accountability process; (4) check whether Pillars A/E/F fresh
+    indicators show any improvement; (5) check if Pillar C has gained
+    coverage.
+  model_used: claude-sonnet-5
+
+historical:
+  overview: >
+    Italy invaded Ottoman Libya in 1911, and after a fierce resistance
+    movement led in Cyrenaica by Sheikh Omar al-Mukhtar, waged one of
+    the most violent colonial campaigns in Africa: under Marshal
+    Rodolfo Graziani, Italian forces built concentration camps that
+    interned over 100,000 Cyrenaicans, and an estimated 50,000-100,000
+    Libyans died from violence, starvation and disease between 1923
+    and 1932. Mukhtar himself was captured and hanged at the Soluch
+    concentration camp on 16 September 1931. The United Nations
+    granted Libya independence in 1951 under King Idris, making it the
+    first country to achieve independence through the UN rather than
+    direct negotiation with a colonial power. Oil was discovered in
+    1959, and Colonel Muammar Gaddafi's 1969 coup nationalised its
+    revenues to fund a 42-year rule built around his idiosyncratic
+    "Jamahiriya" system of direct popular congresses without political
+    parties. A 2011 uprising, backed by NATO airstrikes, ended
+    Gaddafi's rule and his life, but Libya has remained divided ever
+    since between rival power centres: a UN-recognised Government of
+    National Unity in Tripoli, and an eastern-based Government of
+    National Stability backed by Khalifa Haftar's Libyan National
+    Army. In April 2026, the two sides approved Libya's first unified
+    national budget since 2013, a roughly $30 billion agreement
+    brokered partly by the United States, even as the underlying
+    political dispute over how to hold long-promised national
+    elections remained unresolved.
+  overview_citations: [c1, c2, c3, c4, c5, c8]
+  colonial_legacy: >
+    context/colonial_history.yaml already names the Cyrenaica
+    pacification as one of Africa's most violent colonial campaigns
+    and argues that Libya's post-2011 collapse reflects both an
+    absence of institutions and a tribal fragmentation colonialism
+    intensified. Worth stating the mechanism directly: Italy's
+    colonial project in Libya was explicitly a settler colony, not
+    merely an extractive one -- the schema entry lists land itself, not
+    a specific commodity, as the primary resource extracted, because
+    the goal was to displace Libyans from Cyrenaica's most fertile
+    land and resettle Italian farmers there. The concentration-camp
+    system Graziani built between 1929 and 1934 was the direct
+    mechanism for that displacement, not incidental to it: Cyrenaicans
+    were removed from their land specifically so it could be given to
+    Italian settlers, and roughly half the Cyrenaican population was
+    interned in the process. Libya's independence in 1951 inherited a
+    territory whose Ottoman-era and Sanussi tribal and regional
+    structures Italy had spent four decades violently disrupting
+    rather than governing through, leaving post-independence Libya
+    with unusually little indigenous administrative continuity to
+    build on -- a specific, traceable root of the institutional vacuum
+    this record's Pillar A documents as severely as anywhere in this
+    corpus.
+  colonial_legacy_citations: [c1, c2]
+  key_periods:
+    - title: "The Cyrenaica pacification"
+      period: "1911-1932"
+      summary: >
+        Italy invaded Ottoman Libya in 1911, and after resistance led
+        by Sheikh Omar al-Mukhtar in Cyrenaica, waged one of the most
+        violent colonial campaigns in Africa under Marshal Rodolfo
+        Graziani. Italian forces built concentration camps interning
+        over 100,000 Cyrenaicans between 1929 and 1934, and an
+        estimated 50,000-100,000 Libyans died. Mukhtar was captured
+        and hanged in September 1931.
+      citations: [c1, c2]
+    - title: "UN-granted independence and Gaddafi's rise"
+      period: "1951-1969"
+      summary: >
+        The United Nations granted Libya independence in 1951 under
+        King Idris, the first country to achieve independence through
+        the UN rather than direct negotiation with a colonial power.
+        Oil was discovered in 1959, and Colonel Muammar Gaddafi's 1969
+        coup nationalised its revenues to fund a 42-year rule built
+        around his "Jamahiriya" system of direct popular congresses
+        without political parties.
+      citations: [c3]
+    - title: "The 2011 uprising and Gaddafi's fall"
+      period: "2011"
+      summary: >
+        A 2011 popular uprising, backed by NATO airstrikes under a UN
+        Security Council mandate, ended Gaddafi's 42-year rule and his
+        life, but produced no functioning successor state, beginning
+        more than a decade of intermittent civil war and territorial
+        division that has persisted into the present day.
+      citations: [c4]
+    - title: "Division between rival governments and the 2026 unified budget"
+      period: "2014-2026"
+      summary: >
+        Libya has been split since 2014 between a UN-recognised
+        Government of National Unity in Tripoli and an eastern-based
+        government backed by Khalifa Haftar's Libyan National Army. In
+        April 2026, the two sides approved Libya's first unified
+        national budget since 2013, though the underlying dispute over
+        holding national elections remained unresolved.
+      citations: [c5, c8]
+
+pillars:
+  A:
+    summary: >
+      All six World Governance Indicators are directly measured this
+      year, and the aggregate is Libya's weakest pillar by a wide
+      margin -- Political Stability (23.3) and Control of Corruption
+      (11.0), near the scale's absolute floor, are among the most
+      severe readings recorded anywhere in this corpus. That severity
+      reflects a country still split between two rival governments
+      nearly fifteen years after Gaddafi's fall: a UN-recognised
+      Government of National Unity in Tripoli and a rival Government
+      of National Stability in the east, backed by Khalifa Haftar's
+      self-styled Libyan National Army, neither able to hold the
+      national elections both sides have repeatedly promised.
+    drivers:
+      - "all 6 WGI indicators directly measured; Political Stability (23.3) and Control of Corruption (11.0), near the scale's absolute floor, among the most severe readings recorded anywhere in this corpus"
+      - "a country still split between two rival governments nearly 15 years after Gaddafi's fall: the UN-recognised GNU in Tripoli, and the rival GNS in the east backed by Haftar's LNA"
+      - "neither government has been able to hold the national elections both sides have repeatedly promised (see recent developments)"
+    citations: [c5, c8]
+  B:
+    summary: >
+      GDP growth, GDP per capita, inflation and domestic credit, all
+      freshly measured, are comparatively strong for this corpus --
+      GDP growth (85.4) is exceptionally high, reflecting
+      oil-production volatility rather than broad-based development.
+      Gini is entirely unmeasured this year. This pillar's 2023
+      reference year predates a genuine, concrete step toward
+      reunification documented under recent developments: Libya's two
+      rival governments approved their first unified national budget
+      since 2013 in April 2026, a roughly $30 billion agreement
+      brokered in part by the United States.
+    drivers:
+      - "GDP growth, GDP per capita, inflation, domestic credit all fresh, comparatively strong for this corpus; GDP growth (85.4) exceptionally high, reflecting oil-production volatility rather than broad development"
+      - "Gini entirely unmeasured this year"
+      - "2023 reference year predates a genuine step toward reunification: Libya's two rival governments approved their first unified national budget since 2013 in April 2026, ~$30B, brokered in part by the US (see recent developments)"
+    citations: [c8]
+  D:
+    summary: >
+      Four of five indicators are directly measured this year, and the
+      aggregate is Libya's strongest pillar: handwashing-facility
+      access, at 95.59% of the population, is at the scale's
+      near-ceiling. Life expectancy and infant mortality are both
+      comparatively strong. Severe food insecurity is more middling.
+      Safely managed drinking water, the pillar's only regional-mean
+      estimate, is comparatively strong regardless. Four of the
+      pillar's five indicators are current, describing a health and
+      sanitation infrastructure legacy that has survived the political
+      collapse documented in Pillar A.
+    drivers:
+      - "4 of 5 indicators directly measured; handwashing-facility access 95.59% of the population -- at the scale's near-ceiling"
+      - "life expectancy and infant mortality both comparatively strong; severe food insecurity more middling"
+      - "safely managed drinking water comparatively strong (regional-mean estimate); 4 of 5 indicators current -- health/sanitation infrastructure that has survived the political collapse documented in Pillar A"
+    citations: [c1]
+  E:
+    summary: >
+      Displaced persons, at 16.29 per 1,000 and directly measured, is
+      severe, a direct consequence of over a decade of intermittent
+      civil war. Political Stability and Rule of Law, both fresh and
+      shared with Pillar A, are among the most severe readings
+      recorded anywhere in this corpus. Intentional homicide,
+      estimated from regional peers rather than measured directly, is
+      comparatively more middling. Three of the pillar's four
+      indicators are current, capturing real, ongoing instability
+      rather than a data-coverage artefact, consistent with the
+      territorial division documented in Pillar A.
+    drivers:
+      - "displaced persons 16.29/1,000 (fresh, directly measured) -- severe, a direct consequence of over a decade of intermittent civil war"
+      - "Political Stability and Rule of Law (shared with Pillar A) among the most severe readings recorded anywhere in this corpus, fresh"
+      - "intentional homicide more middling (regional-mean estimate); 3 of 4 indicators current -- real, ongoing instability, not a data-coverage artefact"
+    citations: [c5]
+  F:
+    summary: >
+      This is the weakest single pillar recorded anywhere in this
+      corpus, surpassing even Egypt's own record-low Pillar F
+      documented elsewhere: annual freshwater withdrawal, carried
+      forward, stands at more than 817% of internal renewable
+      resources, meaning Libya draws over eight times more water each
+      year than its own renewable supply can provide, sustained almost
+      entirely by non-renewable fossil aquifers. CO2 emissions per
+      capita, freshly measured, score at the scale's absolute floor.
+      Electricity generation from fossil sources, also carried
+      forward, is essentially total at 99.97%. Agricultural land
+      share, fresh, is minimal, reflecting Libya's overwhelmingly
+      desert terrain. Only two of the pillar's four indicators are
+      current.
+    drivers:
+      - "the weakest single pillar recorded anywhere in this corpus, surpassing EGY's own prior record-low Pillar F"
+      - "freshwater withdrawal over 817% of internal renewable resources (carried forward) -- Libya draws over 8x its renewable water supply, sustained almost entirely by non-renewable fossil aquifers"
+      - "CO2 pc at the scale's absolute floor (fresh); electricity generation essentially total fossil-fuel, 99.97% (carried forward); agricultural land minimal (fresh, desert terrain); only 2 of 4 indicators current"
+    citations: [c1]
+  G:
+    summary: >
+      Electricity access, at 73% of the population and freshly
+      measured, is comparatively decent for this corpus. Basic
+      drinking water access, also fresh, is comparatively strong.
+      Government Effectiveness and Control of Corruption, shared with
+      Pillar A, are both near the scale's floor. Social protection
+      coverage is entirely unmeasured this year. Four of the pillar's
+      five indicators are current, describing infrastructure reach
+      that has held up better than the governance collapse documented
+      in Pillar A would suggest, echoing Pillar D's own resilient
+      health infrastructure.
+    drivers:
+      - "electricity access 73% of the population (fresh) -- comparatively decent for this corpus; basic drinking water comparatively strong (fresh)"
+      - "Government Effectiveness and Control of Corruption (shared with Pillar A) both near the scale's floor; social protection entirely unmeasured"
+      - "4 of 5 indicators current -- infrastructure reach has held up better than the governance collapse documented in Pillar A would suggest"
+    citations: [c1]
+
+recent:
+  primary:
+    - headline: "UN report documents 'systematic' abuse of migrants as a 'violent business model'"
+      date: 2026-02-01
+      summary: >
+        A UN Human Rights Office report published in February 2026,
+        covering January 2024 to December 2025, documented systematic
+        violations against migrants, asylum-seekers and refugees in
+        Libya, describing an exploitative model in which
+        government-affiliated armed groups and detention-centre
+        officials profit from trafficking, sexual exploitation, forced
+        labour, ransom and extortion. The report found government
+        officials had colluded with criminal smuggling networks rather
+        than only failing to stop them.
+      why_it_matters: >
+        Directly explains the severity of Pillar A's governance scores
+        and demonstrates that state fragmentation has produced not
+        merely an absence of authority but active state involvement in
+        exploitation, a distinction this record states plainly rather
+        than blur.
+      news_url: "https://www.ohchr.org/en/stories/2026/02/libya-pattern-systematic-human-rights-violations-and-abuses-against-migrants"
+      wikipedia_url: "https://en.wikipedia.org/wiki/Detention_centres_in_Libya"
+      sentiment: negative
+    - headline: "Rival governments approve Libya's first unified national budget since 2013"
+      date: 2026-04-11
+      summary: >
+        Libya's two rival governments approved the country's first
+        unified national budget on 11 April 2026, worth nearly 190
+        billion Libyan dinars (roughly $30 billion). The agreement was
+        brokered primarily between Ibrahim Dbeibah, nephew of
+        Tripoli-based Prime Minister Abdul-Hamid Dbeibah, and Saddam
+        Haftar, son and presumed successor of eastern military
+        commander Khalifa Haftar, with US diplomatic support.
+      why_it_matters: >
+        A concrete, verifiable step toward institutional reunification
+        after more than a decade of division, though brokered between
+        the same rival power centres' own family networks rather than
+        through the broader national elections both sides have
+        repeatedly postponed.
+      news_url: "https://www.securitycouncilreport.org/monthly-forecast/2026-04/libya-66.php"
+      wikipedia_url: ""
+      sentiment: positive
+    - headline: "Armed clashes briefly shut down Libya's largest oil refinery"
+      date: 2026-05-08
+      summary: >
+        Fighting between GNU-affiliated state security forces and
+        local armed groups near the Zawiya refinery, Libya's largest,
+        forced a temporary shutdown on 8 May 2026 after heavy-calibre
+        shells struck the facility and surrounding civilian areas. The
+        refinery resumed full operations two days later without major
+        structural damage.
+      why_it_matters: >
+        A concrete illustration of how the same territorial
+        fragmentation documented in Pillar A directly threatens the
+        oil infrastructure Pillar B's comparatively strong economic
+        scores depend on.
+      news_url: "https://www.aljazeera.com/news/2026/5/8/libyas-largest-oil-refinery-halts-operations-during-fighting"
+      wikipedia_url: ""
+      sentiment: negative
+  extended:
+    - headline: "UN political roadmap for elections remains stalled despite 'renewed but fragile momentum'"
+      date: 2026-06-09
+      summary: >
+        The United Nations Support Mission in Libya's three-track
+        roadmap -- covering an electoral framework, institutional
+        unification, and a national dialogue -- showed only limited
+        progress through mid-2026, according to UN Security Council
+        briefings describing "renewed but fragile momentum." The two
+        sides remain deadlocked specifically over whether a unified
+        interim government should be formed before elections are held,
+        a dispute unresolved since the process began.
+      why_it_matters: >
+        The structural political question underlying every other item
+        in this record: without an agreed path to elections,
+        achievements like the unified budget remain partial fixes
+        rather than a resolution to the underlying division.
+      news_url: "https://www.securitycouncilreport.org/monthly-forecast/2026-06/libya-68.php"
+      wikipedia_url: ""
+      sentiment: mixed
+
+events:
+  - year: 1931
+    type: conflict
+    title: "Omar Mukhtar executed"
+    description: >
+      Sheikh Omar al-Mukhtar, leader of Cyrenaica's resistance to
+      Italian colonization, was captured and hanged at the Soluch
+      concentration camp on 16 September 1931, near the end of a
+      campaign that killed an estimated 50,000-100,000 Libyans.
+    url: "https://en.wikipedia.org/wiki/Omar_Mukhtar"
+    direction: deteriorate
+  - year: 1951
+    type: independence
+    title: "UN grants Libya independence"
+    description: >
+      The United Nations granted Libya independence on 24 December
+      1951 under King Idris, the first country to achieve independence
+      through the UN rather than direct negotiation with a colonial
+      power.
+    url: "https://en.wikipedia.org/wiki/Muammar_Gaddafi"
+    direction: improve
+  - year: 1969
+    type: coup
+    title: "Gaddafi seizes power"
+    description: >
+      Colonel Muammar Gaddafi overthrew King Idris I in a coup on 1
+      September 1969, establishing the "Jamahiriya" system he ruled
+      under for the next 42 years.
+    url: "https://en.wikipedia.org/wiki/1969_Libyan_coup_d'%C3%A9tat"
+    direction: deteriorate
+  - year: 2011
+    type: conflict
+    title: "Uprising and NATO intervention end Gaddafi's rule"
+    description: >
+      A 2011 popular uprising, backed by NATO airstrikes under a UN
+      Security Council mandate, ended Gaddafi's 42-year rule and his
+      life, but left no functioning successor state, beginning more
+      than a decade of intermittent civil war.
+    url: "https://en.wikipedia.org/wiki/2011_military_intervention_in_Libya"
+    direction: mixed
+
+citations:
+  - id: c1
+    url: "https://libyanheritagehouse.org/the-pacification-of-cyrenaica-the-libyan-genocide"
+    source_type: news
+    title: "The Pacification of Cyrenaica: the Libyan Genocide (Libyan Heritage House)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c2
+    url: "https://en.wikipedia.org/wiki/Omar_Mukhtar"
+    source_type: wikipedia
+    title: "Omar Mukhtar"
+    accessed: 2026-08-11
+    verified: true
+  - id: c3
+    url: "https://en.wikipedia.org/wiki/1969_Libyan_coup_d'%C3%A9tat"
+    source_type: wikipedia
+    title: "1969 Libyan coup d'état"
+    accessed: 2026-08-11
+    verified: true
+  - id: c4
+    url: "https://en.wikipedia.org/wiki/2011_military_intervention_in_Libya"
+    source_type: wikipedia
+    title: "2011 military intervention in Libya"
+    accessed: 2026-08-11
+    verified: true
+  - id: c5
+    url: "https://mecouncil.org/publication/libya-trapped-between-internal-impasse-and-international-interference/"
+    source_type: news
+    title: "Libya: Trapped Between Internal Impasse and International Interference (Middle East Council on Global Affairs)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c6
+    url: "https://www.ohchr.org/en/stories/2026/02/libya-pattern-systematic-human-rights-violations-and-abuses-against-migrants"
+    source_type: official
+    title: "Libya: A pattern of systematic human rights violations and abuses against migrants (OHCHR)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c7
+    url: "https://news.un.org/en/story/2026/02/1166984"
+    source_type: official
+    title: "Migrants and refugees in Libya subjected to 'systematic' abuse: UN report (UN News)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c8
+    url: "https://www.securitycouncilreport.org/monthly-forecast/2026-04/libya-66.php"
+    source_type: news
+    title: "Libya, April 2026 Monthly Forecast (Security Council Report)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c9
+    url: "https://www.aljazeera.com/news/2026/5/8/libyas-largest-oil-refinery-halts-operations-during-fighting"
+    source_type: news
+    title: "Libya's largest oil refinery halts operations during fighting (Al Jazeera)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c10
+    url: "https://www.aljazeera.com/news/2026/5/10/libyas-zawiya-refinery-resumes-full-operations"
+    source_type: news
+    title: "Libya's Zawiya refinery resumes full operations (Al Jazeera)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c11
+    url: "https://www.securitycouncilreport.org/monthly-forecast/2026-06/libya-68.php"
+    source_type: news
+    title: "Libya, June 2026 Monthly Forecast (Security Council Report)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c12
+    url: "https://en.wikipedia.org/wiki/Arab_Maghreb_Union"
+    source_type: wikipedia
+    title: "Arab Maghreb Union"
+    accessed: 2026-08-11
+    verified: true
+  - id: c13
+    url: "https://en.wikipedia.org/wiki/Common_Market_for_Eastern_and_Southern_Africa"
+    source_type: official
+    title: "Common Market for Eastern and Southern Africa (Wikipedia)"
+    accessed: 2026-08-11
+    verified: true
+  - id: c14
+    url: "https://simple.wikipedia.org/wiki/Community_of_Sahel-Saharan_States"
+    source_type: wikipedia
+    title: "Community of Sahel-Saharan States"
+    accessed: 2026-08-11
+    verified: true
+
+rec_membership:
+  - org: UMA
+    joined: 1989
+    status: current
+    left: null
+    citations: [c12]
+  - org: COMESA
+    joined: 2005
+    status: current
+    left: null
+    citations: [c13]
+  - org: CEN-SAD
+    joined: 1998
+    status: current
+    left: null
+    citations: [c14]
+
+balance:
+  n_positive: 1
+  n_negative: 2
+  n_mixed: 1
+  note: >
+    The migrant-abuse report and the Zawiya refinery clashes are kept
+    as two distinct negatives rather than merged into one, because
+    they document different domains -- systematic human trafficking
+    with state involvement, and a specific armed clash threatening
+    critical infrastructure. The unified budget is credited at full
+    positive weight because it is a real, concrete institutional step,
+    not merely an announcement -- the same standard this corpus
+    applies to crediting a genuine achievement without waiting for a
+    complete resolution first. The UN roadmap's stalled status is
+    coded mixed rather than negative: the process itself continues and
+    described "fragile momentum," a genuinely uncertain state this
+    record does not resolve into either full progress or full failure.
