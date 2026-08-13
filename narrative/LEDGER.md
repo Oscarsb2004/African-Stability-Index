@@ -26,7 +26,7 @@ An audit is forced early if a single run inflates the citation count by more tha
 
 ## Status
 
-**53 of 54 countries have a record (Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria, Rwanda, Chad, Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic, Mauritania, Zimbabwe, Comoros, Uganda, Sierra Leone, Equatorial Guinea, The Gambia, Mozambique, Guinea, South Sudan, Lesotho, Sao Tome & Principe, Togo, Cameroon, Burundi, Tunisia, Cote d'Ivoire, Zambia, Senegal, Gabon, Malawi, Eswatini, Seychelles, Benin, Libya, Tanzania, Republic of Congo, Djibouti, Guinea-Bissau). The first pass is complete; Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic, Mauritania, Zimbabwe, Comoros, Uganda, Sierra Leone, Equatorial Guinea, The Gambia, Mozambique, Guinea, South Sudan, Lesotho, Sao Tome & Principe, Togo, Cameroon, Burundi, Tunisia, Cote d'Ivoire, Zambia, Senegal, Gabon, Malawi, Eswatini, Seychelles, Benin, Libya, Tanzania, Republic of Congo, Djibouti and Guinea-Bissau are the first forty-four backlog countries.**
+**54 of 54 countries have a record. The corpus is complete.** Mauritius, Ghana, Algeria, DR Congo, Somalia, Botswana, Nigeria, Rwanda, Chad, Angola, South Africa, Kenya, Egypt, Ethiopia, Sudan, Mali, Burkina Faso, Niger, Morocco, Madagascar, Namibia, Liberia, Eritrea, Central African Republic, Mauritania, Zimbabwe, Comoros, Uganda, Sierra Leone, Equatorial Guinea, The Gambia, Mozambique, Guinea, South Sudan, Lesotho, Sao Tome & Principe, Togo, Cameroon, Burundi, Tunisia, Cote d'Ivoire, Zambia, Senegal, Gabon, Malawi, Eswatini, Seychelles, Benin, Libya, Tanzania, Republic of Congo, Djibouti, Guinea-Bissau and Cabo Verde -- the first pass's forty-five backlog countries, completing every AU member state in this corpus. `narrative/state.yaml`'s `backlog` is now empty. Future runs move to iteration 2 (EXPAND) on existing records, per the CREATE/EXPAND/AUDIT rotation, unless a new country is added to the index.
 
 ### First pass — 9 countries
 
@@ -95,14 +95,14 @@ whose ranks swing hardest with the weighting method.
 | COG | Republic of Congo | completes Central Africa (8 of 8 done); a demographic-collapse colonial mechanism distinct from CAF's Kongo-Wara rebellion already in this corpus -- historian Adam Hochschild estimates the same concessionary rubber system halved the combined population of French Congo and Gabon, a toll of the same order as the Congo Free State atrocities across the river, despite producing no comparably large rebellion; the Congo-Ocean railway (1921-1934) killed an estimated 17,000-25,000 conscripted labourers; Denis Sassou Nguesso's rule (1979-1992, then unbroken since a 1997 civil war Angola's military intervention resolved in his favour) is a fourth named entrenchment mechanism, distinct from TGO/CMR/GAB/BEN's own patterns -- restoration by foreign military intervention rather than domestic legal or electoral manoeuvre; a fifth consecutive term won 15 March 2026 with 94.90% amid an opposition boycott, two imprisoned opposition leaders, and an election-day internet blackout; a severe debt crisis (97.2% of GDP) credited alongside a genuine TotalEnergies investment | **done — iteration 1** |
 | DJI | Djibouti | completes East Africa (14 of 14 done); a strategic-location colonial mechanism distinct from most of the corpus -- France valued the territory chiefly for its port and the Addis Ababa-Djibouti railway rather than any commodity, with no significant slave trade recorded; French administration grouped the Afar and Issa-Somali under one territory and favoured Issa leadership, the specific root of the 1991-2001 civil war; Guelleh's 1999 succession from his own uncle, followed by an unbroken rule extended via a 2025 constitutional age-limit removal to a sixth term (10 April 2026, 97.81%), is a near-exact structural echo of COG's own 2015 age-limit removal researched immediately prior; a genuinely adjudicated rule-of-law failure (the DP World Doraleh arbitration, $685M unpaid) credited alongside a genuine, measured renewable-energy achievement (~80% of current electricity, not merely a stated target) | **done — iteration 1** |
 | GNB | Guinea-Bissau | leaves only CPV in the backlog; a slave-export colonial mechanism distinct from the extractive-commodity colonies documented elsewhere -- Portugal valued Portuguese Guinea chiefly as a source of captive people feeding Cape Verde's own plantations, a relationship that reappeared, inverted, as the specific mainland-versus-Cape-Verdean fault line that ended PAIGC's planned single post-colonial state: Amilcar Cabral's own 1973 assassination, then the 1980 coup that deposed his half-brother Luis Cabral and split Guinea-Bissau from Cape Verde permanently in January 1981; nine coups or coup attempts since independence, the most recent on 26 November 2025 when soldiers arrested President Embalo days before results of an election from which PAIGC itself -- the party that won the country's independence -- had been barred; a genuine 2025 cashew-harvest achievement (260,000 tonnes, up 18%) credited independent of the same year's coup and ECOWAS suspension; deliberately researched immediately before CPV to set up their shared PAIGC/1980-split cross-reference | **done — iteration 1** |
+| CPV | Cabo Verde | the forty-fifth and final backlog country -- completes the corpus at 54 of 54; a colonial mechanism combining two roles this corpus has not documented together elsewhere -- the islands were uninhabited before Portuguese settlement in 1462 and were populated specifically to serve the slave trade, both as a transhipment hub and as a plantation economy in their own right, over 513 years, the longest colonial period recorded in this corpus, surpassing STP's own 490; documents the 1980 PAIGC split from Cape Verde's own side, closing the cross-reference loop opened by GNB's own record researched immediately prior; a new corpus record Pillar A score (84.1, surpassing NAM's prior 75.3), credited explicitly as a post-independence achievement (four peaceful PAICV/MpD alternations since 1991, most recently 17 May 2026) rather than a colonial inheritance; a genuine discipline catch under an otherwise exceptional composite score -- Cabo Verde's entrenchment as a cocaine trans-shipment hub between South America and Europe -- credited at full negative weight on the same standard applied to SYC's own heroin-addiction finding; the first record this session with a fully clean `--links` result, zero warnings across all 16 citations | **done — iteration 1** |
 
-### Backlog — the remaining 1
+### Backlog — empty
 
-Listed in full in `narrative/state.yaml` under `backlog`. It is recorded
-explicitly rather than left implicit: a country with no record should be visibly
-absent, not quietly missing.
-
-Cabo Verde
+The corpus is complete: all 54 African Union member states now have a
+narrative record. `narrative/state.yaml`'s `backlog` key is now an empty
+mapping (`{}`), recorded explicitly rather than removed, so future runs can
+see at a glance that the backlog was emptied deliberately rather than lost.
 
 ---
 
@@ -1927,6 +1927,39 @@ Append one line per run: date, country, mode, what changed, what was removed.
   warnings (COD, EGY). 53 of 54 countries now have a record — only
   Cabo Verde remains.
 
+- **2026-08-12 — CPV (Cabo Verde), CREATE. The corpus's forty-fifth
+  and final backlog country.** 16 sources opened and verified: 6
+  Wikipedia, 8 news, 1 official (Organized Crime Index), 1 more news.
+  A colonial mechanism combining two roles this corpus has not
+  documented together elsewhere: the islands were uninhabited before
+  Portuguese settlement in 1462 and were populated specifically to
+  serve the slave trade, both as a transhipment hub and as a
+  plantation economy in their own right, over 513 years — the longest
+  colonial period recorded in this corpus, surpassing STP's own 490
+  (verified against STP's own ledger entry before asserting the
+  superlative). Documents the 1980 PAIGC split from Cape Verde's own
+  side, researched immediately after GNB documented the same rupture
+  from Guinea-Bissau's side — the clearest deliberate cross-reference
+  pairing in this corpus, closing the loop opened in GNB's own
+  meta-notes entry. New corpus record: Pillar A (84.1), surpassing
+  NAM's prior record of 75.3 (verified before asserting), credited
+  explicitly as a post-independence achievement — four peaceful
+  PAICV/MpD alternations since 1991, most recently 17 May 2026 —
+  rather than a colonial inheritance, honouring the schema's own
+  explicit warning against that misattribution. A genuine discipline
+  catch under an otherwise exceptional composite score: Cabo Verde's
+  entrenchment as a cocaine trans-shipment hub between South America
+  and Europe, credited at full negative weight on the same standard
+  applied to SYC's own heroin-addiction finding. No word-count or
+  citation fixes needed — validated clean on the first pass. `--links`
+  returned a fully clean result: all 16 citation URLs resolved with
+  zero warnings, the first record this session with no 403s, no
+  timeouts, and no dead links at all. Balance: 2 positive, 3 negative,
+  1 mixed. Full pytest suite: 106 passed. Full-corpus check: 0 errors,
+  2 pre-existing unrelated warnings (COD, EGY). **54 of 54 countries
+  now have a record. The backlog is empty. The first full pass of this
+  corpus is complete.**
+
 ---
 
 ## Meta-notes
@@ -2858,6 +2891,35 @@ Things a future run should know about how to work, not about a specific country.
   can trace explicitly once both records exist — worth checking CPV's
   own record, once written, states the 1980 split from Guinea-Bissau's
   side as plainly as this record states it from Guinea-Bissau's.
+- **2026-08-12** — CPV closes the loop GNB's own entry predicted:
+  the 1980 PAIGC split is now documented from both sides, the clearest
+  realised cross-reference pair in the corpus and a template for the
+  next: whenever two countries share a founding movement, a colonial
+  administration, or a still-open dispute, sequencing their CREATE
+  runs back-to-back (as done here, and earlier with BWA/LSO/SWZ) makes
+  the cross-reference verifiable rather than merely asserted from
+  memory. CPV also confirms two corpus records simultaneously —
+  longest colonial period (513 years, surpassing STP's 490) and
+  highest Pillar A score (84.1, surpassing NAM's 75.3) — both checked
+  against the actual prior record-holder's own ledger entry before
+  being asserted, the standing discipline established after LBY's
+  Pillar F record and repeated for every superlative claim since.
+  **This entry marks the corpus's first full pass: all 54 AU member
+  states now have a CREATE-mode record, `state.yaml`'s backlog is
+  empty, and every future run moves into the CREATE/EXPAND/AUDIT
+  rotation's iteration 2 onward.** Two structural lessons carry
+  forward from this pass as a whole: (1) a strong composite score
+  must never be read as evidence that no severe problem exists
+  underneath it — SYC's heroin finding and CPV's own cocaine-hub
+  finding are the two clearest instances, both credited at full
+  negative weight rather than softened by an excellent aggregate; and
+  (2) two genuinely new YAML-syntax failure modes were found and fixed
+  in `state.yaml` during this pass (an unquoted `#digit` sequence
+  parsed as a comment, first caught in SEN/SYC; a bare trailing colon
+  inside an unquoted multi-line scalar, first caught in GNB) — both
+  now documented here so a future run recognises the pattern
+  immediately rather than re-deriving the diagnosis from a bare
+  `ParserError` traceback.
 
 ---
 

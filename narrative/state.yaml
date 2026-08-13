@@ -1266,15 +1266,42 @@ countries:
       data is available; check whether the maternal-mortality and
       malaria figures documented here worsen under continued military
       rule; check if Pillar C has gained coverage'
-backlog:
   CPV:
     name: Cabo Verde
     region: West
     first_pass: false
-    reason: not yet scheduled
-    iteration_count: 0
-    last_updated: null
-    next_action: create baseline from blueprint
+    reason: forty-fifth and final backlog country -- completes the
+      corpus at 54 of 54. A colonial mechanism combining two roles
+      this corpus has not documented together elsewhere -- the
+      islands were uninhabited before Portuguese settlement in 1462
+      and were populated specifically to serve the slave trade, both
+      as a transhipment hub and as a plantation economy in their own
+      right, over 513 years, the longest colonial period recorded in
+      this corpus, surpassing STP''s own 490; the same PAIGC that
+      fought to liberate Guinea-Bissau also fought for Cape Verde, and
+      this record documents the 1980 split from CPV''s own side,
+      researched immediately after GNB''s side of the same rupture;
+      the corpus''s new record Pillar A score (84.1, surpassing NAM''s
+      75.3), verified as a specifically post-independence achievement
+      via four peaceful PAICV/MpD alternations since 1991, most
+      recently 17 May 2026; a genuine discipline catch under an
+      otherwise exceptional composite -- Cabo Verde''s entrenchment as
+      a cocaine trans-shipment hub between South America and Europe --
+      credited at full negative weight on the same standard applied to
+      SYC''s own heroin-addiction finding
+    iteration_count: 1
+    last_updated: '2026-08-12'
+    next_action: 'EXPAND: follow whether PAICV''s new government
+      under PM Francisco Carvalho maintains the institutional
+      consistency that produced Pillar A''s record score; follow
+      whether the cocaine trans-shipment trend documented here worsens
+      or is checked by any enforcement response; follow whether the
+      Santiago Island desalination project reaches completion and
+      measurably improves Pillar F''s freshwater-withdrawal figure;
+      follow whether the digital-governance push (Autentika, TechPark
+      CV) measurably reduces tourism dependency; check if Pillar C has
+      gained coverage'
+backlog: {}
 pending_format_proposals:
 - asi/narrative/schema.py validate() checks historical.overview_citations and key_periods[].citations
   but has no check for a colonial_legacy_citations field, even though colonial_legacy is a
@@ -2917,3 +2944,36 @@ meta_notes:
   3 negative, 0 mixed. Full pytest suite: 106 passed. Full-corpus
   check: 0 errors, 2 pre-existing unrelated warnings (COD, EGY). 53 of
   54 countries now have a record.'
+- '2026-08-12: CPV CREATE run complete (16 sources opened and
+  verified: 6 Wikipedia, 8 news, 1 official (Organized Crime Index), 1
+  more news). Completes the corpus at 54 of 54 countries. A colonial
+  mechanism combining two roles this corpus has not documented
+  together elsewhere: the islands were uninhabited before Portuguese
+  settlement in 1462 and were populated specifically to serve the
+  slave trade, both as a transhipment hub and as a plantation economy
+  in their own right, over 513 years -- the longest colonial period
+  recorded in this corpus, surpassing STP''s own 490 (verified against
+  STP''s own ledger entry before asserting the superlative, per
+  standing discipline). Documents the 1980 PAIGC split from Cape
+  Verde''s own side, researched immediately after GNB documented the
+  same rupture from Guinea-Bissau''s side -- the corpus''s clearest
+  deliberate cross-reference pairing, closing the loop opened in GNB''s
+  own meta-notes entry. New corpus record: Pillar A (84.1), surpassing
+  NAM''s prior record of 75.3 (verified against NAM''s own score before
+  asserting), credited explicitly as a post-independence achievement
+  (four peaceful PAICV/MpD alternations since 1991, most recently 17
+  May 2026) rather than a colonial inheritance, per the schema''s own
+  explicit warning against that misattribution. A genuine discipline
+  catch under an otherwise exceptional composite score: Cabo Verde''s
+  entrenchment as a cocaine trans-shipment hub between South America
+  and Europe, credited at full negative weight on the same standard
+  applied to SYC''s own heroin-addiction finding -- a strong aggregate
+  must never be allowed to imply no severe problem exists underneath
+  it. No word-count or citation fixes needed -- validated clean on the
+  first pass. `--links` returned a fully clean result: all 16 citation
+  URLs resolved with zero warnings, the first country this session
+  with no 403s, no timeouts, and no dead links at all. Balance: 2
+  positive, 3 negative, 1 mixed. Full pytest suite: 106 passed.
+  Full-corpus check: 0 errors, 2 pre-existing unrelated warnings (COD,
+  EGY). 54 of 54 countries now have a record -- the backlog is empty
+  and the first full pass of this corpus is complete.'
