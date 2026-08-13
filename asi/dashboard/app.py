@@ -32,8 +32,10 @@ import yaml
 from dash import Dash, dcc, html, Input, Output, State, ALL, callback_context, no_update
 import dash_bootstrap_components as dbc
 
-from asi.core.constants import PILLAR_DEFS, ACTIVE_PROFILE
+from asi.core.constants import PILLAR_DEFS, ACTIVE_PROFILE, PROJECT_ROOT
 from asi.dashboard import data as D
+from asi.dashboard import narrative_ui as N
+from asi.narrative.store import load_corpus
 
 # ── Presentation constants ─────────────────────────────────────────────────────
 
@@ -57,8 +59,8 @@ TIER_STYLE = {
     "absent":     ("#bdc3c7", "No data"),
 }
 
-CONTEXT_DIR = Path("context")
-QUAL_DIR    = Path("qualitative/countries")
+CONTEXT_DIR = PROJECT_ROOT / "context"
+QUAL_DIR    = PROJECT_ROOT / "qualitative" / "countries"
 
 
 # ── Data ───────────────────────────────────────────────────────────────────────
@@ -77,6 +79,11 @@ COUNTRY_FACTS = _load_yaml(CONTEXT_DIR / "country_facts.yaml")
 QUAL_NOTES = {
     p.stem.upper(): _load_yaml(p) for p in QUAL_DIR.glob("*.yaml")
 } if QUAL_DIR.exists() else {}
+
+#: The narrative corpus: one validated record per country, or {} if the research
+#: pass has not run. Absent records degrade to a stated absence rather than an
+#: error — the index is meant to serve its numbers with or without the prose.
+NARRATIVE = load_corpus()
 
 
 # ── Small components ───────────────────────────────────────────────────────────
@@ -293,7 +300,10 @@ def view_overview(lens: D.Lens, group_mode: str, group_key: str | None,
                 html.P("Select a country on the map to open its profile.",
                        style={"fontSize": "9px", "color": "#bbb", "marginTop": "12px"}),
             ], style={"width": "185px", "flexShrink": 0}),
-            dcc.Graph(id="ov-map", figure=fig_map(frame, lens),
+            # Pattern-matching id, not a plain one: this graph exists only on the
+            # Explore tab, and a plain Input naming a component that is not in the
+            # current layout makes Dash refuse to run the whole callback.
+            dcc.Graph(id={"type": "ov-map", "index": "main"}, figure=fig_map(frame, lens),
                       config={"displayModeBar": False},
                       style={"flex": "1", "height": "500px"}),
         ], style={"display": "flex", "gap": "10px", "padding": "0 14px 14px"}),
@@ -304,6 +314,7 @@ def view_country(iso3: str, lens: D.Lens, year: int):
     meta = PANEL.countries.get(iso3, {})
     name = meta.get("name", iso3)
     method = lens.key if lens.kind == "composite" else "equal"
+    record = NARRATIVE.get(iso3)
 
     comp = D.country_composite_series(PANEL, iso3, method)
     row = comp[comp["year"] == year]
@@ -320,9 +331,15 @@ def view_country(iso3: str, lens: D.Lens, year: int):
         colour = ("#27ae60" if shown and r["score"] >= 65 else
                   "#e67e22" if shown and r["score"] >= 35 else
                   "#c0392b" if shown else "#b0b7bd")
+        has_prose = record is not None and record.pillar(pid) is not None
         cards.append(html.Button([
-            html.Div(f"{pid}", style={"fontWeight": "700", "fontSize": "11px",
-                                      "color": BRAND}),
+            html.Div([
+                html.Span(f"{pid}", style={"fontWeight": "700", "fontSize": "11px",
+                                           "color": BRAND}),
+                html.Span("¶", title="Narrative commentary available",
+                          style={"fontSize": "10px", "color": BRAND_LIGHT,
+                                 "float": "right"}) if has_prose else None,
+            ]),
             html.Div(pname, style={"fontSize": "9px", "color": "#666",
                                    "lineHeight": "1.25", "minHeight": "24px"}),
             html.Div(value, style={"fontSize": "20px", "fontWeight": "700",
@@ -364,6 +381,8 @@ def view_country(iso3: str, lens: D.Lens, year: int):
         unreliable_banner(row["reliability"] if row is not None else "absent", None, year),
 
         # ── the time slider: country pages only, per the design ──────────────
+        # Recorded events are drawn onto the scale, so the reader can see when
+        # something happened before deciding where to drag.
         html.Div([
             html.Div([
                 html.Span("Year", style={"fontSize": "11px", "fontWeight": "700",
@@ -373,14 +392,25 @@ def view_country(iso3: str, lens: D.Lens, year: int):
                 html.Span("  — the selected year carries into every pillar and "
                           "indicator below",
                           style={"fontSize": "10px", "color": "#aaa", "marginLeft": "8px"}),
-            ], style={"marginBottom": "2px"}),
+                html.Span(
+                    [html.Span("▲ improve  ", style={"color": "#27ae60"}),
+                     html.Span("▼ deteriorate  ", style={"color": "#c0392b"}),
+                     html.Span("◆ mixed", style={"color": "#e67e22"})],
+                    style={"fontSize": "9px", "fontWeight": "700", "marginLeft": "auto"},
+                ) if record and record.events_in(PANEL.panel_start, PANEL.panel_end) else None,
+            ], style={"marginBottom": "2px", "display": "flex", "alignItems": "center",
+                      "flexWrap": "wrap"}),
             dcc.Slider(
-                id="year-slider", min=PANEL.panel_start, max=PANEL.panel_end, step=1,
+                # Pattern-matching id: the slider lives on country pages only, and
+                # a plain Input for a component absent from the current layout
+                # stops Dash running the navigation callback at all.
+                id={"type": "year-slider", "index": "country"},
+                min=PANEL.panel_start, max=PANEL.panel_end, step=1,
                 value=year,
-                marks={y: {"label": str(y), "style": {"fontSize": "9px"}}
-                       for y in range(PANEL.panel_start, PANEL.panel_end + 1, 4)},
+                marks=N.slider_marks(record, PANEL.panel_start, PANEL.panel_end),
                 tooltip={"placement": "bottom", "always_visible": False},
             ),
+            N.year_event_callout(record, year),
         ], style={"padding": "10px 14px 4px", "background": "#f8f9fa",
                   "border": "1px solid #e8e8e8", "borderRadius": "8px",
                   "margin": "10px 0"}),
@@ -396,13 +426,14 @@ def view_country(iso3: str, lens: D.Lens, year: int):
                style={"fontSize": "10px", "color": "#aaa", "margin": "10px 0 6px"}),
         html.Div(cards, style={"display": "flex", "gap": "6px", "flexWrap": "wrap"}),
 
-        render_context(iso3),
+        render_context(iso3, record),
     ], style={"padding": "10px 14px"})
 
 
 def view_pillar(iso3: str, pillar_id: str, year: int):
     name = PANEL.countries.get(iso3, {}).get("name", iso3)
     pname = PILLAR_DEFS.get(pillar_id, pillar_id)
+    record = NARRATIVE.get(iso3)
 
     series = D.country_pillar_series(PANEL, iso3)
     series = series[series["pillar_id"] == pillar_id]
@@ -457,6 +488,12 @@ def view_pillar(iso3: str, pillar_id: str, year: int):
                  sub="carried or regional", colour="#e67e22"),
         ], style={"display": "flex", "gap": "8px", "margin": "10px 0"}),
 
+        # the prose explaining the number the reader has just seen
+        N.pillar_narrative_block(
+            record, pillar_id, pname,
+            displayable=bool(r is not None and r["reliability"] in D.DISPLAYABLE),
+        ),
+
         html.Div([
             html.H4("Over time", style={"fontSize": "11px", "fontWeight": "600",
                                         "margin": "0 0 2px"}),
@@ -472,8 +509,20 @@ def view_pillar(iso3: str, pillar_id: str, year: int):
     ], style={"padding": "10px 14px"})
 
 
-def render_context(iso3: str):
-    """Colonial history and analyst notes — country-level, panel-independent."""
+def render_context(iso3: str, record=None):
+    """
+    Everything about a country that is not a number: structured facts, colonial
+    history, and the narrative record.
+
+    Ordering follows what a reader asks in sequence — what is this place, what
+    happened to it, what is happening now, what is this record's own standing.
+
+    Where the narrative record covers ground the context YAMLs also cover, the
+    record wins and the YAML's prose is dropped rather than printed twice: the
+    narrative version is longer, cited, and validated. The YAML's *structured*
+    fields (which powers colonised the country) are kept, because those are
+    facts the narrative does not restate in machine-readable form.
+    """
     ch = COLONIAL.get(iso3) or {}
     facts = COUNTRY_FACTS.get(iso3) or {}
     qual = QUAL_NOTES.get(iso3) or {}
@@ -502,26 +551,48 @@ def render_context(iso3: str):
         note = (ch.get("colonial_note") or "").strip()
         colonisers = [c for c in [ch.get("primary_colonizer")]
                       + (ch.get("other_colonizers") or []) if c and c.lower() != "none"]
+        years = ch.get("years_colonized")
+        # The narrative record's colonial_legacy expands exactly this note, with
+        # citations. Printing both would say the same thing twice, worse the
+        # second time, so the note yields when a record exists.
+        show_note = bool(note) and (record is None or not record.colonial_legacy)
         blocks.append(html.Div([
-            html.H4("Historical context",
+            html.H4("Colonial record",
                     style={"fontSize": "11px", "fontWeight": "700", "color": "#666",
                            "textTransform": "uppercase", "letterSpacing": ".06em",
                            "margin": "0 0 6px"}),
             html.Div(f"Colonised by {', '.join(colonisers)}"
+                     + (f"  ·  {years} years" if years else "")
                      if colonisers else "Never formally colonised",
                      style={"fontSize": "11px", "fontWeight": "600", "color": "#444"}),
             html.P(note, style={"fontSize": "10px", "color": "#555",
-                                "lineHeight": 1.6, "margin": "6px 0 0"}) if note else None,
+                                "lineHeight": 1.6, "margin": "6px 0 0"}) if show_note else None,
             html.Div("Historical context only — not part of the score.",
                      style={"fontSize": "9px", "color": "#aaa", "marginTop": "6px"}),
         ], style={"background": "#fafafa", "border": "1px solid #e4e4e4",
                   "borderLeft": "4px solid #8e44ad", "borderRadius": "8px",
                   "padding": "12px 14px"}))
 
+    # ── the narrative record ───────────────────────────────────────────────────
+    if record is None:
+        blocks.append(N.no_record_notice(PANEL.countries.get(iso3, {}).get("name", iso3)))
+    else:
+        blocks += N.history_block(record)
+        for block in (N.recent_block(record),
+                      N.events_block(record, PANEL.panel_start, PANEL.panel_end),
+                      N.rec_membership_block(record),
+                      N.balance_block(record),
+                      N.sources_block(record)):
+            if block is not None:
+                blocks.append(block)
+        blocks.append(N.record_footer(record))
+
+    # Hand-written analyst notes, where any exist. The scaffolding ships with 54
+    # empty stubs, so this renders only once someone has actually written one.
     overview = (qual.get("overview") or "").strip()
     if overview:
         blocks.append(html.Div([
-            html.H4("Country notes",
+            html.H4("Analyst notes",
                     style={"fontSize": "11px", "fontWeight": "700", "color": "#666",
                            "textTransform": "uppercase", "letterSpacing": ".06em",
                            "margin": "0 0 6px"}),
@@ -827,7 +898,7 @@ def build_layout():
 
 def create_app() -> Dash:
     app = Dash(__name__,
-               assets_folder=str(Path(__file__).resolve().parent.parent.parent / "assets"),
+               assets_folder=str(PROJECT_ROOT / "assets"),
                external_stylesheets=[dbc.themes.FLATLY],
                title="African Stability Index",
                suppress_callback_exceptions=True)
@@ -856,10 +927,21 @@ def create_app() -> Dash:
             return view_pillar(nav["iso3"], nav["pillar"], year)
         return view_overview(lens, mode, key or None, excl, year)
 
-    @app.callback(Output("map-click", "data"), Input("ov-map", "clickData"),
+    @app.callback(Output("map-click", "data"),
+                  Input({"type": "ov-map", "index": ALL}, "clickData"),
                   prevent_initial_call=True)
-    def relay_map(click):
-        return click
+    def relay_map(clicks):
+        """
+        Relay the first real map click.
+
+        Matching on a pattern rather than a fixed id is what lets the map be
+        absent — on Rankings, Methodology or a country page — without Dash
+        treating the callback as referring to a nonexistent component.
+        """
+        for c in clicks or []:
+            if c:
+                return c
+        return no_update
 
     @app.callback(Output("nav-event", "data"),
                   Input({"type": "pillar-btn", "index": ALL}, "n_clicks"),
@@ -876,17 +958,20 @@ def create_app() -> Dash:
 
     @app.callback(Output("nav", "data"),
                   Input("map-click", "data"), Input("nav-event", "data"),
-                  Input("year-slider", "value"),
+                  Input({"type": "year-slider", "index": ALL}, "value"),
                   State("nav", "data"), prevent_initial_call=True)
-    def navigate(click, event, slider_year, nav):
+    def navigate(click, event, slider_years, nav):
         tid = callback_context.triggered_id
         nav = dict(nav)
 
         # the year persists across drill-down: selecting 2011 on the country page
         # and opening a pillar keeps 2011
-        if tid == "year-slider" and slider_year:
-            nav["year"] = int(slider_year)
-            return nav
+        if isinstance(tid, dict) and tid.get("type") == "year-slider":
+            years = [y for y in (slider_years or []) if y is not None]
+            if years:
+                nav["year"] = int(years[0])
+                return nav
+            return no_update
 
         if tid == "map-click" and click:
             iso3 = click["points"][0].get("location")

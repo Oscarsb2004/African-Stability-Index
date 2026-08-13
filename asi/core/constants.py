@@ -14,6 +14,7 @@ history, RECs) stays deliberately Africa-specific; the *machinery* does not.
 from __future__ import annotations
 
 from dataclasses import dataclass, field
+from pathlib import Path
 
 
 # ── Pillar definitions — the single source of truth ────────────────────────────
@@ -174,6 +175,17 @@ ACTIVE_PROFILE = AFRICA
 ISLAND_SET = ACTIVE_PROFILE.island_states
 
 
+#: Repository root, resolved from this file rather than from the process's
+#: working directory.
+#:
+#: The interface reads data/, narrative/ and context/ by relative path, which
+#: silently requires the server to be started from the project root — the app
+#: launches, then fails on the first read, which reads as missing data rather
+#: than as a wrong working directory. Anchoring to the package location makes
+#: `python 07_dashboard.py` and `gunicorn app:server` work from anywhere.
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
+
+
 __all__ = [
     "PILLAR_DEFS", "ACTIVE_PRESET", "WEIGHT_PRESETS",
     "WEIGHT_MIN", "WEIGHT_MAX", "SMALL",
@@ -185,4 +197,5 @@ __all__ = [
     "PANEL_START", "PANEL_PULL_BUFFER", "DEFAULT_MAX_CARRY_FORWARD",
     "DISPLAY_DECIMALS",
     "RegionProfile", "AFRICA", "ACTIVE_PROFILE", "ISLAND_SET",
+    "PROJECT_ROOT",
 ]

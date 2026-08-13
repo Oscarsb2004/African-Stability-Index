@@ -28,9 +28,9 @@ from pathlib import Path
 
 import pandas as pd
 
-from asi.core.constants import PILLAR_DEFS
+from asi.core.constants import PILLAR_DEFS, PROJECT_ROOT
 
-PANEL_DIR = Path("data/panel")
+PANEL_DIR = PROJECT_ROOT / "data" / "panel"
 
 #: Tiers whose numbers may be shown. Anything else renders greyed.
 DISPLAYABLE = ("reliable", "thin")
