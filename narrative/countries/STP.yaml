@@ -110,9 +110,7 @@ pillars:
   A:
     summary: >
       All six World Governance Indicators are directly measured this
-      year, and the aggregate is Sao Tome and Principe's strongest
-      pillar and among the strongest recorded anywhere in this
-      corpus -- Political Stability (84.7) and Voice and
+      year, and the aggregate is comparatively strong for this corpus, though fourth of Sao Tome and Principe's six scored pillars -- Political Stability (84.7) and Voice and
       Accountability (74.5) both score highly. That strength reflects
       a democracy that has survived four coup attempts (1995, 2003,
       2022) and a 2025 executive-legislative rupture without any of
@@ -122,7 +120,7 @@ pillars:
       defeating that party's own candidate in a competitive, peaceful
       vote.
     drivers:
-      - "all 6 WGI indicators directly measured; Political Stability (84.7) and Voice and Accountability (74.5) both score highly -- Sao Tome's strongest pillar and among the strongest in this corpus"
+      - "all 6 WGI indicators directly measured; Political Stability (84.7) and Voice and Accountability (74.5) both score highly -- comparatively strong for this corpus, though fourth of six here"
       - "survived 4 coup attempts (1995, 2003, 2022) without derailing multiparty competitiveness"
       - "July 2026: Vila Nova won re-election as an independent after splitting from his own former party, defeating that party's own candidate"
     citations: [c8, c6]

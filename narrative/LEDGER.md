@@ -95,7 +95,7 @@ whose ranks swing hardest with the weighting method.
 | COG | Republic of Congo | completes Central Africa (8 of 8 done); a demographic-collapse colonial mechanism distinct from CAF's Kongo-Wara rebellion already in this corpus -- historian Adam Hochschild estimates the same concessionary rubber system halved the combined population of French Congo and Gabon, a toll of the same order as the Congo Free State atrocities across the river, despite producing no comparably large rebellion; the Congo-Ocean railway (1921-1934) killed an estimated 17,000-25,000 conscripted labourers; Denis Sassou Nguesso's rule (1979-1992, then unbroken since a 1997 civil war Angola's military intervention resolved in his favour) is a fourth named entrenchment mechanism, distinct from TGO/CMR/GAB/BEN's own patterns -- restoration by foreign military intervention rather than domestic legal or electoral manoeuvre; a fifth consecutive term won 15 March 2026 with 94.90% amid an opposition boycott, two imprisoned opposition leaders, and an election-day internet blackout; a severe debt crisis (97.2% of GDP) credited alongside a genuine TotalEnergies investment | **done — iteration 1** |
 | DJI | Djibouti | completes East Africa (14 of 14 done); a strategic-location colonial mechanism distinct from most of the corpus -- France valued the territory chiefly for its port and the Addis Ababa-Djibouti railway rather than any commodity, with no significant slave trade recorded; French administration grouped the Afar and Issa-Somali under one territory and favoured Issa leadership, the specific root of the 1991-2001 civil war; Guelleh's 1999 succession from his own uncle, followed by an unbroken rule extended via a 2025 constitutional age-limit removal to a sixth term (10 April 2026, 97.81%), is a near-exact structural echo of COG's own 2015 age-limit removal researched immediately prior; a genuinely adjudicated rule-of-law failure (the DP World Doraleh arbitration, $685M unpaid) credited alongside a genuine, measured renewable-energy achievement (~80% of current electricity, not merely a stated target) | **done — iteration 1** |
 | GNB | Guinea-Bissau | leaves only CPV in the backlog; a slave-export colonial mechanism distinct from the extractive-commodity colonies documented elsewhere -- Portugal valued Portuguese Guinea chiefly as a source of captive people feeding Cape Verde's own plantations, a relationship that reappeared, inverted, as the specific mainland-versus-Cape-Verdean fault line that ended PAIGC's planned single post-colonial state: Amilcar Cabral's own 1973 assassination, then the 1980 coup that deposed his half-brother Luis Cabral and split Guinea-Bissau from Cape Verde permanently in January 1981; nine coups or coup attempts since independence, the most recent on 26 November 2025 when soldiers arrested President Embalo days before results of an election from which PAIGC itself -- the party that won the country's independence -- had been barred; a genuine 2025 cashew-harvest achievement (260,000 tonnes, up 18%) credited independent of the same year's coup and ECOWAS suspension; deliberately researched immediately before CPV to set up their shared PAIGC/1980-split cross-reference | **done — iteration 1** |
-| CPV | Cabo Verde | the forty-fifth and final backlog country -- completes the corpus at 54 of 54; a colonial mechanism combining two roles this corpus has not documented together elsewhere -- the islands were uninhabited before Portuguese settlement in 1462 and were populated specifically to serve the slave trade, both as a transhipment hub and as a plantation economy in their own right, over 513 years, the longest colonial period recorded in this corpus, surpassing STP's own 490; documents the 1980 PAIGC split from Cape Verde's own side, closing the cross-reference loop opened by GNB's own record researched immediately prior; a new corpus record Pillar A score (84.1, surpassing NAM's prior 75.3), credited explicitly as a post-independence achievement (four peaceful PAICV/MpD alternations since 1991, most recently 17 May 2026) rather than a colonial inheritance; a genuine discipline catch under an otherwise exceptional composite score -- Cabo Verde's entrenchment as a cocaine trans-shipment hub between South America and Europe -- credited at full negative weight on the same standard applied to SYC's own heroin-addiction finding; the first record this session with a fully clean `--links` result, zero warnings across all 16 citations | **done — iteration 1** |
+| CPV | Cabo Verde | the forty-fifth and final backlog country -- completes the corpus at 54 of 54; a colonial mechanism combining two roles this corpus has not documented together elsewhere -- the islands were uninhabited before Portuguese settlement in 1462 and were populated specifically to serve the slave trade, both as a transhipment hub and as a plantation economy in their own right, over 513 years, the longest colonial period recorded in this corpus, surpassing STP's own 490; documents the 1980 PAIGC split from Cape Verde's own side, closing the cross-reference loop opened by GNB's own record researched immediately prior; the third-highest Pillar A score in the corpus (84.1, behind SYC 88.2 and MUS 86.2 — originally and wrongly claimed here as a corpus record), credited explicitly as a post-independence achievement (four peaceful PAICV/MpD alternations since 1991, most recently 17 May 2026) rather than a colonial inheritance; a genuine discipline catch under an otherwise exceptional composite score -- Cabo Verde's entrenchment as a cocaine trans-shipment hub between South America and Europe -- credited at full negative weight on the same standard applied to SYC's own heroin-addiction finding; the first record this session with a fully clean `--links` result, zero warnings across all 16 citations | **done — iteration 1** |
 
 ### Backlog — empty
 
@@ -1941,7 +1941,7 @@ Append one line per run: date, country, mode, what changed, what was removed.
   side, researched immediately after GNB documented the same rupture
   from Guinea-Bissau's side — the clearest deliberate cross-reference
   pairing in this corpus, closing the loop opened in GNB's own
-  meta-notes entry. New corpus record: Pillar A (84.1), surpassing
+  meta-notes entry. Pillar A (84.1) — asserted at the time as a corpus record, surpassing
   NAM's prior record of 75.3 (verified before asserting), credited
   explicitly as a post-independence achievement — four peaceful
   PAICV/MpD alternations since 1991, most recently 17 May 2026 —
@@ -2900,7 +2900,7 @@ Things a future run should know about how to work, not about a specific country.
   the cross-reference verifiable rather than merely asserted from
   memory. CPV also confirms two corpus records simultaneously —
   longest colonial period (513 years, surpassing STP's 490) and
-  highest Pillar A score (84.1, surpassing NAM's 75.3) — both checked
+  highest Pillar A score (84.1, surpassing NAM's 75.3 — later found false; see the 2026-08-13 note) — both checked
   against the actual prior record-holder's own ledger entry before
   being asserted, the standing discipline established after LBY's
   Pillar F record and repeated for every superlative claim since.
@@ -2920,6 +2920,43 @@ Things a future run should know about how to work, not about a specific country.
   now documented here so a future run recognises the pattern
   immediately rather than re-deriving the diagnosis from a bare
   `ParserError` traceback.
+- **2026-08-13 — consistency audit; the superlative discipline was
+  wrong, not just unevenly applied.** A machine audit of all 54 records
+  against the panel found **ten false pillar claims**: a summary
+  calling itself the country's strongest or weakest pillar when the
+  panel ranked it elsewhere (CIV/B, LBY/A, LSO/A, MWI/A, SEN/A, SEN/D,
+  STP/A, SYC/A, TUN/A). The overlooked pillar was F four times, G three
+  times, E twice — and that distribution is the diagnosis, not noise.
+  E and G *share indicators with A* (Political Stability, Rule of Law,
+  Government Effectiveness, Control of Corruption), so they track A
+  closely and get forgotten when ranking; F is semantically
+  incomparable to the rest, because a high F often means "poor and
+  low-emitting" rather than "environmentally sound". The prose was
+  reaching for a true statement about governance and hitting a false
+  one about ranking.
+  **The bigger finding is that this ledger's own superlative rule was
+  itself unsound.** It said: before asserting a corpus record, check
+  the prior record-holder's figure from its own LEDGER entry. CPV's
+  Pillar A was checked that way against NAM (75.3), passed, and was
+  written up as a corpus record — but SYC (88.2) and MUS (86.2) both
+  beat CPV's 84.1, and neither had been named a record-holder, so
+  neither was consulted. **Verify a superlative against the data, never
+  against the previous claim**; the last thing written up is not the
+  extreme. Corrected in CPV.yaml, state.yaml and this file. LBY's
+  Pillar F record (1.6, the lowest single-pillar score in the corpus)
+  was re-checked the correct way and does hold.
+  Also fixed: CPV's framing-balance count claimed 3 negatives against 2
+  actual, and ERI carried the same URL under two citation ids (c1/c8).
+  All of these are now caught by `check_consistency()` in
+  `scripts/narrative_check.py`, so the audit is repeatable rather than
+  a one-off — the checks are balance-vs-items, pillar-rank claims
+  vs the panel, and citation linkage in both directions.
+  Two known-good results worth recording so they are not re-litigated:
+  **64 numeric indicator scores quoted in pillar prose were checked
+  against the panel and all 64 matched**, and severity language tracks
+  score monotonically across terciles (4.22 / 3.44 / 2.17 severity
+  words from weakest to strongest third), so the cross-country
+  calibration worry raised earlier is measurably not a problem.
 
 ---
 

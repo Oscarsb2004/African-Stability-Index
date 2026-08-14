@@ -112,8 +112,7 @@ pillars:
   A:
     summary: >
       All six World Governance Indicators are directly measured this
-      year, and the aggregate is Seychelles' strongest pillar and
-      among the strongest recorded anywhere in this corpus -- Control
+      year, and the aggregate is Seychelles' second-strongest pillar and the highest Pillar A score recorded anywhere in this corpus -- Control
       of Corruption (97.2) is near the scale's ceiling, and Political
       Stability (91.6) and Voice and Accountability (90.0) are both
       comparably exceptional. That strength reflects a democracy that
@@ -123,7 +122,7 @@ pillars:
       runoff to opposition leader Patrick Herminie and pledged a
       "dignified and orderly" transfer of power.
     drivers:
-      - "all 6 WGI indicators directly measured; Control of Corruption (97.2) near the scale's ceiling; Political Stability (91.6) and Voice and Accountability (90.0) both comparably exceptional -- Seychelles' strongest pillar, among the strongest in this corpus"
+      - "all 6 WGI indicators directly measured; Control of Corruption (97.2) near the scale's ceiling; Political Stability (91.6) and Voice and Accountability (90.0) both comparably exceptional -- Seychelles' second-strongest pillar, and the highest Pillar A score in this corpus"
       - "a democracy that has completed genuine transfers of power between rival parties since the 1993 return to multiparty politics"
       - "October 2025: incumbent Ramkalawan lost a runoff to opposition leader Herminie and pledged a 'dignified and orderly' transfer of power (see recent developments)"
     citations: [c5, c6]

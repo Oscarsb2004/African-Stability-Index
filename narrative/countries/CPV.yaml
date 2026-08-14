@@ -116,9 +116,7 @@ pillars:
   A:
     summary: >
       All six World Governance Indicators are directly measured this
-      year, and the aggregate (84.1) is the strongest Pillar A score
-      recorded anywhere in this corpus, surpassing Namibia's own prior
-      record of 75.3 -- Voice and Accountability (93.0) and Political
+      year, and the aggregate (84.1) is the third-highest Pillar A score in this corpus, behind Seychelles (88.2) and Mauritius (86.2) -- Voice and Accountability (93.0) and Political
       Stability (90.4) are both near the scale's ceiling. That
       strength is not a colonial inheritance but a specifically
       post-independence achievement: Cape Verde ended one-party rule
@@ -127,7 +125,7 @@ pillars:
       absolute majority to unseat an MpD government that had governed
       since 2016.
     drivers:
-      - "all 6 WGI indicators directly measured; aggregate (84.1) the strongest Pillar A score recorded anywhere in this corpus, surpassing NAM's own prior record of 75.3"
+      - "all 6 WGI indicators directly measured; aggregate (84.1) the third-highest Pillar A score in this corpus, behind SYC (88.2) and MUS (86.2)"
       - "Voice and Accountability (93.0) and Political Stability (90.4) both near the scale's ceiling"
       - "a specifically post-independence achievement, not a colonial inheritance: PAICV and MpD have peacefully alternated power four times since 1991, most recently 17 May 2026 (see recent developments)"
     citations: [c5, c6]
@@ -212,12 +210,12 @@ pillars:
       coverage, a regional-mean estimate rather than a direct
       measurement, is comparatively weak by contrast. Four of the
       pillar's five indicators are current, describing infrastructure
-      access consistent with the corpus's strongest Pillar A score,
+      access consistent with the country's own exceptional Pillar A score,
       though social protection remains the one clear structural gap.
     drivers:
       - "electricity access 98.60% of the population (fresh) -- near-universal; basic drinking water strong (fresh)"
       - "Government Effectiveness and Control of Corruption (shared with Pillar A) both strong, Control of Corruption (87.9) near the scale's ceiling"
-      - "social protection comparatively weak by contrast (regional-mean estimate); 4 of 5 indicators current -- infrastructure access consistent with the corpus's strongest Pillar A score, though social protection remains a clear structural gap"
+      - "social protection comparatively weak by contrast (regional-mean estimate); 4 of 5 indicators current -- infrastructure access consistent with the country's own exceptional Pillar A score, though social protection remains a clear structural gap"
     citations: [c13]
 
 recent:
@@ -466,7 +464,7 @@ rec_membership:
 
 balance:
   n_positive: 2
-  n_negative: 3
+  n_negative: 2
   n_mixed: 1
   note: >
     The May 2026 election and the digital-governance achievement are

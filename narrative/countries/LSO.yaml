@@ -118,7 +118,7 @@ pillars:
   A:
     summary: >
       All six World Governance Indicators are directly measured this
-      year, and the aggregate is Lesotho's strongest pillar -- Voice
+      year, and the aggregate is Lesotho's second-strongest pillar -- Voice
       and Accountability (65.6) and Political Stability (67.3) are the
       standouts, reflecting a functioning multiparty democracy where a
       2022 election brought political outsider Sam Matekane's
@@ -131,7 +131,7 @@ pillars:
       reads as democratic institutions functioning under real strain
       rather than failing.
     drivers:
-      - "all 6 WGI indicators directly measured; Voice and Accountability (65.6) and Political Stability (67.3) the standouts -- Lesotho's strongest pillar"
+      - "all 6 WGI indicators directly measured; Voice and Accountability (65.6) and Political Stability (67.3) the standouts -- Lesotho's second-strongest pillar"
       - "2022: political outsider Sam Matekane's Revolution for Prosperity party won power within 7 months of its founding, forming a coalition government"
       - "2023-2024: a no-confidence attempt and a Constitutional Court ruling striking down an amendment designed to blunt such challenges -- democratic checks functioning under strain, not failing"
     citations: [c7, c8]

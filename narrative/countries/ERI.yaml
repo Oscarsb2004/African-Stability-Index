@@ -144,7 +144,7 @@ pillars:
       - "Voice and Accountability (4.9) is the single lowest indicator score recorded anywhere in this entire project to date -- zero national elections held since 1993 independence"
       - "Regulatory Quality and Rule of Law almost as severe; unusually, all 6 indicators are FRESH -- this severity is directly measured, not estimated"
       - "3 of this record's other 6 pillars (B, C, D) are greyed out entirely -- the index judged Eritrea's own data too sparse to score, itself a consequence of the same closed-state pattern"
-    citations: [c3, c8]
+    citations: [c3, c1]
   E:
     summary: >
       Political Stability, freshly measured, is moderate -- an
@@ -181,7 +181,7 @@ pillars:
       - "electricity access barely half the population (Pillar G) -- confirms low emissions reflect low consumption, not clean generation"
       - "agricultural land extensive (fresh), consistent with a largely rural, subsistence-agricultural economy; freshwater withdrawal moderate (carried forward)"
       - "only 2 of 4 indicators freshly measured this year"
-    citations: [c8]
+    citations: [c1]
   G:
     summary: >
       Electricity access, at just under 55% and freshly measured, is
@@ -200,7 +200,7 @@ pillars:
       - "electricity access under 55% (fresh) -- weak, the only indicator directly measured for Eritrea specifically in this pillar"
       - "basic/safely managed water, handwashing, and social protection all estimated from regional peers, not measured directly -- all in a similarly weak range"
       - "this data-sparsity pattern extends well beyond this one pillar -- 3 of this record's other 6 pillars are greyed out entirely, not just thin, because Eritrea publishes so little of the underlying data"
-    citations: [c8]
+    citations: [c1]
 
 recent:
   primary:
@@ -353,12 +353,6 @@ citations:
     url: "https://foreignpolicy.com/2025/11/26/ethiopia-eritrea-tensions-red-sea-access-conflict/"
     source_type: news
     title: "Ethiopia-Eritrea Tensions Trigger Fears of a Fresh Regional Conflict (Foreign Policy)"
-    accessed: 2026-08-10
-    verified: true
-  - id: c8
-    url: "https://www.ebsco.com/research-starters/history/eritrea-secedes-ethiopia"
-    source_type: academic
-    title: "Eritrea Secedes from Ethiopia (EBSCO)"
     accessed: 2026-08-10
     verified: true
   - id: c9

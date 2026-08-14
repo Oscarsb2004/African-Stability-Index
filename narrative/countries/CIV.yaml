@@ -128,7 +128,7 @@ pillars:
   B:
     summary: >
       GDP growth, GDP per capita, inflation and domestic credit, all
-      freshly measured, make this Côte d'Ivoire's strongest pillar --
+      freshly measured, make this Côte d'Ivoire's second-strongest pillar --
       GDP growth (65.5) is comparatively high for this corpus. Gini,
       carried forward, is comparatively strong. This pillar's 2023
       reference year understates continued acceleration: growth was
@@ -139,7 +139,7 @@ pillars:
       cocoa value chain colonial_legacy documents as originally built
       on forced and migrant labour.
     drivers:
-      - "GDP growth, GDP per capita, inflation, domestic credit all fresh -- Côte d'Ivoire's strongest pillar; GDP growth (65.5) comparatively high for this corpus"
+      - "GDP growth, GDP per capita, inflation, domestic credit all fresh -- Côte d'Ivoire's second-strongest pillar; GDP growth (65.5) comparatively high for this corpus"
       - "Gini comparatively strong (carried forward)"
       - "2023 reference year understates continued acceleration: 6.2% growth projected for 2025; cocoa domestic-processing target (50% by end-2026) already 44% met by late 2024, backed by a new EUR200M plant"
     citations: [c11]

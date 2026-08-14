@@ -114,8 +114,7 @@ pillars:
   A:
     summary: >
       All six World Governance Indicators are directly measured this
-      year, and the aggregate is Senegal's strongest pillar and among
-      the strongest recorded anywhere in this corpus -- Government
+      year, and the aggregate is comparatively strong for this corpus, though third of Senegal's six scored pillars -- Government
       Effectiveness (71.7) and Voice and Accountability (70.7) are
       both comparatively high. That strength reflects a democracy
       tested severely and repeatedly since this pillar's 2023
@@ -126,7 +125,7 @@ pillars:
       and its citizens ultimately won, documented in full under recent
       developments.
     drivers:
-      - "all 6 WGI indicators directly measured; Government Effectiveness (71.7) and Voice and Accountability (70.7) both comparatively high -- Senegal's strongest pillar, among the strongest in this corpus"
+      - "all 6 WGI indicators directly measured; Government Effectiveness (71.7) and Voice and Accountability (70.7) both comparatively high -- comparatively strong for this corpus, though third of six here"
       - "2023 reference year predates the corpus's sharpest recent institutional-resilience test: Sall's Feb 2024 attempt to postpone the election outright"
       - "the Constitutional Council overturned the postponement and the election proceeded (see recent developments) -- though the reform government it produced has since fractured (also recent developments)"
     citations: [c5, c7]
@@ -148,14 +147,12 @@ pillars:
     citations: [c12, c8]
   D:
     summary: >
-      All five indicators are directly measured this year, and the
-      aggregate is Senegal's second-strongest pillar: severe food
+      All five indicators are directly measured this year, and the aggregate is comparatively strong in absolute terms, though only fifth of Senegal's six scored pillars: severe food
       insecurity, at just 4.00% of the population, is among the lowest
       recorded anywhere in this corpus. Life expectancy and infant
       mortality are both comparatively decent. Handwashing-facility
       access and safely managed drinking water are more middling,
-      leaving room for improvement even in this record's
-      second-strongest pillar. Five of the pillar's five indicators
+      leaving room for improvement even in an otherwise comparatively strong pillar. Five of the pillar's five indicators
       are current, a fully-measured pillar consistent with Senegal's
       reliable-tier composite score overall.
     drivers:
