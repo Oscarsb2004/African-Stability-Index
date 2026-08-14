@@ -127,6 +127,125 @@ def breadcrumb(steps):
     return html.Div(items, style={"padding": "4px 0 10px"})
 
 
+def year_slider(index: str, year: int, *, marks=None, caption: str | None = None,
+                trailing=None):
+    """
+    The year control, shared by the continent views and the country page.
+
+    `index` distinguishes instances; the id is pattern-matching because these
+    live inside `content` and only one exists at a time. A plain id would stop
+    Dash running the navigation callback on every page that lacks the slider.
+    """
+    return html.Div([
+        html.Div([
+            html.Span("Year", style={"fontSize": "11px", "fontWeight": "700",
+                                     "color": "#555", "marginRight": "10px"}),
+            html.Span(str(year), style={"fontSize": "13px", "fontWeight": "700",
+                                        "color": BRAND}),
+            html.Span(caption, style={"fontSize": "10px", "color": "#aaa",
+                                      "marginLeft": "8px"}) if caption else None,
+            trailing,
+        ], style={"marginBottom": "2px", "display": "flex", "alignItems": "center",
+                  "flexWrap": "wrap"}),
+        dcc.Slider(
+            id={"type": "year-slider", "index": index},
+            min=PANEL.panel_start, max=PANEL.panel_end, step=1, value=year,
+            marks=marks or {y: {"label": str(y), "style": {"fontSize": "9px",
+                                                           "color": "#888"}}
+                            for y in range(PANEL.panel_start, PANEL.panel_end + 1, 4)},
+            tooltip={"placement": "bottom", "always_visible": False},
+        ),
+    ], style={"padding": "10px 14px 4px", "background": "#f8f9fa",
+              "border": "1px solid #e8e8e8", "borderRadius": "8px",
+              "margin": "10px 0"})
+
+
+def year_coverage_note(year: int, n_shown: int, n_total: int):
+    """
+    Why a year shows fewer countries than the map has.
+
+    Without this a reader drags to 2024, sees an empty continent, and concludes
+    the tool is broken. The panel genuinely runs to 2024; what it does not have
+    is enough *reported* data to score it. Saying which of those two is true is
+    the whole point of the greyed-not-blank rule, applied to the time axis.
+    """
+    if n_shown == n_total:
+        return None
+
+    reasons = []
+    if year > PANEL.reference_year:
+        reasons.append(
+            f"The panel runs to {PANEL.panel_end}, but {PANEL.reference_year} is the "
+            f"most recent year with enough reported data to score. World Bank series "
+            f"publish on a lag, so later years are mostly empty rather than mostly bad."
+        )
+    if year == 2001:
+        reasons.append(
+            "Governance indicators were published biennially before 2002, so 2001 has "
+            "no governance observation at all and is largely estimated."
+        )
+
+    severe = n_shown == 0
+    colour = "#c0392b" if severe else "#7f8c8d"
+    return html.Div([
+        html.Span(f"{n_shown} of {n_total} countries scoreable in {year}. ",
+                  style={"fontWeight": "700", "color": colour}),
+        html.Span(" ".join(reasons) if reasons else
+                  "The rest are greyed because too much of their data is inferred "
+                  "rather than measured in this year.",
+                  style={"color": "#7f8c8d"}),
+    ], style={"fontSize": "11px", "background": "#f4f6f7", "border": "1px solid #dfe4e6",
+              "borderLeft": f"4px solid {colour}", "borderRadius": "6px",
+              "padding": "9px 13px", "margin": "8px 0"})
+
+
+def rec_membership_caveat(mode: str, key: str | None, year: int):
+    """
+    Warn when a community grouping is applied to a year its membership predates.
+
+    `asi.core.countries` stores REC membership as current status only — its own
+    docstring flags that a time slider would need year-aware membership. Rather
+    than silently compare "ECOWAS in 2010" using 2026's membership list, this
+    names the countries whose own sourced narrative records say they were on the
+    other side of the line that year.
+    """
+    if mode != "rec" or not key:
+        return None
+
+    now = {iso for iso, m in PANEL.countries.items() if key in (m.get("recs") or [])}
+    joined_later, left_since = [], []
+    for iso, record in NARRATIVE.items():
+        spans = [m for m in record.rec_membership if m.org == key]
+        if not spans:
+            continue
+        member_then = any(
+            m.joined is not None and m.joined <= year and (m.left is None or year < m.left)
+            for m in spans
+        )
+        name = PANEL.countries.get(iso, {}).get("name", iso)
+        if iso in now and not member_then:
+            joined_later.append(name)
+        elif iso not in now and member_then:
+            left_since.append(name)
+
+    if not joined_later and not left_since:
+        return None
+
+    parts = []
+    if joined_later:
+        parts.append(f"{', '.join(sorted(joined_later))} had not joined yet")
+    if left_since:
+        parts.append(f"{', '.join(sorted(left_since))} were members then but are not now")
+    return html.Div([
+        html.Span(f"{key} membership is grouped as it stands today. ",
+                  style={"fontWeight": "700", "color": "#8a6d3b"}),
+        html.Span(f"In {year}, " + "; ".join(parts) + ".",
+                  style={"color": "#8a6d3b"}),
+    ], style={"fontSize": "10px", "background": "#fffaf0", "border": "1px solid #f0e2c0",
+              "borderLeft": "4px solid #d4a017", "borderRadius": "6px",
+              "padding": "8px 12px", "margin": "6px 0"})
+
+
 def unreliable_banner(reliability: str, coverage: float | None, year: int):
     """Say plainly why a panel is greyed, rather than showing an empty box."""
     if reliability in D.DISPLAYABLE:
@@ -289,6 +408,16 @@ def view_overview(lens: D.Lens, group_mode: str, group_key: str | None,
             stat("Year", year, sub=f"panel {PANEL.panel_start}–{PANEL.panel_end}"),
         ], style={"display": "flex", "gap": "8px", "flexWrap": "wrap", "padding": "10px 14px"}),
 
+        # The continent time slider. The goalposts are frozen across the whole
+        # panel, which is what makes dragging this honest: a country moves only
+        # when its own data moves, never because the comparison set changed.
+        html.Div([
+            year_slider("overview", year,
+                        caption="— the whole map, this year"),
+            year_coverage_note(year, n_shown, len(frame)),
+            rec_membership_caveat(group_mode, group_key, year),
+        ], style={"padding": "0 14px"}),
+
         html.Div([
             html.Div([
                 html.H4("Highest", style={"fontSize": "11px", "color": "#27ae60",
@@ -332,13 +461,22 @@ def view_country(iso3: str, lens: D.Lens, year: int):
                   "#e67e22" if shown and r["score"] >= 35 else
                   "#c0392b" if shown else "#b0b7bd")
         has_prose = record is not None and record.pillar(pid) is not None
+        # Why a card may carry no ¶: the corpus does not write prose for a pillar
+        # the index refused to score. Stating that on the card itself stops the
+        # gap reading as a missing section the reader has to click to discover.
+        prose_note = ("Written commentary available" if has_prose else
+                      "No commentary: the index did not score this pillar, and the "
+                      "corpus does not write prose the data cannot support"
+                      if not shown else
+                      "No commentary written for this pillar yet")
         cards.append(html.Button([
             html.Div([
                 html.Span(f"{pid}", style={"fontWeight": "700", "fontSize": "11px",
                                            "color": BRAND}),
-                html.Span("¶", title="Narrative commentary available",
-                          style={"fontSize": "10px", "color": BRAND_LIGHT,
-                                 "float": "right"}) if has_prose else None,
+                html.Span("¶" if has_prose else "—", title=prose_note,
+                          style={"fontSize": "10px",
+                                 "color": BRAND_LIGHT if has_prose else "#ccc",
+                                 "float": "right"}),
             ]),
             html.Div(pname, style={"fontSize": "9px", "color": "#666",
                                    "lineHeight": "1.25", "minHeight": "24px"}),
@@ -380,40 +518,22 @@ def view_country(iso3: str, lens: D.Lens, year: int):
 
         unreliable_banner(row["reliability"] if row is not None else "absent", None, year),
 
-        # ── the time slider: country pages only, per the design ──────────────
-        # Recorded events are drawn onto the scale, so the reader can see when
-        # something happened before deciding where to drag.
+        # The country slider carries the same scale as the continent one, with
+        # this country's recorded events drawn onto it.
         html.Div([
-            html.Div([
-                html.Span("Year", style={"fontSize": "11px", "fontWeight": "700",
-                                         "color": "#555", "marginRight": "10px"}),
-                html.Span(str(year), style={"fontSize": "13px", "fontWeight": "700",
-                                            "color": BRAND}),
-                html.Span("  — the selected year carries into every pillar and "
-                          "indicator below",
-                          style={"fontSize": "10px", "color": "#aaa", "marginLeft": "8px"}),
-                html.Span(
+            year_slider(
+                "country", year,
+                caption="— carries into every pillar and indicator below",
+                marks=N.slider_marks(record, PANEL.panel_start, PANEL.panel_end),
+                trailing=html.Span(
                     [html.Span("▲ improve  ", style={"color": "#27ae60"}),
                      html.Span("▼ deteriorate  ", style={"color": "#c0392b"}),
                      html.Span("◆ mixed", style={"color": "#e67e22"})],
                     style={"fontSize": "9px", "fontWeight": "700", "marginLeft": "auto"},
                 ) if record and record.events_in(PANEL.panel_start, PANEL.panel_end) else None,
-            ], style={"marginBottom": "2px", "display": "flex", "alignItems": "center",
-                      "flexWrap": "wrap"}),
-            dcc.Slider(
-                # Pattern-matching id: the slider lives on country pages only, and
-                # a plain Input for a component absent from the current layout
-                # stops Dash running the navigation callback at all.
-                id={"type": "year-slider", "index": "country"},
-                min=PANEL.panel_start, max=PANEL.panel_end, step=1,
-                value=year,
-                marks=N.slider_marks(record, PANEL.panel_start, PANEL.panel_end),
-                tooltip={"placement": "bottom", "always_visible": False},
             ),
             N.year_event_callout(record, year),
-        ], style={"padding": "10px 14px 4px", "background": "#f8f9fa",
-                  "border": "1px solid #e8e8e8", "borderRadius": "8px",
-                  "margin": "10px 0"}),
+        ]),
 
         html.Div([
             html.H4(f"{METHOD_LABELS.get(method, method)} over time",
@@ -422,8 +542,13 @@ def view_country(iso3: str, lens: D.Lens, year: int):
                       config={"displayModeBar": False}),
         ]),
 
-        html.P("Seven pillars — select one to see its indicators",
-               style={"fontSize": "10px", "color": "#aaa", "margin": "10px 0 6px"}),
+        html.P([
+            "Seven pillars — select one to see its indicators.  ",
+            html.Span("¶", style={"color": BRAND_LIGHT, "fontWeight": "700"}),
+            " marks a pillar with written commentary; ",
+            html.Span("—", style={"color": "#ccc", "fontWeight": "700"}),
+            " means none, because the index did not score that pillar here.",
+        ], style={"fontSize": "10px", "color": "#aaa", "margin": "10px 0 6px"}),
         html.Div(cards, style={"display": "flex", "gap": "6px", "flexWrap": "wrap"}),
 
         render_context(iso3, record),
@@ -634,6 +759,11 @@ def view_rankings(lens: D.Lens, group_mode, group_key, exclude_islands, year):
                  f"{len(hidden)} not shown",
                  style={"fontSize": "10px", "color": "#888", "padding": "8px 14px",
                         "background": "#f8f9fa", "borderBottom": "1px solid #e4e4e4"}),
+        html.Div([
+            year_slider("rankings", year, caption="— re-ranks the table below"),
+            year_coverage_note(year, len(ranked), len(frame)),
+            rec_membership_caveat(group_mode, group_key, year),
+        ], style={"padding": "0 14px"}),
         html.Div(html.Table(rows, style={"width": "100%", "borderCollapse": "collapse"}),
                  style={"padding": "10px 14px"}),
         html.Div([
@@ -743,6 +873,35 @@ def view_methodology():
             for t in ("reliable", "thin", "unreliable", "absent")
         ]),
 
+        html.H4("Which countries are in scope",
+                style={"fontSize": "12px", "color": BRAND, "margin": "16px 0 6px"}),
+        html.P([
+            f"The African Union has 55 member states. This index scores "
+            f"{len(PANEL.countries)}. The exclusion is ",
+            html.B("Western Sahara"),
+            " (the Sahrawi Arab Democratic Republic), an AU member since 1984 — the "
+            "admission that caused Morocco to leave the OAU until 2017.",
+        ], style={"fontSize": "11px", "color": "#555", "lineHeight": 1.65,
+                  "maxWidth": "660px", "margin": "0 0 6px"}),
+        html.P("It is excluded on data availability, not on any position about the "
+               "territory's status. The World Bank publishes no WDI or WGI series for "
+               "Western Sahara: it has no entry in the source databases this index is "
+               "built from, so all 32 indicators would have to be imputed from regional "
+               "peers. That would produce a score with zero measured inputs — which the "
+               "reliability rules exist precisely to refuse to display. Including it "
+               "would mean showing a country-shaped hole coloured as though it were "
+               "evidence.",
+               style={"fontSize": "11px", "color": "#555", "lineHeight": 1.65,
+                      "maxWidth": "660px", "margin": "0 0 6px"}),
+        html.P("The dispute itself is not omitted: it is documented in the narrative "
+               "records for Morocco (the 1975 Green March, the 1991 ceasefire, the "
+               "unheld referendum, and the 2025 Security Council vote on autonomy) and "
+               "for Algeria (roughly 174,000 Sahrawi refugees hosted at Tindouf for five "
+               "decades). What the index will not do is assign the territory a stability "
+               "score it has no data to support.",
+               style={"fontSize": "11px", "color": "#555", "lineHeight": 1.65,
+                      "maxWidth": "660px", "margin": "0 0 6px"}),
+
         html.H4("Known limitations", style={"fontSize": "12px", "color": BRAND,
                                             "margin": "16px 0 6px"}),
         html.Ul([
@@ -843,10 +1002,14 @@ def build_layout():
                 html.H1("African Stability Index",
                         style={"color": "#fff", "margin": 0, "fontSize": "19px",
                                "fontWeight": "700"}),
-                html.Div(f"{len(PANEL.countries)} AU member states  ·  "
+                html.Div(f"{len(PANEL.countries)} of 55 AU member states  ·  "
                          f"{len(PILLAR_DEFS)} pillars  ·  "
                          f"{sum(1 for i in PANEL.indicators.values() if i['role'] == 'scoring')} indicators"
                          f"  ·  {PANEL.panel_start}–{PANEL.panel_end}",
+                         title="Western Sahara (SADR) is an AU member state but is not "
+                               "scored: the World Bank publishes no WDI or WGI series "
+                               "for the territory, so every indicator would be imputed. "
+                               "See Methodology.",
                          style={"color": "#9bb8d4", "fontSize": "10px", "marginTop": "2px"}),
             ]),
             html.Div("0 = most fragile · 100 = most stable",
@@ -964,14 +1127,18 @@ def create_app() -> Dash:
         tid = callback_context.triggered_id
         nav = dict(nav)
 
-        # the year persists across drill-down: selecting 2011 on the country page
-        # and opening a pillar keeps 2011
+        # The year persists across every view: set it on the continent map and it
+        # carries into rankings, into a country page, and down into a pillar.
+        # Read the value off the component that actually fired rather than the
+        # first match, so the sliders cannot fight each other during a re-render.
         if isinstance(tid, dict) and tid.get("type") == "year-slider":
-            years = [y for y in (slider_years or []) if y is not None]
-            if years:
-                nav["year"] = int(years[0])
-                return nav
-            return no_update
+            fired = (callback_context.triggered or [{}])[0].get("value")
+            if fired is None:
+                fired = next((y for y in (slider_years or []) if y is not None), None)
+            if fired is None:
+                return no_update
+            nav["year"] = int(fired)
+            return nav
 
         if tid == "map-click" and click:
             iso3 = click["points"][0].get("location")
