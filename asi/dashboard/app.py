@@ -62,6 +62,16 @@ TIER_STYLE = {
 CONTEXT_DIR = PROJECT_ROOT / "context"
 QUAL_DIR    = PROJECT_ROOT / "qualitative" / "countries"
 
+#: AU member states this edition does not score, and why. Kept as data rather
+#: than prose so the union total shown to a reader stays derived: the AU count
+#: is the scored set plus these, and neither number is ever typed into a string.
+EXCLUDED_AU_MEMBERS = {
+    "Western Sahara": (
+        "the Sahrawi Arab Democratic Republic, an AU member since 1984 — the "
+        "admission that caused Morocco to leave the OAU until 2017"
+    ),
+}
+
 
 # ── Data ───────────────────────────────────────────────────────────────────────
 
@@ -84,6 +94,11 @@ QUAL_NOTES = {
 #: pass has not run. Absent records degrade to a stated absence rather than an
 #: error — the index is meant to serve its numbers with or without the prose.
 NARRATIVE = load_corpus()
+
+#: Derived once. Every count a reader sees comes from the data: the header
+#: claimed "36 Indicators" for weeks after the number changed, which is why
+#: verify/contract.py refuses literal counts in interface strings.
+N_SCORING = sum(1 for m in PANEL.indicators.values() if m.get("role") == "scoring")
 
 
 # ── Small components ───────────────────────────────────────────────────────────
@@ -876,21 +891,21 @@ def view_methodology():
         html.H4("Which countries are in scope",
                 style={"fontSize": "12px", "color": BRAND, "margin": "16px 0 6px"}),
         html.P([
-            f"The African Union has 55 member states. This index scores "
-            f"{len(PANEL.countries)}. The exclusion is ",
+            f"The African Union has {len(PANEL.countries) + len(EXCLUDED_AU_MEMBERS)} "
+            f"member states. This index scores {len(PANEL.countries)}. The exclusion "
+            f"is ",
             html.B("Western Sahara"),
-            " (the Sahrawi Arab Democratic Republic), an AU member since 1984 — the "
-            "admission that caused Morocco to leave the OAU until 2017.",
+            f" ({EXCLUDED_AU_MEMBERS['Western Sahara']}).",
         ], style={"fontSize": "11px", "color": "#555", "lineHeight": 1.65,
                   "maxWidth": "660px", "margin": "0 0 6px"}),
-        html.P("It is excluded on data availability, not on any position about the "
-               "territory's status. The World Bank publishes no WDI or WGI series for "
-               "Western Sahara: it has no entry in the source databases this index is "
-               "built from, so all 32 indicators would have to be imputed from regional "
-               "peers. That would produce a score with zero measured inputs — which the "
-               "reliability rules exist precisely to refuse to display. Including it "
-               "would mean showing a country-shaped hole coloured as though it were "
-               "evidence.",
+        html.P(f"It is excluded on data availability, not on any position about the "
+               f"territory's status. The World Bank publishes no WDI or WGI series for "
+               f"Western Sahara: it has no entry in the source databases this index is "
+               f"built from, so all {N_SCORING} scoring indicators would have to be "
+               f"imputed from regional peers. That would produce a score with zero "
+               f"measured inputs — which the reliability rules exist precisely to "
+               f"refuse to display. Including it would mean showing a country-shaped "
+               f"hole coloured as though it were evidence.",
                style={"fontSize": "11px", "color": "#555", "lineHeight": 1.65,
                       "maxWidth": "660px", "margin": "0 0 6px"}),
         html.P("The dispute itself is not omitted: it is documented in the narrative "
@@ -956,13 +971,12 @@ def view_sources():
                     style={"padding": "5px 9px", "fontSize": "9px", "color": "#777"}),
         ]))
 
-    n_scoring = sum(1 for m in PANEL.indicators.values() if m.get("role") == "scoring")
     n_cross = sum(1 for m in PANEL.indicators.values()
                   if m.get("role") == "scoring" and len(m.get("pillars", [])) > 1)
 
     return html.Div([
         html.Div([
-            html.P(f"{n_scoring} scoring indicators from the World Bank's World "
+            html.P(f"{N_SCORING} scoring indicators from the World Bank's World "
                    f"Development Indicators and Worldwide Governance Indicators. "
                    f"{n_cross} are counted in more than one pillar and therefore carry "
                    f"more weight than the rest — shown in red.",
@@ -1004,7 +1018,7 @@ def build_layout():
                                "fontWeight": "700"}),
                 html.Div(f"{len(PANEL.countries)} of 55 AU member states  ·  "
                          f"{len(PILLAR_DEFS)} pillars  ·  "
-                         f"{sum(1 for i in PANEL.indicators.values() if i['role'] == 'scoring')} indicators"
+                         f"{N_SCORING} indicators"
                          f"  ·  {PANEL.panel_start}–{PANEL.panel_end}",
                          title="Western Sahara (SADR) is an AU member state but is not "
                                "scored: the World Bank publishes no WDI or WGI series "

@@ -193,19 +193,14 @@ pillars:
     summary: >
       Electricity access, at just over half the population and freshly
       measured, is moderate. Basic drinking water access, also fresh,
-      is comparatively decent. Safely managed water, estimated from
-      regional peers, and handwashing and social protection, both
-      carried forward rather than fresh, are all considerably weaker.
-      Only two of the pillar's five indicators are current, making this
-      pillar's overall picture thinner than the moderate headline score
-      might suggest -- a reminder that Guinea's real bauxite and
+      is comparatively decent. Government Effectiveness and Control of Corruption, shared with Pillar A and both freshly measured, are weak. Social protection coverage, carried forward rather than fresh, is the pillar's only non-current indicator. Four of the pillar's five indicators are current, so the moderate headline score rests on real measurement -- which makes the gap it records harder to dismiss: Guinea's real bauxite and
       iron-ore wealth, documented in Pillar B, has not yet translated
       into infrastructure investment at the pace the mining sector
       itself has grown.
     drivers:
       - "electricity access just over half the population (fresh) -- moderate"
-      - "basic drinking water comparatively decent (fresh); safely managed water, handwashing, social protection all weaker (regional-mean/carried-forward)"
-      - "only 2 of 5 indicators current -- thinner than the moderate headline score suggests; a reminder that mineral wealth (Pillar B) hasn't yet translated into infrastructure investment at pace"
+      - "basic drinking water comparatively decent (fresh); Government Effectiveness and Control of Corruption (shared with Pillar A) weak, both fresh; social protection carried forward"
+      - "4 of 5 indicators current -- the moderate headline score rests on real measurement; mineral wealth (Pillar B) hasn't yet translated into infrastructure investment at pace"
     citations: [c1]
 
 recent:

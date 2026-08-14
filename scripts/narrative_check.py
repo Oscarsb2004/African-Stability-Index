@@ -121,6 +121,28 @@ RANK_CLAIMS = [
 ]
 
 
+_NUMBER_WORDS = {"one": 1, "two": 2, "three": 3, "four": 4,
+                 "five": 5, "six": 6, "seven": 7, "eight": 8}
+
+#: "Four of the pillar's five indicators are current" and friends. Deliberately
+#: requires a positive verb: the negated form ("two of five were NOT freshly
+#: measured") is a statement about the complement, not a coverage count.
+COVERAGE_CLAIM = re.compile(
+    r"(?:only\s+)?(?P<n>one|two|three|four|five|six|seven|eight|\d)\s+of\s+"
+    r"(?:the\s+pillar's\s+|its\s+|this\s+pillar's\s+)?"
+    r"(?P<total>one|two|three|four|five|six|seven|eight|\d)\s+indicators?\s+"
+    r"(?:are|is)\s+(?!not\b)(?:current|fresh|freshly measured|directly measured|measured)",
+    re.I,
+)
+
+
+def _spelled(token: str) -> int | None:
+    token = token.strip().lower()
+    if token.isdigit():
+        return int(token)
+    return _NUMBER_WORDS.get(token)
+
+
 def _pillar_ranking(panel, iso3: str) -> list[str]:
     """This country's displayable pillars, best score first."""
     pil = D.country_pillar_series(panel, iso3)
@@ -194,6 +216,34 @@ def check_consistency(records: dict[str, dict], panel) -> list[str]:
                                 f"{label} pillar, but ranks {pos} of {len(order)} "
                                 f"at {panel.reference_year} — {want} is.")
                         break
+
+        # ── "N of M indicators are measured" vs the panel ─────────────────────
+        # Only positive assertions are judged. "Two of five indicators were NOT
+        # freshly measured" is a claim about the complement and is left alone —
+        # reading it as a coverage count produced eleven false positives out of
+        # twelve on the first attempt at this check.
+        by_pillar = {r.pillar_id: r for r in
+                     panel.pillar_scores[
+                         (panel.pillar_scores["iso3"] == iso3)
+                         & (panel.pillar_scores["year"] == panel.reference_year)
+                     ].itertuples()}
+        for pid, p in (rec.get("pillars") or {}).items():
+            row = by_pillar.get(pid)
+            if row is None:
+                continue
+            summary = ((p or {}).get("summary") or "")
+            for m in COVERAGE_CLAIM.finditer(summary):
+                claimed = _spelled(m.group("n"))
+                total = _spelled(m.group("total"))
+                if claimed is None or total is None:
+                    continue
+                if total != int(row.n_indicators):
+                    continue          # not a claim about this pillar's own size
+                if claimed != int(row.n_observed):
+                    problems.append(
+                        f"[error] {iso3} · pillars.{pid}: says {m.group(0).strip()!r}, "
+                        f"but the panel measured {int(row.n_observed)} of "
+                        f"{int(row.n_indicators)} at {panel.reference_year}.")
 
         # ── citation linkage, both directions ─────────────────────────────────
         cites = {str(c.get("id")): c for c in (rec.get("citations") or []) if c.get("id")}
