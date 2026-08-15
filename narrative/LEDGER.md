@@ -2957,6 +2957,43 @@ Things a future run should know about how to work, not about a specific country.
   score monotonically across terciles (4.22 / 3.44 / 2.17 severity
   words from weakest to strongest third), so the cross-country
   calibration worry raised earlier is measurably not a problem.
+- **2026-08-13 — second consistency pass, and the corpus moves inside the
+  release gate.** The PAIGC contradiction found in the first pass (GNB saying
+  the party was founded in 1960, CPV saying 1956) resolved into a nuance rather
+  than a wrong year: it was founded on 19 September 1956 as the **PAI** and
+  renamed **PAIGC** in 1960, with armed struggle from 1963. Both records were
+  half right and both were misleading; both now state the founding and the
+  renaming. **Lesson worth keeping: a cross-record contradiction is often a
+  compressed fact, not an error in one of the two records** — resolve it by
+  finding the distinction both versions flattened, rather than by picking the
+  better-sourced year.
+  Four further defects, each a new class: ZMB carried an election written in
+  the past tense and dated two days *after* its own `last_updated` (a
+  prediction wearing a publication date — precisely what the date requirement
+  exists to prevent); COG's `meta.name` disagreed with the published bundle;
+  GIN/G and GNQ/G both miscounted their own coverage *and* described Pillar D
+  indicators while omitting the two WGI indicators actually in Pillar G; SLE/B
+  called a freshly-measured inflation figure "carried forward".
+  **Structural change: `verify/narrative.py` now exists and gates a release.**
+  Until today the corpus was checked only by `scripts/narrative_check.py`,
+  which imports `asi.narrative.schema` and `asi.dashboard.data` — the exact
+  dependency `verify/__init__.py` exists to forbid — and was not registered in
+  `verify/run.py` at all, so half the project could not fail a release. The new
+  layer re-reads the YAML and the panel CSVs directly, re-stating the
+  reliability rule rather than importing it. It gates on arithmetic and reports
+  on judgement, following advisory.py's reasoning.
+  It caught a regression immediately: contract check 2.1 failed because the new
+  Western Sahara text hardcoded "55 member states" and "32 indicators", which
+  the interface is required to derive. Worth remembering when writing UI prose.
+  Clean results recorded so they are not re-audited: independence years and
+  colonial durations agree with `context/colonial_history.yaml` for all 54; no
+  country joined a REC before it existed; no duplicate events; no recent item
+  missing `why_it_matters`; no event missing a URL; and the five coup or
+  independence entries whose `direction` looks contradictory are all correct
+  (Bokassa, Denard, Traore, Bashir, and Angola's independence into immediate
+  civil war). New advisory metric: Wikipedia is 37% of citations on average but
+  ranges 7% (SSD) to 79% (ETH), an evidence-quality spread the interface's
+  source count cannot show.
 
 ---
 
