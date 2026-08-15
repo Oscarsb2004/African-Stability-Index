@@ -308,6 +308,27 @@ def check_advisory(records: dict[str, dict]) -> list[str]:
     notes.append(f"citation linkage: {unlinked} sources attached to no claim; "
                  f"{unlisted} URLs used but absent from a citations block")
 
+    # How much of a record rests on encyclopedia entries rather than reporting,
+    # research or primary sources. Not a rule — Wikipedia is a legitimate source
+    # for settled history, and the blueprint asks for it alongside a news link.
+    # But a record at 79% is resting on a different quality of evidence than one
+    # at 7%, and that difference is invisible in the interface, which shows only
+    # a count of sources.
+    shares = []
+    for iso3, rec in records.items():
+        cites = rec.get("citations") or []
+        if not cites:
+            continue
+        wiki = sum(1 for c in cites if str(c.get("source_type")) == "wikipedia")
+        shares.append((wiki / len(cites), iso3, wiki, len(cites)))
+    if shares:
+        shares.sort(reverse=True)
+        heaviest = ", ".join(f"{i} ({w}/{t})" for _, i, w, t in shares[:5])
+        mean = sum(s for s, _, _, _ in shares) / len(shares)
+        notes.append(f"sourcing mix: Wikipedia is {mean:.0%} of citations on "
+                     f"average, ranging {shares[-1][0]:.0%} to {shares[0][0]:.0%}. "
+                     f"Most encyclopedia-reliant: {heaviest}")
+
     no_background = [i for i, rec in records.items()
                      if not any((x.get("wikipedia_url") or "")
                                 for x in (list((rec.get("recent") or {}).get("primary") or [])
