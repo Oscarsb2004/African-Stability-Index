@@ -342,9 +342,9 @@ citations:
     accessed: 2026-08-11
     verified: true
   - id: c2
-    url: "https://www.ebsco.com/research-starters/politics-and-government/tunisian-uprising"
-    source_type: news
-    title: "Tunisian Uprising (EBSCO Research Starters)"
+    url: "https://en.wikipedia.org/wiki/Tunisian_revolution"
+    source_type: wikipedia
+    title: "Tunisian revolution"
     accessed: 2026-08-11
     verified: true
   - id: c3
