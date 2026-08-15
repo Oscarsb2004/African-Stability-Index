@@ -314,3 +314,54 @@ def test_duplicate_events_are_an_error():
     rec = {"meta": {"iso3": "KEN"}, "events": [
         {"year": 2007, "type": "election"}, {"year": 2007, "type": "election"}]}
     assert any("share year/type" in e for e in _vcheck(rec))
+
+
+# ── Quoted indicator values ────────────────────────────────────────────────────
+
+@pytest.fixture(scope="module")
+def observations():
+    return verify_narrative.load_observations()
+
+
+def _quoted(summary, panel_year, observations, pillar="G", iso3="KEN"):
+    rec = {iso3: {"meta": {"iso3": iso3}, "pillars": {pillar: {"summary": summary}}}}
+    return verify_narrative.check_quoted_values(rec, observations, panel_year)
+
+
+def test_an_inverted_hedge_is_caught(panel, observations):
+    """Kenya's electricity access is ~76%; 'over 90%' must fail."""
+    out = _quoted("Electricity access, at over 90% of the population, is decent.",
+                  panel.reference_year, observations)
+    assert out and "electricity access" in out[0]
+
+
+def test_a_correct_hedge_passes(panel, observations):
+    assert not _quoted("Electricity access, at over 50% of the population, is decent.",
+                       panel.reference_year, observations)
+
+
+def test_rounding_with_a_hedge_is_not_an_error(panel, observations):
+    """
+    The corpus rounds and hedges constantly -- "just under 60%" for 59.2. Direct
+    numeric comparison flagged 19 correct sentences, so only hedge direction is
+    judged.
+    """
+    assert not _quoted("Electricity access, at roughly 76% of the population.",
+                       panel.reference_year, observations)
+
+
+def test_a_clause_naming_another_indicator_is_not_read_across(panel, observations):
+    """
+    "Life expectancy, just over 57 years, and infant mortality, at 60.8 per
+    1,000" -- 60.8 belongs to infant mortality. Reading across the conjunction
+    produced 17 false positives.
+    """
+    assert not _quoted(
+        "Life expectancy, just over 57 years, and infant mortality, at 60.8 "
+        "per 1,000 live births, are both severe.",
+        panel.reference_year, observations, pillar="D", iso3="CAF")
+
+
+def test_the_shipped_corpus_quotes_its_values_correctly(records, panel, observations):
+    out = verify_narrative.check_quoted_values(records, observations, panel.reference_year)
+    assert not out, "quoted-value violations:\n" + "\n".join(out)

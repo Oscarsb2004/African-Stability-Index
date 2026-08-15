@@ -89,6 +89,108 @@ def load_pillar_scores() -> tuple[pd.DataFrame, int]:
     return scores, int(meta["run"]["reference_year"])
 
 
+#: Indicator phrases as prose writes them, mapped to the display-name prefix the
+#: panel publishes. Prefixes must be unambiguous: matching "intentional
+#: homicide" loosely also hits the female-specific series, which silently
+#: compared the wrong number the first time this was attempted.
+INDICATOR_PHRASES = {
+    "electricity access": "Access to electricity",
+    "access to electricity": "Access to electricity",
+    "basic drinking water": "People using at least basic drinking water",
+    "safely managed drinking water": "People using safely managed drinking water",
+    "handwashing-facility access": "People with basic handwashing",
+    "handwashing": "People with basic handwashing",
+    "social protection": "Coverage of social protection",
+    "life expectancy": "Life expectancy at birth",
+    "infant mortality": "Mortality rate, infant",
+    "severe food insecurity": "Prevalence of severe food insecurity",
+    "agricultural land": "Agricultural land",
+    "freshwater withdrawal": "Annual freshwater withdrawals",
+    "gdp per capita": "GDP per capita",
+    "domestic credit": "Domestic credit to private sector",
+    "gini": "Gini index",
+    "intentional homicide": "Intentional homicides (per",
+    "displaced persons": "Internally displaced persons",
+}
+
+HEDGE = (r"(just over|just under|slightly over|slightly under|a little over|"
+         r"more than|less than|over|under|above|below|nearly|almost|roughly|"
+         r"about|around|just|only)")
+_QUOTED = re.compile(
+    rf"^[^.]{{0,14}}?\b(?:at|of)?\s*(?:{HEDGE}\s+)?([\d][\d,]*\.?\d*)\s?(?:%|per|years)",
+    re.I)
+
+
+def _hedge_holds(hedge: str | None, claimed: float, actual: float) -> bool:
+    """
+    Whether a rounded, hedged figure is still true of the measured value.
+
+    The corpus rounds constantly and hedges when it does — "just under 60%" for
+    59.2, "roughly 21" for 21.3. That is good prose, not error, so comparing the
+    numbers directly flags 19 correct sentences. What is checkable is the
+    *direction*: "over 40%" is false if the value is 38, and would become false
+    silently the next time the panel is rebuilt.
+    """
+    h = (hedge or "").lower()
+    if h in ("over", "above", "more than", "just over", "slightly over", "a little over"):
+        return actual > claimed
+    if h in ("under", "below", "less than", "just under", "slightly under"):
+        return actual < claimed
+    if h in ("nearly", "almost"):
+        return claimed * 0.90 <= actual < claimed * 1.02
+    if h in ("roughly", "about", "around"):
+        return abs(actual - claimed) <= max(1.0, claimed * 0.06)
+    return abs(round(actual) - claimed) < 0.51
+
+
+def load_observations() -> pd.DataFrame:
+    return pd.read_csv(PANEL_DIR / "observations.csv")
+
+
+def check_quoted_values(records: dict[str, dict], observations: pd.DataFrame,
+                        year: int) -> list[str]:
+    """Indicator values quoted in pillar prose, against what the panel measured."""
+    problems: list[str] = []
+    at_year = observations[observations["year"] == year]
+
+    for iso3, rec in sorted(records.items()):
+        rows = at_year[at_year["iso3"] == iso3]
+        values = {str(r.display_name): r.raw_value for r in rows.itertuples()}
+
+        def measured(prefix: str):
+            hits = [v for k, v in values.items() if k.startswith(prefix)]
+            return hits[0] if len(hits) == 1 else None
+
+        for pid, p in (rec.get("pillars") or {}).items():
+            text = ((p or {}).get("summary") or "")
+            for phrase, prefix in INDICATOR_PHRASES.items():
+                for m in re.finditer(re.escape(phrase), text, re.I):
+                    tail = text[m.end():m.end() + 34]
+                    # a clause naming another indicator carries another number;
+                    # reading across one produced 17 false positives
+                    if " and " in tail:
+                        continue
+                    if any(k in tail.lower() for k in INDICATOR_PHRASES if k != phrase):
+                        continue
+                    nm = _QUOTED.match(tail)
+                    if not nm:
+                        continue
+                    actual = measured(prefix)
+                    if actual is None or actual != actual:
+                        continue
+                    try:
+                        claimed = float(nm.group(2).replace(",", ""))
+                    except (TypeError, ValueError):
+                        continue
+                    if not _hedge_holds(nm.group(1), claimed, float(actual)):
+                        problems.append(
+                            f"[error] {iso3} · pillars.{pid}: says "
+                            f"{(nm.group(1) or '').strip()} {claimed:g} for "
+                            f"{phrase}, but the panel measured "
+                            f"{float(actual):.2f} at {year}.")
+    return problems
+
+
 def load_country_names() -> dict[str, str]:
     """
     Display names straight from the published bundle.
@@ -351,7 +453,9 @@ def main() -> int:
     names = load_country_names()
     print(f"  {len(records)} records · panel reference year {year}\n")
 
-    problems = check_claims(records, scores, year) + check_internal(records, names)
+    problems = (check_claims(records, scores, year)
+                + check_quoted_values(records, load_observations(), year)
+                + check_internal(records, names))
     errors = [p for p in problems if p.startswith("[error]")]
     warnings = [p for p in problems if p.startswith("[warning]")]
 
