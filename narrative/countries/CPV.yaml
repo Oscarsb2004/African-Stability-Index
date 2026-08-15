@@ -25,8 +25,7 @@ historical:
     corpus, surpassing Sao Tome and Principe's own 490 years. The
     mixing of enslaved Africans and Portuguese settlers produced
     Kriolu, a distinctive Atlantic creole culture and language. Amilcar
-    Cabral, himself Cape Verdean, co-founded the PAIGC in 1956 to
-    fight for the joint liberation of Guinea-Bissau and Cape Verde;
+    Cabral, himself Cape Verdean, co-founded the party in 1956 -- the PAI, renamed PAIGC in 1960 -- to fight for the joint liberation of Guinea-Bissau and Cape Verde;
     Cape Verde received independence on 5 July 1975 under PAIGC
     secretary-general Aristides Pereira, with a formal union between
     the two states still planned. That union collapsed after a
@@ -46,7 +45,7 @@ historical:
     in 2024, even as chronic water scarcity forces the country to
     depend on energy-intensive, largely fossil-fuel-powered
     desalination.
-  overview_citations: [c1, c2, c3, c4, c5, c9]
+  overview_citations: [c1, c2, c3, c4, c5, c9, c17]
   colonial_legacy: >
     context/colonial_history.yaml is explicit about a distinction this
     record honours directly: Cape Verde's strong composite score
@@ -59,8 +58,7 @@ historical:
     in its own right -- a colonial mechanism combining both roles that
     this corpus has not documented together elsewhere. At 513 years,
     Cape Verde's colonial period is the longest recorded in this
-    corpus, surpassing Sao Tome and Principe's own 490 years. The same
-    1956-founded PAIGC that fought to liberate Cape Verde also fought
+    corpus, surpassing Sao Tome and Principe's own 490 years. The same party, founded in 1956 and renamed PAIGC in 1960, that fought to liberate Cape Verde also fought
     for Guinea-Bissau's independence in a single movement, envisioning
     one post-colonial state; the 1980 coup that deposed Luis Cabral in
     Guinea-Bissau, and the resulting split of PAIGC into separate
@@ -68,7 +66,7 @@ historical:
     shows Cape Verde's side of -- a rupture Guinea-Bissau's own record,
     researched immediately prior in this corpus, documents from the
     other side.
-  colonial_legacy_citations: [c1, c3]
+  colonial_legacy_citations: [c1, c3, c17]
   key_periods:
     - title: "Slave-trade settlement and 513 years of Portuguese rule"
       period: "1462-1975"
@@ -454,6 +452,13 @@ citations:
     title: "Economic Community of West African States"
     accessed: 2026-08-12
     verified: true
+
+  - id: c17
+    url: "https://en.wikipedia.org/wiki/African_Party_for_the_Independence_of_Guinea_and_Cape_Verde"
+    source_type: wikipedia
+    title: "African Party for the Independence of Guinea and Cape Verde (PAIGC)"
+    accessed: 2026-08-13
+    verified: false
 
 rec_membership:
   - org: ECOWAS

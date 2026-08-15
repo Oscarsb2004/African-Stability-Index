@@ -258,3 +258,59 @@ def test_verify_narrative_passes_on_the_shipped_corpus():
     proc = subprocess.run([sys.executable, "-X", "utf8", "verify/narrative.py"],
                           cwd=ROOT, capture_output=True, text=True)
     assert proc.returncode == 0, proc.stdout[-2000:]
+
+
+# ── verify/narrative.py internal checks ────────────────────────────────────────
+
+_vspec = importlib.util.spec_from_file_location(
+    "verify_narrative", ROOT / "verify" / "narrative.py")
+verify_narrative = importlib.util.module_from_spec(_vspec)
+_vspec.loader.exec_module(verify_narrative)
+
+
+def _vcheck(rec, names=None):
+    return [p for p in verify_narrative.check_internal({"KEN": rec}, names or {})
+            if p.startswith("[error]")]
+
+
+def test_record_name_must_match_the_published_bundle():
+    """Found in COG: 'Republic of the Congo' against the bundle's 'Republic of Congo'."""
+    rec = {"meta": {"iso3": "KEN", "name": "Kenia"}}
+    assert any("meta.name" in e for e in _vcheck(rec, {"KEN": "Kenya"}))
+    assert not _vcheck({"meta": {"iso3": "KEN", "name": "Kenya"}}, {"KEN": "Kenya"})
+
+
+def test_a_development_dated_after_the_record_was_written_is_an_error():
+    """
+    Found in ZMB: an election written up in the past tense, dated two days after
+    the record itself. A publication date that postdates the writing is a
+    prediction, which is exactly what requiring dates is meant to prevent.
+    """
+    rec = {"meta": {"iso3": "KEN", "last_updated": "2026-08-11"},
+           "recent": {"primary": [{"sentiment": "mixed", "date": "2026-08-13"}]},
+           "balance": {"n_positive": 0, "n_negative": 0, "n_mixed": 1}}
+    assert any("cannot be reported before it happens" in e for e in _vcheck(rec))
+
+
+def test_a_development_dated_on_or_before_the_write_date_is_fine():
+    rec = {"meta": {"iso3": "KEN", "last_updated": "2026-08-13"},
+           "recent": {"primary": [{"sentiment": "mixed", "date": "2026-08-13"}]},
+           "balance": {"n_positive": 0, "n_negative": 0, "n_mixed": 1}}
+    assert not _vcheck(rec)
+
+
+def test_incoherent_membership_spans_are_errors():
+    rec = {"meta": {"iso3": "KEN"},
+           "rec_membership": [{"org": "EAC", "joined": 2000, "left": 1977,
+                               "status": "withdrawn"}]}
+    assert any("before joining" in e for e in _vcheck(rec))
+
+    rec2 = {"meta": {"iso3": "KEN"},
+            "rec_membership": [{"org": "EAC", "joined": 1967, "status": "withdrawn"}]}
+    assert any("no year of withdrawal" in e for e in _vcheck(rec2))
+
+
+def test_duplicate_events_are_an_error():
+    rec = {"meta": {"iso3": "KEN"}, "events": [
+        {"year": 2007, "type": "election"}, {"year": 2007, "type": "election"}]}
+    assert any("share year/type" in e for e in _vcheck(rec))

@@ -89,6 +89,20 @@ def load_pillar_scores() -> tuple[pd.DataFrame, int]:
     return scores, int(meta["run"]["reference_year"])
 
 
+def load_country_names() -> dict[str, str]:
+    """
+    Display names straight from the published bundle.
+
+    Read here rather than imported from `asi.core.countries` for the same reason
+    as everything else in this file: the point is to check the corpus against
+    what the project actually publishes, not against the module the interface
+    happens to import.
+    """
+    import json
+    meta = json.loads((PANEL_DIR / "bundle.json").read_text(encoding="utf-8"))
+    return {iso3: c.get("name", iso3) for iso3, c in meta["countries"].items()}
+
+
 # ── Gating checks ──────────────────────────────────────────────────────────────
 
 def check_claims(records: dict[str, dict], scores: pd.DataFrame,
@@ -144,12 +158,61 @@ def check_claims(records: dict[str, dict], scores: pd.DataFrame,
     return problems
 
 
-def check_internal(records: dict[str, dict]) -> list[str]:
+def check_internal(records: dict[str, dict],
+                   names: dict[str, str] | None = None) -> list[str]:
     """Claims a record makes that can be checked without the panel at all."""
     problems: list[str] = []
+    names = names or {}
     for iso3, rec in sorted(records.items()):
+        meta = rec.get("meta") or {}
         recent = rec.get("recent") or {}
         items = list(recent.get("primary") or []) + list(recent.get("extended") or [])
+
+        # the record must not disagree with the index about what a country is called
+        published = names.get(iso3)
+        recorded = meta.get("name")
+        if published and recorded and recorded != published:
+            problems.append(
+                f"[error] {iso3} · meta.name: record says {recorded!r}, the "
+                f"published bundle says {published!r}. The interface renders the "
+                f"bundle's name, so the two must agree.")
+
+        # a "recent development" dated after the record was written is a
+        # prediction wearing a publication date — the exact failure the date
+        # requirement exists to catch. Found in ZMB: an election written up in
+        # the past tense two days before it happened.
+        updated = str(meta.get("last_updated") or "")
+        dated = [str(i.get("date") or "") for i in items]
+        ahead = sorted(d for d in dated if len(d) >= 10 and updated and d > updated)
+        if ahead:
+            problems.append(
+                f"[error] {iso3} · recent: {len(ahead)} item(s) dated after the "
+                f"record's own last_updated ({updated}): {', '.join(ahead)}. A "
+                f"development cannot be reported before it happens.")
+
+        # membership spans must be coherent
+        for m in rec.get("rec_membership") or []:
+            joined, left = m.get("joined"), m.get("left")
+            org = m.get("org", "?")
+            if joined and left and int(left) < int(joined):
+                problems.append(
+                    f"[error] {iso3} · rec_membership {org}: left {left} before "
+                    f"joining {joined}.")
+            if str(m.get("status")) == "withdrawn" and not left:
+                problems.append(
+                    f"[error] {iso3} · rec_membership {org}: withdrawn but no "
+                    f"year of withdrawal.")
+
+        # the same event recorded twice
+        seen: dict[tuple, int] = {}
+        for e in rec.get("events") or []:
+            key = (e.get("year"), e.get("type"))
+            seen[key] = seen.get(key, 0) + 1
+        for key, count in seen.items():
+            if count > 1:
+                problems.append(
+                    f"[error] {iso3} · events: {count} entries share year/type "
+                    f"{key}.")
 
         bal = rec.get("balance") or {}
         if bal:
@@ -264,9 +327,10 @@ def main() -> int:
         print("  no records found — nothing to verify")
         return 0
     scores, year = load_pillar_scores()
+    names = load_country_names()
     print(f"  {len(records)} records · panel reference year {year}\n")
 
-    problems = check_claims(records, scores, year) + check_internal(records)
+    problems = check_claims(records, scores, year) + check_internal(records, names)
     errors = [p for p in problems if p.startswith("[error]")]
     warnings = [p for p in problems if p.startswith("[warning]")]
 

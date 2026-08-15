@@ -1,7 +1,7 @@
 meta:
   iso3: ZMB
   name: Zambia
-  last_updated: 2026-08-11
+  last_updated: 2026-08-13
   iteration_count: 1
   next_action: >
     EXPAND: (1) record the result of the 13 August 2026 presidential
@@ -276,20 +276,24 @@ recent:
     - headline: "Hichilema seeks a second term as Zambia votes on 13 August 2026"
       date: 2026-08-13
       summary: >
-        Zambia held a general election on 13 August 2026, with
-        incumbent Hakainde Hichilema facing Brian Mundubile, a former
-        ally of the late Edgar Lungu who consolidated a fragmented
-        opposition coalition behind his candidacy. Presidential
-        results were due 17 August. The vote was widely framed as a
-        referendum on Hichilema's economic record -- the 2024 debt
-        restructuring and renewed growth against continued hardship
-        from inflation and the Sino-Metals disaster's aftermath.
+        Zambians voted on 13 August 2026 in a general election
+        contested by fourteen presidential candidates. Incumbent
+        Hakainde Hichilema, favoured by analysts on the advantages of
+        incumbency and a fragmented opposition, cast his ballot in
+        Lusaka's Kabulonga suburb; Brian Mundubile, widely judged the
+        strongest challenger and a former ally of the late Edgar
+        Lungu, voted in Olympia. The Electoral Commission of Zambia
+        expects to declare the presidential result by 17 August. The
+        vote was framed as a referendum on Hichilema's economic
+        record -- the 2024 debt restructuring and renewed growth
+        against continued hardship from inflation and the Sino-Metals
+        disaster's aftermath.
       why_it_matters: >
-        The outcome, not yet known at the time of this record's
-        research, will determine whether Zambia's pattern of peaceful
-        electoral transfers, unbroken since 1991, continues under a
-        second consecutive contested but orderly vote.
-      news_url: "https://allafrica.com/stories/202608110117.html"
+        The result was still uncounted when this record was written,
+        so no outcome is asserted here; what it will determine is
+        whether Zambia's pattern of peaceful electoral transfers,
+        unbroken since 1991, holds through another contested vote.
+      news_url: "https://www.pbs.org/newshour/world/zambians-cast-ballots-in-a-presidential-election-that-tests-incumbents-economic-reforms"
       wikipedia_url: "https://en.wikipedia.org/wiki/2026_Zambian_general_election"
       sentiment: mixed
 
@@ -415,6 +419,12 @@ citations:
     title: "Common Market for Eastern and Southern Africa"
     accessed: 2026-08-11
     verified: true
+  - id: c14
+    url: "https://www.pbs.org/newshour/world/zambians-cast-ballots-in-a-presidential-election-that-tests-incumbents-economic-reforms"
+    source_type: news
+    title: "Zambians cast ballots in a presidential election that tests incumbent's economic reforms (PBS News)"
+    accessed: 2026-08-13
+    verified: false
 
 rec_membership:
   - org: SADC

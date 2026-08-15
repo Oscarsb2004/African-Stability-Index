@@ -19,11 +19,7 @@ historical:
   overview: >
     Portugal held Portuguese Guinea primarily as a slave-export route
     feeding plantations on Cape Verde and in the Americas, one of the
-    highest slave-trade intensities recorded in this corpus. Amilcar
-    Cabral founded the PAIGC in 1960 to fight for the joint
-    liberation of Guinea-Bissau and Cape Verde, leading one of
-    Africa's most militarily successful guerrilla campaigns against a
-    NATO-equipped Portuguese army before he was assassinated in
+    highest slave-trade intensities recorded in this corpus. Amilcar Cabral founded the party on 19 September 1956 -- as the PAI, renamed PAIGC in 1960 -- to fight for the joint liberation of Guinea-Bissau and Cape Verde, leading one of Africa's most militarily successful guerrilla campaigns against a NATO-equipped Portuguese army before he was assassinated in
     January 1973, reportedly amid an internal rift between mainland
     and Cape Verdean party members. Guinea-Bissau declared
     independence unilaterally later that year, recognised by Portugal
@@ -47,7 +43,7 @@ historical:
     cashew nuts, roughly 93% of export revenue, remain the economy's
     dominant genuine growth driver: the 2025 harvest is estimated at
     260,000 tonnes, up 18% on 2024.
-  overview_citations: [c1, c2, c3, c5, c7, c10]
+  overview_citations: [c1, c2, c3, c5, c7, c10, c16]
   colonial_legacy: >
     context/colonial_history.yaml already records Portuguese Guinea's
     slave-trade intensity as "very high," among the highest in this
@@ -71,17 +67,14 @@ historical:
     The same slave-trade relationship that once bound Guinea-Bissau to
     Cape Verde as source and destination reappeared, inverted, as the
     specific political fracture line that ended their planned union.
-  colonial_legacy_citations: [c1, c2]
+  colonial_legacy_citations: [c1, c2, c16]
   key_periods:
     - title: "Slave-export colonization and the PAIGC liberation war"
       period: "1879-1974"
       summary: >
         Portugal held Portuguese Guinea primarily as a slave-export
         route feeding plantations on Cape Verde and in the Americas.
-        Amilcar Cabral founded the PAIGC in 1960 to fight for the
-        joint liberation of Guinea-Bissau and Cape Verde, leading one
-        of Africa's most militarily successful guerrilla campaigns
-        against a NATO-equipped Portuguese army before independence
+        Amilcar Cabral founded the party in 1956 -- as the PAI, renamed PAIGC in 1960 -- to fight for the joint liberation of Guinea-Bissau and Cape Verde, leading one of Africa's most militarily successful guerrilla campaigns against a NATO-equipped Portuguese army before independence
         was unilaterally declared in 1973.
       citations: [c1, c2]
     - title: "Cabral's assassination and the planned union's collapse"
@@ -442,6 +435,13 @@ citations:
     title: "Community of Sahel-Saharan States"
     accessed: 2026-08-12
     verified: true
+
+  - id: c16
+    url: "https://en.wikipedia.org/wiki/African_Party_for_the_Independence_of_Guinea_and_Cape_Verde"
+    source_type: wikipedia
+    title: "African Party for the Independence of Guinea and Cape Verde (PAIGC)"
+    accessed: 2026-08-13
+    verified: false
 
 rec_membership:
   - org: ECOWAS
