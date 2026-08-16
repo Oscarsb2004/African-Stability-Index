@@ -26,6 +26,7 @@ exposed to (ASI v2 plan §9.3):
 
 from __future__ import annotations
 
+import re
 from dataclasses import dataclass, field
 from enum import Enum
 from typing import Any
@@ -106,6 +107,19 @@ LIMITS = {
 N_RECENT_PRIMARY  = 3
 N_RECENT_EXTENDED = 6
 
+#: Reserved citation id: the index's own panel.
+#:
+#: Most pillar summaries are index output — a score, a coverage count, a tier —
+#: which rest on data/panel and are verified by verify/panel.py, not by any URL.
+#: Requiring a URL anyway produced 71 pillars citing the country's general
+#: history article as filler, which could not support anything in them.
+#:
+#: A pillar may therefore cite `panel` for what the index measured. It may not
+#: use it to cover anything else: a summary that reaches outside the index —
+#: an event, an actor, a year other than the reference year — still needs a real
+#: source. Outside context is encouraged; uncited outside context is not.
+PANEL_CITATION = "panel"
+
 #: An AUDIT run is forced when a single run inflates citations by more than this,
 #: regardless of where the rotation sits. Rapid growth is when fabrication is
 #: most likely and least visible.
@@ -165,7 +179,8 @@ def _check_length(country: str, where: str, text: str | None,
 
 
 def validate(record: dict[str, Any], *,
-             greyed_pillars: set[str] | None = None) -> list[Problem]:
+             greyed_pillars: set[str] | None = None,
+             reference_year: int | None = None) -> list[Problem]:
     """
     Check one country record against the blueprint.
 
@@ -173,6 +188,10 @@ def validate(record: dict[str, Any], *,
     at the reference year. Writing a confident paragraph about a pillar the data
     refused to score is the single most damaging thing this layer can do, so it
     is an error rather than a style note.
+
+    `reference_year` enables the rule that a pillar citing only the index may not
+    reach outside the year the index measures. Omit it and that check is skipped,
+    so callers without a panel to hand still get every structural check.
     """
     problems: list[Problem] = []
     iso3 = (record.get("meta") or {}).get("iso3", "???")
@@ -195,11 +214,19 @@ def validate(record: dict[str, Any], *,
             problems.append(Problem(iso3, f"citation {cid}",
                                     f"unknown source_type {c.get('source_type')!r}"))
 
-    def check_refs(where: str, refs: list[str] | None) -> None:
+    def check_refs(where: str, refs: list[str] | None,
+                   *, panel_allowed: bool = False) -> None:
         if not refs:
             problems.append(Problem(iso3, where, "no citation referenced"))
             return
         for r in refs:
+            if r == PANEL_CITATION:
+                if not panel_allowed:
+                    problems.append(Problem(
+                        iso3, where,
+                        f"cites {PANEL_CITATION!r}, which only pillar summaries may "
+                        f"do — prose outside the pillars is not index output"))
+                continue
             if r not in citations:
                 problems.append(Problem(iso3, where, f"cites unknown id {r!r}"))
 
@@ -232,9 +259,26 @@ def validate(record: dict[str, Any], *,
         if not entry:
             problems.append(Problem(iso3, f"pillars.{pid}", "missing", "warning"))
             continue
-        _check_length(iso3, f"pillars.{pid}", entry.get("summary"),
-                      "pillar_summary", problems)
-        check_refs(f"pillars.{pid}", entry.get("citations"))
+        summary = entry.get("summary") or ""
+        _check_length(iso3, f"pillars.{pid}", summary, "pillar_summary", problems)
+        refs = entry.get("citations")
+        check_refs(f"pillars.{pid}", refs, panel_allowed=True)
+
+        # Outside context is encouraged, but it has to be sourced. A summary
+        # that cites nothing but the index while discussing a year the index
+        # does not cover is asserting something the panel cannot support.
+        if reference_year is not None and refs:
+            outside = [r for r in refs if r != PANEL_CITATION]
+            if not outside:
+                years = {int(y) for y in re.findall(r"\b(?:19|20)\d{2}\b", summary)}
+                beyond = sorted(years - {reference_year})
+                if beyond:
+                    problems.append(Problem(
+                        iso3, f"pillars.{pid}",
+                        f"cites only {PANEL_CITATION!r} but refers to "
+                        f"{', '.join(str(y) for y in beyond)} — the index measures "
+                        f"{reference_year}, so a claim reaching beyond it needs a "
+                        f"real source"))
 
     # REC (Regional Economic Community) membership
     rec_membership = record.get("rec_membership")

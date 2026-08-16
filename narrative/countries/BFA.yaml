@@ -184,7 +184,7 @@ pillars:
       - "life expectancy ~61 years, infant mortality ~45/1,000 -- both fresh, among the more severe readings in the index"
       - "severe food insecurity ~7% (fresh) -- may not fully capture conditions in areas cut off by the insurgency"
       - "safely managed water low (regional-mean estimate)"
-    citations: [c1]
+    citations: [panel]
   E:
     summary: >
       Political Stability, freshly measured, scores among the very
@@ -224,7 +224,7 @@ pillars:
       - "CO2 pc scores well (fresh), but electricity generation is ~86% fossil-fuel (carried forward) -- closer to the wealth-proxy pattern than a genuine clean-energy case"
       - "electricity access only ~22% (Pillar G) -- low emissions mostly reflect low overall consumption"
       - "agricultural land extensive (fresh); freshwater withdrawal low (carried forward)"
-    citations: [c1]
+    citations: [panel]
   G:
     summary: >
       Electricity access, at just under 22% and freshly measured, is
@@ -241,7 +241,7 @@ pillars:
       - "electricity access only ~22% (fresh) -- among the lowest figures in this corpus, roughly 4 in 5 people lack access"
       - "basic water access under 50% (fresh)"
       - "social protection coverage moderate (carried forward); 4 of 5 indicators fresh -- a substantiated, not estimated, severity"
-    citations: [c1]
+    citations: [panel]
 
 recent:
   primary:

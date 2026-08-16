@@ -187,7 +187,7 @@ pillars:
       - "all 5 indicators freshly measured, all score strongly -- the best D-pillar combination in the corpus so far"
       - "life expectancy >71, infant mortality ~21/1,000, severe food insecurity only 12% -- none of these figures is an estimate"
       - "a genuine outlier: strong basic-needs delivery alongside very low Voice and Accountability, not the pattern usually seen together"
-    citations: [c1]
+    citations: [panel]
   E:
     summary: >
       Political Stability, freshly measured, scores only moderately,
@@ -245,7 +245,7 @@ pillars:
       - "electricity access 100% (fresh) -- the index ceiling; basic water and handwashing both near-universal"
       - "social protection coverage at the ceiling (carried forward) -- reflects long-standing state subsidy programmes now under fiscal pressure"
       - "4 of 5 indicators fresh -- a substantiated, not estimated, result"
-    citations: [c1]
+    citations: [panel]
 
 recent:
   primary:

@@ -105,6 +105,29 @@ balance:
 
 ## Rules that are enforced, not suggested
 
+**A pillar may cite the index, but only for what the index measured.** Most
+pillar summaries are index output — a score, a coverage count, a reliability
+tier. Those rest on `data/panel`, which `verify/panel.py` re-derives
+independently; they have a verified source, just not a URL. Such a summary
+cites the reserved id `panel`:
+
+```yaml
+pillars:
+  D:
+    summary: "Four of the pillar's five indicators are directly measured ..."
+    drivers: [...]
+    citations: [panel]        # index output; no external source to give
+```
+
+Outside context in a pillar summary is **encouraged** — an event that explains
+the score, a policy that predates it, a figure the reference year misses. It is
+what turns a number into an explanation. But it must be sourced like any other
+claim: a summary citing only `panel` while discussing a year the index does not
+measure is an error, because its stated source cannot support it. Cite `panel`
+*and* the real source when a summary does both.
+
+`panel` is valid only inside `pillars`. Prose elsewhere is not index output.
+
 **Every factual claim carries a citation.** Models produce plausible,
 well-formatted, nonexistent sources. An uncited sentence is treated as
 unsupported and removed by the next audit.

@@ -158,7 +158,7 @@ pillars:
       - "all 5 indicators directly measured; handwashing-facility access just 12.39% of the population -- among the lowest recorded anywhere in this corpus"
       - "life expectancy and infant mortality both comparatively poor; severe food insecurity and safely managed drinking water similarly weak"
       - "5 of 5 indicators current -- Benin's weakest pillar, and the weakness is not a data-coverage artefact"
-    citations: [c1]
+    citations: [panel]
   E:
     summary: >
       Displaced persons, at 0.62 per 1,000 and directly measured, is
@@ -210,7 +210,7 @@ pillars:
       - "electricity access 57% of the population (fresh) -- moderate; basic drinking water comparatively decent (fresh)"
       - "Government Effectiveness and Control of Corruption (shared with Pillar A) middling; social protection severe (carried forward) -- among the lowest recorded anywhere in this corpus"
       - "4 of 5 indicators current -- infrastructure access has not kept pace with the port-driven economic growth documented in Pillar B"
-    citations: [c1]
+    citations: [panel]
 
 recent:
   primary:

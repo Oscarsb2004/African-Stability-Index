@@ -167,7 +167,7 @@ pillars:
       - "life expectancy ~67 years, infant mortality ~36.0/1,000 -- both fresh, moderate"
       - "severe food insecurity affects over a quarter of the population (fresh) -- comparatively severe"
       - "safely managed water weak (regional-mean estimate); 4 of 5 indicators fresh -- a largely, not thinly, measured picture"
-    citations: [c1]
+    citations: [panel]
   E:
     summary: >
       Political Stability, freshly measured, is comparatively decent --

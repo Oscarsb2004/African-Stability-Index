@@ -30,6 +30,7 @@ from __future__ import annotations
 
 from dash import dcc, html
 
+from asi.narrative.schema import PANEL_CITATION
 from asi.narrative.store import (
     Balance, Event, NarrativeRecord, PillarNarrative, RecentItem,
 )
@@ -88,12 +89,29 @@ def source_links(record: NarrativeRecord, ids, *, label: str = "Sources"):
 
     Rendered as numbered links rather than titles: a paragraph followed by five
     full source titles buries the paragraph.
+
+    The reserved `panel` id has no URL, because what it points at is the index's
+    own measured output rather than a page. It renders as a statement of that,
+    not as a missing link — a pillar summary describing a score is sourced, just
+    not to the web.
     """
     cites = record.cite(ids)
-    if not cites:
+    from_panel = PANEL_CITATION in (ids or ())
+    if not cites and not from_panel:
         return None
     parts = ([html.Span(f"{label}: ", style={"color": "#bbb", "fontSize": "9px"})]
              if label else [])
+    if from_panel:
+        parts.append(html.Span(
+            "measured by the index",
+            title="This summary describes what the index itself measured for the "
+                  "reference year. The underlying panel is re-derived "
+                  "independently by verify/panel.py; see Methodology.",
+            style={"fontSize": "9px", "color": "#16a085", "fontWeight": "700",
+                   "marginRight": "7px"}))
+        if cites:
+            parts.append(html.Span("·", style={"color": "#ddd", "fontSize": "9px",
+                                               "marginRight": "7px"}))
     for i, c in enumerate(cites):
         parts.append(html.A(
             c.domain,

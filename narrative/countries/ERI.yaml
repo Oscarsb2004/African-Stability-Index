@@ -181,7 +181,7 @@ pillars:
       - "electricity access barely half the population (Pillar G) -- confirms low emissions reflect low consumption, not clean generation"
       - "agricultural land extensive (fresh), consistent with a largely rural, subsistence-agricultural economy; freshwater withdrawal moderate (carried forward)"
       - "only 2 of 4 indicators freshly measured this year"
-    citations: [c1]
+    citations: [panel]
   G:
     summary: >
       Electricity access, at just under 55% and freshly measured, is
@@ -200,7 +200,7 @@ pillars:
       - "electricity access under 55% (fresh) -- weak, the only indicator directly measured for Eritrea specifically in this pillar"
       - "basic/safely managed water, handwashing, and social protection all estimated from regional peers, not measured directly -- all in a similarly weak range"
       - "this data-sparsity pattern extends well beyond this one pillar -- 3 of this record's other 6 pillars are greyed out entirely, not just thin, because Eritrea publishes so little of the underlying data"
-    citations: [c1]
+    citations: [panel]
 
 recent:
   primary:

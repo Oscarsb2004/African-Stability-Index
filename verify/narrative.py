@@ -48,6 +48,12 @@ DISPLAYABLE = ("reliable", "thin")
 #: Re-stated, not imported: AUDIT lands on iteration 4 and every 4th after.
 AUDIT_EVERY = 4
 
+#: Re-stated, not imported: the reserved citation id meaning "the index's own
+#: panel". A pillar summary that is pure index output rests on data/panel, which
+#: verify/panel.py re-derives independently — so it has a verified source, just
+#: not a URL. It may not stand in for a claim reaching outside the index.
+PANEL_CITATION = "panel"
+
 NUMBER_WORDS = {"one": 1, "two": 2, "three": 3, "four": 4,
                 "five": 5, "six": 6, "seven": 7, "eight": 8}
 
@@ -260,6 +266,31 @@ def check_claims(records: dict[str, dict], scores: pd.DataFrame,
     return problems
 
 
+def check_panel_citations(records: dict[str, dict], year: int) -> list[str]:
+    """
+    The index may stand as a pillar's source, but only for what the index says.
+
+    Outside context is encouraged in a pillar summary; uncited outside context is
+    not. A summary citing nothing but `panel` while discussing a year the panel
+    does not cover is asserting something its stated source cannot support.
+    """
+    problems: list[str] = []
+    for iso3, rec in sorted(records.items()):
+        for pid, p in (rec.get("pillars") or {}).items():
+            refs = list(((p or {}).get("citations") or []))
+            if not refs or any(r != PANEL_CITATION for r in refs):
+                continue
+            summary = ((p or {}).get("summary") or "")
+            beyond = sorted({int(y) for y in re.findall(r"\b(?:19|20)\d{2}\b", summary)}
+                            - {year})
+            if beyond:
+                problems.append(
+                    f"[error] {iso3} · pillars.{pid}: cites only the index but "
+                    f"refers to {', '.join(str(y) for y in beyond)}; the panel "
+                    f"measures {year}, so that claim needs a real source.")
+    return problems
+
+
 def check_internal(records: dict[str, dict],
                    names: dict[str, str] | None = None) -> list[str]:
     """Claims a record makes that can be checked without the panel at all."""
@@ -340,7 +371,7 @@ def check_internal(records: dict[str, dict],
             refs |= set((p or {}).get("citations") or [])
         for m in rec.get("rec_membership") or []:
             refs |= set(m.get("citations") or [])
-        dangling = sorted(refs - cites)
+        dangling = sorted(refs - cites - {PANEL_CITATION})
         if dangling:
             problems.append(
                 f"[error] {iso3} · citations: referenced but not defined: "
@@ -502,6 +533,7 @@ def main() -> int:
 
     problems = (check_claims(records, scores, year)
                 + check_quoted_values(records, load_observations(), year)
+                + check_panel_citations(records, year)
                 + check_internal(records, names))
     errors = [p for p in problems if p.startswith("[error]")]
     warnings = [p for p in problems if p.startswith("[warning]")]

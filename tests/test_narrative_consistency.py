@@ -365,3 +365,59 @@ def test_a_clause_naming_another_indicator_is_not_read_across(panel, observation
 def test_the_shipped_corpus_quotes_its_values_correctly(records, panel, observations):
     out = verify_narrative.check_quoted_values(records, observations, panel.reference_year)
     assert not out, "quoted-value violations:\n" + "\n".join(out)
+
+
+# ── The reserved panel citation ────────────────────────────────────────────────
+
+from asi.narrative.schema import PANEL_CITATION, validate  # noqa: E402
+
+
+def _rec(summary, citations, pillar="A"):
+    return {"meta": {"iso3": "KEN", "name": "Kenya", "last_updated": "2026-01-01",
+                     "iteration_count": 1, "next_action": "x"},
+            "citations": [{"id": "c1", "url": "https://e.org/a", "source_type": "news"}],
+            "pillars": {pillar: {"summary": summary, "citations": citations}}}
+
+
+IDX_ONLY = "All six indicators are directly measured this year and the aggregate is weak. " + "word " * 75
+CONTEXTUAL = "The 2026 election followed this reading. " + "word " * 80
+
+
+def test_a_pillar_may_cite_the_index():
+    problems = validate(_rec(IDX_ONLY, [PANEL_CITATION]))
+    assert not [p for p in problems if "unknown id" in p.message]
+
+
+def test_panel_is_rejected_outside_the_pillars():
+    rec = _rec(IDX_ONLY, ["c1"])
+    rec["historical"] = {"overview": "x " * 200, "overview_citations": [PANEL_CITATION]}
+    assert any("only pillar summaries" in p.message for p in validate(rec))
+
+
+def test_citing_only_the_index_cannot_cover_an_outside_claim():
+    """Outside context is encouraged; uncited outside context is not."""
+    problems = validate(_rec(CONTEXTUAL, [PANEL_CITATION]), reference_year=2023)
+    assert any("needs a real source" in p.message for p in problems)
+
+
+def test_an_outside_claim_is_fine_when_a_real_source_is_cited_too():
+    problems = validate(_rec(CONTEXTUAL, [PANEL_CITATION, "c1"]), reference_year=2023)
+    assert not [p for p in problems if "needs a real source" in p.message]
+
+
+def test_the_rule_is_skipped_without_a_reference_year():
+    assert not [p for p in validate(_rec(CONTEXTUAL, [PANEL_CITATION]))
+                if "needs a real source" in p.message]
+
+
+def test_verify_layer_agrees_with_the_schema_about_panel(records, panel):
+    """verify/ re-states the rule rather than importing it; they must not drift."""
+    out = verify_narrative.check_panel_citations(records, panel.reference_year)
+    assert not out, "\n".join(out)
+
+
+def test_verify_layer_catches_an_index_only_citation_covering_an_outside_claim(panel):
+    rec = {"KEN": {"meta": {"iso3": "KEN"},
+                   "pillars": {"A": {"summary": CONTEXTUAL, "citations": [PANEL_CITATION]}}}}
+    out = verify_narrative.check_panel_citations(rec, panel.reference_year)
+    assert out and "needs a real source" in out[0]

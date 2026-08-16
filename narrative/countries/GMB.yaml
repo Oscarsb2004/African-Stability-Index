@@ -172,7 +172,7 @@ pillars:
       - "all 5 health indicators freshly measured -- a fully, not partially, measured picture"
       - "life expectancy ~66 years, infant mortality ~33.7/1,000 -- both moderate (fresh)"
       - "severe food insecurity ~22% (fresh) -- comparatively less severe; safely managed water covers nearly half the population (fresh) -- moderate across the board, genuinely evidenced"
-    citations: [c1]
+    citations: [panel]
   E:
     summary: >
       Political Stability, freshly measured, is genuinely strong -- one
@@ -192,7 +192,7 @@ pillars:
       - "IDPs near-zero (fresh) -- another strong reading"
       - "homicide the pillar's only weaker component (regional-mean estimate, not directly measured)"
       - "3 of 4 indicators fresh -- a genuinely, not thinly, measured strength, a rare case where this pillar's positive reading reflects real stability, not a data-coverage gap"
-    citations: [c1]
+    citations: [panel]
   F:
     summary: >
       CO2 emissions per capita, freshly measured, are near the lowest
@@ -209,7 +209,7 @@ pillars:
       - "CO2 pc near the lowest recorded in this corpus (fresh) -- unambiguous wealth-proxy artefact: electricity generation >98% fossil-fuel (carried forward), among the highest fossil-dependence readings in this project"
       - "electricity access only ~67% of the population (Pillar G) -- confirms low emissions reflect low consumption, not clean generation"
       - "freshwater withdrawal very low relative to renewable resources (carried forward); agricultural land extensive (fresh)"
-    citations: [c1]
+    citations: [panel]
   G:
     summary: >
       Electricity access, at just under 67% and freshly measured, is
@@ -225,7 +225,7 @@ pillars:
       - "electricity access ~67% (fresh) -- moderate"
       - "basic drinking water strong (fresh), covering the large majority of the population; handwashing weak (fresh) -- among the lower readings recorded in this corpus, just under 13%"
       - "social protection thin (regional-mean estimate); 4 of 5 indicators fresh -- a genuine mix of strong water access and weaker hygiene/social protection"
-    citations: [c1]
+    citations: [panel]
 
 recent:
   primary:

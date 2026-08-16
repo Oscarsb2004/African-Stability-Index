@@ -130,7 +130,9 @@ def test_corpus_citations_all_resolve(corpus):
             referenced |= set(p.citations)
         for m in r.rec_membership:
             referenced |= set(m.citations)
-        assert referenced <= set(r.citations), f"{r.iso3} references missing citations"
+        # `panel` is the reserved id for the index's own output; it has no
+        # citations-block entry because what it points at is not a page.
+        assert referenced <= set(r.citations) | {"panel"},             f"{r.iso3} references missing citations"
 
 
 # ── Provenance: the claim the corpus is allowed to make ────────────────────────

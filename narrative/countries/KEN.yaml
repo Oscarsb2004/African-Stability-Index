@@ -182,7 +182,7 @@ pillars:
     drivers:
       - "life expectancy >63, infant mortality ~35/1,000 -- both fresh, moderate"
       - "severe food insecurity affects >25% of population (fresh) -- the pillar's weakest indicator, tied to drought in arid/semi-arid counties"
-    citations: [c1]
+    citations: [panel]
   E:
     summary: >
       Political Stability, freshly measured, scores only moderately --

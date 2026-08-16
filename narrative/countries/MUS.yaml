@@ -191,7 +191,7 @@ pillars:
       - "no civil conflict or coup since 1968"
       - "homicide indicators carried forward, not freshly measured"
       - "displacement data absent (no active conflict)"
-    citations: [c1]
+    citations: [panel]
   F:
     summary: >
       Mauritius records the weakest pillar score in the index, driven by
@@ -230,7 +230,7 @@ pillars:
       - "100% electricity access"
       - "deep domestic credit markets"
       - "social protection coverage data absent this year"
-    citations: [c1]
+    citations: [panel]
 
 rec_membership:
   - org: COMESA

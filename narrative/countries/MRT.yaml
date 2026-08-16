@@ -172,7 +172,7 @@ pillars:
       - "life expectancy ~68 years, infant mortality ~31.1/1,000 -- both fresh, moderate, meaningfully better than several other records in this corpus"
       - "severe food insecurity ~13% (fresh) -- comparatively less severe"
       - "safely managed water weak (regional-mean estimate); 4 of 5 indicators fresh -- a genuinely, not thinly, measured moderate reading"
-    citations: [c1]
+    citations: [panel]
   E:
     summary: >
       Political Stability, freshly measured, is comparatively decent, an
@@ -210,7 +210,7 @@ pillars:
       - "CO2 pc moderate (fresh); electricity generation high fossil-fuel share (carried forward)"
       - "agricultural land moderate (fresh) -- notable given most of Mauritania's territory is Saharan desert"
       - "only 2 of 4 indicators freshly measured this year"
-    citations: [c1]
+    citations: [panel]
   G:
     summary: >
       Electricity access, at just over half the population and freshly
@@ -227,7 +227,7 @@ pillars:
       - "electricity access just over half the population (fresh) -- moderate"
       - "basic drinking water comparatively decent (fresh); handwashing more middling (fresh); safely managed water weak (regional-mean estimate)"
       - "social protection thin (regional-mean estimate); 4 of 5 indicators fresh -- a moderate reading in real contrast with Pillar F's severe freshwater-withdrawal figure"
-    citations: [c1]
+    citations: [panel]
 
 recent:
   primary:

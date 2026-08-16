@@ -339,7 +339,8 @@ def main() -> int:
     all_problems: list[str] = []
     print()
     for iso3, rec in records.items():
-        problems = validate(rec, greyed_pillars=greyed_pillars(panel, iso3))
+        problems = validate(rec, greyed_pillars=greyed_pillars(panel, iso3),
+                            reference_year=panel.reference_year)
         errors = [p for p in problems if p.severity == "error"]
         warnings = [p for p in problems if p.severity == "warning"]
         n = (rec.get("meta") or {}).get("iteration_count", 0)

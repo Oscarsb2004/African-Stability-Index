@@ -185,7 +185,7 @@ pillars:
       - "all 5 health indicators freshly measured -- the most complete picture recorded in this corpus so far"
       - "life expectancy ~64 years, infant mortality ~43.7/1,000 -- both weak relative to the rest of this corpus"
       - "severe food insecurity ~18% -- comparatively severe; genuinely, not thinly, measured -- 5/5 fresh indicators all point the same direction"
-    citations: [c1]
+    citations: [panel]
   E:
     summary: >
       Only two of the pillar's four indicators have any data this year,
@@ -225,7 +225,7 @@ pillars:
       - "CO2 pc near the lowest recorded in this corpus (fresh) -- reads as a wealth-proxy artefact: electricity access under 40%, and even that grid is ~66% fossil-fuel (carried forward)"
       - "agricultural land extensive (fresh) -- consistent with a still heavily rural, agrarian economy"
       - "freshwater withdrawal very low relative to renewable resources (carried forward) -- plausibly genuine (high rainfall, large landmass) rather than purely poverty-driven, though the data can't fully distinguish the two"
-    citations: [c1]
+    citations: [panel]
   G:
     summary: >
       Electricity access, at just under 40% and freshly measured, is

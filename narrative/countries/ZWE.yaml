@@ -173,7 +173,7 @@ pillars:
       - "all 5 health indicators freshly measured -- a fully, not partially, measured picture"
       - "life expectancy ~63 years, infant mortality ~62.2/1,000 -- both severe (fresh)"
       - "severe food insecurity ~25% (fresh) -- comparatively severe; safely managed water weak (fresh); genuinely, not thinly, evidenced severity"
-    citations: [c1]
+    citations: [panel]
   E:
     summary: >
       Political Stability, freshly measured, is weak, consistent with
@@ -209,7 +209,7 @@ pillars:
       - "electricity access covers a majority of the population (Pillar G) -- not the severe constraint seen in the corpus's clearest wealth-proxy cases"
       - "freshwater withdrawal moderate relative to renewable resources (carried forward); agricultural land moderate (fresh)"
       - "only 2 of 4 indicators freshly measured this year"
-    citations: [c1]
+    citations: [panel]
   G:
     summary: >
       Electricity access, at 62% and freshly measured, is moderate --
@@ -227,7 +227,7 @@ pillars:
       - "electricity access 62% (fresh) -- among the better readings in this corpus, consistent with Kariba Dam hydropower documented in Pillar F"
       - "basic drinking water comparatively decent (fresh); handwashing moderate (fresh); safely managed water markedly weaker than the other water indicators (fresh)"
       - "social protection moderate (carried forward); 4 of 5 indicators fresh -- a genuinely, not thinly, measured picture"
-    citations: [c1]
+    citations: [panel]
 
 recent:
   primary:

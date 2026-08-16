@@ -180,7 +180,7 @@ pillars:
       - "life expectancy ~67 years, infant mortality ~38.3/1,000 -- both fresh, moderate"
       - "severe food insecurity 30% (fresh) -- among the most severe readings in this corpus, a striking contrast with Namibia's strong governance/GDP-per-capita figures"
       - "2 of 5 indicators not measured this year; stark income inequality (absent from Pillar B's own data) is a plausible part of the explanation"
-    citations: [c1]
+    citations: [panel]
   E:
     summary: >
       Political Stability, freshly measured, is strong -- among the
@@ -196,7 +196,7 @@ pillars:
       - "Political Stability strong (fresh) -- among the better readings in this corpus, consistent with 3 decades of uninterrupted multi-party government"
       - "intentional homicide comparatively weak (carried forward) -- a real, separate concern from political stability"
       - "only 2 of 4 indicators have any data -- IDPs entirely absent; the strong score should be read as thin, not fully verified"
-    citations: [c1]
+    citations: [panel]
   F:
     summary: >
       CO2 emissions per capita, freshly measured, are moderate.
@@ -220,7 +220,7 @@ pillars:
       - "freshwater withdrawal very low relative to renewable resources (carried forward) -- plausibly reflects severe water scarcity (Namibia is among the most arid countries in Sub-Saharan Africa), not abundance, unlike some other low-withdrawal cases in this corpus"
       - "electricity generation ~1.5% fossil-fuel (carried forward) -- plausibly a genuine clean-generation mix (Ruacana hydropower + imports), since electricity access (Pillar G) is a moderate ~57%, not severely constrained like the corpus's wealth-proxy cases"
       - "only 2 of 4 indicators freshly measured this year"
-    citations: [c1]
+    citations: [panel]
   G:
     summary: >
       Electricity access, at just under 57% and freshly measured, is
@@ -240,7 +240,7 @@ pillars:
       - "basic drinking water strong (fresh), covering the large majority of the population; safely managed water and handwashing more middling (regional-mean estimates)"
       - "social protection not measured this year"
       - "this moderate-to-strong infrastructure picture supports reading Pillar F's low-fossil generation figure as a genuine achievement, not an energy-poverty artefact"
-    citations: [c1]
+    citations: [panel]
 
 recent:
   primary:

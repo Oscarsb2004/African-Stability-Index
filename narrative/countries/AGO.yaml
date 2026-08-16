@@ -175,7 +175,7 @@ pillars:
     drivers:
       - "life expectancy >64 years, infant mortality 33/1,000 -- both fresh, moderate"
       - "severe food insecurity (~31%, carried forward) and safely managed water (~18%, regional-mean) both weaker, both stale estimates"
-    citations: [c1]
+    citations: [panel]
   E:
     summary: >
       Political Stability, freshly measured, scores moderately well at
@@ -217,7 +217,7 @@ pillars:
       - "CO2 pc 0.74 tons scores well -- genuinely hydro-driven (only 27% fossil-fuel electricity), not just the usual wealth-proxy artifact"
       - "but electricity access is still only ~51% -- clean generation mix coexists with real energy poverty"
       - "agricultural land moderate (fresh); freshwater withdrawal very low (carried forward)"
-    citations: [c1]
+    citations: [panel]
   G:
     summary: >
       Electricity access (51%), basic water access (67%) and handwashing

@@ -188,7 +188,7 @@ pillars:
       - "CO2 pc comparatively low (fresh) -- reads as partly genuine: electricity generation under 12% fossil-fuel (carried forward)"
       - "but electricity access (Pillar G) covers barely half the population -- energy poverty remains part of the explanation, a genuine blend case"
       - "freshwater withdrawal very low relative to renewable resources (carried forward); agricultural land extensive (fresh); only 2 of 4 indicators freshly measured this year"
-    citations: [c1]
+    citations: [panel]
   G:
     summary: >
       Electricity access, at just over half the population and freshly
@@ -201,7 +201,7 @@ pillars:
       - "electricity access just over half the population (fresh) -- moderate"
       - "basic drinking water comparatively decent (fresh); Government Effectiveness and Control of Corruption (shared with Pillar A) weak, both fresh; social protection carried forward"
       - "4 of 5 indicators current -- the moderate headline score rests on real measurement; mineral wealth (Pillar B) hasn't yet translated into infrastructure investment at pace"
-    citations: [c1]
+    citations: [panel]
 
 recent:
   primary:

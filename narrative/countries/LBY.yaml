@@ -159,7 +159,7 @@ pillars:
       - "4 of 5 indicators directly measured; handwashing-facility access 95.59% of the population -- at the scale's near-ceiling"
       - "life expectancy and infant mortality both comparatively strong; severe food insecurity more middling"
       - "safely managed drinking water comparatively strong (regional-mean estimate); 4 of 5 indicators current -- health/sanitation infrastructure that has survived the political collapse documented in Pillar A"
-    citations: [c1]
+    citations: [panel]
   E:
     summary: >
       Displaced persons, at 16.29 per 1,000 and directly measured, is
@@ -196,7 +196,7 @@ pillars:
       - "the weakest single pillar recorded anywhere in this corpus, surpassing EGY's own prior record-low Pillar F"
       - "freshwater withdrawal over 817% of internal renewable resources (carried forward) -- Libya draws over 8x its renewable water supply, sustained almost entirely by non-renewable fossil aquifers"
       - "CO2 pc at the scale's absolute floor (fresh); electricity generation essentially total fossil-fuel, 99.97% (carried forward); agricultural land minimal (fresh, desert terrain); only 2 of 4 indicators current"
-    citations: [c1]
+    citations: [panel]
   G:
     summary: >
       Electricity access, at 73% of the population and freshly
@@ -213,7 +213,7 @@ pillars:
       - "electricity access 73% of the population (fresh) -- comparatively decent for this corpus; basic drinking water comparatively strong (fresh)"
       - "Government Effectiveness and Control of Corruption (shared with Pillar A) both near the scale's floor; social protection entirely unmeasured"
       - "4 of 5 indicators current -- infrastructure reach has held up better than the governance collapse documented in Pillar A would suggest"
-    citations: [c1]
+    citations: [panel]
 
 recent:
   primary:

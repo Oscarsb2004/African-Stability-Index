@@ -173,7 +173,7 @@ pillars:
       - "Political Stability and Rule of Law (shared with Pillar A) both middling to comparatively strong, fresh"
       - "displaced persons 49.87/1,000 is a regional-mean estimate, not a direct measurement -- Zambia has no comparable internal conflict, and the figure most plausibly reflects the DRC conflict (see COD, RWA, BDI records) pulling the regional average upward"
       - "intentional homicide also a regional-mean estimate; only 2 of 4 indicators current"
-    citations: [c1]
+    citations: [panel]
   F:
     summary: >
       CO2 emissions per capita, freshly measured, score comparatively
@@ -191,7 +191,7 @@ pillars:
       - "CO2 pc scores comparatively well (fresh) -- reads as genuinely earned: electricity generation just over 11% fossil-fuel (carried forward), reflecting real hydropower from Kariba and Kafue Gorge"
       - "closer to LSO's genuine hydropower case elsewhere in this corpus than to a small-economy artefact"
       - "agricultural land thin (fresh); freshwater withdrawal very low relative to renewable resources (carried forward); only 2 of 4 indicators current"
-    citations: [c1]
+    citations: [panel]
   G:
     summary: >
       Electricity access, at just over half the population and
@@ -209,7 +209,7 @@ pillars:
       - "electricity access just over half the population (fresh) -- moderate; basic drinking water comparatively decent (fresh)"
       - "Government Effectiveness and Control of Corruption (shared with Pillar A) middling; social protection comparatively weaker (regional-mean estimate)"
       - "4 of 5 indicators current -- roughly half the population still lacks power despite the generation capacity documented in Pillar F"
-    citations: [c1]
+    citations: [panel]
 
 recent:
   primary:

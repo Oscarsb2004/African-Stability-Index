@@ -175,7 +175,7 @@ pillars:
       - "life expectancy ~62 years, infant mortality ~56.3/1,000 -- both severe (fresh)"
       - "severe food insecurity ~34% (fresh) -- comparatively severe, directly connected to the food-inflation crisis in Pillar B"
       - "safely managed water ~10.6% (fresh) -- among the weakest readings recorded anywhere in this corpus; all 5 indicators fresh -- genuinely, not thinly, evidenced severity"
-    citations: [c1]
+    citations: [panel]
   E:
     summary: >
       Political Stability, freshly measured, is moderate. Displaced
@@ -215,7 +215,7 @@ pillars:
       - "electricity generation ~25% fossil-fuel (carried forward) -- a comparatively modest share, suggesting some genuine hydropower, but low overall consumption still dominates the picture"
       - "freshwater withdrawal near zero relative to renewable resources (carried forward) -- plausibly genuine abundance given Sierra Leone's high rainfall"
       - "agricultural land moderate (fresh); only 2 of 4 indicators freshly measured this year"
-    citations: [c1]
+    citations: [panel]
   G:
     summary: >
       Electricity access, at just over a third of the population and
@@ -232,7 +232,7 @@ pillars:
       - "electricity access just over a third of the population (fresh) -- weak"
       - "basic drinking water comparatively decent (fresh), covering roughly two-thirds of the population; handwashing weak (fresh)"
       - "social protection thin (carried forward); 4 of 5 indicators fresh -- a genuine gap between decent water access and weaker electricity/social protection"
-    citations: [c1]
+    citations: [panel]
 
 recent:
   primary:

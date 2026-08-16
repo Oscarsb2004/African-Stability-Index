@@ -191,7 +191,7 @@ pillars:
       - "life expectancy ~61 years (fresh), moderate; infant mortality ~67/1,000 (fresh) -- among the most severe figures recorded anywhere in this corpus"
       - "severe food insecurity 7.6% (fresh) -- comparatively less severe"
       - "safely managed water low (regional-mean estimate); 4 of 5 indicators fresh -- a substantiated, not primarily estimated, severity"
-    citations: [c1]
+    citations: [panel]
   E:
     summary: >
       Political Stability, freshly measured, scores poorly, reflecting
@@ -231,7 +231,7 @@ pillars:
       - "electricity generation ~97% fossil-fuel (carried forward); electricity access only ~20% (Pillar G) -- barely an energy system despite uranium exports"
       - "freshwater withdrawal ~74% of internal renewable resources (carried forward) -- dependence on the shared Niger River"
       - "agricultural land moderate (fresh)"
-    citations: [c1]
+    citations: [panel]
   G:
     summary: >
       Electricity access, at just over 20% and freshly measured, is
@@ -249,7 +249,7 @@ pillars:
       - "electricity access only ~20% (fresh) -- among the lowest in the corpus, stark contrast with Niger's role as a major uranium exporter"
       - "basic water ~53%, handwashing ~22% (both fresh) -- both low"
       - "social protection thin (carried forward); 4 of 5 indicators fresh -- a substantiated severity"
-    citations: [c1]
+    citations: [panel]
 
 recent:
   primary:

@@ -180,7 +180,7 @@ pillars:
       - "all 5 indicators freshly measured -- a well-evidenced picture, not a coverage gap"
       - "handwashing access only ~6% -- among the lowest figures recorded anywhere in this project; safely managed water only 13%"
       - "life expectancy >67, infant mortality ~39/1,000 -- moderate; severe food insecurity ~19%, tied to drought and displacement"
-    citations: [c1]
+    citations: [panel]
   E:
     summary: >
       Political Stability, freshly measured, scores among the weakest
@@ -238,7 +238,7 @@ pillars:
       - "electricity access 55%, basic water access 54% -- both fresh, moderate, below the corpus median"
       - "well below ZAF/KEN/EGY infrastructure levels -- consistent with a lower-income economy still building out services"
       - "social protection coverage not freshly measured -- a real gap given the currency crisis's effect on need"
-    citations: [c1]
+    citations: [panel]
 
 recent:
   primary:

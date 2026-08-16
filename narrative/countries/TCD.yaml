@@ -182,7 +182,7 @@ pillars:
       - "all 5 indicators freshly measured -- a well-evidenced crisis, not a coverage artifact"
       - "life expectancy ~55 years; infant mortality 58/1,000 -- among the more severe readings in the index"
       - "safely managed water only ~6% -- one of the lowest figures in the project; a huge gap versus basic water access (Pillar G)"
-    citations: [c1]
+    citations: [panel]
   E:
     summary: >
       Political Stability, freshly measured, scores poorly, and displaced
@@ -224,7 +224,7 @@ pillars:
       - "CO2 pc 0.15 tons (near-ceiling score) is the wealth-proxy artifact at its starkest -- only 12% have electricity access at all"
       - "of the tiny electricity supply that exists, 98% is fossil-fuel generated (carried forward, scores near zero)"
       - "agricultural land moderate (fresh); freshwater withdrawal low (carried forward)"
-    citations: [c1]
+    citations: [panel]
   G:
     summary: >
       Electricity access, at just 12%, is freshly measured and among the
@@ -243,7 +243,7 @@ pillars:
       - "electricity access only 12% (fresh) -- among the lowest in the project; basic water ~52%, handwashing ~26%"
       - "social protection coverage ~11% (carried forward)"
       - "Chad's single weakest pillar; traces directly to the chronic underinvestment documented in colonial_legacy"
-    citations: [c1]
+    citations: [panel]
 
 rec_membership:
   - org: ECCAS

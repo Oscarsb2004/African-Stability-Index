@@ -218,7 +218,7 @@ pillars:
       - "electricity access ~50%, basic water ~73% -- low but not the pillar's worst pattern"
       - "reflects private/NGO service reconstruction during the stateless period"
       - "gap between basic access and higher-quality (safely managed) service delivery"
-    citations: [c2]
+    citations: [panel]
 
 rec_membership:
   - org: IGAD

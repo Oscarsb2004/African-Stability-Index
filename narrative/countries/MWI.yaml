@@ -155,7 +155,7 @@ pillars:
       - "all 5 indicators directly measured; severe food insecurity 55.60% -- among the most severe readings recorded anywhere in this corpus"
       - "handwashing access and safely managed drinking water similarly weak; life expectancy and infant mortality comparatively less severe but still weak"
       - "5 of 5 indicators current -- Malawi's weakest pillar, and the severity is not a data-coverage artefact"
-    citations: [c1]
+    citations: [panel]
   E:
     summary: >
       Political Stability and Rule of Law, both fresh and shared with
@@ -171,7 +171,7 @@ pillars:
       - "Political Stability and Rule of Law (shared with Pillar A) both comparatively strong, fresh"
       - "displaced persons 49.87/1,000 is a regional-mean estimate, not a direct measurement -- Malawi has no comparable internal conflict; most plausibly reflects the Cabo Delgado insurgency in neighbouring Mozambique (see MOZ record) pulling the regional average upward"
       - "intentional homicide also a regional-mean estimate; only 2 of 4 indicators current"
-    citations: [c1]
+    citations: [panel]
   F:
     summary: >
       CO2 emissions per capita, freshly measured, are very low, and
@@ -207,7 +207,7 @@ pillars:
       - "electricity access just 15.6% of the population (fresh) -- among the lowest recorded anywhere in this corpus, Malawi's weakest single reading"
       - "basic drinking water comparatively decent by contrast (fresh); Government Effectiveness and Control of Corruption (shared with Pillar A) both weak"
       - "social protection comparatively stronger (carried forward); 4 of 5 indicators current -- severe energy poverty sitting alongside comparatively strong governance (Pillar A)"
-    citations: [c1]
+    citations: [panel]
 
 recent:
   primary:

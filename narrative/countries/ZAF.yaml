@@ -185,7 +185,7 @@ pillars:
     drivers:
       - "life expectancy >66, infant mortality ~24/1,000, severe food insecurity <9% -- all fresh, the strongest D-pillar combination in the corpus so far"
       - "safely managed water access high but a regional-mean estimate, not confirmed specifically for South Africa this year"
-    citations: [c1]
+    citations: [panel]
   E:
     summary: >
       Political Stability, freshly measured, is moderate, and displaced
@@ -226,7 +226,7 @@ pillars:
       - "CO2 pc 6.76 tons (fresh) scores at the absolute bottom of the scale -- the clearest counter-example to the wealth-proxy pattern seen elsewhere, a genuine emissions cost from a coal-dependent economy"
       - "electricity ~85% fossil-fuel generated (carried forward) -- consistent with the high CO2 score, not contradicting it"
       - "freshwater withdrawal high relative to renewable resources (carried forward) -- real water stress in a semi-arid country"
-    citations: [c1]
+    citations: [panel]
   G:
     summary: >
       Electricity access (88%) and basic water access (90%), both

@@ -238,7 +238,7 @@ pillars:
       - "freshwater withdrawal ~673% of internal renewable resources (carried forward) -- Nile dependency shared with Egypt/Ethiopia, war impact on infrastructure unconfirmed"
       - "CO2 pc scores well (fresh); electricity ~71% non-fossil (carried forward) -- real hydro capacity (Merowe Dam), though this predates wartime damage"
       - "agricultural land comparatively extensive (fresh)"
-    citations: [c1]
+    citations: [panel]
   G:
     summary: >
       Electricity access (66%) and basic water access (64%), both
