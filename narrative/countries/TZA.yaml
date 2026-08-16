@@ -390,128 +390,127 @@ citations:
     source_type: wikipedia
     title: "Maji Maji Rebellion"
     accessed: 2026-08-12
-    verified: true
+    verified: false
   - id: c2
     url: "https://en.wikipedia.org/wiki/Articles_of_Union"
     source_type: wikipedia
     title: "Articles of Union (Tanganyika-Zanzibar)"
     accessed: 2026-08-12
-    verified: true
+    verified: false
   - id: c3
     url: "https://en.wikipedia.org/wiki/Julius_Nyerere"
     source_type: wikipedia
     title: "Julius Nyerere"
     accessed: 2026-08-12
-    verified: true
+    verified: false
   - id: c4
     url: "https://www.cnn.com/2025/11/01/africa/tanzania-hassan-landslide-election-intl"
     source_type: news
     title: "Tanzania's Hassan declared landslide winner in election marred by violence (CNN)"
     accessed: 2026-08-12
-    verified: true
+    verified: false
   - id: c5
     url: "https://www.aljazeera.com/news/2025/11/1/tanzanian-president-samia-suluhu-hassan-declared-winner-of-election"
     source_type: news
     title: "Tanzanian President Hassan declared winner of disputed vote with 98 percent (Al Jazeera)"
     accessed: 2026-08-12
-    verified: true
+    verified: false
   - id: c6
     url: "https://en.wikipedia.org/wiki/2025_Tanzanian_election_protests"
     source_type: wikipedia
     title: "2025 Tanzanian election protests"
     accessed: 2026-08-12
-    verified: true
+    verified: false
   - id: c7
     url: "https://www.cnn.com/2025/11/05/world/tanzania-election-protest-deaths-intl"
     source_type: news
     title: "Tanzanian police disposed of bodies after election violence, opposition alleges (CNN)"
     accessed: 2026-08-12
-    verified: true
+    verified: false
   - id: c8
     url: "https://www.aljazeera.com/news/2025/11/14/tanzanias-president-announces-probe-into-post-election-protest-deaths"
     source_type: news
     title: "Tanzania's president announces probe into post-election protest deaths (Al Jazeera)"
     accessed: 2026-08-12
-    verified: true
+    verified: false
   - id: c9
     url: "https://www.africanews.com/2025/04/13/tanzanias-main-opposition-party-chadema-disqualified-from-elections/"
     source_type: news
     title: "Tanzania's main opposition party CHADEMA disqualified from elections (Africanews)"
     accessed: 2026-08-12
-    verified: true
+    verified: false
   - id: c10
     url: "https://www.hrw.org/news/2025/04/15/tanzanian-opposition-leaders-arrest-spells-trouble-elections"
     source_type: official
     title: "Tanzanian Opposition Leader's Arrest Spells Trouble for Elections (Human Rights Watch)"
     accessed: 2026-08-12
-    verified: true
+    verified: false
   - id: c11
     url: "https://financeinafrica.com/news/tanzania-gold-exports-hit-record/"
     source_type: news
     title: "Tanzania gold exports hit record $4.7 billion in 2025 (Finance in Africa)"
     accessed: 2026-08-12
-    verified: true
+    verified: false
   - id: c12
     url: "https://www.travelandtourworld.com/news/article/tanzania-triumphs-at-world-travel-awards-2025-worlds-leading-safari-destination-and-more/"
     source_type: news
     title: "Tanzania Triumphs At World Travel Awards 2025 (Travel And Tour World)"
     accessed: 2026-08-12
-    verified: true
+    verified: false
   - id: c13
     url: "https://www.tanzaniainvest.com/tourism/dar-es-salaam-africa-leading-destination-award-2025"
     source_type: news
     title: "Tanzania Wins Africa's Leading Destination 2025 Award (TanzaniaInvest)"
     accessed: 2026-08-12
-    verified: true
+    verified: false
   - id: c14
     url: "https://furtherafrica.com/2025/04/08/tanzanias-julius-nyerere-hydropower-achieves-full-operational-capacity/"
     source_type: news
     title: "Tanzania's Julius Nyerere Hydropower Achieves Full Operational Capacity (Further Africa)"
     accessed: 2026-08-12
-    verified: true
+    verified: false
   - id: c15
     url: "https://en.wikipedia.org/wiki/Julius_Nyerere_Hydropower_Station"
     source_type: wikipedia
     title: "Julius Nyerere Hydropower Station"
     accessed: 2026-08-12
-    verified: true
+    verified: false
   - id: c16
     url: "https://www.sadc.int/member-states/united-republic-tanzania"
     source_type: official
     title: "United Republic of Tanzania (SADC)"
     accessed: 2026-08-12
-    verified: true
+    verified: false
   - id: c17
     url: "https://en.wikipedia.org/wiki/East_African_Community"
     source_type: wikipedia
     title: "East African Community"
     accessed: 2026-08-12
-    verified: true
+    verified: false
   - id: c18
     url: "https://www.unicef.org/tanzania/topics/water-sanitation-and-hygiene"
     source_type: official
     title: "Water, sanitation and hygiene (UNICEF Tanzania)"
     accessed: 2026-08-12
-    verified: true
+    verified: false
   - id: c19
     url: "https://furtherafrica.com/2025/05/07/tanzania-aims-to-launch-42-billion-lng-project-by-end-of-2025/"
     source_type: news
     title: "Tanzania Aims to Launch $42 Billion LNG Project by End of 2025 (Further Africa)"
     accessed: 2026-08-12
-    verified: true
+    verified: false
   - id: c20
     url: "https://www.tanzaniainvest.com/mining"
     source_type: news
     title: "Tanzania Mining Sector 2026: Gold, Critical Minerals (TanzaniaInvest)"
     accessed: 2026-08-12
-    verified: true
+    verified: false
   - id: c21
     url: "https://www.tanzaniainvest.com/rural-electrification"
     source_type: news
     title: "Rural Electrification (TanzaniaInvest)"
     accessed: 2026-08-12
-    verified: true
-
+    verified: false
 rec_membership:
   - org: EAC
     joined: 1967

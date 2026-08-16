@@ -370,6 +370,23 @@ def check_advisory(records: dict[str, dict]) -> list[str]:
     """Judgement, not arithmetic. Reported, never gating."""
     notes: list[str] = []
 
+    # Audit coverage, reported whether or not anything is wrong. Once the flags
+    # were reset to false the premature-flag error went silent, and silence
+    # would wrongly read as "the sources are fine" rather than "nobody has
+    # checked them yet". State the position explicitly instead.
+    total_cites = sum(len(rec.get("citations") or []) for rec in records.values())
+    confirmed = sum(1 for rec in records.values()
+                    for c in (rec.get("citations") or []) if c.get("verified"))
+    audited_records = sum(
+        1 for rec in records.values()
+        if int((rec.get("meta") or {}).get("iteration_count", 0) or 0) >= AUDIT_EVERY)
+    notes.append(
+        f"audit coverage: {audited_records} of {len(records)} records have "
+        f"reached an AUDIT run (iteration {AUDIT_EVERY}); {confirmed} of "
+        f"{total_cites} citations are confirmed as opened and supporting the "
+        f"claim that cites them. Reachability is separately machine-checked by "
+        f"narrative_check.py --links.")
+
     latest: dict[str, str] = {}
     for iso3, rec in records.items():
         recent = rec.get("recent") or {}

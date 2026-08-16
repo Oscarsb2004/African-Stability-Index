@@ -342,86 +342,85 @@ citations:
     source_type: news
     title: "The Pacification of Cyrenaica: the Libyan Genocide (Libyan Heritage House)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c2
     url: "https://en.wikipedia.org/wiki/Omar_Mukhtar"
     source_type: wikipedia
     title: "Omar Mukhtar"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c3
     url: "https://en.wikipedia.org/wiki/1969_Libyan_coup_d'%C3%A9tat"
     source_type: wikipedia
     title: "1969 Libyan coup d'état"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c4
     url: "https://en.wikipedia.org/wiki/2011_military_intervention_in_Libya"
     source_type: wikipedia
     title: "2011 military intervention in Libya"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c5
     url: "https://mecouncil.org/publication/libya-trapped-between-internal-impasse-and-international-interference/"
     source_type: news
     title: "Libya: Trapped Between Internal Impasse and International Interference (Middle East Council on Global Affairs)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c6
     url: "https://www.ohchr.org/en/stories/2026/02/libya-pattern-systematic-human-rights-violations-and-abuses-against-migrants"
     source_type: official
     title: "Libya: A pattern of systematic human rights violations and abuses against migrants (OHCHR)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c7
     url: "https://news.un.org/en/story/2026/02/1166984"
     source_type: official
     title: "Migrants and refugees in Libya subjected to 'systematic' abuse: UN report (UN News)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c8
     url: "https://www.securitycouncilreport.org/monthly-forecast/2026-04/libya-66.php"
     source_type: news
     title: "Libya, April 2026 Monthly Forecast (Security Council Report)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c9
     url: "https://www.aljazeera.com/news/2026/5/8/libyas-largest-oil-refinery-halts-operations-during-fighting"
     source_type: news
     title: "Libya's largest oil refinery halts operations during fighting (Al Jazeera)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c10
     url: "https://www.aljazeera.com/news/2026/5/10/libyas-zawiya-refinery-resumes-full-operations"
     source_type: news
     title: "Libya's Zawiya refinery resumes full operations (Al Jazeera)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c11
     url: "https://www.securitycouncilreport.org/monthly-forecast/2026-06/libya-68.php"
     source_type: news
     title: "Libya, June 2026 Monthly Forecast (Security Council Report)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c12
     url: "https://en.wikipedia.org/wiki/Arab_Maghreb_Union"
     source_type: wikipedia
     title: "Arab Maghreb Union"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c13
     url: "https://en.wikipedia.org/wiki/Common_Market_for_Eastern_and_Southern_Africa"
     source_type: official
     title: "Common Market for Eastern and Southern Africa (Wikipedia)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c14
     url: "https://simple.wikipedia.org/wiki/Community_of_Sahel-Saharan_States"
     source_type: wikipedia
     title: "Community of Sahel-Saharan States"
     accessed: 2026-08-11
-    verified: true
-
+    verified: false
 rec_membership:
   - org: UMA
     joined: 1989

@@ -370,86 +370,85 @@ citations:
     source_type: academic
     title: "History of Madagascar (Britannica)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c2
     url: "https://allafrica.com/stories/202510270306.html"
     source_type: news
     title: "Ousted Madagascan President Stripped of Citizenship (AllAfrica)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c3
     url: "https://localhistories.org/a-brief-history-of-madagascar/"
     source_type: news
     title: "A Brief History of Madagascar (Local Histories)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c4
     url: "https://en.wikipedia.org/wiki/Menalamba_rebellion"
     source_type: wikipedia
     title: "Menalamba rebellion"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c5
     url: "https://www.gisreportsonline.com/r/madagascar-coup/"
     source_type: news
     title: "Madagascar after the coup (GIS Reports)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c6
     url: "https://www.opb.org/article/2025/10/14/madagascar-president-andry-rajoelina-flees-country-after-military-rebellion/"
     source_type: news
     title: "Madagascar's president flees country in fear for his life after military rebellion (OPB)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c7
     url: "https://en.wikipedia.org/wiki/2025_Malagasy_protests"
     source_type: wikipedia
     title: "2025 Malagasy protests"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c8
     url: "https://thevoiceofafrica.com/2025/10/27/ousted-madagascar-president-andry-rajoelina-stripped-of-citizenship-after-coup/"
     source_type: news
     title: "Ousted Madagascar President Andry Rajoelina Stripped of Citizenship After Coup (The Voice of Africa)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c9
     url: "https://theconversation.com/madagascar-protests-how-ousted-president-andry-rajoelinas-urban-agenda-backfired-267654"
     source_type: news
     title: "Madagascar protests: how ousted president Andry Rajoelina's urban agenda backfired (The Conversation)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c10
     url: "https://discoveryalert.com.au/strategic-mineral-supply-madagascar-2026/"
     source_type: news
     title: "Madagascar Lifts Mining Moratorium: Critical Minerals Investment Opportunities Emerge (Discovery Alert)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c11
     url: "https://www.capmad.com/mining-en/mining-in-madagascar-end-of-the-moratorium-and-opening-to-international-capital/"
     source_type: news
     title: "Mining in Madagascar: End of the Moratorium and Opening to International Capital (Capmad)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c12
     url: "https://www.africanews.com/2026/05/11/madagascar-presidential-election-scheduled-for-october-2027/"
     source_type: news
     title: "Madagascar presidential election scheduled for October 2027 (Africanews)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c13
     url: "https://en.wikipedia.org/wiki/Common_Market_for_Eastern_and_Southern_Africa"
     source_type: wikipedia
     title: "Common Market for Eastern and Southern Africa"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c14
     url: "https://www.sadc.int/member-states/madagascar"
     source_type: official
     title: "Madagascar (SADC)"
     accessed: 2026-08-10
-    verified: true
-
+    verified: false
 rec_membership:
   - org: COMESA
     joined: 1994

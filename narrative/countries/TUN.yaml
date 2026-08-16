@@ -340,86 +340,85 @@ citations:
     source_type: wikipedia
     title: "Mohamed Bouazizi"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c2
     url: "https://en.wikipedia.org/wiki/Tunisian_revolution"
     source_type: wikipedia
     title: "Tunisian revolution"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c3
     url: "https://en.wikipedia.org/wiki/Code_of_Personal_Status_in_Tunisia"
     source_type: wikipedia
     title: "Code of Personal Status in Tunisia"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c4
     url: "https://en.wikipedia.org/wiki/1987_Tunisian_coup_d'%C3%A9tat"
     source_type: wikipedia
     title: "1987 Tunisian coup d'état"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c5
     url: "https://en.wikipedia.org/wiki/2021_Tunisian_self-coup"
     source_type: wikipedia
     title: "2021 Tunisian self-coup"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c6
     url: "https://carnegieendowment.org/posts/2022/07/one-year-later-tunisias-president-has-reversed-nearly-a-decade-of-democratic-gains?lang=en"
     source_type: news
     title: "One Year Later, Tunisia's President Has Reversed Nearly a Decade of Democratic Gains (Carnegie Endowment)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c7
     url: "https://www.npr.org/2024/10/08/g-s1-26834/tunisia-kais-saied-election-2024-arab-spring"
     source_type: news
     title: "Tunisia's President Saied wins reelection after cracking down on opposition (NPR)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c8
     url: "https://www.aljazeera.com/news/2025/3/21/tunisias-saeid-sacks-premier-as-economic-and-political-crisis-deepens"
     source_type: news
     title: "Tunisia's president sacks third prime minister in less than two years (Al Jazeera)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c9
     url: "https://www.aljazeera.com/economy/2026/7/26/tunisia-grapples-with-five-years-of-crisis-since-saieds-power-grab"
     source_type: news
     title: "Tunisia grapples with five years of crisis since Saied's power grab (Al Jazeera)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c10
     url: "https://www.afdb.org/en/news-and-events/press-releases/tunisia-african-development-bank-welcomes-commissioning-120-mwp-kairouan-solar-photovoltaic-project-major-milestone-89873"
     source_type: official
     title: "Tunisia: African Development Bank Welcomes the Commissioning of 120 MWp Kairouan Solar Photovoltaic Project (AfDB)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c11
     url: "https://en.wikipedia.org/wiki/2022_Tunisian_constitutional_referendum"
     source_type: wikipedia
     title: "2022 Tunisian constitutional referendum"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c12
     url: "https://en.wikipedia.org/wiki/Arab_Maghreb_Union"
     source_type: wikipedia
     title: "Arab Maghreb Union"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c13
     url: "https://simple.wikipedia.org/wiki/Community_of_Sahel-Saharan_States"
     source_type: wikipedia
     title: "Community of Sahel-Saharan States"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c14
     url: "https://allafrica.com/stories/201807200097.html"
     source_type: news
     title: "East Africa: Tunisia Becomes Comesa's 20th Member State (AllAfrica)"
     accessed: 2026-08-11
-    verified: true
-
+    verified: false
 rec_membership:
   - org: UMA
     joined: 1989

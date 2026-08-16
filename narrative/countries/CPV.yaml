@@ -361,98 +361,97 @@ citations:
     source_type: news
     title: "Cabo Verde - Struggle for independence (Britannica)"
     accessed: 2026-08-12
-    verified: true
+    verified: false
   - id: c2
     url: "https://cabo-verde.cv/luis-cabral-the-1975-independence-of-cape-verde/"
     source_type: news
     title: "Luis Cabral & the 1975 Independence of Cape Verde"
     accessed: 2026-08-12
-    verified: true
+    verified: false
   - id: c3
     url: "https://en.wikipedia.org/wiki/1980_Guinea-Bissau_coup_d'%C3%A9tat"
     source_type: wikipedia
     title: "1980 Guinea-Bissau coup d'etat"
     accessed: 2026-08-12
-    verified: true
+    verified: false
   - id: c4
     url: "https://en.wikipedia.org/wiki/1991_Cape_Verdean_parliamentary_election"
     source_type: wikipedia
     title: "1991 Cape Verdean parliamentary election"
     accessed: 2026-08-12
-    verified: true
+    verified: false
   - id: c5
     url: "https://en.wikipedia.org/wiki/2026_Cape_Verdean_parliamentary_election"
     source_type: wikipedia
     title: "2026 Cape Verdean parliamentary election"
     accessed: 2026-08-12
-    verified: true
+    verified: false
   - id: c6
     url: "https://english.news.cn/africa/20260530/60c29f52a2074e21a5d4252bf3184711/c.html"
     source_type: news
     title: "Cabo Verde's final election results confirm PAICV victory with absolute majority (Xinhua)"
     accessed: 2026-08-12
-    verified: true
+    verified: false
   - id: c7
     url: "https://www.coface.com/news-economy-and-insights/business-risk-dashboard/country-risk-files/cabo-verde"
     source_type: news
     title: "Cabo Verde: Country Risk File (Coface)"
     accessed: 2026-08-12
-    verified: true
+    verified: false
   - id: c8
     url: "https://theportugalpost.com/posts/cape-verdean-diaspora-sends-record-52-million-home-from-portugal-in-2025"
     source_type: news
     title: "Cape Verde Remittances Hit EUR52M: Portugal Leads (The Portugal Post)"
     accessed: 2026-08-12
-    verified: true
+    verified: false
   - id: c9
     url: "https://aquamaya.org/the-water-struggle-in-cabo-verdes-drier-islands/"
     source_type: news
     title: "The Water Struggle in Cabo Verde's Drier Islands (Aqua Maya)"
     accessed: 2026-08-12
-    verified: true
+    verified: false
   - id: c10
     url: "https://ocindex.net/assets/downloads/2025/english/ocindex_profile_cabo_verde_2025.pdf"
     source_type: official
     title: "Cabo Verde Country Profile 2025 (Organized Crime Index / ENACT)"
     accessed: 2026-08-12
-    verified: true
+    verified: false
   - id: c11
     url: "https://reportersonline.nl/cape-verdes-water-and-electricity-crisis-the-hidden-costs-of-development/"
     source_type: news
     title: "Cape Verde's Water and Electricity Crisis (Reporters Online)"
     accessed: 2026-08-12
-    verified: true
+    verified: false
   - id: c12
     url: "https://english.news.cn/africa/20260608/6e264ebc183a410b898a39fc1f47238b/c.html"
     source_type: news
     title: "Cabo Verde looks to ocean for growth, climate resilience (Xinhua)"
     accessed: 2026-08-12
-    verified: true
+    verified: false
   - id: c13
     url: "https://techafricanews.com/2026/05/04/cape-verde-launches-national-data-and-ai-strategies-to-modernize-public-administration/"
     source_type: news
     title: "Cape Verde Launches National Data and AI Strategies to Modernize Public Administration (TechAfrica News)"
     accessed: 2026-08-12
-    verified: true
+    verified: false
   - id: c14
     url: "https://www.riotimesonline.com/cape-verde-digital-id-e-governance-post-tourism-strategy-2026/"
     source_type: news
     title: "Cape Verde Bets on Digital ID to Build a Post-Tourism Economy (The Rio Times)"
     accessed: 2026-08-12
-    verified: true
+    verified: false
   - id: c15
     url: "https://enactafrica.org/enact-observer/is-cape-verde-doomed-to-become-a-narco-state"
     source_type: news
     title: "Is Cape Verde doomed to become a narco-state? (ENACT Africa)"
     accessed: 2026-08-12
-    verified: true
+    verified: false
   - id: c16
     url: "https://en.wikipedia.org/wiki/Economic_Community_of_West_African_States"
     source_type: wikipedia
     title: "Economic Community of West African States"
     accessed: 2026-08-12
-    verified: true
-
+    verified: false
   - id: c17
     url: "https://en.wikipedia.org/wiki/African_Party_for_the_Independence_of_Guinea_and_Cape_Verde"
     source_type: wikipedia

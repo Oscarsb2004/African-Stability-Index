@@ -342,86 +342,85 @@ citations:
     source_type: wikipedia
     title: "Algerian War"
     accessed: 2026-08-09
-    verified: true
+    verified: false
   - id: c2
     url: "https://en.wikipedia.org/wiki/Algerian_Civil_War"
     source_type: wikipedia
     title: "Algerian Civil War"
     accessed: 2026-08-09
-    verified: true
+    verified: false
   - id: c3
     url: "https://en.wikipedia.org/wiki/Sonatrach"
     source_type: wikipedia
     title: "Sonatrach"
     accessed: 2026-08-09
-    verified: true
+    verified: false
   - id: c4
     url: "https://en.wikipedia.org/wiki/2024_Algerian_presidential_election"
     source_type: wikipedia
     title: "2024 Algerian presidential election"
     accessed: 2026-08-09
-    verified: true
+    verified: false
   - id: c5
     url: "https://en.wikipedia.org/wiki/2021_Algerian_protests"
     source_type: wikipedia
     title: "2021 Algerian protests"
     accessed: 2026-08-09
-    verified: true
+    verified: false
   - id: c6
     url: "https://www.france24.com/en/africa/20240914-algeria-s-tebboune-re-elected-with-84-of-vote-according-to-official-results"
     source_type: news
     title: "Algeria's Tebboune re-elected with 84% of vote, according to official results"
     accessed: 2026-08-09
-    verified: true
+    verified: false
   - id: c7
     url: "https://foreignpolicy.com/2021/10/14/algeria-bouteflika-death-fln-hirak-oil-military-pouvoir/"
     source_type: news
     title: "Bouteflika Represented Everything Algeria's Hirak Movement Is Fighting Against"
     accessed: 2026-08-09
-    verified: true
+    verified: false
   - id: c8
     url: "https://www.realinstitutoelcano.org/en/analyses/another-round-of-algerian-gas-for-europe/"
     source_type: academic
     title: "Another round of Algerian gas for Europe (Real Instituto Elcano)"
     accessed: 2026-08-09
-    verified: true
+    verified: false
   - id: c9
     url: "https://www.migrationpolicy.org/article/western-sahara-sahrawi-refugees"
     source_type: academic
     title: "Western Sahara's Sahrawi Refugees Face an Uncertain Future after 50 Years of Exile (Migration Policy Institute)"
     accessed: 2026-08-09
-    verified: true
+    verified: false
   - id: c10
     url: "https://reliefweb.int/report/algeria/acaps-briefing-note-algeria-sahrawi-refugees-tindouf-19-january-2022"
     source_type: academic
     title: "ACAPS Briefing Note: Algeria: Sahrawi refugees in Tindouf"
     accessed: 2026-08-09
-    verified: true
+    verified: false
   - id: c11
     url: "https://history.state.gov/historicaldocuments/frus1969-76ve05p2/d27"
     source_type: official
     title: "Nationalization of hydrocarbons in Algeria, 1971 (US State Department, Office of the Historian)"
     accessed: 2026-08-09
-    verified: true
+    verified: false
   - id: c12
     url: "https://www.hrw.org/world-report/2026/country-chapters/algeria"
     source_type: news
     title: "World Report 2026: Algeria (Human Rights Watch)"
     accessed: 2026-08-09
-    verified: true
+    verified: false
   - id: c13
     url: "https://www.bloomberg.com/news/articles/2025-12-03/algeria-plans-rare-sukuk-sale-at-start-of-2026-document-shows"
     source_type: news
     title: "Algeria Plans Rare Sukuk Sale at Start of 2026, Document Shows"
     accessed: 2026-08-09
-    verified: true
+    verified: false
   - id: c14
     url: "https://en.wikipedia.org/wiki/Arab_Maghreb_Union"
     source_type: wikipedia
     title: "Arab Maghreb Union"
     accessed: 2026-08-10
-    verified: true
-
+    verified: false
 balance:
   n_positive: 1
   n_negative: 1

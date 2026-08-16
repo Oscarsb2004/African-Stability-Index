@@ -343,92 +343,91 @@ citations:
     source_type: news
     title: "The Complete History of The Gambia — River of Stories (Exodus.Africa)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c2
     url: "https://whc.unesco.org/en/list/761/"
     source_type: official
     title: "Kunta Kinteh Island and Related Sites (UNESCO World Heritage Centre)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c3
     url: "https://www.worldatlas.com/articles/james-island-and-kunta-kinteh-island-fort-gambia.html"
     source_type: news
     title: "James Island And Kunta Kinteh Island Fort - Gambia (WorldAtlas)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c4
     url: "https://en.wikipedia.org/wiki/2016%E2%80%932017_Gambian_constitutional_crisis"
     source_type: wikipedia
     title: "2016-2017 Gambian constitutional crisis"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c5
     url: "https://en.wikipedia.org/wiki/ECOWAS_military_intervention_in_the_Gambia"
     source_type: wikipedia
     title: "ECOWAS military intervention in the Gambia"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c6
     url: "https://www.cnn.com/2017/01/18/africa/gambia-jammeh-barrow"
     source_type: news
     title: "Gambia's new President sworn in; incumbent Yahya Jammeh refuses to step down (CNN)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c7
     url: "https://www.enca.com/news/gambia-opens-its-first-trial-member-notorious-death-squad"
     source_type: news
     title: "Gambia opens its first trial of member of notorious 'death squad' (eNCA)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c8
     url: "https://rsf.org/en/murder-deyda-hydara-gambia-after-more-two-decades-impunity-trial-former-junglers-leader-sparks-hope"
     source_type: news
     title: "Murder of Deyda Hydara in the Gambia: after more than two decades of impunity, the trial of a former Junglers leader sparks hope for truth and justice (RSF)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c9
     url: "https://www.hrw.org/news/2023/11/28/germany-verdict-gambia-atrocity-case"
     source_type: news
     title: "Germany: Verdict in Gambia Atrocity Case (Human Rights Watch)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c10
     url: "https://www.aljazeera.com/news/2021/12/9/adama-barrows-reelection-and-the-gambias-long-walk-to-justice"
     source_type: news
     title: "Adama Barrow's re-election and The Gambia's long walk to justice (Al Jazeera)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c11
     url: "https://factcheckgambia.org/factsheet-only-16-out-of-262-trrc-recommendations-implemented/"
     source_type: news
     title: "FACTSHEET: Only 16 Out of 262 TRRC Recommendations Implemented (FactCheck Gambia)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c12
     url: "https://www.cnn.com/2018/05/31/africa/gambia-hiv-aids-cure-lawsuit-jammeh"
     source_type: news
     title: "Former Gambian leader sued over fraudulent AIDS cure (CNN)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c13
     url: "https://www.theeastafrican.co.ke/tea/magazine/president-jammeh-s-great-witch-hunt-1295002"
     source_type: news
     title: "President Jammeh's great witch hunt (The East African)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c14
     url: "https://en.wikipedia.org/wiki/Treaty_of_Lagos"
     source_type: wikipedia
     title: "Treaty of Lagos"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c15
     url: "https://simple.wikipedia.org/wiki/Community_of_Sahel-Saharan_States"
     source_type: wikipedia
     title: "Community of Sahel-Saharan States"
     accessed: 2026-08-10
-    verified: true
-
+    verified: false
 rec_membership:
   - org: ECOWAS
     joined: 1975

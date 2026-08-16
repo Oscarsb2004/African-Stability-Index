@@ -386,86 +386,85 @@ citations:
     source_type: wikipedia
     title: "History of Nigeria"
     accessed: 2026-08-09
-    verified: true
+    verified: false
   - id: c2
     url: "https://en.wikipedia.org/wiki/Nigerian_Civil_War"
     source_type: wikipedia
     title: "Nigerian Civil War"
     accessed: 2026-08-09
-    verified: true
+    verified: false
   - id: c3
     url: "https://www.thehistoryville.com/indirect-rule-nigeria/"
     source_type: news
     title: "A History of Indirect Rule in Nigeria (HistoryVille)"
     accessed: 2026-08-09
-    verified: true
+    verified: false
   - id: c4
     url: "https://en.wikipedia.org/wiki/2023_Nigerian_general_election"
     source_type: wikipedia
     title: "2023 Nigerian general election"
     accessed: 2026-08-09
-    verified: true
+    verified: false
   - id: c5
     url: "https://www.vanguardngr.com/2023/10/supreme-court-affirms-tinubus-election-dismisses-atiku-obis-appeals/"
     source_type: news
     title: "Supreme Court affirms Tinubu's election, dismisses Atiku, Obi's appeals (Vanguard)"
     accessed: 2026-08-09
-    verified: true
+    verified: false
   - id: c6
     url: "https://allafrica.com/stories/202509180065.html"
     source_type: news
     title: "Nigeria: Tinubu Lifts State of Emergency On Rivers, Restores Democratic Rule (AllAfrica)"
     accessed: 2026-08-09
-    verified: true
+    verified: false
   - id: c7
     url: "https://theconversation.com/nigeria-botched-economic-reforms-plunge-the-country-into-crisis-224545"
     source_type: news
     title: "Nigeria: botched economic reforms plunge the country into crisis (The Conversation)"
     accessed: 2026-08-09
-    verified: true
+    verified: false
   - id: c8
     url: "https://thesoufancenter.org/intelbrief-2025-august-22/"
     source_type: academic
     title: "From Criminality to Insurgency: The Convergence of Bandits and Jihadists in Nigeria's Northwest (The Soufan Center)"
     accessed: 2026-08-09
-    verified: true
+    verified: false
   - id: c9
     url: "https://www.hrw.org/world-report/2026/country-chapters/nigeria"
     source_type: academic
     title: "World Report 2026: Nigeria (Human Rights Watch)"
     accessed: 2026-08-09
-    verified: true
+    verified: false
   - id: c10
     url: "https://www.vanguardngr.com/2025/08/nigerias-necessary-energy-transition-to-unlock-prosperity/"
     source_type: news
     title: "Nigeria's necessary energy transition to unlock prosperity (Vanguard)"
     accessed: 2026-08-09
-    verified: true
+    verified: false
   - id: c11
     url: "https://nairametrics.com/2024/04/19/nigeria-to-become-africas-fourth-largest-economy-in-2024-imf/"
     source_type: news
     title: "Nigeria to become Africa's fourth largest economy in 2024 - IMF (Nairametrics)"
     accessed: 2026-08-09
-    verified: true
+    verified: false
   - id: c12
     url: "https://www.wfp.org/news/wfp-calls-urgent-life-saving-support-nigeria-33-million-people-face-food-insecurity-2025"
     source_type: official
     title: "WFP calls for urgent life-saving support in Nigeria as 33 million people face food insecurity in 2025"
     accessed: 2026-08-09
-    verified: true
+    verified: false
   - id: c13
     url: "https://www.ecowas.int/creation-history/"
     source_type: official
     title: "Creation (History) — ECOWAS"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c14
     url: "https://en.wikipedia.org/wiki/Community_of_Sahel%E2%80%93Saharan_States"
     source_type: wikipedia
     title: "Community of Sahel-Saharan States"
     accessed: 2026-08-10
-    verified: true
-
+    verified: false
 balance:
   n_positive: 1
   n_negative: 2

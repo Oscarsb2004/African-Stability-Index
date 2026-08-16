@@ -366,74 +366,73 @@ citations:
     source_type: wikipedia
     title: "History of Egypt"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c2
     url: "https://en.wikipedia.org/wiki/2023%E2%80%932024_Egyptian_financial_crisis"
     source_type: wikipedia
     title: "2023-2024 Egyptian financial crisis"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c3
     url: "https://en.wikipedia.org/wiki/2023_Egyptian_presidential_election"
     source_type: wikipedia
     title: "2023 Egyptian presidential election"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c4
     url: "https://theconversation.com/colonial-era-treaties-are-to-blame-for-the-unresolved-dispute-over-ethiopias-dam-133538"
     source_type: news
     title: "Colonial-era treaties are to blame for the unresolved dispute over Ethiopia's dam (The Conversation)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c5
     url: "https://www.dailynewsegypt.com/2025/09/09/egypt-warns-unsc-that-ethiopian-nile-dam-threatens-its-water-security/"
     source_type: news
     title: "Egypt warns UNSC that Ethiopian Nile Dam threatens its water security (Daily News Egypt)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c6
     url: "https://www.middleeasteye.net/news/imf-more-doubles-egypt-bailout-deal-8-billion-following-pound-devaluation"
     source_type: news
     title: "IMF more than doubles Egypt bailout deal to $8bn following devaluation (Middle East Eye)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c7
     url: "https://www.crisisgroup.org/brf/middle-east-north-africa/north-africa/egypt-israelpalestine/b91-egypts-gaza-dilemmas"
     source_type: academic
     title: "Egypt's Gaza Dilemmas (International Crisis Group)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c8
     url: "https://water.fanack.com/gerd-dispute-nile-flood-2025/"
     source_type: news
     title: "Surging Nile Waters Rekindle the GERD Dispute Between Egypt, Sudan, and Ethiopia (Fanack Water)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c9
     url: "https://www.france24.com/en/middle-east/20231218-egypt-s-sisi-sweeps-to-third-presidential-term"
     source_type: news
     title: "Egypt's Sisi sweeps to third presidential term with 89.6% of vote (France 24)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c10
     url: "https://www.cnn.com/2023/12/09/middleeast/egypt-presidential-election-sisi-gaza-war-intl"
     source_type: news
     title: "Egypt's president expected to secure third term as the world's eyes are fixed on Gaza (CNN)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c11
     url: "https://www.comesa.int/egypt-and-comesa/"
     source_type: official
     title: "Egypt and COMESA"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c12
     url: "https://en.wikipedia.org/wiki/Community_of_Sahel%E2%80%93Saharan_States"
     source_type: wikipedia
     title: "Community of Sahel-Saharan States"
     accessed: 2026-08-10
-    verified: true
-
+    verified: false
 rec_membership:
   - org: COMESA
     joined: 1998

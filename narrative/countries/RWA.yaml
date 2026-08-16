@@ -385,86 +385,85 @@ citations:
     source_type: wikipedia
     title: "History of Rwanda"
     accessed: 2026-08-09
-    verified: true
+    verified: false
   - id: c2
     url: "https://en.wikipedia.org/wiki/2025_Goma_offensive"
     source_type: wikipedia
     title: "2025 Goma offensive"
     accessed: 2026-08-09
-    verified: true
+    verified: false
   - id: c3
     url: "https://en.wikipedia.org/wiki/2024_Rwandan_general_election"
     source_type: wikipedia
     title: "2024 Rwandan general election"
     accessed: 2026-08-09
-    verified: true
+    verified: false
   - id: c4
     url: "https://freedomhouse.org/country/rwanda/freedom-world/2024"
     source_type: academic
     title: "Rwanda: Freedom in the World 2024 Country Report (Freedom House)"
     accessed: 2026-08-09
-    verified: true
+    verified: false
   - id: c5
     url: "https://www.npr.org/2025/01/26/nx-s1-5275358/rwanda-backed-rebels-claim-to-have-seized-key-city-in-congo"
     source_type: news
     title: "Eastern Congolese city on the precipice as Rwanda-backed rebels enter city (NPR)"
     accessed: 2026-08-09
-    verified: true
+    verified: false
   - id: c6
     url: "https://www.aljazeera.com/news/2025/12/13/residents-emerge-in-dr-congos-tense-uvira-after-m23-rebel-takeover"
     source_type: news
     title: "Residents emerge in DR Congo's tense Uvira after M23 rebel takeover (Al Jazeera)"
     accessed: 2026-08-09
-    verified: true
+    verified: false
   - id: c7
     url: "https://www.hrw.org/news/2026/03/03/us-sanctions-rwandan-army-commanders"
     source_type: academic
     title: "US Sanctions Rwandan Army, Commanders (Human Rights Watch)"
     accessed: 2026-08-09
-    verified: true
+    verified: false
   - id: c8
     url: "https://allafrica.com/stories/202603030069.html"
     source_type: news
     title: "Rwanda Regrets 'One-Sided' US Sanctions (AllAfrica)"
     accessed: 2026-08-09
-    verified: true
+    verified: false
   - id: c9
     url: "https://www.worldbank.org/en/country/rwanda/overview"
     source_type: official
     title: "Rwanda Overview (World Bank)"
     accessed: 2026-08-09
-    verified: true
+    verified: false
   - id: c10
     url: "https://www.amnestyusa.org/reports/safer-to-stay-silent-the-chilling-effect-of-rwandas-laws-on-genocide-ideology-and-sectarianism/"
     source_type: academic
     title: "Safer to Stay Silent: The Chilling Effect of Rwanda's Laws on 'Genocide Ideology' and 'Sectarianism' (Amnesty International)"
     accessed: 2026-08-09
-    verified: true
+    verified: false
   - id: c11
     url: "https://intelpoint.co/insights/63-8-of-rwandas-parliament-are-women-as-of-2024-highest-in-the-world/"
     source_type: news
     title: "63.8% of Rwanda's parliament are women as of 2024 - highest in the world (Intelpoint)"
     accessed: 2026-08-09
-    verified: true
+    verified: false
   - id: c12
     url: "https://allafrica.com/stories/202512050184.html"
     source_type: news
     title: "Full Text of Washington Accords Signed By Kagame, Tshisekedi (AllAfrica)"
     accessed: 2026-08-09
-    verified: true
+    verified: false
   - id: c13
     url: "https://www.minaffet.gov.rw/eac-1"
     source_type: official
     title: "COMESA (Rwanda Ministry of Foreign Affairs)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c14
     url: "https://allafrica.com/stories/200706180717.html"
     source_type: news
     title: "East Africa: Finally Rwanda, Burundi Become Full EAC Members (AllAfrica)"
     accessed: 2026-08-10
-    verified: true
-
+    verified: false
 balance:
   n_positive: 1
   n_negative: 2

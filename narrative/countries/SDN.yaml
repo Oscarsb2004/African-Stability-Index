@@ -385,80 +385,79 @@ citations:
     source_type: wikipedia
     title: "History of Sudan"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c2
     url: "https://en.wikipedia.org/wiki/2021_Sudanese_coup_d%27%C3%A9tat"
     source_type: wikipedia
     title: "2021 Sudanese coup d'état"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c3
     url: "https://en.wikipedia.org/wiki/2019_Sudanese_coup_d%27%C3%A9tat"
     source_type: wikipedia
     title: "2019 Sudanese coup d'état"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c4
     url: "https://www.cfr.org/global-conflict-tracker/conflict/power-struggle-sudan"
     source_type: academic
     title: "Civil War in Sudan (Council on Foreign Relations Global Conflict Tracker)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c5
     url: "https://www.csis.org/analysis/sudan-war-10-charts"
     source_type: academic
     title: "The Sudan War in 10 Charts (CSIS)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c6
     url: "https://time.com/7330421/sudan-el-fasher-rsf-darfur/"
     source_type: news
     title: "Reports of Mass Killings by Militia After Key City Falls in Sudan (Time)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c7
     url: "https://2021-2025.state.gov/genocide-determination-in-sudan-and-imposing-accountability-measures/"
     source_type: official
     title: "Genocide Determination in Sudan and Imposing Accountability Measures (US Department of State)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c8
     url: "https://www.britannica.com/topic/Janjaweed"
     source_type: academic
     title: "Janjaweed (Encyclopaedia Britannica)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c9
     url: "https://en.wikipedia.org/wiki/Famine_in_Sudan_(2024%E2%80%93present)"
     source_type: wikipedia
     title: "Famine in Sudan (2024-present)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c10
     url: "https://en.wikipedia.org/wiki/Emergency_Response_Rooms"
     source_type: wikipedia
     title: "Emergency Response Rooms"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c11
     url: "https://time.com/collections/davos-2025/7204654/sudan-humanitarianism-crisis-err-aid/"
     source_type: news
     title: "Locals in Sudan Are Saving Lives Aid Agencies Can't Reach (Time)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c12
     url: "https://en.wikipedia.org/wiki/Common_Market_for_Eastern_and_Southern_Africa"
     source_type: wikipedia
     title: "Common Market for Eastern and Southern Africa"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c13
     url: "https://en.wikipedia.org/wiki/Community_of_Sahel%E2%80%93Saharan_States"
     source_type: wikipedia
     title: "Community of Sahel-Saharan States"
     accessed: 2026-08-10
-    verified: true
-
+    verified: false
 rec_membership:
   - org: COMESA
     joined: 1994

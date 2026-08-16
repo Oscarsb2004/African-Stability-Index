@@ -333,98 +333,97 @@ citations:
     source_type: wikipedia
     title: "Ikiza"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c2
     url: "https://en.wikipedia.org/wiki/Burundian_genocide"
     source_type: wikipedia
     title: "Burundian genocide"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c3
     url: "https://www.ebsco.com/research-starters/history/ikiza-or-burundi-killings-1972"
     source_type: news
     title: "Ikiza or Burundi Killings of 1972 (EBSCO Research Starters)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c4
     url: "https://en.wikipedia.org/wiki/Melchior_Ndadaye"
     source_type: wikipedia
     title: "Melchior Ndadaye"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c5
     url: "https://en.wikipedia.org/wiki/Arusha_Accords_(Burundi)"
     source_type: wikipedia
     title: "Arusha Accords (Burundi)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c6
     url: "https://www.ktpress.rw/2020/06/burundis-nkurunziza-dies/"
     source_type: news
     title: "Burundi's Nkurunziza Dies (KT Press)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c7
     url: "https://www.amnesty.org/en/latest/news/2025/07/ten-years-on-reflections-on-the-silent-crisis-in-burundi/"
     source_type: news
     title: "Ten Years On: Reflections on the Silent Crisis in Burundi (Amnesty International)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c8
     url: "https://www.hrw.org/world-report/2026/country-chapters/burundi"
     source_type: news
     title: "World Report 2026: Burundi (Human Rights Watch)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c9
     url: "https://www.afdb.org/en/countries/east-africa/burundi/burundi-economic-outlook"
     source_type: official
     title: "Burundi Economic Outlook (African Development Bank)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c10
     url: "https://civil-protection-humanitarian-aid.ec.europa.eu/news-stories/news/unprecedented-influx-eu-responds-burundi-dr-congo-border-crisis-2025-12-16_en"
     source_type: official
     title: "'An unprecedented influx': the EU responds to the Burundi-DR Congo border crisis"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c11
     url: "https://www.france24.com/en/africa/20250611-burundi-s-ruling-party-wins-all-seats-in-parliamentary-vote-as-opposition-cries-foul"
     source_type: news
     title: "Burundi's ruling party wins all seats in parliamentary vote as opposition cries foul (France 24)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c12
     url: "https://www.sosmediasburundi.org/en/2025/06/04/burundi-agathon-rwasa-this-is-not-an-election-its-a-cndd-fdd-show-the-opposition-leader-calls-for-a-national-conference-to-avoid-authoritarianism/"
     source_type: news
     title: "Burundi - Agathon Rwasa: 'This is not an election, it's a CNDD-FDD show' (SOS Médias Burundi)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c13
     url: "https://www.technoserve.org/news/major-new-initiative-aims-to-make-burundis-coffee-sector-more-profitable-and-resilient/"
     source_type: news
     title: "Major New Initiative Aims to Make Burundi's Coffee Sector More Profitable and Resilient (TechnoServe)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c14
     url: "https://en.wikipedia.org/wiki/Common_Market_for_Eastern_and_Southern_Africa"
     source_type: wikipedia
     title: "Common Market for Eastern and Southern Africa"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c15
     url: "https://en.wikipedia.org/wiki/East_African_Community"
     source_type: wikipedia
     title: "East African Community"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c16
     url: "https://au.int/en/recs/eccas"
     source_type: official
     title: "ECCAS (African Union)"
     accessed: 2026-08-11
-    verified: true
-
+    verified: false
 rec_membership:
   - org: COMESA
     joined: 1994

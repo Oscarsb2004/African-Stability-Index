@@ -349,86 +349,85 @@ citations:
     source_type: academic
     title: "Mauritania -- History (Britannica)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c2
     url: "https://arabcenterdc.org/resource/slavery-in-mauritania-the-long-road-to-real-emancipation/"
     source_type: news
     title: "Slavery in Mauritania: The Long Road to Real Emancipation (Arab Center Washington DC)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c3
     url: "https://www.globalsecurity.org/military/world/war/mauritania-1989-events.htm"
     source_type: news
     title: "Mauritania \"1989 Events\" (GlobalSecurity.org)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c4
     url: "https://www.npr.org/templates/story/story.php?storyId=10741476"
     source_type: news
     title: "Ethnic Cleansing in Mauritania (NPR)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c5
     url: "https://en.wikipedia.org/wiki/2008_Mauritanian_coup_d%27%C3%A9tat"
     source_type: wikipedia
     title: "2008 Mauritanian coup d'état"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c6
     url: "https://www.aljazeera.com/news/2024/7/1/mauritania-re-elects-president-ghazouani-for-a-second-term"
     source_type: news
     title: "Mauritania re-elects President Ghazouani for a second term (Al Jazeera)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c8
     url: "https://en.wikipedia.org/wiki/Mohamed_Ould_Ghazouani"
     source_type: wikipedia
     title: "Mohamed Ould Ghazouani"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c9
     url: "https://en.wikipedia.org/wiki/Mohamed_Ould_Abdel_Aziz"
     source_type: wikipedia
     title: "Mohamed Ould Abdel Aziz"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c10
     url: "https://dispatchrisk.com/greater-tortue-ahmeyim-project-hits-lng-output-targets-for-2025/"
     source_type: news
     title: "Greater Tortue Ahmeyim Project Hits LNG Output Targets for 2025 (Dispatch Risk)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c11
     url: "https://www.geopoliticalmonitor.com/grand-tortue-ahmeyim-field-boosts-senegal-and-mauritania-gas-production/"
     source_type: news
     title: "Grand Tortue Ahmeyim Field Boosts Senegal and Mauritania Gas Production (Geopolitical Monitor)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c12
     url: "https://www.state.gov/reports/2025-trafficking-in-persons-report/mauritania/"
     source_type: official
     title: "2025 Trafficking in Persons Report: Mauritania (US Department of State)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c13
     url: "https://www.hrw.org/report/2025/08/27/they-accused-me-of-trying-to-go-to-europe/migration-control-abuses-and-eu"
     source_type: news
     title: "\"They Accused Me of Trying to Go to Europe\": Migration Control Abuses and EU Externalization in Mauritania (Human Rights Watch)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c14
     url: "https://en.wikipedia.org/wiki/Arab_Maghreb_Union"
     source_type: wikipedia
     title: "Arab Maghreb Union"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c15
     url: "https://simple.wikipedia.org/wiki/Community_of_Sahel-Saharan_States"
     source_type: wikipedia
     title: "Community of Sahel-Saharan States"
     accessed: 2026-08-10
-    verified: true
-
+    verified: false
 rec_membership:
   - org: UMA
     joined: 1989

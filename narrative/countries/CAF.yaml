@@ -363,110 +363,109 @@ citations:
     source_type: wikipedia
     title: "Company of the Upper Ubangi Sultanates"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c2
     url: "https://en.wikipedia.org/wiki/Kongo-Wara_rebellion"
     source_type: wikipedia
     title: "Kongo-Wara rebellion"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c3
     url: "https://en.wikipedia.org/wiki/Jean-B%C3%A9del_Bokassa"
     source_type: wikipedia
     title: "Jean-Bédel Bokassa"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c4
     url: "https://en.wikipedia.org/wiki/Operation_Barracuda"
     source_type: wikipedia
     title: "Operation Barracuda"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c5
     url: "https://en.wikipedia.org/wiki/Central_African_Republic_Civil_War"
     source_type: wikipedia
     title: "Central African Republic Civil War"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c6
     url: "https://www.barchart.com/story/news/1045157/central-african-republic-s-president-sworn-in-for-a-third-term-after-disputed-election"
     source_type: news
     title: "Central African Republic's president sworn in for a third term after disputed election (Barchart)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c7
     url: "https://en.wikipedia.org/wiki/2023_Central_African_constitutional_referendum"
     source_type: wikipedia
     title: "2023 Central African constitutional referendum"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c8
     url: "https://www.nbcnews.com/news/africa/wagner-ukraine-russia-central-african-republic-gold-mine-putin-rcna86392"
     source_type: news
     title: "Russian mercenaries exploit African country as they fight in Ukraine (NBC News)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c9
     url: "https://www.aljazeera.com/news/2023/7/29/car-braces-for-referendum-that-may-extend-president-touaderas-rule"
     source_type: news
     title: "CAR braces for referendum that may extend President Touadera's rule (Al Jazeera)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c10
     url: "https://www.occrp.org/en/news/report-wagner-mercenaries-profit-from-central-africas-blood-diamonds"
     source_type: news
     title: "Report: Wagner Mercenaries Profit from Central Africa's Blood Diamonds (OCCRP)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c11
     url: "https://www.irreview.org/articles/2025/10/26/the-central-african-republic-a-story-of-blood-diamonds-and-poor-policy"
     source_type: news
     title: "The Central African Republic: A Story of Blood Diamonds and Poor Policy (International Relations Review)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c12
     url: "https://www.jckonline.com/editorial-article/kimberley-central-african-republic/"
     source_type: news
     title: "Kimberley Process Lifts Embargo on Central African Republic (JCK)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c13
     url: "https://en.wikipedia.org/wiki/History_of_the_Central_African_Republic"
     source_type: wikipedia
     title: "History of the Central African Republic"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c14
     url: "https://www.state.gov/reports/2024-country-reports-on-human-rights-practices/central-african-republic"
     source_type: official
     title: "Central African Republic 2024 Country Report on Human Rights Practices (US Department of State)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c15
     url: "https://www.rferl.org/a/russia-wagner-mercenaries-central-african-republic-crimes/33306858.html"
     source_type: news
     title: "Wagner's Successors Wage Campaign Of Terror In Central African Republic (RFE/RL)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c16
     url: "https://reliefweb.int/report/central-african-republic/wagner-group-poses-fundamental-challenges-protection-civilians-un-peacekeeping-operations"
     source_type: news
     title: "Wagner Group Poses Fundamental Challenges for the Protection of Civilians by UN Peacekeeping Operations (ReliefWeb)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c17
     url: "https://en.wikipedia.org/wiki/Economic_Community_of_Central_African_States"
     source_type: wikipedia
     title: "Economic Community of Central African States"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c18
     url: "https://simple.wikipedia.org/wiki/Community_of_Sahel-Saharan_States"
     source_type: wikipedia
     title: "Community of Sahel-Saharan States"
     accessed: 2026-08-10
-    verified: true
-
+    verified: false
 rec_membership:
   - org: ECCAS
     joined: 1983

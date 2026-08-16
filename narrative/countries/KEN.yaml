@@ -366,86 +366,85 @@ citations:
     source_type: wikipedia
     title: "History of Kenya"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c2
     url: "https://en.wikipedia.org/wiki/2007%E2%80%932008_Kenyan_crisis"
     source_type: wikipedia
     title: "2007-2008 Kenyan crisis"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c3
     url: "https://en.wikipedia.org/wiki/International_Criminal_Court_investigation_in_Kenya"
     source_type: wikipedia
     title: "International Criminal Court investigation in Kenya"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c4
     url: "https://www.aljazeera.com/news/africa/2013/06/20136663243850762.html"
     source_type: news
     title: "Britain to compensate tortured Kenyans (Al Jazeera)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c5
     url: "https://en.wikipedia.org/wiki/Kenya_Finance_Bill_protests"
     source_type: wikipedia
     title: "Kenya Finance Bill protests"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c6
     url: "https://en.wikipedia.org/wiki/2024_storming_of_the_Kenyan_Parliament"
     source_type: wikipedia
     title: "2024 storming of the Kenyan Parliament"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c7
     url: "https://www.csis.org/analysis/taking-charge-gen-z-leads-historic-protests-kenya"
     source_type: academic
     title: "Taking Charge: Gen Z Leads Historic Protests in Kenya (CSIS)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c8
     url: "https://en.wikipedia.org/wiki/2025_Kenyan_protests"
     source_type: wikipedia
     title: "2025 Kenyan protests"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c9
     url: "https://www.aljazeera.com/features/2026/6/24/kenya-braces-for-return-of-gen-z-protests-how-did-they-begin"
     source_type: news
     title: "Kenya braces for return of Gen Z protests -- how did they begin? (Al Jazeera)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c10
     url: "https://theprogressplaybook.com/2025/07/08/kenyas-march-towards-100-clean-electricity-expands-energy-access/"
     source_type: news
     title: "Kenya's march towards 100% clean electricity expands energy access"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c11
     url: "https://www.aljazeera.com/amp/news/2024/5/23/us-to-designate-kenya-as-non-nato-ally-during-rutos-state-visit"
     source_type: news
     title: "US to designate Kenya as non-NATO ally during Ruto's state visit (Al Jazeera)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c12
     url: "https://en.wikipedia.org/wiki/Common_Market_for_Eastern_and_Southern_Africa"
     source_type: wikipedia
     title: "Common Market for Eastern and Southern Africa"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c13
     url: "https://en.wikipedia.org/wiki/East_African_Community"
     source_type: wikipedia
     title: "East African Community"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c14
     url: "https://en.wikipedia.org/wiki/Intergovernmental_Authority_on_Development"
     source_type: wikipedia
     title: "Intergovernmental Authority on Development"
     accessed: 2026-08-10
-    verified: true
-
+    verified: false
 rec_membership:
   - org: COMESA
     joined: 1994

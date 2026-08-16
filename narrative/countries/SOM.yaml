@@ -361,98 +361,97 @@ citations:
     source_type: wikipedia
     title: "History of the transitional federal government of Somalia"
     accessed: 2026-08-09
-    verified: true
+    verified: false
   - id: c2
     url: "https://en.wikipedia.org/wiki/History_of_Somalia_(1991%E2%80%932006)"
     source_type: wikipedia
     title: "History of Somalia (1991-2006)"
     accessed: 2026-08-09
-    verified: true
+    verified: false
   - id: c3
     url: "https://en.wikipedia.org/wiki/Somali_Civil_War_(2009%E2%80%93present)"
     source_type: wikipedia
     title: "Somali Civil War (2009-present)"
     accessed: 2026-08-09
-    verified: true
+    verified: false
   - id: c5
     url: "https://en.wikipedia.org/wiki/African_Union_Support_and_Stabilization_Mission_in_Somalia"
     source_type: wikipedia
     title: "African Union Support and Stabilization Mission in Somalia"
     accessed: 2026-08-09
-    verified: true
+    verified: false
   - id: c6
     url: "https://en.wikipedia.org/wiki/2024_Somaliland_presidential_election"
     source_type: wikipedia
     title: "2024 Somaliland presidential election"
     accessed: 2026-08-09
-    verified: true
+    verified: false
   - id: c7
     url: "https://thesoufancenter.org/intelbrief-2025-july-24/"
     source_type: academic
     title: "Al-Shabaab's 2025 Offensive and the Unraveling of Somalia's Federal Counterinsurgency (The Soufan Center)"
     accessed: 2026-08-09
-    verified: true
+    verified: false
   - id: c8
     url: "https://news.un.org/en/story/2025/02/1160521"
     source_type: official
     title: "Somalia faces escalating crisis amid drought, conflict and price hikes (UN News)"
     accessed: 2026-08-09
-    verified: true
+    verified: false
   - id: c9
     url: "https://www.amnesty.org/en/latest/news/2025/11/somalia-thousands-of-climate-displaced-individuals-being-failed-by-authorities-and-the-international-community-new-report/"
     source_type: news
     title: "Somalia: Thousands of climate-displaced individuals being failed by authorities and the international community (Amnesty International)"
     accessed: 2026-08-09
-    verified: true
+    verified: false
   - id: c10
     url: "https://theconversation.com/somaliland-elections-whats-at-stake-for-independence-stability-and-shifting-power-dynamics-in-the-horn-of-africa-242131"
     source_type: news
     title: "Somaliland elections: what's at stake for independence, stability and shifting power dynamics in the Horn of Africa"
     accessed: 2026-08-09
-    verified: true
+    verified: false
   - id: c11
     url: "https://www.crisisgroup.org/qna/africa/horn-africa/somaliland/somalilands-peaceful-handover-withstands-neighbourhood-strains"
     source_type: academic
     title: "Somaliland's Peaceful Handover Withstands Neighbourhood Strains (International Crisis Group)"
     accessed: 2026-08-09
-    verified: true
+    verified: false
   - id: c12
     url: "https://www.wfp.org/news/somalia-drought-conflict-and-high-food-prices-risk-pushing-44-million-people-hunger-federal"
     source_type: official
     title: "Somalia: Drought, conflict and high food prices risk pushing 4.4 million people into hunger (World Food Programme)"
     accessed: 2026-08-09
-    verified: true
+    verified: false
   - id: c13
     url: "https://en.wikipedia.org/wiki/Somali_invasion_of_Ogaden"
     source_type: wikipedia
     title: "Somali invasion of Ogaden"
     accessed: 2026-08-09
-    verified: true
+    verified: false
   - id: c14
     url: "https://en.wikipedia.org/wiki/Intergovernmental_Authority_on_Development"
     source_type: wikipedia
     title: "Intergovernmental Authority on Development"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c15
     url: "https://en.wikipedia.org/wiki/Community_of_Sahel%E2%80%93Saharan_States"
     source_type: wikipedia
     title: "Community of Sahel-Saharan States"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c16
     url: "https://www.lexology.com/library/detail.aspx?g=03527e20-f588-4a72-9b64-c11731e36d1e"
     source_type: news
     title: "Tunisia and Somalia join COMESA"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c17
     url: "https://www.eac.int/press-releases/3049-somalia-finally-joins-eac-as-the-bloc-s-8th-partner-state"
     source_type: official
     title: "Somalia finally joins EAC as the bloc's 8th Partner State"
     accessed: 2026-08-10
-    verified: true
-
+    verified: false
 balance:
   n_positive: 1
   n_negative: 3

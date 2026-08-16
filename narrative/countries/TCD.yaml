@@ -379,74 +379,73 @@ citations:
     source_type: wikipedia
     title: "History of Chad"
     accessed: 2026-08-09
-    verified: true
+    verified: false
   - id: c2
     url: "https://www.hrw.org/news/2024/05/13/chad-political-transition-ends-debys-election"
     source_type: academic
     title: "Chad: Political Transition Ends with Déby's Election (Human Rights Watch)"
     accessed: 2026-08-09
-    verified: true
+    verified: false
   - id: c3
     url: "https://www.hrw.org/news/2023/01/23/chad-justice-needed-october-crackdown"
     source_type: academic
     title: "Chad: Justice Needed for October Crackdown (Human Rights Watch)"
     accessed: 2026-08-09
-    verified: true
+    verified: false
   - id: c4
     url: "https://monitor.civicus.org/explore/chad-black-thursday-at-least-50-killed-in-protests-against-extension-military-transitional-period-qhf1/"
     source_type: news
     title: "\"Black Thursday\": at least 50 killed in protests against extension of military transitional period (CIVICUS Monitor)"
     accessed: 2026-08-09
-    verified: true
+    verified: false
   - id: c6
     url: "https://www.aljazeera.com/news/2026/5/5/boko-haram-attack-kills-23-soldiers-in-chads-lake-chad-region"
     source_type: news
     title: "Boko Haram attack kills 23 soldiers in Chad's Lake Chad region (Al Jazeera)"
     accessed: 2026-08-09
-    verified: true
+    verified: false
   - id: c7
     url: "https://www.aljazeera.com/gallery/2025/12/6/chad-struggles-as-new-sudanese-refugees-strain-resources-and-infrastructure"
     source_type: news
     title: "Chad struggles as new Sudanese refugees strain resources and infrastructure (Al Jazeera)"
     accessed: 2026-08-09
-    verified: true
+    verified: false
   - id: c8
     url: "https://www.unrefugees.org/news/unhcr-warns-crisis-reaching-breaking-point-as-sudanese-refugee-numbers-triple-in-chad/"
     source_type: official
     title: "UNHCR warns crisis reaching breaking point as Sudanese refugee numbers triple in Chad"
     accessed: 2026-08-09
-    verified: true
+    verified: false
   - id: c9
     url: "https://ips-dc.org/the_world_bank_takes_the_money_and_runs_from_chad/"
     source_type: academic
     title: "The World Bank Takes the Money and Runs from Chad (Institute for Policy Studies)"
     accessed: 2026-08-09
-    verified: true
+    verified: false
   - id: c10
     url: "https://www.financialafrik.com/en/2025/11/14/chad-connection-2030-country-secures-20-5-billion-and-already-closes-two-thirds-of-the-financing-for-its-national-development-plan/"
     source_type: news
     title: "Chad Connection 2030: country secures $20.5 billion (Financial Afrik)"
     accessed: 2026-08-09
-    verified: true
+    verified: false
   - id: c11
     url: "https://www.sciencespo.fr/mass-violence-war-massacre-resistance/en/document/colonial-violence-and-resistance-chad-1900-1960.html"
     source_type: academic
     title: "Colonial violence and resistance in Chad (1900-1960) (Sciences Po Mass Violence and Resistance Research Network)"
     accessed: 2026-08-09
-    verified: true
+    verified: false
   - id: c12
     url: "https://en.wikipedia.org/wiki/Economic_Community_of_Central_African_States"
     source_type: wikipedia
     title: "Economic Community of Central African States"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c13
     url: "https://en.wikipedia.org/wiki/Community_of_Sahel%E2%80%93Saharan_States"
     source_type: wikipedia
     title: "Community of Sahel-Saharan States"
     accessed: 2026-08-10
-    verified: true
-
+    verified: false
 balance:
   n_positive: 1
   n_negative: 2

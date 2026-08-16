@@ -379,92 +379,91 @@ citations:
     source_type: wikipedia
     title: "French protectorate in Morocco"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c2
     url: "https://en.wikipedia.org/wiki/Years_of_Lead_(Morocco)"
     source_type: wikipedia
     title: "Years of Lead (Morocco)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c3
     url: "https://en.wikipedia.org/wiki/Western_Sahara_War"
     source_type: wikipedia
     title: "Western Sahara War"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c4
     url: "https://www.aljazeera.com/news/2020/12/10/israel-morocco-agree-to-normalise-relations-in-us-brokered-deal"
     source_type: news
     title: "Israel, Morocco agree to normalise relations in US-brokered deal (Al Jazeera)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c5
     url: "https://rsf.org/en/morocco-journalists-taoufik-bouachrine-omar-radi-and-soulaimane-raissouni-free-last"
     source_type: news
     title: "Morocco: Journalists Taoufik Bouachrine, Omar Radi and Soulaimane Raissouni Free at Last (RSF)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c6
     url: "https://en.wikipedia.org/wiki/2023_Al_Haouz_earthquake"
     source_type: wikipedia
     title: "2023 Al Haouz earthquake"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c7
     url: "https://www.france24.com/en/africa/20251031-un-security-council-backs-moroccan-plan-for-disputed-western-sahara"
     source_type: news
     title: "UN Security Council backs Moroccan plan for disputed Western Sahara (France 24)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c8
     url: "https://www.middleeasteye.net/news/morocco-two-people-killed-police-during-genz-212-protests"
     source_type: news
     title: "Morocco: Police kill three during GenZ 212 protests (Middle East Eye)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c9
     url: "https://en.wikipedia.org/wiki/2025_Moroccan_Gen_Z_protests"
     source_type: wikipedia
     title: "2025 Moroccan Gen Z protests"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c10
     url: "https://www.moroccoworldnews.com/2025/12/270802/tehraoui-morocco-expands-universal-health-coverage-to-88-of-population/"
     source_type: news
     title: "Tehraoui: Morocco Expands Universal Health Coverage to 88% of Population (Morocco World News)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c11
     url: "https://www.icj-cij.org/node/103799"
     source_type: official
     title: "Summary of the Advisory Opinion of 16 October 1975 -- Western Sahara (International Court of Justice)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c12
     url: "https://www.aljazeera.com/news/2017/1/31/morocco-rejoins-the-african-union-after-33-years"
     source_type: news
     title: "Morocco rejoins the African Union after 33 years (Al Jazeera)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c13
     url: "https://www.cif.org/news/worlds-largest-concentrated-solar-plant-opened-morocco"
     source_type: official
     title: "World's largest concentrated solar plant opened in Morocco (Climate Investment Funds)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c14
     url: "https://en.wikipedia.org/wiki/Arab_Maghreb_Union"
     source_type: wikipedia
     title: "Arab Maghreb Union"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c15
     url: "https://simple.wikipedia.org/wiki/Community_of_Sahel-Saharan_States"
     source_type: wikipedia
     title: "Community of Sahel-Saharan States"
     accessed: 2026-08-10
-    verified: true
-
+    verified: false
 rec_membership:
   - org: UMA
     joined: 1989

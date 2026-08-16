@@ -350,92 +350,91 @@ citations:
     source_type: news
     title: "Guinea-Bissau - Independence (Britannica)"
     accessed: 2026-08-12
-    verified: true
+    verified: false
   - id: c2
     url: "https://en.wikipedia.org/wiki/Am%C3%ADlcar_Cabral"
     source_type: wikipedia
     title: "Amilcar Cabral"
     accessed: 2026-08-12
-    verified: true
+    verified: false
   - id: c3
     url: "https://en.wikipedia.org/wiki/1980_Guinea-Bissau_coup_d'%C3%A9tat"
     source_type: wikipedia
     title: "1980 Guinea-Bissau coup d'etat"
     accessed: 2026-08-12
-    verified: true
+    verified: false
   - id: c4
     url: "https://en.wikipedia.org/wiki/Lu%C3%ADs_Cabral"
     source_type: wikipedia
     title: "Luis Cabral"
     accessed: 2026-08-12
-    verified: true
+    verified: false
   - id: c5
     url: "https://adf-magazine.com/2022/09/cocaine-coups-plague-guinea-bissau/"
     source_type: news
     title: "Cocaine, Coups Plague Guinea-Bissau (Africa Defense Forum)"
     accessed: 2026-08-12
-    verified: true
+    verified: false
   - id: c6
     url: "https://www.cfr.org/articles/united-states-and-drug-trafficking-guinea-bissau"
     source_type: news
     title: "United States and Drug Trafficking in Guinea-Bissau (Council on Foreign Relations)"
     accessed: 2026-08-12
-    verified: true
+    verified: false
   - id: c7
     url: "https://en.wikipedia.org/wiki/2025_Guinea-Bissau_coup_d'%C3%A9tat"
     source_type: wikipedia
     title: "2025 Guinea-Bissau coup d'etat"
     accessed: 2026-08-12
-    verified: true
+    verified: false
   - id: c8
     url: "https://www.pbs.org/newshour/world/guinea-bissau-soldiers-announce-general-as-junta-leader-cementing-a-coup-days-after-election"
     source_type: news
     title: "Guinea-Bissau soldiers announce general as junta leader (PBS News)"
     accessed: 2026-08-12
-    verified: true
+    verified: false
   - id: c9
     url: "https://www.africanews.com/2025/12/15/ecowas-rejects-guinea-bissau-transition-warns-of-sanctions/"
     source_type: news
     title: "ECOWAS rejects Guinea-Bissau transition, warns of sanctions (Africanews)"
     accessed: 2026-08-12
-    verified: true
+    verified: false
   - id: c10
     url: "https://www.ecofinagency.com/news/3006-47472-cashew-guinea-bissau-on-track-to-meet-2025-export-target-amid-challenges"
     source_type: news
     title: "Cashew: Guinea-Bissau on Track to Meet 2025 Export Target (Ecofin Agency)"
     accessed: 2026-08-12
-    verified: true
+    verified: false
   - id: c11
     url: "https://english.news.cn/africa/20250627/41ebf69c72dc4108b3576077cf738ef7/c.html"
     source_type: news
     title: "Guinea-Bissau aims to export over 200,000 tons of cashew nuts in 2025 (Xinhua)"
     accessed: 2026-08-12
-    verified: true
+    verified: false
   - id: c12
     url: "https://www.unicef.org/guineabissau/documents/maternal-newborn-child-adolescent-health"
     source_type: official
     title: "Maternal, Newborn, Child & Adolescent Health (UNICEF Guinea-Bissau)"
     accessed: 2026-08-12
-    verified: true
+    verified: false
   - id: c13
     url: "https://theconversation.com/guinea-bissau-coup-election-uncertainty-has-triggered-military-takeovers-before-271368"
     source_type: news
     title: "Guinea-Bissau coup: election uncertainty has triggered military takeovers before (The Conversation)"
     accessed: 2026-08-12
-    verified: true
+    verified: false
   - id: c14
     url: "https://en.wikipedia.org/wiki/Economic_Community_of_West_African_States"
     source_type: wikipedia
     title: "Economic Community of West African States"
     accessed: 2026-08-12
-    verified: true
+    verified: false
   - id: c15
     url: "https://simple.wikipedia.org/wiki/Community_of_Sahel-Saharan_States"
     source_type: wikipedia
     title: "Community of Sahel-Saharan States"
     accessed: 2026-08-12
-    verified: true
-
+    verified: false
   - id: c16
     url: "https://en.wikipedia.org/wiki/African_Party_for_the_Independence_of_Guinea_and_Cape_Verde"
     source_type: wikipedia

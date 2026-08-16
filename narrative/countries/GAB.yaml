@@ -342,74 +342,73 @@ citations:
     source_type: wikipedia
     title: "1964 Gabonese coup d'état"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c2
     url: "https://en.wikipedia.org/wiki/L%C3%A9on_M%E2%80%99ba"
     source_type: wikipedia
     title: "Léon M'ba"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c3
     url: "https://en.wikipedia.org/wiki/2023_Gabonese_coup_d'%C3%A9tat"
     source_type: wikipedia
     title: "2023 Gabonese coup d'état"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c4
     url: "https://www.africanews.com/2025/04/13/brice-oligui-nguema-wins-gabon-presidential-election-with-9035-of-the-vote/"
     source_type: news
     title: "Brice Oligui Nguema wins Gabon Presidential election with 90.35% of the Vote (Africanews)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c5
     url: "https://en.wikipedia.org/wiki/2025_Gabonese_presidential_election"
     source_type: wikipedia
     title: "2025 Gabonese presidential election"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c6
     url: "https://www.france24.com/en/africa/20250516-gabon-ali-bong-president-angola-junta-coup-released-house-arrest-ngueme-lourenco-luanda"
     source_type: news
     title: "Gabon's ousted leader Bongo released from house arrest, arrives in Angola (France 24)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c7
     url: "https://allafrica.com/view/group/main/main/id/00094709.html"
     source_type: news
     title: "Former First Family of Gabon Get 20 Years in Absentia for Graft (AllAfrica)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c8
     url: "https://www.worldbank.org/en/country/gabon/publication/gabon-economic-update-2025-building-and-preserving-gabon-wealth-for-better-livelihoods"
     source_type: official
     title: "Gabon Economic Update 2025: Building and Preserving Gabon Wealth for Better Livelihoods (World Bank)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c9
     url: "https://www.miningreview.com/news/gabons-manganese-investment-opportunities/"
     source_type: news
     title: "Gabon's Manganese transformation creates new downstream investment opportunities (Mining Review)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c10
     url: "https://www.jurist.org/news/2024/11/gabon-referendum-approves-new-constitution-restoring-civilian-government/"
     source_type: news
     title: "Gabon approves new constitution in referendum restoring civilian government (JURIST)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c11
     url: "https://theconversation.com/gabons-coup-leaders-have-changed-the-constitution-to-entrench-their-power-its-a-growing-trend-in-west-africa-244182"
     source_type: news
     title: "Gabon's coup leaders have changed the constitution to entrench their power (The Conversation)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c12
     url: "https://en.wikipedia.org/wiki/Economic_Community_of_Central_African_States"
     source_type: wikipedia
     title: "Economic Community of Central African States"
     accessed: 2026-08-11
-    verified: true
-
+    verified: false
 rec_membership:
   - org: ECCAS
     joined: 1983

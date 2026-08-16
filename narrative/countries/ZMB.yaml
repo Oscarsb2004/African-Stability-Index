@@ -346,79 +346,79 @@ citations:
     source_type: wikipedia
     title: "History of Zambia"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c2
     url: "https://en.wikipedia.org/wiki/Frederick_Chiluba"
     source_type: wikipedia
     title: "Frederick Chiluba"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c3
     url: "https://en.wikipedia.org/wiki/2021_Zambian_general_election"
     source_type: wikipedia
     title: "2021 Zambian general election"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c4
     url: "https://www.france24.com/en/africa/20210816-opposition-candidate-hichilema-wins-zambia-presidential-election"
     source_type: news
     title: "Opposition candidate Hichilema wins Zambia presidential election (France 24)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c5
     url: "https://en.wikipedia.org/wiki/2025_Sino-Metals_Leach_Zambia_dam_disaster"
     source_type: wikipedia
     title: "2025 Sino-Metals Leach Zambia dam disaster"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c6
     url: "https://www.hrw.org/news/2025/09/11/zambia-acid-spill-jeopardizes-residents-health"
     source_type: news
     title: "Zambia: Acid Spill Jeopardizes Residents' Health (Human Rights Watch)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c7
     url: "https://www.aljazeera.com/news/2025/8/8/zambia-ex-president-must-be-sent-home-for-burial-south-african-court-rules"
     source_type: news
     title: "Zambia ex-president must be sent home for burial, South African court rules (Al Jazeera)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c8
     url: "https://en.wikipedia.org/wiki/Death_and_state_funeral_of_Edgar_Lungu"
     source_type: wikipedia
     title: "Death and state funeral of Edgar Lungu"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c9
     url: "https://www.mofnp.gov.zm/?p=7786"
     source_type: official
     title: "Government of the Republic of Zambia Reaches Agreement on Debt Restructuring Terms (Ministry of Finance and National Planning)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c10
     url: "https://allafrica.com/stories/202608110117.html"
     source_type: news
     title: "Zambia Vote to Test Hichilema's Economic Record (AllAfrica)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c11
     url: "https://en.wikipedia.org/wiki/2026_Zambian_general_election"
     source_type: wikipedia
     title: "2026 Zambian general election"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c12
     url: "https://www.sadc.int/pages/history-and-treaty"
     source_type: official
     title: "History and Treaty (SADC)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c13
     url: "https://en.wikipedia.org/wiki/Common_Market_for_Eastern_and_Southern_Africa"
     source_type: wikipedia
     title: "Common Market for Eastern and Southern Africa"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c14
     url: "https://www.pbs.org/newshour/world/zambians-cast-ballots-in-a-presidential-election-that-tests-incumbents-economic-reforms"
     source_type: news

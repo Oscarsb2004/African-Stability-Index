@@ -374,110 +374,109 @@ citations:
     source_type: news
     title: "History of Djibouti (Britannica)"
     accessed: 2026-08-12
-    verified: true
+    verified: false
   - id: c2
     url: "https://en.wikipedia.org/wiki/Hassan_Gouled_Aptidon"
     source_type: wikipedia
     title: "Hassan Gouled Aptidon"
     accessed: 2026-08-12
-    verified: true
+    verified: false
   - id: c3
     url: "https://en.wikipedia.org/wiki/Djiboutian_Civil_War"
     source_type: wikipedia
     title: "Djiboutian Civil War"
     accessed: 2026-08-12
-    verified: true
+    verified: false
   - id: c4
     url: "https://www.britannica.com/place/Djibouti/Multiparty-politics-and-civil-war"
     source_type: news
     title: "Djibouti - Multiparty politics and civil war (Britannica)"
     accessed: 2026-08-12
-    verified: true
+    verified: false
   - id: c5
     url: "https://www.peoplesworld.org/article/why-do-so-many-countries-have-military-bases-in-djibouti/"
     source_type: news
     title: "Why do so many countries have military bases in Djibouti? (People's World)"
     accessed: 2026-08-12
-    verified: true
+    verified: false
   - id: c6
     url: "https://en.wikipedia.org/wiki/Foreign_military_bases_in_Djibouti"
     source_type: wikipedia
     title: "Foreign military bases in Djibouti"
     accessed: 2026-08-12
-    verified: true
+    verified: false
   - id: c7
     url: "https://en.wikipedia.org/wiki/2026_Djiboutian_presidential_election"
     source_type: wikipedia
     title: "2026 Djiboutian presidential election"
     accessed: 2026-08-12
-    verified: true
+    verified: false
   - id: c8
     url: "https://www.sabcnews.com/sabcnews/djiboutis-guelleh-expected-to-win-sixth-term-after-age-limits-lifted/"
     source_type: news
     title: "Djibouti's Guelleh Expected to Win Sixth Term After Age Limits Lifted (SABC News)"
     accessed: 2026-08-12
-    verified: true
+    verified: false
   - id: c9
     url: "https://www.france24.com/en/africa/20260409-djibouti-election-expected-extend-incumbent-27-years-presidential-office"
     source_type: news
     title: "Djibouti election expected to extend incumbent's 27 years in office (France 24)"
     accessed: 2026-08-12
-    verified: true
+    verified: false
   - id: c10
     url: "https://www.africanleadershipmagazine.co.uk/djiboutis-economic-outlook-after-imf-review-ports-growth-and-regional-risks/"
     source_type: news
     title: "Djibouti's Economic Outlook After IMF Review (African Leadership Magazine)"
     accessed: 2026-08-12
-    verified: true
+    verified: false
   - id: c11
     url: "https://www.coface.com/news-economy-and-insights/business-risk-dashboard/country-risk-files/djibouti"
     source_type: news
     title: "Djibouti: Country Risk File (Coface)"
     accessed: 2026-08-12
-    verified: true
+    verified: false
   - id: c12
     url: "https://www.unicef.org/djibouti/en/stories/malnutrition-reaching-children-last-mile"
     source_type: official
     title: "Malnutrition: Reaching Children in the Last Mile (UNICEF Djibouti)"
     accessed: 2026-08-12
-    verified: true
+    verified: false
   - id: c13
     url: "https://african.business/2024/05/dossier/how-djibouti-will-produce-100-green-energy-by-2035"
     source_type: news
     title: "How Djibouti will produce 100% green energy by 2035 (African Business)"
     accessed: 2026-08-12
-    verified: true
+    verified: false
   - id: c14
     url: "https://africa-energy-portal.org/news/djibouti-secures-first-renewables-project-60mw-wind-farm"
     source_type: news
     title: "Djibouti secures first renewables project: 60MW wind farm (Africa Energy Portal)"
     accessed: 2026-08-12
-    verified: true
+    verified: false
   - id: c15
     url: "https://www.mediaoffice.ae/en/news/2025/october/02-10/london-court-confirms-djibouti-acted-illegally-in-seizing-dp-world-built-terminal"
     source_type: news
     title: "London Court confirms Djibouti acted illegally in seizing DP World-built terminal"
     accessed: 2026-08-12
-    verified: true
+    verified: false
   - id: c17
     url: "https://en.wikipedia.org/wiki/Common_Market_for_Eastern_and_Southern_Africa"
     source_type: wikipedia
     title: "Common Market for Eastern and Southern Africa"
     accessed: 2026-08-12
-    verified: true
+    verified: false
   - id: c18
     url: "https://simple.wikipedia.org/wiki/Community_of_Sahel-Saharan_States"
     source_type: wikipedia
     title: "Community of Sahel-Saharan States"
     accessed: 2026-08-12
-    verified: true
+    verified: false
   - id: c19
     url: "https://en.wikipedia.org/wiki/Intergovernmental_Authority_on_Development"
     source_type: wikipedia
     title: "Intergovernmental Authority on Development"
     accessed: 2026-08-12
-    verified: true
-
+    verified: false
 rec_membership:
   - org: IGAD
     joined: 1986

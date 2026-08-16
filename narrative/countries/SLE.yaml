@@ -354,86 +354,85 @@ citations:
     source_type: wikipedia
     title: "Sierra Leone Colony and Protectorate"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c2
     url: "https://www.newworldencyclopedia.org/entry/Freetown"
     source_type: academic
     title: "Freetown (New World Encyclopedia)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c3
     url: "https://www.thenewhumanitarian.org/feature/1999/05/12/sierra-leone-chronology"
     source_type: news
     title: "Sierra Leone: Chronology (The New Humanitarian)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c4
     url: "https://en.wikipedia.org/wiki/Sierra_Leone_Civil_War"
     source_type: wikipedia
     title: "Sierra Leone Civil War"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c5
     url: "https://blackpast.org/global-african-history/revolutionary-united-front-1991-2002/"
     source_type: academic
     title: "Revolutionary United Front (1991-2002) (BlackPast.org)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c6
     url: "https://en.wikipedia.org/wiki/British_military_intervention_in_the_Sierra_Leone_Civil_War"
     source_type: wikipedia
     title: "British military intervention in the Sierra Leone Civil War"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c7
     url: "https://www.globalwitness.org/en/archive/charles-taylor-verdict-global-witness-briefing-dictator-blood-diamonds-and-timber-and-two/"
     source_type: news
     title: "The Charles Taylor Verdict: A Global Witness briefing on a dictator, blood diamonds and timber, and two countries in recovery (Global Witness)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c8
     url: "https://en.wikipedia.org/wiki/2023_Sierra_Leone_coup_attempt"
     source_type: wikipedia
     title: "2023 Sierra Leone coup attempt"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c9
     url: "https://www.aljazeera.com/news/2023/6/27/sierra-leones-bio-declared-winner-of-presidential-election"
     source_type: news
     title: "Sierra Leone's Bio re-elected as president, avoids run-off (Al Jazeera)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c10
     url: "https://www.ecowas.int/67th-ecowas-summit-h-e-julius-maada-bio-president-of-sierra-leone-is-the-new-chairman-of-the-authority-of-heads-of-state-and-government-for-a-one-year-term/"
     source_type: official
     title: "67th ECOWAS Summit: Julius Maada Bio is the new chairman (ECOWAS)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c11
     url: "https://agra.org/news/breaking-the-cycle-sierra-leones-way-to-transforming-its-food-systems/"
     source_type: news
     title: "Breaking the Cycle: Sierra Leone's Way to Transforming its Food Systems (AGRA)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c12
     url: "https://westafricareport.com/sierra-leone/feed-salone-can-bios-initiative-achieve-food-security-for-sierra-leone/"
     source_type: news
     title: "Feed Salone: can Bio's initiative achieve food security for Sierra Leone? (West Africa Report)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c13
     url: "https://en.wikipedia.org/wiki/Treaty_of_Lagos"
     source_type: wikipedia
     title: "Treaty of Lagos"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c14
     url: "https://simple.wikipedia.org/wiki/Community_of_Sahel-Saharan_States"
     source_type: wikipedia
     title: "Community of Sahel-Saharan States"
     accessed: 2026-08-10
-    verified: true
-
+    verified: false
 rec_membership:
   - org: ECOWAS
     joined: 1975

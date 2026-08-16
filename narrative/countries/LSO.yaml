@@ -356,86 +356,85 @@ citations:
     source_type: news
     title: "Basutoland (now Lesotho) becomes British territory (South African History Online)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c2
     url: "https://www.britannica.com/place/Lesotho/The-Sotho-kingdom-1824-69"
     source_type: news
     title: "Lesotho - The Sotho kingdom, 1824-69 (Britannica)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c3
     url: "https://en.wikipedia.org/wiki/1970_Lesotho_coup_d%27%C3%A9tat"
     source_type: wikipedia
     title: "1970 Lesotho coup d'état"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c4
     url: "https://en.wikipedia.org/wiki/1986_Lesotho_coup_d%27%C3%A9tat"
     source_type: wikipedia
     title: "1986 Lesotho coup d'état"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c5
     url: "https://en.wikipedia.org/wiki/South_African_intervention_in_Lesotho"
     source_type: wikipedia
     title: "South African intervention in Lesotho"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c6
     url: "https://historyrise.com/the-1998-political-crisis-and-sadc-military-intervention-in-lesotho/"
     source_type: news
     title: "The 1998 Political Crisis And SADC Military Intervention In Lesotho: Causes, Action, And Impact"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c7
     url: "https://en.wikipedia.org/wiki/Sam_Matekane"
     source_type: wikipedia
     title: "Sam Matekane"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c8
     url: "https://informativenews.co.ls/2024/02/21/concourt-nullifies-constitutions-9th-amendment/"
     source_type: news
     title: "ConCourt nullifies Constitution's 9th Amendment (Informative News Lesotho)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c9
     url: "https://allafrica.com/stories/202507140140.html"
     source_type: news
     title: "Lesotho Declares 'State of Disaster' As It Struggles With US Policy Changes (AllAfrica)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c10
     url: "https://texfash.com/special/lesotho-declares-state-of-disaster-as-trump-tariff-wipes-out-textiles-industry"
     source_type: news
     title: "Lesotho Declares State of Disaster as Trump Tariff Wipes Out Textiles Industry (texfash.com)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c11
     url: "https://www.unaids.org/sites/default/files/2025-07/2025-global-aids-update-JC3153_en.pdf"
     source_type: official
     title: "UNAIDS Global AIDS Update 2025"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c12
     url: "https://theconversation.com/the-lesotho-highlands-water-project-is-40-years-old-and-going-strong-but-history-weighs-on-its-successes-277860"
     source_type: news
     title: "The Lesotho Highlands Water project is 40 years old and going strong: but history weighs on its successes (The Conversation)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c13
     url: "https://allafrica.com/stories/202509220102.html"
     source_type: news
     title: "Lesotho: Villagers Lodge Complaint With African Development Bank Against Lesotho Highlands Water Project (AllAfrica)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c14
     url: "https://www.sadc.int/pages/history-and-treaty"
     source_type: official
     title: "History and Treaty (SADC)"
     accessed: 2026-08-11
-    verified: true
-
+    verified: false
 rec_membership:
   - org: SADC
     joined: 1980

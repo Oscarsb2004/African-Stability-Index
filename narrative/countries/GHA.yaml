@@ -340,80 +340,79 @@ citations:
     source_type: wikipedia
     title: "History of Ghana"
     accessed: 2026-08-09
-    verified: true
+    verified: false
   - id: c2
     url: "https://en.wikipedia.org/wiki/2024_Ghanaian_general_election"
     source_type: wikipedia
     title: "2024 Ghanaian general election"
     accessed: 2026-08-09
-    verified: true
+    verified: false
   - id: c3
     url: "https://www.theafricareport.com/371032/infographic-breakdown-of-ghanas-2024-presidential-results/"
     source_type: news
     title: "Infographic: Breakdown of Ghana's 2024 presidential results"
     accessed: 2026-08-09
-    verified: true
+    verified: false
   - id: c4
     url: "https://allafrica.com/stories/202412090430.html"
     source_type: news
     title: "Ghana: Surprises, Jubilation Greet Mahama's Victory"
     accessed: 2026-08-09
-    verified: true
+    verified: false
   - id: c5
     url: "https://www.cgdev.org/sites/default/files/ghana-sovereign-debt-restructuring-g20-common-framework.pdf"
     source_type: academic
     title: "Ghana: A Case Study of Sovereign Debt Restructuring under the G20 Common Framework (Center for Global Development)"
     accessed: 2026-08-09
-    verified: true
+    verified: false
   - id: c6
     url: "https://www.imf.org/-/media/files/publications/cr/2024/english/1ghaea2024004-print-pdf.pdf"
     source_type: official
     title: "IMF Country Report No. 24/334: Ghana"
     accessed: 2026-08-09
-    verified: true
+    verified: false
   - id: c7
     url: "https://www.aljazeera.com/features/2025/1/22/as-gold-prices-surge-ghana-faces-looming-crisis-over-illegal-mining"
     source_type: news
     title: "As gold prices surge, Ghana faces 'looming crisis' over illegal mining (Al Jazeera)"
     accessed: 2026-08-09
-    verified: true
+    verified: false
   - id: c8
     url: "https://en.wikipedia.org/wiki/Galamsey"
     source_type: wikipedia
     title: "Galamsey"
     accessed: 2026-08-09
-    verified: true
+    verified: false
   - id: c9
     url: "https://en.wikipedia.org/wiki/Kwame_Nkrumah"
     source_type: wikipedia
     title: "Kwame Nkrumah"
     accessed: 2026-08-09
-    verified: true
+    verified: false
   - id: c10
     url: "https://en.wikipedia.org/wiki/National_Health_Insurance_Scheme_(Ghana)"
     source_type: wikipedia
     title: "National Health Insurance Scheme (Ghana)"
     accessed: 2026-08-09
-    verified: true
+    verified: false
   - id: c11
     url: "https://wanep.org/wanep/fighting-illegal-mining-galamsey-in-ghana-is-a-state-of-emergency-enough/"
     source_type: news
     title: "Fighting Illegal Mining (Galamsey) in Ghana: Is a State Of Emergency Enough? (WANEP)"
     accessed: 2026-08-09
-    verified: true
+    verified: false
   - id: c12
     url: "https://www.ecowas.int/creation-history/"
     source_type: official
     title: "Creation (History) — ECOWAS"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c13
     url: "https://en.wikipedia.org/wiki/Community_of_Sahel%E2%80%93Saharan_States"
     source_type: wikipedia
     title: "Community of Sahel-Saharan States"
     accessed: 2026-08-10
-    verified: true
-
+    verified: false
 balance:
   n_positive: 2
   n_negative: 1

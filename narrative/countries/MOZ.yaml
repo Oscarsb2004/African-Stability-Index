@@ -340,80 +340,79 @@ citations:
     source_type: academic
     title: "Mozambican War of Independence (EBSCO)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c2
     url: "https://en.wikipedia.org/wiki/Mozambican_War_of_Independence"
     source_type: wikipedia
     title: "Mozambican War of Independence"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c3
     url: "https://www.africarebirth.com/how-mozambique-broke-free-from-500-years-of-portuguese-rule/"
     source_type: news
     title: "How Mozambique Broke Free from 500 Years of Portuguese Rule (Africa Rebirth)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c4
     url: "https://blackpast.org/global-african-history/the-mozambican-civil-war-1977-1992/"
     source_type: academic
     title: "The Mozambican Civil War (1977-1992) (BlackPast.org)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c5
     url: "https://en.wikipedia.org/wiki/Mozambican_Civil_War"
     source_type: wikipedia
     title: "Mozambican Civil War"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c6
     url: "https://www.hrw.org/news/2024/10/29/mozambique-post-election-protests-violently-repressed"
     source_type: news
     title: "Mozambique: Post-Election Protests Violently Repressed (Human Rights Watch)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c7
     url: "https://www.amnesty.org/en/latest/news/2025/02/mozambique-authorities-must-investigate-reports-of-more-than-300-unlawful-killings-during-post-election-protest-crackdown/"
     source_type: news
     title: "Mozambique: Authorities must investigate reports of more than 300 unlawful killings during post-election protest crackdown (Amnesty International)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c8
     url: "https://ctc.westpoint.edu/the-march-2021-palma-attack-and-the-evolving-jihadi-terror-threat-to-mozambique/"
     source_type: academic
     title: "The March 2021 Palma Attack and the Evolving Jihadi Terror Threat to Mozambique (Combating Terrorism Center at West Point)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c9
     url: "https://www.france24.com/en/africa/20250115-mozambique-inaugurates-president-elect-daniel-chapo-amid-deadly-unrest"
     source_type: news
     title: "Mozambique inaugurates President Daniel Chapo amid deadly unrest over disputed election (France 24)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c10
     url: "https://www.afdb.org/en/countries/southern-africa/mozambique/mozambique-economic-outlook"
     source_type: official
     title: "Mozambique Economic Outlook (African Development Bank)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c11
     url: "https://english.news.cn/africa/20251025/efa9b772875746c88e85b3f21055e87d/c.html"
     source_type: news
     title: "Mozambique removed from FATF grey list (Xinhua)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c12
     url: "https://issafrica.org/iss-today/terrorism-takes-its-toll-on-mozambique-s-gas-revenue"
     source_type: news
     title: "Terrorism takes its toll on Mozambique's gas revenue (ISS Africa)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c13
     url: "https://en.wikipedia.org/wiki/Southern_African_Development_Coordination_Conference"
     source_type: wikipedia
     title: "Southern African Development Coordination Conference"
     accessed: 2026-08-10
-    verified: true
-
+    verified: false
 rec_membership:
   - org: SADC
     joined: 1980

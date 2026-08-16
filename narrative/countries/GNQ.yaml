@@ -327,74 +327,73 @@ citations:
     source_type: wikipedia
     title: "Francisco Macías Nguema"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c2
     url: "https://en.wikipedia.org/wiki/Republic_of_Equatorial_Guinea_(1968%E2%80%931979)"
     source_type: wikipedia
     title: "Republic of Equatorial Guinea (1968-1979)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c3
     url: "https://en.wikipedia.org/wiki/1979_Equatorial_Guinea_coup_d'%C3%A9tat"
     source_type: wikipedia
     title: "1979 Equatorial Guinea coup d'état"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c4
     url: "https://www.hrw.org/news/2017/10/29/equatorial-guinea-presidents-son-convicted-laundering-millions"
     source_type: news
     title: "Equatorial Guinea: President's Son Convicted of Laundering Millions (Human Rights Watch)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c5
     url: "https://www.occrp.org/en/news/french-court-convicts-equatorial-guinea-princeling-of-graft"
     source_type: news
     title: "French Court Convicts Equatorial Guinea Princeling of Graft (OCCRP)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c6
     url: "https://en.wikipedia.org/wiki/Teodoro_Nguema_Obiang_Mangue"
     source_type: wikipedia
     title: "Teodoro Nguema Obiang Mangue"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c7
     url: "https://borkena.com/2025/11/01/immortal-leader-of-equatorial-guinea-teodoro-obiang-dynastic-rule-and-the-costs-of-46-years-in-power/"
     source_type: news
     title: "Immortal Leader of Equatorial Guinea: Teodoro Obiang, Dynastic Rule, and the Costs of 46 Years in Power (Borkena)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c8
     url: "https://www.courthousenews.com/equatorial-guinea-loses-world-court-bid-over-seized-paris-mansion/"
     source_type: news
     title: "Equatorial Guinea loses world court bid over seized Paris mansion (Courthouse News Service)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c9
     url: "https://www.hrw.org/news/2021/07/28/france-equatorial-guinea-vice-presidents-conviction-upheld"
     source_type: news
     title: "France: Equatorial Guinea Vice President's Conviction Upheld (Human Rights Watch)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c10
     url: "https://www.gisreportsonline.com/r/equatorial-guineas-oil-and-gas-industry/"
     source_type: news
     title: "Equatorial Guinea's oil and gas industry continues to shrink (GIS Reports)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c11
     url: "https://open.unicef.org/download-pdf?country-name=Equatorial+Guinea&year=2025"
     source_type: official
     title: "UNICEF Equatorial Guinea Annual Report 2025"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c12
     url: "https://en.wikipedia.org/wiki/Economic_Community_of_Central_African_States"
     source_type: wikipedia
     title: "Economic Community of Central African States"
     accessed: 2026-08-10
-    verified: true
-
+    verified: false
 rec_membership:
   - org: ECCAS
     joined: 1983

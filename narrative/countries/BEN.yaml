@@ -346,74 +346,73 @@ citations:
     source_type: news
     title: "Dahomey (Britannica)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c2
     url: "https://visitabomey.com/en/pillars/how-did-dahomey-fall"
     source_type: news
     title: "How did the Dahomey kingdom fall? France vs Behanzin (Visit Abomey)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c3
     url: "https://en.wikipedia.org/wiki/Mathieu_K%C3%A9r%C3%A9kou"
     source_type: wikipedia
     title: "Mathieu Kérékou"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c4
     url: "https://en.wikipedia.org/wiki/1996_Beninese_presidential_election"
     source_type: wikipedia
     title: "1996 Beninese presidential election"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c5
     url: "https://en.wikipedia.org/wiki/2025_Beninese_coup_attempt"
     source_type: wikipedia
     title: "2025 Beninese coup attempt"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c6
     url: "https://www.france24.com/en/africa/20251216-benin-jails-30-people-with-links-to-thwarted-coup-attempt-legal-sources-say"
     source_type: news
     title: "Benin jails 30 people with links to thwarted coup attempt, legal sources say (France 24)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c7
     url: "https://www.aljazeera.com/news/2026/4/13/government-candidate-wadagni-on-course-to-win-benin-presidential-vote"
     source_type: news
     title: "Benin's Wadagni wins presidential election with landslide 94% of votes (Al Jazeera)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c8
     url: "https://theconversation.com/benin-election-wadagnis-landslide-win-raises-questions-about-his-legitimacy-281005"
     source_type: news
     title: "Benin election: Wadagni's landslide win raises questions about his legitimacy (The Conversation)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c9
     url: "https://www.aljazeera.com/news/2026/1/18/benin-opposition-loses-all-parliamentary-seats-provisional-results-show"
     source_type: news
     title: "Benin's opposition loses all parliamentary seats, provisional results show (Al Jazeera)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c10
     url: "https://www.ecofinagency.com/news-infrastructures/1409-48662-benin-cotonou-port-handles-6-7-million-tons-in-h1-2025-despite-q2-slowdown"
     source_type: news
     title: "Benin: Cotonou Port Handles 6.7 Million Tons in H1 2025 Despite Q2 Slowdown (Ecofin Agency)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c11
     url: "https://en.wikipedia.org/wiki/ECOWAS"
     source_type: wikipedia
     title: "ECOWAS"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c12
     url: "https://simple.wikipedia.org/wiki/Community_of_Sahel-Saharan_States"
     source_type: wikipedia
     title: "Community of Sahel-Saharan States"
     accessed: 2026-08-11
-    verified: true
-
+    verified: false
 rec_membership:
   - org: ECOWAS
     joined: 1975

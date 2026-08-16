@@ -344,74 +344,73 @@ citations:
     source_type: wikipedia
     title: "1956 British Togoland status plebiscite"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c2
     url: "https://en.wikipedia.org/wiki/1963_Togolese_coup_d'%C3%A9tat"
     source_type: wikipedia
     title: "1963 Togolese coup d'état"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c3
     url: "https://en.wikipedia.org/wiki/1967_Togolese_coup_d'%C3%A9tat"
     source_type: wikipedia
     title: "1967 Togolese coup d'état"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c5
     url: "https://www.loc.gov/item/global-legal-monitor/2024-05-16/togo-new-constitution-promulgated/"
     source_type: official
     title: "Togo: New Constitution Promulgated (Library of Congress)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c6
     url: "https://english.news.cn/africa/20250503/3f2c407e84a542e18d5eee26597f8fbb/c.html"
     source_type: news
     title: "Gnassingbe sworn in as president of Togo's Council of Ministers (Xinhua)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c7
     url: "https://www.africanews.com/2025/06/11/togos-president-faces-calls-to-resign-after-protests-over-new-role-allowing-indefinite-rul/"
     source_type: news
     title: "Togo's president faces calls to resign after protests over new role allowing indefinite rule (Africanews)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c8
     url: "https://allafrica.com/stories/202507020038.html"
     source_type: news
     title: "West Africa: Bloody Crackdown On Protests in Togo - 7 Dead, Over 60 Arrested (AllAfrica)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c9
     url: "https://www.myjoyonline.com/togo-issues-international-arrest-warrants-for-leaders-behind-civil-protests/"
     source_type: news
     title: "Togo issues international arrest warrants for leaders behind civil protests (MyJoyOnline)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c10
     url: "https://www.togofirst.com/en/agriculture/2909-17170-togo-s-coffee-and-cocoa-exports-jump-50-in-2024-2025-season"
     source_type: news
     title: "Togo's Coffee and Cocoa Exports Jump 50% in 2024-2025 Season (Togo First)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c11
     url: "https://www.togofirst.com/en/economic-governance/2205-19043-togo-s-economy-expands-6-3-in-2025-gdp-exceeds-5-6-trillion-cfa-francs"
     source_type: news
     title: "Togo's Economy Expands 6.3% in 2025, GDP Exceeds 5.6 Trillion CFA Francs (Togo First)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c12
     url: "https://en.wikipedia.org/wiki/ECOWAS"
     source_type: wikipedia
     title: "ECOWAS"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c13
     url: "https://simple.wikipedia.org/wiki/Community_of_Sahel-Saharan_States"
     source_type: wikipedia
     title: "Community of Sahel-Saharan States"
     accessed: 2026-08-11
-    verified: true
-
+    verified: false
 rec_membership:
   - org: ECOWAS
     joined: 1975

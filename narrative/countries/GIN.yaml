@@ -324,80 +324,79 @@ citations:
     source_type: news
     title: "When Guinea wanted freedom, colonialist France destroyed buildings out of spite - Here's the story (Face2Face Africa)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c2
     url: "https://en.wikipedia.org/wiki/1958_Guinean_constitutional_referendum"
     source_type: wikipedia
     title: "1958 Guinean constitutional referendum"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c3
     url: "https://en.wikipedia.org/wiki/Camp_Boiro"
     source_type: wikipedia
     title: "Camp Boiro"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c4
     url: "https://www.hrw.org/news/2009/10/27/guinea-september-28-massacre-was-premeditated"
     source_type: news
     title: "Guinea: September 28 Massacre Was Premeditated (Human Rights Watch)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c5
     url: "https://www.hrw.org/news/2024/07/26/guineas-2009-stadium-massacre-trial"
     source_type: news
     title: "Guinea's 2009 Stadium Massacre Trial (Human Rights Watch)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c6
     url: "https://www.fidh.org/en/region/Africa/guinea-conakry/the-28-september-2009-stadium-killings-trial-the-pardoning-of-moussa"
     source_type: news
     title: "The 28 September 2009 stadium killings trial: The pardoning of Moussa Dadis Camara is an affront to justice (FIDH)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c7
     url: "https://en.wikipedia.org/wiki/2021_Guinean_coup_d'%C3%A9tat"
     source_type: wikipedia
     title: "2021 Guinean coup d'état"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c8
     url: "https://www.aljazeera.com/news/2025/12/30/guinea-coup-leader-mamdi-doumbouya-wins-presidential-election"
     source_type: news
     title: "Guinea coup leader Mamady Doumbouya wins presidential election (Al Jazeera)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c9
     url: "https://en.wikipedia.org/wiki/Mamady_Doumbouya"
     source_type: wikipedia
     title: "Mamady Doumbouya"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c10
     url: "https://www.ntu.edu.sg/cas/news-events/news/details/how-asia-is-driving-the-mining-boom-in-guinea"
     source_type: news
     title: "How Asia is driving the mining boom in Guinea (NTU-SBF Centre for African Studies)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c11
     url: "https://www.spglobal.com/market-intelligence/en/news-insights/research/2025/09/simandou-iron-ore-project-a-game-changer-for-global-supply"
     source_type: news
     title: "Simandou iron ore project: A game changer for global supply (S&P Global)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c12
     url: "https://en.wikipedia.org/wiki/Treaty_of_Lagos"
     source_type: wikipedia
     title: "Treaty of Lagos"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c13
     url: "https://simple.wikipedia.org/wiki/Community_of_Sahel-Saharan_States"
     source_type: wikipedia
     title: "Community of Sahel-Saharan States"
     accessed: 2026-08-10
-    verified: true
-
+    verified: false
 rec_membership:
   - org: ECOWAS
     joined: 1975

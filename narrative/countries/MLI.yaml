@@ -371,68 +371,67 @@ citations:
     source_type: wikipedia
     title: "History of Mali"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c2
     url: "https://www.aljazeera.com/news/2025/1/29/military-governments-lead-west-african-trio-out-of-ecowas-regional-bloc"
     source_type: news
     title: "Military governments lead West African trio out of ECOWAS regional bloc (Al Jazeera)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c3
     url: "https://www.france24.com/en/africa/20250608-wagner-group-leaves-mali-replaced-by-moscow-backed-africa-corps-russia"
     source_type: news
     title: "Wagner Group leaves Mali, replaced by Moscow-backed Africa Corps (France 24)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c4
     url: "https://en.wikipedia.org/wiki/Tuareg_rebellion_(1962%E2%80%931964)"
     source_type: wikipedia
     title: "Tuareg rebellion (1962-1964)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c5
     url: "https://peoplesdispatch.org/2025/01/29/sahel-states-exit-ecowas-launch-regional-passport-and-joint-military/"
     source_type: news
     title: "Sahel states exit ECOWAS, launch regional passport and joint military (Peoples Dispatch)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c6
     url: "https://www.themoscowtimes.com/2025/06/08/wagner-replaced-by-russias-africa-corp-in-mali-diplomatic-sources-say-a89378"
     source_type: news
     title: "Wagner Replaced by Russia's Africa Corp in Mali, Diplomatic Sources Say (The Moscow Times)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c7
     url: "https://www.mining.com/timeline-barricks-dispute-with-malis-junta/"
     source_type: news
     title: "TIMELINE: Barrick's dispute with Mali's junta (MINING.COM)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c8
     url: "https://en.wikipedia.org/wiki/Mali_fuel_blockade"
     source_type: wikipedia
     title: "Mali fuel blockade"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c9
     url: "https://www.riotimesonline.com/mali-fuel-blockade-bamako-siege-2026/"
     source_type: news
     title: "Mali's Fuel Blockade Tightens the Siege on Bamako (Rio Times)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c10
     url: "https://en.wikipedia.org/wiki/Community_of_Sahel%E2%80%93Saharan_States"
     source_type: wikipedia
     title: "Community of Sahel-Saharan States"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c11
     url: "https://source.benchmarkminerals.com/article/mali-set-to-become-africas-second-largest-lithium-producer-in-2025"
     source_type: news
     title: "Mali set to become Africa's second largest lithium producer in 2025 (Benchmark Mineral Intelligence)"
     accessed: 2026-08-10
-    verified: true
-
+    verified: false
 rec_membership:
   - org: CEN-SAD
     joined: 1998

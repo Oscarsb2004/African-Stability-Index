@@ -344,86 +344,85 @@ citations:
     source_type: news
     title: "Senegal at 58: The long struggle for independence in 1960 (Face2Face Africa)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c2
     url: "https://en.wikipedia.org/wiki/L%C3%A9opold_S%C3%A9dar_Senghor"
     source_type: wikipedia
     title: "Léopold Sédar Senghor"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c3
     url: "https://en.wikipedia.org/wiki/Abdou_Diouf"
     source_type: wikipedia
     title: "Abdou Diouf"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c4
     url: "https://en.wikipedia.org/wiki/Ousmane_Sonko"
     source_type: wikipedia
     title: "Ousmane Sonko"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c5
     url: "https://www.globalsecurity.org/military/library/news/2024/02/mil-240216-voa07.htm"
     source_type: news
     title: "Senegal's Sall to Comply with Court Ruling That Said Election Delay Unconstitutional (VOA)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c6
     url: "https://www.aljazeera.com/features/2024/4/2/from-prisoner-to-president-in-20-days-senegals-diomaye-faye-takes-office"
     source_type: news
     title: "From prisoner to president in 20 days, Senegal's Diomaye Faye takes office (Al Jazeera)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c7
     url: "https://en.wikipedia.org/wiki/Bassirou_Diomaye_Faye"
     source_type: wikipedia
     title: "Bassirou Diomaye Faye"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c8
     url: "https://en.wikipedia.org/wiki/Senegal_hidden_debt_scandal"
     source_type: wikipedia
     title: "Senegal hidden debt scandal"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c9
     url: "https://www.theafricareport.com/402385/senegals-hidden-debt-scandal-in-search-of-the-missing-billions/"
     source_type: news
     title: "Senegal's 'hidden debt' scandal: In search of the missing billions (The Africa Report)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c10
     url: "https://www.aljazeera.com/news/2026/5/23/senegals-president-faye-sacks-pm-sonko-and-dissolves-government"
     source_type: news
     title: "Senegal's President Faye sacks PM Sonko and dissolves government (Al Jazeera)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c11
     url: "https://www.aljazeera.com/news/2026/5/26/senegal-lawmakers-elect-ousted-pm-sonko-as-new-parliament-speaker"
     source_type: news
     title: "Senegal lawmakers elect ousted PM Sonko as new parliament speaker (Al Jazeera)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c12
     url: "https://www.semafor.com/article/01/12/2026/senegals-oil-output-enjoys-bumper-year-in-2025"
     source_type: news
     title: "Senegal's oil output enjoys bumper year in 2025 (Semafor)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c13
     url: "https://en.wikipedia.org/wiki/ECOWAS"
     source_type: wikipedia
     title: "ECOWAS"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c14
     url: "https://simple.wikipedia.org/wiki/Community_of_Sahel-Saharan_States"
     source_type: wikipedia
     title: "Community of Sahel-Saharan States"
     accessed: 2026-08-11
-    verified: true
-
+    verified: false
 rec_membership:
   - org: ECOWAS
     joined: 1975

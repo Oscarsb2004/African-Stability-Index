@@ -376,62 +376,61 @@ citations:
     source_type: wikipedia
     title: "History of South Africa"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c2
     url: "https://www.corruptionwatch.org.za/zondo-report-a-summary-of-the-first-four-parts-and-who-it-implicated/"
     source_type: academic
     title: "Zondo report: a summary of the first four parts, and who it implicated (Corruption Watch)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c3
     url: "https://blog-pfm.imf.org/en/pfmblog/2023/04/how-and-why-did-state-capture-and-massive-corruption-occur-in-south-africa"
     source_type: official
     title: "How and Why Did State Capture and Massive Corruption Occur in South Africa? (IMF)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c4
     url: "https://www.aljazeera.com/news/2024/6/1/south-africa-anc-loses-30-year-parliamentary-majority-after-election"
     source_type: news
     title: "South Africa's ANC loses 30-year parliamentary majority after election (Al Jazeera)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c5
     url: "https://www.dailymaverick.co.za/article/2025-03-10-land-ownership-in-sa-the-facts-and-figures/"
     source_type: news
     title: "Land ownership in South Africa — the facts and figures, and figuring out the facts (Daily Maverick)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c6
     url: "https://issafrica.org/iss-today/violent-crime-and-the-myth-of-south-africa-s-white-genocide"
     source_type: academic
     title: "Violent crime and the myth of South Africa's 'white genocide' (Institute for Security Studies)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c7
     url: "https://www.africanews.com/2026/01/23/south-africa-to-step-aside-from-g20-during-united-states-presidency/"
     source_type: news
     title: "South Africa to step aside from G20 during United States presidency (Africanews)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c8
     url: "https://www.sanews.gov.za/south-africa/eskom-reports-441-days-without-load-shedding"
     source_type: official
     title: "Eskom reports 441 days without load shedding (South African Government News Agency)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c9
     url: "https://en.wikipedia.org/wiki/2024_South_African_general_election"
     source_type: wikipedia
     title: "2024 South African general election"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c10
     url: "https://www.sadc.int/member-states/south-africa"
     source_type: official
     title: "South Africa (SADC)"
     accessed: 2026-08-10
-    verified: true
-
+    verified: false
 rec_membership:
   - org: SADC
     joined: 1994

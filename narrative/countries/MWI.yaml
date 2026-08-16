@@ -336,74 +336,73 @@ citations:
     source_type: wikipedia
     title: "Hastings Banda"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c2
     url: "https://en.wikipedia.org/wiki/Bakili_Muluzi"
     source_type: wikipedia
     title: "Bakili Muluzi"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c3
     url: "https://www.thenewhumanitarian.org/news/2002/07/05/no-third-term-muluzi"
     source_type: news
     title: "No third term for Muluzi (The New Humanitarian)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c4
     url: "https://ohrh.law.ox.ac.uk/the-high-court-of-malawi-nullifies-may-2019-presidential-election-in-landmark-judgment/"
     source_type: news
     title: "The High Court of Malawi Nullifies May 2019 Presidential Election in Landmark Judgment (Oxford Human Rights Hub)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c5
     url: "https://www.aljazeera.com/news/2020/6/27/malawi-presidential-election-lazarus-chakwera-declared-winner"
     source_type: news
     title: "Malawi presidential election: Lazarus Chakwera declared winner (Al Jazeera)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c6
     url: "https://www.timeslive.co.za/news/africa/2025-09-24-malawis-lazarus-chakwera-concedes-election-defeat-to-rival-peter-mutharika/"
     source_type: news
     title: "Malawi's Lazarus Chakwera concedes election defeat to rival Peter Mutharika (TimesLIVE)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c7
     url: "https://www.aljazeera.com/news/2025/9/24/malawis-president-chakwera-concedes-election-to-his-predecessor-mutharika"
     source_type: news
     title: "Malawi's ex-president Mutharika, 85, wins election by a landslide (Al Jazeera)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c8
     url: "https://www.nyasatimes.com/rbm-admits-forex-crisis-as-malawi-struggles-to-pay-for-fuel-and-drugs/"
     source_type: news
     title: "RBM Admits Forex Crisis as Malawi Struggles to Pay for Fuel and Drugs (Nyasa Times)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c9
     url: "https://allafrica.com/stories/202511050257.html"
     source_type: news
     title: "Malawi: Nation At a Standstill - Fuel Crisis Cripples Malawi (AllAfrica)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c10
     url: "https://allafrica.com/stories/202507160086.html"
     source_type: news
     title: "Malawi: Political Analyst Hails G2G Fuel Deal As a Game-Changer for Malawi's Economy (AllAfrica)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c11
     url: "https://www.sadc.int/pages/history-and-treaty"
     source_type: official
     title: "History and Treaty (SADC)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c12
     url: "https://en.wikipedia.org/wiki/Common_Market_for_Eastern_and_Southern_Africa"
     source_type: wikipedia
     title: "Common Market for Eastern and Southern Africa"
     accessed: 2026-08-11
-    verified: true
-
+    verified: false
 rec_membership:
   - org: SADC
     joined: 1980

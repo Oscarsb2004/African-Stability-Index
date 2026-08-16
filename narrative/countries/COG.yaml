@@ -338,80 +338,79 @@ citations:
     source_type: wikipedia
     title: "List of concessionnaires of the French Congo"
     accessed: 2026-08-12
-    verified: true
+    verified: false
   - id: c2
     url: "https://news.stanford.edu/stories/2021/07/deadly-railroad-project-congo-reveals-colonial-era-abuses"
     source_type: news
     title: "Deadly railroad project in Congo reveals colonial-era abuses (Stanford Report)"
     accessed: 2026-08-12
-    verified: true
+    verified: false
   - id: c3
     url: "https://en.wikipedia.org/wiki/Denis_Sassou_Nguesso"
     source_type: wikipedia
     title: "Denis Sassou Nguesso"
     accessed: 2026-08-12
-    verified: true
+    verified: false
   - id: c4
     url: "https://en.wikipedia.org/wiki/Republic_of_the_Congo_Civil_War_(1997%E2%80%931999)"
     source_type: wikipedia
     title: "Republic of the Congo Civil War (1997-1999)"
     accessed: 2026-08-12
-    verified: true
+    verified: false
   - id: c5
     url: "https://1997-2001.state.gov/global/human_rights/1998_hrp_report/congorep.html"
     source_type: official
     title: "1998 Human Rights Report: Republic of Congo (US Department of State)"
     accessed: 2026-08-12
-    verified: true
+    verified: false
   - id: c6
     url: "https://en.wikipedia.org/wiki/2026_Republic_of_the_Congo_presidential_election"
     source_type: wikipedia
     title: "2026 Republic of the Congo presidential election"
     accessed: 2026-08-12
-    verified: true
+    verified: false
   - id: c7
     url: "https://www.aljazeera.com/news/2026/3/17/congos-president-nguesso-to-secure-fifth-term-provisional-results-predict"
     source_type: news
     title: "Congolese President Nguesso wins fifth term: Provisional results (Al Jazeera)"
     accessed: 2026-08-12
-    verified: true
+    verified: false
   - id: c8
     url: "https://www.aljazeera.com/news/2026/3/15/republic-of-congo-votes-in-election-that-could-extend-sassous-42-year-rule"
     source_type: news
     title: "Republic of Congo votes in election that could extend Sassou's 42-year rule (Al Jazeera)"
     accessed: 2026-08-12
-    verified: true
+    verified: false
   - id: c9
     url: "https://www.imf.org/en/news/articles/2026/03/16/pr26079-imf-executive-board-concludes-2026-post-financing-assessment-with-the-republic-of-congo"
     source_type: official
     title: "IMF Executive Board Concludes 2026 Post-Financing Assessment with the Republic of Congo"
     accessed: 2026-08-12
-    verified: true
+    verified: false
   - id: c10
     url: "https://www.coface.com/news-economy-and-insights/business-risk-dashboard/country-risk-files/congo-republic-of-the"
     source_type: news
     title: "Republic of the Congo: Country Risk File (Coface)"
     accessed: 2026-08-12
-    verified: true
+    verified: false
   - id: c11
     url: "https://angolanminingoilandgas.com/totalenergies-commits-500-million-to-boost-production-at-congos-moho-nord-field/"
     source_type: news
     title: "TotalEnergies Commits $500 Million to Boost Production at Congo's Moho Nord Field"
     accessed: 2026-08-12
-    verified: true
+    verified: false
   - id: c12
     url: "https://theconversation.com/congo-brazzaville-election-boycotts-blackouts-and-growing-dissent-but-denis-sassou-nguesso-held-on-to-power-279539"
     source_type: news
     title: "Congo-Brazzaville election: boycotts, blackouts and growing dissent (The Conversation)"
     accessed: 2026-08-12
-    verified: true
+    verified: false
   - id: c13
     url: "https://en.wikipedia.org/wiki/Economic_Community_of_Central_African_States"
     source_type: wikipedia
     title: "Economic Community of Central African States"
     accessed: 2026-08-12
-    verified: true
-
+    verified: false
 rec_membership:
   - org: ECCAS
     joined: 1983

@@ -330,68 +330,67 @@ citations:
     source_type: academic
     title: "Eritrea Secedes from Ethiopia (EBSCO)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c3
     url: "https://www.hrw.org/report/2019/08/09/they-are-making-us-slaves-not-educating-us/how-indefinite-conscription-restricts"
     source_type: news
     title: "\"They Are Making Us into Slaves, Not Educating Us\": How Indefinite Conscription Restricts Young People's Rights, Access to Education in Eritrea (Human Rights Watch)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c5
     url: "https://www.nobelprize.org/prizes/peace/2019/abiy/speedread/"
     source_type: official
     title: "Abiy Ahmed -- Speed Read (NobelPrize.org)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c6
     url: "https://www.genocidewatch.com/single-post/eritrean-forces-still-occupy-border-2-years-after-tigray-war"
     source_type: news
     title: "Eritrean Forces Still Occupy Border 2 Years After Tigray War (Genocide Watch)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c7
     url: "https://foreignpolicy.com/2025/11/26/ethiopia-eritrea-tensions-red-sea-access-conflict/"
     source_type: news
     title: "Ethiopia-Eritrea Tensions Trigger Fears of a Fresh Regional Conflict (Foreign Policy)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c9
     url: "https://eritrea.un.org/en/314387-un-eritrea-annual-results-report-2025"
     source_type: official
     title: "UN Eritrea Annual Results Report 2025 (United Nations in Eritrea)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c10
     url: "https://www.intellinews.com/can-eritrea-s-mining-sector-flourish-under-autocratic-rule-365073/"
     source_type: news
     title: "Can Eritrea's mining sector flourish under autocratic rule? (bne IntelliNews)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c11
     url: "https://www.business-humanrights.org/en/latest-news/nevsun-lawsuit-re-bisha-mine-eritrea/"
     source_type: news
     title: "Nevsun lawsuit (re Bisha mine, Eritrea) (Business & Human Rights Resource Centre)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c12
     url: "https://www.hrw.org/news/2023/02/09/eritrea-crackdown-draft-evaders-families"
     source_type: news
     title: "Eritrea: Crackdown on Draft Evaders' Families (Human Rights Watch)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c13
     url: "https://en.wikipedia.org/wiki/Common_Market_for_Eastern_and_Southern_Africa"
     source_type: wikipedia
     title: "Common Market for Eastern and Southern Africa"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c14
     url: "https://simple.wikipedia.org/wiki/Community_of_Sahel-Saharan_States"
     source_type: wikipedia
     title: "Community of Sahel-Saharan States"
     accessed: 2026-08-10
-    verified: true
-
+    verified: false
 rec_membership:
   - org: COMESA
     joined: 1994

@@ -368,74 +368,73 @@ citations:
     source_type: wikipedia
     title: "History of Burkina Faso"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c2
     url: "https://en.wikipedia.org/wiki/September_2022_Burkina_Faso_coup_d%27%C3%A9tat"
     source_type: wikipedia
     title: "September 2022 Burkina Faso coup d'état"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c3
     url: "https://www.aljazeera.com/news/2022/4/6/hold-burkina-faso-sankara-trial"
     source_type: news
     title: "Life sentence for Burkinabe ex-leader Compaoré for Sankara murder (Al Jazeera)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c4
     url: "https://adf-magazine.com/2026/03/terrorism-worsens-in-burkina-faso/"
     source_type: news
     title: "Terrorism Worsens in Burkina Faso (Africa Defense Forum)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c5
     url: "https://www.thenewhumanitarian.org/investigations/2026/07/06/burkina-fasos-army-accused-preventing-civilians-leaving-jihadist-besieged"
     source_type: news
     title: "Burkina Faso's army accused of preventing civilians from leaving jihadist-besieged towns (The New Humanitarian)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c6
     url: "https://www.hrw.org/news/2026/04/02/burkina-faso-crimes-against-humanity-by-all-sides"
     source_type: academic
     title: "Burkina Faso: Crimes Against Humanity by All Sides (Human Rights Watch)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c7
     url: "https://www.aljazeera.com/news/2026/4/2/burkina-faso-military-allies-committing-horrific-civilian-abuses-hrw"
     source_type: news
     title: "Burkina Faso military, allies committing 'horrific' civilian abuses: HRW (Al Jazeera)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c8
     url: "https://en.wikipedia.org/wiki/French_Upper_Volta"
     source_type: wikipedia
     title: "French Upper Volta"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c9
     url: "https://allafrica.com/stories/202204060545.html"
     source_type: news
     title: "Burkina Faso: Ex-President Blaise Compaoré Sentenced to Life Imprisonment (AllAfrica)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c10
     url: "https://www.aljazeera.com/news/2025/1/29/military-governments-lead-west-african-trio-out-of-ecowas-regional-bloc"
     source_type: news
     title: "Military governments lead West African trio out of ECOWAS regional bloc (Al Jazeera)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c11
     url: "https://apanews.net/burkina-reports-record-94-ton-gold-output-in-2025/"
     source_type: news
     title: "Burkina reports record 94-ton gold output in 2025 (APAnews)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c12
     url: "https://en.wikipedia.org/wiki/Community_of_Sahel%E2%80%93Saharan_States"
     source_type: wikipedia
     title: "Community of Sahel-Saharan States"
     accessed: 2026-08-10
-    verified: true
-
+    verified: false
 rec_membership:
   - org: CEN-SAD
     joined: 1998

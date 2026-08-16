@@ -378,62 +378,61 @@ citations:
     source_type: wikipedia
     title: "History of Niger"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c2
     url: "https://www.aljazeera.com/news/2025/6/20/niger-nationalises-uranium-mine-as-spat-with-french-nuclear-giant-worsens"
     source_type: news
     title: "Niger to nationalise uranium mine operated by French state-affiliated firm (Al Jazeera)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c3
     url: "https://en.wikipedia.org/wiki/2023_Nigerien_coup_d%27%C3%A9tat"
     source_type: wikipedia
     title: "2023 Nigerien coup d'état"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c4
     url: "https://www.worldbank.org/en/news/press-release/2025/06/12/niger-economy-rebounds-in-2024-thanks-to-large-scale-oil-exports-and-a-good-agricultural-season"
     source_type: official
     title: "Niger: Economy Rebounds in 2024 Thanks to Large-Scale Oil Exports and a Good Agricultural Season (World Bank)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c5
     url: "https://www.bloomberg.com/news/articles/2024-08-19/niger-resumes-oil-exports-through-benin-after-pipeline-reopened"
     source_type: news
     title: "Niger Resumes Oil Exports Through Benin After Pipeline Reopened (Bloomberg)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c6
     url: "https://www.africanews.com/2026/03/13/nearly-1300-killed-in-nigers-tillaberi-as-jihadist-attacks-surge/"
     source_type: news
     title: "Nearly 1,300 killed in Niger's Tillabéri as jihadist attacks surge (Africanews)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c8
     url: "https://www.africanews.com/2026/03/31/niger-coup-leader-bazoum-still-detained-as-presidential-term-ends/"
     source_type: news
     title: "Niger coup leader Bazoum still detained as presidential term ends (Africanews)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c9
     url: "https://www.africanews.com/2026/07/25/lawyers-call-for-former-president-to-be-freed-three-years-after-coup/"
     source_type: news
     title: "Lawyers call for former president to be freed three years after coup (Africanews)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c10
     url: "https://www.aljazeera.com/news/2025/1/29/military-governments-lead-west-african-trio-out-of-ecowas-regional-bloc"
     source_type: news
     title: "Military governments lead West African trio out of ECOWAS regional bloc (Al Jazeera)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c11
     url: "https://en.wikipedia.org/wiki/Community_of_Sahel%E2%80%93Saharan_States"
     source_type: wikipedia
     title: "Community of Sahel-Saharan States"
     accessed: 2026-08-10
-    verified: true
-
+    verified: false
 rec_membership:
   - org: CEN-SAD
     joined: 1998

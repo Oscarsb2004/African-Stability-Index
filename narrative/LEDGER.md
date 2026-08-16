@@ -2994,6 +2994,32 @@ Things a future run should know about how to work, not about a specific country.
   civil war). New advisory metric: Wikipedia is 37% of citations on average but
   ranges 7% (SSD) to 79% (ETH), an evidence-quality spread the interface's
   source count cannot show.
+- **2026-08-13 — third consistency pass found nothing, and the `verified` flags
+  were reset to what is actually true.** The pass checked raw indicator values
+  quoted in prose, trend claims, composite-rank claims, cross-referenced
+  records, and references to greyed pillars. **Zero defects.** Two results are
+  worth keeping so nobody re-derives them: a naive value check flags 36 correct
+  sentences, because (a) the corpus rounds and hedges and the hedges are right —
+  "just under 60%" for 59.2, "over 40%" for 42.5, all 73 hedged claims pointing
+  the correct way — and (b) a conjunction carries the next indicator's number,
+  so "Life expectancy, just over 57 years, and infant mortality, at 60.8 per
+  1,000" reads across to the wrong figure. The check that survives judges hedge
+  *direction*, which is the part that silently inverts when the panel is
+  rebuilt, and it now gates.
+  **The `verified: true` flags are gone.** 746 of 749 citations carried
+  `verified: true` while `narrative/prompts/RESEARCH.md` is explicit that the
+  flag means "opened in this session and confirmed to support the claim citing
+  it", and is set only by an AUDIT run. No record has reached iteration 4, so
+  none of them had been. Reachability had been machine-checked; support had not.
+  All 746 are now `false`, which is simply what is true, and the interface's
+  wording ("cited rather than confirmed") was already correct and did not
+  change. **The general lesson: a flag that defaults to the flattering value is
+  worse than no flag, because it converts an unknown into a false assurance.**
+  With the flags honest the premature-flag error goes silent, so audit coverage
+  is now reported as a standing advisory line — 0 of 54 records audited, 0 of
+  749 citations confirmed — since silence there would read as "the sources are
+  fine" rather than "nobody has checked them yet".
+  Corpus status: `verify/narrative.py` reports 0 errors and 0 warnings.
 
 ---
 

@@ -356,92 +356,91 @@ citations:
     source_type: academic
     title: "History of Uganda (Britannica)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c2
     url: "https://en.wikipedia.org/wiki/Mengo_Crisis"
     source_type: wikipedia
     title: "Mengo Crisis"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c3
     url: "https://en.wikipedia.org/wiki/Expulsion_of_Asians_from_Uganda"
     source_type: wikipedia
     title: "Expulsion of Asians from Uganda"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c4
     url: "https://www.monitor.co.ug/uganda/special-reports/uganda-s-brutal-lord-s-resistance-army-past-and-present-3392914"
     source_type: news
     title: "Uganda's brutal Lord's Resistance Army, past and present (Monitor)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c5
     url: "https://www.britannica.com/topic/Lords-Resistance-Army"
     source_type: academic
     title: "Lord's Resistance Army (Britannica)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c6
     url: "https://www.hrw.org/news/2024/04/04/uganda-court-upholds-anti-homosexuality-act"
     source_type: news
     title: "Uganda: Court Upholds Anti-Homosexuality Act (Human Rights Watch)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c7
     url: "https://allafrica.com/stories/202601190400.html"
     source_type: news
     title: "Uganda: Yoweri Museveni Extends 40-Year Rule With 71.65 Percent Victory (AllAfrica)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c8
     url: "https://allafrica.com/stories/202601180054.html"
     source_type: news
     title: "Uganda: Museveni Declared Presidential Elect 2026-2031 (AllAfrica)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c9
     url: "https://www.hrw.org/news/2026/01/28/uganda-post-election-assault-on-political-opposition"
     source_type: news
     title: "Uganda: Post Election Assault on Political Opposition (Human Rights Watch)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c10
     url: "https://peoplesdispatch.org/2026/01/29/ugandan-military-continues-post-election-manhunt-for-main-opposition-leader-bobi-wine/"
     source_type: news
     title: "Ugandan military continues post-election manhunt for main opposition leader Bobi Wine (Peoples Dispatch)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c11
     url: "https://www.africanews.com/2025/06/06/world-bank-resumes-uganda-loans-after-anti-gay-law-freeze/"
     source_type: news
     title: "World Bank resumes Uganda loans after anti-gay law freeze (Africanews)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c12
     url: "https://www.bloomberg.com/news/articles/2025-10-21/uganda-secures-2-billion-from-world-bank-after-funding-freeze"
     source_type: news
     title: "Uganda Secures $2 Billion From World Bank After Funding Freeze (Bloomberg)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c13
     url: "https://en.wikipedia.org/wiki/East_African_Community"
     source_type: wikipedia
     title: "East African Community"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c14
     url: "https://en.wikipedia.org/wiki/Common_Market_for_Eastern_and_Southern_Africa"
     source_type: wikipedia
     title: "Common Market for Eastern and Southern Africa"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c15
     url: "https://au.int/en/recs/igad"
     source_type: official
     title: "Intergovernmental Authority for Development (IGAD) (African Union)"
     accessed: 2026-08-10
-    verified: true
-
+    verified: false
 rec_membership:
   - org: EAC
     joined: 1967

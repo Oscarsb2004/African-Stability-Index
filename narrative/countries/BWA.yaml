@@ -391,92 +391,91 @@ citations:
     source_type: wikipedia
     title: "History of Botswana"
     accessed: 2026-08-09
-    verified: true
+    verified: false
   - id: c2
     url: "https://en.wikipedia.org/wiki/Bechuanaland_Protectorate"
     source_type: wikipedia
     title: "Bechuanaland Protectorate"
     accessed: 2026-08-09
-    verified: true
+    verified: false
   - id: c3
     url: "https://en.wikipedia.org/wiki/Debswana"
     source_type: wikipedia
     title: "Debswana"
     accessed: 2026-08-09
-    verified: true
+    verified: false
   - id: c4
     url: "https://en.wikipedia.org/wiki/2024_Botswana_general_election"
     source_type: wikipedia
     title: "2024 Botswana general election"
     accessed: 2026-08-09
-    verified: true
+    verified: false
   - id: c5
     url: "https://www.aljazeera.com/news/2024/11/1/botswanas-ruling-party-loses-power-after-six-decades-early-results-show"
     source_type: news
     title: "Botswana's ruling party loses power after six decades, early results show (Al Jazeera)"
     accessed: 2026-08-09
-    verified: true
+    verified: false
   - id: c6
     url: "https://en.wikipedia.org/wiki/Pula_Fund"
     source_type: wikipedia
     title: "Pula Fund"
     accessed: 2026-08-09
-    verified: true
+    verified: false
   - id: c7
     url: "https://businessfront.com/finance/news/botswana-launches-new-wealth-fund/"
     source_type: news
     title: "New Botswana wealth fund targets economic stability amid diamond slump"
     accessed: 2026-08-09
-    verified: true
+    verified: false
   - id: c8
     url: "https://www.cdc.gov/global-hiv-tb/php/success-stories/a-global-first-botswana-achieves-gold-tier-status-protecting-mothers-and-infants.html"
     source_type: official
     title: "A Global First: Botswana Achieves 'Gold Tier' Status Protecting Mothers and Infants (CDC)"
     accessed: 2026-08-09
-    verified: true
+    verified: false
   - id: c9
     url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC12929189/"
     source_type: academic
     title: "Botswana's 95-95-95 Achievement: Pathways to HIV Epidemic Control"
     accessed: 2026-08-09
-    verified: true
+    verified: false
   - id: c10
     url: "https://dialogue.earth/en/climate/botswanas-severe-drought-and-the-struggle-to-adapt/"
     source_type: news
     title: "Botswana's severe drought and the struggle to adapt (Dialogue Earth)"
     accessed: 2026-08-09
-    verified: true
+    verified: false
   - id: c11
     url: "https://en.wikipedia.org/wiki/Central_Kalahari_Game_Reserve"
     source_type: wikipedia
     title: "Central Kalahari Game Reserve"
     accessed: 2026-08-09
-    verified: true
+    verified: false
   - id: c12
     url: "https://www.fairplanet.org/story/the-forced-eviction-of-botswanas-indigenous-people/"
     source_type: news
     title: "The forced eviction of Botswana's indigenous people (FairPlanet)"
     accessed: 2026-08-09
-    verified: true
+    verified: false
   - id: c13
     url: "https://www.debeersgroup.com/about-us/case-studies/2025/strengthening-our-partnership-with-botswana"
     source_type: official
     title: "Strengthening our partnership with Botswana (De Beers Group)"
     accessed: 2026-08-09
-    verified: true
+    verified: false
   - id: c14
     url: "https://iwgia.org/en/botswana/256-history"
     source_type: academic
     title: "History: Botswana (International Work Group for Indigenous Affairs)"
     accessed: 2026-08-09
-    verified: true
+    verified: false
   - id: c15
     url: "https://www.sadc.int/pages/history-and-treaty"
     source_type: official
     title: "History and Treaty (SADC)"
     accessed: 2026-08-10
-    verified: true
-
+    verified: false
 balance:
   n_positive: 2
   n_negative: 1

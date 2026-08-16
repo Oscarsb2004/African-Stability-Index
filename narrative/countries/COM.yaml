@@ -347,92 +347,91 @@ citations:
     source_type: wikipedia
     title: "History of the Comoros"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c2
     url: "https://en.wikipedia.org/wiki/Bob_Denard"
     source_type: wikipedia
     title: "Bob Denard"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c3
     url: "https://en.wikipedia.org/wiki/Operation_Azalee"
     source_type: wikipedia
     title: "Operation Azalee"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c4
     url: "https://en.wikipedia.org/wiki/2008_invasion_of_Anjouan"
     source_type: wikipedia
     title: "2008 invasion of Anjouan"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c5
     url: "https://en.wikipedia.org/wiki/Azali_Assoumani"
     source_type: wikipedia
     title: "Azali Assoumani"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c6
     url: "https://www.aljazeera.com/news/2024/1/11/comoros-president-assoumani-seeks-fourth-term-in-january-13-election"
     source_type: news
     title: "Comoros President Assoumani seeks fourth term in January 13 election (Al Jazeera)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c7
     url: "https://africacenter.org/spotlight/comoros-election-exercise-promises-more-of-the-same/"
     source_type: news
     title: "Comoros Election Exercise Promises More of the Same (Africa Center for Strategic Studies)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c8
     url: "https://www.ecofinagency.com/news-agriculture/2910-49933-comoros-outlines-new-reforms-to-revive-its-struggling-vanilla-industry"
     source_type: news
     title: "Comoros outlines new reforms to revive its struggling vanilla industry (Ecofin Agency)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c9
     url: "https://www.afdb.org/en/countries/east-africa/comoros/comoros-economic-outlook"
     source_type: official
     title: "Comoros Economic Outlook (African Development Bank)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c10
     url: "https://solarquarter.com/2025/04/23/adfd-inaugurates-6-3-mw-solar-plant-in-comoros-to-drive-clean-energy-transition-and-economic-growth/"
     source_type: news
     title: "ADFD Inaugurates 6.3 MW Solar Plant in Comoros to Drive Clean Energy Transition and Economic Growth (SolarQuarter)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c11
     url: "https://www.preventionweb.net/news/how-comoros-taking-climate-action-promise-progress"
     source_type: news
     title: "How the Comoros is taking climate action from promise to progress (PreventionWeb)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c12
     url: "https://www.aljazeera.com/news/2024/12/18/mayotte-toll-still-unknown-as-french-territory-reels-from-chido-devastation"
     source_type: news
     title: "Mayotte toll still unknown as French territory reels from Chido devastation (Al Jazeera)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c13
     url: "https://en.wikipedia.org/wiki/Common_Market_for_Eastern_and_Southern_Africa"
     source_type: wikipedia
     title: "Common Market for Eastern and Southern Africa"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c14
     url: "https://simple.wikipedia.org/wiki/Community_of_Sahel-Saharan_States"
     source_type: wikipedia
     title: "Community of Sahel-Saharan States"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c15
     url: "https://www.sadc.int/member-states/comoros"
     source_type: official
     title: "Comoros (SADC)"
     accessed: 2026-08-10
-    verified: true
-
+    verified: false
 rec_membership:
   - org: COMESA
     joined: 1994

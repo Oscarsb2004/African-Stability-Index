@@ -364,86 +364,85 @@ citations:
     source_type: wikipedia
     title: "History of Angola"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c2
     url: "https://en.wikipedia.org/wiki/Strike_in_Baixa_do_Cassange"
     source_type: wikipedia
     title: "Strike in Baixa do Cassange"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c3
     url: "https://en.wikipedia.org/wiki/Chibalo"
     source_type: wikipedia
     title: "Chibalo"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c4
     url: "https://en.wikipedia.org/wiki/2022_Angolan_general_election"
     source_type: wikipedia
     title: "2022 Angolan general election"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c5
     url: "https://www.aljazeera.com/news/2025/7/30/at-least-22-killed-at-angola-fuel-price-hike-protests-authorities-say"
     source_type: news
     title: "At least 22 killed at Angola fuel price hike protests, authorities say (Al Jazeera)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c6
     url: "https://monitor.civicus.org/explore/angola-on-protests-against-fuel-price-increase-30-killed-277-injured-and-over-1500-arrested/"
     source_type: news
     title: "Angola: Protests against fuel price increase: 30 killed, 277 injured and over 1,500 arrested (CIVICUS Monitor)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c7
     url: "https://www.africansecurityanalysis.com/reports/cabinda-unilateral-declaration-of-independence-and-the-strategic-fault-lines-of-angola-s-petro-state"
     source_type: academic
     title: "Cabinda: Unilateral Declaration of Independence and The Strategic Fault Lines of Angola's Petro-State"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c8
     url: "https://allafrica.com/stories/202601210552.html"
     source_type: news
     title: "Who will lead Angola in 2027? The 3 main potential candidates of the MPLA (AllAfrica)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c9
     url: "https://www.theafricareport.com/421710/angolas-unita-turns-to-cold-war-ally-to-lobby-trump-for-free-elections/"
     source_type: news
     title: "Angola's UNITA turns to Cold War ally to lobby Trump for free elections (The Africa Report)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c10
     url: "https://furtherafrica.com/2025/07/29/angola-plans-major-cut-to-oil-backed-debt-to-china-in-2025/"
     source_type: news
     title: "Angola Plans Major Cut to Oil-Backed Debt to China in 2025 (FurtherAfrica)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c11
     url: "https://www.imf.org/en/news/articles/2023/09/05/pr23303-angola-imf-executive-board-concludes-first-post-financing-discussion-with-angola"
     source_type: official
     title: "Angola: IMF Executive Board Concludes First Post-Financing Discussion"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c12
     url: "https://macaonews.org/news/lusofonia/angola-economy-oil-gas-diversification/"
     source_type: news
     title: "Export data underscores 'insufficient' economic diversification in Angola (Macao News)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c13
     url: "https://www.sadc.int/pages/history-and-treaty"
     source_type: official
     title: "History and Treaty (SADC)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c14
     url: "https://en.wikipedia.org/wiki/Economic_Community_of_Central_African_States"
     source_type: wikipedia
     title: "Economic Community of Central African States"
     accessed: 2026-08-10
-    verified: true
-
+    verified: false
 rec_membership:
   - org: SADC
     joined: 1980

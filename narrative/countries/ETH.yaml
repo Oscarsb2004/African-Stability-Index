@@ -367,86 +367,85 @@ citations:
     source_type: wikipedia
     title: "History of Ethiopia"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c2
     url: "https://en.wikipedia.org/wiki/Battle_of_Adwa"
     source_type: wikipedia
     title: "Battle of Adwa"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c3
     url: "https://en.wikipedia.org/wiki/Derg"
     source_type: wikipedia
     title: "Derg"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c4
     url: "https://en.wikipedia.org/wiki/Eritrean_War_of_Independence"
     source_type: wikipedia
     title: "Eritrean War of Independence"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c5
     url: "https://www.nobelprize.org/prizes/peace/2019/abiy/facts/"
     source_type: official
     title: "The Nobel Peace Prize 2019: Abiy Ahmed Ali"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c6
     url: "https://en.wikipedia.org/wiki/Tigray_genocide"
     source_type: wikipedia
     title: "Tigray genocide"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c7
     url: "https://en.wikipedia.org/wiki/War_in_Amhara"
     source_type: wikipedia
     title: "War in Amhara (Fano insurgency)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c8
     url: "https://allafrica.com/stories/202504240267.html"
     source_type: news
     title: "Ethiopia: More Than 100 People Killed in Drone Strike in East Gojjam Zone, Amhara Region (AllAfrica)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c9
     url: "https://en.wikipedia.org/wiki/2024_Ethiopian_foreign_exchange_rate_policy"
     source_type: wikipedia
     title: "2024 Ethiopian foreign exchange rate policy"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c10
     url: "https://en.wikipedia.org/wiki/Menelik_II%27s_conquests"
     source_type: wikipedia
     title: "Menelik II's conquests"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c11
     url: "https://www.aljazeera.com/features/2025/9/9/from-haile-selassie-to-crowdfunding-how-ethiopias-gerd-dam-was-born"
     source_type: news
     title: "From Haile Selassie to crowdfunding, how Ethiopia's GERD dam was born (Al Jazeera)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c12
     url: "https://en.wikipedia.org/wiki/TPLF_factional_dispute"
     source_type: wikipedia
     title: "TPLF factional dispute"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c13
     url: "https://en.wikipedia.org/wiki/Common_Market_for_Eastern_and_Southern_Africa"
     source_type: wikipedia
     title: "Common Market for Eastern and Southern Africa"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c14
     url: "https://en.wikipedia.org/wiki/Intergovernmental_Authority_on_Development"
     source_type: wikipedia
     title: "Intergovernmental Authority on Development"
     accessed: 2026-08-10
-    verified: true
-
+    verified: false
 rec_membership:
   - org: COMESA
     joined: 1994

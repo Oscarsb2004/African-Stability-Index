@@ -343,80 +343,79 @@ citations:
     source_type: wikipedia
     title: "1977 Seychelles coup d'état"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c2
     url: "https://en.wikipedia.org/wiki/France-Albert_Ren%C3%A9"
     source_type: wikipedia
     title: "France-Albert René"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c3
     url: "https://en.wikipedia.org/wiki/James_Mancham"
     source_type: wikipedia
     title: "James Mancham"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c4
     url: "https://www.npr.org/sections/thetwo-way/2018/02/23/588273709/seychelles-finds-a-novel-way-to-swap-its-debt-for-marine-protections"
     source_type: news
     title: "Seychelles Finds A Novel Way To Swap Its Debt For Marine Protections (NPR)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c5
     url: "https://en.wikipedia.org/wiki/2025_Seychellois_general_election"
     source_type: wikipedia
     title: "2025 Seychellois general election"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c6
     url: "https://www.trtafrika.com/english/article/b7761d7cd989"
     source_type: news
     title: "Seychelles President Ramkalawan pledges 'dignified' transfer of power after election defeat (TRT Afrika)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c7
     url: "https://adf-magazine.com/2025/02/seychelles-fights-trafficking-addiction-as-heroin-hub/"
     source_type: news
     title: "Seychelles Fights Trafficking, Addiction as Heroin Hub (Africa Defense Forum)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c8
     url: "https://www.afrobarometer.org/publication/ad1061-seychellois-losing-confidence-in-anti-drug-efforts-see-government-action-as-a-top-priority/"
     source_type: news
     title: "Seychellois losing confidence in anti-drug efforts (Afrobarometer)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c9
     url: "https://www.ecofinagency.com/news-infrastructures/0310-49251-seychelles-launches-floating-solar-project-to-cut-fossil-fuel-dependence"
     source_type: news
     title: "Seychelles Launches Floating Solar Project to Cut Fossil Fuel Dependence (Ecofin Agency)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c10
     url: "https://www.worldbank.org/en/news/press-release/2025/06/30/seychelles-afe-launches-ambitious-renewable-energy-program-to-attract-private-investment-and-power-a-sustainable-future"
     source_type: official
     title: "Seychelles Launches Ambitious Renewable Energy Program (World Bank)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c11
     url: "https://www.travelandtourworld.com/news/article/seychelles-exceeds-last-years-visitor-numbers-with-twelve-percent-rise-in-arrivals-reflecting-their-tourism-demand-and-economic-growth/"
     source_type: news
     title: "Seychelles Exceeds Last Year's Visitor Numbers with Twelve Percent Rise in Arrivals (Travel And Tour World)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c12
     url: "https://www.sadc.int/member-states/seychelles"
     source_type: official
     title: "Seychelles (SADC)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c13
     url: "https://en.wikipedia.org/wiki/Common_Market_for_Eastern_and_Southern_Africa"
     source_type: wikipedia
     title: "Common Market for Eastern and Southern Africa"
     accessed: 2026-08-11
-    verified: true
-
+    verified: false
 rec_membership:
   - org: SADC
     joined: 2008

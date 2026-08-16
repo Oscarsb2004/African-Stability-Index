@@ -354,98 +354,97 @@ citations:
     source_type: wikipedia
     title: "Colony of Liberia"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c2
     url: "https://en.wikipedia.org/wiki/Liberian_Declaration_of_Independence"
     source_type: wikipedia
     title: "Liberian Declaration of Independence"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c3
     url: "https://aas.princeton.edu/news/what-princeton-owes-firestones-exploitation-liberia"
     source_type: academic
     title: "What Princeton Owes to Firestone's Exploitation of Liberia (Princeton African American Studies)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c4
     url: "https://en.wikipedia.org/wiki/1980_Liberian_coup_d%27%C3%A9tat"
     source_type: wikipedia
     title: "1980 Liberian coup d'état"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c5
     url: "https://www.hrw.org/news/2012/04/26/sierra-leone-landmark-conviction-liberian-ex-president"
     source_type: news
     title: "Sierra Leone: Landmark Conviction of Liberian Ex-President (Human Rights Watch)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c6
     url: "https://en.wikipedia.org/wiki/Accra_Comprehensive_Peace_Agreement"
     source_type: wikipedia
     title: "Accra Comprehensive Peace Agreement"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c7
     url: "https://www.nobelprize.org/prizes/peace/2011/johnson_sirleaf/biographical/"
     source_type: official
     title: "Ellen Johnson Sirleaf -- Biographical (NobelPrize.org)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c8
     url: "https://en.wikipedia.org/wiki/Ebola_virus_epidemic_in_Liberia"
     source_type: wikipedia
     title: "Ebola virus epidemic in Liberia"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c9
     url: "https://www.voanews.com/a/liberian-president-concedes-defeat-after-provisional-results-show-boakai-won-/7360395.html"
     source_type: news
     title: "Liberian President Concedes Defeat After Provisional Results Show Boakai Won (VOA News)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c10
     url: "https://www.liberianobserver.com/news/executive-order-infuses-new-life-us-2m-into-war-crimes-court/article_d3c10942-b806-4af4-b858-0194cb351da3.html"
     source_type: news
     title: "Executive Order Infuses New Life, US$2M into War Crimes Court (Liberian Observer)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c11
     url: "https://www.hrw.org/news/2025/01/27/joint-letter-president-republic-liberia-situation-office-war-and-economic-crimes"
     source_type: news
     title: "Joint Letter to the President of the Republic of Liberia: Situation of the Office for the War and Economic Crimes Court (Human Rights Watch)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c12
     url: "https://www.justsecurity.org/96297/liberia-war-crimes-court/"
     source_type: news
     title: "Liberia Can Learn from Other Hybrid War Crimes Tribunals (Just Security)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c13
     url: "https://allafrica.com/stories/202601280263.html"
     source_type: news
     title: "Liberia: LPP Disputes Boakai's Economic Stability Claims (AllAfrica)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c14
     url: "https://www.liberianobserver.com/opinion/commentaries/boakai-s-anti-corruption-agenda-is-crumbling/article_0114963b-ef68-4e42-80fd-7d97515758ce.html"
     source_type: news
     title: "Boakai's Anti-corruption Agenda Is Crumbling (Liberian Observer)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c15
     url: "https://www.bssnews.net/international/293333"
     source_type: news
     title: "Hundreds rally against government corruption in Liberia (BSS News)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c16
     url: "https://en.wikipedia.org/wiki/Treaty_of_Lagos"
     source_type: wikipedia
     title: "Treaty of Lagos"
     accessed: 2026-08-10
-    verified: true
-
+    verified: false
 rec_membership:
   - org: ECOWAS
     joined: 1975

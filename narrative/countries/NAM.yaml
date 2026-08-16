@@ -365,74 +365,73 @@ citations:
     source_type: wikipedia
     title: "Herero and Nama genocide"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c2
     url: "https://en.wikipedia.org/wiki/Shark_Island_concentration_camp"
     source_type: wikipedia
     title: "Shark Island concentration camp"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c3
     url: "https://www.ebsco.com/research-starters/politics-and-government/namibia-liberated-south-african-control"
     source_type: academic
     title: "Namibia Is Liberated from South African Control (EBSCO)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c4
     url: "https://namibia.un.org/en/node/175155"
     source_type: official
     title: "UN Secretary-General congratulates Namibian President Nujoma, 21 March 1990 (UN Namibia)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c5
     url: "https://en.wikipedia.org/wiki/Herero_and_Nama_genocide_reparations"
     source_type: wikipedia
     title: "Herero and Nama genocide reparations"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c6
     url: "https://www.observer24.com.na/ovaherero-and-nama-leaders-plan-ahead-as-appeal-to-us-supreme-court-is-declined/"
     source_type: news
     title: "Ovaherero and Nama leaders plan ahead as appeal to US Supreme court is declined (Observer24)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c7
     url: "https://www.aljazeera.com/news/2024/12/3/namibia-elects-nandi-ndaitwah-as-countrys-first-woman-president"
     source_type: news
     title: "Namibia elects Nandi-Ndaitwah as country's first woman president (Al Jazeera)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c8
     url: "https://allafrica.com/stories/202502280498.html"
     source_type: news
     title: "Namibia: Supreme Court Dismisses Presidential Election Challenge (AllAfrica)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c9
     url: "https://www.hydrogeninsight.com/production/rwe-pulls-out-of-deal-to-import-green-ammonia-from-giant-namibian-project/2-1-1878176"
     source_type: news
     title: "RWE pulls out of deal to import green ammonia from giant Namibian project (Hydrogen Insight)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c10
     url: "https://www.financialafrik.com/en/2026/08/07/namibia-250-million-targeted-to-accelerate-green-industrialization/"
     source_type: news
     title: "Namibia: $250 million targeted to accelerate green industrialization (Financial Afrik)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c11
     url: "https://www.africanleadershipmagazine.co.uk/namibias-green-hydrogen-ambitions-gain-momentum/"
     source_type: news
     title: "Namibia's Green Hydrogen Ambitions Gain Momentum (African Leadership Magazine)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c12
     url: "https://www.sadc.int/member-states/namibia"
     source_type: official
     title: "Namibia (SADC)"
     accessed: 2026-08-10
-    verified: true
-
+    verified: false
 rec_membership:
   - org: SADC
     joined: 1990

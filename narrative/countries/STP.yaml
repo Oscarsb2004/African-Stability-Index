@@ -337,68 +337,67 @@ citations:
     source_type: news
     title: "William Cadbury, Chocolate, and Slavery in Portuguese West Africa (Isles Abroad)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c2
     url: "https://wa-cadbury.org.uk/the-campaign-against-island-slavery-1901-1908-adapted-from-the-account-by-john-f-crosfield/"
     source_type: news
     title: "The Campaign against Island Slavery 1901-1908 (William A Cadbury Charitable Trust)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c3
     url: "https://www.britannica.com/topic/history-of-Sao-Tome-and-Principe"
     source_type: news
     title: "History of Sao Tome and Principe (Britannica)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c4
     url: "https://en.wikipedia.org/wiki/1995_S%C3%A3o_Tom%C3%A9_and_Pr%C3%ADncipe_coup_d'%C3%A9tat"
     source_type: wikipedia
     title: "1995 São Tomé and Príncipe coup d'état"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c6
     url: "https://en.wikipedia.org/wiki/2022_S%C3%A3o_Tom%C3%A9_and_Pr%C3%ADncipe_coup_attempt"
     source_type: wikipedia
     title: "2022 São Tomé and Príncipe coup attempt"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c7
     url: "https://www.africanews.com/2022/12/02/sao-tome-to-probe-inhumane-acts-in-aftermath-of-attempted-coup/"
     source_type: news
     title: "Sao Tome to probe 'inhumane acts' in aftermath of attempted coup (Africanews)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c8
     url: "https://www.plataformamedia.com/en/2026/07/20/carlos-vila-nova-reelected-president-sao-tome-and-principe/"
     source_type: news
     title: "São Tomé: Carlos Vila Nova re-elected President with 55.94% of the votes (Plataforma Media)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c9
     url: "https://www.trtafrika.com/english/article/18251377"
     source_type: news
     title: "Sao Tome and Principe president dismisses government (TRT Afrika)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c10
     url: "https://www.worldbank.org/en/country/saotome/publication/stp-economic-update-august-2025"
     source_type: official
     title: "São Tomé and Príncipe Economic Update, August 2025 (World Bank)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c11
     url: "https://borgenproject.org/renewable-energy-in-sao-tome-and-principe/"
     source_type: news
     title: "Renewable Energy in Sao Tome and Principe (The Borgen Project)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c12
     url: "https://au.int/en/recs/eccas"
     source_type: official
     title: "ECCAS (African Union)"
     accessed: 2026-08-11
-    verified: true
-
+    verified: false
 rec_membership:
   - org: ECCAS
     joined: 1983

@@ -353,92 +353,91 @@ citations:
     source_type: wikipedia
     title: "Rhodesia's Unilateral Declaration of Independence"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c2
     url: "https://en.wikipedia.org/wiki/Lancaster_House_Agreement"
     source_type: wikipedia
     title: "Lancaster House Agreement"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c3
     url: "https://www.britannica.com/place/Zimbabwe/Rhodesia-and-the-UDI"
     source_type: academic
     title: "Zimbabwe -- Rhodesia and the UDI (Britannica)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c4
     url: "https://www.hrw.org/reports/2002/zimbabwe/ZimLand0302.pdf"
     source_type: news
     title: "Fast Track Land Reform in Zimbabwe (Human Rights Watch, March 2002)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c5
     url: "https://www.markethistories.com/en/the-zimbabwe-hyperinflation-how-a-nation-printed-100-trillion-dollar-notes-2007-2009"
     source_type: news
     title: "The Zimbabwe Hyperinflation: How a Nation Printed 100 Trillion Dollar Notes (2007-2009) (Market Histories)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c6
     url: "https://www.aljazeera.com/news/2017/11/27/zimbabwe-army-operation-that-led-to-mugabe-ouster-ends"
     source_type: news
     title: "Zimbabwe: Army operation that led to Mugabe ouster ends (Al Jazeera)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c7
     url: "https://www.crisisgroup.org/qna/africa/zimbabwe/zimbabwe-constitutional-change-and-fight-succession"
     source_type: news
     title: "Zimbabwe: Constitutional Change and the Fight for Succession (International Crisis Group)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c8
     url: "https://www.myzimbabwe.co.zw/news/188594-goodbye-chiwenga-succession-problem-solved-as-president-mnangagwa-signs-cab-3-into-law-here-is-whats-next.html"
     source_type: news
     title: "Goodbye Chiwenga: succession problem 'solved' as President Mnangagwa signs CAB 3 into law (My Zimbabwe News)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c9
     url: "https://bulawayo24.com/index-id-news-sc-local-byo-250927.html"
     source_type: news
     title: "Mnangagwa, Chiwenga clash over succession plans (Bulawayo24 News)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c10
     url: "https://allafrica.com/stories/202601270279.html"
     source_type: news
     title: "Zimbabwe Hits Single-Digit Inflation Milestone (AllAfrica)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c11
     url: "https://www.weforum.org/stories/2024/05/zimbabwe-zig-new-currency-inflation-dollar/"
     source_type: news
     title: "The ZiG: Zimbabwe rolls out world's newest currency (World Economic Forum)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c12
     url: "https://www.aljazeera.com/news/2023/8/28/zimbabwe-opposition-alleges-blatant-and-gigantic-fraud-in-election"
     source_type: news
     title: "Zimbabwe opposition alleges 'blatant and gigantic fraud' in election (Al Jazeera)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c13
     url: "https://zambianobserver.com/chiwenga-admits-2017-event-was-a-coup/"
     source_type: news
     title: "Chiwenga admits 2017 event was a coup (Zambian Observer)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c14
     url: "https://www.sadc.int/member-states/zimbabwe"
     source_type: official
     title: "Zimbabwe (SADC)"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c15
     url: "https://en.wikipedia.org/wiki/Common_Market_for_Eastern_and_Southern_Africa"
     source_type: wikipedia
     title: "Common Market for Eastern and Southern Africa"
     accessed: 2026-08-10
-    verified: true
-
+    verified: false
 rec_membership:
   - org: SADC
     joined: 1980

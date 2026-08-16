@@ -352,80 +352,79 @@ citations:
     source_type: wikipedia
     title: "History of Mauritius"
     accessed: 2026-08-09
-    verified: true
+    verified: false
   - id: c2
     url: "https://en.wikipedia.org/wiki/2024_Mauritian_general_election"
     source_type: wikipedia
     title: "2024 Mauritian general election"
     accessed: 2026-08-09
-    verified: true
+    verified: false
   - id: c3
     url: "https://en.wikipedia.org/wiki/Chagos_Archipelago_sovereignty_dispute"
     source_type: wikipedia
     title: "Chagos Archipelago sovereignty dispute"
     accessed: 2026-08-09
-    verified: true
+    verified: false
   - id: c4
     url: "https://www.aljazeera.com/news/2024/11/10/mauritius-election-amid-wiretapping-scandal-whats-at-stake"
     source_type: news
     title: "Mauritius election 2024: Amid wiretapping scandal, what's at stake?"
     accessed: 2026-08-09
-    verified: true
+    verified: false
   - id: c5
     url: "https://theconversation.com/mauritius-elections-landslide-why-voters-were-determined-to-get-jugnauths-government-out-243715"
     source_type: news
     title: "Mauritius elections landslide - why voters were determined to get Jugnauth's government out"
     accessed: 2026-08-09
-    verified: true
+    verified: false
   - id: c6
     url: "https://commonslibrary.parliament.uk/research-briefings/cbp-10273/"
     source_type: official
     title: "2025 treaty on the British Indian Ocean Territory/Chagos Archipelago (UK House of Commons Library)"
     accessed: 2026-08-09
-    verified: true
+    verified: false
   - id: c7
     url: "https://www.imf.org/en/news/articles/2025/06/18/pr-25204-mauritius-imf-concludes-2025-article-iv-consultation"
     source_type: official
     title: "IMF Executive Board Concludes 2025 Article IV Consultation with Mauritius"
     accessed: 2026-08-09
-    verified: true
+    verified: false
   - id: c8
     url: "https://en.wikipedia.org/wiki/2024_Mauritian_social_media_ban"
     source_type: wikipedia
     title: "2024 Mauritian social media ban"
     accessed: 2026-08-09
-    verified: true
+    verified: false
   - id: c9
     url: "https://www.who.int/news-room/feature-stories/detail/integrated-health-care-for-older-people-in-the-republic-of-mauritius"
     source_type: official
     title: "Integrated health care for older people in the Republic of Mauritius (WHO)"
     accessed: 2026-08-09
-    verified: true
+    verified: false
   - id: c10
     url: "https://www.undp.org/mauritius-seychelles/renewable-energy"
     source_type: official
     title: "Renewable energy (UNDP Mauritius & Seychelles)"
     accessed: 2026-08-09
-    verified: true
+    verified: false
   - id: c11
     url: "https://www.timeslive.co.za/news/africa/2024-11-01-mauritius-suspends-social-media-until-after-election-amid-wiretapping-scandal/"
     source_type: news
     title: "Mauritius suspends social media until after election amid wiretapping scandal"
     accessed: 2026-08-09
-    verified: true
+    verified: false
   - id: c12
     url: "https://en.wikipedia.org/wiki/Common_Market_for_Eastern_and_Southern_Africa"
     source_type: wikipedia
     title: "Common Market for Eastern and Southern Africa"
     accessed: 2026-08-10
-    verified: true
+    verified: false
   - id: c13
     url: "https://www.sadc.int/pages/history-and-treaty"
     source_type: official
     title: "History and Treaty (SADC)"
     accessed: 2026-08-10
-    verified: true
-
+    verified: false
 balance:
   n_positive: 1
   n_negative: 1

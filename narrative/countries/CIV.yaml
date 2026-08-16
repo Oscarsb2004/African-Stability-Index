@@ -337,80 +337,79 @@ citations:
     source_type: wikipedia
     title: "1999 Ivorian coup d'état"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c2
     url: "https://en.wikipedia.org/wiki/Henri_Konan_B%C3%A9di%C3%A9"
     source_type: wikipedia
     title: "Henri Konan Bédié"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c3
     url: "https://en.wikipedia.org/wiki/Ivorian_Civil_War"
     source_type: wikipedia
     title: "Ivorian Civil War"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c4
     url: "https://grokipedia.com/page/2010%E2%80%932011_Ivorian_crisis"
     source_type: news
     title: "2010-2011 Ivorian crisis (Grokipedia)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c5
     url: "https://www.diplomatie.gouv.fr/en/country-files/cote-d-ivoire/france-and-cote-d-ivoire-65124"
     source_type: official
     title: "France and Côte d'Ivoire (French Ministry for Europe and Foreign Affairs)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c6
     url: "https://www.aljazeera.com/news/2020/09/15/ivory-coast-court-clears-ouattaras-third-term-bid-amid-protests/"
     source_type: news
     title: "Ivory Coast court clears Ouattara's third term bid amid protests (Al Jazeera)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c7
     url: "https://www.france24.com/en/africa/20251027-alassane-ouattara-wins-ivory-coast-presidential-election-according-to-provisional-results"
     source_type: news
     title: "Alassane Ouattara wins Ivory Coast presidential election, according to provisional results (France 24)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c8
     url: "https://allafrica.com/stories/202511260005.html"
     source_type: news
     title: "Côte d'Ivoire's Democratic Backslide - Elections Leave Even Less Space for Freedom (AllAfrica)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c9
     url: "https://www.theafricareport.com/382123/cote-divoire-tidjiane-thiam-is-barred-from-running-in-elections/"
     source_type: news
     title: "Côte d'Ivoire: Tidjiane Thiam is barred from running in elections (The Africa Report)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c10
     url: "https://www.africanews.com/2025/04/28/ineligible-to-stand-gbagbo-enters-the-ivorian-election-by-other-means/"
     source_type: news
     title: "Ineligible to stand, Gbagbo enters the Ivorian election by other means (Africanews)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c11
     url: "https://furtherafrica.com/2025/07/01/cote-divoire-opens-new-cocoa-processing-complex/"
     source_type: news
     title: "Côte d'Ivoire Opens New Cocoa Processing Complex (FurtherAfrica)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c12
     url: "https://en.wikipedia.org/wiki/ECOWAS"
     source_type: wikipedia
     title: "ECOWAS"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c13
     url: "https://simple.wikipedia.org/wiki/Community_of_Sahel-Saharan_States"
     source_type: wikipedia
     title: "Community of Sahel-Saharan States"
     accessed: 2026-08-11
-    verified: true
-
+    verified: false
 rec_membership:
   - org: ECOWAS
     joined: 1975

@@ -350,92 +350,91 @@ citations:
     source_type: wikipedia
     title: "1961 British Cameroons referendum"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c2
     url: "https://en.wikipedia.org/wiki/1972_Cameroonian_constitutional_referendum"
     source_type: wikipedia
     title: "1972 Cameroonian constitutional referendum"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c3
     url: "https://en.wikipedia.org/wiki/Paul_Biya"
     source_type: wikipedia
     title: "Paul Biya"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c4
     url: "https://en.wikipedia.org/wiki/1984_Cameroonian_coup_attempt"
     source_type: wikipedia
     title: "1984 Cameroonian coup attempt"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c5
     url: "https://en.wikipedia.org/wiki/Anglophone_Crisis"
     source_type: wikipedia
     title: "Anglophone Crisis"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c6
     url: "https://www.globalr2p.org/countries/cameroon/"
     source_type: news
     title: "Cameroon (Global Centre for the Responsibility to Protect)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c7
     url: "https://www.npr.org/2025/10/27/nx-s1-5586685/cameroon-biya-old-africa-youth"
     source_type: news
     title: "Cameroon's 92-year-old President wins 8th term amid protests (NPR)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c8
     url: "https://www.aljazeera.com/news/2025/10/27/biya-declared-victor-of-cameroon-election-why-deadly-protests-broke-out"
     source_type: news
     title: "Biya declared victor of Cameroon election: Why deadly protests broke out (Al Jazeera)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c9
     url: "https://www.africanews.com/2025/11/10/cameroon-tchiroma-gives-authorities-48-hour-ultimatum-to-release-post-election-detainees/"
     source_type: news
     title: "Cameroon: Tchiroma gives authorities 48-hour ultimatum to release post-election detainees (Africanews)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c10
     url: "https://allafrica.com/stories/202511180211.html"
     source_type: news
     title: "Cameroon: Nigeria Refuses to Hand Over Bakary to Cameroon (AllAfrica)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c11
     url: "https://www.camer.be/93632/40:1/cameroun-issa-tchiroma-porte-plainte-a-paris-cameroon.html"
     source_type: news
     title: "Cameroun : Issa Tchiroma porte plainte à Paris (Camer.be)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c12
     url: "https://africanews.dz/eng/index.php/2026/05/03/cameroon-encouraging-progress-following-the-introduction-of-the-malaria-vaccine/"
     source_type: news
     title: "Cameroon: Encouraging Progress Following the Introduction of the Malaria Vaccine (Africanews.dz)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c13
     url: "https://www.afdb.org/en/countries-central-africa-republic-cameroun/cameroon-economic-outlook"
     source_type: official
     title: "Cameroon Economic Outlook (African Development Bank)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c14
     url: "https://en.wikipedia.org/wiki/Timeline_of_the_Anglophone_Crisis_(2026)"
     source_type: wikipedia
     title: "Timeline of the Anglophone Crisis (2026)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c15
     url: "https://au.int/en/recs/eccas"
     source_type: official
     title: "ECCAS (African Union)"
     accessed: 2026-08-11
-    verified: true
-
+    verified: false
 rec_membership:
   - org: ECCAS
     joined: 1983

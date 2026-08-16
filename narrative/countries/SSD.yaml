@@ -307,86 +307,85 @@ citations:
     source_type: wikipedia
     title: "First Sudanese Civil War"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c2
     url: "https://www.britannica.com/question/What-led-to-the-secession-of-South-Sudan-in-2011"
     source_type: news
     title: "What led to the secession of South Sudan in 2011? (Britannica)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c3
     url: "https://www.britannica.com/place/South-Sudan/The-2005-Comprehensive-Peace-Agreement"
     source_type: news
     title: "South Sudan - The 2005 Comprehensive Peace Agreement (Britannica)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c4
     url: "https://www.cfr.org/global-conflict-tracker/conflict/civil-war-south-sudan"
     source_type: news
     title: "Instability in South Sudan (Council on Foreign Relations, Global Conflict Tracker)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c5
     url: "https://www.thenewhumanitarian.org/in-depth/south-sudan-humanitarian-toll-half-decade-war"
     source_type: news
     title: "South Sudan: The humanitarian toll of half a decade of war (The New Humanitarian)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c6
     url: "https://www.accord.org.za/conflict-trends/the-formation-of-the-revitalized-transitional-government-of-national-unity-in-south-sudan/"
     source_type: news
     title: "The Formation of the Revitalized Transitional Government of National Unity in South Sudan (ACCORD)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c7
     url: "https://www.cnn.com/2025/09/12/africa/south-sudan-vp-machar-treason-charge-intl"
     source_type: news
     title: "South Sudan's vice president charged with treason and murder (CNN)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c8
     url: "https://www.aljazeera.com/news/2026/1/28/south-sudan-launches-offensive-against-opposition-forces-what-to-know"
     source_type: news
     title: "South Sudan launches offensive against opposition forces: What to know (Al Jazeera)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c9
     url: "https://www.thenewhumanitarian.org/news-feature/2026/03/12/south-sudan-power-sharing-collapse-drives-violence-mass-displacement"
     source_type: news
     title: "South Sudan power-sharing collapse drives violence and mass displacement (The New Humanitarian)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c10
     url: "https://sudantribune.com/article/308313"
     source_type: news
     title: "South Sudan, Sudan agree to resume production at Heglig, Bamboo oil fields (Sudan Tribune)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c11
     url: "https://www.unicef.org/press-releases/hunger-intensifies-south-sudan-78-million-people-face-high-acute-food-insecurity-0"
     source_type: news
     title: "Hunger intensifies in South Sudan as 7.8 million people face high acute food insecurity (UNICEF)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c12
     url: "https://www.ictj.org/latest-news/south-sudan-postpones-december-election-two-years"
     source_type: news
     title: "South Sudan Postpones December Election by Two Years (International Center for Transitional Justice)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c13
     url: "https://www.wvi.org/south-sudan/article/south-sudan-joins-east-african-community-bloc"
     source_type: news
     title: "South Sudan Joins East African Community Bloc (World Vision International)"
     accessed: 2026-08-11
-    verified: true
+    verified: false
   - id: c14
     url: "https://igad.int/about/"
     source_type: official
     title: "About IGAD"
     accessed: 2026-08-11
-    verified: true
-
+    verified: false
 rec_membership:
   - org: EAC
     joined: 2016
