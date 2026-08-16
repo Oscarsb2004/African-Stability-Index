@@ -1079,6 +1079,13 @@ def create_app() -> Dash:
                external_stylesheets=[dbc.themes.FLATLY],
                title="African Stability Index",
                suppress_callback_exceptions=True)
+
+    # Cap the request body. Dash posts callback state to /_dash-update-component,
+    # and the largest legitimate payload this app sends is a few KB — but Flask
+    # will otherwise buffer a body of any size in memory before parsing it, so an
+    # unauthenticated client could exhaust a small container with two requests.
+    app.server.config["MAX_CONTENT_LENGTH"] = 1_000_000
+
     app.layout = build_layout()
 
     @app.callback(Output("content", "children"),
@@ -1174,10 +1181,23 @@ server = app.server
 
 
 def main() -> int:
+    """
+    Development server. Production runs `gunicorn app:server`, which imports
+    `server` and never calls this.
+
+    Binds loopback by default. `DEBUG=true` enables the Werkzeug debugger, which
+    is remote code execution behind a PIN, so it is refused on any non-loopback
+    host rather than left one environment variable away from being exposed.
+    """
     port = int(os.environ.get("PORT", 8050))
+    host = os.environ.get("HOST", "127.0.0.1")
     debug = os.environ.get("DEBUG", "false").lower() == "true"
-    print(f"\nAfrican Stability Index — http://127.0.0.1:{port}\n")
-    app.run(debug=debug, host="0.0.0.0", port=port)
+    if debug and host not in ("127.0.0.1", "localhost", "::1"):
+        print(f"Refusing to start: DEBUG=true exposes the Werkzeug debugger and "
+              f"HOST is {host!r}. Use HOST=127.0.0.1, or unset DEBUG.")
+        return 2
+    print(f"\nAfrican Stability Index — http://{host}:{port}\n")
+    app.run(debug=debug, host=host, port=port)
     return 0
 
 

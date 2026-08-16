@@ -82,3 +82,45 @@ def test_citation_reference_must_exist():
     rec["historical"]["overview_citations"] = ["c9"]
     problems = validate(rec)
     assert any("unknown id" in p.message for p in problems)
+
+
+# ── URL scheme allowlist ───────────────────────────────────────────────────────
+
+def _record_with_citation_url(url):
+    return {"meta": {"iso3": "KEN", "name": "Kenya", "last_updated": "2026-01-01",
+                     "iteration_count": 1, "next_action": "x"},
+            "citations": [{"id": "c1", "url": url, "source_type": "news"}]}
+
+
+def test_a_javascript_url_is_rejected():
+    """
+    Citation URLs are rendered straight into href attributes, and React renders
+    a javascript: href with a console warning rather than refusing it. The
+    corpus is machine-authored across sessions, so this cannot rest on
+    convention.
+    """
+    problems = validate(_record_with_citation_url("javascript:alert(1)"))
+    assert any("must start with http" in p.message for p in problems)
+
+
+def test_a_data_url_is_rejected():
+    problems = validate(_record_with_citation_url("data:text/html,<script>1</script>"))
+    assert any("must start with http" in p.message for p in problems)
+
+
+def test_https_and_http_are_accepted():
+    for url in ("https://example.org/a", "http://example.org/a"):
+        problems = validate(_record_with_citation_url(url))
+        assert not [p for p in problems if "must start with http" in p.message]
+
+
+def test_event_and_recent_urls_are_checked_too():
+    rec = _record_with_citation_url("https://example.org/a")
+    rec["events"] = [{"year": 2020, "type": "coup", "direction": "mixed",
+                      "url": "javascript:alert(1)"}]
+    rec["recent"] = {"primary": [{"headline": "h", "date": "2025-01-01",
+                                  "summary": "s", "why_it_matters": "w",
+                                  "news_url": "javascript:alert(2)",
+                                  "sentiment": "mixed"}]}
+    msgs = [p.message for p in validate(rec) if "must start with http" in p.message]
+    assert len(msgs) >= 2

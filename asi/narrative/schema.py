@@ -178,6 +178,27 @@ def _check_length(country: str, where: str, text: str | None,
         problems.append(Problem(country, where, f"{n} words, limit {hi}"))
 
 
+#: Schemes a citation URL may use.
+#:
+#: These strings are rendered straight into `href` attributes by
+#: asi/dashboard/narrative_ui.py, and React renders a `javascript:` href with
+#: only a console warning rather than refusing it. The corpus is written by a
+#: language model across many sessions, which is exactly the condition under
+#: which a convention-only guarantee decays — this file exists because that has
+#: already happened once with the `verified` flags.
+URL_SCHEMES = ("http://", "https://")
+
+
+def _check_url(country: str, where: str, url, problems: list["Problem"]) -> None:
+    """A URL that will become an href must be http(s) or absent."""
+    if not url:
+        return
+    if not str(url).startswith(URL_SCHEMES):
+        problems.append(Problem(
+            country, where,
+            f"url must start with http:// or https:// — got {str(url)[:40]!r}"))
+
+
 def validate(record: dict[str, Any], *,
              greyed_pillars: set[str] | None = None,
              reference_year: int | None = None) -> list[Problem]:
@@ -210,6 +231,7 @@ def validate(record: dict[str, Any], *,
     for cid, c in citations.items():
         if not c.get("url"):
             problems.append(Problem(iso3, f"citation {cid}", "no url"))
+        _check_url(iso3, f"citation {cid}", c.get("url"), problems)
         if c.get("source_type") not in {s.value for s in SourceType}:
             problems.append(Problem(iso3, f"citation {cid}",
                                     f"unknown source_type {c.get('source_type')!r}"))
@@ -344,6 +366,8 @@ def validate(record: dict[str, Any], *,
         _check_length(iso3, where, item.get("summary"), "recent_summary", problems)
         if not item.get("news_url") and not item.get("wikipedia_url"):
             problems.append(Problem(iso3, where, "no source url"))
+        _check_url(iso3, f"{where}.news_url", item.get("news_url"), problems)
+        _check_url(iso3, f"{where}.wikipedia_url", item.get("wikipedia_url"), problems)
         if item.get("sentiment") not in {s.value for s in Sentiment}:
             problems.append(Problem(iso3, where,
                                     f"unknown sentiment {item.get('sentiment')!r}"))
@@ -360,6 +384,7 @@ def validate(record: dict[str, Any], *,
             problems.append(Problem(iso3, where, f"unknown direction {ev.get('direction')!r}"))
         if not ev.get("url"):
             problems.append(Problem(iso3, where, "no source url"))
+        _check_url(iso3, where, ev.get("url"), problems)
 
     # framing balance
     balance = record.get("balance") or {}
@@ -402,7 +427,7 @@ def blank_record(iso3: str, name: str) -> dict[str, Any]:
 __all__ = [
     "Mode", "Sentiment", "SourceType", "EventType", "Direction",
     "REC", "RECStatus",
-    "LIMITS", "N_RECENT_PRIMARY", "N_RECENT_EXTENDED",
+    "LIMITS", "N_RECENT_PRIMARY", "N_RECENT_EXTENDED", "URL_SCHEMES",
     "AUDIT_EVERY", "AUDIT_CITATION_GROWTH_TRIGGER",
     "mode_for_iteration", "Problem", "validate", "blank_record",
 ]

@@ -96,3 +96,23 @@ def test_content_and_stores_are_in_the_base_layout(base_layout_ids):
     """The containers the callbacks write into must never be conditional."""
     for required in ("content", "nav", "map-click", "nav-event", "tabs"):
         assert required in base_layout_ids
+
+
+# ── Hardening ──────────────────────────────────────────────────────────────────
+
+def test_request_body_is_capped(app):
+    """
+    Dash callback payloads are a few KB. Without a cap, Flask buffers a body of
+    any size in memory before parsing, so an unauthenticated client can exhaust
+    a small container with a couple of requests.
+    """
+    assert app.server.config["MAX_CONTENT_LENGTH"] == 1_000_000
+    client = app.server.test_client()
+    oversized = b'{"x":"' + b"A" * (2 * 1024 * 1024) + b'"}'
+    r = client.post("/_dash-update-component", data=oversized,
+                    content_type="application/json")
+    assert r.status_code == 413
+
+
+def test_a_normal_page_load_still_works(app):
+    assert app.server.test_client().get("/").status_code == 200
