@@ -176,8 +176,15 @@ def main() -> int:
     spread = pd.DataFrame({k: _ranking(v) for k, v in method_scores.items()})
     spread["range"] = spread.max(axis=1) - spread.min(axis=1)
     volatile = spread.sort_values("range", ascending=False).head(8)
+    # Min/max over the method columns only. `range` was appended to this frame
+    # two lines up, so a whole-row min() returns the range whenever a country's
+    # spread is narrower than its best rank — which silently published four of
+    # these eight entries with a min equal to their range.
+    methods = list(method_scores)
     results["rank_spread_across_methods"] = {
-        iso3: {"min": int(r.min()), "max": int(r.max()), "range": int(r["range"])}
+        iso3: {"min": int(r[methods].min()),
+               "max": int(r[methods].max()),
+               "range": int(r["range"])}
         for iso3, r in volatile.iterrows()
     }
     logger.info("")

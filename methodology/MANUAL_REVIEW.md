@@ -127,7 +127,7 @@ not:
 | Libya | 16 – 52 |
 | Mauritania | 21 – 42 |
 | Egypt | 6 – 27 |
-| Guinea | 13 – 40 |
+| Guinea | 27 – 40 |
 
 These are all North African / Sahelian hydrocarbon economies, which is the
 signature of item 9 below: entropy gives Pillar F the highest weight while PCA

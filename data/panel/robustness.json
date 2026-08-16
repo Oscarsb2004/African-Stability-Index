@@ -65,22 +65,22 @@
    "range": 21
   },
   "GIN": {
-   "min": 13,
+   "min": 27,
    "max": 40,
    "range": 13
   },
   "LSO": {
-   "min": 13,
+   "min": 14,
    "max": 27,
    "range": 13
   },
   "UGA": {
-   "min": 11,
+   "min": 17,
    "max": 28,
    "range": 11
   },
   "GAB": {
-   "min": 11,
+   "min": 20,
    "max": 31,
    "range": 11
   }
