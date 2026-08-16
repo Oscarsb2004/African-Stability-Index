@@ -448,6 +448,36 @@ def check_advisory(records: dict[str, dict]) -> list[str]:
                      f"average, ranging {shares[-1][0]:.0%} to {shares[0][0]:.0%}. "
                      f"Most encyclopedia-reliant: {heaviest}")
 
+    # Pillars whose only source is a general history article. The schema requires
+    # a citation per pillar, but most pillar summaries are index output and have
+    # no claim a URL could support, so the requirement gets satisfied with
+    # whatever is to hand. Reported, not gated: the fix is a schema decision
+    # (logged in pending_format_proposals), not a per-record error.
+    generic = re.compile(
+        r"^History of|History \(|— History|Colony and Protectorate|"
+        r"War of Independence|Unilateral Declaration|genocide|Secedes from|"
+        r"French protectorate|Pacification of|Complete History", re.I)
+    only_history = 0
+    written = 0
+    for rec in records.values():
+        cites = {str(c.get("id")): str(c.get("title", ""))
+                 for c in (rec.get("citations") or []) if c.get("id")}
+        for p in (rec.get("pillars") or {}).values():
+            ids = [i for i in ((p or {}).get("citations") or []) if i in cites]
+            if not ids:
+                continue
+            written += 1
+            if all(generic.search(cites[i]) for i in ids):
+                only_history += 1
+    if written:
+        notes.append(
+            f"pillar sourcing: {only_history} of {written} written pillars "
+            f"({only_history / written:.0%}) cite only a general history or "
+            f"colonial-era article, which cannot support a present-day "
+            f"indicator claim. See pending_format_proposals — the schema "
+            f"requires a citation per pillar even where the summary is pure "
+            f"index output.")
+
     no_background = [i for i, rec in records.items()
                      if not any((x.get("wikipedia_url") or "")
                                 for x in (list((rec.get("recent") or {}).get("primary") or [])

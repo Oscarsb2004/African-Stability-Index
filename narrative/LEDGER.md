@@ -3047,3 +3047,32 @@ becomes unauditable.
   for it. Suggest adding a `SUSPENDED` status value if another
   suspended-not-withdrawn case comes up. Not applied — awaiting a human
   decision, per the self-modifying-format rule above.
+- **2026-08-13 (from the first citation-support audit):** the schema requires at
+  least one citation per written pillar, but most pillar summaries make no claim
+  that a source could support. **210 of 317 summaries are essentially index
+  output** — a score, a coverage count, a tier — all of which come from the
+  panel and are verified by `verify/panel.py`, not by a URL. Only 107 make a
+  contextual claim (an event, a year outside the reference year, a named actor)
+  that genuinely needs sourcing.
+  The requirement is therefore satisfied by attaching whatever citation is to
+  hand, and the result is measurable: **76 of 317 written pillars (24%) are
+  sourced only to a general history or colonial-era article** — "History of
+  Chad" against Chad's Pillar G electricity access, "The Pacification of
+  Cyrenaica" against Libya's Pillar F freshwater withdrawal. Fetching that
+  Libya source confirms it contains nothing about water, CO2, electricity or
+  land. The concentration is exactly where it should be if this diagnosis is
+  right: Pillars D (22), G (23), F (20) and E (10) are present-day indicator
+  pillars, while Pillar A — where a country's political history genuinely is
+  relevant — accounts for 1.
+  This is not 76 individual errors so much as one rule producing them. Three
+  options, none applied: (a) make the citation requirement conditional on the
+  summary containing a non-index claim; (b) keep it mandatory but let a pillar
+  cite the panel itself as its source, which is what an index-only summary
+  actually rests on; (c) leave it and accept that a pillar citation means
+  "further reading", not "evidence for this sentence" — in which case the
+  interface should stop labelling them "Sources".
+  Not applied — awaiting a human decision, per the self-modifying-format rule
+  above. Worth noting the audit's other result alongside it: every citation
+  tested that was attached to a *specific* claim checked out exactly (Gabon
+  90.35%, Mauritania 56.12% and 55.39% turnout). The sourcing problem is
+  confined to pillars that had nothing to source.
