@@ -56,7 +56,7 @@ python -m verify.run
 
 | Layer | Gates a release? | Role |
 |---|---|---|
-| `verify/panel.py` | **yes** | Independent re-derivation of the whole panel from the frozen raw baseline, using different tools than the pipeline (carry-forward via a `merge_asof` join; reliability rules re-implemented from the specification). |
+| `verify/panel.py` | **yes** | Independent re-derivation of the panel from the frozen raw baseline, using different tools than the pipeline (carry-forward via a `merge_asof` join; rolling means via `.rolling()`; reliability rules re-implemented from the specification). All 32 scoring indicators are covered. Of 43,200 scoring cells, 38,276 (88.6%) are re-derived; the remaining 11.4% are regional-mean estimates, which by definition cannot be predicted from a country's own data and are checked instead by the `MIN_REGIONAL_SAMPLE` rule and the reliability tiers. |
 | `verify/contract.py` | **yes** | The backend/frontend object contract: every indicator entry carries its own identity, pillar scores reconcile with the indicators they are built from, ranks reproduce from scores, and the UI neither hardcodes counts nor redefines canonical constants. |
 | `verify/advisory.py` | no | Design diagnostics — correlations, effective weights, coverage, staleness, benchmark plausibility. Reports; never blocks. |
 

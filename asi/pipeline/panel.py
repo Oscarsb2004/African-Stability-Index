@@ -199,9 +199,16 @@ def apply_derived(
 
     # 2. IDP per capita — needs population as denominator
     if idp_var in specs and population_var in specs:
+        # dropna=False is load-bearing. pivot_table's default omits any column
+        # whose entries are all NaN, so a population series that failed to pull
+        # for the entire panel would vanish from `wide`, the guard below would
+        # find no denominator, and the conversion would be skipped in silence —
+        # leaving raw head-counts sitting in a per-thousand column, six orders of
+        # magnitude too large, still marked carried_forward. Absent for one
+        # country-year already behaved correctly; absent for all of them did not.
         wide = panel.pivot_table(
             index=["iso3", "year"], columns="variable_name",
-            values="raw_value", aggfunc="first",
+            values="raw_value", aggfunc="first", dropna=False,
         )
         if idp_var in wide.columns and population_var in wide.columns:
             pop = wide[population_var]
