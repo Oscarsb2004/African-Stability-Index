@@ -177,7 +177,10 @@ def load(path) -> dict[str, dict]:
     if not path.exists():
         raise FileNotFoundError(
             f"No frozen goalposts at {path}. Generate them once with "
-            f"03_normalize.py --freeze-goalposts, then keep the file under version control."
+            f"`python 02_panel.py --freeze-goalposts`, then keep the file under "
+            f"version control. Regenerating re-anchors every historical score, so "
+            f"it must be a deliberate act: this is why the file is not recreated "
+            f"on demand."
         )
     with open(path, encoding="utf-8") as f:
         payload = yaml.safe_load(f) or {}

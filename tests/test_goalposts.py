@@ -184,3 +184,61 @@ def test_the_committed_goalposts_load_and_are_self_consistent():
         assert spec["goalpost_min"] < spec["goalpost_max"], f"{var}: inverted goalposts"
         if spec.get("winsor_lower") is not None:
             assert spec["winsor_lower"] <= spec["winsor_upper"], f"{var}: inverted fences"
+
+
+# ── the pipeline may not re-anchor them by accident ────────────────────────────
+
+def test_the_stage_script_freezes_only_when_told_to():
+    """
+    `02_panel.py` used to read `if args.freeze_goalposts or not
+    GOALPOSTS_FILE.exists()`, which quietly undid the rule this module states in
+    its own docstring. A deleted, gitignored or never-committed
+    `registry/goalposts.yaml` re-anchored every historical score against the
+    current panel, logged as an ordinary step — and the resulting scores would
+    look entirely normal while being incomparable with any published edition.
+
+    Read from the syntax tree, not by substring: the comment explaining the fix
+    quotes the removed condition, and a grep would trip on the explanation. The
+    guard is the shape of the `if` — a bare flag, never a disjunction.
+    """
+    import ast
+
+    from asi.core.constants import PROJECT_ROOT
+
+    tree = ast.parse((PROJECT_ROOT / "02_panel.py").read_text(encoding="utf-8"))
+    guards = [
+        node for node in ast.walk(tree)
+        if isinstance(node, ast.If)
+        and "freeze_goalposts" in ast.unparse(node.test)
+    ]
+    assert guards, "02_panel.py no longer guards the freeze step at all"
+    for node in guards:
+        assert not isinstance(node.test, ast.BoolOp), (
+            f"the freeze step runs on `{ast.unparse(node.test)}` — anything beyond "
+            f"the explicit flag re-anchors every historical score when the file "
+            f"happens to be missing")
+
+
+def test_the_error_message_names_a_command_that_exists():
+    """
+    It told the user to run `03_normalize.py`, which was retired. An error whose
+    remedy does not exist teaches people to delete the check instead.
+    """
+    from asi.core.constants import PROJECT_ROOT
+
+    with pytest.raises(FileNotFoundError) as exc:
+        gp.load(PROJECT_ROOT / "registry" / "no-such-goalposts.yaml")
+    message = str(exc.value)
+    assert "03_normalize.py" not in message
+    assert "02_panel.py --freeze-goalposts" in message
+    assert (PROJECT_ROOT / "02_panel.py").exists()
+
+
+def test_the_reference_year_threshold_is_a_named_constant():
+    """A bare 0.80 inside a stage script decides what year the whole site describes."""
+    from asi.core.constants import PROJECT_ROOT, REFERENCE_YEAR_MIN_COVERAGE
+
+    assert 0.0 < REFERENCE_YEAR_MIN_COVERAGE <= 1.0
+    src = (PROJECT_ROOT / "02_panel.py").read_text(encoding="utf-8")
+    assert "REFERENCE_YEAR_MIN_COVERAGE" in src
+    assert ">= 0.80" not in src

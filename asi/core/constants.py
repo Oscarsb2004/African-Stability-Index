@@ -105,6 +105,12 @@ MIN_REGIONAL_SAMPLE      = 3     # minimum peer countries required for a regiona
 COVERAGE_WARN_THRESHOLD  = 0.75  # below this -> SPARSE flag
 COVERAGE_ALERT_THRESHOLD = 0.50  # below this -> VERY SPARSE flag
 
+# The reference year is the most recent year at least this share of countries can
+# be scored in. It decides which year the whole interface and the entire
+# narrative corpus describe, so it belongs here with the other tunable
+# parameters rather than as a bare 0.80 inside a stage script.
+REFERENCE_YEAR_MIN_COVERAGE = 0.80
+
 
 # ── Reliability tiers (Phase B) ────────────────────────────────────────────────
 # A score assembled mostly from regional averages is not a measurement. These
@@ -189,7 +195,7 @@ PROJECT_ROOT = Path(__file__).resolve().parents[2]
 __all__ = [
     "PILLAR_DEFS", "ACTIVE_PRESET", "WEIGHT_PRESETS",
     "WEIGHT_MIN", "WEIGHT_MAX", "SMALL",
-    "IQR_MULTIPLIER", "MIN_REGIONAL_SAMPLE",
+    "IQR_MULTIPLIER", "MIN_REGIONAL_SAMPLE", "REFERENCE_YEAR_MIN_COVERAGE",
     "COVERAGE_WARN_THRESHOLD", "COVERAGE_ALERT_THRESHOLD",
     "RELIABILITY_RELIABLE_AT", "RELIABILITY_THIN_AT",
     "RELIABILITY_MAX_IMPUTED", "MIN_PILLARS_FOR_COMPOSITE",

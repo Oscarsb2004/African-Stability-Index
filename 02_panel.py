@@ -38,7 +38,7 @@ from asi.core.constants import (
     PANEL_START, DEFAULT_MAX_CARRY_FORWARD, IQR_MULTIPLIER, MIN_REGIONAL_SAMPLE,
     PILLAR_DEFS, WEIGHT_PRESETS, ACTIVE_PRESET, SMALL,
     RELIABILITY_RELIABLE_AT, RELIABILITY_THIN_AT, RELIABILITY_MAX_IMPUTED,
-    MIN_PILLARS_FOR_COMPOSITE, DISPLAY_DECIMALS,
+    MIN_PILLARS_FOR_COMPOSITE, DISPLAY_DECIMALS, REFERENCE_YEAR_MIN_COVERAGE,
 )
 from asi.core.countries import COUNTRIES
 from asi.core.registry import PillarRegistry, IndicatorRegistry
@@ -118,7 +118,14 @@ def main() -> int:
     logger.info("  %d cells remain empty (left empty on purpose)", still_missing)
 
     # ── 4. goalposts ──────────────────────────────────────────────────────────
-    if args.freeze_goalposts or not GOALPOSTS_FILE.exists():
+    # `--freeze-goalposts` and nothing else. The condition here used to read
+    # `or not GOALPOSTS_FILE.exists()`, which quietly undid the rule the
+    # goalposts module states in its own docstring: a deleted, gitignored or
+    # never-committed registry/goalposts.yaml re-anchored every historical score
+    # against the current panel, and the run logged it as an ordinary step. The
+    # scores that came out would look entirely normal and would not be
+    # comparable with any previously published edition.
+    if args.freeze_goalposts:
         logger.info("Step 4 - computing and FREEZING goalposts")
         gps = gp_mod.compute(pnl, scoring, IQR_MULTIPLIER)
         gp_mod.freeze(gps, GOALPOSTS_FILE, panel_years=(PANEL_START, panel_end))
@@ -221,11 +228,11 @@ def main() -> int:
     coverage_by_year = (
         eq[eq["rank"].notna()].groupby("year").size() / n_countries
     )
-    eligible = coverage_by_year[coverage_by_year >= 0.80]
+    eligible = coverage_by_year[coverage_by_year >= REFERENCE_YEAR_MIN_COVERAGE]
     reference_year = int(eligible.index.max()) if not eligible.empty else panel_end
     logger.info("Step 8 - reference year: %d "
-                "(latest year with >=80%% of countries scoreable; panel ends %d)",
-                reference_year, panel_end)
+                "(latest year with >=%.0f%% of countries scoreable; panel ends %d)",
+                reference_year, REFERENCE_YEAR_MIN_COVERAGE * 100, panel_end)
     if reference_year != panel_end:
         logger.info("  %d-%d are present but too sparse to score and will display greyed",
                     reference_year + 1, panel_end)

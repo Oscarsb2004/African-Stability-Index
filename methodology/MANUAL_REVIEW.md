@@ -117,9 +117,28 @@ reason is stated rather than inferred from coverage.
 
 ### [ ] 9a. Some countries' ranks swing wildly with the weighting method
 
-From `03_robustness.py` at 2023. The index is *robust* overall (worst-case
-Spearman 0.928 across all admissible weightings), but individual countries are
-not:
+From `03_robustness.py` at 2023. **Corrected by B09 (2026-08-17):** the index is
+*moderately sensitive*, not robust. The earlier worst-case Spearman of 0.928
+came from a sampler that accepted 23 of 1000 draws, so the verdict rested on 23
+evaluations of a seven-dimensional polytope — and the worst vector it reported
+was one of the deterministic corners, meaning the random search had contributed
+nothing. Sampling the shifted simplex accepts 2,993 of 10,000 and finds a
+genuinely interior worst case at **rho = 0.880**.
+
+Individual countries are much less stable than the headline suggests, which is
+now reported per country rather than only as a single continental verdict. The
+share of admissible weightings that leave a country in its published quintile:
+
+| Country | Stays in its published quintile |
+|---|---|
+| Nigeria | 26% |
+| Libya | 27% |
+| Tunisia | 49% |
+| Egypt | 50% |
+| Mauritania | 51% |
+
+Median across all 54 countries is 93%, so the instability is concentrated rather
+than general. Rank ranges across the four published weighting methods:
 
 | Country | Rank range across methods |
 |---|---|
@@ -127,7 +146,7 @@ not:
 | Libya | 16 – 52 |
 | Mauritania | 21 – 42 |
 | Egypt | 6 – 27 |
-| Guinea | 27 – 40 |
+| Guinea | 13 – 40 |
 
 These are all North African / Sahelian hydrocarbon economies, which is the
 signature of item 9 below: entropy gives Pillar F the highest weight while PCA
