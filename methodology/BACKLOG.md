@@ -20,7 +20,6 @@ without a decision only you can make.
 
 | ID | Title | Effort | Human? | Depends on | Source |
 |---|---|---:|:---:|---|---|
-| **B03** | Enforce verification independence; rename the results layer | 5 | no | — | ITERATION_PLAN 0.4 (ASI-13) |
 | **B04** | Collapse the two divergent narrative validators into one | 6 | no | — | ITERATION_PLAN 0.5 (ASI-12) |
 | **B05** | Test and verify the five hardest indicator paths | 8 | no | — | ITERATION_PLAN 0.3 (ASI-05) |
 | **B06** | Add content assertions to the view tests; drop the count pins | 8 | no | — | ITERATION_PLAN 0.6 (ASI-18) |
@@ -79,7 +78,10 @@ the specific edges the plan states. Both are now released. **B01 is done** (`7ba
 gated B41 and B47, which move code into subdirectories the contract checks could not see, and
 those checks now recurse. **B02 is done** (`d6a316d`): it gated every Stage 2 item because
 those edit arithmetic that had no tests, and that arithmetic is now covered and
-mutation-checked. Stage 0 still has B03–B06 open; finish them before Stage 4 or 5.
+mutation-checked. **B03 is done** (`f3ef6f9`): it gated B39–B42, whose whole subject is
+comparing this index against outside benchmarks — a benchmark layer that loads the panel
+through the interface's own loader is comparing the index against a filtered view of itself.
+Stage 0 still has B04–B06 open; finish them before Stage 4 or 5.
 
 ---
 
@@ -115,19 +117,6 @@ mutation-checked. Stage 0 still has B03–B06 open; finish them before Stage 4 o
 > `verify/panel.py` to re-derive the geometric composite independently. Report —
 > do not decide — whether Benefit-of-the-Doubt should be implemented or removed
 > from `asi/dashboard/app.py:52`, `requirements-pipeline.txt` and the docstrings.
-
-### B03 — Enforce verification independence; rename the results layer
-
-> In `F:\Code\African Stability Index`, `asi/dashboard/data.py` calls itself "the
-> interface's only door to stored results" but is imported by `03_robustness.py:32`,
-> `scripts/narrative_check.py:30` and `verify/advisory.py:26` — the last violating
-> the rule stated in `README:63` and `verify/__init__.py` that verification never
-> imports the code it checks. Move the module to `asi/results.py`, update its
-> docstring and all importers, and replace `verify/advisory.py`'s use of it with
-> direct pandas/json reads of `data/panel/`. Add `tests/test_verify_independence.py`
-> that AST-scans `verify/*.py` and fails on any `asi.*` import other than
-> `asi.core.constants`. Note `verify/advisory.py:29-30` also hardcodes Africa-only
-> IIAG benchmark ISO3 sets; flag that for Stage 4 rather than fixing it here.
 
 ### B04 — Collapse the two divergent narrative validators into one
 
@@ -894,6 +883,7 @@ not against a checkbox.
 | **D07** | First citation-support audit — stratified sample of non-Wikipedia citations behind figure-bearing claims. Found the failure is structural (a schema rule), not 76 separate lapses. Reported as an advisory metric, not a gate. | `809b524`; `verify/narrative.py` |
 | **D08** | Contract section 2 could not catch most of what it describes. `_ui_files()` used `glob` not `rglob`, so a `views/` package — the next scheduled refactor — would have switched the layer off silently. 2.1's regex missed five of eight probe strings including the live `54 of 55 AU member states`; 2.2 missed four of five; 2.3 grepped substrings and flagged its own docstring. | `7ba8cb7`; `verify/contract.py` sections 2.1–2.3 rewritten, `tests/test_verify_contract.py` (31 fixtures, discriminating against the old logic), live offender at `asi/dashboard/app.py:1019` derived from `EXCLUDED_AU_MEMBERS` |
 | **D09** | A quarter of published composites were verified by nothing — `check_composites` looped over equal/pca/entropy while `composites.csv` carries 5,400 rows across four methods. A +40 corruption on a geometric row passed; the same on an equal row failed. Also: no test had ever imported `asi.pipeline.score` or `asi.pipeline.goalposts`. | `d6a316d`; `check_geometric_composite` in `verify/panel.py` re-derives by product-and-root (pipeline uses exp-mean-log), 1,350 rows reconcile; `tests/test_score.py` + `tests/test_goalposts.py` (37 tests); four mutations introduced and all four caught |
+| **D10** | `verify/advisory.py` imported `asi.dashboard.data` — the loader the interface uses — breaking the rule `README` and `verify/__init__.py` both state. A filter added to that loader would have narrowed what the diagnostics saw without changing a line of `advisory.py`. The rule was documentation only. | `f3ef6f9`; `asi/dashboard/data.py` → `asi/results.py` with eight importers repointed, `verify/advisory.py` reads `data/panel/` directly (frames verified identical), `tests/test_verify_independence.py` AST-scans `verify/*.py` and permits only `asi.core.constants`; contract 2.3 loses its `data.py` filename exemption; three mutations introduced and all three caught |
 
 *A regex bug found during D05 is worth remembering: a `\b` written through a heredoc
 became a literal backspace byte, so the year check silently matched nothing and passed
