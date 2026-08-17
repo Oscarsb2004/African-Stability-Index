@@ -1016,7 +1016,9 @@ def build_layout():
                 html.H1("African Stability Index",
                         style={"color": "#fff", "margin": 0, "fontSize": "19px",
                                "fontWeight": "700"}),
-                html.Div(f"{len(PANEL.countries)} of 55 AU member states  ·  "
+                html.Div(f"{len(PANEL.countries)} of "
+                         f"{len(PANEL.countries) + len(EXCLUDED_AU_MEMBERS)} "
+                         f"AU member states  ·  "
                          f"{len(PILLAR_DEFS)} pillars  ·  "
                          f"{N_SCORING} indicators"
                          f"  ·  {PANEL.panel_start}–{PANEL.panel_end}",

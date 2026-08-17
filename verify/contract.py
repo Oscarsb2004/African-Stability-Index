@@ -137,7 +137,15 @@ def check_bundle_complete(bundle: dict, registry: dict) -> None:
 # ── 2. the interface derives nothing ───────────────────────────────────────────
 
 def _ui_files():
-    return sorted(UI_DIR.glob("*.py"))
+    """
+    Every Python file under the interface, at any depth.
+
+    `glob` rather than `rglob` meant these checks saw only the top level. The
+    obvious next refactor is splitting app.py into a `views/` package, which
+    would have silently disabled all three of them — a gate that switches itself
+    off during the change it exists to police is worse than no gate at all.
+    """
+    return sorted(UI_DIR.rglob("*.py"))
 
 
 def check_no_hardcoded_counts() -> None:
@@ -147,15 +155,28 @@ def check_no_hardcoded_counts() -> None:
     The header once claimed "36 Indicators" for weeks after the number changed.
     Only string literals are inspected, so comments may still discuss the old bug.
     """
-    pattern = re.compile(r"\b\d{2,3}\s+(Indicators?|Countries|Pillars?|member states)\b",
-                         re.IGNORECASE)
+    # A digit near a domain noun, tolerating connective words in between.
+    #
+    # The previous pattern demanded two-or-three digits followed immediately by
+    # the noun. That caught "36 Indicators" — the bug it was written for — while
+    # passing "54 of 55 AU member states" (live in this interface at the time),
+    # "7 pillars" (one digit) and "32 scoring indicators" (an intervening word).
+    pattern = re.compile(
+        # One to three digits only. Every count in this domain is under 1000,
+        # and the word boundaries keep "2024 country coverage" — a year, not a
+        # count — from matching on its trailing digits.
+        r"\b\d{1,3}\b"
+        r"(?:[\s,]+(?:of|the|AU|African|Union|scoring|total|all)\b)*"
+        r"[\s,]+(indicators?|countries|country|pillars?|member\s+states)\b",
+        re.IGNORECASE)
     offenders = []
     for path in _ui_files():
         tree = ast.parse(path.read_text(encoding="utf-8"))
         for node in ast.walk(tree):
             if isinstance(node, ast.Constant) and isinstance(node.value, str):
                 if pattern.search(node.value):
-                    offenders.append(f"{path.name}:{node.lineno}: {node.value[:60]!r}")
+                    offenders.append(
+                        f"{path.relative_to(UI_DIR)}:{node.lineno}: {node.value[:60]!r}")
     if offenders:
         record("2.1 no hardcoded counts in the interface", "FAIL",
                f"{len(offenders)} literal counts — derive these from the data", offenders)
@@ -169,12 +190,18 @@ def check_ui_does_not_redefine_canonicals() -> None:
     offenders = []
     for path in _ui_files():
         tree = ast.parse(path.read_text(encoding="utf-8"))
-        assigned = {
-            t.id for node in tree.body if isinstance(node, ast.Assign)
-            for t in node.targets if isinstance(t, ast.Name)
-        }
+        # Walk the whole tree, not just module level, and cover annotated and
+        # augmented assignment. `PILLAR_DEFS: dict = {}`, a class attribute and
+        # a rebind inside a function all passed the module-level-Assign version.
+        assigned: set[str] = set()
+        for node in ast.walk(tree):
+            if isinstance(node, ast.Assign):
+                assigned |= {t.id for t in node.targets if isinstance(t, ast.Name)}
+            elif isinstance(node, (ast.AnnAssign, ast.AugAssign)):
+                if isinstance(node.target, ast.Name):
+                    assigned.add(node.target.id)
         for name in sorted(canonical & assigned):
-            offenders.append(f"{path.name}: {name}")
+            offenders.append(f"{path.relative_to(UI_DIR)}: {name}")
     if offenders:
         record("2.2 interface imports canonical constants", "FAIL",
                "canonical values redefined in the UI", offenders)
@@ -189,15 +216,30 @@ def check_ui_reads_only_through_the_data_layer() -> None:
 
     A view module reading a CSV or the panel directory itself would be deriving
     its own view of the data, outside anything verify/panel.py checks.
+
+    Matched on the syntax tree rather than by substring: a docstring discussing
+    `read_csv` is not a read, and a call in a subdirectory is. The scope stays
+    the panel — the stored results verify/panel.py re-derives. Reading the
+    context YAMLs or the narrative corpus is a different store under a different
+    rule, and this check deliberately says nothing about it.
     """
+    readers = {"read_csv", "read_excel", "read_parquet", "read_json"}
     offenders = []
     for path in _ui_files():
         if path.name == "data.py":
             continue
-        src = path.read_text(encoding="utf-8")
-        for needle in ("read_csv", "read_excel", "data/panel", "06_results"):
-            if needle in src:
-                offenders.append(f"{path.name}: reads storage directly ({needle})")
+        rel = path.relative_to(UI_DIR)
+        tree = ast.parse(path.read_text(encoding="utf-8"))
+        for node in ast.walk(tree):
+            if isinstance(node, ast.Call):
+                name = getattr(node.func, "attr", None) or getattr(node.func, "id", None)
+                if name in readers:
+                    offenders.append(f"{rel}:{node.lineno}: calls {name}()")
+            elif isinstance(node, ast.Constant) and isinstance(node.value, str):
+                for needle in ("data/panel", "06_results"):
+                    if needle in node.value:
+                        offenders.append(
+                            f"{rel}:{node.lineno}: names storage directly ({needle})")
     if offenders:
         record("2.3 interface reads only through the data layer", "FAIL",
                f"{len(offenders)} direct reads", offenders)
