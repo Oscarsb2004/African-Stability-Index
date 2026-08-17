@@ -1,0 +1,20 @@
+# Dependency updates.
+#
+# Grouped into a single weekly pull request rather than one per package: this is
+# a single-maintainer project, and a stream of individual bumps gets ignored,
+# which is worse than a slower cadence that actually gets read.
+version: 2
+updates:
+  - package-ecosystem: pip
+    directory: "/"
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 3
+    groups:
+      python-dependencies:
+        patterns: ["*"]
+
+  - package-ecosystem: github-actions
+    directory: "/"
+    schedule:
+      interval: monthly

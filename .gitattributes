@@ -1,0 +1,27 @@
+# Normalise line endings in the repository, regardless of who clones it.
+#
+# Without this, behaviour depends on each machine's `core.autocrlf`, which is a
+# local setting and is not committed. This repo's index is already LF
+# throughout, so these rules formalise what is there rather than rewriting it —
+# but they make it survive a move to a different machine or OS, which is the
+# case that would otherwise produce a whole-file diff on every text file.
+
+* text=auto
+
+# Explicit, so nothing depends on content sniffing.
+*.py    text diff=python
+*.md    text
+*.yaml  text
+*.yml   text
+*.csv   text
+*.json  text
+*.txt   text
+*.css   text
+Procfile text
+
+# Binary: never touch, never diff as text.
+*.xlsx  binary
+*.png   binary
+*.jpg   binary
+*.ico   binary
+*.pdf   binary

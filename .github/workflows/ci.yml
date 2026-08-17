@@ -1,0 +1,47 @@
+# Continuous integration.
+#
+# Two gates, matching what a maintainer runs locally before committing:
+#   pytest              — the unit and integration suite
+#   verify.run --gate-only — independent re-derivation of the panel, the
+#                            backend/frontend contract, and the narrative claims
+#
+# `--gate-only` deliberately skips the advisory layer: that layer reports design
+# judgement rather than arithmetic, and failing a build on a judgement call only
+# teaches people to ignore the gate (see verify/advisory.py).
+name: CI
+
+on:
+  push:
+    branches: [main, dev, phase-a-foundation]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          # requirements-pipeline.txt includes requirements.txt via -r
+          pip install -r requirements-pipeline.txt
+
+      - name: Report resolved versions
+        # Dependencies are currently unpinned, so record what was actually
+        # installed. When a build breaks for no apparent reason, this is the
+        # first thing worth reading.
+        run: pip freeze
+
+      - name: Tests
+        run: python -m pytest -q
+
+      - name: Verification (gating layers only)
+        run: python -m verify.run --gate-only
