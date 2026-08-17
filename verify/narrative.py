@@ -291,6 +291,77 @@ def check_panel_citations(records: dict[str, dict], year: int) -> list[str]:
     return problems
 
 
+def _citation_links(rec: dict) -> tuple[dict[str, dict], set[str], set[str]]:
+    """
+    A record's citations, the ids its prose refers to, and the URLs it links to.
+
+    Shared by the linkage check and the advisory summary so the two cannot drift
+    apart — which is what happened to the two validators this function is part
+    of collapsing.
+    """
+    cites = {str(c.get("id")): c for c in (rec.get("citations") or []) if c.get("id")}
+
+    hist = rec.get("historical") or {}
+    used: set[str] = set(hist.get("overview_citations") or [])
+    used |= set(hist.get("colonial_legacy_citations") or [])
+    for k in hist.get("key_periods") or []:
+        used |= set(k.get("citations") or [])
+    for p in (rec.get("pillars") or {}).values():
+        used |= set((p or {}).get("citations") or [])
+    for m in rec.get("rec_membership") or []:
+        used |= set(m.get("citations") or [])
+
+    recent = rec.get("recent") or {}
+    items = list(recent.get("primary") or []) + list(recent.get("extended") or [])
+    linked = {u for i in items
+              for u in (i.get("news_url"), i.get("wikipedia_url")) if u}
+    linked |= {e.get("url") for e in (rec.get("events") or []) if e.get("url")}
+    return cites, used, {u for u in linked if u}
+
+
+def check_citation_linkage(records: dict[str, dict]) -> list[str]:
+    """
+    Whether a record's source list matches the sources it actually uses.
+
+    All three findings were `scripts/narrative_check.py`'s alone until B04. The
+    duplicate-URL check in particular existed only in the non-gating script and
+    fires zero times on the shipped corpus today, which is precisely why it
+    needed moving: a check that is currently silent is a check nobody would
+    notice losing, and it caught a real duplicate in ERI when it was written.
+
+    Warnings, not errors, and deliberately so. A source attached to no claim
+    inflates an apparent evidence base and a URL used but unlisted understates
+    it — both are worth seeing, neither is a false statement about a country.
+    """
+    problems: list[str] = []
+    for iso3, rec in sorted(records.items()):
+        cites, used, linked = _citation_links(rec)
+        cited_urls = {str(c.get("url", "")) for c in cites.values()}
+
+        orphans = [cid for cid, c in cites.items()
+                   if cid not in used and str(c.get("url", "")) not in linked]
+        if orphans:
+            problems.append(
+                f"[warning] {iso3} · citations: {len(orphans)} listed but attached "
+                f"to no claim ({', '.join(sorted(orphans))}).")
+
+        unlisted = sorted(u for u in linked if u not in cited_urls)
+        if unlisted:
+            problems.append(
+                f"[warning] {iso3} · citations: {len(unlisted)} URL(s) used in "
+                f"recent items or events but absent from the citations block.")
+
+        by_url: dict[str, list[str]] = {}
+        for cid, c in cites.items():
+            by_url.setdefault(str(c.get("url", "")), []).append(cid)
+        for url, ids in sorted(by_url.items()):
+            if len(ids) > 1:
+                problems.append(
+                    f"[warning] {iso3} · citations: {'/'.join(sorted(ids))} are the "
+                    f"same URL under different ids.")
+    return problems
+
+
 def check_internal(records: dict[str, dict],
                    names: dict[str, str] | None = None) -> list[str]:
     """Claims a record makes that can be checked without the panel at all."""
@@ -433,28 +504,16 @@ def check_advisory(records: dict[str, dict]) -> list[str]:
             f"{min(latest.values())} to {max(latest.values())}. Stalest: "
             + ", ".join(f"{i} ({d})" for i, d in oldest))
 
-    unlinked = 0
-    unlisted = 0
-    for iso3, rec in records.items():
-        cites = {str(c.get("id")): str(c.get("url", ""))
-                 for c in (rec.get("citations") or []) if c.get("id")}
-        hist = rec.get("historical") or {}
-        used = set(hist.get("overview_citations") or [])
-        used |= set(hist.get("colonial_legacy_citations") or [])
-        for k in hist.get("key_periods") or []:
-            used |= set(k.get("citations") or [])
-        for p in (rec.get("pillars") or {}).values():
-            used |= set((p or {}).get("citations") or [])
-        for m in rec.get("rec_membership") or []:
-            used |= set(m.get("citations") or [])
-        recent = rec.get("recent") or {}
-        items = list(recent.get("primary") or []) + list(recent.get("extended") or [])
-        linked = {u for i in items
-                  for u in (i.get("news_url"), i.get("wikipedia_url")) if u}
-        linked |= {e.get("url") for e in (rec.get("events") or []) if e.get("url")}
-        unlinked += sum(1 for cid, url in cites.items()
-                        if cid not in used and url not in linked)
-        unlisted += sum(1 for u in linked if u and u not in set(cites.values()))
+    # The corpus-wide totals. The per-record detail is a gating-layer warning in
+    # check_citation_linkage; this line is the one-number trend, and it shares
+    # _citation_links with that check so the two cannot report different figures.
+    unlinked = unlisted = 0
+    for rec in records.values():
+        cites, used, linked = _citation_links(rec)
+        urls = {str(c.get("url", "")) for c in cites.values()}
+        unlinked += sum(1 for cid, c in cites.items()
+                        if cid not in used and str(c.get("url", "")) not in linked)
+        unlisted += sum(1 for u in linked if u not in urls)
     notes.append(f"citation linkage: {unlinked} sources attached to no claim; "
                  f"{unlisted} URLs used but absent from a citations block")
 
@@ -521,6 +580,28 @@ def check_advisory(records: dict[str, dict]) -> list[str]:
     return notes
 
 
+def all_checks(records: dict[str, dict], scores: pd.DataFrame,
+               observations: pd.DataFrame, year: int,
+               names: dict[str, str] | None = None) -> list[str]:
+    """
+    Every consistency check, in one call, in a fixed order.
+
+    The single entry point B04 exists to create. `scripts/narrative_check.py`
+    used to carry its own copy of this logic and the two had already drifted in
+    both directions: the script had a duplicate-URL check the gate lacked, the
+    gate had quoted-value, name-drift, future-date and membership-span checks
+    the script lacked. Two validators means two answers to "does this record
+    ship", and the one with tests was the one that did not gate.
+
+    The script now calls this. Anything added here is added to both.
+    """
+    return (check_claims(records, scores, year)
+            + check_quoted_values(records, observations, year)
+            + check_panel_citations(records, year)
+            + check_internal(records, names)
+            + check_citation_linkage(records))
+
+
 def main() -> int:
     print("Narrative corpus verification (independent re-read)")
     records = load_records()
@@ -531,10 +612,7 @@ def main() -> int:
     names = load_country_names()
     print(f"  {len(records)} records · panel reference year {year}\n")
 
-    problems = (check_claims(records, scores, year)
-                + check_quoted_values(records, load_observations(), year)
-                + check_panel_citations(records, year)
-                + check_internal(records, names))
+    problems = all_checks(records, scores, load_observations(), year, names)
     errors = [p for p in problems if p.startswith("[error]")]
     warnings = [p for p in problems if p.startswith("[warning]")]
 

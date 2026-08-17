@@ -24,14 +24,30 @@ import pytest
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-_spec = importlib.util.spec_from_file_location(
-    "narrative_check", ROOT / "scripts" / "narrative_check.py")
-narrative_check = importlib.util.module_from_spec(_spec)
-_spec.loader.exec_module(narrative_check)
-
 from asi import results as D  # noqa: E402
+from verify import narrative as VN  # noqa: E402
 
-check_consistency = narrative_check.check_consistency
+
+def check_consistency(records, panel):
+    """
+    The gating implementation, called the way the authoring script calls it.
+
+    These tests used to load `scripts/narrative_check.py` and exercise its own
+    copy of this logic — the copy that does not gate a release. The gating copy
+    had no tests at all, so every assertion below was being made about the wrong
+    implementation, and the two had already drifted apart in both directions.
+    """
+    names = {iso3: c.get("name", iso3) for iso3, c in panel.countries.items()}
+    return VN.all_checks(records, panel.pillar_scores, panel.observations,
+                         panel.reference_year, names)
+
+
+def _pillar_ranking(panel, iso3: str) -> list[str]:
+    """This country's displayable pillars at the reference year, best first."""
+    pil = D.country_pillar_series(panel, iso3)
+    at_year = pil[(pil["year"] == panel.reference_year) & pil["displayable"]]
+    return list(at_year[at_year["score"].notna()]
+                .sort_values("score", ascending=False)["pillar_id"])
 
 
 @pytest.fixture(scope="module")
@@ -60,6 +76,58 @@ def test_shipped_corpus_has_no_consistency_errors(records, panel):
     """The audit that found ten false claims must stay at zero."""
     errs = _errors(check_consistency(records, panel))
     assert not errs, "consistency errors:\n" + "\n".join(errs)
+
+
+# ── One implementation, two entry points ───────────────────────────────────────
+
+def test_the_script_and_the_gate_report_exactly_the_same_findings(records, panel):
+    """
+    The property B04 exists to establish, checked on the shipped corpus.
+
+    `scripts/narrative_check.py` hands over frames already loaded through
+    `asi.results`; the gate reads `data/panel/` itself with plain pandas. Same
+    rules by two routes, so this asserts the two routes agree finding-for-
+    finding — not merely that both are silent. Before the collapse the sets
+    differed by construction: the script had a duplicate-URL check the gate
+    lacked, the gate had four checks the script lacked.
+    """
+    scores, year = VN.load_pillar_scores()
+    via_gate = set(VN.all_checks(records, scores, VN.load_observations(), year,
+                                 VN.load_country_names()))
+    via_script = set(check_consistency(records, panel))
+    assert via_script == via_gate, (
+        f"only via script: {sorted(via_script - via_gate)}\n"
+        f"only via gate:   {sorted(via_gate - via_script)}")
+
+
+def test_the_script_no_longer_carries_its_own_copy_of_the_rules():
+    """
+    A thin caller that quietly regrows an implementation is the failure this
+    whole item is about. The rule names are the tell: if `RANK_CLAIMS` or
+    `COVERAGE_CLAIM` reappear in the script, the two have started to diverge
+    again and this test says so before anyone has to notice by hand.
+    """
+    src = (ROOT / "scripts" / "narrative_check.py").read_text(encoding="utf-8")
+    for name in ("RANK_CLAIMS", "COVERAGE_CLAIM", "NUMBER_WORDS", "_spelled"):
+        assert name not in src, (
+            f"scripts/narrative_check.py defines {name} again — the consistency "
+            f"rules belong in verify/narrative.py, which is what gates a release.")
+    assert "from verify import narrative" in src, "the script must call the gate"
+
+
+def test_every_gating_check_is_reachable_through_all_checks():
+    """
+    `all_checks` is the single door both callers use. A check added to
+    verify/narrative.py but not wired into it would gate nothing and be called
+    by nobody, which is the same invisibility B04 is removing.
+    """
+    import inspect
+
+    defined = {n for n, f in inspect.getmembers(VN, inspect.isfunction)
+               if n.startswith("check_") and n != "check_advisory"}
+    wired = inspect.getsource(VN.all_checks)
+    missing = sorted(n for n in defined if f"{n}(" not in wired)
+    assert not missing, f"gating checks not called by all_checks: {missing}"
 
 
 # ── Framing balance ────────────────────────────────────────────────────────────
@@ -100,7 +168,7 @@ def _with_pillar_summary(iso3, pillar, summary):
 
 def test_a_false_strongest_pillar_claim_is_an_error(panel):
     """Kenya's Pillar A is not its strongest; claiming so must fail."""
-    order = narrative_check._pillar_ranking(panel, "KEN")
+    order = _pillar_ranking(panel, "KEN")
     loser = order[-1]
     rec = _with_pillar_summary("KEN", loser, "This is Kenya's strongest pillar.")
     errs = _errors(check_consistency(rec, panel))
@@ -108,20 +176,20 @@ def test_a_false_strongest_pillar_claim_is_an_error(panel):
 
 
 def test_a_true_strongest_pillar_claim_passes(panel):
-    order = narrative_check._pillar_ranking(panel, "KEN")
+    order = _pillar_ranking(panel, "KEN")
     rec = _with_pillar_summary("KEN", order[0], "This is Kenya's strongest pillar.")
     assert not _errors(check_consistency(rec, panel))
 
 
 def test_a_true_weakest_pillar_claim_passes(panel):
-    order = narrative_check._pillar_ranking(panel, "KEN")
+    order = _pillar_ranking(panel, "KEN")
     rec = _with_pillar_summary("KEN", order[-1], "This is Kenya's weakest pillar.")
     assert not _errors(check_consistency(rec, panel))
 
 
 def test_second_strongest_is_not_read_as_strongest(panel):
     """'second-strongest' contains 'strongest'; the checker must not confuse them."""
-    order = narrative_check._pillar_ranking(panel, "KEN")
+    order = _pillar_ranking(panel, "KEN")
     rec = _with_pillar_summary("KEN", order[1], "This is Kenya's second-strongest pillar.")
     assert not _errors(check_consistency(rec, panel))
 
@@ -131,7 +199,7 @@ def test_referring_to_another_pillars_score_is_not_a_self_claim(panel):
     Cabo Verde's Pillar G cites Pillar A's score. That is a reference, not a
     claim that G is strongest, and must not be flagged.
     """
-    order = narrative_check._pillar_ranking(panel, "KEN")
+    order = _pillar_ranking(panel, "KEN")
     rec = _with_pillar_summary(
         "KEN", order[-1],
         "Infrastructure consistent with the corpus's strongest Pillar A score.")
