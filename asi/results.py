@@ -1,5 +1,15 @@
 """
-asi.dashboard.data — the interface's only door to stored results.
+asi.results — the only door to stored results.
+
+It lived at `asi.dashboard.data` and was described as the *interface's* only
+door, which turned out to be a misreading of its own job. Four callers outside
+the interface already used it: `03_robustness.py`, `scripts/country_facts.py`,
+`scripts/narrative_check.py` and `verify/advisory.py`. The last one mattered —
+a verification layer importing the code it checks inherits that code's bugs,
+which is the rule `README` and `verify/__init__.py` both state. The name was
+describing one caller rather than the boundary, so the boundary kept leaking.
+`verify/advisory.py` now reads `data/panel/` directly and imports nothing from
+here; the other three are ordinary consumers and belong at this address.
 
 Rules this module exists to enforce:
 

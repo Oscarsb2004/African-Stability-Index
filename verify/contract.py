@@ -212,10 +212,16 @@ def check_ui_does_not_redefine_canonicals() -> None:
 
 def check_ui_reads_only_through_the_data_layer() -> None:
     """
-    asi/dashboard/data.py is the only door to stored results.
+    asi/results.py is the only door to stored results.
 
     A view module reading a CSV or the panel directory itself would be deriving
     its own view of the data, outside anything verify/panel.py checks.
+
+    The door used to live inside the interface as `asi/dashboard/data.py`, which
+    this check had to exempt by filename. That exemption was a hole: any new
+    `data.py` under the interface would have inherited it. With the loader moved
+    out of the interface entirely there is nothing here to exempt, so the check
+    now applies to every file it scans without exception.
 
     Matched on the syntax tree rather than by substring: a docstring discussing
     `read_csv` is not a read, and a call in a subdirectory is. The scope stays
@@ -226,8 +232,6 @@ def check_ui_reads_only_through_the_data_layer() -> None:
     readers = {"read_csv", "read_excel", "read_parquet", "read_json"}
     offenders = []
     for path in _ui_files():
-        if path.name == "data.py":
-            continue
         rel = path.relative_to(UI_DIR)
         tree = ast.parse(path.read_text(encoding="utf-8"))
         for node in ast.walk(tree):
@@ -245,7 +249,7 @@ def check_ui_reads_only_through_the_data_layer() -> None:
                f"{len(offenders)} direct reads", offenders)
     else:
         record("2.3 interface reads only through the data layer", "PASS",
-               "all view code goes through asi.dashboard.data")
+               "all view code goes through asi.results")
 
 
 # ── Entry point ────────────────────────────────────────────────────────────────

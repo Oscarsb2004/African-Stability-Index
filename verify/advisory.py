@@ -9,27 +9,83 @@ and exits 0.
 Ported to the panel in Phase C. The previous version read the legacy snapshot
 files, which no longer exist.
 
+This layer used to import `asi.dashboard.data` — the results loader the
+interface uses — which broke the rule the other three layers keep: verification
+that imports the code it checks inherits that code's bugs. A filter dropped in
+that loader would have silently narrowed what the diagnostics saw, and the
+diagnostics would have reported the narrowed picture as the whole one. It now
+reads `data/panel/` with plain json and pandas, as `verify/panel.py` does.
+
 Run:  python verify/advisory.py
 """
 
+import json as _json
 import sys as _sys
+from dataclasses import dataclass
 from pathlib import Path as _Path
 
 _REPO = _Path(__file__).resolve().parent.parent
 _sys.path.insert(0, str(_REPO))
 
-import numpy as np
 import pandas as pd
 from scipy.stats import spearmanr
 
 from asi.core.constants import PILLAR_DEFS
-from asi.dashboard import data as D
+
+PANEL_DIR = _REPO / "data" / "panel"
 
 # Mo Ibrahim Foundation, IIAG 2023 — an external sanity check, not a target.
+#
+# Both sets are Africa-only by construction, so "4 of 5 agree" says nothing
+# about whether the index would place an African state correctly against a
+# non-African one. Stage 4 (B39-B42) is where the benchmark work belongs; this
+# note is here so the limitation travels with the numbers it qualifies.
 IIAG_TOP5    = {"MUS", "CPV", "SYC", "BWA", "ZAF"}
 IIAG_BOTTOM5 = {"SSD", "SOM", "ERI", "SDN", "COD"}
 
 NOTES: list[str] = []
+
+
+@dataclass(slots=True)
+class _Panel:
+    """
+    The stored panel, read directly rather than through the results loader.
+
+    Deliberately a plain container with no filtering: every field is exactly
+    what is on disk. Anything this layer wants to exclude, it excludes visibly
+    at the point of use.
+    """
+
+    meta: dict
+    indicators: dict
+    pillars: dict
+    observations: pd.DataFrame
+    pillar_scores: pd.DataFrame
+    composites: pd.DataFrame
+
+    @property
+    def reference_year(self) -> int:
+        return int(self.meta["run"]["reference_year"])
+
+
+def _load(panel_dir: _Path | None = None) -> _Panel:
+    d = _Path(panel_dir or PANEL_DIR)
+    required = ["bundle.json", "observations.csv", "pillar_scores.csv",
+                "composites.csv"]
+    missing = [f for f in required if not (d / f).exists()]
+    if missing:
+        raise FileNotFoundError(
+            f"Panel incomplete in {d}: missing {missing}. Run: python 02_panel.py")
+
+    meta = _json.loads((d / "bundle.json").read_text(encoding="utf-8"))
+    return _Panel(
+        meta=meta,
+        indicators=meta["indicators"],
+        pillars=meta["pillars"],
+        observations=pd.read_csv(d / "observations.csv"),
+        pillar_scores=pd.read_csv(d / "pillar_scores.csv"),
+        composites=pd.read_csv(d / "composites.csv"),
+    )
 
 
 def section(title: str) -> None:
@@ -44,7 +100,7 @@ def note(text: str) -> None:
 
 
 def main() -> int:
-    panel = D.load()
+    panel = _load()
     year = panel.reference_year
     print("=" * 78)
     print(f"ADVISORY -- design diagnostics at {year} (report only)")

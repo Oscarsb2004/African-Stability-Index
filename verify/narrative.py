@@ -7,8 +7,8 @@ judgement.
 Why this exists as a verification layer rather than only as a script:
 
     `scripts/narrative_check.py` validates records, but it imports
-    `asi.narrative.schema` and `asi.dashboard.data` — the exact dependency this
-    package was created to avoid. If `asi.dashboard.data` mis-filtered
+    `asi.narrative.schema` and `asi.results` — the exact dependency this
+    package was created to avoid. If `asi.results` mis-filtered
     reliability, the rule "no prose for a greyed pillar" would be checked
     against a wrong idea of which pillars are greyed, and the check would agree
     with the bug. Half the project was also outside `verify/run.py` entirely, so

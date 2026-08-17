@@ -5,7 +5,7 @@ asi.narrative.store — the interface's only door to the narrative corpus.
 not. This module is the other half: it reads the validated records off disk and
 hands the interface typed objects instead of nested dictionaries.
 
-It follows the same rule `asi.dashboard.data` follows for the panel, for the
+It follows the same rule `asi.results` follows for the panel, for the
 same reason:
 
     It resolves and shapes. It never writes prose, infers a fact, or upgrades a

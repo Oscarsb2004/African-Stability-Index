@@ -16,7 +16,7 @@ Replaces the single-snapshot dashboard. Three things drove the design:
    number would be a claim the data cannot support.
 
 3. The interface derives nothing.
-   Every value comes from asi.dashboard.data, which reads results the pipeline
+   Every value comes from asi.results, which reads results the pipeline
    computed and verify/panel.py checked. No score, rank or label is calculated
    here.
 """
@@ -33,7 +33,7 @@ from dash import Dash, dcc, html, Input, Output, State, ALL, callback_context, n
 import dash_bootstrap_components as dbc
 
 from asi.core.constants import PILLAR_DEFS, ACTIVE_PROFILE, PROJECT_ROOT
-from asi.dashboard import data as D
+from asi import results as D
 from asi.dashboard import narrative_ui as N
 from asi.narrative.store import load_corpus
 

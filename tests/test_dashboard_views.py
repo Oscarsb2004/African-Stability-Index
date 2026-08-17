@@ -10,7 +10,7 @@ absence — never to a traceback on a page a reader has already opened.
 import pytest
 
 from asi.core.constants import PILLAR_DEFS
-from asi.dashboard import data as D
+from asi import results as D
 from asi.dashboard.app import PANEL, NARRATIVE, view_country, view_pillar, view_overview
 
 LENS = D.Lens("composite", "equal")

@@ -64,6 +64,13 @@ python -m verify.run
 imports the code it checks inherits that code's bugs. It re-reads the registry
 YAML itself.
 
+That was documentation until B03, and `verify/advisory.py` had already broken it
+by loading the panel through the same module the interface uses.
+`tests/test_verify_independence.py` now AST-scans every file under `verify/` and
+fails on any `asi.*` import except `asi.core.constants` — which holds
+declarations (pillar names, country list, tunable parameters) and no logic, so
+importing it cannot import a bug under test.
+
 Unit tests cover pure functions, registry integrity, and single-source-of-truth
 enforcement:
 
@@ -78,7 +85,8 @@ python -m pytest tests/ -q
 ```
 asi/                             importable package (the project's own code)
   pipeline/                      panel, goalposts, normalize, score
-  dashboard/                     data.py (the only door to results) + app.py
+  results.py                     the only door to stored results (all callers)
+  dashboard/app.py               the interface — reads only through results.py
   core/constants.py              ALL tunable parameters + the region profile (GSI seam)
   core/schema.py                 canonical objects: Observation, PillarScore,
                                  CompositeScore, Provenance, Reliability

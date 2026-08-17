@@ -16,7 +16,7 @@ never had, and both are tested here rather than left to be discovered:
 import pytest
 
 from asi.core.constants import PILLAR_DEFS
-from asi.dashboard import data as D
+from asi import results as D
 from asi.dashboard.app import (
     PANEL, rec_membership_caveat, view_country, view_overview, view_rankings,
     year_coverage_note, year_slider,

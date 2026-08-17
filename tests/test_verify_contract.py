@@ -157,10 +157,16 @@ def test_prose_about_reading_is_not_a_read(ui):
     assert _verdict("2.3") == "PASS"
 
 
-def test_the_data_layer_itself_is_exempt(ui):
+def test_a_file_named_data_py_no_longer_buys_an_exemption(ui):
+    """
+    The loader moved to asi/results.py, so nothing under the interface reads
+    storage any more. While the exemption existed it was keyed on the filename
+    alone: a new `data.py` anywhere under the interface — a views/data.py, a
+    components/data.py — would have inherited a licence it was never granted.
+    """
     _write(ui, "data.py", 'import pandas as pd\ndf = pd.read_csv("data/panel/x.csv")\n')
     contract.check_ui_reads_only_through_the_data_layer()
-    assert _verdict("2.3") == "PASS"
+    assert _verdict("2.3") == "FAIL"
 
 
 def test_loading_context_yaml_is_not_a_panel_read(ui):

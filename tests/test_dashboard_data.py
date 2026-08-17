@@ -10,7 +10,7 @@ prevent.
 import pandas as pd
 import pytest
 
-from asi.dashboard.data import (
+from asi.results import (
     Lens, apply_grouping, rankings, reliability_note, DISPLAYABLE,
 )
 

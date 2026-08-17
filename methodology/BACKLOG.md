@@ -265,8 +265,9 @@ mutation-checked. Stage 0 still has B03–B06 open; finish them before Stage 4 o
 > its actual rank within ECOWAS is #2 of 12. Reproduce that, then decide with the
 > maintainer whether the country page should follow the grouping or say
 > "continental", implement it, and add a regression test. Root cause is
-> architectural: `asi/dashboard/data.py:6` states the module never computes a rank,
-> while `data.py:151` and `:215` both do, so two disagreeing ranks exist.
+> architectural: `asi/results.py:6` states the module never computes a rank, while
+> two of its own functions do, so two disagreeing ranks exist. (The module was
+> `asi/dashboard/data.py` until B03 moved it.)
 
 ### B14 — Make documentation describe the code that exists
 

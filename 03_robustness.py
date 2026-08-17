@@ -29,7 +29,7 @@ from scipy.stats import spearmanr
 from asi.core.constants import (
     PILLAR_DEFS, WEIGHT_MIN, WEIGHT_MAX, SMALL, ACTIVE_PROFILE,
 )
-from asi.dashboard import data as D
+from asi import results as D
 from asi.pipeline import score as score_mod
 
 logging.basicConfig(level=logging.INFO, format="%(levelname)-8s %(message)s",

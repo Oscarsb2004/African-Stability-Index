@@ -29,7 +29,7 @@ _spec = importlib.util.spec_from_file_location(
 narrative_check = importlib.util.module_from_spec(_spec)
 _spec.loader.exec_module(narrative_check)
 
-from asi.dashboard import data as D  # noqa: E402
+from asi import results as D  # noqa: E402
 
 check_consistency = narrative_check.check_consistency
 

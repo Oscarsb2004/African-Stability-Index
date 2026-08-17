@@ -19,7 +19,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 import pandas as pd  # noqa: E402
 
 from asi.core.constants import PILLAR_DEFS  # noqa: E402
-from asi.dashboard import data as D  # noqa: E402
+from asi import results as D  # noqa: E402
 
 
 def main() -> int:

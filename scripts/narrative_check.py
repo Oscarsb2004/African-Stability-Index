@@ -27,7 +27,7 @@ import yaml  # noqa: E402
 
 from asi.core.countries import COUNTRIES  # noqa: E402
 from asi.narrative.schema import validate, mode_for_iteration  # noqa: E402
-from asi.dashboard import data as D  # noqa: E402
+from asi import results as D  # noqa: E402
 
 NARRATIVE_DIR = Path("narrative/countries")
 STATE_FILE = Path("narrative/state.yaml")
