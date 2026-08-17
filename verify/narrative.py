@@ -266,6 +266,48 @@ def check_claims(records: dict[str, dict], scores: pd.DataFrame,
     return problems
 
 
+def check_indicator_phrases(observations: pd.DataFrame, year: int) -> list[str]:
+    """
+    Every prefix in INDICATOR_PHRASES must still match exactly one indicator.
+
+    `check_quoted_values` compares a number in prose against the panel by
+    resolving a phrase to a `display_name` prefix, and its `measured()` helper
+    returns None whenever a prefix matches zero or more than one series. That is
+    the right behaviour for a single lookup and the wrong thing to leave
+    unwatched: a display-name edit in the registry silently turns the check off
+    for that indicator, and the corpus keeps passing while nothing is comparing
+    its figures any more.
+
+    The failure is invisible from the outside — quoted-value checking reports
+    "no errors" either way. So the mapping itself is verified rather than
+    assumed. Both directions matter: a prefix that matches nothing has gone
+    stale, and one that matches several has become ambiguous, which is how
+    "intentional homicide" once compared prose against the female-specific
+    series instead.
+    """
+    problems: list[str] = []
+    names = set(observations[observations["year"] == year]["display_name"]
+                .dropna().astype(str))
+    if not names:
+        return [f"[warning] no observations at {year}; indicator phrases unchecked"]
+
+    for phrase, prefix in sorted(INDICATOR_PHRASES.items()):
+        hits = sorted(n for n in names if n.startswith(prefix))
+        if len(hits) == 1:
+            continue
+        if not hits:
+            problems.append(
+                f"[error] INDICATOR_PHRASES: {phrase!r} -> {prefix!r} matches no "
+                f"published display_name. The quoted-value check is silently "
+                f"disabled for this indicator.")
+        else:
+            problems.append(
+                f"[error] INDICATOR_PHRASES: {phrase!r} -> {prefix!r} matches "
+                f"{len(hits)} series ({', '.join(hits)}). An ambiguous prefix "
+                f"compares prose against whichever one sorts first.")
+    return problems
+
+
 def check_panel_citations(records: dict[str, dict], year: int) -> list[str]:
     """
     The index may stand as a pillar's source, but only for what the index says.
@@ -597,6 +639,7 @@ def all_checks(records: dict[str, dict], scores: pd.DataFrame,
     """
     return (check_claims(records, scores, year)
             + check_quoted_values(records, observations, year)
+            + check_indicator_phrases(observations, year)
             + check_panel_citations(records, year)
             + check_internal(records, names)
             + check_citation_linkage(records))

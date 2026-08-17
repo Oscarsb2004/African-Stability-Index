@@ -19,6 +19,7 @@ import re
 import sys
 from pathlib import Path
 
+import pandas as pd
 import pytest
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -488,3 +489,47 @@ def test_verify_layer_catches_an_index_only_citation_covering_an_outside_claim(p
                    "pillars": {"A": {"summary": CONTEXTUAL, "citations": [PANEL_CITATION]}}}}
     out = verify_narrative.check_panel_citations(rec, panel.reference_year)
     assert out and "needs a real source" in out[0]
+
+
+# ── INDICATOR_PHRASES stays wired to the panel ─────────────────────────────────
+
+def _obs(*display_names, year=2023):
+    return pd.DataFrame({"year": [year] * len(display_names),
+                         "display_name": list(display_names)})
+
+
+def test_every_shipped_phrase_resolves_to_exactly_one_series(observations, panel):
+    """
+    The mapping the quoted-value check depends on, verified rather than assumed.
+
+    `measured()` returns None when a prefix matches zero or several series, so a
+    display-name edit switches quoted-value checking off for that indicator and
+    the corpus keeps reporting no errors. The failure is invisible from outside.
+    """
+    problems = VN.check_indicator_phrases(observations, panel.reference_year)
+    assert not [p for p in problems if p.startswith("[error]")], "\n".join(problems)
+
+
+def test_a_prefix_that_matches_nothing_is_an_error():
+    """A renamed series leaves the phrase pointing at a name that no longer exists."""
+    obs = _obs("Something Else Entirely")
+    problems = VN.check_indicator_phrases(obs, 2023)
+    assert any("matches no published display_name" in p for p in problems)
+
+
+def test_a_prefix_that_matches_several_series_is_an_error():
+    """
+    Ambiguity is the failure that already happened once: matching "intentional
+    homicide" loosely also hits the female-specific series, and the check
+    compared prose against whichever sorted first.
+    """
+    obs = _obs("Intentional homicides (per 100,000 people)",
+               "Intentional homicides (per 100,000 female)")
+    problems = VN.check_indicator_phrases(obs, 2023)
+    assert any("matches 2 series" in p for p in problems)
+
+
+def test_a_year_with_no_observations_warns_rather_than_passing_silently():
+    """Zero matches for every phrase is not evidence that every phrase is fine."""
+    problems = VN.check_indicator_phrases(_obs("GDP per capita", year=2000), 2023)
+    assert problems and all(p.startswith("[warning]") for p in problems)
