@@ -20,7 +20,6 @@ without a decision only you can make.
 
 | ID | Title | Effort | Human? | Depends on | Source |
 |---|---|---:|:---:|---|---|
-| **B01** | Make the contract checks fail on what they were written to catch | 6 | no | — | ITERATION_PLAN 0.1 (ASI-01) |
 | **B02** | Unit-test the scoring arithmetic; verify the geometric composite | 10 | no | — | ITERATION_PLAN 0.2 (ASI-04) |
 | **B03** | Enforce verification independence; rename the results layer | 5 | no | — | ITERATION_PLAN 0.4 (ASI-13) |
 | **B04** | Collapse the two divergent narrative validators into one | 6 | no | — | ITERATION_PLAN 0.5 (ASI-12) |
@@ -60,13 +59,13 @@ without a decision only you can make.
 | **B38** | Confirm the aggregation window for each indicator | 2 | **yes** | — | MANUAL_REVIEW T3 |
 | **B39** | Pull the AUDIT limb forward for a sample | 4 | **yes** | — | ITERATION_PLAN 4.4 · MANUAL_REVIEW T4 |
 | **B40** | Version the narrative schema and build a migration path | 12 | **yes** | — | ITERATION_PLAN 4.2 (ASI-10) · state.yaml proposals 2+3 |
-| **B41** | Key every path and singleton on the region profile | 20–30 | **yes** | B01 | ITERATION_PLAN 4.1 (ASI-06) |
+| **B41** | Key every path and singleton on the region profile | 20–30 | **yes** | — (B01 done) | ITERATION_PLAN 4.1 (ASI-06) |
 | **B42** | Split the narrative journal from the work queue | 5 | **yes** | — | ITERATION_PLAN 4.3 (ASI-19) |
 | **B43** | Surface `robustness.json` in the Methodology tab | 2 | no | B09 | ITERATION_PLAN 5.4 |
 | **B44** | Drop `dash_bootstrap_components` | 1 | no | — | ITERATION_PLAN 5.5 |
 | **B45** | Add URL routing | 6 | no | — | ITERATION_PLAN 5.3 |
 | **B46** | Accessibility and legibility | 14 | **yes** | — | ITERATION_PLAN 5.2 |
-| **B47** | Decompose `app.py` | 16 | no | B01 | ITERATION_PLAN 5.1 |
+| **B47** | Decompose `app.py` | 16 | no | — (B01 done) | ITERATION_PLAN 5.1 |
 | **B48** | Work the 54 per-country EXPAND queues | ~1.5 each | no | — | `narrative/countries/*.yaml` `meta.next_action` |
 | **B49** | Cross-record consistency sweep of the paired threads | 4 | no | — | LEDGER meta-notes (9 flagged pairs) |
 | **B50** | Audit `context/colonial_history.yaml` | 3 | no | — | MANUAL_REVIEW T4 |
@@ -78,9 +77,9 @@ without a decision only you can make.
 **Carried dependency logic.** `ITERATION_PLAN` Stage 0 blocks Stages 2, 4 and 5. That is
 B01–B06 blocking B16–B23 (Stage 2), B39–B42 (Stage 4) and B43–B47 (Stage 5). The table records
 the specific edges the plan states — B02 gates every Stage 2 item because those edit the
-arithmetic it puts under test, and B01 gates B41 and B47 because both move code into
-subdirectories the contract checks cannot currently see. Do not start a Stage 2, 4 or 5 item
-with Stage 0 unfinished.
+arithmetic it puts under test. B01 gated B41 and B47, which move code into subdirectories the
+contract checks could not see; **B01 is done** (`7ba8cb7`), so that edge is released and the
+checks now recurse. Do not start a Stage 2, 4 or 5 item with the rest of Stage 0 unfinished.
 
 ---
 
@@ -731,9 +730,10 @@ second region exists, not during it.*
 > holding theme constants, components, figures, all views and all callbacks. Split
 > it into `theme.py`, `components.py`, `figures.py`, `views/` and `callbacks.py`,
 > and move `view_methodology`'s ~140 lines of English prose into Markdown files
-> the module reads. **Run B01 first**: `verify/contract.py:140` uses
+> the module reads. B01 cleared the way for this: `verify/contract.py` used
 > `UI_DIR.glob("*.py")` rather than `rglob`, so moving views into a subdirectory
-> today silently disarms all three contract checks. Done looks like: no module
+> would have silently disarmed all three contract checks. It recurses now, and
+> `tests/test_verify_contract.py` holds it to that. Done looks like: no module
 > over ~300 lines, the contract checks still see every file, and the full test
 > suite green with no view behaviour changed.
 
@@ -891,6 +891,7 @@ not against a checkbox.
 | **D05** | Reserved `panel` citation id — a pillar summary that is pure index output may cite the index itself, valid only inside pillars and only for the measured year. 71 filler citations migrated; general-history-only pillar sourcing fell from 21% to 2%. Closes the first `pending_format_proposals` entry. | `836cfbf`; `PANEL_CITATION` at `asi/narrative/schema.py:120`, enforced in `schema.py` and restated in `verify/narrative.py`, documented in `narrative/BLUEPRINT.md` |
 | **D06** | 746 unearned `verified: true` flags reset. `verified` means an AUDIT run opened the source; no record has passed iteration 1, so none had earned it. | `ea52845`; zero `verified: true` remain across all 54 files in `narrative/countries/` |
 | **D07** | First citation-support audit — stratified sample of non-Wikipedia citations behind figure-bearing claims. Found the failure is structural (a schema rule), not 76 separate lapses. Reported as an advisory metric, not a gate. | `809b524`; `verify/narrative.py` |
+| **D08** | Contract section 2 could not catch most of what it describes. `_ui_files()` used `glob` not `rglob`, so a `views/` package — the next scheduled refactor — would have switched the layer off silently. 2.1's regex missed five of eight probe strings including the live `54 of 55 AU member states`; 2.2 missed four of five; 2.3 grepped substrings and flagged its own docstring. | `7ba8cb7`; `verify/contract.py` sections 2.1–2.3 rewritten, `tests/test_verify_contract.py` (31 fixtures, discriminating against the old logic), live offender at `asi/dashboard/app.py:1019` derived from `EXCLUDED_AU_MEMBERS` |
 
 *A regex bug found during D05 is worth remembering: a `\b` written through a heredoc
 became a literal backspace byte, so the year check silently matched nothing and passed
