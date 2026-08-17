@@ -20,7 +20,6 @@ without a decision only you can make.
 
 | ID | Title | Effort | Human? | Depends on | Source |
 |---|---|---:|:---:|---|---|
-| **B02** | Unit-test the scoring arithmetic; verify the geometric composite | 10 | no | — | ITERATION_PLAN 0.2 (ASI-04) |
 | **B03** | Enforce verification independence; rename the results layer | 5 | no | — | ITERATION_PLAN 0.4 (ASI-13) |
 | **B04** | Collapse the two divergent narrative validators into one | 6 | no | — | ITERATION_PLAN 0.5 (ASI-12) |
 | **B05** | Test and verify the five hardest indicator paths | 8 | no | — | ITERATION_PLAN 0.3 (ASI-05) |
@@ -34,13 +33,13 @@ without a decision only you can make.
 | **B13** | Stop the country page reporting a continental rank as "in scope" | 3 | **yes** | — | ITERATION_PLAN 1.5 (ASI-02) |
 | **B14** | Make documentation describe the code that exists | 4 | no | — | ITERATION_PLAN 1.4 (ASI-16, D8) |
 | **B15** | Delete the shadow registry and the dead weight | 3 | **yes** | — | ITERATION_PLAN 1.8 (ASI-11/17) |
-| **B16** | Decide what an `unreliable` pillar does to the composite | 6 | **yes** | B02 | ITERATION_PLAN 2.1 (D1) |
-| **B17** | Resolve what Pillar F measures | 3 / 20–30 | **yes** | B02 | ITERATION_PLAN 2.3 (D3) |
-| **B18** | Collapse the WGI family and remove cross-listing | 4 / +15 | **yes** | B02 | ITERATION_PLAN 2.4 (D4) |
-| **B19** | Re-anchor goalposts that rest on imputed extremes | 6 | **yes** | B02 | ITERATION_PLAN 2.5 (U1) · MANUAL_REVIEW 1 |
-| **B20** | Publish rank intervals instead of point ranks | 12 | **yes** | B02 | ITERATION_PLAN 2.2 (D2) |
-| **B21** | State or replace the missing-data assumption | 2 / 10 | **yes** | B02 | ITERATION_PLAN 2.6 (U3) |
-| **B22** | Re-derive the log-transform flags under an explicit rule | 3 | **yes** | B02 | MANUAL_REVIEW 4 · ROADMAP P1d · METHODOLOGY_REVIEW C8 |
+| **B16** | Decide what an `unreliable` pillar does to the composite | 6 | **yes** | — (B02 done) | ITERATION_PLAN 2.1 (D1) |
+| **B17** | Resolve what Pillar F measures | 3 / 20–30 | **yes** | — (B02 done) | ITERATION_PLAN 2.3 (D3) |
+| **B18** | Collapse the WGI family and remove cross-listing | 4 / +15 | **yes** | — (B02 done) | ITERATION_PLAN 2.4 (D4) |
+| **B19** | Re-anchor goalposts that rest on imputed extremes | 6 | **yes** | — (B02 done) | ITERATION_PLAN 2.5 (U1) · MANUAL_REVIEW 1 |
+| **B20** | Publish rank intervals instead of point ranks | 12 | **yes** | — (B02 done) | ITERATION_PLAN 2.2 (D2) |
+| **B21** | State or replace the missing-data assumption | 2 / 10 | **yes** | — (B02 done) | ITERATION_PLAN 2.6 (U3) |
+| **B22** | Re-derive the log-transform flags under an explicit rule | 3 | **yes** | — (B02 done) | MANUAL_REVIEW 4 · ROADMAP P1d · METHODOLOGY_REVIEW C8 |
 | **B23** | Spot-check the reliability thresholds | 2 | **yes** | B16 | MANUAL_REVIEW 5 |
 | **B24** | Add per-pillar Cronbach's α to `verify/advisory.py` | 1 | no | — | ITERATION_PLAN 3.2 · ROADMAP P3a |
 | **B25** | Publish a per-pillar imputation table | 2 | no | — | ITERATION_PLAN 3.3 |
@@ -76,10 +75,11 @@ without a decision only you can make.
 
 **Carried dependency logic.** `ITERATION_PLAN` Stage 0 blocks Stages 2, 4 and 5. That is
 B01–B06 blocking B16–B23 (Stage 2), B39–B42 (Stage 4) and B43–B47 (Stage 5). The table records
-the specific edges the plan states — B02 gates every Stage 2 item because those edit the
-arithmetic it puts under test. B01 gated B41 and B47, which move code into subdirectories the
-contract checks could not see; **B01 is done** (`7ba8cb7`), so that edge is released and the
-checks now recurse. Do not start a Stage 2, 4 or 5 item with the rest of Stage 0 unfinished.
+the specific edges the plan states. Both are now released. **B01 is done** (`7ba8cb7`): it
+gated B41 and B47, which move code into subdirectories the contract checks could not see, and
+those checks now recurse. **B02 is done** (`d6a316d`): it gated every Stage 2 item because
+those edit arithmetic that had no tests, and that arithmetic is now covered and
+mutation-checked. Stage 0 still has B03–B06 open; finish them before Stage 4 or 5.
 
 ---
 
@@ -860,7 +860,7 @@ names in two or more sources.
 | Cronbach's α on raw mixed-polarity values | METHODOLOGY_REVIEW A4 + C9 · ROADMAP Phase 3a · ITERATION_PLAN 3.2 | **B24** |
 | Log-transform flags never derived from the stated rule | MANUAL_REVIEW 4 · ROADMAP Phase 1d · METHODOLOGY_REVIEW C8 + A5 | **B22** |
 | Staleness hidden by `most_recent` / never-measured indicators | MANUAL_REVIEW 11 · METHODOLOGY_REVIEW C5 · ROADMAP Phase 4a | **B36**, with the median-data-year display in **B32** |
-| Benefit-of-the-Doubt documented but nonexistent | ITERATION_PLAN 1.3 (D8) · ITERATION_PLAN 0.2 (ASI-04, reports on it) · ITERATION_PLAN 5.x docstring claims · METHODOLOGY_REVIEW B | **B11** (B02 reports, B11 decides and removes) |
+| Benefit-of-the-Doubt documented but nonexistent | ITERATION_PLAN 1.3 (D8) · ITERATION_PLAN 0.2 (ASI-04, reports on it) · ITERATION_PLAN 5.x docstring claims · METHODOLOGY_REVIEW B | **B11** (B02 reported it in `d6a316d`; B11 decides and removes) |
 | Documentation describes a retired architecture | ITERATION_PLAN 1.4 (ASI-16) · METHODOLOGY_REVIEW B · references.md:296-320 (cites three nonexistent stage files) | **B14**, with the full METHODOLOGY_REVIEW rewrite as **B29** |
 | External validation against peer indices | ROADMAP Phase 5 · METHODOLOGY_REVIEW A9 · `verify/advisory.py:29` hardcoded IIAG sets (flagged by ITERATION_PLAN 0.4) | **B31** |
 | Cross-pillar redundancy check | ROADMAP Phase 3d · METHODOLOGY_REVIEW C7 | **D14** — already implemented at `verify/advisory.py:104` |
@@ -892,6 +892,7 @@ not against a checkbox.
 | **D06** | 746 unearned `verified: true` flags reset. `verified` means an AUDIT run opened the source; no record has passed iteration 1, so none had earned it. | `ea52845`; zero `verified: true` remain across all 54 files in `narrative/countries/` |
 | **D07** | First citation-support audit — stratified sample of non-Wikipedia citations behind figure-bearing claims. Found the failure is structural (a schema rule), not 76 separate lapses. Reported as an advisory metric, not a gate. | `809b524`; `verify/narrative.py` |
 | **D08** | Contract section 2 could not catch most of what it describes. `_ui_files()` used `glob` not `rglob`, so a `views/` package — the next scheduled refactor — would have switched the layer off silently. 2.1's regex missed five of eight probe strings including the live `54 of 55 AU member states`; 2.2 missed four of five; 2.3 grepped substrings and flagged its own docstring. | `7ba8cb7`; `verify/contract.py` sections 2.1–2.3 rewritten, `tests/test_verify_contract.py` (31 fixtures, discriminating against the old logic), live offender at `asi/dashboard/app.py:1019` derived from `EXCLUDED_AU_MEMBERS` |
+| **D09** | A quarter of published composites were verified by nothing — `check_composites` looped over equal/pca/entropy while `composites.csv` carries 5,400 rows across four methods. A +40 corruption on a geometric row passed; the same on an equal row failed. Also: no test had ever imported `asi.pipeline.score` or `asi.pipeline.goalposts`. | `d6a316d`; `check_geometric_composite` in `verify/panel.py` re-derives by product-and-root (pipeline uses exp-mean-log), 1,350 rows reconcile; `tests/test_score.py` + `tests/test_goalposts.py` (37 tests); four mutations introduced and all four caught |
 
 *A regex bug found during D05 is worth remembering: a `\b` written through a heredoc
 became a literal backspace byte, so the year check silently matched nothing and passed
