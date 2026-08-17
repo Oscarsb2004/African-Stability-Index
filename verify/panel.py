@@ -31,7 +31,7 @@ import yaml
 from asi.core.constants import (
     PANEL_START, DEFAULT_MAX_CARRY_FORWARD, MIN_REGIONAL_SAMPLE,
     RELIABILITY_RELIABLE_AT, RELIABILITY_THIN_AT, RELIABILITY_MAX_IMPUTED,
-    PILLAR_DEFS, DISPLAY_DECIMALS,
+    PILLAR_DEFS, DISPLAY_DECIMALS, SMALL,
 )
 
 PANEL_DIR      = _REPO / "data" / "panel"
@@ -311,6 +311,51 @@ def check_composites(pil: pd.DataFrame, comp: pd.DataFrame) -> None:
                f"{n} composite scores reconcile with the frozen weights")
 
 
+def check_geometric_composite(pil: pd.DataFrame, comp: pd.DataFrame) -> None:
+    """
+    The fourth published method, previously re-derived by nothing.
+
+    check_composites loops over equal, pca and entropy only, so a quarter of
+    every published composite row crossed the gate unexamined. Adding 40 points
+    to a geometric score and re-running the suite passed; the same corruption on
+    an equal-weight row failed.
+
+    Independence here is arithmetic as well as structural. The pipeline computes
+    exp(mean(ln x)); this takes the product and its n-th root. Same definition,
+    different path — a transcription slip in either surfaces as disagreement
+    rather than as two copies of one mistake. Scores are floored at SMALL for the
+    same reason the pipeline floors them: a pillar at zero would otherwise send
+    the whole composite to zero via ln(0).
+    """
+    wide = pil.pivot_table(index=["iso3", "year"], columns="pillar_id",
+                           values="score", aggfunc="first")
+    pillars = [p for p in PILLAR_DEFS if p in wide.columns]
+
+    bad, n = [], 0
+    for r in comp[comp["method"] == "geometric"].itertuples():
+        key = (r.iso3, r.year)
+        if key not in wide.index:
+            continue
+        row = wide.loc[key]
+        vals = np.array([row[p] for p in pillars], dtype=float)
+        vals = vals[~np.isnan(vals)]
+        if vals.size == 0:
+            continue
+        floored = np.maximum(vals, SMALL)
+        expected = round(float(np.prod(floored) ** (1.0 / floored.size)),
+                         DISPLAY_DECIMALS)
+        n += 1
+        if pd.notna(r.score) and abs(expected - float(r.score)) > 10 ** -DISPLAY_DECIMALS:
+            bad.append(f"{r.iso3}/geometric/{int(r.year)}: "
+                       f"expected={expected} actual={r.score}")
+
+    if bad:
+        record("4.3 geometric composite", "FAIL", f"{len(bad)}/{n} mismatches", bad)
+    else:
+        record("4.3 geometric composite", "PASS",
+               f"{n} geometric scores reconcile by product-and-root")
+
+
 def check_ranks_only_where_displayable(comp: pd.DataFrame) -> None:
     """An unreliable score must not carry a rank: ranking implies a claim."""
     ranked_bad = comp[comp["rank"].notna() & ~comp["reliability"].isin(["reliable", "thin"])]
@@ -356,6 +401,7 @@ def run() -> int:
     check_pillar_scores(obs, pil, registry)
     check_composites(pil, comp)
     check_ranks_only_where_displayable(comp)
+    check_geometric_composite(pil, comp)
 
     n_fail = sum(1 for c in CHECKS if c["status"] == "FAIL")
     n_warn = sum(1 for c in CHECKS if c["status"] == "WARN")
