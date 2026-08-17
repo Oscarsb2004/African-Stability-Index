@@ -1303,15 +1303,15 @@ countries:
       gained coverage'
 backlog: {}
 pending_format_proposals:
-- 'Schema requires >=1 citation per written pillar, but 210 of 317 pillar
-  summaries are index-only (score, coverage count, tier) and rest on the panel
-  rather than any source. The requirement is met by attaching whatever citation
-  is handy: 76 of 317 written pillars (24%) are sourced only to a general
-  history or colonial-era article, concentrated in D/G/F/E and almost absent
-  from A. Options: make the requirement conditional on a non-index claim; allow
-  a pillar to cite the panel itself; or relabel pillar citations as further
-  reading rather than evidence. Raised during the first citation-support audit
-  (2026-08-13), not applied.'
+- 'Schema requires >=1 citation per written pillar, but 210 of 317 pillar
+  summaries are index-only (score, coverage count, tier) and rest on the panel
+  rather than any source. The requirement is met by attaching whatever citation
+  is handy: 76 of 317 written pillars (24%) are sourced only to a general
+  history or colonial-era article, concentrated in D/G/F/E and almost absent
+  from A. Options: make the requirement conditional on a non-index claim; allow
+  a pillar to cite the panel itself; or relabel pillar citations as further
+  reading rather than evidence. Raised during the first citation-support audit
+  (2026-08-13), not applied.'
 - asi/narrative/schema.py validate() checks historical.overview_citations and key_periods[].citations
   but has no check for a colonial_legacy_citations field, even though colonial_legacy is a
   substantial prose block making citable claims. Consider adding the same check_refs() call
