@@ -22,7 +22,6 @@ Things that are not defects — what goes stale, what needs a decision from the 
 
 | ID | Title | Effort | Human? | Depends on | Source |
 |---|---|---:|:---:|---|---|
-| **B06** | Add content assertions to the view tests; drop the count pins | 8 | no | — | ITERATION_PLAN 0.6 (ASI-18) |
 | **B07** | Restore TLS verification on the data pull; manifest the baseline | 3 | **yes** | — | ITERATION_PLAN "Out of band" |
 | **B08** | Stop `02_panel.py` silently re-anchoring frozen goalposts | 1 | no | — | ITERATION_PLAN 1.7 (ASI-15) |
 | **B09** | Repair the robustness stage's sampler and verdict | 2 | no | — | ITERATION_PLAN 1.1 (D6) |
@@ -81,7 +80,9 @@ those edit arithmetic that had no tests, and that arithmetic is now covered and
 mutation-checked. **B03 is done** (`f3ef6f9`): it gated B39–B42, whose whole subject is
 comparing this index against outside benchmarks — a benchmark layer that loads the panel
 through the interface's own loader is comparing the index against a filtered view of itself.
-**B04 is done** (`8704853`): the narrative corpus now has one validator rather than two disagreeing ones. **B05 is done** (`40e362a`): every scoring indicator now has a re-derivation path, so Stage 2's arithmetic edits land on a panel that is checked rather than assumed. Stage 0 still has B06 open; finish it before Stage 4 or 5.
+**B04 is done** (`8704853`): the narrative corpus now has one validator rather than two disagreeing ones. **B05 is done** (`40e362a`): every scoring indicator now has a re-derivation path, so Stage 2's arithmetic edits land on a panel that is checked rather than assumed. **B06 is done** (`1e7b9f7`, `82495ba`): the view tests can now fail, which is what Stages 4 and 5 need before they start moving view code into subdirectories.
+
+**Stage 0 is complete.** Stages 2, 4 and 5 are unblocked; every remaining dependency edge in the table is released.
 
 ---
 
@@ -117,21 +118,6 @@ through the interface's own loader is comparing the index against a filtered vie
 > `verify/panel.py` to re-derive the geometric composite independently. Report —
 > do not decide — whether Benefit-of-the-Doubt should be implemented or removed
 > from `asi/dashboard/app.py:52`, `requirements-pipeline.txt` and the docstrings.
-
-### B06 — Add content assertions to the view tests; drop the count pins
-
-> In `F:\Code\African Stability Index`, 118 of 302 tests are parametrized
-> `assert view(...) is not None`, which cannot fail unless an exception is raised
-> (confirm with `pytest --collect-only -q`). Those 54 country-view tests all pass
-> while `view_country` renders a false rank label. Add content assertions in
-> `tests/test_dashboard_views.py`: the rank rendered on a country page equals
-> `D.rankings()`'s `scope_rank` for the active grouping; a greyed pillar card
-> renders "—" plus a stated reason; each tier badge matches `pillar_scores.csv`.
-> Replace the hardcoded counts at `tests/test_registry.py:21,108,109` (54 countries,
-> 32 indicators) with structural invariants that survive adding a country or an
-> indicator. Add a check in `verify/narrative.py` that every prefix in
-> `INDICATOR_PHRASES` (line 102) resolves to exactly one `display_name`, so a
-> display-name edit cannot silently disable the quoted-value check.
 
 ### B07 — Restore TLS verification on the data pull; manifest the baseline
 
@@ -858,6 +844,7 @@ not against a checkbox.
 | **D09** | A quarter of published composites were verified by nothing — `check_composites` looped over equal/pca/entropy while `composites.csv` carries 5,400 rows across four methods. A +40 corruption on a geometric row passed; the same on an equal row failed. Also: no test had ever imported `asi.pipeline.score` or `asi.pipeline.goalposts`. | `d6a316d`; `check_geometric_composite` in `verify/panel.py` re-derives by product-and-root (pipeline uses exp-mean-log), 1,350 rows reconcile; `tests/test_score.py` + `tests/test_goalposts.py` (37 tests); four mutations introduced and all four caught |
 | **D10** | `verify/advisory.py` imported `asi.dashboard.data` — the loader the interface uses — breaking the rule `README` and `verify/__init__.py` both state. A filter added to that loader would have narrowed what the diagnostics saw without changing a line of `advisory.py`. The rule was documentation only. | `f3ef6f9`; `asi/dashboard/data.py` → `asi/results.py` with eight importers repointed, `verify/advisory.py` reads `data/panel/` directly (frames verified identical), `tests/test_verify_independence.py` AST-scans `verify/*.py` and permits only `asi.core.constants`; contract 2.3 loses its `data.py` filename exemption; three mutations introduced and all three caught |
 | **D12** | `verify/panel.py` re-derived 27 of 32 scoring indicators. The five it skipped — `displaced_persons`, `gdp_growth_3yr_avg`, `inflation_5yr_avg`, `primary_gpi`, `secondary_gpi` — were 15.6% of cells and effectively all of the panel's arithmetic, while the README claimed re-derivation of the whole panel. Found a live bug: `apply_derived` pivots to reach population as a denominator, and `pivot_table` omits an all-NaN column, so a population series that failed to pull for the whole panel would skip the conversion in silence and leave raw head-counts in a per-thousand column. | `40e362a`; checks 1.4 (`.rolling()`, 2,569 cells), 1.5 (`min(x, 2-x)`, 2,346 cells) and 1.6 (IDP/population, 747 cells) in `verify/panel.py`; `dropna=False` fix in `asi/pipeline/panel.py` (published panel unaffected — population is non-null in all 1,350 cells); `tests/test_panel_derived.py` (28 tests); coverage restated as 38,276 of 43,200 cells (88.6%), remainder regional-mean by construction |
+| **D13** | 118 test cases asserted only `view(...) is not None`. A Dash view returns a component tree or raises — it never returns None — so they could only fail on an exception, and 54 country-view tests passed while the page rendered a continental rank labelled "in scope". `test_registry.py` pinned counts (54 countries, 32 indicators), which is a second place to write a number rather than a check. | `1e7b9f7` + `82495ba`; view tests now read the rendered tree per pillar card and compare against `data/panel/*.csv`; the rank defect recorded as a strict xfail pointing at B13; count pins replaced by cross-source agreement with `bundle.json` and `COUNTRIES + EXCLUDED_AU_MEMBERS == 55`; `check_indicator_phrases` in `verify/narrative.py` holds all 17 prefixes to exactly one `display_name`; six mutations introduced, two survived the first attempt and were fixed, all six caught |
 | **D11** | Two narrative validators, already drifted in both directions. `scripts/narrative_check.py` had a duplicate-URL check the gate lacked; `verify/narrative.py` had quoted-value, name-drift, future-date and membership-span checks the script lacked. The tests covered the script — the copy that does not gate a release — and the gating copy had none. | `8704853`; `all_checks()` in `verify/narrative.py` is the single implementation, `scripts/narrative_check.py` reduced to a thin caller keeping only `--links` and the coverage report, script's duplicate-URL check moved in as `check_citation_linkage`; both routes assert an identical 40-finding set on the shipped corpus; three mutations introduced and all three caught |
 
 *A regex bug found during D05 is worth remembering: a `\b` written through a heredoc

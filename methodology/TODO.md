@@ -16,6 +16,7 @@ Last reviewed: 2026-08-17.
 | U2 | **Decide Benefit-of-the-Doubt** (BACKLOG B11). It is labelled in `asi/dashboard/app.py:52`, justified by `WEIGHT_MIN`/`WEIGHT_MAX`, listed in `asi/core/schema.py:319`, pulls `pulp` as a dependency, and `verify/__init__.py` claims to verify it — but no LP exists anywhere in the tree, and it is unreachable in the UI because the dropdown builds from `PANEL.methods`. Implement it, or remove all five traces. | Changes what the index publishes. | your call |
 | U3 | **TLS verification on the data pull** (BACKLOG B07). `01_pull.py:26-38` disables certificate verification process-wide while producing the frozen baseline the whole index is re-derived from. Needs to know whether the failure is a corporate proxy, a stale cert store, or something else. | Depends on your own network, which no agent can inspect. | 15 min |
 | U4 | **Four methodology decisions** (BACKLOG B16, B17, B18, B20): what an unreliable pillar does to the composite; what Pillar F actually measures; whether to collapse the WGI family; whether to publish rank intervals. | Each changes the published numbers. | your call |
+| U5 | **Country-page rank label** (BACKLOG B13, effort 3). The page renders the continental rank and labels it "in scope"; inside ECOWAS a country ranked #2 of 12 sees its continental position. Either pass the grouping into `view_country` or change the label. A strict xfail is already written and will start failing the build the moment it is fixed, so the note removes itself. | Which of the two the page should do is a product decision. | your call |
 
 ---
 
@@ -51,7 +52,7 @@ Last reviewed: 2026-08-17.
 | # | What | Status |
 |---|---|---|
 | K1 | `verify/panel.py` re-derives 38,276 of 43,200 scoring cells (88.6%). The remaining 11.4% are regional-mean estimates, which cannot be predicted from a country's own data by construction. | Closed by B05 — kept here because the 11.4% is a permanent property, not a gap to fill |
-| K2 | 9 parametrized assertion sites in `tests/` assert only `is not None` and cannot fail unless an exception is raised — 118 test cases when B06 was written. | BACKLOG B06 |
+| K2 | The country page shows a continental rank under the label "in scope". `view_country` takes no grouping argument, so it cannot know the scope. Recorded as a strict xfail in `tests/test_dashboard_views.py`. | BACKLOG B13 — needs your call: follow the grouping, or relabel it "continental" |
 | K3 | No LICENSE file — all rights reserved, by your decision. | Intentional |
 | K4 | `main` is 89 commits behind `phase-a-foundation` (as of 2026-08-17). | Intentional while the branch is the working line |
 | K5 | Local only, no public deployment. Security items in the backlog are written against a future public server, not today's setup. | Intentional |
