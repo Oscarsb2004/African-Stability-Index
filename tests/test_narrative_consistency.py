@@ -27,19 +27,18 @@ sys.path.insert(0, str(ROOT))
 from asi import results as D  # noqa: E402
 from verify import narrative as VN  # noqa: E402
 
+_spec = importlib.util.spec_from_file_location(
+    "narrative_check", ROOT / "scripts" / "narrative_check.py")
+narrative_check = importlib.util.module_from_spec(_spec)
+_spec.loader.exec_module(narrative_check)
 
-def check_consistency(records, panel):
-    """
-    The gating implementation, called the way the authoring script calls it.
-
-    These tests used to load `scripts/narrative_check.py` and exercise its own
-    copy of this logic — the copy that does not gate a release. The gating copy
-    had no tests at all, so every assertion below was being made about the wrong
-    implementation, and the two had already drifted apart in both directions.
-    """
-    names = {iso3: c.get("name", iso3) for iso3, c in panel.countries.items()}
-    return VN.all_checks(records, panel.pillar_scores, panel.observations,
-                         panel.reference_year, names)
+#: The authoring script's entry point, which since B04 is a thin call into
+#: `verify.narrative.all_checks`. Every rule test below therefore exercises the
+#: whole chain — script, all_checks, and the individual gating check — rather
+#: than any one link. Calling `all_checks` directly here instead would have been
+#: a third copy of the wiring, and a mutation that made the script call only
+#: `check_claims` passed a version of this file that did exactly that.
+check_consistency = narrative_check.check_consistency
 
 
 def _pillar_ranking(panel, iso3: str) -> list[str]:
