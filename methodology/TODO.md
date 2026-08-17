@@ -50,8 +50,8 @@ Last reviewed: 2026-08-17.
 
 | # | What | Status |
 |---|---|---|
-| K1 | `verify/panel.py` excludes 5 of 33 indicators from re-derivation — the rolling-mean, transformed and derived ones. The README's "independent re-derivation of the whole panel" is true of 85% of cells. | BACKLOG B05; the README claim is corrected as part of it |
-| K2 | 13 parametrized assertion sites in `tests/` assert only `is not None` and cannot fail unless an exception is raised — 118 test cases when B06 was written. | BACKLOG B06 |
+| K1 | `verify/panel.py` re-derives 38,276 of 43,200 scoring cells (88.6%). The remaining 11.4% are regional-mean estimates, which cannot be predicted from a country's own data by construction. | Closed by B05 — kept here because the 11.4% is a permanent property, not a gap to fill |
+| K2 | 9 parametrized assertion sites in `tests/` assert only `is not None` and cannot fail unless an exception is raised — 118 test cases when B06 was written. | BACKLOG B06 |
 | K3 | No LICENSE file — all rights reserved, by your decision. | Intentional |
 | K4 | `main` is 89 commits behind `phase-a-foundation` (as of 2026-08-17). | Intentional while the branch is the working line |
 | K5 | Local only, no public deployment. Security items in the backlog are written against a future public server, not today's setup. | Intentional |
