@@ -77,6 +77,40 @@ def _rendered(iso3, year=None):
     return view_country(iso3, LENS, year if year is not None else YEAR)
 
 
+def _pillar_card(page, pillar_id):
+    """
+    One pillar's card, isolated from the rest of the page.
+
+    Asserting against the whole page is too coarse to be useful here: an em dash
+    appears in the headline, in the prose marker on every card, and on any other
+    greyed pillar, so "a dash is somewhere on the page" is satisfied even when
+    the card under test is showing a number it should not. A mutation that
+    rendered untrustworthy pillar scores passed the page-level version of these
+    tests untouched.
+    """
+    for node in _walk(page):
+        ident = getattr(node, "id", None)
+        if (isinstance(ident, dict) and ident.get("type") == "pillar-btn"
+                and ident.get("index") == pillar_id):
+            return node
+    return None
+
+
+#: The tier vocabulary, re-stated rather than imported.
+#:
+#: Reading `TIER_STYLE` to build the expectation makes the test agree with any
+#: rename automatically — a mutation changing "Measured" to "Verified" passed.
+#: These four strings are what the interface promises a reader, so changing one
+#: should require a deliberate edit here, the same reasoning `verify/` applies to
+#: every rule it restates instead of importing.
+EXPECTED_TIER_LABELS = {
+    "reliable":   "Measured",
+    "thin":       "Partly estimated",
+    "unreliable": "Too inferred to show",
+    "absent":     "No data",
+}
+
+
 def _published(iso3, year=None):
     """The composite row the page is supposed to be showing."""
     year = YEAR if year is None else year
@@ -205,13 +239,43 @@ def test_a_greyed_pillar_card_shows_a_dash_and_states_a_reason(iso3, pillar_id):
     A blank cell and an untrustworthy cell are different claims, and the page
     must not collapse them. The card renders an em dash instead of a figure, and
     a tooltip saying why — an unexplained grey box reads as a bug in the site.
-    """
-    page = _rendered(iso3)
-    assert "—" in _texts(page), f"{iso3}/{pillar_id}: no dash rendered for a greyed pillar"
 
-    reasons = " ".join(_titles(page)).lower()
+    The score must be absent from the card, not merely accompanied by a dash.
+    An interface that printed the untrustworthy number *and* a dash somewhere
+    else would satisfy the weaker phrasing while doing exactly what the tiers
+    exist to prevent.
+    """
+    card = _pillar_card(_rendered(iso3), pillar_id)
+    assert card is not None, f"{iso3}: no card rendered for pillar {pillar_id}"
+    texts = _texts(card)
+
+    assert "—" in texts, f"{iso3}/{pillar_id}: greyed card shows no dash"
+
+    pil = PANEL.pillar_scores
+    row = pil[(pil["iso3"] == iso3) & (pil["year"] == YEAR)
+              & (pil["pillar_id"] == pillar_id)]
+    if not row.empty and row.iloc[0]["score"] == row.iloc[0]["score"]:
+        hidden = f"{row.iloc[0]['score']:.1f}"
+        assert hidden not in texts, (
+            f"{iso3}/{pillar_id}: tier is "
+            f"{row.iloc[0]['reliability']!r} but the card shows {hidden}")
+
+    reasons = " ".join(_titles(card)).lower()
     assert ("inferred" in reasons or "no data available" in reasons), (
         f"{iso3}/{pillar_id}: no stated reason for the greyed card")
+
+
+def test_the_tier_vocabulary_is_what_the_interface_promises():
+    """
+    The four words a reader is shown, pinned independently of the code.
+
+    Renaming a badge is a change to what the site claims about its own data —
+    'Measured' and 'Verified' are different promises, and this project has never
+    verified a measurement. A test that derived its expectation from TIER_STYLE
+    would approve any rename silently.
+    """
+    actual = {tier: style[1] for tier, style in TIER_STYLE.items()}
+    assert actual == EXPECTED_TIER_LABELS
 
 
 @pytest.mark.parametrize("iso3", ISO3S[:14])
@@ -221,26 +285,52 @@ def test_every_tier_badge_matches_pillar_scores_csv(iso3):
     reading 'Measured' over an inferred number is the most direct way this
     interface could mislead, and nothing checked it.
     """
-    texts = _texts(_rendered(iso3))
+    page = _rendered(iso3)
     pil = PANEL.pillar_scores
     at_year = pil[(pil["iso3"] == iso3) & (pil["year"] == YEAR)].set_index("pillar_id")
 
     for pid in PILLAR_DEFS:
+        card = _pillar_card(page, pid)
+        assert card is not None, f"{iso3}: no card for pillar {pid}"
         tier = at_year.loc[pid, "reliability"] if pid in at_year.index else "absent"
-        label = TIER_STYLE.get(tier, TIER_STYLE["absent"])[1]
-        assert label in texts, (
-            f"{iso3}/{pid}: panel says {tier!r}, badge {label!r} not on the page")
+        label = EXPECTED_TIER_LABELS[tier]
+        assert label in _texts(card), (
+            f"{iso3}/{pid}: panel says {tier!r}, badge {label!r} not on the card")
 
 
 @pytest.mark.parametrize("iso3", ISO3S[:14])
 def test_a_displayable_pillar_renders_its_published_score(iso3):
-    page_texts = _texts(_rendered(iso3))
+    page = _rendered(iso3)
     pil = PANEL.pillar_scores
     at_year = pil[(pil["iso3"] == iso3) & (pil["year"] == YEAR)]
     shown = at_year[at_year["reliability"].isin(D.DISPLAYABLE) & at_year["score"].notna()]
     for r in shown.itertuples():
-        assert f"{r.score:.1f}" in page_texts, (
-            f"{iso3}/{r.pillar_id}: expected {r.score:.1f} on a card")
+        card = _pillar_card(page, r.pillar_id)
+        assert f"{r.score:.1f}" in _texts(card), (
+            f"{iso3}/{r.pillar_id}: expected {r.score:.1f} on its own card")
+
+
+@pytest.mark.parametrize("iso3", ISO3S[:14])
+def test_no_card_shows_a_score_the_tiers_forbid(iso3):
+    """
+    The complement of the test above, stated over every card at once.
+
+    Checked per card rather than per page: an em dash appears in the headline
+    and in the prose marker on every card, so page-level phrasings of this rule
+    are satisfied by dashes that have nothing to do with the pillar under test.
+    """
+    page = _rendered(iso3)
+    pil = PANEL.pillar_scores
+    at_year = pil[(pil["iso3"] == iso3) & (pil["year"] == YEAR)].set_index("pillar_id")
+
+    for pid in PILLAR_DEFS:
+        if pid not in at_year.index:
+            continue
+        row = at_year.loc[pid]
+        if row["reliability"] in D.DISPLAYABLE or row["score"] != row["score"]:
+            continue
+        assert f"{row['score']:.1f}" not in _texts(_pillar_card(page, pid)), (
+            f"{iso3}/{pid}: {row['reliability']!r} score is on the card anyway")
 
 
 # ── Pillar page ────────────────────────────────────────────────────────────────
