@@ -23,9 +23,6 @@ Things that are not defects — what goes stale, what needs a decision from the 
 | ID | Title | Effort | Human? | Depends on | Source |
 |---|---|---:|:---:|---|---|
 | **B07** | Restore TLS verification on the data pull; manifest the baseline | 3 | **yes** | — | ITERATION_PLAN "Out of band" |
-| **B08** | Stop `02_panel.py` silently re-anchoring frozen goalposts | 1 | no | — | ITERATION_PLAN 1.7 (ASI-15) |
-| **B09** | Repair the robustness stage's sampler and verdict | 2 | no | — | ITERATION_PLAN 1.1 (D6) |
-| **B10** | Fix the `measured_only` diagnostic to test what it claims | 3 | no | — | ITERATION_PLAN 1.2 (D7) |
 | **B11** | Strike the phantom Benefit-of-the-Doubt limb | 2 | **yes** | — | ITERATION_PLAN 1.3 (D8, ASI-04/17) |
 | **B12** | Make corpus loading fault-tolerant and imports side-effect-free | 4 | no | — | ITERATION_PLAN 1.6 (ASI-03) |
 | **B13** | Stop the country page reporting a continental rank as "in scope" | 3 | **yes** | — | ITERATION_PLAN 1.5 (ASI-02) |
@@ -82,7 +79,7 @@ comparing this index against outside benchmarks — a benchmark layer that loads
 through the interface's own loader is comparing the index against a filtered view of itself.
 **B04 is done** (`8704853`): the narrative corpus now has one validator rather than two disagreeing ones. **B05 is done** (`40e362a`): every scoring indicator now has a re-derivation path, so Stage 2's arithmetic edits land on a panel that is checked rather than assumed. **B06 is done** (`1e7b9f7`, `82495ba`): the view tests can now fail, which is what Stages 4 and 5 need before they start moving view code into subdirectories.
 
-**Stage 0 is complete.** Stages 2, 4 and 5 are unblocked; every remaining dependency edge in the table is released.
+**Stage 0 is complete.** Stages 2, 4 and 5 are unblocked; every remaining dependency edge in the table is released. **Stage 1's autonomous items (B08–B10) are also done** (`e5ae2dc`); B07 remains, and needs the maintainer's own network knowledge.
 
 ---
 
@@ -138,44 +135,6 @@ through the interface's own loader is comparing the index against a filtered vie
 > This needs the maintainer's own knowledge of the network. `verify/panel.py`
 > re-derives the entire published index from that baseline, so a substituted
 > baseline would reconcile perfectly through every downstream check.
-
-### B08 — Stop `02_panel.py` silently re-anchoring frozen goalposts
-
-> In `F:\Code\African Stability Index`, `asi/pipeline/goalposts.py:176` states it
-> raises when the goalposts file is absent because "silently recomputing defeats
-> the point" — but `02_panel.py:121` reads `if args.freeze_goalposts or not
-> GOALPOSTS_FILE.exists():`, so a deleted or gitignored `registry/goalposts.yaml`
-> silently re-anchors every historical score with no warning. Remove the implicit
-> regeneration branch. Fix the error message at `goalposts.py:180`, which tells the
-> user to run the retired `03_normalize.py`. Move the bare `0.80` reference-year
-> coverage threshold at `02_panel.py:224` into `asi/core/constants.py` as a named
-> constant.
-
-### B09 — Repair the robustness stage's sampler and verdict
-
-> In `F:\Code\African Stability Index`, `03_robustness.py:120-128` samples weights
-> via `rng.dirichlet(np.ones(7))` and rejects vectors outside `[WEIGHT_MIN,
-> WEIGHT_MAX]`; `data/panel/robustness.json` records that only 23 of 1000 draws
-> were accepted, so the published "robust" verdict rests on ~30 evaluations of a
-> 7-dimensional polytope. Replace the sampler with `w = 0.05 + 0.65 *
-> rng.dirichlet(np.ones(7))` plus a `w.max() <= 0.25` check (~30% acceptance),
-> raise `N_RANDOM_WEIGHTS` to 10000, and replace the single global verdict at
-> line 130 with a per-country statistic: the share of admissible weightings that
-> keep the country in its published quintile. The file currently reports
-> `verdict: robust` alongside `max_rank_shift: 29`.
-
-### B10 — Fix the `measured_only` diagnostic to test what it claims
-
-> In `F:\Code\African Stability Index`, the `measured_only` check at
-> `03_robustness.py:148` filters pillar scores to `reliability == "reliable"` and
-> claims to measure the effect of excluding estimated data. At the 2023 reference
-> year that filter leaves Pillar C with zero surviving countries, so it actually
-> deletes Pillar C for everyone and silently reweights the other six; its reported
-> `countries_no_longer_scoreable: 0` is an artifact of the renormalisation in
-> `asi/pipeline/score.py:136`. Rewrite it to work at cell level — rebuild
-> composites from `provenance == "observed"` scores only, using
-> `data/panel/observations.csv` — and report how many country-years fall below
-> `MIN_PILLARS_FOR_COMPOSITE` and how far ranks move.
 
 ### B11 — Strike the phantom Benefit-of-the-Doubt limb
 
@@ -845,6 +804,9 @@ not against a checkbox.
 | **D10** | `verify/advisory.py` imported `asi.dashboard.data` — the loader the interface uses — breaking the rule `README` and `verify/__init__.py` both state. A filter added to that loader would have narrowed what the diagnostics saw without changing a line of `advisory.py`. The rule was documentation only. | `f3ef6f9`; `asi/dashboard/data.py` → `asi/results.py` with eight importers repointed, `verify/advisory.py` reads `data/panel/` directly (frames verified identical), `tests/test_verify_independence.py` AST-scans `verify/*.py` and permits only `asi.core.constants`; contract 2.3 loses its `data.py` filename exemption; three mutations introduced and all three caught |
 | **D12** | `verify/panel.py` re-derived 27 of 32 scoring indicators. The five it skipped — `displaced_persons`, `gdp_growth_3yr_avg`, `inflation_5yr_avg`, `primary_gpi`, `secondary_gpi` — were 15.6% of cells and effectively all of the panel's arithmetic, while the README claimed re-derivation of the whole panel. Found a live bug: `apply_derived` pivots to reach population as a denominator, and `pivot_table` omits an all-NaN column, so a population series that failed to pull for the whole panel would skip the conversion in silence and leave raw head-counts in a per-thousand column. | `40e362a`; checks 1.4 (`.rolling()`, 2,569 cells), 1.5 (`min(x, 2-x)`, 2,346 cells) and 1.6 (IDP/population, 747 cells) in `verify/panel.py`; `dropna=False` fix in `asi/pipeline/panel.py` (published panel unaffected — population is non-null in all 1,350 cells); `tests/test_panel_derived.py` (28 tests); coverage restated as 38,276 of 43,200 cells (88.6%), remainder regional-mean by construction |
 | **D13** | 118 test cases asserted only `view(...) is not None`. A Dash view returns a component tree or raises — it never returns None — so they could only fail on an exception, and 54 country-view tests passed while the page rendered a continental rank labelled "in scope". `test_registry.py` pinned counts (54 countries, 32 indicators), which is a second place to write a number rather than a check. | `1e7b9f7` + `82495ba`; view tests now read the rendered tree per pillar card and compare against `data/panel/*.csv`; the rank defect recorded as a strict xfail pointing at B13; count pins replaced by cross-source agreement with `bundle.json` and `COUNTRIES + EXCLUDED_AU_MEMBERS == 55`; `check_indicator_phrases` in `verify/narrative.py` holds all 17 prefixes to exactly one `display_name`; six mutations introduced, two survived the first attempt and were fixed, all six caught |
+| **D14** | `02_panel.py` regenerated frozen goalposts whenever the file was missing, re-anchoring every historical score against the current panel and logging it as an ordinary step. The `FileNotFoundError` told the user to run `03_normalize.py`, retired. | `e5ae2dc`; implicit branch removed (AST-guarded by a test, since the explanatory comment quotes the old condition), message names `02_panel.py --freeze-goalposts`, `REFERENCE_YEAR_MIN_COVERAGE` replaces a bare `0.80` |
+| **D15** | The adversarial-weights search sampled the plain simplex and rejected outside `[WEIGHT_MIN, WEIGHT_MAX]`: 23 of 1000 draws survived, so the published *robust* verdict rested on 23 evaluations of a 7-dimensional polytope — and its reported worst vector was a deterministic corner, so the random search contributed nothing. **The verdict changes to "moderately sensitive".** | `e5ae2dc`; shifted-simplex sampler (2,993 of 10,000 accepted, worst rho 0.880 at a genuinely interior vector), `N_RANDOM_WEIGHTS` 1000→10000, per-country quintile-stability statistic (median 93%, NGA 26%, LBY 27%); `MANUAL_REVIEW` 9a corrected |
+| **D16** | `measured_only` filtered *pillar* reliability, and Pillar C has zero reliable countries at 2023 — so it deleted Pillar C for all 54 and let `weighted_composite` renormalise. `countries_no_longer_scoreable: 0` was an artifact of that renormalisation. | `e5ae2dc`; rebuilt at cell level from `observations.csv` on `provenance == 'observed'` (996 of 1,728 cells, rho 0.952, median shift 2), reported with the pillar thinness that makes the zero readable (median indicator share 75%, 61 of 377 pillar-years under half) |
 | **D11** | Two narrative validators, already drifted in both directions. `scripts/narrative_check.py` had a duplicate-URL check the gate lacked; `verify/narrative.py` had quoted-value, name-drift, future-date and membership-span checks the script lacked. The tests covered the script — the copy that does not gate a release — and the gating copy had none. | `8704853`; `all_checks()` in `verify/narrative.py` is the single implementation, `scripts/narrative_check.py` reduced to a thin caller keeping only `--links` and the coverage report, script's duplicate-URL check moved in as `check_citation_linkage`; both routes assert an identical 40-finding set on the shipped corpus; three mutations introduced and all three caught |
 
 *A regex bug found during D05 is worth remembering: a `\b` written through a heredoc

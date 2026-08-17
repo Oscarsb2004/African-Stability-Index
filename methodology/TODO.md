@@ -26,6 +26,7 @@ Last reviewed: 2026-08-17.
 |---|---|---|---|
 | S1 | **Reference year is 2023.** World Bank series report late, so 2024 is entirely unreliable and nothing is rankable in it. | Whenever WDI/WGI publish 2024 in full — re-run `01_pull.py`, then `02_panel.py`. | `data/panel/bundle.json` → `run.reference_year` |
 | S2 | **Goalposts are frozen at version 2**, computed once over the whole panel. Re-running the pipeline will not re-anchor them, deliberately. | Only when a genuinely new extreme appears. Regenerating silently re-anchors every historical score, so it must be a decision, not a side effect. | `registry/goalposts.yaml`, `asi/pipeline/goalposts.py` |
+| S2b | **Goalposts are no longer regenerated on demand** (B08). If `registry/goalposts.yaml` is missing, `02_panel.py` now fails instead of silently re-anchoring. Recreating it requires `python 02_panel.py --freeze-goalposts` and re-anchors every historical score. | Only when you decide a new extreme warrants it. | `registry/goalposts.yaml` |
 | S3 | **PCA and entropy weights are frozen once-fitted.** | Same rule as S2 — refitting changes every published score for every year. | `registry/weights.yaml` |
 | S4 | **Narrative recency.** Newest recent-item dates span 2025-05-01 to 2026-08-13. Stalest records: BWA, MUS, SLE, GAB, KEN. | Continuously. `verify/narrative.py`'s advisory pass reports the spread on every run. | `narrative/countries/*.yaml` |
 | S5 | **No record has reached an AUDIT run.** 0 of 54; audit lands on iteration 4. 0 of 749 citations are confirmed as opened. | When records reach iteration 4 — until then the interface correctly says "cited", not "confirmed". | `narrative/state.yaml` |
@@ -55,4 +56,5 @@ Last reviewed: 2026-08-17.
 | K2 | The country page shows a continental rank under the label "in scope". `view_country` takes no grouping argument, so it cannot know the scope. Recorded as a strict xfail in `tests/test_dashboard_views.py`. | BACKLOG B13 — needs your call: follow the grouping, or relabel it "continental" |
 | K3 | No LICENSE file — all rights reserved, by your decision. | Intentional |
 | K4 | `main` is 89 commits behind `phase-a-foundation` (as of 2026-08-17). | Intentional while the branch is the working line |
+| K6 | The robustness verdict is **moderately sensitive** (worst-case Spearman 0.880), corrected from "robust" by B09. Any prose still calling the index robust is stale — `methodology/MANUAL_REVIEW.md` 9a is updated; `METHODOLOGY_REVIEW.md` still quotes the old 0.9245 figure under a retired stage name. | BACKLOG B14 (documentation vs code) |
 | K5 | Local only, no public deployment. Security items in the backlog are written against a future public server, not today's setup. | Intentional |
