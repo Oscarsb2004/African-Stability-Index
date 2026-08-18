@@ -18,10 +18,16 @@ without a decision only you can make.
 
 Things that are not defects — what goes stale, what needs a decision from the maintainer, what to update when the project's shape changes — live in [`TODO.md`](TODO.md), not here.
 
+Statistical-method work is planned in [`STATISTICS.md`](STATISTICS.md): the end state, its preconditions, and the near-term items N1–N6 below. Read §3 there before adding indicators — under equal pillar weights, adding one indicator to a four-indicator pillar cuts every existing indicator in it by 20%.
+
 ## The list
 
 | ID | Title | Effort | Human? | Depends on | Source |
 |---|---|---:|:---:|---|---|
+| **N1** | Incremental goalposts: freeze bounds for new indicators only | 4 | no | — | STATISTICS §4 (blocks indicator growth) |
+| **N2** | Indicator admission screening script | 5 | no | N1 | STATISTICS §4 |
+| **N3** | Publish effective indicator weights (advisory → methodology + UI) | 3 | no | — | STATISTICS §4 |
+| **N6** | State which composite is the headline method, and why | 1 | **yes** | B17 | STATISTICS §4 |
 | **B07** | Restore TLS verification on the data pull; manifest the baseline | 3 | **yes** | — | ITERATION_PLAN "Out of band" |
 | **B11** | Strike the phantom Benefit-of-the-Doubt limb | 2 | **yes** | — | ITERATION_PLAN 1.3 (D8, ASI-04/17) |
 | **B12** | Make corpus loading fault-tolerant and imports side-effect-free | 4 | no | — | ITERATION_PLAN 1.6 (ASI-03) |
@@ -115,6 +121,49 @@ through the interface's own loader is comparing the index against a filtered vie
 > `verify/panel.py` to re-derive the geometric composite independently. Report —
 > do not decide — whether Benefit-of-the-Doubt should be implemented or removed
 > from `asi/dashboard/app.py:52`, `requirements-pipeline.txt` and the docstrings.
+
+### N1 — Incremental goalposts: freeze bounds for new indicators only
+
+> In `F:\Code\African Stability Index`, `registry/goalposts.yaml` is frozen at
+> `GOALPOSTS_VERSION = 2` and `02_panel.py --freeze-goalposts` recomputes every
+> indicator's bounds, so adding one indicator re-anchors every historical score for
+> all 32. Add an incremental mode that computes bounds only for indicators absent
+> from the frozen file, leaves existing entries byte-identical, and records which
+> panel window each entry was derived from. Bump `GOALPOSTS_VERSION` and keep
+> `load()`'s version check meaningful. Prove it: freeze, add a synthetic indicator,
+> re-freeze incrementally, and assert every pre-existing bound is unchanged and
+> every published score is identical.
+
+### N2 — Indicator admission screening script
+
+> In `F:\Code\African Stability Index`, adding an indicator currently has no
+> gate. Write `scripts/screen_indicator.py <variable_name>` reporting, for a
+> candidate already present in the raw pull: coverage by country and year, share
+> observed vs carried-forward vs regional-mean, variance and a degenerate-column
+> check, maximum |rho| against every existing scoring indicator (flagging above
+> 0.80), and the before/after effective weight of every indicator in the pillar it
+> would join. It refuses nothing — it makes the cost visible before the commit.
+> Depends on N1, since a screened indicator has to be addable without re-anchoring.
+
+### N3 — Publish effective indicator weights
+
+> In `F:\Code\African Stability Index`, `verify/advisory.py` computes effective
+> per-indicator weights and prints them to a log nobody reads. Equal pillar weights
+> are not equal indicator weights: `pv_estimate` and `rl_estimate` carry 5.95% of
+> the composite, `primary_gpi` 1.79% — a 3.33x spread nobody chose. Surface the
+> table in the methodology page and in the interface's methodology panel, derived
+> at render time so it cannot go stale. A reader told "pillars are equally
+> weighted" currently has no way to learn this.
+
+### N6 — State which composite is the headline method, and why
+
+> In `F:\Code\African Stability Index`, four composites are published (`equal`,
+> `geometric`, `pca`, `entropy`) and nothing says which is the index's answer.
+> Write the paragraph: which is the headline, what the others are for, and why.
+> Depends on B17 — see `STATISTICS.md` §2.1: geometric aggregation currently
+> penalises Algeria 29 places, and 6 of the 8 countries it penalises most have
+> Pillar F as their worst pillar, so promoting geometric before Pillar F is fixed
+> would amplify a known defect rather than reduce compensability.
 
 ### B07 — Restore TLS verification on the data pull; manifest the baseline
 

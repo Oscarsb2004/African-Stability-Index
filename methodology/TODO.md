@@ -39,7 +39,7 @@ Last reviewed: 2026-08-17.
 | # | Trigger | What must be updated |
 |---|---|---|
 | C1 | **A country is added or removed** (Western Sahara being the live case — see `EXCLUDED_AU_MEMBERS`) | `asi/core/countries.py`; every count in the UI must stay derived, never typed — contract check 2.1 fails the build on a hardcoded one |
-| C2 | **An indicator is added or removed** | `registry/indicators.yaml`; goalposts must be regenerated deliberately (S2); `N_SCORING` flows through automatically |
+| C2 | **An indicator is added or removed** | Read [`STATISTICS.md`](STATISTICS.md) §3 first — under equal pillar weights, adding one indicator to a four-indicator pillar cuts every existing indicator in it by 20%, and nothing records that. Then: `registry/indicators.yaml`; goalposts currently regenerate *all* bounds (blocked on N1); `N_SCORING` flows through automatically |
 | C3 | **A pillar is added or removed** | `PILLAR_DEFS` in `asi/core/constants.py` — everything else derives from it, including the geometric composite's weights |
 | C4 | **`app.py` is split into a package** (planned: B47) | Nothing — contract checks now recurse with `rglob`. This was a live trap until B01 |
 | C5 | **A new `verify/` layer is added** | Register it in `verify/run.py` LAYERS; it may import only `asi.core.constants` — `tests/test_verify_independence.py` fails the build otherwise |
