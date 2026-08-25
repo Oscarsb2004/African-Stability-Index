@@ -1,5 +1,9 @@
 # ASI Refinement Roadmap
 
+> **Phases 1–6 are superseded by [`V2_RESTRUCTURE_PLAN.md`](V2_RESTRUCTURE_PLAN.md)**
+> (written 2026-08-08), which folds them into its workstreams. Read that first;
+> this document remains for the evidence and ordering behind the original phases.
+
 *Created 2026-07-14 from the full methodology review ([`METHODOLOGY_REVIEW.md`](METHODOLOGY_REVIEW.md)
 — read that first for the evidence behind every item). Phases are ordered: cheap
 truth-restoring work before score-changing work. Every phase ends with a green
