@@ -1,0 +1,13 @@
+schema: athena.repo-manifest/v0
+id: repo:athena-core
+title: athena-core
+status: planning
+updated: "2026-09-14"
+umbrella: Oscarsb2004/athena-data
+role: shared-backend
+standard_version: "0.1.0"
+project: null
+read_first:
+  - AGENTS.md
+  - The umbrella's AGENTS.md
+  - The umbrella's registry/shells/ and registry/recipes/
