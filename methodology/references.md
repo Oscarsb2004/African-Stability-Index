@@ -21,59 +21,81 @@ for composite index construction and is used by the UN, World Bank, and EU Commi
 
 | Decision | Handbook section | Implementation |
 |---|---|---|
-| Min-max normalization to [0, 100] | §6.1 | `03_normalize.py` — `normalize_indicator()` |
-| Log transformation before normalization for skewed distributions | §6.2 | `03_normalize.py` — `log_transform: true` indicators (e.g. GDP per capita, homicide rate) |
-| Polarity inversion at normalization step | §5.3 | `03_normalize.py` — negative polarity inverts formula to `(max-x)/(max-min)*100` |
-| IQR Winsorization to handle outliers (cap, do not delete) | §5.2 | `02_clean.py` — `IQR_MULTIPLIER = 2.0` (widened from Tukey's 1.5; see Winsorization section) |
-| Three-stage imputation hierarchy before leaving NaN | §5.4 | `02_clean.py` — Stage1: 5yr lookback; Stage2: regional mean; Stage3: NaN |
-| Equal weights as the default / reference case | §7.1 | `04_score.py` — `score_equal()` |
-| PCA-derived weights as a data-driven alternative | §7.3 | `04_score.py` — `score_pca()` |
-| Sensitivity analysis / robustness testing across methods | §8 | `05_robustness.py` (implemented: weight perturbation, MaxS adversarial search, fill/island exclusion) |
-| Transparency: all weights, bounds, and intermediate values published | throughout | All pipeline outputs include bounds sheets and fill logs |
+| Min-max normalization to [0, 100] | §6.1 | `asi/pipeline/normalize.py` — `normalize_value()` |
+| Log transformation before normalization for skewed distributions | §6.2 | `asi/pipeline/goalposts.py` — `apply_log()`, on indicators carrying `log_transform: true` in `indicators_list/*.yaml` |
+| Polarity inversion at normalization step | §5.3 | `asi/pipeline/normalize.py` — `normalize_value()` inverts to `(gmax-x)/(gmax-gmin)*100` for negative polarity |
+| IQR Winsorization to handle outliers (cap, do not delete) | §5.2 | `asi/pipeline/goalposts.py` — `winsorize_bounds()` at `IQR_MULTIPLIER = 2.0` (widened from Tukey's 1.5; see Winsorization section). Bounds are **frozen** with the goalposts, not recomputed per run |
+| Imputation hierarchy before leaving a cell empty | §5.4 | `asi/pipeline/panel.py` — `window_value()` (carry-forward within `max_carry_forward`) then `regional_fill()` (same-year regional mean, `MIN_REGIONAL_SAMPLE` peers required). Every cell carries a `provenance` label; nothing is filled silently |
+| Equal weights as the default / reference case | §7.1 | `asi/pipeline/score.py` — `weighted_composite()` with `WEIGHT_PRESETS["equal"]` |
+| PCA-derived weights as a data-driven alternative | §7.3 | `asi/pipeline/score.py` — `fit_pca_weights()`, fitted once on the pooled panel and frozen to `data/panel/weights.yaml` |
+| Sensitivity analysis / robustness testing across methods | §8 | `03_robustness.py` — method agreement, adversarial weight search, measured-cells-only rebuild, island exclusion |
+| Transparency: all weights, bounds, and intermediate values published | throughout | `registry/goalposts.yaml`, `data/panel/weights.yaml`, and per-cell provenance in `data/panel/observations.csv` |
+
+> **Section numbers are unverified.** The `§` references above were carried forward from
+> earlier revisions of this document and have not been checked against the 2008 Handbook
+> itself. They are internally consistent but appear offset from the Handbook's step
+> numbering. Treat them as a pointer, not a citation, until confirmed against the source.
+
+**Where this index departs from the Handbook's own step list**, and knowingly:
+
+| OECD step | State | Detail |
+|---|---|---|
+| 4 — Multivariate analysis | **Adequate** | Cronbach α, item-rest correlations, eigenstructure at both levels, KMO and Bartlett all run (`verify/stats.py`, reported by `verify/advisory.py`). Factor-analytic validation of the seven-pillar structure is **blocked by coverage, not unbuilt**: the reference year has 31 complete cases across 32 indicators and a singular correlation matrix. The diagnostic refuses to report rather than returning a number. See `METHODOLOGY_REVIEW.md` §C0. |
+| 7 — Uncertainty & sensitivity | **Weak** | `03_robustness.py` varies assumptions **one at a time** and reports point Spearman correlations. There is no joint uncertainty analysis and no published rank interval. |
+| 9 — Links to other indicators | **Weak** | A five-in / five-out set-membership check against IIAG 2023, Africa-only by construction. No full-sample correlation against any peer index. |
 
 **Known deviations:**
 - The Handbook recommends z-score normalization as an alternative to min-max. We use min-max
   because it produces scores in a fixed [0, 100] range that is more interpretable for a
   public-facing index. Z-scores can exceed these bounds and are harder to communicate.
-- The Handbook treats the Benefit of Doubt (BoD) method as exploratory. We implement it as a
-  first-class scoring method because the ASI user (a researcher) understands its interpretation.
+  **Untested:** no sensitivity analysis compares the two. This is a stated choice, not a
+  demonstrated one.
+- The Handbook's min-max is computed against the observed sample. We normalise against
+  **fixed goalposts** frozen across the whole panel instead, so that a score moves only when
+  that country's data moves. This follows later practice (HDI, ND-GAIN) rather than the 2008
+  text, and is the deviation that makes a time series possible. See
+  `asi/pipeline/goalposts.py`.
 
 ---
 
 ## Scoring Methods
 
-### Benefit of Doubt (BoD) Composite Indicator
+### Benefit of Doubt (BoD) — considered and retired
 
 > Cherchye, L., Moesen, W., Rogge, N., & Van Puyenbroeck, T.
 > "An Introduction to 'Benefit of the Doubt' Composite Indicators."
 > *Social Indicators Research*, 82(1), 111–145, 2007.
 > DOI: [10.1007/s11205-006-9029-7](https://doi.org/10.1007/s11205-006-9029-7)
+>
+> Rogge, N. (2018). "Composite Indicators as Generalized Benefit-of-the-Doubt Weighted
+> Averages." *European Journal of Operational Research*, 267(1), 381–392.
 
-BoD is a restricted Data Envelopment Analysis (DEA-CCR) formulation that awards each
-country the weight vector that maximises its own composite score, subject to global
-weight bounds. This gives each country the "benefit of the doubt" regarding its own
-strengths.
+**BoD is not a method of this index.** It was implemented in the pre-panel pipeline as a
+restricted DEA-CCR linear program — one LP per country, awarding each the weight vector
+that maximised its own composite subject to global weight bounds — and was retired when
+the index became a panel. This section records the decision rather than deleting the
+history, because the reasoning generalises.
 
-**Implementation in `04_score.py` — `score_bod()`:**
-- Formulation: LP per country, maximise `sum(w_i * s_i)` subject to:
-  - `sum(w_i) = 1` — over that country's **valid (non-NaN) pillars only**
-  - `WEIGHT_MIN <= w_i <= WEIGHT_MAX` per valid pillar (bounds: 0.05 to 0.25)
-  - `sum(w_i * s_j_i) <= 1` for all other countries j (no country can exceed score 1.0),
-    restricted to pillars where both countries have data
-- Solver: PuLP CBC (open-source LP solver)
-- Pillar scores normalised to [0, 1] before LP; results rescaled back to [0, 100]
-- **Feasibility fallback:** a country with fewer than 4 valid pillars cannot reach
-  `sum(w_i) = 1` under `WEIGHT_MAX = 0.25`, so its score falls back to the equal-weight
-  mean of its valid pillars. Restricting the sum-to-1 constraint to valid pillars (rather
-  than including missing ones) was a July 2026 correction: the prior formulation forced
-  `WEIGHT_MIN` to be "spent" on each missing pillar, artificially capping achievable scores.
+**Why it was retired.** BoD solves for each country's most favourable weighting against
+*that year's* peers, so a BoD score is a within-year statement by construction. Every
+other method in this index now uses weights fitted once on the pooled panel and reused
+for every year, specifically so that a country's score moves only when that country's
+data moves (see *PCA Weighting* below and `data/panel/weights.yaml`). A BoD series would
+have been the one published method a reader could not read as a time series, sitting
+beside three that they can. That is a worse defect than the absence of a fifth method.
 
-**Known deviation from source:**
-- The original Cherchye et al. (2007) formulation uses no explicit upper weight bounds.
-  We add per-pillar `WEIGHT_MAX = 0.25` to prevent degenerate solutions where one pillar
-  receives near-100% weight. This follows the restricted BoD extension discussed in:
-  > Rogge, N. (2018). "Composite Indicators as Generalized Benefit-of-the-Doubt Weighted
-  > Averages." *European Journal of Operational Research*, 267(1), 381–392.
+**What remains.** `WEIGHT_MIN = 0.05` and `WEIGHT_MAX = 0.25` were introduced as the LP's
+bounds and still stand, now as the definition of an admissible weighting in the
+adversarial search of `03_robustness.py`. The feasibility requirement they were chosen to
+satisfy — `7*MIN <= 1 <= 7*MAX` — is unchanged and is asserted by
+`tests/test_registry.py::test_weight_bounds_are_feasible`.
+
+**Correcting the record.** Until this revision, this document described the LP, its
+solver, and a July 2026 correction to its feasibility fallback, as though all three were
+live; `pulp` remained in `requirements-pipeline.txt`; and `asi/dashboard/app.py` carried a
+display label for the method. None of it ran. The published methods have been `equal`,
+`pca`, `entropy` and `geometric` since the Phase B rebuild — see
+`data/panel/composites.csv`, which is the authority on what the index actually computes.
 
 ---
 
@@ -95,7 +117,7 @@ a country at war but with a strong economy should not rank highly overall.
 The geometric mean `exp(Σ w_i · ln(s_i))` introduces partial compensability: low scores
 in any dimension drag the composite down non-linearly, preventing full substitution.
 
-**Implementation in `04_score.py` — `score_geometric()`:**
+**Implementation in `asi/pipeline/score.py` — `geometric_composite()`:**
 - Equal weights (1/7 per pillar) applied in log space
 - Scores floored at `1e-8` before `ln()` to avoid `log(0) = -inf`
 - Countries missing all pillar scores receive NaN
@@ -122,7 +144,7 @@ Entropy weights reward pillars that vary meaningfully across countries (high inf
 content) and downweight pillars where all countries score similarly (low information).
 This is purely data-driven — no expert judgment is required.
 
-**Implementation in `04_score.py` — `score_entropy()`:**
+**Implementation in `asi/pipeline/score.py` — `fit_entropy_weights()`:**
 - Entropy `H_j = -Σ p_ij · ln(p_ij)` computed per pillar j
 - `p_ij = s_ij / Σ_i s_ij` (proportion of pillar j's total score attributed to country i)
 - Divergence `e_j = 1 - H_j / ln(n)` (lower entropy → more informative → higher weight)
@@ -148,7 +170,7 @@ different country lists.
 The first principal component captures the direction of maximum variance in pillar scores.
 Using its loadings as weights assigns more weight to pillars that differentiate countries most.
 
-**Implementation in `04_score.py` — `score_pca()`:**
+**Implementation in `asi/pipeline/score.py` — `fit_pca_weights()`:**
 - Fit PCA on countries with complete pillar data (StandardScaler applied first)
 - First PC loadings taken as raw weights; whole vector sign-flipped if the majority of
   loadings are negative (orient PC1 toward "higher stability = higher score")
@@ -181,18 +203,31 @@ preferred method.
 
 Alpha measures whether indicators within a pillar are measuring a common underlying construct.
 The conventional minimum for acceptable internal consistency is α ≥ 0.70
-(Nunnally, 1978; George & Mallery, 2003). The pipeline gates more leniently at
-`MIN_CRONBACH_ALPHA = 0.60` (`constants.py`) — warning, not halting — because it currently
-computes alpha on **raw, mixed-polarity values**, which mechanically deflates alpha for
-pillars containing negative-polarity indicators. Correcting this to run on polarity-aligned
-normalized scores is scheduled as ROADMAP Phase 3; until then the 0.60 warnings for pillars
-B/C/D/E/F are expected artifacts, not verdicts on construct validity.
+(Nunnally, 1978; George & Mallery, 2003).
 
-**Implementation in `02_clean.py` — `cronbach_alpha()`:**
-- Computed per pillar on the cleaned (pre-winsorisation) values
-- Requires at least k ≥ 2 indicators and n ≥ 3 complete country observations
-- Logged in the `diagnostics` sheet of `02_clean.xlsx`
-- Values below `MIN_CRONBACH_ALPHA` (0.60) are flagged for review of pillar composition
+**Implementation in `verify/stats.py` - `cronbach_alpha()`, reported by
+`verify/advisory.py`** (backlog B24, closed 2026-09-06):
+
+- Computed on the panel's `score` column, which normalisation has already inverted for
+  negative-polarity indicators, so the items are **polarity-aligned by construction**. The
+  retired pre-panel implementation ran on raw mixed-polarity values, which mechanically
+  deflates alpha for any pillar holding a reversed item; that is why its warnings were
+  uninterpretable and why the threshold sits at 0.60 rather than the conventional 0.70.
+- Listwise deletion, sample variance (ddof=1). The number of complete observations is
+  reported alongside every figure, so an alpha resting on 31 countries cannot be quoted as
+  though it rested on 54.
+- Returns undefined rather than a number for fewer than two items, fewer than three
+  complete rows, or zero total variance.
+- Cross-checked against `pingouin.cronbach_alpha` to twelve decimal places, and against a
+  four-subject case computed by hand, in `tests/test_advisory_stats.py`.
+
+**Limitation, and it is the important one here.** Alpha rises mechanically with item count
+and with redundancy among items. Pillar A returns 0.958 not because it is the best-measured
+pillar but because six of its indicators are the WGI family, correlating up to 0.93 - one
+measurement taken six times. A test encodes this property directly (adding a duplicate item
+raises alpha) so the figure is not read as a quality score. Alpha is evidence about
+redundancy at least as much as about reliability, and it is not a measure of
+unidimensionality at all.
 
 **Limitation:** Cronbach's alpha assumes tau-equivalence (all indicators equally measure
 the construct) and is sensitive to the number of indicators. A large pillar (e.g. Pillar C
@@ -213,8 +248,10 @@ k = 1.5 marks "outside values"; k = 3.0 marks "far out" values. Winsorization re
 observation in the sample (unlike trimming) and prevents outlier countries from compressing
 the entire normalization range.
 
-**Implementation in `02_clean.py`:**
-- Applied per **scoring** indicator across all countries after aggregation and filling
+**Implementation in `asi/pipeline/goalposts.py` - `winsorize_bounds()`:**
+- Applied per **scoring** indicator across the whole panel, after the log transform and
+  before the goalpost min-max. Bounds are frozen into `registry/goalposts.yaml`, so one
+  new outlier in a later edition cannot reshape every historical score
 - `IQR_MULTIPLIER = 2.0` — **deliberately widened from Tukey's 1.5.** Rationale
   (`constants.py`): 1.5×IQR is calibrated for large samples; at n = 54 it clips too
   aggressively and compresses cross-country differentiation in the middle of the
@@ -236,7 +273,8 @@ the entire normalization range.
 
 Pairwise Spearman correlations between indicators within a pillar reveal redundancy
 (very high ρ) and potential misclassification (very low or negative ρ). Computed after
-cleaning for each pillar and written to the `spearman_*` sheets in `02_clean.xlsx`.
+normalisation and reported by `verify/advisory.py`, both within a pillar and across
+pillars, at the reference year.
 
 **Interpretation guideline (not from a single source — conventional):**
 - ρ > 0.90: likely redundant pair; consider removing one indicator
@@ -303,7 +341,7 @@ not percentile rank (`.PER.RNK`), to avoid rank compression artifacts.
 > *Journal of the Royal Statistical Society: Series A*, 168(2), 307–323, 2005.
 > DOI: [10.1111/j.1467-985X.2005.00359.x](https://doi.org/10.1111/j.1467-985X.2005.00359.x)
 
-Grounds `05_robustness.py`: weight perturbation, fill-exclusion and island-exclusion
+Grounds `03_robustness.py`: weight perturbation, measured-only rebuild and island-exclusion
 sensitivity, and the MaxS adversarial worst-case weight search.
 
 **MaxS implementation note:** the worst-case search uses a **random-restart grid search**
@@ -320,12 +358,15 @@ ROADMAP Phase 3.
 > *Global Sensitivity Analysis: The Primer.*
 > John Wiley & Sons, 2008. ISBN: 978-0-470-05997-5.
 
-Will be used for the sensitivity band methodology (Monte Carlo weight perturbation).
+**Not yet used.** This is the intended basis for a joint Monte Carlo over all assumptions
+and for per-country rank intervals (backlog **B20**). Nothing in the pipeline implements it
+today; `03_robustness.py` varies one assumption at a time. Listing it here under
+"implemented" was itself part of the drift this revision corrects.
 
 ---
 
-*Last updated: 2026-07-14 (Roadmap Phase 0 — documentation truth pass)*
-*Last verified against code: 2026-07-14 (constants.py, 02_clean.py, 04_score.py, 05_robustness.py)*
+*Last updated: 2026-09-06 (documentation truth pass — Phase 0)*
+*Last verified against code: 2026-09-06 (`asi/`, `verify/`, `01_pull.py`, `02_panel.py`, `03_robustness.py`)*
 *Maintained by: Oscar Bailey*
 *Any addition to the pipeline that introduces a new methodological choice must be
 logged here before the change is committed. See `METHODOLOGY_REVIEW.md` for the full

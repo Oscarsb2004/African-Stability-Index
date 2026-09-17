@@ -7,7 +7,7 @@ without losing the rest of the pull.
 
 Year window pulled: min(year_start) - 5yr buffer to max(year_end), computed
 dynamically from indicator definitions. The per-indicator windows are applied
-in 02_clean.py — this module just acquires the full raw range.
+in 02_panel.py — this module just acquires the full raw range.
 
 Requires internet access. Run from the project root:
     python 01_pull.py
@@ -322,4 +322,4 @@ if __name__ == "__main__":
     logger.info("Done in %.0fs.", elapsed_total)
     logger.info("Output: %s", OUTPUT_FILE.resolve())
     logger.info("Sheets: coverage_report | raw_data | pull_log")
-    logger.info("Next step: python 02_clean.py")
+    logger.info("Next step: python 02_panel.py")

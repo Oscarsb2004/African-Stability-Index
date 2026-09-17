@@ -316,7 +316,7 @@ class CompositeScore:
 
     iso3: str
     year: int
-    method: str                       # equal | pca | bod | entropy | geometric | custom
+    method: str                       # equal | pca | entropy | geometric | custom
     score: float | None
     rank: int | None = None
     n_pillars_used: int = 0

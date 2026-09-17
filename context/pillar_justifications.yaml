@@ -65,7 +65,7 @@ E: >
   This pillar measures internally displaced persons per capita (UNHCR standard,
   normalised by total population for comparability across country sizes), battle-related
   deaths per capita, and two rule-of-law indicators from the WGI (Political Stability
-  and Rule of Law) cross-listed from Pillar A. IDP per capita is computed in 02_clean.py
+  and Rule of Law) cross-listed from Pillar A. IDP per capita is computed in asi/pipeline/panel.py (apply_derived)
   Step 1b using SP.POP.TOTL as the denominator (UNHCR standard; OECD §3 comparability).
   The security dimension is the most stability-proximate of all seven pillars —
   a country at war cannot be considered stable regardless of its performance on

@@ -30,7 +30,9 @@ _sys.path.insert(0, str(_REPO))
 import pandas as pd
 from scipy.stats import spearmanr
 
-from asi.core.constants import PILLAR_DEFS
+from asi.core.constants import PILLAR_DEFS, MIN_CRONBACH_ALPHA
+
+from verify import stats
 
 PANEL_DIR = _REPO / "data" / "panel"
 
@@ -44,6 +46,30 @@ IIAG_TOP5    = {"MUS", "CPV", "SYC", "BWA", "ZAF"}
 IIAG_BOTTOM5 = {"SSD", "SOM", "ERI", "SDN", "COD"}
 
 NOTES: list[str] = []
+
+
+def _pooled_indicator_frame(panel: "_Panel") -> pd.DataFrame:
+    """
+    Every country-year as a row, indicators as columns.
+
+    Used only where a single year has too few complete cases to support a factor
+    model. Rows are not independent observations and the caller must say so.
+    """
+    scoring_rows = panel.observations[panel.observations["role"] == "scoring"]
+    return scoring_rows.pivot_table(
+        index=["iso3", "year"], columns="variable_name",
+        values="score", aggfunc="first",
+    )
+
+
+def _kmo_label(value: float) -> str:
+    """Kaiser's own labels for sampling adequacy."""
+    for floor, label in ((0.90, "marvellous"), (0.80, "meritorious"),
+                         (0.70, "middling"), (0.60, "mediocre"),
+                         (0.50, "miserable")):
+        if value >= floor:
+            return label
+    return "unacceptable"
 
 
 @dataclass(slots=True)
@@ -175,6 +201,121 @@ def main() -> int:
                      f"{b} ({'+'.join(scoring[b]['pillars'])}): rho={rho:+.2f}")
     if not found:
         note("none")
+
+    # ── internal consistency ──────────────────────────────────────────────────
+    # OECD step 4. Computed on the `score` column, which normalisation has
+    # already inverted for negative-polarity indicators — so the items are
+    # polarity-aligned by construction. The retired pre-panel implementation ran
+    # on raw mixed-polarity values, which deflates alpha mechanically and is why
+    # its warnings were uninterpretable.
+    section(f"Internal consistency: Cronbach's alpha (threshold {MIN_CRONBACH_ALPHA})")
+    note("alpha rises with item count and with redundancy — a pillar measuring "
+         "one thing six times scores well. Read it beside item-rest below.")
+    for pid, meta in panel.pillars.items():
+        members = [v for v in meta["indicators"] if v in wide.columns]
+        result = stats.cronbach_alpha(wide[members])
+        if not result.defined:
+            note(f"{pid}: undefined ({result.note})")
+            continue
+        flag = "" if result.alpha >= MIN_CRONBACH_ALPHA else "  << below threshold"
+        note(f"{pid}: alpha={result.alpha:+.3f}  k={result.k}  n={result.n}{flag}")
+
+    all_items = [v for v in wide.columns if v in scoring]
+    whole = stats.cronbach_alpha(wide[all_items])
+    if whole.defined:
+        note(f"all {whole.k} scoring indicators as ONE scale: alpha={whole.alpha:+.3f} "
+             f"(n={whole.n}) — high here means the pillars are less distinct than "
+             f"the structure claims")
+
+    # ── item-rest correlations ────────────────────────────────────────────────
+    section("Item-rest correlation (item vs the sum of its pillar's others)")
+    note("negative: check polarity first. below +0.30: the item may belong elsewhere.")
+    flagged = 0
+    for pid, meta in panel.pillars.items():
+        members = [v for v in meta["indicators"] if v in wide.columns]
+        if len(members) < 2:
+            continue
+        for v, r in sorted(stats.item_rest_correlations(wide[members]).items(),
+                           key=lambda kv: (kv[1] is not None, kv[1])):
+            if r is None:
+                note(f"{pid}: {v} undefined (no variance)")
+                flagged += 1
+            elif r < 0.30:
+                note(f"{pid}: {v} r={r:+.3f}")
+                flagged += 1
+    if not flagged:
+        note("every indicator correlates at least +0.30 with the rest of its pillar")
+
+    # ── dimensionality ────────────────────────────────────────────────────────
+    # Both levels, each labelled. Two eigenvalue figures in this repository read
+    # as contradictory only because neither stated which level it described.
+    section("Dimensionality (eigenvalues of the correlation matrix)")
+    indicator_dim = stats.pca_dimensionality(wide[all_items], level="32 indicators")
+    note(indicator_dim.summary())
+
+    pillar_wide = (panel.pillar_scores[panel.pillar_scores["year"] == year]
+                   .pivot_table(index="iso3", columns="pillar_id", values="score",
+                                aggfunc="first"))
+    pillar_dim = stats.pca_dimensionality(pillar_wide, level="7 pillar scores")
+    note(pillar_dim.summary())
+    note("the pipeline's PCA weighting acts at the pillar level; reporting only "
+         "the indicator-level figure beside it would compare unlike things")
+
+    # ── structural validation ─────────────────────────────────────────────────
+    # Does the declared grouping match the structure the data shows? Written
+    # against a {group: members} mapping rather than against pillars, so the same
+    # check evaluates any later index framework.
+    section("Structural validation (declared pillars vs recovered factors)")
+    declared = {pid: list(meta["indicators"]) for pid, meta in panel.pillars.items()}
+
+    for label, frame in (
+        (f"reference year {year}", wide),
+        # Pooling every country-year is the only way to reach a non-singular
+        # correlation matrix here. The rows are not independent — the same 54
+        # countries recur for 25 years and indicator series are highly
+        # autocorrelated — so the effective sample is far below the nominal one.
+        # Reported because it is the closest thing to an answer available, and
+        # labelled because it must not be read as 147 independent observations.
+        ("pooled country-years", _pooled_indicator_frame(panel)),
+    ):
+        structure = stats.structure_agreement(frame, declared)
+        note(f"[{label}]")
+        if structure.note:
+            note(f"   not computed: {structure.note}")
+            continue
+
+        note(f"   {structure.n} complete observations x {structure.k} indicators "
+             f"= {structure.obs_per_variable:.2f} per variable "
+             f"(correlation matrix rank {structure.rank} of {structure.k})")
+
+        if not structure.reportable:
+            note(f"   NOT REPORTABLE: {structure.inadequacy}")
+            note(f"   a factor routine still returns a solution on this data, and "
+                 f"that solution would carry an adjusted Rand index of "
+                 f"{structure.agreement:+.3f}. It is not evidence about the pillar "
+                 f"structure and must not be quoted as though it were.")
+            continue
+
+        if structure.kmo is not None:
+            note(f"   KMO sampling adequacy: {structure.kmo:.3f} "
+                 f"({_kmo_label(structure.kmo)})")
+        chi2, df = stats.bartlett_sphericity(frame[[c for c in frame.columns
+                                                    if c in scoring]])
+        if chi2 is not None:
+            note(f"   Bartlett sphericity: chi2={chi2:.0f} on {df} df "
+                 f"(a floor, not evidence of a good solution)")
+        note(f"   adjusted Rand index vs the declared pillars: "
+             f"{structure.agreement:+.3f} (1.0 identical, 0.0 chance)")
+        for pid, share in sorted(structure.cohesion.items()):
+            note(f"      {pid}: {share*100:.0f}% of members land on one factor")
+        if structure.cross_listed:
+            note(f"   cross-listed, assigned to their first pillar: "
+                 f"{list(structure.cross_listed)}")
+
+    note("a formative index need not recover cleanly — pillars that jointly "
+         "define stability are not required to be alternative measures of it. "
+         "Whether this index is formative or reflective has never been stated, "
+         "and that decision governs how these numbers should be read.")
 
     # ── data quality ──────────────────────────────────────────────────────────
     section("Data quality at the reference year")

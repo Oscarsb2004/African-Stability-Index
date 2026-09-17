@@ -15,10 +15,18 @@ Methodology anchored to the OECD/JRC *Handbook on Constructing Composite Indicat
 ```powershell
 git clone https://github.com/Oscarsb2004/African-Stability-Index.git
 cd African-Stability-Index
-python -m venv .venv
-.venv\Scripts\activate
-pip install -r requirements-pipeline.txt   # full pipeline + dashboard deps
-python 07_dashboard.py                     # -> http://127.0.0.1:8050
+python run_asi.py                          # -> http://127.0.0.1:8050
+```
+
+`run_asi.py` is the only command needed. On first run it creates `.venv`, installs
+`requirements-pipeline.txt` into it, and re-executes itself inside it; afterwards it
+starts straight away and reinstalls only if the requirements files change. There is
+nothing to activate by hand.
+
+```powershell
+python run_asi.py --port 8060   # serve on another port
+python run_asi.py --verify      # run the verification suite instead
+python run_asi.py --test        # run pytest instead
 ```
 
 All pipeline outputs in `data/` are committed, so the **dashboard and verification run
@@ -41,7 +49,7 @@ from `data/`.
 | 1 | `01_pull.py` | Pull WDI + WGI series via wbgapi across the whole panel window | `data/01_raw_pull.xlsx` |
 | 2 | `02_panel.py` | Build the country x indicator x **year** panel with provenance, apply derived transforms, fill regional gaps, normalise against **fixed goalposts**, and score pillars and composites with reliability tiers | `data/panel/*` |
 | 3 | `03_robustness.py` | Sensitivity analysis at the reference year: weighting methods, adversarial weights, measured-only, islands excluded | `data/panel/robustness.json` |
-| 7 | `07_dashboard.py` | Run the interface (port 8050) | — |
+| 7 | `run_asi.py` | Run the interface (port 8050); bootstraps `.venv` on first use | — |
 
 Add `--freeze-goalposts` to stage 2 only when deliberately re-anchoring every
 historical score.
@@ -99,7 +107,7 @@ verify/                          independent verification (NOT imported by asi/)
 tests/                           pytest: registry, schema, SSOT enforcement
 scripts/                         one-off utilities (stub generation, adding indicators)
 01_pull 02_panel 03_robustness   pipeline stages
-07_dashboard.py                  thin runner for asi/dashboard/app.py
+run_asi.py                       launcher: bootstraps .venv, runs asi/dashboard/app.py
 app.py, Procfile                 gunicorn entry point for web deploy (Railway-ready)
 indicators_list/pillar_[a-g].yaml  indicator registry — polarity, window, aggregation,
                                    log flag, and written justification per indicator

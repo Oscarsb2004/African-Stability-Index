@@ -114,8 +114,14 @@ def test_active_preset_exists():
 
 def test_weight_bounds_are_feasible():
     """
-    The BoD LP needs sum(w)=1 to be reachable inside [WEIGHT_MIN, WEIGHT_MAX].
-    With 7 pillars this requires 7*MIN <= 1 <= 7*MAX.
+    A weight vector summing to 1 must be reachable inside [WEIGHT_MIN, WEIGHT_MAX],
+    which with 7 pillars requires 7*MIN <= 1 <= 7*MAX.
+
+    Written for a Benefit-of-the-Doubt LP that has since been retired. The
+    requirement survives it: 03_robustness.py samples admissible weightings as
+    WEIGHT_MIN + (1 - 7*WEIGHT_MIN) * Dir(1), which needs the same inequality to
+    hold in both directions — the lower bound for the shift to be well defined,
+    the upper for any draw to clear the cap.
     """
     n = len(PILLAR_DEFS)
     assert n * WEIGHT_MIN <= 1.0 <= n * WEIGHT_MAX
