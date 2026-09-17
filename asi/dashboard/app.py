@@ -44,12 +44,15 @@ BRAND_LIGHT = "#2E6DB4"
 GREY        = "#d8dbe0"
 SCORE_CS    = [[0.0, "#c0392b"], [0.35, "#e67e22"], [0.65, "#f1c40f"], [1.0, "#2ecc71"]]
 
+#: Display names for the composite methods the pipeline produces. `lens_options`
+#: builds the selector from PANEL.methods, not from these keys, so a label here
+#: for a method the panel does not carry would never appear — which is how a
+#: "Benefit of the doubt" entry survived here after that method was retired.
 METHOD_LABELS = {
     "equal":     "Equal weights",
     "pca":       "PCA weights",
     "entropy":   "Entropy weights",
     "geometric": "Geometric mean",
-    "bod":       "Benefit of the doubt",
 }
 
 TIER_STYLE = {

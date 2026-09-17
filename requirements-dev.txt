@@ -1,0 +1,14 @@
+# Test-only dependencies: independent implementations the statistics in
+# verify/stats.py are cross-checked against by tests/test_advisory_stats.py.
+#
+# Deliberately NOT in requirements-pipeline.txt. pingouin pulls matplotlib,
+# seaborn, statsmodels and xarray, none of which the index needs to run — and a
+# reference implementation that shipped with the pipeline would be a dependency
+# of the thing it exists to check independently. The cross-check tests skip
+# cleanly when these are absent, so the suite passes with the pipeline
+# requirements alone.
+#
+#     pip install -r requirements-dev.txt
+-r requirements-pipeline.txt
+pingouin
+factor_analyzer

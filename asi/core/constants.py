@@ -55,10 +55,19 @@ WEIGHT_PRESETS: dict[str, dict[str, float]] = {
 }
 
 
-# ── Scoring bounds (Benefit-of-the-Doubt LP) ───────────────────────────────────
+# ── Admissible pillar weights ──────────────────────────────────────────────────
+# These bound what counts as a defensible weighting of the seven pillars. They
+# were introduced for a Benefit-of-the-Doubt LP that has since been retired
+# (see methodology/references.md); their live consumer is the adversarial weight
+# search in 03_robustness.py, which asks how far the ranking can be pushed by any
+# weighting inside these bounds.
+#
+# The feasibility requirement is unchanged by that move: 7*MIN <= 1 <= 7*MAX, so
+# that a weight vector summing to 1 exists inside the bounds at all. Asserted by
+# tests/test_registry.py::test_weight_bounds_are_feasible.
 
-WEIGHT_MIN = 0.05   # lower bound per pillar in the BoD LP
-WEIGHT_MAX = 0.25   # upper bound per pillar in the BoD LP
+WEIGHT_MIN = 0.05   # lower bound per pillar
+WEIGHT_MAX = 0.25   # upper bound per pillar
 SMALL      = 1e-8   # numerical floor for log/division operations
 
 
@@ -128,7 +137,21 @@ MIN_PILLARS_FOR_COMPOSITE = 5     # composite needs this many usable pillars
 # into verify/; nothing here calls sys.exit().
 
 MAX_PILLAR_NAN_RATE = 0.30  # flag if >30% of countries have no data in a pillar
-MIN_CRONBACH_ALPHA  = 0.60  # flag if pillar internal consistency falls below this
+
+#: Threshold for pillar internal consistency.
+#:
+#: Consumed by `verify/advisory.py`, which flags any pillar below it. Alpha is
+#: computed by `verify/stats.py` on the panel's `score` column — already inverted
+#: for negative-polarity indicators, so the items are polarity-aligned. The
+#: retired pre-panel implementation ran on raw mixed-polarity values, which
+#: deflates alpha mechanically for any pillar holding a reversed item; that is
+#: why this sits at 0.60 rather than the conventional 0.70, and why the old
+#: sub-threshold warnings were artefacts rather than findings.
+#:
+#: Advisory, not a gate: falling below it prints a flag and blocks nothing. A
+#: high alpha is also not a pass — it rises with redundancy, and Pillar A clears
+#: it at 0.958 by measuring one thing six times.
+MIN_CRONBACH_ALPHA  = 0.60
 
 
 # ── Region profile — the GSI seam ──────────────────────────────────────────────
@@ -188,7 +211,7 @@ ISLAND_SET = ACTIVE_PROFILE.island_states
 #: silently requires the server to be started from the project root — the app
 #: launches, then fails on the first read, which reads as missing data rather
 #: than as a wrong working directory. Anchoring to the package location makes
-#: `python 07_dashboard.py` and `gunicorn app:server` work from anywhere.
+#: `python run_asi.py` and `gunicorn app:server` work from anywhere.
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
 

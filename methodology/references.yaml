@@ -1,10 +1,13 @@
 # methodology/references.yaml
 # Machine-readable citation registry for the African Stability Index (ASI).
 # Every methodological decision must have an entry here.
-# NOTE: Not yet wired into the dashboard (07_dashboard.py builds its methodology panel
-#       from bundle["method_guide"] in 06_qualitative.py). This file is the standalone
-#       machine-readable registry; the human-readable equivalent is references.md.
-#       Keep both in sync until this is consumed by the dashboard / Athena UI.
+# NOTE: Not wired into anything. The interface builds its methodology panel from its
+#       own content, not from this file. This is the standalone machine-readable
+#       registry; the human-readable equivalent is references.md, which is the one
+#       that is actually read. Keep both in sync, or retire this one (backlog B15).
+#
+#       `status: retired` / `status: not_implemented` mark sources whose decision is
+#       recorded but whose code no longer exists or never did.
 #
 # Fields:
 #   id:          short slug used in code comments and YAML cross-references
@@ -35,19 +38,26 @@ sources:
     doi: "10.1787/9789264043466-en"
     url: "https://doi.org/10.1787/9789264043466-en"
     used_in:
-      - "02_clean.py"
-      - "03_normalize.py"
-      - "04_score.py"
-      - "05_robustness.py"
+      - "asi/pipeline/panel.py"
+      - "asi/pipeline/goalposts.py"
+      - "asi/pipeline/normalize.py"
+      - "asi/pipeline/score.py"
+      - "03_robustness.py"
     justifies: >
       Primary methodological authority for the entire pipeline.
       Grounds: min-max normalization (§6.1), log transforms for skewed data (§6.2),
       polarity inversion at normalization step (§5.3), IQR Winsorization (§5.2),
-      three-stage imputation hierarchy (§5.4), equal weights as reference case (§7.1),
+      the imputation hierarchy (§5.4), equal weights as reference case (§7.1),
       PCA-derived weights (§7.3), and robustness testing (§8).
+      Section numbers are UNVERIFIED against the source — see references.md.
     limitations: >
       Handbook recommends z-score normalization as an alternative to min-max.
-      We deviate toward min-max for interpretability (fixed [0,100] range).
+      We deviate toward min-max for interpretability (fixed [0,100] range), untested
+      by any sensitivity analysis. We further deviate by normalising against FIXED
+      goalposts rather than the observed sample, following HDI/ND-GAIN practice, so
+      that scores are comparable across editions.
+      Handbook steps 4 (multivariate), 7 (uncertainty) and 9 (links to other
+      indicators) are only partially met — see references.md.
 
   - id: cherchye_2007_bod
     authors:
@@ -60,15 +70,19 @@ sources:
     venue: "Social Indicators Research"
     doi: "10.1007/s11205-006-9029-7"
     url: "https://doi.org/10.1007/s11205-006-9029-7"
-    used_in:
-      - "04_score.py"
+    status: retired
+    used_in: []
     justifies: >
-      Benefit of Doubt (BoD) LP formulation: per-country DEA-CCR that maximises
-      each country's own composite score subject to global pillar weight bounds.
-      Implemented in score_bod() using PuLP CBC solver.
+      Benefit of Doubt (BoD): per-country DEA-CCR LP awarding each country the
+      weighting most favourable to it. Implemented in the pre-panel pipeline and
+      RETIRED when the index became a panel — a BoD score is a within-year
+      statement, and every surviving method uses weights frozen across the panel
+      so a score moves only when a country's own data moves. Retained here as a
+      considered-and-rejected decision; see methodology/references.md.
     limitations: >
-      Original formulation has no explicit upper weight bounds. We add WEIGHT_MAX=0.25
-      to prevent degenerate single-pillar solutions, following Rogge (2018).
+      Not computed. The published methods are equal, pca, entropy and geometric
+      (data/panel/composites.csv). WEIGHT_MIN/WEIGHT_MAX originated as this LP's
+      bounds and now define an admissible weighting in 03_robustness.py.
 
   - id: rogge_2018_bod_extended
     authors:
@@ -78,12 +92,15 @@ sources:
     venue: "European Journal of Operational Research"
     doi: "10.1016/j.ejor.2017.12.009"
     url: "https://doi.org/10.1016/j.ejor.2017.12.009"
-    used_in:
-      - "04_score.py"
+    status: retired
+    used_in: []
     justifies: >
-      Justifies adding per-pillar upper weight bounds to the standard BoD LP
-      to prevent degenerate solutions (one pillar receiving near-100% weight).
-    limitations: null
+      Justified adding per-pillar upper weight bounds to the standard BoD LP to
+      prevent degenerate solutions (one pillar receiving near-100% weight).
+      Retired with the BoD method itself; see cherchye_2007_bod above.
+    limitations: >
+      Not computed. The weight bounds it justified survive as the admissible
+      range for the adversarial weight search in 03_robustness.py.
 
   - id: munda_nardo_2009_geometric
     authors:
@@ -95,7 +112,7 @@ sources:
     doi: "10.1080/00036840601019364"
     url: "https://doi.org/10.1080/00036840601019364"
     used_in:
-      - "04_score.py"
+      - "asi/pipeline/score.py"
     justifies: >
       Grounds the use of geometric mean aggregation as a partially non-compensatory
       method. Low pillar scores cannot be fully offset by high scores elsewhere,
@@ -113,7 +130,7 @@ sources:
     doi: null
     url: "https://hdr.undp.org/content/human-development-report-2010"
     used_in:
-      - "04_score.py"
+      - "asi/pipeline/score.py"
     justifies: >
       Precedent for geometric mean adoption in a widely-used country index (HDI).
       The 2010 switch from arithmetic to geometric mean in the HDI is the most
@@ -133,7 +150,7 @@ sources:
     doi: "10.1016/j.ecolecon.2006.12.020"
     url: "https://doi.org/10.1016/j.ecolecon.2006.12.020"
     used_in:
-      - "04_score.py"
+      - "asi/pipeline/score.py"
     justifies: >
       Grounds the Shannon entropy weighting approach for composite indicators:
       H_j = -sum(p_ij * ln(p_ij)), divergence e_j = 1 - H_j/ln(n), weights
@@ -153,7 +170,7 @@ sources:
     doi: "10.1002/j.1538-7305.1948.tb01338.x"
     url: "https://doi.org/10.1002/j.1538-7305.1948.tb01338.x"
     used_in:
-      - "04_score.py"
+      - "asi/pipeline/score.py"
     justifies: >
       Foundational source for Shannon entropy H = -sum(p * ln(p)).
       The composite indicator application (zhou_2007_entropy) derives from this.
@@ -171,7 +188,7 @@ sources:
     doi: null
     url: "https://publications.jrc.ec.europa.eu/repository/handle/JRC31473"
     used_in:
-      - "04_score.py"
+      - "asi/pipeline/score.py"
     justifies: >
       Grounds PCA-derived weights: first principal component loadings used as
       pillar weights, capturing the direction of maximum variance across countries.
@@ -188,8 +205,8 @@ sources:
     venue: "Psychometrika"
     doi: "10.1007/BF02310555"
     url: "https://doi.org/10.1007/BF02310555"
-    used_in:
-      - "02_clean.py"
+    status: not_implemented
+    used_in: []
     justifies: >
       Cronbach's alpha as the pillar internal consistency diagnostic. Conventional
       minimum alpha >= 0.70; pipeline gates leniently at MIN_CRONBACH_ALPHA = 0.60
@@ -209,7 +226,7 @@ sources:
     doi: null
     url: null
     used_in:
-      - "02_clean.py"
+      - "verify/advisory.py"
     justifies: >
       Tukey's fences for IQR Winsorization. ASI deliberately widens k from Tukey's
       1.5 to IQR_MULTIPLIER = 2.0 (constants.py): at n=54, 1.5x clips too aggressively
@@ -231,9 +248,9 @@ sources:
     doi: "10.1111/j.1467-985X.2005.00359.x"
     url: "https://doi.org/10.1111/j.1467-985X.2005.00359.x"
     used_in:
-      - "05_robustness.py"
+      - "03_robustness.py"
     justifies: >
-      Grounds the robustness framework (05_robustness.py, implemented): MaxS worst-case
+      Grounds the robustness framework (03_robustness.py): worst-case
       weight search, fill/island-exclusion sensitivity, and rank-shift analysis across
       methods. MaxS uses random-restart grid search (deterministic pillar corners +
       Dirichlet samples), not SLSQP — the rank-based objective is non-differentiable.
@@ -258,11 +275,11 @@ sources:
     doi: null
     url: null
     used_in:
-      - "05_robustness.py"
+      - "03_robustness.py"
     justifies: >
       Sensitivity band methodology for Monte Carlo weight perturbation in Stage 05.
     limitations: >
-      Weight-perturbation sensitivity is implemented in 05_robustness.py; the full joint
+      Weight-perturbation sensitivity is implemented in 03_robustness.py; the full joint
       Monte Carlo across all assumptions is scheduled as ROADMAP Phase 3.
 
   - id: kaufmann_2010_wgi
@@ -297,7 +314,7 @@ sources:
     doi: "10.2307/1412159"
     url: "https://doi.org/10.2307/1412159"
     used_in:
-      - "02_clean.py"
+      - "verify/advisory.py"
     justifies: >
       Spearman rank correlation matrices computed per pillar to identify redundant
       indicator pairs (rho > 0.90) and potential pillar misclassifications (rho < 0.30).

@@ -2,5 +2,4 @@
 wbgapi
 scipy
 scikit-learn
-pulp
 pytest
