@@ -29,3 +29,6 @@ Thumbs.db
 .idea/
 *.swp
 *.swo
+
+# Pages build output (scripts/build_pages.py) — CI builds it; never committed
+build/
