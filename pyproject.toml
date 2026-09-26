@@ -12,6 +12,7 @@ license-files = ["LICENSE"]
 dependencies = [
     "pydantic==2.13.5",
     "pyarrow==25.0.1",
+    "pypdf==6.19.0",
 ]
 
 [project.optional-dependencies]
@@ -21,5 +22,5 @@ test = ["pytest==9.1.1"]
 where = ["src"]
 
 [tool.pytest.ini_options]
-testpaths = ["tests"]
-pythonpath = ["src", "tests"]
+testpaths = ["tests", "projects/mdg/tests"]
+pythonpath = ["src", "tests", "projects/mdg"]
