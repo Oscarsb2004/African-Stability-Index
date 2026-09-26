@@ -15,8 +15,8 @@ from typing import ClassVar
 from pydantic import Field, model_validator
 
 from athena.base import Definition, Record
+from athena.citations import Citation
 from athena.ids import Id
-from athena.method import Citation
 from athena.vocab import Criterion, Origin, ReproClass, Stance
 
 WEIGHT_EPSILON = 1e-9

@@ -17,6 +17,7 @@ from pydantic import Field, model_validator
 
 from athena.base import Record
 from athena.frames import Frame
+from athena.rounding import Rounding
 from athena.vocab import CauseClass, DivergenceStatus
 
 EPSILON = 1e-12
@@ -32,6 +33,10 @@ class Tolerance(Record):
         """A value published to n decimals cannot be held tighter than half a unit in the last place."""
         return cls(absolute=0.5 * 10.0 ** -decimals, basis=f"published to {decimals} decimal place(s)",
                    fixed_on=fixed_on)
+
+    @classmethod
+    def from_rounding(cls, rounding: Rounding, *, fixed_on: date) -> Tolerance:
+        return cls.from_decimals(rounding.decimals, fixed_on=fixed_on)
 
     def admits(self, difference: float) -> bool:
         return abs(difference) <= self.absolute + EPSILON

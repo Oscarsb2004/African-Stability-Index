@@ -1,0 +1,93 @@
+{
+  "$defs": {
+    "Maturity": {
+      "description": "How far a shared part has been proven (lifecycle:part-maturity in the umbrella).",
+      "enum": [
+        "idea",
+        "candidate",
+        "used-once",
+        "proven",
+        "frozen",
+        "deprecated"
+      ],
+      "title": "Maturity",
+      "type": "string"
+    },
+    "Profile": {
+      "description": "The eight shapes a frame may take. A new profile needs a recorded decision (P6).",
+      "enum": [
+        "panel",
+        "cross-section",
+        "tree-scores",
+        "matrix",
+        "points",
+        "events",
+        "passages",
+        "distribution"
+      ],
+      "title": "Profile",
+      "type": "string"
+    }
+  },
+  "$id": "athena-core/shell.schema.json",
+  "additionalProperties": false,
+  "description": "What a step is, for people and for programs: the entry in the shell catalogue.",
+  "properties": {
+    "id": {
+      "pattern": "^[a-z][a-z0-9-]*:[A-Za-z0-9][A-Za-z0-9._-]*$",
+      "title": "Id",
+      "type": "string"
+    },
+    "inputs": {
+      "additionalProperties": {
+        "$ref": "#/$defs/Profile"
+      },
+      "title": "Inputs",
+      "type": "object"
+    },
+    "invariants": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Invariants",
+      "type": "array"
+    },
+    "maturity": {
+      "$ref": "#/$defs/Maturity",
+      "default": "idea"
+    },
+    "output": {
+      "$ref": "#/$defs/Profile"
+    },
+    "parameters_schema": {
+      "additionalProperties": true,
+      "title": "Parameters Schema",
+      "type": "object"
+    },
+    "summary": {
+      "title": "Summary",
+      "type": "string"
+    },
+    "title": {
+      "title": "Title",
+      "type": "string"
+    },
+    "version": {
+      "default": "0.1.0",
+      "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)$",
+      "title": "Version",
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "title",
+    "summary",
+    "inputs",
+    "output",
+    "parameters_schema",
+    "invariants"
+  ],
+  "title": "ShellCard",
+  "type": "object"
+}

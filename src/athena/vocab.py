@@ -54,6 +54,23 @@ REQUIRED_ROLES: dict[Profile, frozenset[Role]] = {
 }
 
 
+class Concept(StrEnum):
+    """SDMX concepts, the vocabulary the UN, OECD, IMF and others use for statistical data (decision 7).
+
+    A column that carries one of these meanings says so, so readers and views agree on what "area" or "period"
+    means across publishers. Areas use ISO 3166-1 alpha-3 codes, or UN M49 codes for regions.
+    """
+
+    REF_AREA = "REF_AREA"
+    TIME_PERIOD = "TIME_PERIOD"
+    OBS_VALUE = "OBS_VALUE"
+    OBS_STATUS = "OBS_STATUS"
+    UNIT_MEASURE = "UNIT_MEASURE"
+    UNIT_MULT = "UNIT_MULT"
+    FREQ = "FREQ"
+    SERIES = "SERIES"
+
+
 class DType(StrEnum):
     """Column types a frame may hold. Money and rates are floats with a declared unit; dates are ISO dates."""
 

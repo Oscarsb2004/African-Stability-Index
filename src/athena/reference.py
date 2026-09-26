@@ -12,7 +12,7 @@ from typing import ClassVar
 from pydantic import model_validator
 
 from athena.base import Definition
-from athena.method import Citation
+from athena.citations import Citation
 
 
 class Grouping(Definition):

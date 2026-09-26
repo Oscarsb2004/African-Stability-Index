@@ -10,11 +10,11 @@ import pyarrow.compute as pc
 import pytest
 from pydantic import BaseModel, ConfigDict
 
+from athena.citations import Citation
 from athena.frames import Column, Frame, Manifest
-from athena.method import Citation
 from athena.reference import Grouping
 from athena.steps import Invariant, Step
-from athena.vocab import DType, Profile, ReproClass, Role
+from athena.vocab import Concept, DType, Profile, ReproClass, Role
 
 FIXED_ON = date(2026, 9, 25)
 
@@ -28,9 +28,9 @@ def panel(rows: list[tuple[str, int, float]], *, measure: str = "value", unit: s
     manifest = Manifest(
         profile=Profile.PANEL,
         columns=(
-            Column(name="area", dtype=DType.STRING, role=Role.ENTITY),
-            Column(name="year", dtype=DType.INT64, role=Role.TIME),
-            Column(name=measure, dtype=DType.FLOAT64, role=Role.MEASURE, unit=unit),
+            Column(name="area", dtype=DType.STRING, role=Role.ENTITY, concept=Concept.REF_AREA),
+            Column(name="year", dtype=DType.INT64, role=Role.TIME, concept=Concept.TIME_PERIOD),
+            Column(name=measure, dtype=DType.FLOAT64, role=Role.MEASURE, unit=unit, concept=Concept.OBS_VALUE),
         ),
         keys=("area", "year"),
         produced_by=produced_by,

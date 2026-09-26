@@ -5,6 +5,8 @@ text is unclear, the reading adopted is logged with its reason, and the owner ru
 chosen because it matches the answer key. The card also lists every value the publisher releases along the way,
 because those values decide where checkpoints can go.
 
+The card records the rounding rule: the publisher's, cited, or the owner's default of half up.
+
 An own method states a formula in the owner's words. It needs no citations, and everything it produces is
 labelled derived.
 """
@@ -16,16 +18,12 @@ from typing import ClassVar
 from pydantic import model_validator
 
 from athena.base import Definition, Record
+from athena.citations import Citation
 from athena.ids import Id
+from athena.rounding import Rounding
 from athena.vocab import Origin
 
-
-class Citation(Record):
-    """Where in a stored document a statement comes from. The quote must be found verbatim at the locator."""
-
-    document: Id
-    locator: str
-    quote: str
+__all__ = ["Citation", "MethodCard", "MethodStep", "PublishedValue", "Reading"]
 
 
 class MethodStep(Record):
@@ -73,6 +71,7 @@ class MethodCard(Definition):
     readings: tuple[Reading, ...] = ()
     published_values: tuple[PublishedValue, ...] = ()
     formula: str | None = None
+    rounding: Rounding | None = None
 
     @model_validator(mode="after")
     def _well_formed(self) -> MethodCard:

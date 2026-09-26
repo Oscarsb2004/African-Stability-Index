@@ -12,8 +12,21 @@ import pyarrow.compute as pc
 from pydantic import model_validator
 
 from athena.base import Record
-from athena.ids import ContentHash, hash_bytes
-from athena.vocab import DType, Origin, Profile, ReproClass, Role, ValidationLevel
+from athena.ids import ContentHash, canonical_json, hash_bytes
+from athena.vocab import Concept, DType, Origin, Profile, ReproClass, Role, ValidationLevel
+
+HASH_SCHEME = "athena-frame/1"
+
+CONCEPT_ROLES: dict[Concept, Role] = {
+    Concept.REF_AREA: Role.ENTITY,
+    Concept.TIME_PERIOD: Role.TIME,
+    Concept.OBS_VALUE: Role.MEASURE,
+    Concept.OBS_STATUS: Role.STATUS,
+    Concept.UNIT_MEASURE: Role.CATEGORY,
+    Concept.UNIT_MULT: Role.CATEGORY,
+    Concept.FREQ: Role.CATEGORY,
+    Concept.SERIES: Role.ENTITY,
+}
 
 ARROW_TYPES: dict[DType, pa.DataType] = {
     DType.STRING: pa.string(),
@@ -29,12 +42,16 @@ class Column(Record):
     dtype: DType
     role: Role
     unit: str | None = None
+    concept: Concept | None = None
     description: str = ""
 
     @model_validator(mode="after")
     def _measures_have_units(self) -> Column:
         if self.role is Role.MEASURE and not self.unit:
             raise ValueError(f"measure column {self.name!r} must declare a unit")
+        if self.concept is not None and CONCEPT_ROLES[self.concept] is not self.role:
+            raise ValueError(f"column {self.name!r} is {self.concept}, which is a {CONCEPT_ROLES[self.concept]}, "
+                             f"not a {self.role}")
         return self
 
 
@@ -98,11 +115,17 @@ class Frame:
         return self.table.num_rows
 
     def content_hash(self) -> ContentHash:
-        """A hash of the numbers and the manifest together; the same frame always gives the same hash."""
-        sink = pa.BufferOutputStream()
-        with pa.ipc.new_stream(sink, self.table.schema) as writer:
-            writer.write_table(self.table)
-        return hash_bytes(sink.getvalue().to_pybytes() + self.manifest.fingerprint().encode())
+        """A hash of the values and the manifest, in a byte form Athena defines itself (decision 2).
+
+        Rows are ordered by their keys and every value is written in canonical JSON, so the hash does not
+        depend on row order, on how the table is chunked in memory, or on the version of any library.
+        Floats are written in their shortest round-trip form, and -0.0 is written as 0.0.
+        """
+        return hash_bytes(canonical_json({
+            "scheme": HASH_SCHEME,
+            "manifest": self.manifest.model_dump(mode="json"),
+            "rows": [[_canonical(v) for v in row.values()] for row in self.sorted_by_keys().table.to_pylist()],
+        }))
 
     def column(self, name: str) -> pa.ChunkedArray:
         return self.table.column(name)
@@ -110,3 +133,13 @@ class Frame:
     def sorted_by_keys(self) -> Frame:
         order = pc.sort_indices(self.table, [(k, "ascending") for k in self.manifest.keys])
         return Frame(self.table.take(order), self.manifest)
+
+
+def _canonical(value):
+    if isinstance(value, float):
+        if value != value or value in (float("inf"), float("-inf")):
+            raise ValueError("frames hold no NaN or infinite values; missing is null")
+        return 0.0 if value == 0 else value
+    if hasattr(value, "isoformat"):
+        return value.isoformat()
+    return value
