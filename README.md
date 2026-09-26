@@ -25,7 +25,9 @@ Athena recreates published datasets and indices from the publishers' own methods
 
 ## Licence
 
-Apache-2.0. See [LICENSE](LICENSE).
+**Source-available, all rights reserved.** You may read the code to evaluate the work. You may not use, copy, modify or distribute it without written permission. See [LICENSE](LICENSE).
+
+Issues and critique are welcome. Code contributions are accepted only under a signed agreement that gives the copyright holder full rights to them.
 
 ## Where things are
 
