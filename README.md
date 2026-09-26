@@ -20,8 +20,21 @@ Athena recreates published datasets and indices from the publishers' own methods
 | `reference` | `Grouping`: a small versioned definition that points, by hash, at a membership frame of member, group and level. Levels can nest and lists can overlap (decision P19) |
 | `runs` | `RunRecord`: the receipt that lets any result be rebuilt and compared exactly |
 | `schemas` | JSON Schema export. The Python definitions are the single source of truth; `schemas/` is generated from them |
+| `store` | The store: snapshots named by content hash and never overwritten, plus an append-only event log |
+| `transport` | The HTTP transport readers fetch through (TLS always verified), and a fixture transport for tests |
 
 `tests/test_pipeline.py` runs the whole loop in miniature. It builds a regional figure and checks both the region list and the regional values against the publisher. A planted wrong region is caught at the first checkpoint, which narrows the fault to the grouping step, and the divergence is recorded.
+
+## Projects
+
+`projects/mdg/` is the first replication: MDG indicator 3.3, the proportion of seats held by women in national parliament, for 2015 (section S42). It is private under decision P24.
+
+```bash
+PYTHONPATH="src;projects/mdg" .venv/Scripts/python -m mdg fetch   # retrieve every source into the store
+PYTHONPATH="src;projects/mdg" .venv/Scripts/python -m mdg run     # build, validate, write the report
+```
+
+The pipeline modules never import `mdg.answers`, and a test fails if one does. Tests use synthetic fixtures, so no publisher material is committed.
 
 ## Licence
 
