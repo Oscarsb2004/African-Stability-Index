@@ -6,7 +6,7 @@ Read this whole file before doing anything.
 
 The shared backend of Athena. It holds two kinds of code, under different rules:
 
-- **The contracts** (`src/athena/`): the definitions and base classes every project is built on - ids, sources, method cards, frames, steps, validation, runs. They exist before any project because every project needs them from its first line. *Proposed on 2026-09-25, awaiting the owner's decision; see the pull request that introduced them.*
+- **The contracts** (`src/athena/`): the definitions and base classes every project is built on - ids, sources, method cards, frames, steps, validation, runs. They exist before any project because every project needs them from its first line (decision P16).
 - **Shared shells**: steps used unchanged by two projects (decision P6, `std:MOD-01`). None yet. A shell enters only through an extraction pull request that keeps both consuming projects' checks passing.
 
 ## 2. Before any change

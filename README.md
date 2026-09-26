@@ -23,6 +23,10 @@ Athena recreates published datasets and indices from the publishers' own methods
 
 `tests/test_pipeline.py` runs the whole loop in miniature. It builds a regional figure and checks both the region list and the regional values against the publisher. A planted wrong region is caught at the first checkpoint, which narrows the fault to the grouping step, and the divergence is recorded.
 
+## Licence
+
+Apache-2.0. See [LICENSE](LICENSE).
+
 ## Where things are
 
 - **The umbrella, with the Standard, decisions and section briefs:** `Oscarsb2004/athena-data`
