@@ -1,0 +1,87 @@
+# Every source the MDG replications read. `kind` picks the reader; `edition` is what P25 compares: every value
+# input of an indicator must come from one edition. Terms are read and dated before any data is used.
+# Addresses under web.archive.org are Internet Archive captures, fetched raw (the id_ form).
+
+[ipu-2015-02]
+title = "IPU world classification of women in national parliaments, 1 February 2015"
+url = "http://archive.ipu.org/wmn-e/arc/classif010215.htm"
+kind = "ipu-classification"
+edition = "IPU 2015-02-01"
+year = 2015
+terms = "https://www.ipu.org/terms-use; read 2026-09-25; research or personal use, not commercial"
+
+[ipu-world-2015-02]
+title = "IPU world and regional averages, 1 February 2015"
+url = "http://archive.ipu.org/wmn-e/arc/world010215.htm"
+kind = "ipu-world"
+edition = "IPU 2015-02-01"
+terms = "https://www.ipu.org/terms-use; read 2026-09-25; research or personal use, not commercial"
+
+[groupings]
+title = "Official MDG regional groupings (capture of 2014-10-20)"
+url = "https://web.archive.org/web/20141020095627id_/http://mdgs.un.org/unsd/mdg/Resources/Static/Data/Regional%20groupings.doc"
+kind = "groupings-doc"
+terms = "https://www.un.org/en/about-us/terms-of-use; read 2026-09-25; personal, non-commercial, no derivatives"
+
+[ldc-2014]
+title = "UN DESA list of least developed countries (capture of 2014-01-13)"
+url = "https://web.archive.org/web/20140113124748id_/http://www.un.org/en/development/desa/policy/cdp/ldc/ldc_list.pdf"
+kind = "ldc-pdf"
+group = "least-developed"
+terms = "https://www.un.org/en/about-us/terms-of-use; read 2026-09-26; personal, non-commercial, no derivatives"
+
+[lldc-2014]
+title = "UN-OHRLLS landlocked developing countries (capture of 2014-12-31)"
+url = "https://web.archive.org/web/20141231235304id_/http://unohrlls.org:80/about-lldcs/country-profiles/"
+kind = "lldc-html"
+group = "landlocked-developing"
+terms = "https://www.un.org/en/about-us/terms-of-use; read 2026-09-26; personal, non-commercial, no derivatives"
+
+[m49]
+title = "UN M49 overview: country or area names and ISO codes"
+url = "https://unstats.un.org/unsd/methodology/m49/overview/"
+kind = "m49-html"
+terms = "https://www.un.org/en/about-us/terms-of-use; read 2026-09-25; personal, non-commercial, no derivatives"
+
+[annex-2015]
+title = "The MDG Report 2015, statistical annex (capture of 2015-09-12)"
+url = "https://web.archive.org/web/20150912043121id_/http://unstats.un.org/unsd/mdg/Resources/Static/Products/Progress2015/Statannex.pdf"
+kind = "annex-pdf"
+terms = "https://www.un.org/en/about-us/terms-of-use; read 2026-09-25; personal, non-commercial, no derivatives"
+
+[metadata-557]
+title = "MDG metadata, series 557 (capture of 2017-03-15)"
+url = "https://web.archive.org/web/20170315064103id_/https://mdgs.un.org/unsd/mdg/Metadata.aspx?IndicatorId=0&SeriesId=557"
+kind = "html"
+terms = "https://www.un.org/en/about-us/terms-of-use; read 2026-09-25; personal, non-commercial, no derivatives"
+
+[metadata-611]
+title = "MDG metadata, series 611 (capture of 2017-03-15)"
+url = "https://web.archive.org/web/20170315064018id_/https://mdgs.un.org/unsd/mdg/Metadata.aspx?IndicatorId=0&SeriesId=611"
+kind = "html"
+terms = "https://www.un.org/en/about-us/terms-of-use; read 2026-09-25; personal, non-commercial, no derivatives"
+
+[series-611]
+title = "MDG database, series 611, final edition of 6 July 2015 (capture of 2015-09-10)"
+url = "https://web.archive.org/web/20150910092221id_/http://mdgs.un.org/unsd/mdg/SeriesDetail.aspx?srid=611"
+kind = "mdg-series"
+terms = "https://data.un.org/Host.aspx?Content=UNdataUse; read 2026-09-25; redistribution with citation"
+
+[series-613]
+title = "MDG database, series 613, final edition of 6 July 2015 (capture of 2015-09-10)"
+url = "https://web.archive.org/web/20150910074839id_/http://mdgs.un.org/unsd/mdg/SeriesDetail.aspx?srid=613"
+kind = "mdg-series"
+terms = "https://data.un.org/Host.aspx?Content=UNdataUse; read 2026-09-25; redistribution with citation"
+
+[series-614]
+title = "MDG database, series 614, final edition of 6 July 2015 (capture of 2015-09-10)"
+url = "https://web.archive.org/web/20150910134912id_/http://mdgs.un.org/unsd/mdg/SeriesDetail.aspx?srid=614"
+kind = "mdg-series"
+terms = "https://data.un.org/Host.aspx?Content=UNdataUse; read 2026-09-25; redistribution with citation"
+
+[wdi-2015-04]
+title = "World Development Indicators, April 2015 edition, from the WDI Database Archives"
+url = "https://api.worldbank.org/v2/sources/57/country/all/series/{series}/version/201504/time/{years}?format=json&per_page=20000"
+kind = "wdi-archive"
+edition = "WDI 2015-04"
+terms = "https://datacatalog.worldbank.org/search/dataset/0038555; read 2026-09-26; CC BY 4.0"
