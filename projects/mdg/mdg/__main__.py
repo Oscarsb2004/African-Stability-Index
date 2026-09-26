@@ -1,7 +1,8 @@
 """Command line for phase 1.
 
     python -m mdg fetch    retrieve every recipe into the store (network)
-    python -m mdg run      build, validate and write the report (no network)
+    python -m mdg run      build, validate and write the 3.3 report (no network)
+    python -m mdg run-goal3   build and validate 3.1, host 3.2, and write the Goal 3 report (no network)
 """
 
 from __future__ import annotations
@@ -25,9 +26,13 @@ from mdg.validate import validate
 from mdg.view import render
 
 
-def fetch(store: Store) -> None:
+def fetch(store: Store, refresh: bool = False) -> None:
+    """Retrieve each recipe once. A recipe that already has a snapshot is skipped unless refresh is asked for."""
     transport = HttpTransport()
+    fetched = {e["recipe"] for e in store.events("snapshot")}
     for recipe in RECIPES:
+        if recipe.ref in fetched and not refresh:
+            continue
         source = SOURCES[recipe.source]
         if not source.usable:
             raise SystemExit(f"{source.id}: terms not read and dated (std:DATA-04)")
@@ -69,15 +74,49 @@ def run(store: Store) -> int:
     return 0 if v.passed else 1
 
 
+def run_goal3(store: Store) -> int:
+    from mdg.goal3 import build_goal3
+    from mdg.validate_goal3 import validate_goal3
+    from mdg.view_goal3 import render_goal3
+
+    started = datetime.now(timezone.utc)
+    b = build_goal3(store)
+    v = validate_goal3(b, store)
+    lock = Path(__file__).resolve().parents[3] / "requirements.lock"
+    record = RunRecord(
+        id=f"run:mdg-goal-3-{started:%Y%m%dT%H%M%SZ}", project="project:index-catalogue", started_at=started,
+        finished_at=datetime.now(timezone.utc), code_version=code_version(),
+        environment=hash_bytes(lock.read_bytes()) if lock.exists() else hash_bytes(b""),
+        parsed=b.parsed, steps=tuple(b.results), comparisons=tuple(v.comparisons.values()),
+    )
+    folder = store.root / "runs" / record.id.split(":", 1)[1]
+    folder.mkdir(parents=True, exist_ok=True)
+    (folder / "run.json").write_bytes(canonical_json(record.model_dump(mode="json")))
+    (folder / "report.html").write_text(render_goal3(b, v, record.id), encoding="utf-8")
+    for d in v.register.current().values():
+        store.log("divergence", run=record.id, **d.model_dump(mode="json"))
+    store.log("run", id=record.id, report=str(folder / "report.html"),
+              checkpoints={k: c.passed for k, c in v.comparisons.items()})
+    for k, c in v.comparisons.items():
+        print(f"{k}: compared {c.compared}, within {c.within}, missing {c.missing}, extra {c.extra}, "
+              f"largest difference {c.max_abs_difference:.4f} -> {'pass' if c.passed else 'FAIL'}")
+    print("quotes:", "all found" if not v.quote_problems else v.quote_problems)
+    print("report:", folder / "report.html")
+    return 0
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(prog="mdg")
-    parser.add_argument("command", choices=("fetch", "run"))
+    parser.add_argument("command", choices=("fetch", "run", "run-goal3"))
     parser.add_argument("--store", type=Path, default=DEFAULT_ROOT)
+    parser.add_argument("--refresh", action="store_true", help="fetch recipes that already have a snapshot again")
     args = parser.parse_args(argv)
     store = Store(args.store)
     if args.command == "fetch":
-        fetch(store)
+        fetch(store, refresh=args.refresh)
         return 0
+    if args.command == "run-goal3":
+        return run_goal3(store)
     return run(store)
 
 

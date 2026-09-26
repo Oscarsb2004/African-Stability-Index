@@ -109,3 +109,114 @@ def verify_quotes(card: MethodCard, texts: Mapping[str, str]) -> list[str]:
         elif normalise(c.quote) not in normalise(texts[document]):
             problems.append(f"{c.locator}: quote not found verbatim - {c.quote[:60]!r}")
     return problems
+
+
+# ── Goal 3: indicators 3.1 and 3.2 (section S43) ───────────────────────────────────────────────────────────
+
+META_611 = "MDG metadata series 611"
+META_722 = "MDG metadata series 722"
+SERIES_611 = "MDG database series 611"
+SERIES_722 = "MDG database series 722"
+ANNEX_31 = "MDG 2015 statistical annex, pages 16 and 17"
+ANNEX_32 = "MDG 2015 statistical annex, page 18"
+
+CARD_31 = MethodCard(
+    id="method:mdg-3-1", title="MDG 3.1 - Ratios of girls to boys in primary, secondary and tertiary education",
+    subject="indicator:mdg-3-1", origin=Origin.PUBLISHED,
+    steps=(
+        MethodStep(number=1, name="Gross enrolment ratios by sex", shell="shell:mdg-ger-by-country",
+                   action="For each country, sex and level, divide enrolment by the school-age population.",
+                   citation=Citation(document=META, locator=f"{META_611}, Method of computation",
+                                     quote="is divided by the population of official school age for that level of "
+                                           "education")),
+        MethodStep(number=2, name="Ratio of girls to boys", shell="shell:mdg-parity-by-country",
+                   action="Divide the female gross enrolment ratio by the male one.",
+                   citation=Citation(document=META, locator=f"{META_611}, Definition",
+                                     quote="the Gender Parity Index (GPI) of the Gross Enrolment Ratio (GER) for each "
+                                           "level of education is used")),
+        MethodStep(number=3, name="Weight by school-age population per group", shell="shell:mdg-parity-by-group",
+                   action="Average over each group's countries, weighted by school-age population.",
+                   citation=Citation(document=META, locator=f"{META_611}, Regional and Global estimates",
+                                     quote="Averages are produced using the appropriate school-age populations as "
+                                           "weights.")),
+        MethodStep(number=4, name="Fill gaps with unpublished estimates", shell=None,
+                   action="The publisher fills missing countries with estimates it does not release. We cannot, so "
+                          "a group is built only from countries with published counts.",
+                   citation=Citation(document=META, locator=f"{META_611}, Regional and Global estimates",
+                                     quote="using the best possible non-publishable estimates where no publishable "
+                                           "data exist")),
+    ),
+    published_values=(
+        PublishedValue(name="UIS gross enrolment ratios by sex", after_step=1,
+                       description="UIS publishes each country's gross enrolment ratio by sex (current edition).",
+                       citation=Citation(document=META, locator=f"{META_611}, Method of computation",
+                                         quote="is divided by the population of official school age")),
+        PublishedValue(name="country ratios, 2015 edition", after_step=2,
+                       description="The MDG database's final country values, last updated 6 July 2015.",
+                       citation=Citation(document=META, locator=f"{SERIES_611}, table",
+                                         quote="Last updated: 06 Jul 2015")),
+        PublishedValue(name="regional table", after_step=3,
+                       description="The annex prints each grouping's ratio for 1991, 2000 and 2015, to two decimals.",
+                       citation=Citation(document=REPORT, locator=ANNEX_31,
+                                         quote="Ratios of girls to boys in primary, secondary")),
+    ),
+    readings=(
+        Reading(step=3, sentence=Citation(document=META, locator=f"{META_611}, Regional and Global estimates",
+                                          quote="Averages are produced using the appropriate school-age populations "
+                                                "as weights."),
+                options=("A group's female gross enrolment ratio over its male one, each summed over the group's "
+                         "countries, so each sex is weighted by its own school-age population",
+                         "The average of the countries' ratios, weighted by total school-age population"),
+                adopted="A group's female gross enrolment ratio over its male one, each summed over the group's "
+                        "countries, so each sex is weighted by its own school-age population",
+                reason="The sentence weights averages by school-age populations, and a gross enrolment ratio is "
+                       "defined per sex over its own population. Taking the ratio of the two group ratios keeps that "
+                       "definition at group level. Adopted before any comparison; awaiting the owner."),
+    ),
+    rounding=Rounding(decimals=2),
+)
+
+CARD_32 = MethodCard(
+    id="method:mdg-3-2", title="MDG 3.2 - Share of women in wage employment in the non-agricultural sector",
+    subject="indicator:mdg-3-2", origin=Origin.PUBLISHED,
+    steps=(
+        MethodStep(number=1, name="Share per country", shell=None,
+                   action="Women in non-agricultural paid employment over all persons in it, per country.",
+                   citation=Citation(document=META, locator=f"{META_722}, Method of computation",
+                                     quote="The indicator is calculated as the number of women in non-agricultural "
+                                           "paid employment divided by the total number of persons in paid "
+                                           "employment in the non-agricultural sector.")),
+        MethodStep(number=2, name="Weight by 1990 non-agricultural labour force", shell=None,
+                   action="Average over each group, weighted by each country's economically active population in "
+                          "the non-agricultural sector in 1990.",
+                   citation=Citation(document=META, locator=f"{META_722}, Regional and Global estimates",
+                                     quote="in the benchmark year 1990")),
+        MethodStep(number=3, name="Impute missing countries", shell=None,
+                   action="The publisher imputes missing countries with models it does not release.",
+                   citation=Citation(document=META, locator=f"{META_722}, Treatment of missing values",
+                                     quote="These imputed values are used solely for the production of the regional "
+                                           "and global estimates of the indicator.")),
+    ),
+    published_values=(
+        PublishedValue(name="country shares, 2015 edition", after_step=1,
+                       description="The MDG database's final country values, last updated 6 July 2015.",
+                       citation=Citation(document=META, locator=f"{SERIES_722}, table",
+                                         quote="Last updated: 06 Jul 2015")),
+        PublishedValue(name="regional table", after_step=2,
+                       description="The annex prints each region's share for 1990, 2000, 2005 and 2013.",
+                       citation=Citation(document=REPORT, locator=ANNEX_32,
+                                         quote="Share of women in wage employment in the")),
+    ),
+    rounding=Rounding(decimals=1),
+)
+
+INDICATOR_31 = Indicator(
+    id="indicator:mdg-3-1", title="Ratios of girls to boys in primary, secondary and tertiary education",
+    framework="MDG", code="3.1", unit="ratio", method=CARD_31.id,
+    sources=(META, REPORT, "source:uis-api"), repro_class=ReproClass.B,
+)
+INDICATOR_32 = Indicator(
+    id="indicator:mdg-3-2", title="Share of women in wage employment in the non-agricultural sector",
+    framework="MDG", code="3.2", unit="percent", method=CARD_32.id,
+    sources=(META, REPORT), repro_class=ReproClass.C,
+)

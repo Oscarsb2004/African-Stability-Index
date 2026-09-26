@@ -115,11 +115,11 @@ class ReplaceGroups(Step):
 # ── Ratios ───────────────────────────────────────────────────────────────────────────────────────────────────
 
 def _percent_frame(rows: list[tuple[str, float, int]], produced_by: str, period: str, entity: str,
-                   extra: tuple[Column, ...] = (), extra_values: dict | None = None) -> Frame:
+                   extra: tuple[Column, ...] = (), extra_values: dict | None = None, unit: str = "percent") -> Frame:
     manifest = Manifest(
         profile=Profile.CROSS_SECTION,
         columns=(Column(name=entity, dtype=DType.STRING, role=Role.ENTITY),
-                 Column(name="value", dtype=DType.FLOAT64, role=Role.MEASURE, unit="percent"),
+                 Column(name="value", dtype=DType.FLOAT64, role=Role.MEASURE, unit=unit),
                  Column(name="countries", dtype=DType.INT64, role=Role.MEASURE, unit="countries",
                         description="Countries with both counts known"),
                  *extra),
@@ -210,6 +210,141 @@ class SumRatioByGroup(Step):
                           between_members),)
 
 
+# ── Indicator 3.1: gender parity of gross enrolment ratios ──────────────────────────────────────────────────
+
+COUNT_COLUMNS = ("ef", "em", "pf", "pm")
+COUNT_LABELS = {"ef": "female enrolment", "em": "male enrolment", "pf": "female school-age population",
+                "pm": "male school-age population"}
+
+
+class UisCountsParameters(_Params):
+    year: int
+    ef: str
+    em: str
+    pf: str
+    pm: str
+
+
+class UisCounts(Step):
+    """Arrange one level's UIS counts for one year as a row per country: enrolment and school-age population,
+    female and male. A count UIS does not publish stays missing."""
+
+    ID = "shell:mdg-uis-counts"
+    VERSION = "0.1.0"
+    TITLE = "Enrolment and school-age population by sex, one year"
+    SUMMARY = "Pick four UIS indicators for one year and lay them out one row per country."
+    INPUTS = {"records": Profile.PANEL}
+    OUTPUT = Profile.CROSS_SECTION
+    Parameters = UisCountsParameters
+
+    def run(self, inputs, params):
+        codes = {getattr(params, c): c for c in COUNT_COLUMNS}
+        by_area: dict[str, dict[str, float | None]] = {}
+        for r in inputs["records"].table.to_pylist():
+            if r["year"] == params.year and r["indicator"] in codes:
+                by_area.setdefault(r["area"], {c: None for c in COUNT_COLUMNS})[codes[r["indicator"]]] = r["value"]
+        areas = sorted(by_area)
+        manifest = Manifest(
+            profile=Profile.CROSS_SECTION,
+            columns=(Column(name="area", dtype=DType.STRING, role=Role.ENTITY, concept=Concept.REF_AREA),
+                     *[Column(name=c, dtype=DType.FLOAT64, role=Role.MEASURE, unit="persons",
+                              description=COUNT_LABELS[c]) for c in COUNT_COLUMNS]),
+            keys=("area",), produced_by=self.ref(), repro_class=ReproClass.B, period=str(params.year),
+        )
+        table = {"area": pa.array(areas, pa.string())}
+        table |= {c: pa.array([by_area[a][c] for a in areas], pa.float64()) for c in COUNT_COLUMNS}
+        return Frame(pa.table(table), manifest)
+
+    def invariants(self):
+        return (Invariant("counts-not-negative", "No enrolment or population is negative.",
+                          lambda i, o, p: all(v is None or v >= 0 for c in COUNT_COLUMNS
+                                              for v in o.column(c).to_pylist())),)
+
+
+def _complete(rows: list[dict]) -> list[dict]:
+    """Method: no imputation of our own. A country is used only where all four counts are published and the
+    populations are positive."""
+    return [r for r in rows if all(r[c] is not None for c in COUNT_COLUMNS) and r["pf"] > 0 and r["pm"] > 0
+            and r["em"] > 0]
+
+
+def _parity(ef: float, pf: float, em: float, pm: float) -> float:
+    return (ef / pf) / (em / pm)
+
+
+class GerByCountry(Step):
+    """Gross enrolment ratios by sex, per country: enrolment over school-age population, times 100. Checked against
+    the ratios UIS itself publishes, which separates our arithmetic from any revision since 2015."""
+
+    ID = "shell:mdg-ger-by-country"
+    VERSION = "0.1.0"
+    TITLE = "Gross enrolment ratio by sex, per country"
+    SUMMARY = "Divide enrolment by school-age population for each sex."
+    INPUTS = {"counts": Profile.CROSS_SECTION}
+    OUTPUT = Profile.CROSS_SECTION
+
+    def run(self, inputs, params):
+        rows = _complete(inputs["counts"].table.to_pylist())
+        manifest = Manifest(
+            profile=Profile.CROSS_SECTION,
+            columns=(Column(name="area", dtype=DType.STRING, role=Role.ENTITY, concept=Concept.REF_AREA),
+                     Column(name="female", dtype=DType.FLOAT64, role=Role.MEASURE, unit="percent"),
+                     Column(name="male", dtype=DType.FLOAT64, role=Role.MEASURE, unit="percent")),
+            keys=("area",), produced_by=self.ref(), repro_class=ReproClass.B,
+            period=inputs["counts"].manifest.period,
+        )
+        return Frame(pa.table({"area": [r["area"] for r in rows],
+                               "female": pa.array([100 * r["ef"] / r["pf"] for r in rows], pa.float64()),
+                               "male": pa.array([100 * r["em"] / r["pm"] for r in rows], pa.float64())}), manifest)
+
+
+class ParityByCountry(Step):
+    ID = "shell:mdg-parity-by-country"
+    VERSION = "0.1.0"
+    TITLE = "Ratio of girls to boys, per country"
+    SUMMARY = "The female gross enrolment ratio divided by the male one, for each country."
+    INPUTS = {"counts": Profile.CROSS_SECTION}
+    OUTPUT = Profile.CROSS_SECTION
+
+    def run(self, inputs, params):
+        rows = _complete(inputs["counts"].table.to_pylist())
+        return _percent_frame([(r["area"], _parity(r["ef"], r["pf"], r["em"], r["pm"]), 1) for r in rows],
+                              self.ref(), inputs["counts"].manifest.period, "area", unit="ratio")
+
+    def invariants(self):
+        return (Invariant("not-negative", "A parity index is never negative; it is 0 where no girls are enrolled.",
+                          lambda i, o, p: all(v >= 0 for v in o.column("value").to_pylist())),)
+
+
+class ParityByGroup(Step):
+    """Reading adopted on the method card: a group's ratio is its female gross enrolment ratio over its male one,
+    each being total enrolment over total school-age population across the group's countries. This is the same as
+    weighting each country's ratio for each sex by that sex's school-age population."""
+
+    ID = "shell:mdg-parity-by-group"
+    VERSION = "0.1.0"
+    TITLE = "Ratio of girls to boys, per group"
+    SUMMARY = "Sum enrolment and school-age population by sex over a group, then divide the two ratios."
+    INPUTS = {"counts": Profile.CROSS_SECTION, "groups": Profile.MEMBERSHIP}
+    OUTPUT = Profile.CROSS_SECTION
+    Parameters = SumRatioParameters
+
+    def run(self, inputs, params):
+        known = {r["area"]: r for r in _complete(inputs["counts"].table.to_pylist())}
+        totals: dict[str, list] = {}
+        for m in inputs["groups"].table.to_pylist():
+            if m[LEVEL] in params.levels and m[MEMBER] in known:
+                t = totals.setdefault(m[GROUP], [m[LEVEL], 0.0, 0.0, 0.0, 0.0, 0])
+                for i, c in enumerate(COUNT_COLUMNS, 1):
+                    t[i] += known[m[MEMBER]][c]
+                t[5] += 1
+        rows = sorted(totals.items())
+        extra = (Column(name="level", dtype=DType.STRING, role=Role.CATEGORY),)
+        return _percent_frame([(g, _parity(t[1], t[3], t[2], t[4]), t[5]) for g, t in rows], self.ref(),
+                              inputs["counts"].manifest.period, "group", extra,
+                              {"level": pa.array([t[0] for _, t in rows], pa.string())}, unit="ratio")
+
+
 # ── Rounding ─────────────────────────────────────────────────────────────────────────────────────────────────
 
 class RoundParameters(_Params):
@@ -242,4 +377,5 @@ class RoundValues(Step):
                           within_half_unit),)
 
 
-STEPS = (CodeCountries, CodeMembers, ReplaceGroups, RatioByCountry, SumRatioByGroup, RoundValues)
+STEPS = (CodeCountries, CodeMembers, ReplaceGroups, RatioByCountry, SumRatioByGroup, RoundValues, UisCounts,
+         GerByCountry, ParityByCountry, ParityByGroup)

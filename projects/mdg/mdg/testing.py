@@ -89,7 +89,30 @@ def pdf(lines: list[str]) -> bytes:
     return out.encode("latin-1")
 
 
-ANNEX_LINES = [
+GOAL3_ANNEX_LINES = [
+    "Indicator 3.1",
+    "Ratios of girls to boys in primary, secondary and tertiary education",
+] + [line for part, title in (("a", "Primary"), ("b", "Secondary"), ("c", "Tertiary")) for line in (
+    f"({part}) {title} education a",
+    "1991 2000 2015 b",
+    "World 0.88 0.88 -",
+    "Developing regions 0.87 0.87 -",
+    "Northern Africa 0.91 0.91 -",
+    "Eastern Asia 0.75 0.75 -",
+    "Developed regions 0.90 0.90 -",
+    "Least developed countries 0.91 0.91 -",
+    "Report of the Secretary-General on the work of the Organization",
+    "Landlocked developing countries 0.75 0.75 -",
+)] + [
+    "a Using gross enrolment ratios. b Projections.",
+    "Indicator 3.2",
+    "Share of women in wage employment in the non-agri cultural sector",
+    "1990 2000 2005 2013",
+    "World 35.4 37.6 38.5 39.9",
+    "Developed regions 44.7 46.2 47.0 47.8",
+]
+
+ANNEX_LINES = GOAL3_ANNEX_LINES + [
     "Indicator 3.3",
     "Proportion of seats held by women in national parliament a",
     "2014 2015",
@@ -123,13 +146,67 @@ def lldc_html(regions=(("Asia", ("Delta",)),)) -> bytes:
             f"</body></html>").encode()
 
 
+# Goal 3 fixtures. Enrolment (female, male) and school-age population (female, male) per country, the same for
+# every level and year. Expected ratios: Alpha 0.90, Beta 0.80, Gamma 1.00, Delta 0.75; Epsilon has no counts.
+UIS_COUNTS_BY_AREA = {"AAA": (90, 100, 100, 100), "BBB": (40, 50, 50, 50), "CCC": (60, 60, 60, 60),
+                      "DDD": (30, 40, 40, 40)}
+PARITY = {"Alpha": 0.90, "Beta": 0.80, "Gamma": 1.00, "Delta": 0.75}
+
+
+def uis_json(codes: tuple[str, ...], values: dict[str, tuple[float, ...]], years=(1991, 2000)) -> bytes:
+    import json
+    records = [{"indicatorId": code, "geoUnit": area, "year": year, "value": vals[i], "magnitude": None,
+                "qualifier": None}
+               for area, vals in values.items() for year in years for i, code in enumerate(codes)]
+    return json.dumps({"hints": [], "records": records}).encode()
+
+
+def series_html(values: dict[str, float], years=(1991, 2000), decimals: int = 2) -> bytes:
+    head = "<tr class=\"Head\"><td>Country</td>" + "".join(f"<td>{y}</td>" for y in years) + "</tr>"
+    rows = "".join(f"<tr class=\"Data\"><td>{name}</td>" + "".join(
+        f"<td class=\"C\">{v:.{decimals}f}<sup><span class=\"Footnotes\">1</span></sup></td>" for _ in years)
+        + "</tr>" for name, v in values.items())
+    return (f"<html><body><div>Last updated: 06 Jul 2015</div><table><tr class=\"Head\"><td>Series</td></tr>"
+            f"{head}{rows}</table></body></html>").encode()
+
+
+def metadata_31_html() -> bytes:
+    return ("<html><body><p>To standardise, the Gender Parity Index (GPI) of the Gross Enrolment Ratio (GER) for "
+            "each level of education is used.</p><p>Then, the number enrolled in each level is divided by the "
+            "population of official school age for that level of education, and multiplied by 100.</p><p>Averages "
+            "are produced using the appropriate school-age populations as weights.</p><p>Regional averages are made "
+            "using the best possible non-publishable estimates where no publishable data exist.</p></body></html>").encode()
+
+
+def metadata_32_html() -> bytes:
+    return ("<html><body><p>The indicator is calculated as the number of women in non-agricultural paid employment "
+            "divided by the total number of persons in paid employment in the non-agricultural sector.</p><p>Shares "
+            "in the benchmark year 1990.</p><p>These imputed values are used solely for the production of the "
+            "regional and global estimates of the indicator.</p></body></html>").encode()
+
+
+def goal3_content() -> dict[str, bytes]:
+    from mdg.sources import LEVELS, METADATA, SERIES, UIS_COUNTS, UIS_GER
+
+    ger = {a: (100 * ef / pf, 100 * em / pm) for a, (ef, em, pf, pm) in UIS_COUNTS_BY_AREA.items()}
+    content = {SERIES[722].id: series_html({"Alpha": 45.0, "Beta": 30.0}, years=(1990, 2013), decimals=1),
+               METADATA[722].id: metadata_32_html()}
+    for srid in (611, 613, 614):
+        content[SERIES[srid].id] = series_html(PARITY)
+        content[METADATA[srid].id] = metadata_31_html()
+    for part, (level, ef, em, pf, pm, gf, gm, _s) in LEVELS.items():
+        content[UIS_COUNTS[part].id] = uis_json((ef, em, pf, pm), UIS_COUNTS_BY_AREA)
+        content[UIS_GER[part].id] = uis_json((gf, gm), ger)
+    return content
+
+
 def fill(store: Store, **overrides: bytes) -> Store:
     """Put one snapshot per recipe into the store; keyword overrides replace a recipe's bytes by recipe slug."""
     content = {
         IPU_CLASSIFICATION.id: ipu_html(), IPU_WORLD.id: world_html(), GROUPINGS.id: groupings_doc(),
         METADATA_557.id: metadata_html(), ANNEX.id: annex_pdf(), M49_OVERVIEW.id: m49_html(),
         LDC_2014.id: ldc_pdf(), LLDC_2014.id: lldc_html(),
-    }
+    } | goal3_content()
     for slug, data in overrides.items():
         content[f"recipe:{slug}"] = data
     for recipe in RECIPES:

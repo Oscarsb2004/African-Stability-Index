@@ -18,7 +18,7 @@ from mdg.readers import (AnnexTableReader, GroupingsDocReader, IpuClassification
 from mdg.sources import ANNEX, GROUPINGS, IPU_CLASSIFICATION, IPU_WORLD, M49_OVERVIEW
 from mdg.validate import validate
 
-PIPELINE_MODULES = ("sources", "readers", "codes", "steps", "method", "pipeline")
+PIPELINE_MODULES = ("sources", "readers", "codes", "steps", "method", "pipeline", "goal3")
 
 
 @pytest.fixture
