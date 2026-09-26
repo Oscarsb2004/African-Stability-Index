@@ -7,6 +7,8 @@ name = "athena-core"
 version = "0.1.0.dev0"
 description = "The contracts every Athena project is built on: definitions, frames, steps and validation."
 requires-python = ">=3.13"
+license = "Apache-2.0"
+license-files = ["LICENSE"]
 dependencies = [
     "pydantic==2.13.5",
     "pyarrow==25.0.1",
