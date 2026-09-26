@@ -66,9 +66,19 @@ CARD = MethodCard(
                                           quote="Other groupings: Least Developed Countries as of 1 January 2011"),
                 options=("The list as the official groupings document gives it (as of 1 January 2011)",
                          "The list of least developed countries in force in January 2015"),
-                adopted="The list as the official groupings document gives it (as of 1 January 2011)",
-                reason="It is the list the IAEG published as its grouping. The later list would be our choice, "
-                       "not the publisher's. Any divergence in this row is expected and will be classed."),
+                adopted="The list of least developed countries in force in January 2015",
+                reason="Owner ruling of 2026-09-26: use the lists in force in 2015. The list is the UN DESA list "
+                       "captured on 2014-01-13; it already reflects Samoa's graduation on 1 January 2014, and its "
+                       "footnote places the next graduations after 2015.",
+                owner_ruled=True),
+        Reading(step=2, sentence=Citation(document=META, locator=f"{GROUPINGS_DOC}, section 4",
+                                          quote="Other groupings: Landlocked developing countries"),
+                options=("The list as the official groupings document gives it (undated)",
+                         "The list of landlocked developing countries in force in January 2015"),
+                adopted="The list of landlocked developing countries in force in January 2015",
+                reason="Owner ruling of 2026-09-26, the same rule as for least developed countries. The list is the "
+                       "UN-OHRLLS country-profiles page captured on 2014-12-31.",
+                owner_ruled=True),
     ),
     rounding=Rounding(decimals=1),
 )

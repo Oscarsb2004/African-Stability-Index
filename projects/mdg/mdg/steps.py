@@ -78,6 +78,40 @@ class CodeMembers(Step):
         return (Invariant("groups-kept", "Coding never adds or removes a group.", same_groups),)
 
 
+class ReplaceGroups(Step):
+    """Owner ruling of 2026-09-26: the least developed and landlocked developing groups use the lists in force in
+    January 2015, not the older lists in the groupings document. Every group the replacement names is replaced
+    whole; every other group is kept as it is."""
+
+    ID = "shell:mdg-replace-groups"
+    VERSION = "0.1.0"
+    TITLE = "Replace whole groups with dated lists"
+    SUMMARY = "Swap the members of named groups for the members of a replacement list."
+    INPUTS = {"groups": Profile.MEMBERSHIP, "replacement": Profile.MEMBERSHIP}
+    OUTPUT = Profile.MEMBERSHIP
+
+    def run(self, inputs, params):
+        replacement = {(r[MEMBER], r[GROUP], r[LEVEL]) for r in inputs["replacement"].table.to_pylist()}
+        replaced = {(g, lvl) for _, g, lvl in replacement}
+        kept = {(r[MEMBER], r[GROUP], r[LEVEL]) for r in inputs["groups"].table.to_pylist()
+                if (r[GROUP], r[LEVEL]) not in replaced}
+        return membership_frame(sorted(kept | replacement), produced_by=self.ref())
+
+    def invariants(self):
+        def groups(frame):
+            return {(r[GROUP], r[LEVEL]) for r in frame.table.to_pylist()}
+
+        def members(frame, group):
+            return {r[MEMBER] for r in frame.table.to_pylist() if (r[GROUP], r[LEVEL]) == group}
+
+        def exact(i, o, p):
+            return all(members(o, g) == members(i["replacement"], g) for g in groups(i["replacement"]))
+
+        return (Invariant("groups-kept", "No group is lost or invented.",
+                          lambda i, o, p: groups(o) == groups(i["groups"]) | groups(i["replacement"])),
+                Invariant("replaced-exactly", "A replaced group has exactly the replacement's members.", exact))
+
+
 # ── Ratios ───────────────────────────────────────────────────────────────────────────────────────────────────
 
 def _percent_frame(rows: list[tuple[str, float, int]], produced_by: str, period: str, entity: str,
@@ -208,4 +242,4 @@ class RoundValues(Step):
                           within_half_unit),)
 
 
-STEPS = (CodeCountries, CodeMembers, RatioByCountry, SumRatioByGroup, RoundValues)
+STEPS = (CodeCountries, CodeMembers, ReplaceGroups, RatioByCountry, SumRatioByGroup, RoundValues)

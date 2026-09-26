@@ -185,3 +185,46 @@ def test_the_isolation_scan_catches_a_planted_read():
     assert imports_answers("import mdg.answers as a\n")
     assert imports_answers("from mdg.answers import regional\n")
     assert not imports_answers("from mdg import readers\n")
+
+
+# ── The owner's ruling on least developed and landlocked lists (2026-09-26) ─────────────────────────────────
+
+def test_the_dated_ldc_list_is_numbered_without_gaps_and_drops_footnote_digits():
+    from mdg.readers import LdcListReader
+    assert LdcListReader().names(testing.ldc_pdf(("Gamma", "Beta"))) == ["Gamma", "Beta"]
+    gap = testing.pdf(["LIST", "1 Gamma 1971 3 Beta 1975"])
+    with pytest.raises(ParseError, match="not numbered 1 to n"):
+        LdcListReader().names(gap)
+
+
+def test_the_lldc_reader_checks_each_region_count():
+    from mdg.readers import LldcProfilesReader
+    assert LldcProfilesReader().names(testing.lldc_html()) == ["Delta"]
+    wrong = testing.lldc_html().replace(b"Asia (1)", b"Asia (2)")
+    with pytest.raises(ParseError, match="region counts"):
+        LldcProfilesReader().names(wrong)
+
+
+def test_the_dated_lists_replace_the_documents_lists_whole(store):
+    b, v = run(store)
+    groups = {(r["member"], r["group"]) for r in b.frames["groups"].table.to_pylist()}
+    assert {m for m, g in groups if g == "least-developed"} == {"BBB", "CCC"}
+    assert {m for m, g in groups if g == "landlocked-developing"} == {"DDD"}, "Epsilon, the document's entry, is gone"
+    assert v.passed, v.comparisons
+
+
+def test_the_readings_record_the_owner_ruling():
+    assert CARD.unruled_readings == ()
+    assert all("2015" in r.adopted for r in CARD.readings)
+
+
+def test_without_the_replacement_the_least_developed_row_diverges(store, monkeypatch):
+    monkeypatch.setattr(mdg_steps.ReplaceGroups, "run",
+                        lambda self, inputs, params: type(inputs["groups"])(
+                            inputs["groups"].table, inputs["groups"].manifest.model_copy(
+                                update={"produced_by": self.ref()})))
+    monkeypatch.setattr(mdg_steps.ReplaceGroups, "invariants", lambda self: ())
+    _, v = run(store)
+    assert not v.comparisons["K3"].passed
+    wrong = {m.key["group"] for m in v.comparisons["K3"].mismatches if m.side != "extra"}
+    assert wrong == {"least-developed", "landlocked-developing"}

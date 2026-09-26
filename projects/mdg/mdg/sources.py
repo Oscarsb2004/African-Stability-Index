@@ -39,7 +39,23 @@ M49 = SourceCard(
     readers=("reader:m49-html",),
 )
 
-SOURCES = {s.id: s for s in (IPU, MDG_DOCS, MDG_REPORT, M49)}
+LDC_LIST = SourceCard(
+    id="source:un-desa-ldc-list", title="UN DESA list of least developed countries",
+    publisher="UN DESA, Committee for Development Policy secretariat, via the Internet Archive",
+    access=Access.DOCUMENT,
+    terms=Terms(url="https://www.un.org/en/about-us/terms-of-use", read_on=date(2026, 9, 26),
+                redistribution=Redistribution.FORBIDDEN, summary="Personal, non-commercial use only."),
+    readers=("reader:ldc-list-pdf",),
+)
+LLDC_LIST = SourceCard(
+    id="source:un-ohrlls-lldc-list", title="UN-OHRLLS list of landlocked developing countries",
+    publisher="UN-OHRLLS, via the Internet Archive", access=Access.WEB,
+    terms=Terms(url="https://www.un.org/en/about-us/terms-of-use", read_on=date(2026, 9, 26),
+                redistribution=Redistribution.FORBIDDEN, summary="Personal, non-commercial use only."),
+    readers=("reader:lldc-profiles-html",),
+)
+
+SOURCES = {s.id: s for s in (IPU, MDG_DOCS, MDG_REPORT, M49, LDC_LIST, LLDC_LIST)}
 
 
 def recipe(slug: str, title: str, source: SourceCard, reader: str, url: str) -> Recipe:
@@ -69,4 +85,13 @@ M49_OVERVIEW = recipe(
     "m49-overview", "M49 overview table", M49, "reader:m49-html",
     "https://unstats.un.org/unsd/methodology/m49/overview/")
 
-RECIPES = (IPU_CLASSIFICATION, IPU_WORLD, GROUPINGS, METADATA_557, ANNEX, M49_OVERVIEW)
+LDC_2014 = recipe(
+    "un-ldc-list-2014-01", "List of least developed countries (capture of 2014-01-13)", LDC_LIST,
+    "reader:ldc-list-pdf",
+    WAYBACK.format(stamp="20140113124748", url="http://www.un.org/en/development/desa/policy/cdp/ldc/ldc_list.pdf"))
+LLDC_2014 = recipe(
+    "un-lldc-list-2014-12", "UN-OHRLLS LLDC country profiles (capture of 2014-12-31)", LLDC_LIST,
+    "reader:lldc-profiles-html",
+    WAYBACK.format(stamp="20141231235304", url="http://unohrlls.org:80/about-lldcs/country-profiles/"))
+
+RECIPES = (IPU_CLASSIFICATION, IPU_WORLD, GROUPINGS, METADATA_557, ANNEX, M49_OVERVIEW, LDC_2014, LLDC_2014)
