@@ -1,0 +1,109 @@
+{
+  "$defs": {
+    "Component": {
+      "additionalProperties": false,
+      "description": "A node in an index tree: either an indicator (a leaf) or a group of components.",
+      "properties": {
+        "children": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/Component"
+          },
+          "title": "Children",
+          "type": "array"
+        },
+        "indicator": {
+          "anyOf": [
+            {
+              "pattern": "^[a-z][a-z0-9-]*:[A-Za-z0-9][A-Za-z0-9._-]*$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Indicator"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "weight": {
+          "exclusiveMinimum": 0,
+          "title": "Weight",
+          "type": "number"
+        }
+      },
+      "required": [
+        "name",
+        "weight"
+      ],
+      "title": "Component",
+      "type": "object"
+    },
+    "Origin": {
+      "description": "Where a method comes from (P4). Everything an own method produces is labelled derived.",
+      "enum": [
+        "published",
+        "own"
+      ],
+      "title": "Origin",
+      "type": "string"
+    }
+  },
+  "$id": "athena-core/index.schema.json",
+  "additionalProperties": false,
+  "properties": {
+    "aggregation": {
+      "title": "Aggregation",
+      "type": "string"
+    },
+    "id": {
+      "pattern": "^[a-z][a-z0-9-]*:[A-Za-z0-9][A-Za-z0-9._-]*$",
+      "title": "Id",
+      "type": "string"
+    },
+    "method": {
+      "pattern": "^[a-z][a-z0-9-]*:[A-Za-z0-9][A-Za-z0-9._-]*$",
+      "title": "Method",
+      "type": "string"
+    },
+    "normalisation": {
+      "title": "Normalisation",
+      "type": "string"
+    },
+    "origin": {
+      "$ref": "#/$defs/Origin"
+    },
+    "publisher": {
+      "title": "Publisher",
+      "type": "string"
+    },
+    "root": {
+      "$ref": "#/$defs/Component"
+    },
+    "title": {
+      "title": "Title",
+      "type": "string"
+    },
+    "version": {
+      "default": "0.1.0",
+      "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)$",
+      "title": "Version",
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "title",
+    "publisher",
+    "origin",
+    "method",
+    "normalisation",
+    "aggregation",
+    "root"
+  ],
+  "title": "CompositeIndex",
+  "type": "object"
+}

@@ -1,0 +1,112 @@
+{
+  "$defs": {
+    "Access": {
+      "enum": [
+        "api",
+        "bulk",
+        "document",
+        "web"
+      ],
+      "title": "Access",
+      "type": "string"
+    },
+    "Redistribution": {
+      "enum": [
+        "allowed",
+        "attribution",
+        "forbidden",
+        "unknown"
+      ],
+      "title": "Redistribution",
+      "type": "string"
+    },
+    "Terms": {
+      "additionalProperties": false,
+      "properties": {
+        "read_on": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Read On"
+        },
+        "redistribution": {
+          "$ref": "#/$defs/Redistribution",
+          "default": "unknown"
+        },
+        "summary": {
+          "title": "Summary",
+          "type": "string"
+        },
+        "url": {
+          "title": "Url",
+          "type": "string"
+        }
+      },
+      "required": [
+        "url",
+        "summary"
+      ],
+      "title": "Terms",
+      "type": "object"
+    }
+  },
+  "$id": "athena-core/source.schema.json",
+  "additionalProperties": false,
+  "properties": {
+    "access": {
+      "$ref": "#/$defs/Access"
+    },
+    "id": {
+      "pattern": "^[a-z][a-z0-9-]*:[A-Za-z0-9][A-Za-z0-9._-]*$",
+      "title": "Id",
+      "type": "string"
+    },
+    "notes": {
+      "default": "",
+      "title": "Notes",
+      "type": "string"
+    },
+    "publisher": {
+      "title": "Publisher",
+      "type": "string"
+    },
+    "readers": {
+      "default": [],
+      "items": {
+        "pattern": "^[a-z][a-z0-9-]*:[A-Za-z0-9][A-Za-z0-9._-]*$",
+        "type": "string"
+      },
+      "title": "Readers",
+      "type": "array"
+    },
+    "terms": {
+      "$ref": "#/$defs/Terms"
+    },
+    "title": {
+      "title": "Title",
+      "type": "string"
+    },
+    "version": {
+      "default": "0.1.0",
+      "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)$",
+      "title": "Version",
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "title",
+    "publisher",
+    "access",
+    "terms"
+  ],
+  "title": "SourceCard",
+  "type": "object"
+}
