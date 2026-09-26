@@ -45,19 +45,21 @@
       "title": "Disjoint",
       "type": "boolean"
     },
-    "groups": {
-      "additionalProperties": {
-        "items": {
-          "type": "string"
-        },
-        "type": "array"
-      },
-      "title": "Groups",
-      "type": "object"
-    },
     "id": {
       "pattern": "^[a-z][a-z0-9-]*:[A-Za-z0-9][A-Za-z0-9._-]*$",
       "title": "Id",
+      "type": "string"
+    },
+    "levels": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Levels",
+      "type": "array"
+    },
+    "members": {
+      "pattern": "^sha256:[0-9a-f]{64}$",
+      "title": "Members",
       "type": "string"
     },
     "publisher": {
@@ -67,6 +69,32 @@
     "title": {
       "title": "Title",
       "type": "string"
+    },
+    "valid_from": {
+      "anyOf": [
+        {
+          "format": "date",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Valid From"
+    },
+    "valid_to": {
+      "anyOf": [
+        {
+          "format": "date",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Valid To"
     },
     "version": {
       "default": "0.1.0",
@@ -79,8 +107,9 @@
     "id",
     "title",
     "publisher",
-    "groups",
-    "disjoint"
+    "levels",
+    "disjoint",
+    "members"
   ],
   "title": "Grouping",
   "type": "object"

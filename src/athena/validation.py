@@ -10,6 +10,7 @@ from __future__ import annotations
 
 from collections.abc import Mapping, Sequence
 from datetime import date
+from typing import Literal
 
 import pyarrow as pa
 import pyarrow.compute as pc
@@ -43,22 +44,37 @@ class Tolerance(Record):
 
 
 class Checkpoint(Record):
+    """Where a comparison is made. With a measure, values are compared within a tolerance; without one, only the
+    presence of each key is compared - which is how a membership list such as a region grouping is checked."""
+
     id: str
     after_step: int
     published_value: str
     keys: tuple[str, ...]
-    measure: str
-    tolerance: Tolerance
+    measure: str | None = None
+    tolerance: Tolerance | None = None
+
+    @model_validator(mode="after")
+    def _measure_and_tolerance_together(self) -> Checkpoint:
+        if (self.measure is None) != (self.tolerance is None):
+            raise ValueError("a value checkpoint names a measure and a tolerance; a membership checkpoint names neither")
+        return self
+
+    @property
+    def kind(self) -> Literal["values", "membership"]:
+        return "membership" if self.measure is None else "values"
 
 
 class Mismatch(Record):
     key: dict[str, str | int | float | bool | None]
-    ours: float | None
-    theirs: float | None
+    side: Literal["missing", "extra", "value"]
+    ours: float | None = None
+    theirs: float | None = None
 
 
 class Comparison(Record):
     checkpoint: str
+    kind: Literal["values", "membership"]
     compared: int
     within: int
     missing: int
@@ -68,7 +84,11 @@ class Comparison(Record):
 
     @property
     def passed(self) -> bool:
-        return self.within == self.compared and self.missing == 0 and self.compared > 0
+        """Values pass when every published value is matched within tolerance. A membership passes only when the
+        two lists are identical: a member we added is as wrong as a member we left out."""
+        if self.compared == 0 or self.missing or self.within != self.compared:
+            return False
+        return self.kind == "values" or self.extra == 0
 
 
 class AnswerKey:
@@ -84,6 +104,8 @@ class AnswerKey:
         return f"AnswerKey(sealed, source={self._source!r})"
 
     def compare(self, ours: Frame, checkpoint: Checkpoint, *, limit: int = 50) -> Comparison:
+        if checkpoint.kind == "membership":
+            return self._compare_membership(ours, checkpoint, limit)
         keys, measure = list(checkpoint.keys), checkpoint.measure
         left = ours.table.select(keys + [measure]).rename_columns(keys + ["ours"])
         right = self._frame.table.select(keys + [measure]).rename_columns(keys + ["theirs"])
@@ -99,17 +121,32 @@ class AnswerKey:
         for row in joined.to_pylist():
             o, t = row["ours"], row["theirs"]
             if o is None or t is None or not checkpoint.tolerance.admits(o - t):
-                mismatches.append(Mismatch(key={k: row[k] for k in keys}, ours=o, theirs=t))
+                side = "missing" if o is None else "extra" if t is None else "value"
+                mismatches.append(Mismatch(key={k: row[k] for k in keys}, side=side, ours=o, theirs=t))
                 if len(mismatches) >= limit:
                     break
         return Comparison(
             checkpoint=checkpoint.id,
+            kind="values",
             compared=paired.num_rows,
             within=pc.sum(ok).as_py() or 0,
             missing=missing,
             extra=extra,
             max_abs_difference=(pc.max(diffs).as_py() if paired.num_rows else None) or 0.0,
             mismatches=tuple(mismatches),
+        )
+
+
+    def _compare_membership(self, ours: Frame, checkpoint: Checkpoint, limit: int) -> Comparison:
+        keys = list(checkpoint.keys)
+        mine = {tuple(r[k] for k in keys) for r in ours.table.select(keys).to_pylist()}
+        theirs = {tuple(r[k] for k in keys) for r in self._frame.table.select(keys).to_pylist()}
+        missing, extra = sorted(theirs - mine), sorted(mine - theirs)
+        mismatches = [Mismatch(key=dict(zip(keys, k)), side="missing") for k in missing]
+        mismatches += [Mismatch(key=dict(zip(keys, k)), side="extra") for k in extra]
+        return Comparison(
+            checkpoint=checkpoint.id, kind="membership", compared=len(theirs), within=len(theirs & mine),
+            missing=len(missing), extra=len(extra), max_abs_difference=0.0, mismatches=tuple(mismatches[:limit]),
         )
 
 

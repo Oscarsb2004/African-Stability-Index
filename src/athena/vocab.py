@@ -26,7 +26,7 @@ class Role(StrEnum):
 
 
 class Profile(StrEnum):
-    """The eight shapes a frame may take. A new profile needs a recorded decision (P6)."""
+    """The shapes a frame may take. A new profile needs a recorded decision (P6); membership came with P19."""
 
     PANEL = "panel"
     CROSS_SECTION = "cross-section"
@@ -36,6 +36,7 @@ class Profile(StrEnum):
     EVENTS = "events"
     PASSAGES = "passages"
     DISTRIBUTION = "distribution"
+    MEMBERSHIP = "membership"
 
     @property
     def required_roles(self) -> frozenset[Role]:
@@ -51,6 +52,7 @@ REQUIRED_ROLES: dict[Profile, frozenset[Role]] = {
     Profile.EVENTS: frozenset({Role.ENTITY, Role.TIME, Role.CATEGORY}),
     Profile.PASSAGES: frozenset({Role.ENTITY, Role.LABEL, Role.SOURCE_REF}),
     Profile.DISTRIBUTION: frozenset({Role.ENTITY, Role.MEASURE, Role.UNCERTAINTY_LOW, Role.UNCERTAINTY_HIGH}),
+    Profile.MEMBERSHIP: frozenset({Role.ENTITY, Role.CATEGORY}),
 }
 
 

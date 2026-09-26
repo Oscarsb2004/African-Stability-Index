@@ -14,7 +14,7 @@
       "type": "string"
     },
     "Profile": {
-      "description": "The eight shapes a frame may take. A new profile needs a recorded decision (P6).",
+      "description": "The shapes a frame may take. A new profile needs a recorded decision (P6); membership came with P19.",
       "enum": [
         "panel",
         "cross-section",
@@ -23,7 +23,8 @@
         "points",
         "events",
         "passages",
-        "distribution"
+        "distribution",
+        "membership"
       ],
       "title": "Profile",
       "type": "string"

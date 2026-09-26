@@ -6,7 +6,6 @@ import pytest
 from pydantic import ValidationError
 
 from athena.ids import hash_bytes, kind_of
-from athena.reference import Grouping
 from athena.sources import SourceCard, Terms
 from athena.vocab import Access
 
@@ -54,13 +53,6 @@ def test_fingerprints_are_stable_and_change_with_content():
 
 def test_hash_bytes_is_sha256():
     assert hash_bytes(b"") == "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
-
-
-def test_a_disjoint_grouping_refuses_a_member_in_two_groups():
-    with pytest.raises(ValidationError, match="is in both"):
-        Grouping(id="grouping:g", title="g", publisher="p", disjoint=True, groups={"N": ("A",), "S": ("A",)})
-    overlapping = Grouping(id="grouping:g", title="g", publisher="p", disjoint=False, groups={"N": ("A",), "S": ("A",)})
-    assert overlapping.group_of("A") == ("N", "S")
 
 
 def test_terms_cannot_be_judged_before_they_are_read():

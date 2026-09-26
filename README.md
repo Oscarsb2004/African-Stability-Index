@@ -17,11 +17,11 @@ Athena recreates published datasets and indices from the publishers' own methods
 | `frames` | `Frame`: an Arrow table plus a `Manifest` whose columns declare their roles |
 | `validation` | The sealed `AnswerKey`, `Tolerance`, `Checkpoint`, the blame window, and the append-only `DivergenceRegister` |
 | `indicators` | `Indicator`, `CompositeIndex` trees, and `Justification`: a publisher's reasons, quoted and filed by criterion |
-| `reference` | `Grouping`: region lists and other code lists, versioned like any definition |
+| `reference` | `Grouping`: a small versioned definition that points, by hash, at a membership frame of member, group and level. Levels can nest and lists can overlap (decision P19) |
 | `runs` | `RunRecord`: the receipt that lets any result be rebuilt and compared exactly |
 | `schemas` | JSON Schema export. The Python definitions are the single source of truth; `schemas/` is generated from them |
 
-`tests/test_pipeline.py` runs the whole loop in miniature. It builds a regional figure, compares it with the answer key, catches a planted grouping fault, names the step at fault, and records the divergence.
+`tests/test_pipeline.py` runs the whole loop in miniature. It builds a regional figure and checks both the region list and the regional values against the publisher. A planted wrong region is caught at the first checkpoint, which narrows the fault to the grouping step, and the divergence is recorded.
 
 ## Where things are
 
