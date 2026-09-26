@@ -45,3 +45,13 @@
 "US Virgin Islands" = "VIR"                          # United States Virgin Islands
 "United States" = "USA"                              # United States of America
 "Venezuela R.B." = "VEN"                             # Venezuela (Bolivarian Republic of)
+
+# Spelling in the UN DESA list of least developed countries (capture of 2014-01-13)
+"Dem. Rep of the Congo" = "COD"                      # Democratic Republic of the Congo
+"Lao People's Dem. Republic" = "LAO"                 # Lao People's Democratic Republic
+"United Rep. of Tanzania" = "TZA"                    # United Republic of Tanzania
+
+# Spelling in the UN-OHRLLS list of landlocked developing countries (capture of 2014-12-31)
+"Kyrgystan" = "KGZ"                                  # misspelt in the source; Kyrgyzstan
+"Lao People’s Democratic Republic" = "LAO"           # curly apostrophe in the source
+"The Former Yugoslav Republic of Macedonia" = "MKD"  # North Macedonia

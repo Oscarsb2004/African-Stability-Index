@@ -217,6 +217,66 @@ class GroupingsDocReader(UrlReader):
         return membership_frame(sorted(rows), produced_by=self.ref())
 
 
+# ── Dated lists of least developed and landlocked developing countries ─────────────────────────────────────
+
+def _pdf_text(data: bytes) -> str:
+    from pypdf import PdfReader
+
+    logging.getLogger("pypdf").setLevel(logging.ERROR)
+    return "\n".join(p.extract_text() or "" for p in PdfReader(io.BytesIO(data)).pages)
+
+
+class LdcListReader(UrlReader):
+    """The numbered list of least developed countries: "1 Afghanistan 1971 25 Madagascar 1991". A footnote digit
+    may sit on a name ("Vanuatu1"). The numbers must run 1 to n without a gap."""
+
+    ID = "reader:ldc-list-pdf"
+    GROUP = ("least-developed", "special")
+
+    def names(self, data: bytes) -> list[str]:
+        found = re.findall(r"(?:^|\s)(\d{1,2})\s+([A-Z][^\d\n]*?)\d?\s+(\d{4})(?=\s|$)", _pdf_text(data))
+        numbered = {int(n): name.strip() for n, name, _ in found}
+        if not numbered or sorted(numbered) != list(range(1, max(numbered) + 1)):
+            raise ParseError(f"the list is not numbered 1 to n: {sorted(numbered)}")
+        return [numbered[n] for n in sorted(numbered)]
+
+    def parse(self, data: bytes, recipe: Recipe) -> Frame:
+        return membership_frame([(n, *self.GROUP) for n in self.names(data)], produced_by=self.ref())
+
+
+class LldcProfilesReader(UrlReader):
+    """The UN-OHRLLS country-profiles table: region headers such as "Africa (16)", then numbered names; "#" marks
+    countries that are also least developed. Each region's count must equal the names listed under it."""
+
+    ID = "reader:lldc-profiles-html"
+    GROUP = ("landlocked-developing", "special")
+
+    def names(self, data: bytes) -> list[str]:
+        text = data.decode("utf-8", errors="replace")
+        start = text.find("Country Profiles", text.find("<body"))
+        table = text[start:text.find("</table>", start)]
+        names, counts, current = [], {}, None
+        for row in re.findall(r"<tr[^>]*>(.*?)</tr>", table, flags=re.S | re.I):
+            for cell in _cells(row):
+                cell = cell.replace("#", "").strip()
+                header = re.fullmatch(r"(.+?) \((\d+)\)", cell)
+                if header:
+                    current = header.group(1)
+                    counts[current] = [int(header.group(2)), 0]
+                elif cell and not cell.isdigit():
+                    if current is None:
+                        raise ParseError(f"{cell!r} appears before any region header")
+                    names.append(cell)
+                    counts[current][1] += 1
+        wrong = {r: c for r, c in counts.items() if c[0] != c[1]}
+        if not names or wrong:
+            raise ParseError(f"region counts do not match the names listed: {wrong}")
+        return names
+
+    def parse(self, data: bytes, recipe: Recipe) -> Frame:
+        return membership_frame([(n, *self.GROUP) for n in self.names(data)], produced_by=self.ref())
+
+
 # ── UN M49 overview ─────────────────────────────────────────────────────────────────────────────────────────
 
 class M49Reader(UrlReader):
@@ -295,4 +355,4 @@ def parse_annex_text(page: str, indicator: str) -> list[tuple[str, int, float | 
 
 
 READERS = {r.ID: r for r in (HtmlTextReader, IpuClassificationReader, IpuWorldReader, GroupingsDocReader,
-                              M49Reader, AnnexTableReader)}
+                              M49Reader, AnnexTableReader, LdcListReader, LldcProfilesReader)}

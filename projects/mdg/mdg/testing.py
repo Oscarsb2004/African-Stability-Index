@@ -7,8 +7,8 @@ from datetime import datetime, timezone
 
 from athena.sources import Snapshot
 from athena.store import Store
-from mdg.sources import (ANNEX, GROUPINGS, IPU_CLASSIFICATION, IPU_WORLD, M49_OVERVIEW, METADATA_557, RECIPES,
-                         SOURCES)
+from mdg.sources import (ANNEX, GROUPINGS, IPU_CLASSIFICATION, IPU_WORLD, LDC_2014, LLDC_2014, M49_OVERVIEW,
+                         METADATA_557, RECIPES, SOURCES)
 
 # name, seats, women (None prints as ?)
 COUNTRIES = [("Alpha", 100, 30), ("Beta", 50, 10), ("Gamma", 40, 20), ("Delta", 60, 6), ("Epsilon 1", 20, None)]
@@ -47,6 +47,7 @@ def groupings_doc(ldc=("Gamma",)) -> bytes:
             f"{table(['Beta', 'Gamma'])}\r\rEastern Asia\r{table(['Delta'])}\r"
             f"Western Asia \r{table(['Epsilon'])}\r"
             f"3. Other groupings: Least Developed Countries as of 1 January 2011\r{table(list(ldc))}\r"
+            f"4. Other groupings: Landlocked developing countries\r{table(['Epsilon'])}\r"
             "6. Other groupings: African regions according to ECA\rrest")
     return b"\xd0\xcf\x11\xe0binary" + text.encode("cp1252") + b"\x00\x00\x00"
 
@@ -98,7 +99,8 @@ ANNEX_LINES = [
     "Eastern Asia 10.0 10.0",
     "Western Asia - -",
     "Developed regions 30.0 30.0",
-    "Least developed countries 50.0 50.0",
+    "Least developed countries 50.0 33.3",
+    "Landlocked developing countries 10.0 10.0",
     "a As at 31 January 2015.",
 ]
 
@@ -107,11 +109,26 @@ def annex_pdf(lines=ANNEX_LINES) -> bytes:
     return pdf(lines)
 
 
+def ldc_pdf(names=("Gamma", "Beta")) -> bytes:
+    entries = " ".join(f"{i} {n}1 1971" if i == 1 else f"{i} {n} 1971" for i, n in enumerate(names, 1))
+    return pdf(["LIST OF LEAST DEVELOPED COUNTRIES", entries])
+
+
+def lldc_html(regions=(("Asia", ("Delta",)),)) -> bytes:
+    rows = []
+    for region, names in regions:
+        rows.append(f"<tr><td></td><td>{region} ({len(names)})</td></tr>")
+        rows += [f"<tr><td>{i}</td><td>{n} #</td></tr>" for i, n in enumerate(names, 1)]
+    return (f"<html><head><title>x</title></head><body><h2>Country Profiles</h2><table>{''.join(rows)}</table>"
+            f"</body></html>").encode()
+
+
 def fill(store: Store, **overrides: bytes) -> Store:
     """Put one snapshot per recipe into the store; keyword overrides replace a recipe's bytes by recipe slug."""
     content = {
         IPU_CLASSIFICATION.id: ipu_html(), IPU_WORLD.id: world_html(), GROUPINGS.id: groupings_doc(),
         METADATA_557.id: metadata_html(), ANNEX.id: annex_pdf(), M49_OVERVIEW.id: m49_html(),
+        LDC_2014.id: ldc_pdf(), LLDC_2014.id: lldc_html(),
     }
     for slug, data in overrides.items():
         content[f"recipe:{slug}"] = data
