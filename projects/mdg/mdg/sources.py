@@ -22,7 +22,7 @@ MDG_DOCS = SourceCard(
     publisher="UNSD for the IAEG on MDG Indicators, via the Internet Archive", access=Access.WEB,
     terms=Terms(url="https://www.un.org/en/about-us/terms-of-use", read_on=READ_ON,
                 redistribution=Redistribution.FORBIDDEN, summary="Personal, non-commercial use only."),
-    readers=("reader:mdg-groupings-doc", "reader:html-text"),
+    readers=("reader:mdg-groupings-doc", "reader:html-text", "reader:mdg-series-html"),
 )
 MDG_REPORT = SourceCard(
     id="source:un-mdg-report-2015", title="The MDG Report 2015 and its statistical annex",
@@ -95,3 +95,59 @@ LLDC_2014 = recipe(
     WAYBACK.format(stamp="20141231235304", url="http://unohrlls.org:80/about-lldcs/country-profiles/"))
 
 RECIPES = (IPU_CLASSIFICATION, IPU_WORLD, GROUPINGS, METADATA_557, ANNEX, M49_OVERVIEW, LDC_2014, LLDC_2014)
+
+# ── Goal 3, indicators 3.1 and 3.2 (section S43) ───────────────────────────────────────────────────────────
+
+UIS = SourceCard(
+    id="source:uis-api", title="UNESCO Institute for Statistics public data API",
+    publisher="UNESCO Institute for Statistics", access=Access.API,
+    terms=Terms(url="https://databrowser.uis.unesco.org/terms-and-conditions", read_on=date(2026, 9, 26),
+                redistribution=Redistribution.ATTRIBUTION,
+                summary="CC BY-SA 4.0. Credit: 'Source: UNESCO Institute for Statistics (UIS), URL, date of "
+                        "extraction'. Adapted data must be shared under the same licence."),
+    readers=("reader:uis-api-json",),
+)
+SOURCES[UIS.id] = UIS
+
+
+
+def mdg_series(srid: int, stamp: str) -> Recipe:
+    return recipe(f"mdg-series-{srid}", f"MDG database series {srid} (capture of {stamp[:8]})", MDG_DOCS,
+                  "reader:mdg-series-html",
+                  WAYBACK.format(stamp=stamp, url=f"http://mdgs.un.org/unsd/mdg/SeriesDetail.aspx?srid={srid}"))
+
+
+def mdg_metadata(srid: int, stamp: str) -> Recipe:
+    return recipe(f"mdg-metadata-series-{srid}", f"MDG metadata, series {srid} (capture of {stamp[:8]})", MDG_DOCS,
+                  "reader:html-text",
+                  WAYBACK.format(stamp=stamp,
+                                 url=f"https://mdgs.un.org/unsd/mdg/Metadata.aspx?IndicatorId=0&SeriesId={srid}"))
+
+
+UIS_API = "https://api.uis.unesco.org/api/public/data/indicators?{codes}&start=1991&end=2000&geoUnitType=NATIONAL"
+
+
+def uis(slug: str, title: str, codes: tuple[str, ...]) -> Recipe:
+    return recipe(slug, title, UIS, "reader:uis-api-json",
+                  UIS_API.format(codes="&".join(f"indicator={c}" for c in codes)))
+
+
+# part: (level, female enrolment, male enrolment, female school-age population, male, UIS GER female, male, series)
+LEVELS = {
+    "a": ("primary", "20063", "40035", "SAP.1.F", "SAP.1.M", "GER.1.F", "GER.1.M", 611),
+    "b": ("secondary", "20083", "40044", "SAP.2T3.F", "SAP.2T3.M", "GER.2T3.F", "GER.2T3.M", 613),
+    "c": ("tertiary", "25057", "42620", "SAP.5T8.F", "SAP.5T8.M", "GER.5T8.F", "GER.5T8.M", 614),
+}
+SERIES_STAMPS = {611: "20150910092221", 613: "20150910074839", 614: "20150910134912", 722: "20150910134705"}
+METADATA_STAMPS = {611: "20170315064018", 613: "20170315064026", 614: "20170315064033", 722: "20170315064050"}
+
+SERIES = {srid: mdg_series(srid, stamp) for srid, stamp in SERIES_STAMPS.items()}
+METADATA = {srid: mdg_metadata(srid, stamp) for srid, stamp in METADATA_STAMPS.items()}
+UIS_COUNTS = {part: uis(f"uis-{level}-counts-1991-2000", f"UIS {level} enrolment and school-age population by sex",
+                        (ef, em, pf, pm))
+              for part, (level, ef, em, pf, pm, *_rest) in LEVELS.items()}
+UIS_GER = {part: uis(f"uis-{level}-ger-1991-2000", f"UIS {level} gross enrolment ratio by sex", (gf, gm))
+           for part, (level, _ef, _em, _pf, _pm, gf, gm, _s) in LEVELS.items()}
+
+GOAL3_RECIPES = (*SERIES.values(), *METADATA.values(), *UIS_COUNTS.values(), *UIS_GER.values())
+RECIPES = RECIPES + GOAL3_RECIPES

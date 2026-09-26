@@ -55,3 +55,10 @@
 "Kyrgystan" = "KGZ"                                  # misspelt in the source; Kyrgyzstan
 "Lao People’s Democratic Republic" = "LAO"           # curly apostrophe in the source
 "The Former Yugoslav Republic of Macedonia" = "MKD"  # North Macedonia
+
+# Spelling in the MDG database series pages (captures of 2015-09-10)
+"Korea, Democratic People's Republic of" = "PRK"     # Democratic People's Republic of Korea
+"Korea, Republic of" = "KOR"                         # Republic of Korea
+"Micronesia, Federated States of" = "FSM"            # Micronesia (Federated States of)
+"Reunion" = "REU"                                    # Réunion
+"Sudan (former)" = "736"                             # Sudan before South Sudan's independence in 2011; M49 736

@@ -87,3 +87,40 @@ def world_totals(ipu_world_html: bytes) -> tuple[AnswerKey, dict[str, float]]:
 
 
 TOLERANCE_FIXED_ON = date(2026, 9, 26)
+
+
+# ── Goal 3 (section S43) ────────────────────────────────────────────────────────────────────────────────────
+
+def annex_part(annex_pdf: bytes, indicator: str, part: str | None, year: int) -> tuple[AnswerKey, dict[str, float]]:
+    """One year of one part of an annex table, keyed by grouping."""
+    published = {}
+    for p, label, y, value in AnnexTableReader().parts(annex_pdf, indicator):
+        if label not in ANNEX_LABELS:
+            raise UnknownLabel(f"annex row {label!r} has no grouping")
+        if p == part and y == year and value is not None:
+            published[ANNEX_LABELS[label][0]] = value
+    frame = _frame("group", sorted(published.items()), "as published", AnnexTableReader.ref())
+    return AnswerKey(frame, source=ANNEX.ref), published
+
+
+def mdg_series(series_html: bytes, mapping: dict[str, str], year: int) -> tuple[AnswerKey, dict[str, float]]:
+    """The MDG database's final country values (6 July 2015) for one year, keyed by country code."""
+    from mdg.readers import MdgSeriesReader
+
+    frame = MdgSeriesReader().parse(series_html, ANNEX)
+    published = {mapping[r["name"]]: r["value"] for r in frame.table.to_pylist() if r["year"] == year}
+    return AnswerKey(_frame("area", sorted(published.items()), "as published", MdgSeriesReader.ref()),
+                     source="recipe:mdg-series"), published
+
+
+def uis_ger(records_json: bytes, female: str, male: str, year: int) -> dict[str, AnswerKey]:
+    """UIS's own gross enrolment ratios by sex for one year: the check on our arithmetic, same edition."""
+    from mdg.readers import UisApiReader
+
+    frame = UisApiReader().parse(records_json, ANNEX)
+    keys = {}
+    for sex, code in (("female", female), ("male", male)):
+        rows = sorted((r["area"], r["value"]) for r in frame.table.to_pylist()
+                      if r["indicator"] == code and r["year"] == year and r["value"] is not None)
+        keys[sex] = AnswerKey(_frame("area", rows, "percent", UisApiReader.ref()), source=f"uis:{code}")
+    return keys

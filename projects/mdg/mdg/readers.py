@@ -298,25 +298,132 @@ class M49Reader(UrlReader):
         return codes
 
 
+# ── Archived MDG series pages (the database's final country values, 6 July 2015) ────────────────────────────
+
+NATURES = {"C": "country data", "CA": "country adjusted", "E": "estimated", "M": "modelled",
+           "G": "global monitoring data", "N": "not relevant", "": "unclassified"}
+
+
+class MdgSeriesReader(UrlReader):
+    """One MDG database series: a row per country, a column per year. Each value's cell carries its nature code as
+    its class (C, CA, E, M...), and a footnote number may follow the value."""
+
+    ID = "reader:mdg-series-html"
+
+    def parse(self, data: bytes, recipe: Recipe) -> Frame:
+        text = data.decode("utf-8", errors="replace")
+        heads = [_cells(h) for h in re.findall(r'<tr class="Head">(.*?)</tr>', text, flags=re.S)]
+        head = next((h for h in heads if h and h[0] == "Country"), None)
+        if head is None:
+            raise ParseError("no header row starting with Country")
+        years = [int(y) for y in head[1:]]
+        rows = []
+        for row in re.findall(r'<tr class="Data">(.*?)</tr>', text, flags=re.S):
+            cells = re.findall(r'<td([^>]*)>(.*?)</td>', row, flags=re.S)
+            name = _cells(f"<td>{cells[0][1]}</td>")[0]
+            if len(cells) - 1 != len(years):
+                raise ParseError(f"{name}: {len(cells) - 1} cells for {len(years)} years")
+            for year, (attrs, body) in zip(years, cells[1:]):
+                found = re.search(r'class="([A-Z]*)"', attrs)
+                nature = found.group(1) if found else ""
+                note = re.search(r">(\d+)</span>", body)
+                value = html.unescape(re.sub(r"<sup>.*?</sup>|<[^>]+>", "", body, flags=re.S)).strip()
+                if not value:
+                    continue
+                if nature not in NATURES or not NUMBER.fullmatch(value):
+                    raise ParseError(f"{name} {year}: unexpected cell {nature!r} {value!r}")
+                rows.append((name, year, float(value), NATURES[nature], note.group(1) if note else ""))
+        if not rows:
+            raise ParseError("no values")
+        manifest = Manifest(
+            profile=Profile.PANEL,
+            columns=(Column(name="name", dtype=DType.STRING, role=Role.ENTITY),
+                     Column(name="year", dtype=DType.INT64, role=Role.TIME, concept=Concept.TIME_PERIOD),
+                     Column(name="value", dtype=DType.FLOAT64, role=Role.MEASURE, unit="as published",
+                            concept=Concept.OBS_VALUE),
+                     Column(name="nature", dtype=DType.STRING, role=Role.STATUS, concept=Concept.OBS_STATUS),
+                     Column(name="footnote", dtype=DType.STRING, role=Role.CATEGORY)),
+            keys=("name", "year"), produced_by=self.ref(), repro_class=ReproClass.C,
+        )
+        columns = list(zip(*rows))
+        return Frame(pa.table({"name": pa.array(columns[0], pa.string()), "year": pa.array(columns[1], pa.int64()),
+                               "value": pa.array(columns[2], pa.float64()),
+                               "nature": pa.array(columns[3], pa.string()),
+                               "footnote": pa.array(columns[4], pa.string())}), manifest)
+
+
+# ── UNESCO Institute for Statistics public API ──────────────────────────────────────────────────────────────
+
+class UisApiReader(UrlReader):
+    """Records from the UIS public data API: one per indicator, country and year. A value UIS estimated carries
+    the qualifier UIS_EST."""
+
+    ID = "reader:uis-api-json"
+
+    def parse(self, data: bytes, recipe: Recipe) -> Frame:
+        import json
+
+        payload = json.loads(data)
+        records = payload.get("records")
+        if not records:
+            raise ParseError(f"no records; hints: {payload.get('hints')}")
+        manifest = Manifest(
+            profile=Profile.PANEL,
+            columns=(Column(name="area", dtype=DType.STRING, role=Role.ENTITY, concept=Concept.REF_AREA),
+                     Column(name="indicator", dtype=DType.STRING, role=Role.CATEGORY),
+                     Column(name="year", dtype=DType.INT64, role=Role.TIME, concept=Concept.TIME_PERIOD),
+                     Column(name="value", dtype=DType.FLOAT64, role=Role.MEASURE, unit="as published",
+                            concept=Concept.OBS_VALUE),
+                     Column(name="qualifier", dtype=DType.STRING, role=Role.STATUS, concept=Concept.OBS_STATUS)),
+            keys=("area", "indicator", "year"), produced_by=self.ref(), repro_class=ReproClass.B,
+        )
+        return Frame(pa.table({
+            "area": pa.array([r["geoUnit"] for r in records], pa.string()),
+            "indicator": pa.array([r["indicatorId"] for r in records], pa.string()),
+            "year": pa.array([r["year"] for r in records], pa.int64()),
+            "value": pa.array([None if r["value"] is None else float(r["value"]) for r in records], pa.float64()),
+            "qualifier": pa.array([r["qualifier"] or "" for r in records], pa.string()),
+        }), manifest)
+
+
 # ── The 2015 statistical annex (answers only) ───────────────────────────────────────────────────────────────
 
-VALUE = r"(?:\d+\.\d|\d+|<0\.1|[–\-�])"
+VALUE = r"(?:\d+\.\d+|\d+|<0\.1|[–\-�])"
+NUMBER = re.compile(r"\d+(?:\.\d+)?")
+YEARS = re.compile(r"(?:\d{4}(?:\s*[a-e])?\s*)+")
+PART = re.compile(r"^\(([a-z])\)\s*(.*)$")
+FOOTNOTE = re.compile(r"^[a-e] [A-Z]")
+PAGE_HEADERS = ("Report of the Secretary-General on the work of the Organization", "Annex")
 
 
 class AnnexTableReader(UrlReader):
-    """One indicator's table from the annex, as rows of (label, year, value). Only `mdg.answers` calls this."""
+    """One indicator's table from the annex. Only `mdg.answers` calls this."""
 
     ID = "reader:mdg-annex-pdf"
 
-    def parse(self, data: bytes, recipe: Recipe, indicator: str = "3.3") -> list[tuple[str, int, float | None]]:
+    def pages(self, data: bytes) -> list[str]:
         from pypdf import PdfReader
 
         logging.getLogger("pypdf").setLevel(logging.ERROR)
-        pages = [p.extract_text() or "" for p in PdfReader(io.BytesIO(data)).pages]
-        page = next((p for p in pages if _marker(indicator).search(p)), None)
-        if page is None:
+        return [p.extract_text() or "" for p in PdfReader(io.BytesIO(data)).pages]
+
+    def parse(self, data: bytes, recipe: Recipe, indicator: str = "3.3") -> list[tuple[str, int, float | None]]:
+        return [(label, year, value) for _, label, year, value in self.parts(data, indicator)]
+
+    def parts(self, data: bytes, indicator: str) -> list[tuple[str | None, str, int, float | None]]:
+        """Rows of (part, label, year, value). A table may run over several pages and be split into parts."""
+        pages = self.pages(data)
+        first = next((i for i, p in enumerate(pages) if _marker(indicator).search(p)), None)
+        if first is None:
             raise ParseError(f"no table for indicator {indicator}")
-        return parse_annex_text(page, indicator)
+        text = pages[first][_marker(indicator).search(pages[first]).start():]
+        for page in pages[first + 1:]:
+            other = re.search(r"Indicator \d+\.\d+", page)
+            if other:
+                text += "\n" + page[:other.start()]
+                break
+            text += "\n" + page
+        return parse_annex_parts(text, indicator)
 
 
 def _marker(indicator: str) -> re.Pattern[str]:
@@ -324,35 +431,43 @@ def _marker(indicator: str) -> re.Pattern[str]:
 
 
 def parse_annex_text(page: str, indicator: str) -> list[tuple[str, int, float | None]]:
-    """Rows of (label, year, value) from the text of one annex page. A dash means no value, never zero."""
-    found = _marker(indicator).search(page)
+    """Rows of (label, year, value) from the text of one annex table. A dash means no value, never zero."""
+    return [(label, year, value) for _, label, year, value in parse_annex_parts(page, indicator)]
+
+
+def parse_annex_parts(text: str, indicator: str) -> list[tuple[str | None, str, int, float | None]]:
+    """Rows of (part, label, year, value). Parts are headed "(a)", "(b)"...; a year line may carry a footnote
+    letter ("2015 b"); a page header repeated inside the table is skipped."""
+    found = _marker(indicator).search(text)
     if found is None:
         raise ParseError(f"no table for indicator {indicator}")
-    lines = page[found.start():].splitlines()
     years: list[int] = []
-    out: list[tuple[str, int, float | None]] = []
-    for line in lines[1:]:
+    part: str | None = None
+    out: list[tuple[str | None, str, int, float | None]] = []
+    for line in text[found.start():].splitlines()[1:]:
         line = line.strip()
-        if line.startswith("Indicator ") or re.match(r"^[a-e] [A-Z]", line):
+        if re.match(r"^Indicator \d", line) or FOOTNOTE.match(line):
             break
-        if re.fullmatch(r"(?:\d{4}\s*)+", line):
-            years = [int(y) for y in line.split()]
+        if line and YEARS.fullmatch(line):
+            years = [int(y) for y in re.findall(r"\d{4}", line)]
             continue
-        if not years:
+        heading = PART.match(line)
+        if heading:
+            part, years = heading.group(1), []
             continue
-        if not line:
+        if not years or not line or line in PAGE_HEADERS:
             continue
         m = re.fullmatch(rf"(?P<label>.+?)\s+(?P<values>{VALUE}(?:\s+{VALUE}){{{len(years) - 1}}})", line)
         if not m:
             raise ParseError(f"indicator {indicator}: unrecognised row {line!r}")
         values = re.findall(VALUE, m.group("values"))
         for year, value in zip(years, values):
-            number = float(value) if re.fullmatch(r"\d+(?:\.\d)?", value) else None
-            out.append((m.group("label").strip(), year, number))
+            out.append((part, m.group("label").strip(), year, float(value) if NUMBER.fullmatch(value) else None))
     if not out:
         raise ParseError(f"indicator {indicator}: no rows parsed")
     return out
 
 
 READERS = {r.ID: r for r in (HtmlTextReader, IpuClassificationReader, IpuWorldReader, GroupingsDocReader,
-                              M49Reader, AnnexTableReader, LdcListReader, LldcProfilesReader)}
+                              M49Reader, AnnexTableReader, LdcListReader, LldcProfilesReader, MdgSeriesReader,
+                              UisApiReader)}
