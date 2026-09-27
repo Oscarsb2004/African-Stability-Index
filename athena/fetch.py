@@ -24,7 +24,8 @@ class SourceChanged(RuntimeError):
 
 
 def cached_session(store: Path = STORE) -> requests_cache.CachedSession:
-    session = requests_cache.CachedSession(str(store / "http"), backend="filesystem",
+    # decode_content=False keeps each body exactly as received; the default re-encodes JSON, changing its bytes.
+    session = requests_cache.CachedSession(str(store / "http"), backend="filesystem", decode_content=False,
                                            expire_after=requests_cache.NEVER_EXPIRE, allowable_codes=(200,))
     session.headers["User-Agent"] = USER_AGENT
     return session
