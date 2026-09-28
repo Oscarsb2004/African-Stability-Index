@@ -1,6 +1,6 @@
 # AGENTS.md: athena-core
 
-Start with the umbrella's `AGENTS.md` and `Athena Data/Plan.md` in `athena-data`. The rules there apply here. In
+Start with `Athena Data/00 Start Here/Now.md` in `athena-data`, then the umbrella's `AGENTS.md`. The rules there apply here. In
 particular: reuse permissively licensed libraries first, keep the code minimal, and never build one indicator on
 its own.
 
