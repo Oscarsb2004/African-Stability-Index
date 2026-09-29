@@ -1,4 +1,8 @@
-"""The build: every catalogue row from its sources to the common format. It never reads a published value."""
+"""The M1 build: every catalogue row from its sources to the common format. It never reads a published value.
+
+This is the first replication project (MDG 3.3 and 3.1). Milestone S1 replaces it with a short project script over
+the ingested datasets.
+"""
 
 from __future__ import annotations
 
@@ -9,21 +13,19 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
+from adapters import LOCK, readers, sources
+from adapters.codes import Coder, UnmappedNames, load_aliases  # noqa: F401  (UnmappedNames is re-exported)
 from athena import aggregate
 from athena.fetch import Fetcher
 from athena.table import table
-from mdg import readers
 
 HERE = Path(__file__).parent
+DATASET = "mdg-m1"
 
 
-def load(name: str) -> dict:
-    with (HERE / name).open("rb") as f:
+def load(name: str, folder: Path = HERE) -> dict:
+    with (folder / name).open("rb") as f:
         return tomllib.load(f)
-
-
-class UnmappedNames(ValueError):
-    pass
 
 
 class MixedEditions(ValueError):
@@ -33,36 +35,15 @@ class MixedEditions(ValueError):
 @dataclass
 class Project:
     fetcher: Fetcher
-    sources: dict = field(default_factory=lambda: load("sources.toml"))
+    sources: dict = field(default_factory=sources)
     catalogue: dict = field(default_factory=lambda: load("catalogue.toml"))
 
     def get(self, key: str, **fields: str) -> bytes:
         return self.fetcher.get(self.sources[key]["url"].format(**fields))
 
 
-def open_project(lock: Path = HERE / "sources.lock", session=None) -> Project:
+def open_project(lock: Path = LOCK, session=None) -> Project:
     return Project(Fetcher(lock, session))
-
-
-class Coder:
-    """Country names to codes: an exact M49 match, then the declared alias table, and nothing else. There is no
-    fuzzy matching; every name no table matches is reported together, and the run stops."""
-
-    def __init__(self, m49: dict[str, str], aliases: dict[str, str]):
-        shadowing = sorted(a for a in aliases if a in m49)
-        if shadowing:
-            raise UnmappedNames(f"aliases for names M49 already matches: {shadowing}")
-        self.codes, self.missing = m49 | aliases, set()
-
-    def __call__(self, name: str) -> str | None:
-        code = self.codes.get(name)
-        if code is None:
-            self.missing.add(name)
-        return code
-
-    def done(self) -> None:
-        if self.missing:
-            raise UnmappedNames(f"{len(self.missing)} names match neither M49 nor an alias: {sorted(self.missing)}")
 
 
 def membership(project: Project, code: Coder) -> pd.DataFrame:
@@ -115,7 +96,7 @@ class Built:
 
 
 def build(project: Project) -> Built:
-    code = Coder(readers.m49_codes(project.get("m49")), load("aliases.toml")["aliases"])
+    code = Coder(readers.m49_codes(project.get("m49")), load_aliases())
     members = membership(project, code)
     rows, sums = [], {}
     for row in project.catalogue["indicator"]:
@@ -126,8 +107,7 @@ def build(project: Project) -> Built:
             sums[(row["id"], year)] = groups
             values = pd.concat([known["value"], groups["value"]])
             for area, value in values[np.isfinite(values)].items():
-                rows.append({"INDICATOR": row["id"], "REF_AREA": area, "TIME_PERIOD": year, "OBS_VALUE": value,
-                             "UNIT_MEASURE": row["unit"], "OBS_STATUS": "", "SOURCE": "athena",
-                             "EDITION": edition, "DERIVED": True})
+                rows.append({"DATASET": DATASET, "SERIES": row["id"], "REF_AREA": area, "TIME_PERIOD": str(year),
+                             "OBS_VALUE": value, "UNIT_MEASURE": row["unit"], "EDITION": edition, "DERIVED": True})
     code.done()
     return Built(table(rows), members, sums, code)

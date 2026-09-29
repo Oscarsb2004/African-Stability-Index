@@ -8,8 +8,9 @@ Millennium Development Goals.
 
 | Path | What it is |
 | --- | --- |
-| `athena/` | The generic parts: fetch once and keep forever (`fetch`), the common format (`table`), formula aggregation (`aggregate`) and comparison at the publisher's decimals (`check`) |
-| `mdg/` | The MDG replication: its sources, readers, the sealed answer key, build and check. In the next milestone it splits into database adapters and a project configuration |
+| `athena/` | The generic parts: fetch once and keep forever (`fetch`), the common format (`table`), datasets in the store (`dataset`), formula aggregation (`aggregate`) and comparison at the publisher's decimals (`check`) |
+| `adapters/` | One adapter per database: each reads one publisher's format and writes a dataset in the common format, with a report of every loss and its reason. `sources.toml` lists every source and its terms; `sources.lock` holds the hash of every address fetched |
+| `mdg/` | The first replication project (MDG 3.3 and 3.1). Milestone S1 replaces it with a short project script over the datasets |
 | `test/` | Tests on synthetic fixtures only; no publisher material is committed |
 
 ## Commands
@@ -17,8 +18,8 @@ Millennium Development Goals.
 ```bash
 .venv/Scripts/python -m pip install -r requirements.lock
 .venv/Scripts/python -m pytest -q
-.venv/Scripts/python -m mdg fetch    # download every source once; hashes go to mdg/sources.lock
-.venv/Scripts/python -m mdg check    # build, compare with the publishers, write the scoreboard to the store
+.venv/Scripts/python -m adapters mdg    # ingest the MDG database, annex and groupings as datasets in the store
+.venv/Scripts/python -m mdg check       # the M1 project: build 3.3 and 3.1, compare with the publishers
 ```
 
 The store is `C:\AthenaStore` unless `ATHENA_STORE` says otherwise. The build never imports `mdg.answers`, and a

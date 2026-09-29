@@ -107,6 +107,9 @@ HEADINGS: dict[str, tuple[str, str] | None] = {
 }
 LIST_START = "2. MDG regional groupings: List of countries in each grouping"
 LIST_END = "6. Other groupings: African regions according to ECA"
+ECA_HEADINGS = {"SRO Central Africa": "central-africa-eca", "SRO Eastern Africa": "eastern-africa-eca",
+                "SRO North Africa": "north-africa-eca", "SRO West Africa": "west-africa-eca",
+                "SRO Southern Africa": "southern-africa-eca"}
 
 
 def groupings(data: bytes) -> set[tuple[str, str]]:
@@ -142,6 +145,27 @@ def groupings(data: bytes) -> set[tuple[str, str]]:
             pairs.add((name, "eastern-asia-excluding-china"))
         if group == "southern-asia" and name != "India":
             pairs.add((name, "southern-asia-excluding-india"))
+        if group in ("south-eastern-asia", "oceania"):
+            pairs.add((name, "south-eastern-asia-including-oceania"))
+    return pairs | eca_subregions(data)
+
+
+def eca_subregions(data: bytes) -> set[tuple[str, str]]:
+    """(country, group) for the five African subregions of the UN Economic Commission for Africa, listed in the
+    same document after the MDG groupings."""
+    start = data.find(LIST_END.encode())
+    if start < 0:
+        raise ParseError("the ECA section marker is missing; the document has changed")
+    text = data[start + len(LIST_END):].split(b"\x00")[0].decode("cp1252")
+    pairs, current = set(), None
+    for paragraph in text.split("\r"):
+        name = paragraph.strip().strip("\x02\x03\x04\x0c").strip()
+        if name in ECA_HEADINGS:
+            current = ECA_HEADINGS[name]
+        elif "\x07" in paragraph and current:
+            pairs |= {(cell.strip(), current) for cell in paragraph.split("\x07") if cell.strip()}
+    if {g for _, g in pairs} != set(ECA_HEADINGS.values()):
+        raise ParseError(f"ECA subregions found: {sorted({g for _, g in pairs})}")
     return pairs
 
 
@@ -201,11 +225,21 @@ def m49_codes(data: bytes) -> dict[str, str]:
 
 NATURES = {"C": "country data", "CA": "country adjusted", "E": "estimated", "M": "modelled",
            "G": "global monitoring data", "N": "not relevant", "": "unclassified"}
-NUMBER = re.compile(r"\d+(?:\.\d+)?")
+NUMBER = re.compile(r"-?\d+(?:\.\d+)?")  # growth rates and balances can be negative
+BOUND = re.compile(r"[<>]\s*(\d+(?:\.\d+)?)")
 
 
-def mdg_series(data: bytes) -> list[tuple[str, int, float, str]]:
-    """(country, year, value, nature) for every value on the page. A value's nature code is its cell's class."""
+def mdg_series(data: bytes, problems: list[str] | None = None) -> list[tuple[str, int, float | None, str, str]]:
+    """(country, year, value, nature, printed) for every value on the page. A value's nature code is its cell's
+    class. A value printed only as a bound ("<5") has no value and keeps its printed text.
+
+    With a `problems` list, a cell that cannot be read is listed there and skipped; without one it stops the read.
+    """
+    def fail(message: str) -> None:
+        if problems is None:
+            raise ParseError(message)
+        problems.append(message)
+
     text = data.decode("utf-8", errors="replace")
     heads = [cells(h) for h in re.findall(r'<tr class="Head">(.*?)</tr>', text, flags=re.S)]
     head = next((h for h in heads if h and h[0] == "Country"), None)
@@ -217,17 +251,58 @@ def mdg_series(data: bytes) -> list[tuple[str, int, float, str]]:
         found = re.findall(r"<td([^>]*)>(.*?)</td>", row, flags=re.S)
         name = cells(f"<td>{found[0][1]}</td>")[0]
         if len(found) - 1 != len(years):
-            raise ParseError(f"{name}: {len(found) - 1} cells for {len(years)} years")
+            fail(f"{name}: {len(found) - 1} cells for {len(years)} years")
+            continue
         for year, (attrs, body) in zip(years, found[1:]):
             nature = (re.search(r'class="([A-Z]*)"', attrs) or [None, ""])[1]
-            value = html.unescape(re.sub(r"<sup>.*?</sup>|<[^>]+>", "", body, flags=re.S)).strip()
-            if not value:
+            printed = html.unescape(re.sub(r"<sup>.*?</sup>|<[^>]+>", "", body, flags=re.S)).strip()
+            if not printed:
                 continue
-            if nature not in NATURES or not NUMBER.fullmatch(value):
-                raise ParseError(f"{name} {year}: unexpected cell {nature!r} {value!r}")
-            out.append((name, year, float(value), NATURES[nature]))
-    if not out:
+            if nature not in NATURES:
+                fail(f"{name} {year}: unknown nature code {nature!r}")
+            elif NUMBER.fullmatch(printed):
+                out.append((name, year, float(printed), NATURES[nature], printed))
+            elif BOUND.fullmatch(printed):
+                out.append((name, year, None, NATURES[nature], printed))
+            else:
+                fail(f"{name} {year}: unreadable value {printed!r}")
+    if not out and not problems:
         raise ParseError("no values")
+    return out
+
+
+SERIES_LABELS = ("Series Name:", "Goal:", "Target:", "Indicator:", "Series Data")
+
+
+def series_header(data: bytes) -> dict[str, str]:
+    """The series page's own description: name, goal, target, indicator code and title, and last update."""
+    text = html_text(data)
+    found = {}
+    for label, following in zip(SERIES_LABELS, SERIES_LABELS[1:]):
+        m = re.search(re.escape(label) + r"\s*(.*?)\s*" + re.escape(following), text)
+        found[label.rstrip(":").lower().replace(" ", "_")] = m.group(1) if m else ""
+    indicator = re.match(r"Indicator\s+(\d+\.\d+[a-z]?)\s*(.*)", found.get("indicator", ""))
+    updated = re.search(r"Last updated:\s*(\d{1,2} \w{3} \d{4})", text)
+    return {"name": found.get("series_name", ""), "goal": found.get("goal", ""), "target": found.get("target", ""),
+            "indicator": indicator.group(1) if indicator else "",
+            "indicator_title": indicator.group(2) if indicator else found.get("indicator", ""),
+            "last_updated": updated.group(1) if updated else ""}
+
+
+def metadata_sections(data: bytes) -> dict[str, str]:
+    """Each section of an archived MDG metadata page, heading to text: definition, method of computation,
+    regional and global estimates, treatment of missing values, and so on."""
+    text = data.decode("utf-8", errors="replace")
+    out = {}
+    for m in re.finditer(r"TogglePanel\('Section_(\d+)'\)\s*\">([^<]+)</a>", text):
+        heading = html.unescape(m.group(2)).strip()
+        if heading == "Collapse":
+            continue
+        start = text.find(f'<div id="Section_{m.group(1)}"', m.end())
+        if start < 0:
+            continue
+        end = text.find('<div class="SegmentHead', start)
+        out[heading] = html_text(text[start:end if end > 0 else len(text)].encode())
     return out
 
 

@@ -9,7 +9,8 @@ from dataclasses import dataclass
 import pandas as pd
 
 from athena.check import compare, summary
-from mdg import answers, readers
+from adapters import readers
+from mdg import answers
 from mdg.build import Built, Project
 
 TEXT = {"html": readers.html_text, "annex-pdf": lambda d: " ".join(readers.pdf_pages(d)),
@@ -53,9 +54,9 @@ def check(project: Project, built: Built) -> Checked:
                                 "ours": r["ours"], "rounded": r["rounded"], "published": r["published"]})
 
     for row in project.catalogue["indicator"]:
-        ours_all = built.outputs[built.outputs["INDICATOR"] == row["id"]]
+        ours_all = built.outputs[built.outputs["SERIES"] == row["id"]]
         for year in row["years"]:
-            ours = ours_all[ours_all["TIME_PERIOD"] == year].set_index("REF_AREA")["OBS_VALUE"]
+            ours = ours_all[ours_all["TIME_PERIOD"] == str(year)].set_index("REF_AREA")["OBS_VALUE"]
             is_group = ours.index.isin(groups)
 
             if row["annex"] not in annex_rows:
