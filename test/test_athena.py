@@ -13,8 +13,8 @@ from athena.fetch import Fetcher, SourceChanged
 from athena.table import canonical_hash, round_half_up, table
 from fixtures import Session
 
-ROW = {"INDICATOR": "x", "REF_AREA": "AAA", "TIME_PERIOD": 2015, "OBS_VALUE": 1.5, "UNIT_MEASURE": "percent",
-       "OBS_STATUS": "", "SOURCE": "athena", "EDITION": "e", "DERIVED": True}
+ROW = {"DATASET": "d", "SERIES": "x", "REF_AREA": "AAA", "TIME_PERIOD": "2015", "OBS_VALUE": 1.5,
+       "UNIT_MEASURE": "percent", "EDITION": "e", "DERIVED": True}
 
 
 # ── fetch ───────────────────────────────────────────────────────────────────────────────────────────────────

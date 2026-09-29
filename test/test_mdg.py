@@ -7,7 +7,8 @@ from pathlib import Path
 import pytest
 
 import fixtures
-from mdg import readers
+import mdg
+from adapters import readers
 from mdg.build import MixedEditions, UnmappedNames, build
 from mdg.check import check
 
@@ -130,7 +131,7 @@ def test_a_run_with_a_changed_source_is_refused(tmp_path):
 # ── the seal ────────────────────────────────────────────────────────────────────────────────────────────────
 
 def test_only_the_check_reads_the_answer_key():
-    package = Path(readers.__file__).parent
+    package = Path(mdg.__file__).parent
     for path in package.glob("*.py"):
         if path.name in ("answers.py", "check.py"):
             continue

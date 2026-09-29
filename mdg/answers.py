@@ -7,7 +7,7 @@ from collections.abc import Callable
 
 import pandas as pd
 
-from mdg import readers
+from adapters import readers
 
 ANNEX_LABELS = {
     "World": "world", "Developing regions": "developing", "Developed regions": "developed",
@@ -52,4 +52,5 @@ def ipu_world_totals(data: bytes) -> pd.Series:
 
 def series(data: bytes, code: Callable[[str], str | None], year: int) -> pd.Series:
     """The MDG database's final country values for one year, by code."""
-    return pd.Series({code(name): value for name, y, value, _ in readers.mdg_series(data) if y == year}, dtype=float)
+    return pd.Series({code(name): value for name, y, value, _, _ in readers.mdg_series(data)
+                      if y == year and value is not None}, dtype=float)

@@ -46,6 +46,11 @@
 "United States" = "USA"                              # United States of America
 "Venezuela R.B." = "VEN"                             # Venezuela (Bolivarian Republic of)
 
+# Spelling in the groupings document's list of ECA subregions (capture of 2014-10-20)
+"Cape-Verde" = "CPV"                                 # Cabo Verde
+"Democratic Republic of Congo" = "COD"               # Democratic Republic of the Congo
+"Tanzania" = "TZA"                                   # United Republic of Tanzania
+
 # Spelling in the UN DESA list of least developed countries (capture of 2014-01-13)
 "Dem. Rep of the Congo" = "COD"                      # Democratic Republic of the Congo
 "Lao People's Dem. Republic" = "LAO"                 # Lao People's Democratic Republic
@@ -62,3 +67,8 @@
 "Micronesia, Federated States of" = "FSM"            # Micronesia (Federated States of)
 "Reunion" = "REU"                                    # Réunion
 "Sudan (former)" = "736"                             # Sudan before South Sudan's independence in 2011; M49 736
+"Czechoslovakia [former]" = "CSK"                    # dissolved 1993; its former ISO code
+"Serbia and Montenegro" = "SCG"                      # dissolved 2006; its former ISO code
+"Union of Soviet Socialist Republics [former]" = "SUN"  # dissolved 1991; its former ISO code
+"Yugoslavia [former Socialist Federal Republic]" = "YUG"  # dissolved 1992; its former ISO code
+"European Union (EU)" = "european-union"             # an aggregate, not a country; a group whose members no source lists

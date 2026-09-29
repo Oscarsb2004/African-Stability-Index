@@ -46,7 +46,8 @@ class Fetcher:
         locked = self.lock.get(url)
         if locked is None:
             self.lock[url] = digest
-            self.lock_path.write_text(json.dumps(self.lock, indent=1, sort_keys=True) + "\n", encoding="utf-8")
+            self.lock_path.write_text(json.dumps(self.lock, indent=1, sort_keys=True) + "\n", encoding="utf-8",
+                                      newline="\n")
         elif locked != digest:
             raise SourceChanged(f"{url}: sha256 is {digest}, the lock says {locked}")
         return response.content
