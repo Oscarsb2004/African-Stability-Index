@@ -1,0 +1,135 @@
+# One table per indicator: its inputs, the formula, and where the publisher printed the answer.
+# A group's value is the formula applied to the sums of its members' variables; nothing is imputed.
+# Commit this file before comparing: every run records the commit, so the method is fixed before anyone sees
+# whether it matches (P32).
+
+[groups]
+document = "groupings"                 # the official MDG regional groupings
+replace = ["ldc-2014", "lldc-2014"]    # owner ruling of 2026-09-26: the lists in force in January 2015
+
+# ── MDG 3.3 ──────────────────────────────────────────────────────────────────────────────────────────────────
+
+[[indicator]]
+id = "mdg-3.3"
+title = "Proportion of seats held by women in national parliament"
+unit = "percent"
+decimals = 1
+class = "A"
+years = [2015]
+value = "100 * women / seats"
+annex = "3.3"
+countries = "ipu-2015-02"              # the IPU prints each country's share
+world_totals = "ipu-world-2015-02"     # and the world's seats and women
+
+[indicator.inputs]
+women = "ipu-2015-02/women"
+seats = "ipu-2015-02/seats"
+
+[[indicator.method]]
+source = "metadata-557"
+quote = "This indicator covers the single chamber in unicameral parliaments and the lower chamber in bicameral parliaments."
+
+[[indicator.method]]
+source = "metadata-557"
+quote = "Regional averages are determined by dividing the total number of women members by the total number of seats filled in single or lower chambers of parliament per region."
+
+[[indicator.method]]
+source = "metadata-557"
+quote = "No adjustments are made for missing values."
+
+[[indicator.method]]
+source = "groupings"
+quote = "MDG regional groupings: List of countries in each grouping"
+
+# ── MDG 3.1: one table per level of education (P28: inputs from the WDI archive, April 2015 edition) ───────────
+# WDI publishes enrolment, the share of it that is female, and the gross enrolment ratio by sex. School-age
+# population by sex is derived as enrolment over the ratio (a reading the owner has still to rule on), so a country
+# with a zero ratio for either sex cannot be used.
+
+[[indicator]]
+id = "mdg-3.1a"
+title = "Ratio of girls to boys in primary education"
+unit = "ratio"
+decimals = 2
+class = "B"
+years = [1991, 2000]
+value = "(ef / pf) / (em / pm)"
+annex = "3.1"
+part = "a"
+countries = "series-611"
+
+[indicator.inputs]
+enrolled = "wdi-2015-04/SE.PRM.ENRL"
+female_share = "wdi-2015-04/SE.PRM.ENRL.FE.ZS"
+ger_f = "wdi-2015-04/SE.PRM.ENRR.FE"
+ger_m = "wdi-2015-04/SE.PRM.ENRR.MA"
+
+[indicator.derive]
+ef = "enrolled * female_share / 100"
+em = "enrolled - ef"
+pf = "100 * ef / ger_f"
+pm = "100 * em / ger_m"
+
+[[indicator.method]]
+source = "metadata-611"
+quote = "the Gender Parity Index (GPI) of the Gross Enrolment Ratio (GER) for each level of education is used"
+
+[[indicator.method]]
+source = "metadata-611"
+quote = "Averages are produced using the appropriate school-age populations as weights."
+
+[[indicator]]
+id = "mdg-3.1b"
+title = "Ratio of girls to boys in secondary education"
+unit = "ratio"
+decimals = 2
+class = "B"
+years = [1991, 2000]
+value = "(ef / pf) / (em / pm)"
+annex = "3.1"
+part = "b"
+countries = "series-613"
+
+[indicator.inputs]
+enrolled = "wdi-2015-04/SE.SEC.ENRL"
+female_share = "wdi-2015-04/SE.SEC.ENRL.FE.ZS"
+ger_f = "wdi-2015-04/SE.SEC.ENRR.FE"
+ger_m = "wdi-2015-04/SE.SEC.ENRR.MA"
+
+[indicator.derive]
+ef = "enrolled * female_share / 100"
+em = "enrolled - ef"
+pf = "100 * ef / ger_f"
+pm = "100 * em / ger_m"
+
+[[indicator.method]]
+source = "metadata-611"
+quote = "Averages are produced using the appropriate school-age populations as weights."
+
+[[indicator]]
+id = "mdg-3.1c"
+title = "Ratio of women to men in tertiary education"
+unit = "ratio"
+decimals = 2
+class = "B"
+years = [1991, 2000]
+value = "(ef / pf) / (em / pm)"
+annex = "3.1"
+part = "c"
+countries = "series-614"
+
+[indicator.inputs]
+enrolled = "wdi-2015-04/SE.TER.ENRL"
+female_share = "wdi-2015-04/SE.TER.ENRL.FE.ZS"
+ger_f = "wdi-2015-04/SE.TER.ENRR.FE"
+ger_m = "wdi-2015-04/SE.TER.ENRR.MA"
+
+[indicator.derive]
+ef = "enrolled * female_share / 100"
+em = "enrolled - ef"
+pf = "100 * ef / ger_f"
+pm = "100 * em / ger_m"
+
+[[indicator.method]]
+source = "metadata-611"
+quote = "Averages are produced using the appropriate school-age populations as weights."

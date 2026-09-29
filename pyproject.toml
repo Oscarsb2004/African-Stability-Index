@@ -4,14 +4,15 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "athena-core"
-version = "0.1.0.dev0"
-description = "The contracts every Athena project is built on: definitions, frames, steps and validation."
+version = "0.2.0.dev0"
+description = "Published statistics in one common format, rebuilt by their publishers' methods and checked against them."
 requires-python = ">=3.13"
 license = "LicenseRef-Proprietary"
 license-files = ["LICENSE"]
 dependencies = [
-    "pydantic==2.13.5",
-    "pyarrow==25.0.1",
+    "pandas==3.0.6",
+    "pandera==0.33.1",
+    "requests-cache==1.3.3",
     "pypdf==6.19.0",
 ]
 
@@ -19,8 +20,8 @@ dependencies = [
 test = ["pytest==9.1.1"]
 
 [tool.setuptools.packages.find]
-where = ["src"]
+include = ["athena", "mdg"]
 
 [tool.pytest.ini_options]
-testpaths = ["tests", "projects/mdg/tests"]
-pythonpath = ["src", "tests", "projects/mdg"]
+testpaths = ["test"]
+pythonpath = ["."]
