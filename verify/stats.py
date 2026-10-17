@@ -410,6 +410,19 @@ class StructureResult:
         return self.k > 0 and self.rank < self.k
 
 
+def factor_loadings(data: pd.DataFrame, n_factors: int) -> pd.DataFrame:
+    """Maximum-likelihood factor loadings (`sklearn.decomposition.FactorAnalysis`) on the standardised complete
+    rows, varimax-rotated: variables x factors."""
+    from sklearn.decomposition import FactorAnalysis
+
+    values = data.to_numpy(dtype=float)
+    spread = values.std(axis=0, ddof=1)
+    standardised = (values - values.mean(axis=0)) / np.where(spread == 0, 1.0, spread)
+    model = FactorAnalysis(n_components=n_factors, random_state=0).fit(standardised)
+    return pd.DataFrame(varimax(model.components_.T), index=list(data.columns),
+                        columns=[f"F{i + 1}" for i in range(n_factors)])
+
+
 def structure_agreement(
     frame: pd.DataFrame,
     declared: dict[str, list[str]],
@@ -445,7 +458,6 @@ def structure_agreement(
     comparison has a partition to work with; they are listed in the result, since
     a structure with many of them is one this measure describes less well.
     """
-    from sklearn.decomposition import FactorAnalysis
     from sklearn.metrics import adjusted_rand_score
 
     seen: dict[str, str] = {}
@@ -482,16 +494,7 @@ def structure_agreement(
         reasons.append(f"{per_variable:.2f} complete observations per variable, "
                        f"below the {MIN_OBS_PER_VARIABLE:.0f} minimum")
 
-    values = data.to_numpy(dtype=float)
-    standardised = (values - values.mean(axis=0)) / np.where(
-        values.std(axis=0, ddof=1) == 0, 1.0, values.std(axis=0, ddof=1)
-    )
-
-    model = FactorAnalysis(n_components=n_factors, random_state=0).fit(standardised)
-    rotated = varimax(model.components_.T)
-    loadings = pd.DataFrame(
-        rotated, index=columns, columns=[f"F{i + 1}" for i in range(n_factors)]
-    )
+    loadings = factor_loadings(data, n_factors)
 
     recovered = {v: int(np.argmax(np.abs(loadings.loc[v].to_numpy())))
                  for v in columns}
@@ -530,10 +533,107 @@ def structure_agreement(
     )
 
 
+# ── Inference on samples (the ADA toolkit) ─────────────────────────────────────
+#
+# Every statistic below is reported with the sample it rests on. A correlation
+# between two indicators is a sample of the n countries that report both; a
+# country's composite is the mean of a sample of k pillar scores. The formulas
+# are the standard ones: the t test for r, Fisher's r-to-z for intervals and for
+# comparing two r's, the t interval for a mean, partial and semi-partial r, and
+# the correction for attenuation.
+
+#: Two-tailed critical z at .05.
+Z95 = 1.959963984540054
+
+
+def r_significance(r: float, n: int) -> tuple[float, float]:
+    """t = r * sqrt((n - 2) / (1 - r^2)) on n - 2 degrees of freedom: (t, two-tailed p)."""
+    from scipy.stats import t as student
+    if n < 3 or abs(r) >= 1:
+        return float("nan"), float("nan")
+    t = r * np.sqrt((n - 2) / (1 - r * r))
+    return float(t), float(2 * student.sf(abs(t), n - 2))
+
+
+def r_interval(r: float, n: int, z: float = Z95) -> tuple[float, float]:
+    """Fisher's interval: z' = artanh r, SE = 1 / sqrt(n - 3), z' +/- z * SE, back through tanh.
+    r itself is not normally distributed, which is why the interval is built on z' and is asymmetric in r."""
+    if n <= 3 or abs(r) >= 1:
+        return float("nan"), float("nan")
+    centre, se = np.arctanh(r), 1 / np.sqrt(n - 3)
+    return float(np.tanh(centre - z * se)), float(np.tanh(centre + z * se))
+
+
+def compare_correlations(r1: float, n1: int, r2: float, n2: int) -> float:
+    """Z for the difference between two independent correlations: (z'1 - z'2) / sqrt(1/(n1-3) + 1/(n2-3))."""
+    return float((np.arctanh(r1) - np.arctanh(r2)) / np.sqrt(1 / (n1 - 3) + 1 / (n2 - 3)))
+
+
+def partial_r(rxy: float, rxz: float, ryz: float) -> float:
+    """X and Y with Z removed from both: what is left of their relationship once Z is held constant."""
+    return float((rxy - rxz * ryz) / np.sqrt((1 - rxz ** 2) * (1 - ryz ** 2)))
+
+
+def semipartial_r(rxy: float, rxz: float, ryz: float) -> float:
+    """Y with X, Z removed from X only. Squared, it is the share of Y's variance X explains beyond Z."""
+    return float((rxy - rxz * ryz) / np.sqrt(1 - rxz ** 2))
+
+
+def disattenuated_r(r: float, reliability_x: float, reliability_y: float) -> float:
+    """The correlation the two measures would show if both were perfectly reliable. Above 1 means they cannot be
+    told apart at the reliability they have."""
+    return float(r / np.sqrt(reliability_x * reliability_y))
+
+
+def mean_interval(mean: float, sd: float, n: int, *, known_sd: bool = False,
+                  confidence: float = 0.95) -> tuple[float, float, float]:
+    """(SE, lower, upper) for a mean: SE = SD / sqrt(n), with z when the SD is the population's and t on n - 1
+    degrees of freedom when it is estimated from the sample."""
+    from scipy.stats import norm, t as student
+    se = sd / np.sqrt(n)
+    tail = (1 + confidence) / 2
+    critical = norm.ppf(tail) if known_sd else student.ppf(tail, n - 1)
+    return float(se), float(mean - critical * se), float(mean + critical * se)
+
+
+def rank_bands(scores: pd.Series, errors: pd.Series, z: float = Z95) -> pd.DataFrame:
+    """
+    The ranks each unit could hold, given its score's standard error.
+
+    Two units differ only if z = (M1 - M2) / sqrt(SE1^2 + SE2^2) passes the critical value: the test for the
+    difference between two independent estimates, and the WGI's overlapping-interval rule made exact. A unit's band
+    runs from 1 + (how many are significantly above it) to N - (how many are significantly below it). Rank 1 is
+    the highest score.
+    """
+    data = pd.DataFrame({"score": scores, "se": errors}).dropna()
+    difference = data.score.to_numpy()[None, :] - data.score.to_numpy()[:, None]
+    spread = np.sqrt(data.se.to_numpy()[None, :] ** 2 + data.se.to_numpy()[:, None] ** 2)
+    with np.errstate(divide="ignore", invalid="ignore"):
+        statistic = np.where(spread > 0, difference / spread, np.sign(difference) * np.inf)
+    above = (statistic > z).sum(axis=1)          # row i: units j significantly above i
+    below = (statistic < -z).sum(axis=1)
+    data["best"] = 1 + above
+    data["worst"] = len(data) - below
+    data["width"] = data.worst - data.best + 1
+    return data
+
+
+def parallel_analysis(n: int, k: int, *, draws: int = 2000, percentile: float = 95,
+                      seed: int = 0) -> np.ndarray:
+    """Horn's parallel analysis: the given percentile of each eigenvalue of the correlation matrix of n x k
+    independent normal draws. A factor is worth keeping only if its observed eigenvalue beats chance's."""
+    rng = np.random.default_rng(seed)
+    eigen = np.array([np.linalg.eigvalsh(np.corrcoef(rng.normal(size=(n, k)), rowvar=False))[::-1]
+                      for _ in range(draws)])
+    return np.percentile(eigen, percentile, axis=0)
+
+
 __all__ = [
     "MIN_COMPLETE_ROWS",
     "AlphaResult", "cronbach_alpha", "item_rest_correlations",
     "DimensionalityResult", "pca_dimensionality",
     "kmo", "bartlett_sphericity",
-    "varimax", "StructureResult", "structure_agreement",
+    "varimax", "factor_loadings", "StructureResult", "structure_agreement",
+    "Z95", "r_significance", "r_interval", "compare_correlations", "partial_r", "semipartial_r",
+    "disattenuated_r", "mean_interval", "rank_bands", "parallel_analysis",
 ]

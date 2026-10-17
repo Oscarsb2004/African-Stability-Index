@@ -20,6 +20,7 @@ Run:  python verify/advisory.py
 """
 
 import json as _json
+import math
 import sys as _sys
 from dataclasses import dataclass
 from pathlib import Path as _Path
@@ -27,8 +28,10 @@ from pathlib import Path as _Path
 _REPO = _Path(__file__).resolve().parent.parent
 _sys.path.insert(0, str(_REPO))
 
+import numpy as np
 import pandas as pd
 from scipy.stats import spearmanr
+from scipy.stats import t as t_dist
 
 from asi.core.constants import PILLAR_DEFS, MIN_CRONBACH_ALPHA
 
@@ -60,6 +63,15 @@ def _pooled_indicator_frame(panel: "_Panel") -> pd.DataFrame:
         index=["iso3", "year"], columns="variable_name",
         values="score", aggfunc="first",
     )
+
+
+def _residuals(frame: pd.DataFrame, control: pd.Series) -> pd.DataFrame:
+    """Each column with a covariate regressed out (least squares, complete rows): what is left once the covariate
+    is held constant."""
+    data = frame.join(control.rename("_control"), how="inner").dropna()
+    x = np.column_stack([np.ones(len(data)), data.pop("_control").to_numpy()])
+    fitted = x @ np.linalg.lstsq(x, data.to_numpy(dtype=float), rcond=None)[0]
+    return pd.DataFrame(data.to_numpy(dtype=float) - fitted, index=data.index, columns=data.columns)
 
 
 def _kmo_label(value: float) -> str:
@@ -316,6 +328,115 @@ def main() -> int:
          "define stability are not required to be alternative measures of it. "
          "Whether this index is formative or reflective has never been stated, "
          "and that decision governs how these numbers should be read.")
+
+    # ── correlations, each with its sample ────────────────────────────────────
+    # Real values only: an imputed cell is the pipeline's guess, and correlating
+    # guesses measures the imputation. `score` is already polarity-aligned, so a
+    # positive r means both indicators point to more stability.
+    section("Correlations between indicators, each with its sample (n, 95% CI, p)")
+    real = at_year[at_year["provenance"].isin(["observed", "carried_forward"])]
+    real_wide = real.pivot_table(index="iso3", columns="variable_name", values="score", aggfunc="first")
+    gdp = real[real["variable_name"] == "gdp_pc_ppp"].set_index("iso3")["raw_value"]
+    log_gdp = gdp[gdp > 0].map(math.log)
+    names = [c for c in real_wide.columns if c in scoring]
+    rows = []
+    for i, a in enumerate(names):
+        for b in names[i + 1:]:
+            pair = real_wide[[a, b]].dropna()
+            n = len(pair)
+            if n < 5:
+                continue
+            r = float(pair[a].corr(pair[b]))
+            _, p = stats.r_significance(r, n)
+            low, high = stats.r_interval(r, n)
+            row = {"a": a, "b": b, "n": n, "r": r, "p": p, "low": low, "high": high}
+            triple = pair.join(log_gdp.rename("gdp"), how="inner")
+            if "gdp_pc_ppp" not in (a, b) and len(triple) >= 6:
+                c = triple.corr()
+                row["partial"] = stats.partial_r(c.loc[a, b], c.loc[a, "gdp"], c.loc[b, "gdp"])
+                row["n_partial"] = len(triple)
+                row["p_partial"] = stats.r_significance(row["partial"], len(triple) - 1)[1]
+            rows.append(row)
+    pairs = pd.DataFrame(rows)
+    note(f"{len(pairs)} pairs with at least 5 countries reporting both; n from {pairs.n.min()} to "
+         f"{pairs.n.max()}, median {pairs.n.median():.0f}")
+    note(f"significant at .05: {(pairs.p < 0.05).sum()}; |r| >= .50: {(pairs.r.abs() >= 0.5).sum()}; "
+         f"median 95% CI width {(pairs.high - pairs.low).median():.2f}")
+    note(f"|r| >= .40 yet not significant, because n < 25: "
+         f"{((pairs.r.abs() >= 0.4) & (pairs.p >= 0.05) & (pairs.n < 25)).sum()}")
+    thin = real_wide[names].notna().sum().sort_values()
+    note("fewest countries reporting: " + ", ".join(f"{v} {n}" for v, n in thin.head(6).items()))
+
+    # ── the third variable ────────────────────────────────────────────────────
+    # Development lifts most indicators together. Partialling it out separates a
+    # relationship between two indicators from their shared dependence on it.
+    section("The third variable: log GDP per capita held constant (partial r)")
+    with_gdp = pairs[(pairs.a == "gdp_pc_ppp") | (pairs.b == "gdp_pc_ppp")].copy()
+    with_gdp["other"] = with_gdp.a.where(with_gdp.a != "gdp_pc_ppp", with_gdp.b)
+    strongest = with_gdp.reindex(with_gdp.r.abs().sort_values(ascending=False).index).head(6)
+    note("most dependent on GDP per capita: " + "; ".join(
+        f"{x.other} {x.r:+.2f} (n={x.n})" for x in strongest.itertuples()))
+    partials = pairs.dropna(subset=["partial"]) if "partial" in pairs else pd.DataFrame()
+    strong = partials[(partials.r.abs() >= 0.5) & (partials.p < 0.05)]
+    note(f"{len(strong)} strong pairs (|r| >= .50, p < .05); with GDP held constant "
+         f"{(strong.p_partial >= 0.05).sum()} lose significance and {(strong.partial.abs() < 0.3).sum()} fall "
+         f"below |.30|")
+    drops = strong.assign(drop=strong.r.abs() - strong.partial.abs()).sort_values("drop", ascending=False)
+    for x in drops.head(4).itertuples():
+        note(f"   {x.a} x {x.b}: r {x.r:+.2f} -> {x.partial:+.2f} (n={int(x.n_partial)})")
+    note(f"suppression (partial larger than r by more than .15): "
+         f"{(partials.partial.abs() > partials.r.abs() + 0.15).sum()} pairs; correlation is not causation "
+         f"in an observational design, and an Africa-only sample restricts the range")
+
+    # ── pillars: reliability-corrected correlations and factors ───────────────
+    section("Pillars: correlations corrected for attenuation, and factor analysis")
+    alphas = {pid: stats.cronbach_alpha(wide[[v for v in meta["indicators"] if v in wide.columns]]).alpha
+              for pid, meta in panel.pillars.items()}
+    pillar_r = pillar_wide.corr()
+    n_pillar = len(pillar_wide.dropna())
+    merged = []
+    for i, a in enumerate(pillar_r.index):
+        for b in pillar_r.columns[i + 1:]:
+            if alphas.get(a) and alphas.get(b) and alphas[a] > 0 and alphas[b] > 0:
+                corrected = stats.disattenuated_r(pillar_r.loc[a, b], alphas[a], alphas[b])
+                if abs(corrected) >= 0.90:
+                    merged.append(f"{a}-{b} {pillar_r.loc[a, b]:+.2f} -> {corrected:+.2f}")
+    note(f"n = {n_pillar}; pairs whose corrected r reaches |.90| (not distinguishable at their reliability): "
+         + (", ".join(merged) if merged else "none"))
+    note("alpha is a lower bound on reliability, so a corrected r is an upper bound; above 1 means the two "
+         "pillars are one measurement within error")
+    k_overall, _ = stats.kmo(pillar_wide)
+    chi2, df = stats.bartlett_sphericity(pillar_wide)
+    if k_overall is not None and chi2 is not None:
+        note(f"KMO {k_overall:.3f} ({_kmo_label(k_overall)}); Bartlett chi2 {chi2:.1f} on {df} df; "
+             f"{n_pillar / pillar_wide.shape[1]:.1f} countries per pillar")
+    for label, frame in (("as scored", pillar_wide.dropna()),
+                         ("log GDP per capita held constant", _residuals(pillar_wide, log_gdp))):
+        eigen = np.linalg.eigvalsh(frame.corr().to_numpy())[::-1]
+        chance = stats.parallel_analysis(len(frame), frame.shape[1])
+        keep = int(np.argmin(eigen > chance)) if (eigen <= chance).any() else len(eigen)
+        note(f"[{label}, n = {len(frame)}] eigenvalues {', '.join(f'{e:.2f}' for e in eigen[:3])}; parallel "
+             f"analysis {', '.join(f'{c:.2f}' for c in chance[:3])}; factors to keep: {keep}")
+    loadings = stats.factor_loadings(pillar_wide.dropna(), 2)
+    note("two-factor loadings (ML, varimax): " + "; ".join(
+        f"{pid} {row.F1:+.2f}/{row.F2:+.2f}" for pid, row in loadings.iterrows()))
+
+    # ── composite intervals and rank bands ────────────────────────────────────
+    # Each country's composite is the mean of a sample of k pillar scores, so it
+    # has a standard error, SD / sqrt(k), and a t interval on k - 1 degrees of
+    # freedom. Two countries differ only if the z test on their difference passes.
+    section("Composite confidence intervals and rank bands (equal weights)")
+    k = pillar_wide.notna().sum(axis=1)
+    mean = pillar_wide.mean(axis=1)
+    se = pillar_wide.std(axis=1, ddof=1) / k.pow(0.5)
+    half = se * k.map(lambda size: float(t_dist.ppf(0.975, size - 1)) if size > 1 else float("nan"))
+    bands = stats.rank_bands(mean, se)
+    note(f"standard error of each composite: median {se.median():.2f} points ({se.min():.2f} to {se.max():.2f}); "
+         f"95% half-width median {half.median():.2f}")
+    note(f"rank bands: median {bands.width.median():.0f} places wide ({bands.width.min()} to {bands.width.max()}) "
+         f"of {len(bands)} — the data separate a handful of tiers, not {len(bands)} ranks")
+    for iso3, row in bands.sort_values("score", ascending=False).head(3).iterrows():
+        note(f"   {iso3}: {row.score:.1f} +/- {half[iso3]:.1f}, ranks {int(row.best)}-{int(row.worst)}")
 
     # ── data quality ──────────────────────────────────────────────────────────
     section("Data quality at the reference year")
