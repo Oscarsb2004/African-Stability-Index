@@ -12,13 +12,14 @@ one is checked
   2. against algebraic properties that must hold whatever the input — alpha of
      identical items is 1, correlation-matrix eigenvalues sum to the number of
      variables, and so on;
-  3. against an independent third-party implementation — `pingouin` for alpha,
-     `factor_analyzer` for KMO and Bartlett, `scikit-learn` for the
-     eigenstructure.
+  3. against an independent route to the same number — a different algorithm
+     written in this file (residual regressions for partial correlations,
+     eigenvalues for the determinant, Kaiser's pairwise varimax), or
+     `scikit-learn` for the eigenstructure.
 
-The third-party checks skip cleanly where those packages are absent, so the
-suite still passes on a machine with only the pipeline requirements installed.
-Install them with `pip install -r requirements-dev.txt` to run the full battery.
+Every route uses permissively licensed code only; the earlier cross-checks
+against pingouin and factor_analyzer (both GPL) were replaced when the project
+moved into Athena.
 """
 
 import numpy as np
@@ -114,7 +115,7 @@ def test_alpha_is_not_high_for_independent_items(independent):
 
     One-sided on purpose. Alpha is centred near zero here but has wide sampling
     variance, and it is *unbounded below* — this fixture returns -0.469, which
-    `pingouin` reproduces to twelve decimal places. Asserting `abs(alpha)` would
+    the covariance form below reproduces to twelve decimal places. Asserting `abs(alpha)` would
     fail on correct arithmetic, which is how this test was first written.
     """
     assert cronbach_alpha(independent).alpha < 0.3
@@ -278,42 +279,72 @@ def test_bartlett_returns_none_for_a_singular_matrix(rng):
     assert chi2 is None
 
 
-# ── Third-party cross-checks ───────────────────────────────────────────────────
+# ── Independent routes ─────────────────────────────────────────────────────────
+#
+# Each statistic recomputed by a different algorithm written here, not by the
+# formula `verify/stats.py` uses: two routes to one number agree only if both
+# are right. (These replaced cross-checks against pingouin and factor_analyzer,
+# which are GPL and so outside Athena's licence rule.)
 
-def test_alpha_agrees_with_pingouin(correlated):
-    pingouin = pytest.importorskip("pingouin", reason="pip install -r requirements-dev.txt")
-    theirs, _ = pingouin.cronbach_alpha(data=correlated)
-    assert cronbach_alpha(correlated).alpha == pytest.approx(theirs, abs=1e-9)
-
-
-def test_alpha_agrees_with_pingouin_on_the_hand_case():
-    """Ours, theirs, and the paper computation must all be the same number."""
-    pingouin = pytest.importorskip("pingouin", reason="pip install -r requirements-dev.txt")
-    theirs, _ = pingouin.cronbach_alpha(data=HAND_FRAME)
-    assert theirs == pytest.approx(HAND_ALPHA, abs=1e-9)
-    assert cronbach_alpha(HAND_FRAME).alpha == pytest.approx(theirs, abs=1e-9)
-
-
-def test_kmo_agrees_with_factor_analyzer(correlated):
-    fa = pytest.importorskip("factor_analyzer", reason="pip install -r requirements-dev.txt")
-    _, their_overall = fa.calculate_kmo(correlated)
-    ours, _ = kmo(correlated)
-    assert ours == pytest.approx(their_overall, abs=1e-8)
+def alpha_from_covariances(frame: pd.DataFrame) -> float:
+    """Alpha from the mean item variance v and mean inter-item covariance c:
+    k*c / (v + (k-1)*c), algebraically equal to the variance-sum form."""
+    cov = np.cov(frame.to_numpy(dtype=float), rowvar=False, ddof=1)
+    k = cov.shape[0]
+    v = np.diag(cov).mean()
+    c = (cov.sum() - np.trace(cov)) / (k * (k - 1))
+    return float(k * c / (v + (k - 1) * c))
 
 
-def test_per_variable_kmo_agrees_with_factor_analyzer(correlated):
-    fa = pytest.importorskip("factor_analyzer", reason="pip install -r requirements-dev.txt")
-    their_per_variable, _ = fa.calculate_kmo(correlated)
-    ours = kmo(correlated)[1]
-    for theirs, (_, mine) in zip(their_per_variable, ours.items()):
-        assert mine == pytest.approx(theirs, abs=1e-8)
+def partials_from_residuals(frame: pd.DataFrame) -> np.ndarray:
+    """Each pair's partial correlation as the correlation of the two residuals
+    left after regressing both on every other variable: least squares, with no
+    matrix inverse anywhere."""
+    data = frame.to_numpy(dtype=float)
+    k = data.shape[1]
+    partial = np.zeros((k, k))
+    for i in range(k):
+        for j in range(i + 1, k):
+            others = np.column_stack([np.ones(len(data))] +
+                                     [data[:, m] for m in range(k) if m not in (i, j)])
+            residual = [data[:, x] - others @ np.linalg.lstsq(others, data[:, x], rcond=None)[0]
+                        for x in (i, j)]
+            partial[i, j] = partial[j, i] = np.corrcoef(*residual)[0, 1]
+    return partial
 
 
-def test_bartlett_agrees_with_factor_analyzer(correlated):
-    fa = pytest.importorskip("factor_analyzer", reason="pip install -r requirements-dev.txt")
-    their_chi2, _ = fa.calculate_bartlett_sphericity(correlated)
-    ours, _ = bartlett_sphericity(correlated)
-    assert ours == pytest.approx(their_chi2, abs=1e-6)
+def test_alpha_agrees_with_the_covariance_form(correlated):
+    assert cronbach_alpha(correlated).alpha == pytest.approx(alpha_from_covariances(correlated), abs=1e-12)
+
+
+def test_alpha_covariance_form_gives_the_hand_case():
+    """Ours, the covariance form and the paper computation are one number."""
+    assert alpha_from_covariances(HAND_FRAME) == pytest.approx(HAND_ALPHA, abs=1e-12)
+    assert cronbach_alpha(HAND_FRAME).alpha == pytest.approx(HAND_ALPHA, abs=1e-12)
+
+
+def test_kmo_agrees_with_partials_from_residuals(correlated):
+    observed = np.corrcoef(correlated.to_numpy(dtype=float), rowvar=False)
+    np.fill_diagonal(observed, 0.0)
+    partial = partials_from_residuals(correlated)
+    theirs = (observed ** 2).sum() / ((observed ** 2).sum() + (partial ** 2).sum())
+    assert kmo(correlated)[0] == pytest.approx(theirs, abs=1e-10)
+
+
+def test_per_variable_kmo_agrees_with_partials_from_residuals(correlated):
+    observed = np.corrcoef(correlated.to_numpy(dtype=float), rowvar=False)
+    np.fill_diagonal(observed, 0.0)
+    partial = partials_from_residuals(correlated)
+    theirs = (observed ** 2).sum(axis=1) / ((observed ** 2).sum(axis=1) + (partial ** 2).sum(axis=1))
+    assert list(kmo(correlated)[1].values()) == pytest.approx(list(theirs), abs=1e-10)
+
+
+def test_bartlett_agrees_with_the_eigenvalue_route(correlated):
+    """ln det R as the sum of the log eigenvalues, not an LU factorisation."""
+    n, k = correlated.shape
+    eigenvalues = np.linalg.eigvalsh(np.corrcoef(correlated.to_numpy(dtype=float), rowvar=False))
+    theirs = -((n - 1) - (2 * k + 5) / 6.0) * np.log(eigenvalues).sum()
+    assert bartlett_sphericity(correlated)[0] == pytest.approx(theirs, rel=1e-10)
 
 
 def test_eigenvalues_agree_with_sklearn(correlated):
@@ -376,17 +407,40 @@ def test_varimax_is_a_noop_for_a_single_factor(correlated):
     assert varimax(single) == pytest.approx(single)
 
 
-def test_varimax_agrees_with_factor_analyzer(correlated):
-    """
-    Our rotation against the reference implementation, to machine precision.
+def kaiser_pairwise_varimax(loadings: np.ndarray, tol: float = 1e-14, sweeps: int = 5000) -> np.ndarray:
+    """Kaiser's original algorithm (1958): rotate one pair of factors at a time
+    by the closed-form angle that maximises the criterion for that pair, and
+    sweep until no pair moves. Kaiser-normalised. A different algorithm from the
+    SVD iteration in `verify/stats.py`, reaching the same fixed point."""
+    h = np.sqrt((loadings ** 2).sum(axis=1))
+    x = loadings / h[:, None]
+    p, m = x.shape
+    for _ in range(sweeps):
+        largest = 0.0
+        for a in range(m - 1):
+            for b in range(a + 1, m):
+                u, v = x[:, a] ** 2 - x[:, b] ** 2, 2 * x[:, a] * x[:, b]
+                numerator = 2 * (u * v).sum() - 2 * u.sum() * v.sum() / p
+                denominator = (u ** 2 - v ** 2).sum() - (u.sum() ** 2 - v.sum() ** 2) / p
+                angle = np.arctan2(numerator, denominator) / 4
+                largest = max(largest, abs(angle))
+                c, s = np.cos(angle), np.sin(angle)
+                x[:, a], x[:, b] = c * x[:, a] + s * x[:, b], -s * x[:, a] + c * x[:, b]
+        if largest < tol:
+            break
+    return x * h[:, None]
 
-    Both must be run to convergence for the comparison to mean anything.
-    `factor_analyzer`'s default `tol=1e-5` stops while the loadings are still
-    ~5e-3 from the fixed point — enough to look like an algorithmic disagreement
-    when it is only an unconverged one, and enough to move a borderline factor
-    assignment. Driven to `tol=1e-12`, the two agree to ~1e-15.
+
+def test_varimax_agrees_with_kaiser_pairwise_rotation(correlated):
     """
-    fa = pytest.importorskip("factor_analyzer", reason="pip install -r requirements-dev.txt")
+    Our rotation against Kaiser's own pairwise algorithm, run to convergence.
+
+    Both must be run to convergence for the comparison to mean anything. Ours
+    stops when the criterion's relative gain falls below `tol`, and the criterion
+    is flat at its maximum, so the loadings stop about sqrt(tol) short of the
+    fixed point. Measured on this fixture: 1.7e-3 at the default tol=1e-6, 1.8e-6
+    at 1e-12, 6.8e-8 at 1e-15. Hence the tolerance used here.
+    """
     decomposition = pytest.importorskip("sklearn.decomposition")
     from verify.stats import varimax
 
@@ -395,14 +449,13 @@ def test_varimax_agrees_with_factor_analyzer(correlated):
     loadings = decomposition.FactorAnalysis(n_components=2,
                                             random_state=0).fit(standardised).components_.T
 
-    theirs = fa.Rotator(method="varimax", normalize=True,
-                        tol=1e-12, max_iter=5000).fit_transform(loadings)
-    ours = varimax(loadings, normalize=True, tol=1e-12, max_iter=5000)
+    theirs = kaiser_pairwise_varimax(loadings)
+    ours = varimax(loadings, normalize=True, tol=1e-15, max_iter=200000)
 
     # Factor axes are sign- and order-arbitrary; compare the loading magnitudes
     # each variable ends up with, which is what the assignment step reads.
     assert np.sort(np.abs(ours), axis=1) == pytest.approx(
-        np.sort(np.abs(theirs), axis=1), abs=1e-10)
+        np.sort(np.abs(theirs), axis=1), abs=1e-7)
 
 
 def test_varimax_kaiser_normalisation_changes_the_answer(correlated):

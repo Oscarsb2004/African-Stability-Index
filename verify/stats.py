@@ -5,8 +5,8 @@ Separated from `advisory.py` so the arithmetic can be unit-tested on data whose
 answer is known in advance, rather than only on the panel, where nobody can say
 what the right answer is. `tests/test_advisory_stats.py` checks every function
 here three ways: against closed-form cases computed by hand, against algebraic
-properties that must hold for any input, and against an independent third-party
-implementation (`pingouin`, `factor_analyzer`) where one exists.
+properties that must hold for any input, and against an independent route to the
+same number (a different algorithm written in the test, or scikit-learn).
 
 Everything here is plain numpy. No `asi` import, per the rule
 `tests/test_verify_independence.py` enforces: a diagnostic that imported the
@@ -331,10 +331,15 @@ def varimax(
     before rotating and rescaled after, so that a variable with small
     communality pulls on the solution as hard as one with large communality.
     It is on by default because it is the convention SPSS, R's `varimax` and
-    `factor_analyzer` all use — the cross-check in
-    `tests/test_advisory_stats.py` disagreed with the reference implementation by
-    up to 0.048 per loading until this was added, which is small enough to look
-    like numerical noise and large enough to move a borderline assignment.
+    `factor_analyzer` all use — a cross-check against the reference implementation
+    disagreed by up to 0.048 per loading until this was added, which is small
+    enough to look like numerical noise and large enough to move a borderline
+    assignment.
+
+    The stopping rule is the criterion's relative gain, and the criterion is flat
+    at its maximum, so the loadings stop about sqrt(tol) short of the fixed point:
+    1.7e-3 at the default tol, measured against Kaiser's pairwise algorithm in
+    `tests/test_advisory_stats.py`.
     """
     rotated = np.asarray(loadings, dtype=float)
     k, n_factors = rotated.shape

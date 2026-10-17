@@ -1,5 +1,19 @@
 # African Stability Index (ASI)
 
+> **Since 2026-10-17 the ASI lives in Athena** (`athena-core/projects/asi`, decision P44), with its full history.
+> The public repository `Oscarsb2004/African-Stability-Index` and its GitHub Pages site stay as the live legacy
+> edition until a new edition is published from here. Run everything from this folder with athena-core's
+> environment (`requirements.lock` at the repository root):
+>
+> ```powershell
+> ..\..\.venv\Scripts\python -m pytest -q           # 735 tests
+> ..\..\.venv\Scripts\python -m verify.run          # the four verification layers
+> ..\..\.venv\Scripts\python -m asi.dashboard.app  # the dashboard, http://127.0.0.1:8050
+> ```
+>
+> The sections below still describe the standalone repository; they are rewritten as the project moves onto
+> Athena's datasets.
+
 A composite stability index covering all **54 African Union member states**, built on
 **7 pillars** and **32 scoring indicators** (33 total incl. one descriptive), scored by
 **4 weighting methods**, as a 2000-2024 panel with an interactive drill-down dashboard.

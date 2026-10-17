@@ -218,8 +218,10 @@ The conventional minimum for acceptable internal consistency is α ≥ 0.70
   though it rested on 54.
 - Returns undefined rather than a number for fewer than two items, fewer than three
   complete rows, or zero total variance.
-- Cross-checked against `pingouin.cronbach_alpha` to twelve decimal places, and against a
-  four-subject case computed by hand, in `tests/test_advisory_stats.py`.
+- Cross-checked against the covariance form of alpha to twelve decimal places, and against a
+  four-subject case computed by hand, in `tests/test_advisory_stats.py`. (The cross-check
+  was against `pingouin` until the project moved into Athena, whose licence rule excludes GPL
+  code.)
 
 **Limitation, and it is the important one here.** Alpha rises mechanically with item count
 and with redundancy among items. Pillar A returns 0.958 not because it is the best-measured
