@@ -5,7 +5,7 @@ Replaces the old 02_clean -> 03_normalize -> 04_score chain for the panel era.
 Those three stages each collapsed or re-anchored the data in ways that made a
 time series impossible; this runs the whole sequence once, on every year.
 
-    raw pull
+    inputs (data/inputs.csv, from Athena's datasets)
       -> panel        one value per country/indicator/year, with provenance
       -> derived      GPI parity folding, IDP per capita
       -> regional     fill gaps from same-year regional peers
@@ -53,11 +53,7 @@ logging.basicConfig(level=logging.INFO, format="%(levelname)-8s %(message)s",
 logger = logging.getLogger(__name__)
 
 
-def _dt_today() -> str:
-    import datetime
-    return datetime.date.today().isoformat()
-
-RAW_FILE       = Path("data/01_raw_pull.xlsx")
+INPUTS         = Path("data/inputs.csv")
 OUT_DIR        = Path("data/panel")
 GOALPOSTS_FILE = Path("registry/goalposts.yaml")
 WEIGHTS_FILE   = OUT_DIR / "weights.yaml"
@@ -84,11 +80,21 @@ def main() -> int:
     logger.info("Registry: %d indicators (%d scoring)", len(specs), len(scoring))
 
     # ── raw ───────────────────────────────────────────────────────────────────
-    if not RAW_FILE.exists():
-        logger.error("%s not found — run 01_pull.py first.", RAW_FILE)
+    # data/inputs.csv is Athena's common format, written by 01_inputs.py from the
+    # edition's datasets; each World Bank series maps to its registry variable.
+    if not INPUTS.exists():
+        logger.error("%s not found — run 01_inputs.py first.", INPUTS)
         return 1
-    raw = pd.read_excel(RAW_FILE, sheet_name="raw_data")
-    raw["year"] = pd.to_numeric(raw["year"], errors="coerce")
+    inputs = pd.read_csv(INPUTS, dtype={"TIME_PERIOD": str}, float_precision="round_trip")
+    variable = {s["series_code"]: v for v, s in specs.items()}
+    if len(variable) != len(specs):
+        logger.error("Two registry variables share a series code; inputs cannot be mapped.")
+        return 1
+    raw = pd.DataFrame({"iso3": inputs["REF_AREA"], "variable_name": inputs["SERIES"].map(variable),
+                        "year": inputs["TIME_PERIOD"].astype(int), "value": inputs["OBS_VALUE"]})
+    # The bundle is dated by its data, not by the day it was built, so the same
+    # inputs always give the same bytes: the newest edition among the datasets.
+    as_of = max(name[-10:] for name in inputs["DATASET"].unique())
     panel_end = int(raw["year"].max())
     years = range(PANEL_START, panel_end + 1)
     logger.info("Raw: %d observations | panel %d-%d", len(raw), PANEL_START, panel_end)
@@ -289,7 +295,7 @@ def main() -> int:
     import json
     bundle = {
         "run": {
-            "generated": _dt_today(),
+            "generated": as_of,
             "panel_start": PANEL_START,
             "panel_end": panel_end,
             "reference_year": reference_year,

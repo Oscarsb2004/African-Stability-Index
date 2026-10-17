@@ -23,6 +23,8 @@ from pathlib import Path
 REPO = Path(__file__).resolve().parent.parent
 
 LAYERS = {
+    "rebuild":   ("verify/rebuild.py",   True,
+                  "the committed outputs, rebuilt from data/inputs.csv"),
     "panel":     ("verify/panel.py",     True,
                   "independent re-derivation of the time-series panel"),
     "contract":  ("verify/contract.py",  True,

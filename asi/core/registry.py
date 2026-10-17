@@ -159,7 +159,7 @@ class IndicatorRegistry:
 
         indicators = []
         for path in sorted(self._yaml_dir.glob("*.yaml")):
-            with open(path, "r") as f:
+            with open(path, "r", encoding="utf-8") as f:
                 data = yaml.safe_load(f)
             if not data:          # guards against None from empty/comment-only files
                 continue
@@ -190,7 +190,7 @@ class IndicatorRegistry:
             ind for ind in self._indicators
             if self._file_map.get(ind["variable_name"]) == path
         ]
-        with open(path, "r") as f:
+        with open(path, "r", encoding="utf-8") as f:
             existing = f.read()
 
         # preserve header comments at the top of the file
@@ -201,7 +201,7 @@ class IndicatorRegistry:
             else:
                 break
 
-        with open(path, "w") as f:
+        with open(path, "w", encoding="utf-8") as f:
             if comments:
                 f.write("\n".join(comments) + "\n\n")
             if entries:

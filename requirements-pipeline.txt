@@ -1,5 +1,4 @@
 -r requirements.txt
-wbgapi
 scipy
 scikit-learn
 pytest

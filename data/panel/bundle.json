@@ -408,7 +408,7 @@
    ],
    "log_transform": true,
    "transform": null,
-   "justification": "Internal displacement is a direct consequence of active conflict, persecution, or disaster and is the clearest observable outcome of security breakdown at population scale. Raw absolute IDP counts (SM.POP.IDPC, sourced from UNHCR and IDMC via World Bank WDI) are converted to IDPs per 1,000 population in 02_clean.py using SP.POP.TOTL. This per-capita conversion is required by OECD Handbook (2008) §3 comparability criterion: without it, large countries (DRC, Ethiopia, Sudan) are systematically penalised relative to smaller states regardless of actual conflict intensity per capita. The UNHCR Global Trends report (UNHCR 2023) uses per-capita displacement rates as its standard cross-country comparison metric. log_transform applied: rates span from 0 to 150+ per 1,000 in active conflict states. Source: UNHCR / IDMC via World Bank WDI SM.POP.IDPC; denominator SP.POP.TOTL."
+   "justification": "Internal displacement is a direct consequence of active conflict, persecution, or disaster and is the clearest observable outcome of security breakdown at population scale. Raw absolute IDP counts (SM.POP.IDPC, sourced from UNHCR and IDMC via World Bank WDI) are converted to IDPs per 1,000 population in asi/pipeline/panel.py using SP.POP.TOTL. This per-capita conversion is required by OECD Handbook (2008) §3 comparability criterion: without it, large countries (DRC, Ethiopia, Sudan) are systematically penalised relative to smaller states regardless of actual conflict intensity per capita. The UNHCR Global Trends report (UNHCR 2023) uses per-capita displacement rates as its standard cross-country comparison metric. log_transform applied: rates span from 0 to 150+ per 1,000 in active conflict states. Source: UNHCR / IDMC via World Bank WDI SM.POP.IDPC; denominator SP.POP.TOTL."
   },
   "population_total": {
    "display_name": "Population, total",
@@ -421,7 +421,7 @@
    ],
    "log_transform": false,
    "transform": null,
-   "justification": "Normalization denominator only. Used exclusively in 02_clean.py Step 1b to convert the absolute IDP count (SM.POP.IDPC) to a per-1,000 population rate before any filling or winsorization is applied. Not a scoring indicator and excluded from all scoring steps: 03_normalize.py skips it (role: descriptive), 04_score.py load_pillar_map filters role != scoring, and 06_qualitative.py indicator metadata excludes non-scoring entries. Source: World Bank WDI SP.POP.TOTL, annual mid-year estimate."
+   "justification": "Normalization denominator only. Used exclusively in asi/pipeline/panel.py Step 1b to convert the absolute IDP count (SM.POP.IDPC) to a per-1,000 population rate before any filling or winsorization is applied. Not a scoring indicator and excluded from all scoring steps: normalisation skips it (role: descriptive), the pillar map filters role != scoring, and the UI metadata bundle excludes non-scoring entries. Source: World Bank WDI SP.POP.TOTL, annual mid-year estimate."
   },
   "co2_pc": {
    "display_name": "CO2 emissions, AR5 GWP100 (metric tons per capita)",

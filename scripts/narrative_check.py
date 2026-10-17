@@ -68,10 +68,9 @@ def check_links(records: dict[str, dict]) -> list[str]:
     as "does not exist", and the two must not be reported identically.
 
     Two things independent of link validity get in the way here:
-      - SSL verification fails on this project's environment against otherwise
-        valid HTTPS sites (documented precedent: 01_pull.py's "Windows SSL fix",
-        a corporate/system proxy replacing certificates with a CA Python does
-        not recognise). Disabled the same way, for the same reason.
+      - Certificate verification can fail on a machine behind a proxy that
+        replaces certificates. Verification stays on regardless (an Athena rule):
+        such a link is reported as unreachable, never quietly counted as live.
       - Some sites (IMF/Akamai observed) return 403 to any scripted request
         regardless of method, which a human browser sails past. That is bot
         detection, not link rot, so it is reported as a warning to check
@@ -84,9 +83,9 @@ def check_links(records: dict[str, dict]) -> list[str]:
     import urllib.error
     import urllib.request
 
+    # Certificates are always verified (an Athena rule): a link that only loads
+    # with verification off is reported as failing, not quietly counted as live.
     ctx = ssl.create_default_context()
-    ctx.check_hostname = False
-    ctx.verify_mode = ssl.CERT_NONE
 
     def _try(url: str, method: str) -> tuple[bool, int | None, str | None]:
         req = urllib.request.Request(

@@ -30,7 +30,7 @@ def add_if_missing(ir, **kwargs):
 #
 # SERIES CODE NOTE: WGI codes in wbgapi require source=3 (the WGI database).
 # The short-form codes below (VA.EST, PV.EST etc.) are correct for that source.
-# Verify against: wbgapi.series.list(db=3) before building 01_pull.py.
+# Verify against the WGI dataset's codebook (athena-core: python -m adapters worldbank).
 # =============================================================================
 
 add_if_missing(ir,

@@ -49,7 +49,7 @@ from asi.core.constants import (
 )
 
 PANEL_DIR      = _REPO / "data" / "panel"
-BASELINE       = _REPO / "data" / "baseline" / "01_raw_pull_BASELINE.xlsx"
+INPUTS         = _REPO / "data" / "inputs.csv"
 GOALPOSTS      = _REPO / "registry" / "goalposts.yaml"
 INDICATORS_DIR = _REPO / "indicators_list"
 COUNTRIES_PY   = _REPO / "asi" / "core" / "countries.py"
@@ -84,12 +84,13 @@ def load_countries() -> dict[str, dict]:
 # ── 1. panel construction, re-derived with merge_asof ──────────────────────────
 
 def _raw_baseline() -> pd.DataFrame:
-    """The frozen raw pull, cleaned the same way every check below needs it."""
-    raw = pd.read_excel(BASELINE, sheet_name="raw_data")
-    raw["year"] = pd.to_numeric(raw["year"], errors="coerce")
-    raw = raw.dropna(subset=["year", "value"])
-    raw["year"] = raw["year"].astype(int)
-    return raw
+    """The inputs the panel was built from (data/inputs.csv, Athena's common format), as country, variable, year
+    and value. Series map to variables through the registry, read here rather than through the pipeline's loader."""
+    inputs = pd.read_csv(INPUTS, dtype={"TIME_PERIOD": str}, float_precision="round_trip")
+    variable = {ind["series_code"]: v for v, ind in load_registry().items()}
+    raw = pd.DataFrame({"iso3": inputs["REF_AREA"], "variable_name": inputs["SERIES"].map(variable),
+                        "year": inputs["TIME_PERIOD"].astype(int), "value": inputs["OBS_VALUE"]})
+    return raw.dropna(subset=["variable_name", "value"])
 
 
 def _carry_forward(series: pd.DataFrame, years: list[int],
@@ -135,10 +136,7 @@ def check_panel_values(obs: pd.DataFrame, registry: dict, countries: dict) -> No
     which is carry-forward expressed as a join instead of a scan — a genuinely
     different route to the same answer.
     """
-    raw = pd.read_excel(BASELINE, sheet_name="raw_data")
-    raw["year"] = pd.to_numeric(raw["year"], errors="coerce")
-    raw = raw.dropna(subset=["year", "value"])
-    raw["year"] = raw["year"].astype(int)
+    raw = _raw_baseline()
 
     years = sorted(obs["year"].unique())
     # only indicators whose value is taken as-is (no rolling mean, no transform,
@@ -656,7 +654,7 @@ def run() -> int:
     print("=" * 78)
 
     required = [PANEL_DIR / "observations.csv", PANEL_DIR / "pillar_scores.csv",
-                PANEL_DIR / "composites.csv", GOALPOSTS, BASELINE]
+                PANEL_DIR / "composites.csv", GOALPOSTS, INPUTS]
     missing = [p for p in required if not p.exists()]
     if missing:
         record("0 inputs present", "FAIL",

@@ -9,10 +9,13 @@ sklearn PCA, a merge_asof join instead of the pipeline's dictionary scan).
 import from `asi` except `asi.core.constants`, which holds declared thresholds
 rather than logic.
 
-Four layers, run together by `python -m verify.run`:
+Five layers, run together by `python -m verify.run`:
 
-    panel       re-derive the panel from the frozen raw baseline and compare
-                against what the pipeline wrote                   (pass/fail)
+    rebuild     rerun the pipeline from data/inputs.csv in a scratch copy; every
+                committed output must come back byte for byte    (pass/fail)
+    panel       re-derive the panel from its inputs (data/inputs.csv, written
+                from Athena's datasets) and compare against what the pipeline
+                wrote                                             (pass/fail)
     contract    the backend/frontend object contract: identity, aggregation
                 reconciliation, no re-derivation in the UI        (pass/fail)
     narrative   narrative claims against the panel they describe  (pass/fail)
@@ -29,4 +32,4 @@ estimates, which by construction cannot be predicted from a country's own data;
 the MIN_REGIONAL_SAMPLE rule and the reliability tiers carry those instead.
 """
 
-__all__ = ["panel", "contract", "narrative", "advisory"]
+__all__ = ["rebuild", "panel", "contract", "narrative", "advisory"]

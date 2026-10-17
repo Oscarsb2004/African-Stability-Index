@@ -1,55 +1,35 @@
 # African Stability Index (ASI)
 
-> **Since 2026-10-17 the ASI lives in Athena** (`athena-core/projects/asi`, decision P44), with its full history.
-> The public repository `Oscarsb2004/African-Stability-Index` and its GitHub Pages site stay as the live legacy
-> edition until a new edition is published from here. Run everything from this folder with athena-core's
-> environment (`requirements.lock` at the repository root):
->
-> ```powershell
-> ..\..\.venv\Scripts\python -m pytest -q           # 735 tests
-> ..\..\.venv\Scripts\python -m verify.run          # the four verification layers
-> ..\..\.venv\Scripts\python -m asi.dashboard.app  # the dashboard, http://127.0.0.1:8050
-> ```
->
-> The sections below still describe the standalone repository; they are rewritten as the project moves onto
-> Athena's datasets.
-
 A composite stability index covering all **54 African Union member states**, built on
 **7 pillars** and **32 scoring indicators** (33 total incl. one descriptive), scored by
 **4 weighting methods**, as a 2000-2024 panel with an interactive drill-down dashboard.
 
-Data sources: World Bank **WDI** (db 2) and **WGI** (db 3) via the `wbgapi` API.
-Methodology anchored to the OECD/JRC *Handbook on Constructing Composite Indicators* (2008)
-— every design choice is source-mapped in [`methodology/references.md`](methodology/references.md).
+**Since 2026-10-17 the ASI lives in Athena** (`athena-core/projects/asi`, decision P44), with its full history.
+The public repository `Oscarsb2004/African-Stability-Index` and its GitHub Pages site stay as the live legacy
+edition until a new edition is published from here.
+
+Data: World Bank **WDI** and **WGI**, read from Athena's datasets. Every score published so far rests on the ASI's
+own pull of 8 August 2026, kept as the dataset `asi-pull-2026-08-08`. Methodology anchored to the OECD/JRC
+*Handbook on Constructing Composite Indicators* (2008) — every design choice is source-mapped in
+[`methodology/references.md`](methodology/references.md).
 
 ---
 
-## Quick start (new machine)
+## Running it
+
+From this folder, with athena-core's environment (`requirements.lock` at the repository root):
 
 ```powershell
-git clone https://github.com/Oscarsb2004/African-Stability-Index.git
-cd African-Stability-Index
-python run_asi.py                          # -> http://127.0.0.1:8050
+..\..\.venv\Scripts\python -m pytest -q                  # the tests
+..\..\.venv\Scripts\python -m verify.run                 # the five verification layers
+..\..\.venv\Scripts\python -m asi.dashboard.app          # the dashboard, http://127.0.0.1:8050
 ```
 
-`run_asi.py` is the only command needed. On first run it creates `.venv`, installs
-`requirements-pipeline.txt` into it, and re-executes itself inside it; afterwards it
-starts straight away and reinstalls only if the requirements files change. There is
-nothing to activate by hand.
+All outputs in `data/` are committed, so the dashboard and verification run without Athena's store. The store is
+needed only to make inputs (stage 1 below).
 
-```powershell
-python run_asi.py --port 8060   # serve on another port
-python run_asi.py --verify      # run the verification suite instead
-python run_asi.py --test        # run pytest instead
-```
-
-All pipeline outputs in `data/` are committed, so the **dashboard and verification run
-immediately after cloning** — no API pull required. Re-run the pipeline only when you want
-fresh World Bank data.
-
-Requirements files:
-- `requirements.txt` — dashboard/web-deploy only (used by Railway/gunicorn)
-- `requirements-pipeline.txt` — superset: adds `wbgapi`, `scipy`, `scikit-learn`, `pulp`
+`run_asi.py` still works on its own: it builds a separate `.venv` from `requirements-pipeline.txt`. Inside Athena,
+use the shared environment instead.
 
 ---
 
@@ -60,7 +40,8 @@ from `data/`.
 
 | Stage | Script | What it does | Output |
 |---|---|---|---|
-| 1 | `01_pull.py` | Pull WDI + WGI series via wbgapi across the whole panel window | `data/01_raw_pull.xlsx` |
+| 0 | `python -m adapters asi-pull` or `python -m adapters worldbank`, in athena-core | Ingest the inputs' databases into Athena's store, each source hash-locked | datasets in `C:\AthenaStore\datasets` |
+| 1 | `01_inputs.py <datasets>` | Select the registry's series for the 54 states over the pull window from the named datasets. The datasets are the edition: `asi-pull-2026-08-08` reproduces every published score exactly; `wdi-2026-10-08 wgi-2026-09-25` would make a new edition | `data/inputs.csv` |
 | 2 | `02_panel.py` | Build the country x indicator x **year** panel with provenance, apply derived transforms, fill regional gaps, normalise against **fixed goalposts**, and score pillars and composites with reliability tiers | `data/panel/*` |
 | 3 | `03_robustness.py` | Sensitivity analysis at the reference year: weighting methods, adversarial weights, measured-only, islands excluded | `data/panel/robustness.json` |
 | 7 | `run_asi.py` | Run the interface (port 8050); bootstraps `.venv` on first use | — |
@@ -70,7 +51,7 @@ historical score.
 
 ### Verification (run after any pipeline change)
 
-One entry point runs three layers:
+One entry point runs five layers:
 
 ```bash
 python -m verify.run
@@ -78,7 +59,8 @@ python -m verify.run
 
 | Layer | Gates a release? | Role |
 |---|---|---|
-| `verify/panel.py` | **yes** | Independent re-derivation of the panel from the frozen raw baseline, using different tools than the pipeline (carry-forward via a `merge_asof` join; rolling means via `.rolling()`; reliability rules re-implemented from the specification). All 32 scoring indicators are covered. Of 43,200 scoring cells, 38,276 (88.6%) are re-derived; the remaining 11.4% are regional-mean estimates, which by definition cannot be predicted from a country's own data and are checked instead by the `MIN_REGIONAL_SAMPLE` rule and the reliability tiers. |
+| `verify/rebuild.py` | **yes** | Reruns stages 2 and 3 from `data/inputs.csv` in a scratch copy; every committed output must come back identical. A stale or hand-edited output fails, and it is the proof that the ASI reproduces its published scores from Athena's datasets. |
+| `verify/panel.py` | **yes** | Independent re-derivation of the panel from its inputs (`data/inputs.csv`), using different tools than the pipeline (carry-forward via a `merge_asof` join; rolling means via `.rolling()`; reliability rules re-implemented from the specification). All 32 scoring indicators are covered. Of 43,200 scoring cells, 38,276 (88.6%) are re-derived; the remaining 11.4% are regional-mean estimates, which by definition cannot be predicted from a country's own data and are checked instead by the `MIN_REGIONAL_SAMPLE` rule and the reliability tiers. |
 | `verify/contract.py` | **yes** | The backend/frontend object contract: every indicator entry carries its own identity, pillar scores reconcile with the indicators they are built from, ranks reproduce from scores, and the UI neither hardcodes counts nor redefines canonical constants. |
 | `verify/advisory.py` | no | Design diagnostics — correlations, effective weights, coverage, staleness, benchmark plausibility. Reports; never blocks. |
 
@@ -117,10 +99,10 @@ asi/                             importable package (the project's own code)
   core/models.py                 runtime Indicator / Pillar objects
 verify/                          independent verification (NOT imported by asi/)
   run.py                         single entry point: python -m verify.run
-  panel.py contract.py advisory.py
+  rebuild.py panel.py contract.py narrative.py advisory.py
 tests/                           pytest: registry, schema, SSOT enforcement
 scripts/                         one-off utilities (stub generation, adding indicators)
-01_pull 02_panel 03_robustness   pipeline stages
+01_inputs 02_panel 03_robustness pipeline stages
 run_asi.py                       launcher: bootstraps .venv, runs asi/dashboard/app.py
 app.py, Procfile                 gunicorn entry point for web deploy (Railway-ready)
 indicators_list/pillar_[a-g].yaml  indicator registry — polarity, window, aggregation,
@@ -130,7 +112,8 @@ qualitative/countries/*.yaml     per-country analyst notes (rendered in dashboar
 assets/                          dashboard CSS (incl. Dash 4 dropdown fix)
 data/                            all pipeline outputs (committed for portability)
 data/panel/                      the panel, scores, frozen weights, UI bundle
-data/baseline/                   frozen raw pull used by verify/panel.py
+data/inputs.csv                  the edition's inputs, written by 01_inputs.py from Athena's datasets
+data/baseline/                   the frozen pull of 8 August 2026, the source of asi-pull-2026-08-08
 methodology/references.md        source → design-decision mapping (keep in sync!)
 methodology/METHODOLOGY_REVIEW.md  full OECD 10-step evaluation
 methodology/ROADMAP.md           phased refinement plan
