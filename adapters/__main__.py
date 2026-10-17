@@ -1,8 +1,9 @@
-"""python -m adapters discover | mdg
+"""python -m adapters discover | mdg | worldbank
 
-discover  finds the Internet Archive capture of every MDG series page and metadata page after the database's
-          final update, and writes adapters/mdg_captures.csv. Run once, then commit the file.
-mdg       ingests the MDG groupings, database and annex into datasets in the store, and prints the report.
+discover   finds the Internet Archive capture of every MDG series page and metadata page after the database's
+           final update, and writes adapters/mdg_captures.csv. Run once, then commit the file.
+mdg        ingests the MDG groupings, database and annex into datasets in the store, and prints the report.
+worldbank  ingests every World Bank bulk download in sources.toml (WDI, WGI) into a dataset named after its edition.
 """
 
 from __future__ import annotations
@@ -12,7 +13,7 @@ from pathlib import Path
 
 import pandas as pd
 
-from adapters import fetcher, mdg_annex, mdg_database, mdg_groupings, sources
+from adapters import fetcher, mdg_annex, mdg_database, mdg_groupings, sources, worldbank
 from athena import dataset
 from athena.fetch import cached_session
 
@@ -32,6 +33,17 @@ def mdg(session=None, root: Path = dataset.ROOT, captures: Path = mdg_database.C
     return groupings_report + database_report + annex_report
 
 
+def world_bank(session=None, root: Path = dataset.ROOT, lock: Path | None = None) -> list[str]:
+    """One dataset per bulk download, written as each is read."""
+    get, report = (fetcher(session, lock) if lock else fetcher(session)).get, []
+    for source in sources().values():
+        if source.get("kind") == "worldbank-bulk":
+            name, tables, lines = worldbank.ingest(get(source["url"]), source["database"])
+            dataset.write(name, tables, lines, root)
+            report += lines
+    return report
+
+
 def main(argv: list[str]) -> int:
     if argv[:1] == ["discover"]:
         found = mdg_database.discover(cached_session())
@@ -40,6 +52,9 @@ def main(argv: list[str]) -> int:
         return 0
     if argv[:1] == ["mdg"]:
         print("\n".join(mdg()))
+        return 0
+    if argv[:1] == ["worldbank"]:
+        print("\n".join(world_bank()))
         return 0
     print(__doc__)
     return 2

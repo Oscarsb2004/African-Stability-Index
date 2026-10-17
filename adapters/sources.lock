@@ -13,6 +13,8 @@
  "https://api.worldbank.org/v2/sources/57/country/all/series/SE.TER.ENRL/version/201504/time/YR1991;YR2000?format=json&per_page=20000": "476192fd804d335b58a742ef440fe7d1ddd835a566bcf185d7769a056b1594c2",
  "https://api.worldbank.org/v2/sources/57/country/all/series/SE.TER.ENRR.FE/version/201504/time/YR1991;YR2000?format=json&per_page=20000": "e2f3956ec06bf7e72d5a7ef97a2af66609dacce5ec03888a593c53a59464a635",
  "https://api.worldbank.org/v2/sources/57/country/all/series/SE.TER.ENRR.MA/version/201504/time/YR1991;YR2000?format=json&per_page=20000": "d13da108ddbcf0b678f6f9c62982372dfd9d0a5646e1fd2145b24c4f0a810f57",
+ "https://databank.worldbank.org/data/download/WDI_CSV.zip": "1cbb81b7e8e656e05fe9236f201d6d59a82d62a77f96c147c1bc63940a7b0c0c",
+ "https://databank.worldbank.org/data/download/WGI_CSV.zip": "137acf55c0899d1c319be282ca173e944aa3a5f5b7693d916518e484987c4434",
  "https://unstats.un.org/unsd/methodology/m49/overview/": "b9048114f6e7f2abda83bf03d4263c9d7cd1bd7230e3d0461025ee7839a7a1fb",
  "https://web.archive.org/web/20140113124748id_/http://www.un.org/en/development/desa/policy/cdp/ldc/ldc_list.pdf": "75e6427f0109684aee2230b74c3ef4ef77204dd21b1382ebccc10c0eb65b3bee",
  "https://web.archive.org/web/20141020095627id_/http://mdgs.un.org/unsd/mdg/Resources/Static/Data/Regional%20groupings.doc": "c713efc95537971e9b7e1f6e6793ae641c692c49595b7ff2b0210f68d80e149b",

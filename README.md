@@ -18,7 +18,8 @@ Millennium Development Goals.
 ```bash
 .venv/Scripts/python -m pip install -r requirements.lock
 .venv/Scripts/python -m pytest -q
-.venv/Scripts/python -m adapters mdg    # ingest the MDG database, annex and groupings as datasets in the store
+.venv/Scripts/python -m adapters mdg        # ingest the MDG database, annex and groupings as datasets in the store
+.venv/Scripts/python -m adapters worldbank  # ingest the whole WDI and WGI, each as a dataset named after its edition
 .venv/Scripts/python -m mdg check       # the M1 project: build 3.3 and 3.1, compare with the publishers
 ```
 
