@@ -1,0 +1,22 @@
+# The GitHub Pages build (scripts/build_pages.py).
+#
+# The build copies Dash's JavaScript out of this environment and vendors the same
+# versions' wheels for the browser, so the two always match each other. These
+# pins fix WHICH versions: this is the combination verified running under Pyodide
+# 314.0.7 in a browser on 2026-09-18 — every callback exercised, no failed request.
+#
+# requirements.txt stays unpinned for the pipeline. Bump these deliberately, and
+# re-verify in a browser: a site can build cleanly and still fail to boot.
+-r requirements.txt
+dash==4.4.1
+dash-bootstrap-components==2.0.4
+plotly==7.0.0
+flask==3.1.3
+werkzeug==3.1.8
+blinker==1.9.0
+itsdangerous==2.2.0
+importlib-metadata==9.0.0
+zipp==4.1.0
+janus==2.0.0
+nest-asyncio==1.6.0
+comm==0.2.3

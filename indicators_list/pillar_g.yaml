@@ -1,0 +1,87 @@
+# pillar_g.yaml — Structural / Infrastructure
+# Measures energy access, water infrastructure, and social protection reach.
+#
+# Consolidation decisions (OECD Handbook §3 parsimony criterion):
+#
+#   social_safetynet_pop REMOVED: per_sa_allsa.cov_pop_tot (safety net programs) is
+#   a subset of per_allsp.cov_pop_tot (all social protection and labour programs).
+#   Including both creates hierarchical double-counting identical to the food insecurity
+#   nesting in Pillar D. social_protection_labour_pop is retained as the broader and
+#   more informative measure — it captures both targeted safety nets AND contributory
+#   social insurance (pensions, unemployment benefits, health insurance), which are
+#   better indicators of institutional state capacity to buffer economic shocks.
+#
+# Shared indicators from Pillar A (ge_estimate, cc_estimate):
+#   defined in pillar_a.yaml with pillars: ["A", "G"]
+#   do not redefine them here
+
+- variable_name: elec_access_tot
+  display_name: Access to electricity (% of population)
+  source: wb_api
+  series_code: EG.ELC.ACCS.ZS
+  role: scoring
+  polarity: positive
+  pillars:
+  - G
+  year_start: 2015
+  year_end: 2024
+  aggregation: most_recent
+  justification: "Electricity access is the enabling infrastructure for all other
+    development outcomes — healthcare delivery, education (lighting for study),
+    communications, cold chains, and economic activity. Without electricity, all
+    other infrastructure investments are constrained. Sub-Saharan Africa has the
+    lowest electricity access rates globally, with 54% access as of 2021 (IEA,
+    2023), making cross-country variation in access a high-discrimination stability
+    indicator. Source: World Bank WDI EG.ELC.ACCS.ZS (IEA / World Bank tracking)."
+  database: wdi
+  log_transform: false
+
+- variable_name: water_access_pop
+  display_name: People using at least basic drinking water services (% of population)
+  source: wb_api
+  series_code: SH.H2O.BASW.ZS
+  role: scoring
+  polarity: positive
+  pillars:
+  - G
+  year_start: 2015
+  year_end: 2024
+  aggregation: most_recent
+  justification: "Basic water access (SH.H2O.BASW.ZS) measures the infrastructure
+    delivery reach of water systems — the share of population with access to a
+    protected water source within a 30-minute round trip (WHO/UNICEF JMP Tier 2).
+    Conceptually distinct from Pillar D's managed_water_percent (SH.H2O.SMDW.ZS):
+    basic access measures the infrastructure side (can people get to water?);
+    managed water measures the quality side (is that water safely managed?). Both
+    are needed: a country can have high basic access but low managed coverage, or
+    vice versa. In Pillar G, this captures state capacity to extend water infrastructure
+    to the population. Source: World Bank WDI SH.H2O.BASW.ZS (WHO/UNICEF JMP)."
+  database: wdi
+  log_transform: false
+
+- variable_name: social_protection_labour_pop
+  display_name: Coverage of social protection and labor programs (% of population)
+  source: wb_api
+  series_code: per_allsp.cov_pop_tot
+  role: scoring
+  polarity: positive
+  pillars:
+  - G
+  year_start: 2010
+  year_end: 2024
+  aggregation: most_recent
+  justification: "Social protection coverage reflects the institutional reach of the
+    state to protect citizens against economic shocks, disability, old age, and
+    unemployment. This broader measure (per_allsp.cov_pop_tot) encompasses all
+    formal social protection and labour programs: contributory social insurance
+    (pensions, unemployment benefits, health insurance) plus targeted safety nets.
+    Retained in preference to social_safetynet_pop (per_sa_allsa.cov_pop_tot)
+    because the safety net series is a hierarchical subset of this broader measure
+    — including both would double-count safety net recipients (OECD Handbook §3).
+    The broader measure also better captures state institutional capacity: high
+    contributory insurance coverage signals a formalised labour market and functioning
+    administrative state, which are prerequisites for long-run stability. Extended
+    year range (2010-2024): World Bank ASPIRE data is reported infrequently.
+    Source: World Bank ASPIRE database, per_allsp.cov_pop_tot."
+  database: wdi
+  log_transform: false

@@ -1,0 +1,27 @@
+note: Fitted once on the pooled panel and reused for every year. Refitting per year
+  would move a country's score because the weighting changed rather than because the
+  country did.
+equal:
+  A: 0.14285714285714285
+  B: 0.14285714285714285
+  C: 0.14285714285714285
+  D: 0.14285714285714285
+  E: 0.14285714285714285
+  F: 0.14285714285714285
+  G: 0.14285714285714285
+pca:
+  A: 0.158125
+  B: 0.16096
+  C: 0.164621
+  D: 0.17315
+  E: 0.150876
+  F: 0.0
+  G: 0.192268
+entropy:
+  A: 0.158408
+  B: 0.070513
+  C: 0.091988
+  D: 0.191958
+  E: 0.092365
+  F: 0.204314
+  G: 0.190453

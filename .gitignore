@@ -1,4 +1,34 @@
-.venv/
+# Python
 __pycache__/
-.pytest_cache/
-node_modules/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+
+# Virtual environment
+.venv/
+venv/
+env/
+
+# Pipeline outputs in data/ ARE committed (small, and make the repo clone-and-run:
+# dashboard + 00_evaluate work immediately without an API pull).
+# Legacy/scratch artifacts stay out:
+data/06_results_BASELINE.json
+data/baseline_audit.txt
+
+# Logs / scratch
+*.log
+dash_errors.txt
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Pages build output (scripts/build_pages.py) — CI builds it; never committed
+build/

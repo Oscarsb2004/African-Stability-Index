@@ -1,0 +1,131 @@
+# pillar_d.yaml — Health
+# Measures disease burden, healthcare access, clean water, food security.
+#
+# Consolidation decisions (OECD Handbook §3 parsimony criterion):
+#
+#   modsev_food_insec REMOVED: SN.ITK.MSFI.ZS (moderate OR severe food insecurity)
+#   is a superset that includes all individuals counted in SN.ITK.SVFI.ZS (severe
+#   food insecurity). Including both creates a hierarchical nesting problem — the
+#   'severe' population is counted twice. The correlation is r > 0.95 across African
+#   countries. sev_food_insec is retained because severe food insecurity (going entire
+#   days without eating) is the threshold most directly linked to stability outcomes:
+#   it is a documented precursor to displacement, violence, and political breakdown
+#   (IPC Phase 4-5 triggers). Moderate food insecurity, while important for welfare,
+#   is a less direct signal of instability than its severe counterpart.
+
+- variable_name: life_expect_tot
+  display_name: Life expectancy at birth, total (years)
+  source: wb_api
+  series_code: SP.DYN.LE00.IN
+  role: scoring
+  polarity: positive
+  pillars:
+  - D
+  year_start: 2015
+  year_end: 2024
+  aggregation: most_recent
+  justification: "Life expectancy at birth is the single most comprehensive summary
+    statistic for population health, integrating disease burden, healthcare access,
+    maternal health, nutrition quality, and conflict mortality into one number. The
+    WHO uses life expectancy as the primary health component in the Human Development
+    Index. For stability purposes, low life expectancy signals healthcare system
+    failure and elevated conflict/disease burden that generates grievances and
+    reduces economic productivity. Source: World Bank WDI SP.DYN.LE00.IN (WHO
+    Global Health Observatory)."
+  database: wdi
+  log_transform: false
+
+- variable_name: mort_infant
+  display_name: Mortality rate, infant (per 1,000 live births)
+  source: wb_api
+  series_code: SP.DYN.IMRT.IN
+  role: scoring
+  polarity: negative
+  pillars:
+  - D
+  year_start: 2015
+  year_end: 2024
+  aggregation: most_recent
+  justification: "Infant mortality is highly sensitive to healthcare access at delivery,
+    maternal health, nutrition, and sanitation quality — making it a leading indicator
+    of health system performance at the point of greatest biological vulnerability.
+    Conceptually distinct from life_expect_tot: IMR measures health system quality
+    in the 0-12 month window while life expectancy integrates across the full
+    lifespan including adult mortality from conflict, AIDS, and non-communicable
+    disease. log_transform applied: rates range from ~2 (Mauritius) to ~80+ (Somalia,
+    Mali), requiring compression before min-max normalization. Source: World Bank
+    WDI SP.DYN.IMRT.IN (UN Inter-agency Group for Child Mortality Estimation)."
+  database: wdi
+  log_transform: true
+
+- variable_name: managed_water_percent
+  display_name: People using safely managed drinking water services (% of population)
+  source: wb_api
+  series_code: SH.H2O.SMDW.ZS
+  role: scoring
+  polarity: positive
+  pillars:
+  - D
+  year_start: 2015
+  year_end: 2024
+  aggregation: most_recent
+  justification: "Safely managed water services require on-premises access, availability
+    when needed, and freedom from faecal and chemical contamination — a stronger
+    standard than basic access that more accurately captures disease prevention
+    capacity. Distinguished from Pillar G's water_access_pop (SH.H2O.BASW.ZS,
+    basic access) by measuring the health outcome side: managed water prevents
+    waterborne disease; basic access measures infrastructure delivery reach. Both
+    are needed because countries can have high basic access coverage but low
+    managed service quality. Source: World Bank WDI SH.H2O.SMDW.ZS (WHO/UNICEF
+    Joint Monitoring Programme)."
+  database: wdi
+  log_transform: false
+
+- variable_name: hand_washing_facil
+  display_name: People with basic handwashing facilities including soap and water
+    (% of population)
+  source: wb_api
+  series_code: SH.STA.HYGN.ZS
+  role: scoring
+  polarity: positive
+  pillars:
+  - D
+  year_start: 2015
+  year_end: 2024
+  aggregation: most_recent
+  justification: "Basic handwashing is a frontline communicable disease barrier
+    with documented impact on cholera, typhoid, respiratory infection, and diarrhoeal
+    disease mortality. Low coverage accelerates transmission and reflects underlying
+    sanitation infrastructure gaps. Conceptually distinct from managed_water_percent:
+    managed water prevents ingestion-route contamination; handwashing prevents
+    contact-route transmission. The COVID-19 pandemic demonstrated that handwashing
+    facility coverage is independently predictive of outbreak outcomes even controlling
+    for water access. Source: World Bank WDI SH.STA.HYGN.ZS (WHO/UNICEF JMP)."
+  database: wdi
+  log_transform: false
+
+- variable_name: sev_food_insec
+  display_name: Prevalence of severe food insecurity (% of population)
+  source: wb_api
+  series_code: SN.ITK.SVFI.ZS
+  role: scoring
+  polarity: negative
+  pillars:
+  - D
+  year_start: 2015
+  year_end: 2024
+  aggregation: most_recent
+  justification: "Severe food insecurity (going entire days without eating, measured
+    by the FAO Food Insecurity Experience Scale FIES) is a direct measure of acute
+    deprivation and a documented precursor to displacement, social breakdown, and
+    political violence. Retained in preference to modsev_food_insec (SN.ITK.MSFI.ZS)
+    because the moderate-or-severe series is a hierarchical superset: every person
+    counted in SN.ITK.SVFI.ZS is also counted in SN.ITK.MSFI.ZS. Including both
+    would double-count the severe population, violating OECD Handbook §3 parsimony.
+    The severe threshold is the more stability-relevant choice: it corresponds
+    approximately to IPC Phase 3 (Crisis) and above, the internationally recognised
+    threshold for humanitarian response activation. log_transform applied: rates
+    span 0-60%+ across African countries. Source: World Bank WDI SN.ITK.SVFI.ZS
+    (FAO FIES data)."
+  database: wdi
+  log_transform: true

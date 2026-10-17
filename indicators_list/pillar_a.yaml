@@ -1,0 +1,148 @@
+# pillar_a.yaml — Political / Governance
+# Measures state legitimacy, institutional strength, corruption, rule-making.
+#
+# All six indicators draw from the World Bank's Worldwide Governance Indicators
+# (WGI), produced annually by Kaufmann, Kraay & Mastruzzi (2010) using an
+# unobserved-components model across 200+ governance data sources.
+#
+# Series code format: GOV_WGI_<INDICATOR>.EST — this is the wbgapi db=3 format
+# required for the World Bank API. The legacy short-form <INDICATOR>.EST (e.g.
+# VA.EST) was deprecated in the WB API and returns a JSON decoding error.
+# The GOV_WGI_ prefix routes correctly through wbgapi db=3 (WGI source).
+#
+# Shared indicators that also appear in Pillar E:
+#   define them here with pillars: ["A", "E"] — do not redefine in pillar_e.yaml
+
+- variable_name: va_estimate
+  display_name: Voice and Accountability, WGI estimated score
+  source: wb_api
+  series_code: GOV_WGI_VA.EST
+  role: scoring
+  polarity: positive
+  pillars:
+  - A
+  - C
+  year_start: 2015
+  year_end: 2023
+  aggregation: most_recent
+  justification: "Measures the degree to which citizens can participate in selecting
+    their government, and freedom of expression, association, and a free media. Selected
+    per OECD Handbook §3 as a direct proxy for political legitimacy — a necessary
+    condition for long-run stability. Cross-listed in Pillar C because civic freedoms
+    are prerequisite conditions for human capital development (UNESCO 2013). Source:
+    Kaufmann, Kraay & Mastruzzi (2010), WGI estimated score, N(0,1) scale."
+  database: wgi
+  log_transform: false
+
+- variable_name: pv_estimate
+  display_name: Political Stability and Absence of Violence / Terrorism, WGI estimated
+    score
+  source: wb_api
+  series_code: GOV_WGI_PV.EST
+  role: scoring
+  polarity: positive
+  pillars:
+  - A
+  - E
+  year_start: 2015
+  year_end: 2023
+  aggregation: most_recent
+  justification: "Measures the perceived likelihood of political instability and
+    politically motivated violence including terrorism. Selected as the governance
+    dimension most directly linked to security outcomes (OECD §3 coherence criterion).
+    Cross-listed in Pillar E because PV.EST is a leading indicator of active conflict
+    — it reflects government legitimacy under threat, which is the governance-side
+    driver of Pillar E's security failures. Source: Kaufmann, Kraay & Mastruzzi
+    (2010), WGI estimated score, N(0,1) scale."
+  database: wgi
+  log_transform: false
+
+- variable_name: ge_estimate
+  display_name: Government Effectiveness, WGI estimated score
+  source: wb_api
+  series_code: GOV_WGI_GE.EST
+  role: scoring
+  polarity: positive
+  pillars:
+  - A
+  - G
+  year_start: 2015
+  year_end: 2023
+  aggregation: most_recent
+  justification: "Captures perceptions of public service quality, civil service
+    independence from political pressure, and the credibility of government commitment
+    to stated policies. Cross-listed in Pillar G because government effectiveness
+    is the primary institutional prerequisite for infrastructure delivery — weak
+    states cannot reliably extend electricity, water, or social protection regardless
+    of resources. Aligns with World Bank (2011) fragility framework that treats
+    capacity as the binding constraint on service delivery. Source: Kaufmann, Kraay
+    & Mastruzzi (2010), WGI estimated score, N(0,1) scale."
+  database: wgi
+  log_transform: false
+
+- variable_name: rq_estimate
+  display_name: Regulatory Quality, WGI estimated score
+  source: wb_api
+  series_code: GOV_WGI_RQ.EST
+  role: scoring
+  polarity: positive
+  pillars:
+  - A
+  year_start: 2015
+  year_end: 2023
+  aggregation: most_recent
+  justification: "Measures the government's ability to formulate and implement sound
+    policies and regulations that permit private sector development. Assigned to
+    Pillar A only, per OECD Handbook §3 parsimony criterion: regulatory quality
+    is fundamentally a governance concept, not an economic or infrastructure outcome.
+    A previous version cross-listed this indicator in Pillars B and G, giving it
+    an effective weight of 2.4x that of other indicators — the consolidation to
+    Pillar A removes that implicit up-weighting bias. Source: Kaufmann, Kraay &
+    Mastruzzi (2010), WGI estimated score, N(0,1) scale."
+  database: wgi
+  log_transform: false
+
+- variable_name: rl_estimate
+  display_name: Rule of Law, WGI estimated score
+  source: wb_api
+  series_code: GOV_WGI_RL.EST
+  role: scoring
+  polarity: positive
+  pillars:
+  - A
+  - E
+  year_start: 2015
+  year_end: 2023
+  aggregation: most_recent
+  justification: "Captures confidence in and abidance by societal rules — property
+    rights, police, courts, contract enforcement. Cross-listed in Pillar E because
+    weak rule of law is both a cause and an enabler of violent crime and organised
+    conflict: where courts are ineffective and police are corrupt, armed non-state
+    actors operate freely. This distinction from PV.EST (governance threat to stability)
+    is that RL.EST measures the institutional failure that allows violence to persist.
+    Source: Kaufmann, Kraay & Mastruzzi (2010), WGI estimated score, N(0,1) scale."
+  database: wgi
+  log_transform: false
+
+- variable_name: cc_estimate
+  display_name: Control of Corruption, WGI estimated score
+  source: wb_api
+  series_code: GOV_WGI_CC.EST
+  role: scoring
+  polarity: positive
+  pillars:
+  - A
+  - G
+  year_start: 2015
+  year_end: 2023
+  aggregation: most_recent
+  justification: "Measures the extent to which public power is exercised for private
+    gain, including petty and grand corruption and capture of the state by elites.
+    Cross-listed in Pillar G because corruption directly degrades infrastructure
+    delivery and social protection reach: public investment is diverted, contracts
+    are awarded non-competitively, and services reach intended beneficiaries at
+    lower rates. The cross-listing captures the institutional channel through which
+    governance failure translates into structural under-development. Source: Kaufmann,
+    Kraay & Mastruzzi (2010), WGI estimated score, N(0,1) scale."
+  database: wgi
+  log_transform: false

@@ -1,0 +1,436 @@
+# context/country_facts.yaml
+# Static reference facts for all 54 AU member states.
+# Population in millions (2023 est.). Area in km².
+# Sources: UN DESA, World Bank, African Development Bank.
+
+DZA:
+  capital: Algiers
+  population_m: 46.2
+  area_km2: 2381741
+  languages: [Arabic, Tamazight, French]
+  currency: Algerian Dinar (DZD)
+  resources: [Oil, Natural gas, Phosphates, Iron ore]
+
+AGO:
+  capital: Luanda
+  population_m: 37.2
+  area_km2: 1246700
+  languages: [Portuguese]
+  currency: Kwanza (AOA)
+  resources: [Oil, Diamonds, Coffee, Timber]
+
+BEN:
+  capital: Porto-Novo
+  population_m: 13.8
+  area_km2: 112622
+  languages: [French]
+  currency: West African CFA Franc (XOF)
+  resources: [Cotton, Cashews, Palm oil]
+
+BWA:
+  capital: Gaborone
+  population_m: 2.7
+  area_km2: 581730
+  languages: [English, Setswana]
+  currency: Botswana Pula (BWP)
+  resources: [Diamonds, Copper, Nickel, Coal]
+
+BFA:
+  capital: Ouagadougou
+  population_m: 23.4
+  area_km2: 274222
+  languages: [French]
+  currency: West African CFA Franc (XOF)
+  resources: [Gold, Cotton, Zinc, Manganese]
+
+BDI:
+  capital: Gitega
+  population_m: 13.2
+  area_km2: 27834
+  languages: [Kirundi, French, English]
+  currency: Burundian Franc (BIF)
+  resources: [Coffee, Tea, Gold, Coltan]
+
+CMR:
+  capital: Yaoundé
+  population_m: 28.6
+  area_km2: 475442
+  languages: [French, English]
+  currency: Central African CFA Franc (XAF)
+  resources: [Oil, Cocoa, Timber, Coffee]
+
+CPV:
+  capital: Praia
+  population_m: 0.6
+  area_km2: 4033
+  languages: [Portuguese, Cape Verdean Creole]
+  currency: Cape Verdean Escudo (CVE)
+  resources: [Fish, Salt, Tourism]
+
+CAF:
+  capital: Bangui
+  population_m: 5.6
+  area_km2: 622984
+  languages: [Sango, French]
+  currency: Central African CFA Franc (XAF)
+  resources: [Diamonds, Gold, Timber, Uranium]
+
+TCD:
+  capital: "N'Djamena"
+  population_m: 18.3
+  area_km2: 1284000
+  languages: [Arabic, French]
+  currency: Central African CFA Franc (XAF)
+  resources: [Oil, Cotton, Gum arabic, Livestock]
+
+COM:
+  capital: Moroni
+  population_m: 0.9
+  area_km2: 2235
+  languages: [Comorian, Arabic, French]
+  currency: Comorian Franc (KMF)
+  resources: [Ylang-ylang, Vanilla, Cloves, Fish]
+
+COD:
+  capital: Kinshasa
+  population_m: 102.2
+  area_km2: 2344858
+  languages: [French, Lingala, Swahili, Kikongo, Tshiluba]
+  currency: Congolese Franc (CDF)
+  resources: [Coltan, Cobalt, Gold, Diamonds, Copper, Timber]
+
+COG:
+  capital: Brazzaville
+  population_m: 6.0
+  area_km2: 342000
+  languages: [French, Lingala, Munukutuba]
+  currency: Central African CFA Franc (XAF)
+  resources: [Oil, Timber, Potash, Iron ore]
+
+CIV:
+  capital: Yamoussoukro
+  population_m: 28.2
+  area_km2: 322463
+  languages: [French]
+  currency: West African CFA Franc (XOF)
+  resources: [Cocoa, Coffee, Palm oil, Rubber, Cashews]
+
+DJI:
+  capital: Djibouti
+  population_m: 1.1
+  area_km2: 23200
+  languages: [Somali, Afar, French, Arabic]
+  currency: Djiboutian Franc (DJF)
+  resources: [Strategic port services, Salt, Geothermal energy]
+
+EGY:
+  capital: Cairo
+  population_m: 106.5
+  area_km2: 1002450
+  languages: [Arabic]
+  currency: Egyptian Pound (EGP)
+  resources: [Oil, Natural gas, Suez Canal revenues, Tourism, Phosphates]
+
+GNQ:
+  capital: Malabo
+  population_m: 1.8
+  area_km2: 28051
+  languages: [Spanish, French, Portuguese]
+  currency: Central African CFA Franc (XAF)
+  resources: [Oil, Timber, Cocoa, Coffee]
+
+ERI:
+  capital: Asmara
+  population_m: 3.5
+  area_km2: 117600
+  languages: [Tigrinya, Arabic, English]
+  currency: Eritrean Nakfa (ERN)
+  resources: [Gold, Zinc, Copper, Potash, Fish]
+
+SWZ:
+  capital: Mbabane
+  population_m: 1.2
+  area_km2: 17364
+  languages: [Swati, English]
+  currency: Swazi Lilangeni (SZL)
+  resources: [Timber, Sugarcane, Coal, Diamonds]
+
+ETH:
+  capital: Addis Ababa
+  population_m: 126.5
+  area_km2: 1104300
+  languages: [Amharic, Oromo, Somali, Tigrinya]
+  currency: Ethiopian Birr (ETB)
+  resources: [Coffee, Qat, Sesame, Hides, Gold, Tantalum]
+
+GAB:
+  capital: Libreville
+  population_m: 2.4
+  area_km2: 267668
+  languages: [French]
+  currency: Central African CFA Franc (XAF)
+  resources: [Oil, Manganese, Timber, Uranium, Iron ore]
+
+GMB:
+  capital: Banjul
+  population_m: 2.8
+  area_km2: 11295
+  languages: [English]
+  currency: Gambian Dalasi (GMD)
+  resources: [Fish, Groundnuts, Sesame, Tourism]
+
+GHA:
+  capital: Accra
+  population_m: 34.1
+  area_km2: 238533
+  languages: [English]
+  currency: Ghanaian Cedi (GHS)
+  resources: [Gold, Oil, Cocoa, Timber, Bauxite]
+
+GIN:
+  capital: Conakry
+  population_m: 14.2
+  area_km2: 245857
+  languages: [French]
+  currency: Guinean Franc (GNF)
+  resources: [Bauxite, Gold, Diamonds, Iron ore, Hydropower]
+
+GNB:
+  capital: Bissau
+  population_m: 2.1
+  area_km2: 36125
+  languages: [Portuguese, Guinea-Bissau Creole]
+  currency: West African CFA Franc (XOF)
+  resources: [Fish, Cashews, Groundnuts, Timber]
+
+KEN:
+  capital: Nairobi
+  population_m: 55.0
+  area_km2: 580367
+  languages: [Swahili, English]
+  currency: Kenyan Shilling (KES)
+  resources: [Tea, Coffee, Horticulture, Tourism, Soda ash]
+
+LSO:
+  capital: Maseru
+  population_m: 2.3
+  area_km2: 30355
+  languages: [Sesotho, English]
+  currency: Lesotho Loti (LSL)
+  resources: [Water, Diamonds, Wool, Mohair, Hydropower]
+
+LBR:
+  capital: Monrovia
+  population_m: 5.4
+  area_km2: 111369
+  languages: [English]
+  currency: Liberian Dollar (LRD)
+  resources: [Iron ore, Rubber, Timber, Gold, Diamonds]
+
+LBY:
+  capital: Tripoli
+  population_m: 7.4
+  area_km2: 1759541
+  languages: [Arabic]
+  currency: Libyan Dinar (LYD)
+  resources: [Oil, Natural gas]
+
+MDG:
+  capital: Antananarivo
+  population_m: 29.6
+  area_km2: 587041
+  languages: [Malagasy, French]
+  currency: Malagasy Ariary (MGA)
+  resources: [Vanilla, Graphite, Chromite, Coffee, Sapphires]
+
+MWI:
+  capital: Lilongwe
+  population_m: 21.1
+  area_km2: 118484
+  languages: [Chichewa, English]
+  currency: Malawian Kwacha (MWK)
+  resources: [Tobacco, Tea, Sugar, Coffee, Uranium]
+
+MLI:
+  capital: Bamako
+  population_m: 23.3
+  area_km2: 1240192
+  languages: [French, Bambara]
+  currency: West African CFA Franc (XOF)
+  resources: [Gold, Cotton, Livestock, Salt, Phosphates]
+
+MRT:
+  capital: Nouakchott
+  population_m: 4.8
+  area_km2: 1030700
+  languages: [Hassaniya Arabic, French]
+  currency: Mauritanian Ouguiya (MRU)
+  resources: [Iron ore, Gold, Fish, Copper, Oil (offshore)]
+
+MUS:
+  capital: Port Louis
+  population_m: 1.3
+  area_km2: 2040
+  languages: [English, French, Mauritian Creole]
+  currency: Mauritian Rupee (MUR)
+  resources: [Financial services, Tourism, Textiles, Sugar]
+
+MAR:
+  capital: Rabat
+  population_m: 38.1
+  area_km2: 446550
+  languages: [Arabic, Tamazight, French]
+  currency: Moroccan Dirham (MAD)
+  resources: [Phosphates, Fish, Tourism, Solar energy]
+
+MOZ:
+  capital: Maputo
+  population_m: 33.9
+  area_km2: 801590
+  languages: [Portuguese]
+  currency: Mozambican Metical (MZN)
+  resources: [Natural gas, Coal, Aluminium, Timber, Tantalite]
+
+NAM:
+  capital: Windhoek
+  population_m: 3.0
+  area_km2: 825615
+  languages: [English, Afrikaans, German]
+  currency: Namibian Dollar (NAD)
+  resources: [Diamonds, Uranium, Gold, Fish, Zinc]
+
+NER:
+  capital: Niamey
+  population_m: 25.5
+  area_km2: 1267000
+  languages: [French, Hausa, Zarma]
+  currency: West African CFA Franc (XOF)
+  resources: [Uranium, Gold, Oil, Livestock, Coal]
+
+NGA:
+  capital: Abuja
+  population_m: 220.1
+  area_km2: 923768
+  languages: [English, Hausa, Yoruba, Igbo]
+  currency: Nigerian Naira (NGN)
+  resources: [Oil, Natural gas, Cocoa, Palm oil, Coal, Tin]
+
+RWA:
+  capital: Kigali
+  population_m: 14.3
+  area_km2: 26338
+  languages: [Kinyarwanda, French, English, Swahili]
+  currency: Rwandan Franc (RWF)
+  resources: [Coffee, Tea, Coltan, Cassiterite, Gold, Tourism]
+
+STP:
+  capital: "São Tomé"
+  population_m: 0.2
+  area_km2: 964
+  languages: [Portuguese]
+  currency: "São Tomé and Príncipe Dobra (STN)"
+  resources: [Cocoa, Oil (offshore potential), Fish, Tourism]
+
+SEN:
+  capital: Dakar
+  population_m: 18.1
+  area_km2: 196722
+  languages: [French, Wolof]
+  currency: West African CFA Franc (XOF)
+  resources: [Fish, Groundnuts, Phosphates, Oil, Gold]
+
+SLE:
+  capital: Freetown
+  population_m: 8.5
+  area_km2: 71740
+  languages: [English, Krio]
+  currency: Sierra Leonean Leone (SLE)
+  resources: [Diamonds, Rutile, Iron ore, Cocoa, Coffee]
+
+SOM:
+  capital: Mogadishu
+  population_m: 18.1
+  area_km2: 637657
+  languages: [Somali, Arabic]
+  currency: Somali Shilling (SOS)
+  resources: [Livestock, Fish, Bananas, Sesame, Charcoal]
+
+ZAF:
+  capital: Pretoria (admin.) / Cape Town (legislative)
+  population_m: 60.1
+  area_km2: 1219090
+  languages: [Zulu, Xhosa, Afrikaans, English, +7 official]
+  currency: South African Rand (ZAR)
+  resources: [Gold, Diamonds, Platinum, Coal, Iron ore, Chrome]
+
+SSD:
+  capital: Juba
+  population_m: 11.1
+  area_km2: 619745
+  languages: [English, Arabic]
+  currency: South Sudanese Pound (SSP)
+  resources: [Oil, Timber, Livestock, Iron ore, Gold]
+
+SDN:
+  capital: Khartoum
+  population_m: 47.6
+  area_km2: 1886068
+  languages: [Arabic, English]
+  currency: Sudanese Pound (SDG)
+  resources: [Oil, Gold, Cotton, Sesame, Livestock]
+
+SYC:
+  capital: Victoria
+  population_m: 0.1
+  area_km2: 459
+  languages: [Seychellois Creole, French, English]
+  currency: Seychellois Rupee (SCR)
+  resources: [Fish, Cinnamon, Tourism, Copra]
+
+TZA:
+  capital: Dodoma
+  population_m: 67.5
+  area_km2: 945087
+  languages: [Swahili, English]
+  currency: Tanzanian Shilling (TZS)
+  resources: [Gold, Diamonds, Tanzanite, Coffee, Tea, Tourism]
+
+TGO:
+  capital: "Lomé"
+  population_m: 9.0
+  area_km2: 56785
+  languages: [French, Ewe, Kabye]
+  currency: West African CFA Franc (XOF)
+  resources: [Phosphates, Coffee, Cocoa, Cotton]
+
+TUN:
+  capital: Tunis
+  population_m: 12.1
+  area_km2: 163610
+  languages: [Arabic, French]
+  currency: Tunisian Dinar (TND)
+  resources: [Oil, Phosphates, Tourism, Olive oil]
+
+UGA:
+  capital: Kampala
+  population_m: 49.5
+  area_km2: 241038
+  languages: [English, Swahili, Luganda]
+  currency: Ugandan Shilling (UGX)
+  resources: [Oil (emerging), Coffee, Tea, Fish, Gold, Tobacco]
+
+ZMB:
+  capital: Lusaka
+  population_m: 20.6
+  area_km2: 752618
+  languages: [English, Bemba, Nyanja, Tonga]
+  currency: Zambian Kwacha (ZMW)
+  resources: [Copper, Cobalt, Zinc, Coal, Emeralds]
+
+ZWE:
+  capital: Harare
+  population_m: 16.1
+  area_km2: 390757
+  languages: [English, Shona, Ndebele, +13 official]
+  currency: Zimbabwe Gold (ZiG)
+  resources: [Platinum, Gold, Diamonds, Coal, Tobacco, Chrome]

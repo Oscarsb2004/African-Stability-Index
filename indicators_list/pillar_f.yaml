@@ -1,0 +1,100 @@
+# pillar_f.yaml — Environmental
+# Measures climate vulnerability, fossil-fuel dependence, water stress,
+# and agricultural land capacity.
+
+- variable_name: co2_pc
+  display_name: CO2 emissions, AR5 GWP100 (metric tons per capita)
+  source: wb_api
+  series_code: EN.GHG.CO2.PC.CE.AR5
+  role: scoring
+  polarity: negative
+  pillars:
+  - F
+  year_start: 2015
+  year_end: 2023
+  aggregation: most_recent
+  justification: "Per capita CO2 emissions capture fossil-fuel dependence and long-run
+    climate stress exposure — high-emission economies face greater physical climate
+    risk (coastal flooding, heat extremes, drought) and higher energy transition
+    costs, both destabilising forces on governance and livelihoods. Series
+    EN.GHG.CO2.PC.CE.AR5 uses IPCC Fifth Assessment Report (AR5) GWP100 conversion
+    factors, the current international standard adopted by the Paris Agreement
+    reporting framework. The legacy series EN.ATM.CO2E.PC was deprecated by the
+    World Bank in 2023 and no longer returns data via the API. Year end set to
+    2023: emissions estimates carry a 1-2 year release lag. Source: World Bank
+    Climate Change Knowledge Portal, EN.GHG.CO2.PC.CE.AR5."
+  database: wdi
+  log_transform: false
+
+- variable_name: freshwater_withdraw
+  display_name: Annual freshwater withdrawals, total (% of internal resources)
+  source: wb_api
+  series_code: ER.H2O.FWTL.ZS
+  role: scoring
+  polarity: negative
+  pillars:
+  - F
+  year_start: 2010
+  year_end: 2024
+  aggregation: most_recent
+  justification: "Freshwater withdrawal as a percentage of renewable internal
+    freshwater resources measures water stress intensity. Countries withdrawing
+    >100% of renewable resources (e.g. Libya, Egypt) are drawing on non-renewable
+    groundwater or are heavily import-dependent, creating structural resource
+    insecurity. Water stress is a documented driver of rural-urban migration and
+    agricultural collapse that precedes political instability (Gleick 2014, FAO
+    2020). Extended year range (2010-2024): this indicator is reported infrequently
+    by national statistics offices, sometimes with gaps of 5-10 years between
+    estimates; the extended window ensures most countries have at least one
+    usable value. Source: World Bank WDI ER.H2O.FWTL.ZS (FAO AQUASTAT)."
+  database: wdi
+  log_transform: false
+
+- variable_name: nonrenew_elec
+  display_name: Electricity production from oil, gas, and coal sources (% of total)
+  source: wb_api
+  series_code: EG.ELC.FOSL.ZS
+  role: scoring
+  polarity: negative
+  pillars:
+  - F
+  year_start: 2015
+  year_end: 2024
+  aggregation: most_recent
+  justification: "Fossil fuel dependence for electricity generation exposes economies
+    to global commodity price shocks (oil, gas, coal import price volatility) and
+    to physical supply disruptions — both drivers of energy insecurity and macroeconomic
+    instability. High fossil-fuel shares also signal slow progress on the energy
+    transition required to reduce long-run climate exposure and meet international
+    climate commitments (a growing source of fiscal and regulatory risk). Africa's
+    rapidly expanding renewable capacity (solar, hydro) makes this a differentiating
+    indicator across the 54-country sample. Source: World Bank WDI EG.ELC.FOSL.ZS
+    (IEA World Energy Statistics)."
+  database: wdi
+  log_transform: false
+
+- variable_name: agri_land
+  display_name: Agricultural land (% of land area)
+  source: wb_api
+  series_code: AG.LND.AGRI.ZS
+  role: scoring
+  polarity: positive
+  pillars:
+  - F
+  year_start: 2015
+  year_end: 2024
+  aggregation: most_recent
+  justification: "Agricultural land share is assigned POSITIVE polarity in this index,
+    treating it as a food production capacity indicator rather than an ecosystem loss
+    indicator. Decision rationale (OECD Handbook §3 construct validity): in the African
+    context, food production capacity is the direct stability-relevant quantity — food
+    insecurity (Pillar D) is a primary driver of conflict and displacement. Countries
+    with larger agricultural land bases have greater domestic food production potential,
+    which buffers against import price shocks and food supply disruptions. The alternative
+    interpretation (negative polarity: land conversion pressure / deforestation risk)
+    is already indirectly captured by co2_pc (emissions from land use change are
+    included in GHG accounting). Assigning negative polarity would penalise food-secure
+    agricultural economies — the opposite of the stability signal intended. Source:
+    World Bank WDI AG.LND.AGRI.ZS (FAO)."
+  database: wdi
+  log_transform: false

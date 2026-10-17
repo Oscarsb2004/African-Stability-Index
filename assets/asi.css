@@ -1,0 +1,13 @@
+/* Dash 4 dropdown popup: default max-height of 200px clips the last options
+   ("Geometric Mean", "Custom Weights") behind a subtle scrollbar. Clicks aimed
+   at the clipped rows fall through to the choropleth map underneath, silently
+   failing the selection or navigating to a country. Raise the cap so all 6
+   method options are visible at once. */
+.dash-dropdown-content {
+    max-height: 340px !important;
+}
+
+/* Keep the popup safely above plotly graphs and dash tables. */
+.dash-dropdown-wrapper {
+    z-index: 1000;
+}
