@@ -23,7 +23,7 @@
   - A
   - C
   year_start: 2015
-  year_end: 2023
+  year_end: 2025
   aggregation: most_recent
   justification: "Measures the degree to which citizens can participate in selecting
     their government, and freedom of expression, association, and a free media. Selected
@@ -45,7 +45,7 @@
   - A
   - E
   year_start: 2015
-  year_end: 2023
+  year_end: 2025
   aggregation: most_recent
   justification: "Measures the perceived likelihood of political instability and
     politically motivated violence including terrorism. Selected as the governance
@@ -67,7 +67,7 @@
   - A
   - G
   year_start: 2015
-  year_end: 2023
+  year_end: 2025
   aggregation: most_recent
   justification: "Captures perceptions of public service quality, civil service
     independence from political pressure, and the credibility of government commitment
@@ -89,7 +89,7 @@
   pillars:
   - A
   year_start: 2015
-  year_end: 2023
+  year_end: 2025
   aggregation: most_recent
   justification: "Measures the government's ability to formulate and implement sound
     policies and regulations that permit private sector development. Assigned to
@@ -112,7 +112,7 @@
   - A
   - E
   year_start: 2015
-  year_end: 2023
+  year_end: 2025
   aggregation: most_recent
   justification: "Captures confidence in and abidance by societal rules — property
     rights, police, courts, contract enforcement. Cross-listed in Pillar E because
@@ -134,7 +134,7 @@
   - A
   - G
   year_start: 2015
-  year_end: 2023
+  year_end: 2025
   aggregation: most_recent
   justification: "Measures the extent to which public power is exercised for private
     gain, including petty and grand corruption and capture of the state by elites.
