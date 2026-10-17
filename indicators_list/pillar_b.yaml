@@ -10,7 +10,7 @@
   pillars:
   - B
   year_start: 2015
-  year_end: 2024
+  year_end: 2025
   aggregation: most_recent
   justification: PPP-adjusted GDP per capita is the primary measure of material living
     standards, controlling for price differences across countries. The most direct
@@ -26,7 +26,7 @@
   pillars:
   - B
   year_start: 2015
-  year_end: 2024
+  year_end: 2025
   aggregation: average_recent_3
   justification: A 3-year average smooths single-year volatility and reflects the
     recent growth trajectory. Sustained growth signals economic momentum; contraction
@@ -42,7 +42,7 @@
   pillars:
   - B
   year_start: 2015
-  year_end: 2024
+  year_end: 2025
   aggregation: average_recent_5
   justification: Chronic high inflation erodes real wages, destroys savings, and destabilises
     governments. A 5-year average captures structural monetary instability rather
@@ -58,7 +58,7 @@
   pillars:
   - B
   year_start: 2010
-  year_end: 2024
+  year_end: 2025
   aggregation: most_recent
   justification: Income inequality is a structural driver of social tension and political
     instability that GDP alone conceals. Year range extended to 2010 because Gini
@@ -74,7 +74,7 @@
   pillars:
   - B
   year_start: 2000
-  year_end: 2024
+  year_end: 2025
   aggregation: most_recent
   justification: "Domestic credit to the private sector measures financial-sector
     depth: the extent to which banks and other institutions channel savings into
@@ -92,5 +92,27 @@
     healthy investment climate. Coverage screened before adoption: 53/54
     countries, 51 of them 2018 or later, median year 2024. Source: World Bank
     WDI FS.AST.PRVT.GD.ZS (IMF International Financial Statistics)."
+  database: wdi
+  log_transform: false
+
+# gdp_total is DESCRIPTIVE (owner's ruling, 2026-10-17): shown beside the scores, never scored. GDP per capita
+# stays the scored measure of living standards; the size of the whole economy bounds what a government can raise
+# and spend, and how heavy its fixed overheads are relative to its means.
+- variable_name: gdp_total
+  display_name: GDP (current US$)
+  source: wb_api
+  series_code: NY.GDP.MKTP.CD
+  role: descriptive
+  polarity: positive
+  pillars:
+  - B
+  year_start: 2015
+  year_end: 2025
+  aggregation: most_recent
+  justification: "Total output in current US dollars, descriptive only. It is the scale of the economy a government
+    taxes and borrows against, and the base its fixed costs (administration, debt service, security) are paid from:
+    two countries with the same GDP per capita but economies of very different size face very different overhead
+    burdens. Current US dollars rather than PPP because debt, imports and most external obligations are paid at
+    market exchange rates. Source: World Bank WDI NY.GDP.MKTP.CD."
   database: wdi
   log_transform: false

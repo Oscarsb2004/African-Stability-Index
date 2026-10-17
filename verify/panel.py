@@ -579,7 +579,11 @@ def check_composites(pil: pd.DataFrame, comp: pd.DataFrame) -> None:
             ww = wv[valid] / wv[valid].sum()
             expected = round(float(np.dot(ww, vals[valid])), DISPLAY_DECIMALS)
             n += 1
-            if pd.notna(r.score) and abs(expected - float(r.score)) > 10 ** -DISPLAY_DECIMALS:
+            # One unit in the last displayed place is allowed: this route uses the
+            # weights as stored (6 decimals), the pipeline its unrounded ones, so a
+            # score on a rounding boundary may land one unit apart. The 1e-9 keeps
+            # float subtraction (46.24 - 46.23 = 0.0100000000000051) from failing it.
+            if pd.notna(r.score) and abs(expected - float(r.score)) > 10 ** -DISPLAY_DECIMALS + 1e-9:
                 bad.append(f"{r.iso3}/{method}/{int(r.year)}: "
                            f"expected={expected} actual={r.score}")
 
@@ -662,9 +666,9 @@ def run() -> int:
                f"-- run 02_panel.py first")
         return 1
 
-    obs = pd.read_csv(PANEL_DIR / "observations.csv")
-    pil = pd.read_csv(PANEL_DIR / "pillar_scores.csv")
-    comp = pd.read_csv(PANEL_DIR / "composites.csv")
+    obs = pd.read_csv(PANEL_DIR / "observations.csv", float_precision="round_trip")
+    pil = pd.read_csv(PANEL_DIR / "pillar_scores.csv", float_precision="round_trip")
+    comp = pd.read_csv(PANEL_DIR / "composites.csv", float_precision="round_trip")
     registry = load_registry()
     countries = load_countries()
 

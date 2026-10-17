@@ -89,7 +89,7 @@ def load_records() -> dict[str, dict]:
 
 def load_pillar_scores() -> tuple[pd.DataFrame, int]:
     """Re-read the panel's pillar scores without going through asi.dashboard."""
-    scores = pd.read_csv(PANEL_DIR / "pillar_scores.csv")
+    scores = pd.read_csv(PANEL_DIR / "pillar_scores.csv", float_precision="round_trip")
     import json
     meta = json.loads((PANEL_DIR / "bundle.json").read_text(encoding="utf-8"))
     return scores, int(meta["run"]["reference_year"])
@@ -150,7 +150,7 @@ def _hedge_holds(hedge: str | None, claimed: float, actual: float) -> bool:
 
 
 def load_observations() -> pd.DataFrame:
-    return pd.read_csv(PANEL_DIR / "observations.csv")
+    return pd.read_csv(PANEL_DIR / "observations.csv", float_precision="round_trip")
 
 
 def check_quoted_values(records: dict[str, dict], observations: pd.DataFrame,

@@ -22,7 +22,7 @@
   pillars:
   - D
   year_start: 2015
-  year_end: 2024
+  year_end: 2025
   aggregation: most_recent
   justification: "Life expectancy at birth is the single most comprehensive summary
     statistic for population health, integrating disease burden, healthcare access,
@@ -44,7 +44,7 @@
   pillars:
   - D
   year_start: 2015
-  year_end: 2024
+  year_end: 2025
   aggregation: most_recent
   justification: "Infant mortality is highly sensitive to healthcare access at delivery,
     maternal health, nutrition, and sanitation quality — making it a leading indicator
@@ -67,7 +67,7 @@
   pillars:
   - D
   year_start: 2015
-  year_end: 2024
+  year_end: 2025
   aggregation: most_recent
   justification: "Safely managed water services require on-premises access, availability
     when needed, and freedom from faecal and chemical contamination — a stronger
@@ -91,7 +91,7 @@
   pillars:
   - D
   year_start: 2015
-  year_end: 2024
+  year_end: 2025
   aggregation: most_recent
   justification: "Basic handwashing is a frontline communicable disease barrier
     with documented impact on cholera, typhoid, respiratory infection, and diarrhoeal
@@ -113,7 +113,7 @@
   pillars:
   - D
   year_start: 2015
-  year_end: 2024
+  year_end: 2025
   aggregation: most_recent
   justification: "Severe food insecurity (going entire days without eating, measured
     by the FAO Food Insecurity Experience Scale FIES) is a direct measure of acute

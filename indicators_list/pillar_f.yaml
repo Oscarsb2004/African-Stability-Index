@@ -35,7 +35,7 @@
   pillars:
   - F
   year_start: 2010
-  year_end: 2024
+  year_end: 2025
   aggregation: most_recent
   justification: "Freshwater withdrawal as a percentage of renewable internal
     freshwater resources measures water stress intensity. Countries withdrawing
@@ -59,7 +59,7 @@
   pillars:
   - F
   year_start: 2015
-  year_end: 2024
+  year_end: 2025
   aggregation: most_recent
   justification: "Fossil fuel dependence for electricity generation exposes economies
     to global commodity price shocks (oil, gas, coal import price volatility) and
@@ -82,7 +82,7 @@
   pillars:
   - F
   year_start: 2015
-  year_end: 2024
+  year_end: 2025
   aggregation: most_recent
   justification: "Agricultural land share is assigned POSITIVE polarity in this index,
     treating it as a food production capacity indicator rather than an ecosystem loss

@@ -29,7 +29,7 @@
   pillars:
   - C
   year_start: 2010
-  year_end: 2024
+  year_end: 2025
   aggregation: most_recent
   justification: "Youth literacy (ages 15-24) reflects the effectiveness of the
     current education system for the cohort entering adulthood — it is a leading
@@ -54,7 +54,7 @@
   pillars:
   - C
   year_start: 2015
-  year_end: 2024
+  year_end: 2025
   aggregation: most_recent
   justification: "Net primary enrollment measures the share of primary-age children
     actually attending primary school — the most direct indicator of whether children
@@ -77,7 +77,7 @@
   pillars:
   - C
   year_start: 2015
-  year_end: 2024
+  year_end: 2025
   aggregation: most_recent
   justification: "Secondary enrollment captures progression beyond primary schooling
     and shapes the skilled labour pool available for formal sector employment.
@@ -100,7 +100,7 @@
   pillars:
   - C
   year_start: 2015
-  year_end: 2024
+  year_end: 2025
   aggregation: most_recent
   justification: "Learning poverty (World Bank / UNESCO, 2019) is conceptually
     distinct from enrollment: it measures not who attends school but whether
@@ -123,7 +123,7 @@
   pillars:
   - C
   year_start: 2015
-  year_end: 2024
+  year_end: 2025
   aggregation: most_recent
   transform: distance_from_parity
   justification: "Gender Parity Index = girls enrolled / boys enrolled. GPI is an
@@ -152,7 +152,7 @@
   pillars:
   - C
   year_start: 2015
-  year_end: 2024
+  year_end: 2025
   aggregation: most_recent
   transform: distance_from_parity
   justification: "Secondary GPI captures whether girls progress beyond primary
@@ -180,7 +180,7 @@
   pillars:
   - C
   year_start: 2015
-  year_end: 2024
+  year_end: 2025
   aggregation: most_recent
   justification: "Female homicide rates measure gendered violence as a social
     cohesion failure distinct from general violence (captured in Pillar E). High

@@ -1,9 +1,9 @@
 {
  "run": {
-  "generated": "2026-08-08",
+  "generated": "2026-10-08",
   "panel_start": 2000,
-  "panel_end": 2024,
-  "reference_year": 2023
+  "panel_end": 2025,
+  "reference_year": 2024
  },
  "pillars": {
   "A": {
@@ -227,6 +227,19 @@
    "log_transform": false,
    "transform": null,
    "justification": "Domestic credit to the private sector measures financial-sector depth: the extent to which banks and other institutions channel savings into productive private investment. Deep credit markets let firms and households absorb shocks without distress sales or default cascades, which is the economic-resilience channel most directly tied to stability. Replaces firm_foreign_owned (IC.FRM.FO.ZS) in the 2026 revision for three reasons (see methodology/METHODOLOGY_REVIEW.md C3): (1) firm_foreign_owned was the only indicator in the index with a NEGATIVE item-rest correlation (-0.10), meaning it moved against the rest of Pillar B as polarised; (2) it drew on enterprise surveys so infrequent that 20 of 49 countries carried pre-2021 values, some from 2006; (3) it is conceptually confounded in the African context, because extractive-sector FDI concentrates in less stable states, so high foreign ownership can signal resource dependence rather than a healthy investment climate. Coverage screened before adoption: 53/54 countries, 51 of them 2018 or later, median year 2024. Source: World Bank WDI FS.AST.PRVT.GD.ZS (IMF International Financial Statistics)."
+  },
+  "gdp_total": {
+   "display_name": "GDP (current US$)",
+   "series_code": "NY.GDP.MKTP.CD",
+   "database": "wdi",
+   "polarity": "positive",
+   "role": "descriptive",
+   "pillars": [
+    "B"
+   ],
+   "log_transform": false,
+   "transform": null,
+   "justification": "Total output in current US dollars, descriptive only. It is the scale of the economy a government taxes and borrows against, and the base its fixed costs (administration, debt service, security) are paid from: two countries with the same GDP per capita but economies of very different size face very different overhead burdens. Current US dollars rather than PPP because debt, imports and most external obligations are paid at market exchange rates. Source: World Bank WDI NY.GDP.MKTP.CD."
   },
   "youth_literacy": {
    "display_name": "Literacy rate, youth total (% of people ages 15-24)",
@@ -1015,22 +1028,22 @@
    "G": 0.14285714285714285
   },
   "pca": {
-   "A": 0.15812522838559329,
-   "B": 0.16096008076438037,
-   "C": 0.1646207582957655,
-   "D": 0.1731504665863755,
-   "E": 0.15087583063793777,
+   "A": 0.1584304180274766,
+   "B": 0.16047844707688727,
+   "C": 0.16424092837540327,
+   "D": 0.17258644995052813,
+   "E": 0.15172804112258192,
    "F": 0.0,
-   "G": 0.19226763532994762
+   "G": 0.19253571544712275
   },
   "entropy": {
-   "A": 0.1584082617087334,
-   "B": 0.07051267020003663,
-   "C": 0.09198779467955363,
-   "D": 0.19195822848974584,
-   "E": 0.09236519870289556,
-   "F": 0.20431441363380945,
-   "G": 0.19045343258522549
+   "A": 0.16323722623203188,
+   "B": 0.07055243873814503,
+   "C": 0.0888027695771135,
+   "D": 0.18808811586989335,
+   "E": 0.09352841504512381,
+   "F": 0.204134416730367,
+   "G": 0.19165661780732543
   }
  },
  "coverage_by_year": {
@@ -1057,6 +1070,7 @@
   "2020": 0.981,
   "2021": 0.981,
   "2022": 0.981,
-  "2023": 0.963
+  "2023": 0.981,
+  "2024": 0.981
  }
 }

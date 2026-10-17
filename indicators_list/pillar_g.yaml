@@ -24,7 +24,7 @@
   pillars:
   - G
   year_start: 2015
-  year_end: 2024
+  year_end: 2025
   aggregation: most_recent
   justification: "Electricity access is the enabling infrastructure for all other
     development outcomes — healthcare delivery, education (lighting for study),
@@ -45,7 +45,7 @@
   pillars:
   - G
   year_start: 2015
-  year_end: 2024
+  year_end: 2025
   aggregation: most_recent
   justification: "Basic water access (SH.H2O.BASW.ZS) measures the infrastructure
     delivery reach of water systems — the share of population with access to a
@@ -68,7 +68,7 @@
   pillars:
   - G
   year_start: 2010
-  year_end: 2024
+  year_end: 2025
   aggregation: most_recent
   justification: "Social protection coverage reflects the institutional reach of the
     state to protect citizens against economic shocks, disability, old age, and

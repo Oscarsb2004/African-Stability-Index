@@ -19,7 +19,7 @@
   pillars:
   - E
   year_start: 2015
-  year_end: 2024
+  year_end: 2025
   aggregation: most_recent
   justification: "Intentional homicide rates are the most consistently measured
     cross-country proxy for violent crime and societal security failure. WHO and
@@ -44,7 +44,7 @@
   pillars:
   - E
   year_start: 2015
-  year_end: 2024
+  year_end: 2025
   aggregation: most_recent
   justification: "Internal displacement is a direct consequence of active conflict,
     persecution, or disaster and is the clearest observable outcome of security
@@ -70,7 +70,7 @@
   pillars:
   - E
   year_start: 2015
-  year_end: 2024
+  year_end: 2025
   aggregation: most_recent
   justification: "Normalization denominator only. Used exclusively in asi/pipeline/panel.py
     Step 1b to convert the absolute IDP count (SM.POP.IDPC) to a per-1,000

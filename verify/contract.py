@@ -267,7 +267,7 @@ def run() -> int:
         return 1
 
     bundle = json.loads(BUNDLE.read_text(encoding="utf-8"))
-    obs = pd.read_csv(OBSERVATIONS)
+    obs = pd.read_csv(OBSERVATIONS, float_precision="round_trip")
     registry = load_registry()
 
     check_rows_self_describing(obs)
