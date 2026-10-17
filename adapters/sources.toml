@@ -85,3 +85,19 @@ url = "https://api.worldbank.org/v2/sources/57/country/all/series/{series}/versi
 kind = "wdi-archive"
 edition = "WDI 2015-04"
 terms = "https://datacatalog.worldbank.org/search/dataset/0038555; read 2026-09-26; CC BY 4.0"
+
+# World Bank databank bulk downloads. The address serves the current edition, so the lock pins the edition we
+# ingested; a newer edition is refused until the lock entry is removed on purpose.
+[wdi-bulk]
+title = "World Development Indicators, bulk download"
+url = "https://databank.worldbank.org/data/download/WDI_CSV.zip"
+kind = "worldbank-bulk"
+database = "WDI"
+terms = "https://www.worldbank.org/ext/en/legal/terms-conditions/datasets; read 2026-10-17; CC BY 4.0 unless a series' License Type says otherwise; attribute as 'The World Bank: Dataset name: Data source'"
+
+[wgi-bulk]
+title = "Worldwide Governance Indicators, bulk download"
+url = "https://databank.worldbank.org/data/download/WGI_CSV.zip"
+kind = "worldbank-bulk"
+database = "WGI"
+terms = "https://www.worldbank.org/ext/en/legal/terms-conditions/datasets; read 2026-10-17; CC BY 4.0 unless a series' License Type says otherwise; attribute as 'The World Bank: Dataset name: Data source'"
