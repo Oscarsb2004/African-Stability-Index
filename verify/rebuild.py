@@ -7,12 +7,16 @@ hand, fails here. It is also the proof that the ASI, reading its inputs from Ath
 has published.
 
 Files must be identical byte for byte, line endings aside (git normalises them). One allowance: a machine with a
-different maths library can differ in the last bit of a logarithm, so where the bytes differ, a CSV still passes if
-every text cell is identical and every number agrees to a relative 1e-12. The report says which held.
+different maths library can differ in the last bit of a logarithm or an eigenvector, so where the bytes differ, a
+CSV, JSON or YAML file still passes if every text value is identical and every number agrees to a relative 1e-12.
+The report says which held. (Measured on CI's Linux runner: the observations, the pillar scores and the bundle's
+fitted weights differ from Windows only in the last bits.)
 
 Run:  python verify/rebuild.py
 """
 
+import json
+import math
 import shutil
 import subprocess
 import sys
@@ -21,6 +25,7 @@ from pathlib import Path
 
 import numpy as np
 import pandas as pd
+import yaml
 
 REPO = Path(__file__).resolve().parent.parent
 PANEL = Path("data") / "panel"
@@ -32,7 +37,24 @@ def _bytes(path: Path) -> bytes:
     return path.read_bytes().replace(b"\r\n", b"\n")
 
 
+def _close(x, y) -> bool:
+    """Equal structures, with numbers allowed a relative RELATIVE apart."""
+    if isinstance(x, bool) or isinstance(y, bool):
+        return x == y
+    if isinstance(x, (int, float)) and isinstance(y, (int, float)):
+        both_nan = isinstance(x, float) and isinstance(y, float) and math.isnan(x) and math.isnan(y)
+        return both_nan or x == y or abs(x - y) <= RELATIVE * max(abs(x), abs(y))
+    if isinstance(x, dict) and isinstance(y, dict):
+        return x.keys() == y.keys() and all(_close(x[k], y[k]) for k in x)
+    if isinstance(x, list) and isinstance(y, list):
+        return len(x) == len(y) and all(map(_close, x, y))
+    return x == y
+
+
 def _numbers_agree(committed: Path, rebuilt: Path) -> bool:
+    if committed.suffix in (".json", ".yaml"):
+        read = json.loads if committed.suffix == ".json" else yaml.safe_load
+        return _close(read(committed.read_text(encoding="utf-8")), read(rebuilt.read_text(encoding="utf-8")))
     if committed.suffix != ".csv":
         return False
     a, b = pd.read_csv(committed, float_precision="round_trip"), pd.read_csv(rebuilt, float_precision="round_trip")
@@ -71,7 +93,7 @@ def run() -> int:
             if _bytes(ours) == _bytes(theirs):
                 print(f"[PASS] rebuild | {name}: identical")
             elif _numbers_agree(ours, theirs):
-                print(f"[PASS] rebuild | {name}: every number within {RELATIVE:g} relative, every text cell identical")
+                print(f"[PASS] rebuild | {name}: every number within {RELATIVE:g} relative, every text value identical")
             else:
                 print(f"[FAIL] rebuild | {name}: differs from what the inputs and code produce; rebuild and commit")
                 failures += 1
