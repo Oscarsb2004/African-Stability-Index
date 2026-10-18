@@ -147,12 +147,13 @@ def test_adding_an_indicator_never_moves_an_existing_goalpost():
     assert merged["a"] == frozen["a"] and merged["b"] == computed["b"] and added == ["b"]
 
 
-def test_compute_carries_the_spec_flags_through():
+def test_compute_carries_polarity_and_lets_the_skew_test_decide_the_log():
+    """Edition 2 (plan 4.6): the registry's log flag no longer decides; the skew test does."""
     out = gp.compute(_panel([1.0, 2.0, 3.0]),
                      {"gdp_pc": {"log_transform": True, "polarity": "negative"}},
                      1.5)["gdp_pc"]
-    assert out["log_transform"] is True
     assert out["polarity"] == "negative"
+    assert out["log_transform"] is False  # three evenly spaced values have no skew, whatever the flag says
 
 
 # ── freeze / load ──────────────────────────────────────────────────────────────
@@ -270,3 +271,36 @@ def test_the_reference_year_threshold_is_a_named_constant():
     src = (PROJECT_ROOT / "02_panel.py").read_text(encoding="utf-8")
     assert "REFERENCE_YEAR_MIN_COVERAGE" in src
     assert ">= 0.80" not in src
+
+
+# ── the log rule (edition 2, plan 4.6) ─────────────────────────────────────────
+
+def test_the_skew_test_logs_only_a_significant_right_skew():
+    rng = np.random.default_rng(3)
+    right = pd.Series(rng.lognormal(0.0, 1.0, 54))
+    symmetric = pd.Series(rng.normal(0.0, 1.0, 54))
+    assert gp.skew_test(right)[3] > gp.SKEW_Z
+    assert abs(gp.skew_test(symmetric)[3]) < gp.SKEW_Z  # negative control
+    n, skew, se, z = gp.skew_test([1.0, 2.0, 3.0, 10.0])
+    assert n == 4 and se == pytest.approx(np.sqrt(6 * 4 * 3 / (2 * 5 * 7))) and z == pytest.approx(skew / se)
+
+
+def test_osborne_constant_makes_the_minimum_one():
+    panel = pd.DataFrame({"iso3": [f"S{i}" for i in range(40)], "year": 2020, "variable_name": "gdp_pc",
+                          "provenance": "observed",
+                          "raw_value": np.random.default_rng(4).lognormal(3.0, 1.0, 40) + 50.0})
+    out = gp.compute(panel, {"gdp_pc": {}}, 1.5)["gdp_pc"]
+    assert out["log_transform"] is True
+    assert out["log_constant"] == pytest.approx(1.0 - panel["raw_value"].min())
+    logged = gp.apply_log(panel["raw_value"], True, out["log_constant"])
+    assert logged.min() == pytest.approx(0.0)  # log(1)
+
+
+def test_the_registry_flags_match_the_frozen_log_rule():
+    """The frozen goalposts decide the log; the registry must say the same, so nobody reads a stale flag."""
+    import glob
+    frozen = yaml.safe_load(open("registry/goalposts.yaml", encoding="utf-8"))["indicators"]
+    registry = {e["variable_name"]: e for f in glob.glob("indicators_list/*.yaml")
+                for e in yaml.safe_load(open(f, encoding="utf-8")) or []}
+    mismatched = [v for v, b in frozen.items() if bool(registry[v].get("log_transform")) != b["log_transform"]]
+    assert mismatched == []

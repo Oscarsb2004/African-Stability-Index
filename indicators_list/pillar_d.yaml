@@ -56,7 +56,7 @@
     Mali), requiring compression before min-max normalization. Source: World Bank
     WDI SP.DYN.IMRT.IN (UN Inter-agency Group for Child Mortality Estimation)."
   database: wdi
-  log_transform: true
+  log_transform: false
 
 - variable_name: managed_water_percent
   display_name: People using safely managed drinking water services (% of population)
@@ -103,7 +103,7 @@
     facility coverage is independently predictive of outbreak outcomes even controlling
     for water access. Source: World Bank WDI SH.STA.HYGN.ZS (WHO/UNICEF JMP)."
   database: wdi
-  log_transform: false
+  log_transform: true
   theoretical_bounds: [0, 100]
 
 - variable_name: sev_food_insec

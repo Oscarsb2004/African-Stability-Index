@@ -48,7 +48,7 @@
     governments. A 5-year average captures structural monetary instability rather
     than isolated supply shocks.
   database: wdi
-  log_transform: false
+  log_transform: true
 - variable_name: gini
   display_name: Gini index
   source: wb_api
@@ -64,7 +64,7 @@
     instability that GDP alone conceals. Year range extended to 2010 because Gini
     is survey-based and reported infrequently.
   database: wdi
-  log_transform: false
+  log_transform: true
   theoretical_bounds: [0, 100]
 - variable_name: domestic_credit_private
   display_name: Domestic credit to private sector (% of GDP)
@@ -94,7 +94,7 @@
     countries, 51 of them 2018 or later, median year 2024. Source: World Bank
     WDI FS.AST.PRVT.GD.ZS (IMF International Financial Statistics)."
   database: wdi
-  log_transform: false
+  log_transform: true
 
 # gdp_total is DESCRIPTIVE (owner's ruling, 2026-10-17): shown beside the scores, never scored. GDP per capita
 # stays the scored measure of living standards; the size of the whole economy bounds what a government can raise

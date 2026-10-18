@@ -86,5 +86,5 @@
     year range (2010-2024): World Bank ASPIRE data is reported infrequently.
     Source: World Bank ASPIRE database, per_allsp.cov_pop_tot."
   database: wdi
-  log_transform: false
+  log_transform: true
   theoretical_bounds: [0, 100]

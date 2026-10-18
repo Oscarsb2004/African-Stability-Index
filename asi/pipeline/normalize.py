@@ -78,7 +78,7 @@ def normalize_panel(
             continue
 
         values = panel.loc[mask, "raw_value"]
-        transformed = apply_log(values, bool(bounds.get("log_transform", False)))
+        transformed = apply_log(values, bool(bounds.get("log_transform", False)), bounds.get("log_constant"))
 
         lo, hi = bounds.get("winsor_lower"), bounds.get("winsor_upper")
         if lo is not None and hi is not None:

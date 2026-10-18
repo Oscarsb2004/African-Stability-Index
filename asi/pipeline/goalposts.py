@@ -63,21 +63,43 @@ def _round_outward(value: float, *, up: bool) -> float:
 
 # ── Transform steps ────────────────────────────────────────────────────────────
 
-def apply_log(values: pd.Series, log_transform: bool) -> pd.Series:
+def apply_log(values: pd.Series, log_transform: bool, constant: float | None = None) -> pd.Series:
     """
-    log1p a right-skewed indicator.
+    Log a right-skewed indicator.
 
-    Negative values are clipped to 0 first: log1p is undefined below -1, and an
-    indicator flagged for log transform is one whose meaningful range is
-    non-negative. Clipping is logged by the caller rather than silently applied
-    to data that should not have been flagged.
+    Edition 2 (plan 4.6, Osborne's rule): log(x + c), where the frozen constant c
+    makes the indicator's minimum 1, so its log is 0. A later value below that
+    minimum logs below 0 and is clamped by the goalposts; one at or below -c
+    cannot be logged and is floored at a tiny positive number first.
+
+    Edition 1 (no constant): log1p, with negative values clipped to 0.
     """
     if not log_transform:
         return values.astype(float)
     x = values.astype(float)
+    if constant is not None:
+        return np.log((x + constant).clip(lower=1e-9))
     if (x.dropna() < 0).any():
         x = x.clip(lower=0)
     return np.log1p(x)
+
+
+#: The log rule (plan 4.6, the ADA course): log an indicator when its skew is positive and significant, z = skew /
+#: SE(skew) above 1.96. The test runs on one value per state, its most recent observation, so n is the number of
+#: states reporting, not the thousands of panel cells that would make every skew "significant".
+SKEW_Z = 1.96
+
+
+def skew_test(values) -> tuple[int, float, float, float]:
+    """(n, skew, its standard error, z). Skew is the adjusted Fisher-Pearson G1; SE = sqrt(6n(n-1) /
+    ((n-2)(n+1)(n+3)))."""
+    x = pd.Series(values, dtype=float).dropna().to_numpy()
+    n = x.size
+    if n < 3 or np.std(x) == 0:
+        return n, float("nan"), float("nan"), float("nan")
+    g1 = float(pd.Series(x).skew())  # pandas' skew is the adjusted G1
+    se = float(np.sqrt(6.0 * n * (n - 1) / ((n - 2) * (n + 1) * (n + 3))))
+    return n, g1, se, g1 / se
 
 
 def winsorize_bounds(values: pd.Series, iqr_multiplier: float) -> tuple[float, float]:
@@ -150,23 +172,35 @@ def compute(
         if sub.empty:
             continue
 
-        log = bool(spec.get("log_transform", False))
-        logged = apply_log(sub["raw_value"], log)
+        # the log rule (plan 4.6): each state's most recent observed value, skew test after outlier treatment
+        theory = spec.get("theoretical_bounds")
+        latest = sub.dropna(subset=["raw_value"]).sort_values("year").groupby("iso3")["raw_value"].last() \
+            if {"iso3", "year"} <= set(sub.columns) else sub["raw_value"].dropna()
+        lo0, hi0, lo0_to, hi0_to = trimmed_outlier_bounds(latest)
+        n_skew, skew, skew_se, skew_z = skew_test(cap_outliers(latest, lo0, hi0, lo0_to, hi0_to))
+        log = bool(np.isfinite(skew_z) and skew_z > SKEW_Z)
+        base = float(theory[0]) if theory else float(sub["raw_value"].min())
+        constant = 1.0 - base if log else None
+
+        logged = apply_log(sub["raw_value"], log, constant)
         lo, hi, lo_to, hi_to = trimmed_outlier_bounds(logged)
         capped = cap_outliers(logged, lo, hi, lo_to, hi_to)
         valid = capped.dropna()
         if valid.empty:
             continue
 
-        theory = spec.get("theoretical_bounds")
         if theory:
-            gmin, gmax = (float(v) for v in apply_log(pd.Series(theory, dtype=float), log))
+            gmin, gmax = (float(v) for v in apply_log(pd.Series(theory, dtype=float), log, constant))
         else:
             gmin, gmax = float(valid.min()), float(valid.max())
 
         finite = np.isfinite(lo)
         out[var] = {
             "log_transform":     log,
+            "log_constant":      constant,
+            "skew":              None if not np.isfinite(skew) else round(skew, 4),
+            "skew_z":            None if not np.isfinite(skew_z) else round(skew_z, 4),
+            "skew_n":            int(n_skew),
             "polarity":          spec.get("polarity", "positive"),
             "winsor_lower":      _round_outward(lo, up=False) if finite else None,
             "winsor_upper":      _round_outward(hi, up=True) if finite else None,

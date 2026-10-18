@@ -201,4 +201,4 @@
     women's overall safety and social status. Source: WHO/UNODC via World Bank WDI
     VC.IHR.PSRC.FE.P5."
   database: wdi
-  log_transform: false
+  log_transform: true

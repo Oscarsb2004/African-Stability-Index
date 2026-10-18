@@ -198,7 +198,7 @@
    "pillars": [
     "B"
    ],
-   "log_transform": false,
+   "log_transform": true,
    "transform": null,
    "justification": "Chronic high inflation erodes real wages, destroys savings, and destabilises governments. A 5-year average captures structural monetary instability rather than isolated supply shocks."
   },
@@ -211,7 +211,7 @@
    "pillars": [
     "B"
    ],
-   "log_transform": false,
+   "log_transform": true,
    "transform": null,
    "justification": "Income inequality is a structural driver of social tension and political instability that GDP alone conceals. Year range extended to 2010 because Gini is survey-based and reported infrequently."
   },
@@ -224,7 +224,7 @@
    "pillars": [
     "B"
    ],
-   "log_transform": false,
+   "log_transform": true,
    "transform": null,
    "justification": "Domestic credit to the private sector measures financial-sector depth: the extent to which banks and other institutions channel savings into productive private investment. Deep credit markets let firms and households absorb shocks without distress sales or default cascades, which is the economic-resilience channel most directly tied to stability. Replaces firm_foreign_owned (IC.FRM.FO.ZS) in the 2026 revision for three reasons (see methodology/METHODOLOGY_REVIEW.md C3): (1) firm_foreign_owned was the only indicator in the index with a NEGATIVE item-rest correlation (-0.10), meaning it moved against the rest of Pillar B as polarised; (2) it drew on enterprise surveys so infrequent that 20 of 49 countries carried pre-2021 values, some from 2006; (3) it is conceptually confounded in the African context, because extractive-sector FDI concentrates in less stable states, so high foreign ownership can signal resource dependence rather than a healthy investment climate. Coverage screened before adoption: 53/54 countries, 51 of them 2018 or later, median year 2024. Source: World Bank WDI FS.AST.PRVT.GD.ZS (IMF International Financial Statistics)."
   },
@@ -328,7 +328,7 @@
    "pillars": [
     "C"
    ],
-   "log_transform": false,
+   "log_transform": true,
    "transform": null,
    "justification": "Female homicide rates measure gendered violence as a social cohesion failure distinct from general violence (captured in Pillar E). High female homicide rates indicate systemic failure to protect women — reflecting deep structural gender inequality, weak rule of law enforcement for domestic violence, and breakdown of community social norms. The indicator uses VC.IHR.PSRC.FE.P5 (all female homicides per 100,000 female population), not a femicide-specific series, because no consistent cross-African 'femicide' series exists in WDI. The indicator is placed in Pillar C (Social / Human Capital) rather than E (Security) because it measures social inequality, not political or conflict violence — and because it complements the gender parity indicators in capturing women's overall safety and social status. Source: WHO/UNODC via World Bank WDI VC.IHR.PSRC.FE.P5."
   },
@@ -354,7 +354,7 @@
    "pillars": [
     "D"
    ],
-   "log_transform": true,
+   "log_transform": false,
    "transform": null,
    "justification": "Infant mortality is highly sensitive to healthcare access at delivery, maternal health, nutrition, and sanitation quality — making it a leading indicator of health system performance at the point of greatest biological vulnerability. Conceptually distinct from life_expect_tot: IMR measures health system quality in the 0-12 month window while life expectancy integrates across the full lifespan including adult mortality from conflict, AIDS, and non-communicable disease. log_transform applied: rates range from ~2 (Mauritius) to ~80+ (Somalia, Mali), requiring compression before min-max normalization. Source: World Bank WDI SP.DYN.IMRT.IN (UN Inter-agency Group for Child Mortality Estimation)."
   },
@@ -380,7 +380,7 @@
    "pillars": [
     "D"
    ],
-   "log_transform": false,
+   "log_transform": true,
    "transform": null,
    "justification": "Basic handwashing is a frontline communicable disease barrier with documented impact on cholera, typhoid, respiratory infection, and diarrhoeal disease mortality. Low coverage accelerates transmission and reflects underlying sanitation infrastructure gaps. Conceptually distinct from managed_water_percent: managed water prevents ingestion-route contamination; handwashing prevents contact-route transmission. The COVID-19 pandemic demonstrated that handwashing facility coverage is independently predictive of outbreak outcomes even controlling for water access. Source: World Bank WDI SH.STA.HYGN.ZS (WHO/UNICEF JMP)."
   },
@@ -445,7 +445,7 @@
    "pillars": [
     "F"
    ],
-   "log_transform": false,
+   "log_transform": true,
    "transform": null,
    "justification": "Per capita CO2 emissions capture fossil-fuel dependence and long-run climate stress exposure — high-emission economies face greater physical climate risk (coastal flooding, heat extremes, drought) and higher energy transition costs, both destabilising forces on governance and livelihoods. Series EN.GHG.CO2.PC.CE.AR5 uses IPCC Fifth Assessment Report (AR5) GWP100 conversion factors, the current international standard adopted by the Paris Agreement reporting framework. The legacy series EN.ATM.CO2E.PC was deprecated by the World Bank in 2023 and no longer returns data via the API. Year end set to 2023: emissions estimates carry a 1-2 year release lag. Source: World Bank Climate Change Knowledge Portal, EN.GHG.CO2.PC.CE.AR5."
   },
@@ -458,7 +458,7 @@
    "pillars": [
     "F"
    ],
-   "log_transform": false,
+   "log_transform": true,
    "transform": null,
    "justification": "Freshwater withdrawal as a percentage of renewable internal freshwater resources measures water stress intensity. Countries withdrawing >100% of renewable resources (e.g. Libya, Egypt) are drawing on non-renewable groundwater or are heavily import-dependent, creating structural resource insecurity. Water stress is a documented driver of rural-urban migration and agricultural collapse that precedes political instability (Gleick 2014, FAO 2020). Extended year range (2010-2024): this indicator is reported infrequently by national statistics offices, sometimes with gaps of 5-10 years between estimates; the extended window ensures most countries have at least one usable value. Source: World Bank WDI ER.H2O.FWTL.ZS (FAO AQUASTAT)."
   },
@@ -523,7 +523,7 @@
    "pillars": [
     "G"
    ],
-   "log_transform": false,
+   "log_transform": true,
    "transform": null,
    "justification": "Social protection coverage reflects the institutional reach of the state to protect citizens against economic shocks, disability, old age, and unemployment. This broader measure (per_allsp.cov_pop_tot) encompasses all formal social protection and labour programs: contributory social insurance (pensions, unemployment benefits, health insurance) plus targeted safety nets. Retained in preference to social_safetynet_pop (per_sa_allsa.cov_pop_tot) because the safety net series is a hierarchical subset of this broader measure — including both would double-count safety net recipients (OECD Handbook §3). The broader measure also better captures state institutional capacity: high contributory insurance coverage signals a formalised labour market and functioning administrative state, which are prerequisites for long-run stability. Extended year range (2010-2024): World Bank ASPIRE data is reported infrequently. Source: World Bank ASPIRE database, per_allsp.cov_pop_tot."
   }
@@ -1028,22 +1028,22 @@
    "G": 0.14285714285714285
   },
   "pca": {
-   "A": 0.1740565016732678,
-   "B": 0.15553923995787045,
-   "C": 0.1509034750535871,
-   "D": 0.1632020816527191,
-   "E": 0.16504316312193953,
+   "A": 0.175755708851314,
+   "B": 0.1450678416501557,
+   "C": 0.15094562970463068,
+   "D": 0.16283177725613648,
+   "E": 0.16848205950871212,
    "F": 0.0,
-   "G": 0.1912555385406161
+   "G": 0.19691698302905103
   },
   "entropy": {
-   "A": 0.16978231551804512,
-   "B": 0.08703171269662947,
-   "C": 0.06724026643953511,
-   "D": 0.20911067990563978,
-   "E": 0.1392316203753129,
-   "F": 0.15706237263542944,
-   "G": 0.17054103242940816
+   "A": 0.17934476042054495,
+   "B": 0.07408499956719776,
+   "C": 0.0689321932265277,
+   "D": 0.16920216135921834,
+   "E": 0.14636085051350076,
+   "F": 0.19880326578550025,
+   "G": 0.16327176912751024
   }
  },
  "coverage_by_year": {

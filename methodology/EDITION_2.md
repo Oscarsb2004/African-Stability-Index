@@ -191,3 +191,54 @@ gdp_pc_ppp 1. Re-anchoring the goalposts is step 3.
   - **Replaced:** edition 1's test that recorded an imputed extreme. It is now a test that an imputed or carried
     value never sets a goalpost, with a negative control.
   - **New:** tests for theoretical bounds, the trimmed rule (with a negative control) and N1.
+
+## Step 4: the log rule, a skew test and Osborne's constant (plan 4.6)
+
+**What changed.** Edition 1 flagged 5 indicators for logs by hand and never applied a stated rule. The rule now
+(the ADA course):
+- **The test:** log an indicator when its skew is positive and significant, z = skew / SE(skew) above 1.96, with
+  SE = sqrt(6n(n−1) / ((n−2)(n+1)(n+3))).
+- **The sample:** one value per state, its most recent observation, so n is the number of states reporting (19 to
+  54). Thousands of panel cells would make every skew "significant". The test runs after the outlier rule of step 3.
+- **The transform:** log(x + c), where the frozen constant c makes the indicator's minimum 1 (Osborne). For an
+  indicator with theoretical bounds the minimum is the bound, so its goalposts are log(1) and log(101).
+- **The record:** the decision, skew, z, n and c are frozen in `registry/goalposts.yaml`. The registry's
+  `log_transform` flags were set to match, and a test keeps them so.
+
+**The decisions.** 12 indicators are logged now, against 5 in edition 1.
+- **Logged:**
+  - freshwater_withdraw, z 9.19;
+  - co2_pc, 5.69;
+  - displaced_persons, 5.43;
+  - intent_homicide, 4.85;
+  - domestic_credit_private, 4.66;
+  - inflation_5yr_avg, 4.06;
+  - hand_washing_facil, 3.80;
+  - gdp_pc_ppp, 3.77;
+  - social_protection_labour_pop, 3.64;
+  - sev_food_insec, 3.30;
+  - femicide, 2.50;
+  - gini, 2.35.
+- **No longer logged:** mort_infant (z 0.47).
+- **Significantly left-skewed, so not logged:** primary_gpi (z −4.71), secondary_gpi (−3.79), primary_enroll
+  (−3.30), youth_literacy (−2.73), learning_poverty (−2.10). Logging a left skew means reflecting the scale first.
+  **The owner rules on whether to.**
+
+**What moved** (2024, equal weights, against step 3)
+- **Scores:** composites moved 1.57 points on average (+0.77 net), at most 3.90 (SDN, +3.90).
+- **Ranks:** rank correlation 0.988 over 54 states. 3 moved 5 places or more:
+  - EGY 19 to 25;
+  - UGA 20 to 26;
+  - KEN 16 to 21.
+- **Pillars,** mean change in points: A 0.00, B +0.38, C −1.14, D +11.00, E −0.22, F −7.21, G +2.58. D rises as
+  hand washing and severe food insecurity are logged. F falls as CO2 and freshwater withdrawal are.
+- **Reliability:** unchanged.
+- **Top 5:** MUS, CPV, SYC, RWA, NAM. **Bottom 5:** LBY, CAF, SOM, SDN, SSD.
+
+**Checks**
+- **Passing:** `verify.run` rebuild, panel and contract.
+- **Narrative fails** as before, until step 10.
+- **Tests:** 765 passed and 1 xfailed, besides the 4 narrative tests.
+  - **New:** the skew test (a symmetric sample as negative control), Osborne's constant, and the registry's flags
+    matching the frozen rule.
+  - **Rewritten:** the test that carried a hand-set log flag through. The skew test decides now.

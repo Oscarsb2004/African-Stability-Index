@@ -24,7 +24,7 @@
     2023: emissions estimates carry a 1-2 year release lag. Source: World Bank
     Climate Change Knowledge Portal, EN.GHG.CO2.PC.CE.AR5."
   database: wdi
-  log_transform: false
+  log_transform: true
 
 - variable_name: freshwater_withdraw
   display_name: Annual freshwater withdrawals, total (% of internal resources)
@@ -48,7 +48,7 @@
     estimates; the extended window ensures most countries have at least one
     usable value. Source: World Bank WDI ER.H2O.FWTL.ZS (FAO AQUASTAT)."
   database: wdi
-  log_transform: false
+  log_transform: true
 
 - variable_name: nonrenew_elec
   display_name: Electricity production from oil, gas, and coal sources (% of total)
