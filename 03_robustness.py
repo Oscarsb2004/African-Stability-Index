@@ -84,8 +84,8 @@ def main() -> int:
 
     pil = panel.pillar_scores
     at_year = pil[pil["year"] == year]
-    wide = at_year.pivot_table(index="iso3", columns="pillar_id",
-                               values="score", aggfunc="first")
+    # the published composites' inputs: unreliable pillars left out (edition 2, step 7)
+    wide = score_mod.composite_inputs(at_year, index=["iso3"])
     pillars = [p for p in PILLAR_DEFS if p in wide.columns]
     logger.info("  %d countries x %d pillars", len(wide), len(pillars))
 

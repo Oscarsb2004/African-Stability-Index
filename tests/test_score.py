@@ -224,3 +224,32 @@ def test_unreliable_pillars_do_not_count_toward_the_floor():
     got = composite_reliability(_tiers("reliable", *["unreliable"] * 6),
                                 min_pillars=2)
     assert got is Reliability.UNRELIABLE
+
+
+# ── Edition 2, step 7: unreliable pillars leave the composite ──────────────────
+
+def _pillars(rows):
+    return pd.DataFrame(rows, columns=["iso3", "year", "pillar_id", "score", "reliability"])
+
+
+def test_an_unreliable_pillar_is_left_out_and_a_thin_one_kept():
+    from asi.pipeline.score import composite_inputs
+    pil = _pillars([("KEN", 2024, "GOV", 60.0, "reliable"), ("KEN", 2024, "ENV", 10.0, "unreliable"),
+                    ("KEN", 2024, "SEC", 40.0, "thin")])
+    wide = composite_inputs(pil)
+    assert np.isnan(wide.loc[("KEN", 2024), "ENV"])
+    assert wide.loc[("KEN", 2024), "SEC"] == 40.0  # negative control: thin still counts
+    assert weighted_composite(wide, {"GOV": 1 / 3, "ENV": 1 / 3, "SEC": 1 / 3}).iloc[0] == pytest.approx(50.0)
+
+
+def test_the_lack_of_reliability_index_follows_its_formula():
+    from asi.pipeline.score import lack_of_reliability
+    panel = pd.DataFrame({
+        "iso3": ["KEN"] * 4, "year": [2024] * 4, "variable_name": ["a", "b", "c", "d"],
+        "raw_value": [1.0, 2.0, 3.0, np.nan],
+        "provenance": ["observed", "carried_forward", "carried_forward", "absent"],
+        "source_year": [2024, 2022, 2021, None]})
+    # gap = 3 of 4 not measured; age = mean(0, 2, 3) / 5 = 1/3; LRI = 10 x (0.75 + 1/3) / 2
+    assert lack_of_reliability(panel, ["a", "b", "c", "d"], 5).loc[("KEN", 2024)] == pytest.approx(10 * (0.75 + 1 / 3) / 2)
+    fresh = panel.assign(provenance="observed", source_year=2024, raw_value=1.0)
+    assert lack_of_reliability(fresh, ["a", "b", "c", "d"], 5).loc[("KEN", 2024)] == 0.0  # negative control

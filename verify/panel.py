@@ -609,10 +609,20 @@ def check_pillar_scores(obs: pd.DataFrame, pil: pd.DataFrame, registry: dict) ->
 
 # ── 4. composites ──────────────────────────────────────────────────────────────
 
+def _composable(pil: pd.DataFrame) -> pd.DataFrame:
+    """
+    Pillar scores wide, keeping only pillars a composite may use: reliable or
+    thin (edition 2, step 7). Built by filtering long rows and unstacking, where
+    the pipeline masks a wide table, so the two routes differ.
+    """
+    keep = pil[pil["reliability"].isin(["reliable", "thin"])].set_index(["iso3", "year", "pillar_id"])["score"]
+    full = pil.set_index(["iso3", "year", "pillar_id"])["score"]
+    return keep.reindex(full.index).unstack("pillar_id").dropna(how="all")
+
+
 def check_composites(pil: pd.DataFrame, comp: pd.DataFrame) -> None:
     weights = yaml.safe_load((PANEL_DIR / "weights.yaml").read_text(encoding="utf-8"))
-    wide = pil.pivot_table(index=["iso3", "year"], columns="pillar_id",
-                           values="score", aggfunc="first")
+    wide = _composable(pil)
 
     bad, n = [], 0
     for method in ("equal", "pca", "entropy"):
@@ -663,8 +673,7 @@ def check_geometric_composite(pil: pd.DataFrame, comp: pd.DataFrame) -> None:
     same reason the pipeline floors them: a pillar at zero would otherwise send
     the whole composite to zero via ln(0).
     """
-    wide = pil.pivot_table(index=["iso3", "year"], columns="pillar_id",
-                           values="score", aggfunc="first")
+    wide = _composable(pil)
     pillars = [p for p in PILLAR_DEFS if p in wide.columns]
 
     bad, n = [], 0
@@ -690,6 +699,43 @@ def check_geometric_composite(pil: pd.DataFrame, comp: pd.DataFrame) -> None:
     else:
         record("4.3 geometric composite", "PASS",
                f"{n} geometric scores reconcile by product-and-root")
+
+
+def check_k_and_reliability_index(obs: pd.DataFrame, pil: pd.DataFrame, comp: pd.DataFrame,
+                                  registry: dict) -> None:
+    """
+    Each composite's k (pillars used) and its lack-of-reliability index, re-derived.
+
+    k is counted from the long pillar table. The index is recomputed from the
+    observations with numpy, from its written formula: 10 x (gap + age) / 2 over
+    the scoring indicators, gap the share not measured that year, age the mean
+    staleness of the values present over the carry-forward limit (1 if none).
+    """
+    usable = pil[pil["reliability"].isin(["reliable", "thin"]) & pil["score"].notna()]
+    k = usable.groupby(["iso3", "year"]).size()
+    scoring = {v for v, s in registry.items() if s.get("role", "scoring") == "scoring"}
+    sub = obs[obs["variable_name"].isin(scoring)]
+    lri = {}
+    for (iso3, year), g in sub.groupby(["iso3", "year"]):
+        prov = g["provenance"].to_numpy()
+        gap = np.mean(~np.isin(prov, ["observed", "derived"]))
+        present = g["raw_value"].notna().to_numpy()
+        stale = (g["year"].to_numpy(dtype=float) - g["source_year"].to_numpy(dtype=float))[present]
+        age = float(np.mean(stale)) / DEFAULT_MAX_CARRY_FORWARD if stale.size else 1.0
+        lri[(iso3, year)] = round(10 * (gap + age) / 2, DISPLAY_DECIMALS)
+
+    bad, n = [], 0
+    for r in comp.itertuples():
+        n += 1
+        ek, el = int(k.get((r.iso3, r.year), 0)), lri.get((r.iso3, r.year), 10.0)
+        if ek != int(r.n_pillars) or abs(el - float(r.lack_of_reliability)) > 10 ** -DISPLAY_DECIMALS + 1e-9:
+            bad.append(f"{r.iso3}/{r.method}/{int(r.year)}: k {ek} vs {r.n_pillars}, "
+                       f"index {el} vs {r.lack_of_reliability}")
+    if bad:
+        record("4.4 pillars used and reliability index", "FAIL", f"{len(bad)}/{n} rows differ", bad)
+    else:
+        record("4.4 pillars used and reliability index", "PASS",
+               f"{n} composite rows: k and the lack-of-reliability index re-derived")
 
 
 def check_ranks_only_where_displayable(comp: pd.DataFrame) -> None:
@@ -742,6 +788,7 @@ def run() -> int:
     check_composites(pil, comp)
     check_ranks_only_where_displayable(comp)
     check_geometric_composite(pil, comp)
+    check_k_and_reliability_index(obs, pil, comp, registry)
 
     n_fail = sum(1 for c in CHECKS if c["status"] == "FAIL")
     n_warn = sum(1 for c in CHECKS if c["status"] == "WARN")

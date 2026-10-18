@@ -450,3 +450,62 @@ ranks)
   - **New:** four tests, for per capita (an error without population, with a negative control; each indicator's own
     scale) and for volatility (the window, with a negative control).
   - **Moved to the new keys:** the dashboard, narrative and consistency tests that named edition 1's letters.
+
+## Step 7: unreliable pillars leave the composite (plan 4.1)
+
+**What changed.**
+- **Exclusion:** a pillar whose tier is unreliable no longer enters any composite (equal, PCA, entropy or
+  geometric). The pillars that remain are averaged, with their weights renormalised.
+  - Edition 1 averaged such pillars in at full weight, so cells the interface greys out still moved the headline.
+  - `score.composite_inputs` leaves them out.
+  - The data-driven weights are fitted on the same inputs.
+- **Each composite row now reports:**
+  - **k (`n_pillars`):** the number of pillars it used;
+  - **`lack_of_reliability`:** an INFORM-style index from 0 (reliable) to 10, computed as
+    LRI = 10 × (gap + age) / 2 over the scoring indicators, where:
+    - gap is the share not measured that year (absent, carried forward or imputed);
+    - age is the mean age of the values present, as a share of the 5-year carry-forward limit (1 when nothing is
+      present).
+
+  INFORM builds its index from missing and imputed data and from the data's age. Those are its components that
+  apply to a national index; its subnational component does not.
+- **Composite reliability is unchanged:** a composite still needs `MIN_PILLARS_FOR_COMPOSITE` = 5 displayable pillars.
+- **`03_robustness.py`** starts from the same inputs.
+
+**What moved** (2024, equal weights, against step 6)
+- **Left out:** 358 unreliable pillar-years in all, over every year. By pillar: ENV 138, EXT 65, GOV 55, HUM 54,
+  MAC 26, COH 15, VOI 5. At 2024 ENV is left out for all 54 states.
+- **Scores:** composites moved 1.40 points on average (−0.68 net), at most 4.03 (CAF, −4.03).
+- **Ranks:** rank correlation 0.983. 7 moved 5 places or more:
+  - DZA 22 to 15;
+  - DJI 31 to 25;
+  - EGY 23 to 17;
+  - UGA 33 to 28;
+  - SLE 21 to 26;
+  - LBR 24 to 31;
+  - COM 14 to 22.
+- **k at 2024:** 42 states use 7 pillars, 10 use 6 and 2 use 5.
+- **Lack of reliability at 2024:** median 1.69, from 1.19 (UGA) to 3.93 (ERI).
+- **Reliability:** composites stay 33 reliable and 21 thin.
+- **Top 5:** CPV, MUS, SYC, BWA, ZAF. **Bottom 5:** TCD, CAF, SOM, SDN, SSD.
+
+**For the owner.** ENV is left out at 2024 for every state, and at 2023 for 11.
+- **Why:** four of its five series end in 2021 to 2023, so their latest values are carried forward. The tier rule
+  counts a carried value as imputed, and an imputed share above 0.50 makes a pillar unreliable.
+- **What it is not:** the data are not wrong. They are published with a lag.
+- **The choice:**
+  - keep the rule, so the headline at the latest year has no environment pillar;
+  - or count a value carried forward within its publisher's usual lag as current for the tier.
+
+  That is a ruling, not something to tune until ENV comes back.
+
+**Checks**
+- **Passing:** `verify.run` rebuild, panel and contract.
+  - **4.1 and 4.3** now re-derive the composites from reliable and thin pillars only. They filter the long table,
+    where the pipeline masks the wide one.
+  - **4.4 (new)** re-derives k and the index for all 5,616 composite rows with numpy, from the written formula.
+- **Narrative fails** as before, until step 10.
+- **Robustness:** weighting methods agree at rho .9848 (PCA), .9838 (entropy) and .9877 (geometric). The worst
+  in-bounds weighting gives .9067, and measured cells only give .8507.
+- **Tests:** 769 passed and 1 xfailed, besides the same 4 narrative corpus tests. **New:** two, each with a negative
+  control: an unreliable pillar is left out while a thin one is kept, and the index follows its formula.

@@ -197,9 +197,14 @@ def main() -> int:
 
     # ── 7. composites ─────────────────────────────────────────────────────────
     logger.info("Step 7 - composite scores")
-    wide = pil.pivot_table(index=["iso3", "year"], columns="pillar_id",
-                           values="score", aggfunc="first")
+    # Edition 2, step 7 (plan 4.1): an unreliable pillar does not enter any composite; the rest are averaged, and
+    # each composite reports how many pillars it used (k) and an INFORM-style lack-of-reliability index.
+    wide = score_mod.composite_inputs(pil)
     pillars = [p for p in PILLAR_DEFS if p in wide.columns]
+    n_pillars = wide.notna().sum(axis=1)
+    lri = score_mod.lack_of_reliability(pnl, list(scoring), DEFAULT_MAX_CARRY_FORWARD)
+    left_out = int((pil["score"].notna() & ~pil["reliability"].isin(score_mod.COMPOSABLE)).sum())
+    logger.info("  %d unreliable pillar-years left out of the composites", left_out)
 
     # data-driven weights fitted ONCE on the pooled panel, then reused every year
     pca_w = score_mod.fit_pca_weights(wide, pillars, SMALL)
@@ -237,6 +242,8 @@ def main() -> int:
                 "iso3": iso3, "year": int(year), "method": method,
                 "score": None if pd.isna(value) else round(float(value), DISPLAY_DECIMALS),
                 "reliability": rel.value,
+                "n_pillars": int(n_pillars.get((iso3, year), 0)),
+                "lack_of_reliability": round(float(lri.get((iso3, year), 10.0)), DISPLAY_DECIMALS),
             })
     comp_df = pd.DataFrame(rows)
 

@@ -113,6 +113,45 @@ def pillar_scores(
 
 # ── Composite level ────────────────────────────────────────────────────────────
 
+#: Tiers a pillar may have and still enter a composite (edition 2, step 7, plan 4.1).
+COMPOSABLE = ("reliable", "thin")
+
+
+def composite_inputs(pil: pd.DataFrame, index: list[str] | None = None) -> pd.DataFrame:
+    """
+    Pillar scores, wide, with every pillar that is not displayable left out.
+
+    Edition 1 averaged an unreliable pillar into the composite at full weight:
+    61 pillar cells at 2023 that the interface itself greys out still moved the
+    headline. From edition 2 such a pillar is blank here, so every composite
+    averages only the pillars it can show, and reports how many (k).
+    """
+    index = index or ["iso3", "year"]
+    wide = pil.pivot_table(index=index, columns="pillar_id", values="score", aggfunc="first")
+    tiers = pil.pivot_table(index=index, columns="pillar_id", values="reliability", aggfunc="first")
+    return wide.where(tiers.reindex(index=wide.index, columns=wide.columns).isin(COMPOSABLE))
+
+
+def lack_of_reliability(panel: pd.DataFrame, scoring: list[str], max_carry: int) -> pd.Series:
+    """
+    An INFORM-style lack-of-reliability index per country-year, 0 (reliable) to 10.
+
+        LRI = 10 x (gap + age) / 2, over the scoring indicators, where
+        gap = the share not measured that year (absent, carried forward or imputed)
+        age = the mean age of the values present, as a share of the carry-forward limit
+              (1 when nothing is present)
+
+    INFORM builds its index from missing and imputed data and from the age of
+    the data; these are its two components that apply to a national index.
+    """
+    sub = panel[panel["variable_name"].isin(scoring)]
+    keys = [sub["iso3"], sub["year"]]
+    gap = (~sub["provenance"].isin(["observed", "derived"])).groupby(keys).mean()
+    staleness = sub["year"] - pd.to_numeric(sub["source_year"])
+    age = (staleness.where(sub["raw_value"].notna()) / max_carry).groupby(keys).mean()
+    return 10 * (gap + age.fillna(1.0)) / 2
+
+
 def weighted_composite(
     pillar_wide: pd.DataFrame,
     weights: dict[str, float],
@@ -244,4 +283,5 @@ def composite_reliability(
 __all__ = [
     "pillar_scores", "weighted_composite", "geometric_composite",
     "fit_pca_weights", "fit_entropy_weights", "composite_reliability",
+    "COMPOSABLE", "composite_inputs", "lack_of_reliability",
 ]
