@@ -245,9 +245,13 @@ def test_a_negated_coverage_sentence_is_not_a_coverage_claim(panel):
     Reading it as a count produced 11 false positives out of 12 the first time
     this check was attempted, so it is pinned here.
     """
-    obs, tot = _pillar_counts(panel, "KEN", "D")
+    # any country and pillar with some, not all, indicators fresh; the data decide which (edition 2 moved KEN D to
+    # fully measured, which left this sentence nothing to negate)
+    iso3, pillar, obs, tot = next(
+        (i, p, *_pillar_counts(panel, i, p)) for i in ("KEN", "GHA", "SEN", "TZA", "UGA", "NGA", "ETH")
+        for p in ("D", "B", "F", "C") if 0 < _pillar_counts(panel, i, p)[0] < _pillar_counts(panel, i, p)[1] <= 6)
     rec = _with_pillar_summary(
-        "KEN", "D",
+        iso3, pillar,
         f"{WORDS[tot - obs].title()} of {WORDS[tot]} indicators were not "
         f"freshly measured this year.")
     assert not _errors(check_consistency(rec, panel))

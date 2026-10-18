@@ -1,8 +1,11 @@
 # African Stability Index (ASI)
 
 A composite stability index covering all **54 African Union member states**, built on
-**7 pillars** and **32 scoring indicators** (33 total incl. one descriptive), scored by
-**4 weighting methods**, as a 2000-2024 panel with an interactive drill-down dashboard.
+**7 pillars**, scored by **4 weighting methods**, as a yearly panel with an interactive drill-down dashboard.
+
+- **Edition 1 (published):** 32 scoring indicators, a 2000–2024 panel, reference year 2023.
+- **Edition 2 (in progress, steps 1 to 5 in `methodology/EDITION_2.md`):** 22 scoring indicators after the admission
+  floor (12 descriptive), a 2000–2025 panel, reference year 2024. The eight pillars of ruling P57 come next.
 
 **Since 2026-10-17 the ASI lives in Athena** (`athena-core/projects/asi`, decision P44), with its full history.
 The public repository `Oscarsb2004/African-Stability-Index` and its GitHub Pages site stay as the live legacy

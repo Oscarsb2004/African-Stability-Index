@@ -57,23 +57,6 @@ indicators:
     n_values: 1325
     n_capped_low: 0
     n_capped_high: 65
-  displaced_persons:
-    log_transform: true
-    log_constant: 0.999546925878808
-    skew: 2.1587
-    skew_z: 5.428
-    skew_n: 35
-    polarity: negative
-    winsor_lower: -2.087874
-    winsor_upper: 6.749921
-    winsor_lower_to: -2.23517
-    winsor_upper_to: 6.897218
-    goalpost_min: 0.0
-    goalpost_max: 5.438697
-    goalpost_source: observed
-    n_values: 361
-    n_capped_low: 0
-    n_capped_high: 0
   domestic_credit_private:
     log_transform: true
     log_constant: 1.0
@@ -106,23 +89,6 @@ indicators:
     goalpost_max: 100.0
     goalpost_source: theoretical
     n_values: 1334
-    n_capped_low: 0
-    n_capped_high: 0
-  femicide:
-    log_transform: true
-    log_constant: 0.867215336301803
-    skew: 1.3118
-    skew_z: 2.5046
-    skew_n: 19
-    polarity: negative
-    winsor_lower: -0.8738
-    winsor_upper: 3.016705
-    winsor_lower_to: -0.938642
-    winsor_upper_to: 3.081547
-    goalpost_min: 0.0
-    goalpost_max: 2.680311
-    goalpost_source: observed
-    n_values: 145
     n_capped_low: 0
     n_capped_high: 0
   freshwater_withdraw:
@@ -193,23 +159,6 @@ indicators:
     n_values: 1339
     n_capped_low: 0
     n_capped_high: 6
-  gini:
-    log_transform: true
-    log_constant: 1.0
-    skew: 0.7833
-    skew_z: 2.349
-    skew_n: 51
-    polarity: negative
-    winsor_lower: 3.273419
-    winsor_upper: 4.200407
-    winsor_lower_to: 3.257969
-    winsor_upper_to: 4.215857
-    goalpost_min: 0.0
-    goalpost_max: 4.61512051684126
-    goalpost_source: theoretical
-    n_values: 199
-    n_capped_low: 0
-    n_capped_high: 0
   hand_washing_facil:
     log_transform: true
     log_constant: 1.0
@@ -244,40 +193,6 @@ indicators:
     n_values: 1285
     n_capped_low: 4
     n_capped_high: 32
-  intent_homicide:
-    log_transform: true
-    log_constant: 0.732481848207457
-    skew: 1.8347
-    skew_z: 4.8508
-    skew_n: 39
-    polarity: negative
-    winsor_lower: -0.708566
-    winsor_upper: 4.101421
-    winsor_lower_to: -0.788733
-    winsor_upper_to: 4.181587
-    goalpost_min: 0.0
-    goalpost_max: 3.847364
-    goalpost_source: observed
-    n_values: 387
-    n_capped_low: 0
-    n_capped_high: 0
-  learning_poverty:
-    log_transform: false
-    log_constant: null
-    skew: -0.9093
-    skew_z: -2.0973
-    skew_n: 29
-    polarity: negative
-    winsor_lower: 42.237023
-    winsor_upper: 115.300135
-    winsor_lower_to: 41.019305
-    winsor_upper_to: 116.517854
-    goalpost_min: 0.0
-    goalpost_max: 100.0
-    goalpost_source: theoretical
-    n_values: 47
-    n_capped_low: 2
-    n_capped_high: 0
   life_expect_tot:
     log_transform: false
     log_constant: null
@@ -294,23 +209,6 @@ indicators:
     goalpost_source: observed
     n_values: 1350
     n_capped_low: 9
-    n_capped_high: 0
-  managed_water_percent:
-    log_transform: false
-    log_constant: null
-    skew: 0.6391
-    skew_z: 1.4971
-    skew_n: 30
-    polarity: positive
-    winsor_lower: -34.191934
-    winsor_upper: 95.00674
-    winsor_lower_to: -36.345245
-    winsor_upper_to: 97.160051
-    goalpost_min: 0.0
-    goalpost_max: 100.0
-    goalpost_source: theoretical
-    n_values: 747
-    n_capped_low: 0
     n_capped_high: 0
   mort_infant:
     log_transform: false
@@ -345,23 +243,6 @@ indicators:
     goalpost_source: theoretical
     n_values: 1263
     n_capped_low: 0
-    n_capped_high: 0
-  primary_enroll:
-    log_transform: false
-    log_constant: null
-    skew: -1.1092
-    skew_z: -3.2953
-    skew_n: 50
-    polarity: positive
-    winsor_lower: 30.055765
-    winsor_upper: 124.957688
-    winsor_lower_to: 28.474066
-    winsor_upper_to: 126.539387
-    goalpost_min: 0.0
-    goalpost_max: 100.0
-    goalpost_source: theoretical
-    n_values: 590
-    n_capped_low: 3
     n_capped_high: 0
   primary_gpi:
     log_transform: false
@@ -431,40 +312,6 @@ indicators:
     n_values: 1340
     n_capped_low: 1
     n_capped_high: 14
-  secondary_enroll:
-    log_transform: false
-    log_constant: null
-    skew: 0.5415
-    skew_z: 1.5147
-    skew_n: 44
-    polarity: positive
-    winsor_lower: -19.369656
-    winsor_upper: 90.156127
-    winsor_lower_to: -21.195085
-    winsor_upper_to: 91.981557
-    goalpost_min: 0.0
-    goalpost_max: 100.0
-    goalpost_source: theoretical
-    n_values: 344
-    n_capped_low: 0
-    n_capped_high: 1
-  secondary_gpi:
-    log_transform: false
-    log_constant: null
-    skew: -1.24
-    skew_z: -3.7869
-    skew_n: 53
-    polarity: positive
-    winsor_lower: 0.427214
-    winsor_upper: 1.222343
-    winsor_lower_to: 0.413961
-    winsor_upper_to: 1.235595
-    goalpost_min: 0.0
-    goalpost_max: 1.0
-    goalpost_source: theoretical
-    n_values: 684
-    n_capped_low: 12
-    n_capped_high: 0
   sev_food_insec:
     log_transform: true
     log_constant: 1.0
@@ -480,23 +327,6 @@ indicators:
     goalpost_max: 4.61512051684126
     goalpost_source: theoretical
     n_values: 361
-    n_capped_low: 0
-    n_capped_high: 0
-  social_protection_labour_pop:
-    log_transform: true
-    log_constant: 1.0
-    skew: 1.2499
-    skew_z: 3.6426
-    skew_n: 48
-    polarity: positive
-    winsor_lower: 0.282176
-    winsor_upper: 5.560975
-    winsor_lower_to: 0.194196
-    winsor_upper_to: 5.648955
-    goalpost_min: 0.0
-    goalpost_max: 4.61512051684126
-    goalpost_source: theoretical
-    n_values: 127
     n_capped_low: 0
     n_capped_high: 0
   va_estimate:

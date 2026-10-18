@@ -14,7 +14,7 @@
   display_name: Intentional homicides (per 100,000 people)
   source: wb_api
   series_code: VC.IHR.PSRC.P5
-  role: scoring
+  role: descriptive  # edition 2, step 5: below the admission floor (33 of 54) at 2024
   polarity: negative
   pillars:
   - E
@@ -39,7 +39,7 @@
   display_name: Internally displaced persons (per 1,000 population)
   source: wb_api
   series_code: SM.POP.IDPC
-  role: scoring
+  role: descriptive  # edition 2, step 5: below the admission floor (33 of 54) at 2024
   polarity: negative
   pillars:
   - E

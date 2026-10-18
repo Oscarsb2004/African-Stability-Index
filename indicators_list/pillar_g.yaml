@@ -65,7 +65,7 @@
   display_name: Coverage of social protection and labor programs (% of population)
   source: wb_api
   series_code: per_allsp.cov_pop_tot
-  role: scoring
+  role: descriptive  # edition 2, step 5: below the admission floor (33 of 54) at 2024
   polarity: positive
   pillars:
   - G

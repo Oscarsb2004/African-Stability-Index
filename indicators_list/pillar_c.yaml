@@ -50,7 +50,7 @@
   display_name: School enrollment, primary, net (%)
   source: wb_api
   series_code: SE.PRM.NENR
-  role: scoring
+  role: descriptive  # edition 2, step 5: below the admission floor (33 of 54) at 2024
   polarity: positive
   pillars:
   - C
@@ -74,7 +74,7 @@
   display_name: School enrollment, secondary, net (%)
   source: wb_api
   series_code: SE.SEC.NENR
-  role: scoring
+  role: descriptive  # edition 2, step 5: below the admission floor (33 of 54) at 2024
   polarity: positive
   pillars:
   - C
@@ -98,7 +98,7 @@
     adjusted for out-of-school (%)"
   source: wb_api
   series_code: SE.LPV.PRIM
-  role: scoring
+  role: descriptive  # edition 2, step 5: below the admission floor (33 of 54) at 2024
   polarity: negative
   pillars:
   - C
@@ -152,7 +152,7 @@
   display_name: School enrollment, secondary, gender parity index (GPI)
   source: wb_api
   series_code: SE.ENR.SECO.FM.ZS
-  role: scoring
+  role: descriptive  # edition 2, step 5: below the admission floor (33 of 54) at 2024
   polarity: positive
   pillars:
   - C
@@ -181,7 +181,7 @@
   display_name: Intentional homicides, female (per 100,000 female population)
   source: wb_api
   series_code: VC.IHR.PSRC.FE.P5
-  role: scoring
+  role: descriptive  # edition 2, step 5: below the admission floor (33 of 54) at 2024
   polarity: negative
   pillars:
   - C

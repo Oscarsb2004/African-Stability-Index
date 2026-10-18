@@ -242,3 +242,56 @@ gdp_pc_ppp 1. Re-anchoring the goalposts is step 3.
   - **New:** the skew test (a symmetric sample as negative control), Osborne's constant, and the registry's flags
     matching the frozen rule.
   - **Rewritten:** the test that carried a hand-set log flag through. The skew test decides now.
+
+## Step 5: the admission floor (plan 2.1, 4.12)
+
+**What changed.** An indicator is scored only if at least 33 of the 54 states have a real value for it at the
+reference year: observed, or carried forward within 5 years. That is the Ibrahim Index's rule of at least 33 African
+countries. Below the floor an indicator is descriptive: shown, not scored. `ADMISSION_FLOOR = 33` is in
+`asi/core/constants.py`, and a test checks every scoring indicator against it, with a negative control.
+
+**Below the floor at 2024** (states with a value), now descriptive:
+- secondary_enroll 1;
+- primary_enroll 2;
+- femicide 16;
+- social_protection_labour_pop 18;
+- learning_poverty 19;
+- intent_homicide 20;
+- managed_water_percent 30;
+- gini 30;
+- secondary_gpi 30;
+- displaced_persons 32.
+
+The two enrolment series have almost no values in the 5 years up to 2024. 22 indicators remain scored.
+
+**What moved** (2024, equal weights, against step 4)
+- **Scores:** composites moved 1.75 points on average (+1.06 net), at most 6.20 (ZAF, +6.20).
+- **Ranks:** rank correlation 0.981 over 54 states. 9 moved 5 places or more:
+  - DZA 17 to 25;
+  - DJI 19 to 26;
+  - CIV 20 to 14;
+  - KEN 21 to 15;
+  - MWI 18 to 24;
+  - ZAF 15 to 9;
+  - MDG 32 to 27;
+  - MLI 37 to 42;
+  - NGA 44 to 39.
+- **Reliability:** composites are now 29 reliable and 25 thin, against 18 and 36. The thin indicators no longer drag
+  coverage down.
+- **Pillars,** indicators each: A 6, B 4, C 3, D 4, E 2, F 4, G 4. Mean change: B +3.72, C +3.74, D +3.45,
+  E −2.63, G −0.76.
+- **The cost, stated plainly:**
+  - Pillar C keeps 3 indicators and is unreliable for 47 states.
+  - Pillar E is now the WGI's political stability and rule of law alone.
+
+  The eight pillars of P57 rebuild both from new sources: UCDP for security, and education and cohesion data beyond
+  the WDI.
+- **Top 5:** CPV, MUS, SYC, NAM, BWA. **Bottom 5:** CAF, LBY, SOM, SDN, SSD.
+
+**Checks**
+- **Passing:** `verify.run` rebuild, panel and contract.
+- **Narrative fails** as before, until step 10.
+- **Tests:** 767 passed and 1 xfailed, besides the 4 narrative corpus tests.
+  - **New:** two admission-floor tests.
+  - **Fixed:** one narrative test assumed Kenya's Pillar D had an indicator not freshly measured. It no longer does,
+    so the test now picks a case from the data.

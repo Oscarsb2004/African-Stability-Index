@@ -23,7 +23,6 @@
     "gdp_pc_ppp",
     "gdp_growth_3yr_avg",
     "inflation_5yr_avg",
-    "gini",
     "domestic_credit_private"
    ]
   },
@@ -32,12 +31,7 @@
    "indicators": [
     "va_estimate",
     "youth_literacy",
-    "primary_enroll",
-    "secondary_enroll",
-    "learning_poverty",
-    "primary_gpi",
-    "secondary_gpi",
-    "femicide"
+    "primary_gpi"
    ]
   },
   "D": {
@@ -45,7 +39,6 @@
    "indicators": [
     "life_expect_tot",
     "mort_infant",
-    "managed_water_percent",
     "hand_washing_facil",
     "sev_food_insec"
    ]
@@ -54,9 +47,7 @@
    "name": "Security / Conflict",
    "indicators": [
     "pv_estimate",
-    "rl_estimate",
-    "intent_homicide",
-    "displaced_persons"
+    "rl_estimate"
    ]
   },
   "F": {
@@ -74,8 +65,7 @@
     "ge_estimate",
     "cc_estimate",
     "elec_access_tot",
-    "water_access_pop",
-    "social_protection_labour_pop"
+    "water_access_pop"
    ]
   }
  },
@@ -207,7 +197,7 @@
    "series_code": "SI.POV.GINI",
    "database": "wdi",
    "polarity": "negative",
-   "role": "scoring",
+   "role": "descriptive",
    "pillars": [
     "B"
    ],
@@ -259,7 +249,7 @@
    "series_code": "SE.PRM.NENR",
    "database": "wdi",
    "polarity": "positive",
-   "role": "scoring",
+   "role": "descriptive",
    "pillars": [
     "C"
    ],
@@ -272,7 +262,7 @@
    "series_code": "SE.SEC.NENR",
    "database": "wdi",
    "polarity": "positive",
-   "role": "scoring",
+   "role": "descriptive",
    "pillars": [
     "C"
    ],
@@ -285,7 +275,7 @@
    "series_code": "SE.LPV.PRIM",
    "database": "wdi",
    "polarity": "negative",
-   "role": "scoring",
+   "role": "descriptive",
    "pillars": [
     "C"
    ],
@@ -311,7 +301,7 @@
    "series_code": "SE.ENR.SECO.FM.ZS",
    "database": "wdi",
    "polarity": "positive",
-   "role": "scoring",
+   "role": "descriptive",
    "pillars": [
     "C"
    ],
@@ -324,7 +314,7 @@
    "series_code": "VC.IHR.PSRC.FE.P5",
    "database": "wdi",
    "polarity": "negative",
-   "role": "scoring",
+   "role": "descriptive",
    "pillars": [
     "C"
    ],
@@ -363,7 +353,7 @@
    "series_code": "SH.H2O.SMDW.ZS",
    "database": "wdi",
    "polarity": "positive",
-   "role": "scoring",
+   "role": "descriptive",
    "pillars": [
     "D"
    ],
@@ -402,7 +392,7 @@
    "series_code": "VC.IHR.PSRC.P5",
    "database": "wdi",
    "polarity": "negative",
-   "role": "scoring",
+   "role": "descriptive",
    "pillars": [
     "E"
    ],
@@ -415,7 +405,7 @@
    "series_code": "SM.POP.IDPC",
    "database": "wdi",
    "polarity": "negative",
-   "role": "scoring",
+   "role": "descriptive",
    "pillars": [
     "E"
    ],
@@ -519,7 +509,7 @@
    "series_code": "per_allsp.cov_pop_tot",
    "database": "wdi",
    "polarity": "positive",
-   "role": "scoring",
+   "role": "descriptive",
    "pillars": [
     "G"
    ],
@@ -1028,27 +1018,27 @@
    "G": 0.14285714285714285
   },
   "pca": {
-   "A": 0.175755708851314,
-   "B": 0.1450678416501557,
-   "C": 0.15094562970463068,
-   "D": 0.16283177725613648,
-   "E": 0.16848205950871212,
+   "A": 0.1813490549237724,
+   "B": 0.14832518112313192,
+   "C": 0.1562730587656355,
+   "D": 0.1471347253945541,
+   "E": 0.17685363489425834,
    "F": 0.0,
-   "G": 0.19691698302905103
+   "G": 0.1900643448986477
   },
   "entropy": {
-   "A": 0.17934476042054495,
-   "B": 0.07408499956719776,
-   "C": 0.0689321932265277,
-   "D": 0.16920216135921834,
-   "E": 0.14636085051350076,
-   "F": 0.19880326578550025,
-   "G": 0.16327176912751024
+   "A": 0.17654531726001088,
+   "B": 0.07456140303362713,
+   "C": 0.06993605602953124,
+   "D": 0.1431333555836457,
+   "E": 0.1711005486350784,
+   "F": 0.19570008930356664,
+   "G": 0.16902323015454002
   }
  },
  "coverage_by_year": {
   "2000": 0.981,
-  "2001": 0.333,
+  "2001": 0.056,
   "2002": 0.981,
   "2003": 0.981,
   "2004": 0.981,

@@ -130,6 +130,10 @@ RELIABILITY_RELIABLE_AT   = 0.60  # coverage at or above this -> reliable
 RELIABILITY_THIN_AT       = 0.40  # coverage at or above this -> thin (muted)
 RELIABILITY_MAX_IMPUTED   = 0.50  # imputed share above this -> unreliable regardless
 MIN_PILLARS_FOR_COMPOSITE = 5     # composite needs this many usable pillars
+# Edition 2, step 5 (plan 2.1, 4.12): an indicator is scored only if at least this many of the 54 states have a
+# real value (observed, or carried forward within DEFAULT_MAX_CARRY_FORWARD years) at the reference year: the
+# Ibrahim Index's rule of at least 33 African countries. Below it, an indicator is descriptive: shown, not scored.
+ADMISSION_FLOOR = 33
 
 
 # ── Quality gates ──────────────────────────────────────────────────────────────
@@ -221,7 +225,7 @@ __all__ = [
     "IQR_MULTIPLIER", "MIN_REGIONAL_SAMPLE", "REFERENCE_YEAR_MIN_COVERAGE",
     "COVERAGE_WARN_THRESHOLD", "COVERAGE_ALERT_THRESHOLD",
     "RELIABILITY_RELIABLE_AT", "RELIABILITY_THIN_AT",
-    "RELIABILITY_MAX_IMPUTED", "MIN_PILLARS_FOR_COMPOSITE",
+    "RELIABILITY_MAX_IMPUTED", "MIN_PILLARS_FOR_COMPOSITE", "ADMISSION_FLOOR",
     "MAX_PILLAR_NAN_RATE", "MIN_CRONBACH_ALPHA",
     "PANEL_START", "PANEL_PULL_BUFFER", "DEFAULT_MAX_CARRY_FORWARD",
     "DISPLAY_DECIMALS",

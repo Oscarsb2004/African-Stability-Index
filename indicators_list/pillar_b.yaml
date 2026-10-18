@@ -53,7 +53,7 @@
   display_name: Gini index
   source: wb_api
   series_code: SI.POV.GINI
-  role: scoring
+  role: descriptive  # edition 2, step 5: below the admission floor (33 of 54) at 2024
   polarity: negative
   pillars:
   - B
