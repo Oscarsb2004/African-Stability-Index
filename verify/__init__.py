@@ -26,10 +26,11 @@ Five layers, run together by `python -m verify.run`:
 `advisory` is judgement, not arithmetic, so it reports and never blocks: gating a
 release on a judgement call trains people to ignore the gate.
 
-Coverage is stated precisely because it was once overstated. `panel` re-derives
-38,276 of 43,200 scoring cells (88.6%). The remaining 11.4% are regional-mean
-estimates, which by construction cannot be predicted from a country's own data;
-the MIN_REGIONAL_SAMPLE rule and the reliability tiers carry those instead.
+Coverage is stated precisely because it was once overstated. In edition 1, `panel`
+re-derived 38,276 of 43,200 scoring cells (88.6%); the other 11.4% were
+regional-mean estimates, which cannot be predicted from a country's own data.
+From edition 2 there is no regional fill, so every cell with a value is
+re-derived (37,154 by the as-of join alone).
 """
 
 __all__ = ["rebuild", "panel", "contract", "narrative", "advisory"]

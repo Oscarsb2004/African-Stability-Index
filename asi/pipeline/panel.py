@@ -248,6 +248,7 @@ def regional_fill(
     panel: pd.DataFrame,
     iso3_to_region: dict[str, str],
     min_sample: int,
+    statistic: str | float = "mean",
 ) -> tuple[pd.DataFrame, int]:
     """
     Fill gaps from regional peers, within the same year.
@@ -257,21 +258,25 @@ def regional_fill(
     fewer than `min_sample` peers reporting that year is left empty rather than
     imputed from one or two neighbours.
 
-    Filled cells are marked REGIONAL_MEAN, which the reliability tiers treat as
-    inference, not measurement.
+    Edition 1 filled with the peers' mean (REGIONAL_MEAN). From edition 2 the
+    published scores use no fill at all (plan 4.5); a quantile fill, such as the
+    peers' 25th percentile, is the sensitivity check that asks how much the
+    missing states would move if they were weaker than their neighbours. Either
+    way, the reliability tiers treat a filled cell as inference, not measurement.
     """
     panel = panel.copy()
     panel["_region"] = panel["iso3"].map(iso3_to_region)
 
     missing = panel["raw_value"].isna()
     n_filled = 0
-
-    donors = (
-        panel.loc[~missing]
-        .groupby(["variable_name", "year", "_region"])["raw_value"]
-        .agg(["mean", "size"])
-    )
-    eligible = donors[donors["size"] >= min_sample]["mean"]
+    groups = panel.loc[~missing].groupby(["variable_name", "year", "_region"])["raw_value"]
+    if statistic == "mean":
+        donors = groups.agg(["mean", "size"]).rename(columns={"mean": "fill"})
+        label = Provenance.REGIONAL_MEAN.value
+    else:
+        donors = pd.DataFrame({"fill": groups.quantile(float(statistic)), "size": groups.size()})
+        label = Provenance.REGIONAL_QUANTILE.value
+    eligible = donors[donors["size"] >= min_sample]["fill"]
 
     if not eligible.empty:
         keys = pd.MultiIndex.from_arrays([
@@ -280,7 +285,7 @@ def regional_fill(
         candidate = eligible.reindex(keys).to_numpy()
         fillable = missing.to_numpy() & ~pd.isna(candidate)
         panel.loc[fillable, "raw_value"] = candidate[fillable]
-        panel.loc[fillable, "provenance"] = Provenance.REGIONAL_MEAN.value
+        panel.loc[fillable, "provenance"] = label
         panel.loc[fillable, "source_year"] = None
         n_filled = int(fillable.sum())
 

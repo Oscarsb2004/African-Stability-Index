@@ -8,7 +8,7 @@ time series impossible; this runs the whole sequence once, on every year.
     inputs (data/inputs.csv, from Athena's datasets)
       -> panel        one value per country/indicator/year, with provenance
       -> derived      GPI parity folding, IDP per capita
-      -> regional     fill gaps from same-year regional peers
+      -> missing      a gap stays a gap (edition 2; --missing-at-regional-quantile for the sensitivity run)
       -> goalposts    fixed bounds (frozen; --freeze-goalposts to regenerate)
       -> normalize    log -> winsorize -> goalpost min-max, clamping flagged
       -> score        pillar + composite scores, each with a reliability tier
@@ -65,8 +65,17 @@ def main() -> int:
     ap.add_argument("--freeze-goalposts", action="store_true",
                     help="recompute and overwrite the frozen goalposts "
                          "(re-anchors every historical score — do this deliberately)")
+    ap.add_argument("--missing-at-regional-quantile", type=float, metavar="Q",
+                    help="sensitivity run only: fill every gap with its region's Q quantile that year "
+                         "(plan 4.5 asks for 0.25); needs --out, so the published outputs are untouched")
+    ap.add_argument("--out", help="write the outputs here instead of data/panel")
     args = ap.parse_args()
+    if args.missing_at_regional_quantile is not None and not args.out:
+        ap.error("a sensitivity run must write elsewhere: add --out")
 
+    global OUT_DIR, WEIGHTS_FILE
+    if args.out:
+        OUT_DIR, WEIGHTS_FILE = Path(args.out), Path(args.out) / "weights.yaml"
     t0 = _time.time()
     OUT_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -115,11 +124,19 @@ def main() -> int:
     for n in notes:
         logger.info("  %s", n)
 
-    # ── 3. regional fill ──────────────────────────────────────────────────────
-    logger.info("Step 3 - regional fill (min %d peers, same year)", MIN_REGIONAL_SAMPLE)
-    iso3_to_region = {k: v["region"] for k, v in COUNTRIES.items()}
-    pnl, n_filled = panel_mod.regional_fill(pnl, iso3_to_region, MIN_REGIONAL_SAMPLE)
-    logger.info("  filled %d cells from regional peers", n_filled)
+    # ── 3. missing data ───────────────────────────────────────────────────────
+    # Edition 2, step 2 (plan 4.5): no regional fill. A value is observed, or carried forward up to
+    # DEFAULT_MAX_CARRY_FORWARD years, or missing; a pillar scores on what is present, with its tier. The states
+    # least able to report are the least stable, so a regional mean flattered them.
+    q = args.missing_at_regional_quantile
+    if q is None:
+        logger.info("Step 3 - no regional fill: a gap stays a gap (edition 2, plan 4.5)")
+    else:
+        logger.info("Step 3 - SENSITIVITY: gaps set to the region's %.2f quantile (min %d peers, same year)",
+                    q, MIN_REGIONAL_SAMPLE)
+        iso3_to_region = {k: v["region"] for k, v in COUNTRIES.items()}
+        pnl, n_filled = panel_mod.regional_fill(pnl, iso3_to_region, MIN_REGIONAL_SAMPLE, statistic=q)
+        logger.info("  filled %d cells from regional peers", n_filled)
     still_missing = int(pnl["raw_value"].isna().sum())
     logger.info("  %d cells remain empty (left empty on purpose)", still_missing)
 

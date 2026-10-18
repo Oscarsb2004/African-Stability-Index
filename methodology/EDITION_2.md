@@ -72,3 +72,56 @@ gdp_pc_ppp 1. Re-anchoring the goalposts is step 3.
 - **The weighted-composite check (panel 4.1)** allows one unit in the last displayed decimal, but float subtraction
   made 46.24 − 46.23 exceed 0.01. Two scores on a rounding boundary failed it (SDN pca 2007, DZA entropy 2024). The
   tolerance now has a 1e-9 margin.
+
+## Step 2 — the missing-data rule: a gap stays a gap (plan 4.5)
+
+**What changed**
+- **No regional fill.** Edition 1 filled a missing value with the mean of the same region's states that year. The
+  states least able to report are the least stable, so data are not missing at random, and the mean flattered them.
+  A value is now observed, or carried forward up to 5 years (as INFORM does, and as the panel already did), or
+  missing. A pillar scores on the indicators present, and its reliability tier says how many those are.
+- **In numbers:** 47,736 panel cells. 32,478 observed, 5,322 carried forward, and 9,936 left empty.
+- **The sensitivity run the plan asks for:**
+
+  ```
+  python 02_panel.py --missing-at-regional-quantile 0.25 --out <scratch>
+  ```
+
+  It fills each gap with its region's 25th percentile that year. It fills 5,147 cells and writes elsewhere, so the
+  published outputs are untouched. Those cells are marked `regional_quantile` and count as imputed.
+
+**What moved** (2024, equal weights, step 1 against step 2)
+- **Scores:** composites moved 1.93 points on average, at most 12.92 (SSD, −12.92).
+- **Ranks:** rank correlation is 0.983 over the 53 states ranked in both. 5 moved 5 places or more:
+  - COM 19 to 28;
+  - GAB 25 to 17;
+  - GIN 34 to 41;
+  - SDN 48 to 53;
+  - TZA 23 to 18.
+- **Pillars,** mean absolute change in points: A 0.00, B 1.56, C 8.09, D 3.83, E 3.60, F 0.58, G 1.43. Pillar C
+  moves most because its thin indicators (enrolment, learning poverty, femicide) were the most often filled.
+- **Reliability:** composites were 19 reliable, 34 thin and 1 unreliable; now 18 reliable and 36 thin. No composite
+  is now mostly imputed.
+- **Top 5:** MUS, CPV, SYC, MAR, NAM. **Bottom 5:** TCD, CAF, SOM, SDN, SSD.
+
+**The sensitivity** (step 2 against gaps at the regional 25th percentile)
+- **Scores:** composites move 1.75 points on average, at most 11.98 (SSD, +11.98).
+- **Ranks:** rank correlation is 0.980. 8 moved 5 places or more:
+  - GIN 41 to 31;
+  - GAB 17 to 25;
+  - COM 28 to 21;
+  - GNB 43 to 36;
+  - CMR 36 to 42;
+  - CIV 19 to 14;
+  - ETH 35 to 40;
+  - SDN 53 to 48.
+- **Reading:** how a gap is treated moves a few states by several places. They are the states the tiers already
+  mark thin, which is why the published view is tiers and bands (step 8), not point ranks.
+
+**Checks**
+- **Passing:** `verify.run` rebuild, panel and contract. Panel: 14 checks pass. 37,154 cells match the independent
+  as-of join, and no regional-mean cell is left to skip.
+- **Narrative still fails** in the verification layer and in 4 tests, as in step 1. It is refreshed once, after the
+  method steps.
+- **Tests:** 759 passed, 1 xfailed, besides those 4. Three new tests cover the quantile fill, the edition-1 mean
+  fill as a negative control, and the published panel having no fill.

@@ -14,11 +14,12 @@ Independence measures taken here:
   - the registry is read straight from YAML, never through asi.core.registry
 
 Coverage, stated precisely because it used to be overstated: all 32 scoring
-indicators have a re-derivation path, and 38,276 of 43,200 scoring cells (88.6%)
-are re-derived. The remaining 11.4% are regional-mean estimates. Those cannot be
-predicted from a country's own data by construction — that is what makes them
-estimates — so every check here skips them and the MIN_REGIONAL_SAMPLE rule and
-the reliability tiers carry them instead.
+indicators have a re-derivation path. In edition 1, 38,276 of 43,200 scoring
+cells (88.6%) were re-derived and the other 11.4% were regional-mean estimates,
+which no check can predict from a country's own data. From edition 2 there is no
+regional fill (plan 4.5), so every cell with a value is re-derived: 37,154 by the
+as-of join, the rest by the rolling-mean, parity and IDP checks. The checks still
+skip a regional-mean cell, so the edition-1 panel verifies as before.
 
 Until B05 the five hardest indicators were re-derived by nothing at all:
 displaced_persons, gdp_growth_3yr_avg, inflation_5yr_avg, primary_gpi and

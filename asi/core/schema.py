@@ -37,7 +37,8 @@ class Provenance(str, Enum):
     OBSERVED        = "observed"          # real measurement from the source database
     CARRIED_FORWARD = "carried_forward"   # last real value reused for a later year
     INTERPOLATED    = "interpolated"      # estimated between two real values
-    REGIONAL_MEAN   = "regional_mean"     # imputed from regional peers
+    REGIONAL_MEAN   = "regional_mean"     # imputed from regional peers (edition 1; off from edition 2)
+    REGIONAL_QUANTILE = "regional_quantile"  # a regional quantile, only in edition 2's sensitivity run
     DERIVED         = "derived"           # computed from other indicators (e.g. IDP per capita)
     ABSENT          = "absent"            # no value available
 
@@ -53,6 +54,7 @@ class Provenance(str, Enum):
             Provenance.CARRIED_FORWARD,
             Provenance.INTERPOLATED,
             Provenance.REGIONAL_MEAN,
+            Provenance.REGIONAL_QUANTILE,
         )
 
 
