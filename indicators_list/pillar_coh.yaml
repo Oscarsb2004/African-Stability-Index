@@ -1,0 +1,124 @@
+# pillar_coh.yaml — Social Cohesion and Equity (COH)
+# Goal: Whether society holds together across its groups: how evenly income and opportunity are shared, and how much strain displacement and fast urban growth put on it.
+#
+# Edition 2, step 6 (P57, variant B). Every indicator here has one home, this pillar, and falls under its
+# umbrella (P58). 4 scored, 3 descriptive.
+
+- variable_name: gini
+  display_name: Gini index
+  source: wb_api
+  series_code: SI.POV.GINI
+  role: descriptive
+  polarity: negative
+  pillars:
+  - COH
+  year_start: 2010
+  year_end: 2025
+  aggregation: most_recent
+  justification: Income inequality. Below the admission floor (33 of 54 states) at 2024; descriptive, shown and
+    not scored.
+  database: wdi
+  log_transform: true
+  theoretical_bounds:
+  - 0
+  - 100
+- variable_name: refugees_hosted
+  display_name: Refugees under the mandate of the UNHCR by country or territory of asylum, per 100,000 people
+  source: wb_api
+  series_code: SM.POP.RHCR.EA
+  role: scoring
+  polarity: negative
+  pillars:
+  - COH
+  year_start: 2015
+  year_end: 2025
+  aggregation: most_recent
+  justification: 'Refugees hosted: a strain on services and on relations between hosts and newcomers. UNHCR records
+    zeros, so a gap is a gap.'
+  database: wdi
+  log_transform: true
+  per_capita: 100000
+- variable_name: slum_population
+  display_name: Population living in slums (% of urban population)
+  source: wb_api
+  series_code: EN.POP.SLUM.UR.ZS
+  role: scoring
+  polarity: negative
+  pillars:
+  - COH
+  year_start: 2015
+  year_end: 2025
+  aggregation: most_recent
+  justification: How unevenly the city's gains are shared.
+  database: wdi
+  log_transform: false
+  theoretical_bounds:
+  - 0
+  - 100
+- variable_name: female_male_labour
+  display_name: Ratio of female to male labor force participation rate (%) (modeled ILO estimate)
+  source: wb_api
+  series_code: SL.TLF.CACT.FM.ZS
+  role: scoring
+  polarity: positive
+  pillars:
+  - COH
+  year_start: 2015
+  year_end: 2025
+  aggregation: most_recent
+  justification: How evenly economic opportunity is shared between women and men. Can pass 100, so no theoretical
+    bounds.
+  database: wdi
+  log_transform: false
+- variable_name: urban_growth
+  display_name: Urban population growth (annual %)
+  source: wb_api
+  series_code: SP.URB.GROW
+  role: scoring
+  polarity: negative
+  pillars:
+  - COH
+  year_start: 2015
+  year_end: 2025
+  aggregation: most_recent
+  justification: Fast urban growth strains housing, services and the social fabric of cities.
+  database: wdi
+  log_transform: false
+- variable_name: primary_gpi
+  display_name: School enrollment, primary, gender parity index (GPI)
+  source: wb_api
+  series_code: SE.ENR.PRIM.FM.ZS
+  role: descriptive
+  polarity: positive
+  pillars:
+  - COH
+  year_start: 2015
+  year_end: 2025
+  aggregation: most_recent
+  justification: 'Gender parity in primary enrolment, folded so that parity scores best. Opportunity shared between
+    girls and boys. Edition 2, step 6: variant B (P57) leaves it out; descriptive, shown and not scored.'
+  database: wdi
+  log_transform: false
+  transform: distance_from_parity
+  theoretical_bounds:
+  - 0
+  - 1
+- variable_name: secondary_gpi
+  display_name: School enrollment, secondary, gender parity index (GPI)
+  source: wb_api
+  series_code: SE.ENR.SECO.FM.ZS
+  role: descriptive
+  polarity: positive
+  pillars:
+  - COH
+  year_start: 2015
+  year_end: 2025
+  aggregation: most_recent
+  justification: Gender parity in secondary enrolment, folded so that parity scores best. Below the admission floor
+    (33 of 54 states) at 2024; descriptive, shown and not scored.
+  database: wdi
+  log_transform: false
+  transform: distance_from_parity
+  theoretical_bounds:
+  - 0
+  - 1

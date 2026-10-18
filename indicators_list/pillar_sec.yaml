@@ -1,0 +1,104 @@
+# pillar_sec.yaml — Security and Violence (SEC)
+# Goal: How safe people are from organised and everyday violence, and from being forced from home by it.
+#
+# Edition 2, step 6 (P57, variant B). Every indicator here has one home, this pillar, and falls under its
+# umbrella (P58). 2 scored, 4 descriptive.
+
+- variable_name: pv_estimate
+  display_name: Political Stability and Absence of Violence / Terrorism, WGI estimated score
+  source: wb_api
+  series_code: GOV_WGI_PV.EST
+  role: scoring
+  polarity: positive
+  pillars:
+  - SEC
+  year_start: 2015
+  year_end: 2025
+  aggregation: most_recent
+  justification: The perceived likelihood of political instability and politically motivated violence, terrorism
+    included. WGI, N(0,1) scale.
+  database: wgi
+  log_transform: false
+- variable_name: organised_violence_deaths
+  display_name: Deaths in organised violence (state-based, non-state and one-sided), per 100,000 people
+  source: ucdp
+  series_code: cumulative_total_deaths_in_orgvio_best
+  role: scoring
+  polarity: negative
+  pillars:
+  - SEC
+  year_start: 2015
+  year_end: 2025
+  aggregation: most_recent
+  justification: 'UCDP''s best estimate of everyone killed inside the country''s borders in the year by state-based
+    conflict, fighting between non-state groups and one-sided violence against civilians. UCDP records every country-year,
+    so a year without organised violence is a measured zero, not a gap: the reason it replaces the WDI''s battle-related
+    deaths, which leave 27 of 54 states blank. Divided by population.'
+  database: ucdp
+  log_transform: true
+  per_capita: 100000
+- variable_name: intent_homicide
+  display_name: Intentional homicides (per 100,000 people)
+  source: wb_api
+  series_code: VC.IHR.PSRC.P5
+  role: descriptive
+  polarity: negative
+  pillars:
+  - SEC
+  year_start: 2015
+  year_end: 2025
+  aggregation: most_recent
+  justification: 'Everyday violence: unlawful killings with intent, excluding conflict deaths. Below the admission
+    floor (33 of 54 states) at 2024; descriptive, shown and not scored.'
+  database: wdi
+  log_transform: true
+- variable_name: femicide
+  display_name: Intentional homicides, female (per 100,000 female population)
+  source: wb_api
+  series_code: VC.IHR.PSRC.FE.P5
+  role: descriptive
+  polarity: negative
+  pillars:
+  - SEC
+  year_start: 2015
+  year_end: 2025
+  aggregation: most_recent
+  justification: Intentional homicides of women. Violence, so it belongs here. Below the admission floor (33 of
+    54 states) at 2024; descriptive, shown and not scored.
+  database: wdi
+  log_transform: true
+- variable_name: displaced_persons
+  display_name: Internally displaced persons by conflict and violence (per 100,000 people)
+  source: wb_api
+  series_code: SM.POP.IDPC
+  role: descriptive
+  polarity: negative
+  pillars:
+  - SEC
+  year_start: 2015
+  year_end: 2025
+  aggregation: most_recent
+  justification: People living displaced inside their own country by conflict and violence, per 100,000 people.
+    The WDI omits states with no displacement, so a gap is often a zero it does not record. Below the admission
+    floor (33 of 54 states) at 2024; descriptive, shown and not scored.
+  database: wdi
+  log_transform: true
+  per_capita: 100000
+- variable_name: conflict_displacement
+  display_name: Internally displaced persons, new displacement associated with conflict and violence, per 100,000
+    people
+  source: wb_api
+  series_code: VC.IDP.NWCV
+  role: descriptive
+  polarity: negative
+  pillars:
+  - SEC
+  year_start: 2015
+  year_end: 2025
+  aggregation: most_recent
+  justification: New displacements by conflict and violence in the year (IDMC via the WDI). Like the stock of displaced
+    people, it leaves states with none blank. Below the admission floor (33 of 54 states) at 2024; descriptive,
+    shown and not scored.
+  database: wdi
+  log_transform: false
+  per_capita: 100000

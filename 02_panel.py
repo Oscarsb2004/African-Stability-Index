@@ -97,15 +97,16 @@ def main() -> int:
         logger.error("%s not found — run 01_inputs.py first.", INPUTS)
         return 1
     inputs = pd.read_csv(INPUTS, dtype={"TIME_PERIOD": str}, float_precision="round_trip")
-    variable = {s["series_code"]: v for v, s in specs.items()}
-    if len(variable) != len(specs):
-        logger.error("Two registry variables share a series code; inputs cannot be mapped.")
-        return 1
-    raw = pd.DataFrame({"iso3": inputs["REF_AREA"], "variable_name": inputs["SERIES"].map(variable),
+    # A series may feed more than one variable: growth is read as its 3-year mean and as its 10-year volatility.
+    variables = pd.DataFrame([(s["series_code"], v) for v, s in specs.items()], columns=["SERIES", "variable_name"])
+    inputs = inputs.merge(variables, on="SERIES", how="inner", validate="many_to_many")
+    raw = pd.DataFrame({"iso3": inputs["REF_AREA"], "variable_name": inputs["variable_name"],
                         "year": inputs["TIME_PERIOD"].astype(int), "value": inputs["OBS_VALUE"]})
     # The bundle is dated by its data, not by the day it was built, so the same
     # inputs always give the same bytes: the newest edition among the datasets.
-    as_of = max(name[-10:] for name in inputs["DATASET"].unique())
+    # Only names that end in a date count: UCDP's datasets are named by version (ucdp-cy-26.1).
+    as_of = max(name[-10:] for name in inputs["DATASET"].unique()
+                if pd.notna(pd.to_datetime(name[-10:], format="%Y-%m-%d", errors="coerce")))
     panel_end = int(raw["year"].max())
     years = range(PANEL_START, panel_end + 1)
     logger.info("Raw: %d observations | panel %d-%d", len(raw), PANEL_START, panel_end)

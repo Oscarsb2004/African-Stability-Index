@@ -30,7 +30,8 @@ Coverage is stated precisely because it was once overstated. In edition 1, `pane
 re-derived 38,276 of 43,200 scoring cells (88.6%); the other 11.4% were
 regional-mean estimates, which cannot be predicted from a country's own data.
 From edition 2 there is no regional fill, so every cell with a value is
-re-derived (37,154 by the as-of join alone).
+re-derived (78,234 by the as-of join alone at step 6, the rest by the rolling-mean,
+volatility, parity and per-capita checks).
 """
 
 __all__ = ["rebuild", "panel", "contract", "narrative", "advisory"]

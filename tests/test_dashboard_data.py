@@ -18,18 +18,18 @@ from asi.results import (
 # ── Lens ───────────────────────────────────────────────────────────────────────
 
 def test_lens_round_trip():
-    for value in ("composite:equal", "pillar:D", "composite:geometric"):
+    for value in ("composite:equal", "pillar:HUM", "composite:geometric"):
         assert Lens.parse(value).value == value
 
 
 def test_lens_defaults_when_absent_or_malformed():
-    for bad in (None, "", "nonsense", "unknown:D"):
+    for bad in (None, "", "nonsense", "unknown:HUM"):
         lens = Lens.parse(bad)
         assert lens.kind == "composite" and lens.key == "equal"
 
 
 def test_lens_labels():
-    assert "Health" in Lens("pillar", "D").label({})
+    assert "Human Development" in Lens("pillar", "HUM").label({})
     assert Lens("composite", "equal").label({"equal": "Equal Weights"}) == "Equal Weights"
 
 

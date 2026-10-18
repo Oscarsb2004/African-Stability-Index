@@ -2,26 +2,29 @@ note: Fitted once on the pooled panel and reused for every year. Refitting per y
   would move a country's score because the weighting changed rather than because the
   country did.
 equal:
-  A: 0.14285714285714285
-  B: 0.14285714285714285
-  C: 0.14285714285714285
-  D: 0.14285714285714285
-  E: 0.14285714285714285
-  F: 0.14285714285714285
-  G: 0.14285714285714285
+  GOV: 0.125
+  VOI: 0.125
+  SEC: 0.125
+  MAC: 0.125
+  EXT: 0.125
+  HUM: 0.125
+  COH: 0.125
+  ENV: 0.125
 pca:
-  A: 0.181349
-  B: 0.148325
-  C: 0.156273
-  D: 0.147135
-  E: 0.176854
-  F: 0.0
-  G: 0.190064
+  GOV: 0.181592
+  VOI: 0.156371
+  SEC: 0.151569
+  MAC: 0.0
+  EXT: 0.141235
+  HUM: 0.139946
+  COH: 0.129074
+  ENV: 0.100212
 entropy:
-  A: 0.176545
-  B: 0.074561
-  C: 0.069936
-  D: 0.143133
-  E: 0.171101
-  F: 0.1957
-  G: 0.169023
+  GOV: 0.206493
+  VOI: 0.190701
+  SEC: 0.206863
+  MAC: 0.077144
+  EXT: 0.038034
+  HUM: 0.144881
+  COH: 0.065248
+  ENV: 0.070636

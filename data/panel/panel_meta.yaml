@@ -6,7 +6,7 @@ note: reference_year is the latest year with at least 80% of countries scoreable
   not blank.
 coverage_by_year:
   2000: 0.981
-  2001: 0.056
+  2001: 0.981
   2002: 0.981
   2003: 0.981
   2004: 0.981
@@ -30,3 +30,4 @@ coverage_by_year:
   2022: 1.0
   2023: 1.0
   2024: 1.0
+  2025: 0.722

@@ -1,0 +1,118 @@
+# pillar_gov.yaml — Governance and State Capacity (GOV)
+# Goal: The state's capacity to make and carry out policy: effective administration, binding rules, controlled corruption, revenue and statistics.
+#
+# Edition 2, step 6 (P57, variant B). Every indicator here has one home, this pillar, and falls under its
+# umbrella (P58). 6 scored, 1 descriptive.
+
+- variable_name: ge_estimate
+  display_name: Government Effectiveness, WGI estimated score
+  source: wb_api
+  series_code: GOV_WGI_GE.EST
+  role: scoring
+  polarity: positive
+  pillars:
+  - GOV
+  year_start: 2015
+  year_end: 2025
+  aggregation: most_recent
+  justification: 'The quality of public services and the civil service, and the credibility of the government''s
+    commitment to its policies: the core of state capacity. WGI, Kaufmann, Kraay and Mastruzzi (2010), N(0,1) scale.'
+  database: wgi
+  log_transform: false
+- variable_name: rl_estimate
+  display_name: Rule of Law, WGI estimated score
+  source: wb_api
+  series_code: GOV_WGI_RL.EST
+  role: scoring
+  polarity: positive
+  pillars:
+  - GOV
+  year_start: 2015
+  year_end: 2025
+  aggregation: most_recent
+  justification: 'Confidence in and abidance by the rules of society: contracts, property, police and courts. Binding
+    rules are what turn a decision into its execution. WGI, N(0,1) scale.'
+  database: wgi
+  log_transform: false
+- variable_name: cc_estimate
+  display_name: Control of Corruption, WGI estimated score
+  source: wb_api
+  series_code: GOV_WGI_CC.EST
+  role: scoring
+  polarity: positive
+  pillars:
+  - GOV
+  year_start: 2015
+  year_end: 2025
+  aggregation: most_recent
+  justification: The extent to which public power is exercised for private gain. A captured state cannot carry out
+    policy as made. WGI, N(0,1) scale.
+  database: wgi
+  log_transform: false
+- variable_name: rq_estimate
+  display_name: Regulatory Quality, WGI estimated score
+  source: wb_api
+  series_code: GOV_WGI_RQ.EST
+  role: descriptive
+  polarity: positive
+  pillars:
+  - GOV
+  year_start: 2015
+  year_end: 2025
+  aggregation: most_recent
+  justification: 'The government''s ability to make policy that permits private sector development. A near-duplicate
+    of government effectiveness (rho at least .90 in the candidate screen), so edition 2, step 6: variant B (P57)
+    leaves it out; descriptive, shown and not scored.'
+  database: wgi
+  log_transform: false
+- variable_name: cpia_property_rights
+  display_name: CPIA property rights and rule-based governance rating (1=low to 6=high)
+  source: wb_api
+  series_code: IQ.CPA.PROP.XQ
+  role: scoring
+  polarity: positive
+  pillars:
+  - GOV
+  year_start: 2015
+  year_end: 2025
+  aggregation: most_recent
+  justification: The World Bank's assessment of how far property and contract rights are secured and governance
+    is rule-based. Rated for IDA-eligible states only (41 of 54 at 2024); the scale's ends are its theoretical bounds.
+  database: wdi
+  log_transform: false
+  theoretical_bounds:
+  - 1
+  - 6
+- variable_name: statistical_performance
+  display_name: 'Statistical performance indicators (SPI): Overall score (scale 0-100)'
+  source: wb_api
+  series_code: IQ.SPI.OVRL
+  role: scoring
+  polarity: positive
+  pillars:
+  - GOV
+  year_start: 2015
+  year_end: 2025
+  aggregation: most_recent
+  justification: 'The state''s capacity to know its own population and economy: data use, services, products, sources
+    and infrastructure. Distinct from income (rho .16 with log GDP per capita in the candidate screen).'
+  database: wdi
+  log_transform: false
+  theoretical_bounds:
+  - 0
+  - 100
+- variable_name: tax_revenue
+  display_name: Tax revenue (% of GDP)
+  source: wb_api
+  series_code: GC.TAX.TOTL.GD.ZS
+  role: scoring
+  polarity: positive
+  pillars:
+  - GOV
+  year_start: 2015
+  year_end: 2025
+  aggregation: most_recent
+  justification: 'The state''s capacity to raise its own revenue, the fiscal base of everything else it does. 33
+    of 54 states at 2024: at the admission floor.'
+  database: wdi
+  log_transform: true

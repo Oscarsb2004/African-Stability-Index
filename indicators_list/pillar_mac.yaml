@@ -1,0 +1,107 @@
+# pillar_mac.yaml — Macroeconomic and Fiscal Stability (MAC)
+# Goal: How steady the macroeconomy is and how much room the state has to absorb a shock.
+#
+# Edition 2, step 6 (P57, variant B). Every indicator here has one home, this pillar, and falls under its
+# umbrella (P58). 7 scored, 0 descriptive.
+
+- variable_name: inflation_5yr_avg
+  display_name: Inflation, consumer prices, annual % (5-year average)
+  source: wb_api
+  series_code: FP.CPI.TOTL.ZG
+  role: scoring
+  polarity: negative
+  pillars:
+  - MAC
+  year_start: 2015
+  year_end: 2025
+  aggregation: average_recent_5
+  justification: Average consumer price inflation over five years. High and unstable inflation erodes incomes and
+    savings and is the commonest macroeconomic crisis.
+  database: wdi
+  log_transform: true
+- variable_name: gdp_growth_3yr_avg
+  display_name: GDP growth, annual % (3-year average)
+  source: wb_api
+  series_code: NY.GDP.MKTP.KD.ZG
+  role: scoring
+  polarity: positive
+  pillars:
+  - MAC
+  year_start: 2015
+  year_end: 2025
+  aggregation: average_recent_3
+  justification: 'Average real GDP growth over three years: whether the economy is expanding or contracting, smoothed
+    over the business cycle.'
+  database: wdi
+  log_transform: false
+- variable_name: growth_volatility
+  display_name: 'Volatility of real GDP growth: standard deviation over the last 10 years (percentage points)'
+  source: wb_api
+  series_code: NY.GDP.MKTP.KD.ZG
+  role: scoring
+  polarity: negative
+  pillars:
+  - MAC
+  year_start: 2015
+  year_end: 2025
+  aggregation: sd_recent_10
+  justification: 'How unsteady growth has been: the sample standard deviation of annual real growth over the trailing
+    ten years, reported when at least five were measured.'
+  database: wdi
+  log_transform: true
+- variable_name: external_debt
+  display_name: External debt stocks (% of GNI)
+  source: wb_api
+  series_code: DT.DOD.DECT.GN.ZS
+  role: scoring
+  polarity: negative
+  pillars:
+  - MAC
+  year_start: 2015
+  year_end: 2025
+  aggregation: most_recent
+  justification: The debt owed abroad, a stock that limits room to borrow in a shock.
+  database: wdi
+  log_transform: true
+- variable_name: debt_service
+  display_name: Total debt service (% of GNI)
+  source: wb_api
+  series_code: DT.TDS.DECT.GN.ZS
+  role: scoring
+  polarity: negative
+  pillars:
+  - MAC
+  year_start: 2015
+  year_end: 2025
+  aggregation: most_recent
+  justification: 'What the debt costs each year: income spent servicing it is not available to absorb a shock.'
+  database: wdi
+  log_transform: true
+- variable_name: reserves_months
+  display_name: Total reserves in months of imports
+  source: wb_api
+  series_code: FI.RES.TOTL.MO
+  role: scoring
+  polarity: positive
+  pillars:
+  - MAC
+  year_start: 2015
+  year_end: 2025
+  aggregation: most_recent
+  justification: 'The buffer against an external shock: how long imports could be paid for from reserves.'
+  database: wdi
+  log_transform: false
+- variable_name: current_account
+  display_name: Current account balance (% of GDP)
+  source: wb_api
+  series_code: BN.CAB.XOKA.GD.ZS
+  role: scoring
+  polarity: positive
+  pillars:
+  - MAC
+  year_start: 2015
+  year_end: 2025
+  aggregation: most_recent
+  justification: Whether the economy pays its way with the rest of the world or must borrow to cover the gap.
+  database: wdi
+  log_transform: false

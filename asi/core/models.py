@@ -66,9 +66,9 @@ class Indicator:
 class Pillar:
     """A pillar and the indicators assigned to it."""
 
-    def __init__(self, key: str, name: str, justification: str, weight: float = 1 / 7):
-        self.key           = key    # e.g. "A"
-        self.name          = name   # e.g. "Political / Governance"
+    def __init__(self, key: str, name: str, justification: str, weight: float = 1 / 8):
+        self.key           = key    # e.g. "GOV"
+        self.name          = name   # e.g. "Governance and State Capacity"
         self.justification = justification
         self.weight        = weight
         self.indicators: list[Indicator] = []

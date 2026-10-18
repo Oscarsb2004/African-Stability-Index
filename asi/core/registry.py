@@ -36,9 +36,9 @@ logger = logging.getLogger(__name__)
 
 VALID_ROLES        = {"scoring", "descriptive"}
 VALID_POLARITIES   = {"positive", "negative"}
-VALID_SOURCES      = {"wb_api", "wb_api_wgi", "manual"}
-VALID_AGGREGATIONS = {"average", "most_recent", "average_recent_3", "average_recent_5"}
-VALID_DATABASES    = {"wdi", "wgi"}
+VALID_SOURCES      = {"wb_api", "wb_api_wgi", "ucdp", "manual"}
+VALID_AGGREGATIONS = {"average", "most_recent", "average_recent_3", "average_recent_5", "sd_recent_10"}
+VALID_DATABASES    = {"wdi", "wgi", "ucdp"}
 
 REQUIRED_FIELDS = {
     "variable_name", "display_name", "source", "series_code",
@@ -173,7 +173,7 @@ class IndicatorRegistry:
         """
         Determines which pillar file a new indicator should be written to.
         Derives order from PillarRegistry so it stays in sync if pillars are added.
-        e.g. pillars: ["E", "A"] still routes to pillar_a.yaml
+        e.g. pillars: ["SEC", "GOV"] still routes to pillar_gov.yaml
         """
         pillar_order = list(self._pillar_registry.list_pillars().keys())
         for key in pillar_order:
@@ -397,6 +397,11 @@ class IndicatorRegistry:
         if bounds is not None and not (isinstance(bounds, list) and len(bounds) == 2
                                        and all(isinstance(b, (int, float)) for b in bounds) and bounds[0] < bounds[1]):
             errors.append(f"[{name}] 'theoretical_bounds' must be [low, high] with low < high")
+
+        # per_capita (optional): divide by population_total and multiply by this scale (edition 2, P57)
+        scale = entry.get("per_capita")
+        if scale is not None and not (isinstance(scale, int) and not isinstance(scale, bool) and scale > 0):
+            errors.append(f"[{name}] 'per_capita' must be a positive whole number, such as 100000")
 
         # source format
         errors += self._validate_source(entry["source"], entry["series_code"], name)

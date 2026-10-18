@@ -391,8 +391,8 @@ def test_country_view_survives_a_missing_narrative_record(monkeypatch):
     country = app_module.view_country(iso3, LENS, YEAR)
     assert name in _texts(country), "numbers must survive a missing record"
 
-    pillar = app_module.view_pillar(iso3, "A", YEAR)
-    assert PILLAR_DEFS["A"] in " ".join(_texts(pillar))
+    pillar = app_module.view_pillar(iso3, "GOV", YEAR)
+    assert PILLAR_DEFS["GOV"] in " ".join(_texts(pillar))
 
 
 # ── Overview ───────────────────────────────────────────────────────────────────

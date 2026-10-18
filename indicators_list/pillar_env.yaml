@@ -1,0 +1,147 @@
+# pillar_env.yaml — Environment and Climate Exposure (ENV)
+# Goal: The pressure the natural environment puts on the country: water stress, polluted air, depleted resources, disasters that displace people, and forest loss.
+#
+# Edition 2, step 6 (P57, variant B). Every indicator here has one home, this pillar, and falls under its
+# umbrella (P58). 5 scored, 4 descriptive.
+
+- variable_name: water_stress
+  display_name: 'Level of water stress: freshwater withdrawal as a proportion of available freshwater resources'
+  source: wb_api
+  series_code: ER.H2O.FWST.ZS
+  role: scoring
+  polarity: negative
+  pillars:
+  - ENV
+  year_start: 2015
+  year_end: 2025
+  aggregation: most_recent
+  justification: Resource depletion (SDG 6.4.2). Can pass 100, so no theoretical bounds.
+  database: wdi
+  log_transform: true
+- variable_name: pm25
+  display_name: PM2.5 air pollution, mean annual exposure (micrograms per cubic meter)
+  source: wb_api
+  series_code: EN.ATM.PM25.MC.M3
+  role: scoring
+  polarity: negative
+  pillars:
+  - ENV
+  year_start: 2015
+  year_end: 2025
+  aggregation: most_recent
+  justification: Environmental degradation people breathe.
+  database: wdi
+  log_transform: true
+- variable_name: resource_depletion
+  display_name: Adjusted savings, natural resources depletion (% of GNI)
+  source: wb_api
+  series_code: NY.ADJ.DRES.GN.ZS
+  role: scoring
+  polarity: negative
+  pillars:
+  - ENV
+  year_start: 2015
+  year_end: 2025
+  aggregation: most_recent
+  justification: Natural capital run down to fund current income.
+  database: wdi
+  log_transform: true
+- variable_name: disaster_displacement
+  display_name: Internally displaced persons, new displacement associated with disasters, per 100,000 people
+  source: wb_api
+  series_code: VC.IDP.NWDS
+  role: scoring
+  polarity: negative
+  pillars:
+  - ENV
+  year_start: 2015
+  year_end: 2025
+  aggregation: most_recent
+  justification: People forced from home by floods, storms, drought and other hazards in the year (IDMC via the
+    WDI).
+  database: wdi
+  log_transform: true
+  per_capita: 100000
+- variable_name: forest_area
+  display_name: Forest area (% of land area)
+  source: wb_api
+  series_code: AG.LND.FRST.ZS
+  role: scoring
+  polarity: positive
+  pillars:
+  - ENV
+  year_start: 2015
+  year_end: 2025
+  aggregation: most_recent
+  justification: Forest cover, which holds soil and water.
+  database: wdi
+  log_transform: true
+  theoretical_bounds:
+  - 0
+  - 100
+- variable_name: co2_pc
+  display_name: CO2 emissions, AR5 GWP100 (metric tons per capita)
+  source: wb_api
+  series_code: EN.GHG.CO2.PC.CE.AR5
+  role: descriptive
+  polarity: negative
+  pillars:
+  - ENV
+  year_start: 2015
+  year_end: 2025
+  aggregation: most_recent
+  justification: 'CO2 emissions per person: a wealth proxy (rho -.93 with GDP per capita), not a pressure on the
+    country (plan 4.2). Edition 2, step 6: variant B (P57) leaves it out; descriptive, shown and not scored.'
+  database: wdi
+  log_transform: true
+- variable_name: freshwater_withdraw
+  display_name: Annual freshwater withdrawals, total (% of internal resources)
+  source: wb_api
+  series_code: ER.H2O.FWTL.ZS
+  role: descriptive
+  polarity: negative
+  pillars:
+  - ENV
+  year_start: 2010
+  year_end: 2025
+  aggregation: most_recent
+  justification: 'Annual freshwater withdrawals. A near-duplicate of water stress, the SDG measure, so edition 2,
+    step 6: variant B (P57) leaves it out; descriptive, shown and not scored.'
+  database: wdi
+  log_transform: true
+- variable_name: nonrenew_elec
+  display_name: Electricity production from oil, gas, and coal sources (% of total)
+  source: wb_api
+  series_code: EG.ELC.FOSL.ZS
+  role: descriptive
+  polarity: negative
+  pillars:
+  - ENV
+  year_start: 2015
+  year_end: 2025
+  aggregation: most_recent
+  justification: 'Electricity from fossil fuels: the energy mix, not an environmental pressure on the country. Edition
+    2, step 6: variant B (P57) leaves it out; descriptive, shown and not scored.'
+  database: wdi
+  log_transform: false
+  theoretical_bounds:
+  - 0
+  - 100
+- variable_name: agri_land
+  display_name: Agricultural land (% of land area)
+  source: wb_api
+  series_code: AG.LND.AGRI.ZS
+  role: descriptive
+  polarity: positive
+  pillars:
+  - ENV
+  year_start: 2015
+  year_end: 2025
+  aggregation: most_recent
+  justification: 'Agricultural land: no defended direction, as more farmland is not more stable. Edition 2, step
+    6: variant B (P57) leaves it out; descriptive, shown and not scored.'
+  database: wdi
+  log_transform: false
+  theoretical_bounds:
+  - 0
+  - 100

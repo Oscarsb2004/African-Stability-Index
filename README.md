@@ -1,17 +1,20 @@
 # African Stability Index (ASI)
 
-A composite stability index covering all **54 African Union member states**, built on
-**7 pillars**, scored by **4 weighting methods**, as a yearly panel with an interactive drill-down dashboard.
+A composite stability index covering all **54 African Union member states**, scored by **4 weighting methods**, as a yearly panel with an interactive drill-down dashboard.
 
-- **Edition 1 (published):** 32 scoring indicators, a 2000–2024 panel, reference year 2023.
-- **Edition 2 (in progress, steps 1 to 5 in `methodology/EDITION_2.md`):** 22 scoring indicators after the admission
-  floor (12 descriptive), a 2000–2025 panel, reference year 2024. The eight pillars of ruling P57 come next.
+- **Edition 1 (published):** 7 pillars, 32 scoring indicators, a 2000–2024 panel, reference year 2023.
+- **Edition 2 (in progress, steps 1 to 6 in `methodology/EDITION_2.md`):** the **8 pillars** of ruling P57
+  (Governance and State Capacity; Political Voice and Representation; Security and Violence; Macroeconomic and
+  Fiscal Stability; External Exposure and Economic Structure; Human Development and Demography; Social Cohesion and
+  Equity; Environment and Climate Exposure), 50 scoring indicators and 19 descriptive ones, a 2000–2025 panel,
+  reference year 2024.
 
 **Since 2026-10-17 the ASI lives in Athena** (`athena-core/projects/asi`, decision P44), with its full history.
 The public repository `Oscarsb2004/African-Stability-Index` and its GitHub Pages site stay as the live legacy
 edition until a new edition is published from here.
 
-Data: World Bank **WDI** and **WGI**, read from Athena's datasets. Every score published so far rests on the ASI's
+Data: World Bank **WDI** and **WGI**, and from edition 2 **UCDP**'s country-year deaths in organised violence, read
+from Athena's datasets. Every score published so far rests on the ASI's
 own pull of 8 August 2026, kept as the dataset `asi-pull-2026-08-08`. Methodology anchored to the OECD/JRC
 *Handbook on Constructing Composite Indicators* (2008) — every design choice is source-mapped in
 [`methodology/references.md`](methodology/references.md).
@@ -44,7 +47,7 @@ from `data/`.
 | Stage | Script | What it does | Output |
 |---|---|---|---|
 | 0 | `python -m adapters asi-pull` or `python -m adapters worldbank`, in athena-core | Ingest the inputs' databases into Athena's store, each source hash-locked | datasets in `C:\AthenaStore\datasets` |
-| 1 | `01_inputs.py <datasets>` | Select the registry's series for the 54 states over the pull window from the named datasets. The datasets are the edition: `asi-pull-2026-08-08` reproduces every published score exactly; `wdi-2026-10-08 wgi-2026-09-25` would make a new edition | `data/inputs.csv` |
+| 1 | `01_inputs.py <datasets>` | Select the registry's series for the 54 states over the pull window from the named datasets. The datasets are the edition: `asi-pull-2026-08-08` reproduces every published score exactly; `wdi-2026-10-08 wgi-2026-09-25 ucdp-cy-26.1` makes edition 2 | `data/inputs.csv` |
 | 2 | `02_panel.py` | Build the country x indicator x **year** panel with provenance, apply derived transforms, fill regional gaps, normalise against **fixed goalposts**, and score pillars and composites with reliability tiers | `data/panel/*` |
 | 3 | `03_robustness.py` | Sensitivity analysis at the reference year: weighting methods, adversarial weights, measured-only, islands excluded | `data/panel/robustness.json` |
 | 7 | `run_asi.py` | Run the interface (port 8050); bootstraps `.venv` on first use | — |
@@ -63,7 +66,7 @@ python -m verify.run
 | Layer | Gates a release? | Role |
 |---|---|---|
 | `verify/rebuild.py` | **yes** | Reruns stages 2 and 3 from `data/inputs.csv` in a scratch copy; every committed output must come back identical. A stale or hand-edited output fails, and it is the proof that the ASI reproduces its published scores from Athena's datasets. |
-| `verify/panel.py` | **yes** | Independent re-derivation of the panel from its inputs (`data/inputs.csv`), using different tools than the pipeline (carry-forward via a `merge_asof` join; rolling means via `.rolling()`; reliability rules re-implemented from the specification). All 32 scoring indicators are covered. From edition 2 there is no regional fill, so every cell with a value is re-derived (37,154 by the as-of join alone); in edition 1, 11.4% of cells were regional means no check could predict. |
+| `verify/panel.py` | **yes** | Independent re-derivation of the panel from its inputs (`data/inputs.csv`), using different tools than the pipeline (carry-forward via a `merge_asof` join; rolling means and volatility via `.rolling()`; per-capita rates from the carried-forward count and population; reliability rules re-implemented from the specification). Every scoring indicator is covered. From edition 2 there is no regional fill, so every cell with a value is re-derived (78,234 by the as-of join alone at step 6); in edition 1, 11.4% of cells were regional means no check could predict. |
 | `verify/contract.py` | **yes** | The backend/frontend object contract: every indicator entry carries its own identity, pillar scores reconcile with the indicators they are built from, ranks reproduce from scores, and the UI neither hardcodes counts nor redefines canonical constants. |
 | `verify/advisory.py` | no | Design diagnostics — correlations, effective weights, coverage, staleness, benchmark plausibility. Reports; never blocks. |
 
@@ -143,7 +146,7 @@ settled silently in code.
 
 Open items live in [`methodology/MANUAL_REVIEW.md`](methodology/MANUAL_REVIEW.md);
 the full assessment is in [`methodology/METHODOLOGY_REVIEW.md`](methodology/METHODOLOGY_REVIEW.md).
-Headlines: 19 indicators have a fixed goalpost anchored on an estimated rather than
+Edition 1's headlines: 19 indicators have a fixed goalpost anchored on an estimated rather than
 measured value; `co2_pc` behaves as an inverted wealth proxy (rho -0.93 with GDP per
 capita) and PCA excludes Pillar F entirely while entropy weights it highest; the
 governance source family carries roughly a third of the composite weight; and 2024

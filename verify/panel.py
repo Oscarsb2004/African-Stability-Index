@@ -13,18 +13,19 @@ Independence measures taken here:
   - pillar means and composites are recomputed with plain numpy
   - the registry is read straight from YAML, never through asi.core.registry
 
-Coverage, stated precisely because it used to be overstated: all 32 scoring
-indicators have a re-derivation path. In edition 1, 38,276 of 43,200 scoring
+Coverage, stated precisely because it used to be overstated: every scoring
+indicator has a re-derivation path. In edition 1, 38,276 of 43,200 scoring
 cells (88.6%) were re-derived and the other 11.4% were regional-mean estimates,
 which no check can predict from a country's own data. From edition 2 there is no
-regional fill (plan 4.5), so every cell with a value is re-derived: 37,154 by the
-as-of join, the rest by the rolling-mean, parity and IDP checks. The checks still
+regional fill (plan 4.5), so every cell with a value is re-derived: at step 6,
+78,234 by the as-of join, the rest by the rolling-mean (1.4), parity (1.5),
+per-capita (1.6) and volatility (1.7) checks. The checks still
 skip a regional-mean cell, so the edition-1 panel verifies as before.
 
 Until B05 the five hardest indicators were re-derived by nothing at all:
 displaced_persons, gdp_growth_3yr_avg, inflation_5yr_avg, primary_gpi and
 secondary_gpi, 15.6% of cells and effectively all of the arithmetic. Checks 1.4,
-1.5 and 1.6 close that.
+1.5 and 1.6 close that; 1.7 covers the volatility edition 2 added.
 
 Only asi.core.constants is imported, for threshold values — those are
 declarations, not logic. Re-typing them here would test nothing except my
@@ -88,8 +89,11 @@ def _raw_baseline() -> pd.DataFrame:
     """The inputs the panel was built from (data/inputs.csv, Athena's common format), as country, variable, year
     and value. Series map to variables through the registry, read here rather than through the pipeline's loader."""
     inputs = pd.read_csv(INPUTS, dtype={"TIME_PERIOD": str}, float_precision="round_trip")
-    variable = {ind["series_code"]: v for v, ind in load_registry().items()}
-    raw = pd.DataFrame({"iso3": inputs["REF_AREA"], "variable_name": inputs["SERIES"].map(variable),
+    # one series can feed two variables (growth's 3-year mean and its volatility), so map by explicit pairs
+    pairs = [(ind["series_code"], v) for v, ind in load_registry().items()]
+    frames = [inputs[inputs["SERIES"] == code].assign(variable_name=v) for code, v in pairs]
+    inputs = pd.concat(frames, ignore_index=True)
+    raw = pd.DataFrame({"iso3": inputs["REF_AREA"], "variable_name": inputs["variable_name"],
                         "year": inputs["TIME_PERIOD"].astype(int), "value": inputs["OBS_VALUE"]})
     return raw.dropna(subset=["variable_name", "value"])
 
@@ -146,7 +150,7 @@ def check_panel_values(obs: pd.DataFrame, registry: dict, countries: dict) -> No
         v for v, s in registry.items()
         if s.get("aggregation") == "most_recent"
         and not s.get("transform")
-        and v != "displaced_persons"
+        and not s.get("per_capita")
     ]
 
     mismatches, n_checked = [], 0
@@ -334,18 +338,16 @@ def check_parity_fold(obs: pd.DataFrame, registry: dict, countries: dict) -> Non
                f"{n_checked} cells match min(x, 2-x) over the carried-forward ratio")
 
 
-def check_idp_per_capita(obs: pd.DataFrame, registry: dict, countries: dict,
-                         idp_var: str = "displaced_persons",
-                         population_var: str = "population_total",
-                         scale: float = 1000.0) -> None:
+def check_per_capita(obs: pd.DataFrame, registry: dict, countries: dict,
+                     population_var: str = "population_total") -> None:
     """
-    The last of the five indicators 1.1 excludes, and the riskiest of them.
+    Every count the registry marks `per_capita`, which 1.1 cannot touch.
 
-    A displacement count needs a second indicator as its denominator, so it is
-    not a single-column transform and 1.1 skips it by name. Two things can go
+    A count needs a second indicator as its denominator, so it is not a
+    single-column transform and 1.1 skips it by its flag. Two things can go
     wrong and produce a panel that reads as ordinary: the division not happening
-    at all, which leaves a raw head-count roughly six orders of magnitude too
-    large in a per-thousand column; and a cell with no denominator being kept as
+    at all, which leaves a raw head-count orders of magnitude too large in a
+    per-capita column; and a cell with no denominator being kept as
     CARRIED_FORWARD rather than dropped, which makes an unusable number look
     sourced. The first was live — `pivot_table` omits an all-NaN column, so a
     population series that failed to pull for the whole panel would have skipped
@@ -355,53 +357,55 @@ def check_idp_per_capita(obs: pd.DataFrame, registry: dict, countries: dict,
     pipeline's order: windowing then deriving. Doing it the other way would
     divide by a population from a different year.
     """
-    if idp_var not in registry or population_var not in registry:
-        record("1.6 IDP per capita re-derived", "WARN",
-               f"{idp_var} or {population_var} absent from the registry")
+    rates = {v: s for v, s in registry.items() if s.get("per_capita")}
+    if not rates or population_var not in registry:
+        record("1.6 per capita re-derived", "WARN",
+               f"no per_capita indicators, or {population_var} absent from the registry")
         return
 
     raw = _raw_baseline()
     years = sorted(obs["year"].unique())
-    idp_carry = int(registry[idp_var].get("max_carry_forward",
-                                          DEFAULT_MAX_CARRY_FORWARD))
     pop_carry = int(registry[population_var].get("max_carry_forward",
                                                  DEFAULT_MAX_CARRY_FORWARD))
 
     mismatches, n_checked, n_dropped = [], 0, 0
-    for iso3 in countries:
-        idp_src = raw[(raw["variable_name"] == idp_var)
+    for var, spec in rates.items():
+        scale = float(spec["per_capita"])
+        carry = int(spec.get("max_carry_forward", DEFAULT_MAX_CARRY_FORWARD))
+        for iso3 in countries:
+            src = raw[(raw["variable_name"] == var)
                       & (raw["iso3"] == iso3)][["year", "value"]].sort_values("year")
-        pop_src = raw[(raw["variable_name"] == population_var)
-                      & (raw["iso3"] == iso3)][["year", "value"]].sort_values("year")
-        if idp_src.empty:
-            continue
-
-        idp = _carry_forward(idp_src, years, idp_carry).set_index("year")["value"]
-        pop = (_carry_forward(pop_src, years, pop_carry).set_index("year")["value"]
-               if not pop_src.empty else pd.Series(np.nan, index=years))
-
-        actual = _published(obs, idp_var, iso3)
-        prov = _provenance(obs, idp_var, iso3)
-        for yr in years:
-            if yr not in actual.index or prov.get(yr) == "regional_mean":
+            pop_src = raw[(raw["variable_name"] == population_var)
+                          & (raw["iso3"] == iso3)][["year", "value"]].sort_values("year")
+            if src.empty:
                 continue
-            i, p = idp.get(yr), pop.get(yr)
-            if pd.isna(i) or pd.isna(p) or float(p) <= 0:
-                e = np.nan
-                n_dropped += 1
-            else:
-                e = float(i) / float(p) * scale
-            a = actual.loc[yr]
-            n_checked += 1
-            if pd.isna(e) and pd.isna(a):
-                continue
-            if pd.isna(e) != pd.isna(a) or abs(float(e) - float(a)) > 1e-9:
-                mismatches.append(
-                    f"{iso3}/{idp_var}/{yr}: idp={i} pop={p} expected={e} actual={a}")
+
+            count = _carry_forward(src, years, carry).set_index("year")["value"]
+            pop = (_carry_forward(pop_src, years, pop_carry).set_index("year")["value"]
+                   if not pop_src.empty else pd.Series(np.nan, index=years))
+
+            actual = _published(obs, var, iso3)
+            prov = _provenance(obs, var, iso3)
+            for yr in years:
+                if yr not in actual.index or prov.get(yr) == "regional_mean":
+                    continue
+                i, p = count.get(yr), pop.get(yr)
+                if pd.isna(i) or pd.isna(p) or float(p) <= 0:
+                    e = np.nan
+                    n_dropped += 1
+                else:
+                    e = float(i) / float(p) * scale
+                a = actual.loc[yr]
+                n_checked += 1
+                if pd.isna(e) and pd.isna(a):
+                    continue
+                if pd.isna(e) != pd.isna(a) or abs(float(e) - float(a)) > 1e-9 * max(1.0, abs(float(e))):
+                    mismatches.append(
+                        f"{iso3}/{var}/{yr}: count={i} pop={p} expected={e} actual={a}")
 
     # A cell with no denominator must be ABSENT, not carried forward: the value
     # it would otherwise keep is a head-count, not a rate.
-    kept = obs[(obs["variable_name"] == idp_var)
+    kept = obs[obs["variable_name"].isin(list(rates))
                & obs["raw_value"].isna()
                & (obs["provenance"] == "carried_forward")]
     if not kept.empty:
@@ -409,12 +413,60 @@ def check_idp_per_capita(obs: pd.DataFrame, registry: dict, countries: dict,
             f"{len(kept)} cells have no value but are still marked carried_forward")
 
     if mismatches:
-        record("1.6 IDP per capita re-derived", "FAIL",
+        record("1.6 per capita re-derived", "FAIL",
                f"{len(mismatches)}/{n_checked} cells differ", mismatches)
     else:
-        record("1.6 IDP per capita re-derived", "PASS",
-               f"{n_checked} cells match idp/population x {scale:.0f} "
+        record("1.6 per capita re-derived", "PASS",
+               f"{n_checked} cells of {len(rates)} indicators match count/population x scale "
                f"({n_dropped} correctly dropped for want of a denominator)")
+
+
+def check_volatility(obs: pd.DataFrame, registry: dict, countries: dict) -> None:
+    """
+    The rolling standard deviations (growth volatility), which 1.1 cannot touch.
+
+    The pipeline collects each year's trailing window in Python and takes
+    numpy's sample SD when at least half the window was measured. This reindexes
+    onto a year grid and uses pandas `.rolling().std()` with `min_periods`, so the
+    window edge and the half-window rule are reached from the other direction.
+    """
+    raw = _raw_baseline()
+    years = sorted(obs["year"].unique())
+    spread = {v: s for v, s in registry.items() if str(s.get("aggregation", "")).startswith("sd_recent_")}
+    if not spread:
+        record("1.7 volatility re-derived", "WARN", "no sd_recent_* indicators in the registry")
+        return
+
+    mismatches, n_checked = [], 0
+    for var, spec in spread.items():
+        window = int(str(spec["aggregation"]).rsplit("_", 1)[1])
+        max_carry = int(spec.get("max_carry_forward", DEFAULT_MAX_CARRY_FORWARD))
+        for iso3 in countries:
+            s = raw[(raw["variable_name"] == var) & (raw["iso3"] == iso3)][["year", "value"]].sort_values("year")
+            if s.empty:
+                continue
+            grid_years = list(range(min(years) - window + 1, max(years) + 1))
+            measured = s.set_index("year")["value"].reindex(grid_years)
+            sd = measured.rolling(window=window, min_periods=max(2, window // 2)).std(ddof=1).reindex(years)
+            asof = _carry_forward(s, years, max_carry).set_index("year")
+            sd[asof["value"].isna()] = np.nan          # an expired series has no volatility either
+
+            actual = _published(obs, var, iso3)
+            for yr in years:
+                if yr not in actual.index:
+                    continue
+                e, a = sd.get(yr), actual.loc[yr]
+                n_checked += 1
+                if pd.isna(e) and pd.isna(a):
+                    continue
+                if pd.isna(e) != pd.isna(a) or abs(float(e) - float(a)) > 1e-9:
+                    mismatches.append(f"{iso3}/{var}/{yr}: expected={e} actual={a}")
+
+    if mismatches:
+        record("1.7 volatility re-derived", "FAIL", f"{len(mismatches)}/{n_checked} cells differ", mismatches)
+    else:
+        record("1.7 volatility re-derived", "PASS",
+               f"{n_checked} cells match an independent .rolling().std() derivation")
 
 
 def check_carry_forward_expiry(obs: pd.DataFrame) -> None:
@@ -680,7 +732,8 @@ def run() -> int:
     check_panel_values(obs, registry, countries)
     check_rolling_means(obs, registry, countries)
     check_parity_fold(obs, registry, countries)
-    check_idp_per_capita(obs, registry, countries)
+    check_per_capita(obs, registry, countries)
+    check_volatility(obs, registry, countries)
     check_carry_forward_expiry(obs)
     check_no_lookahead(obs)
     check_scores_within_bounds(obs)

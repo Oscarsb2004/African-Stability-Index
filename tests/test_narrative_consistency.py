@@ -167,7 +167,7 @@ def _with_pillar_summary(iso3, pillar, summary):
 
 
 def test_a_false_strongest_pillar_claim_is_an_error(panel):
-    """Kenya's Pillar A is not its strongest; claiming so must fail."""
+    """Kenya's weakest pillar is not its strongest; claiming so must fail."""
     order = _pillar_ranking(panel, "KEN")
     loser = order[-1]
     rec = _with_pillar_summary("KEN", loser, "This is Kenya's strongest pillar.")
@@ -221,19 +221,19 @@ WORDS = {1: "one", 2: "two", 3: "three", 4: "four", 5: "five", 6: "six"}
 
 
 def test_a_true_coverage_claim_passes(panel):
-    obs, tot = _pillar_counts(panel, "KEN", "G")
+    obs, tot = _pillar_counts(panel, "KEN", "GOV")
     rec = _with_pillar_summary(
-        "KEN", "G",
+        "KEN", "GOV",
         f"{WORDS[obs].title()} of the pillar's {WORDS[tot]} indicators are current.")
     assert not _errors(check_consistency(rec, panel))
 
 
 def test_an_undercounted_coverage_claim_is_an_error(panel):
-    """The exact defect found in Guinea and Equatorial Guinea's Pillar G."""
-    obs, tot = _pillar_counts(panel, "KEN", "G")
+    """The exact defect found in Guinea and Equatorial Guinea's Pillar G (edition 1)."""
+    obs, tot = _pillar_counts(panel, "KEN", "GOV")
     wrong = WORDS[max(1, obs - 2)]
     rec = _with_pillar_summary(
-        "KEN", "G",
+        "KEN", "GOV",
         f"Only {wrong} of the pillar's {WORDS[tot]} indicators are current.")
     errs = _errors(check_consistency(rec, panel))
     assert any("panel measured" in e for e in errs)
@@ -249,7 +249,7 @@ def test_a_negated_coverage_sentence_is_not_a_coverage_claim(panel):
     # fully measured, which left this sentence nothing to negate)
     iso3, pillar, obs, tot = next(
         (i, p, *_pillar_counts(panel, i, p)) for i in ("KEN", "GHA", "SEN", "TZA", "UGA", "NGA", "ETH")
-        for p in ("D", "B", "F", "C") if 0 < _pillar_counts(panel, i, p)[0] < _pillar_counts(panel, i, p)[1] <= 6)
+        for p in ("GOV", "SEC", "COH", "ENV", "VOI") if 0 < _pillar_counts(panel, i, p)[0] < _pillar_counts(panel, i, p)[1] <= 6)
     rec = _with_pillar_summary(
         iso3, pillar,
         f"{WORDS[tot - obs].title()} of {WORDS[tot]} indicators were not "
@@ -260,7 +260,7 @@ def test_a_negated_coverage_sentence_is_not_a_coverage_claim(panel):
 def test_a_count_against_a_different_pillar_size_is_ignored(panel):
     """A sentence about some other set of indicators is not a coverage claim."""
     rec = _with_pillar_summary(
-        "KEN", "G", "Three of eight indicators are measured across the region.")
+        "KEN", "GOV", "Three of eight indicators are measured across the region.")
     assert not _errors(check_consistency(rec, panel))
 
 
@@ -395,7 +395,7 @@ def observations():
     return verify_narrative.load_observations()
 
 
-def _quoted(summary, panel_year, observations, pillar="G", iso3="KEN"):
+def _quoted(summary, panel_year, observations, pillar="HUM", iso3="KEN"):
     rec = {iso3: {"meta": {"iso3": iso3}, "pillars": {pillar: {"summary": summary}}}}
     return verify_narrative.check_quoted_values(rec, observations, panel_year)
 
@@ -431,7 +431,7 @@ def test_a_clause_naming_another_indicator_is_not_read_across(panel, observation
     assert not _quoted(
         "Life expectancy, just over 57 years, and infant mortality, at 60.8 "
         "per 1,000 live births, are both severe.",
-        panel.reference_year, observations, pillar="D", iso3="CAF")
+        panel.reference_year, observations, pillar="HUM", iso3="CAF")
 
 
 def test_the_shipped_corpus_quotes_its_values_correctly(records, panel, observations):
@@ -444,7 +444,7 @@ def test_the_shipped_corpus_quotes_its_values_correctly(records, panel, observat
 from asi.narrative.schema import PANEL_CITATION, validate  # noqa: E402
 
 
-def _rec(summary, citations, pillar="A"):
+def _rec(summary, citations, pillar="GOV"):
     return {"meta": {"iso3": "KEN", "name": "Kenya", "last_updated": "2026-01-01",
                      "iteration_count": 1, "next_action": "x"},
             "citations": [{"id": "c1", "url": "https://e.org/a", "source_type": "news"}],
@@ -490,7 +490,7 @@ def test_verify_layer_agrees_with_the_schema_about_panel(records, panel):
 
 def test_verify_layer_catches_an_index_only_citation_covering_an_outside_claim(panel):
     rec = {"KEN": {"meta": {"iso3": "KEN"},
-                   "pillars": {"A": {"summary": CONTEXTUAL, "citations": [PANEL_CITATION]}}}}
+                   "pillars": {"GOV": {"summary": CONTEXTUAL, "citations": [PANEL_CITATION]}}}}
     out = verify_narrative.check_panel_citations(rec, panel.reference_year)
     assert out and "needs a real source" in out[0]
 

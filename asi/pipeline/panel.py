@@ -85,6 +85,16 @@ def window_value(
         # nothing inside the window, but a usable recent value exists
         return float(observations[latest]), Provenance.CARRIED_FORWARD, latest
 
+    if mode is WindowMode.ROLLING_SD:
+        # volatility: the sample standard deviation of the real measurements in
+        # the trailing window, and only when at least half the window was measured;
+        # a spread of two or three numbers says little about a decade
+        start = year - window_years + 1
+        in_window = [observations[y] for y in prior if y >= start]
+        if len(in_window) < max(2, window_years // 2):
+            return None, Provenance.ABSENT, None
+        return float(np.std(in_window, ddof=1)), provenance, latest
+
     if mode is WindowMode.POINT:
         if staleness != 0:
             return None, Provenance.ABSENT, None
@@ -164,18 +174,17 @@ def apply_derived(
     panel: pd.DataFrame,
     specs: dict[str, dict],
     *,
-    idp_var: str = "displaced_persons",
     population_var: str = "population_total",
-    per_capita_scale: float = 1000.0,
 ) -> tuple[pd.DataFrame, list[str]]:
     """
     Apply transforms that reshape an indicator's meaning.
 
-    Two kinds, both flagged in the registry rather than hardcoded by name where
-    possible:
+    Two kinds, both declared in the registry:
       - `transform: distance_from_parity` on the GPI indicators
-      - the IDP per-capita conversion, which needs a second indicator as its
-        denominator and so cannot be expressed as a single-column transform
+      - `per_capita: <scale>`, a count divided by the same country-year's
+        population and multiplied by the scale (100,000 for deaths and
+        displacement). It needs a second indicator as its denominator, so it
+        cannot be a single-column transform.
 
     Returns the panel and a list of human-readable notes for the run log.
     """
@@ -197,45 +206,44 @@ def apply_derived(
         else:
             raise ValueError(f"{var}: unknown transform {transform!r}")
 
-    # 2. IDP per capita — needs population as denominator
-    if idp_var in specs and population_var in specs:
+    # 2. per capita — needs population as denominator
+    rates = {var: float(spec["per_capita"]) for var, spec in specs.items() if spec.get("per_capita")}
+    if rates and population_var not in specs:
+        raise ValueError(f"{sorted(rates)} are per capita, but {population_var} is not in the registry")
+    if rates:
         # dropna=False is load-bearing. pivot_table's default omits any column
         # whose entries are all NaN, so a population series that failed to pull
-        # for the entire panel would vanish from `wide`, the guard below would
-        # find no denominator, and the conversion would be skipped in silence —
-        # leaving raw head-counts sitting in a per-thousand column, six orders of
-        # magnitude too large, still marked carried_forward. Absent for one
-        # country-year already behaved correctly; absent for all of them did not.
+        # for the entire panel would vanish from `wide`, and the conversion would
+        # be skipped in silence — leaving raw head-counts sitting in a per-capita
+        # column, orders of magnitude too large, still marked carried_forward.
+        # A missing denominator column is therefore an error, not a skip.
         wide = panel.pivot_table(
             index=["iso3", "year"], columns="variable_name",
             values="raw_value", aggfunc="first", dropna=False,
         )
-        if idp_var in wide.columns and population_var in wide.columns:
-            pop = wide[population_var]
-            idp = wide[idp_var]
-            converted = np.where(
-                idp.notna() & pop.notna() & (pop > 0),
-                idp / pop * per_capita_scale,
-                np.nan,
-            )
-            new = pd.Series(converted, index=wide.index)
-
-            idx = panel.set_index(["iso3", "year"]).index
-            is_idp = (panel["variable_name"] == idp_var).to_numpy()
-            mapped = new.reindex(idx).to_numpy()
-            panel.loc[is_idp, "raw_value"] = mapped[is_idp]
+        if population_var not in wide.columns:
+            raise ValueError(f"{population_var} has no panel cells to divide by")
+        pop = wide[population_var]
+        idx = panel.set_index(["iso3", "year"]).index
+        for var, scale in rates.items():
+            if var not in wide.columns:
+                continue
+            count = wide[var]
+            converted = np.where(count.notna() & pop.notna() & (pop > 0), count / pop * scale, np.nan)
+            mapped = pd.Series(converted, index=wide.index).reindex(idx).to_numpy()
+            is_var = (panel["variable_name"] == var).to_numpy()
+            had = is_var & panel["raw_value"].notna().to_numpy()
+            panel.loc[is_var, "raw_value"] = mapped[is_var]
 
             # a value that needed a denominator we did not have is not "carried
             # forward", it is absent
-            lost = is_idp & pd.isna(panel["raw_value"]).to_numpy()
+            lost = is_var & pd.isna(panel["raw_value"]).to_numpy()
             panel.loc[lost, "provenance"] = Provenance.ABSENT.value
             panel.loc[lost, "source_year"] = None
 
-            n_ok = int((is_idp & ~pd.isna(panel["raw_value"]).to_numpy()).sum())
-            notes.append(
-                f"{idp_var}: converted to per {per_capita_scale:.0f} population "
-                f"({n_ok} cells); {int(lost.sum())} cells dropped for want of population"
-            )
+            n_ok = int((is_var & ~pd.isna(panel["raw_value"]).to_numpy()).sum())
+            notes.append(f"{var}: converted to per {scale:,.0f} population ({n_ok} cells); "
+                         f"{int((had & lost).sum())} counts dropped for want of population")
         # population_total is descriptive: it stays in the panel as a denominator
         # and is filtered out of scoring by role, not by deletion.
 

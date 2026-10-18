@@ -47,16 +47,16 @@ def test_blank_record_is_not_valid():
 
 def test_greyed_pillar_must_not_be_written_about():
     rec = blank_record("TCD", "Chad")
-    rec["pillars"]["C"]["summary"] = "Social outcomes have improved markedly."
-    problems = validate(rec, greyed_pillars={"C"})
+    rec["pillars"]["HUM"]["summary"] = "Social outcomes have improved markedly."
+    problems = validate(rec, greyed_pillars={"HUM"})
     assert any("greys out" in p.message for p in problems), \
         "prose about a pillar the index refused to score must be rejected"
 
 
 def test_greyed_pillar_left_empty_is_accepted():
     rec = blank_record("TCD", "Chad")
-    problems = validate(rec, greyed_pillars={"C"})
-    assert not any(p.where == "pillars.C" for p in problems)
+    problems = validate(rec, greyed_pillars={"HUM"})
+    assert not any(p.where == "pillars.HUM" for p in problems)
 
 
 def test_recent_item_without_a_date_is_an_error():

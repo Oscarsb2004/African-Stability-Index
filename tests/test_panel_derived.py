@@ -103,7 +103,7 @@ def test_an_unknown_transform_raises_rather_than_passing_the_value_through():
 
 # ── apply_derived: IDP per capita ──────────────────────────────────────────────
 
-IDP_SPECS = {"displaced_persons": {"aggregation": "most_recent"},
+IDP_SPECS = {"displaced_persons": {"aggregation": "most_recent", "per_capita": 1000},
              "population_total": {"aggregation": "most_recent"}}
 
 
@@ -173,11 +173,27 @@ def test_each_country_year_uses_its_own_population():
     assert idp.loc[("KEN", 2021), "raw_value"] == pytest.approx(0.5)
 
 
-def test_the_conversion_is_skipped_when_population_is_not_in_the_registry():
-    """Without a denominator indicator there is nothing to divide by."""
+def test_a_per_capita_indicator_without_population_in_the_registry_is_an_error():
+    """Skipping the division would leave a head-count in a per-capita column."""
     panel = _panel([("KEN", "displaced_persons", 2020, 50_000.0, "observed", 2020)])
+    with pytest.raises(ValueError, match="population_total is not in the registry"):
+        apply_derived(panel, {"displaced_persons": {"aggregation": "most_recent", "per_capita": 1000}})
+    # negative control: without the flag nothing is divided, and nothing needs a denominator
     out, _ = apply_derived(panel, {"displaced_persons": {"aggregation": "most_recent"}})
     assert out["raw_value"].iloc[0] == pytest.approx(50_000.0)
+
+
+def test_every_flagged_indicator_takes_its_own_scale():
+    panel = _panel([
+        ("KEN", "displaced_persons", 2020, 50_000.0, "observed", 2020),
+        ("KEN", "conflict_deaths", 2020, 500.0, "observed", 2020),
+        ("KEN", "population_total", 2020, 50_000_000.0, "observed", 2020),
+    ])
+    specs = {**IDP_SPECS, "conflict_deaths": {"aggregation": "most_recent", "per_capita": 100_000}}
+    out, notes = apply_derived(panel, specs)
+    v = out.set_index("variable_name")["raw_value"]
+    assert (v["displaced_persons"], v["conflict_deaths"]) == (pytest.approx(1.0), pytest.approx(1.0))
+    assert len(notes) == 2
 
 
 # ── rolling means (gdp_growth_3yr_avg, inflation_5yr_avg) ──────────────────────
@@ -237,6 +253,22 @@ def test_a_rolling_mean_expires_with_everything_else():
     assert value is None
     assert prov is Provenance.ABSENT
     assert src is None
+
+
+# ── rolling standard deviation (growth volatility) ─────────────────────────────
+
+def test_volatility_is_the_sample_sd_of_the_years_inside_the_window():
+    obs = {2009: 50.0, **{y: float(y % 2) for y in range(2011, 2021)}}
+    value, prov, src = window_value(obs, 2020, WindowMode.ROLLING_SD, 10, 5)
+    assert value == pytest.approx(np.std([float(y % 2) for y in range(2011, 2021)], ddof=1))
+    assert (prov, src) == (Provenance.OBSERVED, 2020)  # 2009 is outside the window and never counted
+
+
+def test_volatility_needs_half_the_window_measured():
+    four = {2017: 1.0, 2018: 3.0, 2019: 1.0, 2020: 3.0}
+    assert window_value(four, 2020, WindowMode.ROLLING_SD, 10, 5)[0] is None
+    # negative control: one more year inside the window and the spread is reported
+    assert window_value({**four, 2016: 1.0}, 2020, WindowMode.ROLLING_SD, 10, 5)[0] is not None
 
 
 # ── regional_fill ──────────────────────────────────────────────────────────────

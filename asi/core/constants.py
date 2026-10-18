@@ -21,50 +21,46 @@ from pathlib import Path
 # Never redefine these anywhere else. asi.core.registry derives its pillar
 # objects from this dict; verify/ asserts no module shadows it.
 
+# Edition 2, step 6 (P57): eight pillars, variant B of the layout test. Keys are
+# short names rather than edition 1's letters, so a key can never be read as the
+# old pillar it replaced (edition 1's "E" was security; here "SEC" is). Order is
+# the vault's numbering, Pillar 1 to Pillar 8.
+
 PILLAR_DEFS: dict[str, str] = {
-    "A": "Political / Governance",
-    "B": "Economic",
-    "C": "Social / Human Capital",
-    "D": "Health",
-    "E": "Security / Conflict",
-    "F": "Environmental",
-    "G": "Structural / Infrastructure",
+    "GOV": "Governance and State Capacity",
+    "VOI": "Political Voice and Representation",
+    "SEC": "Security and Violence",
+    "MAC": "Macroeconomic and Fiscal Stability",
+    "EXT": "External Exposure and Economic Structure",
+    "HUM": "Human Development and Demography",
+    "COH": "Social Cohesion and Equity",
+    "ENV": "Environment and Climate Exposure",
 }
 
 
 # ── Weight presets ─────────────────────────────────────────────────────────────
 # ACTIVE_PRESET selects which profile drives the arithmetic "equal weights"
 # column. All presets must sum to 1.0 and stay within [WEIGHT_MIN, WEIGHT_MAX].
+# Edition 1's three other presets weighted its seven pillars and no stage read
+# them; step 8 (aggregation and weights) sets any others for the eight.
 
 ACTIVE_PRESET = "equal"
 
 WEIGHT_PRESETS: dict[str, dict[str, float]] = {
-    "equal": {k: 1 / 7 for k in PILLAR_DEFS},
-    "security_focus": {
-        "A": 0.20, "B": 0.10, "C": 0.10, "D": 0.10,
-        "E": 0.30, "F": 0.10, "G": 0.10,
-    },
-    "governance_focus": {
-        "A": 0.25, "B": 0.15, "C": 0.10, "D": 0.10,
-        "E": 0.20, "F": 0.10, "G": 0.10,
-    },
-    "my_weights": {
-        "A": 0.20, "B": 0.10, "C": 0.15, "D": 0.20,
-        "E": 0.15, "F": 0.10, "G": 0.10,
-    },
+    "equal": {k: 1 / len(PILLAR_DEFS) for k in PILLAR_DEFS},
 }
 
 
 # ── Admissible pillar weights ──────────────────────────────────────────────────
-# These bound what counts as a defensible weighting of the seven pillars. They
+# These bound what counts as a defensible weighting of the pillars. They
 # were introduced for a Benefit-of-the-Doubt LP that has since been retired
 # (see methodology/references.md); their live consumer is the adversarial weight
 # search in 03_robustness.py, which asks how far the ranking can be pushed by any
 # weighting inside these bounds.
 #
-# The feasibility requirement is unchanged by that move: 7*MIN <= 1 <= 7*MAX, so
-# that a weight vector summing to 1 exists inside the bounds at all. Asserted by
-# tests/test_registry.py::test_weight_bounds_are_feasible.
+# The feasibility requirement is unchanged by that move: n*MIN <= 1 <= n*MAX for
+# n pillars, so that a weight vector summing to 1 exists inside the bounds at all.
+# Asserted by tests/test_registry.py::test_weight_bounds_are_feasible.
 
 WEIGHT_MIN = 0.05   # lower bound per pillar
 WEIGHT_MAX = 0.25   # upper bound per pillar

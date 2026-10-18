@@ -295,3 +295,158 @@ The two enrolment series have almost no values in the 5 years up to 2024. 22 ind
   - **New:** two admission-floor tests.
   - **Fixed:** one narrative test assumed Kenya's Pillar D had an indicator not freshly measured. It no longer does,
     so the test now picks a case from the data.
+
+## Step 6: the eight pillars (P57, variant B)
+
+**What changed.** The seven pillars A to G are replaced by the eight of variant B of the layout test (P57). Each
+indicator now has one home, and each falls under its pillar's umbrella (P58).
+- **Keys** are short names, so a key can never be read as the old pillar it replaced. Edition 1's E was security;
+  here SEC is. The order follows the vault's numbering, Pillar 1 to Pillar 8:
+  - GOV, Governance and State Capacity;
+  - VOI, Political Voice and Representation;
+  - SEC, Security and Violence;
+  - MAC, Macroeconomic and Fiscal Stability;
+  - EXT, External Exposure and Economic Structure;
+  - HUM, Human Development and Demography;
+  - COH, Social Cohesion and Equity;
+  - ENV, Environment and Climate Exposure.
+- **The registry** is `indicators_list/pillar_<key>.yaml`, one file per pillar. It holds 69 indicators: 50 scored and
+  19 descriptive.
+
+| Pillar | Scored | Descriptive |
+| --- | --- | --- |
+| GOV | 6 | 1 |
+| VOI | 2 | 0 |
+| SEC | 2 | 4 |
+| MAC | 7 | 0 |
+| EXT | 8 | 1 |
+| HUM | 16 | 6 |
+| COH | 4 | 3 |
+| ENV | 5 | 4 |
+
+- **Variant B's 54 indicators, with the admission floor of step 5 applied.**
+  - **Below the floor at 2024** (states with a value), so descriptive: homicide 20, conflict displacement 27, the
+    stock of displaced people 32, and the Gini index 30.
+  - **Battle-related deaths:** the WDI's series leaves 27 of 54 states blank. UCDP's deaths in organised violence
+    take its place (below), so it is not carried.
+  - **Tax revenue** is at the floor, with 33 states.
+- **Security, from UCDP.** Without UCDP the pillar would hold political stability alone, since every WDI violence
+  series falls below the floor.
+  - **The indicator:** UCDP's country-year deaths in organised violence (dataset `ucdp-cy-26.1`, from athena-core
+    #18), per 100,000 people.
+  - **What it counts:** state-based, non-state and one-sided violence together. The column
+    `cumulative_total_deaths_in_orgvio_best` equals their sum in every row.
+  - **Why it passes the floor:** UCDP records every country-year, so a year without organised violence is a measured
+    zero, not a gap. All 54 states have a value.
+  - **South Sudan** is empty for 2000 to 2010, before it existed.
+- **Indicators variant B leaves out stay descriptive.** They are shown, not scored:
+  - regulatory quality (a near-duplicate of government effectiveness);
+  - private credit;
+  - infant mortality;
+  - handwashing;
+  - severe food insecurity;
+  - primary gender parity;
+  - CO2 per person;
+  - freshwater withdrawal;
+  - fossil electricity;
+  - agricultural land.
+- **Dropped:** primary and secondary enrolment and learning poverty, which have no value for any state since 2020.
+- **Total GDP is scored** in EXT, as P50 asks.
+- **Two transforms, declared in the registry and re-derived in `verify/panel.py`:**
+  - **`per_capita: 100000`** divides a count by the same country-year's population. It replaces the code that
+    converted only displaced people, per 1,000. Five indicators use it: organised-violence deaths, refugees hosted,
+    disaster displacement, displaced people and conflict displacement. Population missing from the registry is now
+    an error, not a skipped conversion.
+  - **`aggregation: sd_recent_10`** is the sample standard deviation of the trailing ten years of a series, given
+    only when at least five were measured. Growth volatility uses it. One series can now feed two variables: real
+    growth is read both as its 3-year mean and as its volatility.
+- **Theoretical bounds** follow step 3's rule for every new share of a whole or bounded scale. That makes 15 in all:
+  - basic_sanitation, elec_access_tot, forest_area, fuel_exports, internet_users, ore_metal_exports,
+    slum_population, stunting, undernourishment, water_access_pop, women_in_parliament, youth_literacy and
+    youth_share, 0 to 100;
+  - statistical_performance, 0 to 100;
+  - cpia_property_rights, 1 to 6.
+- **Goalposts** are frozen again for all 50 scored indicators, since the set changed.
+- **The log rule (step 4)** logs 23 of them, and the registry's flags were set to match. Three are significantly
+  left-skewed and not logged: female_male_labour (z −3.95), youth_share (−2.91) and youth_literacy (−2.73). That
+  joins the open ruling on left skew.
+- **Weight presets:** edition 1's three presets beyond equal weights weighted the seven pillars, and no stage read
+  them, so they are removed. Step 8 sets any others.
+- **`MIN_PILLARS_FOR_COMPOSITE`** stays 5, now of 8. Steps 7 and 8 revisit it.
+- **Inputs:** `python 01_inputs.py wdi-2026-10-08 wgi-2026-09-25 ucdp-cy-26.1` gives 83,801 values, 68 series, 54
+  countries, 1995 to 2025.
+
+**What moved** (2024, equal weights, against step 5)
+- **Scores:** composites moved 5.24 points on average (−4.07 net), at most 14.41 (RWA, −14.41).
+- **Ranks:** rank correlation 0.936 over 54 states. 18 moved 5 places or more:
+  - COM 29 to 14;
+  - GNQ 49 to 34;
+  - GNB 40 to 30;
+  - SLE 31 to 21;
+  - LBY 51 to 42;
+  - ZWE 44 to 35;
+  - LBR 30 to 24;
+  - EGY 28 to 23;
+  - MRT 33 to 38;
+  - TGO 23 to 28;
+  - MLI 42 to 47;
+  - DJI 26 to 31;
+  - ETH 37 to 44;
+  - BFA 38 to 46;
+  - ZMB 19 to 27;
+  - KEN 15 to 25;
+  - UGA 22 to 33;
+  - RWA 6 to 17.
+- **Reliability:** composites are 33 reliable and 21 thin, against 29 and 25.
+- **Top 5:** SYC, MUS, CPV, BWA, NAM. **Bottom 5:** TCD, CAF, SOM, SDN, SSD.
+- **Pillars at 2024:**
+
+| Pillar | Indicators | Mean score | Reliable | Thin | Unreliable |
+| --- | --- | --- | --- | --- | --- |
+| GOV | 6 | 48.18 | 54 | 0 | 0 |
+| VOI | 2 | 36.15 | 50 | 4 | 0 |
+| SEC | 2 | 68.01 | 54 | 0 | 0 |
+| MAC | 7 | 47.81 | 49 | 3 | 1 |
+| EXT | 8 | 55.46 | 29 | 14 | 9 |
+| HUM | 16 | 60.09 | 52 | 2 | 0 |
+| COH | 4 | 53.95 | 50 | 3 | 1 |
+| ENV | 5 | 57.25 | 0 | 0 | 54 |
+
+- **The cost, stated plainly:**
+  - **ENV is unreliable for all 54 states at 2024.** Four of its five series end in 2021 to 2023, so at the
+    reference year four values are carried forward, and the imputed share passes the 0.50 limit. Step 7 (unreliable
+    pillars) decides what that means; the data are not wrong.
+  - **MAC is negatively correlated with every other pillar** (−.07 to −.34 at 2024), and PCA gives it no weight
+    (0.0). Steady prices, low debt and reserves do not move with governance or development across these states.
+    Step 8 weighs that.
+  - **SEC has two indicators.** Homicide and displacement return when sources clear the floor (UNODC, IDMC direct).
+
+**The layout test, rerun on edition 2's panel** (objective 5 of the pillar note; scores at 2024, not the prototype's
+ranks)
+- **Between-pillar overlap:** mean |rho| .383, largest GOV–VOI .80. The prototype gave .320 and .64.
+- **Corrected for attenuation:** the advisory layer finds seven pairs above |.90|, every one involving COH or ENV:
+  COH–ENV +2.71, COH–SEC +1.58, ENV–SEC +1.19, ENV–GOV +1.12, COH–HUM +1.11, ENV–MAC −0.99 and COH–GOV +0.95.
+  Those two pillars are formative (their items are separate causes, P58), so their alpha is not a reliability and a
+  corrected r above 1 says the reflective model does not fit them. It does not say they measure one thing.
+- **Factor analysis:** parallel analysis keeps one factor, as scored (eigenvalues 3.93, 1.19, 0.80) and with log GDP
+  per capita held constant (3.25, 1.38, 0.92).
+
+**Robustness** (`03_robustness.py`, 2024)
+- **Weighting methods agree:** rho .9843 for PCA, .9782 for entropy and .9909 for geometric.
+- **Worst in-bounds weighting:** rho .9076.
+- **Measured cells only:** rho .8981.
+- **Least stable quintiles:** SLE 41%, UGA 42%, LSO 47%, DZA 49%, GNQ 53%.
+
+**Checks**
+- **Passing:** `verify.run` rebuild, panel and contract. Panel: 15 checks pass, two of them new:
+  - 1.6 now re-derives every per-capita indicator: 5,850 cells of 5 indicators;
+  - 1.7 re-derives growth volatility with pandas' rolling standard deviation: 1,404 cells.
+
+  78,234 cells match the as-of join.
+- **Narrative fails** as before, until step 10. The narrative checker's phrase "displaced persons" now names its
+  series in full, since three series begin "Internally displaced persons".
+- **Tests:** 767 passed and 1 xfailed. The same 4 narrative corpus tests fail as at step 5, confirmed on a clean
+  checkout of step 5.
+  - **New:** four tests, for per capita (an error without population, with a negative control; each indicator's own
+    scale) and for volatility (the window, with a negative control).
+  - **Moved to the new keys:** the dashboard, narrative and consistency tests that named edition 1's letters.

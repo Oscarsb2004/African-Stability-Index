@@ -1,0 +1,358 @@
+# pillar_hum.yaml — Human Development and Demography (HUM)
+# Goal: What people have to live on and live with: income, health, nutrition, education, basic services, connection, and the demographic transition that moves with them.
+#
+# Edition 2, step 6 (P57, variant B). Every indicator here has one home, this pillar, and falls under its
+# umbrella (P58). 16 scored, 6 descriptive.
+
+- variable_name: gdp_pc_ppp
+  display_name: GDP per capita, PPP (current international $)
+  source: wb_api
+  series_code: NY.GDP.PCAP.PP.CD
+  role: scoring
+  polarity: positive
+  pillars:
+  - HUM
+  year_start: 2015
+  year_end: 2025
+  aggregation: most_recent
+  justification: 'Income per person at purchasing power parity: what people have to live on (P50).'
+  database: wdi
+  log_transform: true
+- variable_name: life_expect_tot
+  display_name: Life expectancy at birth, total (years)
+  source: wb_api
+  series_code: SP.DYN.LE00.IN
+  role: scoring
+  polarity: positive
+  pillars:
+  - HUM
+  year_start: 2015
+  year_end: 2025
+  aggregation: most_recent
+  justification: Life expectancy at birth, the summary of a population's health.
+  database: wdi
+  log_transform: false
+- variable_name: under5_mortality
+  display_name: Mortality rate, under-5 (per 1,000 live births)
+  source: wb_api
+  series_code: SH.DYN.MORT
+  role: scoring
+  polarity: negative
+  pillars:
+  - HUM
+  year_start: 2015
+  year_end: 2025
+  aggregation: most_recent
+  justification: Deaths of young children, the most sensitive measure of health services and living conditions.
+  database: wdi
+  log_transform: false
+- variable_name: maternal_mortality
+  display_name: Maternal mortality ratio (modeled estimate, per 100,000 live births)
+  source: wb_api
+  series_code: SH.STA.MMRT
+  role: scoring
+  polarity: negative
+  pillars:
+  - HUM
+  year_start: 2015
+  year_end: 2025
+  aggregation: most_recent
+  justification: Women's health and the reach of care at birth; less redundant with life expectancy than infant
+    mortality is.
+  database: wdi
+  log_transform: true
+- variable_name: stunting
+  display_name: Prevalence of stunting, height for age (modeled estimate, % of children under 5)
+  source: wb_api
+  series_code: SH.STA.STNT.ME.ZS
+  role: scoring
+  polarity: negative
+  pillars:
+  - HUM
+  year_start: 2015
+  year_end: 2025
+  aggregation: most_recent
+  justification: Chronic malnutrition in childhood.
+  database: wdi
+  log_transform: false
+  theoretical_bounds:
+  - 0
+  - 100
+- variable_name: undernourishment
+  display_name: Prevalence of undernourishment (% of population)
+  source: wb_api
+  series_code: SN.ITK.DEFC.ZS
+  role: scoring
+  polarity: negative
+  pillars:
+  - HUM
+  year_start: 2015
+  year_end: 2025
+  aggregation: most_recent
+  justification: 'Hunger: the share whose food intake falls short of what they need.'
+  database: wdi
+  log_transform: true
+  theoretical_bounds:
+  - 0
+  - 100
+- variable_name: youth_literacy
+  display_name: Literacy rate, youth total (% of people ages 15-24)
+  source: wb_api
+  series_code: SE.ADT.1524.LT.ZS
+  role: scoring
+  polarity: positive
+  pillars:
+  - HUM
+  year_start: 2010
+  year_end: 2025
+  aggregation: most_recent
+  justification: 'Literacy among 15 to 24 year olds: whether schooling has reached the young.'
+  database: wdi
+  log_transform: false
+  theoretical_bounds:
+  - 0
+  - 100
+- variable_name: primary_completion
+  display_name: Primary completion rate, total (% of relevant age group)
+  source: wb_api
+  series_code: SE.PRM.CMPT.ZS
+  role: scoring
+  polarity: positive
+  pillars:
+  - HUM
+  year_start: 2015
+  year_end: 2025
+  aggregation: most_recent
+  justification: 'Whether children finish primary school: an outcome, replacing enrolment, whose series stopped.
+    A gross ratio, so it can pass 100 and takes no theoretical bounds.'
+  database: wdi
+  log_transform: false
+- variable_name: elec_access_tot
+  display_name: Access to electricity (% of population)
+  source: wb_api
+  series_code: EG.ELC.ACCS.ZS
+  role: scoring
+  polarity: positive
+  pillars:
+  - HUM
+  year_start: 2015
+  year_end: 2025
+  aggregation: most_recent
+  justification: Access to electricity, a basic service.
+  database: wdi
+  log_transform: false
+  theoretical_bounds:
+  - 0
+  - 100
+- variable_name: water_access_pop
+  display_name: People using at least basic drinking water services (% of population)
+  source: wb_api
+  series_code: SH.H2O.BASW.ZS
+  role: scoring
+  polarity: positive
+  pillars:
+  - HUM
+  year_start: 2015
+  year_end: 2025
+  aggregation: most_recent
+  justification: At least basic drinking water, a basic service.
+  database: wdi
+  log_transform: false
+  theoretical_bounds:
+  - 0
+  - 100
+- variable_name: basic_sanitation
+  display_name: People using at least basic sanitation services (% of population)
+  source: wb_api
+  series_code: SH.STA.BASS.ZS
+  role: scoring
+  polarity: positive
+  pillars:
+  - HUM
+  year_start: 2015
+  year_end: 2025
+  aggregation: most_recent
+  justification: At least basic sanitation, a basic service.
+  database: wdi
+  log_transform: false
+  theoretical_bounds:
+  - 0
+  - 100
+- variable_name: internet_users
+  display_name: Individuals using the Internet (% of population)
+  source: wb_api
+  series_code: IT.NET.USER.ZS
+  role: scoring
+  polarity: positive
+  pillars:
+  - HUM
+  year_start: 2015
+  year_end: 2025
+  aggregation: most_recent
+  justification: Connection to information (Interpeace).
+  database: wdi
+  log_transform: false
+  theoretical_bounds:
+  - 0
+  - 100
+- variable_name: mobile_subscriptions
+  display_name: Mobile cellular subscriptions (per 100 people)
+  source: wb_api
+  series_code: IT.CEL.SETS.P2
+  role: scoring
+  polarity: positive
+  pillars:
+  - HUM
+  year_start: 2015
+  year_end: 2025
+  aggregation: most_recent
+  justification: Connection; can pass 100, so no theoretical bounds.
+  database: wdi
+  log_transform: false
+- variable_name: youth_share
+  display_name: Population ages 0-14 (% of total population)
+  source: wb_api
+  series_code: SP.POP.0014.TO.ZS
+  role: scoring
+  polarity: negative
+  pillars:
+  - HUM
+  year_start: 2015
+  year_end: 2025
+  aggregation: most_recent
+  justification: 'The demographic transition: a young population needs schooling and jobs faster than an economy
+    usually grows them.'
+  database: wdi
+  log_transform: false
+  theoretical_bounds:
+  - 0
+  - 100
+- variable_name: population_growth
+  display_name: Population growth (annual %)
+  source: wb_api
+  series_code: SP.POP.GROW
+  role: scoring
+  polarity: negative
+  pillars:
+  - HUM
+  year_start: 2015
+  year_end: 2025
+  aggregation: most_recent
+  justification: The pace of the demographic transition.
+  database: wdi
+  log_transform: false
+- variable_name: adolescent_fertility
+  display_name: Adolescent fertility rate (births per 1,000 women ages 15-19)
+  source: wb_api
+  series_code: SP.ADO.TFRT
+  role: scoring
+  polarity: negative
+  pillars:
+  - HUM
+  year_start: 2015
+  year_end: 2025
+  aggregation: most_recent
+  justification: Girls' and young women's opportunity, and the transition's pace (Interpeace's youth and women).
+  database: wdi
+  log_transform: false
+- variable_name: mort_infant
+  display_name: Mortality rate, infant (per 1,000 live births)
+  source: wb_api
+  series_code: SP.DYN.IMRT.IN
+  role: descriptive
+  polarity: negative
+  pillars:
+  - HUM
+  year_start: 2015
+  year_end: 2025
+  aggregation: most_recent
+  justification: 'Infant mortality. A near-duplicate of under-5 mortality and life expectancy, so edition 2, step
+    6: variant B (P57) leaves it out; descriptive, shown and not scored.'
+  database: wdi
+  log_transform: false
+- variable_name: hand_washing_facil
+  display_name: People with basic handwashing facilities including soap and water (% of population)
+  source: wb_api
+  series_code: SH.STA.HYGN.ZS
+  role: descriptive
+  polarity: positive
+  pillars:
+  - HUM
+  year_start: 2015
+  year_end: 2025
+  aggregation: most_recent
+  justification: 'Basic handwashing facilities at home. Edition 2, step 6: variant B (P57) leaves it out; descriptive,
+    shown and not scored.'
+  database: wdi
+  log_transform: true
+  theoretical_bounds:
+  - 0
+  - 100
+- variable_name: sev_food_insec
+  display_name: Prevalence of severe food insecurity (% of population)
+  source: wb_api
+  series_code: SN.ITK.SVFI.ZS
+  role: descriptive
+  polarity: negative
+  pillars:
+  - HUM
+  year_start: 2015
+  year_end: 2025
+  aggregation: most_recent
+  justification: 'Severe food insecurity (FAO FIES). Undernourishment carries hunger in variant B, so edition 2,
+    step 6: variant B (P57) leaves it out; descriptive, shown and not scored.'
+  database: wdi
+  log_transform: true
+  theoretical_bounds:
+  - 0
+  - 100
+- variable_name: managed_water_percent
+  display_name: People using safely managed drinking water services (% of population)
+  source: wb_api
+  series_code: SH.H2O.SMDW.ZS
+  role: descriptive
+  polarity: positive
+  pillars:
+  - HUM
+  year_start: 2015
+  year_end: 2025
+  aggregation: most_recent
+  justification: Safely managed drinking water. Below the admission floor (33 of 54 states) at 2024; descriptive,
+    shown and not scored.
+  database: wdi
+  log_transform: false
+  theoretical_bounds:
+  - 0
+  - 100
+- variable_name: social_protection_labour_pop
+  display_name: Coverage of social protection and labor programs (% of population)
+  source: wb_api
+  series_code: per_allsp.cov_pop_tot
+  role: descriptive
+  polarity: positive
+  pillars:
+  - HUM
+  year_start: 2010
+  year_end: 2025
+  aggregation: most_recent
+  justification: Coverage of social protection and labour programmes. Below the admission floor (33 of 54 states)
+    at 2024; descriptive, shown and not scored.
+  database: wdi
+  log_transform: true
+  theoretical_bounds:
+  - 0
+  - 100
+- variable_name: population_total
+  display_name: Population, total
+  source: wb_api
+  series_code: SP.POP.TOTL
+  role: descriptive
+  polarity: positive
+  pillars:
+  - HUM
+  year_start: 2015
+  year_end: 2025
+  aggregation: most_recent
+  justification: 'Total population: the denominator of every per-capita indicator, not scored.'
+  database: wdi
+  log_transform: false

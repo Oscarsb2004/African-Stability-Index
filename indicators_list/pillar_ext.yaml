@@ -1,0 +1,141 @@
+# pillar_ext.yaml — External Exposure and Economic Structure (EXT)
+# Goal: How exposed the economy is to forces outside the country, through what it sells, what it receives, and how large and diversified it is.
+#
+# Edition 2, step 6 (P57, variant B). Every indicator here has one home, this pillar, and falls under its
+# umbrella (P58). 8 scored, 1 descriptive.
+
+- variable_name: fuel_exports
+  display_name: Fuel exports (% of merchandise exports)
+  source: wb_api
+  series_code: TX.VAL.FUEL.ZS.UN
+  role: scoring
+  polarity: negative
+  pillars:
+  - EXT
+  year_start: 2015
+  year_end: 2025
+  aggregation: most_recent
+  justification: Dependence on oil and gas sales, and so on their world price.
+  database: wdi
+  log_transform: true
+  theoretical_bounds:
+  - 0
+  - 100
+- variable_name: ore_metal_exports
+  display_name: Ores and metals exports (% of merchandise exports)
+  source: wb_api
+  series_code: TX.VAL.MMTL.ZS.UN
+  role: scoring
+  polarity: negative
+  pillars:
+  - EXT
+  year_start: 2015
+  year_end: 2025
+  aggregation: most_recent
+  justification: Dependence on mineral sales and their world prices.
+  database: wdi
+  log_transform: true
+  theoretical_bounds:
+  - 0
+  - 100
+- variable_name: resource_rents
+  display_name: Total natural resources rents (% of GDP)
+  source: wb_api
+  series_code: NY.GDP.TOTL.RT.ZS
+  role: scoring
+  polarity: negative
+  pillars:
+  - EXT
+  year_start: 2015
+  year_end: 2025
+  aggregation: most_recent
+  justification: 'How much of the economy is rent from natural resources: exposure to commodity prices and the incentive
+    to fight over the rent.'
+  database: wdi
+  log_transform: true
+- variable_name: aid_received
+  display_name: Net ODA received (% of GNI)
+  source: wb_api
+  series_code: DT.ODA.ODAT.GN.ZS
+  role: scoring
+  polarity: negative
+  pillars:
+  - EXT
+  year_start: 2015
+  year_end: 2025
+  aggregation: most_recent
+  justification: Dependence on aid, which donors can cut.
+  database: wdi
+  log_transform: true
+- variable_name: remittances
+  display_name: Personal remittances, received (% of GDP)
+  source: wb_api
+  series_code: BX.TRF.PWKR.DT.GD.ZS
+  role: scoring
+  polarity: positive
+  pillars:
+  - EXT
+  year_start: 2015
+  year_end: 2025
+  aggregation: most_recent
+  justification: Income sent home by migrants, which tends to rise when the home economy is hit.
+  database: wdi
+  log_transform: true
+- variable_name: trade_openness
+  display_name: Trade (% of GDP)
+  source: wb_api
+  series_code: NE.TRD.GNFS.ZS
+  role: scoring
+  polarity: positive
+  pillars:
+  - EXT
+  year_start: 2015
+  year_end: 2025
+  aggregation: most_recent
+  justification: How integrated the economy is with world markets.
+  database: wdi
+  log_transform: true
+- variable_name: fdi_inflows
+  display_name: Foreign direct investment, net inflows (% of GDP)
+  source: wb_api
+  series_code: BX.KLT.DINV.WD.GD.ZS
+  role: scoring
+  polarity: positive
+  pillars:
+  - EXT
+  year_start: 2015
+  year_end: 2025
+  aggregation: most_recent
+  justification: Long-term foreign investment in the economy.
+  database: wdi
+  log_transform: true
+- variable_name: gdp_total
+  display_name: GDP (current US$)
+  source: wb_api
+  series_code: NY.GDP.MKTP.CD
+  role: scoring
+  polarity: positive
+  pillars:
+  - EXT
+  year_start: 2015
+  year_end: 2025
+  aggregation: most_recent
+  justification: 'The economy''s size, in current US dollars. A large economy absorbs a shock to one sector or market
+    more easily (P50: scored, on a log scale if the skew test asks).'
+  database: wdi
+  log_transform: true
+- variable_name: domestic_credit_private
+  display_name: Domestic credit to private sector (% of GDP)
+  source: wb_api
+  series_code: FS.AST.PRVT.GD.ZS
+  role: descriptive
+  polarity: positive
+  pillars:
+  - EXT
+  year_start: 2000
+  year_end: 2025
+  aggregation: most_recent
+  justification: 'Domestic credit to the private sector: the depth of the financial system, part of the economy''s
+    structure. Edition 2, step 6: variant B (P57) leaves it out; descriptive, shown and not scored.'
+  database: wdi
+  log_transform: true

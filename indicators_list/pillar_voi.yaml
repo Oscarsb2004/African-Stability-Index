@@ -1,0 +1,39 @@
+# pillar_voi.yaml — Political Voice and Representation (VOI)
+# Goal: Whether citizens can choose and hold to account those who govern, and whether every group, women and youth included, is represented.
+#
+# Edition 2, step 6 (P57, variant B). Every indicator here has one home, this pillar, and falls under its
+# umbrella (P58). 2 scored, 0 descriptive.
+
+- variable_name: va_estimate
+  display_name: Voice and Accountability, WGI estimated score
+  source: wb_api
+  series_code: GOV_WGI_VA.EST
+  role: scoring
+  polarity: positive
+  pillars:
+  - VOI
+  year_start: 2015
+  year_end: 2025
+  aggregation: most_recent
+  justification: 'The degree to which citizens can take part in selecting their government, and freedom of expression,
+    association and the media: accountability itself. WGI, N(0,1) scale.'
+  database: wgi
+  log_transform: false
+- variable_name: women_in_parliament
+  display_name: Proportion of seats held by women in national parliaments (%)
+  source: wb_api
+  series_code: SG.GEN.PARL.ZS
+  role: scoring
+  polarity: positive
+  pillars:
+  - VOI
+  year_start: 2015
+  year_end: 2025
+  aggregation: most_recent
+  justification: Representation of women in the body that makes law (Interpeace's inclusion of women). Barely correlated
+    with any other candidate, so it carries new information.
+  database: wdi
+  log_transform: false
+  theoretical_bounds:
+  - 0
+  - 100

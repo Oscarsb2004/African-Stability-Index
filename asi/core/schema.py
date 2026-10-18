@@ -86,6 +86,7 @@ class WindowMode(str, Enum):
     POINT        = "point"          # the single observation for that year
     MOST_RECENT  = "most_recent"    # latest observation at or before that year
     ROLLING_MEAN = "rolling_mean"   # mean of the trailing `window_years`
+    ROLLING_SD   = "rolling_sd"     # standard deviation of the trailing `window_years`
 
 
 #: Registry `aggregation:` values map onto panel windowing. The existing field
@@ -101,6 +102,7 @@ AGGREGATION_TO_WINDOW: dict[str, tuple["WindowMode", int]] = {
     "average_recent_3": (WindowMode.ROLLING_MEAN, 3),
     "average_recent_5": (WindowMode.ROLLING_MEAN, 5),
     "average":          (WindowMode.ROLLING_MEAN, 0),   # 0 = all available years
+    "sd_recent_10":     (WindowMode.ROLLING_SD, 10),    # volatility (edition 2, P57)
 }
 
 

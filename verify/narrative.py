@@ -116,7 +116,7 @@ INDICATOR_PHRASES = {
     "domestic credit": "Domestic credit to private sector",
     "gini": "Gini index",
     "intentional homicide": "Intentional homicides (per",
-    "displaced persons": "Internally displaced persons",
+    "displaced persons": "Internally displaced persons by conflict",
 }
 
 HEDGE = (r"(just over|just under|slightly over|slightly under|a little over|"
