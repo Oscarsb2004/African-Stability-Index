@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import MapView from "./MapView";
 import EconomyPanel from "./panels/EconomyPanel";
-import HeritagePanel from "./panels/HeritagePanel";
+import WondersPanel from "./panels/WondersPanel";
 import InfrastructurePanel from "./panels/InfrastructurePanel";
 import StabilityPanel from "./panels/StabilityPanel";
 import { load, RAMP, type MetaDoc, type Section, type SectionsDoc, type StabilityDoc } from "./data";
@@ -12,7 +12,7 @@ const SECTIONS: { id: Section; label: string }[] = [
   { id: "stability", label: "Stability" },
   { id: "economy", label: "Economy" },
   { id: "infrastructure", label: "Infrastructure" },
-  { id: "heritage", label: "Heritage" },
+  { id: "wonders", label: "Wonders" },
 ];
 
 interface Docs { meta: MetaDoc; stability: StabilityDoc; sections: SectionsDoc }
@@ -100,7 +100,7 @@ export default function App() {
             {section === "stability" && <StabilityPanel iso3={selected} stability={docs.stability} sections={docs.sections} />}
             {section === "economy" && <EconomyPanel iso3={selected} doc={docs.sections} />}
             {section === "infrastructure" && <InfrastructurePanel iso3={selected} />}
-            {section === "heritage" && <HeritagePanel />}
+            {section === "wonders" && <WondersPanel />}
             <details className="sources">
               <summary className="muted small">Sources and licences</summary>
               {docs.meta.sources.map((s) => (
@@ -115,10 +115,10 @@ export default function App() {
           <div className="panel-body welcome">
             <h2>Choose a country</h2>
             <p>Click a country on the map, or pick one above. Hovering shows its name.</p>
-            {section === "heritage" ? <HeritagePanel /> : (
+            {section === "wonders" ? <WondersPanel /> : (
               <p className="muted small">
-                Stability shows the ASI next to other institutions' scores. Economy leads with stressors and the
-                latest figures. Infrastructure shows cities now; roads, rail, ports and megaprojects follow.
+                Stability shows the ASI next to other institutions' scores. Economy leads with the latest figures
+                and the record. Infrastructure shows cities now; roads, rail, ports and megaprojects follow.
               </p>
             )}
           </div>

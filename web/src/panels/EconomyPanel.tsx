@@ -51,34 +51,14 @@ export default function EconomyPanel({ iso3, doc }: Props) {
   const a = doc.areas[iso3];
   const out = a.output, prices = a.prices;
   const peaks = (prices.inflation_peaks?.values ?? []) as { value: number; period: string }[];
-  const stress = doc.sections.find((s) => s.id === "stressors");
   const trend = (f?: Figure) => ({ periods: f?.periods ?? [], values: (f?.values ?? []) as number[] });
   const infl = trend(prices.inflation_trend), growth = trend(out.growth_trend);
   return (
     <div className="panel-body">
       <div className="note">
         Forecasts (IMF World Economic Outlook) will lead this panel once that database is in Athena. Until then
-        it starts with the stressors and the latest published figures.
+        it starts with the latest published figures.
       </div>
-
-      <h3>Stressors</h3>
-      <ul className="stressors">
-        {stress?.figures.map((f) => {
-          const r = a.stressors[f.id];
-          const state = r?.flag === true ? "warning" : r?.flag === false ? "good" : "unknown";
-          return (
-            <li key={f.id} className={`stressor ${state}`}>
-              <span className="icon" aria-hidden>{state === "warning" ? "!" : state === "good" ? "✓" : "?"}</span>
-              <div>
-                <div><b>{state === "warning" ? "Yes" : state === "good" ? "No" : "No data"}</b> · {f.label}</div>
-                <div className="muted small">
-                  Latest {fmt(r?.value ?? null)} {f.unit}{r?.period ? ` (${r.period})` : ""}. Limit: {f.limit_source}. {f.note}
-                </div>
-              </div>
-            </li>
-          );
-        })}
-      </ul>
 
       <h3>Headline</h3>
       <div className="tiles">
@@ -113,7 +93,7 @@ export default function EconomyPanel({ iso3, doc }: Props) {
         ({out.growth_spread_10?.period ?? "—"}).
       </p>
 
-      {doc.sections.filter((s) => !["stressors", "appraisals", "output", "prices"].includes(s.id)).map((s) => (
+      {doc.sections.filter((s) => !["appraisals", "output", "prices"].includes(s.id)).map((s) => (
         <Rows key={s.id} section={s} figures={a[s.id]} />
       ))}
     </div>

@@ -46,7 +46,7 @@ from `data/`.
 | 3 | `03_robustness.py` | Sensitivity analysis at the reference year: weighting methods, adversarial weights, measured-only, islands excluded | `data/panel/robustness.json` |
 | 4 | `04_sections.py <datasets>` | The economy and appraisal sections for each country: athena-core's shared section templates, bound to WDI and WGI series in `sections.toml` (P54) | `data/sections.json` |
 | 5 | `05_web.py` | The files the new site reads: Natural Earth borders, countries and cities (hash-locked through `athena.fetch`), the published ASI at its reference year, and the sections | `web/public/{geo,data}/*` |
-| — | `web/`: `npm install`, then `npm run dev` | The new site (prototype, P55): a satellite globe with four sections (Stability, Economy, Infrastructure, Heritage) and a country panel on the right | — |
+| — | `web/`: `npm install`, then `npm run dev` | The new site (prototype, P55): a satellite globe with four sections (Stability, Economy, Infrastructure, Wonders) and a country panel on the right. Imagery: EOX by default; Esri World Imagery when `web/.env.local` sets `VITE_ESRI_KEY` | — |
 | 7 | `run_asi.py` | Run the interface (port 8050); bootstraps `.venv` on first use | — |
 
 Add `--freeze-goalposts` to stage 2 only when deliberately re-anchoring every

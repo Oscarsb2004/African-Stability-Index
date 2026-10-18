@@ -2,7 +2,7 @@
 # 04_sections.py reads it with the datasets named on its command line. The templates are in athena/sections/.
 
 project = "asi"
-sections = ["stressors", "appraisals", "output", "prices", "public_finances", "external", "financial_sector",
+sections = ["appraisals", "output", "prices", "public_finances", "external", "financial_sector",
             "structure", "jobs"]
 
 [datasets.wdi]
@@ -29,7 +29,7 @@ tax_revenue = { dataset = "wdi", series = "GC.TAX.TOTL.GD.ZS" }
 fiscal_balance = { dataset = "wdi", series = "GC.NLD.TOTL.GD.ZS" }
 external_debt = { dataset = "wdi", series = "DT.DOD.DECT.GN.ZS" }
 debt_service = { dataset = "wdi", series = "DT.TDS.DECT.GN.ZS" }
-# external position and stressors
+# external position
 current_account = { dataset = "wdi", series = "BN.CAB.XOKA.GD.ZS" }
 reserves_months = { dataset = "wdi", series = "FI.RES.TOTL.MO" }
 fdi = { dataset = "wdi", series = "BX.KLT.DINV.WD.GD.ZS" }

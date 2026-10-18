@@ -19,29 +19,6 @@
  ],
  "sections": [
   {
-   "id": "stressors",
-   "title": "Stressors",
-   "order": 10,
-   "about": "Limits a publisher has stated, and whether the latest value is beyond them. A stressor without a published limit is not listed. First positions, waiting on the owner's ruling.",
-   "figures": [
-    {
-     "id": "reserves_below_3_months",
-     "label": "Reserves below three months of imports",
-     "unit": "months of imports",
-     "shell": "threshold",
-     "measure": "reserves_months",
-     "args": {
-      "below": 3
-     },
-     "derived": true,
-     "limit_source": "IMF (2011), Assessing Reserve Adequacy: three months of imports is a traditional rule of thumb",
-     "note": "The IMF calls the rule simple but arbitrary; a flag is a prompt to look closer, not a verdict.",
-     "dataset": "wdi-2026-10-08",
-     "series": "FI.RES.TOTL.MO"
-    }
-   ]
-  },
-  {
    "id": "appraisals",
    "title": "Other appraisals",
    "order": 15,
@@ -630,14 +607,6 @@
  ],
  "areas": {
   "AGO": {
-   "stressors": {
-    "reserves_below_3_months": {
-     "value": 5.292,
-     "period": "2025",
-     "n": 1,
-     "flag": false
-    }
-   },
    "appraisals": {
     "wgi_va": {
      "value": 39.364,
@@ -1020,14 +989,6 @@
    }
   },
   "BDI": {
-   "stressors": {
-    "reserves_below_3_months": {
-     "value": 0.734,
-     "period": "2023",
-     "n": 1,
-     "flag": true
-    }
-   },
    "appraisals": {
     "wgi_va": {
      "value": 29.489,
@@ -1410,14 +1371,6 @@
    }
   },
   "BEN": {
-   "stressors": {
-    "reserves_below_3_months": {
-     "value": null,
-     "period": null,
-     "n": 0,
-     "flag": null
-    }
-   },
    "appraisals": {
     "wgi_va": {
      "value": 51.471,
@@ -1800,14 +1753,6 @@
    }
   },
   "BFA": {
-   "stressors": {
-    "reserves_below_3_months": {
-     "value": null,
-     "period": null,
-     "n": 0,
-     "flag": null
-    }
-   },
    "appraisals": {
     "wgi_va": {
      "value": 35.633,
@@ -2190,14 +2135,6 @@
    }
   },
   "BWA": {
-   "stressors": {
-    "reserves_below_3_months": {
-     "value": 4.71,
-     "period": "2024",
-     "n": 1,
-     "flag": false
-    }
-   },
    "appraisals": {
     "wgi_va": {
      "value": 64.988,
@@ -2580,14 +2517,6 @@
    }
   },
   "CAF": {
-   "stressors": {
-    "reserves_below_3_months": {
-     "value": 9.626,
-     "period": "1994",
-     "n": 1,
-     "flag": false
-    }
-   },
    "appraisals": {
     "wgi_va": {
      "value": 34.47,
@@ -2970,14 +2899,6 @@
    }
   },
   "CIV": {
-   "stressors": {
-    "reserves_below_3_months": {
-     "value": null,
-     "period": null,
-     "n": 0,
-     "flag": null
-    }
-   },
    "appraisals": {
     "wgi_va": {
      "value": 47.763,
@@ -3360,14 +3281,6 @@
    }
   },
   "CMR": {
-   "stressors": {
-    "reserves_below_3_months": {
-     "value": 5.275,
-     "period": "2024",
-     "n": 1,
-     "flag": false
-    }
-   },
    "appraisals": {
     "wgi_va": {
      "value": 34.676,
@@ -3750,14 +3663,6 @@
    }
   },
   "COD": {
-   "stressors": {
-    "reserves_below_3_months": {
-     "value": 1.69,
-     "period": "2023",
-     "n": 1,
-     "flag": true
-    }
-   },
    "appraisals": {
     "wgi_va": {
      "value": 35.625,
@@ -4122,14 +4027,6 @@
    }
   },
   "COG": {
-   "stressors": {
-    "reserves_below_3_months": {
-     "value": 1.604,
-     "period": "2021",
-     "n": 1,
-     "flag": true
-    }
-   },
    "appraisals": {
     "wgi_va": {
      "value": 34.3,
@@ -4512,14 +4409,6 @@
    }
   },
   "COM": {
-   "stressors": {
-    "reserves_below_3_months": {
-     "value": 7.611,
-     "period": "2023",
-     "n": 1,
-     "flag": false
-    }
-   },
    "appraisals": {
     "wgi_va": {
      "value": 37.925,
@@ -4900,14 +4789,6 @@
    }
   },
   "CPV": {
-   "stressors": {
-    "reserves_below_3_months": {
-     "value": 8.69,
-     "period": "2025",
-     "n": 1,
-     "flag": false
-    }
-   },
    "appraisals": {
     "wgi_va": {
      "value": 73.883,
@@ -5290,14 +5171,6 @@
    }
   },
   "DJI": {
-   "stressors": {
-    "reserves_below_3_months": {
-     "value": 0.85,
-     "period": "2024",
-     "n": 1,
-     "flag": true
-    }
-   },
    "appraisals": {
     "wgi_va": {
      "value": 33.39,
@@ -5650,14 +5523,6 @@
    }
   },
   "DZA": {
-   "stressors": {
-    "reserves_below_3_months": {
-     "value": 11.633,
-     "period": "2025",
-     "n": 1,
-     "flag": false
-    }
-   },
    "appraisals": {
     "wgi_va": {
      "value": 37.807,
@@ -6040,14 +5905,6 @@
    }
   },
   "EGY": {
-   "stressors": {
-    "reserves_below_3_months": {
-     "value": 4.36,
-     "period": "2025",
-     "n": 1,
-     "flag": false
-    }
-   },
    "appraisals": {
     "wgi_va": {
      "value": 27.716,
@@ -6430,14 +6287,6 @@
    }
   },
   "ERI": {
-   "stressors": {
-    "reserves_below_3_months": {
-     "value": 0.85,
-     "period": "2000",
-     "n": 1,
-     "flag": true
-    }
-   },
    "appraisals": {
     "wgi_va": {
      "value": 14.635,
@@ -6724,14 +6573,6 @@
    }
   },
   "ETH": {
-   "stressors": {
-    "reserves_below_3_months": {
-     "value": 1.781,
-     "period": "2024",
-     "n": 1,
-     "flag": true
-    }
-   },
    "appraisals": {
     "wgi_va": {
      "value": 34.31,
@@ -7114,14 +6955,6 @@
    }
   },
   "GAB": {
-   "stressors": {
-    "reserves_below_3_months": {
-     "value": 4.247,
-     "period": "2015",
-     "n": 1,
-     "flag": false
-    }
-   },
    "appraisals": {
     "wgi_va": {
      "value": 42.558,
@@ -7504,14 +7337,6 @@
    }
   },
   "GHA": {
-   "stressors": {
-    "reserves_below_3_months": {
-     "value": 3.832,
-     "period": "2025",
-     "n": 1,
-     "flag": false
-    }
-   },
    "appraisals": {
     "wgi_va": {
      "value": 64.334,
@@ -7894,14 +7719,6 @@
    }
   },
   "GIN": {
-   "stressors": {
-    "reserves_below_3_months": {
-     "value": 1.277,
-     "period": "2024",
-     "n": 1,
-     "flag": true
-    }
-   },
    "appraisals": {
     "wgi_va": {
      "value": 36.135,
@@ -8274,14 +8091,6 @@
    }
   },
   "GMB": {
-   "stressors": {
-    "reserves_below_3_months": {
-     "value": 4.79,
-     "period": "2024",
-     "n": 1,
-     "flag": false
-    }
-   },
    "appraisals": {
     "wgi_va": {
      "value": 53.898,
@@ -8662,14 +8471,6 @@
    }
   },
   "GNB": {
-   "stressors": {
-    "reserves_below_3_months": {
-     "value": null,
-     "period": null,
-     "n": 0,
-     "flag": null
-    }
-   },
    "appraisals": {
     "wgi_va": {
      "value": 37.989,
@@ -9052,14 +8853,6 @@
    }
   },
   "GNQ": {
-   "stressors": {
-    "reserves_below_3_months": {
-     "value": 0.012,
-     "period": "1996",
-     "n": 1,
-     "flag": true
-    }
-   },
    "appraisals": {
     "wgi_va": {
      "value": 24.816,
@@ -9440,14 +9233,6 @@
    }
   },
   "KEN": {
-   "stressors": {
-    "reserves_below_3_months": {
-     "value": 4.632,
-     "period": "2025",
-     "n": 1,
-     "flag": false
-    }
-   },
    "appraisals": {
     "wgi_va": {
      "value": 51.589,
@@ -9830,14 +9615,6 @@
    }
   },
   "LBR": {
-   "stressors": {
-    "reserves_below_3_months": {
-     "value": 2.016,
-     "period": "2024",
-     "n": 1,
-     "flag": true
-    }
-   },
    "appraisals": {
     "wgi_va": {
      "value": 58.037,
@@ -10216,14 +9993,6 @@
    }
   },
   "LBY": {
-   "stressors": {
-    "reserves_below_3_months": {
-     "value": 31.57,
-     "period": "2023",
-     "n": 1,
-     "flag": false
-    }
-   },
    "appraisals": {
     "wgi_va": {
      "value": 31.298,
@@ -10606,14 +10375,6 @@
    }
   },
   "LSO": {
-   "stressors": {
-    "reserves_below_3_months": {
-     "value": 5.533,
-     "period": "2024",
-     "n": 1,
-     "flag": false
-    }
-   },
    "appraisals": {
     "wgi_va": {
      "value": 59.579,
@@ -10996,14 +10757,6 @@
    }
   },
   "MAR": {
-   "stressors": {
-    "reserves_below_3_months": {
-     "value": 5.927,
-     "period": "2025",
-     "n": 1,
-     "flag": false
-    }
-   },
    "appraisals": {
     "wgi_va": {
      "value": 45.023,
@@ -11386,14 +11139,6 @@
    }
   },
   "MDG": {
-   "stressors": {
-    "reserves_below_3_months": {
-     "value": 5.546,
-     "period": "2024",
-     "n": 1,
-     "flag": false
-    }
-   },
    "appraisals": {
     "wgi_va": {
      "value": 45.829,
@@ -11776,14 +11521,6 @@
    }
   },
   "MLI": {
-   "stressors": {
-    "reserves_below_3_months": {
-     "value": null,
-     "period": null,
-     "n": 0,
-     "flag": null
-    }
-   },
    "appraisals": {
     "wgi_va": {
      "value": 34.741,
@@ -12166,14 +11903,6 @@
    }
   },
   "MOZ": {
-   "stressors": {
-    "reserves_below_3_months": {
-     "value": 3.44,
-     "period": "2024",
-     "n": 1,
-     "flag": false
-    }
-   },
    "appraisals": {
     "wgi_va": {
      "value": 41.181,
@@ -12546,14 +12275,6 @@
    }
   },
   "MRT": {
-   "stressors": {
-    "reserves_below_3_months": {
-     "value": 5.414,
-     "period": "2021",
-     "n": 1,
-     "flag": false
-    }
-   },
    "appraisals": {
     "wgi_va": {
      "value": 41.173,
@@ -12936,14 +12657,6 @@
    }
   },
   "MUS": {
-   "stressors": {
-    "reserves_below_3_months": {
-     "value": 5.161,
-     "period": "2024",
-     "n": 1,
-     "flag": false
-    }
-   },
    "appraisals": {
     "wgi_va": {
      "value": 68.844,
@@ -13326,14 +13039,6 @@
    }
   },
   "MWI": {
-   "stressors": {
-    "reserves_below_3_months": {
-     "value": 1.915,
-     "period": "2020",
-     "n": 1,
-     "flag": true
-    }
-   },
    "appraisals": {
     "wgi_va": {
      "value": 57.562,
@@ -13716,14 +13421,6 @@
    }
   },
   "NAM": {
-   "stressors": {
-    "reserves_below_3_months": {
-     "value": 3.958,
-     "period": "2024",
-     "n": 1,
-     "flag": false
-    }
-   },
    "appraisals": {
     "wgi_va": {
      "value": 64.577,
@@ -14100,14 +13797,6 @@
    }
   },
   "NER": {
-   "stressors": {
-    "reserves_below_3_months": {
-     "value": null,
-     "period": null,
-     "n": 0,
-     "flag": null
-    }
-   },
    "appraisals": {
     "wgi_va": {
      "value": 36.754,
@@ -14490,14 +14179,6 @@
    }
   },
   "NGA": {
-   "stressors": {
-    "reserves_below_3_months": {
-     "value": 7.118,
-     "period": "2025",
-     "n": 1,
-     "flag": false
-    }
-   },
    "appraisals": {
     "wgi_va": {
      "value": 45.595,
@@ -14880,14 +14561,6 @@
    }
   },
   "RWA": {
-   "stressors": {
-    "reserves_below_3_months": {
-     "value": 4.185,
-     "period": "2024",
-     "n": 1,
-     "flag": false
-    }
-   },
    "appraisals": {
     "wgi_va": {
      "value": 43.747,
@@ -15270,14 +14943,6 @@
    }
   },
   "SDN": {
-   "stressors": {
-    "reserves_below_3_months": {
-     "value": 0.186,
-     "period": "2017",
-     "n": 1,
-     "flag": true
-    }
-   },
    "appraisals": {
     "wgi_va": {
      "value": 21.184,
@@ -15654,14 +15319,6 @@
    }
   },
   "SEN": {
-   "stressors": {
-    "reserves_below_3_months": {
-     "value": null,
-     "period": null,
-     "n": 0,
-     "flag": null
-    }
-   },
    "appraisals": {
     "wgi_va": {
      "value": 60.671,
@@ -16044,14 +15701,6 @@
    }
   },
   "SLE": {
-   "stressors": {
-    "reserves_below_3_months": {
-     "value": 1.75,
-     "period": "2024",
-     "n": 1,
-     "flag": true
-    }
-   },
    "appraisals": {
     "wgi_va": {
      "value": 49.162,
@@ -16420,14 +16069,6 @@
    }
   },
   "SOM": {
-   "stressors": {
-    "reserves_below_3_months": {
-     "value": null,
-     "period": null,
-     "n": 0,
-     "flag": null
-    }
-   },
    "appraisals": {
     "wgi_va": {
      "value": 28.594,
@@ -16742,14 +16383,6 @@
    }
   },
   "SSD": {
-   "stressors": {
-    "reserves_below_3_months": {
-     "value": 0.175,
-     "period": "2023",
-     "n": 1,
-     "flag": true
-    }
-   },
    "appraisals": {
     "wgi_va": {
      "value": 23.435,
@@ -17074,14 +16707,6 @@
    }
   },
   "STP": {
-   "stressors": {
-    "reserves_below_3_months": {
-     "value": 2.715,
-     "period": "2024",
-     "n": 1,
-     "flag": true
-    }
-   },
    "appraisals": {
     "wgi_va": {
      "value": 61.301,
@@ -17464,14 +17089,6 @@
    }
   },
   "SWZ": {
-   "stressors": {
-    "reserves_below_3_months": {
-     "value": 1.909,
-     "period": "2024",
-     "n": 1,
-     "flag": true
-    }
-   },
    "appraisals": {
     "wgi_va": {
      "value": 31.045,
@@ -17842,14 +17459,6 @@
    }
   },
   "SYC": {
-   "stressors": {
-    "reserves_below_3_months": {
-     "value": 3.667,
-     "period": "2024",
-     "n": 1,
-     "flag": false
-    }
-   },
    "appraisals": {
     "wgi_va": {
      "value": 70.164,
@@ -18232,14 +17841,6 @@
    }
   },
   "TCD": {
-   "stressors": {
-    "reserves_below_3_months": {
-     "value": 2.273,
-     "period": "1994",
-     "n": 1,
-     "flag": true
-    }
-   },
    "appraisals": {
     "wgi_va": {
      "value": 31.026,
@@ -18622,14 +18223,6 @@
    }
   },
   "TGO": {
-   "stressors": {
-    "reserves_below_3_months": {
-     "value": null,
-     "period": null,
-     "n": 0,
-     "flag": null
-    }
-   },
    "appraisals": {
     "wgi_va": {
      "value": 38.721,
@@ -19012,14 +18605,6 @@
    }
   },
   "TUN": {
-   "stressors": {
-    "reserves_below_3_months": {
-     "value": 4.504,
-     "period": "2024",
-     "n": 1,
-     "flag": false
-    }
-   },
    "appraisals": {
     "wgi_va": {
      "value": 45.79,
@@ -19402,14 +18987,6 @@
    }
   },
   "TZA": {
-   "stressors": {
-    "reserves_below_3_months": {
-     "value": 5.391,
-     "period": "2018",
-     "n": 1,
-     "flag": false
-    }
-   },
    "appraisals": {
     "wgi_va": {
      "value": 43.304,
@@ -19792,14 +19369,6 @@
    }
   },
   "UGA": {
-   "stressors": {
-    "reserves_below_3_months": {
-     "value": 2.345,
-     "period": "2024",
-     "n": 1,
-     "flag": true
-    }
-   },
    "appraisals": {
     "wgi_va": {
      "value": 39.198,
@@ -20182,14 +19751,6 @@
    }
   },
   "ZAF": {
-   "stressors": {
-    "reserves_below_3_months": {
-     "value": 6.225,
-     "period": "2025",
-     "n": 1,
-     "flag": false
-    }
-   },
    "appraisals": {
     "wgi_va": {
      "value": 70.218,
@@ -20572,14 +20133,6 @@
    }
   },
   "ZMB": {
-   "stressors": {
-    "reserves_below_3_months": {
-     "value": 3.293,
-     "period": "2024",
-     "n": 1,
-     "flag": false
-    }
-   },
    "appraisals": {
     "wgi_va": {
      "value": 52.104,
@@ -20962,14 +20515,6 @@
    }
   },
   "ZWE": {
-   "stressors": {
-    "reserves_below_3_months": {
-     "value": 0.519,
-     "period": "2024",
-     "n": 1,
-     "flag": true
-    }
-   },
    "appraisals": {
     "wgi_va": {
      "value": 33.905,

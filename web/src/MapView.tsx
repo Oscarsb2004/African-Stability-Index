@@ -26,6 +26,13 @@ interface Place {
 
 const AFRICA: [number, number] = [19, 3];
 
+// Imagery (P62): Esri World Imagery through ArcGIS Location Platform when a key is set: sub-metre in many cities,
+// zoom to 19. Without a key, EOX's open 10 m mosaic. The key lives in web/.env.local as VITE_ESRI_KEY, never in git;
+// it should be restricted to the site's addresses in the ArcGIS dashboard. Esri requires "Powered by Esri" and the
+// service's own data credits, always visible (developers.arcgis.com, Esri and data attribution, read 2026-10-18).
+const ESRI = "https://static-map-tiles-api.arcgis.com/arcgis/rest/services/static-basemap-tiles-service/v1/arcgis/imagery";
+const ESRI_KEY = import.meta.env.VITE_ESRI_KEY as string | undefined;
+
 export default function MapView({ meta, stability, section, selected, showClasses, onSelect }: Props) {
   const box = useRef<HTMLDivElement>(null);
   const tip = useRef<HTMLDivElement>(null);
@@ -44,14 +51,17 @@ export default function MapView({ meta, stability, section, selected, showClasse
       container: box.current,
       center: AFRICA,
       zoom: 2.6,
-      maxZoom: meta.imagery.max_zoom + 1,
-      attributionControl: { compact: true },
+      maxZoom: ESRI_KEY ? 19 : meta.imagery.max_zoom + 1,
+      attributionControl: false,
       style: {
         version: 8,
         projection: { type: "globe" },
         sky: { "atmosphere-blend": ["interpolate", ["linear"], ["zoom"], 0, 1, 5, 1, 7, 0] },
         sources: {
-          imagery: {
+          imagery: ESRI_KEY ? {
+            type: "raster", tiles: [`${ESRI}/static/tile/{z}/{y}/{x}?token=${ESRI_KEY}`], tileSize: 512, maxzoom: 19,
+            attribution: 'Powered by <a href="https://www.esri.com" target="_blank" rel="noreferrer">Esri</a>',
+          } : {
             type: "raster", tiles: [meta.imagery.tiles], tileSize: 256, maxzoom: meta.imagery.max_zoom,
             attribution: `<a href="https://cloudless.eox.at" target="_blank" rel="noreferrer">${meta.imagery.attribution}</a>`,
           },
@@ -93,6 +103,12 @@ export default function MapView({ meta, stability, section, selected, showClasse
       },
     });
     m.addControl(new maplibregl.NavigationControl({ visualizePitch: true }), "bottom-right");
+    const credit = (sources?: string) => m.addControl(new maplibregl.AttributionControl(
+      sources ? { customAttribution: `Sources: ${sources}` } : {}), "bottom-right");
+    if (ESRI_KEY) {
+      fetch(`${ESRI}/static?token=${ESRI_KEY}`).then((r) => r.json())
+        .then((d) => credit(d.copyrightText), () => credit("Esri"));
+    } else credit();
     m.addControl(new maplibregl.ScaleControl({ unit: "metric" }), "bottom-left");
 
     m.on("mousemove", "classes", (e) => {
