@@ -1,8 +1,9 @@
-// The economic outlook (P56): analyses before history. Stressors first, then the headline figures, then the
-// record, then the detail sections. Every figure shows its period; a derived one says so.
+// The economy (P56): analyses before history. The headline figures, then the record, then the economy dimension's
+// other sections; money, banks, markets and debt are under Finance. Every figure shows its period.
 
 import LineChart from "../LineChart";
-import { fmt, type Figure, type SectionSpec, type SectionsDoc } from "../data";
+import { fmt, type Figure, type SectionsDoc } from "../data";
+import { Rows, Tile, trend } from "./parts";
 
 interface Props {
   iso3: string;
@@ -13,45 +14,10 @@ function spec(doc: SectionsDoc, section: string, id: string) {
   return doc.sections.find((s) => s.id === section)?.figures.find((f) => f.id === id);
 }
 
-function Tile({ label, figure, unit, sub }: { label: string; figure?: Figure; unit: string; sub?: string }) {
-  return (
-    <div className="tile">
-      <div className="tile-label">{label}</div>
-      <div className="tile-value">{fmt(figure?.value ?? null, unit)}</div>
-      <div className="tile-sub">{sub ?? (figure?.period ? figure.period : "not published")}</div>
-    </div>
-  );
-}
-
-function Rows({ section, figures }: { section: SectionSpec; figures: Record<string, Figure> }) {
-  return (
-    <details className="block" open={section.id === "public_finances"}>
-      <summary><span>{section.title}</span><span className="muted small">{section.about}</span></summary>
-      <table className="rows">
-        <tbody>
-          {section.figures.filter((f) => f.shell !== "trend").map((f) => {
-            const r = figures[f.id];
-            return (
-              <tr key={f.id}>
-                <td>{f.label}{f.derived && <span className="tag" title={`Computed by the ${f.shell} shell`}>derived</span>}</td>
-                <td className="num">{f.unbound ? <span className="muted" title={f.unbound}>not yet</span>
-                  : r?.value == null ? <span className="muted">—</span>
-                  : <>{fmt(r.value, f.unit)} <span className="unit">{f.unit.startsWith("%") ? f.unit.slice(1) : f.unit}</span></>}</td>
-                <td className="period">{r?.period ?? ""}</td>
-              </tr>
-            );
-          })}
-        </tbody>
-      </table>
-    </details>
-  );
-}
-
 export default function EconomyPanel({ iso3, doc }: Props) {
   const a = doc.areas[iso3];
   const out = a.output, prices = a.prices;
   const peaks = (prices.inflation_peaks?.values ?? []) as { value: number; period: string }[];
-  const trend = (f?: Figure) => ({ periods: f?.periods ?? [], values: (f?.values ?? []) as number[] });
   const infl = trend(prices.inflation_trend), growth = trend(out.growth_trend);
   return (
     <div className="panel-body">
@@ -93,8 +59,8 @@ export default function EconomyPanel({ iso3, doc }: Props) {
         ({out.growth_spread_10?.period ?? "—"}).
       </p>
 
-      {doc.sections.filter((s) => !["appraisals", "output", "prices"].includes(s.id)).map((s) => (
-        <Rows key={s.id} section={s} figures={a[s.id]} />
+      {doc.sections.filter((s) => s.dimension === "economy" && !["output", "prices"].includes(s.id)).map((s) => (
+        <Rows key={s.id} section={s} figures={a[s.id]} open={s.id === "public_finances"} />
       ))}
     </div>
   );

@@ -3,3 +3,4 @@ dist/
 *.tsbuildinfo
 # the imagery key (VITE_ESRI_KEY) and any other local settings
 *.local
+.vite/

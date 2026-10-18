@@ -1,9 +1,13 @@
 # The ASI's binding to athena-core's section templates (P54): which series fills each measure.
-# 04_sections.py reads it with the datasets named on its command line. The templates are in athena/sections/.
+# 04_sections.py reads it with the datasets named on its command line. The templates are in athena/sections/, and
+# each belongs to a dimension (P64): stability, economy or finance.
 
 project = "asi"
-sections = ["appraisals", "output", "prices", "public_finances", "external", "financial_sector",
-            "structure", "jobs"]
+sections = [
+    "appraisals",                                                                      # stability
+    "output", "prices", "public_finances", "structure", "jobs",                         # economy
+    "monetary", "currency", "banks", "capital_markets", "sovereign", "capital_flows",   # finance
+]
 
 [datasets.wdi]
 publisher = "World Bank"
@@ -18,6 +22,7 @@ attribution = "The World Bank: Worldwide Governance Indicators"
 link = "https://www.worldbank.org/en/publication/worldwide-governance-indicators"
 
 [measures]
+# ── economy ───────────────────────────────────────────────────────────────────────────────────────────────────────
 # output
 gdp = { dataset = "wdi", series = "NY.GDP.MKTP.CD" }
 gdp_per_person = { dataset = "wdi", series = "NY.GDP.PCAP.PP.CD" }
@@ -27,20 +32,6 @@ inflation = { dataset = "wdi", series = "FP.CPI.TOTL.ZG" }
 # public finances
 tax_revenue = { dataset = "wdi", series = "GC.TAX.TOTL.GD.ZS" }
 fiscal_balance = { dataset = "wdi", series = "GC.NLD.TOTL.GD.ZS" }
-external_debt = { dataset = "wdi", series = "DT.DOD.DECT.GN.ZS" }
-debt_service = { dataset = "wdi", series = "DT.TDS.DECT.GN.ZS" }
-# external position
-current_account = { dataset = "wdi", series = "BN.CAB.XOKA.GD.ZS" }
-reserves_months = { dataset = "wdi", series = "FI.RES.TOTL.MO" }
-fdi = { dataset = "wdi", series = "BX.KLT.DINV.WD.GD.ZS" }
-remittances = { dataset = "wdi", series = "BX.TRF.PWKR.DT.GD.ZS" }
-aid = { dataset = "wdi", series = "DT.ODA.ODAT.GN.ZS" }
-exchange_rate = { dataset = "wdi", series = "PA.NUS.FCRF" }
-# financial sector
-private_credit = { dataset = "wdi", series = "FS.AST.PRVT.GD.ZS" }
-lending_rate = { dataset = "wdi", series = "FR.INR.LEND" }
-interest_spread = { dataset = "wdi", series = "FR.INR.LNDP" }
-accounts = { dataset = "wdi", series = "FX.OWN.TOTL.ZS" }
 # structure
 agriculture = { dataset = "wdi", series = "NV.AGR.TOTL.ZS" }
 industry = { dataset = "wdi", series = "NV.IND.TOTL.ZS" }
@@ -54,7 +45,42 @@ unemployment = { dataset = "wdi", series = "SL.UEM.TOTL.ZS" }
 youth_unemployment = { dataset = "wdi", series = "SL.UEM.1524.ZS" }
 participation = { dataset = "wdi", series = "SL.TLF.CACT.ZS" }
 vulnerable_employment = { dataset = "wdi", series = "SL.EMP.VULN.ZS" }
-# appraisals
+# ── finance ───────────────────────────────────────────────────────────────────────────────────────────────────────
+# monetary conditions
+real_interest_rate = { dataset = "wdi", series = "FR.INR.RINR" }
+lending_rate = { dataset = "wdi", series = "FR.INR.LEND" }
+deposit_rate = { dataset = "wdi", series = "FR.INR.DPST" }
+broad_money = { dataset = "wdi", series = "FM.LBL.BMNY.GD.ZS" }
+broad_money_growth = { dataset = "wdi", series = "FM.LBL.BMNY.ZG" }
+# currency and reserves
+exchange_rate = { dataset = "wdi", series = "PA.NUS.FCRF" }
+real_effective_rate = { dataset = "wdi", series = "PX.REX.REER" }
+reserves_months = { dataset = "wdi", series = "FI.RES.TOTL.MO" }
+short_term_debt_reserves = { dataset = "wdi", series = "DT.DOD.DSTC.IR.ZS" }
+current_account = { dataset = "wdi", series = "BN.CAB.XOKA.GD.ZS" }
+# banks
+bad_loans = { dataset = "wdi", series = "FB.AST.NPER.ZS" }
+capital_to_assets = { dataset = "wdi", series = "FB.BNK.CAPA.ZS" }
+private_credit = { dataset = "wdi", series = "FS.AST.PRVT.GD.ZS" }
+interest_spread = { dataset = "wdi", series = "FR.INR.LNDP" }
+accounts = { dataset = "wdi", series = "FX.OWN.TOTL.ZS" }
+# capital markets
+market_cap = { dataset = "wdi", series = "CM.MKT.LCAP.GD.ZS" }
+turnover = { dataset = "wdi", series = "CM.MKT.TRNR" }
+listed = { dataset = "wdi", series = "CM.MKT.LDOM.NO" }
+equity_index = { dataset = "wdi", series = "CM.MKT.INDX.ZG" }
+# sovereign and external debt
+interest_revenue = { dataset = "wdi", series = "GC.XPN.INTP.RV.ZS" }
+external_debt = { dataset = "wdi", series = "DT.DOD.DECT.GN.ZS" }
+debt_service_gni = { dataset = "wdi", series = "DT.TDS.DECT.GN.ZS" }
+debt_service_exports = { dataset = "wdi", series = "DT.TDS.DECT.EX.ZS" }
+# capital flows
+fdi = { dataset = "wdi", series = "BX.KLT.DINV.WD.GD.ZS" }
+portfolio_equity = { dataset = "wdi", series = "BX.PEF.TOTL.CD.WD" }
+portfolio_net = { dataset = "wdi", series = "BN.KLT.PTXL.CD" }
+remittances = { dataset = "wdi", series = "BX.TRF.PWKR.DT.GD.ZS" }
+aid = { dataset = "wdi", series = "DT.ODA.ODAT.GN.ZS" }
+# ── stability: other appraisals ───────────────────────────────────────────────────────────────────────────────────
 wgi_va = { dataset = "wgi", series = "GOV_WGI_VA.SC" }
 wgi_va_lower = { dataset = "wgi", series = "GOV_WGI_VA.SC_LB" }
 wgi_va_upper = { dataset = "wgi", series = "GOV_WGI_VA.SC_UB" }

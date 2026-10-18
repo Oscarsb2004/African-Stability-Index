@@ -1,6 +1,6 @@
 // The files 05_web.py writes to public/. Every type mirrors a document's shape; nothing here computes a figure.
 
-export type Section = "stability" | "economy" | "infrastructure" | "wonders";
+export type Section = "stability" | "economy" | "finance" | "infrastructure" | "wonders";
 
 export interface Figure {
   value: number | null;
@@ -28,6 +28,7 @@ export interface SectionSpec {
   id: string;
   title: string;
   order: number;
+  dimension: string;
   about: string;
   figures: FigureSpec[];
 }
@@ -76,11 +77,13 @@ export async function load<T>(path: string): Promise<T> {
 export function fmt(v: number | null | undefined, unit = ""): string {
   if (v === null || v === undefined) return "—";
   if (unit === "current US$") {
-    const a = Math.abs(v);
-    if (a >= 1e12) return `$${(v / 1e12).toFixed(1)} tn`;
-    if (a >= 1e9) return `$${(v / 1e9).toFixed(1)} bn`;
-    if (a >= 1e6) return `$${(v / 1e6).toFixed(1)} m`;
+    const a = Math.abs(v), sign = v < 0 ? "−" : "";
+    if (a >= 1e12) return `${sign}$${(a / 1e12).toFixed(1)} tn`;
+    if (a >= 1e9) return `${sign}$${(a / 1e9).toFixed(1)} bn`;
+    if (a >= 1e6) return `${sign}$${(a / 1e6).toFixed(1)} m`;
+    return `${sign}$${Math.round(a).toLocaleString("en")}`;
   }
+  if (unit === "companies") return Math.round(v).toLocaleString("en");
   if (unit === "current international $") return `$${Math.round(v).toLocaleString("en")}`;
   const s = Math.abs(v) >= 1000 ? Math.round(v).toLocaleString("en") : v.toFixed(1);
   return unit.startsWith("%") ? `${s}%` : s;

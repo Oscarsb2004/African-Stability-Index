@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import MapView from "./MapView";
 import EconomyPanel from "./panels/EconomyPanel";
+import FinancePanel from "./panels/FinancePanel";
 import WondersPanel from "./panels/WondersPanel";
 import InfrastructurePanel from "./panels/InfrastructurePanel";
 import StabilityPanel from "./panels/StabilityPanel";
@@ -11,6 +12,7 @@ import { load, RAMP, type MetaDoc, type Section, type SectionsDoc, type Stabilit
 const SECTIONS: { id: Section; label: string }[] = [
   { id: "stability", label: "Stability" },
   { id: "economy", label: "Economy" },
+  { id: "finance", label: "Finance" },
   { id: "infrastructure", label: "Infrastructure" },
   { id: "wonders", label: "Wonders" },
 ];
@@ -99,6 +101,7 @@ export default function App() {
             </div>
             {section === "stability" && <StabilityPanel iso3={selected} stability={docs.stability} sections={docs.sections} />}
             {section === "economy" && <EconomyPanel iso3={selected} doc={docs.sections} />}
+            {section === "finance" && <FinancePanel iso3={selected} doc={docs.sections} />}
             {section === "infrastructure" && <InfrastructurePanel iso3={selected} />}
             {section === "wonders" && <WondersPanel />}
             <details className="sources">
@@ -118,7 +121,8 @@ export default function App() {
             {section === "wonders" ? <WondersPanel /> : (
               <p className="muted small">
                 Stability shows the ASI next to other institutions' scores. Economy leads with the latest figures
-                and the record. Infrastructure shows cities now; roads, rail, ports and megaprojects follow.
+                and the record. Finance covers money, the currency and reserves, banks, markets and debt.
+                Infrastructure shows cities now; roads, rail, ports and megaprojects follow.
               </p>
             )}
           </div>
