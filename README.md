@@ -44,6 +44,9 @@ from `data/`.
 | 1 | `01_inputs.py <datasets>` | Select the registry's series for the 54 states over the pull window from the named datasets. The datasets are the edition: `asi-pull-2026-08-08` reproduces every published score exactly; `wdi-2026-10-08 wgi-2026-09-25` would make a new edition | `data/inputs.csv` |
 | 2 | `02_panel.py` | Build the country x indicator x **year** panel with provenance, apply derived transforms, fill regional gaps, normalise against **fixed goalposts**, and score pillars and composites with reliability tiers | `data/panel/*` |
 | 3 | `03_robustness.py` | Sensitivity analysis at the reference year: weighting methods, adversarial weights, measured-only, islands excluded | `data/panel/robustness.json` |
+| 4 | `04_sections.py <datasets>` | The economy and appraisal sections for each country: athena-core's shared section templates, bound to WDI and WGI series in `sections.toml` (P54) | `data/sections.json` |
+| 5 | `05_web.py` | The files the new site reads: Natural Earth borders, countries and cities (hash-locked through `athena.fetch`), the published ASI at its reference year, and the sections | `web/public/{geo,data}/*` |
+| — | `web/`: `npm install`, then `npm run dev` | The new site (prototype, P55): a satellite globe with four sections (Stability, Economy, Infrastructure, Heritage) and a country panel on the right | — |
 | 7 | `run_asi.py` | Run the interface (port 8050); bootstraps `.venv` on first use | — |
 
 Add `--freeze-goalposts` to stage 2 only when deliberately re-anchoring every
