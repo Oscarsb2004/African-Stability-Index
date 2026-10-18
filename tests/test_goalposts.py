@@ -106,17 +106,45 @@ def test_goalposts_contain_every_value_they_were_derived_from():
     assert out["goalpost_max"] >= max(values)
 
 
-def test_an_extreme_set_by_imputed_data_is_recorded_not_hidden():
+def test_an_imputed_or_carried_value_never_sets_a_goalpost():
     """
-    A goalpost anchored on a regional-mean estimate is a manual-review item.
-    Recording it is the difference between a known weakness and an unknown one.
+    Edition 2 (plan 4.4): goalposts come from observed values only. In edition 1
+    an extreme set by a regional mean was flagged for review; now it cannot set
+    the extreme at all.
     """
     out = gp.compute(
-        _panel([1.0, 50.0, 100.0], ["regional_mean", "observed", "observed"]),
+        _panel([1.0, 50.0, 100.0, 200.0], ["regional_mean", "observed", "observed", "carried_forward"]),
         {"gdp_pc": {}}, 1.5,
     )["gdp_pc"]
-    assert out["min_from_imputed"] is True
-    assert out["max_from_imputed"] is False
+    assert (out["goalpost_min"], out["goalpost_max"]) == (50.0, 100.0)
+    assert out["goalpost_source"] == "observed"
+    # negative control: marked observed, the low value now sets the lower bound
+    every = gp.compute(_panel([1.0, 50.0, 100.0, 200.0]), {"gdp_pc": {}}, 1.5)["gdp_pc"]
+    assert every["goalpost_min"] == 1.0
+
+
+def test_theoretical_bounds_are_the_goalposts_where_the_registry_gives_them():
+    out = gp.compute(_panel([20.0, 40.0, 60.0]), {"gdp_pc": {"theoretical_bounds": [0, 100]}}, 1.5)["gdp_pc"]
+    assert (out["goalpost_min"], out["goalpost_max"], out["goalpost_source"]) == (0.0, 100.0, "theoretical")
+
+
+def test_the_trimmed_rule_replaces_only_values_beyond_three_trimmed_sds():
+    values = pd.Series(list(np.linspace(0.0, 10.0, 99)) + [1000.0])
+    lo, hi, lo_to, hi_to = gp.trimmed_outlier_bounds(values)
+    capped = gp.cap_outliers(values, lo, hi, lo_to, hi_to)
+    assert capped.iloc[-1] == pytest.approx(hi_to)       # the outlier comes in to 3.1 trimmed SDs
+    assert (capped.iloc[:-1] == values.iloc[:-1]).all()   # the rest are untouched
+    assert hi_to > hi                                     # replaced just beyond the 3-SD threshold, as the IIAG does
+    # negative control: no outlier, nothing moves
+    plain = pd.Series(np.linspace(0.0, 10.0, 100))
+    assert (gp.cap_outliers(plain, *gp.trimmed_outlier_bounds(plain)) == plain).all()
+
+
+def test_adding_an_indicator_never_moves_an_existing_goalpost():
+    frozen = {"a": {"goalpost_min": 0.0, "goalpost_max": 1.0}}
+    computed = {"a": {"goalpost_min": -5.0, "goalpost_max": 9.0}, "b": {"goalpost_min": 2.0, "goalpost_max": 3.0}}
+    merged, added = gp.add_new(frozen, computed)
+    assert merged["a"] == frozen["a"] and merged["b"] == computed["b"] and added == ["b"]
 
 
 def test_compute_carries_the_spec_flags_through():

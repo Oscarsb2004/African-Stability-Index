@@ -125,3 +125,69 @@ gdp_pc_ppp 1. Re-anchoring the goalposts is step 3.
   method steps.
 - **Tests:** 759 passed, 1 xfailed, besides those 4. Three new tests cover the quantile fill, the edition-1 mean
   fill as a negative control, and the published panel having no fill.
+
+## Step 3: goalposts re-anchored on observed values, the IIAG's outlier rule, theoretical bounds (plan 4.4)
+
+**What changed.** The goalposts are re-anchored once, deliberately, with `02_panel.py --freeze-goalposts`.
+`registry/goalposts.yaml` moves to version 3. Three rules:
+- **Observed values only.** A carried-forward value repeats a measurement and an imputed one guesses it, so neither
+  sets a bound. In edition 1, 19 of 32 goalposts rested on imputed extremes.
+- **Outliers are capped first, by the Ibrahim Index's rule.**
+  - **The rule** (2024 IIAG methodology, "Outliers and treatment", read 2026-10-18):
+    - the trimmed mean and standard deviation come from the central 95% of the values;
+    - a value more than 3 of those standard deviations from the mean is replaced by the mean plus or minus 3.1 of
+      them.
+  - **It replaces edition 1's Tukey fences** at 2 IQR.
+  - **Values replaced** (observed values beyond the threshold):
+    - co2_pc 80;
+    - domestic_credit_private 66;
+    - gdp_growth_3yr_avg 61;
+    - inflation_5yr_avg 59;
+    - freshwater_withdraw 57;
+    - hand_washing_facil 33;
+    - primary_gpi 30;
+    - mort_infant 19;
+    - rq_estimate 15;
+    - secondary_gpi 12;
+    - cc_estimate 11;
+    - life_expect_tot 9;
+    - rl_estimate 8;
+    - ge_estimate 6;
+    - gini 3, primary_enroll 3, femicide 3;
+    - youth_literacy 2, learning_poverty 2, social_protection_labour_pop 2;
+    - pv_estimate 1, secondary_enroll 1.
+- **Theoretical bounds where they exist.** 15 indicators take their possible extremes as goalposts, so a score means
+  the same distance from the possible best and worst:
+  - 0 to 100 for 13 percentages: agri_land, elec_access_tot, gini, hand_washing_facil, learning_poverty,
+    managed_water_percent, nonrenew_elec, primary_enroll, secondary_enroll, sev_food_insec,
+    social_protection_labour_pop, water_access_pop, youth_literacy;
+  - 0 to 1 for the two parity distances.
+
+  The registry carries them as `theoretical_bounds`.
+- **New indicators (N1):** `02_panel.py --freeze-new-goalposts` adds goalposts for indicators the file lacks and
+  leaves every existing one alone, so adding an indicator never re-anchors history.
+
+**What moved** (2024, equal weights, against step 2)
+- **Scores:** composites moved 1.21 points on average (+0.81 net), at most 3.74 (ERI, +3.74). The composite range
+  is 21.92 to 80.98.
+- **Ranks:** rank correlation is 0.989 over 54 states. 5 moved 5 places or more:
+  - BFA 34 to 40;
+  - DZA 20 to 14;
+  - CIV 19 to 24;
+  - COG 39 to 44;
+  - ZWE 44 to 39.
+- **Pillars,** mean change in points: A +1.27, B −2.60, C +4.09, D −5.32, E +0.35, F +5.54, G +2.20. Theoretical
+  bounds lower scores where the observed range sat high in the scale (D's water and hygiene) and raise them where it
+  sat low.
+- **Clamping:** only 1 value now falls outside its goalposts (displaced_persons), against 45 under the old frozen
+  goalposts.
+- **Reliability:** unchanged, 18 reliable and 36 thin.
+- **Top 5:** MUS, CPV, SYC, MAR, NAM. **Bottom 5:** LBY, CAF, SOM, SDN, SSD.
+
+**Checks**
+- **Passing:** `verify.run` rebuild, panel and contract.
+- **Narrative fails** as before, until step 10.
+- **Tests:** 762 passed and 1 xfailed, besides the 4 narrative tests.
+  - **Replaced:** edition 1's test that recorded an imputed extreme. It is now a test that an imputed or carried
+    value never sets a goalpost, with a negative control.
+  - **New:** tests for theoretical bounds, the trimmed rule (with a negative control) and N1.

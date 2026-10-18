@@ -65,6 +65,7 @@
     is survey-based and reported infrequently.
   database: wdi
   log_transform: false
+  theoretical_bounds: [0, 100]
 - variable_name: domestic_credit_private
   display_name: Domestic credit to private sector (% of GDP)
   source: wb_api

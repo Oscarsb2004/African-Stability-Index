@@ -35,7 +35,7 @@ import numpy as np
 import pandas as pd
 import yaml
 
-GOALPOSTS_VERSION = 2
+GOALPOSTS_VERSION = 3  # 3: edition 2 (observed only, trimmed outlier rule, theoretical bounds)
 
 #: Decimal places bounds are stored at. Bounds are rounded OUTWARD (min down,
 #: max up) rather than to-nearest, so that the very values which defined an
@@ -81,13 +81,40 @@ def apply_log(values: pd.Series, log_transform: bool) -> pd.Series:
 
 
 def winsorize_bounds(values: pd.Series, iqr_multiplier: float) -> tuple[float, float]:
-    """Tukey fences at `iqr_multiplier` x IQR. Returns (lower, upper)."""
+    """Tukey fences at `iqr_multiplier` x IQR. Returns (lower, upper). Edition 1's rule."""
     clean = values.dropna().astype(float)
     if clean.empty:
         return (float("nan"), float("nan"))
     q1, q3 = np.quantile(clean, [0.25, 0.75])
     iqr = q3 - q1
     return (float(q1 - iqr_multiplier * iqr), float(q3 + iqr_multiplier * iqr))
+
+
+#: The Ibrahim Index's outlier rule (2024 IIAG methodology, "Outliers and treatment", read 2026-10-18): the trimmed
+#: mean and standard deviation come from the central 95% of the values; a value more than 3 of those standard
+#: deviations from the mean is replaced by the mean plus or minus 3.1 of them.
+TRIM, OUTLIER_SD, REPLACE_SD = 0.025, 3.0, 3.1
+
+
+def trimmed_outlier_bounds(values: pd.Series) -> tuple[float, float, float, float]:
+    """(lower, upper, lower_to, upper_to): a value below `lower` becomes `lower_to`, above `upper` becomes
+    `upper_to`. Edition 2's rule (plan 4.4)."""
+    clean = np.sort(values.dropna().astype(float).to_numpy())
+    if clean.size == 0:
+        return (float("nan"),) * 4
+    lo_q, hi_q = np.quantile(clean, [TRIM, 1 - TRIM])
+    core = clean[(clean >= lo_q) & (clean <= hi_q)]
+    mean = float(core.mean())
+    sd = float(core.std(ddof=1)) if core.size > 1 else 0.0
+    return (mean - OUTLIER_SD * sd, mean + OUTLIER_SD * sd, mean - REPLACE_SD * sd, mean + REPLACE_SD * sd)
+
+
+def cap_outliers(values: pd.Series, lower, upper, lower_to, upper_to) -> pd.Series:
+    """Replace values beyond the outlier bounds; leave the rest alone."""
+    x = values.astype(float)
+    if lower is None or upper is None or not np.isfinite(lower):
+        return x
+    return x.mask(x < lower, lower_to).mask(x > upper, upper_to)
 
 
 # ── Computing the frozen bounds ────────────────────────────────────────────────
@@ -98,57 +125,69 @@ def compute(
     iqr_multiplier: float,
 ) -> dict[str, dict]:
     """
-    Derive winsorisation and goalpost bounds for every scoring indicator.
+    Derive outlier and goalpost bounds for every scoring indicator (edition 2, plan 4.4).
 
     Uses the whole panel — all countries, all years — so the bounds describe the
-    full historical range the index will ever normalise against.
+    full historical range the index will ever normalise against. Three rules:
 
-    Records `min_from_imputed` / `max_from_imputed`: whether an extreme was set
-    by a regional-mean estimate rather than a real measurement. A goalpost
-    anchored on an imputed value is a manual-review item, so it is recorded
-    rather than quietly accepted.
+    - **Observed values only.** A carried-forward or imputed value repeats or
+      guesses a measurement, so it never sets a bound.
+    - **Outliers capped first,** by the Ibrahim Index's trimmed rule
+      (`trimmed_outlier_bounds`), on the scale the index normalises (after log).
+    - **Theoretical bounds win** where the registry gives them (0 to 100 for a
+      percentage, 0 to 1 for a parity distance): the goalposts are then those
+      bounds, so a score means the same distance from the possible extremes.
+
+    `iqr_multiplier` is kept for the signature; edition 1's Tukey fences are no
+    longer used.
     """
     out: dict[str, dict] = {}
 
     for var, spec in specs.items():
         if spec.get("role", "scoring") != "scoring":
             continue
-        sub = panel[panel["variable_name"] == var]
+        sub = panel[(panel["variable_name"] == var) & panel["provenance"].isin(["observed", "derived"])]
         if sub.empty:
             continue
 
-        logged = apply_log(sub["raw_value"], bool(spec.get("log_transform", False)))
-        lo, hi = winsorize_bounds(logged, iqr_multiplier)
-        capped = logged.clip(lower=lo, upper=hi) if np.isfinite(lo) else logged
-
+        log = bool(spec.get("log_transform", False))
+        logged = apply_log(sub["raw_value"], log)
+        lo, hi, lo_to, hi_to = trimmed_outlier_bounds(logged)
+        capped = cap_outliers(logged, lo, hi, lo_to, hi_to)
         valid = capped.dropna()
         if valid.empty:
             continue
 
-        gmin, gmax = float(valid.min()), float(valid.max())
+        theory = spec.get("theoretical_bounds")
+        if theory:
+            gmin, gmax = (float(v) for v in apply_log(pd.Series(theory, dtype=float), log))
+        else:
+            gmin, gmax = float(valid.min()), float(valid.max())
 
-        # was an extreme set by imputed data?
-        prov = sub["provenance"].to_numpy()
-        capped_arr = capped.to_numpy(dtype=float)
-        imputed_mask = np.isin(prov, ["regional_mean", "carried_forward"])
-        at_min = np.isclose(capped_arr, gmin, equal_nan=False)
-        at_max = np.isclose(capped_arr, gmax, equal_nan=False)
-
+        finite = np.isfinite(lo)
         out[var] = {
-            "log_transform":     bool(spec.get("log_transform", False)),
+            "log_transform":     log,
             "polarity":          spec.get("polarity", "positive"),
-            "winsor_lower":      _round_outward(lo, up=False) if np.isfinite(lo) else None,
-            "winsor_upper":      _round_outward(hi, up=True) if np.isfinite(hi) else None,
-            "goalpost_min":      _round_outward(gmin, up=False),
-            "goalpost_max":      _round_outward(gmax, up=True),
+            "winsor_lower":      _round_outward(lo, up=False) if finite else None,
+            "winsor_upper":      _round_outward(hi, up=True) if finite else None,
+            "winsor_lower_to":   _round_outward(lo_to, up=False) if finite else None,
+            "winsor_upper_to":   _round_outward(hi_to, up=True) if finite else None,
+            "goalpost_min":      gmin if theory else _round_outward(gmin, up=False),
+            "goalpost_max":      gmax if theory else _round_outward(gmax, up=True),
+            "goalpost_source":   "theoretical" if theory else "observed",
             "n_values":          int(valid.shape[0]),
-            "n_capped_low":      int((logged < lo).sum()) if np.isfinite(lo) else 0,
-            "n_capped_high":     int((logged > hi).sum()) if np.isfinite(hi) else 0,
-            "min_from_imputed":  bool((at_min & imputed_mask).any()),
-            "max_from_imputed":  bool((at_max & imputed_mask).any()),
+            "n_capped_low":      int((logged < lo).sum()) if finite else 0,
+            "n_capped_high":     int((logged > hi).sum()) if finite else 0,
         }
 
     return out
+
+
+def add_new(frozen: dict[str, dict], computed: dict[str, dict]) -> tuple[dict[str, dict], list[str]]:
+    """N1: goalposts for indicators the frozen file lacks, without touching any existing indicator's bounds, so
+    adding an indicator never re-anchors history. Returns the merged bounds and the names added."""
+    added = sorted(set(computed) - set(frozen))
+    return {**frozen, **{v: computed[v] for v in added}}, added
 
 
 # ── Persistence ────────────────────────────────────────────────────────────────
@@ -193,6 +232,6 @@ def load(path) -> dict[str, dict]:
 
 
 __all__ = [
-    "GOALPOSTS_VERSION", "apply_log", "winsorize_bounds",
-    "compute", "freeze", "load",
+    "GOALPOSTS_VERSION", "apply_log", "winsorize_bounds", "trimmed_outlier_bounds", "cap_outliers",
+    "compute", "add_new", "freeze", "load",
 ]

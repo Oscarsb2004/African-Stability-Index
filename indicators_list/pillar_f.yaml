@@ -72,6 +72,7 @@
     (IEA World Energy Statistics)."
   database: wdi
   log_transform: false
+  theoretical_bounds: [0, 100]
 
 - variable_name: agri_land
   display_name: Agricultural land (% of land area)
@@ -98,3 +99,4 @@
     World Bank WDI AG.LND.AGRI.ZS (FAO)."
   database: wdi
   log_transform: false
+  theoretical_bounds: [0, 100]

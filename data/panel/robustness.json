@@ -3,19 +3,19 @@
  "n_countries": 54,
  "methods": {
   "pca": {
-   "spearman_vs_equal": 0.9623,
-   "max_rank_shift": 12,
-   "median_rank_shift": 2.0
-  },
-  "entropy": {
-   "spearman_vs_equal": 0.9823,
+   "spearman_vs_equal": 0.9785,
    "max_rank_shift": 8,
    "median_rank_shift": 1.5
   },
+  "entropy": {
+   "spearman_vs_equal": 0.9902,
+   "max_rank_shift": 9,
+   "median_rank_shift": 1.0
+  },
   "geometric": {
-   "spearman_vs_equal": 0.9149,
-   "max_rank_shift": 34,
-   "median_rank_shift": 2.0
+   "spearman_vs_equal": 0.9627,
+   "max_rank_shift": 27,
+   "median_rank_shift": 1.0
   }
  },
  "adversarial_weights": {
@@ -23,86 +23,86 @@
   "n_sampled": 10000,
   "n_within_bounds": 2993,
   "acceptance_rate": 0.2993,
-  "worst_spearman": 0.8914,
+  "worst_spearman": 0.9234,
   "worst_weights": {
-   "A": 0.1052,
-   "B": 0.1875,
-   "C": 0.1186,
-   "D": 0.053,
-   "E": 0.2191,
-   "F": 0.2475,
-   "G": 0.0691
+   "A": 0.0652,
+   "B": 0.2421,
+   "C": 0.159,
+   "D": 0.1675,
+   "E": 0.0651,
+   "F": 0.2497,
+   "G": 0.0514
   },
-  "verdict": "moderately sensitive",
+  "verdict": "robust",
   "quintile_stability": {
    "definition": "share of admissible weightings that leave the country in its published 5-quantile",
    "n_weightings": 2993,
-   "median": 0.8872,
+   "median": 0.9375,
    "least_stable": {
-    "ZWE": 0.3986,
-    "BEN": 0.421,
-    "STP": 0.4748,
-    "UGA": 0.4955,
-    "MWI": 0.5048,
-    "DZA": 0.5135,
-    "DJI": 0.5426,
-    "TUN": 0.5556
+    "ERI": 0.4427,
+    "SEN": 0.4567,
+    "COG": 0.4845,
+    "MWI": 0.5055,
+    "UGA": 0.5065,
+    "SWZ": 0.5286,
+    "EGY": 0.5413,
+    "DJI": 0.5663
    },
    "per_country": {
-    "AGO": 0.6752,
-    "BDI": 0.8453,
-    "BEN": 0.421,
-    "BFA": 0.6749,
-    "BWA": 0.8854,
+    "AGO": 0.6863,
+    "BDI": 0.8099,
+    "BEN": 0.7357,
+    "BFA": 0.9836,
+    "BWA": 0.9913,
     "CAF": 1.0,
-    "CIV": 0.8172,
-    "CMR": 0.995,
+    "CIV": 0.7237,
+    "CMR": 0.9963,
     "COD": 1.0,
-    "COG": 0.8406,
-    "COM": 0.9813,
+    "COG": 0.4845,
+    "COM": 0.9506,
     "CPV": 1.0,
-    "DJI": 0.5426,
-    "DZA": 0.5135,
-    "EGY": 0.576,
-    "ERI": 0.8891,
-    "ETH": 0.8834,
-    "GAB": 0.7771,
-    "GHA": 0.984,
-    "GIN": 0.7751,
-    "GMB": 0.986,
-    "GNB": 0.8376,
-    "GNQ": 1.0,
-    "KEN": 0.983,
-    "LBR": 0.7153,
-    "LBY": 0.9739,
-    "LSO": 0.5563,
+    "DJI": 0.5663,
+    "DZA": 0.7264,
+    "EGY": 0.5413,
+    "ERI": 0.4427,
+    "ETH": 0.6946,
+    "GAB": 0.7063,
+    "GHA": 0.9706,
+    "GIN": 0.9262,
+    "GMB": 0.9973,
+    "GNB": 0.5934,
+    "GNQ": 0.9997,
+    "KEN": 0.9906,
+    "LBR": 0.724,
+    "LBY": 0.9903,
+    "LSO": 0.5974,
     "MAR": 1.0,
-    "MDG": 0.9422,
-    "MLI": 0.8974,
-    "MOZ": 0.9078,
-    "MRT": 0.721,
+    "MDG": 0.9863,
+    "MLI": 0.9749,
+    "MOZ": 0.9131,
+    "MRT": 0.7822,
     "MUS": 1.0,
-    "MWI": 0.5048,
-    "NAM": 0.9923,
-    "NER": 0.9987,
-    "NGA": 0.8654,
-    "RWA": 0.988,
+    "MWI": 0.5055,
+    "NAM": 1.0,
+    "NER": 0.997,
+    "NGA": 0.861,
+    "RWA": 1.0,
     "SDN": 1.0,
-    "SEN": 0.6362,
-    "SLE": 0.6001,
+    "SEN": 0.4567,
+    "SLE": 0.701,
     "SOM": 1.0,
     "SSD": 1.0,
-    "STP": 0.4748,
-    "SWZ": 0.9676,
-    "SYC": 0.995,
+    "STP": 0.725,
+    "SWZ": 0.5286,
+    "SYC": 0.9903,
     "TCD": 1.0,
-    "TGO": 0.9516,
-    "TUN": 0.5556,
-    "TZA": 0.8998,
-    "UGA": 0.4955,
-    "ZAF": 0.838,
-    "ZMB": 0.7638,
-    "ZWE": 0.3986
+    "TGO": 0.998,
+    "TUN": 0.6762,
+    "TZA": 0.9689,
+    "UGA": 0.5065,
+    "ZAF": 0.8493,
+    "ZMB": 0.6786,
+    "ZWE": 0.9489
    }
   }
  },
@@ -110,7 +110,7 @@
   "basis": "composites rebuilt from observations.csv cells with provenance == 'observed'; pillars re-formed from the survivors, not filtered by pillar-level reliability",
   "n_cells_kept": 1014,
   "n_cells_total": 1728,
-  "spearman_vs_baseline": 0.952,
+  "spearman_vs_baseline": 0.9574,
   "min_pillars_required": 5,
   "countries_no_longer_scoreable": 0,
   "unscoreable": [],
@@ -119,53 +119,53 @@
   "pillar_years_below_half_measured": 62,
   "n_pillar_years_rebuilt": 377,
   "median_rank_shift": 2.0,
-  "max_rank_shift": 18
+  "max_rank_shift": 13
  },
  "islands_excluded": {
   "n_removed": 6,
-  "median_rank_shift": 6.0,
+  "median_rank_shift": 5.0,
   "max_rank_shift": 6
  },
  "rank_spread_across_methods": {
   "SYC": {
-   "min": 1,
-   "max": 37,
-   "range": 36
-  },
-  "DZA": {
-   "min": 10,
-   "max": 44,
-   "range": 34
+   "min": 2,
+   "max": 30,
+   "range": 28
   },
   "EGY": {
-   "min": 6,
-   "max": 31,
-   "range": 25
+   "min": 11,
+   "max": 27,
+   "range": 16
   },
   "MRT": {
-   "min": 18,
-   "max": 38,
-   "range": 20
+   "min": 19,
+   "max": 28,
+   "range": 9
   },
-  "UGA": {
-   "min": 15,
-   "max": 29,
-   "range": 14
+  "ZMB": {
+   "min": 17,
+   "max": 26,
+   "range": 9
+  },
+  "LBY": {
+   "min": 43,
+   "max": 52,
+   "range": 9
   },
   "GIN": {
    "min": 35,
-   "max": 46,
-   "range": 11
+   "max": 44,
+   "range": 9
   },
-  "LBY": {
-   "min": 41,
-   "max": 52,
-   "range": 11
+  "COG": {
+   "min": 37,
+   "max": 44,
+   "range": 7
   },
-  "LSO": {
-   "min": 8,
-   "max": 19,
-   "range": 11
+  "ZWE": {
+   "min": 34,
+   "max": 41,
+   "range": 7
   }
  }
 }

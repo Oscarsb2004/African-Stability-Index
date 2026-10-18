@@ -19,7 +19,7 @@ import numpy as np
 import pandas as pd
 
 from asi.core.schema import Polarity
-from asi.pipeline.goalposts import apply_log
+from asi.pipeline.goalposts import apply_log, cap_outliers
 
 
 def normalize_value(
@@ -82,7 +82,10 @@ def normalize_panel(
 
         lo, hi = bounds.get("winsor_lower"), bounds.get("winsor_upper")
         if lo is not None and hi is not None:
-            transformed = transformed.clip(lower=lo, upper=hi)
+            if "winsor_lower_to" in bounds:  # edition 2: beyond 3 trimmed SDs, replaced at 3.1 (the IIAG rule)
+                transformed = cap_outliers(transformed, lo, hi, bounds["winsor_lower_to"], bounds["winsor_upper_to"])
+            else:                            # edition 1: Tukey fences, clipped
+                transformed = transformed.clip(lower=lo, upper=hi)
 
         gmin = float(bounds["goalpost_min"])
         gmax = float(bounds["goalpost_max"])

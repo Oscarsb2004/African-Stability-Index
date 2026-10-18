@@ -65,6 +65,8 @@ def main() -> int:
     ap.add_argument("--freeze-goalposts", action="store_true",
                     help="recompute and overwrite the frozen goalposts "
                          "(re-anchors every historical score — do this deliberately)")
+    ap.add_argument("--freeze-new-goalposts", action="store_true",
+                    help="freeze goalposts for indicators the file lacks, leaving every existing one as it is (N1)")
     ap.add_argument("--missing-at-regional-quantile", type=float, metavar="Q",
                     help="sensitivity run only: fill every gap with its region's Q quantile that year "
                          "(plan 4.5 asks for 0.25); needs --out, so the published outputs are untouched")
@@ -149,15 +151,20 @@ def main() -> int:
     # scores that came out would look entirely normal and would not be
     # comparable with any previously published edition.
     if args.freeze_goalposts:
-        logger.info("Step 4 - computing and FREEZING goalposts")
+        logger.info("Step 4 - computing and FREEZING goalposts (re-anchors every historical score)")
         gps = gp_mod.compute(pnl, scoring, IQR_MULTIPLIER)
         gp_mod.freeze(gps, GOALPOSTS_FILE, panel_years=(PANEL_START, panel_end))
-        logger.info("  froze %d indicators -> %s", len(gps), GOALPOSTS_FILE)
-        flagged = [v for v, b in gps.items()
-                   if b["min_from_imputed"] or b["max_from_imputed"]]
-        if flagged:
-            logger.warning("  goalpost extremes set by IMPUTED values (review these): %s",
-                           flagged)
+        theory = sorted(v for v, b in gps.items() if b["goalpost_source"] == "theoretical")
+        logger.info("  froze %d indicators -> %s; theoretical bounds for %d: %s", len(gps), GOALPOSTS_FILE,
+                    len(theory), theory)
+        capped = {v: b["n_capped_low"] + b["n_capped_high"] for v, b in gps.items()
+                  if b["n_capped_low"] + b["n_capped_high"]}
+        logger.info("  observed values beyond 3 trimmed SDs, replaced at 3.1: %s", capped)
+    elif args.freeze_new_goalposts:
+        # N1: an added indicator gets goalposts; every existing indicator keeps its own, so history stays put
+        merged, added = gp_mod.add_new(gp_mod.load(GOALPOSTS_FILE), gp_mod.compute(pnl, scoring, IQR_MULTIPLIER))
+        gp_mod.freeze(merged, GOALPOSTS_FILE, panel_years=(PANEL_START, panel_end))
+        logger.info("Step 4 - goalposts added for new indicators only: %s", added or "none")
     else:
         logger.info("Step 4 - loading frozen goalposts")
     gps = gp_mod.load(GOALPOSTS_FILE)

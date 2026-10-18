@@ -44,6 +44,7 @@
     estimates. Source: World Bank WDI SE.ADT.1524.LT.ZS."
   database: wdi
   log_transform: false
+  theoretical_bounds: [0, 100]
 
 - variable_name: primary_enroll
   display_name: School enrollment, primary, net (%)
@@ -67,6 +68,7 @@
     SE.PRM.NENR (UNESCO Institute for Statistics)."
   database: wdi
   log_transform: false
+  theoretical_bounds: [0, 100]
 
 - variable_name: secondary_enroll
   display_name: School enrollment, secondary, net (%)
@@ -89,6 +91,7 @@
     just initial access. Source: World Bank WDI SE.SEC.NENR."
   database: wdi
   log_transform: false
+  theoretical_bounds: [0, 100]
 
 - variable_name: learning_poverty
   display_name: "Learning poverty: share of children below minimum reading proficiency,
@@ -113,6 +116,7 @@
     for Statistics, SE.LPV.PRIM."
   database: wdi
   log_transform: false
+  theoretical_bounds: [0, 100]
 
 - variable_name: primary_gpi
   display_name: School enrollment, primary, gender parity index (GPI)
@@ -142,6 +146,7 @@
     African coverage and was not used. Source: World Bank WDI, UNESCO UIS."
   database: wdi
   log_transform: false
+  theoretical_bounds: [0, 1]
 
 - variable_name: secondary_gpi
   display_name: School enrollment, secondary, gender parity index (GPI)
@@ -170,6 +175,7 @@
     UNESCO UIS."
   database: wdi
   log_transform: false
+  theoretical_bounds: [0, 1]
 
 - variable_name: femicide
   display_name: Intentional homicides, female (per 100,000 female population)

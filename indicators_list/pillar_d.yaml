@@ -80,6 +80,7 @@
     Joint Monitoring Programme)."
   database: wdi
   log_transform: false
+  theoretical_bounds: [0, 100]
 
 - variable_name: hand_washing_facil
   display_name: People with basic handwashing facilities including soap and water
@@ -103,6 +104,7 @@
     for water access. Source: World Bank WDI SH.STA.HYGN.ZS (WHO/UNICEF JMP)."
   database: wdi
   log_transform: false
+  theoretical_bounds: [0, 100]
 
 - variable_name: sev_food_insec
   display_name: Prevalence of severe food insecurity (% of population)
@@ -129,3 +131,4 @@
     (FAO FIES data)."
   database: wdi
   log_transform: true
+  theoretical_bounds: [0, 100]

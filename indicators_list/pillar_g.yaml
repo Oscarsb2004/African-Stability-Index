@@ -35,6 +35,7 @@
     indicator. Source: World Bank WDI EG.ELC.ACCS.ZS (IEA / World Bank tracking)."
   database: wdi
   log_transform: false
+  theoretical_bounds: [0, 100]
 
 - variable_name: water_access_pop
   display_name: People using at least basic drinking water services (% of population)
@@ -58,6 +59,7 @@
     to the population. Source: World Bank WDI SH.H2O.BASW.ZS (WHO/UNICEF JMP)."
   database: wdi
   log_transform: false
+  theoretical_bounds: [0, 100]
 
 - variable_name: social_protection_labour_pop
   display_name: Coverage of social protection and labor programs (% of population)
@@ -85,3 +87,4 @@
     Source: World Bank ASPIRE database, per_allsp.cov_pop_tot."
   database: wdi
   log_transform: false
+  theoretical_bounds: [0, 100]

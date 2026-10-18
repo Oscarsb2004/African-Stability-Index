@@ -392,6 +392,12 @@ class IndicatorRegistry:
         if not isinstance(entry.get("log_transform"), bool):
             errors.append(f"[{name}] 'log_transform' must be a boolean (true/false)")
 
+        # theoretical_bounds (optional): the possible extremes, used as goalposts (edition 2, plan 4.4)
+        bounds = entry.get("theoretical_bounds")
+        if bounds is not None and not (isinstance(bounds, list) and len(bounds) == 2
+                                       and all(isinstance(b, (int, float)) for b in bounds) and bounds[0] < bounds[1]):
+            errors.append(f"[{name}] 'theoretical_bounds' must be [low, high] with low < high")
+
         # source format
         errors += self._validate_source(entry["source"], entry["series_code"], name)
         return errors
