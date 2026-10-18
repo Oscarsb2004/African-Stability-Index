@@ -1,0 +1,81 @@
+# The ASI's binding to athena-core's section templates (P54): which series fills each measure.
+# 04_sections.py reads it with the datasets named on its command line. The templates are in athena/sections/.
+
+project = "asi"
+sections = ["stressors", "appraisals", "output", "prices", "public_finances", "external", "financial_sector",
+            "structure", "jobs"]
+
+[datasets.wdi]
+publisher = "World Bank"
+licence = "CC BY 4.0"
+attribution = "The World Bank: World Development Indicators"
+link = "https://datacatalog.worldbank.org/search/dataset/0037712"
+
+[datasets.wgi]
+publisher = "World Bank"
+licence = "CC BY 4.0"
+attribution = "The World Bank: Worldwide Governance Indicators"
+link = "https://www.worldbank.org/en/publication/worldwide-governance-indicators"
+
+[measures]
+# output
+gdp = { dataset = "wdi", series = "NY.GDP.MKTP.CD" }
+gdp_per_person = { dataset = "wdi", series = "NY.GDP.PCAP.PP.CD" }
+real_growth = { dataset = "wdi", series = "NY.GDP.MKTP.KD.ZG" }
+# prices
+inflation = { dataset = "wdi", series = "FP.CPI.TOTL.ZG" }
+# public finances
+tax_revenue = { dataset = "wdi", series = "GC.TAX.TOTL.GD.ZS" }
+fiscal_balance = { dataset = "wdi", series = "GC.NLD.TOTL.GD.ZS" }
+external_debt = { dataset = "wdi", series = "DT.DOD.DECT.GN.ZS" }
+debt_service = { dataset = "wdi", series = "DT.TDS.DECT.GN.ZS" }
+# external position and stressors
+current_account = { dataset = "wdi", series = "BN.CAB.XOKA.GD.ZS" }
+reserves_months = { dataset = "wdi", series = "FI.RES.TOTL.MO" }
+fdi = { dataset = "wdi", series = "BX.KLT.DINV.WD.GD.ZS" }
+remittances = { dataset = "wdi", series = "BX.TRF.PWKR.DT.GD.ZS" }
+aid = { dataset = "wdi", series = "DT.ODA.ODAT.GN.ZS" }
+exchange_rate = { dataset = "wdi", series = "PA.NUS.FCRF" }
+# financial sector
+private_credit = { dataset = "wdi", series = "FS.AST.PRVT.GD.ZS" }
+lending_rate = { dataset = "wdi", series = "FR.INR.LEND" }
+interest_spread = { dataset = "wdi", series = "FR.INR.LNDP" }
+accounts = { dataset = "wdi", series = "FX.OWN.TOTL.ZS" }
+# structure
+agriculture = { dataset = "wdi", series = "NV.AGR.TOTL.ZS" }
+industry = { dataset = "wdi", series = "NV.IND.TOTL.ZS" }
+manufacturing = { dataset = "wdi", series = "NV.IND.MANF.ZS" }
+services = { dataset = "wdi", series = "NV.SRV.TOTL.ZS" }
+fuel_exports = { dataset = "wdi", series = "TX.VAL.FUEL.ZS.UN" }
+ore_exports = { dataset = "wdi", series = "TX.VAL.MMTL.ZS.UN" }
+resource_rents = { dataset = "wdi", series = "NY.GDP.TOTL.RT.ZS" }
+# jobs
+unemployment = { dataset = "wdi", series = "SL.UEM.TOTL.ZS" }
+youth_unemployment = { dataset = "wdi", series = "SL.UEM.1524.ZS" }
+participation = { dataset = "wdi", series = "SL.TLF.CACT.ZS" }
+vulnerable_employment = { dataset = "wdi", series = "SL.EMP.VULN.ZS" }
+# appraisals
+wgi_va = { dataset = "wgi", series = "GOV_WGI_VA.SC" }
+wgi_va_lower = { dataset = "wgi", series = "GOV_WGI_VA.SC_LB" }
+wgi_va_upper = { dataset = "wgi", series = "GOV_WGI_VA.SC_UB" }
+wgi_pv = { dataset = "wgi", series = "GOV_WGI_PV.SC" }
+wgi_pv_lower = { dataset = "wgi", series = "GOV_WGI_PV.SC_LB" }
+wgi_pv_upper = { dataset = "wgi", series = "GOV_WGI_PV.SC_UB" }
+wgi_ge = { dataset = "wgi", series = "GOV_WGI_GE.SC" }
+wgi_ge_lower = { dataset = "wgi", series = "GOV_WGI_GE.SC_LB" }
+wgi_ge_upper = { dataset = "wgi", series = "GOV_WGI_GE.SC_UB" }
+wgi_rq = { dataset = "wgi", series = "GOV_WGI_RQ.SC" }
+wgi_rq_lower = { dataset = "wgi", series = "GOV_WGI_RQ.SC_LB" }
+wgi_rq_upper = { dataset = "wgi", series = "GOV_WGI_RQ.SC_UB" }
+wgi_rl = { dataset = "wgi", series = "GOV_WGI_RL.SC" }
+wgi_rl_lower = { dataset = "wgi", series = "GOV_WGI_RL.SC_LB" }
+wgi_rl_upper = { dataset = "wgi", series = "GOV_WGI_RL.SC_UB" }
+wgi_cc = { dataset = "wgi", series = "GOV_WGI_CC.SC" }
+wgi_cc_lower = { dataset = "wgi", series = "GOV_WGI_CC.SC_LB" }
+wgi_cc_upper = { dataset = "wgi", series = "GOV_WGI_CC.SC_UB" }
+cpia = { dataset = "wdi", series = "IQ.CPA.IRAI.XQ" }
+spi = { dataset = "wdi", series = "IQ.SPI.OVRL" }
+lpi = { dataset = "wdi", series = "LP.LPI.OVRL.XQ" }
+
+[unbound]
+government_debt = "WDI's central government debt covers 23 of the 54 states, the latest median 2019; IMF WEO general government debt comes with the WEO adapter"
