@@ -5,7 +5,7 @@
 import { useEffect, useRef } from "react";
 import maplibregl, { type ExpressionSpecification, type GeoJSONSource } from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
-import { asset, people, rampColour, type MetaDoc, type Section, type StabilityDoc } from "./data";
+import { asset, people, rampColour, type MetaDoc, type Section, type StabilityDoc, type Wonder } from "./data";
 
 interface Props {
   meta: MetaDoc;
@@ -14,6 +14,8 @@ interface Props {
   selected: string | null;
   showClasses: boolean;
   onSelect: (iso3: string | null) => void;
+  wonders: Wonder[] | null;
+  onWonder: (w: Wonder) => void;
 }
 
 interface Place {
@@ -33,7 +35,7 @@ const AFRICA: [number, number] = [19, 3];
 const ESRI = "https://static-map-tiles-api.arcgis.com/arcgis/rest/services/static-basemap-tiles-service/v1/arcgis/imagery";
 const ESRI_KEY = import.meta.env.VITE_ESRI_KEY as string | undefined;
 
-export default function MapView({ meta, stability, section, selected, showClasses, onSelect }: Props) {
+export default function MapView({ meta, stability, section, selected, showClasses, onSelect, wonders, onWonder }: Props) {
   const box = useRef<HTMLDivElement>(null);
   const tip = useRef<HTMLDivElement>(null);
   const map = useRef<maplibregl.Map | null>(null);
@@ -142,6 +144,7 @@ export default function MapView({ meta, stability, section, selected, showClasse
       markers.current = [];
       const zoom = m.getZoom();
       const bounds = m.getBounds();
+      if (sectionRef.current === "wonders") return;  // the wonders have the map to themselves
       const all = sectionRef.current === "infrastructure";
       const { clientWidth: width, clientHeight: height } = m.getCanvas();
       // capitals from the start; every other city once the map is zoomed to the level Natural Earth gives it.
@@ -232,6 +235,27 @@ export default function MapView({ meta, stability, section, selected, showClasse
     };
     if (m.isStyleLoaded()) apply(); else m.once("idle", apply);
   }, [selected]);
+
+  // ── wonders, in the Wonders section only: a click opens the viewer ──────────────────────────────────────────
+  const wonderPins = useRef<maplibregl.Marker[]>([]);
+  const wonderRef = useRef(onWonder);
+  wonderRef.current = onWonder;
+  useEffect(() => {
+    const m = map.current;
+    wonderPins.current.forEach((mk) => mk.remove());
+    wonderPins.current = [];
+    if (!m || section !== "wonders" || !wonders) return;
+    for (const w of wonders) {
+      const el = document.createElement("button");
+      el.className = "wonder-pin";
+      el.setAttribute("aria-label", `${w.name}: open its photographs`);
+      const label = document.createElement("span");
+      label.textContent = w.name;
+      el.append(label);
+      el.addEventListener("click", (e) => { e.stopPropagation(); wonderRef.current(w); });
+      wonderPins.current.push(new maplibregl.Marker({ element: el, anchor: "left" }).setLngLat([w.lon, w.lat]).addTo(m));
+    }
+  }, [section, wonders]);
 
   // ── cities follow the section ───────────────────────────────────────────────────────────────────────────
   useEffect(() => {

@@ -152,6 +152,37 @@ a { color: var(--accent); }
 .maplibregl-ctrl-attrib a { color: var(--ink-2); }
 .maplibregl-ctrl-scale { background: rgba(10, 12, 18, 0.6); color: var(--ink-2); border-color: var(--ink-2); }
 
+/* ── wonders ────────────────────────────────────────────────────────────────────────────────────────────── */
+.wonder-pin { display: flex; align-items: center; gap: 6px; border: 0; padding: 0; background: none; cursor: pointer; }
+.wonder-pin::before { content: ""; width: 10px; height: 10px; transform: rotate(45deg); background: var(--accent);
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.55), 0 0 12px rgba(232, 194, 122, 0.7); }
+.wonder-pin span { font-size: 12px; font-weight: 600; color: #fff; text-shadow: 0 1px 3px #000, 0 0 2px #000;
+  white-space: nowrap; }
+.wonder-pin:hover span, .wonder-pin:focus-visible span { color: var(--accent); }
+.wonders { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.wonder { width: 100%; display: flex; gap: 10px; align-items: center; text-align: left; padding: 6px;
+  border: 1px solid var(--line); border-radius: 11px; background: rgba(255, 255, 255, 0.035); cursor: pointer; }
+.wonder:hover { background: rgba(255, 255, 255, 0.07); }
+.wonder:disabled { cursor: default; opacity: 0.6; }
+.wonder img, .wonder .no-photo { width: 84px; height: 60px; object-fit: cover; border-radius: 8px; flex: none;
+  background: rgba(255, 255, 255, 0.06); }
+.wonder-text { display: flex; flex-direction: column; gap: 1px; min-width: 0; }
+.viewer { position: fixed; inset: 0; z-index: 20; background: rgba(3, 4, 8, 0.94); display: grid;
+  place-items: center; animation: fade 0.2s ease; }
+.viewer img { max-width: 100vw; max-height: 100vh; object-fit: contain; user-select: none; touch-action: pan-y;
+  cursor: zoom-out; }
+.viewer-nav { position: absolute; top: 50%; transform: translateY(-50%); width: 48px; height: 64px; border: 0;
+  border-radius: 12px; background: rgba(255, 255, 255, 0.08); font-size: 34px; cursor: pointer; }
+.viewer-nav.prev { left: 14px; }
+.viewer-nav.next { right: 14px; }
+.viewer-close { position: absolute; top: 14px; right: 14px; width: 40px; height: 40px; border: 0; border-radius: 10px;
+  background: rgba(255, 255, 255, 0.1); font-size: 22px; cursor: pointer; }
+.viewer-caption { position: absolute; left: 0; right: 0; bottom: 0; padding: 14px 18px;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.75)); }
+.viewer-title { font-size: 16px; font-weight: 650; }
+.viewer-caption a { color: var(--ink-2); }
+@keyframes fade { from { opacity: 0; } to { opacity: 1; } }
+
 /* ── phones: the panel becomes a bottom sheet ───────────────────────────────────────────────────────────── */
 @media (max-width: 760px) {
   .topleft { top: 10px; left: 10px; max-width: calc(100% - 20px); gap: 6px; }

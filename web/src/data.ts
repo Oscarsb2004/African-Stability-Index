@@ -62,6 +62,35 @@ export interface MetaDoc {
   imagery: { tiles: string; attribution: string; max_zoom: number };
 }
 
+export interface Photo {
+  src: string;
+  thumb: string;
+  page: string;
+  licence: string;
+  licence_url: string;
+  artist: string;
+  credit: string;
+}
+
+export interface Wonder {
+  id: string;
+  name: string;
+  description: string;
+  kinds: string[];
+  countries: string[];
+  lon: number;
+  lat: number;
+  notability: number;
+  photos: Photo[];
+}
+
+export interface WondersDoc {
+  edition: string;
+  rule: string;
+  sources: { name: string; licence: string; link: string }[];
+  wonders: Wonder[];
+}
+
 export function asset(path: string): string {
   return `${import.meta.env.BASE_URL}${path}`;
 }

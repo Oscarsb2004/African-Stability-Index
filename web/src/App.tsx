@@ -2,12 +2,14 @@
 
 import { useEffect, useMemo, useState } from "react";
 import MapView from "./MapView";
+import PhotoViewer from "./PhotoViewer";
 import EconomyPanel from "./panels/EconomyPanel";
 import FinancePanel from "./panels/FinancePanel";
 import WondersPanel from "./panels/WondersPanel";
 import InfrastructurePanel from "./panels/InfrastructurePanel";
 import StabilityPanel from "./panels/StabilityPanel";
-import { load, RAMP, type MetaDoc, type Section, type SectionsDoc, type StabilityDoc } from "./data";
+import { load, RAMP, type MetaDoc, type Section, type SectionsDoc, type StabilityDoc, type Wonder,
+  type WondersDoc } from "./data";
 
 const SECTIONS: { id: Section; label: string }[] = [
   { id: "stability", label: "Stability" },
@@ -25,12 +27,15 @@ export default function App() {
   const [section, setSection] = useState<Section>("stability");
   const [selected, setSelected] = useState<string | null>(null);
   const [showClasses, setShowClasses] = useState(true);
+  const [wonders, setWonders] = useState<WondersDoc | null>(null);
+  const [viewing, setViewing] = useState<Wonder | null>(null);
 
   useEffect(() => {
     Promise.all([load<MetaDoc>("data/meta.json"), load<StabilityDoc>("data/stability.json"),
       load<SectionsDoc>("data/sections.json")])
       .then(([meta, stability, sections]) => setDocs({ meta, stability, sections }))
       .catch((e) => setError(String(e)));
+    load<WondersDoc>("data/wonders.json").then(setWonders).catch(() => setWonders(null));  // optional
   }, []);
 
   const names = useMemo(() => docs ? Object.entries(docs.sections.names).sort((a, b) => a[1].localeCompare(b[1]))
@@ -44,7 +49,8 @@ export default function App() {
   return (
     <div className="app">
       <MapView meta={docs.meta} stability={docs.stability} section={section} selected={selected}
-        showClasses={showClasses} onSelect={setSelected} />
+        showClasses={showClasses} onSelect={setSelected} wonders={wonders?.wonders ?? null}
+        onWonder={setViewing} />
 
       <div className="topleft">
       <header className="glass masthead">
@@ -103,7 +109,8 @@ export default function App() {
             {section === "economy" && <EconomyPanel iso3={selected} doc={docs.sections} />}
             {section === "finance" && <FinancePanel iso3={selected} doc={docs.sections} />}
             {section === "infrastructure" && <InfrastructurePanel iso3={selected} />}
-            {section === "wonders" && <WondersPanel />}
+            {section === "wonders" && <WondersPanel doc={wonders} iso3={selected} names={docs.sections.names}
+              onOpen={setViewing} />}
             <details className="sources">
               <summary className="muted small">Sources and licences</summary>
               {docs.meta.sources.map((s) => (
@@ -118,7 +125,8 @@ export default function App() {
           <div className="panel-body welcome">
             <h2>Choose a country</h2>
             <p>Click a country on the map, or pick one above. Hovering shows its name.</p>
-            {section === "wonders" ? <WondersPanel /> : (
+            {section === "wonders" ? <WondersPanel doc={wonders} iso3={null} names={docs.sections.names}
+              onOpen={setViewing} /> : (
               <p className="muted small">
                 Stability shows the ASI next to other institutions' scores. Economy leads with the latest figures
                 and the record. Finance covers money, the currency and reserves, banks, markets and debt.
@@ -128,6 +136,7 @@ export default function App() {
           </div>
         )}
       </aside>
+      {viewing && <PhotoViewer wonder={viewing} onClose={() => setViewing(null)} />}
     </div>
   );
 }
