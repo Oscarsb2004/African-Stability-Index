@@ -15,7 +15,7 @@ import yaml
 import logging
 from pathlib import Path
 
-from asi.core.models import Indicator, Pillar
+from asi.core.models import Indicator
 from asi.core.constants import (
     PILLAR_DEFS, ACTIVE_PRESET, WEIGHT_PRESETS,
     WEIGHT_MIN, WEIGHT_MAX, SMALL,
@@ -45,9 +45,6 @@ REQUIRED_FIELDS = {
     "role", "polarity", "pillars", "year_start", "year_end", "aggregation",
     "database", "log_transform",
 }
-EDITABLE_FIELDS = REQUIRED_FIELDS | {"justification"}
-
-
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -56,8 +53,8 @@ EDITABLE_FIELDS = REQUIRED_FIELDS | {"justification"}
 
 class PillarRegistry:
     """
-    Hardcoded pillar definitions. Editable via methods — never directly.
-    Weights must always sum to 1.0.
+    The pillars, derived from PILLAR_DEFS, with equal starting weights and their bounds.
+    Read-only: the pillars are edited in constants.py, never at run time.
     """
 
     def __init__(self):
@@ -86,60 +83,20 @@ class PillarRegistry:
             raise KeyError(f"Pillar '{key}' not found. Valid keys: {sorted(self.valid_keys())}")
         return self._pillars[key]
 
-    def add_pillar(self, key: str, name: str, justification: str, weight: float | None = None):
-        if key in self._pillars:
-            raise ValueError(f"Pillar '{key}' already exists.")
-        if weight is None:
-            n = len(self._pillars) + 1
-            weight = 1 / n
-            for k in self._pillars:
-                self._pillars[k]["weight"] = 1 / n
-        test = {**self._pillars, key: {"weight": weight}}
-        if not _weights_sum_to_one(test):
-            raise ValueError("Pillar weights do not sum to 1.0 after addition.")
-        self._pillars[key] = {
-            "name": name, "weight": weight,
-            "weight_min": WEIGHT_MIN, "weight_max": WEIGHT_MAX,
-            "justification": justification,
-        }
-
-    def remove_pillar(self, key: str, indicator_registry=None):
-        if key not in self._pillars:
-            raise KeyError(f"Pillar '{key}' not found.")
-        if indicator_registry:
-            affected = indicator_registry.list_indicators(pillar=key)
-            if affected:
-                names = [i["variable_name"] for i in affected]
-                logger.warning("Removing pillar '%s' affects indicators: %s", key, names)
-        del self._pillars[key]
-
-    def edit_pillar(self, key: str, field: str, new_value):
-        if key not in self._pillars:
-            raise KeyError(f"Pillar '{key}' not found.")
-        if field not in {"name", "weight", "weight_min", "weight_max", "justification"}:
-            raise ValueError(f"'{field}' is not an editable pillar field.")
-        if field == "weight":
-            test = {k: dict(v) for k, v in self._pillars.items()}
-            test[key]["weight"] = new_value
-            if not _weights_sum_to_one(test):
-                raise ValueError("Pillar weights do not sum to 1.0 after edit.")
-        self._pillars[key][field] = new_value
-
-
 # ─────────────────────────────────────────────────────────────────────────────
 # IndicatorRegistry
 # ─────────────────────────────────────────────────────────────────────────────
 
 class IndicatorRegistry:
     """
-    Reads and writes the indicators_list/ folder.
+    Reads and validates the indicators_list/ folder; the YAML files are the registry,
+    edited by hand (the write API and scripts/add_indicators.py were retired 2026-10-19).
     All pipeline indicator access goes through this class.
     """
 
     def __init__(self, pillar_registry: PillarRegistry, yaml_dir: Path = INDICATORS_DIR):
         self._yaml_dir        = yaml_dir
         self._pillar_registry = pillar_registry
-        self._file_map        = {}   # {variable_name: Path} — tracks which file each indicator came from
         self._indicators      = self._load()
 
     # ── Internal I/O ─────────────────────────────────────────────────────────
@@ -147,7 +104,6 @@ class IndicatorRegistry:
     def _load(self) -> list[dict]:
         """
         Merges all pillar yaml files into one flat list.
-        Populates _file_map so every indicator knows its source file.
         Guards against empty files returning None.
         O(n)
         """
@@ -163,49 +119,9 @@ class IndicatorRegistry:
                 data = yaml.safe_load(f)
             if not data:          # guards against None from empty/comment-only files
                 continue
-            for entry in data:
-                indicators.append(entry)
-                self._file_map[entry["variable_name"]] = path
+            indicators.extend(data)
 
         return indicators
-
-    def _resolve_target_file(self, pillars: list[str]) -> Path:
-        """
-        Determines which pillar file a new indicator should be written to.
-        Derives order from PillarRegistry so it stays in sync if pillars are added.
-        e.g. pillars: ["SEC", "GOV"] still routes to pillar_gov.yaml
-        """
-        pillar_order = list(self._pillar_registry.list_pillars().keys())
-        for key in pillar_order:
-            if key in pillars:
-                return self._yaml_dir / f"pillar_{key.lower()}.yaml"
-        raise ValueError(f"No valid pillar key found in {pillars}")
-
-    def _rewrite_file(self, path: Path):
-        """
-        Rewrites a single pillar yaml file with all indicators currently
-        mapped to it. Only touches one file — leaves all others unchanged.
-        """
-        entries = [
-            ind for ind in self._indicators
-            if self._file_map.get(ind["variable_name"]) == path
-        ]
-        with open(path, "r", encoding="utf-8") as f:
-            existing = f.read()
-
-        # preserve header comments at the top of the file
-        comments = []
-        for line in existing.splitlines():
-            if line.startswith("#"):
-                comments.append(line)
-            else:
-                break
-
-        with open(path, "w", encoding="utf-8") as f:
-            if comments:
-                f.write("\n".join(comments) + "\n\n")
-            if entries:
-                yaml.dump(entries, f, allow_unicode=True, sort_keys=False)
 
     # ── Reading ───────────────────────────────────────────────────────────────
 
@@ -228,105 +144,11 @@ class IndicatorRegistry:
             f"Use list_indicators() to see all available indicators."
         )
 
-    # ── Writing ───────────────────────────────────────────────────────────────
-
-    def add_indicator(
-        self,
-        variable_name: str,
-        display_name: str,
-        source: str,
-        series_code: str,
-        role: str,
-        polarity: str,
-        pillars: list[str],
-        year_start: int,
-        year_end: int,
-        aggregation: str,
-        database: str = "wdi",
-        log_transform: bool = False,
-        justification: str = "",
-    ):
-        # duplicate check — O(n)
-        for i in self._indicators:
-            if i["variable_name"] == variable_name:
-                raise ValueError(f"Indicator '{variable_name}' already exists.")
-
-        entry = {
-            "variable_name": variable_name,
-            "display_name":  display_name,
-            "source":        source,
-            "series_code":   series_code,
-            "role":          role,
-            "polarity":      polarity,
-            "pillars":       pillars,
-            "year_start":    year_start,
-            "year_end":      year_end,
-            "aggregation":   aggregation,
-            "database":      database,
-            "log_transform": log_transform,
-            "justification": justification,
-        }
-
-        errors = self._validate_fields(entry)
-        if errors:
-            raise ValueError("Validation failed:\n" + "\n".join(errors))
-
-        target = self._resolve_target_file(pillars)
-        self._indicators.append(entry)
-        self._file_map[variable_name] = target
-        self._rewrite_file(target)
-
-    def remove_indicator(self, variable_name: str):
-        for i, entry in enumerate(self._indicators):
-            if entry["variable_name"] == variable_name:
-                confirm = input(f"Delete '{variable_name}'? This cannot be undone. (y/n): ")
-                if confirm.lower() != "y":
-                    logger.info("Removal of '%s' cancelled.", variable_name)
-                    return
-                source_file = self._file_map.pop(variable_name)
-                self._indicators.pop(i)
-                self._rewrite_file(source_file)
-                logger.info("Removed indicator '%s'.", variable_name)
-                return
-        raise KeyError(f"Indicator '{variable_name}' not found.")
-
-    def edit_indicator(self, variable_name: str, field: str, new_value):
-        if field not in EDITABLE_FIELDS:
-            raise ValueError(
-                f"'{field}' is not an editable indicator field. "
-                f"Editable fields: {sorted(EDITABLE_FIELDS)}"
-            )
-
-        for entry in self._indicators:
-            if entry["variable_name"] == variable_name:
-                test = {**entry, field: new_value}
-                errors = self._validate_fields(test)
-                if errors:
-                    raise ValueError("Validation failed:\n" + "\n".join(errors))
-
-                old_file = self._file_map[variable_name]
-                entry[field] = new_value
-
-                # if pillars changed, the indicator may belong in a different file
-                if field == "pillars":
-                    new_file = self._resolve_target_file(new_value)
-                    if new_file != old_file:
-                        self._file_map[variable_name] = new_file
-                        self._rewrite_file(old_file)   # remove from old file
-                        self._rewrite_file(new_file)   # add to new file
-                        return
-
-                self._rewrite_file(old_file)
-                return
-
-        raise KeyError(f"Indicator '{variable_name}' not found.")
-
     # ── Validation ────────────────────────────────────────────────────────────
 
     def _validate_fields(self, entry: dict, valid_keys: set | None = None) -> list[str]:
         """
         Validates a single entry. Returns list of error strings.
-        Called by add and edit — not a full dataset scan.
         Accepts valid_keys to avoid re-fetching inside validate_all loop.
         """
         errors = []
@@ -480,38 +302,3 @@ class IndicatorRegistry:
                 indicator.set_justification(i["justification"])
             indicators[i["variable_name"]] = indicator
         return indicators
-
-    def build_pillars(self, indicators: dict[str, Indicator] | None = None) -> dict[str, Pillar]:
-        """
-        Accepts pre-built indicators dict to avoid reloading yaml.
-        If not provided, builds indicators internally.
-        """
-        if indicators is None:
-            indicators = self.build_indicators()
-
-        pillars = {
-            key: Pillar(
-                key           = key,
-                name          = meta["name"],
-                justification = meta["justification"],
-                weight        = meta["weight"],
-            )
-            for key, meta in self._pillar_registry.list_pillars().items()
-        }
-
-        # O(n) — one pass wiring indicators into pillars
-        for indicator in indicators.values():
-            for key in indicator.pillars:
-                if key in pillars:
-                    pillars[key].add_indicator(indicator)
-
-        return pillars
-
-
-# ─────────────────────────────────────────────────────────────────────────────
-# Helpers
-# ─────────────────────────────────────────────────────────────────────────────
-
-def _weights_sum_to_one(pillars: dict, tolerance: float = 1e-9) -> bool:
-    total = sum(p["weight"] for p in pillars.values())
-    return abs(total - 1.0) < tolerance

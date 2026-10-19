@@ -1,5 +1,5 @@
 """04_sections.py and sections.toml: the ASI's binding resolves against athena-core's templates, and the committed
-data/sections.json meets the output contract. Neither needs Athena's store."""
+web/public/data/sections.json meets the output contract. Neither needs Athena's store."""
 
 import copy
 import importlib.util
@@ -32,7 +32,7 @@ def test_every_template_measure_is_bound_or_explained():
 
 
 def test_the_committed_document_meets_the_contract_for_every_member_state():
-    doc = json.loads((ROOT / "data" / "sections.json").read_text(encoding="utf-8"))
+    doc = json.loads((ROOT / "web" / "public" / "data" / "sections.json").read_text(encoding="utf-8"))
     sections.check(doc)
     assert sorted(doc["areas"]) == sorted(COUNTRIES)
     assert doc["names"]["NGA"] == "Nigeria"

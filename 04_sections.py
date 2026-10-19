@@ -6,7 +6,7 @@ edition, as for 01_inputs.py:
 
     python 04_sections.py wdi-2026-10-08 wgi-2026-09-25
 
-It writes data/sections.json in the format `athena.sections/1`, checked before it is written. Publishers' values
+It writes web/public/data/sections.json (the site reads it) in the format `athena.sections/1`, checked before it is written. Publishers' values
 pass through as printed; every other figure is computed by a named shell in athena.figures and marked derived.
 """
 
@@ -19,7 +19,7 @@ sys.path.insert(0, str(ROOT.parents[1]))  # athena-core, for the `athena` packag
 
 from asi.core.countries import COUNTRIES  # noqa: E402
 
-OUTPUT = ROOT / "data" / "sections.json"
+OUTPUT = ROOT / "web" / "public" / "data" / "sections.json"
 
 
 def main(names: list[str]) -> int:
@@ -38,7 +38,8 @@ def main(names: list[str]) -> int:
     doc = sections.build(b, values, areas)
     doc["names"] = {iso3: c["name"] for iso3, c in COUNTRIES.items()}
     sections.check(doc)
-    OUTPUT.write_text(json.dumps(doc, ensure_ascii=False, indent=1) + "\n", encoding="utf-8", newline="\n")
+    OUTPUT.write_text(json.dumps(doc, ensure_ascii=False, separators=(",", ":")) + "\n", encoding="utf-8",
+                      newline="\n")
     held = sum(r["value"] is not None for a in doc["areas"].values() for s in a.values() for r in s.values())
     total = sum(len(s) for a in doc["areas"].values() for s in a.values())
     print(f"{OUTPUT.relative_to(ROOT)}: {len(areas)} countries, {len(doc['sections'])} sections, "

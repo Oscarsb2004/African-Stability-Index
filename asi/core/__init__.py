@@ -29,7 +29,7 @@ from asi.core.schema import (
     classify_reliability, missing_keys,
     REQUIRED_COUNTRY_KEYS, REQUIRED_INDICATOR_KEYS,
 )
-from asi.core.models import Indicator, Pillar
+from asi.core.models import Indicator
 from asi.core.countries import COUNTRIES
 
 __all__ = [
@@ -48,5 +48,5 @@ __all__ = [
     "classify_reliability", "missing_keys",
     "REQUIRED_COUNTRY_KEYS", "REQUIRED_INDICATOR_KEYS",
     # models / data
-    "Indicator", "Pillar", "COUNTRIES",
+    "Indicator", "COUNTRIES",
 ]

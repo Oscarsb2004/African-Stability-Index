@@ -72,7 +72,7 @@ the number that belongs next to a published rank.
 Each assumption is currently tested in isolation (weights, then imputation, then
 islands). Saisana, Saltelli & Tarantola (2005) is the standard argument for a
 joint Monte Carlo over imputation × winsorisation × normalisation × aggregation
-× weighting, reporting a rank distribution per country. Already on `ROADMAP.md`;
+× weighting, reporting a rank distribution per country. Was on the retired `ROADMAP.md`;
 recorded here as the destination.
 
 **4. Aggregation is chosen for a stated purpose and disclosed per view.**

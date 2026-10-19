@@ -8,7 +8,8 @@ transport records that cross the backend/frontend boundary:
     models.Indicator   loaded definition, used while running a stage
     schema.Observation one country-year value, serialized into the bundle
 
-Consolidates the former models/indicator.py and models/pillar.py. The old
+Consolidates the former models/indicator.py and models/pillar.py; the Pillar
+object went with the registry's write side on 2026-10-19 (nothing read it). The old
 models/nation.py was dropped in Phase A: nothing in the pipeline used it, only a
 smoke check in setup.py.
 """
@@ -63,27 +64,4 @@ class Indicator:
         return self.role == "scoring"
 
 
-class Pillar:
-    """A pillar and the indicators assigned to it."""
-
-    def __init__(self, key: str, name: str, justification: str, weight: float = 1 / 8):
-        self.key           = key    # e.g. "GOV"
-        self.name          = name   # e.g. "Governance and State Capacity"
-        self.justification = justification
-        self.weight        = weight
-        self.indicators: list[Indicator] = []
-
-    def add_indicator(self, indicator: Indicator):
-        self.indicators.append(indicator)
-
-    def __repr__(self):
-        return f"Pillar(key={self.key}, name={self.name}, indicators={len(self.indicators)})"
-
-    def get_scoring_indicators(self) -> list[Indicator]:
-        return [i for i in self.indicators if i.role == "scoring"]
-
-    def get_descriptive_indicators(self) -> list[Indicator]:
-        return [i for i in self.indicators if i.role == "descriptive"]
-
-
-__all__ = ["Indicator", "Pillar"]
+__all__ = ["Indicator"]

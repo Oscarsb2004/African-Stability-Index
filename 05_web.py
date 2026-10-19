@@ -10,8 +10,9 @@ It writes:
                          disputed, indefinite and line-of-control lines are marked to be drawn dashed.
     geo/places.json      Natural Earth 1:10m populated places in the member states, with the zoom each appears at.
     data/stability.json  the published ASI at its reference year: composite, pillars and indicators.
-    data/sections.json   a copy of data/sections.json (04_sections.py).
     data/meta.json       every source shown on the site, with its licence and attribution.
+
+data/sections.json is written there by 04_sections.py; this stage reads it for the sources list.
 
 Natural Earth comes through athena.fetch, so every file is hash-locked in athena-core's adapters/sources.lock.
 Nothing else is downloaded.
@@ -26,6 +27,7 @@ sys.path.insert(0, str(ROOT.parents[1]))  # athena-core, for `athena` and `adapt
 
 import pandas as pd  # noqa: E402
 
+from asi import results  # noqa: E402
 from asi.core.countries import COUNTRIES  # noqa: E402
 
 PUBLIC = ROOT / "web" / "public"
@@ -103,12 +105,9 @@ def places(ne: dict) -> dict:
 
 
 def stability() -> dict:
-    bundle = json.loads((PANEL / "bundle.json").read_text(encoding="utf-8"))
-    year = bundle["run"]["reference_year"]
-    comp = pd.read_csv(PANEL / "composites.csv")
-    pill = pd.read_csv(PANEL / "pillar_scores.csv")
-    obs = pd.read_csv(PANEL / "observations.csv", keep_default_na=False, na_values={"raw_value": [""],
-                                                                                     "score": [""]})
+    panel = results.load(PANEL)
+    bundle, year = panel.meta, panel.reference_year
+    comp, pill, obs = panel.composites, panel.pillar_scores, panel.observations
     equal = comp[comp["method"] == "equal"]
     out = {}
     for iso3 in COUNTRIES:
@@ -125,7 +124,7 @@ def stability() -> dict:
             "indicators": {r.variable_name: {"raw": None if pd.isna(r.raw_value) else float(r.raw_value),
                                              "score": None if pd.isna(r.score) else float(r.score),
                                              "provenance": r.provenance,
-                                             "source_year": None if r.source_year == "" else int(float(r.source_year))}
+                                             "source_year": None if pd.isna(r.source_year) else int(r.source_year)}
                            for r in o.itertuples()},
         }
     scores = pd.Series([c["composite"]["score"] for c in out.values()])
@@ -156,8 +155,7 @@ def main() -> int:
     write(PUBLIC / "geo" / "borders.json", borders(ne["borders-50m"]))
     write(PUBLIC / "geo" / "places.json", places(ne["places-10m"]))
     write(PUBLIC / "data" / "stability.json", stability())
-    sections = json.loads((ROOT / "data" / "sections.json").read_text(encoding="utf-8"))
-    write(PUBLIC / "data" / "sections.json", sections)
+    sections = json.loads((PUBLIC / "data" / "sections.json").read_text(encoding="utf-8"))
     write(PUBLIC / "data" / "meta.json", {
         "sources": [{"name": d["attribution"], "licence": d["licence"], "link": d.get("link", "")}
                     for d in sections["datasets"]]

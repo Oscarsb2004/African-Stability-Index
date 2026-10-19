@@ -178,7 +178,7 @@ Using its loadings as weights assigns more weight to pillars that differentiate 
   that loads inversely on the stability dimension is set to weight 0 and logged. Using
   `abs()` would silently invert its contribution and misrepresent the variance structure
   (OECD §6.2). In the current data this excludes Pillar F (Environmental), which loads
-  inversely — a real signal, not a bug (see METHODOLOGY_REVIEW §C2). If all loadings are
+  inversely — a real signal, not a bug (see the retired METHODOLOGY_REVIEW §C2, tag `archive/asi-dead-code-2026-10`). If all loadings are
   excluded, the method falls back to equal weights.
 - Remaining loadings normalised to sum to 1 (used as convex combination weights)
 - Weighted mean then computed for all countries, including those with some missing pillars
@@ -371,5 +371,6 @@ today; `03_robustness.py` varies one assumption at a time. Listing it here under
 *Last verified against code: 2026-09-06 (`asi/`, `verify/`, `01_pull.py`, `02_panel.py`, `03_robustness.py`)*
 *Maintained by: Oscar Bailey*
 *Any addition to the pipeline that introduces a new methodological choice must be
-logged here before the change is committed. See `METHODOLOGY_REVIEW.md` for the full
-OECD 10-step evaluation and `ROADMAP.md` for the phased refinement plan.*
+logged here before the change is committed. The OECD 10-step evaluation (`METHODOLOGY_REVIEW.md`)
+and the phased plan (`ROADMAP.md`) were retired on 2026-10-19 (tag `archive/asi-dead-code-2026-10`);
+the plan of record is the ASI's notes in the Athena vault.*
