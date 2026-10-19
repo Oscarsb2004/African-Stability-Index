@@ -80,7 +80,7 @@ def _asi_imports(source: str) -> set[str]:
 def test_there_are_verify_modules_to_check():
     """A glob that silently matches nothing would make every test below pass."""
     names = {p.name for p in VERIFY_FILES}
-    assert {"panel.py", "contract.py", "narrative.py", "advisory.py"} <= names
+    assert {"panel.py", "contract.py", "advisory.py"} <= names
 
 
 @pytest.mark.parametrize("path", VERIFY_FILES, ids=lambda p: p.name)

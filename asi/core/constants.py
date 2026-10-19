@@ -7,8 +7,8 @@ pipeline stage ever read it — only `setup.py` inspected it. The live switch ha
 always been ACTIVE_PRESET below.)
 
 Region-specific values live in a RegionProfile rather than as module globals, so
-the pipeline itself contains no hardcoded Africa. Content (narrative, colonial
-history, RECs) stays deliberately Africa-specific; the *machinery* does not.
+the pipeline itself contains no hardcoded Africa. Content (the RECs) stays
+deliberately Africa-specific; the *machinery* does not.
 """
 
 from __future__ import annotations
@@ -111,8 +111,8 @@ COVERAGE_WARN_THRESHOLD  = 0.75  # below this -> SPARSE flag
 COVERAGE_ALERT_THRESHOLD = 0.50  # below this -> VERY SPARSE flag
 
 # The reference year is the most recent year at least this share of countries can
-# be scored in. It decides which year the whole interface and the entire
-# narrative corpus describe, so it belongs here with the other tunable
+# be scored in. It decides which year the published edition describes, so it
+# belongs here with the other tunable
 # parameters rather than as a bare 0.80 inside a stage script.
 REFERENCE_YEAR_MIN_COVERAGE = 0.80
 

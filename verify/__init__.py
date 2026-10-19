@@ -9,16 +9,15 @@ sklearn PCA, a merge_asof join instead of the pipeline's dictionary scan).
 import from `asi` except `asi.core.constants`, which holds declared thresholds
 rather than logic.
 
-Five layers, run together by `python -m verify.run`:
+Four layers, run together by `python -m verify.run`:
 
     rebuild     rerun the pipeline from data/inputs.csv in a scratch copy; every
                 committed output must come back byte for byte    (pass/fail)
     panel       re-derive the panel from its inputs (data/inputs.csv, written
                 from Athena's datasets) and compare against what the pipeline
                 wrote                                             (pass/fail)
-    contract    the backend/frontend object contract: identity, aggregation
-                reconciliation, no re-derivation in the UI        (pass/fail)
-    narrative   narrative claims against the panel they describe  (pass/fail)
+    contract    the backend/frontend object contract: every row and the
+                bundle carry their own identity                   (pass/fail)
     advisory    design diagnostics — effective weights, source concentration,
                 within- and cross-pillar redundancy, reference-year data
                 quality, external plausibility                    (report only)
@@ -34,4 +33,4 @@ re-derived (78,234 by the as-of join alone at step 6, the rest by the rolling-me
 volatility, parity and per-capita checks).
 """
 
-__all__ = ["rebuild", "panel", "contract", "narrative", "advisory"]
+__all__ = ["rebuild", "panel", "contract", "advisory"]
