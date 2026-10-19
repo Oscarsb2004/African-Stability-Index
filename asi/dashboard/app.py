@@ -65,15 +65,7 @@ TIER_STYLE = {
 CONTEXT_DIR = PROJECT_ROOT / "context"
 QUAL_DIR    = PROJECT_ROOT / "qualitative" / "countries"
 
-#: AU member states this edition does not score, and why. Kept as data rather
-#: than prose so the union total shown to a reader stays derived: the AU count
-#: is the scored set plus these, and neither number is ever typed into a string.
-EXCLUDED_AU_MEMBERS = {
-    "Western Sahara": (
-        "the Sahrawi Arab Democratic Republic, an AU member since 1984 — the "
-        "admission that caused Morocco to leave the OAU until 2017"
-    ),
-}
+from asi.core.countries import EXCLUDED_AU_MEMBERS  # noqa: E402
 
 
 # ── Data ───────────────────────────────────────────────────────────────────────

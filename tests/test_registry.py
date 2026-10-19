@@ -60,7 +60,7 @@ def test_the_au_total_is_the_included_plus_the_excluded():
     the documented exclusion, and writing 54 anywhere hides the subtraction that
     produced it. `EXCLUDED_AU_MEMBERS` carries the reason alongside the name.
     """
-    from asi.dashboard.app import EXCLUDED_AU_MEMBERS
+    from asi.core.countries import EXCLUDED_AU_MEMBERS
 
     assert EXCLUDED_AU_MEMBERS, "the exclusion list must say what is left out, and why"
     for name, reason in EXCLUDED_AU_MEMBERS.items():
