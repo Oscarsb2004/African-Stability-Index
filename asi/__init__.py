@@ -9,7 +9,6 @@ Layout:
     asi.core        constants, canonical schema, registry, country/region data
     asi.pipeline    data stages (added in Phase B; today's stages are the
                     numbered scripts at the repo root)
-    asi.dashboard   UI (moved in Phase C)
     asi.narrative   research/narrative system (added in Phase D)
 
 Verification lives OUTSIDE this package, in `verify/`, so that it can never

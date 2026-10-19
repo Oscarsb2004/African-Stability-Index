@@ -24,10 +24,6 @@ Rules this module exists to enforce:
   3. Unreliable results are never silently dropped. They are returned with
      their tier attached so the interface can grey them out and say why — a
      blank cell and an untrustworthy cell are different claims.
-
-The "Lens" concept below is the single control that answers "what is the map
-showing?" — either a composite method or one pillar. Keeping it as one
-vocabulary is what stops the toolbar from growing a control per feature.
 """
 
 from __future__ import annotations
@@ -38,44 +34,12 @@ from pathlib import Path
 
 import pandas as pd
 
-from asi.core.constants import PILLAR_DEFS, PROJECT_ROOT
+from asi.core.constants import PROJECT_ROOT
 
 PANEL_DIR = PROJECT_ROOT / "data" / "panel"
 
 #: Tiers whose numbers may be shown. Anything else renders greyed.
 DISPLAYABLE = ("reliable", "thin")
-
-
-# ── Lens ───────────────────────────────────────────────────────────────────────
-
-@dataclass(frozen=True, slots=True)
-class Lens:
-    """
-    What the map is coloured by: one composite method, or one pillar.
-
-    kind is "composite" or "pillar"; key is the method name or the pillar id.
-    """
-
-    kind: str
-    key: str
-
-    @property
-    def value(self) -> str:
-        return f"{self.kind}:{self.key}"
-
-    @classmethod
-    def parse(cls, value: str | None) -> "Lens":
-        if not value or ":" not in value:
-            return cls("composite", "equal")
-        kind, key = value.split(":", 1)
-        if kind not in ("composite", "pillar"):
-            return cls("composite", "equal")
-        return cls(kind, key)
-
-    def label(self, method_labels: dict[str, str]) -> str:
-        if self.kind == "pillar":
-            return f"Pillar {self.key} — {PILLAR_DEFS.get(self.key, self.key)}"
-        return method_labels.get(self.key, self.key)
 
 
 # ── Loading ────────────────────────────────────────────────────────────────────
@@ -135,97 +99,6 @@ def load(panel_dir: Path | None = None) -> PanelData:
     )
 
 
-# ── Map / rankings view ────────────────────────────────────────────────────────
-
-def choropleth_frame(data: PanelData, lens: Lens, year: int) -> pd.DataFrame:
-    """
-    One row per country for a given lens and year.
-
-    Columns: iso3, name, region, island_state, score, rank, reliability,
-             displayable, coverage_ratio (pillar lens only).
-
-    Countries with an untrustworthy result keep their row — with
-    `displayable=False` — so the map can grey them rather than leaving a hole
-    the reader cannot distinguish from "no such country".
-    """
-    if lens.kind == "pillar":
-        src = data.pillar_scores
-        sub = src[(src["pillar_id"] == lens.key) & (src["year"] == year)].copy()
-        sub = sub.rename(columns={"score": "score"})
-        sub["rank"] = pd.NA
-        keep = ["iso3", "score", "reliability", "coverage_ratio", "rank"]
-        sub = sub[[c for c in keep if c in sub.columns]]
-        # rank within the displayable subset only: ranking an untrustworthy
-        # number states a comparison the data does not support
-        mask = sub["reliability"].isin(DISPLAYABLE) & sub["score"].notna()
-        sub.loc[mask, "rank"] = (
-            sub.loc[mask, "score"].rank(ascending=False, method="min").astype("Int64")
-        )
-    else:
-        src = data.composites
-        sub = src[(src["method"] == lens.key) & (src["year"] == year)].copy()
-        sub = sub[["iso3", "score", "rank", "reliability"]]
-        sub["coverage_ratio"] = pd.NA
-
-    sub["displayable"] = sub["reliability"].isin(DISPLAYABLE) & sub["score"].notna()
-    sub["name"] = sub["iso3"].map(lambda i: data.countries.get(i, {}).get("name", i))
-    sub["region"] = sub["iso3"].map(lambda i: data.countries.get(i, {}).get("region", ""))
-    sub["island_state"] = sub["iso3"].map(
-        lambda i: bool(data.countries.get(i, {}).get("island_state", False))
-    )
-    sub["recs"] = sub["iso3"].map(lambda i: data.countries.get(i, {}).get("recs", []))
-    return sub.reset_index(drop=True)
-
-
-# ── Grouping (the "Compare" control) ───────────────────────────────────────────
-
-def apply_grouping(
-    frame: pd.DataFrame,
-    mode: str,
-    key: str | None,
-    *,
-    exclude_islands: bool = False,
-) -> pd.DataFrame:
-    """
-    Mark which countries are in scope for the current comparison.
-
-    Adds `in_scope`. Rows are never removed: a country outside the selected
-    Regional Economic Community still exists and still renders — greyed — so
-    the map keeps its shape and the reader can see what was excluded.
-    """
-    frame = frame.copy()
-    if mode == "rec" and key:
-        frame["in_scope"] = frame["recs"].map(lambda rs: key in (rs or []))
-    elif mode == "region" and key:
-        frame["in_scope"] = frame["region"] == key
-    else:
-        frame["in_scope"] = True
-
-    if exclude_islands:
-        frame.loc[frame["island_state"], "in_scope"] = False
-    return frame
-
-
-def rankings(frame: pd.DataFrame) -> pd.DataFrame:
-    """
-    Ordered, in-scope, displayable rows, re-ranked within the current scope.
-
-    Re-ranking matters: inside a Regional Economic Community the reader wants
-    "3rd in ECOWAS", not the country's continental position.
-    """
-    sub = frame[frame["in_scope"] & frame["displayable"]].copy()
-    if sub.empty:
-        # Always return the promised shape. A year where nothing is rankable is
-        # a real state — 2024 is entirely unreliable because World Bank series
-        # report late — and callers merge on `scope_rank`, so an empty frame
-        # without that column turns an honest "nothing to show" into a crash.
-        sub["scope_rank"] = pd.Series(dtype="Int64")
-        return sub
-    sub = sub.sort_values("score", ascending=False)
-    sub["scope_rank"] = sub["score"].rank(ascending=False, method="min").astype("Int64")
-    return sub
-
-
 # ── Country detail ─────────────────────────────────────────────────────────────
 
 def country_composite_series(data: PanelData, iso3: str, method: str) -> pd.DataFrame:
@@ -262,25 +135,7 @@ def country_indicators(data: PanelData, iso3: str, year: int,
     return sub.sort_values("display_name").reset_index(drop=True)
 
 
-def reliability_note(reliability: str, coverage_ratio: float | None = None) -> str:
-    """Plain-language explanation of why something is greyed."""
-    if reliability == "reliable":
-        return "Based mostly on direct measurements."
-    if reliability == "thin":
-        note = "Partly estimated — read with caution."
-        if coverage_ratio is not None and pd.notna(coverage_ratio):
-            note += f" {coverage_ratio * 100:.0f}% of indicators measured directly."
-        return note
-    if reliability == "unreliable":
-        note = "Not shown: too much of this is inferred rather than measured."
-        if coverage_ratio is not None and pd.notna(coverage_ratio):
-            note += f" Only {coverage_ratio * 100:.0f}% of indicators were measured."
-        return note
-    return "No data available for this year."
-
-
 __all__ = [
-    "Lens", "PanelData", "load", "choropleth_frame", "apply_grouping",
-    "rankings", "country_composite_series", "country_pillar_series",
-    "country_indicators", "reliability_note", "DISPLAYABLE",
+    "PanelData", "load", "country_composite_series", "country_pillar_series",
+    "country_indicators", "DISPLAYABLE",
 ]

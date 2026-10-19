@@ -167,7 +167,6 @@ class RegionProfile:
 
     key: str
     display_name: str
-    map_scope: str                       # plotly choropleth scope
     subregions: tuple[str, ...]          # internal grouping used for regional fills
     island_states: frozenset[str]        # structurally advantaged small islands
     community_label: str                 # what a country grouping is called
@@ -180,7 +179,6 @@ class RegionProfile:
 AFRICA = RegionProfile(
     key="africa",
     display_name="Africa",
-    map_scope="africa",
     # Grouping used for regional-mean imputation. Note "Islands" holds only 5
     # countries, so a regional fill there rests on a very thin peer pool
     # (MIN_REGIONAL_SAMPLE is 3) — verify/advisory.py flags this.
@@ -207,11 +205,10 @@ ISLAND_SET = ACTIVE_PROFILE.island_states
 #: Repository root, resolved from this file rather than from the process's
 #: working directory.
 #:
-#: The interface reads data/, narrative/ and context/ by relative path, which
-#: silently requires the server to be started from the project root — the app
-#: launches, then fails on the first read, which reads as missing data rather
-#: than as a wrong working directory. Anchoring to the package location makes
-#: `python run_asi.py` and `gunicorn app:server` work from anywhere.
+#: Reading data/ by relative path would silently require every stage to be
+#: started from the project root, and a wrong working directory then reads as
+#: missing data. Anchoring to the package location makes every stage and the
+#: verifier work from anywhere.
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
 

@@ -1,4 +1,0 @@
--r requirements.txt
-scipy
-scikit-learn
-pytest
