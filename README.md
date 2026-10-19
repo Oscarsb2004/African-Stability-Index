@@ -50,6 +50,10 @@ from `data/`.
 | 1 | `01_inputs.py <datasets>` | Select the registry's series for the 54 states over the pull window from the named datasets. The datasets are the edition: `asi-pull-2026-08-08` reproduces every published score exactly; `wdi-2026-10-08 wgi-2026-09-25 ucdp-cy-26.1` makes edition 2 | `data/inputs.csv` |
 | 2 | `02_panel.py` | Build the country x indicator x **year** panel with provenance, apply derived transforms, fill regional gaps, normalise against **fixed goalposts**, and score pillars and composites with reliability tiers | `data/panel/*` |
 | 3 | `03_robustness.py` | Sensitivity analysis at the reference year: weighting methods, adversarial weights, measured-only, islands excluded | `data/panel/robustness.json` |
+| 4 | `04_sections.py <datasets>` | The sections of three dimensions (P64) for each country: stability (other appraisals), economy and finance. athena-core's shared templates are bound to WDI and WGI series in `sections.toml` (P54) | `data/sections.json` |
+| 5 | `05_web.py` | The files the new site reads: Natural Earth borders, countries and cities (hash-locked through `athena.fetch`), the published ASI at its reference year, and the sections | `web/public/{geo,data}/*` |
+| 7 | `07_wonders.py` | The continent's wonders by a stated rule (World Heritage Sites and the most notable mountains, falls, lakes and more on Wikidata, CC0), each with licensed Commons photographs | `web/public/data/wonders.json` |
+| — | `web/`: `npm install`, then `npm run dev` | The new site (prototype, P55): a satellite globe with five sections (Stability, Economy, Finance, Infrastructure, Wonders) and a country panel on the right. Imagery: EOX by default; Esri World Imagery when `web/.env.local` sets `VITE_ESRI_KEY` | — |
 | 7 | `run_asi.py` | Run the interface (port 8050); bootstraps `.venv` on first use | — |
 
 Add `--freeze-goalposts` to stage 2 only when deliberately re-anchoring every
