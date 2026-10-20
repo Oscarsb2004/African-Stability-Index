@@ -1,0 +1,2969 @@
+{
+ "year": 2024,
+ "n_ranked": 54,
+ "n_tiers": 4,
+ "lri_median": 1.62,
+ "note": "Each sentence is a stated template filled with numbers from the panel (08_narratives.py); verify/narrative.py re-derives every number.",
+ "countries": {
+  "AGO": {
+   "name": "Angola",
+   "facts": {
+    "headline": true,
+    "score": 52.37,
+    "ci_low": 36.3,
+    "ci_high": 68.44,
+    "tier": 2,
+    "band_best": 4,
+    "band_worst": 53,
+    "n_pillars": 7,
+    "lack_of_reliability": 1.51,
+    "above": [
+     [
+      "VOI",
+      40.59102166951709,
+      34.12500152554316
+     ],
+     [
+      "SEC",
+      86.31442545343657,
+      85.30095196205438
+     ]
+    ],
+    "below": [
+     [
+      "EXT",
+      41.14424843170028,
+      57.09648615789974
+     ],
+     [
+      "MAC",
+      38.73752031208428,
+      47.99270370399209
+     ]
+    ],
+    "left_out": [
+     "ENV"
+    ],
+    "change": {
+     "from_year": 2014,
+     "from": 53.76,
+     "pillar": "GOV",
+     "pillar_from": 32.9831898897835,
+     "pillar_to": 43.20811842927157
+    }
+   },
+   "text": [
+    "Angola scores 52.4 of 100 in 2024, with a 95% interval of 36.3 to 68.4.",
+    "That puts it in tier 2 of 4: its rank could be anywhere from 4 to 53 of 54.",
+    "Its pillars furthest above the median state are Political Voice and Representation (40.6, against 34.1) and Security and Violence (86.3, against 85.3).",
+    "Furthest below are External Exposure and Economic Structure (41.1, against 57.1) and Macroeconomic and Fiscal Stability (38.7, against 48.0).",
+    "Since 2014 its score has moved from 53.8 to 52.4; the pillar that moved most is Governance and State Capacity, from 33.0 to 43.2.",
+    "The score uses 7 of the 8 pillars; Environment and Climate Exposure was left out, measured too thinly that year to show.",
+    "Its lack-of-reliability index is 1.5 of 10, where 0 means every value was measured that year, against a median of 1.6."
+   ]
+  },
+  "BDI": {
+   "name": "Burundi",
+   "facts": {
+    "headline": true,
+    "score": 47.57,
+    "ci_low": 30.97,
+    "ci_high": 64.17,
+    "tier": 2,
+    "band_best": 7,
+    "band_worst": 54,
+    "n_pillars": 6,
+    "lack_of_reliability": 2.21,
+    "above": [],
+    "below": [
+     [
+      "GOV",
+      34.050502324312426,
+      48.21656700028872
+     ],
+     [
+      "SEC",
+      73.33089684855166,
+      85.30095196205438
+     ]
+    ],
+    "left_out": [
+     "ENV",
+     "EXT"
+    ],
+    "change": {
+     "from_year": 2014,
+     "from": 49.48,
+     "pillar": "MAC",
+     "pillar_from": 51.05474374273725,
+     "pillar_to": 41.03445040775785
+    }
+   },
+   "text": [
+    "Burundi scores 47.6 of 100 in 2024, with a 95% interval of 31.0 to 64.2.",
+    "That puts it in tier 2 of 4: its rank could be anywhere from 7 to 54 of 54.",
+    "None of its pillars is above the median state.",
+    "Furthest below are Governance and State Capacity (34.1, against 48.2) and Security and Violence (73.3, against 85.3).",
+    "Since 2014 its score has moved from 49.5 to 47.6; the pillar that moved most is Macroeconomic and Fiscal Stability, from 51.1 to 41.0.",
+    "The score uses 6 of the 8 pillars; Environment and Climate Exposure and External Exposure and Economic Structure were left out, measured too thinly that year to show.",
+    "Its lack-of-reliability index is 2.2 of 10, where 0 means every value was measured that year, against a median of 1.6."
+   ]
+  },
+  "BEN": {
+   "name": "Benin",
+   "facts": {
+    "headline": true,
+    "score": 59.6,
+    "ci_low": 48.4,
+    "ci_high": 70.8,
+    "tier": 1,
+    "band_best": 1,
+    "band_worst": 46,
+    "n_pillars": 7,
+    "lack_of_reliability": 1.77,
+    "above": [
+     [
+      "GOV",
+      59.65715690097896,
+      48.21656700028872
+     ],
+     [
+      "VOI",
+      43.59780438232882,
+      34.12500152554316
+     ]
+    ],
+    "below": [
+     [
+      "HUM",
+      53.67065136395786,
+      58.47249208471024
+     ],
+     [
+      "SEC",
+      82.52712625458317,
+      85.30095196205438
+     ]
+    ],
+    "left_out": [
+     "ENV"
+    ],
+    "change": {
+     "from_year": 2014,
+     "from": 61.08,
+     "pillar": "MAC",
+     "pillar_from": 63.59963377305656,
+     "pillar_to": 52.85420103677976
+    }
+   },
+   "text": [
+    "Benin scores 59.6 of 100 in 2024, with a 95% interval of 48.4 to 70.8.",
+    "That puts it in tier 1 of 4: its rank could be anywhere from 1 to 46 of 54.",
+    "Its pillars furthest above the median state are Governance and State Capacity (59.7, against 48.2) and Political Voice and Representation (43.6, against 34.1).",
+    "Furthest below are Human Development and Demography (53.7, against 58.5) and Security and Violence (82.5, against 85.3).",
+    "Since 2014 its score has moved from 61.1 to 59.6; the pillar that moved most is Macroeconomic and Fiscal Stability, from 63.6 to 52.9.",
+    "The score uses 7 of the 8 pillars; Environment and Climate Exposure was left out, measured too thinly that year to show.",
+    "Its lack-of-reliability index is 1.8 of 10, where 0 means every value was measured that year, against a median of 1.6."
+   ]
+  },
+  "BFA": {
+   "name": "Burkina Faso",
+   "facts": {
+    "headline": true,
+    "score": 45.03,
+    "ci_low": 31.98,
+    "ci_high": 58.08,
+    "tier": 3,
+    "band_best": 15,
+    "band_worst": 54,
+    "n_pillars": 7,
+    "lack_of_reliability": 1.28,
+    "above": [
+     [
+      "GOV",
+      53.24545675485346,
+      48.21656700028872
+     ],
+     [
+      "MAC",
+      51.12328072335413,
+      47.99270370399209
+     ]
+    ],
+    "below": [
+     [
+      "SEC",
+      20.066480843394583,
+      85.30095196205438
+     ],
+     [
+      "COH",
+      53.49301332832632,
+      64.9242437698412
+     ]
+    ],
+    "left_out": [
+     "ENV"
+    ],
+    "change": {
+     "from_year": 2014,
+     "from": 54.82,
+     "pillar": "SEC",
+     "pillar_from": 82.5603038414078,
+     "pillar_to": 20.066480843394583
+    }
+   },
+   "text": [
+    "Burkina Faso scores 45.0 of 100 in 2024, with a 95% interval of 32.0 to 58.1.",
+    "That puts it in tier 3 of 4: its rank could be anywhere from 15 to 54 of 54.",
+    "Its pillars furthest above the median state are Governance and State Capacity (53.2, against 48.2) and Macroeconomic and Fiscal Stability (51.1, against 48.0).",
+    "Furthest below are Security and Violence (20.1, against 85.3) and Social Cohesion and Equity (53.5, against 64.9).",
+    "Since 2014 its score has moved from 54.8 to 45.0; the pillar that moved most is Security and Violence, from 82.6 to 20.1.",
+    "The score uses 7 of the 8 pillars; Environment and Climate Exposure was left out, measured too thinly that year to show.",
+    "Its lack-of-reliability index is 1.3 of 10, where 0 means every value was measured that year, against a median of 1.6."
+   ]
+  },
+  "BWA": {
+   "name": "Botswana",
+   "facts": {
+    "headline": true,
+    "score": 67.99,
+    "ci_low": 51.02,
+    "ci_high": 84.96,
+    "tier": 1,
+    "band_best": 1,
+    "band_worst": 41,
+    "n_pillars": 7,
+    "lack_of_reliability": 1.73,
+    "above": [
+     [
+      "GOV",
+      77.39269778820379,
+      48.21656700028872
+     ],
+     [
+      "HUM",
+      73.17003900380594,
+      58.47249208471024
+     ]
+    ],
+    "below": [],
+    "left_out": [
+     "ENV"
+    ],
+    "change": {
+     "from_year": 2014,
+     "from": 71.08,
+     "pillar": "MAC",
+     "pillar_from": 63.29990182490311,
+     "pillar_to": 50.24583904656623
+    }
+   },
+   "text": [
+    "Botswana scores 68.0 of 100 in 2024, with a 95% interval of 51.0 to 85.0.",
+    "That puts it in tier 1 of 4: its rank could be anywhere from 1 to 41 of 54.",
+    "Its pillars furthest above the median state are Governance and State Capacity (77.4, against 48.2) and Human Development and Demography (73.2, against 58.5).",
+    "None is below it.",
+    "Since 2014 its score has moved from 71.1 to 68.0; the pillar that moved most is Macroeconomic and Fiscal Stability, from 63.3 to 50.2.",
+    "The score uses 7 of the 8 pillars; Environment and Climate Exposure was left out, measured too thinly that year to show.",
+    "Its lack-of-reliability index is 1.7 of 10, where 0 means every value was measured that year, against a median of 1.6."
+   ]
+  },
+  "CAF": {
+   "name": "Central African Republic",
+   "facts": {
+    "headline": true,
+    "score": 38.21,
+    "ci_low": 26.67,
+    "ci_high": 49.75,
+    "tier": 3,
+    "band_best": 30,
+    "band_worst": 54,
+    "n_pillars": 7,
+    "lack_of_reliability": 1.94,
+    "above": [
+     [
+      "MAC",
+      55.4991233525104,
+      47.99270370399209
+     ]
+    ],
+    "below": [
+     [
+      "SEC",
+      31.112753344922076,
+      85.30095196205438
+     ],
+     [
+      "HUM",
+      33.71514334771423,
+      58.47249208471024
+     ]
+    ],
+    "left_out": [
+     "ENV"
+    ],
+    "change": {
+     "from_year": 2014,
+     "from": 38.2,
+     "pillar": "MAC",
+     "pillar_from": 38.91763877494751,
+     "pillar_to": 55.4991233525104
+    }
+   },
+   "text": [
+    "Central African Republic scores 38.2 of 100 in 2024, with a 95% interval of 26.7 to 49.8.",
+    "That puts it in tier 3 of 4: its rank could be anywhere from 30 to 54 of 54.",
+    "Its pillar furthest above the median state is Macroeconomic and Fiscal Stability (55.5, against 48.0).",
+    "Furthest below are Security and Violence (31.1, against 85.3) and Human Development and Demography (33.7, against 58.5).",
+    "Since 2014 its score has moved from 38.2 to 38.2; the pillar that moved most is Macroeconomic and Fiscal Stability, from 38.9 to 55.5.",
+    "The score uses 7 of the 8 pillars; Environment and Climate Exposure was left out, measured too thinly that year to show.",
+    "Its lack-of-reliability index is 1.9 of 10, where 0 means every value was measured that year, against a median of 1.6."
+   ]
+  },
+  "CIV": {
+   "name": "Cote d'Ivoire",
+   "facts": {
+    "headline": true,
+    "score": 59.37,
+    "ci_low": 45.28,
+    "ci_high": 73.46,
+    "tier": 1,
+    "band_best": 1,
+    "band_worst": 47,
+    "n_pillars": 7,
+    "lack_of_reliability": 1.41,
+    "above": [
+     [
+      "GOV",
+      57.166488034010285,
+      48.21656700028872
+     ],
+     [
+      "COH",
+      69.54396893013603,
+      64.9242437698412
+     ]
+    ],
+    "below": [
+     [
+      "SEC",
+      83.69110715082093,
+      85.30095196205438
+     ],
+     [
+      "VOI",
+      34.12495790685757,
+      34.12500152554316
+     ]
+    ],
+    "left_out": [
+     "ENV"
+    ],
+    "change": {
+     "from_year": 2014,
+     "from": 58.01,
+     "pillar": "HUM",
+     "pillar_from": 48.18191192539028,
+     "pillar_to": 61.44503664899966
+    }
+   },
+   "text": [
+    "Cote d'Ivoire scores 59.4 of 100 in 2024, with a 95% interval of 45.3 to 73.5.",
+    "That puts it in tier 1 of 4: its rank could be anywhere from 1 to 47 of 54.",
+    "Its pillars furthest above the median state are Governance and State Capacity (57.2, against 48.2) and Social Cohesion and Equity (69.5, against 64.9).",
+    "Furthest below are Security and Violence (83.7, against 85.3) and Political Voice and Representation (34.1, against 34.1).",
+    "Since 2014 its score has moved from 58.0 to 59.4; the pillar that moved most is Human Development and Demography, from 48.2 to 61.4.",
+    "The score uses 7 of the 8 pillars; Environment and Climate Exposure was left out, measured too thinly that year to show.",
+    "Its lack-of-reliability index is 1.4 of 10, where 0 means every value was measured that year, against a median of 1.6."
+   ]
+  },
+  "CMR": {
+   "name": "Cameroon",
+   "facts": {
+    "headline": true,
+    "score": 51.57,
+    "ci_low": 41.28,
+    "ci_high": 61.86,
+    "tier": 2,
+    "band_best": 7,
+    "band_worst": 52,
+    "n_pillars": 7,
+    "lack_of_reliability": 1.53,
+    "above": [
+     [
+      "MAC",
+      52.865909565783134,
+      47.99270370399209
+     ],
+     [
+      "HUM",
+      58.638476017007854,
+      58.47249208471024
+     ]
+    ],
+    "below": [
+     [
+      "SEC",
+      65.41919274077851,
+      85.30095196205438
+     ],
+     [
+      "EXT",
+      47.72339815200221,
+      57.09648615789974
+     ]
+    ],
+    "left_out": [
+     "ENV"
+    ],
+    "change": {
+     "from_year": 2014,
+     "from": 52.32,
+     "pillar": "HUM",
+     "pillar_from": 51.225115933375946,
+     "pillar_to": 58.638476017007854
+    }
+   },
+   "text": [
+    "Cameroon scores 51.6 of 100 in 2024, with a 95% interval of 41.3 to 61.9.",
+    "That puts it in tier 2 of 4: its rank could be anywhere from 7 to 52 of 54.",
+    "Its pillars furthest above the median state are Macroeconomic and Fiscal Stability (52.9, against 48.0) and Human Development and Demography (58.6, against 58.5).",
+    "Furthest below are Security and Violence (65.4, against 85.3) and External Exposure and Economic Structure (47.7, against 57.1).",
+    "Since 2014 its score has moved from 52.3 to 51.6; the pillar that moved most is Human Development and Demography, from 51.2 to 58.6.",
+    "The score uses 7 of the 8 pillars; Environment and Climate Exposure was left out, measured too thinly that year to show.",
+    "Its lack-of-reliability index is 1.5 of 10, where 0 means every value was measured that year, against a median of 1.6."
+   ]
+  },
+  "COD": {
+   "name": "Democratic Rep. Congo",
+   "facts": {
+    "headline": true,
+    "score": 42.11,
+    "ci_low": 30.75,
+    "ci_high": 53.46,
+    "tier": 3,
+    "band_best": 23,
+    "band_worst": 54,
+    "n_pillars": 7,
+    "lack_of_reliability": 1.62,
+    "above": [
+     [
+      "MAC",
+      57.18928596814308,
+      47.99270370399209
+     ]
+    ],
+    "below": [
+     [
+      "SEC",
+      41.94283226807401,
+      85.30095196205438
+     ],
+     [
+      "GOV",
+      28.23362608033348,
+      48.21656700028872
+     ]
+    ],
+    "left_out": [
+     "ENV"
+    ],
+    "change": {
+     "from_year": 2014,
+     "from": 45.34,
+     "pillar": "SEC",
+     "pillar_from": 56.92652982518834,
+     "pillar_to": 41.94283226807401
+    }
+   },
+   "text": [
+    "Democratic Rep. Congo scores 42.1 of 100 in 2024, with a 95% interval of 30.8 to 53.5.",
+    "That puts it in tier 3 of 4: its rank could be anywhere from 23 to 54 of 54.",
+    "Its pillar furthest above the median state is Macroeconomic and Fiscal Stability (57.2, against 48.0).",
+    "Furthest below are Security and Violence (41.9, against 85.3) and Governance and State Capacity (28.2, against 48.2).",
+    "Since 2014 its score has moved from 45.3 to 42.1; the pillar that moved most is Security and Violence, from 56.9 to 41.9.",
+    "The score uses 7 of the 8 pillars; Environment and Climate Exposure was left out, measured too thinly that year to show.",
+    "Its lack-of-reliability index is 1.6 of 10, where 0 means every value was measured that year, against a median of 1.6."
+   ]
+  },
+  "COG": {
+   "name": "Republic of Congo",
+   "facts": {
+    "headline": true,
+    "score": 50.43,
+    "ci_low": 27.1,
+    "ci_high": 73.75,
+    "tier": 2,
+    "band_best": 2,
+    "band_worst": 54,
+    "n_pillars": 6,
+    "lack_of_reliability": 2.42,
+    "above": [
+     [
+      "SEC",
+      87.05388810317568,
+      85.30095196205438
+     ]
+    ],
+    "below": [
+     [
+      "GOV",
+      32.55592360251745,
+      48.21656700028872
+     ],
+     [
+      "VOI",
+      24.118695012605663,
+      34.12500152554316
+     ]
+    ],
+    "left_out": [
+     "ENV",
+     "EXT"
+    ],
+    "change": {
+     "from_year": 2014,
+     "from": 54.27,
+     "pillar": "MAC",
+     "pillar_from": 54.054449917768025,
+     "pillar_to": 45.023900487291336
+    }
+   },
+   "text": [
+    "Republic of Congo scores 50.4 of 100 in 2024, with a 95% interval of 27.1 to 73.8.",
+    "That puts it in tier 2 of 4: its rank could be anywhere from 2 to 54 of 54.",
+    "Its pillar furthest above the median state is Security and Violence (87.1, against 85.3).",
+    "Furthest below are Governance and State Capacity (32.6, against 48.2) and Political Voice and Representation (24.1, against 34.1).",
+    "Since 2014 its score has moved from 54.3 to 50.4; the pillar that moved most is Macroeconomic and Fiscal Stability, from 54.1 to 45.0.",
+    "The score uses 6 of the 8 pillars; Environment and Climate Exposure and External Exposure and Economic Structure were left out, measured too thinly that year to show.",
+    "Its lack-of-reliability index is 2.4 of 10, where 0 means every value was measured that year, against a median of 1.6."
+   ]
+  },
+  "COM": {
+   "name": "Comoros",
+   "facts": {
+    "headline": true,
+    "score": 58.13,
+    "ci_low": 33.79,
+    "ci_high": 82.46,
+    "tier": 2,
+    "band_best": 1,
+    "band_worst": 53,
+    "n_pillars": 6,
+    "lack_of_reliability": 2.07,
+    "above": [
+     [
+      "MAC",
+      58.05609790835592,
+      47.99270370399209
+     ],
+     [
+      "COH",
+      72.89039956537351,
+      64.9242437698412
+     ]
+    ],
+    "below": [
+     [
+      "GOV",
+      37.05498574554774,
+      48.21656700028872
+     ],
+     [
+      "VOI",
+      26.113963356424836,
+      34.12500152554316
+     ]
+    ],
+    "left_out": [
+     "ENV",
+     "EXT"
+    ],
+    "change": {
+     "from_year": 2014,
+     "from": 58.05,
+     "pillar": "COH",
+     "pillar_from": 57.16299352493522,
+     "pillar_to": 72.89039956537351
+    }
+   },
+   "text": [
+    "Comoros scores 58.1 of 100 in 2024, with a 95% interval of 33.8 to 82.5.",
+    "That puts it in tier 2 of 4: its rank could be anywhere from 1 to 53 of 54.",
+    "Its pillars furthest above the median state are Macroeconomic and Fiscal Stability (58.1, against 48.0) and Social Cohesion and Equity (72.9, against 64.9).",
+    "Furthest below are Governance and State Capacity (37.1, against 48.2) and Political Voice and Representation (26.1, against 34.1).",
+    "Since 2014 its score has moved from 58.0 to 58.1; the pillar that moved most is Social Cohesion and Equity, from 57.2 to 72.9.",
+    "The score uses 6 of the 8 pillars; Environment and Climate Exposure and External Exposure and Economic Structure were left out, measured too thinly that year to show.",
+    "Its lack-of-reliability index is 2.1 of 10, where 0 means every value was measured that year, against a median of 1.6."
+   ]
+  },
+  "CPV": {
+   "name": "Cabo Verde",
+   "facts": {
+    "headline": true,
+    "score": 73.6,
+    "ci_low": 59.29,
+    "ci_high": 87.91,
+    "tier": 1,
+    "band_best": 1,
+    "band_worst": 29,
+    "n_pillars": 7,
+    "lack_of_reliability": 1.63,
+    "above": [
+     [
+      "VOI",
+      67.33433140249377,
+      34.12500152554316
+     ],
+     [
+      "GOV",
+      74.93796045338492,
+      48.21656700028872
+     ]
+    ],
+    "below": [
+     [
+      "MAC",
+      47.77238598647819,
+      47.99270370399209
+     ]
+    ],
+    "left_out": [
+     "ENV"
+    ],
+    "change": {
+     "from_year": 2014,
+     "from": 68.36,
+     "pillar": "VOI",
+     "pillar_from": 58.06341981660875,
+     "pillar_to": 67.33433140249377
+    }
+   },
+   "text": [
+    "Cabo Verde scores 73.6 of 100 in 2024, with a 95% interval of 59.3 to 87.9.",
+    "That puts it in tier 1 of 4: its rank could be anywhere from 1 to 29 of 54.",
+    "Its pillars furthest above the median state are Political Voice and Representation (67.3, against 34.1) and Governance and State Capacity (74.9, against 48.2).",
+    "Furthest below is Macroeconomic and Fiscal Stability (47.8, against 48.0).",
+    "Since 2014 its score has moved from 68.4 to 73.6; the pillar that moved most is Political Voice and Representation, from 58.1 to 67.3.",
+    "The score uses 7 of the 8 pillars; Environment and Climate Exposure was left out, measured too thinly that year to show.",
+    "Its lack-of-reliability index is 1.6 of 10, where 0 means every value was measured that year, against a median of 1.6."
+   ]
+  },
+  "DJI": {
+   "name": "Djibouti",
+   "facts": {
+    "headline": true,
+    "score": 56.9,
+    "ci_low": 39.65,
+    "ci_high": 74.15,
+    "tier": 2,
+    "band_best": 1,
+    "band_worst": 52,
+    "n_pillars": 7,
+    "lack_of_reliability": 1.83,
+    "above": [
+     [
+      "EXT",
+      66.64967710793887,
+      57.09648615789974
+     ],
+     [
+      "HUM",
+      66.8595121393324,
+      58.47249208471024
+     ]
+    ],
+    "below": [
+     [
+      "COH",
+      53.24972480424574,
+      64.9242437698412
+     ],
+     [
+      "GOV",
+      42.2070772321798,
+      48.21656700028872
+     ]
+    ],
+    "left_out": [
+     "ENV"
+    ],
+    "change": {
+     "from_year": 2014,
+     "from": 53.27,
+     "pillar": "HUM",
+     "pillar_from": 56.8492955001513,
+     "pillar_to": 66.8595121393324
+    }
+   },
+   "text": [
+    "Djibouti scores 56.9 of 100 in 2024, with a 95% interval of 39.6 to 74.2.",
+    "That puts it in tier 2 of 4: its rank could be anywhere from 1 to 52 of 54.",
+    "Its pillars furthest above the median state are External Exposure and Economic Structure (66.6, against 57.1) and Human Development and Demography (66.9, against 58.5).",
+    "Furthest below are Social Cohesion and Equity (53.2, against 64.9) and Governance and State Capacity (42.2, against 48.2).",
+    "Since 2014 its score has moved from 53.3 to 56.9; the pillar that moved most is Human Development and Demography, from 56.8 to 66.9.",
+    "The score uses 7 of the 8 pillars; Environment and Climate Exposure was left out, measured too thinly that year to show.",
+    "Its lack-of-reliability index is 1.8 of 10, where 0 means every value was measured that year, against a median of 1.6."
+   ]
+  },
+  "DZA": {
+   "name": "Algeria",
+   "facts": {
+    "headline": true,
+    "score": 60.59,
+    "ci_low": 40.51,
+    "ci_high": 80.67,
+    "tier": 1,
+    "band_best": 1,
+    "band_worst": 50,
+    "n_pillars": 7,
+    "lack_of_reliability": 1.34,
+    "above": [
+     [
+      "HUM",
+      83.05556895984364,
+      58.47249208471024
+     ],
+     [
+      "MAC",
+      72.37065602095332,
+      47.99270370399209
+     ]
+    ],
+    "below": [
+     [
+      "VOI",
+      23.38297040671285,
+      34.12500152554316
+     ],
+     [
+      "EXT",
+      48.59689426985587,
+      57.09648615789974
+     ]
+    ],
+    "left_out": [
+     "ENV"
+    ],
+    "change": {
+     "from_year": 2014,
+     "from": 58.83,
+     "pillar": "VOI",
+     "pillar_from": 40.08102659757983,
+     "pillar_to": 23.38297040671285
+    }
+   },
+   "text": [
+    "Algeria scores 60.6 of 100 in 2024, with a 95% interval of 40.5 to 80.7.",
+    "That puts it in tier 1 of 4: its rank could be anywhere from 1 to 50 of 54.",
+    "Its pillars furthest above the median state are Human Development and Demography (83.1, against 58.5) and Macroeconomic and Fiscal Stability (72.4, against 48.0).",
+    "Furthest below are Political Voice and Representation (23.4, against 34.1) and External Exposure and Economic Structure (48.6, against 57.1).",
+    "Since 2014 its score has moved from 58.8 to 60.6; the pillar that moved most is Political Voice and Representation, from 40.1 to 23.4.",
+    "The score uses 7 of the 8 pillars; Environment and Climate Exposure was left out, measured too thinly that year to show.",
+    "Its lack-of-reliability index is 1.3 of 10, where 0 means every value was measured that year, against a median of 1.6."
+   ]
+  },
+  "EGY": {
+   "name": "Egypt",
+   "facts": {
+    "headline": true,
+    "score": 59.92,
+    "ci_low": 40.83,
+    "ci_high": 79.02,
+    "tier": 1,
+    "band_best": 1,
+    "band_worst": 50,
+    "n_pillars": 7,
+    "lack_of_reliability": 1.38,
+    "above": [
+     [
+      "HUM",
+      81.48856504415284,
+      58.47249208471024
+     ],
+     [
+      "GOV",
+      58.01519439693139,
+      48.21656700028872
+     ]
+    ],
+    "below": [
+     [
+      "VOI",
+      25.3557145210102,
+      34.12500152554316
+     ],
+     [
+      "MAC",
+      42.4867021185931,
+      47.99270370399209
+     ]
+    ],
+    "left_out": [
+     "ENV"
+    ],
+    "change": {
+     "from_year": 2014,
+     "from": 53.76,
+     "pillar": "EXT",
+     "pillar_from": 55.42401442017699,
+     "pillar_to": 66.5272042677845
+    }
+   },
+   "text": [
+    "Egypt scores 59.9 of 100 in 2024, with a 95% interval of 40.8 to 79.0.",
+    "That puts it in tier 1 of 4: its rank could be anywhere from 1 to 50 of 54.",
+    "Its pillars furthest above the median state are Human Development and Demography (81.5, against 58.5) and Governance and State Capacity (58.0, against 48.2).",
+    "Furthest below are Political Voice and Representation (25.4, against 34.1) and Macroeconomic and Fiscal Stability (42.5, against 48.0).",
+    "Since 2014 its score has moved from 53.8 to 59.9; the pillar that moved most is External Exposure and Economic Structure, from 55.4 to 66.5.",
+    "The score uses 7 of the 8 pillars; Environment and Climate Exposure was left out, measured too thinly that year to show.",
+    "Its lack-of-reliability index is 1.4 of 10, where 0 means every value was measured that year, against a median of 1.6."
+   ]
+  },
+  "ERI": {
+   "name": "Eritrea",
+   "facts": {
+    "headline": true,
+    "score": 48.88,
+    "ci_low": 7.28,
+    "ci_high": 90.49,
+    "tier": 2,
+    "band_best": 1,
+    "band_worst": 54,
+    "n_pillars": 5,
+    "lack_of_reliability": 3.76,
+    "above": [
+     [
+      "COH",
+      77.15249344810722,
+      64.9242437698412
+     ]
+    ],
+    "below": [
+     [
+      "GOV",
+      17.161797249745245,
+      48.21656700028872
+     ],
+     [
+      "VOI",
+      11.812651545095424,
+      34.12500152554316
+     ]
+    ],
+    "left_out": [
+     "ENV"
+    ],
+    "change": {
+     "from_year": 2014,
+     "from": 49.23,
+     "pillar": "GOV",
+     "pillar_from": 28.594768407523564,
+     "pillar_to": 17.161797249745245
+    }
+   },
+   "text": [
+    "Eritrea scores 48.9 of 100 in 2024, with a 95% interval of 7.3 to 90.5.",
+    "That puts it in tier 2 of 4: its rank could be anywhere from 1 to 54 of 54.",
+    "Its pillar furthest above the median state is Social Cohesion and Equity (77.2, against 64.9).",
+    "Furthest below are Governance and State Capacity (17.2, against 48.2) and Political Voice and Representation (11.8, against 34.1).",
+    "Since 2014 its score has moved from 49.2 to 48.9; the pillar that moved most is Governance and State Capacity, from 28.6 to 17.2.",
+    "The score uses 5 of the 8 pillars; Environment and Climate Exposure was left out, measured too thinly that year to show.",
+    "Its lack-of-reliability index is 3.8 of 10, where 0 means every value was measured that year, against a median of 1.6."
+   ]
+  },
+  "ETH": {
+   "name": "Ethiopia",
+   "facts": {
+    "headline": true,
+    "score": 48.95,
+    "ci_low": 40.93,
+    "ci_high": 56.96,
+    "tier": 2,
+    "band_best": 11,
+    "band_worst": 53,
+    "n_pillars": 7,
+    "lack_of_reliability": 1.54,
+    "above": [
+     [
+      "EXT",
+      60.7899110309172,
+      57.09648615789974
+     ],
+     [
+      "VOI",
+      37.60748575425663,
+      34.12500152554316
+     ]
+    ],
+    "below": [
+     [
+      "SEC",
+      54.80637208530302,
+      85.30095196205438
+     ],
+     [
+      "COH",
+      50.17018145762116,
+      64.9242437698412
+     ]
+    ],
+    "left_out": [
+     "ENV"
+    ],
+    "change": {
+     "from_year": 2014,
+     "from": 51.97,
+     "pillar": "SEC",
+     "pillar_from": 80.95212216786896,
+     "pillar_to": 54.80637208530302
+    }
+   },
+   "text": [
+    "Ethiopia scores 49.0 of 100 in 2024, with a 95% interval of 40.9 to 57.0.",
+    "That puts it in tier 2 of 4: its rank could be anywhere from 11 to 53 of 54.",
+    "Its pillars furthest above the median state are External Exposure and Economic Structure (60.8, against 57.1) and Political Voice and Representation (37.6, against 34.1).",
+    "Furthest below are Security and Violence (54.8, against 85.3) and Social Cohesion and Equity (50.2, against 64.9).",
+    "Since 2014 its score has moved from 52.0 to 49.0; the pillar that moved most is Security and Violence, from 81.0 to 54.8.",
+    "The score uses 7 of the 8 pillars; Environment and Climate Exposure was left out, measured too thinly that year to show.",
+    "Its lack-of-reliability index is 1.5 of 10, where 0 means every value was measured that year, against a median of 1.6."
+   ]
+  },
+  "GAB": {
+   "name": "Gabon",
+   "facts": {
+    "headline": true,
+    "score": 60.01,
+    "ci_low": 38.71,
+    "ci_high": 81.3,
+    "tier": 1,
+    "band_best": 1,
+    "band_worst": 52,
+    "n_pillars": 6,
+    "lack_of_reliability": 2.1,
+    "above": [
+     [
+      "HUM",
+      70.93378458057614,
+      58.47249208471024
+     ],
+     [
+      "COH",
+      71.52793193356499,
+      64.9242437698412
+     ]
+    ],
+    "below": [
+     [
+      "GOV",
+      42.348169369662585,
+      48.21656700028872
+     ]
+    ],
+    "left_out": [
+     "ENV",
+     "EXT"
+    ],
+    "change": {
+     "from_year": 2014,
+     "from": 58.25,
+     "pillar": "COH",
+     "pillar_from": 63.11007881240139,
+     "pillar_to": 71.52793193356499
+    }
+   },
+   "text": [
+    "Gabon scores 60.0 of 100 in 2024, with a 95% interval of 38.7 to 81.3.",
+    "That puts it in tier 1 of 4: its rank could be anywhere from 1 to 52 of 54.",
+    "Its pillars furthest above the median state are Human Development and Demography (70.9, against 58.5) and Social Cohesion and Equity (71.5, against 64.9).",
+    "Furthest below is Governance and State Capacity (42.3, against 48.2).",
+    "Since 2014 its score has moved from 58.2 to 60.0; the pillar that moved most is Social Cohesion and Equity, from 63.1 to 71.5.",
+    "The score uses 6 of the 8 pillars; Environment and Climate Exposure and External Exposure and Economic Structure were left out, measured too thinly that year to show.",
+    "Its lack-of-reliability index is 2.1 of 10, where 0 means every value was measured that year, against a median of 1.6."
+   ]
+  },
+  "GHA": {
+   "name": "Ghana",
+   "facts": {
+    "headline": true,
+    "score": 63.27,
+    "ci_low": 47.89,
+    "ci_high": 78.64,
+    "tier": 1,
+    "band_best": 1,
+    "band_worst": 44,
+    "n_pillars": 7,
+    "lack_of_reliability": 1.31,
+    "above": [
+     [
+      "GOV",
+      63.10480742077616,
+      48.21656700028872
+     ],
+     [
+      "VOI",
+      47.09089627281279,
+      34.12500152554316
+     ]
+    ],
+    "below": [
+     [
+      "MAC",
+      43.25799712035066,
+      47.99270370399209
+     ],
+     [
+      "EXT",
+      54.94377549390191,
+      57.09648615789974
+     ]
+    ],
+    "left_out": [
+     "ENV"
+    ],
+    "change": {
+     "from_year": 2014,
+     "from": 60.17,
+     "pillar": "HUM",
+     "pillar_from": 59.7409500990065,
+     "pillar_to": 70.07024615968108
+    }
+   },
+   "text": [
+    "Ghana scores 63.3 of 100 in 2024, with a 95% interval of 47.9 to 78.6.",
+    "That puts it in tier 1 of 4: its rank could be anywhere from 1 to 44 of 54.",
+    "Its pillars furthest above the median state are Governance and State Capacity (63.1, against 48.2) and Political Voice and Representation (47.1, against 34.1).",
+    "Furthest below are Macroeconomic and Fiscal Stability (43.3, against 48.0) and External Exposure and Economic Structure (54.9, against 57.1).",
+    "Since 2014 its score has moved from 60.2 to 63.3; the pillar that moved most is Human Development and Demography, from 59.7 to 70.1.",
+    "The score uses 7 of the 8 pillars; Environment and Climate Exposure was left out, measured too thinly that year to show.",
+    "Its lack-of-reliability index is 1.3 of 10, where 0 means every value was measured that year, against a median of 1.6."
+   ]
+  },
+  "GIN": {
+   "name": "Guinea",
+   "facts": {
+    "headline": true,
+    "score": 54.34,
+    "ci_low": 38.76,
+    "ci_high": 69.92,
+    "tier": 2,
+    "band_best": 2,
+    "band_worst": 52,
+    "n_pillars": 7,
+    "lack_of_reliability": 1.74,
+    "above": [
+     [
+      "EXT",
+      59.607757936063045,
+      57.09648615789974
+     ],
+     [
+      "MAC",
+      49.52723874679708,
+      47.99270370399209
+     ]
+    ],
+    "below": [
+     [
+      "GOV",
+      39.52682270438593,
+      48.21656700028872
+     ],
+     [
+      "HUM",
+      51.05347150236084,
+      58.47249208471024
+     ]
+    ],
+    "left_out": [
+     "ENV"
+    ],
+    "change": {
+     "from_year": 2014,
+     "from": 51.74,
+     "pillar": "EXT",
+     "pillar_from": 46.10410201707906,
+     "pillar_to": 59.607757936063045
+    }
+   },
+   "text": [
+    "Guinea scores 54.3 of 100 in 2024, with a 95% interval of 38.8 to 69.9.",
+    "That puts it in tier 2 of 4: its rank could be anywhere from 2 to 52 of 54.",
+    "Its pillars furthest above the median state are External Exposure and Economic Structure (59.6, against 57.1) and Macroeconomic and Fiscal Stability (49.5, against 48.0).",
+    "Furthest below are Governance and State Capacity (39.5, against 48.2) and Human Development and Demography (51.1, against 58.5).",
+    "Since 2014 its score has moved from 51.7 to 54.3; the pillar that moved most is External Exposure and Economic Structure, from 46.1 to 59.6.",
+    "The score uses 7 of the 8 pillars; Environment and Climate Exposure was left out, measured too thinly that year to show.",
+    "Its lack-of-reliability index is 1.7 of 10, where 0 means every value was measured that year, against a median of 1.6."
+   ]
+  },
+  "GMB": {
+   "name": "The Gambia",
+   "facts": {
+    "headline": true,
+    "score": 60.6,
+    "ci_low": 44.88,
+    "ci_high": 76.33,
+    "tier": 1,
+    "band_best": 1,
+    "band_worst": 47,
+    "n_pillars": 7,
+    "lack_of_reliability": 1.41,
+    "above": [
+     [
+      "GOV",
+      55.95861183457664,
+      48.21656700028872
+     ],
+     [
+      "EXT",
+      62.27204010613407,
+      57.09648615789974
+     ]
+    ],
+    "below": [
+     [
+      "MAC",
+      47.15066509022537,
+      47.99270370399209
+     ]
+    ],
+    "left_out": [
+     "ENV"
+    ],
+    "change": {
+     "from_year": 2014,
+     "from": 53.95,
+     "pillar": "VOI",
+     "pillar_from": 21.722686971054543,
+     "pillar_to": 36.84168678035383
+    }
+   },
+   "text": [
+    "The Gambia scores 60.6 of 100 in 2024, with a 95% interval of 44.9 to 76.3.",
+    "That puts it in tier 1 of 4: its rank could be anywhere from 1 to 47 of 54.",
+    "Its pillars furthest above the median state are Governance and State Capacity (56.0, against 48.2) and External Exposure and Economic Structure (62.3, against 57.1).",
+    "Furthest below is Macroeconomic and Fiscal Stability (47.2, against 48.0).",
+    "Since 2014 its score has moved from 54.0 to 60.6; the pillar that moved most is Political Voice and Representation, from 21.7 to 36.8.",
+    "The score uses 7 of the 8 pillars; Environment and Climate Exposure was left out, measured too thinly that year to show.",
+    "Its lack-of-reliability index is 1.4 of 10, where 0 means every value was measured that year, against a median of 1.6."
+   ]
+  },
+  "GNB": {
+   "name": "Guinea-Bissau",
+   "facts": {
+    "headline": true,
+    "score": 53.35,
+    "ci_low": 33.91,
+    "ci_high": 72.79,
+    "tier": 2,
+    "band_best": 2,
+    "band_worst": 53,
+    "n_pillars": 7,
+    "lack_of_reliability": 1.67,
+    "above": [
+     [
+      "MAC",
+      56.72502289766374,
+      47.99270370399209
+     ],
+     [
+      "COH",
+      72.36667099866142,
+      64.9242437698412
+     ]
+    ],
+    "below": [
+     [
+      "GOV",
+      31.074352868753635,
+      48.21656700028872
+     ],
+     [
+      "EXT",
+      44.24954221150435,
+      57.09648615789974
+     ]
+    ],
+    "left_out": [
+     "ENV"
+    ],
+    "change": {
+     "from_year": 2014,
+     "from": 49.04,
+     "pillar": "COH",
+     "pillar_from": 55.11340617442268,
+     "pillar_to": 72.36667099866142
+    }
+   },
+   "text": [
+    "Guinea-Bissau scores 53.4 of 100 in 2024, with a 95% interval of 33.9 to 72.8.",
+    "That puts it in tier 2 of 4: its rank could be anywhere from 2 to 53 of 54.",
+    "Its pillars furthest above the median state are Macroeconomic and Fiscal Stability (56.7, against 48.0) and Social Cohesion and Equity (72.4, against 64.9).",
+    "Furthest below are Governance and State Capacity (31.1, against 48.2) and External Exposure and Economic Structure (44.2, against 57.1).",
+    "Since 2014 its score has moved from 49.0 to 53.4; the pillar that moved most is Social Cohesion and Equity, from 55.1 to 72.4.",
+    "The score uses 7 of the 8 pillars; Environment and Climate Exposure was left out, measured too thinly that year to show.",
+    "Its lack-of-reliability index is 1.7 of 10, where 0 means every value was measured that year, against a median of 1.6."
+   ]
+  },
+  "GNQ": {
+   "name": "Equatorial Guinea",
+   "facts": {
+    "headline": true,
+    "score": 52.21,
+    "ci_low": 25.29,
+    "ci_high": 79.14,
+    "tier": 2,
+    "band_best": 1,
+    "band_worst": 54,
+    "n_pillars": 6,
+    "lack_of_reliability": 2.66,
+    "above": [
+     [
+      "COH",
+      71.9083428281713,
+      64.9242437698412
+     ],
+     [
+      "SEC",
+      89.17638475551757,
+      85.30095196205438
+     ]
+    ],
+    "below": [
+     [
+      "GOV",
+      27.20864776432058,
+      48.21656700028872
+     ],
+     [
+      "VOI",
+      24.991411770416548,
+      34.12500152554316
+     ]
+    ],
+    "left_out": [
+     "ENV",
+     "EXT"
+    ],
+    "change": {
+     "from_year": 2014,
+     "from": 49.12,
+     "pillar": "COH",
+     "pillar_from": 51.81615071068524,
+     "pillar_to": 71.9083428281713
+    }
+   },
+   "text": [
+    "Equatorial Guinea scores 52.2 of 100 in 2024, with a 95% interval of 25.3 to 79.1.",
+    "That puts it in tier 2 of 4: its rank could be anywhere from 1 to 54 of 54.",
+    "Its pillars furthest above the median state are Social Cohesion and Equity (71.9, against 64.9) and Security and Violence (89.2, against 85.3).",
+    "Furthest below are Governance and State Capacity (27.2, against 48.2) and Political Voice and Representation (25.0, against 34.1).",
+    "Since 2014 its score has moved from 49.1 to 52.2; the pillar that moved most is Social Cohesion and Equity, from 51.8 to 71.9.",
+    "The score uses 6 of the 8 pillars; Environment and Climate Exposure and External Exposure and Economic Structure were left out, measured too thinly that year to show.",
+    "Its lack-of-reliability index is 2.7 of 10, where 0 means every value was measured that year, against a median of 1.6."
+   ]
+  },
+  "KEN": {
+   "name": "Kenya",
+   "facts": {
+    "headline": true,
+    "score": 58.95,
+    "ci_low": 48.03,
+    "ci_high": 69.87,
+    "tier": 2,
+    "band_best": 2,
+    "band_worst": 46,
+    "n_pillars": 7,
+    "lack_of_reliability": 1.36,
+    "above": [
+     [
+      "GOV",
+      56.73941720377334,
+      48.21656700028872
+     ],
+     [
+      "VOI",
+      41.74633128458272,
+      34.12500152554316
+     ]
+    ],
+    "below": [
+     [
+      "SEC",
+      79.33525580433106,
+      85.30095196205438
+     ],
+     [
+      "COH",
+      63.01812973774254,
+      64.9242437698412
+     ]
+    ],
+    "left_out": [
+     "ENV"
+    ],
+    "change": {
+     "from_year": 2014,
+     "from": 56.37,
+     "pillar": "HUM",
+     "pillar_from": 54.128738371335686,
+     "pillar_to": 61.54620919808424
+    }
+   },
+   "text": [
+    "Kenya scores 59.0 of 100 in 2024, with a 95% interval of 48.0 to 69.9.",
+    "That puts it in tier 2 of 4: its rank could be anywhere from 2 to 46 of 54.",
+    "Its pillars furthest above the median state are Governance and State Capacity (56.7, against 48.2) and Political Voice and Representation (41.7, against 34.1).",
+    "Furthest below are Security and Violence (79.3, against 85.3) and Social Cohesion and Equity (63.0, against 64.9).",
+    "Since 2014 its score has moved from 56.4 to 59.0; the pillar that moved most is Human Development and Demography, from 54.1 to 61.5.",
+    "The score uses 7 of the 8 pillars; Environment and Climate Exposure was left out, measured too thinly that year to show.",
+    "Its lack-of-reliability index is 1.4 of 10, where 0 means every value was measured that year, against a median of 1.6."
+   ]
+  },
+  "LBR": {
+   "name": "Liberia",
+   "facts": {
+    "headline": true,
+    "score": 54.5,
+    "ci_low": 33.94,
+    "ci_high": 75.06,
+    "tier": 2,
+    "band_best": 1,
+    "band_worst": 53,
+    "n_pillars": 6,
+    "lack_of_reliability": 1.85,
+    "above": [
+     [
+      "VOI",
+      40.66064017989996,
+      34.12500152554316
+     ],
+     [
+      "SEC",
+      88.61749349072805,
+      85.30095196205438
+     ]
+    ],
+    "below": [
+     [
+      "HUM",
+      43.952087328206375,
+      58.47249208471024
+     ],
+     [
+      "GOV",
+      40.53021596664247,
+      48.21656700028872
+     ]
+    ],
+    "left_out": [
+     "ENV",
+     "EXT"
+    ],
+    "change": {
+     "from_year": 2014,
+     "from": 54.68,
+     "pillar": "COH",
+     "pillar_from": 57.90178770032967,
+     "pillar_to": 67.75256089975224
+    }
+   },
+   "text": [
+    "Liberia scores 54.5 of 100 in 2024, with a 95% interval of 33.9 to 75.1.",
+    "That puts it in tier 2 of 4: its rank could be anywhere from 1 to 53 of 54.",
+    "Its pillars furthest above the median state are Political Voice and Representation (40.7, against 34.1) and Security and Violence (88.6, against 85.3).",
+    "Furthest below are Human Development and Demography (44.0, against 58.5) and Governance and State Capacity (40.5, against 48.2).",
+    "Since 2014 its score has moved from 54.7 to 54.5; the pillar that moved most is Social Cohesion and Equity, from 57.9 to 67.8.",
+    "The score uses 6 of the 8 pillars; Environment and Climate Exposure and External Exposure and Economic Structure were left out, measured too thinly that year to show.",
+    "Its lack-of-reliability index is 1.9 of 10, where 0 means every value was measured that year, against a median of 1.6."
+   ]
+  },
+  "LBY": {
+   "name": "Libya",
+   "facts": {
+    "headline": true,
+    "score": 53.62,
+    "ci_low": 27.25,
+    "ci_high": 79.99,
+    "tier": 2,
+    "band_best": 1,
+    "band_worst": 54,
+    "n_pillars": 6,
+    "lack_of_reliability": 2.55,
+    "above": [
+     [
+      "HUM",
+      82.57333539680714,
+      58.47249208471024
+     ],
+     [
+      "MAC",
+      53.275149581555205,
+      47.99270370399209
+     ]
+    ],
+    "below": [
+     [
+      "GOV",
+      24.66329876180249,
+      48.21656700028872
+     ],
+     [
+      "VOI",
+      23.313038629663176,
+      34.12500152554316
+     ]
+    ],
+    "left_out": [
+     "ENV",
+     "EXT"
+    ],
+    "change": {
+     "from_year": 2014,
+     "from": 45.78,
+     "pillar": "SEC",
+     "pillar_from": 55.81413174906135,
+     "pillar_to": 75.70546350407095
+    }
+   },
+   "text": [
+    "Libya scores 53.6 of 100 in 2024, with a 95% interval of 27.2 to 80.0.",
+    "That puts it in tier 2 of 4: its rank could be anywhere from 1 to 54 of 54.",
+    "Its pillars furthest above the median state are Human Development and Demography (82.6, against 58.5) and Macroeconomic and Fiscal Stability (53.3, against 48.0).",
+    "Furthest below are Governance and State Capacity (24.7, against 48.2) and Political Voice and Representation (23.3, against 34.1).",
+    "Since 2014 its score has moved from 45.8 to 53.6; the pillar that moved most is Security and Violence, from 55.8 to 75.7.",
+    "The score uses 6 of the 8 pillars; Environment and Climate Exposure and External Exposure and Economic Structure were left out, measured too thinly that year to show.",
+    "Its lack-of-reliability index is 2.5 of 10, where 0 means every value was measured that year, against a median of 1.6."
+   ]
+  },
+  "LSO": {
+   "name": "Lesotho",
+   "facts": {
+    "headline": true,
+    "score": 63.17,
+    "ci_low": 49.57,
+    "ci_high": 76.76,
+    "tier": 1,
+    "band_best": 1,
+    "band_worst": 43,
+    "n_pillars": 7,
+    "lack_of_reliability": 1.29,
+    "above": [
+     [
+      "VOI",
+      48.42128583051913,
+      34.12500152554316
+     ],
+     [
+      "GOV",
+      59.70229117743497,
+      48.21656700028872
+     ]
+    ],
+    "below": [
+     [
+      "MAC",
+      46.6968902219428,
+      47.99270370399209
+     ]
+    ],
+    "left_out": [
+     "ENV"
+    ],
+    "change": {
+     "from_year": 2014,
+     "from": 61.06,
+     "pillar": "GOV",
+     "pillar_from": 67.72187058111544,
+     "pillar_to": 59.70229117743497
+    }
+   },
+   "text": [
+    "Lesotho scores 63.2 of 100 in 2024, with a 95% interval of 49.6 to 76.8.",
+    "That puts it in tier 1 of 4: its rank could be anywhere from 1 to 43 of 54.",
+    "Its pillars furthest above the median state are Political Voice and Representation (48.4, against 34.1) and Governance and State Capacity (59.7, against 48.2).",
+    "Furthest below is Macroeconomic and Fiscal Stability (46.7, against 48.0).",
+    "Since 2014 its score has moved from 61.1 to 63.2; the pillar that moved most is Governance and State Capacity, from 67.7 to 59.7.",
+    "The score uses 7 of the 8 pillars; Environment and Climate Exposure was left out, measured too thinly that year to show.",
+    "Its lack-of-reliability index is 1.3 of 10, where 0 means every value was measured that year, against a median of 1.6."
+   ]
+  },
+  "MAR": {
+   "name": "Morocco",
+   "facts": {
+    "headline": true,
+    "score": 65.92,
+    "ci_low": 49.07,
+    "ci_high": 82.76,
+    "tier": 1,
+    "band_best": 1,
+    "band_worst": 43,
+    "n_pillars": 7,
+    "lack_of_reliability": 1.24,
+    "above": [
+     [
+      "HUM",
+      82.82664985567482,
+      58.47249208471024
+     ],
+     [
+      "GOV",
+      66.63829163611217,
+      48.21656700028872
+     ]
+    ],
+    "below": [
+     [
+      "MAC",
+      46.26974086984925,
+      47.99270370399209
+     ]
+    ],
+    "left_out": [
+     "ENV"
+    ],
+    "change": {
+     "from_year": 2014,
+     "from": 63.92,
+     "pillar": "EXT",
+     "pillar_from": 61.93607956944604,
+     "pillar_to": 73.28365324109569
+    }
+   },
+   "text": [
+    "Morocco scores 65.9 of 100 in 2024, with a 95% interval of 49.1 to 82.8.",
+    "That puts it in tier 1 of 4: its rank could be anywhere from 1 to 43 of 54.",
+    "Its pillars furthest above the median state are Human Development and Demography (82.8, against 58.5) and Governance and State Capacity (66.6, against 48.2).",
+    "Furthest below is Macroeconomic and Fiscal Stability (46.3, against 48.0).",
+    "Since 2014 its score has moved from 63.9 to 65.9; the pillar that moved most is External Exposure and Economic Structure, from 61.9 to 73.3.",
+    "The score uses 7 of the 8 pillars; Environment and Climate Exposure was left out, measured too thinly that year to show.",
+    "Its lack-of-reliability index is 1.2 of 10, where 0 means every value was measured that year, against a median of 1.6."
+   ]
+  },
+  "MDG": {
+   "name": "Madagascar",
+   "facts": {
+    "headline": true,
+    "score": 54.43,
+    "ci_low": 37.37,
+    "ci_high": 71.49,
+    "tier": 2,
+    "band_best": 2,
+    "band_worst": 53,
+    "n_pillars": 7,
+    "lack_of_reliability": 1.31,
+    "above": [
+     [
+      "COH",
+      72.79332307450996,
+      64.9242437698412
+     ],
+     [
+      "MAC",
+      49.86377210234574,
+      47.99270370399209
+     ]
+    ],
+    "below": [
+     [
+      "HUM",
+      45.84667894442444,
+      58.47249208471024
+     ],
+     [
+      "EXT",
+      49.09186028172259,
+      57.09648615789974
+     ]
+    ],
+    "left_out": [
+     "ENV"
+    ],
+    "change": {
+     "from_year": 2014,
+     "from": 54.75,
+     "pillar": "HUM",
+     "pillar_from": 40.01430463189567,
+     "pillar_to": 45.84667894442444
+    }
+   },
+   "text": [
+    "Madagascar scores 54.4 of 100 in 2024, with a 95% interval of 37.4 to 71.5.",
+    "That puts it in tier 2 of 4: its rank could be anywhere from 2 to 53 of 54.",
+    "Its pillars furthest above the median state are Social Cohesion and Equity (72.8, against 64.9) and Macroeconomic and Fiscal Stability (49.9, against 48.0).",
+    "Furthest below are Human Development and Demography (45.8, against 58.5) and External Exposure and Economic Structure (49.1, against 57.1).",
+    "Since 2014 its score has moved from 54.8 to 54.4; the pillar that moved most is Human Development and Demography, from 40.0 to 45.8.",
+    "The score uses 7 of the 8 pillars; Environment and Climate Exposure was left out, measured too thinly that year to show.",
+    "Its lack-of-reliability index is 1.3 of 10, where 0 means every value was measured that year, against a median of 1.6."
+   ]
+  },
+  "MLI": {
+   "name": "Mali",
+   "facts": {
+    "headline": true,
+    "score": 44.8,
+    "ci_low": 34.5,
+    "ci_high": 55.09,
+    "tier": 3,
+    "band_best": 19,
+    "band_worst": 54,
+    "n_pillars": 7,
+    "lack_of_reliability": 1.8,
+    "above": [
+     [
+      "MAC",
+      59.77641571997473,
+      47.99270370399209
+     ],
+     [
+      "EXT",
+      57.28560372096398,
+      57.09648615789974
+     ]
+    ],
+    "below": [
+     [
+      "SEC",
+      34.101519010850005,
+      85.30095196205438
+     ],
+     [
+      "COH",
+      37.93263605047888,
+      64.9242437698412
+     ]
+    ],
+    "left_out": [
+     "ENV"
+    ],
+    "change": {
+     "from_year": 2014,
+     "from": 52.19,
+     "pillar": "SEC",
+     "pillar_from": 70.52677312207412,
+     "pillar_to": 34.101519010850005
+    }
+   },
+   "text": [
+    "Mali scores 44.8 of 100 in 2024, with a 95% interval of 34.5 to 55.1.",
+    "That puts it in tier 3 of 4: its rank could be anywhere from 19 to 54 of 54.",
+    "Its pillars furthest above the median state are Macroeconomic and Fiscal Stability (59.8, against 48.0) and External Exposure and Economic Structure (57.3, against 57.1).",
+    "Furthest below are Security and Violence (34.1, against 85.3) and Social Cohesion and Equity (37.9, against 64.9).",
+    "Since 2014 its score has moved from 52.2 to 44.8; the pillar that moved most is Security and Violence, from 70.5 to 34.1.",
+    "The score uses 7 of the 8 pillars; Environment and Climate Exposure was left out, measured too thinly that year to show.",
+    "Its lack-of-reliability index is 1.8 of 10, where 0 means every value was measured that year, against a median of 1.6."
+   ]
+  },
+  "MOZ": {
+   "name": "Mozambique",
+   "facts": {
+    "headline": true,
+    "score": 49.07,
+    "ci_low": 37.92,
+    "ci_high": 60.23,
+    "tier": 2,
+    "band_best": 9,
+    "band_worst": 53,
+    "n_pillars": 7,
+    "lack_of_reliability": 1.31,
+    "above": [
+     [
+      "VOI",
+      41.51612231783962,
+      34.12500152554316
+     ],
+     [
+      "COH",
+      66.0327279193892,
+      64.9242437698412
+     ]
+    ],
+    "below": [
+     [
+      "SEC",
+      62.77464794562567,
+      85.30095196205438
+     ],
+     [
+      "MAC",
+      30.990067889243505,
+      47.99270370399209
+     ]
+    ],
+    "left_out": [
+     "ENV"
+    ],
+    "change": {
+     "from_year": 2014,
+     "from": 57.01,
+     "pillar": "SEC",
+     "pillar_from": 84.09124762777769,
+     "pillar_to": 62.77464794562567
+    }
+   },
+   "text": [
+    "Mozambique scores 49.1 of 100 in 2024, with a 95% interval of 37.9 to 60.2.",
+    "That puts it in tier 2 of 4: its rank could be anywhere from 9 to 53 of 54.",
+    "Its pillars furthest above the median state are Political Voice and Representation (41.5, against 34.1) and Social Cohesion and Equity (66.0, against 64.9).",
+    "Furthest below are Security and Violence (62.8, against 85.3) and Macroeconomic and Fiscal Stability (31.0, against 48.0).",
+    "Since 2014 its score has moved from 57.0 to 49.1; the pillar that moved most is Security and Violence, from 84.1 to 62.8.",
+    "The score uses 7 of the 8 pillars; Environment and Climate Exposure was left out, measured too thinly that year to show.",
+    "Its lack-of-reliability index is 1.3 of 10, where 0 means every value was measured that year, against a median of 1.6."
+   ]
+  },
+  "MRT": {
+   "name": "Mauritania",
+   "facts": {
+    "headline": true,
+    "score": 53.32,
+    "ci_low": 38.21,
+    "ci_high": 68.42,
+    "tier": 2,
+    "band_best": 3,
+    "band_worst": 53,
+    "n_pillars": 7,
+    "lack_of_reliability": 1.64,
+    "above": [
+     [
+      "MAC",
+      49.4160183294043,
+      47.99270370399209
+     ],
+     [
+      "HUM",
+      59.56801821011601,
+      58.47249208471024
+     ]
+    ],
+    "below": [
+     [
+      "COH",
+      44.60927543504517,
+      64.9242437698412
+     ],
+     [
+      "GOV",
+      44.53819959425949,
+      48.21656700028872
+     ]
+    ],
+    "left_out": [
+     "ENV"
+    ],
+    "change": {
+     "from_year": 2014,
+     "from": 48.01,
+     "pillar": "MAC",
+     "pillar_from": 35.06977464078676,
+     "pillar_to": 49.4160183294043
+    }
+   },
+   "text": [
+    "Mauritania scores 53.3 of 100 in 2024, with a 95% interval of 38.2 to 68.4.",
+    "That puts it in tier 2 of 4: its rank could be anywhere from 3 to 53 of 54.",
+    "Its pillars furthest above the median state are Macroeconomic and Fiscal Stability (49.4, against 48.0) and Human Development and Demography (59.6, against 58.5).",
+    "Furthest below are Social Cohesion and Equity (44.6, against 64.9) and Governance and State Capacity (44.5, against 48.2).",
+    "Since 2014 its score has moved from 48.0 to 53.3; the pillar that moved most is Macroeconomic and Fiscal Stability, from 35.1 to 49.4.",
+    "The score uses 7 of the 8 pillars; Environment and Climate Exposure was left out, measured too thinly that year to show.",
+    "Its lack-of-reliability index is 1.6 of 10, where 0 means every value was measured that year, against a median of 1.6."
+   ]
+  },
+  "MUS": {
+   "name": "Mauritius",
+   "facts": {
+    "headline": true,
+    "score": 72.88,
+    "ci_low": 53.54,
+    "ci_high": 92.21,
+    "tier": 1,
+    "band_best": 1,
+    "band_worst": 39,
+    "n_pillars": 7,
+    "lack_of_reliability": 1.26,
+    "above": [
+     [
+      "GOV",
+      83.10164222894463,
+      48.21656700028872
+     ],
+     [
+      "HUM",
+      87.96517423907113,
+      58.47249208471024
+     ]
+    ],
+    "below": [
+     [
+      "MAC",
+      37.51826017487715,
+      47.99270370399209
+     ]
+    ],
+    "left_out": [
+     "ENV"
+    ],
+    "change": {
+     "from_year": 2014,
+     "from": 72.5,
+     "pillar": "COH",
+     "pillar_from": 69.67447485084183,
+     "pillar_to": 78.43574403743325
+    }
+   },
+   "text": [
+    "Mauritius scores 72.9 of 100 in 2024, with a 95% interval of 53.5 to 92.2.",
+    "That puts it in tier 1 of 4: its rank could be anywhere from 1 to 39 of 54.",
+    "Its pillars furthest above the median state are Governance and State Capacity (83.1, against 48.2) and Human Development and Demography (88.0, against 58.5).",
+    "Furthest below is Macroeconomic and Fiscal Stability (37.5, against 48.0).",
+    "Since 2014 its score has moved from 72.5 to 72.9; the pillar that moved most is Social Cohesion and Equity, from 69.7 to 78.4.",
+    "The score uses 7 of the 8 pillars; Environment and Climate Exposure was left out, measured too thinly that year to show.",
+    "Its lack-of-reliability index is 1.3 of 10, where 0 means every value was measured that year, against a median of 1.6."
+   ]
+  },
+  "MWI": {
+   "name": "Malawi",
+   "facts": {
+    "headline": true,
+    "score": 57.44,
+    "ci_low": 42.95,
+    "ci_high": 71.93,
+    "tier": 2,
+    "band_best": 1,
+    "band_worst": 51,
+    "n_pillars": 7,
+    "lack_of_reliability": 1.38,
+    "above": [
+     [
+      "VOI",
+      45.08211628527638,
+      34.12500152554316
+     ],
+     [
+      "GOV",
+      56.09657546687779,
+      48.21656700028872
+     ]
+    ],
+    "below": [
+     [
+      "HUM",
+      50.87323925731116,
+      58.47249208471024
+     ],
+     [
+      "MAC",
+      40.51650894266147,
+      47.99270370399209
+     ]
+    ],
+    "left_out": [
+     "ENV"
+    ],
+    "change": {
+     "from_year": 2014,
+     "from": 57.18,
+     "pillar": "HUM",
+     "pillar_from": 41.61674606884613,
+     "pillar_to": 50.87323925731116
+    }
+   },
+   "text": [
+    "Malawi scores 57.4 of 100 in 2024, with a 95% interval of 43.0 to 71.9.",
+    "That puts it in tier 2 of 4: its rank could be anywhere from 1 to 51 of 54.",
+    "Its pillars furthest above the median state are Political Voice and Representation (45.1, against 34.1) and Governance and State Capacity (56.1, against 48.2).",
+    "Furthest below are Human Development and Demography (50.9, against 58.5) and Macroeconomic and Fiscal Stability (40.5, against 48.0).",
+    "Since 2014 its score has moved from 57.2 to 57.4; the pillar that moved most is Human Development and Demography, from 41.6 to 50.9.",
+    "The score uses 7 of the 8 pillars; Environment and Climate Exposure was left out, measured too thinly that year to show.",
+    "Its lack-of-reliability index is 1.4 of 10, where 0 means every value was measured that year, against a median of 1.6."
+   ]
+  },
+  "NAM": {
+   "name": "Namibia",
+   "facts": {
+    "headline": true,
+    "score": 66.35,
+    "ci_low": 51.36,
+    "ci_high": 81.33,
+    "tier": 1,
+    "band_best": 1,
+    "band_worst": 41,
+    "n_pillars": 7,
+    "lack_of_reliability": 1.46,
+    "above": [
+     [
+      "GOV",
+      74.8770202320562,
+      48.21656700028872
+     ],
+     [
+      "VOI",
+      60.58137624905519,
+      34.12500152554316
+     ]
+    ],
+    "below": [
+     [
+      "MAC",
+      41.744813904238825,
+      47.99270370399209
+     ]
+    ],
+    "left_out": [
+     "ENV"
+    ],
+    "change": {
+     "from_year": 2014,
+     "from": 66.59,
+     "pillar": "HUM",
+     "pillar_from": 58.06980121433137,
+     "pillar_to": 65.53660343691791
+    }
+   },
+   "text": [
+    "Namibia scores 66.3 of 100 in 2024, with a 95% interval of 51.4 to 81.3.",
+    "That puts it in tier 1 of 4: its rank could be anywhere from 1 to 41 of 54.",
+    "Its pillars furthest above the median state are Governance and State Capacity (74.9, against 48.2) and Political Voice and Representation (60.6, against 34.1).",
+    "Furthest below is Macroeconomic and Fiscal Stability (41.7, against 48.0).",
+    "Since 2014 its score has moved from 66.6 to 66.3; the pillar that moved most is Human Development and Demography, from 58.1 to 65.5.",
+    "The score uses 7 of the 8 pillars; Environment and Climate Exposure was left out, measured too thinly that year to show.",
+    "Its lack-of-reliability index is 1.5 of 10, where 0 means every value was measured that year, against a median of 1.6."
+   ]
+  },
+  "NER": {
+   "name": "Niger",
+   "facts": {
+    "headline": true,
+    "score": 46.41,
+    "ci_low": 38.61,
+    "ci_high": 54.2,
+    "tier": 3,
+    "band_best": 19,
+    "band_worst": 53,
+    "n_pillars": 7,
+    "lack_of_reliability": 1.51,
+    "above": [
+     [
+      "MAC",
+      58.52480023528068,
+      47.99270370399209
+     ]
+    ],
+    "below": [
+     [
+      "SEC",
+      51.0347323499995,
+      85.30095196205438
+     ],
+     [
+      "HUM",
+      38.42643953101211,
+      58.47249208471024
+     ]
+    ],
+    "left_out": [
+     "ENV"
+    ],
+    "change": {
+     "from_year": 2014,
+     "from": 50.25,
+     "pillar": "SEC",
+     "pillar_from": 82.89329239929296,
+     "pillar_to": 51.0347323499995
+    }
+   },
+   "text": [
+    "Niger scores 46.4 of 100 in 2024, with a 95% interval of 38.6 to 54.2.",
+    "That puts it in tier 3 of 4: its rank could be anywhere from 19 to 53 of 54.",
+    "Its pillar furthest above the median state is Macroeconomic and Fiscal Stability (58.5, against 48.0).",
+    "Furthest below are Security and Violence (51.0, against 85.3) and Human Development and Demography (38.4, against 58.5).",
+    "Since 2014 its score has moved from 50.2 to 46.4; the pillar that moved most is Security and Violence, from 82.9 to 51.0.",
+    "The score uses 7 of the 8 pillars; Environment and Climate Exposure was left out, measured too thinly that year to show.",
+    "Its lack-of-reliability index is 1.5 of 10, where 0 means every value was measured that year, against a median of 1.6."
+   ]
+  },
+  "NGA": {
+   "name": "Nigeria",
+   "facts": {
+    "headline": true,
+    "score": 51.5,
+    "ci_low": 38.11,
+    "ci_high": 64.9,
+    "tier": 2,
+    "band_best": 5,
+    "band_worst": 53,
+    "n_pillars": 7,
+    "lack_of_reliability": 1.34,
+    "above": [
+     [
+      "EXT",
+      58.49376757246562,
+      57.09648615789974
+     ],
+     [
+      "COH",
+      65.61025936328026,
+      64.9242437698412
+     ]
+    ],
+    "below": [
+     [
+      "SEC",
+      68.59046708991133,
+      85.30095196205438
+     ],
+     [
+      "VOI",
+      27.19456648587304,
+      34.12500152554316
+     ]
+    ],
+    "left_out": [
+     "ENV"
+    ],
+    "change": {
+     "from_year": 2014,
+     "from": 49.82,
+     "pillar": "SEC",
+     "pillar_from": 40.45084878970744,
+     "pillar_to": 68.59046708991133
+    }
+   },
+   "text": [
+    "Nigeria scores 51.5 of 100 in 2024, with a 95% interval of 38.1 to 64.9.",
+    "That puts it in tier 2 of 4: its rank could be anywhere from 5 to 53 of 54.",
+    "Its pillars furthest above the median state are External Exposure and Economic Structure (58.5, against 57.1) and Social Cohesion and Equity (65.6, against 64.9).",
+    "Furthest below are Security and Violence (68.6, against 85.3) and Political Voice and Representation (27.2, against 34.1).",
+    "Since 2014 its score has moved from 49.8 to 51.5; the pillar that moved most is Security and Violence, from 40.5 to 68.6.",
+    "The score uses 7 of the 8 pillars; Environment and Climate Exposure was left out, measured too thinly that year to show.",
+    "Its lack-of-reliability index is 1.3 of 10, where 0 means every value was measured that year, against a median of 1.6."
+   ]
+  },
+  "RWA": {
+   "name": "Rwanda",
+   "facts": {
+    "headline": true,
+    "score": 60.92,
+    "ci_low": 46.96,
+    "ci_high": 74.88,
+    "tier": 1,
+    "band_best": 1,
+    "band_worst": 46,
+    "n_pillars": 7,
+    "lack_of_reliability": 1.44,
+    "above": [
+     [
+      "GOV",
+      68.38369400040288,
+      48.21656700028872
+     ],
+     [
+      "VOI",
+      49.22506122534424,
+      34.12500152554316
+     ]
+    ],
+    "below": [
+     [
+      "COH",
+      56.71964444528319,
+      64.9242437698412
+     ],
+     [
+      "MAC",
+      43.74977487068868,
+      47.99270370399209
+     ]
+    ],
+    "left_out": [
+     "ENV"
+    ],
+    "change": {
+     "from_year": 2014,
+     "from": 57.96,
+     "pillar": "HUM",
+     "pillar_from": 51.16755389989328,
+     "pillar_to": 62.60298309390109
+    }
+   },
+   "text": [
+    "Rwanda scores 60.9 of 100 in 2024, with a 95% interval of 47.0 to 74.9.",
+    "That puts it in tier 1 of 4: its rank could be anywhere from 1 to 46 of 54.",
+    "Its pillars furthest above the median state are Governance and State Capacity (68.4, against 48.2) and Political Voice and Representation (49.2, against 34.1).",
+    "Furthest below are Social Cohesion and Equity (56.7, against 64.9) and Macroeconomic and Fiscal Stability (43.7, against 48.0).",
+    "Since 2014 its score has moved from 58.0 to 60.9; the pillar that moved most is Human Development and Demography, from 51.2 to 62.6.",
+    "The score uses 7 of the 8 pillars; Environment and Climate Exposure was left out, measured too thinly that year to show.",
+    "Its lack-of-reliability index is 1.4 of 10, where 0 means every value was measured that year, against a median of 1.6."
+   ]
+  },
+  "SDN": {
+   "name": "Sudan",
+   "facts": {
+    "headline": true,
+    "score": 32.41,
+    "ci_low": 17.92,
+    "ci_high": 46.9,
+    "tier": 4,
+    "band_best": 42,
+    "band_worst": 54,
+    "n_pillars": 7,
+    "lack_of_reliability": 2.55,
+    "above": [
+     [
+      "HUM",
+      59.15145411419531,
+      58.47249208471024
+     ]
+    ],
+    "below": [
+     [
+      "SEC",
+      22.73559067059109,
+      85.30095196205438
+     ],
+     [
+      "GOV",
+      18.32329767102497,
+      48.21656700028872
+     ]
+    ],
+    "left_out": [
+     "ENV"
+    ],
+    "change": {
+     "from_year": 2014,
+     "from": 38.97,
+     "pillar": "SEC",
+     "pillar_from": 58.01505601995594,
+     "pillar_to": 22.73559067059109
+    }
+   },
+   "text": [
+    "Sudan scores 32.4 of 100 in 2024, with a 95% interval of 17.9 to 46.9.",
+    "That puts it in tier 4 of 4: its rank could be anywhere from 42 to 54 of 54.",
+    "Its pillar furthest above the median state is Human Development and Demography (59.2, against 58.5).",
+    "Furthest below are Security and Violence (22.7, against 85.3) and Governance and State Capacity (18.3, against 48.2).",
+    "Since 2014 its score has moved from 39.0 to 32.4; the pillar that moved most is Security and Violence, from 58.0 to 22.7.",
+    "The score uses 7 of the 8 pillars; Environment and Climate Exposure was left out, measured too thinly that year to show.",
+    "Its lack-of-reliability index is 2.5 of 10, where 0 means every value was measured that year, against a median of 1.6."
+   ]
+  },
+  "SEN": {
+   "name": "Senegal",
+   "facts": {
+    "headline": true,
+    "score": 62.47,
+    "ci_low": 48.45,
+    "ci_high": 76.48,
+    "tier": 1,
+    "band_best": 1,
+    "band_worst": 44,
+    "n_pillars": 7,
+    "lack_of_reliability": 1.62,
+    "above": [
+     [
+      "VOI",
+      57.06420324394496,
+      34.12500152554316
+     ],
+     [
+      "GOV",
+      68.38617659413258,
+      48.21656700028872
+     ]
+    ],
+    "below": [
+     [
+      "MAC",
+      37.97685785871077,
+      47.99270370399209
+     ],
+     [
+      "COH",
+      60.72855847296861,
+      64.9242437698412
+     ]
+    ],
+    "left_out": [
+     "ENV"
+    ],
+    "change": {
+     "from_year": 2014,
+     "from": 62.62,
+     "pillar": "MAC",
+     "pillar_from": 58.38596503543054,
+     "pillar_to": 37.97685785871077
+    }
+   },
+   "text": [
+    "Senegal scores 62.5 of 100 in 2024, with a 95% interval of 48.5 to 76.5.",
+    "That puts it in tier 1 of 4: its rank could be anywhere from 1 to 44 of 54.",
+    "Its pillars furthest above the median state are Political Voice and Representation (57.1, against 34.1) and Governance and State Capacity (68.4, against 48.2).",
+    "Furthest below are Macroeconomic and Fiscal Stability (38.0, against 48.0) and Social Cohesion and Equity (60.7, against 64.9).",
+    "Since 2014 its score has moved from 62.6 to 62.5; the pillar that moved most is Macroeconomic and Fiscal Stability, from 58.4 to 38.0.",
+    "The score uses 7 of the 8 pillars; Environment and Climate Exposure was left out, measured too thinly that year to show.",
+    "Its lack-of-reliability index is 1.6 of 10, where 0 means every value was measured that year, against a median of 1.6."
+   ]
+  },
+  "SLE": {
+   "name": "Sierra Leone",
+   "facts": {
+    "headline": true,
+    "score": 55.63,
+    "ci_low": 38.33,
+    "ci_high": 72.93,
+    "tier": 2,
+    "band_best": 1,
+    "band_worst": 52,
+    "n_pillars": 7,
+    "lack_of_reliability": 1.7,
+    "above": [
+     [
+      "COH",
+      77.56736172277164,
+      64.9242437698412
+     ],
+     [
+      "VOI",
+      42.73354693085197,
+      34.12500152554316
+     ]
+    ],
+    "below": [
+     [
+      "EXT",
+      44.83088436947961,
+      57.09648615789974
+     ],
+     [
+      "MAC",
+      38.85379173038378,
+      47.99270370399209
+     ]
+    ],
+    "left_out": [
+     "ENV"
+    ],
+    "change": {
+     "from_year": 2014,
+     "from": 54.71,
+     "pillar": "HUM",
+     "pillar_from": 39.7467669173632,
+     "pillar_to": 53.02314921151675
+    }
+   },
+   "text": [
+    "Sierra Leone scores 55.6 of 100 in 2024, with a 95% interval of 38.3 to 72.9.",
+    "That puts it in tier 2 of 4: its rank could be anywhere from 1 to 52 of 54.",
+    "Its pillars furthest above the median state are Social Cohesion and Equity (77.6, against 64.9) and Political Voice and Representation (42.7, against 34.1).",
+    "Furthest below are External Exposure and Economic Structure (44.8, against 57.1) and Macroeconomic and Fiscal Stability (38.9, against 48.0).",
+    "Since 2014 its score has moved from 54.7 to 55.6; the pillar that moved most is Human Development and Demography, from 39.7 to 53.0.",
+    "The score uses 7 of the 8 pillars; Environment and Climate Exposure was left out, measured too thinly that year to show.",
+    "Its lack-of-reliability index is 1.7 of 10, where 0 means every value was measured that year, against a median of 1.6."
+   ]
+  },
+  "SOM": {
+   "name": "Somalia",
+   "facts": {
+    "headline": true,
+    "score": 39.1,
+    "ci_low": 19.33,
+    "ci_high": 58.88,
+    "tier": 3,
+    "band_best": 19,
+    "band_worst": 54,
+    "n_pillars": 6,
+    "lack_of_reliability": 2.01,
+    "above": [
+     [
+      "MAC",
+      65.15783159856709,
+      47.99270370399209
+     ]
+    ],
+    "below": [
+     [
+      "SEC",
+      41.26028497073244,
+      85.30095196205438
+     ],
+     [
+      "GOV",
+      13.240310219953145,
+      48.21656700028872
+     ]
+    ],
+    "left_out": [
+     "ENV",
+     "EXT"
+    ],
+    "change": {
+     "from_year": 2014,
+     "from": 39.0,
+     "pillar": "HUM",
+     "pillar_from": 34.20748397364377,
+     "pillar_to": 45.77583903520568
+    }
+   },
+   "text": [
+    "Somalia scores 39.1 of 100 in 2024, with a 95% interval of 19.3 to 58.9.",
+    "That puts it in tier 3 of 4: its rank could be anywhere from 19 to 54 of 54.",
+    "Its pillar furthest above the median state is Macroeconomic and Fiscal Stability (65.2, against 48.0).",
+    "Furthest below are Security and Violence (41.3, against 85.3) and Governance and State Capacity (13.2, against 48.2).",
+    "Since 2014 its score has moved from 39.0 to 39.1; the pillar that moved most is Human Development and Demography, from 34.2 to 45.8.",
+    "The score uses 6 of the 8 pillars; Environment and Climate Exposure and External Exposure and Economic Structure were left out, measured too thinly that year to show.",
+    "Its lack-of-reliability index is 2.0 of 10, where 0 means every value was measured that year, against a median of 1.6."
+   ]
+  },
+  "SSD": {
+   "name": "South Sudan",
+   "facts": {
+    "headline": true,
+    "score": 34.4,
+    "ci_low": 5.94,
+    "ci_high": 62.87,
+    "tier": 3,
+    "band_best": 21,
+    "band_worst": 54,
+    "n_pillars": 5,
+    "lack_of_reliability": 3.05,
+    "above": [],
+    "below": [
+     [
+      "COH",
+      27.80743348961578,
+      64.9242437698412
+     ],
+     [
+      "GOV",
+      11.121446048714128,
+      48.21656700028872
+     ]
+    ],
+    "left_out": [
+     "ENV",
+     "MAC"
+    ],
+    "change": {
+     "from_year": 2014,
+     "from": 28.53,
+     "pillar": "SEC",
+     "pillar_from": 9.888346864484577,
+     "pillar_to": 72.38101195270804
+    }
+   },
+   "text": [
+    "South Sudan scores 34.4 of 100 in 2024, with a 95% interval of 5.9 to 62.9.",
+    "That puts it in tier 3 of 4: its rank could be anywhere from 21 to 54 of 54.",
+    "None of its pillars is above the median state.",
+    "Furthest below are Social Cohesion and Equity (27.8, against 64.9) and Governance and State Capacity (11.1, against 48.2).",
+    "Since 2014 its score has moved from 28.5 to 34.4; the pillar that moved most is Security and Violence, from 9.9 to 72.4.",
+    "The score uses 5 of the 8 pillars; Environment and Climate Exposure and Macroeconomic and Fiscal Stability were left out, measured too thinly that year to show.",
+    "Its lack-of-reliability index is 3.0 of 10, where 0 means every value was measured that year, against a median of 1.6."
+   ]
+  },
+  "STP": {
+   "name": "Sao Tome & Principe",
+   "facts": {
+    "headline": true,
+    "score": 61.67,
+    "ci_low": 46.21,
+    "ci_high": 77.13,
+    "tier": 1,
+    "band_best": 1,
+    "band_worst": 46,
+    "n_pillars": 7,
+    "lack_of_reliability": 1.82,
+    "above": [
+     [
+      "VOI",
+      46.34221149354564,
+      34.12500152554316
+     ],
+     [
+      "HUM",
+      67.55519496563933,
+      58.47249208471024
+     ]
+    ],
+    "below": [
+     [
+      "MAC",
+      46.05957660078844,
+      47.99270370399209
+     ]
+    ],
+    "left_out": [
+     "ENV"
+    ],
+    "change": {
+     "from_year": 2014,
+     "from": 63.2,
+     "pillar": "MAC",
+     "pillar_from": 35.39890052161647,
+     "pillar_to": 46.05957660078844
+    }
+   },
+   "text": [
+    "Sao Tome & Principe scores 61.7 of 100 in 2024, with a 95% interval of 46.2 to 77.1.",
+    "That puts it in tier 1 of 4: its rank could be anywhere from 1 to 46 of 54.",
+    "Its pillars furthest above the median state are Political Voice and Representation (46.3, against 34.1) and Human Development and Demography (67.6, against 58.5).",
+    "Furthest below is Macroeconomic and Fiscal Stability (46.1, against 48.0).",
+    "Since 2014 its score has moved from 63.2 to 61.7; the pillar that moved most is Macroeconomic and Fiscal Stability, from 35.4 to 46.1.",
+    "The score uses 7 of the 8 pillars; Environment and Climate Exposure was left out, measured too thinly that year to show.",
+    "Its lack-of-reliability index is 1.8 of 10, where 0 means every value was measured that year, against a median of 1.6."
+   ]
+  },
+  "SWZ": {
+   "name": "Eswatini",
+   "facts": {
+    "headline": true,
+    "score": 59.16,
+    "ci_low": 40.45,
+    "ci_high": 77.88,
+    "tier": 1,
+    "band_best": 1,
+    "band_worst": 52,
+    "n_pillars": 7,
+    "lack_of_reliability": 1.88,
+    "above": [
+     [
+      "HUM",
+      72.47848888348886,
+      58.47249208471024
+     ],
+     [
+      "COH",
+      74.09503868495413,
+      64.9242437698412
+     ]
+    ],
+    "below": [
+     [
+      "VOI",
+      25.12185993626991,
+      34.12500152554316
+     ]
+    ],
+    "left_out": [
+     "ENV"
+    ],
+    "change": {
+     "from_year": 2014,
+     "from": 59.97,
+     "pillar": "HUM",
+     "pillar_from": 57.28591824634569,
+     "pillar_to": 72.47848888348886
+    }
+   },
+   "text": [
+    "Eswatini scores 59.2 of 100 in 2024, with a 95% interval of 40.5 to 77.9.",
+    "That puts it in tier 1 of 4: its rank could be anywhere from 1 to 52 of 54.",
+    "Its pillars furthest above the median state are Human Development and Demography (72.5, against 58.5) and Social Cohesion and Equity (74.1, against 64.9).",
+    "Furthest below is Political Voice and Representation (25.1, against 34.1).",
+    "Since 2014 its score has moved from 60.0 to 59.2; the pillar that moved most is Human Development and Demography, from 57.3 to 72.5.",
+    "The score uses 7 of the 8 pillars; Environment and Climate Exposure was left out, measured too thinly that year to show.",
+    "Its lack-of-reliability index is 1.9 of 10, where 0 means every value was measured that year, against a median of 1.6."
+   ]
+  },
+  "SYC": {
+   "name": "Seychelles",
+   "facts": {
+    "headline": true,
+    "score": 72.3,
+    "ci_low": 55.08,
+    "ci_high": 89.52,
+    "tier": 1,
+    "band_best": 1,
+    "band_worst": 37,
+    "n_pillars": 7,
+    "lack_of_reliability": 1.68,
+    "above": [
+     [
+      "GOV",
+      84.62254248301952,
+      48.21656700028872
+     ],
+     [
+      "HUM",
+      85.36526306894828,
+      58.47249208471024
+     ]
+    ],
+    "below": [
+     [
+      "MAC",
+      44.608709957547134,
+      47.99270370399209
+     ]
+    ],
+    "left_out": [
+     "ENV"
+    ],
+    "change": {
+     "from_year": 2014,
+     "from": 73.5,
+     "pillar": "EXT",
+     "pillar_from": 75.01095956684284,
+     "pillar_to": 65.45119749525664
+    }
+   },
+   "text": [
+    "Seychelles scores 72.3 of 100 in 2024, with a 95% interval of 55.1 to 89.5.",
+    "That puts it in tier 1 of 4: its rank could be anywhere from 1 to 37 of 54.",
+    "Its pillars furthest above the median state are Governance and State Capacity (84.6, against 48.2) and Human Development and Demography (85.4, against 58.5).",
+    "Furthest below is Macroeconomic and Fiscal Stability (44.6, against 48.0).",
+    "Since 2014 its score has moved from 73.5 to 72.3; the pillar that moved most is External Exposure and Economic Structure, from 75.0 to 65.5.",
+    "The score uses 7 of the 8 pillars; Environment and Climate Exposure was left out, measured too thinly that year to show.",
+    "Its lack-of-reliability index is 1.7 of 10, where 0 means every value was measured that year, against a median of 1.6."
+   ]
+  },
+  "TCD": {
+   "name": "Chad",
+   "facts": {
+    "headline": true,
+    "score": 43.38,
+    "ci_low": 24.06,
+    "ci_high": 62.71,
+    "tier": 3,
+    "band_best": 11,
+    "band_worst": 54,
+    "n_pillars": 6,
+    "lack_of_reliability": 2.02,
+    "above": [
+     [
+      "MAC",
+      58.21325454605395,
+      47.99270370399209
+     ]
+    ],
+    "below": [
+     [
+      "COH",
+      32.51047456002883,
+      64.9242437698412
+     ],
+     [
+      "HUM",
+      34.26369078219426,
+      58.47249208471024
+     ]
+    ],
+    "left_out": [
+     "ENV",
+     "EXT"
+    ],
+    "change": {
+     "from_year": 2014,
+     "from": 43.57,
+     "pillar": "COH",
+     "pillar_from": 43.70049622405643,
+     "pillar_to": 32.51047456002883
+    }
+   },
+   "text": [
+    "Chad scores 43.4 of 100 in 2024, with a 95% interval of 24.1 to 62.7.",
+    "That puts it in tier 3 of 4: its rank could be anywhere from 11 to 54 of 54.",
+    "Its pillar furthest above the median state is Macroeconomic and Fiscal Stability (58.2, against 48.0).",
+    "Furthest below are Social Cohesion and Equity (32.5, against 64.9) and Human Development and Demography (34.3, against 58.5).",
+    "Since 2014 its score has moved from 43.6 to 43.4; the pillar that moved most is Social Cohesion and Equity, from 43.7 to 32.5.",
+    "The score uses 6 of the 8 pillars; Environment and Climate Exposure and External Exposure and Economic Structure were left out, measured too thinly that year to show.",
+    "Its lack-of-reliability index is 2.0 of 10, where 0 means every value was measured that year, against a median of 1.6."
+   ]
+  },
+  "TGO": {
+   "name": "Togo",
+   "facts": {
+    "headline": true,
+    "score": 56.34,
+    "ci_low": 43.38,
+    "ci_high": 69.3,
+    "tier": 2,
+    "band_best": 2,
+    "band_worst": 51,
+    "n_pillars": 7,
+    "lack_of_reliability": 1.88,
+    "above": [
+     [
+      "MAC",
+      59.30493068684988,
+      47.99270370399209
+     ],
+     [
+      "GOV",
+      52.37110157537999,
+      48.21656700028872
+     ]
+    ],
+    "below": [
+     [
+      "SEC",
+      75.88963774648828,
+      85.30095196205438
+     ],
+     [
+      "EXT",
+      52.96728374482964,
+      57.09648615789974
+     ]
+    ],
+    "left_out": [
+     "ENV"
+    ],
+    "change": {
+     "from_year": 2014,
+     "from": 56.65,
+     "pillar": "SEC",
+     "pillar_from": 88.00056231941623,
+     "pillar_to": 75.88963774648828
+    }
+   },
+   "text": [
+    "Togo scores 56.3 of 100 in 2024, with a 95% interval of 43.4 to 69.3.",
+    "That puts it in tier 2 of 4: its rank could be anywhere from 2 to 51 of 54.",
+    "Its pillars furthest above the median state are Macroeconomic and Fiscal Stability (59.3, against 48.0) and Governance and State Capacity (52.4, against 48.2).",
+    "Furthest below are Security and Violence (75.9, against 85.3) and External Exposure and Economic Structure (53.0, against 57.1).",
+    "Since 2014 its score has moved from 56.6 to 56.3; the pillar that moved most is Security and Violence, from 88.0 to 75.9.",
+    "The score uses 7 of the 8 pillars; Environment and Climate Exposure was left out, measured too thinly that year to show.",
+    "Its lack-of-reliability index is 1.9 of 10, where 0 means every value was measured that year, against a median of 1.6."
+   ]
+  },
+  "TUN": {
+   "name": "Tunisia",
+   "facts": {
+    "headline": true,
+    "score": 63.38,
+    "ci_low": 44.08,
+    "ci_high": 82.68,
+    "tier": 1,
+    "band_best": 1,
+    "band_worst": 47,
+    "n_pillars": 7,
+    "lack_of_reliability": 1.51,
+    "above": [
+     [
+      "HUM",
+      87.28445083369519,
+      58.47249208471024
+     ],
+     [
+      "GOV",
+      63.79745944823824,
+      48.21656700028872
+     ]
+    ],
+    "below": [
+     [
+      "MAC",
+      37.40663268355588,
+      47.99270370399209
+     ],
+     [
+      "SEC",
+      84.48460283668588,
+      85.30095196205438
+     ]
+    ],
+    "left_out": [
+     "ENV"
+    ],
+    "change": {
+     "from_year": 2014,
+     "from": 65.14,
+     "pillar": "VOI",
+     "pillar_from": 52.96493008435368,
+     "pillar_to": 34.212346469768335
+    }
+   },
+   "text": [
+    "Tunisia scores 63.4 of 100 in 2024, with a 95% interval of 44.1 to 82.7.",
+    "That puts it in tier 1 of 4: its rank could be anywhere from 1 to 47 of 54.",
+    "Its pillars furthest above the median state are Human Development and Demography (87.3, against 58.5) and Governance and State Capacity (63.8, against 48.2).",
+    "Furthest below are Macroeconomic and Fiscal Stability (37.4, against 48.0) and Security and Violence (84.5, against 85.3).",
+    "Since 2014 its score has moved from 65.1 to 63.4; the pillar that moved most is Political Voice and Representation, from 53.0 to 34.2.",
+    "The score uses 7 of the 8 pillars; Environment and Climate Exposure was left out, measured too thinly that year to show.",
+    "Its lack-of-reliability index is 1.5 of 10, where 0 means every value was measured that year, against a median of 1.6."
+   ]
+  },
+  "TZA": {
+   "name": "Tanzania",
+   "facts": {
+    "headline": true,
+    "score": 58.74,
+    "ci_low": 46.22,
+    "ci_high": 71.26,
+    "tier": 2,
+    "band_best": 1,
+    "band_worst": 47,
+    "n_pillars": 7,
+    "lack_of_reliability": 1.28,
+    "above": [
+     [
+      "MAC",
+      57.79577179966435,
+      47.99270370399209
+     ],
+     [
+      "VOI",
+      43.60124026899609,
+      34.12500152554316
+     ]
+    ],
+    "below": [
+     [
+      "COH",
+      57.28384425757847,
+      64.9242437698412
+     ],
+     [
+      "EXT",
+      53.56425158347607,
+      57.09648615789974
+     ]
+    ],
+    "left_out": [
+     "ENV"
+    ],
+    "change": {
+     "from_year": 2014,
+     "from": 58.72,
+     "pillar": "HUM",
+     "pillar_from": 45.06398535996188,
+     "pillar_to": 56.50959264203884
+    }
+   },
+   "text": [
+    "Tanzania scores 58.7 of 100 in 2024, with a 95% interval of 46.2 to 71.3.",
+    "That puts it in tier 2 of 4: its rank could be anywhere from 1 to 47 of 54.",
+    "Its pillars furthest above the median state are Macroeconomic and Fiscal Stability (57.8, against 48.0) and Political Voice and Representation (43.6, against 34.1).",
+    "Furthest below are Social Cohesion and Equity (57.3, against 64.9) and External Exposure and Economic Structure (53.6, against 57.1).",
+    "Since 2014 its score has moved from 58.7 to 58.7; the pillar that moved most is Human Development and Demography, from 45.1 to 56.5.",
+    "The score uses 7 of the 8 pillars; Environment and Climate Exposure was left out, measured too thinly that year to show.",
+    "Its lack-of-reliability index is 1.3 of 10, where 0 means every value was measured that year, against a median of 1.6."
+   ]
+  },
+  "UGA": {
+   "name": "Uganda",
+   "facts": {
+    "headline": true,
+    "score": 55.63,
+    "ci_low": 43.06,
+    "ci_high": 68.2,
+    "tier": 2,
+    "band_best": 2,
+    "band_worst": 52,
+    "n_pillars": 7,
+    "lack_of_reliability": 1.14,
+    "above": [
+     [
+      "VOI",
+      37.7140707261274,
+      34.12500152554316
+     ],
+     [
+      "GOV",
+      51.639989499526855,
+      48.21656700028872
+     ]
+    ],
+    "below": [
+     [
+      "COH",
+      54.06660854823425,
+      64.9242437698412
+     ],
+     [
+      "HUM",
+      53.672821761172536,
+      58.47249208471024
+     ]
+    ],
+    "left_out": [
+     "ENV"
+    ],
+    "change": {
+     "from_year": 2014,
+     "from": 53.68,
+     "pillar": "HUM",
+     "pillar_from": 43.12249384109916,
+     "pillar_to": 53.672821761172536
+    }
+   },
+   "text": [
+    "Uganda scores 55.6 of 100 in 2024, with a 95% interval of 43.1 to 68.2.",
+    "That puts it in tier 2 of 4: its rank could be anywhere from 2 to 52 of 54.",
+    "Its pillars furthest above the median state are Political Voice and Representation (37.7, against 34.1) and Governance and State Capacity (51.6, against 48.2).",
+    "Furthest below are Social Cohesion and Equity (54.1, against 64.9) and Human Development and Demography (53.7, against 58.5).",
+    "Since 2014 its score has moved from 53.7 to 55.6; the pillar that moved most is Human Development and Demography, from 43.1 to 53.7.",
+    "The score uses 7 of the 8 pillars; Environment and Climate Exposure was left out, measured too thinly that year to show.",
+    "Its lack-of-reliability index is 1.1 of 10, where 0 means every value was measured that year, against a median of 1.6."
+   ]
+  },
+  "ZAF": {
+   "name": "South Africa",
+   "facts": {
+    "headline": true,
+    "score": 67.39,
+    "ci_low": 53.76,
+    "ci_high": 81.02,
+    "tier": 1,
+    "band_best": 1,
+    "band_worst": 40,
+    "n_pillars": 7,
+    "lack_of_reliability": 1.26,
+    "above": [
+     [
+      "VOI",
+      66.9386348854178,
+      34.12500152554316
+     ],
+     [
+      "GOV",
+      71.71437119172636,
+      48.21656700028872
+     ]
+    ],
+    "below": [
+     [
+      "EXT",
+      50.213741235622464,
+      57.09648615789974
+     ],
+     [
+      "MAC",
+      45.431811005298975,
+      47.99270370399209
+     ]
+    ],
+    "left_out": [
+     "ENV"
+    ],
+    "change": {
+     "from_year": 2014,
+     "from": 66.24,
+     "pillar": "HUM",
+     "pillar_from": 73.06519740611861,
+     "pillar_to": 77.51038471912673
+    }
+   },
+   "text": [
+    "South Africa scores 67.4 of 100 in 2024, with a 95% interval of 53.8 to 81.0.",
+    "That puts it in tier 1 of 4: its rank could be anywhere from 1 to 40 of 54.",
+    "Its pillars furthest above the median state are Political Voice and Representation (66.9, against 34.1) and Governance and State Capacity (71.7, against 48.2).",
+    "Furthest below are External Exposure and Economic Structure (50.2, against 57.1) and Macroeconomic and Fiscal Stability (45.4, against 48.0).",
+    "Since 2014 its score has moved from 66.2 to 67.4; the pillar that moved most is Human Development and Demography, from 73.1 to 77.5.",
+    "The score uses 7 of the 8 pillars; Environment and Climate Exposure was left out, measured too thinly that year to show.",
+    "Its lack-of-reliability index is 1.3 of 10, where 0 means every value was measured that year, against a median of 1.6."
+   ]
+  },
+  "ZMB": {
+   "name": "Zambia",
+   "facts": {
+    "headline": true,
+    "score": 54.41,
+    "ci_low": 37.24,
+    "ci_high": 71.59,
+    "tier": 2,
+    "band_best": 2,
+    "band_worst": 53,
+    "n_pillars": 7,
+    "lack_of_reliability": 1.14,
+    "above": [
+     [
+      "GOV",
+      56.08156541145595,
+      48.21656700028872
+     ],
+     [
+      "SEC",
+      89.98321756326266,
+      85.30095196205438
+     ]
+    ],
+    "below": [
+     [
+      "MAC",
+      33.67799351550452,
+      47.99270370399209
+     ],
+     [
+      "EXT",
+      46.07452310965833,
+      57.09648615789974
+     ]
+    ],
+    "left_out": [
+     "ENV"
+    ],
+    "change": {
+     "from_year": 2014,
+     "from": 57.36,
+     "pillar": "MAC",
+     "pillar_from": 53.01373852464712,
+     "pillar_to": 33.67799351550452
+    }
+   },
+   "text": [
+    "Zambia scores 54.4 of 100 in 2024, with a 95% interval of 37.2 to 71.6.",
+    "That puts it in tier 2 of 4: its rank could be anywhere from 2 to 53 of 54.",
+    "Its pillars furthest above the median state are Governance and State Capacity (56.1, against 48.2) and Security and Violence (90.0, against 85.3).",
+    "Furthest below are Macroeconomic and Fiscal Stability (33.7, against 48.0) and External Exposure and Economic Structure (46.1, against 57.1).",
+    "Since 2014 its score has moved from 57.4 to 54.4; the pillar that moved most is Macroeconomic and Fiscal Stability, from 53.0 to 33.7.",
+    "The score uses 7 of the 8 pillars; Environment and Climate Exposure was left out, measured too thinly that year to show.",
+    "Its lack-of-reliability index is 1.1 of 10, where 0 means every value was measured that year, against a median of 1.6."
+   ]
+  },
+  "ZWE": {
+   "name": "Zimbabwe",
+   "facts": {
+    "headline": true,
+    "score": 52.54,
+    "ci_low": 35.64,
+    "ci_high": 69.44,
+    "tier": 2,
+    "band_best": 3,
+    "band_worst": 53,
+    "n_pillars": 7,
+    "lack_of_reliability": 1.47,
+    "above": [
+     [
+      "COH",
+      65.20878385627647,
+      64.9242437698412
+     ]
+    ],
+    "below": [
+     [
+      "MAC",
+      37.20653506542353,
+      47.99270370399209
+     ],
+     [
+      "GOV",
+      39.73977857914067,
+      48.21656700028872
+     ]
+    ],
+    "left_out": [
+     "ENV"
+    ],
+    "change": {
+     "from_year": 2014,
+     "from": 53.3,
+     "pillar": "COH",
+     "pillar_from": 74.37844420042907,
+     "pillar_to": 65.20878385627647
+    }
+   },
+   "text": [
+    "Zimbabwe scores 52.5 of 100 in 2024, with a 95% interval of 35.6 to 69.4.",
+    "That puts it in tier 2 of 4: its rank could be anywhere from 3 to 53 of 54.",
+    "Its pillar furthest above the median state is Social Cohesion and Equity (65.2, against 64.9).",
+    "Furthest below are Macroeconomic and Fiscal Stability (37.2, against 48.0) and Governance and State Capacity (39.7, against 48.2).",
+    "Since 2014 its score has moved from 53.3 to 52.5; the pillar that moved most is Social Cohesion and Equity, from 74.4 to 65.2.",
+    "The score uses 7 of the 8 pillars; Environment and Climate Exposure was left out, measured too thinly that year to show.",
+    "Its lack-of-reliability index is 1.5 of 10, where 0 means every value was measured that year, against a median of 1.6."
+   ]
+  }
+ }
+}

@@ -681,3 +681,53 @@ Athena. Trust in institutions (Afrobarometer) and section 6's expanded list wait
   - the parts are scored and the total is not;
   - a zero-heavy series is tested on its non-zero values and its zeros are never capped, with a negative control:
     any other series is tested as before.
+
+## Step 10, part A: the data narratives (P80, C2)
+
+**What changed.** The narrative system edition 1 showed in Dash was archived at P3 (`archive/narrative-2026-10`,
+Trim Ledger C2): 31,477 lines of researched prose, unverified. Step 10 rebuilds the narratives as site content.
+- **Part A, this part, comes from the panel alone.** `08_narratives.py` writes `data/panel/narratives.json`: for each
+  of the 54 states at the reference year, its facts and seven sentences.
+- **No model writes a sentence.** Each is a stated template filled with the panel's numbers, one decimal each.
+- **The seven sentences say:**
+  1. the score and its 95% interval;
+  2. the tier and the rank band;
+  3. and 4. the two pillars furthest above, and the two furthest below, the median state's score on that pillar.
+     Only pillars that are on that side are named, and "None ..." is said otherwise.
+  5. the change over ten years, and the pillar that moved most;
+  6. how many pillars entered, and which were left out;
+  7. the lack-of-reliability index, against the median.
+
+**Kenya, as written:** "Kenya scores 59.0 of 100 in 2024, with a 95% interval of 48.0 to 69.9. That puts it in tier
+2 of 4: its rank could be anywhere from 2 to 46 of 54. Its pillars furthest above the median state are Governance and
+State Capacity (56.7, against 48.2) and Political Voice and Representation (41.7, against 34.1). Furthest below are
+Security and Violence (79.3, against 85.3) and Social Cohesion and Equity (63.0, against 64.9). Since 2014 its score
+has moved from 56.4 to 59.0; the pillar that moved most is Human Development and Demography, from 54.1 to 61.5. The
+score uses 7 of the 8 pillars; Environment and Climate Exposure was left out, measured too thinly that year to show.
+Its lack-of-reliability index is 1.4 of 10, where 0 means every value was measured that year, against a median of
+1.6."
+
+**What it shows** (2024)
+- **Coverage:** 54 states, all with a headline, seven sentences each.
+- **Two states have no pillar above the median** (BDI, SSD), and one has none below (BWA).
+- **Left out:** ENV for all 54 (P97), EXT for 9 states, MAC for 1.
+
+**Checks**
+- **`verify/narrative.py`,** a new gating layer of `verify.run`:
+  - **1** re-derives every state's facts from `composites.csv` and `pillar_scores.csv`, by its own code (plain loops
+    and sorted lists, where the stage uses pandas), and finds all 54 in agreement.
+  - **2** checks that each of the 1,570 numbers in the 378 sentences is one of those facts, as formatted.
+  - **Negative controls, run by hand:** a number edited into Kenya's first sentence fails check 2, and a stale tier
+    fails check 1.
+- **The rebuild layer** now runs `08_narratives.py` too, and finds `narratives.json` identical.
+- **Tests:** 292 passed. **New:** four on a synthetic panel:
+  - pillars are named only on their side of the median;
+  - the change spans ten years;
+  - the sentences say "None" when no pillar is on a side;
+  - the verifier refuses a number that is not a fact.
+
+**For the owner: parts B and C**
+- **B, context:** history, colonial legacy and regional blocs. The archived texts are research prose, unverified
+  ("Research text, not verified" in the vault's ASI Context notes). Rebuilding them means sourcing and checking every
+  claim, under terms that allow reuse.
+- **C, recent events:** a dated snapshot of news with links. It goes stale within months.

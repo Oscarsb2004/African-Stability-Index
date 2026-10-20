@@ -29,6 +29,8 @@ LAYERS = {
                   "independent re-derivation of the time-series panel"),
     "contract":  ("verify/contract.py",  True,
                   "backend/frontend object contract"),
+    "narrative": ("verify/narrative.py", True,
+                  "every number in the data narratives is the panel's"),
     "advisory":  ("verify/advisory.py",  False,
                   "design diagnostics (report only)"),
 }

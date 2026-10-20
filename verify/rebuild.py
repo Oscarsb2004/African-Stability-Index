@@ -1,9 +1,9 @@
 """
 verify/rebuild.py — the committed outputs are exactly what the committed inputs and code produce.
 
-Copies the project without its outputs to a scratch folder, runs 02_panel.py and 03_robustness.py there from
-data/inputs.csv, and compares every file in data/panel/ with the committed one. A stale output, or one edited by
-hand, fails here. It is also the proof that the ASI, reading its inputs from Athena's datasets, reproduces what it
+Copies the project without its outputs to a scratch folder, runs 02_panel.py, 03_robustness.py and
+08_narratives.py there from data/inputs.csv, and compares every file in data/panel/ with the committed one. A stale
+output, or one edited by hand, fails here. It is also the proof that the ASI, reading its inputs from Athena's datasets, reproduces what it
 has published.
 
 Files must be identical byte for byte, line endings aside (git normalises them). One allowance: a machine with a
@@ -29,7 +29,7 @@ import yaml
 
 REPO = Path(__file__).resolve().parent.parent
 PANEL = Path("data") / "panel"
-STAGES = ("02_panel.py", "03_robustness.py")
+STAGES = ("02_panel.py", "03_robustness.py", "08_narratives.py")
 RELATIVE = 1e-12
 
 

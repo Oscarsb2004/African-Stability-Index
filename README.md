@@ -57,6 +57,7 @@ Run stages in order from the project root. Each stage reads the previous stage's
 | 5 | `05_web.py` | The other files the site reads: Natural Earth borders, countries and cities (hash-locked through `athena.fetch`), the published ASI at its reference year, and the sources list | `web/public/{geo,data}/*` |
 | 6 | `06_backtests.py <datasets>` | The pre-registered backtests (the vault's `ASI Backtests`) on the published panel | `data/backtests.json` |
 | 7 | `07_wonders.py` | The continent's wonders by a stated rule (World Heritage Sites and the most notable mountains, falls, lakes and more on Wikidata, CC0), each with licensed Commons photographs | `web/public/data/wonders.json` |
+| 8 | `08_narratives.py` | Each country's data narrative at the reference year: stated templates filled with the panel's numbers (score, interval, tier and band, the pillars furthest from the median state, the change over ten years, what was left out), every number re-derived by `verify/narrative.py` | `data/panel/narratives.json` |
 | — | `web/`: `npm install`, then `npm run dev` | The site (P55): a satellite globe with five sections (Stability, Economy, Finance, Infrastructure, Wonders) and a country panel on the right. Imagery: EOX by default; Esri World Imagery when `web/.env.local` sets `VITE_ESRI_KEY` | — |
 
 Add `--freeze-goalposts` to stage 2 only when deliberately re-anchoring every historical score.
@@ -99,7 +100,7 @@ verify/                          independent verification (NOT imported by asi/)
   run.py                         single entry point: python -m verify.run
   rebuild.py panel.py contract.py advisory.py stats.py
 tests/                           pytest
-01_inputs … 07_wonders           pipeline stages; backtests.py holds the backtests' rules
+01_inputs … 08_narratives        pipeline stages; backtests.py holds the backtests' rules
 indicators_list/pillar_*.yaml    the indicator registry, edited by hand: polarity, window,
                                  aggregation, log flag, and a written justification per indicator
 registry/goalposts.yaml          the frozen goalposts
