@@ -10,6 +10,8 @@ It writes:
                          disputed, indefinite and line-of-control lines are marked to be drawn dashed.
     geo/places.json      Natural Earth 1:10m populated places in the member states, with the zoom each appears at.
     data/stability.json  the published ASI at its reference year: composite, pillars and indicators.
+    data/method.json     the "How the index is built" page: the rules, pillars, weights, clusters and checks.
+    data/series.json     each state's history for the data view, loaded only when that view opens.
     data/meta.json       every source shown on the site, with its licence and attribution.
 
 data/sections.json is written there by 04_sections.py; this stage reads it for the sources list.
@@ -108,7 +110,13 @@ def stability() -> dict:
     panel = results.load(PANEL)
     bundle, year = panel.meta, panel.reference_year
     comp, pill, obs = panel.composites, panel.pillar_scores, panel.observations
-    equal = comp[comp["method"] == "equal"]
+    equal = comp[comp["method"] == bundle.get("headline", "equal")]
+    narratives = json.loads((PANEL / "narratives.json").read_text(encoding="utf-8"))
+    datasets = sorted(pd.read_csv(ROOT / "data" / "inputs.csv", usecols=["DATASET"])["DATASET"].unique())
+
+    def num(x, kind=float):
+        return None if pd.isna(x) else kind(x)
+
     out = {}
     for iso3 in COUNTRIES:
         c = equal[(equal["iso3"] == iso3)].sort_values("year")
@@ -116,7 +124,12 @@ def stability() -> dict:
         p = pill[(pill["iso3"] == iso3) & (pill["year"] == year)]
         o = obs[(obs["iso3"] == iso3) & (obs["year"] == year) & (obs["role"] == "scoring")]
         out[iso3] = {
-            "composite": {"score": float(now["score"]), "reliability": now["reliability"]},
+            # the headline with its 95% interval, tier and rank band (edition 2, step 8); the point rank stays out
+            "composite": {"score": float(now["score"]), "reliability": now["reliability"],
+                          "ci_low": num(now.get("ci_low")), "ci_high": num(now.get("ci_high")),
+                          "tier": num(now.get("tier"), int), "band_best": num(now.get("band_best"), int),
+                          "band_worst": num(now.get("band_worst"), int)},
+            "narrative": narratives["countries"][iso3]["text"],
             "history": {"years": c["year"].tolist(), "scores": [None if pd.isna(s) else float(s) for s in c["score"]]},
             "pillars": {r.pillar_id: {"score": None if pd.isna(r.score) else float(r.score),
                                       "reliability": r.reliability, "observed": int(r.n_observed),
@@ -130,11 +143,92 @@ def stability() -> dict:
     scores = pd.Series([c["composite"]["score"] for c in out.values()])
     # the map's classes: fifths of the member states at the reference year, a stated rule, not a judgement
     fifths = [round(float(q), 1) for q in scores.quantile([0.2, 0.4, 0.6, 0.8])]
-    return {"reference_year": year, "inputs": f"the frozen pull of {bundle['run']['generated']}",
-            "method": "equal weights", "classes": {"rule": "fifths of the member states", "breaks": fifths},
+    return {"reference_year": year, "inputs": ", ".join(datasets), "n_ranked": narratives["n_ranked"],
+            "n_tiers": narratives["n_tiers"],
+            "method": "equal weights over the pillars that entered",
+            "classes": {"rule": "fifths of the member states", "breaks": fifths},
             "pillars": bundle["pillars"],
             "indicators": {k: {f: v[f] for f in ("display_name", "series_code", "polarity")}
                            for k, v in bundle["indicators"].items() if v["role"] == "scoring"},
+            "countries": out}
+
+
+def method() -> dict:
+    """The facts the site's "How the index is built" page shows: the rules with their values, every pillar with
+    its indicators and their effective weights, the overlap clusters, the uncertainty and the robustness checks.
+    Read from the panel's outputs, the registry and the constants; the page computes nothing."""
+    import yaml
+    from asi.core import constants as k
+    panel = results.load(PANEL)
+    bundle, year = panel.meta, panel.reference_year
+    head = panel.composites[(panel.composites["method"] == bundle["headline"]) & (panel.composites["year"] == year)
+                            & panel.composites["rank"].notna()]
+    goalposts = yaml.safe_load((ROOT / "registry" / "goalposts.yaml").read_text(encoding="utf-8"))["indicators"]
+    overlap = yaml.safe_load((ROOT / "registry" / "overlap.yaml").read_text(encoding="utf-8"))
+    slot = {v: s for s, members in overlap["slots"].items() for v in members}
+    nominal = bundle["effective_weights"]["nominal"]
+    robust = json.loads((PANEL / "robustness.json").read_text(encoding="utf-8"))
+    indicators = bundle["indicators"]
+    pillars = []
+    for pid, p in bundle["pillars"].items():
+        members = [v for v, m in indicators.items() if pid in m["pillars"]]
+        pillars.append({"id": pid, "name": p["name"], "indicators": [
+            {"id": v, "name": indicators[v]["display_name"], "database": indicators[v]["database"],
+             "polarity": indicators[v]["polarity"], "role": indicators[v]["role"],
+             "log": bool(goalposts.get(v, {}).get("log_transform", False)),
+             "goalposts": goalposts.get(v, {}).get("goalpost_source"),
+             "weight": nominal.get(v), "cluster": slot.get(v)} for v in members]})
+    width = head["band_worst"] - head["band_best"] + 1
+    return {
+        "reference_year": year, "n_states": len(COUNTRIES), "n_ranked": int(len(head)),
+        "n_scored": sum(m["role"] == "scoring" for m in indicators.values()),
+        "n_descriptive": sum(m["role"] != "scoring" for m in indicators.values()),
+        "tiers": [int(n) for n in head.groupby("tier").size()],
+        "band_median_width": float(width.median()), "se_median": round(float(head["se"].median()), 2),
+        "rules": {"admission_floor": k.ADMISSION_FLOOR, "carry_forward_years": k.DEFAULT_MAX_CARRY_FORWARD,
+                  "reference_coverage": k.REFERENCE_YEAR_MIN_COVERAGE, "outlier_sd": 3.0, "outlier_replace_sd": 3.1,
+                  "outlier_trim": 0.025, "zero_heavy": 0.5, "overlap_bar": overlap["bar"],
+                  "overlap_year": overlap["year"], "interval_level": k.INTERVAL_LEVEL, "band_z": k.BAND_Z,
+                  "min_pillars": k.MIN_PILLARS_FOR_COMPOSITE, "reliable_at": k.RELIABILITY_RELIABLE_AT,
+                  "thin_at": k.RELIABILITY_THIN_AT, "max_imputed": k.RELIABILITY_MAX_IMPUTED},
+        "method_roles": bundle["method_roles"], "uncertainty": bundle["uncertainty"],
+        "pillars": pillars,
+        "clusters": [{"slot": s, "members": [indicators[v]["display_name"] for v in members],
+                      "pairs": [q for q in overlap["pairs"] if slot.get(q["a"]) == s and slot.get(q["b"]) == s
+                                and abs(q["partial_r"]) >= overlap["bar"]]}
+                     for s, members in overlap["slots"].items()],
+        "wgi_share": round(sum(w for v, w in nominal.items() if indicators[v]["database"] == "wgi"), 4),
+        "robustness": {"agreement": {m: robust["methods"][m]["spearman_vs_equal"] for m in robust["methods"]},
+                       "worst_weighting": robust["adversarial_weights"]["worst_spearman"],
+                       "verdict": robust["adversarial_weights"]["verdict"],
+                       "measured_only": robust["measured_only"]["spearman_vs_baseline"]},
+    }
+
+
+def series() -> dict:
+    """Each state's history for the data view: the headline and every pillar (scores, two decimals) and every
+    scored indicator (its score, two decimals, and its raw value to four significant figures, for display)."""
+    panel = results.load(PANEL)
+    years = list(range(int(panel.composites["year"].min()), int(panel.composites["year"].max()) + 1))
+    head = panel.composites[panel.composites["method"] == panel.meta["headline"]]
+    obs = panel.observations[panel.observations["role"] == "scoring"]
+
+    def line(s: pd.Series, f) -> list:
+        return [None if pd.isna(v) else f(v) for v in s.reindex(years)]
+
+    two = lambda v: round(float(v), 2)  # noqa: E731
+    four = lambda v: float(f"{float(v):.4g}")  # noqa: E731
+    out = {}
+    for iso3 in COUNTRIES:
+        h = head[head["iso3"] == iso3].set_index("year")["score"]
+        p = panel.pillar_scores[panel.pillar_scores["iso3"] == iso3].pivot_table(index="year", columns="pillar_id",
+                                                                                  values="score")
+        o = obs[obs["iso3"] == iso3]
+        sc = o.pivot_table(index="year", columns="variable_name", values="score")
+        rw = o.pivot_table(index="year", columns="variable_name", values="raw_value")
+        out[iso3] = {"headline": line(h, two), "pillars": {c: line(p[c], two) for c in p.columns},
+                     "indicators": {v: {"score": line(sc[v], two), "raw": line(rw[v], four)} for v in sc.columns}}
+    return {"years": years, "note": "Scores 0-100, higher is more stable; raw values to four significant figures.",
             "countries": out}
 
 
@@ -155,6 +249,8 @@ def main() -> int:
     write(PUBLIC / "geo" / "borders.json", borders(ne["borders-50m"]))
     write(PUBLIC / "geo" / "places.json", places(ne["places-10m"]))
     write(PUBLIC / "data" / "stability.json", stability())
+    write(PUBLIC / "data" / "method.json", method())
+    write(PUBLIC / "data" / "series.json", series())
     sections = json.loads((PUBLIC / "data" / "sections.json").read_text(encoding="utf-8"))
     write(PUBLIC / "data" / "meta.json", {
         "sources": [{"name": d["attribution"], "licence": d["licence"], "link": d.get("link", "")}

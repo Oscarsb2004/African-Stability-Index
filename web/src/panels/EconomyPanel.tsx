@@ -1,5 +1,5 @@
-// The economy (P56): analyses before history. The headline figures, then the record, then the economy dimension's
-// other sections; money, banks, markets and debt are under Finance. Every figure shows its period.
+// The economy (P56): analyses before history. The IMF's outlook, the headline figures, the record, then the
+// economy dimension's other sections; money, banks, markets and debt are under Finance. Every figure shows its period.
 
 import LineChart from "../LineChart";
 import { fmt, type Figure, type SectionsDoc } from "../data";
@@ -19,12 +19,32 @@ export default function EconomyPanel({ iso3, doc }: Props) {
   const out = a.output, prices = a.prices;
   const peaks = (prices.inflation_peaks?.values ?? []) as { value: number; period: string }[];
   const infl = trend(prices.inflation_trend), growth = trend(out.growth_trend);
+  const o = a.outlook ?? {}, path = trend(o.growth_path);
+  const weo = doc.datasets.find((d) => d.name.startsWith("weo-"));
+  const later = (f?: Figure) => f?.value == null ? "" : ` · ${f.period}: ${fmt(f.value, "%")}`;
   return (
     <div className="panel-body">
-      <div className="note">
-        Forecasts (IMF World Economic Outlook) will lead this panel once that database is in Athena. Until then
-        it starts with the latest published figures.
-      </div>
+      <h3>Outlook</h3>
+      {o.growth_first?.value == null && o.inflation_first?.value == null && o.debt_first?.value == null
+        ? <p className="muted small">The IMF publishes no projections for this state in this edition.</p>
+        : <>
+          <div className="tiles">
+            <Tile label="Real growth" figure={o.growth_first} unit="%"
+              sub={`${o.growth_first?.period ?? "not projected"}${later(o.growth_last)}`} />
+            <Tile label="Inflation" figure={o.inflation_first} unit="%"
+              sub={`${o.inflation_first?.period ?? "not projected"}${later(o.inflation_last)}`} />
+            <Tile label="Government debt, % of GDP" figure={o.debt_first} unit="%"
+              sub={`${o.debt_first?.period ?? "not projected"}${later(o.debt_last)}`} />
+          </div>
+          {path.periods.length > 1 && <>
+            <div className="chart-title">Real GDP growth, projected, % a year</div>
+            <LineChart periods={path.periods} values={path.values} unit="%" height={80} />
+          </>}
+        </>}
+      <p className="muted small">
+        The IMF's projections as published, from the first year after its last actual data to the last year it
+        projects. {weo?.attribution}.
+      </p>
 
       <h3>Headline</h3>
       <div className="tiles">
@@ -59,7 +79,7 @@ export default function EconomyPanel({ iso3, doc }: Props) {
         ({out.growth_spread_10?.period ?? "—"}).
       </p>
 
-      {doc.sections.filter((s) => s.dimension === "economy" && !["output", "prices"].includes(s.id)).map((s) => (
+      {doc.sections.filter((s) => s.dimension === "economy" && !["outlook", "output", "prices"].includes(s.id)).map((s) => (
         <Rows key={s.id} section={s} figures={a[s.id]} open={s.id === "public_finances"} />
       ))}
     </div>

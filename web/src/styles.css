@@ -196,4 +196,53 @@ a { color: var(--accent); }
   .legend { padding: 6px 10px; }
   .legend .muted { display: none; }
   .legend-step span { width: 44px; }
+  .footer-link { display: none; }  /* the bottom sheet covers it; the panels carry the same link */
 }
+
+/* ── how the index is built: the justification page ───────────────────────────────────────────────────────── */
+.footer-link { left: 50%; bottom: 14px; transform: translateX(-50%); padding: 6px 14px; border-radius: 999px;
+  cursor: pointer; color: var(--ink-2); font-size: 12px; }
+.footer-link:hover { color: var(--ink); }
+.linkish { border: 0; background: none; padding: 0; color: var(--accent); cursor: pointer; text-align: left; }
+.linkish:hover { text-decoration: underline; }
+.rows .linkish { color: var(--ink); text-decoration: underline dotted var(--ink-3); text-underline-offset: 3px; }
+.rows .linkish:hover, .rows tr.picked .linkish { color: var(--accent); }
+.method { position: absolute; inset: 0; z-index: 5; display: grid; place-items: center; padding: 24px;
+  background: rgba(3, 5, 10, 0.55); }
+.method-sheet { position: relative; display: flex; flex-direction: column; width: min(760px, 100%);
+  max-height: 100%; }
+.method-body { padding: 4px 22px 22px; overflow-y: auto; line-height: 1.6; }
+.method-body h3 { margin: 18px 0 6px; font-size: 13px; color: var(--accent); text-transform: uppercase;
+  letter-spacing: 0.06em; }
+.method-body .steps { padding-left: 18px; }
+.method-body .steps li { margin-bottom: 6px; }
+.method-pillar { border-bottom: 1px solid var(--line); padding: 6px 0; }
+.method-pillar summary { cursor: pointer; }
+.method-pillar table { margin: 6px 0; }
+.rows th { text-align: left; font-weight: 550; color: var(--ink-3); font-size: 11px; padding: 4px 8px;
+  border-bottom: 1px solid var(--line); }
+.rows th.num { text-align: right; }
+
+/* ── one indicator across every state ─────────────────────────────────────────────────────────────────────── */
+.compare { padding: 6px 0 2px; }
+.compare svg { width: 100%; height: auto; display: block; }
+.compare .grid { stroke: rgba(255, 255, 255, 0.15); }
+.compare .tick { fill: var(--ink-3); font-size: 9px; }
+.compare .dot-other { fill: rgba(185, 190, 199, 0.55); }
+.compare .dot-at { fill: var(--ink); }
+.compare .dot-mine { fill: var(--accent); stroke: #111; stroke-width: 1.5; }
+.compare-list tr.mine td { color: var(--accent); font-weight: 600; }
+.rows tr.picked td { background: rgba(255, 255, 255, 0.04); }
+
+/* ── the data view: states compared over time ─────────────────────────────────────────────────────────────── */
+.subtabs { margin: 0 0 10px; width: max-content; }
+.dataview .controls { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin-bottom: 8px; }
+.dataview .controls .pick { max-width: 100%; }
+.chips { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; margin-bottom: 8px; }
+.chip { display: inline-flex; align-items: center; gap: 6px; padding: 2px 8px; border: 1px solid; border-radius: 999px;
+  font-size: 12px; }
+.chip button { border: 0; background: none; color: var(--ink-3); cursor: pointer; padding: 0 0 0 2px; }
+.swatch { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 6px; }
+.chart .multi { fill: none; stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
+.chart .end-label { font-size: 9px; font-weight: 600; fill: var(--ink-2); }
+.dataview .chart circle { stroke: #111; stroke-width: 2; }

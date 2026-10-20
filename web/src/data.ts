@@ -44,12 +44,17 @@ export interface SectionsDoc {
 export interface StabilityDoc {
   reference_year: number;
   inputs: string;
+  n_ranked: number;
+  n_tiers: number;
   method: string;
   classes: { rule: string; breaks: number[] };
   pillars: Record<string, { name: string; indicators: string[] }>;
   indicators: Record<string, { display_name: string; series_code: string; polarity: string }>;
   countries: Record<string, {
-    composite: { score: number; reliability: string };
+    // the headline with its 95% interval, tier and rank band (edition 2, step 8)
+    composite: { score: number; reliability: string; ci_low: number | null; ci_high: number | null;
+      tier: number | null; band_best: number | null; band_worst: number | null };
+    narrative: string[];  // the data narrative (step 10, part A): templates filled with the panel's numbers
     history: { years: number[]; scores: (number | null)[] };
     pillars: Record<string, { score: number | null; reliability: string; observed: number; indicators: number }>;
     indicators: Record<string, { raw: number | null; score: number | null; provenance: string;
@@ -61,6 +66,46 @@ export interface MetaDoc {
   sources: { name: string; licence: string; link: string }[];
   imagery: { tiles: string; attribution: string; max_zoom: number };
 }
+
+// method.json: what the "How the index is built" page shows; every figure comes from the panel or the registry
+export interface MethodDoc {
+  reference_year: number;
+  n_states: number;
+  n_ranked: number;
+  n_scored: number;
+  n_descriptive: number;
+  tiers: number[];
+  band_median_width: number;
+  se_median: number;
+  wgi_share: number;
+  rules: {
+    admission_floor: number; carry_forward_years: number; reference_coverage: number; outlier_sd: number;
+    outlier_replace_sd: number; outlier_trim: number; zero_heavy: number; overlap_bar: number; overlap_year: number;
+    interval_level: number; band_z: number; min_pillars: number; reliable_at: number; thin_at: number;
+    max_imputed: number;
+  };
+  method_roles: Record<string, string>;
+  uncertainty: { interval: string; bands: string; tiers: string };
+  pillars: { id: string; name: string; indicators: { id: string; name: string; database: string; polarity: string;
+    role: string; log: boolean; goalposts: string | null; weight: number | null; cluster: string | null }[] }[];
+  clusters: { slot: string; members: string[]; pairs: { a: string; b: string; n: number; partial_r: number }[] }[];
+  robustness: { agreement: Record<string, number>; worst_weighting: number; verdict: string; measured_only: number };
+}
+
+// series.json: each state's history for the data view (loaded only when the view opens)
+export interface SeriesDoc {
+  years: number[];
+  note: string;
+  countries: Record<string, {
+    headline: (number | null)[];
+    pillars: Record<string, (number | null)[]>;
+    indicators: Record<string, { score: (number | null)[]; raw: (number | null)[] }>;
+  }>;
+}
+
+// The comparison colours (dataviz validate_palette.js, dark, surface #111111: all checks pass, worst adjacent CVD
+// delta E 8.4, so every line also carries a direct label). At most four countries are compared at once.
+export const COMPARE = ["#3987e5", "#d95926", "#199e70", "#c98500"];
 
 export interface Photo {
   src: string;

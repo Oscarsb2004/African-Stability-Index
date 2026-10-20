@@ -51,3 +51,46 @@ def test_capitals_follow_the_class_and_a_merged_areas_capital_is_not_one():
     out = [f["properties"] for f in web.places(ne)["features"]]
     assert [(p["name"], p["capital"]) for p in out] == [("Juba", True), ("Town", False), ("Hargeisa", False)]
     assert out[2]["iso3"] == "SOM"
+
+
+def test_the_stability_document_carries_each_headline_with_its_interval_tier_and_narrative():
+    """Edition 2 on the site: the committed stability.json is what stability() writes from the committed panel, and
+    each state's headline carries its interval, tier and band, and its data narrative (steps 8 and 10)."""
+    import json
+    doc = web.stability()
+    committed = json.loads((ROOT / "web" / "public" / "data" / "stability.json").read_text(encoding="utf-8"))
+    assert committed == json.loads(json.dumps(doc, ensure_ascii=False))  # regenerate with 05_web.py when stale
+    for iso3, c in doc["countries"].items():
+        h = c["composite"]
+        assert h["ci_low"] <= h["score"] <= h["ci_high"] and 1 <= h["tier"] <= doc["n_tiers"], iso3
+        assert h["band_best"] <= h["band_worst"] and c["narrative"], iso3
+    assert "rank" not in next(iter(doc["countries"].values()))["composite"]  # the point rank stays off the site
+
+
+def test_the_method_page_reads_the_panel_and_its_weights_add_to_one():
+    """The "How the index is built" page: the committed method.json is what method() writes, every scored indicator
+    sits in exactly one pillar, and the nominal weights of the scored indicators add to the whole headline."""
+    import json
+    doc = web.method()
+    committed = json.loads((ROOT / "web" / "public" / "data" / "method.json").read_text(encoding="utf-8"))
+    assert committed == json.loads(json.dumps(doc, ensure_ascii=False))  # regenerate with 05_web.py when stale
+    scored = [i for p in doc["pillars"] for i in p["indicators"] if i["role"] == "scoring"]
+    assert len(scored) == len({i["id"] for i in scored}) == doc["n_scored"]
+    assert sum(i["weight"] for i in scored) == pytest.approx(1.0, abs=1e-4)  # 52 weights, each rounded to 6 dp
+    assert sum(doc["tiers"]) == doc["n_ranked"]
+    members = {m for c in doc["clusters"] for m in c["members"]}
+    assert members == {i["name"] for i in scored if i["cluster"]}  # the page's clusters are the registry's
+
+
+def test_the_data_view_series_end_with_the_headline_the_site_shows():
+    """The data view: the committed series.json is what series() writes, and each state's headline at the reference
+    year is the stability panel's score, so the two views of one number cannot disagree."""
+    import json
+    doc = web.series()
+    committed = json.loads((ROOT / "web" / "public" / "data" / "series.json").read_text(encoding="utf-8"))
+    assert committed == json.loads(json.dumps(doc, ensure_ascii=False))  # regenerate with 05_web.py when stale
+    stab = web.stability()
+    at = doc["years"].index(stab["reference_year"])
+    for iso3, c in doc["countries"].items():
+        assert c["headline"][at] == pytest.approx(stab["countries"][iso3]["composite"]["score"], abs=0.051), iso3
+        assert set(c["pillars"]) == set(stab["pillars"]), iso3

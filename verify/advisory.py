@@ -29,6 +29,7 @@ _REPO = _Path(__file__).resolve().parent.parent
 _sys.path.insert(0, str(_REPO))
 
 import numpy as np
+import yaml
 import pandas as pd
 from scipy.stats import spearmanr
 from scipy.stats import t as t_dist
@@ -387,6 +388,40 @@ def main() -> int:
     note(f"suppression (partial larger than r by more than .15): "
          f"{(partials.partial.abs() > partials.r.abs() + 0.15).sum()} pairs; correlation is not causation "
          f"in an observational design, and an Africa-only sample restricts the range")
+
+    # ── multicollinearity within each pillar (P103) ───────────────────────────
+    # The overlap rule (P101) looks at pairs. VIF looks at each indicator against all the others of its pillar
+    # at once: VIF = 1 / (1 - R^2), R^2 from regressing it on its pillar-mates, here read off the inverse of the
+    # correlation matrix. Log GDP per capita is held constant first, as the overlap rule does, so what remains is
+    # duplication rather than development. Reported, never applied: the overlap rule is the rule (P103).
+    section("Multicollinearity within each pillar: VIF, log GDP per capita held constant (P103)")
+    at = panel.observations[panel.observations["year"] == year].pivot_table(
+        index="iso3", columns="variable_name", values="transformed_value")
+    overlap = yaml.safe_load((_REPO / "registry" / "overlap.yaml").read_text(encoding="utf-8"))
+    clustered = {v for members in overlap["slots"].values() for v in members}
+    control = at[overlap["control"]]
+    vif = {}
+    for pid in PILLAR_DEFS:
+        members = [v for v, m in scoring.items() if pid in m.get("pillars", []) and v != overlap["control"]
+                   and v in at.columns]
+        if len(members) < 2:
+            continue
+        resid = pd.DataFrame({v: _residuals(at[[v]], control)[v] for v in members})
+        corr = resid.corr(min_periods=20).dropna(how="all").dropna(axis=1, how="all")
+        try:
+            inverse = np.linalg.inv(corr.to_numpy())
+        except np.linalg.LinAlgError:
+            note(f"{pid}: the correlation matrix is singular, so VIF is undefined")
+            continue
+        vif.update({(pid, v): float(inverse[i, i]) for i, v in enumerate(corr.columns)})
+    high = sorted(((x, k) for k, x in vif.items() if x > 10), reverse=True)
+    note(f"{len(vif)} indicators: VIF above 10 for {len(high)}, above 5 for {sum(x > 5 for x in vif.values())} "
+         f"(pairwise-complete correlations of the residuals, at least 20 states a pair)")
+    for x, (pid, v) in high:
+        note(f"   {pid} {v}: VIF {x:.1f}" + ("" if v in clustered else "  << in no overlap cluster"))
+    outside = [v for x, (pid, v) in high if v not in clustered]
+    note(f"above 10 and in no overlap cluster: {len(outside)}" + (f" ({', '.join(outside)})" if outside else "")
+         + "; each is predicted by several pillar-mates together, which a pairwise rule cannot see")
 
     # ── pillars: reliability-corrected correlations and factors ───────────────
     section("Pillars: correlations corrected for attenuation, and factor analysis")

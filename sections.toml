@@ -5,7 +5,7 @@
 project = "asi"
 sections = [
     "appraisals",                                                                      # stability
-    "output", "prices", "public_finances", "structure", "jobs",                         # economy
+    "outlook", "output", "prices", "public_finances", "structure", "jobs",              # economy
     "monetary", "currency", "banks", "capital_markets", "sovereign", "capital_flows",   # finance
 ]
 
@@ -21,8 +21,30 @@ licence = "CC BY 4.0"
 attribution = "The World Bank: Worldwide Governance Indicators"
 link = "https://www.worldbank.org/en/publication/worldwide-governance-indicators"
 
+[datasets.hdr]
+publisher = "UNDP Human Development Report Office"
+licence = "CC BY 3.0 IGO"
+attribution = "UNDP Human Development Report Office: Human Development Report data, 2025 edition"
+link = "https://hdr.undp.org/data-center"
+
+[datasets.cpi]
+publisher = "Transparency International"
+licence = "CC BY 4.0"
+attribution = "Corruption Perceptions Index (2025) by Transparency International is licensed under CC BY 4.0"
+link = "https://www.transparency.org/en/cpi/2025"
+
+[datasets.weo]
+publisher = "International Monetary Fund"
+licence = "IMF terms for data: publish with the citation; commercial reuse needs the IMF's permission"
+attribution = "Source: International Monetary Fund, World Economic Outlook database, October 2026"
+link = "https://www.imf.org/en/Publications/SPROLLs/world-economic-outlook-databases"
+
 [measures]
 # ── economy ───────────────────────────────────────────────────────────────────────────────────────────────────────
+# outlook: the IMF's projections only, the years after each state's last actual data (marked F by the adapter)
+growth_projected = { dataset = "weo", series = "NGDP_RPCH", where = { OBS_STATUS = "F" } }
+inflation_projected = { dataset = "weo", series = "PCPIPCH", where = { OBS_STATUS = "F" } }
+debt_projected = { dataset = "weo", series = "GGXWDG_NGDP", where = { OBS_STATUS = "F" } }
 # output
 gdp = { dataset = "wdi", series = "NY.GDP.MKTP.CD" }
 gdp_per_person = { dataset = "wdi", series = "NY.GDP.PCAP.PP.CD" }
@@ -102,6 +124,10 @@ wgi_cc_upper = { dataset = "wgi", series = "GOV_WGI_CC.SC_UB" }
 cpia = { dataset = "wdi", series = "IQ.CPA.IRAI.XQ" }
 spi = { dataset = "wdi", series = "IQ.SPI.OVRL" }
 lpi = { dataset = "wdi", series = "LP.LPI.OVRL.XQ" }
+hdi = { dataset = "hdr", series = "hdi" }
+cpi = { dataset = "cpi", series = "cpi_score" }
+cpi_lower = { dataset = "cpi", series = "lower_ci" }
+cpi_upper = { dataset = "cpi", series = "upper_ci" }
 
 [unbound]
 government_debt = "WDI's central government debt covers 23 of the 54 states, the latest median 2019; IMF WEO general government debt comes with the WEO adapter"

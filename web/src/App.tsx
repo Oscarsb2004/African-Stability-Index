@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import MapView from "./MapView";
+import MethodPage from "./MethodPage";
 import PhotoViewer from "./PhotoViewer";
 import EconomyPanel from "./panels/EconomyPanel";
 import FinancePanel from "./panels/FinancePanel";
@@ -29,6 +30,18 @@ export default function App() {
   const [showClasses, setShowClasses] = useState(true);
   const [wonders, setWonders] = useState<WondersDoc | null>(null);
   const [viewing, setViewing] = useState<Wonder | null>(null);
+  // the method page has its own address, #method, so it can be linked to
+  const [method, setMethod] = useState(() => window.location.hash === "#method");
+  useEffect(() => {
+    const sync = () => setMethod(window.location.hash === "#method");
+    window.addEventListener("hashchange", sync);
+    return () => window.removeEventListener("hashchange", sync);
+  }, []);
+  const openMethod = () => { window.location.hash = "method"; };
+  const closeMethod = () => {
+    history.replaceState(null, "", window.location.pathname + window.location.search);
+    setMethod(false);
+  };
 
   useEffect(() => {
     Promise.all([load<MetaDoc>("data/meta.json"), load<StabilityDoc>("data/stability.json"),
@@ -105,7 +118,8 @@ export default function App() {
               </div>
               <button className="close" onClick={() => setSelected(null)} aria-label="Close">×</button>
             </div>
-            {section === "stability" && <StabilityPanel iso3={selected} stability={docs.stability} sections={docs.sections} />}
+            {section === "stability" && <StabilityPanel iso3={selected} stability={docs.stability} sections={docs.sections}
+              onMethod={openMethod} />}
             {section === "economy" && <EconomyPanel iso3={selected} doc={docs.sections} />}
             {section === "finance" && <FinancePanel iso3={selected} doc={docs.sections} />}
             {section === "infrastructure" && <InfrastructurePanel iso3={selected} />}
@@ -128,15 +142,18 @@ export default function App() {
             {section === "wonders" ? <WondersPanel doc={wonders} iso3={null} names={docs.sections.names}
               onOpen={setViewing} /> : (
               <p className="muted small">
-                Stability shows the ASI next to other institutions' scores. Economy leads with the latest figures
-                and the record. Finance covers money, the currency and reserves, banks, markets and debt.
-                Infrastructure shows cities now; roads, rail, ports and megaprojects follow.
+                Stability shows the ASI next to other institutions' scores. Economy leads with the IMF's outlook,
+                then the latest figures and the record. Finance covers money, the currency and reserves, banks,
+                markets and debt. Infrastructure shows cities now; roads, rail, ports and megaprojects follow.{" "}
+                <button className="linkish" onClick={openMethod}>How the index is built</button>
               </p>
             )}
           </div>
         )}
       </aside>
+      <button className="glass footer-link" onClick={openMethod}>How the index is built</button>
       {viewing && <PhotoViewer wonder={viewing} onClose={() => setViewing(null)} />}
+      {method && <MethodPage onClose={closeMethod} />}
     </div>
   );
 }

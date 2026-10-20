@@ -4,7 +4,7 @@
 `sections.toml` binds athena-core's section templates to series; the datasets named on the command line are the
 edition, as for 01_inputs.py:
 
-    python 04_sections.py wdi-2026-10-08 wgi-2026-09-25
+    python 04_sections.py wdi-2026-10-08 wgi-2026-09-25 hdr-2025 cpi-2025 weo-2026-10
 
 It writes web/public/data/sections.json (the site reads it) in the format `athena.sections/1`, checked before it is written. Publishers' values
 pass through as printed; every other figure is computed by a named shell in athena.figures and marked derived.
