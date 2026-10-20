@@ -21,6 +21,18 @@ licence = "CC BY 4.0"
 attribution = "The World Bank: Worldwide Governance Indicators"
 link = "https://www.worldbank.org/en/publication/worldwide-governance-indicators"
 
+[datasets.hdr]
+publisher = "UNDP Human Development Report Office"
+licence = "CC BY 3.0 IGO"
+attribution = "UNDP Human Development Report Office: Human Development Report data, 2025 edition"
+link = "https://hdr.undp.org/data-center"
+
+[datasets.cpi]
+publisher = "Transparency International"
+licence = "CC BY 4.0"
+attribution = "Corruption Perceptions Index (2025) by Transparency International is licensed under CC BY 4.0"
+link = "https://www.transparency.org/en/cpi/2025"
+
 [measures]
 # ── economy ───────────────────────────────────────────────────────────────────────────────────────────────────────
 # output
@@ -102,6 +114,10 @@ wgi_cc_upper = { dataset = "wgi", series = "GOV_WGI_CC.SC_UB" }
 cpia = { dataset = "wdi", series = "IQ.CPA.IRAI.XQ" }
 spi = { dataset = "wdi", series = "IQ.SPI.OVRL" }
 lpi = { dataset = "wdi", series = "LP.LPI.OVRL.XQ" }
+hdi = { dataset = "hdr", series = "hdi" }
+cpi = { dataset = "cpi", series = "cpi_score" }
+cpi_lower = { dataset = "cpi", series = "lower_ci" }
+cpi_upper = { dataset = "cpi", series = "upper_ci" }
 
 [unbound]
 government_debt = "WDI's central government debt covers 23 of the 54 states, the latest median 2019; IMF WEO general government debt comes with the WEO adapter"

@@ -116,7 +116,7 @@ export default function StabilityPanel({ iso3, stability, sections }: Props) {
             const on100 = f.unit === "score 0-100";
             return (
               <tr key={f.id}>
-                <td>{f.label}</td>
+                <td>{f.label}{f.note && <div className="muted small">{f.note}</div>}</td>
                 <td className="viz">{on100 && r ? <Interval f={r} /> : null}</td>
                 <td className="num">{fmt(r?.value ?? null)} <span className="unit">{f.unit}</span></td>
                 <td className="period">{r?.period ?? ""}</td>
@@ -126,8 +126,8 @@ export default function StabilityPanel({ iso3, stability, sections }: Props) {
         </tbody>
       </table>
       <p className="muted small">
-        Still to come, each once its terms allow: UNDP HDI, Transparency International CPI, V-Dem, IMF, INFORM,
-        ND-GAIN, Fragile States Index, Global Peace Index, Ibrahim Index.
+        Still to come, each once its terms allow: V-Dem, INFORM, ND-GAIN, Fragile States Index, Global Peace Index,
+        Ibrahim Index, Freedom House.
       </p>
     </div>
   );
