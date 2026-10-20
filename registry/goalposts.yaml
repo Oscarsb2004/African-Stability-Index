@@ -1,5 +1,5 @@
 version: 3
-generated: '2026-10-18'
+generated: '2026-10-19'
 panel_years:
 - 2000
 - 2025
@@ -414,6 +414,40 @@ indicators:
     n_values: 1307
     n_capped_low: 0
     n_capped_high: 3
+  non_state_deaths:
+    log_transform: true
+    log_constant: 1.0
+    skew: 2.0109
+    skew_z: 6.1959
+    skew_n: 54
+    polarity: negative
+    winsor_lower: -0.576283
+    winsor_upper: 0.726326
+    winsor_lower_to: -0.597993
+    winsor_upper_to: 0.748037
+    goalpost_min: 0.0
+    goalpost_max: 0.748037
+    goalpost_source: observed
+    n_values: 1393
+    n_capped_low: 0
+    n_capped_high: 80
+  one_sided_deaths:
+    log_transform: true
+    log_constant: 1.0
+    skew: 2.2611
+    skew_z: 6.9666
+    skew_n: 54
+    polarity: negative
+    winsor_lower: -0.723268
+    winsor_upper: 0.943248
+    winsor_lower_to: -0.751044
+    winsor_upper_to: 0.971023
+    goalpost_min: 0.0
+    goalpost_max: 0.971023
+    goalpost_source: observed
+    n_values: 1393
+    n_capped_low: 0
+    n_capped_high: 90
   ore_metal_exports:
     log_transform: true
     log_constant: 1.0
@@ -635,6 +669,23 @@ indicators:
     n_values: 633
     n_capped_low: 3
     n_capped_high: 0
+  state_based_deaths:
+    log_transform: true
+    log_constant: 1.0
+    skew: 2.4102
+    skew_z: 7.4261
+    skew_n: 54
+    polarity: negative
+    winsor_lower: -1.238564
+    winsor_upper: 1.641397
+    winsor_lower_to: -1.286564
+    winsor_upper_to: 1.689397
+    goalpost_min: 0.0
+    goalpost_max: 1.689397
+    goalpost_source: observed
+    n_values: 1393
+    n_capped_low: 0
+    n_capped_high: 80
   statistical_performance:
     log_transform: false
     log_constant: null

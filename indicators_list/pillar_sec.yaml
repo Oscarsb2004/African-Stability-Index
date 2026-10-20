@@ -2,7 +2,8 @@
 # Goal: How safe people are from organised and everyday violence, and from being forced from home by it.
 #
 # Edition 2, step 6 (P57, variant B). Every indicator here has one home, this pillar, and falls under its
-# umbrella (P58). 2 scored, 4 descriptive.
+# umbrella (P58). Step 9 scores organised violence's parts: state-based and one-sided here, non-state in COH.
+# 3 scored, 5 descriptive.
 
 - variable_name: pv_estimate
   display_name: Political Stability and Absence of Violence / Terrorism, WGI estimated score
@@ -19,10 +20,10 @@
     included. WGI, N(0,1) scale.
   database: wgi
   log_transform: false
-- variable_name: organised_violence_deaths
-  display_name: Deaths in organised violence (state-based, non-state and one-sided), per 100,000 people
+- variable_name: state_based_deaths
+  display_name: Deaths in state-based armed conflict, per 100,000 people
   source: ucdp
-  series_code: cumulative_total_deaths_in_orgvio_best
+  series_code: sb_total_deaths_best
   role: scoring
   polarity: negative
   pillars:
@@ -30,10 +31,45 @@
   year_start: 2015
   year_end: 2025
   aggregation: most_recent
+  justification: 'Armed conflict: UCDP''s best estimate of deaths in fighting where at least one side is a government,
+    inside the country''s borders in the year. UCDP records every country-year, so a year without conflict is a
+    measured zero, not a gap. Edition 2, step 9 (plan 1.2): one of the three parts of organised violence, scored apart
+    so that the protection of civilians and communal violence each count on their own.'
+  database: ucdp
+  log_transform: true
+  per_capita: 100000
+- variable_name: one_sided_deaths
+  display_name: Deaths in one-sided violence against civilians, per 100,000 people
+  source: ucdp
+  series_code: os_total_deaths_best
+  role: scoring
+  polarity: negative
+  pillars:
+  - SEC
+  year_start: 2015
+  year_end: 2025
+  aggregation: most_recent
+  justification: 'The protection of civilians, which Interpeace makes a condition of stability (plan 1.1, 1.2): UCDP''s
+    best estimate of civilians killed deliberately by a government or an organised group in the year, inside the
+    country''s borders. A year without such killing is a measured zero. Edition 2, step 9.'
+  database: ucdp
+  log_transform: true
+  per_capita: 100000
+- variable_name: organised_violence_deaths
+  display_name: Deaths in organised violence (state-based, non-state and one-sided), per 100,000 people
+  source: ucdp
+  series_code: cumulative_total_deaths_in_orgvio_best
+  role: descriptive
+  polarity: negative
+  pillars:
+  - SEC
+  year_start: 2015
+  year_end: 2025
+  aggregation: most_recent
   justification: 'UCDP''s best estimate of everyone killed inside the country''s borders in the year by state-based
-    conflict, fighting between non-state groups and one-sided violence against civilians. UCDP records every country-year,
-    so a year without organised violence is a measured zero, not a gap: the reason it replaces the WDI''s battle-related
-    deaths, which leave 27 of 54 states blank. Divided by population.'
+    conflict, fighting between non-state groups and one-sided violence against civilians. Scored from step 6; from
+    step 9 its three parts are scored instead (state_based_deaths and one_sided_deaths here, non_state_deaths in COH),
+    and the total, their sum, is shown and not scored, so no death counts twice.'
   database: ucdp
   log_transform: true
   per_capita: 100000
