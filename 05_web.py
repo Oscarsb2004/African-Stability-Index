@@ -108,7 +108,13 @@ def stability() -> dict:
     panel = results.load(PANEL)
     bundle, year = panel.meta, panel.reference_year
     comp, pill, obs = panel.composites, panel.pillar_scores, panel.observations
-    equal = comp[comp["method"] == "equal"]
+    equal = comp[comp["method"] == bundle.get("headline", "equal")]
+    narratives = json.loads((PANEL / "narratives.json").read_text(encoding="utf-8"))
+    datasets = sorted(pd.read_csv(ROOT / "data" / "inputs.csv", usecols=["DATASET"])["DATASET"].unique())
+
+    def num(x, kind=float):
+        return None if pd.isna(x) else kind(x)
+
     out = {}
     for iso3 in COUNTRIES:
         c = equal[(equal["iso3"] == iso3)].sort_values("year")
@@ -116,7 +122,12 @@ def stability() -> dict:
         p = pill[(pill["iso3"] == iso3) & (pill["year"] == year)]
         o = obs[(obs["iso3"] == iso3) & (obs["year"] == year) & (obs["role"] == "scoring")]
         out[iso3] = {
-            "composite": {"score": float(now["score"]), "reliability": now["reliability"]},
+            # the headline with its 95% interval, tier and rank band (edition 2, step 8); the point rank stays out
+            "composite": {"score": float(now["score"]), "reliability": now["reliability"],
+                          "ci_low": num(now.get("ci_low")), "ci_high": num(now.get("ci_high")),
+                          "tier": num(now.get("tier"), int), "band_best": num(now.get("band_best"), int),
+                          "band_worst": num(now.get("band_worst"), int)},
+            "narrative": narratives["countries"][iso3]["text"],
             "history": {"years": c["year"].tolist(), "scores": [None if pd.isna(s) else float(s) for s in c["score"]]},
             "pillars": {r.pillar_id: {"score": None if pd.isna(r.score) else float(r.score),
                                       "reliability": r.reliability, "observed": int(r.n_observed),
@@ -130,8 +141,10 @@ def stability() -> dict:
     scores = pd.Series([c["composite"]["score"] for c in out.values()])
     # the map's classes: fifths of the member states at the reference year, a stated rule, not a judgement
     fifths = [round(float(q), 1) for q in scores.quantile([0.2, 0.4, 0.6, 0.8])]
-    return {"reference_year": year, "inputs": f"the frozen pull of {bundle['run']['generated']}",
-            "method": "equal weights", "classes": {"rule": "fifths of the member states", "breaks": fifths},
+    return {"reference_year": year, "inputs": ", ".join(datasets), "n_ranked": narratives["n_ranked"],
+            "n_tiers": narratives["n_tiers"],
+            "method": "equal weights over the pillars that entered",
+            "classes": {"rule": "fifths of the member states", "breaks": fifths},
             "pillars": bundle["pillars"],
             "indicators": {k: {f: v[f] for f in ("display_name", "series_code", "polarity")}
                            for k, v in bundle["indicators"].items() if v["role"] == "scoring"},

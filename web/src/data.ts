@@ -44,12 +44,17 @@ export interface SectionsDoc {
 export interface StabilityDoc {
   reference_year: number;
   inputs: string;
+  n_ranked: number;
+  n_tiers: number;
   method: string;
   classes: { rule: string; breaks: number[] };
   pillars: Record<string, { name: string; indicators: string[] }>;
   indicators: Record<string, { display_name: string; series_code: string; polarity: string }>;
   countries: Record<string, {
-    composite: { score: number; reliability: string };
+    // the headline with its 95% interval, tier and rank band (edition 2, step 8)
+    composite: { score: number; reliability: string; ci_low: number | null; ci_high: number | null;
+      tier: number | null; band_best: number | null; band_worst: number | null };
+    narrative: string[];  // the data narrative (step 10, part A): templates filled with the panel's numbers
     history: { years: number[]; scores: (number | null)[] };
     pillars: Record<string, { score: number | null; reliability: string; observed: number; indicators: number }>;
     indicators: Record<string, { raw: number | null; score: number | null; provenance: string;
