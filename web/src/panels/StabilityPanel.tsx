@@ -1,9 +1,8 @@
 // Stability: the ASI as one appraisal among several (P53). The composite drills down to pillars, each pillar to
 // its indicators, and each indicator to every state's value. Other institutions' scores follow on their own scales,
-// with their own intervals. The Data view compares states over time; the method page says how it is all built.
+// with their own intervals. "Compare" opens the Data tab on any of them; the method page says how it is all built.
 
 import { Fragment, useState } from "react";
-import DataView from "../DataView";
 import IndicatorCompare from "../IndicatorCompare";
 import LineChart from "../LineChart";
 import { fmt, type Figure, type SectionsDoc, type StabilityDoc } from "../data";
@@ -13,6 +12,7 @@ interface Props {
   stability: StabilityDoc;
   sections: SectionsDoc;
   onMethod: () => void;
+  onCompare: (measure: string) => void;  // open the Data tab on this measure
 }
 
 function Bar({ score }: { score: number | null }) {
@@ -34,10 +34,9 @@ function Interval({ f, level = 90 }: { f: Figure; level?: number }) {
   );
 }
 
-export default function StabilityPanel({ iso3, stability, sections, onMethod }: Props) {
+export default function StabilityPanel({ iso3, stability, sections, onMethod, onCompare }: Props) {
   const [open, setOpen] = useState<string | null>(null);
   const [indicator, setIndicator] = useState<string | null>(null);
-  const [view, setView] = useState<"index" | "data">("index");
   const c = stability.countries[iso3];
   const h = c.composite;
   const appraisals = sections.sections.find((s) => s.id === "appraisals");
@@ -45,26 +44,8 @@ export default function StabilityPanel({ iso3, stability, sections, onMethod }: 
   // the narrative's first two sentences restate the hero (score, interval, tier, band), so the panel shows the rest
   const words = h.tier !== null ? c.narrative.slice(2) : c.narrative;
   const names = sections.names;
-  const tabs = (
-    <nav className="tabs subtabs" aria-label="Stability views">
-      <button className={view === "index" ? "tab on" : "tab"} aria-pressed={view === "index"}
-        onClick={() => setView("index")}>Index</button>
-      <button className={view === "data" ? "tab on" : "tab"} aria-pressed={view === "data"}
-        onClick={() => setView("data")}>Data</button>
-    </nav>
-  );
-  if (view === "data") {
-    return (
-      <div className="panel-body">
-        {tabs}
-        <DataView iso3={iso3} stability={stability} names={names} />
-        <p className="small"><button className="linkish" onClick={onMethod}>How the index is built</button></p>
-      </div>
-    );
-  }
   return (
     <div className="panel-body">
-      {tabs}
       <h3>African Stability Index <span className="tag ours">this project</span></h3>
       <div className="hero">
         <div className="hero-value">{h.score.toFixed(1)}</div>
@@ -87,6 +68,8 @@ export default function StabilityPanel({ iso3, stability, sections, onMethod }: 
         <Interval f={{ value: h.score, lower: h.ci_low, upper: h.ci_high } as Figure} level={95} />
       )}
       <LineChart periods={c.history.years.map(String)} values={c.history.scores} unit="points" height={90} zero={false} />
+      <p className="small"><button className="linkish" onClick={() => onCompare("asi/headline")}>
+        Compare with other states and groups in Data →</button></p>
 
       <h3>In words</h3>
       <p className="small">{words.join(" ")}</p>
@@ -110,6 +93,10 @@ export default function StabilityPanel({ iso3, stability, sections, onMethod }: 
                 <span className="num">{s?.score === null || !s ? "—" : s.score.toFixed(1)}</span>
               </button>
               {open === id && (
+                <button className="linkish small compare-link" onClick={() => onCompare(`asi/pillar.${id}`)}>
+                  Compare this pillar in Data →</button>
+              )}
+              {open === id && (
                 <table className="rows indicators">
                   <tbody>
                     {p.indicators.filter((v) => stability.indicators[v]).map((v) => {
@@ -131,6 +118,8 @@ export default function StabilityPanel({ iso3, stability, sections, onMethod }: 
                           {indicator === v && (
                             <tr><td colSpan={3}>
                               <IndicatorCompare variable={v} iso3={iso3} stability={stability} names={names} />
+                              <button className="linkish small" onClick={() => onCompare(`asi/score.${v}`)}>
+                                Compare over time in Data →</button>
                             </td></tr>
                           )}
                         </Fragment>

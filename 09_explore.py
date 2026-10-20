@@ -162,7 +162,8 @@ def asi_docs() -> tuple[list[dict], dict[str, dict]]:
         doc = {"y": [y0, y1], "v": grid(frame, y0, y1)} | (extra(frame, y0, y1) if extra else {})
         entries.append({"id": f"asi/{mid}", "ds": "asi", "code": mid, "label": label, "unit": unit, "topic": topic,
                         "n": int(frame["REF_AREA"].nunique()), "y": [y0, y1],
-                        "polarity": "higher is more stable" if unit == "score 0-100" else ""}
+                        "polarity": "higher is more stable" if unit == "score 0-100" else "",
+                        "ref": panel.reference_year}
                        | ({"interval": "95%"} if mid == "headline" else {}))
         files[f"asi/{file_id(mid)}"] = doc
 

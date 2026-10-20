@@ -13,6 +13,8 @@ interface Props {
   section: Section;
   selected: string | null;
   showClasses: boolean;
+  choropleth?: Record<string, string> | null;  // the Data tab's measure, a colour per state
+  marked?: string[];  // the Data tab's chosen states
   onSelect: (iso3: string | null) => void;
   wonders: Wonder[] | null;
   onWonder: (w: Wonder) => void;
@@ -35,7 +37,8 @@ const AFRICA: [number, number] = [19, 3];
 const ESRI = "https://static-map-tiles-api.arcgis.com/arcgis/rest/services/static-basemap-tiles-service/v1/arcgis/imagery";
 const ESRI_KEY = import.meta.env.VITE_ESRI_KEY as string | undefined;
 
-export default function MapView({ meta, stability, section, selected, showClasses, onSelect, wonders, onWonder }: Props) {
+export default function MapView({ meta, stability, section, selected, showClasses, choropleth, marked = [], onSelect,
+  wonders, onWonder }: Props) {
   const box = useRef<HTMLDivElement>(null);
   const tip = useRef<HTMLDivElement>(null);
   const map = useRef<maplibregl.Map | null>(null);
@@ -181,21 +184,38 @@ export default function MapView({ meta, stability, section, selected, showClasse
     return () => m.remove();
   }, [meta]);
 
-  // ── the stability classes, shown only in the Stability section ─────────────────────────────────────────
+  // ── the stability classes in the Stability section, or the Data tab's measure in the Data section ─────────────
   useEffect(() => {
     const m = map.current;
     if (!m) return;
     const apply = () => {
       const breaks = stability.classes.breaks;
-      const colour: ExpressionSpecification = ["match", ["get", "iso3"],
-        ...Object.entries(stability.countries).flatMap(([iso3, c]) => [iso3, rampColour(c.composite.score, breaks)]),
-        "#000000"] as unknown as ExpressionSpecification;
+      const pairs = section === "data" && choropleth ? Object.entries(choropleth)
+        : Object.entries(stability.countries).map(([iso3, c]) => [iso3, rampColour(c.composite.score, breaks)]);
+      const colour = (pairs.length ? ["match", ["get", "iso3"], ...pairs.flat(), "#000000"]
+        : "#000000") as unknown as ExpressionSpecification;
       m.setPaintProperty("classes", "fill-color", colour);
-      m.setPaintProperty("classes", "fill-opacity",
-        section === "stability" && showClasses ? ["case", ["get", "member"], 0.55, 0] : 0);
+      const shown = (section === "stability" && showClasses) || (section === "data" && !!choropleth);
+      m.setPaintProperty("classes", "fill-opacity", shown
+        ? ["case", ["all", ["get", "member"], ["in", ["get", "iso3"], ["literal", pairs.map((x) => x[0])]]], 0.55, 0] : 0);
     };
     if (m.isStyleLoaded()) apply(); else m.once("load", apply);
-  }, [section, showClasses, stability]);
+  }, [section, showClasses, stability, choropleth]);
+
+  // ── the Data tab's chosen states share the chosen country's tint ─────────────────────────────────────────────
+  const marks = useRef<string[]>([]);
+  const markKey = marked.join(",");
+  useEffect(() => {
+    const m = map.current;
+    if (!m) return;
+    const apply = () => {
+      if (!(m.getSource("countries") as GeoJSONSource | undefined)) return;
+      for (const k of marks.current) if (k !== selected) m.setFeatureState({ source: "countries", id: k }, { chosen: false });
+      for (const k of marked) m.setFeatureState({ source: "countries", id: k }, { chosen: true });
+      marks.current = marked;
+    };
+    if (m.isStyleLoaded()) apply(); else m.once("idle", apply);
+  }, [markKey]);  // eslint-disable-line react-hooks/exhaustive-deps
 
   // ── the chosen country: a faint tint, and the map moves it clear of the panel ───────────────────────────
   const previous = useRef<string | null>(null);

@@ -1,6 +1,10 @@
-// The site (P55): a satellite globe with four sections. Choosing a country opens its panel on the right (P56).
+// The site (P55): a satellite globe with five sections and a Data tab. Choosing a country opens its panel on the
+// right (P56); the Data tab opens a wide workspace beside the map, and the map shows its measure (P105).
 
-import { useEffect, useMemo, useState } from "react";
+import { lazy, Suspense, useCallback, useEffect, useMemo, useState } from "react";
+import type { MapLayer } from "./explore/DataTab";
+import { DEFAULT, type ExploreState, fromHash, rememberedGroups, rememberGroups, toHash } from "./explore/model";
+import { coloured } from "./explore/resolve";
 import MapView from "./MapView";
 import MethodPage from "./MethodPage";
 import PhotoViewer from "./PhotoViewer";
@@ -18,14 +22,20 @@ const SECTIONS: { id: Section; label: string }[] = [
   { id: "finance", label: "Finance" },
   { id: "infrastructure", label: "Infrastructure" },
   { id: "wonders", label: "Wonders" },
+  { id: "data", label: "Data" },
 ];
+const DataTab = lazy(() => import("./explore/DataTab"));  // loaded only when the tab opens
 
 interface Docs { meta: MetaDoc; stability: StabilityDoc; sections: SectionsDoc }
 
 export default function App() {
   const [docs, setDocs] = useState<Docs | null>(null);
   const [error, setError] = useState<string | null>(null);
-  const [section, setSection] = useState<Section>("stability");
+  const initial = useMemo(() => fromHash(window.location.hash), []);
+  const [section, setSection] = useState<Section>(initial ? "data" : "stability");
+  const [explore, setExplore] = useState<ExploreState>(() => initial ?? { ...DEFAULT, custom: rememberedGroups() });
+  const [layer, setLayer] = useState<MapLayer | null>(null);
+  const onMap = useCallback((l: MapLayer | null) => setLayer(l), []);
   const [selected, setSelected] = useState<string | null>(null);
   const [showClasses, setShowClasses] = useState(true);
   const [wonders, setWonders] = useState<WondersDoc | null>(null);
@@ -33,11 +43,43 @@ export default function App() {
   // the method page has its own address, #method, so it can be linked to
   const [method, setMethod] = useState(() => window.location.hash === "#method");
   useEffect(() => {
-    const sync = () => setMethod(window.location.hash === "#method");
+    const sync = () => {
+      setMethod(window.location.hash === "#method");
+      const shared = fromHash(window.location.hash);  // a Data view pasted into the address
+      if (shared) { setExplore(shared); setSection("data"); }
+    };
     window.addEventListener("hashchange", sync);
     return () => window.removeEventListener("hashchange", sync);
   }, []);
   const openMethod = () => { window.location.hash = "method"; };
+  // the Data tab's view lives in the address while the tab is open, so it can be shared
+  useEffect(() => {
+    if (method) return;
+    if (section === "data") history.replaceState(null, "", "#" + toHash(explore));
+    else if (window.location.hash.startsWith("#data=")) history.replaceState(null, "", window.location.pathname);
+  }, [explore, section, method]);
+  useEffect(() => rememberGroups(explore.custom), [explore.custom]);
+  const choose = (s: Section) => {
+    if (s === "data" && selected) setExplore((x) => x.items.length ? x : { ...x, items: [{ t: "s", id: selected }] });
+    setSection(s);
+  };
+  // "Compare" from any tab: the Data tab with that measure, and the chosen country added
+  const compare = (measure: string) => {
+    setExplore((x) => {
+      const has = !selected || x.items.some((i) => i.t === "s" && i.id === selected);
+      const room = x.items.filter(coloured).length < 4;
+      return { ...x, measure, year: null, items: has || !room ? x.items : [...x.items, { t: "s", id: selected as string }] };
+    });
+    setSection("data");
+  };
+  // in the Data tab a click on the map adds a state to the comparison, or takes it out
+  const onMapSelect = (iso3: string | null) => {
+    if (section !== "data") { setSelected(iso3); return; }
+    if (!iso3) return;
+    setExplore((x) => x.items.some((i) => i.t === "s" && i.id === iso3)
+      ? { ...x, items: x.items.filter((i) => !(i.t === "s" && i.id === iso3)) }
+      : x.items.filter(coloured).length >= 4 ? x : { ...x, items: [...x.items, { t: "s", id: iso3 }] });
+  };
   const closeMethod = () => {
     history.replaceState(null, "", window.location.pathname + window.location.search);
     setMethod(false);
@@ -61,9 +103,10 @@ export default function App() {
   const edges = [null, ...breaks, null];
   return (
     <div className="app">
-      <MapView meta={docs.meta} stability={docs.stability} section={section} selected={selected}
-        showClasses={showClasses} onSelect={setSelected} wonders={wonders?.wonders ?? null}
-        onWonder={setViewing} />
+      <MapView meta={docs.meta} stability={docs.stability} section={section} selected={section === "data" ? null : selected}
+        showClasses={showClasses} choropleth={section === "data" ? layer?.colours ?? null : null}
+        marked={section === "data" ? explore.items.filter((i) => i.t === "s").map((i) => i.id) : []}
+        onSelect={onMapSelect} wonders={wonders?.wonders ?? null} onWonder={setViewing} />
 
       <div className="topleft">
       <header className="glass masthead">
@@ -74,7 +117,7 @@ export default function App() {
         <nav className="tabs" aria-label="Sections">
           {SECTIONS.map((s) => (
             <button key={s.id} className={s.id === section ? "tab on" : "tab"} aria-pressed={s.id === section}
-              onClick={() => setSection(s.id)}>{s.label}</button>
+              onClick={() => choose(s.id)}>{s.label}</button>
           ))}
         </nav>
         <select className="pick" value={selected ?? ""} onChange={(e) => setSelected(e.target.value || null)}
@@ -106,8 +149,37 @@ export default function App() {
           )}
         </div>
       )}
+      {section === "data" && layer && (
+        <div className="glass legend data-legend">
+          <div className="legend-toggle">{layer.label}, {layer.year}</div>
+          <div className="legend-ramp">
+            {RAMP.map((c, i) => (
+              <div key={c} className="legend-step">
+                <span style={{ background: c }} />
+                <small>{i === 0 ? `< ${fmtBreak(layer.breaks[0])}` : i === RAMP.length - 1
+                  ? `≥ ${fmtBreak(layer.breaks[i - 1])}` : `${fmtBreak(layer.breaks[i - 1])}–${fmtBreak(layer.breaks[i])}`}</small>
+              </div>
+            ))}
+          </div>
+          <div className="muted small">Fifths of the states with a value. Lighter is higher; grey has no value.</div>
+        </div>
+      )}
       </div>
 
+      {section === "data" ? (
+        <aside className="glass panel wide open" aria-live="polite">
+          <div className="panel-head">
+            <div>
+              <div className="panel-kicker">Data</div>
+              <h2>Compare states and groups</h2>
+            </div>
+            <button className="linkish small" onClick={openMethod}>How the index is built</button>
+          </div>
+          <Suspense fallback={<div className="panel-body"><p className="muted">Loading the Data tab…</p></div>}>
+            <DataTab state={explore} setState={setExplore} onMap={onMap} />
+          </Suspense>
+        </aside>
+      ) : (
       <aside className={selected ? "glass panel open" : "glass panel idle"} aria-live="polite">
         {selected ? (
           <>
@@ -119,9 +191,9 @@ export default function App() {
               <button className="close" onClick={() => setSelected(null)} aria-label="Close">×</button>
             </div>
             {section === "stability" && <StabilityPanel iso3={selected} stability={docs.stability} sections={docs.sections}
-              onMethod={openMethod} />}
-            {section === "economy" && <EconomyPanel iso3={selected} doc={docs.sections} />}
-            {section === "finance" && <FinancePanel iso3={selected} doc={docs.sections} />}
+              onMethod={openMethod} onCompare={compare} />}
+            {section === "economy" && <EconomyPanel iso3={selected} doc={docs.sections} onCompare={compare} />}
+            {section === "finance" && <FinancePanel iso3={selected} doc={docs.sections} onCompare={compare} />}
             {section === "infrastructure" && <InfrastructurePanel iso3={selected} />}
             {section === "wonders" && <WondersPanel doc={wonders} iso3={selected} names={docs.sections.names}
               onOpen={setViewing} />}
@@ -151,9 +223,14 @@ export default function App() {
           </div>
         )}
       </aside>
-      <button className="glass footer-link" onClick={openMethod}>How the index is built</button>
+      )}
+      {section !== "data" && <button className="glass footer-link" onClick={openMethod}>How the index is built</button>}
       {viewing && <PhotoViewer wonder={viewing} onClose={() => setViewing(null)} />}
       {method && <MethodPage onClose={closeMethod} />}
     </div>
   );
+}
+
+function fmtBreak(v: number): string {
+  return v.toLocaleString("en", { maximumSignificantDigits: 3 });
 }

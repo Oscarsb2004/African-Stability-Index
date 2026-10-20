@@ -8,13 +8,14 @@ import { Rows, Tile, trend } from "./parts";
 interface Props {
   iso3: string;
   doc: SectionsDoc;
+  onCompare?: (measure: string) => void;
 }
 
 function spec(doc: SectionsDoc, section: string, id: string) {
   return doc.sections.find((s) => s.id === section)?.figures.find((f) => f.id === id);
 }
 
-export default function EconomyPanel({ iso3, doc }: Props) {
+export default function EconomyPanel({ iso3, doc, onCompare }: Props) {
   const a = doc.areas[iso3];
   const out = a.output, prices = a.prices;
   const peaks = (prices.inflation_peaks?.values ?? []) as { value: number; period: string }[];
@@ -43,7 +44,8 @@ export default function EconomyPanel({ iso3, doc }: Props) {
         </>}
       <p className="muted small">
         The IMF's projections as published, from the first year after its last actual data to the last year it
-        projects. {weo?.attribution}.
+        projects. {weo?.attribution}.{" "}
+        {onCompare && <button className="linkish" onClick={() => onCompare("weo/NGDP_RPCH")}>Compare outlooks in Data →</button>}
       </p>
 
       <h3>Headline</h3>
@@ -80,7 +82,7 @@ export default function EconomyPanel({ iso3, doc }: Props) {
       </p>
 
       {doc.sections.filter((s) => s.dimension === "economy" && !["outlook", "output", "prices"].includes(s.id)).map((s) => (
-        <Rows key={s.id} section={s} figures={a[s.id]} open={s.id === "public_finances"} />
+        <Rows key={s.id} section={s} figures={a[s.id]} open={s.id === "public_finances"} onCompare={onCompare} />
       ))}
     </div>
   );

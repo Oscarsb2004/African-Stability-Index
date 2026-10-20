@@ -80,17 +80,3 @@ def test_the_method_page_reads_the_panel_and_its_weights_add_to_one():
     assert sum(doc["tiers"]) == doc["n_ranked"]
     members = {m for c in doc["clusters"] for m in c["members"]}
     assert members == {i["name"] for i in scored if i["cluster"]}  # the page's clusters are the registry's
-
-
-def test_the_data_view_series_end_with_the_headline_the_site_shows():
-    """The data view: the committed series.json is what series() writes, and each state's headline at the reference
-    year is the stability panel's score, so the two views of one number cannot disagree."""
-    import json
-    doc = web.series()
-    committed = json.loads((ROOT / "web" / "public" / "data" / "series.json").read_text(encoding="utf-8"))
-    assert committed == json.loads(json.dumps(doc, ensure_ascii=False))  # regenerate with 05_web.py when stale
-    stab = web.stability()
-    at = doc["years"].index(stab["reference_year"])
-    for iso3, c in doc["countries"].items():
-        assert c["headline"][at] == pytest.approx(stab["countries"][iso3]["composite"]["score"], abs=0.051), iso3
-        assert set(c["pillars"]) == set(stab["pillars"]), iso3

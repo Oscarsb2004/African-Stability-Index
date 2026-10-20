@@ -5,7 +5,8 @@ import LineChart from "../LineChart";
 import { fmt, type SectionsDoc } from "../data";
 import { Rows, Tile, trend } from "./parts";
 
-export default function FinancePanel({ iso3, doc }: { iso3: string; doc: SectionsDoc }) {
+export default function FinancePanel({ iso3, doc, onCompare }: { iso3: string; doc: SectionsDoc;
+  onCompare?: (measure: string) => void }) {
   const a = doc.areas[iso3];
   const { monetary, currency, banks, sovereign } = a;
   const charts = [
@@ -44,7 +45,7 @@ export default function FinancePanel({ iso3, doc }: { iso3: string; doc: Section
       ))}
 
       {doc.sections.filter((s) => s.dimension === "finance").map((s) => (
-        <Rows key={s.id} section={s} figures={a[s.id]} open={s.id === "monetary"} />
+        <Rows key={s.id} section={s} figures={a[s.id]} open={s.id === "monetary"} onCompare={onCompare} />
       ))}
     </div>
   );

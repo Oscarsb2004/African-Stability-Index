@@ -1,6 +1,6 @@
 // The files 05_web.py writes to public/. Every type mirrors a document's shape; nothing here computes a figure.
 
-export type Section = "stability" | "economy" | "finance" | "infrastructure" | "wonders";
+export type Section = "stability" | "economy" | "finance" | "infrastructure" | "wonders" | "data";
 
 export interface Figure {
   value: number | null;
@@ -90,17 +90,6 @@ export interface MethodDoc {
     role: string; log: boolean; goalposts: string | null; weight: number | null; cluster: string | null }[] }[];
   clusters: { slot: string; members: string[]; pairs: { a: string; b: string; n: number; partial_r: number }[] }[];
   robustness: { agreement: Record<string, number>; worst_weighting: number; verdict: string; measured_only: number };
-}
-
-// series.json: each state's history for the data view (loaded only when the view opens)
-export interface SeriesDoc {
-  years: number[];
-  note: string;
-  countries: Record<string, {
-    headline: (number | null)[];
-    pillars: Record<string, (number | null)[]>;
-    indicators: Record<string, { score: (number | null)[]; raw: (number | null)[] }>;
-  }>;
 }
 
 // The comparison colours (dataviz validate_palette.js, dark, surface #111111: all checks pass, worst adjacent CVD

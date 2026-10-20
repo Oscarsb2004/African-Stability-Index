@@ -197,6 +197,10 @@ a { color: var(--accent); }
   .legend .muted { display: none; }
   .legend-step span { width: 44px; }
   .footer-link { display: none; }  /* the bottom sheet covers it; the panels carry the same link */
+  .panel.wide { top: 120px; width: auto; max-height: none; }
+  .panel.wide h2 { font-size: 17px; }
+  .panel.wide .panel-head { padding: 10px 12px 6px; }
+  .dataview-tab .controls { grid-template-columns: 1fr; }
 }
 
 /* ── how the index is built: the justification page ───────────────────────────────────────────────────────── */
@@ -234,15 +238,51 @@ a { color: var(--accent); }
 .compare-list tr.mine td { color: var(--accent); font-weight: 600; }
 .rows tr.picked td { background: rgba(255, 255, 255, 0.04); }
 
-/* ── the data view: states compared over time ─────────────────────────────────────────────────────────────── */
-.subtabs { margin: 0 0 10px; width: max-content; }
-.dataview .controls { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin-bottom: 8px; }
-.dataview .controls .pick { max-width: 100%; }
-.chips { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; margin-bottom: 8px; }
+/* ── the Data tab: a wide workspace beside the map (P105) ──────────────────────────────────────────────────── */
+.panel.wide { width: min(980px, calc(62vw)); }
+@media (max-width: 1200px) {  /* below the masthead, so the tabs stay reachable */
+  .panel.wide { top: 132px; left: 16px; width: auto; }
+  .legend.data-legend { display: none; }
+}
+.dataview-tab { display: flex; flex-direction: column; gap: 10px; }
+.dataview-tab .controls { display: grid; grid-template-columns: minmax(220px, 2fr) minmax(120px, 1fr) minmax(130px, 1fr);
+  gap: 10px; align-items: end; }
+.dataview-tab .controls .pick { width: 100%; min-width: 0; }
+.control { display: flex; flex-direction: column; gap: 2px; }
+.picker { position: relative; display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.picker-input { width: 100%; box-sizing: border-box; }
+.picker-list { position: absolute; top: 100%; left: 0; right: 0; z-index: 6; margin: 4px 0 0; padding: 4px; list-style: none;
+  max-height: 340px; overflow-y: auto; border-radius: 10px; }
+.picker-list button { display: block; width: 100%; text-align: left; border: 0; background: none; color: var(--ink);
+  padding: 6px 8px; border-radius: 7px; cursor: pointer; }
+.picker-list button:hover, .picker-list button[aria-selected="true"] { background: rgba(255, 255, 255, 0.07); }
+.picker-head { padding: 4px 8px; }
+.selection { display: flex; flex-direction: column; gap: 6px; }
+.chips { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
 .chip { display: inline-flex; align-items: center; gap: 6px; padding: 2px 8px; border: 1px solid; border-radius: 999px;
   font-size: 12px; }
+.chip.context { border-color: rgba(255, 255, 255, 0.2); border-style: dashed; }
 .chip button { border: 0; background: none; color: var(--ink-3); cursor: pointer; padding: 0 0 0 2px; }
+.chip .chip-mode { font-size: 11px; color: var(--ink-2); text-decoration: underline dotted; }
+.chip .chip-mode:disabled { cursor: not-allowed; opacity: 0.5; }
+.chip-name { border: 0; background: none; color: var(--ink); font: inherit; width: 14ch; }
+.adders { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+.adders .pick { max-width: 280px; }
 .swatch { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 6px; }
-.chart .multi { fill: none; stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
-.chart .end-label { font-size: 9px; font-weight: 600; fill: var(--ink-2); }
-.dataview .chart circle { stroke: #111; stroke-width: 2; }
+.year { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.year input[type="range"] { flex: 1; min-width: 160px; accent-color: var(--accent); }
+.view { position: relative; min-height: 120px; }
+.empty { padding: 30px 0; text-align: center; }
+.empty-overlay { position: absolute; inset: 40% 0 auto; text-align: center; pointer-events: none; }
+.plot { width: 100%; }
+.plot svg { overflow: visible; }
+.multiples { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 6px; }
+.table-wrap { overflow-x: auto; }
+.data-table th, .data-table td { white-space: nowrap; }
+.notes { border-top: 1px solid var(--line); padding-top: 8px; color: var(--ink-2); }
+.notes p { margin: 4px 0; }
+.notes ul { margin: 2px 0 6px; padding-left: 18px; }
+.notes .shared { color: var(--ink); }
+.compare-link { display: block; margin: 4px 0 6px; }
+.compare-mini { margin-left: 6px; font-size: 10px; color: var(--ink-3); text-decoration: underline dotted; }
+.compare-mini:hover { color: var(--accent); }

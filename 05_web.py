@@ -11,7 +11,6 @@ It writes:
     geo/places.json      Natural Earth 1:10m populated places in the member states, with the zoom each appears at.
     data/stability.json  the published ASI at its reference year: composite, pillars and indicators.
     data/method.json     the "How the index is built" page: the rules, pillars, weights, clusters and checks.
-    data/series.json     each state's history for the data view, loaded only when that view opens.
     data/meta.json       every source shown on the site, with its licence and attribution.
 
 data/sections.json is written there by 04_sections.py; this stage reads it for the sources list.
@@ -205,33 +204,6 @@ def method() -> dict:
     }
 
 
-def series() -> dict:
-    """Each state's history for the data view: the headline and every pillar (scores, two decimals) and every
-    scored indicator (its score, two decimals, and its raw value to four significant figures, for display)."""
-    panel = results.load(PANEL)
-    years = list(range(int(panel.composites["year"].min()), int(panel.composites["year"].max()) + 1))
-    head = panel.composites[panel.composites["method"] == panel.meta["headline"]]
-    obs = panel.observations[panel.observations["role"] == "scoring"]
-
-    def line(s: pd.Series, f) -> list:
-        return [None if pd.isna(v) else f(v) for v in s.reindex(years)]
-
-    two = lambda v: round(float(v), 2)  # noqa: E731
-    four = lambda v: float(f"{float(v):.4g}")  # noqa: E731
-    out = {}
-    for iso3 in COUNTRIES:
-        h = head[head["iso3"] == iso3].set_index("year")["score"]
-        p = panel.pillar_scores[panel.pillar_scores["iso3"] == iso3].pivot_table(index="year", columns="pillar_id",
-                                                                                  values="score")
-        o = obs[obs["iso3"] == iso3]
-        sc = o.pivot_table(index="year", columns="variable_name", values="score")
-        rw = o.pivot_table(index="year", columns="variable_name", values="raw_value")
-        out[iso3] = {"headline": line(h, two), "pillars": {c: line(p[c], two) for c in p.columns},
-                     "indicators": {v: {"score": line(sc[v], two), "raw": line(rw[v], four)} for v in sc.columns}}
-    return {"years": years, "note": "Scores 0-100, higher is more stable; raw values to four significant figures.",
-            "countries": out}
-
-
 def write(path: Path, doc: dict) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(doc, ensure_ascii=False, separators=(",", ":")) + "\n", encoding="utf-8",
@@ -250,7 +222,6 @@ def main() -> int:
     write(PUBLIC / "geo" / "places.json", places(ne["places-10m"]))
     write(PUBLIC / "data" / "stability.json", stability())
     write(PUBLIC / "data" / "method.json", method())
-    write(PUBLIC / "data" / "series.json", series())
     sections = json.loads((PUBLIC / "data" / "sections.json").read_text(encoding="utf-8"))
     write(PUBLIC / "data" / "meta.json", {
         "sources": [{"name": d["attribution"], "licence": d["licence"], "link": d.get("link", "")}
