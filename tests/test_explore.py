@@ -105,3 +105,11 @@ def test_no_category_singles_out_a_state_for_being_small_or_an_island():
     assert "island" in ids and not ids & {"region", "islands_excluded", "structurally_advantaged"}
     groups = json.loads((OUT / "groups.json").read_text(encoding="utf-8"))
     assert {g["kind"] for g in groups["groups"]} == {"rec", "organisation"}  # published groupings only
+
+
+def test_coverage_counts_a_series_only_where_the_state_has_a_value_since_the_threshold():
+    files = {"wdi/A": {"y": [2010, 2020], "v": {STATES[0]: [1.0] + [None] * 10, STATES[1]: [None] * 10 + [2.0]}},
+             "wdi/B": {"y": [2010, 2020], "v": {STATES[1]: [3.0] * 11}}}
+    cov = explore.coverage(files, since=2015)["wdi"]
+    assert cov[STATES[1]] == 1.0 and cov[STATES[0]] == 0.0  # a value only before 2015 does not count
+    assert set(cov) == set(COUNTRIES) and cov[STATES[2]] == 0.0

@@ -3,7 +3,7 @@
 // several views. Every item can be removed, the first included. Averages, intervals and comparisons are derived by
 // stated formulas (stats.ts); shared members of compared groups are named at the bottom.
 
-import { type ReactNode, useEffect, useMemo, useState } from "react";
+import { Component, type ReactNode, useEffect, useMemo, useState } from "react";
 import { RAMP } from "../data";
 import MeasurePicker, { shortSource } from "./MeasurePicker";
 import {
@@ -12,16 +12,34 @@ import {
 } from "./model";
 import { coloured, GDP, itemKey, num, POPULATION, resolve, shared } from "./resolve";
 import { againstValue, fifths, welch } from "./stats";
+import StatsBlock from "./StatsBlock";
+import { Dumbbell, Slope } from "./views/Change";
+import Composition from "./views/Composition";
+import { Heatmap, Profile } from "./views/Grid";
+import { Categories, Memberships } from "./views/Groups";
 import Lines from "./views/Lines";
 import Multiples from "./views/Multiples";
+import { Scatter, Trajectory } from "./views/Relation";
+import { Distribution, Ordered } from "./views/Snapshot";
 import Table from "./views/Table";
 
 export interface MapLayer { colours: Record<string, string>; breaks: number[]; label: string; year: number }
 
-export const VIEWS: { id: View; label: string }[] = [
-  { id: "lines", label: "Lines over time" },
-  { id: "multiples", label: "Small multiples" },
-  { id: "table", label: "Table" },
+export const VIEWS: { id: View; label: string; group: string }[] = [
+  { id: "lines", label: "Lines over time", group: "Over time" },
+  { id: "multiples", label: "Small multiples", group: "Over time" },
+  { id: "slope", label: "Slope: two years", group: "Over time" },
+  { id: "dumbbell", label: "Dumbbell: two years", group: "Over time" },
+  { id: "distribution", label: "Distribution of every state", group: "One year" },
+  { id: "intervals", label: "Every state in order (with intervals)", group: "One year" },
+  { id: "heatmap", label: "Heatmap", group: "One year" },
+  { id: "scatter", label: "Scatter: two measures", group: "Two measures" },
+  { id: "trajectory", label: "Trajectory: two measures over time", group: "Two measures" },
+  { id: "profile", label: "Pillar profile", group: "Shape" },
+  { id: "composition", label: "Composition: economy or population", group: "Shape" },
+  { id: "categories", label: "Categories across the continent", group: "Groups" },
+  { id: "memberships", label: "How the RECs overlap", group: "Groups" },
+  { id: "table", label: "Table", group: "Numbers" },
 ];
 const AVERAGES: { id: AverageHow; label: string }[] = [
   { id: "mean", label: "Mean (each state once)" },
@@ -93,11 +111,26 @@ export default function DataTab({ state, setState, onMap }: Props) {
   };
   const rename = (id: string, name: string) => set({ custom: state.custom.map((g) => g.id === id ? { ...g, name } : g) });
 
-  const views: Record<View, ReactNode> = {
-    lines: measure && <Lines rs={rs} s={s} measure={measure} how={state.avg} weights={weights} year={year} names={names} />,
-    multiples: measure && <Multiples rs={rs} s={s} measure={measure} how={state.avg} weights={weights} names={names} />,
-    table: <Table rs={rs} s={s} year={year} how={state.avg} weights={weights} names={names} />,
-  } as Record<View, ReactNode>;
+  const common = { rs, s, year, how: state.avg, weights, names };
+  const setYear = (y: number) => set({ year: y });
+  const setX = (id: string) => set({ x: id });
+  const views: Record<View, ReactNode> = measure ? {
+    lines: <Lines {...common} measure={measure} />,
+    multiples: <Multiples {...common} measure={measure} />,
+    slope: <Slope {...common} measure={measure} />,
+    dumbbell: <Dumbbell {...common} measure={measure} />,
+    distribution: <Distribution {...common} measure={measure} states={states} />,
+    intervals: <Ordered {...common} measure={measure} />,
+    heatmap: <Heatmap {...common} measure={measure} states={states} catalogue={catalogue} />,
+    scatter: <Scatter {...common} measure={measure} setYear={setYear} catalogue={catalogue} xId={state.x} setX={setX} />,
+    trajectory: <Trajectory {...common} measure={measure} catalogue={catalogue} xId={state.x} setX={setX} />,
+    profile: <Profile {...common} catalogue={catalogue} />,
+    composition: <Composition {...common} />,
+    categories: <Categories {...common} measure={measure} states={states} attr={state.attr}
+      setAttr={(id) => set({ attr: id })} />,
+    memberships: <Memberships groups={groups} names={names} />,
+    table: <Table {...common} />,
+  } : {} as Record<View, ReactNode>;
 
   return (
     <div className="panel-body dataview-tab">
@@ -105,7 +138,11 @@ export default function DataTab({ state, setState, onMap }: Props) {
         <MeasurePicker catalogue={catalogue} value={state.measure} onPick={(id) => set({ measure: id, year: null })} />
         <label className="control"><span className="small muted">View</span>
           <select className="pick" value={state.view} onChange={(e) => set({ view: e.target.value as View })}>
-            {VIEWS.map((v) => <option key={v.id} value={v.id}>{v.label}</option>)}
+            {[...new Set(VIEWS.map((v) => v.group))].map((g) => (
+              <optgroup key={g} label={g}>
+                {VIEWS.filter((v) => v.group === g).map((v) => <option key={v.id} value={v.id}>{v.label}</option>)}
+              </optgroup>
+            ))}
           </select></label>
         <label className="control"><span className="small muted">Group average</span>
           <select className="pick" value={state.avg} onChange={(e) => set({ avg: e.target.value as AverageHow })}>
@@ -130,9 +167,11 @@ export default function DataTab({ state, setState, onMap }: Props) {
       {!measure ? <p className="note">This series is not in the Data tab: it covers fewer than {catalogue.floor} member
         states since {catalogue.first_year}. Search for another.</p>
         : !s ? <p className="muted">Loading the series…</p>
-        : <div className="view">{views[state.view] ?? views.lines}
+        : <div className="view"><Guard key={`${state.view}|${state.measure}`}>{views[state.view] ?? views.lines}</Guard>
           {!rs.length && state.view === "lines" && <p className="muted empty-overlay">Add a state or a group to begin.</p>}</div>}
 
+      {measure && s && <StatsBlock rs={rs} s={s} measure={measure} year={year} how={state.avg} weights={weights} names={names}
+        states={states} />}
       {measure && s && <Notes rs={rs} measure={measure} catalogue={catalogue} groupsDoc={groupsDoc} year={year}
         how={state.avg} s={s} names={names} />}
     </div>
@@ -259,4 +298,15 @@ function Notes({ rs, measure, catalogue, groupsDoc, year, how, s, names }: {
         filled or rescaled.</p>
     </div>
   );
+}
+
+/** A view that fails says so and leaves the rest of the site working. */
+class Guard extends Component<{ children: ReactNode }, { error: string | null }> {
+  state = { error: null as string | null };
+  static getDerivedStateFromError(e: unknown) {
+    return { error: String(e) };
+  }
+  render() {
+    return this.state.error ? <p className="note">This view could not be drawn: {this.state.error}</p> : this.props.children;
+  }
 }

@@ -1,7 +1,9 @@
 // Wonders (P61): the continent's absolute highlights, chosen by a stated rule, each with a few photographs.
-// The list shows the chosen country's wonders, or all of them; a click opens the full-screen viewer.
+// The list shows the chosen country's wonders, or all of them; a click opens the full-screen viewer. Below, the
+// languages spoken there (Glottolog), or across the continent.
 
 import type { Wonder, WondersDoc } from "../data";
+import Languages from "./Languages";
 
 interface Props {
   doc: WondersDoc | null;
@@ -46,6 +48,7 @@ export default function WondersPanel({ doc, iso3, names, onOpen }: Props) {
         Places: Wikidata (CC0). Photographs: Wikimedia Commons, each under its own licence, credited in the viewer.
         Edition {doc.edition}.
       </p>
+      <Languages iso3={iso3} names={names} />
     </div>
   );
 }

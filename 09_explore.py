@@ -11,7 +11,8 @@ It writes, under web/public/data/explore/:
     s/<dataset>/<code>.json   one series: {"y": [first, last], "v": {iso3: values}} and, where the publisher gives
                               them, the interval ("lo", "hi"), the first projected year ("f") or the ASI's tiers
     groups.json               the RECs (registry/groups.yaml), the organisations (Wikidata), the cross-check
-    states.json               each state's categories, with source and kind, and its land neighbours
+    states.json               each state's categories, with source and kind, its land neighbours, and how much of each
+                              dataset covers it since COVERAGE_SINCE
     languages.json            each state's languages (Glottolog) and official languages (Wikidata)
 
 A series is listed when at least FLOOR states have a value in some year since FIRST_YEAR. Values are printed to four
@@ -39,6 +40,7 @@ PANEL = ROOT / "data" / "panel"
 GROUPS = ROOT / "registry" / "groups.yaml"
 FLOOR, FIRST_YEAR, MIN_ORG_MEMBERS = 20, 2000, 3
 LANGUAGES_YEAR = 2026  # Glottolog 5.3 was released on 2026-03-02
+COVERAGE_SINCE = 2015  # the coverage map counts a series as covering a state if it has a value from this year on
 SOURCES = {  # credit for each dataset the Data tab shows, as each publisher's terms ask (Sources.md)
     "asi": ("African Stability Index, edition 2 (this project)", "CC BY 4.0", ""),
     "wdi": ("The World Bank: World Development Indicators", "CC BY 4.0",
@@ -346,6 +348,22 @@ def language_docs(names: dict[str, str]) -> tuple[dict, list[dict], dict[str, di
     return doc, entries, files
 
 
+def coverage(files: dict[str, dict], since: int = COVERAGE_SINCE) -> dict[str, dict[str, float]]:
+    """For each dataset, each state's share of its listed series with a value since `since`: how visible each
+    state is in each publisher's data, the story behind the ASI's reliability tiers."""
+    by_ds: dict[str, list[dict]] = {}
+    for fid, doc in files.items():
+        by_ds.setdefault(fid.split("/")[0], []).append(doc)
+    out = {}
+    for ds, docs in sorted(by_ds.items()):
+        if ds in ("asi", "glottolog"):
+            continue
+        counts = Counter(a for d in docs for a, vals in d["v"].items()
+                         if any(v is not None for v in vals[max(0, since - d["y"][0]):]))
+        out[ds] = {a: round(counts.get(a, 0) / len(docs), 3) for a in sorted(COUNTRIES)}
+    return out
+
+
 def write(path: Path, doc: dict) -> int:
     path.parent.mkdir(parents=True, exist_ok=True)
     text = json.dumps(doc, ensure_ascii=False, separators=(",", ":")) + "\n"
@@ -376,6 +394,7 @@ def main(argv: list[str]) -> int:
     ne = json.loads(fetcher().get(sources()["natural-earth-countries-50m"]["url"]))
     groups = group_docs(names["wikidata"])
     states = state_docs(names, ne, groups)
+    states["coverage"] = coverage(files)
     for old in (OUT / "s").glob("*/*.json") if (OUT / "s").exists() else []:
         old.unlink()  # a series no longer listed must not linger
     size = sum(write(OUT / "s" / f"{fid}.json", doc) for fid, doc in sorted(files.items()))

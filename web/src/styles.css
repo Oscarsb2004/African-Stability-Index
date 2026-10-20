@@ -200,7 +200,6 @@ a { color: var(--accent); }
   .panel.wide { top: 120px; width: auto; max-height: none; }
   .panel.wide h2 { font-size: 17px; }
   .panel.wide .panel-head { padding: 10px 12px 6px; }
-  .dataview-tab .controls { grid-template-columns: 1fr; }
 }
 
 /* ── how the index is built: the justification page ───────────────────────────────────────────────────────── */
@@ -245,9 +244,15 @@ a { color: var(--accent); }
   .legend.data-legend { display: none; }
 }
 .dataview-tab { display: flex; flex-direction: column; gap: 10px; }
+.dataview-tab > * { flex-shrink: 0; }  /* the panel scrolls; its parts never squeeze under their content */
 .dataview-tab .controls { display: grid; grid-template-columns: minmax(220px, 2fr) minmax(120px, 1fr) minmax(130px, 1fr);
   gap: 10px; align-items: end; }
 .dataview-tab .controls .pick { width: 100%; min-width: 0; }
+@media (max-width: 760px) {
+  .dataview-tab .controls { grid-template-columns: 1fr 1fr; }
+  .dataview-tab .controls .picker { grid-column: 1 / -1; }
+  .adders .pick { max-width: 100%; flex: 1; }
+}
 .control { display: flex; flex-direction: column; gap: 2px; }
 .picker { position: relative; display: flex; flex-direction: column; gap: 2px; min-width: 0; }
 .picker-input { width: 100%; box-sizing: border-box; }
@@ -286,3 +291,20 @@ a { color: var(--accent); }
 .compare-link { display: block; margin: 4px 0 6px; }
 .compare-mini { margin-left: 6px; font-size: 10px; color: var(--ink-3); text-decoration: underline dotted; }
 .compare-mini:hover { color: var(--accent); }
+
+/* ── the Data tab's other views, and languages under Wonders ─────────────────────────────────────────────── */
+.inline-control { display: inline-flex; gap: 6px; align-items: center; margin-bottom: 6px; }
+.inline-control .pick { max-width: 420px; }
+.relation-controls { display: flex; gap: 12px; align-items: end; flex-wrap: wrap; margin-bottom: 6px; }
+.relation-controls .picker { flex: 1; min-width: 220px; }
+.two-up { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 12px; }
+.stats { border: 1px solid var(--line); border-radius: 10px; padding: 6px 10px; color: var(--ink-2); }
+.stats summary { cursor: pointer; color: var(--ink); }
+.stats p { margin: 6px 0; }
+.languages { margin-top: 14px; }
+.family-bars { display: flex; flex-direction: column; gap: 3px; margin: 6px 0; }
+.family-bar { display: grid; grid-template-columns: 140px 1fr 34px; gap: 8px; align-items: center; font-size: 11px; }
+.family-name { color: var(--ink-2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.family-track { height: 8px; border-radius: 4px; background: rgba(255, 255, 255, 0.06); overflow: hidden; }
+.family-track span { display: block; height: 100%; background: var(--ink-2); border-radius: 4px; }
+.languages details input { margin: 6px 0; width: 100%; box-sizing: border-box; }

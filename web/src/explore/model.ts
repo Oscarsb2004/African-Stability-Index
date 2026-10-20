@@ -29,7 +29,11 @@ export interface Attribute {
   id: string; label: string; source: string; kind: string; asof: string;
   values: Record<string, string | string[]>; order?: string[];
 }
-export interface StatesDoc { attributes: Attribute[]; neighbours: Record<string, string[]> }
+export interface StatesDoc {
+  attributes: Attribute[];
+  neighbours: Record<string, string[]>;
+  coverage?: Record<string, Record<string, number>>;  // each dataset's share of series covering each state
+}
 
 export type View = "lines" | "multiples" | "slope" | "dumbbell" | "distribution" | "intervals" | "scatter"
   | "trajectory" | "heatmap" | "profile" | "composition" | "categories" | "memberships" | "table";
