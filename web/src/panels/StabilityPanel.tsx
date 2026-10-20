@@ -1,7 +1,10 @@
-// Stability: the ASI as one appraisal among several (P53). The composite drills down to pillars, and each pillar
-// to its indicators. Other institutions' scores follow on their own scales, with their own intervals.
+// Stability: the ASI as one appraisal among several (P53). The composite drills down to pillars, each pillar to
+// its indicators, and each indicator to every state's value. Other institutions' scores follow on their own scales,
+// with their own intervals. The Data view compares states over time; the method page says how it is all built.
 
-import { useState } from "react";
+import { Fragment, useState } from "react";
+import DataView from "../DataView";
+import IndicatorCompare from "../IndicatorCompare";
 import LineChart from "../LineChart";
 import { fmt, type Figure, type SectionsDoc, type StabilityDoc } from "../data";
 
@@ -9,6 +12,7 @@ interface Props {
   iso3: string;
   stability: StabilityDoc;
   sections: SectionsDoc;
+  onMethod: () => void;
 }
 
 function Bar({ score }: { score: number | null }) {
@@ -30,16 +34,37 @@ function Interval({ f, level = 90 }: { f: Figure; level?: number }) {
   );
 }
 
-export default function StabilityPanel({ iso3, stability, sections }: Props) {
+export default function StabilityPanel({ iso3, stability, sections, onMethod }: Props) {
   const [open, setOpen] = useState<string | null>(null);
+  const [indicator, setIndicator] = useState<string | null>(null);
+  const [view, setView] = useState<"index" | "data">("index");
   const c = stability.countries[iso3];
   const h = c.composite;
   const appraisals = sections.sections.find((s) => s.id === "appraisals");
   const a = sections.areas[iso3].appraisals;
   // the narrative's first two sentences restate the hero (score, interval, tier, band), so the panel shows the rest
   const words = h.tier !== null ? c.narrative.slice(2) : c.narrative;
+  const names = sections.names;
+  const tabs = (
+    <nav className="tabs subtabs" aria-label="Stability views">
+      <button className={view === "index" ? "tab on" : "tab"} aria-pressed={view === "index"}
+        onClick={() => setView("index")}>Index</button>
+      <button className={view === "data" ? "tab on" : "tab"} aria-pressed={view === "data"}
+        onClick={() => setView("data")}>Data</button>
+    </nav>
+  );
+  if (view === "data") {
+    return (
+      <div className="panel-body">
+        {tabs}
+        <DataView iso3={iso3} stability={stability} names={names} />
+        <p className="small"><button className="linkish" onClick={onMethod}>How the index is built</button></p>
+      </div>
+    );
+  }
   return (
     <div className="panel-body">
+      {tabs}
       <h3>African Stability Index <span className="tag ours">this project</span></h3>
       <div className="hero">
         <div className="hero-value">{h.score.toFixed(1)}</div>
@@ -67,8 +92,8 @@ export default function StabilityPanel({ iso3, stability, sections }: Props) {
       <p className="small">{words.join(" ")}</p>
 
       <h3>Pillars</h3>
-      <p className="muted small">Click a pillar for its indicators. A pillar measured too thinly that year is left out of
-        the score.</p>
+      <p className="muted small">Click a pillar for its indicators, and an indicator for every state's value. A pillar
+        measured too thinly that year is left out of the score.</p>
       <ul className="pillars">
         {Object.entries(stability.pillars).map(([id, p]) => {
           const s = c.pillars[id];
@@ -90,13 +115,25 @@ export default function StabilityPanel({ iso3, stability, sections }: Props) {
                     {p.indicators.filter((v) => stability.indicators[v]).map((v) => {
                       const i = c.indicators[v];
                       return (
-                        <tr key={v}>
-                          <td>{stability.indicators[v].display_name}</td>
-                          <td className="num">{i?.score === null || !i ? "—" : i.score.toFixed(1)}</td>
-                          <td className="period" title={`raw ${i?.raw ?? "—"}`}>
-                            {i?.provenance === "observed" ? i.source_year : <span className="tag">{i?.provenance}</span>}
-                          </td>
-                        </tr>
+                        <Fragment key={v}>
+                          <tr className={indicator === v ? "picked" : ""}>
+                            <td>
+                              <button className="linkish" aria-expanded={indicator === v}
+                                onClick={() => setIndicator(indicator === v ? null : v)}>
+                                {stability.indicators[v].display_name}
+                              </button>
+                            </td>
+                            <td className="num">{i?.score === null || !i ? "—" : i.score.toFixed(1)}</td>
+                            <td className="period" title={`raw ${i?.raw ?? "—"}`}>
+                              {i?.provenance === "observed" ? i.source_year : <span className="tag">{i?.provenance}</span>}
+                            </td>
+                          </tr>
+                          {indicator === v && (
+                            <tr><td colSpan={3}>
+                              <IndicatorCompare variable={v} iso3={iso3} stability={stability} names={names} />
+                            </td></tr>
+                          )}
+                        </Fragment>
                       );
                     })}
                   </tbody>
@@ -129,6 +166,7 @@ export default function StabilityPanel({ iso3, stability, sections }: Props) {
         Still to come, each once its terms allow: V-Dem, INFORM, ND-GAIN, Fragile States Index, Global Peace Index,
         Ibrahim Index, Freedom House.
       </p>
+      <p className="small"><button className="linkish" onClick={onMethod}>How the index is built</button></p>
     </div>
   );
 }
