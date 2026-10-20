@@ -40,6 +40,8 @@ from pathlib import Path as _Path
 _REPO = _Path(__file__).resolve().parent.parent
 _sys.path.insert(0, str(_REPO))
 
+import json
+
 import numpy as np
 import pandas as pd
 import yaml
@@ -47,7 +49,7 @@ import yaml
 from asi.core.constants import (
     PANEL_START, DEFAULT_MAX_CARRY_FORWARD, MIN_REGIONAL_SAMPLE,
     RELIABILITY_RELIABLE_AT, RELIABILITY_THIN_AT, RELIABILITY_MAX_IMPUTED,
-    PILLAR_DEFS, DISPLAY_DECIMALS, SMALL,
+    PILLAR_DEFS, DISPLAY_DECIMALS, SMALL, HEADLINE_METHOD, INTERVAL_LEVEL, BAND_Z,
 )
 
 PANEL_DIR      = _REPO / "data" / "panel"
@@ -738,6 +740,108 @@ def check_k_and_reliability_index(obs: pd.DataFrame, pil: pd.DataFrame, comp: pd
                f"{n} composite rows: k and the lack-of-reliability index re-derived")
 
 
+def check_headline_uncertainty(pil: pd.DataFrame, comp: pd.DataFrame) -> None:
+    """
+    The headline's interval, rank band and tier (edition 2, step 8), re-derived.
+
+    The interval is rebuilt from its written formula, M ± t(k - 1) x SD/sqrt(k)
+    over the pillars used, with the sum of squares written out and the t quantile
+    from scipy's inverse of the t distribution (`stdtrit`), where the pipeline
+    calls `t.ppf`. Bands and tiers are recounted pair by pair with plain loops,
+    where the pipeline uses a matrix: a band runs from 1 + the states
+    significantly above to N - those below; a tier (P96) starts at the first state
+    significantly below the current tier's first.
+    """
+    from scipy.special import stdtrit
+    head = HEADLINE_METHOD
+    wide = _composable(pil)
+    est: dict[tuple, tuple[float, float]] = {}
+    for key, row in wide.iterrows():
+        x = row.dropna().to_numpy(dtype=float)
+        if x.size > 1:
+            m = x.sum() / x.size
+            est[key] = (m, np.sqrt(((x - m) ** 2).sum() / (x.size - 1)) / np.sqrt(x.size))
+
+    bad, n_ci, n_band = [], 0, 0
+    sub = comp[comp["method"] == head]
+    for r in sub.itertuples():
+        key = (r.iso3, r.year)
+        if key not in est:
+            if pd.notna(r.se):
+                bad.append(f"{r.iso3}/{int(r.year)}: an interval with fewer than two pillars")
+            continue
+        m, se = est[key]
+        half = stdtrit(int(wide.loc[key].notna().sum()) - 1, 0.5 + INTERVAL_LEVEL / 2) * se
+        n_ci += 1
+        for name, want, got in (("se", se, r.se), ("ci_low", m - half, r.ci_low), ("ci_high", m + half, r.ci_high)):
+            if pd.isna(got) or abs(round(want, DISPLAY_DECIMALS) - float(got)) > 10 ** -DISPLAY_DECIMALS + 1e-9:
+                bad.append(f"{r.iso3}/{int(r.year)} {name}: expected {round(want, DISPLAY_DECIMALS)} actual {got}")
+    for year, g in sub[sub["rank"].notna()].groupby("year"):
+        states = [s for s in g["iso3"] if (s, year) in est]
+        scores = {s: est[(s, year)] for s in states}
+        expect = {}
+        for s in states:
+            above = below = 0
+            for o in states:
+                if o == s:
+                    continue
+                spread = np.hypot(scores[s][1], scores[o][1])
+                z = (scores[o][0] - scores[s][0]) / spread if spread else np.inf * np.sign(scores[o][0] - scores[s][0])
+                above += z > BAND_Z
+                below += z < -BAND_Z
+            expect[s] = [1 + above, len(states) - below]
+        leader, tier = None, 0
+        for s in sorted(states, key=lambda s: -scores[s][0]):
+            if leader is None or (scores[leader][0] - scores[s][0]) > BAND_Z * np.hypot(scores[leader][1],
+                                                                                           scores[s][1]):
+                leader, tier = s, tier + 1
+            expect[s].append(tier)
+        for r in g.itertuples():
+            n_band += 1
+            got = [r.band_best, r.band_worst, r.tier]
+            if r.iso3 not in expect or [int(v) for v in got if pd.notna(v)] != expect[r.iso3]:
+                bad.append(f"{r.iso3}/{int(year)} band/tier: expected {expect.get(r.iso3)} actual {got}")
+    others = comp[(comp["method"] != head) & comp[["se", "band_best", "tier"]].notna().any(axis=1)]
+    if not others.empty:
+        bad.append(f"{len(others)} rows of other methods carry an interval, band or tier")
+    if bad:
+        record("4.5 headline interval, bands and tiers", "FAIL", f"{len(bad)} differences", bad)
+    else:
+        record("4.5 headline interval, bands and tiers", "PASS",
+               f"{n_ci} intervals and {n_band} bands and tiers re-derived")
+
+
+def check_effective_weights(registry: dict) -> None:
+    """
+    The published nominal effective weights, re-derived from the registry YAML:
+    1/P per pillar with members, 1/n per member, summed over an indicator's
+    pillars. Both published sets must sum to 1.
+    """
+    bundle = json.loads((PANEL_DIR / "bundle.json").read_text(encoding="utf-8"))
+    members: dict[str, list[str]] = {}
+    for v, ind in registry.items():
+        if ind.get("role", "scoring") == "scoring":
+            for p in ind.get("pillars", []):
+                if p in PILLAR_DEFS:
+                    members.setdefault(p, []).append(v)
+    expect: dict[str, float] = {}
+    for p, vs in members.items():
+        for v in vs:
+            expect[v] = expect.get(v, 0.0) + 1 / len(members) / len(vs)
+    pub = bundle["effective_weights"]
+    bad = [f"{v}: expected {round(w, 6)} actual {pub['nominal'].get(v)}" for v, w in sorted(expect.items())
+           if abs(round(w, 6) - pub["nominal"].get(v, -1)) > 1e-6]
+    bad += [f"{v} is published but scores in no pillar" for v in sorted(set(pub["nominal"]) - set(expect))]
+    for name, weights in (("nominal", pub["nominal"]), ("realised", pub["realised"]["weights"])):
+        if abs(sum(weights.values()) - 1) > 1e-4:
+            bad.append(f"the {name} weights sum to {sum(weights.values()):.6f}, not 1")
+    if bad:
+        record("4.6 effective weights", "FAIL", f"{len(bad)} differences", bad)
+    else:
+        record("4.6 effective weights", "PASS",
+               f"{len(expect)} nominal weights re-derived from the registry; both sets sum to 1")
+
+
 def check_ranks_only_where_displayable(comp: pd.DataFrame) -> None:
     """An unreliable score must not carry a rank: ranking implies a claim."""
     ranked_bad = comp[comp["rank"].notna() & ~comp["reliability"].isin(["reliable", "thin"])]
@@ -789,6 +893,8 @@ def run() -> int:
     check_ranks_only_where_displayable(comp)
     check_geometric_composite(pil, comp)
     check_k_and_reliability_index(obs, pil, comp, registry)
+    check_headline_uncertainty(pil, comp)
+    check_effective_weights(registry)
 
     n_fail = sum(1 for c in CHECKS if c["status"] == "FAIL")
     n_warn = sum(1 for c in CHECKS if c["status"] == "WARN")

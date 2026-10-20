@@ -253,3 +253,65 @@ def test_the_lack_of_reliability_index_follows_its_formula():
     assert lack_of_reliability(panel, ["a", "b", "c", "d"], 5).loc[("KEN", 2024)] == pytest.approx(10 * (0.75 + 1 / 3) / 2)
     fresh = panel.assign(provenance="observed", source_year=2024, raw_value=1.0)
     assert lack_of_reliability(fresh, ["a", "b", "c", "d"], 5).loc[("KEN", 2024)] == 0.0  # negative control
+
+
+# ── Edition 2, step 8: the headline's interval, bands, tiers and effective weights ──
+
+def test_the_interval_follows_its_formula_and_one_pillar_has_none():
+    from scipy.stats import t
+    from asi.pipeline.score import composite_interval
+    wide = _wide(GOV=[50.0, 40.0], SEC=[60.0, np.nan], VOI=[70.0, np.nan])
+    got = composite_interval(wide, 0.95)
+    se = 10 / np.sqrt(3)  # SD 10 over three pillars
+    assert got.iloc[0]["se"] == pytest.approx(se)
+    assert got.iloc[0]["high"] - got.iloc[0]["mean"] == pytest.approx(t.ppf(0.975, 2) * se)
+    assert np.isnan(got.iloc[1]["low"])  # negative control: one pillar, no spread, no interval
+
+
+def test_a_band_counts_only_the_significant_states_above_and_below():
+    from asi.pipeline.score import rank_bands
+    scores, errors = pd.Series({"A": 90.0, "B": 50.0, "C": 51.0}), pd.Series({"A": 1.0, "B": 1.0, "C": 1.0})
+    bands = rank_bands(scores, errors, 1.96)
+    assert bands.loc["A"].tolist() == [1, 1]
+    assert bands.loc["C"].tolist() == [2, 3] and bands.loc["B"].tolist() == [2, 3]  # 1 point apart: no difference
+
+
+def test_tiers_follow_the_leader_rule_where_overlapping_bands_would_chain():
+    from asi.pipeline.score import rank_bands, tiers
+    # A-B and B-C are 3 points apart (z 1.77), A-C 6 (z 3.54): every band overlaps the next, so the overlap rule
+    # makes one tier; the leader rule opens a second at C, the first state significantly below A (P96)
+    scores, errors = pd.Series({"A": 100.0, "B": 97.0, "C": 94.0}), pd.Series(1.2, index=["A", "B", "C"])
+    bands = rank_bands(scores, errors, 1.96)
+    assert bands["band_best"].tolist() == [1, 1, 2] and bands["band_worst"].tolist() == [2, 3, 3]
+    assert tiers(scores, errors, 1.96).tolist() == [1, 1, 2]
+    assert tiers(scores, errors * 10, 1.96).tolist() == [1, 1, 1]  # negative control: wide errors, one tier
+
+
+def test_effective_weights_nominal_cross_listed_and_as_used():
+    from asi.pipeline.score import effective_weights
+    nominal = effective_weights({"GOV": ["x", "y"], "SEC": ["z"], "ENV": []})
+    assert nominal.to_dict() == pytest.approx({"x": 0.25, "y": 0.25, "z": 0.5})  # an empty pillar weighs nothing
+    assert effective_weights({"GOV": ["x", "y"], "SEC": ["x"]})["x"] == pytest.approx(0.75)  # cross-listed
+    entered = pd.DataFrame({"iso3": ["KEN", "KEN", "TZA"], "pillar_id": ["GOV", "SEC", "GOV"],
+                            "contributing": ["x", "z", "x,y"]})
+    # KEN: two pillars, x alone in GOV; TZA: GOV only, both members
+    assert effective_weights({}, entered).to_dict() == pytest.approx({"x": 0.5, "y": 0.25, "z": 0.25})
+
+
+def test_the_verifier_catches_a_wrong_tier_and_a_wrong_interval(capsys):
+    from verify import panel as V
+    pil = _pillars([(s, 2024, p, v, "reliable") for s, vals in
+                    {"A": (100, 101, 99), "B": (60, 61, 59), "C": (59, 60, 58)}.items()
+                    for p, v in zip(("GOV", "SEC", "VOI"), vals)])
+    comp = pd.DataFrame({"iso3": ["A", "B", "C"], "year": 2024, "method": "equal", "rank": [1, 2, 3],
+                         "se": 1 / np.sqrt(3), "band_best": [1, 2, 2], "band_worst": [1, 3, 3], "tier": [1, 2, 2]})
+    half = 4.302652729911275 / np.sqrt(3)  # t(2) at 97.5%
+    comp["ci_low"] = [100 - half, 60 - half, 59 - half]
+    comp["ci_high"] = [100 + half, 60 + half, 59 + half]
+    comp[["se", "ci_low", "ci_high"]] = comp[["se", "ci_low", "ci_high"]].round(2)
+    V.CHECKS.clear()
+    V.check_headline_uncertainty(pil, comp)
+    assert V.CHECKS[-1]["status"] == "PASS"
+    V.check_headline_uncertainty(pil, comp.assign(tier=[1, 1, 2]))  # negative control: a wrong tier
+    V.check_headline_uncertainty(pil, comp.assign(ci_high=comp["ci_high"] + 1))  # and a wrong interval
+    assert [c["status"] for c in V.CHECKS[-2:]] == ["FAIL", "FAIL"]

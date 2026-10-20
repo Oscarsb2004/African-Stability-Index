@@ -26,6 +26,7 @@ from __future__ import annotations
 
 import numpy as np
 import pandas as pd
+from scipy.stats import t as t_dist
 
 from asi.core.schema import Reliability, classify_reliability
 
@@ -280,8 +281,99 @@ def composite_reliability(
     return Reliability.THIN
 
 
+# ── Uncertainty, bands and tiers (edition 2, step 8) ───────────────────────────
+
+def composite_interval(pillar_wide: pd.DataFrame, level: float) -> pd.DataFrame:
+    """
+    The headline is the mean of a sample of k pillar scores, so it has a standard
+    error and a t interval (plan 2.2):
+
+        SE = SD / sqrt(k),   M ± t(k - 1) x SE
+
+    over the pillars the composite used. One pillar has no spread, so no interval.
+    The spread of a state's pillar scores is the standard error the owner ruled
+    for the bands (2026-10-17; kept when P58 allowed formative pillars). Where a
+    pillar is formative, part of that spread is real rather than error, so the
+    interval errs wide (plan 2.3).
+    """
+    k = pillar_wide.notna().sum(axis=1)
+    mean = pillar_wide.mean(axis=1)
+    se = pillar_wide.std(axis=1, ddof=1) / np.sqrt(k)
+    t = pd.Series(t_dist.ppf((1 + level) / 2, k.where(k > 1) - 1), index=k.index)
+    return pd.DataFrame({"mean": mean, "se": se, "low": mean - t * se, "high": mean + t * se})
+
+
+def _z(scores: pd.Series, errors: pd.Series) -> np.ndarray:
+    """z[i, j] = (M_j - M_i) / sqrt(SE_i^2 + SE_j^2): positive when j scores higher than i."""
+    m, s = scores.to_numpy(dtype=float), errors.to_numpy(dtype=float)
+    with np.errstate(divide="ignore", invalid="ignore"):
+        return (m[None, :] - m[:, None]) / np.sqrt(s[None, :] ** 2 + s[:, None] ** 2)
+
+
+def rank_bands(scores: pd.Series, errors: pd.Series, z: float) -> pd.DataFrame:
+    """
+    The ranks a state could hold (plan 2.3). Two states differ only if
+    |M1 - M2| / sqrt(SE1^2 + SE2^2) exceeds z, the test for two independent
+    estimates. A state's band runs from 1 + the number significantly above it to
+    N - the number significantly below it; rank 1 is the highest score.
+    """
+    stat = _z(scores, errors)
+    return pd.DataFrame({"band_best": 1 + (stat > z).sum(axis=1),
+                         "band_worst": len(scores) - (stat < -z).sum(axis=1)}, index=scores.index)
+
+
+def tiers(scores: pd.Series, errors: pd.Series, z: float) -> pd.Series:
+    """
+    Tiers by the leader rule (P96). From the highest score down, a tier holds
+    every state not significantly below the tier's first state, by the same z
+    test; the first state significantly below it starts the next tier.
+
+    The plan's rule, "bands that overlap form a tier", chains: with bands a median
+    of 42 places wide, every band overlaps its neighbour's, and all 54 states fell
+    into one tier at 2024, 2023 and 2015.
+    """
+    order = scores.sort_values(ascending=False, kind="mergesort").index
+    out, lead, tier = {}, None, 0
+    for state in order:
+        if lead is not None:
+            with np.errstate(divide="ignore", invalid="ignore"):
+                gap = (scores[lead] - scores[state]) / np.hypot(errors[lead], errors[state])
+        if lead is None or gap > z:
+            lead, tier = state, tier + 1
+        out[state] = tier
+    return pd.Series(out, dtype="Int64").reindex(scores.index)
+
+
+def effective_weights(pillar_map: dict[str, list[str]], present: pd.DataFrame | None = None) -> pd.Series:
+    """
+    Each indicator's share of the headline (plan 4.10). Edition 1 hid that the
+    WGI carried 28.9% of its weight.
+
+    Nominal (no `present`): every pillar with members weighs 1/P, and each of its
+    n indicators 1/n of that, summed over the pillars an indicator is in.
+
+    Realised: `present` is the pillar scores of one year (iso3, pillar_id,
+    contributing) for the pillars that entered each state's headline. A state
+    with k pillars gives each 1/k, and each pillar's m contributing indicators
+    1/m of that; the result is the mean over the states.
+    """
+    if present is None:
+        pillars = {p: m for p, m in pillar_map.items() if m}
+        rows = [(v, 1 / (len(pillars) * len(m))) for m in pillars.values() for v in m]
+        return pd.DataFrame(rows, columns=["variable_name", "w"]).groupby("variable_name")["w"].sum()
+    rows = []
+    for state, g in present.groupby("iso3"):
+        for members in g["contributing"]:
+            names = [v for v in str(members).split(",") if v]
+            rows += [(state, v, 1 / (len(g) * len(names))) for v in names]
+    shares = pd.DataFrame(rows, columns=["iso3", "variable_name", "w"])
+    per_state = shares.pivot_table(index="iso3", columns="variable_name", values="w", aggfunc="sum", fill_value=0.0)
+    return per_state.mean()
+
+
 __all__ = [
     "pillar_scores", "weighted_composite", "geometric_composite",
     "fit_pca_weights", "fit_entropy_weights", "composite_reliability",
     "COMPOSABLE", "composite_inputs", "lack_of_reliability",
+    "composite_interval", "rank_bands", "tiers", "effective_weights",
 ]

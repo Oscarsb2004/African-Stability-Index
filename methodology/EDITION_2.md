@@ -509,3 +509,71 @@ ranks)
   in-bounds weighting gives .9067, and measured cells only give .8507.
 - **Tests:** 769 passed and 1 xfailed, besides the same 4 narrative corpus tests. **New:** two, each with a negative
   control: an unreliable pillar is left out while a thin one is kept, and the index follows its formula.
+
+## Step 8: the headline, its interval, rank bands and tiers (plan 2.2, 2.3, 4.7, 4.8, 4.10)
+
+**The owner's rulings for this step (2026-10-19):**
+- **Tiers follow the leader rule (P96).** The plan's rule, "countries whose bands overlap form a tier", chained all
+  54 states into one tier at 2024, 2023 and 2015: with bands a median of 42 places wide, every band overlaps its
+  neighbour's.
+- **ENV stays out at 2024 (P97).** A value carried forward counts as imputed for the tier, as at step 7, so the 2024
+  headline has no environment pillar.
+
+**What changed.** No score moves. The rebuild layer finds every output identical to a fresh run, and the old columns
+of `composites.csv` are unchanged.
+- **One headline, declared:** the equal-weight arithmetic mean of the pillars that entered (`HEADLINE_METHOD`).
+  - The geometric mean is the sensitivity check, and PCA and entropy are diagnostics only.
+  - `bundle.json` names each method's role.
+- **An interval for every headline:** M ± t(k − 1) × SD/√k over its k pillars, at 95%. It is in `se`, `ci_low` and
+  `ci_high`, for the 1,404 headline rows with two or more pillars.
+- **A rank band** among the states ranked that year, in `band_best` and `band_worst`.
+  - Two states differ when |M₁ − M₂| / √(SE₁² + SE₂²) > 1.96.
+  - A band runs from 1 + the states significantly above to N − those significantly below.
+  - The point rank stays, for the methodology.
+- **A tier** by the leader rule, in `tier`. From the top, a tier holds every state not significantly below its first
+  state; the first state significantly below starts the next.
+- **Effective weights** (plan 4.10) are in `bundle.json`:
+  - **nominal:** each pillar 1/P, each indicator 1/n of its pillar;
+  - **as used at the reference year:** the pillars that entered each state's headline, over their contributing
+    indicators, averaged over the 54 ranked states.
+- **The standard error** is the spread of a state's pillar scores, as ruled on 2026-10-17 and kept by P58. Where a
+  pillar is formative, part of that spread is real, so the bands err wide.
+
+**What it shows** (2024)
+- **Standard error:** median 5.79 points, from 3.02 (CMR) to 13.56 (ERI). The 95% half-width has a median of 14.16,
+  from 7.39 to 37.65.
+- **Bands:** median 42 places wide, from 8 (SSD) to 54 (ERI).
+- **Four tiers:**
+  - **Tier 1 (18 states, 72.6 to 57.2):** CPV, MUS, SYC, BWA, ZAF, NAM, MAR, GHA, LSO, TUN, SEN, STP, GMB, RWA, DZA,
+    GAB, EGY, SWZ.
+  - **Tier 2 (24 states, 57.1 to 46.2):** CIV, BEN, TZA, COM, KEN, MWI, DJI, SLE, TGO, UGA, MDG, ZMB, LBR, GIN, GNB,
+    MRT, GNQ, ZWE, AGO, LBY, CMR, NGA, COG, ERI.
+  - **Tier 3 (10 states, 45.8 to 32.8):** MOZ, ETH, BDI, BFA, NER, MLI, COD, TCD, CAF, SOM.
+  - **Tier 4 (2 states, 29.2 to 26.2):** SDN, SSD.
+- **Every year:** of the 26 years with ranks (2000 to 2025), 15 have three tiers and 11 have four.
+- **Effective weights, nominal:** from 0.0078 (adolescent_fertility, 0.39× an even share of 1/50) to 0.0625
+  (organised_violence_deaths, 3.12×).
+  - Every indicator of a two-indicator pillar (VOI, SEC) carries 3.12×.
+  - Each of HUM's 16 carries 0.39×.
+  - Pillars weigh equally, so a small pillar's members weigh most. That is why the aggregation note asks pillars to
+    grow together.
+- **Effective weights, as used at 2024:** largest va_estimate 0.0760, pv_estimate 0.0747, organised_violence_deaths
+  0.0747 and women_in_parliament 0.0734. With ENV left out, its five series weigh 0.
+- **The WGI's share of the headline:** 18.7% nominal and 23.6% as used at 2024, against edition 1's 28.9%.
+
+**Checks**
+- **Passing:** `verify.run` rebuild, panel, contract and advisory. Panel adds two checks:
+  - **4.5** re-derives all 1,404 intervals, from the sum of squares and scipy's `stdtrit`, and the 1,378 bands and
+    tiers, pair by pair with plain loops where the pipeline uses a matrix. It also checks that no other method
+    carries an interval, band or tier.
+  - **4.6** re-derives the 50 nominal weights from the registry's YAML, and checks that both published sets sum
+    to 1.
+- **Tests:** 284 passed, against 279 on main after the P3 trims. **New:** five, each with a negative control:
+  - the interval's formula, and none for one pillar;
+  - a band counting only significant states;
+  - the leader rule where overlapping bands would chain (and one tier when the errors are wide);
+  - nominal, cross-listed and realised weights;
+  - the verifier catching a wrong tier and a wrong interval.
+
+**Not in this step:** showing tiers, bands and intervals on the site. The site still reads edition 1's frozen panel.
+It shows them when edition 2 publishes, with the regenerated `stability.json`.

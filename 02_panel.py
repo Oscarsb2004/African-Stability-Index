@@ -20,7 +20,8 @@ Usage
 Outputs (data/panel/)
     observations.csv    the panel: value, provenance, score per country-year
     pillar_scores.csv   pillar scores with coverage and reliability
-    composites.csv      composite scores per method per year
+    composites.csv      composite scores per method per year; the headline's also with se, ci_low, ci_high,
+                        band_best, band_worst and tier
     weights.yaml        frozen PCA/entropy weights
 """
 
@@ -37,6 +38,7 @@ import yaml
 from asi.core.constants import (
     PANEL_START, DEFAULT_MAX_CARRY_FORWARD, IQR_MULTIPLIER, MIN_REGIONAL_SAMPLE,
     PILLAR_DEFS, WEIGHT_PRESETS, ACTIVE_PRESET, SMALL,
+    HEADLINE_METHOD, METHOD_ROLES, INTERVAL_LEVEL, BAND_Z,
     RELIABILITY_RELIABLE_AT, RELIABILITY_THIN_AT, RELIABILITY_MAX_IMPUTED,
     MIN_PILLARS_FOR_COMPOSITE, DISPLAY_DECIMALS, REFERENCE_YEAR_MIN_COVERAGE,
 )
@@ -255,6 +257,32 @@ def main() -> int:
         ranks = usable["score"].rank(ascending=False, method="min")
         comp_df.loc[ranks.index, "rank"] = ranks.astype("Int64")
 
+    # ── 7b. the headline's uncertainty ────────────────────────────────────────
+    # Edition 2, step 8 (plan 2.2, 2.3, 4.7, 4.8; P96). The headline alone carries a t interval over its pillars, a
+    # rank band and a tier; bands and tiers are drawn among the states ranked that year. The point rank stays, for
+    # the methodology; the bands say how few of its places the data can tell apart.
+    headline = comps[HEADLINE_METHOD].rename_axis(["iso3", "year"])
+    interval = score_mod.composite_interval(wide, INTERVAL_LEVEL)
+    drift = float((interval["mean"] - headline).abs().max())
+    if drift > 1e-9:
+        logger.error("The interval's mean is %.3g from the headline: the headline is not a plain mean of its "
+                     "pillars, so SD/sqrt(k) does not describe it.", drift)
+        return 1
+    is_head = comp_df["method"] == HEADLINE_METHOD
+    banded = []
+    for year, g in comp_df[is_head & comp_df["rank"].notna()].groupby("year"):
+        keys = pd.MultiIndex.from_arrays([g["iso3"], g["year"]], names=["iso3", "year"])
+        m, s = headline.reindex(keys), interval["se"].reindex(keys)
+        banded.append(score_mod.rank_bands(m, s, BAND_Z).assign(tier=score_mod.tiers(m, s, BAND_Z)))
+    bands = pd.concat(banded) if banded else pd.DataFrame(columns=["band_best", "band_worst", "tier"])
+    uncertainty = (interval[["se", "low", "high"]].rename(columns={"low": "ci_low", "high": "ci_high"})
+                   .round(DISPLAY_DECIMALS).join(bands))
+    comp_df = comp_df.merge(uncertainty, left_on=["iso3", "year"], right_index=True, how="left")
+    extra = ["se", "ci_low", "ci_high", "band_best", "band_worst", "tier"]
+    comp_df.loc[comp_df["method"] != HEADLINE_METHOD, extra] = np.nan
+    for col in ("band_best", "band_worst", "tier"):
+        comp_df[col] = comp_df[col].astype("Int64")
+
     # ── 8. reference year ─────────────────────────────────────────────────────
     # The newest year is not automatically the year to show. World Bank series
     # report with a lag, so the final panel year is typically near-empty: the
@@ -287,6 +315,25 @@ def main() -> int:
                 int(y): round(float(v), 3) for y, v in coverage_by_year.items()
             },
         }, f, sort_keys=False)
+
+    # Effective weights (plan 4.10): each indicator's share of the headline, nominal (every pillar full) and as the
+    # composites used them at the reference year (only the pillars that entered, each over its contributing
+    # indicators; the mean over the ranked states).
+    nominal = score_mod.effective_weights(pillar_map)
+    ranked_now = set(comp_df[is_head & (comp_df["year"] == reference_year) & comp_df["rank"].notna()]["iso3"])
+    entered = pil[(pil["year"] == reference_year) & pil["reliability"].isin(score_mod.COMPOSABLE)
+                  & pil["score"].notna() & pil["iso3"].isin(ranked_now)]
+    realised = score_mod.effective_weights(pillar_map, entered)
+    even = 1 / len(nominal)
+    logger.info("  effective weights, nominal: %d indicators, %.2fx to %.2fx an even share",
+                len(nominal), nominal.min() / even, nominal.max() / even)
+    logger.info("  effective weights at %d, as used: largest %s", reference_year,
+                ", ".join(f"{v} {w:.3f}" for v, w in realised.sort_values(ascending=False).head(3).items()))
+    now = comp_df[is_head & (comp_df["year"] == reference_year) & comp_df["rank"].notna()]
+    width = now["band_worst"] - now["band_best"] + 1
+    logger.info("  %d at %d: SE median %.2f; bands median %.0f places wide (%d to %d); %d tiers of %s states",
+                len(now), reference_year, now["se"].median(), width.median(), width.min(), width.max(),
+                now["tier"].nunique(), now.groupby("tier").size().tolist())
 
     # ── 9. write ──────────────────────────────────────────────────────────────
     # Identity columns travel with every value. The dashboard must be able to
@@ -362,7 +409,21 @@ def main() -> int:
             for iso3, meta in COUNTRIES.items()
         },
         "methods": sorted(comp_df["method"].unique().tolist()),
+        "headline": HEADLINE_METHOD,
+        "method_roles": METHOD_ROLES,
+        "uncertainty": {
+            "interval": f"M ± t(k - 1) x SD/sqrt(k) over the k pillars the headline used, {INTERVAL_LEVEL:.0%}",
+            "bands": f"two states differ when |M1 - M2| / sqrt(SE1^2 + SE2^2) > {BAND_Z}; a band runs from 1 + "
+                     "the states significantly above to N - those significantly below",
+            "tiers": "the leader rule (P96): from the top, a tier holds every state not significantly below its "
+                     "first state; the first state significantly below starts the next",
+        },
         "weights": {"equal": equal_w, "pca": pca_w, "entropy": ent_w},
+        "effective_weights": {
+            "nominal": {v: round(float(w), 6) for v, w in nominal.items()},
+            "realised": {"year": reference_year, "states": int(len(entered["iso3"].unique())),
+                         "weights": {v: round(float(w), 6) for v, w in realised.items()}},
+        },
         "coverage_by_year": {
             int(y): round(float(v), 3) for y, v in coverage_by_year.items()
         },

@@ -50,6 +50,14 @@ WEIGHT_PRESETS: dict[str, dict[str, float]] = {
     "equal": {k: 1 / len(PILLAR_DEFS) for k in PILLAR_DEFS},
 }
 
+# The one declared headline (edition 2, step 8; plan 4.7): the equal-weight arithmetic mean of the pillars. The
+# geometric mean (INFORM's) is the sensitivity check; PCA and entropy weights are diagnostics only, since PCA's
+# follow the general development axis. Only the headline carries an interval, a rank band and a tier.
+HEADLINE_METHOD = "equal"
+METHOD_ROLES = {"equal": "headline", "geometric": "sensitivity", "pca": "diagnostic", "entropy": "diagnostic"}
+INTERVAL_LEVEL = 0.95   # the composite's t interval (plan 2.2)
+BAND_Z = 1.96           # two states differ when |z| exceeds this (plan 2.3)
+
 
 # ── Admissible pillar weights ──────────────────────────────────────────────────
 # These bound what counts as a defensible weighting of the pillars. They
@@ -214,6 +222,7 @@ PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
 __all__ = [
     "PILLAR_DEFS", "ACTIVE_PRESET", "WEIGHT_PRESETS",
+    "HEADLINE_METHOD", "METHOD_ROLES", "INTERVAL_LEVEL", "BAND_Z",
     "WEIGHT_MIN", "WEIGHT_MAX", "SMALL",
     "IQR_MULTIPLIER", "MIN_REGIONAL_SAMPLE", "REFERENCE_YEAR_MIN_COVERAGE",
     "COVERAGE_WARN_THRESHOLD", "COVERAGE_ALERT_THRESHOLD",
