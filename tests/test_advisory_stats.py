@@ -433,13 +433,13 @@ def kaiser_pairwise_varimax(loadings: np.ndarray, tol: float = 1e-14, sweeps: in
 
 def test_varimax_agrees_with_kaiser_pairwise_rotation(correlated):
     """
-    Our rotation against Kaiser's own pairwise algorithm, run to convergence.
+    Our rotation, at its default tolerance, against Kaiser's own pairwise
+    algorithm run to convergence.
 
-    Both must be run to convergence for the comparison to mean anything. Ours
-    stops when the criterion's relative gain falls below `tol`, and the criterion
-    is flat at its maximum, so the loadings stop about sqrt(tol) short of the
-    fixed point. Measured on this fixture: 1.7e-3 at the default tol=1e-6, 1.8e-6
-    at 1e-12, 6.8e-8 at 1e-15. Hence the tolerance used here.
+    Ours stops when no entry of the rotation moves by `tol` (plan 4.11). Measured
+    on this fixture: 5.3e-7 from the fixed point at the default tol=1e-6. The
+    earlier rule, the criterion's relative gain, stopped 1.7e-3 short at the same
+    tol, since the criterion is flat at its maximum, so it fails this assertion.
     """
     decomposition = pytest.importorskip("sklearn.decomposition")
     from verify.stats import varimax
@@ -450,12 +450,12 @@ def test_varimax_agrees_with_kaiser_pairwise_rotation(correlated):
                                             random_state=0).fit(standardised).components_.T
 
     theirs = kaiser_pairwise_varimax(loadings)
-    ours = varimax(loadings, normalize=True, tol=1e-15, max_iter=200000)
+    ours = varimax(loadings, normalize=True)
 
     # Factor axes are sign- and order-arbitrary; compare the loading magnitudes
     # each variable ends up with, which is what the assignment step reads.
     assert np.sort(np.abs(ours), axis=1) == pytest.approx(
-        np.sort(np.abs(theirs), axis=1), abs=1e-7)
+        np.sort(np.abs(theirs), axis=1), abs=1e-6)
 
 
 def test_varimax_kaiser_normalisation_changes_the_answer(correlated):

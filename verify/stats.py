@@ -336,10 +336,11 @@ def varimax(
     enough to look like numerical noise and large enough to move a borderline
     assignment.
 
-    The stopping rule is the criterion's relative gain, and the criterion is flat
-    at its maximum, so the loadings stop about sqrt(tol) short of the fixed point:
-    1.7e-3 at the default tol, measured against Kaiser's pairwise algorithm in
-    `tests/test_advisory_stats.py`.
+    The iteration stops when no entry of the rotation matrix moves by `tol` (plan
+    4.11). It used to stop on the criterion's relative gain, but the criterion is
+    flat at its maximum, so the loadings stopped about sqrt(tol) short of the
+    fixed point: 1.7e-3 at the default tol, against Kaiser's pairwise algorithm
+    in `tests/test_advisory_stats.py`.
     """
     rotated = np.asarray(loadings, dtype=float)
     k, n_factors = rotated.shape
@@ -353,17 +354,14 @@ def varimax(
 
     base = rotated.copy()
     rotation = np.eye(n_factors)
-    previous = 0.0
     for _ in range(max_iter):
         transformed = base @ rotation
         cubed = transformed ** 3
         column_means = transformed * (transformed ** 2).sum(axis=0) / k
-        u, s, vt = np.linalg.svd(base.T @ (cubed - column_means))
-        rotation = u @ vt
-        current = s.sum()
-        if previous != 0 and current / previous < 1 + tol:
+        u, _, vt = np.linalg.svd(base.T @ (cubed - column_means))
+        previous, rotation = rotation, u @ vt
+        if np.abs(rotation - previous).max() < tol:
             break
-        previous = current
 
     result = base @ rotation
     if normalize:
