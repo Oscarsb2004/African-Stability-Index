@@ -1,0 +1,99 @@
+# The infrastructure layers the site publishes (P65), read by 10_infrastructure.py. A layer not listed here is not
+# published; each listed layer names its licence and attribution, and each withheld one its reason. Every field
+# shown keeps the publisher's name and its label (USGS's field aliases, adapters/usgs_africa_gis.py). Each layer's
+# stated sources were read in the store's `sources` table before it was listed (2026-10-20).
+format: asi.layers/1
+
+usgs: &usgs
+  attribution: "U.S. Geological Survey (2021), Compilation of Geospatial Data (GIS) for the Mineral Industries and Related Infrastructure of Africa, doi:10.5066/P97EQWXP"
+  link: "https://doi.org/10.5066/P97EQWXP"
+  licence: "U.S. public domain"
+osm: &osm
+  attribution: "© OpenStreetMap contributors, via USGS (2021)"
+  link: "https://www.openstreetmap.org/copyright"
+  licence: "ODbL 1.0 (share-alike: the derived tiles are published under ODbL)"
+
+points:
+  - id: ports
+    title: Ports and export hubs
+    dataset: usgs-africa-gis-2021
+    layer: AFR_Infra_Transport_Ports
+    group_by: FeatureUID          # one point per port; each row is one commodity it exports
+    port_fields: [FeatureNam, NameVar, FeatureTyp, Country, OperateNam, OwnerName, Website, DsgAttr10, LocConfid]
+    row_fields: [DsgAttr03, DsgAttr04, DsgAttr05, DsgAttr06, DsgAttr07, DsgAttr08, DsgAttr09, InfSource1]
+    note: "Ports that export minerals or fuels, with each commodity's form, capacity, source and destination as USGS records them; port data mostly from the NGA World Port Index (public domain)."
+    <<: *usgs
+  - id: facilities
+    title: Mines and mineral facilities
+    dataset: usgs-africa-gis-2021
+    layer: AFR_Mineral_Facilities
+    fields: [FeatureNam, FeatureTyp, Country, DsgAttr01, DsgAttr02, DsgAttr03, DsgAttr04, DsgAttr05, DsgAttr06,
+             DsgAttr07, DsgAttr08, DsgAttr09, LocOpStat, OperateNam, OwnerName1, OwnerName2, OwnerName3, OwnerName4,
+             InfSource1]
+    withhold_where: {LocSource1: SNL, InfSource1: SNL}   # a feature whose stated source names SNL, a commercial database
+    note: "Mines, plants and other mineral facilities; capacity is a facility's stated capacity, not its output."
+    <<: *usgs
+  - id: deposits
+    title: Mineral deposits
+    dataset: usgs-africa-gis-2021
+    layer: AFR_Mineral_Deposits
+    fields: [FeatureNam, NameVar, Country, DsgAttr01, DsgAttr02, DsgAttr03, DsgAttr04, DsgAttr05, DsgAttr06, DsgAttr07,
+             DsgAttr08, DsgAttr09, InfSource1]
+    note: "Major known deposits, from USGS's own compilations."
+    <<: *usgs
+  - id: exploration
+    title: Exploration sites
+    dataset: usgs-africa-gis-2021
+    layer: AFR_Mineral_Exploration
+    fields: [FeatureNam, NameVar, LocOpStat, Country, OwnerName, DsgAttr09, DsgAttr10, DsgAttr11, DsgAttr01, DsgAttr02,
+             DsgAttr03, DsgAttr04, DsgAttr05, DsgAttr06, DsgAttr07, DsgAttr08, InfSource1]
+    note: "Exploration projects, from USGS's World Minerals Exploration Database."
+    <<: *usgs
+
+lines:
+  - id: rail
+    title: Railways
+    dataset: usgs-africa-gis-2021
+    layer: AFR_Infra_Transport_Rail
+    archive: osm
+    class: FeatureTyp
+    keep: {FeatureTyp: class, FeatureNam: name}
+    first_zoom: {default: 3}
+    note: "Every published class kept: railway and narrow-gauge railway."
+    <<: *osm
+  - id: roads
+    title: Major roads
+    dataset: usgs-africa-gis-2021
+    layer: AFR_Infra_Transport_Road
+    archive: osm
+    class: FeatureTyp
+    keep: {FeatureTyp: class, FeatureNam: name, DsgAttr01: ref}
+    # each class enters at a zoom of its own, so the continent view stays calm; every class is shown by zoom 10
+    first_zoom: {"Road (Motorway)": 4, "Road (Trunk)": 4, "Road (Primary)": 6, "Road (Motorway Link)": 7,
+                 "Road (Trunk Link)": 7, "Road (Secondary)": 8, "Road (Primary Link)": 9, "Road (Secondary Link)": 10}
+    note: "OpenStreetMap's road classes as published, motorway to secondary. No open source publishes axle loads, so the map shows the publisher's class, never a heavy-truck network of our own."
+    <<: *osm
+  - id: grid
+    title: Electricity grid
+    dataset: wb-africa-grid-2017
+    layer: grid
+    archive: grid
+    split_source: {field: source, value: OpenStreetMaps, archive: osm}   # the lines the World Bank took from OSM keep ODbL
+    keep: {status: status, voltage_kV: voltage_kV, source: source, operator: operator}
+    first_zoom: {field: voltage_kV, at_least: [[220, 3], [66, 5], [0, 7]]}
+    note: "Existing, planned and under-construction lines by voltage, as the World Bank compiled them in 2017; completeness varies widely by country."
+    attribution: "World Bank Group (2017), Africa Electricity Transmission and Distribution Grid Map (C. Arderne)"
+    link: "https://energydata.info/dataset/africa-electricity-transmission-and-distribution-grid-map-2017"
+    licence: "CC BY 4.0 (the lines from OpenStreetMap keep ODbL)"
+
+withheld:
+  - {layer: AFR_Infra_Power_Stations, reason: "stated source is a commercial publisher (Cross-border Information / African Energy); unpublished until its terms are read"}
+  - {layer: AFR_Infra_Power_Transmission, reason: "stated source is the same commercial publisher; the World Bank's grid is shown instead"}
+  - {layer: AFR_Infra_OG_Pipelines, reason: "stated source is the same commercial publisher; Global Energy Monitor waits on the owner's download"}
+  - {layer: AFR_Infra_OG_LNG_Terminals, reason: "stated sources include the same commercial publisher"}
+  - {layer: AFR_Political_ADM0_Boundaries, reason: "from GADM, which does not allow redistribution; Natural Earth's borders are shown"}
+  - {layer: AFR_Political_ADM1_Boundaries, reason: "from GADM, which does not allow redistribution"}
+  - {layer: AFR_Political_Cities, reason: "Natural Earth's places are shown instead"}
+  - {layer: AFR_NaturalFeatures_Rivers, reason: "not needed: the imagery shows them"}
+  - {layer: AFR_NaturalFeatures_Lakes, reason: "not needed: the imagery shows them"}
+  - {layer: "AFR_Mineral_Resources_* and AFR_OG_*", reason: "USGS's resource assessments (public domain): areas, not facilities; a later step"}
