@@ -8,7 +8,7 @@ time series impossible; this runs the whole sequence once, on every year.
     inputs (data/inputs.csv, from Athena's datasets)
       -> panel        one value per country/indicator/year, with provenance
       -> derived      GPI parity folding, IDP per capita
-      -> missing      a gap stays a gap (edition 2; --missing-at-regional-quantile for the sensitivity run)
+      -> missing      a gap stays a gap (edition 2; edition 1's regional fill is not carried over, P105)
       -> goalposts    fixed bounds (frozen; --freeze-goalposts to regenerate)
       -> normalize    log -> winsorize -> goalpost min-max, clamping flagged
       -> score        pillar + composite scores, each with a reliability tier
@@ -36,7 +36,7 @@ import pandas as pd
 import yaml
 
 from asi.core.constants import (
-    PANEL_START, DEFAULT_MAX_CARRY_FORWARD, IQR_MULTIPLIER, MIN_REGIONAL_SAMPLE,
+    PANEL_START, DEFAULT_MAX_CARRY_FORWARD, IQR_MULTIPLIER,
     PILLAR_DEFS, WEIGHT_PRESETS, ACTIVE_PRESET, SMALL,
     HEADLINE_METHOD, METHOD_ROLES, INTERVAL_LEVEL, BAND_Z, OVERLAP_BAR, OVERLAP_CONTROL, OVERLAP_MIN_N,
     RELIABILITY_RELIABLE_AT, RELIABILITY_THIN_AT, RELIABILITY_MAX_IMPUTED,
@@ -73,13 +73,8 @@ def main() -> int:
                          "registry/overlap.yaml (P101; moves scores, so do this deliberately)")
     ap.add_argument("--freeze-new-goalposts", action="store_true",
                     help="freeze goalposts for indicators the file lacks, leaving every existing one as it is (N1)")
-    ap.add_argument("--missing-at-regional-quantile", type=float, metavar="Q",
-                    help="sensitivity run only: fill every gap with its region's Q quantile that year "
-                         "(plan 4.5 asks for 0.25); needs --out, so the published outputs are untouched")
     ap.add_argument("--out", help="write the outputs here instead of data/panel")
     args = ap.parse_args()
-    if args.missing_at_regional_quantile is not None and not args.out:
-        ap.error("a sensitivity run must write elsewhere: add --out")
 
     global OUT_DIR, WEIGHTS_FILE
     if args.out:
@@ -137,15 +132,7 @@ def main() -> int:
     # Edition 2, step 2 (plan 4.5): no regional fill. A value is observed, or carried forward up to
     # DEFAULT_MAX_CARRY_FORWARD years, or missing; a pillar scores on what is present, with its tier. The states
     # least able to report are the least stable, so a regional mean flattered them.
-    q = args.missing_at_regional_quantile
-    if q is None:
-        logger.info("Step 3 - no regional fill: a gap stays a gap (edition 2, plan 4.5)")
-    else:
-        logger.info("Step 3 - SENSITIVITY: gaps set to the region's %.2f quantile (min %d peers, same year)",
-                    q, MIN_REGIONAL_SAMPLE)
-        iso3_to_region = {k: v["region"] for k, v in COUNTRIES.items()}
-        pnl, n_filled = panel_mod.regional_fill(pnl, iso3_to_region, MIN_REGIONAL_SAMPLE, statistic=q)
-        logger.info("  filled %d cells from regional peers", n_filled)
+    logger.info("Step 3 - no regional fill: a gap stays a gap (edition 2, plan 4.5)")
     still_missing = int(pnl["raw_value"].isna().sum())
     logger.info("  %d cells remain empty (left empty on purpose)", still_missing)
 
@@ -429,14 +416,7 @@ def main() -> int:
             for v, s in specs.items()
         },
         "countries": {
-            iso3: {
-                "name":   meta["name"],
-                "region": meta["region"],
-                "recs":   meta["rec"],
-                "island_state": iso3 in __import__(
-                    "asi.core.constants", fromlist=["ISLAND_SET"]
-                ).ISLAND_SET,
-            }
+            iso3: {"name": meta["name"]}
             for iso3, meta in COUNTRIES.items()
         },
         "methods": sorted(comp_df["method"].unique().tolist()),

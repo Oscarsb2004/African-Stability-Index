@@ -17,7 +17,12 @@ def item(qid, iso3, links, heritage=False, kind=None, name=None, coord="Point(1 
             "heritage": heritage, "kinds": {kind} if kind else set(), "coord": coord, "image": None, "category": None}
 
 
+REGION = {"EGY": "Northern Africa", "MAR": "Northern Africa", "TZA": "Eastern Africa", "KEN": "Eastern Africa",
+          "ZAF": "Southern Africa", "NGA": "Western Africa", "GHA": "Western Africa"}  # invented for the test
+
+
 def test_the_rule_takes_the_most_notable_per_quota_and_every_region(monkeypatch):
+    monkeypatch.setattr(wonders, "REGION", REGION)
     monkeypatch.setattr(wonders, "HERITAGE", 1)
     monkeypatch.setattr(wonders, "PER_CLASS", 1)
     found = {q["id"]: q for q in [
@@ -25,7 +30,7 @@ def test_the_rule_takes_the_most_notable_per_quota_and_every_region(monkeypatch)
         item("Q2", "EGY", 200, heritage=True),           # second heritage site: beyond the quota of 1
         item("Q3", "TZA", 150, kind="Mountain"),         # East: top mountain
         item("Q4", "KEN", 100, kind="Mountain"),         # second mountain: beyond the quota
-        item("Q5", "ZAF", 10, heritage=True),            # South: kept only by the region rule
+        item("Q5", "ZAF", 10, heritage=True),            # Southern Africa: kept only by the subregion rule
         item("Q6", "NGA", 999, kind="Lake", coord=None),  # no coordinates: left out
         item("Q7", "GHA", 500, kind="Lake", name="Q7"),   # no English name: left out
     ]}
@@ -34,6 +39,7 @@ def test_the_rule_takes_the_most_notable_per_quota_and_every_region(monkeypatch)
 
 
 def test_the_owner_can_remove_or_add_a_wonder(monkeypatch):
+    monkeypatch.setattr(wonders, "REGION", REGION)
     found = {q["id"]: q for q in [item("Q1", "EGY", 300, heritage=True), item("Q9", "MAR", 5)]}
     monkeypatch.setattr(wonders, "WONDERS_OWNER", {"Q1": "remove: a city, not a site", "Q9": "a local landmark"})
     chosen = [c["id"] for c in wonders.select(found)]

@@ -12,11 +12,8 @@ Order of operations, and why:
     1. window        derive each year's value from observations at or before it
     2. derived       transforms that need more than one indicator, or that
                      reshape an indicator's meaning (IDP per capita, GPI parity)
-    3. regional fill impute what is still missing from regional peers
 
-Derived transforms run BEFORE the regional fill so that peers are averaged on
-the final quantity. Averaging absolute IDP counts across a region would track
-the peers' population sizes rather than their displacement rates.
+A gap stays a gap: edition 1's regional fill is not carried over (plan 4.5, P105).
 
 Every function here is pure: it takes data and settings and returns data. File
 I/O belongs to the stage script that calls them.
@@ -250,57 +247,7 @@ def apply_derived(
     return panel, notes
 
 
-# ── Regional imputation ────────────────────────────────────────────────────────
-
-def regional_fill(
-    panel: pd.DataFrame,
-    iso3_to_region: dict[str, str],
-    min_sample: int,
-    statistic: str | float = "mean",
-) -> tuple[pd.DataFrame, int]:
-    """
-    Fill gaps from regional peers, within the same year.
-
-    Filling is per year, never across years: a country's 2003 gap is estimated
-    from its region in 2003, not from the region's whole history. A region with
-    fewer than `min_sample` peers reporting that year is left empty rather than
-    imputed from one or two neighbours.
-
-    Edition 1 filled with the peers' mean (REGIONAL_MEAN). From edition 2 the
-    published scores use no fill at all (plan 4.5); a quantile fill, such as the
-    peers' 25th percentile, is the sensitivity check that asks how much the
-    missing states would move if they were weaker than their neighbours. Either
-    way, the reliability tiers treat a filled cell as inference, not measurement.
-    """
-    panel = panel.copy()
-    panel["_region"] = panel["iso3"].map(iso3_to_region)
-
-    missing = panel["raw_value"].isna()
-    n_filled = 0
-    groups = panel.loc[~missing].groupby(["variable_name", "year", "_region"])["raw_value"]
-    if statistic == "mean":
-        donors = groups.agg(["mean", "size"]).rename(columns={"mean": "fill"})
-        label = Provenance.REGIONAL_MEAN.value
-    else:
-        donors = pd.DataFrame({"fill": groups.quantile(float(statistic)), "size": groups.size()})
-        label = Provenance.REGIONAL_QUANTILE.value
-    eligible = donors[donors["size"] >= min_sample]["fill"]
-
-    if not eligible.empty:
-        keys = pd.MultiIndex.from_arrays([
-            panel["variable_name"], panel["year"], panel["_region"],
-        ])
-        candidate = eligible.reindex(keys).to_numpy()
-        fillable = missing.to_numpy() & ~pd.isna(candidate)
-        panel.loc[fillable, "raw_value"] = candidate[fillable]
-        panel.loc[fillable, "provenance"] = label
-        panel.loc[fillable, "source_year"] = None
-        n_filled = int(fillable.sum())
-
-    return panel.drop(columns=["_region"]), n_filled
-
-
 __all__ = [
     "PANEL_COLUMNS", "window_value", "build_panel",
-    "distance_from_parity", "apply_derived", "regional_fill",
+    "distance_from_parity", "apply_derived",
 ]

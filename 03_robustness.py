@@ -27,7 +27,7 @@ import pandas as pd
 from scipy.stats import spearmanr
 
 from asi.core.constants import (
-    PILLAR_DEFS, WEIGHT_MIN, WEIGHT_MAX, SMALL, ACTIVE_PROFILE,
+    PILLAR_DEFS, WEIGHT_MIN, WEIGHT_MAX, SMALL,
     MIN_PILLARS_FOR_COMPOSITE,
 )
 from asi import results as D
@@ -275,22 +275,7 @@ def main() -> int:
     logger.info("   rho=%.4f  |  survivors move a median of %s places", rho,
                 f"{shifts.median():.1f}" if not shifts.empty else "n/a")
 
-    # ── 4. excluding island states ────────────────────────────────────────────
-    logger.info("")
-    logger.info("4. Excluding island states")
-    mainland = wide.drop(index=[i for i in ACTIVE_PROFILE.island_states
-                                if i in wide.index], errors="ignore")
-    m_rank = _ranking(score_mod.weighted_composite(mainland, weights["equal"]))
-    shifts = (base_rank.reindex(m_rank.index) - m_rank).abs()
-    results["islands_excluded"] = {
-        "n_removed": int(len(wide) - len(mainland)),
-        "median_rank_shift": float(shifts.median()) if not shifts.empty else None,
-        "max_rank_shift": int(shifts.max()) if not shifts.empty else None,
-    }
-    logger.info("   removed %d; remaining countries move a median of %.1f places",
-                len(wide) - len(mainland), shifts.median())
-
-    # ── 5. most and least stable countries ────────────────────────────────────
+    # ── 4. most and least stable countries ────────────────────────────────────
     spread = pd.DataFrame({k: _ranking(v) for k, v in method_scores.items()})
     spread["range"] = spread.max(axis=1) - spread.min(axis=1)
     volatile = spread.sort_values("range", ascending=False).head(8)
@@ -306,7 +291,7 @@ def main() -> int:
         for iso3, r in volatile.iterrows()
     }
     logger.info("")
-    logger.info("5. Countries whose rank depends most on the method chosen")
+    logger.info("4. Countries whose rank depends most on the method chosen")
     for iso3, r in volatile.head(5).iterrows():
         name = panel.countries.get(iso3, {}).get("name", iso3)
         logger.info("   %-26s ranks %d-%d across methods", name,

@@ -1,0 +1,73 @@
+# Groups of states that the Data tab compares (P105, P106). 09_explore.py reads this file.
+#
+# The African Union's eight Regional Economic Communities are the owner's own compilation. It was made for edition 1
+# (its asi/core/countries.py) and moved here on 2026-10-20 unchanged. It records current membership, including the
+# 2025 withdrawals of Burkina Faso, Mali and Niger from ECOWAS. It is the authority (P106): 09_explore.py checks it
+# against Wikidata and reports every disagreement, and changes nothing.
+#
+# Organisations are named by their Wikidata item, and their members come from the wikidata-states dataset. The rule
+# for listing one: it groups some but not all of the 54 states, by region, language, religion, law, a resource,
+# trade, or a monetary or customs union, and Wikidata records at least 3 of them as current members. Development
+# banks and funds, UN agencies, treaties and military operations are not groupings in this sense. The West African
+# Economic and Monetary Union and the Alliance of Sahel States are not listed: Wikidata records fewer than 3 members
+# of each (2026-10-20).
+#
+# Each state counts once in a group. No state is excluded, adjusted or reweighted for being small, an island or
+# data-poor (P105).
+
+recs:
+  - id: UMA
+    name: Arab Maghreb Union
+    wikidata: Q370862
+    members: [DZA, LBY, MAR, MRT, TUN]
+  - id: CEN-SAD
+    name: Community of Sahel-Saharan States
+    wikidata: Q605883
+    members: [BEN, BFA, CAF, CIV, COM, DJI, EGY, ERI, GHA, GIN, GMB, GNB, LBY, MAR, MLI, MRT, NER, NGA, SDN, SEN, SLE, SOM, TCD, TGO, TUN]
+  - id: COMESA
+    name: Common Market for Eastern and Southern Africa
+    wikidata: Q1165797
+    members: [BDI, COD, COM, DJI, EGY, ERI, ETH, KEN, LBY, MDG, MUS, MWI, RWA, SDN, SOM, SWZ, SYC, TUN, UGA, ZMB, ZWE]
+  - id: EAC
+    name: East African Community
+    wikidata: Q337456
+    members: [BDI, COD, KEN, RWA, SOM, SSD, TZA, UGA]
+  - id: ECCAS
+    name: Economic Community of Central African States
+    wikidata: Q189966
+    members: [AGO, BDI, CAF, CMR, COD, COG, GAB, GNQ, STP, TCD]
+  - id: ECOWAS
+    name: Economic Community of West African States
+    wikidata: Q193272
+    members: [BEN, CIV, CPV, GHA, GIN, GMB, GNB, LBR, NGA, SEN, SLE, TGO]
+  - id: IGAD
+    name: Intergovernmental Authority on Development
+    wikidata: Q499039
+    members: [DJI, ETH, KEN, SOM, SSD, UGA]
+  - id: SADC
+    name: Southern African Development Community
+    wikidata: Q816706
+    members: [AGO, BWA, COD, COM, LSO, MDG, MOZ, MUS, MWI, NAM, SWZ, SYC, TZA, ZAF, ZMB, ZWE]
+
+history:  # dated changes, with their source; the charts show members as they stand today and say so
+  - {group: ECOWAS, date: "2025-01-29", change: "Burkina Faso, Mali and Niger left", source: "Wikidata end dates, wikidata-states-2026-10-20"}
+  - {group: ECOWAS, date: "2000-12-01", change: "Mauritania left", source: "Wikidata end dates, wikidata-states-2026-10-20"}
+
+organisations:
+  - {id: "OIF", name: "Organisation internationale de la Francophonie", wikidata: Q134102, basis: "language"}
+  - {id: "Commonwealth", name: "Commonwealth of Nations", wikidata: Q7785, basis: "language"}
+  - {id: "CPLP", name: "Community of Portuguese Language Countries", wikidata: Q182500, basis: "language"}
+  - {id: "Arab League", name: "Arab League", wikidata: Q7172, basis: "region and language"}
+  - {id: "OIC", name: "Organisation of Islamic Cooperation", wikidata: Q47543, basis: "religion"}
+  - {id: "OHADA", name: "Organisation for the Harmonisation of Business Law in Africa", wikidata: Q2029901, basis: "law"}
+  - {id: "OPEC", name: "Organization of the Petroleum Exporting Countries", wikidata: Q7795, basis: "a resource"}
+  - {id: "CEMAC", name: "Economic and Monetary Community of Central Africa", wikidata: Q1940250, basis: "a monetary union"}
+  - {id: "SACU", name: "Southern African Customs Union", wikidata: Q1344350, basis: "a customs union"}
+  - {id: "WTO", name: "World Trade Organization", wikidata: Q7825, basis: "trade"}
+  - {id: "BRICS", name: "BRICS", wikidata: Q243630, basis: "trade"}
+  - {id: "Entente", name: "Conseil de l'Entente", wikidata: Q945574, basis: "region"}
+  - {id: "MRU", name: "Mano River Union", wikidata: Q1505172, basis: "region"}
+  - {id: "GGC", name: "Gulf of Guinea Commission", wikidata: Q2986587, basis: "region"}
+  - {id: "LCBC", name: "Lake Chad Basin Commission", wikidata: Q2986599, basis: "region"}
+  - {id: "IOC", name: "Indian Ocean Commission", wikidata: Q1115631, basis: "region"}
+  - {id: "AOSIS", name: "Alliance of Small Island States", wikidata: Q496967, basis: "region"}

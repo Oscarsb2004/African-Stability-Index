@@ -24,13 +24,11 @@ import numpy as np
 import pandas as pd
 import pytest
 
-from asi.core.constants import MIN_REGIONAL_SAMPLE
 from asi.core.schema import Provenance, WindowMode
 from asi.pipeline.panel import (
     PANEL_COLUMNS,
     apply_derived,
     distance_from_parity,
-    regional_fill,
     window_value,
 )
 
@@ -269,122 +267,3 @@ def test_volatility_needs_half_the_window_measured():
     assert window_value(four, 2020, WindowMode.ROLLING_SD, 10, 5)[0] is None
     # negative control: one more year inside the window and the spread is reported
     assert window_value({**four, 2016: 1.0}, 2020, WindowMode.ROLLING_SD, 10, 5)[0] is not None
-
-
-# ── regional_fill ──────────────────────────────────────────────────────────────
-
-REGIONS = {"AAA": "East", "BBB": "East", "CCC": "East", "DDD": "East",
-           "ZZZ": "West"}
-
-
-def _fill_rows(present: dict[str, float], missing: str, year: int = 2020):
-    rows = [(iso3, "gdp_pc", year, v, "observed", year)
-            for iso3, v in present.items()]
-    rows.append((missing, "gdp_pc", year, np.nan, "absent", None))
-    return _panel(rows)
-
-
-def test_a_gap_is_filled_from_the_regional_mean_of_that_year():
-    panel = _fill_rows({"AAA": 10.0, "BBB": 20.0, "CCC": 30.0}, "DDD")
-    out, n = regional_fill(panel, REGIONS, MIN_REGIONAL_SAMPLE)
-    filled = out[out["iso3"] == "DDD"].iloc[0]
-    assert n == 1
-    assert filled["raw_value"] == pytest.approx(20.0)
-    assert filled["provenance"] == Provenance.REGIONAL_MEAN.value
-
-
-def test_a_filled_cell_carries_no_source_year():
-    """An imputed value came from no particular year, and must not claim one."""
-    panel = _fill_rows({"AAA": 10.0, "BBB": 20.0, "CCC": 30.0}, "DDD")
-    out, _ = regional_fill(panel, REGIONS, MIN_REGIONAL_SAMPLE)
-    assert pd.isna(out[out["iso3"] == "DDD"].iloc[0]["source_year"])
-
-
-def test_too_few_peers_leaves_the_gap_empty():
-    """
-    One neighbour is not a regional mean. The threshold is the difference between
-    an estimate and a guess dressed as one.
-    """
-    panel = _fill_rows({"AAA": 10.0, "BBB": 20.0}, "DDD")
-    out, n = regional_fill(panel, REGIONS, MIN_REGIONAL_SAMPLE)
-    assert n == 0
-    assert pd.isna(out[out["iso3"] == "DDD"].iloc[0]["raw_value"])
-    assert out[out["iso3"] == "DDD"].iloc[0]["provenance"] == "absent"
-
-
-def test_the_threshold_is_inclusive_at_exactly_min_regional_sample():
-    """Boundary pinned: three donors with MIN_REGIONAL_SAMPLE == 3 must fill."""
-    donors = {n: 10.0 for n in list(REGIONS)[:MIN_REGIONAL_SAMPLE]}
-    panel = _fill_rows(donors, "DDD")
-    _, n = regional_fill(panel, REGIONS, MIN_REGIONAL_SAMPLE)
-    assert n == 1
-
-    one_short = dict(list(donors.items())[:MIN_REGIONAL_SAMPLE - 1])
-    _, n = regional_fill(_fill_rows(one_short, "DDD"), REGIONS, MIN_REGIONAL_SAMPLE)
-    assert n == 0
-
-
-def test_another_region_is_not_a_donor():
-    panel = _panel([
-        ("ZZZ", "gdp_pc", 2020, 999.0, "observed", 2020),
-        ("AAA", "gdp_pc", 2020, 10.0, "observed", 2020),
-        ("BBB", "gdp_pc", 2020, 20.0, "observed", 2020),
-        ("DDD", "gdp_pc", 2020, np.nan, "absent", None),
-    ])
-    out, n = regional_fill(panel, REGIONS, MIN_REGIONAL_SAMPLE)
-    assert n == 0, "a West-region value must not fill an East-region gap"
-    assert pd.isna(out[out["iso3"] == "DDD"].iloc[0]["raw_value"])
-
-
-def test_another_year_is_not_a_donor():
-    """
-    Filling is per year, never across years. A region's 2019 values say nothing
-    about a country's 2020 gap, and averaging across time would smuggle a second
-    kind of carry-forward past the expiry rule.
-    """
-    panel = _panel([
-        ("AAA", "gdp_pc", 2019, 10.0, "observed", 2019),
-        ("BBB", "gdp_pc", 2019, 20.0, "observed", 2019),
-        ("CCC", "gdp_pc", 2019, 30.0, "observed", 2019),
-        ("DDD", "gdp_pc", 2020, np.nan, "absent", None),
-    ])
-    out, n = regional_fill(panel, REGIONS, MIN_REGIONAL_SAMPLE)
-    assert n == 0
-    assert pd.isna(out[out["iso3"] == "DDD"].iloc[0]["raw_value"])
-
-
-def test_a_measured_value_is_never_overwritten():
-    panel = _panel([
-        ("AAA", "gdp_pc", 2020, 10.0, "observed", 2020),
-        ("BBB", "gdp_pc", 2020, 20.0, "observed", 2020),
-        ("CCC", "gdp_pc", 2020, 30.0, "observed", 2020),
-        ("DDD", "gdp_pc", 2020, 1.0, "observed", 2020),
-    ])
-    out, n = regional_fill(panel, REGIONS, MIN_REGIONAL_SAMPLE)
-    assert n == 0
-    assert out[out["iso3"] == "DDD"].iloc[0]["raw_value"] == pytest.approx(1.0)
-
-
-def test_an_imputed_cell_does_not_become_a_donor_for_another_gap():
-    """
-    Donors are drawn from cells that already have values when the fill starts, so
-    one imputed country cannot prop up the next. Otherwise a region with three
-    reporting members could cascade to fill an unlimited number of gaps, each
-    inheriting confidence it never had.
-    """
-    panel = _panel([
-        ("AAA", "gdp_pc", 2020, 10.0, "observed", 2020),
-        ("BBB", "gdp_pc", 2020, 20.0, "observed", 2020),
-        ("CCC", "gdp_pc", 2020, np.nan, "absent", None),
-        ("DDD", "gdp_pc", 2020, np.nan, "absent", None),
-    ])
-    out, n = regional_fill(panel, REGIONS, MIN_REGIONAL_SAMPLE)
-    assert n == 0, "two donors is below the threshold; neither gap may fill"
-    assert out["raw_value"].isna().sum() == 2
-
-
-def test_the_helper_column_is_not_left_behind():
-    """`_region` is scratch. Leaking it would change the panel's schema."""
-    panel = _fill_rows({"AAA": 10.0, "BBB": 20.0, "CCC": 30.0}, "DDD")
-    out, _ = regional_fill(panel, REGIONS, MIN_REGIONAL_SAMPLE)
-    assert list(out.columns) == PANEL_COLUMNS

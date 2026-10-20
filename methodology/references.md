@@ -25,10 +25,10 @@ for composite index construction and is used by the UN, World Bank, and EU Commi
 | Log transformation before normalization for skewed distributions | §6.2 | `asi/pipeline/goalposts.py` — `apply_log()`, on indicators carrying `log_transform: true` in `indicators_list/*.yaml` |
 | Polarity inversion at normalization step | §5.3 | `asi/pipeline/normalize.py` — `normalize_value()` inverts to `(gmax-x)/(gmax-gmin)*100` for negative polarity |
 | IQR Winsorization to handle outliers (cap, do not delete) | §5.2 | `asi/pipeline/goalposts.py` — `winsorize_bounds()` at `IQR_MULTIPLIER = 2.0` (widened from Tukey's 1.5; see Winsorization section). Bounds are **frozen** with the goalposts, not recomputed per run |
-| Imputation hierarchy before leaving a cell empty | §5.4 | `asi/pipeline/panel.py` — `window_value()` (carry-forward within `max_carry_forward`) then `regional_fill()` (same-year regional mean, `MIN_REGIONAL_SAMPLE` peers required). Every cell carries a `provenance` label; nothing is filled silently |
+| Imputation hierarchy before leaving a cell empty | §5.4 | `asi/pipeline/panel.py` — `window_value()` (carry-forward within `max_carry_forward`); a cell still missing stays empty (edition 1's regional fill is not carried over, P105). Every cell carries a `provenance` label; nothing is filled silently |
 | Equal weights as the default / reference case | §7.1 | `asi/pipeline/score.py` — `weighted_composite()` with `WEIGHT_PRESETS["equal"]` |
 | PCA-derived weights as a data-driven alternative | §7.3 | `asi/pipeline/score.py` — `fit_pca_weights()`, fitted once on the pooled panel and frozen to `data/panel/weights.yaml` |
-| Sensitivity analysis / robustness testing across methods | §8 | `03_robustness.py` — method agreement, adversarial weight search, measured-cells-only rebuild, island exclusion |
+| Sensitivity analysis / robustness testing across methods | §8 | `03_robustness.py` — method agreement, adversarial weight search, measured-cells-only rebuild |
 | Transparency: all weights, bounds, and intermediate values published | throughout | `registry/goalposts.yaml`, `data/panel/weights.yaml`, and per-cell provenance in `data/panel/observations.csv` |
 
 > **Section numbers are unverified.** The `§` references above were carried forward from
@@ -343,8 +343,8 @@ not percentile rank (`.PER.RNK`), to avoid rank compression artifacts.
 > *Journal of the Royal Statistical Society: Series A*, 168(2), 307–323, 2005.
 > DOI: [10.1111/j.1467-985X.2005.00359.x](https://doi.org/10.1111/j.1467-985X.2005.00359.x)
 
-Grounds `03_robustness.py`: weight perturbation, measured-only rebuild and island-exclusion
-sensitivity, and the MaxS adversarial worst-case weight search.
+Grounds `03_robustness.py`: weight perturbation, the measured-only rebuild, and the MaxS adversarial
+worst-case weight search. (Edition 1's island-exclusion check was removed in 2026-10, P105.)
 
 **MaxS implementation note:** the worst-case search uses a **random-restart grid search**
 (7 deterministic pillar-corner weight vectors + 1000 Dirichlet samples within the

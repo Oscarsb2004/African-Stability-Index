@@ -81,14 +81,9 @@ gdp_pc_ppp 1. Re-anchoring the goalposts is step 3.
   A value is now observed, or carried forward up to 5 years (as INFORM does, and as the panel already did), or
   missing. A pillar scores on the indicators present, and its reliability tier says how many those are.
 - **In numbers:** 47,736 panel cells. 32,478 observed, 5,322 carried forward, and 9,936 left empty.
-- **The sensitivity run the plan asks for:**
-
-  ```
-  python 02_panel.py --missing-at-regional-quantile 0.25 --out <scratch>
-  ```
-
-  It fills each gap with its region's 25th percentile that year. It fills 5,147 cells and writes elsewhere, so the
-  published outputs are untouched. Those cells are marked `regional_quantile` and count as imputed.
+- **The sensitivity run the plan asked for** filled each gap with its region's 25th percentile that year (5,147
+  cells, written elsewhere). It used edition 1's own regions, and was removed on 2026-10-20 with them and with the
+  island-exclusion check: no state is treated differently for being small, an island or data-poor (P105).
 
 **What moved** (2024, equal weights, step 1 against step 2)
 - **Scores:** composites moved 1.93 points on average, at most 12.92 (SSD, −12.92).

@@ -30,8 +30,7 @@ def test_imputed_set_is_exactly_the_inferred_kinds():
     imputed = {p for p in Provenance if p.is_imputed}
     assert imputed == {Provenance.CARRIED_FORWARD,
                        Provenance.INTERPOLATED,
-                       Provenance.REGIONAL_MEAN,
-                       Provenance.REGIONAL_QUANTILE}
+                       Provenance.REGIONAL_MEAN}
 
 
 def test_derived_is_not_imputed():

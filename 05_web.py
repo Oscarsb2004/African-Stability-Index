@@ -30,13 +30,13 @@ sys.path.insert(0, str(ROOT.parents[1]))  # athena-core, for `athena` and `adapt
 import pandas as pd  # noqa: E402
 
 from asi import results  # noqa: E402
+from asi.geography import MERGED  # noqa: E402
 from asi.core.countries import COUNTRIES  # noqa: E402
 
 PUBLIC = ROOT / "web" / "public"
 PANEL = ROOT / "data" / "panel"
 DECIMALS = 3  # about 100 m, finer than 1:50m data needs
 ALSO_DRAWN = {"ESH": "Western Sahara"}  # on the map, not in the index
-MERGED = {"SOL": "SOM", "SDS": "SSD"}  # Somaliland is drawn as Somalia; Natural Earth codes South Sudan SDS
 DASHED = ("Disputed", "Indefinite", "Line of control")
 EOX = ("EOxCloudless https://cloudless.eox.at by EOX IT Services GmbH "
        "(Contains modified Copernicus Sentinel data 2025)")
@@ -255,7 +255,14 @@ def main() -> int:
     write(PUBLIC / "data" / "meta.json", {
         "sources": [{"name": d["attribution"], "licence": d["licence"], "link": d.get("link", "")}
                     for d in sections["datasets"]]
-        + [{"name": "Natural Earth (borders, places)", "licence": "public domain",
+        + [{"name": "UCDP Country-Year Dataset on Organized Violence 26.1: Davies, Pettersson & Öberg (2026), "
+                    "Journal of Peace Research; Sundberg & Melander (2013), Journal of Peace Research 50(4)",
+            "licence": "CC BY 4.0", "link": "https://ucdp.uu.se/downloads/"},
+           {"name": "Wikidata (memberships, official languages, wonders)", "licence": "CC0",
+            "link": "https://www.wikidata.org"},
+           {"name": "Hammarström, Forkel, Haspelmath & Bank (2026), Glottolog 5.3, Max Planck Institute for "
+                    "Evolutionary Anthropology", "licence": "CC BY 4.0", "link": "https://glottolog.org"},
+           {"name": "Natural Earth (borders, places, subregions)", "licence": "public domain",
             "link": "https://www.naturalearthdata.com"},
            {"name": EOX, "licence": "CC BY-NC-SA 4.0", "link": "https://cloudless.eox.at"}],
         "imagery": {"tiles": "https://tiles.maps.eox.at/wmts/1.0.0/s2cloudless-2025_3857/default/"

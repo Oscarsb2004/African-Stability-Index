@@ -1052,485 +1052,166 @@
  },
  "countries": {
   "DZA": {
-   "name": "Algeria",
-   "region": "North",
-   "recs": [
-    "UMA"
-   ],
-   "island_state": false
+   "name": "Algeria"
   },
   "EGY": {
-   "name": "Egypt",
-   "region": "North",
-   "recs": [
-    "COMESA",
-    "CEN-SAD"
-   ],
-   "island_state": false
+   "name": "Egypt"
   },
   "LBY": {
-   "name": "Libya",
-   "region": "North",
-   "recs": [
-    "UMA",
-    "COMESA",
-    "CEN-SAD"
-   ],
-   "island_state": false
+   "name": "Libya"
   },
   "MAR": {
-   "name": "Morocco",
-   "region": "North",
-   "recs": [
-    "UMA",
-    "CEN-SAD"
-   ],
-   "island_state": false
+   "name": "Morocco"
   },
   "SDN": {
-   "name": "Sudan",
-   "region": "North",
-   "recs": [
-    "COMESA",
-    "CEN-SAD"
-   ],
-   "island_state": false
+   "name": "Sudan"
   },
   "TUN": {
-   "name": "Tunisia",
-   "region": "North",
-   "recs": [
-    "UMA",
-    "COMESA",
-    "CEN-SAD"
-   ],
-   "island_state": false
+   "name": "Tunisia"
   },
   "BEN": {
-   "name": "Benin",
-   "region": "West",
-   "recs": [
-    "CEN-SAD",
-    "ECOWAS"
-   ],
-   "island_state": false
+   "name": "Benin"
   },
   "BFA": {
-   "name": "Burkina Faso",
-   "region": "West",
-   "recs": [
-    "CEN-SAD"
-   ],
-   "island_state": false
+   "name": "Burkina Faso"
   },
   "CPV": {
-   "name": "Cabo Verde",
-   "region": "West",
-   "recs": [
-    "ECOWAS"
-   ],
-   "island_state": true
+   "name": "Cabo Verde"
   },
   "GMB": {
-   "name": "The Gambia",
-   "region": "West",
-   "recs": [
-    "CEN-SAD",
-    "ECOWAS"
-   ],
-   "island_state": false
+   "name": "The Gambia"
   },
   "GHA": {
-   "name": "Ghana",
-   "region": "West",
-   "recs": [
-    "CEN-SAD",
-    "ECOWAS"
-   ],
-   "island_state": false
+   "name": "Ghana"
   },
   "GIN": {
-   "name": "Guinea",
-   "region": "West",
-   "recs": [
-    "CEN-SAD",
-    "ECOWAS"
-   ],
-   "island_state": false
+   "name": "Guinea"
   },
   "GNB": {
-   "name": "Guinea-Bissau",
-   "region": "West",
-   "recs": [
-    "CEN-SAD",
-    "ECOWAS"
-   ],
-   "island_state": false
+   "name": "Guinea-Bissau"
   },
   "CIV": {
-   "name": "Cote d'Ivoire",
-   "region": "West",
-   "recs": [
-    "CEN-SAD",
-    "ECOWAS"
-   ],
-   "island_state": false
+   "name": "Cote d'Ivoire"
   },
   "LBR": {
-   "name": "Liberia",
-   "region": "West",
-   "recs": [
-    "ECOWAS"
-   ],
-   "island_state": false
+   "name": "Liberia"
   },
   "MLI": {
-   "name": "Mali",
-   "region": "West",
-   "recs": [
-    "CEN-SAD"
-   ],
-   "island_state": false
+   "name": "Mali"
   },
   "MRT": {
-   "name": "Mauritania",
-   "region": "West",
-   "recs": [
-    "UMA",
-    "CEN-SAD"
-   ],
-   "island_state": false
+   "name": "Mauritania"
   },
   "NER": {
-   "name": "Niger",
-   "region": "West",
-   "recs": [
-    "CEN-SAD"
-   ],
-   "island_state": false
+   "name": "Niger"
   },
   "NGA": {
-   "name": "Nigeria",
-   "region": "West",
-   "recs": [
-    "CEN-SAD",
-    "ECOWAS"
-   ],
-   "island_state": false
+   "name": "Nigeria"
   },
   "SEN": {
-   "name": "Senegal",
-   "region": "West",
-   "recs": [
-    "CEN-SAD",
-    "ECOWAS"
-   ],
-   "island_state": false
+   "name": "Senegal"
   },
   "SLE": {
-   "name": "Sierra Leone",
-   "region": "West",
-   "recs": [
-    "CEN-SAD",
-    "ECOWAS"
-   ],
-   "island_state": false
+   "name": "Sierra Leone"
   },
   "TGO": {
-   "name": "Togo",
-   "region": "West",
-   "recs": [
-    "CEN-SAD",
-    "ECOWAS"
-   ],
-   "island_state": false
+   "name": "Togo"
   },
   "AGO": {
-   "name": "Angola",
-   "region": "Central",
-   "recs": [
-    "ECCAS",
-    "SADC"
-   ],
-   "island_state": false
+   "name": "Angola"
   },
   "CMR": {
-   "name": "Cameroon",
-   "region": "Central",
-   "recs": [
-    "ECCAS"
-   ],
-   "island_state": false
+   "name": "Cameroon"
   },
   "CAF": {
-   "name": "Central African Republic",
-   "region": "Central",
-   "recs": [
-    "CEN-SAD",
-    "ECCAS"
-   ],
-   "island_state": false
+   "name": "Central African Republic"
   },
   "TCD": {
-   "name": "Chad",
-   "region": "Central",
-   "recs": [
-    "CEN-SAD",
-    "ECCAS"
-   ],
-   "island_state": false
+   "name": "Chad"
   },
   "COG": {
-   "name": "Republic of Congo",
-   "region": "Central",
-   "recs": [
-    "ECCAS"
-   ],
-   "island_state": false
+   "name": "Republic of Congo"
   },
   "COD": {
-   "name": "Democratic Rep. Congo",
-   "region": "Central",
-   "recs": [
-    "COMESA",
-    "EAC",
-    "ECCAS",
-    "SADC"
-   ],
-   "island_state": false
+   "name": "Democratic Rep. Congo"
   },
   "GNQ": {
-   "name": "Equatorial Guinea",
-   "region": "Central",
-   "recs": [
-    "ECCAS"
-   ],
-   "island_state": false
+   "name": "Equatorial Guinea"
   },
   "GAB": {
-   "name": "Gabon",
-   "region": "Central",
-   "recs": [
-    "ECCAS"
-   ],
-   "island_state": false
+   "name": "Gabon"
   },
   "BDI": {
-   "name": "Burundi",
-   "region": "East",
-   "recs": [
-    "COMESA",
-    "EAC",
-    "ECCAS"
-   ],
-   "island_state": false
+   "name": "Burundi"
   },
   "DJI": {
-   "name": "Djibouti",
-   "region": "East",
-   "recs": [
-    "COMESA",
-    "CEN-SAD",
-    "IGAD"
-   ],
-   "island_state": false
+   "name": "Djibouti"
   },
   "ERI": {
-   "name": "Eritrea",
-   "region": "East",
-   "recs": [
-    "COMESA",
-    "CEN-SAD"
-   ],
-   "island_state": false
+   "name": "Eritrea"
   },
   "ETH": {
-   "name": "Ethiopia",
-   "region": "East",
-   "recs": [
-    "COMESA",
-    "IGAD"
-   ],
-   "island_state": false
+   "name": "Ethiopia"
   },
   "KEN": {
-   "name": "Kenya",
-   "region": "East",
-   "recs": [
-    "COMESA",
-    "EAC",
-    "IGAD"
-   ],
-   "island_state": false
+   "name": "Kenya"
   },
   "MWI": {
-   "name": "Malawi",
-   "region": "East",
-   "recs": [
-    "COMESA",
-    "SADC"
-   ],
-   "island_state": false
+   "name": "Malawi"
   },
   "MOZ": {
-   "name": "Mozambique",
-   "region": "East",
-   "recs": [
-    "SADC"
-   ],
-   "island_state": false
+   "name": "Mozambique"
   },
   "RWA": {
-   "name": "Rwanda",
-   "region": "East",
-   "recs": [
-    "COMESA",
-    "EAC"
-   ],
-   "island_state": false
+   "name": "Rwanda"
   },
   "SOM": {
-   "name": "Somalia",
-   "region": "East",
-   "recs": [
-    "COMESA",
-    "CEN-SAD",
-    "EAC",
-    "IGAD"
-   ],
-   "island_state": false
+   "name": "Somalia"
   },
   "SSD": {
-   "name": "South Sudan",
-   "region": "East",
-   "recs": [
-    "EAC",
-    "IGAD"
-   ],
-   "island_state": false
+   "name": "South Sudan"
   },
   "TZA": {
-   "name": "Tanzania",
-   "region": "East",
-   "recs": [
-    "EAC",
-    "SADC"
-   ],
-   "island_state": false
+   "name": "Tanzania"
   },
   "UGA": {
-   "name": "Uganda",
-   "region": "East",
-   "recs": [
-    "COMESA",
-    "EAC",
-    "IGAD"
-   ],
-   "island_state": false
+   "name": "Uganda"
   },
   "ZMB": {
-   "name": "Zambia",
-   "region": "East",
-   "recs": [
-    "COMESA",
-    "SADC"
-   ],
-   "island_state": false
+   "name": "Zambia"
   },
   "ZWE": {
-   "name": "Zimbabwe",
-   "region": "East",
-   "recs": [
-    "COMESA",
-    "SADC"
-   ],
-   "island_state": false
+   "name": "Zimbabwe"
   },
   "BWA": {
-   "name": "Botswana",
-   "region": "South",
-   "recs": [
-    "SADC"
-   ],
-   "island_state": false
+   "name": "Botswana"
   },
   "LSO": {
-   "name": "Lesotho",
-   "region": "South",
-   "recs": [
-    "SADC"
-   ],
-   "island_state": false
+   "name": "Lesotho"
   },
   "NAM": {
-   "name": "Namibia",
-   "region": "South",
-   "recs": [
-    "SADC"
-   ],
-   "island_state": false
+   "name": "Namibia"
   },
   "SWZ": {
-   "name": "Eswatini",
-   "region": "South",
-   "recs": [
-    "COMESA",
-    "SADC"
-   ],
-   "island_state": false
+   "name": "Eswatini"
   },
   "ZAF": {
-   "name": "South Africa",
-   "region": "South",
-   "recs": [
-    "SADC"
-   ],
-   "island_state": false
+   "name": "South Africa"
   },
   "COM": {
-   "name": "Comoros",
-   "region": "Islands",
-   "recs": [
-    "COMESA",
-    "CEN-SAD",
-    "SADC"
-   ],
-   "island_state": true
+   "name": "Comoros"
   },
   "MDG": {
-   "name": "Madagascar",
-   "region": "Islands",
-   "recs": [
-    "COMESA",
-    "SADC"
-   ],
-   "island_state": true
+   "name": "Madagascar"
   },
   "MUS": {
-   "name": "Mauritius",
-   "region": "Islands",
-   "recs": [
-    "COMESA",
-    "SADC"
-   ],
-   "island_state": true
+   "name": "Mauritius"
   },
   "SYC": {
-   "name": "Seychelles",
-   "region": "Islands",
-   "recs": [
-    "COMESA",
-    "SADC"
-   ],
-   "island_state": true
+   "name": "Seychelles"
   },
   "STP": {
-   "name": "Sao Tome & Principe",
-   "region": "Islands",
-   "recs": [
-    "ECCAS"
-   ],
-   "island_state": true
+   "name": "Sao Tome & Principe"
   }
  },
  "methods": [

@@ -11,7 +11,8 @@ the reason recorded in WONDERS_OWNER below):
    with fewer than MIN_LINKS are not considered, which cannot change the result since only the most notable few of
    each class are taken.
 3. Take the HERITAGE most notable World Heritage Sites, and the PER_CLASS most notable of each class.
-4. Every region of the ASI gets at least one wonder: its most notable World Heritage Site if it has none yet.
+4. Every Natural Earth subregion of Africa gets at least one wonder: its most notable World Heritage Site if it has
+   none yet. (Edition 1's own regions are not carried over, P105.)
 
 Photographs: the item's main image (P18), then the first JPEG files of its Commons category (P373) in the category's
 own order, skipping maps, flags, logos and diagrams, up to PHOTOS in all. A file without a stated licence is refused.
@@ -29,6 +30,7 @@ ROOT = Path(__file__).resolve().parent
 sys.path.insert(0, str(ROOT.parents[1]))  # athena-core
 
 from asi.core.countries import COUNTRIES  # noqa: E402
+from asi.geography import subregions  # noqa: E402
 
 EDITION = "2026-10-18"
 OUTPUT = ROOT / "web" / "public" / "data" / "wonders.json"
@@ -40,6 +42,7 @@ CLASSES = {  # Wikidata class: the label shown; QIDs checked against Wikidata's 
 HERITAGE, PER_CLASS, PHOTOS, WIDTH, MIN_LINKS = 15, 3, 4, 1280, 10
 SKIP = re.compile(r"map|flag|logo|diagram|locator|coat of arms|\.svg$|\.png$|\.tif", re.I)
 WONDERS_OWNER: dict[str, str] = {}  # QID -> the owner's reason for adding (or "remove: reason")
+REGION: dict[str, str] = {}  # each state's Natural Earth subregion, filled by main()
 
 
 def query(iso3: str) -> str:
@@ -88,14 +91,14 @@ SELECT ?item ?itemLabel ?itemDescription ?coord ?image ?category WHERE {{
 
 def shortlist(found: dict[str, dict]) -> list[str]:
     """Every item that could be chosen once names and coordinates are known: four times each quota, and each
-    region's leading World Heritage Sites. Only these need details."""
+    subregion's leading World Heritage Sites. Only these need details."""
     by_links = sorted(found.values(), key=lambda c: (-c["links"], c["id"]))
     keep = [c["id"] for c in by_links if c["heritage"]][:HERITAGE * 4]
     for kind in CLASSES.values():
         keep += [c["id"] for c in by_links if kind in c["kinds"]][:PER_CLASS * 4]
-    for region in {c["region"] for c in COUNTRIES.values()}:
+    for region in set(REGION.values()):
         keep += [c["id"] for c in by_links if c["heritage"]
-                 and any(COUNTRIES[i]["region"] == region for i in c["countries"])][:4]
+                 and any(REGION[i] == region for i in c["countries"])][:4]
     return sorted(set(keep))
 
 
@@ -126,10 +129,9 @@ def select(found: dict[str, dict]) -> list[dict]:
     for kind in CLASSES.values():
         for c in [c for c in by_links if kind in c["kinds"]][:PER_CLASS]:
             chosen.setdefault(c["id"], c)
-    regions = {COUNTRIES[i]["region"] for c in chosen.values() for i in c["countries"]}
-    for region in sorted({c["region"] for c in COUNTRIES.values()} - regions):
-        top = next((c for c in by_links if c["heritage"] and any(COUNTRIES[i]["region"] == region
-                                                                   for i in c["countries"])), None)
+    regions = {REGION[i] for c in chosen.values() for i in c["countries"]}
+    for region in sorted(set(REGION.values()) - regions):
+        top = next((c for c in by_links if c["heritage"] and any(REGION[i] == region for i in c["countries"])), None)
         if top:
             chosen.setdefault(top["id"], top)
     for qid, reason in WONDERS_OWNER.items():
@@ -146,10 +148,11 @@ def file_title(image_url: str) -> str:
 
 
 def main() -> int:
-    from adapters import fetcher
+    from adapters import fetcher, sources
     from athena import commons
 
     fetch = fetcher()
+    REGION.update(subregions(json.loads(fetch.get(sources()["natural-earth-countries-50m"]["url"]))))
     rows = []
     for iso3 in sorted(COUNTRIES):
         rows += commons.bindings(get_json(fetch, commons.sparql_url(query(iso3))))
@@ -195,7 +198,7 @@ def main() -> int:
                         "link": "https://commons.wikimedia.org"}],
            "refused": refused, "wonders": wonders}
     OUTPUT.write_text(json.dumps(doc, ensure_ascii=False, indent=1) + "\n", encoding="utf-8", newline="\n")
-    regions = sorted({COUNTRIES[i]["region"] for w in wonders for i in w["countries"]})
+    regions = sorted({REGION[i] for w in wonders for i in w["countries"]})
     print(f"{len(rows):,} candidate rows, {len(found):,} items; {len(wonders)} wonders in {len(regions)} regions; "
           f"{sum(len(w['photos']) for w in wonders)} photos; {len(refused)} files refused")
     for w in wonders:

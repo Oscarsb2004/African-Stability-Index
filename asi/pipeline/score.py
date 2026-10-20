@@ -94,7 +94,7 @@ def pillar_scores(
                     p = prov.iloc[0] if prov is not None and not prov.empty else "absent"
                     if p == "observed":
                         n_observed += 1
-                    elif p in ("carried_forward", "regional_mean", "regional_quantile", "interpolated"):
+                    elif p in ("carried_forward", "regional_mean", "interpolated"):
                         n_imputed += 1
                     elif p == "derived":
                         n_observed += 1   # computed from real data

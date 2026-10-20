@@ -10,7 +10,7 @@ import pytest
 
 from asi.core import (
     COUNTRIES, PILLAR_DEFS, WEIGHT_PRESETS, WEIGHT_MIN, WEIGHT_MAX,
-    ACTIVE_PRESET, ACTIVE_PROFILE,
+    ACTIVE_PRESET,
 )
 from asi.core.registry import PillarRegistry, IndicatorRegistry
 
@@ -72,27 +72,7 @@ def test_every_country_has_required_fields():
     for iso3, meta in COUNTRIES.items():
         assert len(iso3) == 3 and iso3.isupper(), f"bad ISO3 key: {iso3!r}"
         assert meta.get("name"), f"{iso3} missing name"
-        assert meta.get("region"), f"{iso3} missing region"
-        assert isinstance(meta.get("rec"), list), f"{iso3} rec must be a list"
-
-
-def test_regions_match_active_profile():
-    """Region values must be drawn from the profile's declared subregions."""
-    found = {m["region"] for m in COUNTRIES.values()}
-    declared = set(ACTIVE_PROFILE.subregions)
-    assert found <= declared, f"undeclared regions in registry: {sorted(found - declared)}"
-
-
-def test_rec_membership_is_known():
-    """Every REC code must be one the profile recognises."""
-    found = {r for m in COUNTRIES.values() for r in m["rec"]}
-    declared = set(ACTIVE_PROFILE.communities)
-    assert found <= declared, f"unknown REC codes: {sorted(found - declared)}"
-
-
-def test_island_states_exist_in_registry():
-    missing = ACTIVE_PROFILE.island_states - set(COUNTRIES)
-    assert not missing, f"island states not in country registry: {sorted(missing)}"
+        assert set(meta) == {"name"}, f"{iso3}: groupings live in registry/groups.yaml, not here (P105)"
 
 
 # ── Weights ────────────────────────────────────────────────────────────────────

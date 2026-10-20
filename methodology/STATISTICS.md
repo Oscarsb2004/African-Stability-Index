@@ -69,8 +69,7 @@ ranges from 26% (Nigeria) to effectively 100%. B20's earlier finding — median
 the number that belongs next to a published rank.
 
 **3. All assumptions are varied jointly, not one at a time.**
-Each assumption is currently tested in isolation (weights, then imputation, then
-islands). Saisana, Saltelli & Tarantola (2005) is the standard argument for a
+Each assumption is currently tested in isolation (weights, then imputation). Saisana, Saltelli & Tarantola (2005) is the standard argument for a
 joint Monte Carlo over imputation × winsorisation × normalisation × aggregation
 × weighting, reporting a rank distribution per country. Was on the retired `ROADMAP.md`;
 recorded here as the destination.

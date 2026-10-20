@@ -21,7 +21,6 @@ REPO = pathlib.Path(__file__).resolve().parent.parent
 CANONICAL = {
     "PILLAR_DEFS":    "asi/core/constants.py",
     "WEIGHT_PRESETS": "asi/core/constants.py",
-    "ISLAND_SET":     "asi/core/constants.py",
     "WEIGHT_MIN":     "asi/core/constants.py",
     "WEIGHT_MAX":     "asi/core/constants.py",
     "SMALL":          "asi/core/constants.py",

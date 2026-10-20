@@ -122,11 +122,6 @@
   "median_rank_shift": 4.0,
   "max_rank_shift": 22
  },
- "islands_excluded": {
-  "n_removed": 6,
-  "median_rank_shift": 5.0,
-  "max_rank_shift": 6
- },
  "rank_spread_across_methods": {
   "DZA": {
    "min": 19,

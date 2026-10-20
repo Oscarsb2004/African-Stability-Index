@@ -16,12 +16,11 @@ The four submodules divide as follows:
 from asi.core.constants import (
     PILLAR_DEFS, ACTIVE_PRESET, WEIGHT_PRESETS,
     WEIGHT_MIN, WEIGHT_MAX, SMALL,
-    IQR_MULTIPLIER, MIN_REGIONAL_SAMPLE,
+    IQR_MULTIPLIER,
     COVERAGE_WARN_THRESHOLD, COVERAGE_ALERT_THRESHOLD,
     RELIABILITY_RELIABLE_AT, RELIABILITY_THIN_AT,
     RELIABILITY_MAX_IMPUTED, MIN_PILLARS_FOR_COMPOSITE,
     MAX_PILLAR_NAN_RATE, MIN_CRONBACH_ALPHA,
-    RegionProfile, AFRICA, ACTIVE_PROFILE, ISLAND_SET,
 )
 from asi.core.schema import (
     Provenance, Reliability, Polarity, WindowMode,
@@ -36,12 +35,11 @@ __all__ = [
     # constants
     "PILLAR_DEFS", "ACTIVE_PRESET", "WEIGHT_PRESETS",
     "WEIGHT_MIN", "WEIGHT_MAX", "SMALL",
-    "IQR_MULTIPLIER", "MIN_REGIONAL_SAMPLE",
+    "IQR_MULTIPLIER",
     "COVERAGE_WARN_THRESHOLD", "COVERAGE_ALERT_THRESHOLD",
     "RELIABILITY_RELIABLE_AT", "RELIABILITY_THIN_AT",
     "RELIABILITY_MAX_IMPUTED", "MIN_PILLARS_FOR_COMPOSITE",
     "MAX_PILLAR_NAN_RATE", "MIN_CRONBACH_ALPHA",
-    "RegionProfile", "AFRICA", "ACTIVE_PROFILE", "ISLAND_SET",
     # schema
     "Provenance", "Reliability", "Polarity", "WindowMode",
     "IndicatorSpec", "Observation", "PillarScore", "CompositeScore",

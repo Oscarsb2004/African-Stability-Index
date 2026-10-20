@@ -1,292 +1,68 @@
 """
-asi.core.countries — the country registry for this edition.
+asi.core.countries — the country registry for this edition: the 54 African Union member states scored, each with
+the display name used everywhere in the UI.
 
-Each entry carries:
-    name    display name used everywhere in the UI
-    region  subregion used for regional-mean imputation
-            (West, East, Central, North, South, Islands)
-    rec     Regional Economic Community memberships (AU-recognised)
-
-Island-state status is NOT a region: it lives in
-asi.core.constants.ACTIVE_PROFILE.island_states, because a country can be an
-island state and still belong to a mainland region (Cabo Verde is in West).
-
-REC membership here reflects current status, including the 2025 Sahel
-withdrawals from ECOWAS. It is time-invariant today; the Phase B time slider
-will need year-aware membership or an explicit "current membership" label.
+Groupings live in registry/groups.yaml: the African Union's eight Regional Economic Communities (the owner's
+compilation, moved there on 2026-10-20) and the organisations the Data tab compares. Edition 1's own regions, its
+island-state flag and its regional-mean imputation are not carried over (P105): no state is treated differently
+for being small, an island or data-poor.
 """
 
 COUNTRIES = {
-    "DZA": {
-        "name": "Algeria",
-        "region": "North",
-        "rec": ["UMA"],
-    },
-    "EGY": {
-        "name": "Egypt",
-        "region": "North",
-        "rec": ["COMESA", "CEN-SAD"],
-    },
-    "LBY": {
-        "name": "Libya",
-        "region": "North",
-        "rec": ["UMA", "COMESA", "CEN-SAD"],
-    },
-    "MAR": {
-        "name": "Morocco",
-        "region": "North",
-        "rec": ["UMA", "CEN-SAD"],
-    },
-    "SDN": {
-        "name": "Sudan",
-        "region": "North",
-        "rec": ["COMESA", "CEN-SAD"],
-    },
-    "TUN": {
-        "name": "Tunisia",
-        "region": "North",
-        "rec": ["UMA", "COMESA", "CEN-SAD"],
-    },
-    "BEN": {
-        "name": "Benin",
-        "region": "West",
-        "rec": ["CEN-SAD", "ECOWAS"],
-    },
-    "BFA": {
-        "name": "Burkina Faso",
-        "region": "West",
-        "rec": ["CEN-SAD"],
-    },
-    "CPV": {
-        "name": "Cabo Verde",
-        "region": "West",
-        "rec": ["ECOWAS"],
-    },
-    "GMB": {
-        "name": "The Gambia",
-        "region": "West",
-        "rec": ["CEN-SAD", "ECOWAS"],
-    },
-    "GHA": {
-        "name": "Ghana",
-        "region": "West",
-        "rec": ["CEN-SAD", "ECOWAS"],
-    },
-    "GIN": {
-        "name": "Guinea",
-        "region": "West",
-        "rec": ["CEN-SAD", "ECOWAS"],
-    },
-    "GNB": {
-        "name": "Guinea-Bissau",
-        "region": "West",
-        "rec": ["CEN-SAD", "ECOWAS"],
-    },
-    "CIV": {
-        "name": "Cote d'Ivoire",
-        "region": "West",
-        "rec": ["CEN-SAD", "ECOWAS"],
-    },
-    "LBR": {
-        "name": "Liberia",
-        "region": "West",
-        "rec": ["ECOWAS"],
-    },
-    "MLI": {
-        "name": "Mali",
-        "region": "West",
-        "rec": ["CEN-SAD"],
-    },
-    "MRT": {
-        "name": "Mauritania",
-        "region": "West",
-        "rec": ["UMA", "CEN-SAD"],
-    },
-    "NER": {
-        "name": "Niger",
-        "region": "West",
-        "rec": ["CEN-SAD"],
-    },
-    "NGA": {
-        "name": "Nigeria",
-        "region": "West",
-        "rec": ["CEN-SAD", "ECOWAS"],
-    },
-    "SEN": {
-        "name": "Senegal",
-        "region": "West",
-        "rec": ["CEN-SAD", "ECOWAS"],
-    },
-    "SLE": {
-        "name": "Sierra Leone",
-        "region": "West",
-        "rec": ["CEN-SAD", "ECOWAS"],
-    },
-    "TGO": {
-        "name": "Togo",
-        "region": "West",
-        "rec": ["CEN-SAD", "ECOWAS"],
-    },
-    "AGO": {
-        "name": "Angola",
-        "region": "Central",
-        "rec": ["ECCAS", "SADC"],
-    },
-    "CMR": {
-        "name": "Cameroon",
-        "region": "Central",
-        "rec": ["ECCAS"],
-    },
-    "CAF": {
-        "name": "Central African Republic",
-        "region": "Central",
-        "rec": ["CEN-SAD", "ECCAS"],
-    },
-    "TCD": {
-        "name": "Chad",
-        "region": "Central",
-        "rec": ["CEN-SAD", "ECCAS"],
-    },
-    "COG": {
-        "name": "Republic of Congo",
-        "region": "Central",
-        "rec": ["ECCAS"],
-    },
-    "COD": {
-        "name": "Democratic Rep. Congo",
-        "region": "Central",
-        "rec": ["COMESA", "EAC", "ECCAS", "SADC"],
-    },
-    "GNQ": {
-        "name": "Equatorial Guinea",
-        "region": "Central",
-        "rec": ["ECCAS"],
-    },
-    "GAB": {
-        "name": "Gabon",
-        "region": "Central",
-        "rec": ["ECCAS"],
-    },
-    "BDI": {
-        "name": "Burundi",
-        "region": "East",
-        "rec": ["COMESA", "EAC", "ECCAS"],
-    },
-    "DJI": {
-        "name": "Djibouti",
-        "region": "East",
-        "rec": ["COMESA", "CEN-SAD", "IGAD"],
-    },
-    "ERI": {
-        "name": "Eritrea",
-        "region": "East",
-        "rec": ["COMESA", "CEN-SAD"],
-    },
-    "ETH": {
-        "name": "Ethiopia",
-        "region": "East",
-        "rec": ["COMESA", "IGAD"],
-    },
-    "KEN": {
-        "name": "Kenya",
-        "region": "East",
-        "rec": ["COMESA", "EAC", "IGAD"],
-    },
-    "MWI": {
-        "name": "Malawi",
-        "region": "East",
-        "rec": ["COMESA", "SADC"],
-    },
-    "MOZ": {
-        "name": "Mozambique",
-        "region": "East",
-        "rec": ["SADC"],
-    },
-    "RWA": {
-        "name": "Rwanda",
-        "region": "East",
-        "rec": ["COMESA", "EAC"],
-    },
-    "SOM": {
-        "name": "Somalia",
-        "region": "East",
-        "rec": ["COMESA", "CEN-SAD", "EAC", "IGAD"],
-    },
-    "SSD": {
-        "name": "South Sudan",
-        "region": "East",
-        "rec": ["EAC", "IGAD"],
-    },
-    "TZA": {
-        "name": "Tanzania",
-        "region": "East",
-        "rec": ["EAC", "SADC"],
-    },
-    "UGA": {
-        "name": "Uganda",
-        "region": "East",
-        "rec": ["COMESA", "EAC", "IGAD"],
-    },
-    "ZMB": {
-        "name": "Zambia",
-        "region": "East",
-        "rec": ["COMESA", "SADC"],
-    },
-    "ZWE": {
-        "name": "Zimbabwe",
-        "region": "East",
-        "rec": ["COMESA", "SADC"],
-    },
-    "BWA": {
-        "name": "Botswana",
-        "region": "South",
-        "rec": ["SADC"],
-    },
-    "LSO": {
-        "name": "Lesotho",
-        "region": "South",
-        "rec": ["SADC"],
-    },
-    "NAM": {
-        "name": "Namibia",
-        "region": "South",
-        "rec": ["SADC"],
-    },
-    "SWZ": {
-        "name": "Eswatini",
-        "region": "South",
-        "rec": ["COMESA", "SADC"],
-    },
-    "ZAF": {
-        "name": "South Africa",
-        "region": "South",
-        "rec": ["SADC"],
-    },
-    "COM": {
-        "name": "Comoros",
-        "region": "Islands",
-        "rec": ["COMESA", "CEN-SAD", "SADC"],
-    },
-    "MDG": {
-        "name": "Madagascar",
-        "region": "Islands",
-        "rec": ["COMESA", "SADC"],
-    },
-    "MUS": {
-        "name": "Mauritius",
-        "region": "Islands",
-        "rec": ["COMESA", "SADC"],
-    },
-    "SYC": {
-        "name": "Seychelles",
-        "region": "Islands",
-        "rec": ["COMESA", "SADC"],
-    },
-    "STP": {
-        "name": "Sao Tome & Principe",
-        "region": "Islands",
-        "rec": ["ECCAS"],
-    },
+    "DZA": {"name": "Algeria"},
+    "EGY": {"name": "Egypt"},
+    "LBY": {"name": "Libya"},
+    "MAR": {"name": "Morocco"},
+    "SDN": {"name": "Sudan"},
+    "TUN": {"name": "Tunisia"},
+    "BEN": {"name": "Benin"},
+    "BFA": {"name": "Burkina Faso"},
+    "CPV": {"name": "Cabo Verde"},
+    "GMB": {"name": "The Gambia"},
+    "GHA": {"name": "Ghana"},
+    "GIN": {"name": "Guinea"},
+    "GNB": {"name": "Guinea-Bissau"},
+    "CIV": {"name": "Cote d'Ivoire"},
+    "LBR": {"name": "Liberia"},
+    "MLI": {"name": "Mali"},
+    "MRT": {"name": "Mauritania"},
+    "NER": {"name": "Niger"},
+    "NGA": {"name": "Nigeria"},
+    "SEN": {"name": "Senegal"},
+    "SLE": {"name": "Sierra Leone"},
+    "TGO": {"name": "Togo"},
+    "AGO": {"name": "Angola"},
+    "CMR": {"name": "Cameroon"},
+    "CAF": {"name": "Central African Republic"},
+    "TCD": {"name": "Chad"},
+    "COG": {"name": "Republic of Congo"},
+    "COD": {"name": "Democratic Rep. Congo"},
+    "GNQ": {"name": "Equatorial Guinea"},
+    "GAB": {"name": "Gabon"},
+    "BDI": {"name": "Burundi"},
+    "DJI": {"name": "Djibouti"},
+    "ERI": {"name": "Eritrea"},
+    "ETH": {"name": "Ethiopia"},
+    "KEN": {"name": "Kenya"},
+    "MWI": {"name": "Malawi"},
+    "MOZ": {"name": "Mozambique"},
+    "RWA": {"name": "Rwanda"},
+    "SOM": {"name": "Somalia"},
+    "SSD": {"name": "South Sudan"},
+    "TZA": {"name": "Tanzania"},
+    "UGA": {"name": "Uganda"},
+    "ZMB": {"name": "Zambia"},
+    "ZWE": {"name": "Zimbabwe"},
+    "BWA": {"name": "Botswana"},
+    "LSO": {"name": "Lesotho"},
+    "NAM": {"name": "Namibia"},
+    "SWZ": {"name": "Eswatini"},
+    "ZAF": {"name": "South Africa"},
+    "COM": {"name": "Comoros"},
+    "MDG": {"name": "Madagascar"},
+    "MUS": {"name": "Mauritius"},
+    "SYC": {"name": "Seychelles"},
+    "STP": {"name": "Sao Tome & Principe"},
 }
 
 #: AU member states this edition does not score, and why. Kept as data rather

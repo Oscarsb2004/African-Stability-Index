@@ -6,14 +6,12 @@ Consolidates the former root-level `constants.py` and `run_config.py`.
 pipeline stage ever read it — only `setup.py` inspected it. The live switch has
 always been ACTIVE_PRESET below.)
 
-Region-specific values live in a RegionProfile rather than as module globals, so
-the pipeline itself contains no hardcoded Africa. Content (the RECs) stays
-deliberately Africa-specific; the *machinery* does not.
+Groupings of states (the RECs and others) live in registry/groups.yaml. Edition 1's
+region profile, island-state list and regional fill are not carried over (P105).
 """
 
 from __future__ import annotations
 
-from dataclasses import dataclass, field
 from pathlib import Path
 
 
@@ -122,7 +120,6 @@ DISPLAY_DECIMALS = 2
 # without truncating moderate variation. Documented in methodology/references.md.
 IQR_MULTIPLIER = 2.0
 
-MIN_REGIONAL_SAMPLE      = 3     # minimum peer countries required for a regional-mean fill
 COVERAGE_WARN_THRESHOLD  = 0.75  # below this -> SPARSE flag
 COVERAGE_ALERT_THRESHOLD = 0.50  # below this -> VERY SPARSE flag
 
@@ -170,54 +167,6 @@ MAX_PILLAR_NAN_RATE = 0.30  # flag if >30% of countries have no data in a pillar
 MIN_CRONBACH_ALPHA  = 0.60
 
 
-# ── Region profile — the GSI seam ──────────────────────────────────────────────
-
-@dataclass(frozen=True, slots=True)
-class RegionProfile:
-    """
-    Everything that makes an edition specific to one part of the world.
-
-    A future Global Stability Index supplies a different profile; the pipeline
-    code needs no change. Narrative content remains Africa-specific by design.
-    """
-
-    key: str
-    display_name: str
-    subregions: tuple[str, ...]          # internal grouping used for regional fills
-    island_states: frozenset[str]        # structurally advantaged small islands
-    community_label: str                 # what a country grouping is called
-    communities: tuple[str, ...]         # the groupings themselves
-
-    def is_island(self, iso3: str) -> bool:
-        return iso3 in self.island_states
-
-
-AFRICA = RegionProfile(
-    key="africa",
-    display_name="Africa",
-    # Grouping used for regional-mean imputation. Note "Islands" holds only 5
-    # countries, so a regional fill there rests on a very thin peer pool
-    # (MIN_REGIONAL_SAMPLE is 3) — verify/advisory.py flags this.
-    subregions=("North", "West", "East", "Central", "South", "Islands"),
-    # Small island states rank structurally high across every method: small
-    # populations depress absolute conflict counts, sea borders remove land-border
-    # security concerns, and concentrated economies are easier to administer.
-    # Cabo Verde is deliberately an island state in the *West* region: it is
-    # politically and economically West African. Island membership and region
-    # membership are independent flags, not a hierarchy.
-    island_states=frozenset({"SYC", "MUS", "COM", "CPV", "STP", "MDG"}),
-    community_label="Regional Economic Community",
-    # The eight RECs recognised by the African Union.
-    communities=("UMA", "COMESA", "CEN-SAD", "EAC", "ECCAS", "ECOWAS", "IGAD", "SADC"),
-)
-
-#: The profile this edition runs against.
-ACTIVE_PROFILE = AFRICA
-
-#: Backwards-compatible alias. Prefer ACTIVE_PROFILE.island_states in new code.
-ISLAND_SET = ACTIVE_PROFILE.island_states
-
-
 #: Repository root, resolved from this file rather than from the process's
 #: working directory.
 #:
@@ -233,13 +182,12 @@ __all__ = [
     "HEADLINE_METHOD", "METHOD_ROLES", "INTERVAL_LEVEL", "BAND_Z",
     "OVERLAP_BAR", "OVERLAP_CONTROL", "OVERLAP_MIN_N",
     "WEIGHT_MIN", "WEIGHT_MAX", "SMALL",
-    "IQR_MULTIPLIER", "MIN_REGIONAL_SAMPLE", "REFERENCE_YEAR_MIN_COVERAGE",
+    "IQR_MULTIPLIER", "REFERENCE_YEAR_MIN_COVERAGE",
     "COVERAGE_WARN_THRESHOLD", "COVERAGE_ALERT_THRESHOLD",
     "RELIABILITY_RELIABLE_AT", "RELIABILITY_THIN_AT",
     "RELIABILITY_MAX_IMPUTED", "MIN_PILLARS_FOR_COMPOSITE", "ADMISSION_FLOOR",
     "MAX_PILLAR_NAN_RATE", "MIN_CRONBACH_ALPHA",
     "PANEL_START", "PANEL_PULL_BUFFER", "DEFAULT_MAX_CARRY_FORWARD",
     "DISPLAY_DECIMALS",
-    "RegionProfile", "AFRICA", "ACTIVE_PROFILE", "ISLAND_SET",
     "PROJECT_ROOT",
 ]
