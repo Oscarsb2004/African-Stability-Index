@@ -731,3 +731,71 @@ Its lack-of-reliability index is 1.4 of 10, where 0 means every value was measur
   ("Research text, not verified" in the vault's ASI Context notes). Rebuilding them means sourcing and checking every
   claim, under terms that allow reuse.
 - **C, recent events:** a dated snapshot of news with links. It goes stale within months.
+
+## Overlapping indicators share a weight (P98, P101)
+
+**The owner's rulings (2026-10-20):**
+- **P101:** "option 2 at .71". Within a pillar, indicators that overlap share one weight. The bar is .71, where a
+  pair shares more variance than it holds apart (r² above one half).
+- **P102:** step 10's context (part B) is left to the ASI project, for later. Recent events (part C) are skipped.
+
+**What changed**
+- **The screen.** `02_panel.py --freeze-overlap 2024` measures, for every pair of scored indicators within a pillar
+  at the reference year:
+  - the partial correlation on the transformed values, holding log GDP per capita constant, with n and Fisher's
+    interval;
+  - over the states with all three values, at least 20.
+- **The clusters.** Pairs at |partial r| .71 or more chain into clusters. A cluster is one slot of its pillar, and
+  each member counts as 1/m of it.
+- **The freeze.** The result is frozen in `registry/overlap.yaml`, as the goalposts are, so a new year's data never
+  re-weights history. A run without the file stops.
+- **The pillar score** is the mean of its slots, each slot the mean of its members present. An indicator outside a
+  cluster is a slot of its own. Reliability tiers still count indicators.
+- **193 pairs measured; 11 reach .71; 6 clusters, 15 indicators:**
+  - **GOV:** government effectiveness, rule of law, control of corruption and CPIA property rights. The pairs run
+    from +0.817 to +0.902; control of corruption and CPIA join through the other two.
+  - **HUM:** life expectancy, under-5 mortality and maternal mortality (−0.818 and −0.769, through life
+    expectancy); youth share and population growth (+0.782).
+  - **SEC:** state-based and one-sided deaths (+0.777).
+  - **MAC:** external debt and debt service (+0.810).
+  - **EXT:** aid received and total GDP (−0.758).
+- **Nominal effective weights** now run from 0.0032 (life expectancy, 0.17× an even share of 1/52) to 0.0625
+  (political stability, alone in its slot in SEC).
+
+**What moved** (2024, equal weights, against step 9)
+- **Scores:** composites moved 0.83 points on average (−0.56 net), at most 2.48 (ETH, −2.48).
+- **Ranks:** rank correlation 0.994 over 54 states. One state moved 5 places or more: DZA, 15 to 20.
+- **Pillars,** with each mean and its average move:
+  - **GOV:** 48.18 to 51.85; it moved 4.81 on average, at most 11.15 (MOZ);
+  - **SEC:** 77.93 to 72.09; 5.96 on average, at most 11.94 (LBY). The two death series now weigh as much as
+    political stability alone.
+  - **EXT:** 55.46 to 54.64; 2.30 on average;
+  - **MAC:** 47.81 to 47.58; 1.96 on average;
+  - **HUM:** 60.09 to 59.50; 1.12 on average.
+- **The WGI's share of the headline:** 15.6% nominal and 20.0% as used at 2024, against 16.7% and 21.1% at step 9,
+  and edition 1's 28.9%.
+- **Bands and tiers:**
+  - **Standard error:** median 5.92.
+  - **Bands:** median 45 places wide, from 12 to 54.
+  - **Tiers:** 20, 24, 9 and 1 states.
+- **Top 5:** CPV, MUS, SYC, BWA, ZAF. **Bottom 5:** COD, CAF, SOM, SSD, SDN.
+- **Robustness:**
+  - **Weighting methods agree:** rho .9845 (PCA), .9777 (entropy) and .9905 (geometric).
+  - **The worst in-bounds weighting** gives .9091: "robust" again, where step 9 gave .8863, "moderately sensitive".
+  - **Measured cells only:** .8522.
+- **The data narratives** are regenerated from this panel. The quotation in step 10's entry is Kenya before this
+  change.
+
+**Checks**
+- **Passing:** `verify.run`: rebuild, panel, contract, narrative and advisory.
+  - **3.1** re-derives every pillar as the mean of its slots, reading the frozen file as YAML.
+  - **3.3 (new)** re-derives all 193 partial correlations by another route and checks the 6 clusters. The route: the
+    correlation of the residuals left after least-squares regression on the control, where the pipeline uses the
+    closed form; the clusters by union-find.
+  - **4.6** re-derives the nominal weights with the slots.
+  - **Negative control, by hand:** with one cluster removed from the frozen file, 3.1, 3.3 and 4.6 fail.
+- **Tests:** 295 passed. **New:** three:
+  - overlapping indicators share a slot, with a negative control: three slots without it;
+  - the screen clusters pairs beyond the control and chains them, and leaves alone an indicator that shares only
+    GDP;
+  - effective weights split a slot among its members.

@@ -40,9 +40,14 @@ def pillar_scores(
     reliable_at: float,
     thin_at: float,
     max_imputed_share: float,
+    slots: dict[str, str] | None = None,
 ) -> pd.DataFrame:
     """
     Mean of the available indicator scores in each pillar, per country-year.
+
+    With `slots` (edition 2, P101), indicators that overlap share one slot: the
+    pillar is the mean over its slots, each slot the mean of its members present.
+    An indicator not in `slots` is a slot of its own.
 
     Returns one row per (iso3, pillar_id, year) with:
         score, n_indicators, n_observed, n_imputed, coverage_ratio, reliability
@@ -53,6 +58,7 @@ def pillar_scores(
     coverage.
     """
     rows = []
+    slot_of = (slots or {}).get
     scored = panel[panel["score"].notna()]
 
     by_key = {
@@ -73,7 +79,7 @@ def pillar_scores(
             continue
         for iso3 in iso3s:
             for year in years:
-                vals, n_observed, n_imputed, contributing = [], 0, 0, []
+                by_slot, n_observed, n_imputed, contributing = {}, 0, 0, []
                 for var in members:
                     key = (iso3, year, var)
                     s = by_key.get(key)
@@ -82,7 +88,7 @@ def pillar_scores(
                     value = float(s.iloc[0])
                     if np.isnan(value):
                         continue
-                    vals.append(value)
+                    by_slot.setdefault(slot_of(var, var), []).append(value)
                     contributing.append(var)
                     prov = prov_by_key.get(key)
                     p = prov.iloc[0] if prov is not None and not prov.empty else "absent"
@@ -100,7 +106,7 @@ def pillar_scores(
                 )
                 rows.append({
                     "iso3": iso3, "pillar_id": pillar_id, "year": year,
-                    "score": float(np.mean(vals)) if vals else np.nan,
+                    "score": float(np.mean([np.mean(v) for v in by_slot.values()])) if by_slot else np.nan,
                     "n_indicators": n_indicators,
                     "n_observed": n_observed,
                     "n_imputed": n_imputed,
@@ -344,36 +350,98 @@ def tiers(scores: pd.Series, errors: pd.Series, z: float) -> pd.Series:
     return pd.Series(out, dtype="Int64").reindex(scores.index)
 
 
-def effective_weights(pillar_map: dict[str, list[str]], present: pd.DataFrame | None = None) -> pd.Series:
+def _within(names: list[str], slots: dict[str, str]) -> dict[str, float]:
+    """Each name's share of its pillar: 1/s per slot, split equally among the slot's names."""
+    groups: dict[str, list[str]] = {}
+    for v in names:
+        groups.setdefault(slots.get(v, v), []).append(v)
+    return {v: 1 / (len(groups) * len(g)) for g in groups.values() for v in g}
+
+
+def effective_weights(pillar_map: dict[str, list[str]], present: pd.DataFrame | None = None,
+                      slots: dict[str, str] | None = None) -> pd.Series:
     """
     Each indicator's share of the headline (plan 4.10). Edition 1 hid that the
     WGI carried 28.9% of its weight.
 
-    Nominal (no `present`): every pillar with members weighs 1/P, and each of its
-    n indicators 1/n of that, summed over the pillars an indicator is in.
+    Nominal (no `present`): every pillar with members weighs 1/P; within it each
+    slot weighs 1/s, shared equally by its indicators (P101; an indicator without
+    a slot is one of its own), summed over the pillars an indicator is in.
 
     Realised: `present` is the pillar scores of one year (iso3, pillar_id,
     contributing) for the pillars that entered each state's headline. A state
-    with k pillars gives each 1/k, and each pillar's m contributing indicators
-    1/m of that; the result is the mean over the states.
+    with k pillars gives each 1/k, shared within it the same way over the slots
+    and indicators that contributed; the result is the mean over the states.
     """
+    slots = slots or {}
     if present is None:
         pillars = {p: m for p, m in pillar_map.items() if m}
-        rows = [(v, 1 / (len(pillars) * len(m))) for m in pillars.values() for v in m]
+        rows = [(v, w / len(pillars)) for m in pillars.values() for v, w in _within(m, slots).items()]
         return pd.DataFrame(rows, columns=["variable_name", "w"]).groupby("variable_name")["w"].sum()
     rows = []
     for state, g in present.groupby("iso3"):
         for members in g["contributing"]:
             names = [v for v in str(members).split(",") if v]
-            rows += [(state, v, 1 / (len(g) * len(names))) for v in names]
+            rows += [(state, v, w / len(g)) for v, w in _within(names, slots).items()]
     shares = pd.DataFrame(rows, columns=["iso3", "variable_name", "w"])
     per_state = shares.pivot_table(index="iso3", columns="variable_name", values="w", aggfunc="sum", fill_value=0.0)
     return per_state.mean()
+
+
+def overlap_screen(values: pd.DataFrame, pillar_map: dict[str, list[str]], control: str, bar: float,
+                   min_n: int) -> tuple[dict[str, str], list[dict]]:
+    """
+    Indicators of one pillar that overlap share a slot (P98, P101: "option 2 at .71").
+
+    `values` is one year's transformed values, a state per row and an indicator
+    per column. Two indicators of a pillar overlap when their partial correlation,
+    holding `control` constant (log GDP per capita, the development factor every
+    pillar shares), is at least `bar` in absolute value, over at least `min_n`
+    states with all three:
+
+        r_ab.c = (r_ab - r_ac r_bc) / sqrt((1 - r_ac^2)(1 - r_bc^2))
+
+    Overlapping pairs chain into clusters (connected components), each one slot.
+    The control is screened by nothing. Returns {indicator: slot} for the
+    clustered indicators, and every pair measured, with its n and Fisher interval.
+    """
+    slots, pairs = {}, []
+    for pillar, members in pillar_map.items():
+        names = [v for v in members if v != control and v in values.columns]
+        edges: dict[str, set[str]] = {v: set() for v in names}
+        for i, a in enumerate(names):
+            for b in names[i + 1:]:
+                d = values[[a, b, control]].dropna()
+                if len(d) < min_n:
+                    continue
+                c = d.corr().to_numpy()
+                r = (c[0, 1] - c[0, 2] * c[1, 2]) / np.sqrt((1 - c[0, 2] ** 2) * (1 - c[1, 2] ** 2))
+                half = 1.96 / np.sqrt(len(d) - 4)
+                pairs.append({"pillar": pillar, "a": a, "b": b, "n": int(len(d)), "partial_r": round(float(r), 4),
+                              "low": round(float(np.tanh(np.arctanh(r) - half)), 4),
+                              "high": round(float(np.tanh(np.arctanh(r) + half)), 4)})
+                if abs(r) >= bar:
+                    edges[a].add(b)
+                    edges[b].add(a)
+        seen: set[str] = set()
+        for v in names:
+            if v in seen or not edges[v]:
+                continue
+            cluster, todo = set(), [v]
+            while todo:
+                x = todo.pop()
+                if x not in cluster:
+                    cluster.add(x)
+                    todo += edges[x] - cluster
+            seen |= cluster
+            slot = f"{pillar}:" + "+".join(sorted(cluster))
+            slots.update({x: slot for x in cluster})
+    return slots, pairs
 
 
 __all__ = [
     "pillar_scores", "weighted_composite", "geometric_composite",
     "fit_pca_weights", "fit_entropy_weights", "composite_reliability",
     "COMPOSABLE", "composite_inputs", "lack_of_reliability",
-    "composite_interval", "rank_bands", "tiers", "effective_weights",
+    "composite_interval", "rank_bands", "tiers", "effective_weights", "overlap_screen",
 ]

@@ -58,6 +58,14 @@ METHOD_ROLES = {"equal": "headline", "geometric": "sensitivity", "pca": "diagnos
 INTERVAL_LEVEL = 0.95   # the composite's t interval (plan 2.2)
 BAND_Z = 1.96           # two states differ when |z| exceeds this (plan 2.3)
 
+# Overlapping indicators share a weight (P98, P101: "option 2 at .71"): within a pillar, two indicators whose partial
+# correlation holding log GDP per capita constant is at least OVERLAP_BAR, over at least OVERLAP_MIN_N states, share
+# one slot of the pillar. .71 is where a pair shares more variance than it holds apart (r squared above one half).
+# Measured once at the reference year and frozen in registry/overlap.yaml, as the goalposts are.
+OVERLAP_BAR = 0.71
+OVERLAP_CONTROL = "gdp_pc_ppp"
+OVERLAP_MIN_N = 20
+
 
 # ── Admissible pillar weights ──────────────────────────────────────────────────
 # These bound what counts as a defensible weighting of the pillars. They
@@ -223,6 +231,7 @@ PROJECT_ROOT = Path(__file__).resolve().parents[2]
 __all__ = [
     "PILLAR_DEFS", "ACTIVE_PRESET", "WEIGHT_PRESETS",
     "HEADLINE_METHOD", "METHOD_ROLES", "INTERVAL_LEVEL", "BAND_Z",
+    "OVERLAP_BAR", "OVERLAP_CONTROL", "OVERLAP_MIN_N",
     "WEIGHT_MIN", "WEIGHT_MAX", "SMALL",
     "IQR_MULTIPLIER", "MIN_REGIONAL_SAMPLE", "REFERENCE_YEAR_MIN_COVERAGE",
     "COVERAGE_WARN_THRESHOLD", "COVERAGE_ALERT_THRESHOLD",

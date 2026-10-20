@@ -104,6 +104,7 @@ tests/                           pytest
 indicators_list/pillar_*.yaml    the indicator registry, edited by hand: polarity, window,
                                  aggregation, log flag, and a written justification per indicator
 registry/goalposts.yaml          the frozen goalposts
+registry/overlap.yaml            the frozen overlap screen: which indicators share a slot of their pillar (P101)
 sections.toml                    the binding of the shared section templates (P54)
 data/                            pipeline outputs (committed for portability)
 data/panel/                      the panel, scores, frozen weights, the bundle

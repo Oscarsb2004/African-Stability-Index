@@ -38,7 +38,7 @@ import yaml
 from asi.core.constants import (
     PANEL_START, DEFAULT_MAX_CARRY_FORWARD, IQR_MULTIPLIER, MIN_REGIONAL_SAMPLE,
     PILLAR_DEFS, WEIGHT_PRESETS, ACTIVE_PRESET, SMALL,
-    HEADLINE_METHOD, METHOD_ROLES, INTERVAL_LEVEL, BAND_Z,
+    HEADLINE_METHOD, METHOD_ROLES, INTERVAL_LEVEL, BAND_Z, OVERLAP_BAR, OVERLAP_CONTROL, OVERLAP_MIN_N,
     RELIABILITY_RELIABLE_AT, RELIABILITY_THIN_AT, RELIABILITY_MAX_IMPUTED,
     MIN_PILLARS_FOR_COMPOSITE, DISPLAY_DECIMALS, REFERENCE_YEAR_MIN_COVERAGE,
 )
@@ -58,6 +58,7 @@ logger = logging.getLogger(__name__)
 INPUTS         = Path("data/inputs.csv")
 OUT_DIR        = Path("data/panel")
 GOALPOSTS_FILE = Path("registry/goalposts.yaml")
+OVERLAP_FILE   = Path("registry/overlap.yaml")
 WEIGHTS_FILE   = OUT_DIR / "weights.yaml"
 
 
@@ -67,6 +68,9 @@ def main() -> int:
     ap.add_argument("--freeze-goalposts", action="store_true",
                     help="recompute and overwrite the frozen goalposts "
                          "(re-anchors every historical score — do this deliberately)")
+    ap.add_argument("--freeze-overlap", type=int, metavar="YEAR",
+                    help="measure which indicators overlap at YEAR (the reference year) and freeze it in "
+                         "registry/overlap.yaml (P101; moves scores, so do this deliberately)")
     ap.add_argument("--freeze-new-goalposts", action="store_true",
                     help="freeze goalposts for indicators the file lacks, leaving every existing one as it is (N1)")
     ap.add_argument("--missing-at-regional-quantile", type=float, metavar="Q",
@@ -186,11 +190,38 @@ def main() -> int:
             if p in pillar_map:
                 pillar_map[p].append(var)
 
+    # Overlapping indicators share a slot of their pillar (P98, P101), measured once at the reference year and frozen,
+    # as the goalposts are, so a new year's data never re-weights history. A missing file stops the run.
+    if args.freeze_overlap is not None:
+        at = pnl[pnl["year"] == args.freeze_overlap].pivot_table(index="iso3", columns="variable_name",
+                                                                  values="transformed_value")
+        found, pairs = score_mod.overlap_screen(at, pillar_map, OVERLAP_CONTROL, OVERLAP_BAR, OVERLAP_MIN_N)
+        clusters = sorted({s for s in found.values()})
+        with open(OVERLAP_FILE, "w", encoding="utf-8") as f:
+            yaml.safe_dump({
+                "note": ("Indicators of one pillar whose partial correlation, holding log GDP per capita constant, "
+                         "is at least the bar share one slot (P98, P101). Written by 02_panel.py --freeze-overlap."),
+                "year": args.freeze_overlap, "bar": OVERLAP_BAR, "control": OVERLAP_CONTROL,
+                "min_n": OVERLAP_MIN_N,
+                "slots": {s: sorted(v for v, x in found.items() if x == s) for s in clusters},
+                "pairs": pairs,
+            }, f, sort_keys=False, allow_unicode=True)
+        logger.info("  overlap frozen at %d: %d pairs measured, %d clusters -> %s", args.freeze_overlap,
+                    len(pairs), len(clusters), OVERLAP_FILE)
+    if not OVERLAP_FILE.exists():
+        logger.error("%s not found: run with --freeze-overlap <reference year> once.", OVERLAP_FILE)
+        return 1
+    overlap = yaml.safe_load(OVERLAP_FILE.read_text(encoding="utf-8"))
+    slots = {v: s for s, members in overlap["slots"].items() for v in members}
+    logger.info("  %d indicators share %d slots (overlap at %d, bar %.2f)", len(slots), len(overlap["slots"]),
+                overlap["year"], overlap["bar"])
+
     pil = score_mod.pillar_scores(
         pnl, pillar_map,
         reliable_at=RELIABILITY_RELIABLE_AT,
         thin_at=RELIABILITY_THIN_AT,
         max_imputed_share=RELIABILITY_MAX_IMPUTED,
+        slots=slots,
     )
     tiers = pil[pil["score"].notna()]["reliability"].value_counts()
     logger.info("  %d pillar-years | reliable=%d thin=%d unreliable=%d",
@@ -319,11 +350,11 @@ def main() -> int:
     # Effective weights (plan 4.10): each indicator's share of the headline, nominal (every pillar full) and as the
     # composites used them at the reference year (only the pillars that entered, each over its contributing
     # indicators; the mean over the ranked states).
-    nominal = score_mod.effective_weights(pillar_map)
+    nominal = score_mod.effective_weights(pillar_map, slots=slots)
     ranked_now = set(comp_df[is_head & (comp_df["year"] == reference_year) & comp_df["rank"].notna()]["iso3"])
     entered = pil[(pil["year"] == reference_year) & pil["reliability"].isin(score_mod.COMPOSABLE)
                   & pil["score"].notna() & pil["iso3"].isin(ranked_now)]
-    realised = score_mod.effective_weights(pillar_map, entered)
+    realised = score_mod.effective_weights(pillar_map, entered, slots)
     even = 1 / len(nominal)
     logger.info("  effective weights, nominal: %d indicators, %.2fx to %.2fx an even share",
                 len(nominal), nominal.min() / even, nominal.max() / even)
@@ -419,6 +450,8 @@ def main() -> int:
                      "first state; the first state significantly below starts the next",
         },
         "weights": {"equal": equal_w, "pca": pca_w, "entropy": ent_w},
+        "overlap": {"year": overlap["year"], "bar": overlap["bar"], "control": overlap["control"],
+                    "slots": overlap["slots"]},
         "effective_weights": {
             "nominal": {v: round(float(w), 6) for v, w in nominal.items()},
             "realised": {"year": reference_year, "states": int(len(entered["iso3"].unique())),

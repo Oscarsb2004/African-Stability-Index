@@ -55,6 +55,7 @@ from asi.core.constants import (
 PANEL_DIR      = _REPO / "data" / "panel"
 INPUTS         = _REPO / "data" / "inputs.csv"
 GOALPOSTS      = _REPO / "registry" / "goalposts.yaml"
+OVERLAP        = _REPO / "registry" / "overlap.yaml"
 INDICATORS_DIR = _REPO / "indicators_list"
 COUNTRIES_PY   = _REPO / "asi" / "core" / "countries.py"
 
@@ -562,11 +563,12 @@ def check_pillar_scores(obs: pd.DataFrame, pil: pd.DataFrame, registry: dict) ->
 
     scores = obs.set_index(["iso3", "year", "variable_name"])["score"]
     provs  = obs.set_index(["iso3", "year", "variable_name"])["provenance"]
+    slot = _slots()
 
     score_bad, tier_bad, n = [], [], 0
     for r in pil.itertuples():
         members = pillar_map.get(r.pillar_id, [])
-        vals, n_obs, n_imp = [], 0, 0
+        vals, n_obs, n_imp = {}, 0, 0
         for var in members:
             key = (r.iso3, r.year, var)
             if key not in scores.index:
@@ -574,14 +576,15 @@ def check_pillar_scores(obs: pd.DataFrame, pil: pd.DataFrame, registry: dict) ->
             v = scores.loc[key]
             p = provs.loc[key]
             if pd.notna(v):
-                vals.append(float(v))
+                vals.setdefault(slot.get(var, var), []).append(float(v))
             if p in ("observed", "derived"):
                 n_obs += 1
             elif p in ("carried_forward", "regional_mean", "interpolated"):
                 n_imp += 1
 
         n += 1
-        expected = float(np.mean(vals)) if vals else np.nan
+        # P101: indicators that overlap share one slot; the pillar is the mean of its slots' means
+        expected = float(np.mean([sum(x) / len(x) for x in vals.values()])) if vals else np.nan
         actual = r.score
         if pd.isna(expected) != pd.isna(actual) or (
             pd.notna(expected) and abs(expected - float(actual)) > 1e-6
@@ -595,10 +598,10 @@ def check_pillar_scores(obs: pd.DataFrame, pil: pd.DataFrame, registry: dict) ->
                             f"expected={expected_tier} actual={r.reliability}")
 
     if score_bad:
-        record("3.1 pillar = mean of its indicator scores", "FAIL",
+        record("3.1 pillar = mean of its slots' indicator scores", "FAIL",
                f"{len(score_bad)}/{n} mismatches", score_bad)
     else:
-        record("3.1 pillar = mean of its indicator scores", "PASS",
+        record("3.1 pillar = mean of its slots' indicator scores", "PASS",
                f"{n} pillar-years reconcile")
 
     if tier_bad:
@@ -607,6 +610,65 @@ def check_pillar_scores(obs: pd.DataFrame, pil: pd.DataFrame, registry: dict) ->
     else:
         record("3.2 reliability tiers", "PASS",
                f"{n} tiers match the specification")
+
+
+def _slots() -> dict[str, str]:
+    """Indicator -> its shared slot, from the frozen file, read as YAML (P101)."""
+    data = yaml.safe_load(OVERLAP.read_text(encoding="utf-8"))
+    return {v: s for s, members in data["slots"].items() for v in members}
+
+
+def check_overlap(obs: pd.DataFrame, registry: dict) -> None:
+    """
+    The frozen overlap screen, re-derived (P101). Each pair's partial correlation
+    is rebuilt as the correlation of the two residuals left after regressing each
+    indicator on the control (least squares), where the pipeline uses the
+    closed-form formula; the clusters are rebuilt by union-find, where the
+    pipeline walks the graph.
+    """
+    data = yaml.safe_load(OVERLAP.read_text(encoding="utf-8"))
+    at = obs[obs["year"] == data["year"]].pivot_table(index="iso3", columns="variable_name",
+                                                      values="transformed_value")
+    members: dict[str, list[str]] = {}
+    for var, spec in registry.items():
+        if spec.get("role", "scoring") == "scoring" and var != data["control"]:
+            for p in spec.get("pillars", []):
+                members.setdefault(p, []).append(var)
+    parent: dict[str, str] = {}
+
+    def root(x):
+        while parent.setdefault(x, x) != x:
+            x = parent[x]
+        return x
+
+    published = {(q["a"], q["b"]): q["partial_r"] for q in data["pairs"]}
+    bad, n = [], 0
+    for p, vs in members.items():
+        for i, a in enumerate(vs):
+            for b in vs[i + 1:]:
+                d = at[[a, b, data["control"]]].dropna()
+                if len(d) < data["min_n"]:
+                    continue
+                z = np.column_stack([np.ones(len(d)), d[data["control"]].to_numpy()])
+                res = [d[x].to_numpy() - z @ np.linalg.lstsq(z, d[x].to_numpy(), rcond=None)[0] for x in (a, b)]
+                r = float(np.corrcoef(res[0], res[1])[0, 1])
+                n += 1
+                key = (a, b) if (a, b) in published else (b, a)
+                if key not in published or abs(published[key] - r) > 1e-4:
+                    bad.append(f"{p} {a}/{b}: expected {r:.4f} published {published.get(key)}")
+                if abs(r) >= data["bar"]:
+                    parent[root(a)] = root(b)
+    clusters: dict[str, set] = {}
+    for v in list(parent):
+        clusters.setdefault(root(v), set()).add(v)
+    expected = sorted(sorted(c) for c in clusters.values() if len(c) > 1)
+    if expected != sorted(sorted(m) for m in data["slots"].values()):
+        bad.append(f"clusters: expected {expected}")
+    if bad:
+        record("3.3 overlap screen", "FAIL", f"{len(bad)} differences", bad)
+    else:
+        record("3.3 overlap screen", "PASS",
+               f"{n} pairs re-derived by residuals; {len(expected)} clusters at |partial r| >= {data['bar']}")
 
 
 # ── 4. composites ──────────────────────────────────────────────────────────────
@@ -814,8 +876,8 @@ def check_headline_uncertainty(pil: pd.DataFrame, comp: pd.DataFrame) -> None:
 def check_effective_weights(registry: dict) -> None:
     """
     The published nominal effective weights, re-derived from the registry YAML:
-    1/P per pillar with members, 1/n per member, summed over an indicator's
-    pillars. Both published sets must sum to 1.
+    1/P per pillar with members, 1/s per slot (P101), shared by the slot's
+    members, summed over an indicator's pillars. Both published sets must sum to 1.
     """
     bundle = json.loads((PANEL_DIR / "bundle.json").read_text(encoding="utf-8"))
     members: dict[str, list[str]] = {}
@@ -825,9 +887,14 @@ def check_effective_weights(registry: dict) -> None:
                 if p in PILLAR_DEFS:
                     members.setdefault(p, []).append(v)
     expect: dict[str, float] = {}
+    slot = _slots()
     for p, vs in members.items():
+        groups: dict[str, list[str]] = {}
         for v in vs:
-            expect[v] = expect.get(v, 0.0) + 1 / len(members) / len(vs)
+            groups.setdefault(slot.get(v, v), []).append(v)
+        for g in groups.values():  # P101: each slot 1/s of the pillar, shared by its members
+            for v in g:
+                expect[v] = expect.get(v, 0.0) + 1 / len(members) / len(groups) / len(g)
     pub = bundle["effective_weights"]
     bad = [f"{v}: expected {round(w, 6)} actual {pub['nominal'].get(v)}" for v, w in sorted(expect.items())
            if abs(round(w, 6) - pub["nominal"].get(v, -1)) > 1e-6]
@@ -889,6 +956,7 @@ def run() -> int:
     check_scores_within_bounds(obs)
     check_clamping_is_real(obs)
     check_pillar_scores(obs, pil, registry)
+    check_overlap(obs, registry)
     check_composites(pil, comp)
     check_ranks_only_where_displayable(comp)
     check_geometric_composite(pil, comp)

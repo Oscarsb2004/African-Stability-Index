@@ -315,3 +315,42 @@ def test_the_verifier_catches_a_wrong_tier_and_a_wrong_interval(capsys):
     V.check_headline_uncertainty(pil, comp.assign(tier=[1, 1, 2]))  # negative control: a wrong tier
     V.check_headline_uncertainty(pil, comp.assign(ci_high=comp["ci_high"] + 1))  # and a wrong interval
     assert [c["status"] for c in V.CHECKS[-2:]] == ["FAIL", "FAIL"]
+
+
+# ── P101: overlapping indicators share a slot ──────────────────────────────────
+
+def _cells(rows):
+    return pd.DataFrame(rows, columns=["iso3", "year", "variable_name", "score", "provenance"])
+
+
+def test_overlapping_indicators_share_one_slot_of_their_pillar():
+    from asi.pipeline.score import pillar_scores
+    cells = _cells([("KEN", 2024, "a", 90.0, "observed"), ("KEN", 2024, "b", 70.0, "observed"),
+                    ("KEN", 2024, "c", 20.0, "observed")])
+    kw = dict(reliable_at=0.6, thin_at=0.4, max_imputed_share=0.5)
+    shared = pillar_scores(cells, {"P": ["a", "b", "c"]}, slots={"a": "P:a+b", "b": "P:a+b"}, **kw)
+    assert shared["score"].iloc[0] == pytest.approx((80.0 + 20.0) / 2)       # (a, b) is one slot at 80, then c
+    plain = pillar_scores(cells, {"P": ["a", "b", "c"]}, **kw)
+    assert plain["score"].iloc[0] == pytest.approx(60.0)                      # negative control: three slots
+    lone = pillar_scores(cells[cells["variable_name"] != "b"], {"P": ["a", "b", "c"]},
+                         slots={"a": "P:a+b", "b": "P:a+b"}, **kw)
+    assert lone["score"].iloc[0] == pytest.approx((90.0 + 20.0) / 2)         # a slot with one member present
+
+
+def test_the_overlap_screen_clusters_pairs_beyond_the_control_and_chains_them():
+    from asi.pipeline.score import overlap_screen
+    rng = np.random.default_rng(7)
+    gdp = rng.normal(size=60)
+    shared = rng.normal(size=60)
+    values = pd.DataFrame({"gdp": gdp, "a": gdp + shared, "b": gdp + shared + 0.3 * rng.normal(size=60),
+                           "c": gdp + shared + 0.3 * rng.normal(size=60), "d": gdp + rng.normal(size=60)})
+    slots, pairs = overlap_screen(values, {"P": ["gdp", "a", "b", "c", "d"]}, "gdp", 0.71, 20)
+    assert set(slots) == {"a", "b", "c"} and len(set(slots.values())) == 1  # one cluster
+    assert "d" not in slots and "gdp" not in slots   # negative control: d shares only GDP with the others
+    assert len(pairs) == 6                           # every pair of the pillar but the control's is measured
+
+
+def test_effective_weights_split_a_slot_among_its_members():
+    from asi.pipeline.score import effective_weights
+    w = effective_weights({"P": ["a", "b", "c"], "Q": ["d"]}, slots={"a": "P:a+b", "b": "P:a+b"})
+    assert w.to_dict() == pytest.approx({"a": 0.125, "b": 0.125, "c": 0.25, "d": 0.5})
