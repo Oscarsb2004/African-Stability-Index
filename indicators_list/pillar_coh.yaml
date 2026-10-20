@@ -2,7 +2,8 @@
 # Goal: Whether society holds together across its groups: how evenly income and opportunity are shared, and how much strain displacement and fast urban growth put on it.
 #
 # Edition 2, step 6 (P57, variant B). Every indicator here has one home, this pillar, and falls under its
-# umbrella (P58). 4 scored, 3 descriptive.
+# umbrella (P58). Step 9 adds non-state conflict (scored) and youth unemployment (descriptive). 5 scored, 4
+# descriptive.
 
 - variable_name: gini
   display_name: Gini index
@@ -22,6 +23,39 @@
   theoretical_bounds:
   - 0
   - 100
+- variable_name: non_state_deaths
+  display_name: Deaths in non-state conflict (fighting between organised groups), per 100,000 people
+  source: ucdp
+  series_code: ns_total_deaths_best
+  role: scoring
+  polarity: negative
+  pillars:
+  - COH
+  year_start: 2015
+  year_end: 2025
+  aggregation: most_recent
+  justification: 'Horizontal cohesion between communities (plan 1.2): UCDP''s best estimate of deaths in fighting
+    between organised groups, neither of them a government, inside the country''s borders in the year: the plan''s
+    communal violence. A year without it is a measured zero. Edition 2, step 9.'
+  database: ucdp
+  log_transform: true
+  per_capita: 100000
+- variable_name: youth_unemployment
+  display_name: Unemployment, youth (% of the labour force aged 15 to 24, modelled ILO estimate)
+  source: wb_api
+  series_code: SL.UEM.1524.ZS
+  role: descriptive
+  polarity: negative
+  pillars:
+  - COH
+  year_start: 2015
+  year_end: 2025
+  aggregation: most_recent
+  justification: 'The inclusion of youth, which Interpeace names (plan 1.1, 1.2). Shown and not scored: measured
+    unemployment is higher in Africa''s richer states, where informal work is rarer, so its direction is contradicted
+    (the candidate screen of 2026-10-18).'
+  database: wdi
+  log_transform: false
 - variable_name: refugees_hosted
   display_name: Refugees under the mandate of the UNHCR by country or territory of asylum, per 100,000 people
   source: wb_api
