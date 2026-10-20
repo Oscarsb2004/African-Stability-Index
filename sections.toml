@@ -5,7 +5,7 @@
 project = "asi"
 sections = [
     "appraisals",                                                                      # stability
-    "output", "prices", "public_finances", "structure", "jobs",                         # economy
+    "outlook", "output", "prices", "public_finances", "structure", "jobs",              # economy
     "monetary", "currency", "banks", "capital_markets", "sovereign", "capital_flows",   # finance
 ]
 
@@ -33,8 +33,18 @@ licence = "CC BY 4.0"
 attribution = "Corruption Perceptions Index (2025) by Transparency International is licensed under CC BY 4.0"
 link = "https://www.transparency.org/en/cpi/2025"
 
+[datasets.weo]
+publisher = "International Monetary Fund"
+licence = "IMF terms for data: publish with the citation; commercial reuse needs the IMF's permission"
+attribution = "Source: International Monetary Fund, World Economic Outlook database, October 2026"
+link = "https://www.imf.org/en/Publications/SPROLLs/world-economic-outlook-databases"
+
 [measures]
 # ── economy ───────────────────────────────────────────────────────────────────────────────────────────────────────
+# outlook: the IMF's projections only, the years after each state's last actual data (marked F by the adapter)
+growth_projected = { dataset = "weo", series = "NGDP_RPCH", where = { OBS_STATUS = "F" } }
+inflation_projected = { dataset = "weo", series = "PCPIPCH", where = { OBS_STATUS = "F" } }
+debt_projected = { dataset = "weo", series = "GGXWDG_NGDP", where = { OBS_STATUS = "F" } }
 # output
 gdp = { dataset = "wdi", series = "NY.GDP.MKTP.CD" }
 gdp_per_person = { dataset = "wdi", series = "NY.GDP.PCAP.PP.CD" }

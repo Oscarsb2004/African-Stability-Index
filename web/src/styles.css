@@ -196,6 +196,7 @@ a { color: var(--accent); }
   .legend { padding: 6px 10px; }
   .legend .muted { display: none; }
   .legend-step span { width: 44px; }
+  .footer-link { display: none; }  /* the bottom sheet covers it; the panels carry the same link */
 }
 
 /* ── how the index is built: the justification page ───────────────────────────────────────────────────────── */

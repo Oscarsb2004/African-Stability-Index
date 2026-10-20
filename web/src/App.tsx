@@ -142,9 +142,10 @@ export default function App() {
             {section === "wonders" ? <WondersPanel doc={wonders} iso3={null} names={docs.sections.names}
               onOpen={setViewing} /> : (
               <p className="muted small">
-                Stability shows the ASI next to other institutions' scores. Economy leads with the latest figures
-                and the record. Finance covers money, the currency and reserves, banks, markets and debt.
-                Infrastructure shows cities now; roads, rail, ports and megaprojects follow.
+                Stability shows the ASI next to other institutions' scores. Economy leads with the IMF's outlook,
+                then the latest figures and the record. Finance covers money, the currency and reserves, banks,
+                markets and debt. Infrastructure shows cities now; roads, rail, ports and megaprojects follow.{" "}
+                <button className="linkish" onClick={openMethod}>How the index is built</button>
               </p>
             )}
           </div>
