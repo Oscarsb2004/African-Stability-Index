@@ -580,6 +580,14 @@ It shows them when edition 2 publishes, with the regenerated `stability.json`.
 
 ## Step 9: the realignment to Interpeace's definition (plan 1.1, 1.2)
 
+**The owner's rulings for this step (2026-10-20):**
+- **P98, the split stands:** "yes it is", the rise from three mostly zero series is acceptable. The owner adds that
+  such variables need a partial-correlation check, and their overlap removed. The measurement is below, and the
+  method is open.
+- **P99, non-state violence counts in COH:** "Cohesion between communities".
+- **P100, outliers by how far they sit:** "How much higher are the outliers? if they aren't that much higher then
+  keep, otherwise remove. Don't just remove a set 6%".
+
 **What changed.** The plan names what the definition adds that the index lacked:
 - the protection of civilians;
 - horizontal cohesion between communities;
@@ -601,58 +609,75 @@ Athena. Trust in institutions (Afrobarometer) and section 6's expanded list wait
   - **COH:** 5 scored, 4 descriptive.
 - **Inputs:** `python 01_inputs.py wdi-2026-10-08 wgi-2026-09-25 ucdp-cy-26.1` gives 90,413 values, 72 series and 54
   countries, from 1995 to 2025.
+- **The outlier rule for a zero-heavy series (P100).** The three parts are 67%, 65% and 77% zeros, among the 1,393
+  observed values of each.
+  - **The trimmed rule on the whole series** puts the cap at 3 SDs of a distribution made mostly of zeros. That is
+    4.16, 1.57 and 1.07 deaths per 100,000. It capped 80, 90 and 80 values, whose median was 11.67, 3.11 and 2.72:
+    ordinary violent years, not outliers.
+  - **Measured against the other violent years** (the non-zero values), the same rule caps at 24.0, 6.1 and 7.2. It
+    catches 8, 21 and 8 values (0.6 to 1.5%), the true extremes, with z up to 8.6: Ethiopia 2021 and 2022 (102.0 and
+    130.2 state-based), Sudan 2025 (121.5 one-sided), CAR 2013 and 2014, and Libya 2014 and 2015.
+  - **So the rule now runs on the non-zero values** of any series at least half zeros (`goalposts.ZERO_HEAVY`), and
+    never caps a zero.
+  - **Only these three qualify.** Among the scored indicators the next most zero-heavy is fuel exports, at 5%, so any
+    threshold from 6% to 55% picks the same three.
 - **Goalposts:**
   - **N1:** frozen for the three new indicators only (`--freeze-new-goalposts`), so every existing indicator keeps
     its own and history is not re-anchored.
-  - **The log rule** logs all three: skew z 7.43 (state-based), 6.97 (one-sided) and 6.20 (non-state), n 54,
-    constant 1.0.
-  - **The outlier rule** caps 80, 90 and 80 of their 1,393 values at the high end.
+  - **The log rule** logs all three: skew z 10.67 (state-based), 10.30 (one-sided) and 12.10 (non-state), constant
+    1.0.
+
+**The overlap, measured (P98; plan 2.2, N2)**
+- **Partial correlations at 2024 (n 52),** on the transformed values, holding log GDP per capita constant, with
+  Fisher's 95% interval:
+  - state-based and one-sided: +0.78 [+0.64, +0.87], 60% of variance shared;
+  - state-based and non-state: +0.62 [+0.42, +0.77];
+  - one-sided and non-state: +0.47 [+0.22, +0.66];
+  - each part with political stability: −0.49 to −0.57.
+- **None reaches N2's .90,** the plan's bar for an indicator that adds nothing.
+- **The whole index, for comparison:** of 193 within-pillar pairs at 2024, 7 reach |partial r| .80 and 1 reaches .90:
+  - GOV's WGI government effectiveness and rule of law, +0.90;
+  - rule of law and control of corruption, +0.89;
+  - life expectancy and under-5 mortality (HUM), −0.82;
+  - external debt and debt service (MAC), +0.81.
+- **How to remove overlap is the owner's to rule,** with every pillar in view.
+- **Under the earlier caps** the parts' correlation read higher (+0.86), because capping tied many violent years
+  together at the cap.
 
 **What moved** (2024, equal weights, against step 8)
-- **Scores:** composites moved 2.00 points on average (+1.92 net), at most 6.24 (SSD, +6.24).
+- **Scores:** composites moved 2.72 points on average (+2.72 net), at most 8.18 (SSD, +8.18).
 - **Ranks:** rank correlation 0.997 over 54 states. One state moved 5 places or more: LBY, 38 to 33.
 - **Pillars:**
-  - **SEC:** mean 68.01 to 73.86; it moved 6.70 points on average, at most 37.39 (SSD).
-  - **COH:** mean 53.95 to 61.00; it moved 7.90 on average, at most 13.85 (MRT).
+  - **SEC:** mean 68.01 to 77.93; it moved 9.92 points on average, at most 44.24 (SSD).
+  - **COH:** mean 53.95 to 62.31; it moved 8.48 on average, at most 13.85 (MRT).
   - **COH's tiers:** 53 reliable and 1 thin, against 50, 3 and 1 unreliable.
   - **Across all years,** 343 unreliable pillar-years are left out, against 358.
 - **k at 2024:** 43 states use 7 pillars, 9 use 6 and 2 use 5.
 - **Reliability:** composites stay 33 reliable and 21 thin.
-- **Top 5:** CPV, MUS, SYC, BWA, ZAF. **Bottom 5:** MLI, SOM, CAF, SSD, SDN. SSD is no longer last: much of its
-  violence is non-state, which now counts in COH.
+- **Top 5:** CPV, MUS, SYC, BWA, ZAF. **Bottom 5:** COD, SOM, CAF, SSD, SDN.
 - **Bands and tiers:**
-  - **Standard error:** median 6.46, against 5.79.
-  - **Bands:** median 44 places wide, from 14 to 54.
-  - **Tiers:** 19, 23, 11 and 1 states, against 18, 24, 10 and 2.
-- **Violence's share of the headline:**
-  - **Nominal:** 10.83%, against 6.25% for the total at step 8.
-  - **As used at 2024:** 12.96%, against 7.47%.
+  - **Standard error:** median 6.39, against 5.79.
+  - **Bands:** median 47 places wide, from 13 to 54.
+  - **Tiers:** 20, 25, 8 and 1 states, against 18, 24, 10 and 2.
+- **Violence's share of the headline:** 10.83% nominal and 12.96% as used at 2024, against 6.25% and 7.47% for the
+  total at step 8.
 
-**Why the scores rise.** Each part is zero in more states than the total, and a measured zero scores 100.
-- **At 2024 the total is zero in 25 states.** State-based deaths are zero in 31, one-sided deaths in 32 and
-  non-state deaths in 39.
-- **A state free of one kind of violence scores 100 on that part,** even where another kind is severe.
-- **So splitting one series into three raises SEC and COH for most states,** and the headline with them.
-
-**For the owner.** Splitting is the plan's position (the candidate screen marked all three parts "Ingest"). Three
-questions remain for you to rule on:
-- **Is the rise from three mostly zero series acceptable?** The alternatives:
-  - score only the total, plus one-sided deaths on its own (the protection of civilians), which counts those deaths
-    twice;
-  - or score the total in SEC and non-state deaths in COH, which counts communal violence twice.
-- **Does non-state violence belong in COH** (horizontal cohesion), or in SEC with the other two?
-- **Are the outlier caps right for these zero-heavy series?** They put about 6% of values at the cap. The outlier
-  rule was set for continuous series.
+**Why the scores rise**
+- **Each part is zero in more states than the total.** At 2024 the total is zero in 25 states; the parts are zero
+  in 31, 32 and 39. A measured zero scores 100.
+- **The goalposts now sit at the true extremes.** So a violent year that is not extreme no longer scores 0: at 2024
+  the parts' scores below 100 have medians from 85.3 to 91.1.
 
 **Checks**
-- **Passing:** `verify.run` rebuild, panel, contract and advisory.
-  - **1.6** re-derives 10,062 per-capita cells of 8 indicators.
-  - **4.6** re-derives 52 nominal weights.
+- **Passing:** `verify.run` rebuild, panel, contract and advisory. Panel 1.6 re-derives 10,062 per-capita cells of 8
+  indicators.
 - **Robustness:**
-  - **Weighting methods agree:** rho .9881 (PCA), .9851 (entropy) and .9867 (geometric).
-  - **The worst in-bounds weighting** gives .8962, against .9067 at step 8, and the verdict moves from "robust" to
-    "moderately sensitive".
-  - **Measured cells only:** .8549.
-- **Tests:** 286 passed. **New:** two:
-  - the three parts sum to the total in every country-year, with a negative control: two parts fall short;
-  - the parts are scored and the total is not.
+  - **Weighting methods agree:** rho .9873 (PCA), .9783 (entropy) and .9857 (geometric).
+  - **The worst in-bounds weighting** gives .8863, against .9067 at step 8: "moderately sensitive", where step 8 was
+    "robust".
+  - **Measured cells only:** .8427.
+- **Tests:** 287 passed. **New:** three:
+  - the parts sum to the total in every country-year, with a negative control: two parts fall short;
+  - the parts are scored and the total is not;
+  - a zero-heavy series is tested on its non-zero values and its zeros are never capped, with a negative control:
+    any other series is tested as before.

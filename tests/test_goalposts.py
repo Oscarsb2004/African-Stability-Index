@@ -140,6 +140,22 @@ def test_the_trimmed_rule_replaces_only_values_beyond_three_trimmed_sds():
     assert (gp.cap_outliers(plain, *gp.trimmed_outlier_bounds(plain)) == plain).all()
 
 
+def test_a_zero_heavy_series_is_tested_on_its_non_zero_values_and_its_zeros_are_never_capped():
+    """P100: a violent year is compared with other violent years. A series shaped like UCDP's: 70% zeros, small
+    counts, a few larger ones and one extreme. The whole series' trimmed rule caps nearly every larger count;
+    tested on the counts alone, it caps fewer, still caps the extreme, and leaves every zero alone."""
+    raw = pd.Series([0.0] * 140 + list(np.linspace(0.1, 1.0, 50)) + list(np.linspace(2.0, 10.0, 9)) + [500.0])
+    logged = np.log(raw + 1)
+    whole = gp.cap_outliers(logged, *gp.trimmed_outlier_bounds(logged))
+    split = gp.cap_outliers(logged, *gp.outlier_bounds(logged, raw))
+    assert (whole < logged).sum() == 9                       # eight of the nine larger counts, and the extreme
+    assert 0 < (split < logged).sum() < (whole < logged).sum()
+    assert split.iloc[-1] < logged.iloc[-1]                  # the extreme is still capped
+    assert (split.iloc[:140] == 0).all()                     # zeros are never capped
+    plain = pd.Series(np.linspace(1.0, 10.0, 100))            # negative control: not zero-heavy, the rule as before
+    assert gp.outlier_bounds(plain, plain) == gp.trimmed_outlier_bounds(plain)
+
+
 def test_adding_an_indicator_never_moves_an_existing_goalpost():
     frozen = {"a": {"goalpost_min": 0.0, "goalpost_max": 1.0}}
     computed = {"a": {"goalpost_min": -5.0, "goalpost_max": 9.0}, "b": {"goalpost_min": 2.0, "goalpost_max": 3.0}}

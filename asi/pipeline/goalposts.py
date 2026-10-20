@@ -131,6 +131,26 @@ def trimmed_outlier_bounds(values: pd.Series) -> tuple[float, float, float, floa
     return (mean - OUTLIER_SD * sd, mean + OUTLIER_SD * sd, mean - REPLACE_SD * sd, mean + REPLACE_SD * sd)
 
 
+#: A series at least this share zeros is two regimes, a measured absence and a spread of severity (edition 2, step
+#: 9, P100). Among the scored indicators only UCDP's three counts of deaths qualify (65 to 77% zeros); the next is
+#: fuel exports, at 5%.
+ZERO_HEAVY = 0.5
+
+
+def outlier_bounds(values: pd.Series, raw: pd.Series) -> tuple[float, float, float, float]:
+    """
+    `trimmed_outlier_bounds`, except for a zero-heavy series (P100: "if they aren't that much higher then keep,
+    otherwise remove"). Its test runs on the non-zero values, so a violent year is compared with other violent
+    years rather than with the zeros, which shrink the trimmed SD until ordinary violent years fall beyond 3 of
+    them (5.7 to 6.5% of values, against 0.6 to 1.5% this way). A zero is never capped.
+    """
+    if not (raw.dropna() == 0).mean() >= ZERO_HEAVY:
+        return trimmed_outlier_bounds(values)
+    _, upper, _, upper_to = trimmed_outlier_bounds(values[raw != 0])
+    floor = float(values.min())
+    return floor, upper, floor, upper_to
+
+
 def cap_outliers(values: pd.Series, lower, upper, lower_to, upper_to) -> pd.Series:
     """Replace values beyond the outlier bounds; leave the rest alone."""
     x = values.astype(float)
@@ -155,7 +175,8 @@ def compute(
     - **Observed values only.** A carried-forward or imputed value repeats or
       guesses a measurement, so it never sets a bound.
     - **Outliers capped first,** by the Ibrahim Index's trimmed rule
-      (`trimmed_outlier_bounds`), on the scale the index normalises (after log).
+      (`trimmed_outlier_bounds`), on the scale the index normalises (after log);
+      a zero-heavy series is tested on its non-zero values (`outlier_bounds`, P100).
     - **Theoretical bounds win** where the registry gives them (0 to 100 for a
       percentage, 0 to 1 for a parity distance): the goalposts are then those
       bounds, so a score means the same distance from the possible extremes.
@@ -176,14 +197,14 @@ def compute(
         theory = spec.get("theoretical_bounds")
         latest = sub.dropna(subset=["raw_value"]).sort_values("year").groupby("iso3")["raw_value"].last() \
             if {"iso3", "year"} <= set(sub.columns) else sub["raw_value"].dropna()
-        lo0, hi0, lo0_to, hi0_to = trimmed_outlier_bounds(latest)
+        lo0, hi0, lo0_to, hi0_to = outlier_bounds(latest, latest)
         n_skew, skew, skew_se, skew_z = skew_test(cap_outliers(latest, lo0, hi0, lo0_to, hi0_to))
         log = bool(np.isfinite(skew_z) and skew_z > SKEW_Z)
         base = float(theory[0]) if theory else float(sub["raw_value"].min())
         constant = 1.0 - base if log else None
 
         logged = apply_log(sub["raw_value"], log, constant)
-        lo, hi, lo_to, hi_to = trimmed_outlier_bounds(logged)
+        lo, hi, lo_to, hi_to = outlier_bounds(logged, sub["raw_value"])
         capped = cap_outliers(logged, lo, hi, lo_to, hi_to)
         valid = capped.dropna()
         if valid.empty:
@@ -266,6 +287,6 @@ def load(path) -> dict[str, dict]:
 
 
 __all__ = [
-    "GOALPOSTS_VERSION", "apply_log", "winsorize_bounds", "trimmed_outlier_bounds", "cap_outliers",
+    "GOALPOSTS_VERSION", "apply_log", "winsorize_bounds", "trimmed_outlier_bounds", "outlier_bounds", "ZERO_HEAVY", "cap_outliers",
     "compute", "add_new", "freeze", "load",
 ]
