@@ -11,6 +11,11 @@ Outcomes come from the WDI's copies of their publishers' data until those datase
 - currency crash: a depreciation against the dollar of 15% or more (Reinhart and Rogoff 2011).
 
 Writes data/backtests.json and prints a summary. BT3 (coups) waits on its dataset's terms; BT7 on WDI archives.
+
+v2 (edition 2, 2026-10-20): the same tests on edition 2's eight pillars, mapped by meaning before the run (the
+vault's `ASI Backtest Protocol`, athena-data e6e9b22): the ASI without SEC; MAC as the economic predictor; BT6
+expects SEC, GOV or VOI for conflict and MAC for monetary crises. Edition 1's results are in
+data/backtests_edition1.json.
 """
 
 import json
@@ -74,7 +79,7 @@ def main(names: list[str]) -> int:
     comp = comp[comp["method"] == "equal"].set_index(["iso3", "year"])["score"]
     pillars = pd.read_csv(PANEL / "pillar_scores.csv").pivot_table(index=["iso3", "year"], columns="pillar_id",
                                                                      values="score")
-    without_e = pillars.drop(columns="E").mean(axis=1)
+    without_sec = pillars.drop(columns="SEC").mean(axis=1)
     fifth = comp.groupby(level="year").transform(lambda s: s <= s.quantile(0.2))
 
     flags = {
@@ -88,7 +93,7 @@ def main(names: list[str]) -> int:
         r = bt.windows(flags[event], first, last, h)
         key = list(zip(r["iso3"], r["year"]))
         r["asi"] = [-comp.get(k, np.nan) for k in key]
-        r["asi_without_E"] = [-without_e.get(k, np.nan) for k in key]
+        r["asi_without_SEC"] = [-without_sec.get(k, np.nan) for k in key]
         r["gdp"] = [-np.log(gdp.loc[i, t]) if t in gdp.columns and gdp.loc[i, t] > 0 else np.nan for i, t in key]
         r["history"] = [bt.history(flags[event], i, t) for i, t in key]
         for p in pillars.columns:
@@ -109,28 +114,29 @@ def main(names: list[str]) -> int:
 
     out, rows = {}, {}
     out["BT1 conflict onset"], rows["conflict"] = run(
-        "conflict", 2000, 2021, 3, ["asi", "asi_without_E", "gdp", "history", "wgi_pv"], ("wgi_pv",))
+        "conflict", 2000, 2021, 3, ["asi", "asi_without_SEC", "gdp", "history", "wgi_pv"], ("wgi_pv",))
     out["BT1 sensitivity, t+1"], _ = run("conflict", 2000, 2023, 1, ["asi", "gdp"])
     out["BT1 sensitivity, t+1 to t+5"], _ = run("conflict", 2000, 2019, 5, ["asi", "gdp"])
     out["BT2 conflict displacement"], _ = run(
-        "displacement", 2009, 2020, 3, ["asi", "asi_without_E", "gdp", "history"])
+        "displacement", 2009, 2020, 3, ["asi", "asi_without_SEC", "gdp", "history"])
     out["BT4 inflation crisis"], rows["inflation_crisis"] = run(
-        "inflation_crisis", 2000, 2021, 3, ["asi", "pillar_B", "gdp", "history", "inflation_now"], ("inflation_now",))
+        "inflation_crisis", 2000, 2021, 3, ["asi", "pillar_MAC", "gdp", "history", "inflation_now"],
+        ("inflation_now",))
     out["BT4 currency crash"], rows["currency_crash"] = run(
-        "currency_crash", 2000, 2021, 3, ["asi", "pillar_B", "gdp", "history"])
+        "currency_crash", 2000, 2021, 3, ["asi", "pillar_MAC", "gdp", "history"])
     for h, last in ((1, 2023), (5, 2019)):
         for e in ("inflation_crisis", "currency_crash"):
             out[f"BT4 {e.replace('_', ' ')} sensitivity, h={h}"], _ = run(e, 2000, last, h, ["asi", "gdp"])
 
     # BT6: every pillar's AUC on BT1's and BT4's rows
-    expected = {"conflict": {"E", "A"}, "inflation_crisis": {"B"}, "currency_crash": {"B"}}
+    expected = {"conflict": {"SEC", "GOV", "VOI"}, "inflation_crisis": {"MAC"}, "currency_crash": {"MAC"}}
     for event, r in rows.items():
         cols = [f"pillar_{p}" for p in pillars.columns]
         res = bt.compare(r, cols, None)
-        lead = max(cols, key=lambda c: res[c]["value"])
+        lead = max(cols, key=lambda c: res[c]["value"]).removeprefix("pillar_")
         out[f"BT6 pillars, {event.replace('_', ' ')}"] = {
-            "auc": res, "leading_pillar": lead[-1], "expected": sorted(expected[event]),
-            "expectation_held": lead[-1] in expected[event]}
+            "auc": res, "leading_pillar": lead, "expected": sorted(expected[event]),
+            "expectation_held": lead in expected[event]}
 
     # BT5: war onsets by rule
     war = recorded(deaths, 1989, 2024, above=999)
@@ -154,7 +160,8 @@ def main(names: list[str]) -> int:
             line = ", ".join(f"{k} {v['value']:.3f} [{v['low']:.3f}, {v['high']:.3f}]" for k, v in a.items())
             print(f"{name}: n {res['n']}; {line}; verdict {res['verdict']}; hits {res['hit_rate']}")
         elif "leading_pillar" in res:
-            line = ", ".join(f"{k[-1]} {v['value']:.3f} [{v['low']:.3f}, {v['high']:.3f}]" for k, v in res["auc"].items())
+            line = ", ".join(f"{k.removeprefix('pillar_')} {v['value']:.3f} [{v['low']:.3f}, {v['high']:.3f}]"
+                             for k, v in res["auc"].items())
             print(f"{name}: {line}; leading {res['leading_pillar']}, expected {res['expected']}, "
                   f"held {res['expectation_held']}")
     print("BT5:", {k: v for k, v in out["BT5 war onsets"].items() if k != "events"})

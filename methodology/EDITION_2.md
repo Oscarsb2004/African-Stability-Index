@@ -799,3 +799,46 @@ Its lack-of-reliability index is 1.4 of 10, where 0 means every value was measur
   - the screen clusters pairs beyond the control and chains them, and leaves alone an indicator that shares only
     GDP;
   - effective weights split a slot among its members.
+
+## Before publication: the backtests rerun (v2)
+
+**What changed.** The pre-registered backtests (the vault's `ASI Backtests`) are rerun on edition 2's panel.
+- **The mapping was stated before the run** (the vault's `ASI Backtest Protocol`, athena-data e6e9b22). The
+  pre-registered words map to the new pillars by meaning:
+  - the ASI without its security pillar is the ASI without SEC;
+  - "the economic pillar" as a predictor is MAC;
+  - BT6 expects SEC, GOV or VOI to lead for conflict, and MAC for monetary crises.
+- **Everything else is as in v1:** the tests, windows, baselines, pass rules and outcomes (the WDI's copies).
+- **Edition 1's results** are kept in `data/backtests_edition1.json`.
+- `python 06_backtests.py wdi-2026-10-08 wgi-2026-09-25` writes `data/backtests.json`.
+
+**Results** (AUC with its 95% interval, from 2,000 state-clustered bootstrap resamples; edition 1 in brackets)
+- **BT1, conflict onset in t+1 to t+3** (893 state-years, 142 events, 54 states):
+  - **ASI:** 0.743 [0.644, 0.822] (0.697): informative.
+  - **ASI minus GDP:** +0.126 [−0.004, +0.265] (+0.078). Its lower bound sits just below 0, so it does not yet add
+    to development.
+  - **Without SEC:** 0.719 [0.617, 0.798].
+  - **The WGI's political stability alone:** 0.779 [0.679, 0.862], adding +0.166 [+0.013, +0.326] to GDP. It still
+    beats the full index here.
+  - **The sensitivity windows** (t+1, and t+1 to t+5) agree: ASI 0.732 and 0.741.
+- **BT2, conflict displacement:** ASI 0.643 [0.526, 0.762] (0.575). It is now informative, and does not add to
+  development (+0.019).
+- **BT4, inflation crisis:** ASI 0.626 [0.494, 0.759] (0.574), not informative. MAC alone gives 0.749 [0.667, 0.825]
+  and adds +0.203 [+0.025, +0.381] to GDP. Inflation now gives 0.748. In the bottom fifth: 36% of events (23%).
+- **BT4, currency crash:** ASI 0.493 [0.417, 0.568] (0.496). Nothing predicts it: MAC 0.560, GDP 0.512, history
+  0.486.
+- **BT5, war onsets by rule:** 16. At t−1, 69% were in the ASI's bottom fifth (56%), with a median change from t−3 to
+  t−1 of −0.9 percentile points.
+- **BT6, the leading pillar:**
+  - **conflict:** SEC, 0.785 [0.688, 0.866] (edition 1: G);
+  - **inflation crisis:** MAC, 0.749 (edition 1: A);
+  - **currency crash:** MAC, 0.560 (edition 1: B).
+
+  Every expectation holds, against one of three in v1.
+- **Waiting, as in v1:** BT3 (coups) waits on its dataset's terms, and BT7 (the real-time replay) on WDI archives.
+  BT7 measures the mild look-ahead of goalposts fixed over the whole panel.
+
+**Reading.** Edition 2 predicts conflict and its displacement better than edition 1. It does not yet add to GDP at
+the pre-registered bar, and the WGI's political stability alone predicts conflict better. Monetary crises sit in
+MAC, which predicts inflation crises well on its own; the headline averages it with seven other pillars and loses
+that.
