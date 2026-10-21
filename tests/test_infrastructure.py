@@ -45,6 +45,27 @@ def test_the_reach_is_ten_kilometres_on_the_ellipsoid_at_any_latitude(lat):
     assert got.tolist()[0] == "CCC" and got.isna().tolist() == [False, True, True]  # beyond 10 km, in none
 
 
+def test_at_sea_a_point_is_in_the_state_whose_waters_hold_it_and_in_none_where_they_are_shared(monkeypatch):
+    def zone(box, sovereigns, kind="200NM", name="zone"):
+        return {"type": "Feature", "geometry": shapely.geometry.mapping(shapely.box(*box)),
+                "properties": {"pol_type": kind, "geoname": name, **{f"iso_sov{i}": s for i, s in
+                                                                    enumerate(sovereigns, 1)}}}
+    from asi.infrastructure.places import member_waters
+    import asi.infrastructure.places as places
+    eez = {"features": [zone((2, 0, 4, 0.5), ["AAA"]), zone((2, 0.5, 4, 1), ["AAA", "BBB"], "Overlapping claim",
+                                                              "Overlapping claim: A / B")]}
+    monkeypatch.setattr(places, "COUNTRIES", {"AAA": {}, "BBB": {}})  # the invented states are members here
+    waters = member_waters(eez)
+    got = PlaceInStates().run(PlaceInStates.Input(points((3, 0.25), (3, 0.75), (2.05, 0.75), (5, 5), (0.5, 0.5)),
+                                                  POLYGONS, waters))
+    # in AAA's waters, though BBB's land is nearer; in a claimed zone, none, even 5.6 km from BBB's coast
+    assert got.how.tolist() == ["waters", "shared waters: Overlapping claim: A / B",
+                                "shared waters: Overlapping claim: A / B", "none", "land"]
+    assert got.iso3.tolist()[0] == "AAA" and got.iso3.isna().tolist() == [False, True, True, True, False]
+    without = PlaceInStates().run(PlaceInStates.Input(points((2.05, 0.75)), POLYGONS)).iso3  # no waters given
+    assert without.tolist() == ["BBB"]
+
+
 def test_a_lines_length_counts_toward_each_state_by_the_part_inside_it():
     lines = gpd.GeoDataFrame({"cls": ["Road", "Road"]}, geometry=[shapely.LineString([(0.5, 0.5), (1.5, 0.5)]),
                                                                   shapely.LineString([(5, 5), (6, 5)])], crs=4326)

@@ -63,7 +63,8 @@ def first_zooms(spec: dict, frame: pd.DataFrame) -> np.ndarray:
 
 
 class PointLayer(Component):
-    """One point layer: its GeoJSON, and its catalogue entry with what was withheld, unplaced or placed by degrees."""
+    """One point layer: its GeoJSON, and its catalogue entry with what was withheld, unplaced, placed by degrees, in
+    a member state's waters, or in waters two states share or claim."""
 
     section = "06 Outputs and Site"
 
@@ -73,6 +74,7 @@ class PointLayer(Component):
         frame: gpd.GeoDataFrame     # the layer as the store holds it
         polygons: gpd.GeoDataFrame  # the member states
         labels: dict = field(default_factory=dict)
+        waters: gpd.GeoDataFrame | None = None  # places.member_waters(...), for points at sea
 
     @dataclass(frozen=True)
     class Output:
@@ -96,7 +98,9 @@ class PointLayer(Component):
         for column, word in spec.get("withhold_where", {}).items():
             withheld |= frame[column].fillna("").astype(str).str.contains(word, case=False)
         kept = frame[~withheld].copy()
-        kept["iso3"] = self.place.run(PlaceInStates.Input(kept, inp.polygons)).iso3
+        placed = self.place.run(PlaceInStates.Input(kept, inp.polygons, inp.waters))
+        kept["iso3"] = placed.iso3
+        shared = placed.how[placed.how.str.startswith("shared waters: ")].str.removeprefix("shared waters: ")
         if "group_by" in spec:
             features = []
             for uid, rows in kept.groupby(spec["group_by"], sort=True):
@@ -114,6 +118,8 @@ class PointLayer(Component):
                  "withheld": int(withheld.sum()), "withheld_reason": "stated source names SNL, a commercial database"
                  if withheld.any() else None, "unplaced": int(kept["iso3"].isna().sum()),
                  "placed_by_degrees": by_degrees or None,
+                 "placed_in_waters": int((placed.how == "waters").sum()) or None,
+                 "in_shared_waters": {k: int(v) for k, v in sorted(shared.value_counts().items())} or None,
                  "fields": [{"name": f, "label": inp.labels.get(f, f)} for f in fields],
                  **{k: spec[k] for k in SHOWN}}
         return self.Output({"type": "FeatureCollection", "features": features},

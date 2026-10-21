@@ -26,7 +26,13 @@ Not written yet. The sub-pages above hold this section's material.
 
 ## Binding rulings
 
-Not written yet. The sub-pages above hold this section's material.
+The rulings live in athena-data's Decisions (P-numbers); the sub-pages above hold their material. Rulings the owner gave in this repository's work, still to be numbered there:
+
+| Date | Ruling |
+| --- | --- |
+| 2026-10-21 | **Offshore facilities count for the state whose waters they are in** (asked in #3): at sea, a point belongs to the member state whose exclusive economic zone holds it (Marine Regions' World EEZ v12), and to none where states claim or share the waters |
+| 2026-10-21 | The map's line layers start at zoom 3, as built (asked in #4) |
+| 2026-10-21 | The pillars explainer PDF stays in `edition-2`'s history for now; it is no longer in the branch |
 
 ## Superseded plans
 

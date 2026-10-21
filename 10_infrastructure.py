@@ -14,7 +14,8 @@ they return under web/public/geo/infra/:
     countries.json     each member state's ports and their exports, its facilities by commodity type, and the length
                        of each line layer inside it, by class or status
 
-Which member state a feature belongs to is derived by the rule in `asi.infrastructure.places`. Needs the [geo] extra.
+Which member state a feature belongs to is derived by the rule in `asi.infrastructure.places`, with the member
+states' waters from Marine Regions' World EEZ v12 (CC BY 4.0). Needs the [geo] extra.
 """
 
 import json
@@ -29,7 +30,7 @@ import pandas as pd  # noqa: E402
 from asi.core.countries import COUNTRIES  # noqa: E402
 from asi.infrastructure import registry  # noqa: E402
 from asi.infrastructure.layers import NULL, CountrySummary, LineLayer, PointLayer, labels_for  # noqa: E402
-from asi.infrastructure.places import NEAREST_KM, member_polygons  # noqa: E402
+from asi.infrastructure.places import NEAREST_KM, member_polygons, member_waters  # noqa: E402
 from asi.infrastructure.tiles import MAX_ZOOM, MIN_ZOOM, VectorTiles  # noqa: E402
 
 OUT = ROOT / "web" / "public" / "geo" / "infra"
@@ -47,6 +48,7 @@ def main() -> int:
 
     reg = registry.load(REGISTRY)
     polygons = member_polygons(json.loads(fetcher().get(sources()["natural-earth-countries-50m"]["url"])))
+    waters = member_waters(json.loads(fetcher().get(sources()["marine-regions-eez"]["url"])))
     OUT.mkdir(parents=True, exist_ok=True)
     catalogue = {"points": [], "lines": [], "archives": {}, "withheld": reg["withheld"]}
 
@@ -54,7 +56,7 @@ def main() -> int:
     for spec in reg["points"]:
         fields = dataset.load(spec["dataset"], "fields") if spec["dataset"].startswith("usgs") else pd.DataFrame()
         out = points.run(PointLayer.Input(spec, geo.load(spec["dataset"], spec["layer"]), polygons,
-                                          labels_for(fields, spec["layer"]) if len(fields) else {}))
+                                          labels_for(fields, spec["layer"]) if len(fields) else {}, waters))
         write(out.entry["file"], out.geojson)
         catalogue["points"].append(out.entry)
         docs[spec["id"]] = out.geojson
@@ -81,9 +83,13 @@ def main() -> int:
 
     summary = CountrySummary().run(CountrySummary.Input(reg["points"], docs, km, tuple(sorted(COUNTRIES))))
     catalogue["rules"] = {"null": f"{NULL}, in any case", "nearest_km": NEAREST_KM, "zooms": [MIN_ZOOM, MAX_ZOOM],
-                          "place": "a point is in the member state whose Natural Earth 1:50m polygon holds it, or the "
-                                   f"nearest within {NEAREST_KM} km; a line's length counts toward each state by the "
-                                   "part inside its polygon, on the WGS84 ellipsoid (derived)"}
+                          "place": "a point is in the member state whose Natural Earth 1:50m polygon holds it; at "
+                                   "sea, in the member state whose waters hold it (an exclusive economic zone with one "
+                                   "sovereign, Marine Regions' World EEZ v12), and in none where two or more states "
+                                   f"claim or share the waters; otherwise in the nearest within {NEAREST_KM} km. A "
+                                   "line's length counts toward each state by the part inside its polygon, on the "
+                                   "WGS84 ellipsoid (derived). This says whose waters a point is in, not where a "
+                                   "boundary lies in law"}
     write("layers.json", catalogue)
     write("countries.json", summary.countries)
     print(f"layers.json, countries.json; {len(reg['withheld'])} layers withheld, each with its reason")
