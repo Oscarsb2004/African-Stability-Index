@@ -15,6 +15,7 @@ import InfrastructurePanel from "./panels/InfrastructurePanel";
 import StabilityPanel from "./panels/StabilityPanel";
 import { load, RAMP, type MetaDoc, type Section, type SectionsDoc, type StabilityDoc, type Wonder,
   type WondersDoc } from "./data";
+import { COLOURS, SHOWN_FIRST, type LayersDoc } from "./infra";
 
 const SECTIONS: { id: Section; label: string }[] = [
   { id: "stability", label: "Stability" },
@@ -40,6 +41,14 @@ export default function App() {
   const [showClasses, setShowClasses] = useState(true);
   const [wonders, setWonders] = useState<WondersDoc | null>(null);
   const [viewing, setViewing] = useState<Wonder | null>(null);
+  const [infra, setInfra] = useState<LayersDoc | null>(null);
+  const [infraOn, setInfraOn] = useState<string[]>(SHOWN_FIRST);
+  // the Infrastructure catalogue is loaded the first time the section opens
+  useEffect(() => {
+    if (section === "infrastructure" && !infra) load<LayersDoc>("geo/infra/layers.json").then(setInfra).catch(() => {});
+  }, [section, infra]);
+  const toggle = (id: string) => setInfraOn((on) => on.includes(id) ? on.filter((x) => x !== id) : [...on, id]);
+  const [layersOpen, setLayersOpen] = useState(() => window.innerWidth >= 760);  // closed on a phone, where it covers the map
   // the method page has its own address, #method, so it can be linked to
   const [method, setMethod] = useState(() => window.location.hash === "#method");
   useEffect(() => {
@@ -106,7 +115,7 @@ export default function App() {
       <MapView meta={docs.meta} stability={docs.stability} section={section} selected={section === "data" ? null : selected}
         showClasses={showClasses} choropleth={section === "data" ? layer?.colours ?? null : null}
         marked={section === "data" ? explore.items.filter((i) => i.t === "s").map((i) => i.id) : []}
-        onSelect={onMapSelect} wonders={wonders?.wonders ?? null} onWonder={setViewing} />
+        onSelect={onMapSelect} wonders={wonders?.wonders ?? null} onWonder={setViewing} infra={infra} infraOn={infraOn} />
 
       <div className="topleft">
       <header className="glass masthead">
@@ -148,6 +157,21 @@ export default function App() {
             </>
           )}
         </div>
+      )}
+      {section === "infrastructure" && infra && (
+        <details className="glass legend infra-legend" open={layersOpen}
+          onToggle={(e) => setLayersOpen(e.currentTarget.open)}>
+          <summary className="legend-toggle">Layers <span className="muted small">{infraOn.length} on</span></summary>
+          {[...infra.points, ...infra.lines].map((l) => (
+            <label key={l.id} className="infra-toggle" title={`${l.note} ${l.attribution}, ${l.licence}.`}>
+              <input type="checkbox" checked={infraOn.includes(l.id)} onChange={() => toggle(l.id)} />
+              <span className={l.kind === "points" ? "swatch dot" : "swatch line"} style={{ background: COLOURS[l.id] }} />
+              {l.title} <span className="muted small">{l.count.toLocaleString("en")}</span>
+            </label>
+          ))}
+          <div className="muted small">The lines appear as you zoom in. Click a point for its card; hover a layer for
+            its source and licence. {infra.withheld.length} layers are withheld, each for a stated reason.</div>
+        </details>
       )}
       {section === "data" && layer && (
         <div className="glass legend data-legend">
@@ -194,7 +218,7 @@ export default function App() {
               onMethod={openMethod} onCompare={compare} />}
             {section === "economy" && <EconomyPanel iso3={selected} doc={docs.sections} onCompare={compare} />}
             {section === "finance" && <FinancePanel iso3={selected} doc={docs.sections} onCompare={compare} />}
-            {section === "infrastructure" && <InfrastructurePanel iso3={selected} />}
+            {section === "infrastructure" && <InfrastructurePanel iso3={selected} infra={infra} />}
             {section === "wonders" && <WondersPanel doc={wonders} iso3={selected} names={docs.sections.names}
               onOpen={setViewing} />}
             <details className="sources">
@@ -216,7 +240,8 @@ export default function App() {
               <p className="muted small">
                 Stability shows the ASI next to other institutions' scores. Economy leads with the IMF's outlook,
                 then the latest figures and the record. Finance covers money, the currency and reserves, banks,
-                markets and debt. Infrastructure shows cities now; roads, rail, ports and megaprojects follow.{" "}
+                markets and debt. Infrastructure maps ports, mines, railways, roads and the power grid, with each
+                country's own figures.{" "}
                 <button className="linkish" onClick={openMethod}>How the index is built</button>
               </p>
             )}
