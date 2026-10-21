@@ -113,6 +113,8 @@ verify/                          independent verification (NOT imported by asi/)
   run.py                         single entry point: python -m verify.run
   rebuild.py panel.py contract.py advisory.py stats.py
 tests/                           pytest
+  infrastructure/                the Infrastructure section's data stage, as components: the publication list,
+                                 placing features in states, point and line layers, the country summary, the tiles
   adapters/asi_pull.py           the ASI's own adapter: its frozen pull (the others are athena-kit's)
   sources.py                     the project's sources and lock, through athena-kit's athena.ingest
 00_ingest … 10_infrastructure    pipeline stages; backtests.py holds the backtests' rules

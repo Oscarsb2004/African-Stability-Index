@@ -5,6 +5,8 @@ Each layer is projected to Web Mercator once; at each zoom its features are simp
 MIT), gzipped, and written in tile order into a PMTiles archive (pmtiles, BSD-3), which a static site serves whole
 and the map reads by range requests. A feature enters at its own first zoom (a road's class, a line's voltage), so
 the continent view stays light. Attributes are kept as given; nothing is merged, renamed or invented.
+
+VectorTiles is the component; `build` does the work, and writing the archive is its purpose.
 """
 
 from __future__ import annotations
@@ -20,7 +22,10 @@ import shapely
 from pmtiles.tile import Compression, TileType, tileid_to_zxy, zxy_to_tileid
 from pmtiles.writer import Writer
 
+from athena.component import Component
+
 EXTENT, BUFFER = 4096, 64
+MIN_ZOOM, MAX_ZOOM = 3, 10
 WORLD = 20037508.342789244  # half the Web Mercator world, in metres
 
 
@@ -97,3 +102,26 @@ def build(layers: list[Layer], min_zoom: int, max_zoom: int, path: Path, metadat
                         metadata | {"vector_layers": [{"id": lay.name, "fields": {c: "String" for c in lay.frame.columns
                                                                                  if c != "geometry"}} for lay in layers]})
     return {"tiles": len(tiles), "features_by_zoom": stats, "tile_bytes": size}
+
+
+class VectorTiles(Component):
+    """Write line layers as vector tiles into one PMTiles archive; return how many tiles and features it holds."""
+
+    section = "06 Outputs and Site"
+
+    @dataclass(frozen=True)
+    class Input:
+        layers: list                # tiles.Layer, each with its features' first zooms
+        path: Path
+        metadata: dict
+        min_zoom: int = MIN_ZOOM
+        max_zoom: int = MAX_ZOOM
+
+    @dataclass(frozen=True)
+    class Output:
+        tiles: int
+        features_by_zoom: dict
+        tile_bytes: int
+
+    def run(self, inp: Input) -> Output:
+        return self.Output(**build(inp.layers, inp.min_zoom, inp.max_zoom, inp.path, inp.metadata))
