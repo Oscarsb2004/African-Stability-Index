@@ -35,6 +35,16 @@ def test_a_point_is_in_the_state_that_holds_it_or_the_nearest_within_reach():
     assert got.tolist()[:2] == ["AAA", "BBB"] and got.isna().tolist() == [False, False, True]
 
 
+@pytest.mark.parametrize("lat", [0.5, 34.5])
+def test_the_reach_is_ten_kilometres_on_the_ellipsoid_at_any_latitude(lat):
+    # a state whose east coast is at 2° E; points due east of it at exact distances on the WGS84 ellipsoid
+    state = gpd.GeoDataFrame({"iso3": ["CCC"]}, geometry=[shapely.box(1, lat - 0.5, 2, lat + 0.5)], crs=4326)
+    geod = Geod(ellps="WGS84")
+    east = [geod.fwd(2, lat, 90, metres)[:2] for metres in (9_500, 10_500, 13_400)]
+    got = PlaceInStates().run(PlaceInStates.Input(points(*east), state)).iso3
+    assert got.tolist()[0] == "CCC" and got.isna().tolist() == [False, True, True]  # beyond 10 km, in none
+
+
 def test_a_lines_length_counts_toward_each_state_by_the_part_inside_it():
     lines = gpd.GeoDataFrame({"cls": ["Road", "Road"]}, geometry=[shapely.LineString([(0.5, 0.5), (1.5, 0.5)]),
                                                                   shapely.LineString([(5, 5), (6, 5)])], crs=4326)
