@@ -6,5 +6,5 @@ live in one place; when the project is done, both are ingested into Athena's Lib
 
 A link marked "(athena-data)" names a note that stays in athena-data: a ruling in Decisions, a source's terms, the
 Athena Charter, or a note held back because it names people (athena-data's notes may name family and advisors, and
-stay private). Three such notes are held back: the next-edition plan, the indicator candidates table and Dimension
-Stability.
+stay private). Four such files are held back: the next-edition plan, the indicator candidates table, Dimension
+Stability, and the explainer "ASI: Building Distinct Pillars" (a PDF).
