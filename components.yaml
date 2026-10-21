@@ -34,7 +34,7 @@ sections:
   asi/pipeline/: 04 Methods
   asi/results.py: 03 Pipeline
   asi/geography.py: 06 Outputs and Site
-  asi/tiles.py: 06 Outputs and Site
+  asi/infrastructure/: 06 Outputs and Site
   verify/: 05 Verification
 components:
 - id: 00_ingest.frozen_pull
@@ -171,6 +171,7 @@ components:
   outputs:
   - dict
   tests:
+  - tests/test_infrastructure.py::test_the_country_summary_follows_each_layers_rule
   - tests/test_web.py::test_every_member_state_is_drawn_and_merged_codes_take_the_member_code
   depends_on: []
   drafted: true
@@ -720,110 +721,16 @@ components:
   - asi.sources.fetcher
   - asi.sources.sources
   drafted: true
-- id: 10_infrastructure.clean
+- id: 10_infrastructure.write
   section: 06 Outputs and Site
-  entry: 10_infrastructure.py:clean
-  form: legacy
-  purpose: The publisher's "<Null>" and empty text as missing.
-  inputs:
-  - 'frame: pd.DataFrame'
-  outputs:
-  - pd.DataFrame
-  tests: []
-  depends_on: []
-  drafted: true
-- id: 10_infrastructure.states
-  section: 06 Outputs and Site
-  entry: 10_infrastructure.py:states
-  form: legacy
-  purpose: The member states' Natural Earth polygons, one row each.
-  inputs:
-  - 'ne: dict'
-  outputs:
-  - gpd.GeoDataFrame
-  tests:
-  - tests/test_backtests.py::test_the_interval_excludes_half_for_a_real_signal_and_includes_it_for_noise
-  - tests/test_explore.py::test_no_category_singles_out_a_state_for_being_small_or_an_island
-  depends_on: []
-  drafted: true
-- id: 10_infrastructure.locate
-  section: 06 Outputs and Site
-  entry: 10_infrastructure.py:locate
-  form: legacy
-  purpose: 'Each point''s member state: the polygon holding it, or the nearest within NEAREST_KM; otherwise none.'
-  inputs:
-  - 'points: gpd.GeoDataFrame'
-  - 'polygons: gpd.GeoDataFrame'
-  outputs:
-  - pd.Series
-  tests: []
-  depends_on: []
-  drafted: true
-- id: 10_infrastructure.lengths
-  section: 06 Outputs and Site
-  entry: 10_infrastructure.py:lengths
-  form: legacy
-  purpose: Kilometres of line inside each state, by a class column.
-  inputs:
-  - 'lines: gpd.GeoDataFrame'
-  - 'polygons: gpd.GeoDataFrame'
-  - 'by: str'
-  outputs:
-  - dict[str, dict[str, float]]
-  tests: []
-  depends_on: []
-  drafted: true
-- id: 10_infrastructure.labels_for
-  section: 06 Outputs and Site
-  entry: 10_infrastructure.py:labels_for
+  entry: 10_infrastructure.py:write
   form: legacy
   purpose: '(no docstring: to be written)'
   inputs:
-  - 'fields: pd.DataFrame'
-  - 'layer: str'
+  - 'name: str'
+  - 'doc: dict'
   outputs:
-  - dict[str, str]
-  tests: []
-  depends_on: []
-  drafted: true
-- id: 10_infrastructure.feature
-  section: 06 Outputs and Site
-  entry: 10_infrastructure.py:feature
-  form: legacy
-  purpose: '(no docstring: to be written)'
-  inputs:
-  - geom
-  - 'props: dict'
-  outputs:
-  - dict
-  tests: []
-  depends_on: []
-  drafted: true
-- id: 10_infrastructure.point_layer
-  section: 06 Outputs and Site
-  entry: 10_infrastructure.py:point_layer
-  form: legacy
-  purpose: One point layer's GeoJSON and its catalogue entry. Withheld features are counted, never silently dropped.
-  inputs:
-  - 'spec: dict'
-  - 'frame: gpd.GeoDataFrame'
-  - 'polygons: gpd.GeoDataFrame'
-  - 'labels: dict'
-  outputs:
-  - tuple[dict, dict]
-  tests: []
-  depends_on: []
-  drafted: true
-- id: 10_infrastructure.first_zooms
-  section: 06 Outputs and Site
-  entry: 10_infrastructure.py:first_zooms
-  form: legacy
-  purpose: '(no docstring: to be written)'
-  inputs:
-  - 'spec: dict'
-  - 'frame: pd.DataFrame'
-  outputs:
-  - np.ndarray
+  - None
   tests: []
   depends_on: []
   drafted: true
@@ -838,10 +745,14 @@ components:
   - int
   tests: []
   depends_on:
-  - 08_narratives.build
+  - asi.infrastructure.layers.CountrySummary
+  - asi.infrastructure.layers.LineLayer
+  - asi.infrastructure.layers.PointLayer
+  - asi.infrastructure.layers.labels_for
+  - asi.infrastructure.places.member_polygons
+  - asi.infrastructure.tiles.VectorTiles
   - asi.sources.fetcher
   - asi.sources.sources
-  - asi.tiles.Layer
   drafted: true
 - id: backtests.auc
   section: 05 Verification
@@ -1260,6 +1171,238 @@ components:
   outputs:
   - dict[str, list[str]]
   tests: []
+  depends_on: []
+  drafted: true
+- id: asi.infrastructure.layers.clean
+  section: 06 Outputs and Site
+  entry: asi/infrastructure/layers.py:clean
+  form: legacy
+  purpose: The publisher's "<Null>" and empty text as missing.
+  inputs:
+  - 'frame: pd.DataFrame'
+  outputs:
+  - pd.DataFrame
+  tests: []
+  depends_on: []
+  drafted: true
+- id: asi.infrastructure.layers.labels_for
+  section: 06 Outputs and Site
+  entry: asi/infrastructure/layers.py:labels_for
+  form: legacy
+  purpose: Each field's label in a layer, from the dataset's `fields` table (USGS's aliases); the name where none.
+  inputs:
+  - 'fields: pd.DataFrame'
+  - 'layer: str'
+  outputs:
+  - dict[str, str]
+  tests: []
+  depends_on: []
+  drafted: true
+- id: asi.infrastructure.layers.feature
+  section: 06 Outputs and Site
+  entry: asi/infrastructure/layers.py:feature
+  form: legacy
+  purpose: '(no docstring: to be written)'
+  inputs:
+  - geom
+  - 'props: dict'
+  outputs:
+  - dict
+  tests: []
+  depends_on: []
+  drafted: true
+- id: asi.infrastructure.layers.first_zooms
+  section: 06 Outputs and Site
+  entry: asi/infrastructure/layers.py:first_zooms
+  form: legacy
+  purpose: 'Each line''s first zoom, by the list''s rule: one zoom for all, one per class, or thresholds on a field.'
+  inputs:
+  - 'spec: dict'
+  - 'frame: pd.DataFrame'
+  outputs:
+  - np.ndarray
+  tests:
+  - tests/test_infrastructure.py::test_first_zooms_follow_the_rule_and_an_unlisted_class_stops_the_build
+  depends_on: []
+  drafted: true
+- id: asi.infrastructure.layers.PointLayer
+  section: 06 Outputs and Site
+  entry: asi/infrastructure/layers.py:PointLayer
+  form: component
+  purpose: 'One point layer: its GeoJSON, and its catalogue entry with what was withheld, unplaced or placed by degrees.'
+  inputs:
+  - 'inp: Input'
+  outputs:
+  - Output
+  tests:
+  - tests/test_infrastructure.py::test_a_point_layer_reads_nulls_places_by_degrees_and_counts_what_it_withholds
+  - tests/test_infrastructure.py::test_ports_are_one_point_each_with_a_row_per_commodity
+  depends_on:
+  - asi.infrastructure.places.PlaceInStates
+  drafted: true
+- id: asi.infrastructure.layers.LineLayer
+  section: 06 Outputs and Site
+  entry: asi/infrastructure/layers.py:LineLayer
+  form: component
+  purpose: 'One line layer: its tile layers by archive (the lines under another licence kept apart), its catalogue entry,'
+  inputs:
+  - 'inp: Input'
+  outputs:
+  - Output
+  tests:
+  - tests/test_infrastructure.py::test_a_line_layer_keeps_the_lines_under_another_licence_in_their_own_archive
+  depends_on:
+  - asi.infrastructure.places.LengthByState
+  - asi.infrastructure.tiles.Layer
+  drafted: true
+- id: asi.infrastructure.layers.CountrySummary
+  section: 06 Outputs and Site
+  entry: asi/infrastructure/layers.py:CountrySummary
+  form: component
+  purpose: Each member state's figures for the panel, by each point layer's `summary` rule in the list, then the
+  inputs:
+  - 'inp: Input'
+  outputs:
+  - Output
+  tests:
+  - tests/test_infrastructure.py::test_the_country_summary_follows_each_layers_rule
+  depends_on: []
+  drafted: true
+- id: asi.infrastructure.places.member_polygons
+  section: 06 Outputs and Site
+  entry: asi/infrastructure/places.py:member_polygons
+  form: legacy
+  purpose: The member states' Natural Earth polygons, one row each (`iso3`, `geometry`; EPSG:4326).
+  inputs:
+  - 'ne_countries: dict'
+  outputs:
+  - gpd.GeoDataFrame
+  tests: []
+  depends_on: []
+  drafted: true
+- id: asi.infrastructure.places.PlaceInStates
+  section: 06 Outputs and Site
+  entry: asi/infrastructure/places.py:PlaceInStates
+  form: component
+  purpose: 'Each point''s member state: the polygon that holds it, or the nearest within a stated distance.'
+  inputs:
+  - 'inp: Input'
+  outputs:
+  - Output
+  tests:
+  - tests/test_infrastructure.py::test_a_point_is_in_the_state_that_holds_it_or_the_nearest_within_reach
+  depends_on: []
+  drafted: true
+- id: asi.infrastructure.places.LengthByState
+  section: 06 Outputs and Site
+  entry: asi/infrastructure/places.py:LengthByState
+  form: component
+  purpose: Kilometres of line inside each member state, by a class column, on the WGS84 ellipsoid.
+  inputs:
+  - 'inp: Input'
+  outputs:
+  - Output
+  tests:
+  - tests/test_infrastructure.py::test_a_lines_length_counts_toward_each_state_by_the_part_inside_it
+  depends_on: []
+  drafted: true
+- id: asi.infrastructure.registry.problems
+  section: 06 Outputs and Site
+  entry: asi/infrastructure/registry.py:problems
+  form: legacy
+  purpose: What is wrong with a publication list; empty when nothing is.
+  inputs:
+  - 'reg: dict'
+  outputs:
+  - list[str]
+  tests:
+  - tests/test_infrastructure.py::test_the_publication_list_states_every_licence_and_reason
+  depends_on: []
+  drafted: true
+- id: asi.infrastructure.registry.load
+  section: 06 Outputs and Site
+  entry: asi/infrastructure/registry.py:load
+  form: legacy
+  purpose: '(no docstring: to be written)'
+  inputs:
+  - 'path: Path'
+  outputs:
+  - dict
+  tests:
+  - tests/test_goalposts.py::test_a_file_with_no_version_at_all_is_a_mismatch
+  - tests/test_goalposts.py::test_a_missing_file_raises_rather_than_recomputing
+  - tests/test_goalposts.py::test_a_version_mismatch_raises_rather_than_loading_stale_bounds
+  - tests/test_goalposts.py::test_freeze_then_load_round_trips
+  - tests/test_goalposts.py::test_the_committed_goalposts_load_and_are_self_consistent
+  depends_on: []
+  drafted: true
+- id: asi.infrastructure.tiles.Layer
+  section: 06 Outputs and Site
+  entry: asi/infrastructure/tiles.py:Layer
+  form: legacy
+  purpose: '(no docstring: to be written)'
+  inputs:
+  - (see the class)
+  outputs:
+  - (see the class)
+  tests:
+  - tests/test_infrastructure.py::test_vector_tiles_hold_each_line_from_its_first_zoom
+  depends_on: []
+  drafted: true
+- id: asi.infrastructure.tiles.tile_bounds
+  section: 06 Outputs and Site
+  entry: asi/infrastructure/tiles.py:tile_bounds
+  form: legacy
+  purpose: '(no docstring: to be written)'
+  inputs:
+  - 'z: int'
+  - 'x: int'
+  - 'y: int'
+  outputs:
+  - tuple[float, float, float, float]
+  tests: []
+  depends_on: []
+  drafted: true
+- id: asi.infrastructure.tiles.tiles_over
+  section: 06 Outputs and Site
+  entry: asi/infrastructure/tiles.py:tiles_over
+  form: legacy
+  purpose: The tiles at zoom z that a box in Web Mercator touches.
+  inputs:
+  - 'bounds: tuple[float, float, float, float]'
+  - 'z: int'
+  outputs:
+  - list[tuple[int, int]]
+  tests: []
+  depends_on: []
+  drafted: true
+- id: asi.infrastructure.tiles.build
+  section: 06 Outputs and Site
+  entry: asi/infrastructure/tiles.py:build
+  form: legacy
+  purpose: Write the archive; return how many tiles and features each zoom holds.
+  inputs:
+  - 'layers: list[Layer]'
+  - 'min_zoom: int'
+  - 'max_zoom: int'
+  - 'path: Path'
+  - 'metadata: dict'
+  outputs:
+  - dict
+  tests: []
+  depends_on: []
+  drafted: true
+- id: asi.infrastructure.tiles.VectorTiles
+  section: 06 Outputs and Site
+  entry: asi/infrastructure/tiles.py:VectorTiles
+  form: component
+  purpose: Write line layers as vector tiles into one PMTiles archive; return how many tiles and features it holds.
+  inputs:
+  - 'inp: Input'
+  outputs:
+  - Output
+  tests:
+  - tests/test_infrastructure.py::test_vector_tiles_hold_each_line_from_its_first_zoom
   depends_on: []
   drafted: true
 - id: asi.pipeline.goalposts.apply_log
@@ -1803,61 +1946,6 @@ components:
   tests: []
   depends_on: []
   drafted: true
-- id: asi.tiles.Layer
-  section: 06 Outputs and Site
-  entry: asi/tiles.py:Layer
-  form: legacy
-  purpose: '(no docstring: to be written)'
-  inputs:
-  - (see the class)
-  outputs:
-  - (see the class)
-  tests: []
-  depends_on: []
-  drafted: true
-- id: asi.tiles.tile_bounds
-  section: 06 Outputs and Site
-  entry: asi/tiles.py:tile_bounds
-  form: legacy
-  purpose: '(no docstring: to be written)'
-  inputs:
-  - 'z: int'
-  - 'x: int'
-  - 'y: int'
-  outputs:
-  - tuple[float, float, float, float]
-  tests: []
-  depends_on: []
-  drafted: true
-- id: asi.tiles.tiles_over
-  section: 06 Outputs and Site
-  entry: asi/tiles.py:tiles_over
-  form: legacy
-  purpose: The tiles at zoom z that a box in Web Mercator touches.
-  inputs:
-  - 'bounds: tuple[float, float, float, float]'
-  - 'z: int'
-  outputs:
-  - list[tuple[int, int]]
-  tests: []
-  depends_on: []
-  drafted: true
-- id: asi.tiles.build
-  section: 06 Outputs and Site
-  entry: asi/tiles.py:build
-  form: legacy
-  purpose: Write the archive; return how many tiles and features each zoom holds.
-  inputs:
-  - 'layers: list[Layer]'
-  - 'min_zoom: int'
-  - 'max_zoom: int'
-  - 'path: Path'
-  - 'metadata: dict'
-  outputs:
-  - dict
-  tests: []
-  depends_on: []
-  drafted: true
 - id: verify.advisory.section
   section: 05 Verification
   entry: verify/advisory.py:section
@@ -1979,6 +2067,7 @@ components:
   - tests/test_explore.py::test_a_series_needs_the_floor_of_states_since_2000
   - tests/test_explore.py::test_states_outside_the_index_never_enter
   - tests/test_explore.py::test_the_first_projected_year_is_marked
+  - tests/test_infrastructure.py::test_a_line_layer_keeps_the_lines_under_another_licence_in_their_own_archive
   depends_on: []
   drafted: true
 - id: verify.narrative.record
@@ -2056,6 +2145,7 @@ components:
   - tests/test_explore.py::test_a_series_needs_the_floor_of_states_since_2000
   - tests/test_explore.py::test_states_outside_the_index_never_enter
   - tests/test_explore.py::test_the_first_projected_year_is_marked
+  - tests/test_infrastructure.py::test_a_line_layer_keeps_the_lines_under_another_licence_in_their_own_archive
   depends_on: []
   drafted: true
 - id: verify.panel.record
@@ -2338,6 +2428,7 @@ components:
   - tests/test_explore.py::test_a_series_needs_the_floor_of_states_since_2000
   - tests/test_explore.py::test_states_outside_the_index_never_enter
   - tests/test_explore.py::test_the_first_projected_year_is_marked
+  - tests/test_infrastructure.py::test_a_line_layer_keeps_the_lines_under_another_licence_in_their_own_archive
   depends_on: []
   drafted: true
 - id: verify.rebuild.run
@@ -2354,6 +2445,7 @@ components:
   - tests/test_explore.py::test_a_series_needs_the_floor_of_states_since_2000
   - tests/test_explore.py::test_states_outside_the_index_never_enter
   - tests/test_explore.py::test_the_first_projected_year_is_marked
+  - tests/test_infrastructure.py::test_a_line_layer_keeps_the_lines_under_another_licence_in_their_own_archive
   depends_on: []
   drafted: true
 - id: verify.run.run_layer

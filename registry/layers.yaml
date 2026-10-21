@@ -1,7 +1,9 @@
 # The infrastructure layers the site publishes (P65), read by 10_infrastructure.py. A layer not listed here is not
 # published; each listed layer names its licence and attribution, and each withheld one its reason. Every field
-# shown keeps the publisher's name and its label (USGS's field aliases, adapters/usgs_africa_gis.py). Each layer's
-# stated sources were read in the store's `sources` table before it was listed (2026-10-20).
+# shown keeps the publisher's name and its label (USGS's field aliases, read by athena-kit's usgs_africa_gis
+# adapter). Each layer's stated sources were read in the store's `sources` table before it was listed (2026-10-20).
+# A point layer's `summary` says what the country panel shows of it: a count (the default), a count by a field, or
+# each feature (asi.infrastructure.layers).
 format: asi.layers/1
 
 usgs: &usgs
@@ -21,6 +23,7 @@ points:
     group_by: FeatureUID          # one point per port; each row is one commodity it exports
     port_fields: [FeatureNam, NameVar, FeatureTyp, Country, OperateNam, OwnerName, Website, DsgAttr10, LocConfid]
     row_fields: [DsgAttr03, DsgAttr04, DsgAttr05, DsgAttr06, DsgAttr07, DsgAttr08, DsgAttr09, InfSource1]
+    summary: {each: {fields: {name: FeatureNam, type: FeatureTyp}, from_rows: {exports: DsgAttr03}}}   # each port, with what it exports
     note: "Ports that export minerals or fuels, with each commodity's form, capacity, source and destination as USGS records them; port data mostly from the NGA World Port Index (public domain)."
     <<: *usgs
   - id: facilities
@@ -31,6 +34,7 @@ points:
              DsgAttr07, DsgAttr08, DsgAttr09, LocOpStat, OperateNam, OwnerName1, OwnerName2, OwnerName3, OwnerName4,
              InfSource1]
     withhold_where: {LocSource1: SNL, InfSource1: SNL}   # a feature whose stated source names SNL, a commercial database
+    summary: {count_by: DsgAttr01}                      # facilities by commodity type
     note: "Mines, plants and other mineral facilities; capacity is a facility's stated capacity, not its output."
     <<: *usgs
   - id: deposits
