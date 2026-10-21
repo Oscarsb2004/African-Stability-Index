@@ -202,6 +202,7 @@ components:
   outputs:
   - dict
   tests:
+  - tests/test_infrastructure.py::test_at_sea_a_point_is_in_the_state_whose_waters_hold_it_and_in_none_where_they_are_shared
   - tests/test_web.py::test_capitals_follow_the_class_and_a_merged_areas_capital_is_not_one
   depends_on: []
   drafted: true
@@ -750,6 +751,7 @@ components:
   - asi.infrastructure.layers.PointLayer
   - asi.infrastructure.layers.labels_for
   - asi.infrastructure.places.member_polygons
+  - asi.infrastructure.places.member_waters
   - asi.infrastructure.tiles.VectorTiles
   - asi.sources.fetcher
   - asi.sources.sources
@@ -1177,7 +1179,7 @@ components:
   section: 06 Outputs and Site
   entry: asi/infrastructure/layers.py:clean
   form: legacy
-  purpose: The publisher's "<Null>" and empty text as missing.
+  purpose: The publisher's "<Null>", in any case, and empty text as missing; every other value is kept as written.
   inputs:
   - 'frame: pd.DataFrame'
   outputs:
@@ -1237,8 +1239,7 @@ components:
   tests:
   - tests/test_infrastructure.py::test_a_point_layer_reads_nulls_places_by_degrees_and_counts_what_it_withholds
   - tests/test_infrastructure.py::test_ports_are_one_point_each_with_a_row_per_commodity
-  depends_on:
-  - asi.infrastructure.places.PlaceInStates
+  depends_on: []
   drafted: true
 - id: asi.infrastructure.layers.LineLayer
   section: 06 Outputs and Site
@@ -1251,9 +1252,7 @@ components:
   - Output
   tests:
   - tests/test_infrastructure.py::test_a_line_layer_keeps_the_lines_under_another_licence_in_their_own_archive
-  depends_on:
-  - asi.infrastructure.places.LengthByState
-  - asi.infrastructure.tiles.Layer
+  depends_on: []
   drafted: true
 - id: asi.infrastructure.layers.CountrySummary
   section: 06 Outputs and Site
@@ -1280,6 +1279,19 @@ components:
   tests: []
   depends_on: []
   drafted: true
+- id: asi.infrastructure.places.member_waters
+  section: 06 Outputs and Site
+  entry: asi/infrastructure/places.py:member_waters
+  form: legacy
+  purpose: 'The zones of a World EEZ GeoJSON (Marine Regions) that involve member states: `iso3` for a zone with a single'
+  inputs:
+  - 'eez: dict'
+  outputs:
+  - gpd.GeoDataFrame
+  tests:
+  - tests/test_infrastructure.py::test_at_sea_a_point_is_in_the_state_whose_waters_hold_it_and_in_none_where_they_are_shared
+  depends_on: []
+  drafted: true
 - id: asi.infrastructure.places.PlaceInStates
   section: 06 Outputs and Site
   entry: asi/infrastructure/places.py:PlaceInStates
@@ -1291,6 +1303,20 @@ components:
   - Output
   tests:
   - tests/test_infrastructure.py::test_a_point_is_in_the_state_that_holds_it_or_the_nearest_within_reach
+  depends_on: []
+  drafted: true
+- id: asi.infrastructure.places.nearest_within
+  section: 06 Outputs and Site
+  entry: asi/infrastructure/places.py:nearest_within
+  form: legacy
+  purpose: The member state nearest to a point outside every polygon, if one is within `km` on the WGS84 ellipsoid.
+  inputs:
+  - point
+  - 'polygons: gpd.GeoDataFrame'
+  - 'km: float'
+  outputs:
+  - str | None
+  tests: []
   depends_on: []
   drafted: true
 - id: asi.infrastructure.places.LengthByState
