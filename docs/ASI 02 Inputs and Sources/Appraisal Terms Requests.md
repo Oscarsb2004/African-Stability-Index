@@ -10,19 +10,19 @@ updated: 2026-10-18
 # Appraisal Terms Requests
 
 > [!abstract] Goal
-> Unblock the five appraisals whose terms are unclear, by asking each publisher in writing and filing the answer in Sources (athena-data>).
+> Unblock the five appraisals whose terms are unclear, by asking each publisher in writing and filing the answer in Sources (athena-data).
 
 ## Why it exists
 
-Terms are read and dated before any data is used; where a publisher states no licence, only a written answer settles it. Only the owner sends messages (AGENTS>).
+Terms are read and dated before any data is used; where a publisher states no licence, only a written answer settles it. Only the owner sends messages (AGENTS).
 
 ## Precise objectives
 
 1. Send each request below, adapted as the owner wishes.
-2. File every answer, with its date, in Sources (athena-data>), and move the appraisal's status on.
+2. File every answer, with its date, in Sources (athena-data), and move the appraisal's status on.
 3. For the Global Peace Index, submit IEP's request form as a non-commercial research use.
 
-## The draft (one text, adapted per publisher>)
+## The draft (one text, adapted per publisher)
 
 > **Subject:** Permission to display [index name] values in a non-commercial research atlas
 >
@@ -33,7 +33,7 @@ Terms are read and dated before any data is used; where a publisher states no li
 > it, with full attribution and a link to the source.
 >
 > I would like to include [index name]. Could you tell me:
-> 1. whether I may display your published country values (unchanged, with your citation>) on a public,
+> 1. whether I may display your published country values (unchanged, with your citation) on a public,
 >    non-commercial website;
 > 2. whether I may keep a copy of your published data file to produce that display; and
 > 3. which licence or terms govern this use?
@@ -55,7 +55,7 @@ Terms are read and dated before any data is used; where a publisher states no li
 ## Inputs and outputs
 
 - **In:** the publishers' answers
-- **Out:** dated terms in Sources (athena-data>)
+- **Out:** dated terms in Sources (athena-data)
 
 ## Where it stands
 
@@ -63,4 +63,4 @@ Planned: drafts ready on 2026-10-18; nothing sent.
 
 ## Related
 
-Sources (athena-data>)
+Sources (athena-data)
