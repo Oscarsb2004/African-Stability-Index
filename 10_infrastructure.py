@@ -80,7 +80,7 @@ def main() -> int:
         print(f"{name}.pmtiles: {stats.tiles:,} tiles, {(OUT / f'{name}.pmtiles').stat().st_size / 1e6:.1f} MB")
 
     summary = CountrySummary().run(CountrySummary.Input(reg["points"], docs, km, tuple(sorted(COUNTRIES))))
-    catalogue["rules"] = {"null": NULL, "nearest_km": NEAREST_KM, "zooms": [MIN_ZOOM, MAX_ZOOM],
+    catalogue["rules"] = {"null": f"{NULL}, in any case", "nearest_km": NEAREST_KM, "zooms": [MIN_ZOOM, MAX_ZOOM],
                           "place": "a point is in the member state whose Natural Earth 1:50m polygon holds it, or the "
                                    f"nearest within {NEAREST_KM} km; a line's length counts toward each state by the "
                                    "part inside its polygon, on the WGS84 ellipsoid (derived)"}

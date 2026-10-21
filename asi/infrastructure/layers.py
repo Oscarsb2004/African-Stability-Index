@@ -1,8 +1,8 @@
 """The layers of the publication list, as the site reads them: one point layer's GeoJSON and catalogue entry; one
 line layer's tile layers, catalogue entry and lengths; and each member state's summary for the country panel.
 
-USGS writes a missing value as the text "<Null>"; it is read as missing. Every field shown keeps the publisher's
-name, with its label (USGS's field aliases). A feature withheld by the list, or outside every member state, is
+USGS writes a missing value as the text "<Null>", or "<null>" in some layers (the mineral facilities); either is read
+as missing. Every field shown keeps the publisher's name, with its label (USGS's field aliases). A feature withheld by the list, or outside every member state, is
 counted in the catalogue, never silently dropped.
 """
 
@@ -24,8 +24,13 @@ SHOWN = ("note", "licence", "attribution", "link")
 
 
 def clean(frame: pd.DataFrame) -> pd.DataFrame:
-    """The publisher's "<Null>" and empty text as missing."""
-    return frame.replace({NULL: None, "": None})
+    """The publisher's "<Null>", in any case, and empty text as missing; every other value is kept as written."""
+    out = frame.copy()
+    for column in out.columns:
+        if column != "geometry" and (pd.api.types.is_string_dtype(out[column]) or out[column].dtype == object):
+            text = out[column].astype(str)
+            out[column] = out[column].where(~(text.str.fullmatch(r"(?i)<null>") | (text == "")), None)
+    return out
 
 
 def labels_for(fields: pd.DataFrame, layer: str) -> dict[str, str]:

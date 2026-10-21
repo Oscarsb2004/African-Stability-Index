@@ -56,15 +56,17 @@ def test_a_lines_length_counts_toward_each_state_by_the_part_inside_it():
 def test_a_point_layer_reads_nulls_places_by_degrees_and_counts_what_it_withholds():
     frame = points((0.5, 0.5), (0.6, 0.6), (None, None), (1.5, 0.5),
                    FeatureNam=["Alpha", "<Null>", "Gamma", "Delta"], InfSource1=["USGS", "USGS", "USGS", "SNL Metals"],
+                   Owner=["<null>", "NA", "", "X"],  # either spelling of the marker is missing; "NA" is text
                    Latitude=[None, None, "0.4", None], Longitude=[None, None, "1.4", None])
-    spec = {"id": "mines", "title": "Mines", "fields": ["FeatureNam"], "withhold_where": {"InfSource1": "SNL"}} | SHOWN
+    spec = {"id": "mines", "title": "Mines", "fields": ["FeatureNam", "Owner"], "withhold_where": {"InfSource1": "SNL"}} | SHOWN
     out = PointLayer().run(PointLayer.Input(spec, frame, POLYGONS, {"FeatureNam": "Name"}))
     names = [f["properties"].get("FeatureNam") for f in out.geojson["features"]]
     assert names == ["Alpha", None, "Gamma"] and "Delta" not in names  # the withheld row never appears
+    assert [f["properties"].get("Owner") for f in out.geojson["features"]] == [None, "NA", None]
     assert [f["properties"]["iso3"] for f in out.geojson["features"]] == ["AAA", "AAA", "BBB"]
     assert {k: out.entry[k] for k in ("count", "withheld", "placed_by_degrees", "unplaced")} == \
         {"count": 3, "withheld": 1, "placed_by_degrees": 1, "unplaced": 0}
-    assert out.entry["fields"] == [{"name": "FeatureNam", "label": "Name"}] and out.entry["licence"] == "l"
+    assert out.entry["fields"][0] == {"name": "FeatureNam", "label": "Name"} and out.entry["licence"] == "l"
 
 
 def test_ports_are_one_point_each_with_a_row_per_commodity():
