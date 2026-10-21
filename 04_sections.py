@@ -1,8 +1,8 @@
 """
 04_sections.py — the economy and appraisal sections for each country, from Athena's datasets (P54).
 
-`sections.toml` binds athena-core's section templates to series; the datasets named on the command line are the
-edition, as for 01_inputs.py:
+`sections.toml` binds athena-kit's section templates (athena.sections) to series; the datasets named on the
+command line are the edition, as for 01_inputs.py:
 
     python 04_sections.py wdi-2026-10-08 wgi-2026-09-25 hdr-2025 cpi-2025 weo-2026-10
 
@@ -15,7 +15,6 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-sys.path.insert(0, str(ROOT.parents[1]))  # athena-core, for the `athena` package
 
 from asi.core.countries import COUNTRIES  # noqa: E402
 

@@ -1,5 +1,6 @@
 """
-06_backtests.py — run the pre-registered backtests on the published panel (the vault's `ASI Backtests`).
+06_backtests.py — run the pre-registered backtests on the published panel
+(`docs/ASI 05 Verification/Backtests/ASI Backtests.md`).
 
     python 06_backtests.py wdi-2026-10-08 wgi-2026-09-25
 
@@ -23,7 +24,6 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-sys.path.insert(0, str(ROOT.parents[1]))  # athena-core, for the `athena` package
 
 import numpy as np  # noqa: E402
 import pandas as pd  # noqa: E402

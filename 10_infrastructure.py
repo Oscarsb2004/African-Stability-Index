@@ -25,7 +25,6 @@ from collections import Counter, defaultdict
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-sys.path.insert(0, str(ROOT.parents[1]))  # athena-core, for `athena` and `adapters`
 
 import geopandas as gpd  # noqa: E402
 import numpy as np  # noqa: E402
@@ -152,7 +151,7 @@ def first_zooms(spec: dict, frame: pd.DataFrame) -> np.ndarray:
 
 
 def main() -> int:
-    from adapters import fetcher, sources
+    from asi.sources import fetcher, sources
     from athena import dataset, geo
     from asi.tiles import Layer, build
 

@@ -1,0 +1,104 @@
+# Every source the ASI reads, with its terms as read and dated. `python 00_ingest.py <key> ...` ingests one;
+# `sources.lock` holds the hash of every address fetched (athena-kit's athena.fetch). Moved from athena-core's
+# adapters/sources.toml on 2026-10-20 (P107), the ASI's sources only.
+
+[usgs-africa-gis]
+title = "USGS, Compilation of Geospatial Data (GIS) for the Mineral Industries and Related Infrastructure of Africa (2021), the geodatabase"
+url = "https://www.sciencebase.gov/catalog/file/get/607611a9d34e018b3201cbbf?f=__disk__30%2F8a%2Fb1%2F308ab140de2e0a1384172068209374d19ae4a65a"
+kind = "usgs-africa-gis"
+edition = "2021"
+terms = "https://doi.org/10.5066/P97EQWXP; read 2026-10-18; USGS data release, U.S. public domain; access and use constraints 'None' in the FGDC metadata; provided 'as is'; the rail and road layers carry OpenStreetMap IDs and keep ODbL; each layer names its data source"
+
+[wb-africa-grid]
+title = "World Bank, Africa Electricity Transmission and Distribution Grid Map (2017), existing and planned lines"
+url = "https://datacatalogfiles.worldbank.org/ddh-published/0040465/DR0050466/africagrid20170906final.geojson"
+kind = "wb-africa-grid"
+edition = "2017-09-06"
+terms = "https://energydata.info/dataset/africa-electricity-transmission-and-distribution-grid-map-2017; read 2026-10-18; CC BY 4.0; World Bank Group (author C. Arderne); completeness varies widely by country, as the record says"
+
+[wdi-bulk]
+title = "World Development Indicators, bulk download"
+url = "https://databank.worldbank.org/data/download/WDI_CSV.zip"
+kind = "worldbank-bulk"
+database = "WDI"
+terms = "https://www.worldbank.org/ext/en/legal/terms-conditions/datasets; read 2026-10-17; CC BY 4.0 unless a series' License Type says otherwise; attribute as 'The World Bank: Dataset name: Data source'"
+
+[wgi-bulk]
+title = "Worldwide Governance Indicators, bulk download"
+url = "https://databank.worldbank.org/data/download/WGI_CSV.zip"
+kind = "worldbank-bulk"
+database = "WGI"
+terms = "https://www.worldbank.org/ext/en/legal/terms-conditions/datasets; read 2026-10-17; CC BY 4.0 unless a series' License Type says otherwise; attribute as 'The World Bank: Dataset name: Data source'"
+
+# The ASI's legacy inputs: its own pull through the World Bank API, frozen as a workbook in its folder. A file:
+# address is a path inside this repository, read from disk and locked like any other source.
+
+[asi-pull]
+title = "The ASI's frozen pull of its 33 WDI and WGI series (the inputs of every score published so far)"
+url = "file:data/baseline/01_raw_pull_BASELINE.xlsx"
+kind = "asi-pull"
+terms = "World Bank data under CC BY 4.0, read 2026-10-17 (see wdi-bulk and wgi-bulk); the workbook is the ASI's own"
+
+# Geometry for the ASI site (P55), from Natural Earth's own repository at a fixed release tag.
+
+[natural-earth-countries-50m]
+title = "Natural Earth 1:50m admin-0 countries, v5.1.2"
+url = "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/v5.1.2/geojson/ne_50m_admin_0_countries.geojson"
+kind = "geojson"
+terms = "https://www.naturalearthdata.com/about/terms-of-use/; read 2026-10-18; public domain, no credit needed"
+
+[natural-earth-borders-50m]
+title = "Natural Earth 1:50m admin-0 land boundary lines, v5.1.2"
+url = "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/v5.1.2/geojson/ne_50m_admin_0_boundary_lines_land.geojson"
+kind = "geojson"
+terms = "https://www.naturalearthdata.com/about/terms-of-use/; read 2026-10-18; public domain, no credit needed"
+
+[natural-earth-places-10m]
+title = "Natural Earth 1:10m populated places (simple), v5.1.2"
+url = "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/v5.1.2/geojson/ne_10m_populated_places_simple.geojson"
+kind = "geojson"
+terms = "https://www.naturalearthdata.com/about/terms-of-use/; read 2026-10-18; public domain, no credit needed"
+
+# Whole databases for the ASI's outlook and appraisals (P53, P56). Terms read 2026-10-18; see athena-data Sources.md.
+
+[imf-weo]
+title = "IMF World Economic Outlook database, October 2026, entire dataset (Excel)"
+url = "https://data.imf.org/-/media/iData/External-Storage/Documents/0FA3DC49A04D446E9D69DBEB29979E1C/en/WEOOct2026all.xlsx"
+kind = "imf-weo"
+edition = "2026-10"
+terms = "https://www.imf.org/en/about/copyright-and-terms; read 2026-10-18; data may be downloaded, derived and published, citing 'Source: International Monetary Fund, World Economic Outlook database'; material transformations stated; commercial reuse needs permission"
+
+[undp-hdr]
+title = "UNDP Human Development Report 2025, all composite indices, complete time series"
+url = "https://hdr.undp.org/sites/default/files/2025_HDR/HDR25_Composite_indices_complete_time_series.csv"
+kind = "undp-hdr"
+edition = "2025"
+terms = "https://hdr.undp.org/terms-use; read 2026-10-18; CC BY 3.0 IGO; keep to the latest edition; print UNDP's note that the HDI series is recalculated every year"
+metadata_url = "https://hdr.undp.org/sites/default/files/2025_HDR/HDR25_Composite_indices_metadata.xlsx"
+
+[ti-cpi]
+title = "Transparency International, Corruption Perceptions Index 2025, results and trends"
+url = "https://images.transparencycdn.org/images/CPI2025_Results.xlsx"
+kind = "ti-cpi"
+edition = "2025"
+terms = "https://www.transparency.org/en/copyright-enquiries; read 2026-10-18; CC BY 4.0 for the CPI and its datasets; every change indicated; attribute as 'CPI 2025 by Transparency International is licensed under CC BY 4.0'"
+
+[ucdp-organized-violence]
+title = "UCDP Country-Year Dataset on Organized Violence within Country Borders, version 26.1"
+url = "https://ucdp.uu.se/downloads/organizedviolencecy/organizedviolencecy-261-csv.zip"
+kind = "ucdp"
+edition = "26.1"
+terms = "https://ucdp.uu.se/downloads/; read 2026-10-18; every UCDP dataset free of charge under CC BY 4.0; use and redistribution free provided the publications listed with the dataset are cited"
+
+[wikidata-states]
+title = "Wikidata, the African Union member states: every membership (P463) and a few attributes, two SPARQL queries"
+kind = "wikidata-sparql"
+edition = "2026-10-20"
+terms = "https://www.wikidata.org/wiki/Wikidata:Licensing; read 2026-10-18; all structured data CC0; scripts send an informative User-Agent (athena.fetch does)"
+
+[glottolog-cldf]
+title = "Glottolog 5.3 as CLDF (glottolog/glottolog-cldf, release v5.3, 2026-03-02): languages, values, codes and parameters"
+url = "https://raw.githubusercontent.com/glottolog/glottolog-cldf/v5.3/cldf/{table}.csv"
+kind = "glottolog-cldf"
+edition = "5.3"
+terms = "https://github.com/glottolog/glottolog-cldf/blob/v5.3/LICENSE; read 2026-10-20; CC BY 4.0; cite Hammarström, Forkel, Haspelmath & Bank (2026), Glottolog 5.3, Leipzig: Max Planck Institute for Evolutionary Anthropology"

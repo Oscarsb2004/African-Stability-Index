@@ -1,0 +1,2704 @@
+format: athena.components/1
+covers:
+- 00_ingest.py
+- 01_inputs.py
+- 02_panel.py
+- 03_robustness.py
+- 04_sections.py
+- 05_web.py
+- 06_backtests.py
+- 07_wonders.py
+- 08_narratives.py
+- 09_explore.py
+- 10_infrastructure.py
+- backtests.py
+- asi
+- verify
+tests: tests
+sections:
+  00_ingest.py: 02 Inputs and Sources
+  01_inputs.py: 02 Inputs and Sources
+  asi/adapters/: 02 Inputs and Sources
+  asi/sources.py: 02 Inputs and Sources
+  02_panel.py: 03 Pipeline
+  03_robustness.py: 04 Methods
+  04_sections.py: 06 Outputs and Site
+  05_web.py: 06 Outputs and Site
+  06_backtests.py: 05 Verification
+  07_wonders.py: 06 Outputs and Site
+  08_narratives.py: 06 Outputs and Site
+  09_explore.py: 06 Outputs and Site
+  10_infrastructure.py: 06 Outputs and Site
+  backtests.py: 05 Verification
+  asi/core/: 04 Methods
+  asi/pipeline/: 04 Methods
+  asi/results.py: 03 Pipeline
+  asi/geography.py: 06 Outputs and Site
+  asi/tiles.py: 06 Outputs and Site
+  verify/: 05 Verification
+components:
+- id: 00_ingest.frozen_pull
+  section: 02 Inputs and Sources
+  entry: 00_ingest.py:frozen_pull
+  form: legacy
+  purpose: 'The ASI''s own kind: its frozen pull, read from the project''s folder.'
+  inputs:
+  - 'src: dict'
+  - get
+  outputs:
+  - Result
+  tests: []
+  depends_on: []
+  drafted: true
+- id: 00_ingest.main
+  section: 02 Inputs and Sources
+  entry: 00_ingest.py:main
+  form: legacy
+  purpose: '(no docstring: to be written)'
+  inputs:
+  - 'keys: list[str]'
+  outputs:
+  - int
+  tests: []
+  depends_on: []
+  drafted: true
+- id: 01_inputs.select
+  section: 02 Inputs and Sources
+  entry: 01_inputs.py:select
+  form: legacy
+  purpose: The rows of `values` (Athena's common format) for these series, countries and years, as published.
+  inputs:
+  - 'values: pd.DataFrame'
+  - 'codes: set[str]'
+  - 'countries: set[str]'
+  - 'first: int'
+  - 'last: int'
+  outputs:
+  - pd.DataFrame
+  tests:
+  - tests/test_inputs.py::test_a_series_no_dataset_holds_stops_the_run
+  - tests/test_inputs.py::test_a_series_two_datasets_hold_stops_the_run
+  - tests/test_inputs.py::test_only_registry_series_member_states_and_window_years_with_values
+  - tests/test_wonders.py::test_the_owner_can_remove_or_add_a_wonder
+  - tests/test_wonders.py::test_the_rule_takes_the_most_notable_per_quota_and_every_region
+  depends_on: []
+  drafted: true
+- id: 01_inputs.main
+  section: 02 Inputs and Sources
+  entry: 01_inputs.py:main
+  form: legacy
+  purpose: '(no docstring: to be written)'
+  inputs:
+  - 'names: list[str]'
+  outputs:
+  - int
+  tests: []
+  depends_on:
+  - asi.core.registry.IndicatorRegistry
+  - asi.core.registry.PillarRegistry
+  drafted: true
+- id: 02_panel.main
+  section: 03 Pipeline
+  entry: 02_panel.py:main
+  form: legacy
+  purpose: '(no docstring: to be written)'
+  inputs:
+  - (none)
+  outputs:
+  - int
+  tests: []
+  depends_on:
+  - asi.core.registry.IndicatorRegistry
+  - asi.core.registry.PillarRegistry
+  - asi.core.schema.Reliability
+  drafted: true
+- id: 03_robustness.main
+  section: 04 Methods
+  entry: 03_robustness.py:main
+  form: legacy
+  purpose: '(no docstring: to be written)'
+  inputs:
+  - (none)
+  outputs:
+  - int
+  tests: []
+  depends_on: []
+  drafted: true
+- id: 04_sections.main
+  section: 06 Outputs and Site
+  entry: 04_sections.py:main
+  form: legacy
+  purpose: '(no docstring: to be written)'
+  inputs:
+  - 'names: list[str]'
+  outputs:
+  - int
+  tests: []
+  depends_on: []
+  drafted: true
+- id: 05_web.feature
+  section: 06 Outputs and Site
+  entry: 05_web.py:feature
+  form: legacy
+  purpose: '(no docstring: to be written)'
+  inputs:
+  - 'geometry: dict'
+  - 'properties: dict'
+  outputs:
+  - dict
+  tests: []
+  depends_on: []
+  drafted: true
+- id: 05_web.collection
+  section: 06 Outputs and Site
+  entry: 05_web.py:collection
+  form: legacy
+  purpose: '(no docstring: to be written)'
+  inputs:
+  - 'features: list[dict]'
+  outputs:
+  - dict
+  tests: []
+  depends_on: []
+  drafted: true
+- id: 05_web.countries
+  section: 06 Outputs and Site
+  entry: 05_web.py:countries
+  form: legacy
+  purpose: '(no docstring: to be written)'
+  inputs:
+  - 'ne: dict'
+  outputs:
+  - dict
+  tests:
+  - tests/test_web.py::test_every_member_state_is_drawn_and_merged_codes_take_the_member_code
+  depends_on: []
+  drafted: true
+- id: 05_web.borders
+  section: 06 Outputs and Site
+  entry: 05_web.py:borders
+  form: legacy
+  purpose: '(no docstring: to be written)'
+  inputs:
+  - 'ne: dict'
+  - west
+  - south
+  - east
+  - north
+  outputs:
+  - dict
+  tests:
+  - tests/test_web.py::test_lines_iso_does_not_recognise_are_dropped_and_disputed_ones_dashed
+  depends_on: []
+  drafted: true
+- id: 05_web.places
+  section: 06 Outputs and Site
+  entry: 05_web.py:places
+  form: legacy
+  purpose: '(no docstring: to be written)'
+  inputs:
+  - 'ne: dict'
+  outputs:
+  - dict
+  tests:
+  - tests/test_web.py::test_capitals_follow_the_class_and_a_merged_areas_capital_is_not_one
+  depends_on: []
+  drafted: true
+- id: 05_web.stability
+  section: 06 Outputs and Site
+  entry: 05_web.py:stability
+  form: legacy
+  purpose: '(no docstring: to be written)'
+  inputs:
+  - (none)
+  outputs:
+  - dict
+  tests:
+  - tests/test_web.py::test_the_stability_document_carries_each_headline_with_its_interval_tier_and_narrative
+  depends_on: []
+  drafted: true
+- id: 05_web.method
+  section: 06 Outputs and Site
+  entry: 05_web.py:method
+  form: legacy
+  purpose: 'The facts the site''s "How the index is built" page shows: the rules with their values, every pillar with'
+  inputs:
+  - (none)
+  outputs:
+  - dict
+  tests:
+  - tests/test_web.py::test_the_method_page_reads_the_panel_and_its_weights_add_to_one
+  depends_on: []
+  drafted: true
+- id: 05_web.write
+  section: 06 Outputs and Site
+  entry: 05_web.py:write
+  form: legacy
+  purpose: '(no docstring: to be written)'
+  inputs:
+  - 'path: Path'
+  - 'doc: dict'
+  outputs:
+  - None
+  tests: []
+  depends_on: []
+  drafted: true
+- id: 05_web.main
+  section: 06 Outputs and Site
+  entry: 05_web.py:main
+  form: legacy
+  purpose: '(no docstring: to be written)'
+  inputs:
+  - (none)
+  outputs:
+  - int
+  tests: []
+  depends_on:
+  - asi.sources.fetcher
+  - asi.sources.sources
+  drafted: true
+- id: 06_backtests.wide
+  section: 05 Verification
+  entry: 06_backtests.py:wide
+  form: legacy
+  purpose: '(no docstring: to be written)'
+  inputs:
+  - 'values: pd.DataFrame'
+  - 'series: str'
+  outputs:
+  - pd.DataFrame
+  tests:
+  - tests/test_score.py::test_a_row_with_no_pillars_at_all_is_nan_not_zero
+  - tests/test_score.py::test_an_unreliable_pillar_is_left_out_and_a_thin_one_kept
+  - tests/test_score.py::test_entropy_gives_a_pillar_that_separates_nobody_almost_no_weight
+  - tests/test_score.py::test_entropy_on_an_empty_panel_falls_back_to_equal_weights
+  - tests/test_score.py::test_entropy_shifts_non_positive_columns_before_taking_logs
+  depends_on: []
+  drafted: true
+- id: 06_backtests.recorded
+  section: 05 Verification
+  entry: 06_backtests.py:recorded
+  form: legacy
+  purpose: '1 where a value above `above` is recorded, 0 otherwise: for series that list event years only.'
+  inputs:
+  - 'w: pd.DataFrame'
+  - 'first: int'
+  - 'last: int'
+  - 'above: float'
+  outputs:
+  - pd.DataFrame
+  tests: []
+  depends_on: []
+  drafted: true
+- id: 06_backtests.threshold
+  section: 05 Verification
+  entry: 06_backtests.py:threshold
+  form: legacy
+  purpose: 1 beyond the limit, 0 within it, NaN where unknown.
+  inputs:
+  - 'w: pd.DataFrame'
+  - 'limit: float'
+  - 'inclusive: bool'
+  outputs:
+  - pd.DataFrame
+  tests: []
+  depends_on: []
+  drafted: true
+- id: 06_backtests.latest_at
+  section: 05 Verification
+  entry: 06_backtests.py:latest_at
+  form: legacy
+  purpose: The value at t, or the latest before it (the WGI skips some early years).
+  inputs:
+  - 'w: pd.DataFrame'
+  - 'iso3: str'
+  - 't: int'
+  outputs:
+  - float
+  tests: []
+  depends_on: []
+  drafted: true
+- id: 06_backtests.main
+  section: 05 Verification
+  entry: 06_backtests.py:main
+  form: legacy
+  purpose: '(no docstring: to be written)'
+  inputs:
+  - 'names: list[str]'
+  outputs:
+  - int
+  tests: []
+  depends_on: []
+  drafted: true
+- id: 07_wonders.query
+  section: 06 Outputs and Site
+  entry: 07_wonders.py:query
+  form: legacy
+  purpose: One state's candidates, every class at once. Asking per state takes a second or two; asking per class
+  inputs:
+  - 'iso3: str'
+  outputs:
+  - str
+  tests: []
+  depends_on: []
+  drafted: true
+- id: 07_wonders.get_json
+  section: 06 Outputs and Site
+  entry: 07_wonders.py:get_json
+  form: legacy
+  purpose: The public query service fails now and then under load; a failed request is retried, never cached.
+  inputs:
+  - fetch
+  - 'url: str'
+  - 'tries: int'
+  outputs:
+  - '(not annotated: see the code)'
+  tests: []
+  depends_on: []
+  drafted: true
+- id: 07_wonders.details_query
+  section: 06 Outputs and Site
+  entry: 07_wonders.py:details_query
+  form: legacy
+  purpose: Names, descriptions, coordinates, main image and Commons category, for a shortlist only.
+  inputs:
+  - 'qids: list[str]'
+  outputs:
+  - str
+  tests: []
+  depends_on: []
+  drafted: true
+- id: 07_wonders.shortlist
+  section: 06 Outputs and Site
+  entry: 07_wonders.py:shortlist
+  form: legacy
+  purpose: 'Every item that could be chosen once names and coordinates are known: four times each quota, and each'
+  inputs:
+  - 'found: dict[str, dict]'
+  outputs:
+  - list[str]
+  tests: []
+  depends_on: []
+  drafted: true
+- id: 07_wonders.candidates
+  section: 06 Outputs and Site
+  entry: 07_wonders.py:candidates
+  form: legacy
+  purpose: One record per item, gathering its countries, kinds and first coordinate, image and category.
+  inputs:
+  - 'rows: list[dict[str, str]]'
+  outputs:
+  - dict[str, dict]
+  tests: []
+  depends_on: []
+  drafted: true
+- id: 07_wonders.select
+  section: 06 Outputs and Site
+  entry: 07_wonders.py:select
+  form: legacy
+  purpose: The rule, steps 3 and 4. An item whose label is its own QID has no English name and is left out.
+  inputs:
+  - 'found: dict[str, dict]'
+  outputs:
+  - list[dict]
+  tests:
+  - tests/test_inputs.py::test_a_series_no_dataset_holds_stops_the_run
+  - tests/test_inputs.py::test_a_series_two_datasets_hold_stops_the_run
+  - tests/test_inputs.py::test_only_registry_series_member_states_and_window_years_with_values
+  - tests/test_wonders.py::test_the_owner_can_remove_or_add_a_wonder
+  - tests/test_wonders.py::test_the_rule_takes_the_most_notable_per_quota_and_every_region
+  depends_on: []
+  drafted: true
+- id: 07_wonders.file_title
+  section: 06 Outputs and Site
+  entry: 07_wonders.py:file_title
+  form: legacy
+  purpose: '(no docstring: to be written)'
+  inputs:
+  - 'image_url: str'
+  outputs:
+  - str
+  tests: []
+  depends_on: []
+  drafted: true
+- id: 07_wonders.main
+  section: 06 Outputs and Site
+  entry: 07_wonders.py:main
+  form: legacy
+  purpose: '(no docstring: to be written)'
+  inputs:
+  - (none)
+  outputs:
+  - int
+  tests: []
+  depends_on:
+  - asi.geography.subregions
+  - asi.sources.fetcher
+  - asi.sources.sources
+  drafted: true
+- id: 08_narratives.one
+  section: 06 Outputs and Site
+  entry: 08_narratives.py:one
+  form: legacy
+  purpose: Every number in the text has one decimal.
+  inputs:
+  - 'x: float'
+  outputs:
+  - str
+  tests: []
+  depends_on: []
+  drafted: true
+- id: 08_narratives.facts
+  section: 06 Outputs and Site
+  entry: 08_narratives.py:facts
+  form: legacy
+  purpose: The facts each country's sentences are made from, keyed by ISO3.
+  inputs:
+  - 'comp: pd.DataFrame'
+  - 'pil: pd.DataFrame'
+  - 'year: int'
+  outputs:
+  - dict[str, dict]
+  tests:
+  - tests/test_narratives.py::test_pillars_above_and_below_the_median_are_only_those_on_that_side
+  - tests/test_narratives.py::test_the_change_runs_over_ten_years_and_names_the_pillar_that_moved_most
+  - tests/test_narratives.py::test_the_sentences_say_none_when_no_pillar_is_on_a_side
+  - tests/test_narratives.py::test_the_verifier_finds_every_number_and_refuses_one_that_is_not_a_fact
+  depends_on: []
+  drafted: true
+- id: 08_narratives.sentences
+  section: 06 Outputs and Site
+  entry: 08_narratives.py:sentences
+  form: legacy
+  purpose: '(no docstring: to be written)'
+  inputs:
+  - 'name: str'
+  - 'f: dict'
+  - 'year: int'
+  - 'n: int'
+  - 'n_tiers: int'
+  - 'lri_median: float'
+  outputs:
+  - list[str]
+  tests:
+  - tests/test_narratives.py::test_the_sentences_say_none_when_no_pillar_is_on_a_side
+  - tests/test_narratives.py::test_the_verifier_finds_every_number_and_refuses_one_that_is_not_a_fact
+  depends_on: []
+  drafted: true
+- id: 08_narratives.build
+  section: 06 Outputs and Site
+  entry: 08_narratives.py:build
+  form: legacy
+  purpose: '(no docstring: to be written)'
+  inputs:
+  - 'panel: Path'
+  outputs:
+  - dict
+  tests: []
+  depends_on: []
+  drafted: true
+- id: 08_narratives.main
+  section: 06 Outputs and Site
+  entry: 08_narratives.py:main
+  form: legacy
+  purpose: '(no docstring: to be written)'
+  inputs:
+  - (none)
+  outputs:
+  - int
+  tests: []
+  depends_on: []
+  drafted: true
+- id: 09_explore.key
+  section: 06 Outputs and Site
+  entry: 09_explore.py:key
+  form: legacy
+  purpose: 'A dataset''s short name: wdi-2026-10-08 -> wdi, wikidata-states-2026-10-20 -> wikidata.'
+  inputs:
+  - 'name: str'
+  outputs:
+  - str
+  tests:
+  - tests/test_registry.py::test_pillar_registry_carries_weight_bounds
+  - tests/test_registry.py::test_pillar_registry_matches_pillar_defs
+  depends_on: []
+  drafted: true
+- id: 09_explore.four
+  section: 06 Outputs and Site
+  entry: 09_explore.py:four
+  form: legacy
+  purpose: '(no docstring: to be written)'
+  inputs:
+  - v
+  outputs:
+  - float | None
+  tests:
+  - tests/test_panel_derived.py::test_volatility_needs_half_the_window_measured
+  depends_on: []
+  drafted: true
+- id: 09_explore.file_id
+  section: 06 Outputs and Site
+  entry: 09_explore.py:file_id
+  form: legacy
+  purpose: '(no docstring: to be written)'
+  inputs:
+  - 'code: str'
+  outputs:
+  - str
+  tests:
+  - tests/test_explore.py::test_every_listed_measure_has_its_file_and_every_file_is_listed
+  depends_on: []
+  drafted: true
+- id: 09_explore.ucdp_label
+  section: 06 Outputs and Site
+  entry: 09_explore.py:ucdp_label
+  form: legacy
+  purpose: UCDP's variable names spelled out by its own abbreviations (the dataset has no label table).
+  inputs:
+  - 'code: str'
+  outputs:
+  - str
+  tests: []
+  depends_on: []
+  drafted: true
+- id: 09_explore.labels
+  section: 06 Outputs and Site
+  entry: 09_explore.py:labels
+  form: legacy
+  purpose: Each series code's label, unit and topic, from the dataset's own codebook.
+  inputs:
+  - 'name: str'
+  outputs:
+  - dict[str, tuple[str, str, str]]
+  tests: []
+  depends_on: []
+  drafted: true
+- id: 09_explore.series_docs
+  section: 06 Outputs and Site
+  entry: 09_explore.py:series_docs
+  form: legacy
+  purpose: 'The catalogue entries and series files of one dataset: member states only, from FIRST_YEAR, with FLOOR.'
+  inputs:
+  - 'name: str'
+  - 'values: pd.DataFrame'
+  outputs:
+  - tuple[list[dict], dict[str, dict]]
+  tests: []
+  depends_on: []
+  drafted: true
+- id: 09_explore.grid
+  section: 06 Outputs and Site
+  entry: 09_explore.py:grid
+  form: legacy
+  purpose: Each state's values from y0 to y1, None where the publisher has none.
+  inputs:
+  - 'g: pd.DataFrame'
+  - 'y0: int'
+  - 'y1: int'
+  - 'column: str'
+  outputs:
+  - dict[str, list]
+  tests: []
+  depends_on: []
+  drafted: true
+- id: 09_explore.asi_docs
+  section: 06 Outputs and Site
+  entry: 09_explore.py:asi_docs
+  form: legacy
+  purpose: 'The ASI''s own measures: the headline with its 95% interval and tier, every pillar, every scored indicator''s'
+  inputs:
+  - (none)
+  outputs:
+  - tuple[list[dict], dict[str, dict]]
+  tests: []
+  depends_on: []
+  drafted: true
+- id: 09_explore.group_docs
+  section: 06 Outputs and Site
+  entry: 09_explore.py:group_docs
+  form: legacy
+  purpose: The RECs as the owner compiled them, the listed organisations with their members from Wikidata, and the
+  inputs:
+  - 'wikidata: str'
+  outputs:
+  - dict
+  tests: []
+  depends_on: []
+  drafted: true
+- id: 09_explore.crosscheck
+  section: 06 Outputs and Site
+  entry: 09_explore.py:crosscheck
+  form: legacy
+  purpose: 'Each REC beside Wikidata''s current members: who is only in the owner''s list, who only in Wikidata.'
+  inputs:
+  - 'recs: list[dict]'
+  - 'members: dict[str, list[str]]'
+  outputs:
+  - list[dict]
+  tests:
+  - tests/test_explore.py::test_the_crosscheck_reports_each_difference_and_changes_nothing
+  depends_on: []
+  drafted: true
+- id: 09_explore.census_year
+  section: 06 Outputs and Site
+  entry: 09_explore.py:census_year
+  form: legacy
+  purpose: '(no docstring: to be written)'
+  inputs:
+  - 'text: str'
+  outputs:
+  - int | None
+  tests: []
+  depends_on: []
+  drafted: true
+- id: 09_explore.state_docs
+  section: 06 Outputs and Site
+  entry: 09_explore.py:state_docs
+  form: legacy
+  purpose: Each state's categories. As printed where a publisher prints the category; derived ones say how.
+  inputs:
+  - 'names: dict[str, str]'
+  - 'ne: dict'
+  - 'groups: dict'
+  outputs:
+  - dict
+  tests: []
+  depends_on: []
+  drafted: true
+- id: 09_explore.language_docs
+  section: 06 Outputs and Site
+  entry: 09_explore.py:language_docs
+  form: legacy
+  purpose: Each state's languages still spoken (Glottolog), with family, endangerment and description, and its
+  inputs:
+  - 'names: dict[str, str]'
+  outputs:
+  - tuple[dict, list[dict], dict[str, dict]]
+  tests: []
+  depends_on: []
+  drafted: true
+- id: 09_explore.coverage
+  section: 06 Outputs and Site
+  entry: 09_explore.py:coverage
+  form: legacy
+  purpose: 'For each dataset, each state''s share of its listed series with a value since `since`: how visible each'
+  inputs:
+  - 'files: dict[str, dict]'
+  - 'since: int'
+  outputs:
+  - dict[str, dict[str, float]]
+  tests:
+  - tests/test_admission_floor.py::test_every_scoring_indicator_clears_the_floor
+  - tests/test_admission_floor.py::test_the_floor_does_bind_some_indicators
+  - tests/test_explore.py::test_coverage_counts_a_series_only_where_the_state_has_a_value_since_the_threshold
+  depends_on: []
+  drafted: true
+- id: 09_explore.write
+  section: 06 Outputs and Site
+  entry: 09_explore.py:write
+  form: legacy
+  purpose: '(no docstring: to be written)'
+  inputs:
+  - 'path: Path'
+  - 'doc: dict'
+  outputs:
+  - int
+  tests: []
+  depends_on: []
+  drafted: true
+- id: 09_explore.main
+  section: 06 Outputs and Site
+  entry: 09_explore.py:main
+  form: legacy
+  purpose: '(no docstring: to be written)'
+  inputs:
+  - 'argv: list[str]'
+  outputs:
+  - int
+  tests: []
+  depends_on:
+  - asi.sources.fetcher
+  - asi.sources.sources
+  drafted: true
+- id: 10_infrastructure.clean
+  section: 06 Outputs and Site
+  entry: 10_infrastructure.py:clean
+  form: legacy
+  purpose: The publisher's "<Null>" and empty text as missing.
+  inputs:
+  - 'frame: pd.DataFrame'
+  outputs:
+  - pd.DataFrame
+  tests: []
+  depends_on: []
+  drafted: true
+- id: 10_infrastructure.states
+  section: 06 Outputs and Site
+  entry: 10_infrastructure.py:states
+  form: legacy
+  purpose: The member states' Natural Earth polygons, one row each.
+  inputs:
+  - 'ne: dict'
+  outputs:
+  - gpd.GeoDataFrame
+  tests:
+  - tests/test_backtests.py::test_the_interval_excludes_half_for_a_real_signal_and_includes_it_for_noise
+  - tests/test_explore.py::test_no_category_singles_out_a_state_for_being_small_or_an_island
+  depends_on: []
+  drafted: true
+- id: 10_infrastructure.locate
+  section: 06 Outputs and Site
+  entry: 10_infrastructure.py:locate
+  form: legacy
+  purpose: 'Each point''s member state: the polygon holding it, or the nearest within NEAREST_KM; otherwise none.'
+  inputs:
+  - 'points: gpd.GeoDataFrame'
+  - 'polygons: gpd.GeoDataFrame'
+  outputs:
+  - pd.Series
+  tests: []
+  depends_on: []
+  drafted: true
+- id: 10_infrastructure.lengths
+  section: 06 Outputs and Site
+  entry: 10_infrastructure.py:lengths
+  form: legacy
+  purpose: Kilometres of line inside each state, by a class column.
+  inputs:
+  - 'lines: gpd.GeoDataFrame'
+  - 'polygons: gpd.GeoDataFrame'
+  - 'by: str'
+  outputs:
+  - dict[str, dict[str, float]]
+  tests: []
+  depends_on: []
+  drafted: true
+- id: 10_infrastructure.labels_for
+  section: 06 Outputs and Site
+  entry: 10_infrastructure.py:labels_for
+  form: legacy
+  purpose: '(no docstring: to be written)'
+  inputs:
+  - 'fields: pd.DataFrame'
+  - 'layer: str'
+  outputs:
+  - dict[str, str]
+  tests: []
+  depends_on: []
+  drafted: true
+- id: 10_infrastructure.feature
+  section: 06 Outputs and Site
+  entry: 10_infrastructure.py:feature
+  form: legacy
+  purpose: '(no docstring: to be written)'
+  inputs:
+  - geom
+  - 'props: dict'
+  outputs:
+  - dict
+  tests: []
+  depends_on: []
+  drafted: true
+- id: 10_infrastructure.point_layer
+  section: 06 Outputs and Site
+  entry: 10_infrastructure.py:point_layer
+  form: legacy
+  purpose: One point layer's GeoJSON and its catalogue entry. Withheld features are counted, never silently dropped.
+  inputs:
+  - 'spec: dict'
+  - 'frame: gpd.GeoDataFrame'
+  - 'polygons: gpd.GeoDataFrame'
+  - 'labels: dict'
+  outputs:
+  - tuple[dict, dict]
+  tests: []
+  depends_on: []
+  drafted: true
+- id: 10_infrastructure.first_zooms
+  section: 06 Outputs and Site
+  entry: 10_infrastructure.py:first_zooms
+  form: legacy
+  purpose: '(no docstring: to be written)'
+  inputs:
+  - 'spec: dict'
+  - 'frame: pd.DataFrame'
+  outputs:
+  - np.ndarray
+  tests: []
+  depends_on: []
+  drafted: true
+- id: 10_infrastructure.main
+  section: 06 Outputs and Site
+  entry: 10_infrastructure.py:main
+  form: legacy
+  purpose: '(no docstring: to be written)'
+  inputs:
+  - (none)
+  outputs:
+  - int
+  tests: []
+  depends_on:
+  - 08_narratives.build
+  - asi.sources.fetcher
+  - asi.sources.sources
+  - asi.tiles.Layer
+  drafted: true
+- id: backtests.auc
+  section: 05 Verification
+  entry: backtests.py:auc
+  form: legacy
+  purpose: '(no docstring: to be written)'
+  inputs:
+  - risk
+  - event
+  outputs:
+  - float
+  tests:
+  - tests/test_backtests.py::test_auc_ignores_missing_risk_and_a_random_score_sits_near_half
+  - tests/test_backtests.py::test_auc_is_one_when_risk_separates_events_and_half_when_it_cannot
+  depends_on: []
+  drafted: true
+- id: backtests.windows
+  section: 05 Verification
+  entry: backtests.py:windows
+  form: legacy
+  purpose: 'Rows (iso3, year, event) for every at-risk state-year t in [first, last]. `flags` is states by years:'
+  inputs:
+  - 'flags: pd.DataFrame'
+  - 'first: int'
+  - 'last: int'
+  - 'h: int'
+  outputs:
+  - pd.DataFrame
+  tests:
+  - tests/test_backtests.py::test_windows_keep_only_state_years_free_of_the_event_and_with_known_outcomes
+  depends_on: []
+  drafted: true
+- id: backtests.history
+  section: 05 Verification
+  entry: backtests.py:history
+  form: legacy
+  purpose: 1 if the event happened in any of t-k to t-1, else 0 (an unknown year counts as none).
+  inputs:
+  - 'flags: pd.DataFrame'
+  - 'iso3: str'
+  - 't: int'
+  - 'k: int'
+  outputs:
+  - float
+  tests:
+  - tests/test_backtests.py::test_history_counts_the_five_years_before
+  depends_on: []
+  drafted: true
+- id: backtests.compare
+  section: 05 Verification
+  entry: backtests.py:compare
+  form: legacy
+  purpose: Each predictor's AUC with its interval, and (when a baseline is named) its AUC minus the baseline's.
+  inputs:
+  - 'rows: pd.DataFrame'
+  - 'predictors: list[str]'
+  - 'baseline: str | None'
+  outputs:
+  - dict
+  tests:
+  - tests/test_backtests.py::test_the_interval_excludes_half_for_a_real_signal_and_includes_it_for_noise
+  depends_on: []
+  drafted: true
+- id: backtests.verdict
+  section: 05 Verification
+  entry: backtests.py:verdict
+  form: legacy
+  purpose: The protocol's two pass rules.
+  inputs:
+  - 'result: dict'
+  - 'predictor: str'
+  - 'baseline: str'
+  outputs:
+  - dict
+  tests:
+  - tests/test_backtests.py::test_the_interval_excludes_half_for_a_real_signal_and_includes_it_for_noise
+  depends_on: []
+  drafted: true
+- id: backtests.hit_rate
+  section: 05 Verification
+  entry: backtests.py:hit_rate
+  form: legacy
+  purpose: 'The share of events whose state was in the bottom fifth of the composite in year t (chance: 20%).'
+  inputs:
+  - 'rows: pd.DataFrame'
+  - 'bottom: pd.Series'
+  outputs:
+  - dict
+  tests:
+  - tests/test_backtests.py::test_the_hit_rate_counts_events_in_the_bottom_fifth
+  depends_on: []
+  drafted: true
+- id: asi.adapters.asi_pull.ingest
+  section: 02 Inputs and Sources
+  entry: asi/adapters/asi_pull.py:ingest
+  form: legacy
+  purpose: The dataset's name, its tables, and the report. A variable that pull_log cannot place stops the ingest.
+  inputs:
+  - 'data: bytes'
+  outputs:
+  - tuple[str, dict[str, pd.DataFrame], list[str]]
+  tests:
+  - tests/test_asi_pull.py::test_a_variable_the_log_cannot_place_stops_the_ingest
+  - tests/test_asi_pull.py::test_the_pull_becomes_a_dataset_named_after_its_creation_date
+  depends_on: []
+  drafted: true
+- id: asi.core.constants
+  section: 04 Methods
+  entry: asi/core/constants.py
+  form: legacy
+  purpose: asi.core.constants — every tunable value in the project, in one place.
+  inputs:
+  - (none)
+  outputs:
+  - PILLAR_DEFS
+  - ACTIVE_PRESET
+  - WEIGHT_PRESETS
+  - HEADLINE_METHOD
+  - METHOD_ROLES
+  - INTERVAL_LEVEL
+  - BAND_Z
+  - OVERLAP_BAR
+  - OVERLAP_CONTROL
+  - OVERLAP_MIN_N
+  - WEIGHT_MIN
+  - WEIGHT_MAX
+  - SMALL
+  - PANEL_START
+  - PANEL_PULL_BUFFER
+  - DEFAULT_MAX_CARRY_FORWARD
+  - DISPLAY_DECIMALS
+  - IQR_MULTIPLIER
+  - COVERAGE_WARN_THRESHOLD
+  - COVERAGE_ALERT_THRESHOLD
+  - REFERENCE_YEAR_MIN_COVERAGE
+  - RELIABILITY_RELIABLE_AT
+  - RELIABILITY_THIN_AT
+  - RELIABILITY_MAX_IMPUTED
+  - MIN_PILLARS_FOR_COMPOSITE
+  - ADMISSION_FLOOR
+  - MAX_PILLAR_NAN_RATE
+  - MIN_CRONBACH_ALPHA
+  - PROJECT_ROOT
+  - __all__
+  tests: []
+  depends_on: []
+  drafted: true
+- id: asi.core.countries
+  section: 04 Methods
+  entry: asi/core/countries.py
+  form: legacy
+  purpose: 'asi.core.countries — the country registry for this edition: the 54 African Union member states scored, each with'
+  inputs:
+  - (none)
+  outputs:
+  - COUNTRIES
+  - EXCLUDED_AU_MEMBERS
+  tests: []
+  depends_on: []
+  drafted: true
+- id: asi.core.models.Indicator
+  section: 04 Methods
+  entry: asi/core/models.py:Indicator
+  form: legacy
+  purpose: One indicator as declared in the registry YAML.
+  inputs:
+  - 'variable_name: str'
+  - 'display_name: str'
+  - 'source: str'
+  - 'series_code: str'
+  - 'role: str'
+  - 'polarity: str'
+  - 'pillars: list[str]'
+  - 'year_start: int'
+  - 'year_end: int'
+  - 'aggregation: str'
+  - 'database: str'
+  - 'log_transform: bool'
+  outputs:
+  - '(not annotated: see the code)'
+  tests: []
+  depends_on: []
+  drafted: true
+- id: asi.core.registry.PillarRegistry
+  section: 04 Methods
+  entry: asi/core/registry.py:PillarRegistry
+  form: legacy
+  purpose: The pillars, derived from PILLAR_DEFS, with equal starting weights and their bounds.
+  inputs:
+  - (none)
+  outputs:
+  - '(not annotated: see the code)'
+  tests:
+  - tests/test_registry.py::test_pillar_registry_carries_weight_bounds
+  - tests/test_registry.py::test_pillar_registry_matches_pillar_defs
+  depends_on: []
+  drafted: true
+- id: asi.core.registry.IndicatorRegistry
+  section: 04 Methods
+  entry: asi/core/registry.py:IndicatorRegistry
+  form: legacy
+  purpose: Reads and validates the indicators_list/ folder; the YAML files are the registry,
+  inputs:
+  - 'pillar_registry: PillarRegistry'
+  - 'yaml_dir: Path'
+  outputs:
+  - '(not annotated: see the code)'
+  tests: []
+  depends_on:
+  - asi.core.models.Indicator
+  drafted: true
+- id: asi.core.schema.Provenance
+  section: 04 Methods
+  entry: asi/core/schema.py:Provenance
+  form: legacy
+  purpose: How a value came to exist. Drives reliability and UI greying.
+  inputs:
+  - (see the class)
+  outputs:
+  - (see the class)
+  tests:
+  - tests/test_panel.py::test_carry_forward_boundary_is_inclusive
+  - tests/test_panel.py::test_carry_forward_expires
+  - tests/test_panel.py::test_empty_observations
+  - tests/test_panel.py::test_measurement_in_the_year_is_observed
+  - tests/test_panel.py::test_no_lookahead
+  depends_on: []
+  drafted: true
+- id: asi.core.schema.Reliability
+  section: 04 Methods
+  entry: asi/core/schema.py:Reliability
+  form: legacy
+  purpose: Whether an aggregate is trustworthy enough to display as a number.
+  inputs:
+  - (see the class)
+  outputs:
+  - (see the class)
+  tests:
+  - tests/test_schema.py::test_below_thin_is_unreliable
+  - tests/test_schema.py::test_boundaries_are_inclusive
+  - tests/test_schema.py::test_composite_round_trip
+  - tests/test_schema.py::test_full_coverage_is_reliable
+  - tests/test_schema.py::test_imputed_majority_overrides_good_coverage
+  depends_on: []
+  drafted: true
+- id: asi.core.schema.Polarity
+  section: 04 Methods
+  entry: asi/core/schema.py:Polarity
+  form: legacy
+  purpose: '(no docstring: to be written)'
+  inputs:
+  - (see the class)
+  outputs:
+  - (see the class)
+  tests:
+  - tests/test_schema.py::test_goalposts_reported_missing_until_set
+  - tests/test_schema.py::test_indicator_spec_round_trip
+  - tests/test_schema.py::test_observation_round_trip
+  depends_on: []
+  drafted: true
+- id: asi.core.schema.WindowMode
+  section: 04 Methods
+  entry: asi/core/schema.py:WindowMode
+  form: legacy
+  purpose: How a year's value is drawn from the underlying series.
+  inputs:
+  - (see the class)
+  outputs:
+  - (see the class)
+  tests:
+  - tests/test_panel.py::test_aggregation_maps_to_window
+  - tests/test_panel.py::test_carry_forward_boundary_is_inclusive
+  - tests/test_panel.py::test_carry_forward_expires
+  - tests/test_panel.py::test_empty_observations
+  - tests/test_panel.py::test_measurement_in_the_year_is_observed
+  depends_on: []
+  drafted: true
+- id: asi.core.schema.window_for
+  section: 04 Methods
+  entry: asi/core/schema.py:window_for
+  form: legacy
+  purpose: Translate a registry `aggregation` value into panel window settings.
+  inputs:
+  - 'aggregation: str'
+  outputs:
+  - tuple['WindowMode', int]
+  tests:
+  - tests/test_panel.py::test_aggregation_maps_to_window
+  - tests/test_panel.py::test_unknown_aggregation_is_rejected
+  depends_on: []
+  drafted: true
+- id: asi.core.schema.IndicatorSpec
+  section: 04 Methods
+  entry: asi/core/schema.py:IndicatorSpec
+  form: legacy
+  purpose: The definition of an indicator, as declared in registry YAML.
+  inputs:
+  - (see the class)
+  outputs:
+  - (see the class)
+  tests:
+  - tests/test_schema.py::test_goalposts_reported_missing_until_set
+  - tests/test_schema.py::test_indicator_spec_round_trip
+  depends_on: []
+  drafted: true
+- id: asi.core.schema.Observation
+  section: 04 Methods
+  entry: asi/core/schema.py:Observation
+  form: legacy
+  purpose: One indicator, one country, one year — identity and value together.
+  inputs:
+  - (see the class)
+  outputs:
+  - (see the class)
+  tests:
+  - tests/test_schema.py::test_observation_round_trip
+  depends_on: []
+  drafted: true
+- id: asi.core.schema.PillarScore
+  section: 04 Methods
+  entry: asi/core/schema.py:PillarScore
+  form: legacy
+  purpose: One pillar, one country, one year — with its own honesty flag.
+  inputs:
+  - (see the class)
+  outputs:
+  - (see the class)
+  tests:
+  - tests/test_schema.py::test_pillar_coverage_ratio
+  - tests/test_schema.py::test_pillar_ratios_safe_when_empty
+  - tests/test_schema.py::test_pillar_round_trip
+  depends_on: []
+  drafted: true
+- id: asi.core.schema.CompositeScore
+  section: 04 Methods
+  entry: asi/core/schema.py:CompositeScore
+  form: legacy
+  purpose: One country, one year, one weighting method.
+  inputs:
+  - (see the class)
+  outputs:
+  - (see the class)
+  tests:
+  - tests/test_schema.py::test_composite_round_trip
+  depends_on: []
+  drafted: true
+- id: asi.core.schema.classify_reliability
+  section: 04 Methods
+  entry: asi/core/schema.py:classify_reliability
+  form: legacy
+  purpose: Map coverage onto a reliability tier.
+  inputs:
+  - 'n_indicators: int'
+  - 'n_observed: int'
+  - 'n_imputed: int'
+  - 'reliable_at: float'
+  - 'thin_at: float'
+  - 'max_imputed_share: float'
+  outputs:
+  - Reliability
+  tests:
+  - tests/test_schema.py::test_below_thin_is_unreliable
+  - tests/test_schema.py::test_boundaries_are_inclusive
+  - tests/test_schema.py::test_full_coverage_is_reliable
+  - tests/test_schema.py::test_imputed_majority_overrides_good_coverage
+  - tests/test_schema.py::test_no_data_is_absent
+  depends_on: []
+  drafted: true
+- id: asi.core.schema.missing_keys
+  section: 04 Methods
+  entry: asi/core/schema.py:missing_keys
+  form: legacy
+  purpose: Return the required keys absent from `record`, sorted for stable output.
+  inputs:
+  - 'record: dict[str, Any]'
+  - 'required: Iterable[str]'
+  outputs:
+  - list[str]
+  tests:
+  - tests/test_schema.py::test_missing_keys_detects_gaps
+  - tests/test_schema.py::test_missing_keys_empty_when_complete
+  depends_on: []
+  drafted: true
+- id: asi.geography.code
+  section: 06 Outputs and Site
+  entry: asi/geography.py:code
+  form: legacy
+  purpose: A Natural Earth feature's state, in the index's codes.
+  inputs:
+  - 'properties: dict'
+  outputs:
+  - str
+  tests:
+  - tests/test_web.py::test_capitals_follow_the_class_and_a_merged_areas_capital_is_not_one
+  depends_on: []
+  drafted: true
+- id: asi.geography.subregions
+  section: 06 Outputs and Site
+  entry: asi/geography.py:subregions
+  form: legacy
+  purpose: Each member state's Natural Earth subregion. A state with no polygon, or two polygons that disagree, stops.
+  inputs:
+  - 'ne_countries: dict'
+  outputs:
+  - dict[str, str]
+  tests: []
+  depends_on: []
+  drafted: true
+- id: asi.geography.neighbours
+  section: 06 Outputs and Site
+  entry: asi/geography.py:neighbours
+  form: legacy
+  purpose: Each member state's member neighbours on land, from the polygons (needs the [geo] extra's shapely).
+  inputs:
+  - 'ne_countries: dict'
+  outputs:
+  - dict[str, list[str]]
+  tests: []
+  depends_on: []
+  drafted: true
+- id: asi.pipeline.goalposts.apply_log
+  section: 04 Methods
+  entry: asi/pipeline/goalposts.py:apply_log
+  form: legacy
+  purpose: Log a right-skewed indicator.
+  inputs:
+  - 'values: pd.Series'
+  - 'log_transform: bool'
+  - 'constant: float | None'
+  outputs:
+  - pd.Series
+  tests:
+  - tests/test_goalposts.py::test_log_preserves_missingness
+  - tests/test_goalposts.py::test_log_transform_is_a_no_op_when_not_flagged
+  - tests/test_goalposts.py::test_negatives_are_clipped_before_log1p
+  - tests/test_goalposts.py::test_osborne_constant_makes_the_minimum_one
+  depends_on: []
+  drafted: true
+- id: asi.pipeline.goalposts.skew_test
+  section: 04 Methods
+  entry: asi/pipeline/goalposts.py:skew_test
+  form: legacy
+  purpose: (n, skew, its standard error, z). Skew is the adjusted Fisher-Pearson G1; SE = sqrt(6n(n-1) /
+  inputs:
+  - values
+  outputs:
+  - tuple[int, float, float, float]
+  tests:
+  - tests/test_goalposts.py::test_the_skew_test_logs_only_a_significant_right_skew
+  depends_on: []
+  drafted: true
+- id: asi.pipeline.goalposts.winsorize_bounds
+  section: 04 Methods
+  entry: asi/pipeline/goalposts.py:winsorize_bounds
+  form: legacy
+  purpose: Tukey fences at `iqr_multiplier` x IQR. Returns (lower, upper). Edition 1's rule.
+  inputs:
+  - 'values: pd.Series'
+  - 'iqr_multiplier: float'
+  outputs:
+  - tuple[float, float]
+  tests:
+  - tests/test_goalposts.py::test_an_empty_series_yields_nan_bounds_not_an_exception
+  - tests/test_goalposts.py::test_tukey_fences_sit_at_the_stated_multiple_of_the_iqr
+  depends_on: []
+  drafted: true
+- id: asi.pipeline.goalposts.trimmed_outlier_bounds
+  section: 04 Methods
+  entry: asi/pipeline/goalposts.py:trimmed_outlier_bounds
+  form: legacy
+  purpose: '(lower, upper, lower_to, upper_to): a value below `lower` becomes `lower_to`, above `upper` becomes'
+  inputs:
+  - 'values: pd.Series'
+  outputs:
+  - tuple[float, float, float, float]
+  tests:
+  - tests/test_goalposts.py::test_a_zero_heavy_series_is_tested_on_its_non_zero_values_and_its_zeros_are_never_capped
+  - tests/test_goalposts.py::test_the_trimmed_rule_replaces_only_values_beyond_three_trimmed_sds
+  depends_on: []
+  drafted: true
+- id: asi.pipeline.goalposts.outlier_bounds
+  section: 04 Methods
+  entry: asi/pipeline/goalposts.py:outlier_bounds
+  form: legacy
+  purpose: '`trimmed_outlier_bounds`, except for a zero-heavy series (P100: "if they aren''t that much higher then keep,'
+  inputs:
+  - 'values: pd.Series'
+  - 'raw: pd.Series'
+  outputs:
+  - tuple[float, float, float, float]
+  tests:
+  - tests/test_goalposts.py::test_a_zero_heavy_series_is_tested_on_its_non_zero_values_and_its_zeros_are_never_capped
+  depends_on: []
+  drafted: true
+- id: asi.pipeline.goalposts.cap_outliers
+  section: 04 Methods
+  entry: asi/pipeline/goalposts.py:cap_outliers
+  form: legacy
+  purpose: Replace values beyond the outlier bounds; leave the rest alone.
+  inputs:
+  - 'values: pd.Series'
+  - lower
+  - upper
+  - lower_to
+  - upper_to
+  outputs:
+  - pd.Series
+  tests:
+  - tests/test_goalposts.py::test_a_zero_heavy_series_is_tested_on_its_non_zero_values_and_its_zeros_are_never_capped
+  - tests/test_goalposts.py::test_the_trimmed_rule_replaces_only_values_beyond_three_trimmed_sds
+  depends_on: []
+  drafted: true
+- id: asi.pipeline.goalposts.compute
+  section: 04 Methods
+  entry: asi/pipeline/goalposts.py:compute
+  form: legacy
+  purpose: Derive outlier and goalpost bounds for every scoring indicator (edition 2, plan 4.4).
+  inputs:
+  - 'panel: pd.DataFrame'
+  - 'specs: dict[str, dict]'
+  - 'iqr_multiplier: float'
+  outputs:
+  - dict[str, dict]
+  tests:
+  - tests/test_goalposts.py::test_an_imputed_or_carried_value_never_sets_a_goalpost
+  - tests/test_goalposts.py::test_compute_carries_polarity_and_lets_the_skew_test_decide_the_log
+  - tests/test_goalposts.py::test_compute_skips_non_scoring_indicators
+  - tests/test_goalposts.py::test_goalposts_contain_every_value_they_were_derived_from
+  - tests/test_goalposts.py::test_osborne_constant_makes_the_minimum_one
+  depends_on: []
+  drafted: true
+- id: asi.pipeline.goalposts.add_new
+  section: 04 Methods
+  entry: asi/pipeline/goalposts.py:add_new
+  form: legacy
+  purpose: 'N1: goalposts for indicators the frozen file lacks, without touching any existing indicator''s bounds, so'
+  inputs:
+  - 'frozen: dict[str, dict]'
+  - 'computed: dict[str, dict]'
+  outputs:
+  - tuple[dict[str, dict], list[str]]
+  tests:
+  - tests/test_goalposts.py::test_adding_an_indicator_never_moves_an_existing_goalpost
+  depends_on: []
+  drafted: true
+- id: asi.pipeline.goalposts.freeze
+  section: 04 Methods
+  entry: asi/pipeline/goalposts.py:freeze
+  form: legacy
+  purpose: Write the frozen bounds, with the provenance of the run that made them.
+  inputs:
+  - 'goalposts: dict[str, dict]'
+  - path
+  - 'panel_years: tuple[int, int]'
+  - 'note: str'
+  outputs:
+  - None
+  tests:
+  - tests/test_goalposts.py::test_freeze_stamps_the_version_and_the_panel_it_came_from
+  - tests/test_goalposts.py::test_freeze_then_load_round_trips
+  depends_on: []
+  drafted: true
+- id: asi.pipeline.goalposts.load
+  section: 04 Methods
+  entry: asi/pipeline/goalposts.py:load
+  form: legacy
+  purpose: Read frozen bounds. Raises if absent — silently recomputing defeats the point.
+  inputs:
+  - path
+  outputs:
+  - dict[str, dict]
+  tests:
+  - tests/test_goalposts.py::test_a_file_with_no_version_at_all_is_a_mismatch
+  - tests/test_goalposts.py::test_a_missing_file_raises_rather_than_recomputing
+  - tests/test_goalposts.py::test_a_version_mismatch_raises_rather_than_loading_stale_bounds
+  - tests/test_goalposts.py::test_freeze_then_load_round_trips
+  - tests/test_goalposts.py::test_the_committed_goalposts_load_and_are_self_consistent
+  depends_on: []
+  drafted: true
+- id: asi.pipeline.normalize.normalize_value
+  section: 04 Methods
+  entry: asi/pipeline/normalize.py:normalize_value
+  form: legacy
+  purpose: Map one value onto 0-100. Returns (score, clamped).
+  inputs:
+  - 'capped: float | None'
+  - 'goalpost_min: float'
+  - 'goalpost_max: float'
+  - 'polarity: str | Polarity'
+  outputs:
+  - tuple[float | None, bool]
+  tests:
+  - tests/test_panel.py::test_in_range_values_are_not_flagged
+  - tests/test_panel.py::test_missing_value_stays_missing
+  - tests/test_panel.py::test_negative_polarity_inverts
+  - tests/test_panel.py::test_positive_polarity_maps_range_to_0_100
+  - tests/test_panel.py::test_values_outside_frozen_goalposts_are_clamped_and_flagged
+  depends_on:
+  - asi.core.schema.Polarity
+  drafted: true
+- id: asi.pipeline.normalize.normalize_panel
+  section: 04 Methods
+  entry: asi/pipeline/normalize.py:normalize_panel
+  form: legacy
+  purpose: Add `transformed_value`, `score`, and `clamped` columns to the panel.
+  inputs:
+  - 'panel: pd.DataFrame'
+  - 'goalposts: dict[str, dict]'
+  outputs:
+  - tuple[pd.DataFrame, list[str]]
+  tests: []
+  depends_on:
+  - asi.pipeline.goalposts.apply_log
+  - asi.pipeline.goalposts.cap_outliers
+  drafted: true
+- id: asi.pipeline.panel.window_value
+  section: 04 Methods
+  entry: asi/pipeline/panel.py:window_value
+  form: legacy
+  purpose: Derive the value for `year` from a country's observations of one indicator.
+  inputs:
+  - 'observations: dict[int, float]'
+  - 'year: int'
+  - 'mode: WindowMode'
+  - 'window_years: int'
+  - 'max_carry_forward: int'
+  outputs:
+  - tuple[float | None, Provenance, int | None]
+  tests:
+  - tests/test_panel.py::test_carry_forward_boundary_is_inclusive
+  - tests/test_panel.py::test_carry_forward_expires
+  - tests/test_panel.py::test_empty_observations
+  - tests/test_panel.py::test_measurement_in_the_year_is_observed
+  - tests/test_panel.py::test_no_lookahead
+  depends_on:
+  - asi.core.schema.Provenance
+  - asi.core.schema.WindowMode
+  drafted: true
+- id: asi.pipeline.panel.build_panel
+  section: 04 Methods
+  entry: asi/pipeline/panel.py:build_panel
+  form: legacy
+  purpose: Expand long raw observations into a dense panel.
+  inputs:
+  - 'raw: pd.DataFrame'
+  - 'specs: dict[str, dict]'
+  - 'iso3_list: list[str]'
+  - 'years: range'
+  - 'default_max_carry_forward: int'
+  outputs:
+  - pd.DataFrame
+  tests: []
+  depends_on:
+  - asi.core.schema.window_for
+  drafted: true
+- id: asi.pipeline.panel.distance_from_parity
+  section: 04 Methods
+  entry: asi/pipeline/panel.py:distance_from_parity
+  form: legacy
+  purpose: Fold a parity ratio onto "distance from 1.0", keeping higher = better.
+  inputs:
+  - 'value: float | None'
+  outputs:
+  - float | None
+  tests:
+  - tests/test_panel.py::test_equal_and_opposite_gaps_score_the_same
+  - tests/test_panel.py::test_over_parity_no_longer_beats_parity
+  - tests/test_panel.py::test_parity_handles_missing
+  - tests/test_panel.py::test_parity_is_the_maximum
+  - tests/test_panel.py::test_worse_gaps_score_lower
+  depends_on: []
+  drafted: true
+- id: asi.pipeline.panel.apply_derived
+  section: 04 Methods
+  entry: asi/pipeline/panel.py:apply_derived
+  form: legacy
+  purpose: Apply transforms that reshape an indicator's meaning.
+  inputs:
+  - 'panel: pd.DataFrame'
+  - 'specs: dict[str, dict]'
+  - 'population_var: str'
+  outputs:
+  - tuple[pd.DataFrame, list[str]]
+  tests:
+  - tests/test_panel_derived.py::test_a_per_capita_indicator_without_population_in_the_registry_is_an_error
+  - tests/test_panel_derived.py::test_a_population_of_zero_is_refused_rather_than_dividing_by_it
+  - tests/test_panel_derived.py::test_an_idp_count_with_no_population_becomes_absent_and_clears_source_year
+  - tests/test_panel_derived.py::test_an_indicator_without_the_flag_is_left_alone
+  - tests/test_panel_derived.py::test_an_unknown_transform_raises_rather_than_passing_the_value_through
+  depends_on:
+  - asi.core.schema.Provenance
+  drafted: true
+- id: asi.pipeline.score.pillar_scores
+  section: 04 Methods
+  entry: asi/pipeline/score.py:pillar_scores
+  form: legacy
+  purpose: Mean of the available indicator scores in each pillar, per country-year.
+  inputs:
+  - 'panel: pd.DataFrame'
+  - 'pillar_map: dict[str, list[str]]'
+  - 'reliable_at: float'
+  - 'thin_at: float'
+  - 'max_imputed_share: float'
+  - 'slots: dict[str, str] | None'
+  outputs:
+  - pd.DataFrame
+  tests:
+  - tests/test_score.py::test_overlapping_indicators_share_one_slot_of_their_pillar
+  depends_on:
+  - asi.core.schema.classify_reliability
+  drafted: true
+- id: asi.pipeline.score.composite_inputs
+  section: 04 Methods
+  entry: asi/pipeline/score.py:composite_inputs
+  form: legacy
+  purpose: Pillar scores, wide, with every pillar that is not displayable left out.
+  inputs:
+  - 'pil: pd.DataFrame'
+  - 'index: list[str] | None'
+  outputs:
+  - pd.DataFrame
+  tests:
+  - tests/test_score.py::test_an_unreliable_pillar_is_left_out_and_a_thin_one_kept
+  depends_on: []
+  drafted: true
+- id: asi.pipeline.score.lack_of_reliability
+  section: 04 Methods
+  entry: asi/pipeline/score.py:lack_of_reliability
+  form: legacy
+  purpose: An INFORM-style lack-of-reliability index per country-year, 0 (reliable) to 10.
+  inputs:
+  - 'panel: pd.DataFrame'
+  - 'scoring: list[str]'
+  - 'max_carry: int'
+  outputs:
+  - pd.Series
+  tests:
+  - tests/test_score.py::test_the_lack_of_reliability_index_follows_its_formula
+  depends_on: []
+  drafted: true
+- id: asi.pipeline.score.weighted_composite
+  section: 04 Methods
+  entry: asi/pipeline/score.py:weighted_composite
+  form: legacy
+  purpose: Weighted mean over the pillars a country actually has, renormalising the
+  inputs:
+  - 'pillar_wide: pd.DataFrame'
+  - 'weights: dict[str, float]'
+  outputs:
+  - pd.Series
+  tests:
+  - tests/test_score.py::test_a_row_with_no_pillars_at_all_is_nan_not_zero
+  - tests/test_score.py::test_an_unreliable_pillar_is_left_out_and_a_thin_one_kept
+  - tests/test_score.py::test_equal_weights_reduce_to_the_arithmetic_mean
+  - tests/test_score.py::test_weights_naming_an_absent_pillar_are_ignored
+  - tests/test_score.py::test_weights_renormalise_over_the_pillars_present
+  depends_on: []
+  drafted: true
+- id: asi.pipeline.score.geometric_composite
+  section: 04 Methods
+  entry: asi/pipeline/score.py:geometric_composite
+  form: legacy
+  purpose: exp(sum(w_i * ln(s_i))) with equal weights — partially non-compensatory, so
+  inputs:
+  - 'pillar_wide: pd.DataFrame'
+  - 'pillars: list[str]'
+  - 'small: float'
+  outputs:
+  - pd.Series
+  tests:
+  - tests/test_score.py::test_geometric_all_missing_is_nan
+  - tests/test_score.py::test_geometric_floors_at_small_rather_than_returning_zero
+  - tests/test_score.py::test_geometric_ignores_missing_pillars_rather_than_flooring_them
+  - tests/test_score.py::test_geometric_is_non_compensatory
+  depends_on: []
+  drafted: true
+- id: asi.pipeline.score.fit_pca_weights
+  section: 04 Methods
+  entry: asi/pipeline/score.py:fit_pca_weights
+  form: legacy
+  purpose: First principal component of the pooled panel as pillar weights.
+  inputs:
+  - 'pillar_wide: pd.DataFrame'
+  - 'pillars: list[str]'
+  - 'small: float'
+  outputs:
+  - dict[str, float]
+  tests:
+  - tests/test_score.py::test_pca_falls_back_to_equal_weights_when_too_few_complete_rows
+  - tests/test_score.py::test_pca_weights_sum_to_one_on_a_positively_correlated_panel
+  - tests/test_score.py::test_pca_zeroes_a_negative_loading_rather_than_absolute_valuing_it
+  depends_on: []
+  drafted: true
+- id: asi.pipeline.score.fit_entropy_weights
+  section: 04 Methods
+  entry: asi/pipeline/score.py:fit_entropy_weights
+  form: legacy
+  purpose: 'Shannon-entropy weights: a pillar that separates countries carries more'
+  inputs:
+  - 'pillar_wide: pd.DataFrame'
+  - 'pillars: list[str]'
+  - 'small: float'
+  outputs:
+  - dict[str, float]
+  tests:
+  - tests/test_score.py::test_entropy_gives_a_pillar_that_separates_nobody_almost_no_weight
+  - tests/test_score.py::test_entropy_on_an_empty_panel_falls_back_to_equal_weights
+  - tests/test_score.py::test_entropy_shifts_non_positive_columns_before_taking_logs
+  depends_on: []
+  drafted: true
+- id: asi.pipeline.score.composite_reliability
+  section: 04 Methods
+  entry: asi/pipeline/score.py:composite_reliability
+  form: legacy
+  purpose: A composite is only as honest as the pillars under it.
+  inputs:
+  - 'pillar_year: pd.DataFrame'
+  - 'min_pillars: int'
+  outputs:
+  - Reliability
+  tests:
+  - tests/test_score.py::test_composite_is_reliable_only_when_every_displayable_pillar_is
+  - tests/test_score.py::test_composite_is_unreliable_below_the_pillar_floor
+  - tests/test_score.py::test_one_thin_pillar_makes_the_whole_composite_thin
+  - tests/test_score.py::test_unreliable_pillars_do_not_count_toward_the_floor
+  depends_on:
+  - asi.core.schema.Reliability
+  drafted: true
+- id: asi.pipeline.score.composite_interval
+  section: 04 Methods
+  entry: asi/pipeline/score.py:composite_interval
+  form: legacy
+  purpose: The headline is the mean of a sample of k pillar scores, so it has a standard
+  inputs:
+  - 'pillar_wide: pd.DataFrame'
+  - 'level: float'
+  outputs:
+  - pd.DataFrame
+  tests:
+  - tests/test_score.py::test_the_interval_follows_its_formula_and_one_pillar_has_none
+  depends_on: []
+  drafted: true
+- id: asi.pipeline.score.rank_bands
+  section: 04 Methods
+  entry: asi/pipeline/score.py:rank_bands
+  form: legacy
+  purpose: The ranks a state could hold (plan 2.3). Two states differ only if
+  inputs:
+  - 'scores: pd.Series'
+  - 'errors: pd.Series'
+  - 'z: float'
+  outputs:
+  - pd.DataFrame
+  tests:
+  - tests/test_ada_stats.py::test_overlapping_scores_share_a_band
+  - tests/test_ada_stats.py::test_precise_scores_give_exact_ranks
+  - tests/test_score.py::test_a_band_counts_only_the_significant_states_above_and_below
+  - tests/test_score.py::test_tiers_follow_the_leader_rule_where_overlapping_bands_would_chain
+  depends_on: []
+  drafted: true
+- id: asi.pipeline.score.tiers
+  section: 04 Methods
+  entry: asi/pipeline/score.py:tiers
+  form: legacy
+  purpose: Tiers by the leader rule (P96). From the highest score down, a tier holds
+  inputs:
+  - 'scores: pd.Series'
+  - 'errors: pd.Series'
+  - 'z: float'
+  outputs:
+  - pd.Series
+  tests:
+  - tests/test_score.py::test_tiers_follow_the_leader_rule_where_overlapping_bands_would_chain
+  depends_on: []
+  drafted: true
+- id: asi.pipeline.score.effective_weights
+  section: 04 Methods
+  entry: asi/pipeline/score.py:effective_weights
+  form: legacy
+  purpose: Each indicator's share of the headline (plan 4.10). Edition 1 hid that the
+  inputs:
+  - 'pillar_map: dict[str, list[str]]'
+  - 'present: pd.DataFrame | None'
+  - 'slots: dict[str, str] | None'
+  outputs:
+  - pd.Series
+  tests:
+  - tests/test_score.py::test_effective_weights_nominal_cross_listed_and_as_used
+  - tests/test_score.py::test_effective_weights_split_a_slot_among_its_members
+  depends_on: []
+  drafted: true
+- id: asi.pipeline.score.overlap_screen
+  section: 04 Methods
+  entry: asi/pipeline/score.py:overlap_screen
+  form: legacy
+  purpose: 'Indicators of one pillar that overlap share a slot (P98, P101: "option 2 at .71").'
+  inputs:
+  - 'values: pd.DataFrame'
+  - 'pillar_map: dict[str, list[str]]'
+  - 'control: str'
+  - 'bar: float'
+  - 'min_n: int'
+  outputs:
+  - tuple[dict[str, str], list[dict]]
+  tests:
+  - tests/test_score.py::test_the_overlap_screen_clusters_pairs_beyond_the_control_and_chains_them
+  depends_on: []
+  drafted: true
+- id: asi.results.PanelData
+  section: 03 Pipeline
+  entry: asi/results.py:PanelData
+  form: legacy
+  purpose: 'The panel, loaded once: the bundle and its three tables.'
+  inputs:
+  - (see the class)
+  outputs:
+  - (see the class)
+  tests: []
+  depends_on: []
+  drafted: true
+- id: asi.results.load
+  section: 03 Pipeline
+  entry: asi/results.py:load
+  form: legacy
+  purpose: Load the panel. Raises clearly if the pipeline has not been run.
+  inputs:
+  - 'panel_dir: Path | None'
+  outputs:
+  - PanelData
+  tests:
+  - tests/test_goalposts.py::test_a_file_with_no_version_at_all_is_a_mismatch
+  - tests/test_goalposts.py::test_a_missing_file_raises_rather_than_recomputing
+  - tests/test_goalposts.py::test_a_version_mismatch_raises_rather_than_loading_stale_bounds
+  - tests/test_goalposts.py::test_freeze_then_load_round_trips
+  - tests/test_goalposts.py::test_the_committed_goalposts_load_and_are_self_consistent
+  depends_on: []
+  drafted: true
+- id: asi.sources.sources
+  section: 02 Inputs and Sources
+  entry: asi/sources.py:sources
+  form: legacy
+  purpose: Every source, by key, as `sources.toml` lists it.
+  inputs:
+  - (none)
+  outputs:
+  - dict
+  tests: []
+  depends_on: []
+  drafted: true
+- id: asi.sources.fetcher
+  section: 02 Inputs and Sources
+  entry: asi/sources.py:fetcher
+  form: legacy
+  purpose: A fetcher held to the ASI's own lock.
+  inputs:
+  - session
+  outputs:
+  - '(not annotated: see the code)'
+  tests: []
+  depends_on: []
+  drafted: true
+- id: asi.tiles.Layer
+  section: 06 Outputs and Site
+  entry: asi/tiles.py:Layer
+  form: legacy
+  purpose: '(no docstring: to be written)'
+  inputs:
+  - (see the class)
+  outputs:
+  - (see the class)
+  tests: []
+  depends_on: []
+  drafted: true
+- id: asi.tiles.tile_bounds
+  section: 06 Outputs and Site
+  entry: asi/tiles.py:tile_bounds
+  form: legacy
+  purpose: '(no docstring: to be written)'
+  inputs:
+  - 'z: int'
+  - 'x: int'
+  - 'y: int'
+  outputs:
+  - tuple[float, float, float, float]
+  tests: []
+  depends_on: []
+  drafted: true
+- id: asi.tiles.tiles_over
+  section: 06 Outputs and Site
+  entry: asi/tiles.py:tiles_over
+  form: legacy
+  purpose: The tiles at zoom z that a box in Web Mercator touches.
+  inputs:
+  - 'bounds: tuple[float, float, float, float]'
+  - 'z: int'
+  outputs:
+  - list[tuple[int, int]]
+  tests: []
+  depends_on: []
+  drafted: true
+- id: asi.tiles.build
+  section: 06 Outputs and Site
+  entry: asi/tiles.py:build
+  form: legacy
+  purpose: Write the archive; return how many tiles and features each zoom holds.
+  inputs:
+  - 'layers: list[Layer]'
+  - 'min_zoom: int'
+  - 'max_zoom: int'
+  - 'path: Path'
+  - 'metadata: dict'
+  outputs:
+  - dict
+  tests: []
+  depends_on: []
+  drafted: true
+- id: verify.advisory.section
+  section: 05 Verification
+  entry: verify/advisory.py:section
+  form: legacy
+  purpose: '(no docstring: to be written)'
+  inputs:
+  - 'title: str'
+  outputs:
+  - None
+  tests: []
+  depends_on: []
+  drafted: true
+- id: verify.advisory.note
+  section: 05 Verification
+  entry: verify/advisory.py:note
+  form: legacy
+  purpose: '(no docstring: to be written)'
+  inputs:
+  - 'text: str'
+  outputs:
+  - None
+  tests:
+  - tests/test_advisory_stats.py::test_alpha_undefined_for_a_single_item
+  - tests/test_advisory_stats.py::test_alpha_undefined_for_too_few_complete_rows
+  - tests/test_advisory_stats.py::test_alpha_undefined_when_the_total_does_not_vary
+  - tests/test_advisory_stats.py::test_structure_agreement_survives_too_little_data
+  depends_on: []
+  drafted: true
+- id: verify.advisory.main
+  section: 05 Verification
+  entry: verify/advisory.py:main
+  form: legacy
+  purpose: '(no docstring: to be written)'
+  inputs:
+  - (none)
+  outputs:
+  - int
+  tests: []
+  depends_on: []
+  drafted: true
+- id: verify.contract.record
+  section: 05 Verification
+  entry: verify/contract.py:record
+  form: legacy
+  purpose: '(no docstring: to be written)'
+  inputs:
+  - 'name: str'
+  - 'status: str'
+  - 'summary: str'
+  - details
+  outputs:
+  - None
+  tests:
+  - tests/test_schema.py::test_missing_keys_detects_gaps
+  - tests/test_schema.py::test_missing_keys_empty_when_complete
+  depends_on: []
+  drafted: true
+- id: verify.contract.load_registry
+  section: 05 Verification
+  entry: verify/contract.py:load_registry
+  form: legacy
+  purpose: '(no docstring: to be written)'
+  inputs:
+  - (none)
+  outputs:
+  - dict[str, dict]
+  tests: []
+  depends_on: []
+  drafted: true
+- id: verify.contract.check_rows_self_describing
+  section: 05 Verification
+  entry: verify/contract.py:check_rows_self_describing
+  form: legacy
+  purpose: '(no docstring: to be written)'
+  inputs:
+  - 'obs: pd.DataFrame'
+  outputs:
+  - None
+  tests: []
+  depends_on: []
+  drafted: true
+- id: verify.contract.check_identity_matches_registry
+  section: 05 Verification
+  entry: verify/contract.py:check_identity_matches_registry
+  form: legacy
+  purpose: A row's stated identity must equal the registry's.
+  inputs:
+  - 'obs: pd.DataFrame'
+  - 'registry: dict'
+  outputs:
+  - None
+  tests: []
+  depends_on: []
+  drafted: true
+- id: verify.contract.check_bundle_complete
+  section: 05 Verification
+  entry: verify/contract.py:check_bundle_complete
+  form: legacy
+  purpose: '(no docstring: to be written)'
+  inputs:
+  - 'bundle: dict'
+  - 'registry: dict'
+  outputs:
+  - None
+  tests: []
+  depends_on: []
+  drafted: true
+- id: verify.contract.run
+  section: 05 Verification
+  entry: verify/contract.py:run
+  form: legacy
+  purpose: '(no docstring: to be written)'
+  inputs:
+  - (none)
+  outputs:
+  - int
+  tests:
+  - tests/test_explore.py::test_a_publishers_interval_travels_with_its_score
+  - tests/test_explore.py::test_a_series_needs_the_floor_of_states_since_2000
+  - tests/test_explore.py::test_states_outside_the_index_never_enter
+  - tests/test_explore.py::test_the_first_projected_year_is_marked
+  depends_on: []
+  drafted: true
+- id: verify.narrative.record
+  section: 05 Verification
+  entry: verify/narrative.py:record
+  form: legacy
+  purpose: '(no docstring: to be written)'
+  inputs:
+  - 'name: str'
+  - 'status: str'
+  - 'summary: str'
+  - details
+  outputs:
+  - None
+  tests:
+  - tests/test_schema.py::test_missing_keys_detects_gaps
+  - tests/test_schema.py::test_missing_keys_empty_when_complete
+  depends_on: []
+  drafted: true
+- id: verify.narrative.expected
+  section: 05 Verification
+  entry: verify/narrative.py:expected
+  form: legacy
+  purpose: 'Each country''s facts, by a route of its own: plain loops and per-pillar lists.'
+  inputs:
+  - 'comp: pd.DataFrame'
+  - 'pil: pd.DataFrame'
+  - 'year: int'
+  outputs:
+  - dict[str, dict]
+  tests:
+  - tests/test_advisory_stats.py::test_item_rest_matches_an_explicit_computation
+  - tests/test_narratives.py::test_the_verifier_finds_every_number_and_refuses_one_that_is_not_a_fact
+  depends_on: []
+  drafted: true
+- id: verify.narrative.same
+  section: 05 Verification
+  entry: verify/narrative.py:same
+  form: legacy
+  purpose: '(no docstring: to be written)'
+  inputs:
+  - a
+  - b
+  outputs:
+  - bool
+  tests:
+  - tests/test_narratives.py::test_the_verifier_finds_every_number_and_refuses_one_that_is_not_a_fact
+  depends_on: []
+  drafted: true
+- id: verify.narrative.allowed
+  section: 05 Verification
+  entry: verify/narrative.py:allowed
+  form: legacy
+  purpose: 'Every number the country''s text may show: its facts as formatted, and the fixed numbers of the templates.'
+  inputs:
+  - 'f: dict'
+  - 'doc: dict'
+  outputs:
+  - set[str]
+  tests:
+  - tests/test_narratives.py::test_the_verifier_finds_every_number_and_refuses_one_that_is_not_a_fact
+  depends_on: []
+  drafted: true
+- id: verify.narrative.run
+  section: 05 Verification
+  entry: verify/narrative.py:run
+  form: legacy
+  purpose: '(no docstring: to be written)'
+  inputs:
+  - (none)
+  outputs:
+  - int
+  tests:
+  - tests/test_explore.py::test_a_publishers_interval_travels_with_its_score
+  - tests/test_explore.py::test_a_series_needs_the_floor_of_states_since_2000
+  - tests/test_explore.py::test_states_outside_the_index_never_enter
+  - tests/test_explore.py::test_the_first_projected_year_is_marked
+  depends_on: []
+  drafted: true
+- id: verify.panel.record
+  section: 05 Verification
+  entry: verify/panel.py:record
+  form: legacy
+  purpose: '(no docstring: to be written)'
+  inputs:
+  - 'name: str'
+  - 'status: str'
+  - 'summary: str'
+  - details
+  outputs:
+  - None
+  tests:
+  - tests/test_schema.py::test_missing_keys_detects_gaps
+  - tests/test_schema.py::test_missing_keys_empty_when_complete
+  depends_on: []
+  drafted: true
+- id: verify.panel.load_registry
+  section: 05 Verification
+  entry: verify/panel.py:load_registry
+  form: legacy
+  purpose: '(no docstring: to be written)'
+  inputs:
+  - (none)
+  outputs:
+  - dict[str, dict]
+  tests: []
+  depends_on: []
+  drafted: true
+- id: verify.panel.load_countries
+  section: 05 Verification
+  entry: verify/panel.py:load_countries
+  form: legacy
+  purpose: '(no docstring: to be written)'
+  inputs:
+  - (none)
+  outputs:
+  - dict[str, dict]
+  tests: []
+  depends_on: []
+  drafted: true
+- id: verify.panel.check_panel_values
+  section: 05 Verification
+  entry: verify/panel.py:check_panel_values
+  form: legacy
+  purpose: Re-derive every MOST_RECENT panel cell using a backward as-of join.
+  inputs:
+  - 'obs: pd.DataFrame'
+  - 'registry: dict'
+  - 'countries: dict'
+  outputs:
+  - None
+  tests: []
+  depends_on: []
+  drafted: true
+- id: verify.panel.check_rolling_means
+  section: 05 Verification
+  entry: verify/panel.py:check_rolling_means
+  form: legacy
+  purpose: The trailing-average indicators, which 1.1 cannot touch.
+  inputs:
+  - 'obs: pd.DataFrame'
+  - 'registry: dict'
+  - 'countries: dict'
+  outputs:
+  - None
+  tests: []
+  depends_on: []
+  drafted: true
+- id: verify.panel.check_parity_fold
+  section: 05 Verification
+  entry: verify/panel.py:check_parity_fold
+  form: legacy
+  purpose: The Gender Parity indicators, folded onto distance from 1.0.
+  inputs:
+  - 'obs: pd.DataFrame'
+  - 'registry: dict'
+  - 'countries: dict'
+  outputs:
+  - None
+  tests: []
+  depends_on: []
+  drafted: true
+- id: verify.panel.check_per_capita
+  section: 05 Verification
+  entry: verify/panel.py:check_per_capita
+  form: legacy
+  purpose: Every count the registry marks `per_capita`, which 1.1 cannot touch.
+  inputs:
+  - 'obs: pd.DataFrame'
+  - 'registry: dict'
+  - 'countries: dict'
+  - 'population_var: str'
+  outputs:
+  - None
+  tests: []
+  depends_on: []
+  drafted: true
+- id: verify.panel.check_volatility
+  section: 05 Verification
+  entry: verify/panel.py:check_volatility
+  form: legacy
+  purpose: The rolling standard deviations (growth volatility), which 1.1 cannot touch.
+  inputs:
+  - 'obs: pd.DataFrame'
+  - 'registry: dict'
+  - 'countries: dict'
+  outputs:
+  - None
+  tests: []
+  depends_on: []
+  drafted: true
+- id: verify.panel.check_carry_forward_expiry
+  section: 05 Verification
+  entry: verify/panel.py:check_carry_forward_expiry
+  form: legacy
+  purpose: No cell may be carried forward beyond the stated limit.
+  inputs:
+  - 'obs: pd.DataFrame'
+  outputs:
+  - None
+  tests: []
+  depends_on: []
+  drafted: true
+- id: verify.panel.check_no_lookahead
+  section: 05 Verification
+  entry: verify/panel.py:check_no_lookahead
+  form: legacy
+  purpose: A value must never come from the future.
+  inputs:
+  - 'obs: pd.DataFrame'
+  outputs:
+  - None
+  tests: []
+  depends_on: []
+  drafted: true
+- id: verify.panel.check_scores_within_bounds
+  section: 05 Verification
+  entry: verify/panel.py:check_scores_within_bounds
+  form: legacy
+  purpose: '(no docstring: to be written)'
+  inputs:
+  - 'obs: pd.DataFrame'
+  outputs:
+  - None
+  tests: []
+  depends_on: []
+  drafted: true
+- id: verify.panel.check_clamping_is_real
+  section: 05 Verification
+  entry: verify/panel.py:check_clamping_is_real
+  form: legacy
+  purpose: '`clamped` must mean genuinely outside the frozen range, not rounding noise.'
+  inputs:
+  - 'obs: pd.DataFrame'
+  outputs:
+  - None
+  tests: []
+  depends_on: []
+  drafted: true
+- id: verify.panel.check_pillar_scores
+  section: 05 Verification
+  entry: verify/panel.py:check_pillar_scores
+  form: legacy
+  purpose: '(no docstring: to be written)'
+  inputs:
+  - 'obs: pd.DataFrame'
+  - 'pil: pd.DataFrame'
+  - 'registry: dict'
+  outputs:
+  - None
+  tests: []
+  depends_on: []
+  drafted: true
+- id: verify.panel.check_overlap
+  section: 05 Verification
+  entry: verify/panel.py:check_overlap
+  form: legacy
+  purpose: The frozen overlap screen, re-derived (P101). Each pair's partial correlation
+  inputs:
+  - 'obs: pd.DataFrame'
+  - 'registry: dict'
+  outputs:
+  - None
+  tests: []
+  depends_on: []
+  drafted: true
+- id: verify.panel.check_composites
+  section: 05 Verification
+  entry: verify/panel.py:check_composites
+  form: legacy
+  purpose: '(no docstring: to be written)'
+  inputs:
+  - 'pil: pd.DataFrame'
+  - 'comp: pd.DataFrame'
+  outputs:
+  - None
+  tests: []
+  depends_on: []
+  drafted: true
+- id: verify.panel.check_geometric_composite
+  section: 05 Verification
+  entry: verify/panel.py:check_geometric_composite
+  form: legacy
+  purpose: The fourth published method, previously re-derived by nothing.
+  inputs:
+  - 'pil: pd.DataFrame'
+  - 'comp: pd.DataFrame'
+  outputs:
+  - None
+  tests: []
+  depends_on: []
+  drafted: true
+- id: verify.panel.check_k_and_reliability_index
+  section: 05 Verification
+  entry: verify/panel.py:check_k_and_reliability_index
+  form: legacy
+  purpose: Each composite's k (pillars used) and its lack-of-reliability index, re-derived.
+  inputs:
+  - 'obs: pd.DataFrame'
+  - 'pil: pd.DataFrame'
+  - 'comp: pd.DataFrame'
+  - 'registry: dict'
+  outputs:
+  - None
+  tests: []
+  depends_on: []
+  drafted: true
+- id: verify.panel.check_headline_uncertainty
+  section: 05 Verification
+  entry: verify/panel.py:check_headline_uncertainty
+  form: legacy
+  purpose: The headline's interval, rank band and tier (edition 2, step 8), re-derived.
+  inputs:
+  - 'pil: pd.DataFrame'
+  - 'comp: pd.DataFrame'
+  outputs:
+  - None
+  tests:
+  - tests/test_score.py::test_the_verifier_catches_a_wrong_tier_and_a_wrong_interval
+  depends_on: []
+  drafted: true
+- id: verify.panel.check_effective_weights
+  section: 05 Verification
+  entry: verify/panel.py:check_effective_weights
+  form: legacy
+  purpose: 'The published nominal effective weights, re-derived from the registry YAML:'
+  inputs:
+  - 'registry: dict'
+  outputs:
+  - None
+  tests: []
+  depends_on: []
+  drafted: true
+- id: verify.panel.check_ranks_only_where_displayable
+  section: 05 Verification
+  entry: verify/panel.py:check_ranks_only_where_displayable
+  form: legacy
+  purpose: 'An unreliable score must not carry a rank: ranking implies a claim.'
+  inputs:
+  - 'comp: pd.DataFrame'
+  outputs:
+  - None
+  tests: []
+  depends_on: []
+  drafted: true
+- id: verify.panel.run
+  section: 05 Verification
+  entry: verify/panel.py:run
+  form: legacy
+  purpose: '(no docstring: to be written)'
+  inputs:
+  - (none)
+  outputs:
+  - int
+  tests:
+  - tests/test_explore.py::test_a_publishers_interval_travels_with_its_score
+  - tests/test_explore.py::test_a_series_needs_the_floor_of_states_since_2000
+  - tests/test_explore.py::test_states_outside_the_index_never_enter
+  - tests/test_explore.py::test_the_first_projected_year_is_marked
+  depends_on: []
+  drafted: true
+- id: verify.rebuild.run
+  section: 05 Verification
+  entry: verify/rebuild.py:run
+  form: legacy
+  purpose: '(no docstring: to be written)'
+  inputs:
+  - (none)
+  outputs:
+  - int
+  tests:
+  - tests/test_explore.py::test_a_publishers_interval_travels_with_its_score
+  - tests/test_explore.py::test_a_series_needs_the_floor_of_states_since_2000
+  - tests/test_explore.py::test_states_outside_the_index_never_enter
+  - tests/test_explore.py::test_the_first_projected_year_is_marked
+  depends_on: []
+  drafted: true
+- id: verify.run.run_layer
+  section: 05 Verification
+  entry: verify/run.py:run_layer
+  form: legacy
+  purpose: '(no docstring: to be written)'
+  inputs:
+  - 'name: str'
+  outputs:
+  - int
+  tests: []
+  depends_on: []
+  drafted: true
+- id: verify.run.main
+  section: 05 Verification
+  entry: verify/run.py:main
+  form: legacy
+  purpose: '(no docstring: to be written)'
+  inputs:
+  - (none)
+  outputs:
+  - int
+  tests: []
+  depends_on: []
+  drafted: true
+- id: verify.stats.AlphaResult
+  section: 05 Verification
+  entry: verify/stats.py:AlphaResult
+  form: legacy
+  purpose: Cronbach's alpha for one group of items, with what it was computed on.
+  inputs:
+  - (see the class)
+  outputs:
+  - (see the class)
+  tests: []
+  depends_on: []
+  drafted: true
+- id: verify.stats.cronbach_alpha
+  section: 05 Verification
+  entry: verify/stats.py:cronbach_alpha
+  form: legacy
+  purpose: Cronbach's alpha over the columns of `frame`, rows as observations.
+  inputs:
+  - 'frame: pd.DataFrame'
+  outputs:
+  - AlphaResult
+  tests:
+  - tests/test_advisory_stats.py::test_alpha_agrees_with_the_covariance_form
+  - tests/test_advisory_stats.py::test_alpha_can_be_negative
+  - tests/test_advisory_stats.py::test_alpha_covariance_form_gives_the_hand_case
+  - tests/test_advisory_stats.py::test_alpha_is_invariant_to_common_rescaling
+  - tests/test_advisory_stats.py::test_alpha_is_invariant_to_item_order
+  depends_on: []
+  drafted: true
+- id: verify.stats.item_rest_correlations
+  section: 05 Verification
+  entry: verify/stats.py:item_rest_correlations
+  form: legacy
+  purpose: Correlation of each item with the sum of the *others*, per column.
+  inputs:
+  - 'frame: pd.DataFrame'
+  outputs:
+  - dict[str, float | None]
+  tests:
+  - tests/test_advisory_stats.py::test_item_rest_excludes_the_item_from_its_own_total
+  - tests/test_advisory_stats.py::test_item_rest_is_negative_for_a_reversed_item
+  - tests/test_advisory_stats.py::test_item_rest_is_none_for_a_constant_item
+  - tests/test_advisory_stats.py::test_item_rest_matches_an_explicit_computation
+  - tests/test_advisory_stats.py::test_item_rest_of_identical_items_is_one
+  depends_on: []
+  drafted: true
+- id: verify.stats.DimensionalityResult
+  section: 05 Verification
+  entry: verify/stats.py:DimensionalityResult
+  form: legacy
+  purpose: Eigenstructure of a correlation matrix, and the level it describes.
+  inputs:
+  - (see the class)
+  outputs:
+  - (see the class)
+  tests: []
+  depends_on: []
+  drafted: true
+- id: verify.stats.pca_dimensionality
+  section: 05 Verification
+  entry: verify/stats.py:pca_dimensionality
+  form: legacy
+  purpose: Eigenvalues of the correlation matrix, with variance explained.
+  inputs:
+  - 'frame: pd.DataFrame'
+  - 'level: str'
+  outputs:
+  - DimensionalityResult
+  tests:
+  - tests/test_advisory_stats.py::test_dimensionality_carries_its_level
+  - tests/test_advisory_stats.py::test_eigenvalues_agree_with_sklearn
+  - tests/test_advisory_stats.py::test_eigenvalues_sum_to_the_number_of_variables
+  - tests/test_advisory_stats.py::test_explained_shares_are_ordered_and_sum_to_one
+  - tests/test_advisory_stats.py::test_independent_variables_give_eigenvalues_near_one
+  depends_on: []
+  drafted: true
+- id: verify.stats.kmo
+  section: 05 Verification
+  entry: verify/stats.py:kmo
+  form: legacy
+  purpose: Kaiser-Meyer-Olkin measure of sampling adequacy, overall and per variable.
+  inputs:
+  - 'frame: pd.DataFrame'
+  outputs:
+  - tuple[float | None, dict[str, float]]
+  tests:
+  - tests/test_advisory_stats.py::test_kmo_agrees_with_partials_from_residuals
+  - tests/test_advisory_stats.py::test_kmo_is_bounded
+  - tests/test_advisory_stats.py::test_kmo_is_higher_for_factorable_data
+  - tests/test_advisory_stats.py::test_per_variable_kmo_agrees_with_partials_from_residuals
+  - tests/test_advisory_stats.py::test_structure_agreement_carries_its_sample_size
+  depends_on: []
+  drafted: true
+- id: verify.stats.bartlett_sphericity
+  section: 05 Verification
+  entry: verify/stats.py:bartlett_sphericity
+  form: legacy
+  purpose: 'Bartlett''s test of sphericity: is the correlation matrix distinguishable'
+  inputs:
+  - 'frame: pd.DataFrame'
+  outputs:
+  - tuple[float | None, int]
+  tests:
+  - tests/test_advisory_stats.py::test_bartlett_agrees_with_the_eigenvalue_route
+  - tests/test_advisory_stats.py::test_bartlett_chi2_is_larger_when_variables_are_correlated
+  - tests/test_advisory_stats.py::test_bartlett_returns_none_for_a_singular_matrix
+  depends_on: []
+  drafted: true
+- id: verify.stats.varimax
+  section: 05 Verification
+  entry: verify/stats.py:varimax
+  form: legacy
+  purpose: 'Varimax rotation: the orthogonal rotation maximising the variance of squared'
+  inputs:
+  - 'loadings: np.ndarray'
+  - 'normalize: bool'
+  - 'tol: float'
+  - 'max_iter: int'
+  outputs:
+  - np.ndarray
+  tests:
+  - tests/test_advisory_stats.py::test_varimax_agrees_with_kaiser_pairwise_rotation
+  - tests/test_advisory_stats.py::test_varimax_increases_loading_simplicity
+  - tests/test_advisory_stats.py::test_varimax_is_a_noop_for_a_single_factor
+  - tests/test_advisory_stats.py::test_varimax_kaiser_normalisation_changes_the_answer
+  - tests/test_advisory_stats.py::test_varimax_preserves_communalities
+  depends_on: []
+  drafted: true
+- id: verify.stats.StructureResult
+  section: 05 Verification
+  entry: verify/stats.py:StructureResult
+  form: legacy
+  purpose: How well a declared grouping of variables matches the data's own.
+  inputs:
+  - (see the class)
+  outputs:
+  - (see the class)
+  tests: []
+  depends_on: []
+  drafted: true
+- id: verify.stats.factor_loadings
+  section: 05 Verification
+  entry: verify/stats.py:factor_loadings
+  form: legacy
+  purpose: Maximum-likelihood factor loadings (`sklearn.decomposition.FactorAnalysis`) on the standardised complete
+  inputs:
+  - 'data: pd.DataFrame'
+  - 'n_factors: int'
+  outputs:
+  - pd.DataFrame
+  tests: []
+  depends_on: []
+  drafted: true
+- id: verify.stats.structure_agreement
+  section: 05 Verification
+  entry: verify/stats.py:structure_agreement
+  form: legacy
+  purpose: Compare a declared grouping of variables against the factor structure the
+  inputs:
+  - 'frame: pd.DataFrame'
+  - 'declared: dict[str, list[str]]'
+  - 'n_factors: int | None'
+  outputs:
+  - StructureResult
+  tests:
+  - tests/test_advisory_stats.py::test_adequate_data_is_reportable
+  - tests/test_advisory_stats.py::test_reportability_is_independent_of_agreement
+  - tests/test_advisory_stats.py::test_singular_correlation_matrix_is_not_reportable
+  - tests/test_advisory_stats.py::test_structure_agreement_carries_its_sample_size
+  - tests/test_advisory_stats.py::test_structure_agreement_is_chance_corrected
+  depends_on: []
+  drafted: true
+- id: verify.stats.r_significance
+  section: 05 Verification
+  entry: verify/stats.py:r_significance
+  form: legacy
+  purpose: 't = r * sqrt((n - 2) / (1 - r^2)) on n - 2 degrees of freedom: (t, two-tailed p).'
+  inputs:
+  - 'r: float'
+  - 'n: int'
+  outputs:
+  - tuple[float, float]
+  tests:
+  - tests/test_ada_stats.py::test_question_7_r_of_028_with_52_people_is_significant
+  - tests/test_ada_stats.py::test_question_8_r_of_034_in_123_adults
+  - tests/test_ada_stats.py::test_the_same_r_needs_enough_people
+  depends_on: []
+  drafted: true
+- id: verify.stats.r_interval
+  section: 05 Verification
+  entry: verify/stats.py:r_interval
+  form: legacy
+  purpose: 'Fisher''s interval: z'' = artanh r, SE = 1 / sqrt(n - 3), z'' +/- z * SE, back through tanh.'
+  inputs:
+  - 'r: float'
+  - 'n: int'
+  - 'z: float'
+  outputs:
+  - tuple[float, float]
+  tests:
+  - tests/test_ada_stats.py::test_an_interval_needs_more_than_three_cases
+  - tests/test_ada_stats.py::test_question_8_r_of_034_in_123_adults
+  - tests/test_ada_stats.py::test_question_9_r_of_060_with_40_people
+  depends_on: []
+  drafted: true
+- id: verify.stats.compare_correlations
+  section: 05 Verification
+  entry: verify/stats.py:compare_correlations
+  form: legacy
+  purpose: 'Z for the difference between two independent correlations: (z''1 - z''2) / sqrt(1/(n1-3) + 1/(n2-3)).'
+  inputs:
+  - 'r1: float'
+  - 'n1: int'
+  - 'r2: float'
+  - 'n2: int'
+  outputs:
+  - float
+  tests:
+  - tests/test_ada_stats.py::test_question_10_self_control_and_grades_differ_between_samples
+  depends_on: []
+  drafted: true
+- id: verify.stats.partial_r
+  section: 05 Verification
+  entry: verify/stats.py:partial_r
+  form: legacy
+  purpose: 'X and Y with Z removed from both: what is left of their relationship once Z is held constant.'
+  inputs:
+  - 'rxy: float'
+  - 'rxz: float'
+  - 'ryz: float'
+  outputs:
+  - float
+  tests:
+  - tests/test_ada_stats.py::test_a_spurious_correlation_vanishes
+  - tests/test_ada_stats.py::test_a_third_variable_unrelated_to_both_changes_nothing
+  - tests/test_ada_stats.py::test_question_12_partial_and_semipartial
+  depends_on: []
+  drafted: true
+- id: verify.stats.semipartial_r
+  section: 05 Verification
+  entry: verify/stats.py:semipartial_r
+  form: legacy
+  purpose: Y with X, Z removed from X only. Squared, it is the share of Y's variance X explains beyond Z.
+  inputs:
+  - 'rxy: float'
+  - 'rxz: float'
+  - 'ryz: float'
+  outputs:
+  - float
+  tests:
+  - tests/test_ada_stats.py::test_question_12_partial_and_semipartial
+  depends_on: []
+  drafted: true
+- id: verify.stats.disattenuated_r
+  section: 05 Verification
+  entry: verify/stats.py:disattenuated_r
+  form: legacy
+  purpose: The correlation the two measures would show if both were perfectly reliable. Above 1 means they cannot be
+  inputs:
+  - 'r: float'
+  - 'reliability_x: float'
+  - 'reliability_y: float'
+  outputs:
+  - float
+  tests:
+  - tests/test_ada_stats.py::test_question_11_correcting_for_attenuation
+  depends_on: []
+  drafted: true
+- id: verify.stats.mean_interval
+  section: 05 Verification
+  entry: verify/stats.py:mean_interval
+  form: legacy
+  purpose: '(SE, lower, upper) for a mean: SE = SD / sqrt(n), with z when the SD is the population''s and t on n - 1'
+  inputs:
+  - 'mean: float'
+  - 'sd: float'
+  - 'n: int'
+  - 'known_sd: bool'
+  - 'confidence: float'
+  outputs:
+  - tuple[float, float, float]
+  tests:
+  - tests/test_ada_stats.py::test_question_2_known_sigma_uses_z
+  - tests/test_ada_stats.py::test_question_3_estimated_sd_uses_t
+  depends_on: []
+  drafted: true
+- id: verify.stats.rank_bands
+  section: 05 Verification
+  entry: verify/stats.py:rank_bands
+  form: legacy
+  purpose: The ranks each unit could hold, given its score's standard error.
+  inputs:
+  - 'scores: pd.Series'
+  - 'errors: pd.Series'
+  - 'z: float'
+  outputs:
+  - pd.DataFrame
+  tests:
+  - tests/test_ada_stats.py::test_overlapping_scores_share_a_band
+  - tests/test_ada_stats.py::test_precise_scores_give_exact_ranks
+  - tests/test_score.py::test_a_band_counts_only_the_significant_states_above_and_below
+  - tests/test_score.py::test_tiers_follow_the_leader_rule_where_overlapping_bands_would_chain
+  depends_on: []
+  drafted: true
+- id: verify.stats.parallel_analysis
+  section: 05 Verification
+  entry: verify/stats.py:parallel_analysis
+  form: legacy
+  purpose: 'Horn''s parallel analysis: the given percentile of each eigenvalue of the correlation matrix of n x k'
+  inputs:
+  - 'n: int'
+  - 'k: int'
+  - 'draws: int'
+  - 'percentile: float'
+  - 'seed: int'
+  outputs:
+  - np.ndarray
+  tests:
+  - tests/test_ada_stats.py::test_a_real_factor_beats_parallel_analysis
+  - tests/test_ada_stats.py::test_parallel_analysis_thresholds_fall_and_straddle_one
+  depends_on: []
+  drafted: true

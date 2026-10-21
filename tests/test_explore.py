@@ -13,7 +13,7 @@ import yaml
 ROOT = Path(__file__).resolve().parents[1]
 spec = importlib.util.spec_from_file_location("explore_stage", ROOT / "09_explore.py")
 explore = importlib.util.module_from_spec(spec)
-spec.loader.exec_module(explore)  # puts athena-core on the path
+spec.loader.exec_module(explore)
 
 from asi.core.countries import COUNTRIES  # noqa: E402
 

@@ -7,16 +7,15 @@ named on the command line and written to data/inputs.csv in Athena's common form
     python 01_inputs.py asi-pull-2026-08-08             # the legacy edition: the frozen pull of August 2026
     python 01_inputs.py wdi-2026-10-08 wgi-2026-09-25   # a new edition from the current WDI and WGI
 
-The datasets come from athena-core: `python -m adapters asi-pull` or `python -m adapters worldbank`. Nothing is
-dropped silently: a series that no dataset holds, or that two hold, stops the run. This replaces 01_pull.py, which
-called the World Bank API with TLS verification turned off.
+The datasets come from 00_ingest.py: `python 00_ingest.py asi-pull` or `python 00_ingest.py wdi-bulk wgi-bulk`.
+Nothing is dropped silently: a series that no dataset holds, or that two hold, stops the run. This replaces
+01_pull.py, which called the World Bank API with TLS verification turned off.
 """
 
 import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-sys.path.insert(0, str(ROOT.parents[1]))  # athena-core, for the `athena` package
 
 import pandas as pd  # noqa: E402
 

@@ -3,8 +3,8 @@
 
     python 07_wonders.py
 
-The rule (the vault's `Wonders Selection`, first position of 2026-10-18; the owner may add or remove a wonder, with
-the reason recorded in WONDERS_OWNER below):
+The rule (`docs/ASI 06 Outputs and Site/Wonders/Wonders Selection.md`, first position of 2026-10-18; the owner
+may add or remove a wonder, with the reason recorded in WONDERS_OWNER below):
 1. Candidates are Wikidata items in the 54 member states that are World Heritage Sites, or instances (or instances of
    a direct subclass) of one of CLASSES.
 2. Notability is the number of Wikipedia language editions with an article on the item (Wikidata sitelinks); items
@@ -27,7 +27,6 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-sys.path.insert(0, str(ROOT.parents[1]))  # athena-core
 
 from asi.core.countries import COUNTRIES  # noqa: E402
 from asi.geography import subregions  # noqa: E402
@@ -148,7 +147,7 @@ def file_title(image_url: str) -> str:
 
 
 def main() -> int:
-    from adapters import fetcher, sources
+    from asi.sources import fetcher, sources
     from athena import commons
 
     fetch = fetcher()

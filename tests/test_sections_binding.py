@@ -1,4 +1,4 @@
-"""04_sections.py and sections.toml: the ASI's binding resolves against athena-core's templates, and the committed
+"""04_sections.py and sections.toml: the ASI's binding resolves against athena-kit's templates, and the committed
 web/public/data/sections.json meets the output contract. Neither needs Athena's store."""
 
 import copy
@@ -11,7 +11,7 @@ import pytest
 ROOT = Path(__file__).resolve().parents[1]
 spec = importlib.util.spec_from_file_location("sections_stage", ROOT / "04_sections.py")
 sections_stage = importlib.util.module_from_spec(spec)
-spec.loader.exec_module(sections_stage)  # puts athena-core on the path
+spec.loader.exec_module(sections_stage)
 
 from athena import sections  # noqa: E402
 from asi.core.countries import COUNTRIES  # noqa: E402

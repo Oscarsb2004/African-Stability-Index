@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools==80.9.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "african-stability-index"
+version = "2.0.0.dev0"
+description = "The African Stability Index, edition 2: a composite of 52 published indicators for the 54 African Union states, with its uncertainty, and the atlas that shows it."
+readme = "README.md"
+requires-python = ">=3.13"
+license = "LicenseRef-PolyForm-Noncommercial-1.0.0"
+license-files = ["LICENSE.md", "NOTICE"]
+dependencies = [
+    "athena-kit[geo] @ git+https://github.com/Oscarsb2004/athena-kit@v0.1.2",
+    "scipy==1.18.1",
+    "scikit-learn==1.9.0",
+    "PyYAML==6.0.3",
+    "openpyxl==3.1.5",
+    "mapbox-vector-tile==2.2.0",
+    "pmtiles==3.8.1",
+]
+
+[project.optional-dependencies]
+test = ["pytest==9.1.1"]
+
+[tool.setuptools.packages.find]
+include = ["asi*", "verify*"]

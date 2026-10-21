@@ -27,7 +27,6 @@ from collections import Counter
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-sys.path.insert(0, str(ROOT.parents[1]))  # athena-core, for `athena` and `adapters`
 
 import pandas as pd  # noqa: E402
 import yaml  # noqa: E402
@@ -375,7 +374,7 @@ def main(argv: list[str]) -> int:
     if not argv:
         print(__doc__)
         return 2
-    from adapters import fetcher, sources
+    from asi.sources import fetcher, sources
     from athena import dataset
 
     names = {key(n): n for n in argv}

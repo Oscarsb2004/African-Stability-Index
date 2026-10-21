@@ -1,6 +1,7 @@
 """
-backtests.py — does a lower ASI score come before instability? The rules are pre-registered in the vault
-(`ASI Backtest Protocol` and the notes BT1 to BT7, committed 2026-10-18 before any test was run).
+backtests.py — does a lower ASI score come before instability? The rules are pre-registered in
+docs/ASI 05 Verification/Backtests/ (`ASI Backtest Protocol` and the notes BT1 to BT7, committed 2026-10-18 before any
+test was run).
 
 A state-year t is at risk when the state is free of the event at t; its outcome is whether the event happens in
 t+1 to t+h. A non-event needs every year of the window observed; unknown windows are left out. Predictors are

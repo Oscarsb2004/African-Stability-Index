@@ -15,7 +15,7 @@ It writes:
 
 data/sections.json is written there by 04_sections.py; this stage reads it for the sources list.
 
-Natural Earth comes through athena.fetch, so every file is hash-locked in athena-core's adapters/sources.lock.
+Natural Earth comes through athena.fetch, so every file is hash-locked in the project's sources.lock.
 Nothing else is downloaded.
 """
 
@@ -24,7 +24,6 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-sys.path.insert(0, str(ROOT.parents[1]))  # athena-core, for `athena` and `adapters`
 
 import pandas as pd  # noqa: E402
 
@@ -212,7 +211,7 @@ def write(path: Path, doc: dict) -> None:
 
 
 def main() -> int:
-    from adapters import fetcher, sources
+    from asi.sources import fetcher, sources
 
     src, fetch = sources(), fetcher()
     ne = {k: json.loads(fetch.get(src[f"natural-earth-{k}"]["url"])) for k in ("countries-50m", "borders-50m",

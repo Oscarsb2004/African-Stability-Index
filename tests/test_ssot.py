@@ -32,8 +32,16 @@ SKIP_DIRS = {".venv", ".git", "__pycache__", "node_modules", "data"}
 
 
 def _python_files():
-    for p in REPO.rglob("*.py"):
-        if any(part in SKIP_DIRS for part in p.parts):
+    """The project's own Python files: those git tracks (an environment or a leftover folder is not the project),
+    or, outside a git checkout, every file not under SKIP_DIRS."""
+    import subprocess
+    try:
+        listed = subprocess.run(["git", "ls-files", "*.py"], cwd=REPO, capture_output=True, text=True, check=True)
+        tracked = [REPO / line for line in listed.stdout.splitlines() if line]
+    except (OSError, subprocess.CalledProcessError):
+        tracked = list(REPO.rglob("*.py"))
+    for p in tracked:
+        if any(part in SKIP_DIRS for part in p.relative_to(REPO).parts) or not p.exists():
             continue
         yield p
 

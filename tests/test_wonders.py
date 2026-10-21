@@ -7,7 +7,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 spec = importlib.util.spec_from_file_location("wonders_stage", ROOT / "07_wonders.py")
 wonders = importlib.util.module_from_spec(spec)
-spec.loader.exec_module(wonders)  # puts athena-core on the path
+spec.loader.exec_module(wonders)
 
 from athena import commons  # noqa: E402
 

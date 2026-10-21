@@ -25,3 +25,5 @@ Procfile text
 *.jpg   binary
 *.ico   binary
 *.pdf   binary
+*.pmtiles binary
+*.parquet binary

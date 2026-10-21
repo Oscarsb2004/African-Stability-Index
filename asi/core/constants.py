@@ -22,7 +22,7 @@ from pathlib import Path
 # Edition 2, step 6 (P57): eight pillars, variant B of the layout test. Keys are
 # short names rather than edition 1's letters, so a key can never be read as the
 # old pillar it replaced (edition 1's "E" was security; here "SEC" is). Order is
-# the vault's numbering, Pillar 1 to Pillar 8.
+# the notes' numbering (docs/), Pillar 1 to Pillar 8.
 
 PILLAR_DEFS: dict[str, str] = {
     "GOV": "Governance and State Capacity",
