@@ -1,12 +1,13 @@
-# The ASI's binding to athena-core's section templates (P54): which series fills each measure.
+# The ASI's binding to athena-kit's section templates (P54): which series fills each measure.
 # 04_sections.py reads it with the datasets named on its command line. The templates are in athena/sections/, and
-# each belongs to a dimension (P64): stability, economy or finance.
+# each belongs to a dimension (P64): stability, economy, finance or infrastructure.
 
 project = "asi"
 sections = [
     "appraisals",                                                                      # stability
     "outlook", "output", "prices", "public_finances", "structure", "jobs",              # economy
     "monetary", "currency", "banks", "capital_markets", "sovereign", "capital_flows",   # finance
+    "services", "power", "logistics", "resources",                                      # infrastructure
 ]
 
 [datasets.wdi]
@@ -128,6 +129,28 @@ hdi = { dataset = "hdr", series = "hdi" }
 cpi = { dataset = "cpi", series = "cpi_score" }
 cpi_lower = { dataset = "cpi", series = "lower_ci" }
 cpi_upper = { dataset = "cpi", series = "upper_ci" }
+# the infrastructure dimension (P66): the national figures, from the WDI (its Enterprise Surveys and LPI series too)
+electricity = { dataset = "wdi", series = "EG.ELC.ACCS.ZS" }
+electricity_urban = { dataset = "wdi", series = "EG.ELC.ACCS.UR.ZS" }
+electricity_rural = { dataset = "wdi", series = "EG.ELC.ACCS.RU.ZS" }
+water = { dataset = "wdi", series = "SH.H2O.BASW.ZS" }
+sanitation = { dataset = "wdi", series = "SH.STA.BASS.ZS" }
+internet = { dataset = "wdi", series = "IT.NET.USER.ZS" }
+mobile = { dataset = "wdi", series = "IT.CEL.SETS.P2" }
+broadband = { dataset = "wdi", series = "IT.NET.BBND.P2" }
+outages = { dataset = "wdi", series = "IC.ELC.OUTG.ZS" }
+connection_days = { dataset = "wdi", series = "IC.ELC.DURS" }
+losses = { dataset = "wdi", series = "EG.ELC.LOSS.ZS" }
+consumption = { dataset = "wdi", series = "EG.USE.ELEC.KH.PC" }
+lpi_infrastructure = { dataset = "wdi", series = "LP.LPI.INFR.XQ" }
+containers = { dataset = "wdi", series = "IS.SHP.GOOD.TU" }
+air_freight = { dataset = "wdi", series = "IS.AIR.GOOD.MT.K1" }
+rail_km = { dataset = "wdi", series = "IS.RRS.TOTL.KM" }
+oil = { dataset = "wdi", series = "NY.GDP.PETR.RT.ZS" }
+gas = { dataset = "wdi", series = "NY.GDP.NGAS.RT.ZS" }
+coal = { dataset = "wdi", series = "NY.GDP.COAL.RT.ZS" }
+minerals = { dataset = "wdi", series = "NY.GDP.MINR.RT.ZS" }
+forests = { dataset = "wdi", series = "NY.GDP.FRST.RT.ZS" }
 
 [unbound]
 government_debt = "WDI's central government debt covers 23 of the 54 states, the latest median 2019; IMF WEO general government debt comes with the WEO adapter"

@@ -2,9 +2,9 @@
 type: "project-page"
 project: "African Stability Index"
 section: "06 Outputs and Site"
-status: "planned"
+status: "built"
 created: "2026-10-18"
-updated: 2026-10-19
+updated: 2026-10-21
 ---
 
 # ASI Infrastructure Section
@@ -127,7 +127,12 @@ The owner asked for the Canada atlas's infrastructure ideas applied to Africa wi
 
 ## Where it stands
 
-Cities are built. Geodata is in the store (#19): USGS's Africa compilation and the World Bank grid map. AID waits on its publisher's answer and the owner's account; the map layers wait on #17.
+Built (2026-10-21):
+- **Cities.**
+- **The map layers (I2 to I4):** ports, mines and mineral facilities, deposits and exploration sites as points; railways, major roads and the electricity grid as vector tiles; a card for each point; each state's ports, facilities and kilometres of line in its panel (African-Stability-Index #3 and #4).
+- **The national figures from the WDI (I5, first part):** connection to services, power for industry, trade logistics and the resource economy, as athena-kit's section templates (v0.1.4).
+
+Waiting: the IMF's and FAOSTAT's producer prices (each needs its adapter), ILOSTAT's wages (the owner reads its terms), and AID (its publisher's answer and the owner's account).
 
 ## The layers
 

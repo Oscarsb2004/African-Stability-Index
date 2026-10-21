@@ -1,22 +1,32 @@
-// Infrastructure: the country's ports and what they export, its mines and mineral facilities, the railways, roads
-// and power lines inside it, and its cities. Every figure is the stage's (10_infrastructure.py); which state a
+// Infrastructure: the country's national figures first (the infrastructure dimension's sections, P66), then what
+// the map shows of it: its ports and what they export, its mines and mineral facilities, the railways, roads and
+// power lines inside it, and its cities. The map figures are the stage's (10_infrastructure.py); which state a
 // feature belongs to is derived by the stated rule, and each block names its source.
 
 import { useEffect, useState } from "react";
-import { asset, people } from "../data";
+import LineChart from "../LineChart";
+import { asset, people, type SectionsDoc } from "../data";
 import { km, totalKm, type CountriesDoc, type LayersDoc } from "../infra";
+import { Rows, trend } from "./parts";
 
 interface Place { name: string; iso3: string; capital: boolean; population: number }
 
 const COMING = [
   ["Infrastructure projects (AID)", "waiting on AUDA-NEPAD's answer about republishing"],
   ["Pipelines and power stations", "waiting on the terms of their stated source; Global Energy Monitor next"],
-  ["National figures", "connection to services, producer prices, wages and costs for industry (WDI, IMF, FAOSTAT)"],
+  ["Producer prices and wages", "the IMF's producer prices and FAOSTAT's, then ILOSTAT's wages once its terms are read"],
 ];
 
 let countries: Promise<CountriesDoc> | null = null;  // loaded once, for every state
 
-export default function InfrastructurePanel({ iso3, infra }: { iso3: string; infra: LayersDoc | null }) {
+interface Props {
+  iso3: string;
+  infra: LayersDoc | null;
+  doc: SectionsDoc;
+  onCompare?: (measure: string) => void;
+}
+
+export default function InfrastructurePanel({ iso3, infra, doc: sections, onCompare }: Props) {
   const [places, setPlaces] = useState<Place[]>([]);
   const [doc, setDoc] = useState<CountriesDoc | null>(null);
   useEffect(() => {
@@ -32,8 +42,23 @@ export default function InfrastructurePanel({ iso3, infra }: { iso3: string; inf
     const l = layer(id);
     return l ? `${l.attribution} (${l.licence}).` : "";
   };
+  const a = sections.areas[iso3] ?? {};
+  const national = sections.sections.filter((s) => s.dimension === "infrastructure");
+  const electricity = trend(a.services?.electricity_trend);
+  const wdi = sections.datasets.find((d) => d.name.startsWith("wdi-"));
   return (
     <div className="panel-body">
+      {national.map((s) => (
+        <Rows key={s.id} section={s} figures={a[s.id] ?? {}} open={s.id === "services"} onCompare={onCompare} />
+      ))}
+      {electricity.periods.length > 1 && <>
+        <div className="chart-title">Access to electricity since 2000, % of population</div>
+        <LineChart periods={electricity.periods} values={electricity.values} unit="%" height={80} />
+      </>}
+      {national.length > 0 && <p className="muted small">
+        Each figure as its publisher estimates it, with its year. {wdi?.attribution}, {wdi?.licence}.
+      </p>}
+
       {c && (
         <>
           <h3>Ports and export hubs</h3>

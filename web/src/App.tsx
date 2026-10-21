@@ -218,7 +218,8 @@ export default function App() {
               onMethod={openMethod} onCompare={compare} />}
             {section === "economy" && <EconomyPanel iso3={selected} doc={docs.sections} onCompare={compare} />}
             {section === "finance" && <FinancePanel iso3={selected} doc={docs.sections} onCompare={compare} />}
-            {section === "infrastructure" && <InfrastructurePanel iso3={selected} infra={infra} />}
+            {section === "infrastructure" && <InfrastructurePanel iso3={selected} infra={infra} doc={docs.sections}
+              onCompare={compare} />}
             {section === "wonders" && <WondersPanel doc={wonders} iso3={selected} names={docs.sections.names}
               onOpen={setViewing} />}
             <details className="sources">
