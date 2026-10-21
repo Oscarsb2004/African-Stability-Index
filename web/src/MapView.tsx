@@ -3,9 +3,15 @@
 // City labels are HTML markers, so the map needs no glyph server.
 
 import { useEffect, useRef } from "react";
-import maplibregl, { type ExpressionSpecification, type GeoJSONSource } from "maplibre-gl";
+import maplibregl, { type ExpressionSpecification, type GeoJSONSource, type MapGeoJSONFeature } from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
+import { Protocol } from "pmtiles";
 import { asset, people, rampColour, type MetaDoc, type Section, type StabilityDoc, type Wonder } from "./data";
+import { cardRows, COLOURS, parsed, RING, type LayersDoc } from "./infra";
+
+// The Infrastructure section's line layers are PMTiles archives, read by range requests from the site's own files
+// (pmtiles, BSD-3-Clause, its licence read in protomaps/PMTiles on 2026-10-21).
+maplibregl.addProtocol("pmtiles", new Protocol().tile);
 
 interface Props {
   meta: MetaDoc;
@@ -18,6 +24,8 @@ interface Props {
   onSelect: (iso3: string | null) => void;
   wonders: Wonder[] | null;
   onWonder: (w: Wonder) => void;
+  infra?: LayersDoc | null;  // the Infrastructure section's catalogue, once loaded
+  infraOn?: string[];  // the layers switched on
 }
 
 interface Place {
@@ -38,7 +46,7 @@ const ESRI = "https://static-map-tiles-api.arcgis.com/arcgis/rest/services/stati
 const ESRI_KEY = import.meta.env.VITE_ESRI_KEY as string | undefined;
 
 export default function MapView({ meta, stability, section, selected, showClasses, choropleth, marked = [], onSelect,
-  wonders, onWonder }: Props) {
+  wonders, onWonder, infra = null, infraOn = [] }: Props) {
   const box = useRef<HTMLDivElement>(null);
   const tip = useRef<HTMLDivElement>(null);
   const map = useRef<maplibregl.Map | null>(null);
@@ -129,6 +137,10 @@ export default function MapView({ meta, stability, section, selected, showClasse
       if (tip.current) tip.current.style.opacity = "0";
     });
     m.on("click", (e) => {
+      // a point's card, not the country under it; the hit box is wider than the dot, so a small mark is easy to take
+      const near: [maplibregl.PointLike, maplibregl.PointLike] = [[e.point.x - 6, e.point.y - 6], [e.point.x + 6, e.point.y + 6]];
+      const point = m.queryRenderedFeatures(near).find((f) => f.layer.id.startsWith("infra-pt-"));
+      if (point) { cardRef.current(point, e.lngLat); return; }
       const f = m.queryRenderedFeatures(e.point, { layers: ["classes"] })[0];
       selectRef.current(f && f.properties.member ? String(f.properties.iso3) : null);
     });
@@ -277,6 +289,61 @@ export default function MapView({ meta, stability, section, selected, showClasse
     }
   }, [section, wonders]);
 
+  // ── infrastructure: the layers are added once, hidden, and shown in their section as they are switched on ──────
+  const infraRef = useRef<LayersDoc | null>(null);
+  const popup = useRef<maplibregl.Popup | null>(null);
+  const cardRef = useRef<(f: MapGeoJSONFeature, at: maplibregl.LngLat) => void>(() => {});
+  cardRef.current = (f, at) => {
+    const info = infraRef.current?.points.find((p) => `infra-pt-${p.id}` === f.layer.id);
+    const m = map.current;
+    if (!info || !m) return;
+    popup.current?.remove();
+    popup.current = new maplibregl.Popup({ maxWidth: "340px", className: "infra-popup" })
+      .setLngLat(at).setDOMContent(card(info, parsed(f.properties))).addTo(m);
+  };
+  useEffect(() => {
+    const m = map.current;
+    if (!m || !infra) return;
+    infraRef.current = infra;
+    const add = () => {
+      if (m.getLayer(`infra-pt-${infra.points[0]?.id}`)) return;  // already added
+      for (const [name, a] of Object.entries(infra.archives)) {
+        m.addSource(`infra-arch-${name}`, { type: "vector", attribution: `${a.attribution} (${a.licence})`,
+          url: `pmtiles://${new URL(asset(`geo/infra/${a.file}`), window.location.href).href}` });
+        for (const id of a.layers) addLines(m, id, name);
+      }
+      for (const p of infra.points) {
+        m.addSource(`infra-${p.id}`, { type: "geojson", data: asset(`geo/infra/${p.file}`),
+          attribution: `<a href="${p.link}" target="_blank" rel="noreferrer">${p.attribution}</a>` });
+        m.addLayer({
+          id: `infra-pt-${p.id}`, type: "circle", source: `infra-${p.id}`, layout: { visibility: "none" },
+          paint: {
+            "circle-color": COLOURS[p.id] ?? RING, "circle-stroke-color": RING, "circle-stroke-width": 1,
+            "circle-radius": ["interpolate", ["linear"], ["zoom"], 3, p.id === "ports" ? 4 : 2.5, 9, p.id === "ports" ? 8 : 6],
+          },
+        });
+        m.on("mouseenter", `infra-pt-${p.id}`, () => { m.getCanvas().style.cursor = "pointer"; });
+        m.on("mouseleave", `infra-pt-${p.id}`, () => { m.getCanvas().style.cursor = ""; });
+      }
+    };
+    // "load" fires once, and the catalogue can arrive after it while the style is still busy: wait for "idle"
+    if (m.isStyleLoaded()) add(); else m.once("idle", add);
+  }, [infra]);
+  const infraKey = infraOn.join(",");
+  useEffect(() => {
+    const m = map.current;
+    if (!m || !infra) return;
+    const apply = () => {
+      for (const layer of m.getStyle().layers) {
+        if (!layer.id.startsWith("infra-")) continue;
+        const id = layer.id.replace(/^infra-(pt|ln)-/, "").split("-")[0];
+        m.setLayoutProperty(layer.id, "visibility", section === "infrastructure" && infraOn.includes(id) ? "visible" : "none");
+      }
+      if (section !== "infrastructure") popup.current?.remove();
+    };
+    if (m.isStyleLoaded()) apply(); else m.once("idle", apply);
+  }, [section, infra, infraKey]);  // eslint-disable-line react-hooks/exhaustive-deps
+
   // ── cities follow the section ───────────────────────────────────────────────────────────────────────────
   useEffect(() => {
     sectionRef.current = section;
@@ -289,4 +356,59 @@ export default function MapView({ meta, stability, section, selected, showClasse
       <div ref={tip} className="hover-name" />
     </div>
   );
+}
+
+const MAJOR = ["Road (Motorway)", "Road (Trunk)"];
+
+// One line layer from one archive, under the borders. The grid's existing lines are solid and every other status
+// (planned, under construction, decommissioned) is dashed, as the World Bank records them; roads widen by class.
+function addLines(m: maplibregl.Map, id: string, archive: string) {
+  const base = { type: "line" as const, source: `infra-arch-${archive}`, "source-layer": id,
+    layout: { visibility: "none" as const, "line-cap": "round" as const } };
+  const colour = COLOURS[id] ?? RING;
+  const width = id === "roads"
+    ? ["interpolate", ["linear"], ["zoom"], 4, ["match", ["get", "class"], MAJOR, 1.2, 0.5],
+      10, ["match", ["get", "class"], MAJOR, 3, 1.4]]
+    : ["interpolate", ["linear"], ["zoom"], 3, 0.8, 9, 2.4];
+  const paint = { "line-color": colour, "line-width": width as ExpressionSpecification, "line-opacity": 0.9 };
+  if (id === "grid") {
+    m.addLayer({ ...base, id: `infra-ln-grid-${archive}`, filter: ["==", ["get", "status"], "Existing"], paint }, "borders");
+    m.addLayer({ ...base, id: `infra-ln-grid-${archive}-other`, filter: ["!=", ["get", "status"], "Existing"],
+      paint: { ...paint, "line-dasharray": [2, 2] } }, "borders");
+  } else m.addLayer({ ...base, id: `infra-ln-${id}-${archive}`, paint }, "borders");
+}
+
+// A feature's card: its fields under the publisher's labels, a port's commodities one per line, and the source.
+// Built from DOM nodes, so no value from the data is ever read as HTML.
+function card(info: LayersDoc["points"][number], props: Record<string, unknown>): HTMLElement {
+  const el = document.createElement("div");
+  el.className = "infra-card";
+  const add = (tag: string, text: string, cls?: string) => {
+    const n = document.createElement(tag);
+    n.textContent = text;
+    if (cls) n.className = cls;
+    el.append(n);
+    return n;
+  };
+  add("div", info.title, "panel-kicker");
+  add("div", String(props.FeatureNam ?? info.title), "infra-card-title");
+  const rows = Array.isArray(props.rows) ? props.rows as Record<string, unknown>[] : [];
+  const perRow = info.fields.filter((f) => rows.some((r) => f.name in r));
+  const table = document.createElement("table");
+  table.className = "rows";
+  for (const [label, value] of cardRows(props, info.fields.filter((f) => f.name !== "FeatureNam" && !perRow.includes(f)))) {
+    const tr = table.insertRow();
+    tr.insertCell().textContent = label;
+    tr.insertCell().textContent = value;
+  }
+  el.append(table);
+  for (const r of rows) add("div", cardRows(r, perRow).map(([l, v]) => `${l}: ${v}`).join(" · "), "small infra-card-row");
+  const source = add("div", "", "muted small");
+  const link = document.createElement("a");
+  link.href = info.link;
+  link.target = "_blank";
+  link.rel = "noreferrer";
+  link.textContent = info.attribution;
+  source.append(link, ` · ${info.licence}`);
+  return el;
 }

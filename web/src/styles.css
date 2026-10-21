@@ -71,6 +71,23 @@ a { color: var(--accent); }
 .legend-step { display: flex; flex-direction: column; align-items: center; gap: 2px; }
 .legend-step span { display: block; width: 52px; height: 10px; border-radius: 3px; }
 .legend-step small { font-size: 10px; color: var(--ink-2); }
+.infra-legend { display: grid; gap: 3px; }
+.infra-legend summary { list-style: none; }
+.infra-legend summary::-webkit-details-marker { display: none; }
+.infra-legend summary::after { content: "▾"; color: var(--ink-3); margin-left: auto; }
+.infra-legend:not([open]) summary::after { content: "▸"; }
+.infra-toggle { display: flex; gap: 7px; align-items: center; cursor: pointer; }
+.swatch { display: inline-block; flex: none; }
+.swatch.dot { width: 9px; height: 9px; border-radius: 50%; box-shadow: 0 0 0 1px #f0efec; }
+.swatch.line { width: 16px; height: 3px; border-radius: 2px; }
+.infra-popup .maplibregl-popup-content { background: var(--glass); color: var(--ink); border: 1px solid var(--glass-edge);
+  border-radius: 10px; padding: 10px 12px; backdrop-filter: blur(10px); }
+.infra-popup .maplibregl-popup-tip { border-top-color: var(--glass); border-bottom-color: var(--glass); }
+.infra-popup .maplibregl-popup-close-button { color: var(--ink-2); }
+.infra-card { display: grid; gap: 4px; max-height: 260px; overflow-y: auto; }
+.infra-card-title { font-weight: 600; font-size: 14px; }
+.infra-card .rows td:first-child { color: var(--ink-2); padding-right: 10px; }
+.infra-card-row { padding-top: 2px; border-top: 1px solid var(--line); }
 
 /* ── the country panel ──────────────────────────────────────────────────────────────────────────────────── */
 .panel { top: 16px; right: 16px; bottom: 16px; width: 430px; display: flex; flex-direction: column;
