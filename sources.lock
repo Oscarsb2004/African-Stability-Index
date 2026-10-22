@@ -1,5 +1,8 @@
 {
  "file:data/baseline/01_raw_pull_BASELINE.xlsx": "790febdeb2607b303424b6d7e80fc2e3e99c847086080515c5cc53720cf0ed7b",
+ "https://api.imf.org/external/sdmx/3.0/data/dataflow/IMF.STA/PPI/+/*": "cce01010e7a3efe10e68bc34131e008ccea0fe3406164d5914206f95b1641974",
+ "https://api.imf.org/external/sdmx/3.0/structure/dataflow/IMF.STA/PPI/+?references=all": "47ccc3e8b9a335d530a060ef4495cf7d6959ecf1c447e04d49f7e18fd787c904",
+ "https://bulks-faostat.fao.org/production/Prices_E_All_Data_(Normalized).zip": "327f70a2230032d3966d6e9583ec5caf0e9416aa9fd91b444e02f6b8665c984d",
  "https://commons.wikimedia.org/w/api.php?action=query&format=json&list=categorymembers&cmtitle=Category%3AA%C3%AFt+Benhaddou&cmtype=file&cmlimit=20": "5ffa297f61cf7e97db202b4ce901dddca4cbd1a6d68644536abe07821b7fa15d",
  "https://commons.wikimedia.org/w/api.php?action=query&format=json&list=categorymembers&cmtitle=Category%3AAksum&cmtype=file&cmlimit=20": "03425791dd9655762e0144230a96268ffd496eef5e02a8fff95baff6a25710b1",
  "https://commons.wikimedia.org/w/api.php?action=query&format=json&list=categorymembers&cmtitle=Category%3ABlyde+River+Canyon&cmtype=file&cmlimit=20": "3d5275f37b183a59c0fab5ffff6b07c72b86f207500e195996c183f2d44c744c",

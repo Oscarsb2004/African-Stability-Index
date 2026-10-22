@@ -1,10 +1,10 @@
 """
 09_explore.py — the Data tab's files (P105): every series that covers enough of the member states, each in its own
-small file loaded only when chosen, the catalogue that lists them, the groups of states, each state's categories and
-neighbours, and each state's languages for the Wonders tab.
+small file loaded only when chosen (annual values only), the catalogue that lists them, the groups of states, each
+state's categories and neighbours, and each state's languages for the Wonders tab.
 
     python 09_explore.py wdi-2026-10-08 wgi-2026-09-25 hdr-2025 cpi-2025 weo-2026-10 ucdp-cy-26.1 \
-        wikidata-states-2026-10-20 glottolog-5.3
+        wikidata-states-2026-10-20 glottolog-5.3 ppi-2026-10 faostat-pp-2026-10-09
 
 It writes, under web/public/data/explore/:
     catalogue.json            every measure: id, label, unit, topic, states covered, years, source
@@ -59,9 +59,14 @@ SOURCES = {  # credit for each dataset the Data tab shows, as each publisher's t
     "glottolog": ("Hammarström, Forkel, Haspelmath & Bank (2026), Glottolog 5.3, Max Planck Institute for "
                   "Evolutionary Anthropology", "CC BY 4.0", "https://glottolog.org"),
     "ne": ("Natural Earth", "public domain", "https://www.naturalearthdata.com"),
+    "ppi": ("Source: International Monetary Fund, Producer Price Index (PPI) dataset", "IMF terms for data",
+            "https://data.imf.org"),
+    "faostat": ("FAO. 2026. FAOSTAT: Producer Prices. Accessed 2026-10-22. https://www.fao.org/faostat/en/#data/PP. "
+                "Licence: CC-BY-4.0", "CC BY 4.0", "https://www.fao.org/faostat/en/#data/PP"),
 }
 TOPICS = {"wgi": None, "hdr": "Human development (UNDP)", "cpi": "Corruption Perceptions Index",
-          "weo": "World Economic Outlook (IMF)", "ucdp": "Organised violence (UCDP)"}
+          "weo": "World Economic Outlook (IMF)", "ucdp": "Organised violence (UCDP)",
+          "ppi": "Producer prices (IMF)", "faostat": "Agricultural producer prices (FAO)"}
 BOUNDS = {"wgi": (r"\.SC$", "_LB", "_UB", "90%"), "cpi": (r"^cpi_score$", None, None, "90%")}
 UCDP_WORDS = {"sb": "State-based conflict", "ns": "Non-state conflict", "os": "One-sided violence",
               "best": "best estimate", "high": "high estimate", "low": "low estimate", "govt": "government",
@@ -108,14 +113,22 @@ def labels(name: str) -> dict[str, tuple[str, str, str]]:
         return {r["INDICATOR.ID"]: (r["INDICATOR"], " ".join(x for x in (r["SCALE"], r["UNIT"]) if x and x != "Units"),
                                     TOPICS[k])
                 for _, r in cb.iterrows()}
+    if k == "ppi":
+        cb = dataset.load(name, "codebook")
+        return {r["SERIES"]: (f'{r["INDICATOR_LABEL"]}: {r["TYPE_OF_TRANSFORMATION_LABEL"]}, {r["FREQUENCY_LABEL"]}',
+                              r["TYPE_OF_TRANSFORMATION_LABEL"], TOPICS[k]) for _, r in cb.iterrows()}
+    if k == "faostat":
+        cb = dataset.load(name, "codebook")
+        return {r["SERIES"]: (f'{r["Item"]}: {r["Element"]}', r["Unit"], TOPICS[k]) for _, r in cb.iterrows()}
     return {}
 
 
 def series_docs(name: str, values: pd.DataFrame) -> tuple[list[dict], dict[str, dict]]:
     """The catalogue entries and series files of one dataset: member states only, from FIRST_YEAR, with FLOOR."""
     k, names = key(name), labels(name)
-    v = values[values["REF_AREA"].isin(COUNTRIES) & values["OBS_VALUE"].notna()].copy()
-    v["year"] = v["TIME_PERIOD"].str[:4].astype(int)
+    v = values[values["REF_AREA"].isin(COUNTRIES) & values["OBS_VALUE"].notna()
+               & values["TIME_PERIOD"].str.fullmatch(r"\d{4}")].copy()  # annual values: one per year
+    v["year"] = v["TIME_PERIOD"].astype(int)
     v = v[v["year"] >= FIRST_YEAR]
     cover = v.groupby("SERIES")["REF_AREA"].nunique()
     kept = sorted(cover[cover >= FLOOR].index)
@@ -382,7 +395,7 @@ def main(argv: list[str]) -> int:
     if needed - set(names):
         raise SystemExit(f"name the {sorted(needed - set(names))} datasets too")
     entries, files = asi_docs()
-    for k in ("wdi", "wgi", "hdr", "cpi", "weo", "ucdp"):
+    for k in ("wdi", "wgi", "hdr", "cpi", "weo", "ucdp", "ppi", "faostat"):
         if k in names:
             e, f = series_docs(names[k], dataset.load(names[k]))
             entries += e

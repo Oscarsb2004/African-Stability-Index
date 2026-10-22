@@ -131,8 +131,10 @@ Built (2026-10-21):
 - **Cities.**
 - **The map layers (I2 to I4):** ports, mines and mineral facilities, deposits and exploration sites as points; railways, major roads and the electricity grid as vector tiles; a card for each point; each state's ports, facilities and kilometres of line in its panel (African-Stability-Index #3 and #4).
 - **The national figures from the WDI (I5, first part):** connection to services, power for industry, trade logistics and the resource economy, as athena-kit's section templates (v0.1.4).
+- **Producer prices (I5, second part; 2026-10-22):** the IMF's producer and wholesale price indices (its PPI dataflow, 12 and 9 member states) and FAO's agricultural producer price index (41), each figure with its year; FAO's 136 series covering 20 or more states are in the Data tab.
+- **Offshore features** count for the state whose waters hold them (the owner's ruling of 2026-10-21; Marine Regions' World EEZ v12).
 
-Waiting: the IMF's and FAOSTAT's producer prices (each needs its adapter), ILOSTAT's wages (the owner reads its terms), and AID (its publisher's answer and the owner's account).
+Waiting: ILOSTAT's wages (the owner reads its terms), and AID (its publisher's answer and the owner's account).
 
 ## The layers
 

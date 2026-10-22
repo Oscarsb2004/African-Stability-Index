@@ -16,7 +16,8 @@ spec.loader.exec_module(sections_stage)
 from athena import sections  # noqa: E402
 from asi.core.countries import COUNTRIES  # noqa: E402
 
-NAMES = ["wdi-2026-10-08", "wgi-2026-09-25", "hdr-2025", "cpi-2025", "weo-2026-10"]
+NAMES = ["wdi-2026-10-08", "wgi-2026-09-25", "hdr-2025", "cpi-2025", "weo-2026-10", "ppi-2026-10",
+         "faostat-pp-2026-10-09"]
 
 
 def test_every_template_measure_is_bound_or_explained():
@@ -24,7 +25,7 @@ def test_every_template_measure_is_bound_or_explained():
     templates, used = sections.resolve(b, NAMES)
     assert [t["id"] for t in templates] == b["sections"]
     assert used == {"wdi": "wdi-2026-10-08", "wgi": "wgi-2026-09-25", "hdr": "hdr-2025", "cpi": "cpi-2025",
-                    "weo": "weo-2026-10"}
+                    "weo": "weo-2026-10", "ppi": "ppi-2026-10", "faostat": "faostat-pp-2026-10-09"}
     # negative control: drop one bound measure and the binding no longer resolves
     broken = copy.deepcopy(b)
     del broken["measures"]["inflation"]
