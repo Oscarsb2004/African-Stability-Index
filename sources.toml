@@ -74,6 +74,25 @@ kind = "imf-weo"
 edition = "2026-10"
 terms = "https://www.imf.org/en/about/copyright-and-terms; read 2026-10-18; data may be downloaded, derived and published, citing 'Source: International Monetary Fund, World Economic Outlook database'; material transformations stated; commercial reuse needs permission"
 
+[imf-ppi]
+title = "IMF Producer Price Index (PPI) dataset, the whole dataflow (SDMX 3.0, SDMX-JSON)"
+url = "https://api.imf.org/external/sdmx/3.0/data/dataflow/IMF.STA/PPI/+/*"
+structure_url = "https://api.imf.org/external/sdmx/3.0/structure/dataflow/IMF.STA/PPI/+?references=all"
+kind = "imf-sdmx"
+dataflow = "PPI"
+edition = "2026-10"
+codelists = { INDICATOR = "CL_PPI_INDICATOR", TYPE_OF_TRANSFORMATION = "CL_PPI_TYPE_OF_TRANSFORMATION", FREQUENCY = "CL_FREQ" }
+terms = "https://www.imf.org/en/about/copyright-and-terms; read 2026-10-18; data may be downloaded, derived and published, citing 'Source: International Monetary Fund, Producer Price Index (PPI) dataset'; material transformations stated; commercial reuse needs permission; the whole dataflow is fetched once, as one document"
+
+[faostat-pp]
+title = "FAOSTAT Prices: Producer Prices, all data (normalized), bulk file updated 2026-10-09"
+url = "https://bulks-faostat.fao.org/production/Prices_E_All_Data_(Normalized).zip"
+area_codes_url = "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/v5.1.2/geojson/ne_50m_admin_0_countries.geojson"
+kind = "faostat-bulk"
+domain = "pp"
+edition = "2026-10-09"
+terms = "FAO Statistical Database Terms of Use; read 2026-10-18; CC BY 4.0 unless a dataset's metadata says otherwise (the domain's metadata, PP_e.pdf, read 2026-10-21, states no other licence); cite 'FAO. 2026. FAOSTAT: Producer Prices. Accessed <date>. https://www.fao.org/faostat/en/#data/PP. Licence: CC-BY-4.0'; never imply FAO's endorsement"
+
 [undp-hdr]
 title = "UNDP Human Development Report 2025, all composite indices, complete time series"
 url = "https://hdr.undp.org/sites/default/files/2025_HDR/HDR25_Composite_indices_complete_time_series.csv"

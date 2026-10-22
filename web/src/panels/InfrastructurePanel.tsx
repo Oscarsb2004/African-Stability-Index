@@ -14,7 +14,7 @@ interface Place { name: string; iso3: string; capital: boolean; population: numb
 const COMING = [
   ["Infrastructure projects (AID)", "waiting on AUDA-NEPAD's answer about republishing"],
   ["Pipelines and power stations", "waiting on the terms of their stated source; Global Energy Monitor next"],
-  ["Producer prices and wages", "the IMF's producer prices and FAOSTAT's, then ILOSTAT's wages once its terms are read"],
+  ["Wages", "ILOSTAT's minimum and median wages, once its terms are read"],
 ];
 
 let countries: Promise<CountriesDoc> | null = null;  // loaded once, for every state

@@ -7,7 +7,7 @@ sections = [
     "appraisals",                                                                      # stability
     "outlook", "output", "prices", "public_finances", "structure", "jobs",              # economy
     "monetary", "currency", "banks", "capital_markets", "sovereign", "capital_flows",   # finance
-    "services", "power", "logistics", "resources",                                      # infrastructure
+    "services", "power", "logistics", "resources", "producer_prices",                   # infrastructure
 ]
 
 [datasets.wdi]
@@ -33,6 +33,18 @@ publisher = "Transparency International"
 licence = "CC BY 4.0"
 attribution = "Corruption Perceptions Index (2025) by Transparency International is licensed under CC BY 4.0"
 link = "https://www.transparency.org/en/cpi/2025"
+
+[datasets.ppi]
+publisher = "International Monetary Fund"
+licence = "IMF terms for data: publish with the citation; commercial reuse needs the IMF's permission"
+attribution = "Source: International Monetary Fund, Producer Price Index (PPI) dataset"
+link = "https://data.imf.org"
+
+[datasets.faostat]
+publisher = "Food and Agriculture Organization of the United Nations"
+licence = "CC BY 4.0"
+attribution = "FAO. 2026. FAOSTAT: Producer Prices. Accessed 2026-10-22. https://www.fao.org/faostat/en/#data/PP. Licence: CC-BY-4.0"
+link = "https://www.fao.org/faostat/en/#data/PP"
 
 [datasets.weo]
 publisher = "International Monetary Fund"
@@ -151,6 +163,10 @@ gas = { dataset = "wdi", series = "NY.GDP.NGAS.RT.ZS" }
 coal = { dataset = "wdi", series = "NY.GDP.COAL.RT.ZS" }
 minerals = { dataset = "wdi", series = "NY.GDP.MINR.RT.ZS" }
 forests = { dataset = "wdi", series = "NY.GDP.FRST.RT.ZS" }
+# producer prices (P66): the IMF's annual change in producer and wholesale prices; FAO's agricultural index
+ppi_change = { dataset = "ppi", series = "PPI.YOY_PCH_PT.A" }
+wpi_change = { dataset = "ppi", series = "WPI.YOY_PCH_PT.A" }
+farm_prices = { dataset = "faostat", series = "2051.5539" }
 
 [unbound]
 government_debt = "WDI's central government debt covers 23 of the 54 states, the latest median 2019; IMF WEO general government debt comes with the WEO adapter"

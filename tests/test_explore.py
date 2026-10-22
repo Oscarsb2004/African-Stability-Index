@@ -55,6 +55,15 @@ def test_the_first_projected_year_is_marked(monkeypatch):
     assert "f" not in files["weo/H"]  # negative control: nothing projected, nothing marked
 
 
+def test_only_annual_periods_are_read(monkeypatch):
+    months = values("P", STATES[:explore.FLOOR]).assign(TIME_PERIOD=lambda f: f["TIME_PERIOD"] + "-M01")
+    entries, _ = run(months, name="faostat-pp-2026-10-09", monkeypatch=monkeypatch)
+    assert entries == []  # a monthly value never counts toward a year
+    entries, files = run(pd.concat([months, values("P", STATES[:explore.FLOOR])]), name="faostat-pp-2026-10-09",
+                         monkeypatch=monkeypatch)
+    assert files["faostat/P"]["y"] == [2005, 2006]  # negative control: the annual values of the same series are kept
+
+
 def test_a_publishers_interval_travels_with_its_score(monkeypatch):
     frame = pd.concat([values("GOV_WGI_CC.SC", STATES[:explore.FLOOR]),
                        values("GOV_WGI_CC.SC_LB", STATES[:explore.FLOOR]),
