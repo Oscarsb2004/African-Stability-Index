@@ -16,6 +16,21 @@ kind = "wb-africa-grid"
 edition = "2017-09-06"
 terms = "https://energydata.info/dataset/africa-electricity-transmission-and-distribution-grid-map-2017; read 2026-10-18; CC BY 4.0; World Bank Group (author C. Arderne); completeness varies widely by country, as the record says"
 
+[imf-portwatch]
+title = "IMF PortWatch: its ports and chokepoints, daily port calls and trade estimates, daily chokepoint transits (the four files it publishes for download)"
+url = "https://portwatch.imf.org/api/download/v1/items/{item}/csv?layers=0"
+items = { ports = "acc668d199d1472abaaf2467133d4ca4", chokepoints = "fa9a5800b0ee4855af8b2944ab1e07af", daily_ports = "83b1bbc7b3354c5fb1f40673bb8f852e", daily_chokepoints = "3da2b9ca97684916b75c4013f95d18ab" }
+kind = "imf-portwatch"
+edition = "2026-10-22"
+terms = "https://www.imf.org/en/about/copyright-and-terms (each item's licence field); read 2026-10-22; users 'may download, extract, copy, create derivative works, publish, distribute, and use Data', with attribution to the IMF; a material transformation is stated; commercial reuse needs permission; bulk download by automated technology needs explicit permission, so each published file is fetched once and the query service never; cite 'Sources: UN Global Platform; IMF PortWatch (portwatch.imf.org)'. As served on 2026-10-22: ports of 2026-09-22, chokepoints of 2026-05-13, daily ports of 2026-08-01 (to 2026-07-24), daily chokepoints of 2026-10-21 (to 2026-10-18)"
+
+[nga-wpi]
+title = "NGA, World Port Index (Pub 150), UpdatedPub150.csv"
+url = "https://msi.nga.mil/api/publications/download?type=view&key=16920959/SFH00000/UpdatedPub150.csv"
+kind = "nga-wpi"
+edition = "2026-10-22"
+terms = "https://www.nga.mil/resources/Privacy_Policy.html, linked from msi.nga.mil; read 2026-10-22; 'Information presented on this website is considered public information and may be distributed or copied unless otherwise specified'; a byline is requested; a U.S. Government work. Read for its keys only (World Port Index Number to UN/LOCODE), joining USGS's ports to PortWatch's; the file carries no date, so the edition is the day read"
+
 [wdi-bulk]
 title = "World Development Indicators, bulk download"
 url = "https://databank.worldbank.org/data/download/WDI_CSV.zip"

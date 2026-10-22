@@ -29,6 +29,12 @@ def problems(reg: dict) -> list[str]:
             summary = spec.get("summary", {"count": True})
             if kind == "points" and (len(summary) != 1 or next(iter(summary)) not in SUMMARIES):
                 out.append(f"points {who}: summary must be one of {SUMMARIES}")
+            if "activity" in spec and not spec.get("id_field"):
+                out.append(f"points {who}: activity needs an id_field")
+    activity = {s.get("id") for s in reg.get("points") or [] if "activity" in s}
+    for spec in reg.get("points") or []:
+        if "join" in spec and spec["join"].get("to") not in activity:
+            out.append(f"points {spec.get('id', '?')}: join must name a listed layer with activity")
     out += [f"{i}: listed twice" for i in sorted({i for i in ids if ids.count(i) > 1})]
     out += [f"withheld {w.get('layer', '?')}: no reason" for w in reg.get("withheld") or [] if not w.get("reason")]
     return out

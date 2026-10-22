@@ -46,4 +46,4 @@ typing_extensions==4.16.0
 tzdata==2026.4
 url-normalize==3.0.1
 urllib3==2.8.0
-athena-kit @ git+https://github.com/Oscarsb2004/athena-kit@v0.1.6
+athena-kit @ git+https://github.com/Oscarsb2004/athena-kit@v0.1.7

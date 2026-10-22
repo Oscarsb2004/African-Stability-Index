@@ -1,13 +1,14 @@
 """Which member state an infrastructure feature belongs to, by a stated rule (derived, P4).
 
-- A point is in the member state whose Natural Earth 1:50m polygon holds it. Outside every polygon, it is in the
-  member state whose waters hold it (an exclusive economic zone with a single sovereign, Marine Regions' World EEZ
-  v12; the owner's ruling of 2026-10-21 for offshore facilities), or else the nearest within `nearest_km` (a point
-  on land that the generalised polygons miss); otherwise in none, and counted as unplaced. A point in a zone two or
-  more states claim, or share in a joint regime, belongs to none of them, and is counted with the zone's name. This
-  says whose waters a point is in, not where any boundary lies in law. The distance is measured on the WGS84
-  ellipsoid: in an azimuthal equidistant projection centred on the point, where every distance from the centre is
-  true, to the polygon densified every DENSIFY degrees.
+- A point is in the member state whose Natural Earth 1:50m polygon holds it, and in none when another state's
+  polygon holds it. Outside every polygon, it is in the member state whose waters hold it (an exclusive economic zone
+  with a single sovereign, Marine Regions' World EEZ v12; the owner's ruling of 2026-10-21 for offshore facilities),
+  or else in the state whose land is nearest within `nearest_km` (a point on land that the generalised polygons
+  miss), when that state is a member; otherwise in none, and counted as unplaced. A point in a zone two or more
+  states claim, or share in a joint regime, belongs to none of them, and is counted with the zone's name. This says
+  whose waters a point is in, not where any boundary lies in law. The distance is measured on the WGS84 ellipsoid:
+  in an azimuthal equidistant projection centred on the point, where every distance from the centre is true, to the
+  polygon densified every DENSIFY degrees.
 - A line's length counts toward each state by the part inside its polygon, measured on the WGS84 ellipsoid.
 """
 
@@ -32,6 +33,14 @@ def member_polygons(ne_countries: dict) -> gpd.GeoDataFrame:
     """The member states' Natural Earth polygons, one row each (`iso3`, `geometry`; EPSG:4326)."""
     features = [{"type": "Feature", "properties": {"iso3": geography.code(f["properties"])}, "geometry": f["geometry"]}
                 for f in ne_countries["features"] if geography.code(f["properties"]) in COUNTRIES]
+    return gpd.GeoDataFrame.from_features(features, crs=4326).dissolve("iso3").reset_index()
+
+
+def other_polygons(ne_countries: dict) -> gpd.GeoDataFrame:
+    """Every other state's Natural Earth polygons, one row each: the land a point of a worldwide layer may be in."""
+    features = [{"type": "Feature", "properties": {"iso3": geography.code(f["properties"]) or f["properties"].get(
+        "ADM0_A3", "")}, "geometry": f["geometry"]}
+                for f in ne_countries["features"] if geography.code(f["properties"]) not in COUNTRIES]
     return gpd.GeoDataFrame.from_features(features, crs=4326).dissolve("iso3").reset_index()
 
 
@@ -62,33 +71,44 @@ class PlaceInStates(Component):
         polygons: gpd.GeoDataFrame  # `iso3` and `geometry`, EPSG:4326
         waters: gpd.GeoDataFrame | None = None  # member_waters(...); without it, only land and the nearest
         nearest_km: float = NEAREST_KM
+        others: gpd.GeoDataFrame | None = None  # other_polygons(...): another state's land holds a point, or is nearest
 
     @dataclass(frozen=True)
     class Output:
         iso3: pd.Series             # on the points' index; missing where no member state holds or is near it
-        how: pd.Series              # "land", "waters", "near", "shared waters: <zone>" or "none"
+        how: pd.Series              # "land", "waters", "near", "shared waters: <zone>", "another state: <iso3>"
+                                    # (its land holds the point, or is nearest) or "none"
 
     def run(self, inp: Input) -> Output:
         inside = gpd.sjoin(inp.points[["geometry"]], inp.polygons, how="left", predicate="within")["iso3"]
         inside = inside[~inside.index.duplicated()].astype(object)
         how = pd.Series(np.where(inside.isna(), "none", "land"), index=inside.index, dtype=object)
+        if inp.others is not None and inside.isna().any():
+            held = gpd.sjoin(inp.points.loc[inside.isna(), ["geometry"]], inp.others, how="inner", predicate="within")
+            for i, other in held[~held.index.duplicated()]["iso3"].items():
+                how.loc[i] = f"another state: {other}"
         if inp.waters is not None and inside.isna().any():
-            sea = gpd.sjoin(inp.points.loc[inside.isna(), ["geometry"]], inp.waters, how="inner", predicate="within")
+            sea = gpd.sjoin(inp.points.loc[inside.isna() & (how == "none"), ["geometry"]], inp.waters, how="inner",
+                            predicate="within")
             sea = sea[~sea.index.duplicated()]
             for i, zone in sea.iterrows():
                 if zone["shared"]:
                     how.loc[i] = f"shared waters: {zone['name']}"
                 elif zone["iso3"]:
                     inside.loc[i], how.loc[i] = zone["iso3"], "waters"
+        land = inp.polygons if inp.others is None else pd.concat([inp.polygons, inp.others], ignore_index=True)
+        members = set(inp.polygons["iso3"])
         for i in inside.index[inside.isna() & (how == "none")]:
-            inside.loc[i] = nearest_within(inp.points.geometry.loc[i], inp.polygons, inp.nearest_km)
-            if inside.loc[i] is not None:
-                how.loc[i] = "near"
+            nearest = nearest_within(inp.points.geometry.loc[i], land, inp.nearest_km)
+            if nearest in members:
+                inside.loc[i], how.loc[i] = nearest, "near"
+            elif nearest is not None:
+                how.loc[i] = f"another state: {nearest}"
         return self.Output(inside.reindex(inp.points.index), how.reindex(inp.points.index))
 
 
 def nearest_within(point, polygons: gpd.GeoDataFrame, km: float) -> str | None:
-    """The member state nearest to a point outside every polygon, if one is within `km` on the WGS84 ellipsoid."""
+    """The state nearest to a point outside every polygon, if one is within `km` on the WGS84 ellipsoid."""
     import shapely
     from pyproj import CRS, Transformer
     reach = km / (111.32 * np.cos(np.radians(min(abs(point.y), 80)))) * 1.5  # a box in degrees that holds `km`

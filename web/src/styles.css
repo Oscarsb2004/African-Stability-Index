@@ -80,6 +80,7 @@ a { color: var(--accent); }
 .swatch { display: inline-block; flex: none; }
 .swatch.dot { width: 9px; height: 9px; border-radius: 50%; box-shadow: 0 0 0 1px #f0efec; }
 .swatch.line { width: 16px; height: 3px; border-radius: 2px; }
+.swatch.ring { width: 11px; height: 11px; border-radius: 50%; border: 2px solid; box-sizing: border-box; }
 .infra-popup .maplibregl-popup-content { background: var(--glass); color: var(--ink); border: 1px solid var(--glass-edge);
   border-radius: 10px; padding: 10px 12px; backdrop-filter: blur(10px); }
 .infra-popup .maplibregl-popup-tip { border-top-color: var(--glass); border-bottom-color: var(--glass); }
