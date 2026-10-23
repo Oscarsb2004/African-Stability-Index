@@ -34,6 +34,7 @@ The rulings live in athena-data's Decisions (P-numbers); the sub-pages above hol
 | 2026-10-21 | The map's line layers start at zoom 3, as built (asked in #4) |
 | 2026-10-21 | The pillars explainer PDF stays in `edition-2`'s history for now; it is no longer in the branch |
 | 2026-10-22 | **Show all years** (asked in #7): a section's latest figure is shown with its year however old it is (Sudan's PPI change from 1975, Gabon's WPI change from 1966); no cutoff |
+| 2026-10-23 | **Africa only, and no new dimensions:** the ASI shows the 54 member states and their waters, and nothing outside them; the five dimensions are the set. A model of the world comes later, as its own project branched from this one ([ASI Project Plan](<../ASI 08 Status and Roadmap/ASI Project Plan.md>)) |
 
 ## Superseded plans
 
