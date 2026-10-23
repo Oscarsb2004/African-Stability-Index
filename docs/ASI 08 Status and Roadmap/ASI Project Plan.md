@@ -18,10 +18,16 @@ The owner, 2026-10-23: "keep this project limited to africa. We can branch this 
 
 ## The scope, from now on
 
+> [!note] Amended the same day (2026-10-23)
+> The owner added a sixth tab, "Spreading instability", with links between states, recent conflict events and
+> prediction-market prices; non-African states appear only as thin outlines and as the far end of a link into Africa.
+> The rulings are in [ASI 01 Goals and Rulings](<../ASI 01 Goals and Rulings/ASI 01 Goals and Rulings.md>); the
+> build is phase 4 below.
+
 1. **Africa only.**
-   - The site shows the 54 member states and their waters, and nothing outside them.
+   - The site shows the 54 member states and their waters. Other states appear only as thin outlines, and as the far end of a link into Africa (amended).
    - A source may still be ingested whole into the store (P38). PortWatch's worldwide ports are one example. What is shown is cut to Africa by a stated rule.
-2. **No new dimensions.** The set stays at five, with the Data tab beside them:
+2. **No new dimensions beyond six.** The five below, the Data tab, and "Spreading instability" (amended):
    - Stability (the index);
    - Economy;
    - Finance;
@@ -76,15 +82,26 @@ Per [Expert Consultation](<Expert Consultation.md>): one professional per dimens
 | 3.3 | A yearly refresh, written down: each source's next release and the command that ingests it, with its lock updated | Claude |
 | 3.4 | The finished project goes to athena-data's `Library/Projects`, segmented into pages (P107) | the Cleaners, by Athena's brief |
 
+### Phase 4: Spreading instability, links between states, and readers' own indices (added 2026-10-23)
+
+| # | Work | Size |
+| --- | --- | --- |
+| 4.1 | **Country names always shown** on the map; Western Sahara drawn as a non-member (its Natural Earth code is SAH) | small |
+| 4.2 | **Your own index:** a builder in the Stability popup (any indicator, a stated method, a name), kept in the reader's browser, under Stability › Custom indices | medium |
+| 4.3 | **UCDP's georeferenced events** in the store: GED 26.1 (1989–2025) and the Candidate Events of 2026, monthly | small |
+| 4.4 | **Links between states:** every other state as a thin outline; `registry/links.yaml`, each link cited and ruled on; a link's line and card shown when its state is clicked | medium |
+| 4.5 | **The "Spreading instability" tab:** theatres (the Sahel, Sudan, Ethiopia–Eritrea, Somalia, the eastern DRC, Libya, Mozambique, the Lake Chad basin), each with its events, monthly deaths, spread by a stated formula, and its links; Sudan's town-by-town control from Wikipedia's map where it can be read (CC BY-SA) | large |
+| 4.6 | **Prediction markets:** Polymarket's price where a market exists, Manifold's labelled as play money where it has none, terms read first | small |
+
 ## What is not added
 
-- **No dimension beyond the five.** Health, education, demography and the like are already indicators of a pillar, or measures in the Data tab.
-- **Nothing outside the 54 member states:**
-  - no worldwide layers;
-  - no non-member territory;
+- **No dimension beyond the six** (the five and "Spreading instability"). Health, education, demography and the like are already indicators of a pillar, or measures in the Data tab.
+- **Nothing outside the 54 member states but their links:**
+  - no worldwide layers other than the thin outlines;
+  - no panels or figures for non-members;
   - no comparison with other continents.
 - **No new indicator in the index,** unless a review asks for one and the owner rules for it.
-- **Step 10 part B (context)** is left for Athena, as its brief says. **Part C (recent events)** is skipped (P102).
+- **Step 10 part B (context)** is left for Athena, as its brief says. **Part C (recent events)** is skipped (P102), except UCDP's conflict events in the "Spreading instability" tab (amended 2026-10-23).
 - **The archived backlog** ([ASI Backlog](<ASI Backlog.md>), from edition 1) is not worked through. Edition 2's log supersedes it. An item a review raises again comes back as a new item.
 
 ## Waiting on others, with a decision point

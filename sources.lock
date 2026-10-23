@@ -167,6 +167,8 @@
  "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/v5.1.2/geojson/ne_10m_populated_places_simple.geojson": "fd3fa867a320cbd5c5b6bb5bc550afeec2939fb2cef688e508007282a55ac42f",
  "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/v5.1.2/geojson/ne_50m_admin_0_boundary_lines_land.geojson": "2faac4f6b34386f3d21b6e018cf151f241f00e5c936d44dd17d7d9bfb147fa48",
  "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/v5.1.2/geojson/ne_50m_admin_0_countries.geojson": "3e458fc036ad0a66411f2c1e6cac49c5d7bfb81cb1123bc513b22511a2b7fdeb",
+ "https://ucdp.uu.se/downloads/candidateged/GEDEvent_v26_01_26_09.csv": "134da9b3df08b65266802c4b662e572f396c70c92ab62297319be657540bcede",
+ "https://ucdp.uu.se/downloads/ged/ged261-csv.zip": "8c941d84954e555ee2e54f40fa04d9203bf1e2f962203d0a9930966c4947c667",
  "https://ucdp.uu.se/downloads/organizedviolencecy/organizedviolencecy-261-csv.zip": "66910888f5653af42776d2debc1d72fe527559e7f7fc82e69b7c8771467f2d34",
  "https://www.sciencebase.gov/catalog/file/get/607611a9d34e018b3201cbbf?f=__disk__30%2F8a%2Fb1%2F308ab140de2e0a1384172068209374d19ae4a65a": "bd00e2a1d8d0a6cbb37bb9179c6828170ae7bd37c1e6af40219b24404455be67"
 }
