@@ -64,7 +64,14 @@ def first_zooms(spec: dict, frame: pd.DataFrame) -> np.ndarray:
 
 class PointLayer(Component):
     """One point layer: its GeoJSON, and its catalogue entry with what was withheld, unplaced, placed by degrees, in
-    a member state's waters, or in waters two states share or claim."""
+    a member state's waters, or in waters two states share or claim.
+
+    The list may also say: `place: false` (the points belong to no state, as chokepoints); `only_placed: true` (a
+    worldwide layer keeps only the points in a member state, counting the rest); `publisher_iso3: <field>` (a point
+    counts for a member state only where its publisher names that state too; the others are listed, with both
+    states, and belong to none); `name` (the field that names a point,
+    FeatureNam by default); `labels` (each field's label, where the store has none); `id_field` (the field that
+    keys `extra`, the values the stage adds to a point, such as its activity)."""
 
     section = "06 Outputs and Site"
 
@@ -75,6 +82,8 @@ class PointLayer(Component):
         polygons: gpd.GeoDataFrame  # the member states
         labels: dict = field(default_factory=dict)
         waters: gpd.GeoDataFrame | None = None  # places.member_waters(...), for points at sea
+        extra: dict = field(default_factory=dict)  # a point's id -> properties added to it
+        others: gpd.GeoDataFrame | None = None  # places.other_polygons(...), every other state's land
 
     @dataclass(frozen=True)
     class Output:
@@ -98,9 +107,23 @@ class PointLayer(Component):
         for column, word in spec.get("withhold_where", {}).items():
             withheld |= frame[column].fillna("").astype(str).str.contains(word, case=False)
         kept = frame[~withheld].copy()
-        placed = self.place.run(PlaceInStates.Input(kept, inp.polygons, inp.waters))
-        kept["iso3"] = placed.iso3
-        shared = placed.how[placed.how.str.startswith("shared waters: ")].str.removeprefix("shared waters: ")
+        if spec.get("place", True):
+            placed = self.place.run(PlaceInStates.Input(kept, inp.polygons, inp.waters, others=inp.others))
+            kept["iso3"], how = placed.iso3, placed.how
+        else:
+            kept["iso3"], how = None, pd.Series("none", index=kept.index)
+        differs = None
+        if "publisher_iso3" in spec:   # a point counts for a member state only where its publisher names it too
+            pub = spec["publisher_iso3"]
+            other = kept["iso3"].notna() & (kept["iso3"] != kept[pub])
+            differs = [f"{r[spec.get('name', 'FeatureNam')]}: {r[pub]} by the publisher, {r['iso3']} by the rule"
+                       for _, r in kept[other].iterrows()]
+            kept.loc[other, "iso3"] = None
+        outside = None
+        if spec.get("only_placed"):
+            outside = int(kept["iso3"].isna().sum())
+            kept, how = kept[kept["iso3"].notna()], how[kept["iso3"].notna()]
+        shared = how[how.str.startswith("shared waters: ")].str.removeprefix("shared waters: ")
         if "group_by" in spec:
             features = []
             for uid, rows in kept.groupby(spec["group_by"], sort=True):
@@ -108,19 +131,27 @@ class PointLayer(Component):
                 props = {f: first[f] for f in spec["port_fields"]} | {"id": uid, "iso3": first["iso3"],
                          "rows": [{f: r[f] for f in spec["row_fields"] if r[f] is not None and r[f] == r[f]}
                                   for _, r in rows.iterrows()]}
-                features.append(feature(first.geometry, props))
+                features.append(feature(first.geometry, props | inp.extra.get(uid, {})))
             fields = spec["port_fields"] + spec["row_fields"]
         else:
             fields = spec["fields"]
-            features = [feature(r.geometry, {f: r[f] for f in fields} | {"iso3": r["iso3"]}) for _, r in kept.iterrows()]
+            key = spec.get("id_field")
+            features = [feature(r.geometry, {f: r[f] for f in fields} | {"iso3": r["iso3"]}
+                                | (inp.extra.get(r[key], {}) if key else {})) for _, r in kept.iterrows()]
+        labels = inp.labels | spec.get("labels", {})
         entry = {"id": spec["id"], "title": spec["title"], "kind": "points", "file": f"{spec['id']}.json",
                  "count": len(features), "rows": len(kept) if "group_by" in spec else None,
+                 "name": spec.get("name", "FeatureNam"),
                  "withheld": int(withheld.sum()), "withheld_reason": "stated source names SNL, a commercial database"
-                 if withheld.any() else None, "unplaced": int(kept["iso3"].isna().sum()),
+                 if withheld.any() else None,
+                 "unplaced": int(kept["iso3"].isna().sum()) if spec.get("place", True) else None,
+                 "outside_member_states": outside, "placed_otherwise_than_publisher": differs,
                  "placed_by_degrees": by_degrees or None,
-                 "placed_in_waters": int((placed.how == "waters").sum()) or None,
+                 "placed_in_waters": int((how == "waters").sum()) or None,
                  "in_shared_waters": {k: int(v) for k, v in sorted(shared.value_counts().items())} or None,
-                 "fields": [{"name": f, "label": inp.labels.get(f, f)} for f in fields],
+                 "fields": [{"name": f, "label": labels.get(f, f)} for f in fields],
+                 "activity": [{"name": c, "label": label} for c, label in spec["activity"]["columns"].items()]
+                 if "activity" in spec else None,
                  **{k: spec[k] for k in SHOWN}}
         return self.Output({"type": "FeatureCollection", "features": features},
                            {k: v for k, v in entry.items() if v is not None})
@@ -196,7 +227,8 @@ class CountrySummary(Component):
                 if "each" in rule:   # one entry per feature: some of its properties, and values from its rows
                     each = rule["each"]
                     item = {k: p.get(v) for k, v in each["fields"].items()}
-                    item |= {k: sorted({r.get(v) for r in p["rows"] if r.get(v)}) for k, v in each["from_rows"].items()}
+                    item |= {k: sorted({r.get(v) for r in p["rows"] if r.get(v)})
+                             for k, v in each.get("from_rows", {}).items()}
                     s.setdefault(spec["id"], []).append(item)
                 elif "count_by" in rule:
                     s.setdefault(spec["id"], Counter())[p.get(rule["count_by"]) or "unspecified"] += 1

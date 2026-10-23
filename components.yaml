@@ -735,6 +735,22 @@ components:
   tests: []
   depends_on: []
   drafted: true
+- id: 10_infrastructure.daily
+  section: 06 Outputs and Site
+  entry: 10_infrastructure.py:daily
+  form: legacy
+  purpose: A daily table from the store, only the columns used (PortWatch's daily ports are 600 MB of CSV).
+  inputs:
+  - 'root: Path'
+  - 'name: str'
+  - 'table: str'
+  - 'key: str'
+  - 'columns: list[str]'
+  outputs:
+  - pd.DataFrame
+  tests: []
+  depends_on: []
+  drafted: true
 - id: 10_infrastructure.main
   section: 06 Outputs and Site
   entry: 10_infrastructure.py:main
@@ -746,12 +762,15 @@ components:
   - int
   tests: []
   depends_on:
+  - asi.infrastructure.activity.YearlySums
   - asi.infrastructure.layers.CountrySummary
   - asi.infrastructure.layers.LineLayer
   - asi.infrastructure.layers.PointLayer
   - asi.infrastructure.layers.labels_for
   - asi.infrastructure.places.member_polygons
   - asi.infrastructure.places.member_waters
+  - asi.infrastructure.places.other_polygons
+  - asi.infrastructure.ports.PortLinks
   - asi.infrastructure.tiles.VectorTiles
   - asi.sources.fetcher
   - asi.sources.sources
@@ -1175,6 +1194,31 @@ components:
   tests: []
   depends_on: []
   drafted: true
+- id: asi.infrastructure.activity.number
+  section: 06 Outputs and Site
+  entry: asi/infrastructure/activity.py:number
+  form: legacy
+  purpose: A sum as an integer where it is whole (calls, tons), otherwise as it is.
+  inputs:
+  - v
+  outputs:
+  - int | float
+  tests: []
+  depends_on: []
+  drafted: true
+- id: asi.infrastructure.activity.YearlySums
+  section: 06 Outputs and Site
+  entry: asi/infrastructure/activity.py:YearlySums
+  form: component
+  purpose: Each id's sums over its complete calendar years, for the named columns.
+  inputs:
+  - 'inp: Input'
+  outputs:
+  - Output
+  tests:
+  - tests/test_infrastructure.py::test_activity_sums_only_complete_calendar_years
+  depends_on: []
+  drafted: true
 - id: asi.infrastructure.layers.clean
   section: 06 Outputs and Site
   entry: asi/infrastructure/layers.py:clean
@@ -1279,6 +1323,18 @@ components:
   tests: []
   depends_on: []
   drafted: true
+- id: asi.infrastructure.places.other_polygons
+  section: 06 Outputs and Site
+  entry: asi/infrastructure/places.py:other_polygons
+  form: legacy
+  purpose: 'Every other state''s Natural Earth polygons, one row each: the land a point of a worldwide layer may be in.'
+  inputs:
+  - 'ne_countries: dict'
+  outputs:
+  - gpd.GeoDataFrame
+  tests: []
+  depends_on: []
+  drafted: true
 - id: asi.infrastructure.places.member_waters
   section: 06 Outputs and Site
   entry: asi/infrastructure/places.py:member_waters
@@ -1309,7 +1365,7 @@ components:
   section: 06 Outputs and Site
   entry: asi/infrastructure/places.py:nearest_within
   form: legacy
-  purpose: The member state nearest to a point outside every polygon, if one is within `km` on the WGS84 ellipsoid.
+  purpose: The state nearest to a point outside every polygon, if one is within `km` on the WGS84 ellipsoid.
   inputs:
   - point
   - 'polygons: gpd.GeoDataFrame'
@@ -1330,6 +1386,19 @@ components:
   - Output
   tests:
   - tests/test_infrastructure.py::test_a_lines_length_counts_toward_each_state_by_the_part_inside_it
+  depends_on: []
+  drafted: true
+- id: asi.infrastructure.ports.PortLinks
+  section: 06 Outputs and Site
+  entry: asi/infrastructure/ports.py:PortLinks
+  form: component
+  purpose: USGS port -> PortWatch port, through the World Port Index, with a count of where each unlinked port stops.
+  inputs:
+  - 'inp: Input'
+  outputs:
+  - Output
+  tests:
+  - tests/test_infrastructure.py::test_a_usgs_port_is_linked_to_portwatch_only_by_published_keys
   depends_on: []
   drafted: true
 - id: asi.infrastructure.registry.problems
@@ -2091,9 +2160,9 @@ components:
   tests:
   - tests/test_explore.py::test_a_publishers_interval_travels_with_its_score
   - tests/test_explore.py::test_a_series_needs_the_floor_of_states_since_2000
+  - tests/test_explore.py::test_only_annual_periods_are_read
   - tests/test_explore.py::test_states_outside_the_index_never_enter
   - tests/test_explore.py::test_the_first_projected_year_is_marked
-  - tests/test_infrastructure.py::test_a_line_layer_keeps_the_lines_under_another_licence_in_their_own_archive
   depends_on: []
   drafted: true
 - id: verify.narrative.record
@@ -2169,9 +2238,9 @@ components:
   tests:
   - tests/test_explore.py::test_a_publishers_interval_travels_with_its_score
   - tests/test_explore.py::test_a_series_needs_the_floor_of_states_since_2000
+  - tests/test_explore.py::test_only_annual_periods_are_read
   - tests/test_explore.py::test_states_outside_the_index_never_enter
   - tests/test_explore.py::test_the_first_projected_year_is_marked
-  - tests/test_infrastructure.py::test_a_line_layer_keeps_the_lines_under_another_licence_in_their_own_archive
   depends_on: []
   drafted: true
 - id: verify.panel.record
@@ -2452,9 +2521,9 @@ components:
   tests:
   - tests/test_explore.py::test_a_publishers_interval_travels_with_its_score
   - tests/test_explore.py::test_a_series_needs_the_floor_of_states_since_2000
+  - tests/test_explore.py::test_only_annual_periods_are_read
   - tests/test_explore.py::test_states_outside_the_index_never_enter
   - tests/test_explore.py::test_the_first_projected_year_is_marked
-  - tests/test_infrastructure.py::test_a_line_layer_keeps_the_lines_under_another_licence_in_their_own_archive
   depends_on: []
   drafted: true
 - id: verify.rebuild.run
@@ -2469,9 +2538,9 @@ components:
   tests:
   - tests/test_explore.py::test_a_publishers_interval_travels_with_its_score
   - tests/test_explore.py::test_a_series_needs_the_floor_of_states_since_2000
+  - tests/test_explore.py::test_only_annual_periods_are_read
   - tests/test_explore.py::test_states_outside_the_index_never_enter
   - tests/test_explore.py::test_the_first_projected_year_is_marked
-  - tests/test_infrastructure.py::test_a_line_layer_keeps_the_lines_under_another_licence_in_their_own_archive
   depends_on: []
   drafted: true
 - id: verify.run.run_layer

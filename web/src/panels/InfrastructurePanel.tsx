@@ -1,6 +1,6 @@
 // Infrastructure: the country's national figures first (the infrastructure dimension's sections, P66), then what
-// the map shows of it: its ports and what they export, its mines and mineral facilities, the railways, roads and
-// power lines inside it, and its cities. The map figures are the stage's (10_infrastructure.py); which state a
+// the map shows of it: its ports' activity (PortWatch), its ports and what they export, its mines and mineral
+// facilities, the railways, roads and power lines inside it, and its cities. The map figures are the stage's (10_infrastructure.py); which state a
 // feature belongs to is derived by the stated rule, and each block names its source.
 
 import { useEffect, useState } from "react";
@@ -18,6 +18,9 @@ const COMING = [
 ];
 
 let countries: Promise<CountriesDoc> | null = null;  // loaded once, for every state
+
+// a share as PortWatch publishes it, in percent to two decimals
+const share = (v?: number) => v === undefined ? "" : `${v.toLocaleString("en", { maximumFractionDigits: 2 })}%`;
 
 interface Props {
   iso3: string;
@@ -61,6 +64,29 @@ export default function InfrastructurePanel({ iso3, infra, doc: sections, onComp
 
       {c && (
         <>
+          <h3>Port activity</h3>
+          {c.portwatch?.length ? (
+            <table className="rows">
+              <thead><tr><th>Port</th><th className="num">Ships a year</th><th className="num">Imports</th>
+                <th className="num">Exports</th></tr></thead>
+              <tbody>
+                {[...c.portwatch].sort((x, y) => (y.vessels ?? 0) - (x.vessels ?? 0)).map((p, i) => (
+                  <tr key={`${p.name}-${i}`}>
+                    <td>{p.name ?? "Unnamed"}</td>
+                    <td className="num">{p.vessels === undefined ? "" : p.vessels.toLocaleString("en")}</td>
+                    <td className="num">{share(p.imports)}</td>
+                    <td className="num">{share(p.exports)}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          ) : <p className="muted small">PortWatch tracks no seaport here.</p>}
+          <p className="muted small">
+            Ships calling per year (average, 2019–2025) and each port's share of the country's maritime imports and
+            exports, as PortWatch estimates them from ships' AIS signals; a port's card on the map gives each complete
+            year. {source("portwatch")}
+          </p>
+
           <h3>Ports and export hubs</h3>
           {c.ports?.length ? (
             <table className="rows">

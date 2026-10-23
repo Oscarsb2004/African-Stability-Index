@@ -7,7 +7,7 @@ import maplibregl, { type ExpressionSpecification, type GeoJSONSource, type MapG
 import "maplibre-gl/dist/maplibre-gl.css";
 import { Protocol } from "pmtiles";
 import { asset, people, rampColour, type MetaDoc, type Section, type StabilityDoc, type Wonder } from "./data";
-import { cardRows, COLOURS, parsed, RING, type LayersDoc } from "./infra";
+import { activityRows, cardRows, COLOURS, EDGE, parsed, RING, SHAPES, type Activity, type LayersDoc } from "./infra";
 
 // The Infrastructure section's line layers are PMTiles archives, read by range requests from the site's own files
 // (pmtiles, BSD-3-Clause, its licence read in protomaps/PMTiles on 2026-10-21).
@@ -315,11 +315,20 @@ export default function MapView({ meta, stability, section, selected, showClasse
       for (const p of infra.points) {
         m.addSource(`infra-${p.id}`, { type: "geojson", data: asset(`geo/infra/${p.file}`),
           attribution: `<a href="${p.link}" target="_blank" rel="noreferrer">${p.attribution}</a>` });
+        const s = SHAPES[p.id];
+        // a ring is sized by the ships calling per year (PortWatch's yearly average), so a USGS port's dot sits inside
+        const ships: ExpressionSpecification = ["sqrt", ["coalesce", ["get", "vessel_count_total"], 0]];
         m.addLayer({
           id: `infra-pt-${p.id}`, type: "circle", source: `infra-${p.id}`, layout: { visibility: "none" },
-          paint: {
-            "circle-color": COLOURS[p.id] ?? RING, "circle-stroke-color": RING, "circle-stroke-width": 1,
-            "circle-radius": ["interpolate", ["linear"], ["zoom"], 3, p.id === "ports" ? 4 : 2.5, 9, p.id === "ports" ? 8 : 6],
+          paint: s?.shape === "ring" ? {
+            "circle-color": s.colour, "circle-opacity": 0, "circle-stroke-color": s.colour, "circle-stroke-width": 2,
+            "circle-radius": ["interpolate", ["linear"], ["zoom"], 3, ["+", 4, ["*", 0.08, ships]],
+              9, ["+", 9, ["*", 0.16, ships]]],
+          } : {
+            "circle-color": s?.colour ?? COLOURS[p.id] ?? RING, "circle-stroke-color": s ? EDGE : RING,
+            "circle-stroke-width": s ? 1.5 : 1,
+            "circle-radius": ["interpolate", ["linear"], ["zoom"], 3, s ? 5 : p.id === "ports" ? 4 : 2.5,
+              9, s ? 9 : p.id === "ports" ? 8 : 6],
           },
         });
         m.on("mouseenter", `infra-pt-${p.id}`, () => { m.getCanvas().style.cursor = "pointer"; });
@@ -391,18 +400,43 @@ function card(info: LayersDoc["points"][number], props: Record<string, unknown>)
     return n;
   };
   add("div", info.title, "panel-kicker");
-  add("div", String(props.FeatureNam ?? info.title), "infra-card-title");
+  const name = info.name ?? "FeatureNam";
+  add("div", String(props[name] ?? info.title), "infra-card-title");
   const rows = Array.isArray(props.rows) ? props.rows as Record<string, unknown>[] : [];
   const perRow = info.fields.filter((f) => rows.some((r) => f.name in r));
   const table = document.createElement("table");
   table.className = "rows";
-  for (const [label, value] of cardRows(props, info.fields.filter((f) => f.name !== "FeatureNam" && !perRow.includes(f)))) {
+  for (const [label, value] of cardRows(props, info.fields.filter((f) => f.name !== name && !perRow.includes(f)))) {
     const tr = table.insertRow();
     tr.insertCell().textContent = label;
     tr.insertCell().textContent = value;
   }
   el.append(table);
   for (const r of rows) add("div", cardRows(r, perRow).map(([l, v]) => `${l}: ${v}`).join(" · "), "small infra-card-row");
+  if (typeof props.portwatch_name === "string") {
+    add("div", `The same port in PortWatch: ${props.portwatch_name} (by its World Port Index ID and UN/LOCODE)`,
+      "small infra-card-row");
+  }
+  const activity = props.activity as Activity | undefined;
+  if (activity?.years?.length && info.activity?.length) {
+    add("div", "Each complete year, derived: the sum of PortWatch's daily figures (t: metric tons, as PortWatch " +
+      "estimates them). Sources: UN Global Platform; IMF PortWatch.", "small muted infra-card-row");
+    const t = document.createElement("table");
+    t.className = "rows";
+    const head = t.createTHead().insertRow();
+    ["Year", ...info.activity.map((c) => c.label)].forEach((h, i) => {
+      const th = document.createElement("th");
+      th.textContent = h;
+      if (i) th.className = "num";
+      head.append(th);
+    });
+    const body = t.createTBody();
+    for (const row of activityRows(activity, info.activity)) {
+      const tr = body.insertRow();
+      row.forEach((v, i) => { const td = tr.insertCell(); td.textContent = v; if (i) td.className = "num"; });
+    }
+    el.append(t);
+  }
   const source = add("div", "", "muted small");
   const link = document.createElement("a");
   link.href = info.link;

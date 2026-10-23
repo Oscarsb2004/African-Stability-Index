@@ -15,7 +15,7 @@ import InfrastructurePanel from "./panels/InfrastructurePanel";
 import StabilityPanel from "./panels/StabilityPanel";
 import { load, RAMP, type MetaDoc, type Section, type SectionsDoc, type StabilityDoc, type Wonder,
   type WondersDoc } from "./data";
-import { COLOURS, SHOWN_FIRST, type LayersDoc } from "./infra";
+import { COLOURS, EDGE, SHAPES, SHOWN_FIRST, type LayersDoc } from "./infra";
 
 const SECTIONS: { id: Section; label: string }[] = [
   { id: "stability", label: "Stability" },
@@ -165,7 +165,10 @@ export default function App() {
           {[...infra.points, ...infra.lines].map((l) => (
             <label key={l.id} className="infra-toggle" title={`${l.note} ${l.attribution}, ${l.licence}.`}>
               <input type="checkbox" checked={infraOn.includes(l.id)} onChange={() => toggle(l.id)} />
-              <span className={l.kind === "points" ? "swatch dot" : "swatch line"} style={{ background: COLOURS[l.id] }} />
+              <span className={l.kind === "points" ? `swatch ${SHAPES[l.id]?.shape ?? "dot"}` : "swatch line"}
+                style={SHAPES[l.id]?.shape === "ring" ? { borderColor: SHAPES[l.id].colour }
+                  : SHAPES[l.id] ? { background: SHAPES[l.id].colour, boxShadow: `0 0 0 1px ${EDGE}` }
+                  : { background: COLOURS[l.id] }} />
               {l.title} <span className="muted small">{l.count.toLocaleString("en")}</span>
             </label>
           ))}

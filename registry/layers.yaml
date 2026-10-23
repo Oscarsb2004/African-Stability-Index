@@ -15,7 +15,50 @@ osm: &osm
   link: "https://www.openstreetmap.org/copyright"
   licence: "ODbL 1.0 (share-alike: the derived tiles are published under ODbL)"
 
+portwatch: &portwatch
+  dataset: portwatch-2026-10-22
+  name: portname
+  id_field: portid
+  attribution: "Sources: UN Global Platform; IMF PortWatch (portwatch.imf.org)"
+  link: "https://portwatch.imf.org"
+  licence: "IMF terms for data: published with the citation; commercial reuse needs the IMF's permission"
+
 points:
+  # PortWatch's layers come first, so the USGS ports draw over them (the stage writes the layers in this order)
+  - id: chokepoints
+    title: Chokepoints
+    layer: chokepoints
+    place: false                  # straits and canals belong to no one state here
+    fields: [portname, vessel_count_total, vessel_count_container, vessel_count_dry_bulk, vessel_count_general_cargo,
+             vessel_count_RoRo, vessel_count_tanker, industry_top1, industry_top2, industry_top3]
+    labels: {portname: Chokepoint, vessel_count_total: "Ships passing per year, all types (average, 2019–2024)",
+             vessel_count_container: "Container ships per year (average)", vessel_count_dry_bulk: "Dry bulk carriers per year (average)",
+             vessel_count_general_cargo: "General cargo ships per year (average)", vessel_count_RoRo: "Ro-ro ships per year (average)",
+             vessel_count_tanker: "Tankers per year (average)", industry_top1: "Main industry carried (estimated)",
+             industry_top2: "Second industry", industry_top3: "Third industry"}
+    activity: {table: daily_chokepoints, columns: {n_total: Transits, capacity: "Trade volume, t"}}
+    note: "The 28 chokepoints PortWatch tracks worldwide from ships' AIS signals: the ships passing each year by type and the industries carried. Estimates, not official statistics."
+    <<: *portwatch
+  - id: portwatch
+    title: Port activity
+    layer: ports
+    only_placed: true             # PortWatch covers the world; only the ports in a member state are shown
+    publisher_iso3: ISO3          # the ports the rule places in another state than PortWatch names are listed
+    fields: [portname, country, LOCODE, vessel_count_total, vessel_count_container, vessel_count_dry_bulk,
+             vessel_count_general_cargo, vessel_count_RoRo, vessel_count_tanker, industry_top1, industry_top2,
+             industry_top3, share_country_maritime_import, share_country_maritime_export]
+    labels: {portname: Port, country: "Country (as PortWatch names it)", LOCODE: UN/LOCODE,
+             vessel_count_total: "Ships calling per year, all types (average, 2019–2025)",
+             vessel_count_container: "Container ships per year (average)", vessel_count_dry_bulk: "Dry bulk carriers per year (average)",
+             vessel_count_general_cargo: "General cargo ships per year (average)", vessel_count_RoRo: "Ro-ro ships per year (average)",
+             vessel_count_tanker: "Tankers per year (average)", industry_top1: "Main industry traded (estimated)",
+             industry_top2: "Second industry", industry_top3: "Third industry",
+             share_country_maritime_import: "Share of the country's maritime imports, % (2019–2025)",
+             share_country_maritime_export: "Share of the country's maritime exports, % (2019–2025)"}
+    activity: {table: daily_ports, columns: {portcalls: Port calls, import: "Imports, t", export: "Exports, t"}}
+    summary: {each: {fields: {name: portname, imports: share_country_maritime_import, exports: share_country_maritime_export, vessels: vessel_count_total}}}
+    note: "Ports as PortWatch tracks them from ships' AIS signals: the ships calling each year by type, the industries traded and each port's share of the country's maritime trade. Estimates, not official statistics; a ring's size follows the ships calling per year."
+    <<: *portwatch
   - id: ports
     title: Ports and export hubs
     dataset: usgs-africa-gis-2021
@@ -24,6 +67,9 @@ points:
     port_fields: [FeatureNam, NameVar, FeatureTyp, Country, OperateNam, OwnerName, Website, DsgAttr10, LocConfid]
     row_fields: [DsgAttr03, DsgAttr04, DsgAttr05, DsgAttr06, DsgAttr07, DsgAttr08, DsgAttr09, InfSource1]
     summary: {each: {fields: {name: FeatureNam, type: FeatureTyp}, from_rows: {exports: DsgAttr03}}}   # each port, with what it exports
+    # the same port in PortWatch, by published keys only: USGS's WPI ID, NGA's World Port Index (index number to
+    # UN/LOCODE), PortWatch's LOCODE; never by name or distance (asi.infrastructure.ports)
+    join: {to: portwatch, key: DsgAttr10, index: wpi-2026-10-22}
     note: "Ports that export minerals or fuels, with each commodity's form, capacity, source and destination as USGS records them; port data mostly from the NGA World Port Index (public domain)."
     <<: *usgs
   - id: facilities

@@ -7,8 +7,11 @@ export interface Field { name: string; label: string }
 interface Credit { note: string; licence: string; attribution: string; link: string }
 
 export interface PointLayerInfo extends Credit {
-  id: string; title: string; kind: "points"; file: string; count: number; rows?: number;
-  withheld?: number; withheld_reason?: string; unplaced: number; placed_by_degrees?: number; fields: Field[];
+  id: string; title: string; kind: "points"; file: string; count: number; rows?: number; name: string;
+  withheld?: number; withheld_reason?: string; unplaced?: number; placed_by_degrees?: number; fields: Field[];
+  activity?: Field[];                       // the columns of a point's complete years, under their labels
+  outside_member_states?: number; placed_otherwise_than_publisher?: string[];
+  linked_to_portwatch?: Record<string, number>;
 }
 
 export interface LineLayerInfo extends Credit {
@@ -22,13 +25,21 @@ export interface LayersDoc {
   lines: LineLayerInfo[];
   archives: Record<string, Archive>;
   withheld: { layer: string; reason: string }[];
-  rules: { place: string; nearest_km: number; zooms: [number, number] };
+  rules: { place: string; nearest_km: number; zooms: [number, number]; activity: string; join: string };
 }
 
 export interface Port { name: string | null; type: string | null; exports: string[] }
 
+// a PortWatch port in the panel: its shares of the country's maritime trade (%) and ships calling per year, as
+// PortWatch publishes them
+export interface PortActivity { name: string | null; imports?: number; exports?: number; vessels?: number }
+
+// a point's complete calendar years: the years, and each column's sums (derived by the stage, labelled as such)
+export type Activity = { years: number[] } & Record<string, number[]>;
+
 export interface CountryInfra {
   ports?: Port[];
+  portwatch?: PortActivity[];
   facilities?: Record<string, number>;
   deposits?: number;
   exploration?: number;
@@ -46,10 +57,28 @@ export const COLOURS: Record<string, string> = {
 };
 export const RING = "#f0efec";
 
+// Two more point layers are told apart by shape, not by a hue of their own: six point hues fail validate_palette.js
+// on every pair (2026-10-22), so PortWatch's ports are rings in the ports' blue, sized by the ships calling per
+// year, and the chokepoints are light dots edged dark.
+export const SHAPES: Record<string, { shape: "ring" | "dot"; colour: string }> = {
+  portwatch: { shape: "ring", colour: COLOURS.ports },
+  chokepoints: { shape: "dot", colour: RING },
+};
+export const EDGE = "#1a1a19";
+
 // shown when the section opens; deposits and exploration sites are dense, so they wait for a click
-export const SHOWN_FIRST = ["ports", "facilities", "rail", "roads", "grid"];
+export const SHOWN_FIRST = ["chokepoints", "portwatch", "ports", "facilities", "rail", "roads", "grid"];
 
 const KM = new Intl.NumberFormat("en", { maximumFractionDigits: 0 });
+const WHOLE = new Intl.NumberFormat("en", { maximumFractionDigits: 0 });
+
+// a point's complete years as table rows, newest first: the year, then each column's sum, as whole numbers
+export function activityRows(activity: Activity, columns: Field[]): string[][] {
+  return activity.years.map((y, i) => [String(y), ...columns.map((c) => {
+    const v = activity[c.name]?.[i];
+    return v === undefined || v === null ? "" : WHOLE.format(v);
+  })]).reverse();
+}
 
 export function km(v: number): string {
   return `${KM.format(v)} km`;

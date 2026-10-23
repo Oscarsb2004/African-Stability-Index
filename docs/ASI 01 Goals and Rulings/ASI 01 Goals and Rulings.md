@@ -33,6 +33,7 @@ The rulings live in athena-data's Decisions (P-numbers); the sub-pages above hol
 | 2026-10-21 | **Offshore facilities count for the state whose waters they are in** (asked in #3): at sea, a point belongs to the member state whose exclusive economic zone holds it (Marine Regions' World EEZ v12), and to none where states claim or share the waters |
 | 2026-10-21 | The map's line layers start at zoom 3, as built (asked in #4) |
 | 2026-10-21 | The pillars explainer PDF stays in `edition-2`'s history for now; it is no longer in the branch |
+| 2026-10-22 | **Show all years** (asked in #7): a section's latest figure is shown with its year however old it is (Sudan's PPI change from 1975, Gabon's WPI change from 1966); no cutoff |
 
 ## Superseded plans
 
