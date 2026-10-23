@@ -28,6 +28,8 @@ interface Props {
   infraOn?: string[];  // the layers switched on
   cities?: boolean;  // cities and towns are drawn only when switched on
   names?: Record<string, string>;  // each member state's name, for a city's tooltip
+  stabilityColours?: Record<string, string> | null;  // the Stability map's measure, a colour per state
+  only?: string[] | null;  // a grouping: only its members are coloured
 }
 
 interface Place {
@@ -48,7 +50,8 @@ const ESRI = "https://static-map-tiles-api.arcgis.com/arcgis/rest/services/stati
 const ESRI_KEY = import.meta.env.VITE_ESRI_KEY as string | undefined;
 
 export default function MapView({ meta, stability, section, selected, showClasses, choropleth, marked = [], onSelect,
-  wonders, onWonder, infra = null, infraOn = [], cities = false, names = {} }: Props) {
+  wonders, onWonder, infra = null, infraOn = [], cities = false, names = {},
+  stabilityColours = null, only = null }: Props) {
   const box = useRef<HTMLDivElement>(null);
   const tip = useRef<HTMLDivElement>(null);
   const map = useRef<maplibregl.Map | null>(null);
@@ -217,8 +220,10 @@ export default function MapView({ meta, stability, section, selected, showClasse
     if (!m) return;
     const apply = () => {
       const breaks = stability.classes.breaks;
-      const pairs = section === "data" && choropleth ? Object.entries(choropleth)
-        : Object.entries(stability.countries).map(([iso3, c]) => [iso3, rampColour(c.composite.score, breaks)]);
+      const pairs = (section === "data" && choropleth ? Object.entries(choropleth)
+        : stabilityColours ? Object.entries(stabilityColours)
+        : Object.entries(stability.countries).map(([iso3, c]) => [iso3, rampColour(c.composite.score, breaks)]))
+        .filter(([iso3]) => !only || only.includes(iso3));
       const colour = (pairs.length ? ["match", ["get", "iso3"], ...pairs.flat(), "#000000"]
         : "#000000") as unknown as ExpressionSpecification;
       m.setPaintProperty("classes", "fill-color", colour);
@@ -228,7 +233,7 @@ export default function MapView({ meta, stability, section, selected, showClasse
     };
     // "load" fires once: colours that arrive after it, while the style is still busy, wait for "idle" instead
     if (m.isStyleLoaded()) apply(); else m.once("idle", apply);
-  }, [section, showClasses, stability, choropleth]);
+  }, [section, showClasses, stability, choropleth, stabilityColours, only]);
 
   // ── the Data tab's chosen states share the chosen country's tint ─────────────────────────────────────────────
   const marks = useRef<string[]>([]);

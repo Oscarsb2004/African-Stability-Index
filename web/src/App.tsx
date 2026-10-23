@@ -5,6 +5,7 @@ import { lazy, Suspense, useCallback, useEffect, useMemo, useState } from "react
 import type { MapLayer } from "./explore/DataTab";
 import { DEFAULT, type ExploreState, fromHash, rememberedGroups, rememberGroups, toHash } from "./explore/model";
 import { coloured } from "./explore/resolve";
+import GroupPicker from "./GroupPicker";
 import MapView from "./MapView";
 import MethodPage from "./MethodPage";
 import PhotoViewer from "./PhotoViewer";
@@ -13,6 +14,9 @@ import FinancePanel from "./panels/FinancePanel";
 import WondersPanel from "./panels/WondersPanel";
 import InfrastructurePanel from "./panels/InfrastructurePanel";
 import StabilityPanel from "./panels/StabilityPanel";
+import StabilityMenu from "./StabilityMenu";
+import { shown, type StabilityMeasure } from "./stabilityMap";
+import type { Group } from "./explore/model";
 import { load, RAMP, type MetaDoc, type Section, type SectionsDoc, type StabilityDoc, type Wonder,
   type WondersDoc } from "./data";
 import { COLOURS, EDGE, SHAPES, SHOWN_FIRST, type LayersDoc } from "./infra";
@@ -40,6 +44,11 @@ export default function App() {
   const [selected, setSelected] = useState<string | null>(null);
   const [showClasses, setShowClasses] = useState(true);
   const [cities, setCities] = useState(false);  // cities and towns are drawn only when switched on
+  // the Stability map: what it shows (the composite, a pillar or an indicator) and an optional grouping it is cut to
+  const [measure, setMeasure] = useState<StabilityMeasure>("composite");
+  const [group, setGroup] = useState<Group | null>(null);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const closeMenu = useCallback(() => setMenuOpen(false), []);
   const [wonders, setWonders] = useState<WondersDoc | null>(null);
   const [viewing, setViewing] = useState<Wonder | null>(null);
   const [infra, setInfra] = useState<LayersDoc | null>(null);
@@ -105,19 +114,20 @@ export default function App() {
 
   const names = useMemo(() => docs ? Object.entries(docs.sections.names).sort((a, b) => a[1].localeCompare(b[1]))
     : [], [docs]);
+  const stab = useMemo(() => docs ? shown(docs.stability, measure) : null, [docs, measure]);
 
   if (error) return <div className="loading">Could not load the data: {error}</div>;
   if (!docs) return <div className="loading">Loading…</div>;
 
-  const breaks = docs.stability.classes.breaks;
-  const edges = [null, ...breaks, null];
+  const edges = [null, ...(stab?.breaks ?? []), null];
   return (
     <div className="app">
       <MapView meta={docs.meta} stability={docs.stability} section={section} selected={section === "data" ? null : selected}
         showClasses={showClasses} choropleth={section === "data" ? layer?.colours ?? null : null}
         marked={section === "data" ? explore.items.filter((i) => i.t === "s").map((i) => i.id) : []}
         onSelect={onMapSelect} wonders={wonders?.wonders ?? null} onWonder={setViewing} infra={infra} infraOn={infraOn}
-        cities={cities} names={docs.sections.names} />
+        cities={cities} names={docs.sections.names} stabilityColours={stab?.colours ?? null}
+        only={section === "stability" ? group?.members ?? null : null} />
 
       <div className="topleft">
       <header className="glass masthead">
@@ -131,11 +141,15 @@ export default function App() {
               onClick={() => choose(s.id)}>{s.label}</button>
           ))}
         </nav>
-        <select className="pick" value={selected ?? ""} onChange={(e) => setSelected(e.target.value || null)}
-          aria-label="Choose a country">
-          <option value="">Choose a country…</option>
-          {names.map(([iso3, name]) => <option key={iso3} value={iso3}>{name}</option>)}
-        </select>
+        {section === "stability" ? (
+          <GroupPicker value={group?.id ?? null} names={docs.sections.names} onChange={setGroup} />
+        ) : (
+          <select className="pick" value={selected ?? ""} onChange={(e) => setSelected(e.target.value || null)}
+            aria-label="Choose a country">
+            <option value="">Choose a country…</option>
+            {names.map(([iso3, name]) => <option key={iso3} value={iso3}>{name}</option>)}
+          </select>
+        )}
         {section !== "wonders" && (
           <label className="infra-toggle cities-toggle"
             title="Capitals first, more as you zoom: Natural Earth's populated places (public domain)">
@@ -148,24 +162,32 @@ export default function App() {
 
       {section === "stability" && (
         <div className="glass legend">
-          <label className="legend-toggle">
-            <input type="checkbox" checked={showClasses} onChange={(e) => setShowClasses(e.target.checked)} />
-            ASI {docs.stability.reference_year}, composite score
-          </label>
-          {showClasses && (
+          <div className="legend-toggle legend-head">
+            <input type="checkbox" checked={showClasses} onChange={(e) => setShowClasses(e.target.checked)}
+              aria-label="Show the map's colours" />
+            <button className="measure-button" onClick={() => setMenuOpen(true)} aria-haspopup="dialog"
+              title="Choose what the map shows">
+              {stab?.label} <span className="muted">▾</span>
+            </button>
+          </div>
+          {showClasses && stab && (
             <>
               <div className="legend-ramp">
                 {RAMP.map((c, i) => (
                   <div key={c} className="legend-step">
                     <span style={{ background: c }} />
-                    <small>{edges[i] === null ? `< ${edges[i + 1]}` : edges[i + 1] === null ? `≥ ${edges[i]}`
-                      : `${edges[i]}–${edges[i + 1]}`}</small>
+                    <small>{edges[i] === null ? `< ${fmtBreak(edges[i + 1] as number)}` : edges[i + 1] === null
+                      ? `≥ ${fmtBreak(edges[i] as number)}` : `${fmtBreak(edges[i] as number)}–${fmtBreak(edges[i + 1] as number)}`}</small>
                   </div>
                 ))}
               </div>
-              <div className="muted small">Classes: {docs.stability.classes.rule}. Lighter is more stable.</div>
+              <div className="muted small">{stab.scale}</div>
+              {group && <div className="muted small">Only the {group.members.length} members of {group.name} are
+                coloured; the classes are the 54 states'.</div>}
             </>
           )}
+          {menuOpen && <StabilityMenu stability={docs.stability} value={measure} onChange={setMeasure}
+            onClose={closeMenu} />}
         </div>
       )}
       {section === "infrastructure" && infra && (
