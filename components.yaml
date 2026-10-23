@@ -161,6 +161,19 @@ components:
   tests: []
   depends_on: []
   drafted: true
+- id: 05_web.label
+  section: 06 Outputs and Site
+  entry: 05_web.py:label
+  form: legacy
+  purpose: Natural Earth's label point, label rank and abbreviation (the map's fallback where a full name would cover
+  inputs:
+  - 'p: dict'
+  outputs:
+  - dict
+  tests:
+  - tests/test_web.py::test_each_state_carries_natural_earths_label_point_and_a_merged_area_none
+  depends_on: []
+  drafted: true
 - id: 05_web.countries
   section: 06 Outputs and Site
   entry: 05_web.py:countries
@@ -172,6 +185,7 @@ components:
   - dict
   tests:
   - tests/test_infrastructure.py::test_the_country_summary_follows_each_layers_rule
+  - tests/test_web.py::test_each_state_carries_natural_earths_label_point_and_a_merged_area_none
   - tests/test_web.py::test_every_member_state_is_drawn_and_merged_codes_take_the_member_code
   depends_on: []
   drafted: true
