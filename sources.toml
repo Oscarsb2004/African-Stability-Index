@@ -130,6 +130,20 @@ kind = "ucdp"
 edition = "26.1"
 terms = "https://ucdp.uu.se/downloads/; read 2026-10-18; every UCDP dataset free of charge under CC BY 4.0; use and redistribution free provided the publications listed with the dataset are cited"
 
+[ucdp-ged]
+title = "UCDP Georeferenced Event Dataset (GED) Global, version 26.1: every event of organized violence, 1989-2025"
+url = "https://ucdp.uu.se/downloads/ged/ged261-csv.zip"
+kind = "ucdp-ged"
+edition = "26.1"
+terms = "https://ucdp.uu.se/downloads/; read 2026-10-23; 'All datasets are free of charge and licensed under CC BY 4.0'; free to use and redistribute citing Davies, Pettersson and Oberg (2026), Organized violence 1989-2025, and violent political protests, Journal of Peace Research, doi:10.1093/jopres/xjag046, and Sundberg and Melander (2013), Introducing the UCDP Georeferenced Event Dataset, Journal of Peace Research 50(4); the source_* columns quote news reports and are not republished as text"
+
+[ucdp-candidate]
+title = "UCDP Candidate Events Dataset (provisional, monthly), January to September 2026, version 26.01.26.09"
+url = "https://ucdp.uu.se/downloads/candidateged/GEDEvent_v26_01_26_09.csv"
+kind = "ucdp-candidate"
+edition = "26.01.26.09"
+terms = "https://ucdp.uu.se/downloads/; read 2026-10-23; CC BY 4.0 as every UCDP dataset; cite Hegre, Croicu, Eck and Hogbladh (2020), Introducing the UCDP Candidate Events Dataset, Research & Politics, doi:10.1177/2053168020935257; provisional: each event keeps UCDP's code_status, and a later GED release supersedes it; released monthly, each release a new edition"
+
 [wikidata-states]
 title = "Wikidata, the African Union member states: every membership (P463) and a few attributes, two SPARQL queries"
 kind = "wikidata-sparql"
