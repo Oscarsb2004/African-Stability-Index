@@ -4,7 +4,7 @@ project: "African Stability Index"
 section: "06 Outputs and Site"
 status: "live"
 created: "2026-10-18"
-updated: 2026-10-18
+updated: 2026-10-23
 ---
 
 # Athena Dimensions
@@ -32,7 +32,7 @@ Union states; the Canada atlas, or any other project, can apply them elsewhere.
 | Dimension Stability (athena-data) | D2 reviewed | revise to the advice (edition 2), then a second review |
 | [Dimension Economy](<Dimension Economy.md>) | D1 prototype | a first review by a macroeconomist |
 | [Dimension Finance](<Dimension Finance.md>) | D1 prototype | a first review by a macro-finance professional |
-| [Dimension Infrastructure](<Dimension Infrastructure.md>) | D1 prototype (cities only) | the plan of P65: ports, mines, grid and corridors, then a first review |
+| [Dimension Infrastructure](<Dimension Infrastructure.md>) | D1 prototype (2026-10-23: the layers, national figures and shipping) | I6 and I8 of the [ASI Project Plan](<../ASI 08 Status and Roadmap/ASI Project Plan.md>), then a first review (I10) |
 | [Dimension Wonders](<Dimension Wonders.md>) | D1 prototype | a first review by a geographer or heritage professional |
 
 ## Inputs and outputs
