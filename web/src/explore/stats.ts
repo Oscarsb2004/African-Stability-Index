@@ -186,6 +186,15 @@ export function fifths(xs: number[]): number[] {
   return [0.2, 0.4, 0.6, 0.8].map((p) => quantile(xs, p) as number);
 }
 
+/** For values with both signs, the three breaks of a diverging map: the median of the values below zero, zero, and
+ *  the median of the values above it, so each side has two classes and zero is the boundary between them. Null when
+ *  every value has the same sign (or is zero): the map then keeps its fifths. */
+export function signedBreaks(xs: number[]): number[] | null {
+  const below = xs.filter((x) => x < 0), above = xs.filter((x) => x > 0);
+  if (!below.length || !above.length) return null;
+  return [median(below) as number, 0, median(above) as number];
+}
+
 /** Distances between states over several measures, each standardised to mean 0 and standard deviation 1 across
  *  the states that have it; a pair is compared on the measures both have, and needs at least half of them. */
 export function nearest(rows: Record<string, (number | null)[]>, of: string, k = 5): { iso3: string; d: number }[] {

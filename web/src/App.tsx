@@ -39,6 +39,7 @@ export default function App() {
   const onMap = useCallback((l: MapLayer | null) => setLayer(l), []);
   const [selected, setSelected] = useState<string | null>(null);
   const [showClasses, setShowClasses] = useState(true);
+  const [cities, setCities] = useState(false);  // cities and towns are drawn only when switched on
   const [wonders, setWonders] = useState<WondersDoc | null>(null);
   const [viewing, setViewing] = useState<Wonder | null>(null);
   const [infra, setInfra] = useState<LayersDoc | null>(null);
@@ -115,7 +116,8 @@ export default function App() {
       <MapView meta={docs.meta} stability={docs.stability} section={section} selected={section === "data" ? null : selected}
         showClasses={showClasses} choropleth={section === "data" ? layer?.colours ?? null : null}
         marked={section === "data" ? explore.items.filter((i) => i.t === "s").map((i) => i.id) : []}
-        onSelect={onMapSelect} wonders={wonders?.wonders ?? null} onWonder={setViewing} infra={infra} infraOn={infraOn} />
+        onSelect={onMapSelect} wonders={wonders?.wonders ?? null} onWonder={setViewing} infra={infra} infraOn={infraOn}
+        cities={cities} names={docs.sections.names} />
 
       <div className="topleft">
       <header className="glass masthead">
@@ -134,6 +136,14 @@ export default function App() {
           <option value="">Choose a country…</option>
           {names.map(([iso3, name]) => <option key={iso3} value={iso3}>{name}</option>)}
         </select>
+        {section !== "wonders" && (
+          <label className="infra-toggle cities-toggle"
+            title="Capitals first, more as you zoom: Natural Earth's populated places (public domain)">
+            <input type="checkbox" checked={cities} onChange={(e) => setCities(e.target.checked)} />
+            <span className="swatch dot" style={{ background: "#f4f1ea" }} />
+            Cities and towns
+          </label>
+        )}
       </header>
 
       {section === "stability" && (
@@ -180,15 +190,17 @@ export default function App() {
         <div className="glass legend data-legend">
           <div className="legend-toggle">{layer.label}, {layer.year}</div>
           <div className="legend-ramp">
-            {RAMP.map((c, i) => (
+            {layer.ramp.map((c, i) => (
               <div key={c} className="legend-step">
                 <span style={{ background: c }} />
-                <small>{i === 0 ? `< ${fmtBreak(layer.breaks[0])}` : i === RAMP.length - 1
+                <small>{i === 0 ? `< ${fmtBreak(layer.breaks[0])}` : i === layer.ramp.length - 1
                   ? `≥ ${fmtBreak(layer.breaks[i - 1])}` : `${fmtBreak(layer.breaks[i - 1])}–${fmtBreak(layer.breaks[i])}`}</small>
               </div>
             ))}
           </div>
-          <div className="muted small">Fifths of the states with a value. Lighter is higher; grey has no value.</div>
+          <div className="muted small">{layer.signed
+            ? "Red below zero, blue above, each side split at its median; the colours mark the sign, not whether it is good. Grey has no value."
+            : "Fifths of the states with a value. Lighter is higher; grey has no value."}</div>
         </div>
       )}
       </div>

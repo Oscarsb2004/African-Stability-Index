@@ -3,7 +3,7 @@
 import { describe, expect, it } from "vitest";
 import {
   againstValue, fifths, groupAverage, median, moransI, nearest, neighbourMean, normalQuantile, ols, pearson, quantile,
-  ranks, sd, spearman, tCritical, welch,
+  ranks, sd, signedBreaks, spearman, tCritical, welch,
 } from "./stats";
 
 describe("basic statistics", () => {
@@ -14,6 +14,12 @@ describe("basic statistics", () => {
     expect(sd([1])).toBeNull();  // negative control: one value has no spread
     expect(quantile([1, 2, 3, 4], 0.25)).toBeCloseTo(1.75, 10);  // pandas' default
     expect(fifths([1, 2, 3, 4, 5, 6])).toEqual([2, 3, 4, 5]);
+  });
+
+  it("splits a measure with both signs at zero, each side at its own median", () => {
+    expect(signedBreaks([-6, -2, -1, 0, 1, 3, 9, 12])).toEqual([-2, 0, 6]);
+    expect(signedBreaks([0, 1, 3, 9])).toBeNull();      // negative control: one sign keeps the fifths
+    expect(signedBreaks([-4, -1, 0])).toBeNull();
   });
 
   it("t and normal critical values match the published tables", () => {

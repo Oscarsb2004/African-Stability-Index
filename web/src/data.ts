@@ -163,6 +163,12 @@ export function people(n: number): string {
 // stability.json (fifths of the member states), never from here.
 export const RAMP = ["#4b3c9e", "#6650c4", "#8771e8", "#ab99f6", "#d3c9ff"];
 
+// The Data tab's diverging ramp, for a measure whose values have both signs: red below zero, blue above (the
+// reference palette's diverging pair), each arm darker toward zero. Each arm passes validate_palette.js --ordinal
+// (dark, surface #111111; its dark end at 3.58:1 and 3.50:1), and the two arms clear the colour-blind check against
+// each other (2026-10-23). Zero is a boundary, not a grey class, so it is never mistaken for "no value".
+export const DIVERGING = ["#ef8a84", "#b54848", "#256abf", "#6da7ec"];
+
 export function rampColour(score: number | null, breaks: number[]): string {
   if (score === null) return "#3a3a3a";
   let i = 0;
