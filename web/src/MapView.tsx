@@ -1,5 +1,6 @@
 // The map: satellite imagery on a globe, Natural Earth borders, and countries that answer hover and click.
-// Hover shows the name only; nothing lights up. A chosen country gets a faint tint so the eye can find it again.
+// Each state's name is written at its label point at all times (the owner, 2026-10-23); hover repeats it, and nothing
+// lights up. A chosen country gets a faint tint so the eye can find it again.
 // City labels are HTML markers, so the map needs no glyph server.
 
 import { useEffect, useRef } from "react";
@@ -57,6 +58,9 @@ export default function MapView({ meta, stability, section, selected, showClasse
   const map = useRef<maplibregl.Map | null>(null);
   const markers = useRef<maplibregl.Marker[]>([]);
   const places = useRef<{ p: Place; at: [number, number] }[]>([]);
+  // each state's name, its marker, and its rank (lower is more important)
+  const labels = useRef<{ name: string; abbrev: string; at: [number, number]; size: number; rank: number;
+    marker: maplibregl.Marker; el: HTMLElement }[]>([]);
   const sectionRef = useRef(section);
   const citiesRef = useRef(cities);
   const namesRef = useRef(names);
@@ -159,6 +163,24 @@ export default function MapView({ meta, stability, section, selected, showClasse
         ({ p: f.properties, at: f.geometry.coordinates }));
       drawPlaces();
     });
+    // each state's name at Natural Earth's label point, always: drawn once, it moves with the map; the size follows
+    // Natural Earth's label rank, and a small state's name is smaller, never hidden
+    fetch(asset("geo/countries.json")).then((r) => r.json()).then((g) => {
+      for (const f of g.features as { properties: { name: string; label?: [number, number]; rank?: number;
+        abbrev?: string } }[]) {
+        const { name, label, rank = 5, abbrev = name } = f.properties;
+        if (!label) continue;
+        const size = rank <= 3 ? 13 : rank <= 5 ? 12 : 11;
+        const el = document.createElement("div");
+        el.className = "country-name";
+        el.style.fontSize = `${size}px`;
+        el.textContent = name;
+        const marker = new maplibregl.Marker({ element: el, anchor: "center" }).setLngLat(label).addTo(m);
+        labels.current.push({ name, abbrev, at: label, size, rank, marker, el });
+      }
+      labels.current.sort((a, b) => a.rank - b.rank);
+      drawPlaces();
+    });
     m.on("moveend", drawPlaces);
     map.current = m;
     if (import.meta.env.DEV) (window as unknown as { asiMap: maplibregl.Map }).asiMap = m;
@@ -168,13 +190,34 @@ export default function MapView({ meta, stability, section, selected, showClasse
       markers.current = [];
       const zoom = m.getZoom();
       const bounds = m.getBounds();
+      // the countries' names come first, the more important first (Natural Earth's label rank). Below zoom 4 they are
+      // drawn a little smaller. Each takes the first free place among: its full name on its point, then a line below or
+      // above; Natural Earth's abbreviation in the same three places; else its full name on its point. A name is never
+      // hidden or moved off its state, and hover always gives the full name. A city label that would cover a name
+      // gives way.
+      const overlaps = (a: number[], b: number[]) => a[0] < b[2] && a[2] > b[0] && a[1] < b[3] && a[3] > b[1];
+      const scale = zoom < 3.2 ? 0.8 : zoom < 4.2 ? 0.9 : 1;
+      const placed: number[][] = [];
+      for (const l of labels.current) {
+        const size = Math.round(l.size * scale), h = size * 1.25, pt = m.project(l.at);
+        l.el.style.fontSize = `${size}px`;
+        const box = (text: string, dy: number) => {
+          l.el.textContent = text;
+          const half = ((l.el.offsetWidth || text.length * size * 0.62) + 2) / 2;
+          return [pt.x - half, pt.y + dy - h / 2, pt.x + half, pt.y + dy + h / 2];
+        };
+        const tries = [l.name, l.abbrev].flatMap((text) => [0, h, -h].map((dy) => [text, dy] as const));
+        const [text, dy] = tries.find(([t, d]) => !placed.some((b) => overlaps(box(t, d), b))) ?? [l.name, 0];
+        const b = box(text, dy);
+        l.marker.setOffset([0, dy]);
+        placed.push(b);
+      }
       // only when switched on; the wonders have the map to themselves
       if (sectionRef.current === "wonders" || !citiesRef.current) return;
       const { clientWidth: width, clientHeight: height } = m.getCanvas();
       // capitals from the start; every other city once the map is zoomed to the level Natural Earth gives it.
       // places.json is ordered capitals first, then by population, so a label that would overlap one already
       // placed is the less important one and is skipped.
-      const placed: number[][] = [];
       const shown = [];
       for (const c of places.current) {
         const { p, at } = c;
@@ -182,7 +225,7 @@ export default function MapView({ meta, stability, section, selected, showClasse
         const pt = m.project(at);
         if (pt.x < 0 || pt.y < 0 || pt.x > width || pt.y > height) continue;
         const box = [pt.x - 5, pt.y - 9, pt.x + 14 + p.name.length * (p.capital ? 7 : 6.2), pt.y + 9];
-        if (placed.some((b) => box[0] < b[2] && box[2] > b[0] && box[1] < b[3] && box[3] > b[1])) continue;
+        if (placed.some((b) => overlaps(box, b))) continue;
         placed.push(box);
         shown.push(c);
         if (shown.length >= 120) break;

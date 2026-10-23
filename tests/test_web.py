@@ -32,6 +32,21 @@ def test_every_member_state_is_drawn_and_merged_codes_take_the_member_code():
         web.countries(polygons(members))
 
 
+def test_each_state_carries_natural_earths_label_point_and_a_merged_area_none():
+    members = [c for c in web.COUNTRIES if c not in ("SOM", "SSD")]
+    ne = polygons(members + ["SOL", "SDS", "SAH"])
+    for f in ne["features"]:
+        f["properties"] |= {"LABEL_X": 1.23456, "LABEL_Y": -2.5, "LABELRANK": 3}
+    ne["features"].append({"geometry": SQUARE, "properties": {"ADM0_A3": "SOM", "LABEL_X": 45.0, "LABEL_Y": 6.0,
+                                                               "LABELRANK": 2}})
+    out = {f["properties"]["iso3"]: f["properties"] for f in web.countries(ne)["features"] if "label" in f["properties"]}
+    assert out["KEN"]["label"] == [1.235, -2.5] and out["KEN"]["rank"] == 3
+    assert out["SOM"]["label"] == [45.0, 6.0]  # Somalia's own point, not Somaliland's
+    assert out["ESH"]["rank"] == 3 and "SSD" in out  # South Sudan's SDS is a renaming, not a merged area
+    assert len(out) == len(web.COUNTRIES) + 1
+    assert web.label({"ADM0_A3": "KEN"}) == {}  # negative control: no label point given, none invented
+
+
 def test_every_other_state_is_outlined_simplified_and_never_a_member_twice():
     zigzag = {"type": "Polygon", "coordinates": [[[0, 0], [5, 0.001], [10, 0], [10, 10], [0, 10], [0, 0]]]}
     ne = {"features": [{"geometry": zigzag, "properties": {"ADM0_A3": c, "NAME": n}}

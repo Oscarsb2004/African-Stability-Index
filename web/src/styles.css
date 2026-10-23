@@ -59,6 +59,8 @@ a { color: var(--accent); }
 .cities-toggle { margin-top: 8px; }
 
 /* ── places ─────────────────────────────────────────────────────────────────────────────────────────────── */
+.country-name { pointer-events: none; color: #f4f1ea; font-weight: 600; letter-spacing: 0.02em; white-space: nowrap;
+  text-shadow: 0 1px 3px #000, 0 0 2px #000, 0 0 6px rgba(0, 0, 0, 0.7); }
 .place { display: flex; align-items: center; gap: 5px; pointer-events: auto; cursor: default; }
 .place .dot { width: 5px; height: 5px; border-radius: 50%; background: #f4f1ea; box-shadow: 0 0 0 1.5px rgba(0, 0, 0, 0.6); }
 .place .label { font-size: 11px; color: #f4f1ea; text-shadow: 0 1px 3px #000, 0 0 2px #000; white-space: nowrap; }

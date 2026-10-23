@@ -4,7 +4,8 @@
     python 05_web.py
 
 It writes:
-    geo/countries.json   Natural Earth 1:50m admin-0 polygons for Africa, for hover and click only.
+    geo/countries.json   Natural Earth 1:50m admin-0 polygons for Africa, for hover and click, each with Natural
+                         Earth's label point and label rank, where the site writes the country's name at all times.
                          Somaliland is drawn as part of Somalia, and Western Sahara apart and unscored (ISO's view).
     geo/world.json       every other state's Natural Earth 1:50m outline, simplified, drawn thin and grey around
                          Africa (the owner's ruling of 2026-10-23); hover gives its name.
@@ -37,6 +38,7 @@ PUBLIC = ROOT / "web" / "public"
 PANEL = ROOT / "data" / "panel"
 DECIMALS = 3  # about 100 m, finer than 1:50m data needs
 ALSO_DRAWN = {"SAH": ("ESH", "Western Sahara")}  # on the map, not in the index; Natural Earth codes it SAH
+PART_OF = {"SOL"}  # Somaliland, drawn as part of Somalia (MERGED also renames South Sudan's SDS, a code only)
 WORLD_TOLERANCE, WORLD_DECIMALS = 0.05, 2  # degrees: about 5 km of simplification, 1 km of rounding
 DASHED = ("Disputed", "Indefinite", "Line of control")
 EOX = ("EOxCloudless https://cloudless.eox.at by EOX IT Services GmbH "
@@ -58,15 +60,25 @@ def collection(features: list[dict]) -> dict:
     return {"type": "FeatureCollection", "features": features}
 
 
+def label(p: dict) -> dict:
+    """Natural Earth's label point, label rank and abbreviation (the map's fallback where a full name would cover
+    another), where given; an area drawn as part of a state gets none."""
+    if p.get("ADM0_A3") in PART_OF or p.get("LABEL_X") is None:
+        return {}
+    return {"label": [round(float(p["LABEL_X"]), DECIMALS), round(float(p["LABEL_Y"]), DECIMALS)],
+            "rank": int(p.get("LABELRANK") or 5)} | ({"abbrev": p["ABBREV"]} if p.get("ABBREV") else {})
+
+
 def countries(ne: dict) -> dict:
     out, seen = [], set()
     for f in ne["features"]:
         code = MERGED.get(f["properties"]["ADM0_A3"], f["properties"]["ADM0_A3"])
         if code in COUNTRIES:
-            out.append(feature(f["geometry"], {"iso3": code, "name": COUNTRIES[code]["name"], "member": True}))
+            out.append(feature(f["geometry"], {"iso3": code, "name": COUNTRIES[code]["name"], "member": True}
+                               | label(f["properties"])))
         elif code in ALSO_DRAWN:
             iso3, name = ALSO_DRAWN[code]
-            out.append(feature(f["geometry"], {"iso3": iso3, "name": name, "member": False}))
+            out.append(feature(f["geometry"], {"iso3": iso3, "name": name, "member": False} | label(f["properties"])))
         else:
             continue
         seen.add(code)
