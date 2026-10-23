@@ -6,6 +6,8 @@
 It writes:
     geo/countries.json   Natural Earth 1:50m admin-0 polygons for Africa, for hover and click only.
                          Somaliland is drawn as part of Somalia, and Western Sahara apart and unscored (ISO's view).
+    geo/world.json       every other state's Natural Earth 1:50m outline, simplified, drawn thin and grey around
+                         Africa (the owner's ruling of 2026-10-23); hover gives its name.
     geo/borders.json     Natural Earth's land boundary lines. Lines ISO does not recognise are left out;
                          disputed, indefinite and line-of-control lines are marked to be drawn dashed.
     geo/places.json      Natural Earth 1:10m populated places in the member states, with the zoom each appears at.
@@ -34,7 +36,8 @@ from asi.core.countries import COUNTRIES  # noqa: E402
 PUBLIC = ROOT / "web" / "public"
 PANEL = ROOT / "data" / "panel"
 DECIMALS = 3  # about 100 m, finer than 1:50m data needs
-ALSO_DRAWN = {"ESH": "Western Sahara"}  # on the map, not in the index
+ALSO_DRAWN = {"SAH": ("ESH", "Western Sahara")}  # on the map, not in the index; Natural Earth codes it SAH
+WORLD_TOLERANCE, WORLD_DECIMALS = 0.05, 2  # degrees: about 5 km of simplification, 1 km of rounding
 DASHED = ("Disputed", "Indefinite", "Line of control")
 EOX = ("EOxCloudless https://cloudless.eox.at by EOX IT Services GmbH "
        "(Contains modified Copernicus Sentinel data 2025)")
@@ -62,13 +65,30 @@ def countries(ne: dict) -> dict:
         if code in COUNTRIES:
             out.append(feature(f["geometry"], {"iso3": code, "name": COUNTRIES[code]["name"], "member": True}))
         elif code in ALSO_DRAWN:
-            out.append(feature(f["geometry"], {"iso3": code, "name": ALSO_DRAWN[code], "member": False}))
+            iso3, name = ALSO_DRAWN[code]
+            out.append(feature(f["geometry"], {"iso3": iso3, "name": name, "member": False}))
         else:
             continue
         seen.add(code)
     missing = sorted(set(COUNTRIES) - seen)
     if missing:
         raise ValueError(f"member states with no Natural Earth 1:50m polygon: {missing}")
+    return collection(out)
+
+
+def world(ne: dict) -> dict:
+    """Every state not drawn in countries.json, its outline simplified (Douglas-Peucker, topology kept)."""
+    from shapely.geometry import mapping, shape
+    out = []
+    for f in ne["features"]:
+        p = f["properties"]
+        code = MERGED.get(p["ADM0_A3"], p["ADM0_A3"])
+        if code in COUNTRIES or code in ALSO_DRAWN:
+            continue
+        g = mapping(shape(f["geometry"]).simplify(WORLD_TOLERANCE, preserve_topology=True))
+        out.append({"type": "Feature", "properties": {"iso3": code, "name": p["NAME"]},
+                    "geometry": {"type": g["type"], "coordinates": json.loads(json.dumps(g["coordinates"]),
+                                 parse_float=lambda x: round(float(x), WORLD_DECIMALS))}})
     return collection(out)
 
 
@@ -217,6 +237,7 @@ def main() -> int:
     ne = {k: json.loads(fetch.get(src[f"natural-earth-{k}"]["url"])) for k in ("countries-50m", "borders-50m",
                                                                                 "places-10m")}
     write(PUBLIC / "geo" / "countries.json", countries(ne["countries-50m"]))
+    write(PUBLIC / "geo" / "world.json", world(ne["countries-50m"]))
     write(PUBLIC / "geo" / "borders.json", borders(ne["borders-50m"]))
     write(PUBLIC / "geo" / "places.json", places(ne["places-10m"]))
     write(PUBLIC / "data" / "stability.json", stability())

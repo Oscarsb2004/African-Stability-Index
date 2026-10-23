@@ -175,6 +175,19 @@ components:
   - tests/test_web.py::test_every_member_state_is_drawn_and_merged_codes_take_the_member_code
   depends_on: []
   drafted: true
+- id: 05_web.world
+  section: 06 Outputs and Site
+  entry: 05_web.py:world
+  form: legacy
+  purpose: Every state not drawn in countries.json, its outline simplified (Douglas-Peucker, topology kept).
+  inputs:
+  - 'ne: dict'
+  outputs:
+  - dict
+  tests:
+  - tests/test_web.py::test_every_other_state_is_outlined_simplified_and_never_a_member_twice
+  depends_on: []
+  drafted: true
 - id: 05_web.borders
   section: 06 Outputs and Site
   entry: 05_web.py:borders
@@ -1412,6 +1425,8 @@ components:
   - list[str]
   tests:
   - tests/test_infrastructure.py::test_the_publication_list_states_every_licence_and_reason
+  - tests/test_instability.py::test_a_link_needs_known_states_a_short_card_and_full_sources
+  - tests/test_instability.py::test_the_projects_links_pass_their_checks
   depends_on: []
   drafted: true
 - id: asi.infrastructure.registry.load
@@ -1498,6 +1513,69 @@ components:
   - Output
   tests:
   - tests/test_infrastructure.py::test_vector_tiles_hold_each_line_from_its_first_zoom
+  depends_on: []
+  drafted: true
+- id: asi.instability.links.sentences
+  section: 03 Pipeline
+  entry: asi/instability/links.py:sentences
+  form: legacy
+  purpose: 'How many sentences a card holds: a full stop, question or exclamation mark followed by a capital starts one.'
+  inputs:
+  - 'text: str'
+  outputs:
+  - int
+  tests:
+  - tests/test_narratives.py::test_the_sentences_say_none_when_no_pillar_is_on_a_side
+  - tests/test_narratives.py::test_the_verifier_finds_every_number_and_refuses_one_that_is_not_a_fact
+  depends_on: []
+  drafted: true
+- id: asi.instability.links.problems
+  section: 03 Pipeline
+  entry: asi/instability/links.py:problems
+  form: legacy
+  purpose: What is wrong with a links list; empty when nothing is. `states` are the codes a backer may have, `members`
+  inputs:
+  - 'reg: dict'
+  - 'states: set[str]'
+  - 'members: set[str]'
+  outputs:
+  - list[str]
+  tests:
+  - tests/test_infrastructure.py::test_the_publication_list_states_every_licence_and_reason
+  - tests/test_instability.py::test_a_link_needs_known_states_a_short_card_and_full_sources
+  - tests/test_instability.py::test_the_projects_links_pass_their_checks
+  depends_on: []
+  drafted: true
+- id: asi.instability.links.load
+  section: 03 Pipeline
+  entry: asi/instability/links.py:load
+  form: legacy
+  purpose: The links list, refused with every problem named when it has any.
+  inputs:
+  - 'path: Path'
+  - 'states: set[str]'
+  - 'members: set[str]'
+  outputs:
+  - dict
+  tests:
+  - tests/test_goalposts.py::test_a_file_with_no_version_at_all_is_a_mismatch
+  - tests/test_goalposts.py::test_a_missing_file_raises_rather_than_recomputing
+  - tests/test_goalposts.py::test_a_version_mismatch_raises_rather_than_loading_stale_bounds
+  - tests/test_goalposts.py::test_freeze_then_load_round_trips
+  - tests/test_goalposts.py::test_the_committed_goalposts_load_and_are_self_consistent
+  depends_on: []
+  drafted: true
+- id: asi.instability.links.LinkLines
+  section: 03 Pipeline
+  entry: asi/instability/links.py:LinkLines
+  form: component
+  purpose: Each link as a great-circle line between the two states' label points, with its card.
+  inputs:
+  - 'inp: Input'
+  outputs:
+  - Output
+  tests:
+  - tests/test_instability.py::test_a_link_is_a_great_circle_between_label_points_carrying_its_card
   depends_on: []
   drafted: true
 - id: asi.pipeline.goalposts.apply_log
