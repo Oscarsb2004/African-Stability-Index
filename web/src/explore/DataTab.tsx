@@ -4,14 +4,14 @@
 // stated formulas (stats.ts); shared members of compared groups are named at the bottom.
 
 import { Component, type ReactNode, useEffect, useMemo, useState } from "react";
-import { RAMP } from "../data";
+import { DIVERGING, RAMP } from "../data";
 import MeasurePicker, { shortSource } from "./MeasurePicker";
 import {
   allGroups, type AverageHow, type Catalogue, type ExploreState, type Group, type GroupsDoc, type Item,
   latestCovered, loadCatalogue, loadGroups, loadStates, snapshot, type StatesDoc, useSeries, type View,
 } from "./model";
 import { coloured, GDP, itemKey, num, POPULATION, resolve, shared } from "./resolve";
-import { againstValue, fifths, welch } from "./stats";
+import { againstValue, fifths, signedBreaks, welch } from "./stats";
 import StatsBlock from "./StatsBlock";
 import { Dumbbell, Slope } from "./views/Change";
 import Composition from "./views/Composition";
@@ -23,7 +23,10 @@ import { Scatter, Trajectory } from "./views/Relation";
 import { Distribution, Ordered } from "./views/Snapshot";
 import Table from "./views/Table";
 
-export interface MapLayer { colours: Record<string, string>; breaks: number[]; label: string; year: number }
+export interface MapLayer {
+  colours: Record<string, string>; breaks: number[]; label: string; year: number;
+  ramp: string[]; signed: boolean;  // the diverging ramp, split at zero, when the values have both signs
+}
 
 export const VIEWS: { id: View; label: string; group: string }[] = [
   { id: "lines", label: "Lines over time", group: "Over time" },
@@ -73,19 +76,21 @@ export default function DataTab({ state, setState, onMap }: Props) {
   const s = got[state.measure], weights = weighted ? got[weighted] : undefined;
   const year = Math.min(Math.max(state.year ?? measure?.ref ?? latestCovered(s) ?? 2024, s?.y[0] ?? 2000), s?.y[1] ?? 2031);
 
-  // the map shows the measure at the year: fifths of the states with a value, lighter is higher
+  // the map shows the measure at the year: fifths of the states with a value, lighter is higher; or, when the values
+  // have both signs, red below zero and blue above, each side split at its median
   useEffect(() => {
     if (!s || !measure) { onMap(null); return; }
     const snap = snapshot(s, year);
     const xs = Object.values(snap).filter((v): v is number => v !== null);
     if (xs.length < 5) { onMap(null); return; }
-    const breaks = fifths(xs);
+    const signed = signedBreaks(xs);
+    const breaks = signed ?? fifths(xs), ramp = signed ? DIVERGING : RAMP;
     const colours = Object.fromEntries(Object.entries(snap).filter(([, v]) => v !== null).map(([k, v]) => {
       let i = 0;
       while (i < breaks.length && (v as number) >= breaks[i]) i++;
-      return [k, RAMP[i]];
+      return [k, ramp[i]];
     }));
-    onMap({ colours, breaks, label: measure.label, year });
+    onMap({ colours, breaks, label: measure.label, year, ramp, signed: signed !== null });
   }, [s, measure, year, onMap]);
   useEffect(() => () => onMap(null), [onMap]);
 

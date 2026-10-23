@@ -139,7 +139,7 @@ export default function InfrastructurePanel({ iso3, infra, doc: sections, onComp
       )}
 
       <h3>Cities</h3>
-      <p className="muted small">The capital first, then the largest cities. On the map, more appear as you zoom.</p>
+      <p className="muted small">The capital first, then the largest cities. On the map they show when Cities and towns is switched on, more as you zoom.</p>
       <table className="rows">
         <tbody>
           {here.slice(0, 12).map((p) => (

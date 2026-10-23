@@ -54,8 +54,9 @@ a { color: var(--accent); }
 
 /* ── hover name: the only thing hover shows ─────────────────────────────────────────────────────────────── */
 .hover-name { position: absolute; left: 0; top: 0; z-index: 3; pointer-events: none; opacity: 0;
-  padding: 4px 9px; border-radius: 7px; background: rgba(10, 12, 18, 0.82); border: 1px solid var(--glass-edge);
-  font-size: 12px; font-weight: 550; white-space: nowrap; transition: opacity 0.12s; }
+  padding: 5px 11px; border-radius: 8px; background: rgba(10, 12, 18, 0.86); border: 1px solid var(--glass-edge);
+  font-size: 14px; font-weight: 600; white-space: nowrap; transition: opacity 0.12s; }
+.cities-toggle { margin-top: 8px; }
 
 /* ── places ─────────────────────────────────────────────────────────────────────────────────────────────── */
 .place { display: flex; align-items: center; gap: 5px; pointer-events: auto; cursor: default; }

@@ -26,6 +26,8 @@ interface Props {
   onWonder: (w: Wonder) => void;
   infra?: LayersDoc | null;  // the Infrastructure section's catalogue, once loaded
   infraOn?: string[];  // the layers switched on
+  cities?: boolean;  // cities and towns are drawn only when switched on
+  names?: Record<string, string>;  // each member state's name, for a city's tooltip
 }
 
 interface Place {
@@ -46,13 +48,16 @@ const ESRI = "https://static-map-tiles-api.arcgis.com/arcgis/rest/services/stati
 const ESRI_KEY = import.meta.env.VITE_ESRI_KEY as string | undefined;
 
 export default function MapView({ meta, stability, section, selected, showClasses, choropleth, marked = [], onSelect,
-  wonders, onWonder, infra = null, infraOn = [] }: Props) {
+  wonders, onWonder, infra = null, infraOn = [], cities = false, names = {} }: Props) {
   const box = useRef<HTMLDivElement>(null);
   const tip = useRef<HTMLDivElement>(null);
   const map = useRef<maplibregl.Map | null>(null);
   const markers = useRef<maplibregl.Marker[]>([]);
   const places = useRef<{ p: Place; at: [number, number] }[]>([]);
   const sectionRef = useRef(section);
+  const citiesRef = useRef(cities);
+  const namesRef = useRef(names);
+  namesRef.current = names;
   const redraw = useRef<() => void>(() => {});
   const selectRef = useRef(onSelect);
   selectRef.current = onSelect;
@@ -127,6 +132,7 @@ export default function MapView({ meta, stability, section, selected, showClasse
     m.on("mousemove", "classes", (e) => {
       const f = e.features?.[0];
       if (!f || !tip.current) return;
+      if ((e.originalEvent.target as HTMLElement | null)?.closest?.(".place")) return;  // a city label has its own
       m.getCanvas().style.cursor = f.properties.member ? "pointer" : "default";
       tip.current.textContent = f.properties.name;
       tip.current.style.transform = `translate(${e.point.x + 14}px, ${e.point.y + 14}px)`;
@@ -159,8 +165,8 @@ export default function MapView({ meta, stability, section, selected, showClasse
       markers.current = [];
       const zoom = m.getZoom();
       const bounds = m.getBounds();
-      if (sectionRef.current === "wonders") return;  // the wonders have the map to themselves
-      const all = sectionRef.current === "infrastructure";
+      // only when switched on; the wonders have the map to themselves
+      if (sectionRef.current === "wonders" || !citiesRef.current) return;
       const { clientWidth: width, clientHeight: height } = m.getCanvas();
       // capitals from the start; every other city once the map is zoomed to the level Natural Earth gives it.
       // places.json is ordered capitals first, then by population, so a label that would overlap one already
@@ -169,7 +175,7 @@ export default function MapView({ meta, stability, section, selected, showClasse
       const shown = [];
       for (const c of places.current) {
         const { p, at } = c;
-        if (!(p.capital ? zoom >= 2 : all && zoom >= p.min_zoom - 1) || !bounds.contains(at)) continue;
+        if (!(p.capital ? zoom >= 2 : zoom >= p.min_zoom - 1) || !bounds.contains(at)) continue;
         const pt = m.project(at);
         if (pt.x < 0 || pt.y < 0 || pt.x > width || pt.y > height) continue;
         const box = [pt.x - 5, pt.y - 9, pt.x + 14 + p.name.length * (p.capital ? 7 : 6.2), pt.y + 9];
@@ -187,7 +193,16 @@ export default function MapView({ meta, stability, section, selected, showClasse
         label.className = "label";
         label.textContent = p.name;
         el.append(dot, label);
-        el.title = `${p.name}${p.capital ? " (capital)" : ""}: ${people(p.population)} people (Natural Earth)`;
+        // the city's name with its country's, as the countries' own hover shows theirs
+        el.addEventListener("mouseenter", () => {
+          const t = tip.current, pt = m.project(at);
+          if (!t) return;
+          t.textContent = `${p.name}, ${namesRef.current[p.iso3] ?? p.iso3}${p.capital ? " (capital)" : ""} · ` +
+            `${people(p.population)} people`;
+          t.style.transform = `translate(${pt.x + 14}px, ${pt.y + 14}px)`;
+          t.style.opacity = "1";
+        });
+        el.addEventListener("mouseleave", () => { if (tip.current) tip.current.style.opacity = "0"; });
         markers.current.push(new maplibregl.Marker({ element: el, anchor: "left" }).setLngLat(at).addTo(m));
       }
     }
@@ -211,7 +226,8 @@ export default function MapView({ meta, stability, section, selected, showClasse
       m.setPaintProperty("classes", "fill-opacity", shown
         ? ["case", ["all", ["get", "member"], ["in", ["get", "iso3"], ["literal", pairs.map((x) => x[0])]]], 0.55, 0] : 0);
     };
-    if (m.isStyleLoaded()) apply(); else m.once("load", apply);
+    // "load" fires once: colours that arrive after it, while the style is still busy, wait for "idle" instead
+    if (m.isStyleLoaded()) apply(); else m.once("idle", apply);
   }, [section, showClasses, stability, choropleth]);
 
   // ── the Data tab's chosen states share the chosen country's tint ─────────────────────────────────────────────
@@ -353,11 +369,12 @@ export default function MapView({ meta, stability, section, selected, showClasse
     if (m.isStyleLoaded()) apply(); else m.once("idle", apply);
   }, [section, infra, infraKey]);  // eslint-disable-line react-hooks/exhaustive-deps
 
-  // ── cities follow the section ───────────────────────────────────────────────────────────────────────────
+  // ── cities follow the section and their switch ────────────────────────────────────────────────────────────
   useEffect(() => {
     sectionRef.current = section;
+    citiesRef.current = cities;
     redraw.current();
-  }, [section]);
+  }, [section, cities]);
 
   return (
     <div className="map">
