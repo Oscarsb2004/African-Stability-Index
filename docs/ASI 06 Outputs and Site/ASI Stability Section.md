@@ -38,7 +38,10 @@ Built on edition 1 (equal weights, 2023). **Edition 2 is shown from athena-core 
 
 The point rank stays off the site. Publication is the owner's.
 
-From athena-core #33: the page "How the index is built" (linked at the bottom and at `#method`), and each indicator's value across every state. From #35 the Data sub-tab became its own tab, the [ASI Data Section](<ASI Data Section.md>).
+From 2026-10-23 (the owner's request): the map can show the composite, any pillar or any indicator, chosen in a
+popup ("What the map shows": the owner's highlighted choices, then everything in the order of the indicator files),
+and can be cut to a grouping (the Data tab's communities, organisations and categories), whose members are listed on
+hover. From athena-core #33: the page "How the index is built" (linked at the bottom and at `#method`), and each indicator's value across every state. From #35 the Data sub-tab became its own tab, the [ASI Data Section](<ASI Data Section.md>).
 
 ## Related
 
