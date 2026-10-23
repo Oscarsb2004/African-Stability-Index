@@ -29,6 +29,8 @@ points:
     title: Chokepoints
     layer: chokepoints
     place: false                  # straits and canals belong to no one state here
+    near_members_km: 100          # Africa only (the owner, 2026-10-23): Suez 0 km, Gibraltar 14, Bab el-Mandeb 27,
+                                  # the Cape of Good Hope 55; the next, the Bosporus, is 1,076 km away
     fields: [portname, vessel_count_total, vessel_count_container, vessel_count_dry_bulk, vessel_count_general_cargo,
              vessel_count_RoRo, vessel_count_tanker, industry_top1, industry_top2, industry_top3]
     labels: {portname: Chokepoint, vessel_count_total: "Ships passing per year, all types (average, 2019–2024)",
@@ -37,7 +39,7 @@ points:
              vessel_count_tanker: "Tankers per year (average)", industry_top1: "Main industry carried (estimated)",
              industry_top2: "Second industry", industry_top3: "Third industry"}
     activity: {table: daily_chokepoints, columns: {n_total: Transits, capacity: "Trade volume, t"}}
-    note: "The 28 chokepoints PortWatch tracks worldwide from ships' AIS signals: the ships passing each year by type and the industries carried. Estimates, not official statistics."
+    note: "The chokepoints PortWatch tracks within 100 km of a member state's land (4 of its 28), from ships' AIS signals: the ships passing each year by type and the industries carried. Estimates, not official statistics."
     <<: *portwatch
   - id: portwatch
     title: Port activity
