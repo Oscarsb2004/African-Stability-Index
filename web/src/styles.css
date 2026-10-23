@@ -368,3 +368,8 @@ a { color: var(--accent); }
   .group-menu { grid-template-columns: 1fr; }
   .group-members { border-left: 0; padding-left: 0; border-top: 1px solid var(--line); padding-top: 8px; }
 }
+
+/* ── links between states ───────────────────────────────────────────────────────────────────────────── */
+.link-card { display: grid; gap: 3px; padding-top: 6px; border-top: 1px solid var(--line); }
+.link-card p { margin: 2px 0; }
+.swatch.line.dashed { background-image: repeating-linear-gradient(90deg, transparent 0 5px, rgba(0, 0, 0, 0.9) 5px 8px); }

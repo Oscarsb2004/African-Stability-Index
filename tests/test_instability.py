@@ -31,7 +31,8 @@ def test_a_link_needs_known_states_a_short_card_and_full_sources():
 
 def test_a_link_is_a_great_circle_between_label_points_carrying_its_card():
     pts = {"XXX": (0.0, 60.0), "AAA": (90.0, 60.0)}
-    out = links.LinkLines().run(links.LinkLines.Input([LINK | {"until": "2024"}], pts, npts=9)).geojson
+    out = links.LinkLines().run(links.LinkLines.Input([LINK | {"until": "2024"}], pts, {"XXX": "Xland"},
+                                                      npts=9)).geojson
     f = out["features"][0]
     line = f["geometry"]["coordinates"]
     assert len(line) == 11 and line[0] == [0.0, 60.0] and line[-1] == [90.0, 60.0]
@@ -39,6 +40,7 @@ def test_a_link_is_a_great_circle_between_label_points_carrying_its_card():
     assert Geod(ellps="WGS84").line_length(*zip(*line)) < Geod(ellps="WGS84").line_length(
         *zip(*[[x, 60.0] for x in range(0, 91, 9)]))  # negative control: shorter than following the parallel
     assert f["properties"]["historical"] is True and f["properties"]["summary"] == "One sentence. Two sentences."
+    assert (f["properties"]["from_name"], f["properties"]["to_name"]) == ("Xland", "AAA")  # a code where no name
 
 
 def test_the_projects_links_pass_their_checks():

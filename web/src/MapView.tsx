@@ -9,6 +9,7 @@ import "maplibre-gl/dist/maplibre-gl.css";
 import { Protocol } from "pmtiles";
 import { asset, people, rampColour, type MetaDoc, type Section, type StabilityDoc, type Wonder } from "./data";
 import { activityRows, cardRows, COLOURS, EDGE, parsed, RING, SHAPES, type Activity, type LayersDoc } from "./infra";
+import { heading, KIND_COLOURS, linksOf, standing, type Link, type LinksDoc } from "./links";
 
 // The Infrastructure section's line layers are PMTiles archives, read by range requests from the site's own files
 // (pmtiles, BSD-3-Clause, its licence read in protomaps/PMTiles on 2026-10-21).
@@ -49,6 +50,9 @@ const AFRICA: [number, number] = [19, 3];
 // service's own data credits, always visible (developers.arcgis.com, Esri and data attribution, read 2026-10-18).
 const ESRI = "https://static-map-tiles-api.arcgis.com/arcgis/rest/services/static-basemap-tiles-service/v1/arcgis/imagery";
 const ESRI_KEY = import.meta.env.VITE_ESRI_KEY as string | undefined;
+// each link in its kind's hue (links.ts)
+const KIND_PAINT = ["match", ["get", "kind"], ...Object.entries(KIND_COLOURS).flat(), RING] as unknown as
+  ExpressionSpecification;
 
 export default function MapView({ meta, stability, section, selected, showClasses, choropleth, marked = [], onSelect,
   wonders, onWonder, infra = null, infraOn = [], cities = false, names = {},
@@ -62,6 +66,10 @@ export default function MapView({ meta, stability, section, selected, showClasse
   const labels = useRef<{ name: string; abbrev: string; at: [number, number]; size: number; rank: number;
     marker: maplibregl.Marker; el: HTMLElement }[]>([]);
   const sectionRef = useRef(section);
+  const linksDoc = useRef<LinksDoc | null>(null);
+  const linksPopup = useRef<maplibregl.Popup | null>(null);
+  // shows a state's links on the map, and their cards at a click; none in Wonders
+  const linksRef = useRef<(iso3: string | null, at?: maplibregl.LngLat) => void>(() => {});
   const citiesRef = useRef(cities);
   const namesRef = useRef(names);
   namesRef.current = names;
@@ -91,6 +99,9 @@ export default function MapView({ meta, stability, section, selected, showClasse
             attribution: `<a href="https://cloudless.eox.at" target="_blank" rel="noreferrer">${meta.imagery.attribution}</a>`,
           },
           countries: { type: "geojson", data: asset("geo/countries.json"), promoteId: "iso3" },
+          // every other state, thin and grey around Africa; and the links between states (the owner, 2026-10-23)
+          world: { type: "geojson", data: asset("geo/world.json") },
+          links: { type: "geojson", data: asset("geo/links.json") },
           borders: {
             type: "geojson", data: asset("geo/borders.json"),
             attribution: '<a href="https://www.naturalearthdata.com" target="_blank" rel="noreferrer">Natural Earth</a>',
@@ -99,6 +110,12 @@ export default function MapView({ meta, stability, section, selected, showClasse
         layers: [
           { id: "space", type: "background", paint: { "background-color": "#05070d" } },
           { id: "imagery", type: "raster", source: "imagery", paint: { "raster-fade-duration": 200 } },
+          { id: "world-fill", type: "fill", source: "world", paint: { "fill-color": "#000000", "fill-opacity": 0 } },
+          {
+            id: "world-lines", type: "line", source: "world",
+            paint: { "line-color": "#c9c7c0", "line-opacity": 0.5,
+              "line-width": ["interpolate", ["linear"], ["zoom"], 2, 0.3, 6, 0.7, 10, 1.2] },
+          },
           {
             id: "classes", type: "fill", source: "countries",
             paint: { "fill-color": "#000000", "fill-opacity": 0 },
@@ -123,6 +140,24 @@ export default function MapView({ meta, stability, section, selected, showClasse
               "line-color": "#f4f1ea", "line-opacity": 0.75, "line-dasharray": [3, 3],
               "line-width": ["interpolate", ["linear"], ["zoom"], 2, 0.6, 6, 1.2, 10, 2],
             },
+          },
+          // a state's links, shown when it is chosen: a light casing under each, then the line in its kind's hue,
+          // solid where its source confirms it and dashed where it reports it
+          {
+            id: "links-casing", type: "line", source: "links", filter: ["==", ["get", "id"], ""],
+            layout: { "line-cap": "round" },
+            paint: { "line-color": RING, "line-opacity": 0.55, "line-width": 5 },
+          },
+          {
+            id: "links", type: "line", source: "links", filter: ["==", ["get", "id"], ""],
+            layout: { "line-cap": "round" },
+            paint: { "line-color": KIND_PAINT,
+              "line-width": 3 },
+          },
+          {
+            id: "links-reported", type: "line", source: "links", filter: ["==", ["get", "id"], ""],
+            paint: { "line-color": KIND_PAINT,
+              "line-width": 3, "line-dasharray": [2, 1.5] },
           },
         ],
       },
@@ -149,13 +184,34 @@ export default function MapView({ meta, stability, section, selected, showClasse
       m.getCanvas().style.cursor = "";
       if (tip.current) tip.current.style.opacity = "0";
     });
+    // another state: its name, and a pointer where it has links into Africa
+    m.on("mousemove", "world-fill", (e) => {
+      const f = e.features?.[0];
+      if (!f || !tip.current || m.queryRenderedFeatures(e.point, { layers: ["classes"] }).length) return;
+      const has = linksOf(linksDoc.current, String(f.properties.iso3)).length > 0;
+      m.getCanvas().style.cursor = has ? "pointer" : "default";
+      tip.current.textContent = has ? `${f.properties.name} · its links into Africa on click` : f.properties.name;
+      tip.current.style.transform = `translate(${e.point.x + 14}px, ${e.point.y + 14}px)`;
+      tip.current.style.opacity = "1";
+    });
+    m.on("mouseleave", "world-fill", () => {
+      m.getCanvas().style.cursor = "";
+      if (tip.current) tip.current.style.opacity = "0";
+    });
+    fetch(asset("geo/links.json")).then((r) => r.json()).then((d: LinksDoc) => { linksDoc.current = d; })
+      .catch(() => { linksDoc.current = null; });
     m.on("click", (e) => {
       // a point's card, not the country under it; the hit box is wider than the dot, so a small mark is easy to take
       const near: [maplibregl.PointLike, maplibregl.PointLike] = [[e.point.x - 6, e.point.y - 6], [e.point.x + 6, e.point.y + 6]];
       const point = m.queryRenderedFeatures(near).find((f) => f.layer.id.startsWith("infra-pt-"));
       if (point) { cardRef.current(point, e.lngLat); return; }
       const f = m.queryRenderedFeatures(e.point, { layers: ["classes"] })[0];
-      selectRef.current(f && f.properties.member ? String(f.properties.iso3) : null);
+      const w = f ? undefined : m.queryRenderedFeatures(e.point, { layers: ["world-fill"] })[0];
+      const member = f && f.properties.member ? String(f.properties.iso3) : null;
+      const other = w ? String(w.properties.iso3) : null;
+      // a member state opens its panel; any state shows its links, with their cards at the click
+      if (!other || member) selectRef.current(member);
+      linksRef.current(member ?? other, e.lngLat);
     });
 
     fetch(asset("geo/places.json")).then((r) => r.json()).then((g) => {
@@ -357,6 +413,25 @@ export default function MapView({ meta, stability, section, selected, showClasse
   const infraRef = useRef<LayersDoc | null>(null);
   const popup = useRef<maplibregl.Popup | null>(null);
   const cardRef = useRef<(f: MapGeoJSONFeature, at: maplibregl.LngLat) => void>(() => {});
+  linksRef.current = (iso3, at) => {
+    const m = map.current;
+    if (!m || !m.getLayer("links")) return;
+    const ls = sectionRef.current === "wonders" ? [] : linksOf(linksDoc.current, iso3);
+    const ids: ExpressionSpecification = ["in", ["get", "id"], ["literal", ls.map((l) => l.id)]];
+    m.setFilter("links-casing", ids);
+    m.setFilter("links", ["all", ids, ["==", ["get", "status"], "confirmed"]]);
+    m.setFilter("links-reported", ["all", ids, ["==", ["get", "status"], "reported"]]);
+    // a click replaces the cards; a change of country without a click keeps the ones a click just opened
+    if (at || !iso3 || !ls.length) linksPopup.current?.remove();
+    if (at && ls.length && linksDoc.current) {
+      linksPopup.current = new maplibregl.Popup({ maxWidth: "360px", className: "infra-popup" })
+        .setLngLat(at).setDOMContent(linkCards(ls, linksDoc.current.kinds)).addTo(m);
+    }
+  };
+  useEffect(() => {  // the chosen country's links follow it, in every section but Wonders
+    sectionRef.current = section;
+    linksRef.current(section === "data" ? null : selected);
+  }, [selected, section]);
   cardRef.current = (f, at) => {
     const info = infraRef.current?.points.find((p) => `infra-pt-${p.id}` === f.layer.id);
     const m = map.current;
@@ -450,6 +525,43 @@ function addLines(m: maplibregl.Map, id: string, archive: string) {
     m.addLayer({ ...base, id: `infra-ln-grid-${archive}-other`, filter: ["!=", ["get", "status"], "Existing"],
       paint: { ...paint, "line-dasharray": [2, 2] } }, "borders");
   } else m.addLayer({ ...base, id: `infra-ln-${id}-${archive}`, paint }, "borders");
+}
+
+// A state's links as cards: each with its kind (in words, beside its colour), its standing as its sources put it, its
+// summary and its sources. Built from DOM nodes, so no text from the data is ever read as HTML.
+function linkCards(ls: Link[], kinds: Record<string, string>): HTMLElement {
+  const el = document.createElement("div");
+  el.className = "infra-card";
+  const add = (parent: HTMLElement, tag: string, text: string, cls?: string) => {
+    const n = document.createElement(tag);
+    n.textContent = text;
+    if (cls) n.className = cls;
+    parent.append(n);
+    return n;
+  };
+  add(el, "div", ls.length === 1 ? "Link" : `${ls.length} links`, "panel-kicker");
+  for (const l of ls) {
+    const card = add(el, "div", "", "link-card");
+    add(card, "div", heading(l), "infra-card-title");
+    const kind = add(card, "div", "", "small");
+    const sw = document.createElement("span");
+    sw.className = l.status === "confirmed" ? "swatch line" : "swatch line dashed";
+    sw.style.background = KIND_COLOURS[l.kind] ?? RING;
+    kind.append(sw, ` ${kinds[l.kind] ?? l.kind} · ${standing(l)}`);
+    add(card, "div", l.conflict, "muted small");
+    add(card, "p", l.summary, "small");
+    for (const src of l.sources) {
+      const line = add(card, "div", "", "muted small");
+      const a = document.createElement("a");
+      a.href = src.url;
+      a.target = "_blank";
+      a.rel = "noreferrer";
+      a.textContent = `${src.publisher}, ${src.title}`;
+      line.append(a, ` (${src.date})`);
+    }
+  }
+  add(el, "div", "The owner's compilation: each card is drawn from the sources it names.", "muted small");
+  return el;
 }
 
 // A feature's card: its fields under the publisher's labels, a port's commodities one per line, and the source.

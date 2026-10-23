@@ -25,16 +25,19 @@ from asi.instability import links  # noqa: E402
 GEO = ROOT / "web" / "public" / "geo"
 
 
-def label_points(ne: dict) -> dict[str, tuple[float, float]]:
-    """Each state's Natural Earth label point; for a merged code (Somaliland in Somalia), the state's own."""
-    out: dict[str, tuple[float, float]] = {}
+def label_points(ne: dict) -> tuple[dict[str, tuple[float, float]], dict[str, str]]:
+    """Each state's Natural Earth label point and name; for a merged code (Somaliland in Somalia), the state's own.
+    A member state keeps the ASI's name."""
+    points: dict[str, tuple[float, float]] = {}
+    names: dict[str, str] = {}
     for f in ne["features"]:
         p = f["properties"]
         code = geography.code(p)
-        if code in out and p["ADM0_A3"] != code:
+        if code in points and p["ADM0_A3"] != code:
             continue
-        out[code] = (float(p["LABEL_X"]), float(p["LABEL_Y"]))
-    return out
+        points[code] = (float(p["LABEL_X"]), float(p["LABEL_Y"]))
+        names[code] = COUNTRIES[code]["name"] if code in COUNTRIES else p["NAME"]
+    return points, names
 
 
 def write(path: Path, doc: dict) -> None:
@@ -45,9 +48,9 @@ def main() -> int:
     from asi.sources import fetcher, sources
 
     ne = json.loads(fetcher().get(sources()["natural-earth-countries-50m"]["url"]))
-    points = label_points(ne)
+    points, names = label_points(ne)
     reg = links.load(ROOT / "registry" / "links.yaml", set(points), set(COUNTRIES))
-    doc = links.LinkLines().run(links.LinkLines.Input(reg["links"], points)).geojson | {"kinds": reg["kinds"]}
+    doc = links.LinkLines().run(links.LinkLines.Input(reg["links"], points, names)).geojson | {"kinds": reg["kinds"]}
     write(GEO / "links.json", doc)
     by = {s: sum(1 for l in reg["links"] if l["status"] == s) for s in links.STATUS}
     print(f"links.json: {len(doc['features'])} links {by}, "

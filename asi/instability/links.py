@@ -12,7 +12,7 @@ the shortest path on the WGS84 ellipsoid, a drawing, not a route), carrying the 
 from __future__ import annotations
 
 import re
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from pathlib import Path
 
 import yaml
@@ -78,6 +78,7 @@ class LinkLines(Component):
     class Input:
         links: list                 # the checked entries of registry/links.yaml
         points: dict                # each state's code -> (longitude, latitude), Natural Earth's label point
+        names: dict = field(default_factory=dict)  # each state's code -> its name, for the card
         npts: int = 64              # points between the two ends
 
     @dataclass(frozen=True)
@@ -94,6 +95,8 @@ class LinkLines(Component):
             card = {k: link.get(k) for k in ("id", "from", "to", "actor", "conflict", "kind", "status", "since",
                                              "until", "sources")}
             card["summary"] = " ".join(str(link["summary"]).split())
+            card["from_name"] = inp.names.get(link["from"], link["from"])
+            card["to_name"] = inp.names.get(link["to"], link["to"])
             card["historical"] = bool(link.get("until"))
             features.append({"type": "Feature", "geometry": {"type": "LineString", "coordinates": line},
                              "properties": {k: v for k, v in card.items() if v is not None}})
