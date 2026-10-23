@@ -59,6 +59,8 @@ a { color: var(--accent); }
 .cities-toggle { margin-top: 8px; }
 
 /* ── places ─────────────────────────────────────────────────────────────────────────────────────────────── */
+.country-name { pointer-events: none; color: #f4f1ea; font-weight: 600; letter-spacing: 0.02em; white-space: nowrap;
+  text-shadow: 0 1px 3px #000, 0 0 2px #000, 0 0 6px rgba(0, 0, 0, 0.7); }
 .place { display: flex; align-items: center; gap: 5px; pointer-events: auto; cursor: default; }
 .place .dot { width: 5px; height: 5px; border-radius: 50%; background: #f4f1ea; box-shadow: 0 0 0 1.5px rgba(0, 0, 0, 0.6); }
 .place .label { font-size: 11px; color: #f4f1ea; text-shadow: 0 1px 3px #000, 0 0 2px #000; white-space: nowrap; }
@@ -366,3 +368,8 @@ a { color: var(--accent); }
   .group-menu { grid-template-columns: 1fr; }
   .group-members { border-left: 0; padding-left: 0; border-top: 1px solid var(--line); padding-top: 8px; }
 }
+
+/* ── links between states ───────────────────────────────────────────────────────────────────────────── */
+.link-card { display: grid; gap: 3px; padding-top: 6px; border-top: 1px solid var(--line); }
+.link-card p { margin: 2px 0; }
+.swatch.line.dashed { background-image: repeating-linear-gradient(90deg, transparent 0 5px, rgba(0, 0, 0, 0.9) 5px 8px); }
