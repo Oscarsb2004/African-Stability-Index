@@ -15,7 +15,7 @@ import geopandas as gpd
 import numpy as np
 import pandas as pd
 
-from asi.infrastructure.places import LengthByState, PlaceInStates
+from asi.infrastructure.places import LengthByState, PlaceInStates, nearest_within
 from asi.infrastructure.tiles import MAX_ZOOM, Layer
 from athena.component import Component
 
@@ -71,7 +71,9 @@ class PointLayer(Component):
     counts for a member state only where its publisher names that state too; the others are listed, with both
     states, and belong to none); `name` (the field that names a point,
     FeatureNam by default); `labels` (each field's label, where the store has none); `id_field` (the field that
-    keys `extra`, the values the stage adds to a point, such as its activity)."""
+    keys `extra`, the values the stage adds to a point, such as its activity); `near_members_km` (a layer that
+    belongs to no state keeps only the points within that distance of a member state's land, on the WGS84
+    ellipsoid, counting the rest)."""
 
     section = "06 Outputs and Site"
 
@@ -123,6 +125,11 @@ class PointLayer(Component):
         if spec.get("only_placed"):
             outside = int(kept["iso3"].isna().sum())
             kept, how = kept[kept["iso3"].notna()], how[kept["iso3"].notna()]
+        far = None
+        if "near_members_km" in spec:  # points that belong to no state: only those near a member state's land
+            near = kept.geometry.map(lambda g: nearest_within(g, inp.polygons, spec["near_members_km"]) is not None)
+            far = int((~near).sum())
+            kept, how = kept[near], how[near]
         shared = how[how.str.startswith("shared waters: ")].str.removeprefix("shared waters: ")
         if "group_by" in spec:
             features = []
@@ -145,7 +152,8 @@ class PointLayer(Component):
                  "withheld": int(withheld.sum()), "withheld_reason": "stated source names SNL, a commercial database"
                  if withheld.any() else None,
                  "unplaced": int(kept["iso3"].isna().sum()) if spec.get("place", True) else None,
-                 "outside_member_states": outside, "placed_otherwise_than_publisher": differs,
+                 "outside_member_states": outside, "far_from_member_states": far,
+                 "placed_otherwise_than_publisher": differs,
                  "placed_by_degrees": by_degrees or None,
                  "placed_in_waters": int((how == "waters").sum()) or None,
                  "in_shared_waters": {k: int(v) for k, v in sorted(shared.value_counts().items())} or None,

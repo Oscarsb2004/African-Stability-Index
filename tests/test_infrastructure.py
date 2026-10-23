@@ -197,6 +197,17 @@ def test_points_that_belong_to_no_state_are_not_placed():
     assert placed.geojson["features"][0]["properties"]["iso3"] == "AAA"  # negative control: placed, it is in AAA
 
 
+def test_points_of_no_state_are_kept_only_near_a_member_states_land():
+    # AAA and BBB span 0° to 2° E; one point inside AAA, one 5.6 km east of BBB, one about 56 km east of it
+    frame = points((0.5, 0.5), (2.05, 0.5), (2.5, 0.5), portname=["In", "Near", "Far"])
+    spec = {"id": "ck", "title": "Chokepoints", "fields": ["portname"], "place": False, "near_members_km": 10} | SHOWN
+    out = PointLayer().run(PointLayer.Input(spec, frame, POLYGONS))
+    assert [f["properties"]["portname"] for f in out.geojson["features"]] == ["In", "Near"]
+    assert out.entry["far_from_member_states"] == 1
+    wider = PointLayer().run(PointLayer.Input(spec | {"near_members_km": 100}, frame, POLYGONS))
+    assert wider.entry["count"] == 3 and wider.entry["far_from_member_states"] == 0  # negative control
+
+
 def test_activity_sums_only_complete_calendar_years():
     days = list(pd.date_range("2019-01-01", "2021-03-01", freq="D").strftime("%Y-%m-%d"))
     d = pd.DataFrame({"date": days * 2, "portid": ["p1"] * len(days) + ["p2"] * len(days), "calls": 1, "t": 2.5})
