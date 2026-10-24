@@ -156,3 +156,18 @@ url = "https://raw.githubusercontent.com/glottolog/glottolog-cldf/v5.3/cldf/{tab
 kind = "glottolog-cldf"
 edition = "5.3"
 terms = "https://github.com/glottolog/glottolog-cldf/blob/v5.3/LICENSE; read 2026-10-20; CC BY 4.0; cite Hammarström, Forkel, Haspelmath & Bank (2026), Glottolog 5.3, Leipzig: Max Planck Institute for Evolutionary Anthropology"
+
+[cepii-baci]
+title = "CEPII BACI, version 202601, in HS 1992: world trade by exporter, importer and HS 6-digit product, 1995-2024"
+url = "https://www.cepii.fr/DATA_DOWNLOAD/baci/data/BACI_HS92_V202601.zip"
+kind = "cepii-baci"
+edition = "202601"
+terms = "https://www.cepii.fr/CEPII/en/bdd_modele/bdd_modele_item.asp?id=37; read 2026-10-23; Etalab Open Licence 2.0 (read 2026-10-23): free reuse, commercial or not, derived information included, acknowledging the source (CEPII) and the date of the last update (2026-01-30, BACI's page); cite Gaulier and Zignago (2010), BACI: International Trade Database at the Product-Level, CEPII Working Paper 2010-23"
+
+[usgs-myb3]
+title = "USGS 2024 Minerals Yearbook, volume III, Area Reports — International, data release: every country's mineral production 2020-2024 and its mineral facilities"
+url = "https://www.sciencebase.gov/catalog/file/get/6a8490171ba49b3133cd8055?f=__disk__dc%2Fde%2Fe2%2Fdcdee2cc3de8311e6245db9cb11b1d09459a8065"
+facilities_url = "https://www.sciencebase.gov/catalog/file/get/6a8490171ba49b3133cd8055?f=__disk__81%2F38%2Feb%2F8138ebd0356ad02efcda21627f8d94f7ef108ae7"
+kind = "usgs-myb"
+edition = "2024"
+terms = "https://doi.org/10.5066/P1KEQASH (ScienceBase item 6a8490171ba49b3133cd8055); read 2026-10-23; marked CC0 1.0, 'in the public domain' without use constraints; USGS asks for the credit 'U.S. Geological Survey' (usgs.gov, Copyrights and Credits, read 2026-10-23); cite National Minerals Information Center (2026), 2024 Minerals Yearbook, volume III, U.S. Geological Survey data release, doi:10.5066/P1KEQASH; published 2026-08-31"

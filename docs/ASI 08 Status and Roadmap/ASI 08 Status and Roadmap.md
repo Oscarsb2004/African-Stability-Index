@@ -20,11 +20,15 @@ The index of this section: each note in its folder, by name. Each keeps its own 
 
 ## Now
 
-Phase 1 of the [ASI Project Plan](<ASI Project Plan.md>): Africa's chokepoints only (1.1), then I6 (1.2).
+Phase 1 of the [ASI Project Plan](<ASI Project Plan.md>): I6 (1.2), what each state produces and sells. Its two
+sources are in the store (2026-10-23): CEPII's BACI 202601 in HS 1992 (world trade by product, 1995-2024) and the
+USGS 2024 Minerals Yearbook's data release (every country's mineral production, 2020-2024, and its facilities).
+Chokepoints (1.1) and the diverging palette (1.4) are merged; phase 4 waits on the theatres' ruling (4.5) and on
+Polymarket's terms (4.6).
 
 ## Next
 
-Phase 1's export chains (1.3) and the Data tab's diverging palette (1.4). Then phase 2: one review per dimension.
+Phase 1's export chains (1.3). Then phase 2: one review per dimension.
 
 ## Waiting on the owner
 

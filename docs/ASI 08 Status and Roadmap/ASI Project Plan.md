@@ -59,7 +59,7 @@ The owner, 2026-10-23: "keep this project limited to africa. We can branch this 
 | # | Work | Size | Depends on |
 | --- | --- | --- | --- |
 | 1.1 | **Africa's chokepoints only.** Keep the chokepoints within 100 km of a member state's land. Four of PortWatch's 28 qualify: Suez, Gibraltar, Bab el-Mandeb and the Cape of Good Hope. The next nearest, the Bosporus, is 1,076 km away | small | — |
-| 1.2 | **I6: what each state produces and sells.** Each state's major resources, its production from a publisher's commodity tables, and its exports from CEPII BACI through a declared HS crosswalk (derived), beside the WDI's rents already shown | large | — |
+| 1.2 | **I6: what each state produces and sells.** Each state's major resources, its production from the USGS Minerals Yearbook's data release, and its exports from CEPII BACI through a declared HS crosswalk (derived), beside the WDI's rents already shown | large | — |
 | 1.3 | **I8: export chains.** From a mine, by rail or road, to its exporting port, as declared joins of published segments (derived), and landlocked states' corridors to the sea | medium | 1.2 |
 | 1.4 | **The Data tab's diverging palette,** validated like every ramp on the site | small | — |
 
