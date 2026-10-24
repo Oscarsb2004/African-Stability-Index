@@ -5,7 +5,7 @@
 
 import { useEffect, useState } from "react";
 import LineChart from "../LineChart";
-import { asset, people, type SectionsDoc } from "../data";
+import { loadOnce, people, type SectionsDoc } from "../data";
 import { km, totalKm, type CountriesDoc, type LayersDoc } from "../infra";
 import { Rows, trend } from "./parts";
 
@@ -16,8 +16,6 @@ const COMING = [
   ["Pipelines and power stations", "waiting on the terms of their stated source; Global Energy Monitor next"],
   ["Wages", "ILOSTAT's minimum and median wages, once its terms are read"],
 ];
-
-let countries: Promise<CountriesDoc> | null = null;  // loaded once, for every state
 
 // a share as PortWatch publishes it, in percent to two decimals
 const share = (v?: number) => v === undefined ? "" : `${v.toLocaleString("en", { maximumFractionDigits: 2 })}%`;
@@ -33,10 +31,9 @@ export default function InfrastructurePanel({ iso3, infra, doc: sections, onComp
   const [places, setPlaces] = useState<Place[]>([]);
   const [doc, setDoc] = useState<CountriesDoc | null>(null);
   useEffect(() => {
-    fetch(asset("geo/places.json")).then((r) => r.json()).then((g) =>
-      setPlaces(g.features.map((f: { properties: Place }) => f.properties)));
-    countries ??= fetch(asset("geo/infra/countries.json")).then((r) => r.json());
-    countries.then(setDoc).catch(() => setDoc({}));
+    loadOnce<{ features: { properties: Place }[] }>("geo/places.json").then((g) =>
+      setPlaces(g.features.map((f) => f.properties)), () => setPlaces([]));
+    loadOnce<CountriesDoc>("geo/infra/countries.json").then(setDoc).catch(() => setDoc({}));
   }, []);
   const here = places.filter((p) => p.iso3 === iso3);
   const c = doc?.[iso3];
