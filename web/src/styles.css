@@ -373,3 +373,25 @@ a { color: var(--accent); }
 .link-card { display: grid; gap: 3px; padding-top: 6px; border-top: 1px solid var(--line); }
 .link-card p { margin: 2px 0; }
 .swatch.line.dashed { background-image: repeating-linear-gradient(90deg, transparent 0 5px, rgba(0, 0, 0, 0.9) 5px 8px); }
+
+/* ── your own index: the builder inside the Stability popup ──────────────────────────────────────────── */
+.measure-option.build { border-style: dashed; border-color: var(--accent); color: var(--accent); }
+.custom-entry { display: grid; gap: 2px; }
+.custom-actions { display: flex; gap: 10px; padding-left: 4px; }
+.builder { display: grid; gap: 10px; }
+.builder-field { display: grid; gap: 4px; font-weight: 550; font-size: 13px; }
+.builder-field .pick { width: 100%; color: var(--ink); font: inherit; font-weight: 400; }
+.builder-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.builder-row { display: flex; gap: 6px; margin-bottom: 6px; }
+.builder-row .pick { flex: 1; min-width: 0; color: var(--ink); font: inherit; }
+.builder-list { max-height: 320px; overflow-y: auto; display: grid; gap: 2px; align-content: start;
+  border: 1px solid var(--line); border-radius: 8px; padding: 6px; }
+.builder-option { display: flex; gap: 7px; align-items: flex-start; font-size: 12px; cursor: pointer; padding: 3px 2px; }
+.builder-option input { margin-top: 2px; }
+.builder-chosen { display: grid; gap: 4px; padding: 6px 0; border-bottom: 1px solid var(--line); }
+.builder-dir { display: flex; gap: 4px; align-items: center; }
+.builder-dir .measure-option { padding: 3px 8px; font-size: 11px; }
+.builder-dir .close { width: 24px; height: 24px; }
+.builder-actions { display: flex; justify-content: flex-end; gap: 8px; }
+.builder-actions button:disabled { opacity: 0.5; cursor: not-allowed; }
+@media (max-width: 760px) { .builder-cols { grid-template-columns: 1fr; } }

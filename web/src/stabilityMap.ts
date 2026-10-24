@@ -7,7 +7,7 @@ import { RAMP, type StabilityDoc } from "./data";
 import type { Group } from "./explore/model";
 import { fifths } from "./explore/stats";
 
-// "composite", "pillar:<id>" or "indicator:<id>"
+// "composite", "pillar:<id>", "indicator:<id>" or "custom:<id>" (a reader's own index, customIndex.ts)
 export type StabilityMeasure = string;
 
 // The highlighted choices at the top of the menu: a first position, for the owner to replace with their own.
@@ -49,6 +49,14 @@ export function shown(s: StabilityDoc, m: StabilityMeasure): Shown {
   const { values, raw } = measureValues(s, m);
   const xs = Object.values(values).filter((v): v is number => typeof v === "number");
   const breaks = m === "composite" ? s.classes.breaks : xs.length >= 5 ? fifths(xs) : [];
+  const colours = classColours(values, breaks);
+  const scale = m === "composite" ? `Classes: ${s.classes.rule}. Lighter is more stable.`
+    : raw ? "Fifths of the states with a value, as published. Lighter is higher; it is shown, not scored."
+    : "Fifths of the states with a value, on the ASI's 0 to 100 score. Lighter is more stable.";
+  return { label: measureLabel(s, m), values, breaks, colours, scale };
+}
+
+function classColours(values: Record<string, number | null>, breaks: number[]): Record<string, string> {
   const colours: Record<string, string> = {};
   for (const [k, v] of Object.entries(values)) {
     if (typeof v !== "number" || !breaks.length) continue;
@@ -56,19 +64,24 @@ export function shown(s: StabilityDoc, m: StabilityMeasure): Shown {
     while (i < breaks.length && v >= breaks[i]) i++;
     colours[k] = RAMP[i];
   }
-  const scale = m === "composite" ? `Classes: ${s.classes.rule}. Lighter is more stable.`
-    : raw ? "Fifths of the states with a value, as published. Lighter is higher; it is shown, not scored."
-    : "Fifths of the states with a value, on the ASI's 0 to 100 score. Lighter is more stable.";
-  return { label: measureLabel(s, m), values, breaks, colours, scale };
+  return colours;
+}
+
+/** A reader's own index on the map: its values cut at their fifths, lighter higher, said to be theirs. */
+export function shownValues(label: string, values: Record<string, number | null>, scale: string): Shown {
+  const xs = Object.values(values).filter((v): v is number => typeof v === "number");
+  const breaks = xs.length >= 5 ? fifths(xs) : [];
+  return { label, values, breaks, colours: classColours(values, breaks), scale };
 }
 
 export interface MenuSection { title: string; path?: string; items: StabilityMeasure[] }
 
 /** The menu's sections, in the order of the indicator files: general stability, the eight pillars, then each
  *  pillar's indicators under the name of its file (indicators_list/pillar_<id>.yaml). */
-export function menu(s: StabilityDoc): MenuSection[] {
+export function menu(s: StabilityDoc, custom: StabilityMeasure[] = []): MenuSection[] {
   return [
     { title: "General stability", items: ["composite"] },
+    ...(custom.length ? [{ title: "Custom indices (yours, in this browser)", items: custom }] : []),
     { title: "The eight pillars", items: Object.keys(s.pillars).map((id) => `pillar:${id}`) },
     ...Object.entries(s.pillars).map(([id, p]) => ({
       title: `${id} · ${p.name}`, path: `indicators_list/pillar_${id.toLowerCase()}.yaml`,

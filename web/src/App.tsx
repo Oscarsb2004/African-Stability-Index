@@ -15,7 +15,9 @@ import WondersPanel from "./panels/WondersPanel";
 import InfrastructurePanel from "./panels/InfrastructurePanel";
 import StabilityPanel from "./panels/StabilityPanel";
 import StabilityMenu from "./StabilityMenu";
-import { shown, type StabilityMeasure } from "./stabilityMap";
+import { shown, shownValues, type Shown, type StabilityMeasure } from "./stabilityMap";
+import { AGGREGATES, type CustomIndex, fromIndexHash, indexHash, loadIndexSeries, METHODS, rememberedIndices,
+  rememberIndices, scoreIndex } from "./customIndex";
 import type { Group } from "./explore/model";
 import { load, RAMP, type MetaDoc, type Section, type SectionsDoc, type StabilityDoc, type Wonder,
   type WondersDoc } from "./data";
@@ -45,7 +47,16 @@ export default function App() {
   const [showClasses, setShowClasses] = useState(true);
   const [cities, setCities] = useState(false);  // cities and towns are drawn only when switched on
   // the Stability map: what it shows (the composite, a pillar or an indicator) and an optional grouping it is cut to
-  const [measure, setMeasure] = useState<StabilityMeasure>("composite");
+  // a reader's own indices (customIndex.ts), kept in this browser; one shared by address is added and shown
+  const [shared] = useState<CustomIndex | null>(() => fromIndexHash(window.location.hash));
+  const [indices, setIndices] = useState<CustomIndex[]>(() => {
+    const list = rememberedIndices();
+    return shared && !list.some((ix) => ix.name === shared.name) ? [...list, shared] : list;
+  });
+  useEffect(() => rememberIndices(indices), [indices]);
+  const [measure, setMeasure] = useState<StabilityMeasure>(() => shared
+    ? `custom:${(rememberedIndices().find((ix) => ix.name === shared.name) ?? shared).id}` : "composite");
+  const [custom, setCustom] = useState<Shown | null>(null);
   const [group, setGroup] = useState<Group | null>(null);
   const [menuOpen, setMenuOpen] = useState(false);
   const closeMenu = useCallback(() => setMenuOpen(false), []);
@@ -117,7 +128,22 @@ export default function App() {
 
   const names = useMemo(() => docs ? Object.entries(docs.sections.names).sort((a, b) => a[1].localeCompare(b[1]))
     : [], [docs]);
-  const stab = useMemo(() => docs ? shown(docs.stability, measure) : null, [docs, measure]);
+  // a reader's own index is scored from its series once they load; until then the map keeps its colours
+  useEffect(() => {
+    const ix = measure.startsWith("custom:") ? indices.find((x) => `custom:${x.id}` === measure) : undefined;
+    if (!ix || !docs) { setCustom(null); return; }
+    let live = true;
+    loadIndexSeries(ix).then((series) => {
+      if (!live) return;
+      const { values } = scoreIndex(ix, series, Object.keys(docs.sections.names));
+      const method = METHODS.find((m) => m.id === ix.method)?.label, agg = AGGREGATES.find((a) => a.id === ix.aggregate)?.label;
+      setCustom(shownValues(ix.name, values, `Your index, built in this browser, not the ASI: ${ix.items.length} indicators, ` +
+        `${method}, ${agg?.toLowerCase()}, ${ix.year}. Fifths of the states with a value; lighter is higher.`));
+    });
+    return () => { live = false; };
+  }, [measure, indices, docs]);
+  const stab = useMemo(() => !docs ? null : measure.startsWith("custom:") ? custom : shown(docs.stability, measure),
+    [docs, measure, custom]);
 
   if (error) return <div className="loading">Could not load the data: {error}</div>;
   if (!docs) return <div className="loading">Loading…</div>;
@@ -190,7 +216,11 @@ export default function App() {
             </>
           )}
           {menuOpen && <StabilityMenu stability={docs.stability} value={measure} onChange={setMeasure}
-            onClose={closeMenu} />}
+            onClose={closeMenu} indices={indices}
+            onSaveIndex={(ix) => setIndices((xs) => [...xs, ix])}
+            onDeleteIndex={(id) => { setIndices((xs) => xs.filter((x) => x.id !== id));
+              if (measure === `custom:${id}`) setMeasure("composite"); }}
+            shareLink={(ix) => `${window.location.origin}${window.location.pathname}#${indexHash(ix)}`} />}
         </div>
       )}
       {section === "infrastructure" && infra && (
