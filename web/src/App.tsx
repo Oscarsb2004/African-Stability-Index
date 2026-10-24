@@ -109,8 +109,11 @@ export default function App() {
       load<SectionsDoc>("data/sections.json")])
       .then(([meta, stability, sections]) => setDocs({ meta, stability, sections }))
       .catch((e) => setError(String(e)));
-    load<WondersDoc>("data/wonders.json").then(setWonders).catch(() => setWonders(null));  // optional
   }, []);
+  // the wonders are loaded the first time their section opens; they are optional
+  useEffect(() => {
+    if (section === "wonders" && !wonders) load<WondersDoc>("data/wonders.json").then(setWonders).catch(() => {});
+  }, [section, wonders]);
 
   const names = useMemo(() => docs ? Object.entries(docs.sections.names).sort((a, b) => a[1].localeCompare(b[1]))
     : [], [docs]);

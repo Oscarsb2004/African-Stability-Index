@@ -7,7 +7,7 @@ import { useEffect, useRef } from "react";
 import maplibregl, { type ExpressionSpecification, type GeoJSONSource, type MapGeoJSONFeature } from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
 import { Protocol } from "pmtiles";
-import { asset, people, rampColour, type MetaDoc, type Section, type StabilityDoc, type Wonder } from "./data";
+import { asset, loadOnce, people, rampColour, type MetaDoc, type Section, type StabilityDoc, type Wonder } from "./data";
 import { activityRows, cardRows, COLOURS, EDGE, parsed, RING, SHAPES, type Activity, type LayersDoc } from "./infra";
 import { heading, KIND_COLOURS, linksOf, standing, type Link, type LinksDoc } from "./links";
 
@@ -34,6 +34,12 @@ interface Props {
   only?: string[] | null;  // a grouping: only its members are coloured
 }
 
+// geo/countries.json, as the map reads it: each state's code, name, Natural Earth label point, rank and abbreviation
+interface CountriesGeo {
+  features: { properties: { iso3: string; name: string; label?: [number, number]; rank?: number; abbrev?: string };
+    geometry: { coordinates: unknown } }[];
+}
+
 interface Place {
   name: string;
   iso3: string;
@@ -41,6 +47,7 @@ interface Place {
   population: number;
   min_zoom: number;
 }
+interface PlacesGeo { features: { properties: Place; geometry: { coordinates: [number, number] } }[] }
 
 const AFRICA: [number, number] = [19, 3];
 
@@ -54,17 +61,34 @@ const ESRI_KEY = import.meta.env.VITE_ESRI_KEY as string | undefined;
 const KIND_PAINT = ["match", ["get", "kind"], ...Object.entries(KIND_COLOURS).flat(), RING] as unknown as
   ExpressionSpecification;
 
+// A country name's width in pixels at a size, from the canvas's text metrics in the label's own font (the weight of
+// .country-name, and its letter spacing of 0.02em), so measuring never forces the page's layout. Each is kept.
+const metrics = document.createElement("canvas").getContext("2d");
+const widths = new Map<string, number>();
+let family = "";
+function textWidth(el: HTMLElement, text: string, size: number): number {
+  const key = `${size}|${text}`;
+  let w = widths.get(key);
+  if (w === undefined) {
+    family ||= getComputedStyle(el).fontFamily;
+    if (metrics) metrics.font = `600 ${size}px ${family}`;
+    w = (metrics?.measureText(text).width ?? text.length * size * 0.62) + 0.02 * size * text.length;
+    widths.set(key, w);
+  }
+  return w;
+}
+
 export default function MapView({ meta, stability, section, selected, showClasses, choropleth, marked = [], onSelect,
   wonders, onWonder, infra = null, infraOn = [], cities = false, names = {},
   stabilityColours = null, only = null }: Props) {
   const box = useRef<HTMLDivElement>(null);
   const tip = useRef<HTMLDivElement>(null);
   const map = useRef<maplibregl.Map | null>(null);
-  const markers = useRef<maplibregl.Marker[]>([]);
+  const markers = useRef(new Map<number, maplibregl.Marker>());  // the cities shown, by their place in places.json
   const places = useRef<{ p: Place; at: [number, number] }[]>([]);
   // each state's name, its marker, and its rank (lower is more important)
   const labels = useRef<{ name: string; abbrev: string; at: [number, number]; size: number; rank: number;
-    marker: maplibregl.Marker; el: HTMLElement }[]>([]);
+    marker: maplibregl.Marker; el: HTMLElement; shown?: string }[]>([]);
   const sectionRef = useRef(section);
   const linksDoc = useRef<LinksDoc | null>(null);
   const linksPopup = useRef<maplibregl.Popup | null>(null);
@@ -171,35 +195,36 @@ export default function MapView({ meta, stability, section, selected, showClasse
     } else credit();
     m.addControl(new maplibregl.ScaleControl({ unit: "metric" }), "bottom-left");
 
-    m.on("mousemove", "classes", (e) => {
-      const f = e.features?.[0];
-      if (!f || !tip.current) return;
+    // hover: the state under the pointer, an African one before any other, looked up once a frame however fast the
+    // mouse moves. Another state shows a pointer where it has links into Africa.
+    let pending: maplibregl.MapMouseEvent | null = null;
+    const hide = () => {
+      m.getCanvas().style.cursor = "";
+      if (tip.current) tip.current.style.opacity = "0";
+    };
+    const hover = () => {
+      const e = pending;
+      pending = null;
+      if (!e || !tip.current) return;
       if ((e.originalEvent.target as HTMLElement | null)?.closest?.(".place")) return;  // a city label has its own
-      m.getCanvas().style.cursor = f.properties.member ? "pointer" : "default";
-      tip.current.textContent = f.properties.name;
+      if (e.originalEvent.buttons) { hide(); return; }  // the map is being dragged
+      const found = m.queryRenderedFeatures(e.point, { layers: ["classes", "world-fill"] });
+      const f = found.find((x) => x.layer.id === "classes");
+      const w = f ? undefined : found.find((x) => x.layer.id === "world-fill");
+      if (!f && !w) { hide(); return; }
+      const has = !!w && linksOf(linksDoc.current, String(w.properties.iso3)).length > 0;
+      m.getCanvas().style.cursor = f?.properties.member || has ? "pointer" : "default";
+      tip.current.textContent = f ? f.properties.name
+        : has ? `${w!.properties.name} · its links into Africa on click` : w!.properties.name;
       tip.current.style.transform = `translate(${e.point.x + 14}px, ${e.point.y + 14}px)`;
       tip.current.style.opacity = "1";
+    };
+    m.on("mousemove", (e) => {
+      if (!pending) requestAnimationFrame(hover);
+      pending = e;
     });
-    m.on("mouseleave", "classes", () => {
-      m.getCanvas().style.cursor = "";
-      if (tip.current) tip.current.style.opacity = "0";
-    });
-    // another state: its name, and a pointer where it has links into Africa
-    m.on("mousemove", "world-fill", (e) => {
-      const f = e.features?.[0];
-      if (!f || !tip.current || m.queryRenderedFeatures(e.point, { layers: ["classes"] }).length) return;
-      const has = linksOf(linksDoc.current, String(f.properties.iso3)).length > 0;
-      m.getCanvas().style.cursor = has ? "pointer" : "default";
-      tip.current.textContent = has ? `${f.properties.name} · its links into Africa on click` : f.properties.name;
-      tip.current.style.transform = `translate(${e.point.x + 14}px, ${e.point.y + 14}px)`;
-      tip.current.style.opacity = "1";
-    });
-    m.on("mouseleave", "world-fill", () => {
-      m.getCanvas().style.cursor = "";
-      if (tip.current) tip.current.style.opacity = "0";
-    });
-    fetch(asset("geo/links.json")).then((r) => r.json()).then((d: LinksDoc) => { linksDoc.current = d; })
-      .catch(() => { linksDoc.current = null; });
+    m.on("mouseout", () => { pending = null; hide(); });
+    loadOnce<LinksDoc>("geo/links.json").then((d) => { linksDoc.current = d; }, () => { linksDoc.current = null; });
     m.on("click", (e) => {
       // a point's card, not the country under it; the hit box is wider than the dot, so a small mark is easy to take
       const near: [maplibregl.PointLike, maplibregl.PointLike] = [[e.point.x - 6, e.point.y - 6], [e.point.x + 6, e.point.y + 6]];
@@ -214,16 +239,14 @@ export default function MapView({ meta, stability, section, selected, showClasse
       linksRef.current(member ?? other, e.lngLat);
     });
 
-    fetch(asset("geo/places.json")).then((r) => r.json()).then((g) => {
-      places.current = g.features.map((f: { properties: Place; geometry: { coordinates: [number, number] } }) =>
-        ({ p: f.properties, at: f.geometry.coordinates }));
+    loadOnce<PlacesGeo>("geo/places.json").then((g) => {
+      places.current = g.features.map((f) => ({ p: f.properties, at: f.geometry.coordinates }));
       drawPlaces();
     });
     // each state's name at Natural Earth's label point, always: drawn once, it moves with the map; the size follows
     // Natural Earth's label rank, and a small state's name is smaller, never hidden
-    fetch(asset("geo/countries.json")).then((r) => r.json()).then((g) => {
-      for (const f of g.features as { properties: { name: string; label?: [number, number]; rank?: number;
-        abbrev?: string } }[]) {
+    loadOnce<CountriesGeo>("geo/countries.json").then((g) => {
+      for (const f of g.features) {
         const { name, label, rank = 5, abbrev = name } = f.properties;
         if (!label) continue;
         const size = rank <= 3 ? 13 : rank <= 5 ? 12 : 11;
@@ -242,8 +265,6 @@ export default function MapView({ meta, stability, section, selected, showClasse
     if (import.meta.env.DEV) (window as unknown as { asiMap: maplibregl.Map }).asiMap = m;
 
     function drawPlaces() {
-      markers.current.forEach((mk) => mk.remove());
-      markers.current = [];
       const zoom = m.getZoom();
       const bounds = m.getBounds();
       // the countries' names come first, the more important first (Natural Earth's label rank). Below zoom 4 they are
@@ -251,42 +272,50 @@ export default function MapView({ meta, stability, section, selected, showClasse
       // above; Natural Earth's abbreviation in the same three places; else its full name on its point. A name is never
       // hidden or moved off its state, and hover always gives the full name. A city label that would cover a name
       // gives way.
+      // Widths come from the canvas's text metrics, cached, so no try forces the page's layout; a label's element is
+      // written only when its text, size or place changes.
       const overlaps = (a: number[], b: number[]) => a[0] < b[2] && a[2] > b[0] && a[1] < b[3] && a[3] > b[1];
       const scale = zoom < 3.2 ? 0.8 : zoom < 4.2 ? 0.9 : 1;
       const placed: number[][] = [];
       for (const l of labels.current) {
         const size = Math.round(l.size * scale), h = size * 1.25, pt = m.project(l.at);
-        l.el.style.fontSize = `${size}px`;
         const box = (text: string, dy: number) => {
-          l.el.textContent = text;
-          const half = ((l.el.offsetWidth || text.length * size * 0.62) + 2) / 2;
+          const half = (textWidth(l.el, text, size) + 2) / 2;
           return [pt.x - half, pt.y + dy - h / 2, pt.x + half, pt.y + dy + h / 2];
         };
         const tries = [l.name, l.abbrev].flatMap((text) => [0, h, -h].map((dy) => [text, dy] as const));
         const [text, dy] = tries.find(([t, d]) => !placed.some((b) => overlaps(box(t, d), b))) ?? [l.name, 0];
-        const b = box(text, dy);
-        l.marker.setOffset([0, dy]);
-        placed.push(b);
+        placed.push(box(text, dy));
+        if (l.el.textContent !== text) l.el.textContent = text;
+        if (l.shown !== `${size}|${dy}`) {
+          l.el.style.fontSize = `${size}px`;
+          l.marker.setOffset([0, dy]);
+          l.shown = `${size}|${dy}`;
+        }
       }
       // only when switched on; the wonders have the map to themselves
-      if (sectionRef.current === "wonders" || !citiesRef.current) return;
-      const { clientWidth: width, clientHeight: height } = m.getCanvas();
-      // capitals from the start; every other city once the map is zoomed to the level Natural Earth gives it.
-      // places.json is ordered capitals first, then by population, so a label that would overlap one already
-      // placed is the less important one and is skipped.
-      const shown = [];
-      for (const c of places.current) {
-        const { p, at } = c;
-        if (!(p.capital ? zoom >= 2 : zoom >= p.min_zoom - 1) || !bounds.contains(at)) continue;
-        const pt = m.project(at);
-        if (pt.x < 0 || pt.y < 0 || pt.x > width || pt.y > height) continue;
-        const box = [pt.x - 5, pt.y - 9, pt.x + 14 + p.name.length * (p.capital ? 7 : 6.2), pt.y + 9];
-        if (placed.some((b) => overlaps(box, b))) continue;
-        placed.push(box);
-        shown.push(c);
-        if (shown.length >= 120) break;
+      const shown = new Set<number>();
+      if (sectionRef.current !== "wonders" && citiesRef.current) {
+        const { clientWidth: width, clientHeight: height } = m.getCanvas();
+        // capitals from the start; every other city once the map is zoomed to the level Natural Earth gives it.
+        // places.json is ordered capitals first, then by population, so a label that would overlap one already
+        // placed is the less important one and is skipped.
+        for (const [i, { p, at }] of places.current.entries()) {
+          if (!(p.capital ? zoom >= 2 : zoom >= p.min_zoom - 1) || !bounds.contains(at)) continue;
+          const pt = m.project(at);
+          if (pt.x < 0 || pt.y < 0 || pt.x > width || pt.y > height) continue;
+          const box = [pt.x - 5, pt.y - 9, pt.x + 14 + p.name.length * (p.capital ? 7 : 6.2), pt.y + 9];
+          if (placed.some((b) => overlaps(box, b))) continue;
+          placed.push(box);
+          shown.add(i);
+          if (shown.size >= 120) break;
+        }
       }
-      for (const { p, at } of shown) {
+      // a city still shown keeps its marker; only those that come or go are added or removed
+      for (const [i, mk] of markers.current) if (!shown.has(i)) { mk.remove(); markers.current.delete(i); }
+      for (const i of shown) {
+        if (markers.current.has(i)) continue;
+        const { p, at } = places.current[i];
         const el = document.createElement("div");
         el.className = p.capital ? "place capital" : "place";
         const dot = document.createElement("span");
@@ -305,7 +334,7 @@ export default function MapView({ meta, stability, section, selected, showClasse
           t.style.opacity = "1";
         });
         el.addEventListener("mouseleave", () => { if (tip.current) tip.current.style.opacity = "0"; });
-        markers.current.push(new maplibregl.Marker({ element: el, anchor: "left" }).setLngLat(at).addTo(m));
+        markers.current.set(i, new maplibregl.Marker({ element: el, anchor: "left" }).setLngLat(at).addTo(m));
       }
     }
     redraw.current = drawPlaces;
@@ -353,8 +382,8 @@ export default function MapView({ meta, stability, section, selected, showClasse
   const previous = useRef<string | null>(null);
   const extents = useRef<Record<string, [number, number, number, number]>>({});
   useEffect(() => {
-    fetch(asset("geo/countries.json")).then((r) => r.json()).then((g) => {
-      for (const f of g.features as { properties: { iso3: string }; geometry: { coordinates: unknown } }[]) {
+    loadOnce<CountriesGeo>("geo/countries.json").then((g) => {
+      for (const f of g.features) {
         const e = extents.current[f.properties.iso3] ?? [180, 90, -180, -90];
         const walk = (c: unknown): void => {
           if (typeof (c as number[])[0] === "number") {

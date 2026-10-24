@@ -135,6 +135,18 @@ export async function load<T>(path: string): Promise<T> {
   return r.json() as Promise<T>;
 }
 
+// A file several parts of the site read (countries.json, links.json, places.json): fetched and parsed once, then
+// shared. A failed load is forgotten, so the next caller tries again.
+const once = new Map<string, Promise<unknown>>();
+export function loadOnce<T>(path: string): Promise<T> {
+  let p = once.get(path);
+  if (!p) {
+    p = load<T>(path).catch((e) => { once.delete(path); throw e; });
+    once.set(path, p);
+  }
+  return p as Promise<T>;
+}
+
 // ── formatting: visuals show one decimal (P33) ────────────────────────────────────────────────────────────────
 
 export function fmt(v: number | null | undefined, unit = ""): string {
