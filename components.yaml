@@ -1440,6 +1440,7 @@ components:
   tests:
   - tests/test_infrastructure.py::test_the_publication_list_states_every_licence_and_reason
   - tests/test_instability.py::test_a_link_needs_known_states_a_short_card_and_full_sources
+  - tests/test_instability.py::test_a_theatre_needs_member_states_and_known_links
   - tests/test_instability.py::test_the_projects_links_pass_their_checks
   depends_on: []
   drafted: true
@@ -1529,6 +1530,71 @@ components:
   - tests/test_infrastructure.py::test_vector_tiles_hold_each_line_from_its_first_zoom
   depends_on: []
   drafted: true
+- id: asi.instability.events.month
+  section: 03 Pipeline
+  entry: asi/instability/events.py:month
+  form: legacy
+  purpose: '(no docstring: to be written)'
+  inputs:
+  - 'dates: pd.Series'
+  outputs:
+  - pd.Series
+  tests: []
+  depends_on: []
+  drafted: true
+- id: asi.instability.events.window
+  section: 03 Pipeline
+  entry: asi/instability/events.py:window
+  form: legacy
+  purpose: The first and last month of the `months` ending at `last` (YYYY-MM).
+  inputs:
+  - 'last: str'
+  - 'months: int'
+  outputs:
+  - tuple[str, str]
+  tests:
+  - tests/test_instability.py::test_spread_counts_areas_and_an_identified_groups_new_ground
+  depends_on: []
+  drafted: true
+- id: asi.instability.events.Months
+  section: 03 Pipeline
+  entry: asi/instability/events.py:Months
+  form: component
+  purpose: 'Each member state''s deaths by month: the sum of UCDP''s best estimates of its events starting that month.'
+  inputs:
+  - 'inp: Input'
+  outputs:
+  - Output
+  tests:
+  - tests/test_instability.py::test_deaths_are_summed_by_the_month_an_event_starts
+  depends_on: []
+  drafted: true
+- id: asi.instability.events.Spread
+  section: 03 Pipeline
+  entry: asi/instability/events.py:Spread
+  form: component
+  purpose: A theatre's spread over the last twelve months, by two stated rules.
+  inputs:
+  - 'inp: Input'
+  outputs:
+  - Output
+  tests:
+  - tests/test_instability.py::test_spread_counts_areas_and_an_identified_groups_new_ground
+  depends_on: []
+  drafted: true
+- id: asi.instability.events.Points
+  section: 03 Pipeline
+  entry: asi/instability/events.py:Points
+  form: component
+  purpose: 'The window''s events for the map, in member states: place, date, type, deaths and sides.'
+  inputs:
+  - 'inp: Input'
+  outputs:
+  - Output
+  tests:
+  - tests/test_instability.py::test_points_keep_the_window_and_never_the_news
+  depends_on: []
+  drafted: true
 - id: asi.instability.links.sentences
   section: 03 Pipeline
   entry: asi/instability/links.py:sentences
@@ -1557,6 +1623,7 @@ components:
   tests:
   - tests/test_infrastructure.py::test_the_publication_list_states_every_licence_and_reason
   - tests/test_instability.py::test_a_link_needs_known_states_a_short_card_and_full_sources
+  - tests/test_instability.py::test_a_theatre_needs_member_states_and_known_links
   - tests/test_instability.py::test_the_projects_links_pass_their_checks
   depends_on: []
   drafted: true
@@ -1590,6 +1657,43 @@ components:
   - Output
   tests:
   - tests/test_instability.py::test_a_link_is_a_great_circle_between_label_points_carrying_its_card
+  depends_on: []
+  drafted: true
+- id: asi.instability.theatres.problems
+  section: 03 Pipeline
+  entry: asi/instability/theatres.py:problems
+  form: legacy
+  purpose: What is wrong with a theatres list; empty when nothing is.
+  inputs:
+  - 'reg: dict'
+  - 'members: set[str]'
+  - 'link_ids: set[str]'
+  outputs:
+  - list[str]
+  tests:
+  - tests/test_infrastructure.py::test_the_publication_list_states_every_licence_and_reason
+  - tests/test_instability.py::test_a_link_needs_known_states_a_short_card_and_full_sources
+  - tests/test_instability.py::test_a_theatre_needs_member_states_and_known_links
+  - tests/test_instability.py::test_the_projects_links_pass_their_checks
+  depends_on: []
+  drafted: true
+- id: asi.instability.theatres.load
+  section: 03 Pipeline
+  entry: asi/instability/theatres.py:load
+  form: legacy
+  purpose: The theatres list, refused with every problem named when it has any.
+  inputs:
+  - 'path: Path'
+  - 'members: set[str]'
+  - 'link_ids: set[str]'
+  outputs:
+  - dict
+  tests:
+  - tests/test_goalposts.py::test_a_file_with_no_version_at_all_is_a_mismatch
+  - tests/test_goalposts.py::test_a_missing_file_raises_rather_than_recomputing
+  - tests/test_goalposts.py::test_a_version_mismatch_raises_rather_than_loading_stale_bounds
+  - tests/test_goalposts.py::test_freeze_then_load_round_trips
+  - tests/test_goalposts.py::test_the_committed_goalposts_load_and_are_self_consistent
   depends_on: []
   drafted: true
 - id: asi.pipeline.goalposts.apply_log

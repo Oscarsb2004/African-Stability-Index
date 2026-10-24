@@ -21,6 +21,7 @@ The index of this section: each note in its folder, by name. Each keeps its own 
 - [ASI Economy Section](<ASI Economy Section.md>)
 - [ASI Finance Section](<ASI Finance Section.md>)
 - [ASI Infrastructure Section](<ASI Infrastructure Section.md>)
+- [ASI Instability Section](<ASI Instability Section.md>)
 - [ASI Map and Imagery](<ASI Map and Imagery.md>)
 - [ASI Stability Section](<ASI Stability Section.md>)
 - [ASI Wonders Section](<ASI Wonders Section.md>)

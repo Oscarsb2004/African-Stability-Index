@@ -14,6 +14,8 @@ import FinancePanel from "./panels/FinancePanel";
 import WondersPanel from "./panels/WondersPanel";
 import InfrastructurePanel from "./panels/InfrastructurePanel";
 import StabilityPanel from "./panels/StabilityPanel";
+import InstabilityPanel from "./panels/InstabilityPanel";
+import type { InstabilityDoc } from "./instability";
 import StabilityMenu from "./StabilityMenu";
 import { shown, shownValues, type Shown, type StabilityMeasure } from "./stabilityMap";
 import { AGGREGATES, type CustomIndex, fromIndexHash, indexHash, loadIndexSeries, METHODS, rememberedIndices,
@@ -29,6 +31,7 @@ const SECTIONS: { id: Section; label: string }[] = [
   { id: "finance", label: "Finance" },
   { id: "infrastructure", label: "Infrastructure" },
   { id: "wonders", label: "Wonders" },
+  { id: "instability", label: "Spreading instability" },
   { id: "data", label: "Data" },
 ];
 const DataTab = lazy(() => import("./explore/DataTab"));  // loaded only when the tab opens
@@ -64,6 +67,13 @@ export default function App() {
   const [viewing, setViewing] = useState<Wonder | null>(null);
   const [infra, setInfra] = useState<LayersDoc | null>(null);
   const [infraOn, setInfraOn] = useState<string[]>(SHOWN_FIRST);
+  // Spreading instability: its document, loaded the first time the tab opens, and the theatre chosen
+  const [instability, setInstability] = useState<InstabilityDoc | null>(null);
+  const [theatre, setTheatre] = useState<string>("sahel");
+  useEffect(() => {
+    if (section === "instability" && !instability) load<InstabilityDoc>("data/instability.json").then(setInstability).catch(() => {});
+  }, [section, instability]);
+  const focus = section === "instability" ? instability?.theatres.find((t) => t.id === theatre) ?? null : null;
   // the Infrastructure catalogue is loaded the first time the section opens
   useEffect(() => {
     if (section === "infrastructure" && !infra) load<LayersDoc>("geo/infra/layers.json").then(setInfra).catch(() => {});
@@ -151,11 +161,12 @@ export default function App() {
   const edges = [null, ...(stab?.breaks ?? []), null];
   return (
     <div className="app">
-      <MapView meta={docs.meta} stability={docs.stability} section={section} selected={section === "data" ? null : selected}
+      <MapView meta={docs.meta} stability={docs.stability} section={section} selected={section === "data" || section === "instability" ? null : selected}
         showClasses={showClasses} choropleth={section === "data" ? layer?.colours ?? null : null}
         marked={section === "data" ? explore.items.filter((i) => i.t === "s").map((i) => i.id) : []}
         onSelect={onMapSelect} wonders={wonders?.wonders ?? null} onWonder={setViewing} infra={infra} infraOn={infraOn}
         cities={cities} names={docs.sections.names} stabilityColours={stab?.colours ?? null}
+        theatre={focus ? { states: focus.states, links: focus.links } : null}
         only={section === "stability" ? group?.members ?? null : null} />
 
       <div className="topleft">
@@ -260,7 +271,17 @@ export default function App() {
       )}
       </div>
 
-      {section === "data" ? (
+      {section === "instability" ? (
+        <aside className="glass panel open" aria-live="polite">
+          <div className="panel-head">
+            <div>
+              <div className="panel-kicker">Spreading instability</div>
+              <h2>The continent's worsening conflicts</h2>
+            </div>
+          </div>
+          <InstabilityPanel doc={instability} theatre={theatre} onTheatre={setTheatre} names={docs.sections.names} />
+        </aside>
+      ) : section === "data" ? (
         <aside className="glass panel wide open" aria-live="polite">
           <div className="panel-head">
             <div>

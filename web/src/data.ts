@@ -1,6 +1,6 @@
 // The files 05_web.py writes to public/. Every type mirrors a document's shape; nothing here computes a figure.
 
-export type Section = "stability" | "economy" | "finance" | "infrastructure" | "wonders" | "data";
+export type Section = "stability" | "economy" | "finance" | "infrastructure" | "wonders" | "instability" | "data";
 
 export interface Figure {
   value: number | null;

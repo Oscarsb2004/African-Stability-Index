@@ -1,0 +1,65 @@
+# The conflict theatres of the "Spreading instability" tab (the owner's rulings of 2026-10-23): the owner's list, a
+# first position drafted by Claude for the owner to rule on in the pull request that adds it. A theatre is a set of
+# member states whose conflicts the tab shows together; a state may sit in more than one. Its summary says only what
+# the theatre covers, never a finding; the figures come from UCDP's events and the links from registry/links.yaml.
+# `markets` lists prediction markets by their platform and id, never matched by search (plan 4.6; empty until their
+# terms are read). `maps` links to control maps others publish, dated, never reproduced: no open source publishes
+# Sudan's frontlines as data (Wikipedia's module dates from 2021; Commons holds images), so the tab shows UCDP's events
+# and links out. Checked by asi/instability/theatres.py.
+format: asi.theatres/1
+
+theatres:
+  - id: sahel
+    name: The central Sahel and the coastal states
+    states: [MLI, BFA, NER, BEN, TGO, GHA, CIV]
+    summary: Mali, Burkina Faso and Niger, and the coastal states to their south, Benin, Togo, Ghana and Côte d'Ivoire.
+    links: [rus-mli]
+    markets: []
+  - id: sudan
+    name: Sudan's war and its neighbours
+    states: [SDN, TCD, SSD, CAF]
+    summary: Sudan, and the neighbours its war borders on, Chad, South Sudan and the Central African Republic.
+    links: [are-sdn-rsf]
+    markets: []
+    maps:
+      - title: War in Sudan (2023), a map of control by Wikipedia's editors
+        publisher: Wikimedia Commons
+        url: https://commons.wikimedia.org/wiki/File:War_in_Sudan_(2023).svg
+        revised: "2026-10-07"
+        read: "2026-10-23"
+  - id: ethiopia-eritrea
+    name: Ethiopia and Eritrea
+    states: [ETH, ERI]
+    summary: Ethiopia and Eritrea, whose forces fought together in Tigray from 2020 to 2022.
+    links: [eri-eth-tigray]
+    markets: []
+  - id: somalia
+    name: Somalia and the Horn
+    states: [SOM, KEN, DJI]
+    summary: Somalia, and its neighbours Kenya and Djibouti.
+    links: []
+    markets: []
+  - id: eastern-drc
+    name: The eastern DRC and the Great Lakes
+    states: [COD, RWA, UGA, BDI]
+    summary: The Democratic Republic of the Congo, and its eastern neighbours Rwanda, Uganda and Burundi.
+    links: [rwa-cod-m23]
+    markets: []
+  - id: lake-chad
+    name: The Lake Chad basin
+    states: [NGA, CMR, TCD, NER]
+    summary: Nigeria, Cameroon, Chad and Niger, the states around Lake Chad.
+    links: []
+    markets: []
+  - id: libya
+    name: Libya
+    states: [LBY]
+    summary: Libya.
+    links: []
+    markets: []
+  - id: mozambique
+    name: Northern Mozambique
+    states: [MOZ, TZA]
+    summary: Mozambique, and its northern neighbour Tanzania.
+    links: []
+    markets: []

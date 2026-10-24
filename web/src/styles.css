@@ -395,3 +395,7 @@ a { color: var(--accent); }
 .builder-actions { display: flex; justify-content: flex-end; gap: 8px; }
 .builder-actions button:disabled { opacity: 0.5; cursor: not-allowed; }
 @media (max-width: 760px) { .builder-cols { grid-template-columns: 1fr; } }
+
+/* ── Spreading instability ──────────────────────────────────────────────────────────────────────────── */
+.theatre-list { display: flex; flex-wrap: wrap; gap: 5px; }
+.legend-types { display: flex; flex-wrap: wrap; gap: 12px; }
