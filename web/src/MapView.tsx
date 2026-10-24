@@ -453,7 +453,7 @@ export default function MapView({ meta, stability, section, selected, showClasse
     // a click replaces the cards; a change of country without a click keeps the ones a click just opened
     if (at || !iso3 || !ls.length) linksPopup.current?.remove();
     if (at && ls.length && linksDoc.current) {
-      linksPopup.current = new maplibregl.Popup({ maxWidth: "360px", className: "infra-popup" })
+      linksPopup.current = new maplibregl.Popup({ maxWidth: "280px", className: "infra-popup" })
         .setLngLat(at).setDOMContent(linkCards(ls, linksDoc.current.kinds)).addTo(m);
     }
   };
@@ -556,11 +556,12 @@ function addLines(m: maplibregl.Map, id: string, archive: string) {
   } else m.addLayer({ ...base, id: `infra-ln-${id}-${archive}`, paint }, "borders");
 }
 
-// A state's links as cards: each with its kind (in words, beside its colour), its standing as its sources put it, its
-// summary and its sources. Built from DOM nodes, so no text from the data is ever read as HTML.
+// A state's links, kept small: one line each (its colour, the two sides, its kind in words and its standing as its
+// sources put it), opened by a click to its conflict, summary and sources. Built from DOM nodes, so no text from the
+// data is ever read as HTML.
 function linkCards(ls: Link[], kinds: Record<string, string>): HTMLElement {
   const el = document.createElement("div");
-  el.className = "infra-card";
+  el.className = "infra-card link-cards";
   const add = (parent: HTMLElement, tag: string, text: string, cls?: string) => {
     const n = document.createElement(tag);
     n.textContent = text;
@@ -570,13 +571,14 @@ function linkCards(ls: Link[], kinds: Record<string, string>): HTMLElement {
   };
   add(el, "div", ls.length === 1 ? "Link" : `${ls.length} links`, "panel-kicker");
   for (const l of ls) {
-    const card = add(el, "div", "", "link-card");
-    add(card, "div", heading(l), "infra-card-title");
-    const kind = add(card, "div", "", "small");
+    const card = add(el, "details", "", "link-card");
+    const line = add(card, "summary", "");
     const sw = document.createElement("span");
     sw.className = l.status === "confirmed" ? "swatch line" : "swatch line dashed";
     sw.style.background = KIND_COLOURS[l.kind] ?? RING;
-    kind.append(sw, ` ${kinds[l.kind] ?? l.kind} · ${standing(l)}`);
+    line.append(sw);
+    add(line, "span", heading(l), "link-card-title");
+    add(line, "span", `${kinds[l.kind] ?? l.kind} · ${standing(l)}`, "muted small");
     add(card, "div", l.conflict, "muted small");
     add(card, "p", l.summary, "small");
     for (const src of l.sources) {
@@ -589,7 +591,7 @@ function linkCards(ls: Link[], kinds: Record<string, string>): HTMLElement {
       line.append(a, ` (${src.date})`);
     }
   }
-  add(el, "div", "The owner's compilation: each card is drawn from the sources it names.", "muted small");
+  add(el, "div", "The owner's compilation, from the sources each names.", "muted small");
   return el;
 }
 
