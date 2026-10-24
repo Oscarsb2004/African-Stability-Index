@@ -372,6 +372,17 @@ a { color: var(--accent); }
 /* ── links between states ───────────────────────────────────────────────────────────────────────────── */
 .link-card { display: grid; gap: 3px; padding-top: 6px; border-top: 1px solid var(--line); }
 .link-card p { margin: 2px 0; }
+/* the map's popup: one line a link, opened by a click */
+.link-cards { gap: 2px; max-height: 220px; }
+.link-cards .link-card { padding-top: 4px; }
+.link-cards summary { display: grid; grid-template-columns: auto 1fr; column-gap: 6px; align-items: center;
+  cursor: pointer; list-style: none; }
+.link-cards summary::-webkit-details-marker { display: none; }
+.link-cards summary .swatch { grid-row: span 2; }
+.link-card-title { font-weight: 600; font-size: 12.5px; }
+.link-cards summary .small { grid-column: 2; font-size: 11px; }
+.link-cards details[open] summary { margin-bottom: 3px; }
+.link-cards details > :not(summary) { font-size: 11.5px; }
 .swatch.line.dashed { background-image: repeating-linear-gradient(90deg, transparent 0 5px, rgba(0, 0, 0, 0.9) 5px 8px); }
 
 /* ── your own index: the builder inside the Stability popup ──────────────────────────────────────────── */
