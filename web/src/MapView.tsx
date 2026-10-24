@@ -10,6 +10,7 @@ import { Protocol } from "pmtiles";
 import { asset, loadOnce, people, rampColour, type MetaDoc, type Section, type StabilityDoc, type Wonder } from "./data";
 import { activityRows, cardRows, COLOURS, EDGE, parsed, RING, SHAPES, type Activity, type LayersDoc } from "./infra";
 import { heading, KIND_COLOURS, linksOf, standing, type Link, type LinksDoc } from "./links";
+import { TYPE_COLOURS } from "./instability";
 
 // The Infrastructure section's line layers are PMTiles archives, read by range requests from the site's own files
 // (pmtiles, BSD-3-Clause, its licence read in protomaps/PMTiles on 2026-10-21).
@@ -32,6 +33,7 @@ interface Props {
   names?: Record<string, string>;  // each member state's name, for a city's tooltip
   stabilityColours?: Record<string, string> | null;  // the Stability map's measure, a colour per state
   only?: string[] | null;  // a grouping: only its members are coloured
+  theatre?: { states: string[]; links: string[] } | null;  // Spreading instability: the theatre chosen
 }
 
 // geo/countries.json, as the map reads it: each state's code, name, Natural Earth label point, rank and abbreviation
@@ -57,6 +59,9 @@ const AFRICA: [number, number] = [19, 3];
 // service's own data credits, always visible (developers.arcgis.com, Esri and data attribution, read 2026-10-18).
 const ESRI = "https://static-map-tiles-api.arcgis.com/arcgis/rest/services/static-basemap-tiles-service/v1/arcgis/imagery";
 const ESRI_KEY = import.meta.env.VITE_ESRI_KEY as string | undefined;
+// each event in its type's hue (instability.ts)
+const TYPE_PAINT = ["match", ["get", "type"], ...Object.entries(TYPE_COLOURS).flat(), RING] as unknown as
+  ExpressionSpecification;
 // each link in its kind's hue (links.ts)
 const KIND_PAINT = ["match", ["get", "kind"], ...Object.entries(KIND_COLOURS).flat(), RING] as unknown as
   ExpressionSpecification;
@@ -80,7 +85,7 @@ function textWidth(el: HTMLElement, text: string, size: number): number {
 
 export default function MapView({ meta, stability, section, selected, showClasses, choropleth, marked = [], onSelect,
   wonders, onWonder, infra = null, infraOn = [], cities = false, names = {},
-  stabilityColours = null, only = null }: Props) {
+  stabilityColours = null, only = null, theatre = null }: Props) {
   const box = useRef<HTMLDivElement>(null);
   const tip = useRef<HTMLDivElement>(null);
   const map = useRef<maplibregl.Map | null>(null);
@@ -126,6 +131,12 @@ export default function MapView({ meta, stability, section, selected, showClasse
           // every other state, thin and grey around Africa; and the links between states (the owner, 2026-10-23)
           world: { type: "geojson", data: asset("geo/world.json") },
           links: { type: "geojson", data: asset("geo/links.json") },
+          // UCDP's events of the last twelve months, in the Spreading instability tab only: empty until the tab
+          // first opens, so the other tabs never load them
+          events: {
+            type: "geojson", data: { type: "FeatureCollection", features: [] },
+            attribution: '<a href="https://ucdp.uu.se" target="_blank" rel="noreferrer">UCDP</a> (CC BY 4.0)',
+          },
           borders: {
             type: "geojson", data: asset("geo/borders.json"),
             attribution: '<a href="https://www.naturalearthdata.com" target="_blank" rel="noreferrer">Natural Earth</a>',
@@ -163,6 +174,16 @@ export default function MapView({ meta, stability, section, selected, showClasse
             paint: {
               "line-color": "#f4f1ea", "line-opacity": 0.75, "line-dasharray": [3, 3],
               "line-width": ["interpolate", ["linear"], ["zoom"], 2, 0.6, 6, 1.2, 10, 2],
+            },
+          },
+          {
+            id: "events", type: "circle", source: "events", layout: { visibility: "none" },
+            paint: {
+              "circle-color": TYPE_PAINT,
+              "circle-opacity": 0.8, "circle-stroke-color": RING, "circle-stroke-width": 0.6,
+              // the area grows with the deaths: the radius with their square root
+              "circle-radius": ["interpolate", ["linear"], ["zoom"],
+                3, ["+", 1.5, ["*", 0.5, ["sqrt", ["get", "best"]]]], 8, ["+", 3, ["*", 1, ["sqrt", ["get", "best"]]]]],
             },
           },
           // a state's links, shown when it is chosen: a light casing under each, then the line in its kind's hue,
@@ -461,6 +482,37 @@ export default function MapView({ meta, stability, section, selected, showClasse
     sectionRef.current = section;
     linksRef.current(section === "data" ? null : selected);
   }, [selected, section]);
+  // Spreading instability: the events, the theatre's links all at once, and the map fitted to its states
+  const theatreKey = theatre ? theatre.states.join(",") + "|" + theatre.links.join(",") : "";
+  const eventsLoaded = useRef(false);
+  useEffect(() => {
+    const m = map.current;
+    if (!m) return;
+    const apply = () => {
+      if (!m.getLayer("events")) return;
+      if (section === "instability" && !eventsLoaded.current) {
+        (m.getSource("events") as GeoJSONSource).setData(asset("geo/events.json"));
+        eventsLoaded.current = true;
+      }
+      m.setLayoutProperty("events", "visibility", section === "instability" ? "visible" : "none");
+      if (section !== "instability" || !theatre) return;
+      const ids: ExpressionSpecification = ["in", ["get", "id"], ["literal", theatre.links]];
+      m.setFilter("links-casing", ids);
+      m.setFilter("links", ["all", ids, ["==", ["get", "status"], "confirmed"]]);
+      m.setFilter("links-reported", ["all", ids, ["==", ["get", "status"], "reported"]]);
+      const boxes = theatre.states.map((s) => extents.current[s]).filter(Boolean);
+      if (!boxes.length) return;
+      const e = [Math.min(...boxes.map((b) => b[0])), Math.min(...boxes.map((b) => b[1])),
+        Math.max(...boxes.map((b) => b[2])), Math.max(...boxes.map((b) => b[3]))];
+      const phone = window.innerWidth < 760;
+      m.fitBounds([[e[0], e[1]], [e[2], e[3]]], {
+        padding: phone ? { top: 120, bottom: window.innerHeight * 0.6, left: 30, right: 30 }
+          : { top: 90, bottom: 60, left: 60, right: 500 },
+        maxZoom: 6, duration: 1200,
+      });
+    };
+    if (m.isStyleLoaded()) apply(); else m.once("idle", apply);
+  }, [section, theatreKey]);  // eslint-disable-line react-hooks/exhaustive-deps
   cardRef.current = (f, at) => {
     const info = infraRef.current?.points.find((p) => `infra-pt-${p.id}` === f.layer.id);
     const m = map.current;
