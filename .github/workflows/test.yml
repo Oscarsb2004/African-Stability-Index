@@ -1,6 +1,6 @@
 # Edition 2's checks, on every push and pull request to a branch that carries this file (edition-2 and its work).
 #
-# The Pages deploy is pages.yml on phase-a-foundation (edition 1); this file neither builds nor publishes the site.
+# The Pages deploy is pages.yml (edition 2 since 2026-10-24); this file neither builds nor publishes the site.
 # Every output in data/ and web/public/ is committed, so no step needs the store or the network beyond installing.
 name: test
 
