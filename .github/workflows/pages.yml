@@ -1,0 +1,63 @@
+# Publish edition 2's site to GitHub Pages (the owner, 2026-10-24: edition 2 replaces edition 1 at the same address).
+#
+# The site is static files: Vite builds web/ against what is committed in web/public/ (every stage's output), so a
+# deploy needs neither the store nor the pipeline. Built under /<repo>/, the project site's prefix, taken from the
+# repository's name rather than typed, so a rename or fork cannot ship a site whose every asset 404s.
+#
+# A pull request into edition-2 builds the site, as a check; only a push to edition-2 (a merge) or a manual run
+# deploys it. The github-pages environment allows edition-2 by name. Edition 1 stays tagged `edition-1`, and its own
+# workflow on phase-a-foundation can put it back.
+#
+# No imagery key is set here, so the published map uses EOX's open Sentinel-2 mosaic (MapView.tsx, P62).
+name: Pages
+
+on:
+  push:
+    branches: [edition-2]
+  pull_request:
+    branches: [edition-2]
+  workflow_dispatch:
+
+# One deploy at a time; let an in-flight deploy finish rather than leave Pages mid-publish.
+concurrency:
+  group: pages-${{ github.event_name == 'pull_request' && github.ref || 'deploy' }}
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: web
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+      - run: npm ci
+      - run: npm run build
+        env:
+          VITE_BASE: /${{ github.event.repository.name }}/
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: web/dist
+
+  deploy:
+    if: github.event_name != 'pull_request'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
