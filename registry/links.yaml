@@ -1,21 +1,70 @@
 # The links between states that the site draws (the owner's ruling of 2026-10-23, R5): who backs whom in Africa's
-# conflicts. This list is the owner's compilation. Claude drafts each link and its card from named public sources,
-# cited and dated; the owner rules on every entry in the pull request that adds it, and merging is the ruling.
+# conflicts. Claude drafts each link and its card; the owner rules on every entry in the pull request that adds it,
+# and merging is the ruling.
+#
+# THE RULE (R7, drafted 2026-10-26 for the owner's ruling). A link is listed only when a source of one of the three
+# tiers below names it; news reports may add context to a card but never qualify a link alone. Its `status` follows
+# the qualifying source's own words: "confirmed" where it finds, establishes or is told by the government concerned;
+# "reported" where it judges allegations credible or reports them. A link ends (`until`) when a source of the same
+# tiers says the support has stopped.
+#   un-panel   a final report of a UN Security Council Panel or Group of Experts for an African sanctions regime
+#   government a statement by the government of the backing state or of the state supported
+#   un-rights  a UN human-rights investigation: OHCHR, a commission of inquiry, or OHCHR's joint investigation
+#              with a national human-rights body
+# Coverage: the latest final report of every panel in `coverage` is to be read in full, and every state it names as
+# backing a party listed; until then the site says how much has been read, so a missing line is never read as "none".
 #
 # A link runs from a backer (`from`, any state, African or not) to the member state where its support is used (`to`),
 # naming the armed actor it backs when that is not the state's own government (`actor`). `kind` is one of the kinds
-# below. `status` is as the cited source puts it: "confirmed" where a UN body or a government states it as a finding,
-# "reported" where a source reports or judges allegations credible; the site draws a confirmed link solid and a
-# reported one dashed. `until` closes a link that has ended; the site shows it as historical. A card's `summary` is
-# one or two sentences, each fact in it found in a listed source; every source names its publisher, title, address,
-# date and the day it was read. Checked by asi/instability/links.py before anything is drawn.
-format: asi.links/1
+# below. The site draws a confirmed link solid and a reported one dashed, an ended one faded. A card's `summary` is
+# one or two sentences, each fact in it found in a listed source; every source names its tier, publisher, title,
+# address, date and the day it was read. Checked by asi/instability/links.py before anything is drawn.
+format: asi.links/2
 
 kinds:
   forces: Troops or state forces
   contractors: Mercenaries or private military companies
   arms: Arms, equipment or money
   political: Political or diplomatic backing
+
+tiers:
+  un-panel: A UN Security Council Panel or Group of Experts
+  government: The government concerned
+  un-rights: A UN human-rights investigation
+  context: Context only (does not qualify a link)
+
+# The latest final report of each UN panel for an African sanctions regime, as the UN Digital Library and
+# documents.un.org list them on 2026-10-26. `read` is "in full", "in part" (only the passages a link cites) or
+# "not yet".
+coverage:
+  - regime: Sudan (resolution 1591)
+    report: S/2025/239
+    date: "2025-04-17"
+    read: not yet
+  - regime: Democratic Republic of the Congo (resolution 1533)
+    report: S/2026/466
+    date: "2026-06-11"
+    read: not yet
+  - regime: South Sudan (resolution 2206)
+    report: S/2026/340
+    date: "2026-05-04"
+    read: not yet
+  - regime: Central African Republic (resolution 2127)
+    report: S/2026/481
+    date: "2026-06-10"
+    read: not yet
+  - regime: Libya (resolution 1970)
+    report: S/2024/914
+    date: "2024-12-13"
+    read: not yet
+  - regime: Somalia, Al-Shabaab (resolution 2713)
+    report: S/2025/777
+    date: "2025-11-28"
+    read: not yet
+  - regime: Mali (resolution 2374, ended 2023)
+    report: S/2023/578
+    date: "2023-08-03"
+    read: in part
 
 links:
   - id: are-sdn-rsf
@@ -31,7 +80,8 @@ links:
       RSF on cargo flights unloaded several times a week at Am Djarass, in eastern Chad. The United Arab Emirates
       denied any involvement in shipping arms to the RSF.
     sources:
-      - publisher: United Nations Security Council, Panel of Experts on the Sudan
+      - tier: un-panel
+        publisher: United Nations Security Council, Panel of Experts on the Sudan
         title: Final report of the Panel of Experts on the Sudan (S/2024/65), paragraphs on p. 15
         url: https://docs.un.org/en/S/2024/65
         date: "2024-01-15"
@@ -50,12 +100,14 @@ links:
       Nyiragongo, Rutshuru and Masisi, and found that Rwanda's de facto control and direction over M23 operations
       makes it liable for the group's actions. Rwanda denies it, and has never acknowledged its troops there.
     sources:
-      - publisher: United Nations Security Council, Group of Experts on the Democratic Republic of the Congo
+      - tier: un-panel
+        publisher: United Nations Security Council, Group of Experts on the Democratic Republic of the Congo
         title: Final report of the Group of Experts on the Democratic Republic of the Congo (S/2024/432), pp. 12-13
         url: https://docs.un.org/en/S/2024/432
         date: "2024-06-04"
         read: "2026-10-23"
-      - publisher: Al Jazeera
+      - tier: context
+        publisher: Al Jazeera
         title: "Uganda backed M23 in DRC, Rwanda's 'de facto control' on group: UN experts"
         url: https://www.aljazeera.com/news/2024/7/9/uganda-backed-m23-in-drc-rwandas-de-facto-control-on-group-un-experts
         date: "2024-07-09"
@@ -66,23 +118,25 @@ links:
     to: MLI
     conflict: Mali's war against jihadist and separatist groups (2012-)
     kind: contractors
-    status: reported
+    status: confirmed
     since: "2021"
     summary: >-
-      Russia's Wagner Group, mercenaries supporting Mali's army, said in June 2025 it would leave after more than
-      three and a half years, while Russian mercenaries remain under the Kremlin-backed Africa Corps. A UN
-      fact-finding report found strong indications that more than 500 people were killed by Malian troops and foreign
-      military personnel at Moura in March 2022.
+      Russian officials confirmed to the UN Panel of Experts on Mali in March 2023 that Wagner Group elements were in
+      Mali as private contractors, with a small number of Russian military instructors at Bamako airport who do not
+      take part in operations. Wagner said in June 2025 it would leave Mali, while Russian mercenaries remain under the
+      Kremlin-backed Africa Corps.
     sources:
-      - publisher: Al Jazeera
+      - tier: un-panel
+        publisher: United Nations Security Council, Panel of Experts on Mali
+        title: Final report of the Panel of Experts on Mali (S/2023/578), paragraph 72 and footnote 29, p. 19
+        url: https://docs.un.org/en/S/2023/578
+        date: "2023-08-03"
+        read: "2026-10-26"
+      - tier: context
+        publisher: Al Jazeera
         title: Russia's Wagner mercenaries leaving Mali, Africa Corps to remain
         url: https://www.aljazeera.com/news/2025/6/6/russias-wagner-mercenaries-leaving-mali-africa-corps-to-remain
         date: "2025-06-06"
-        read: "2026-10-23"
-      - publisher: UN News (on the report of the Office of the UN High Commissioner for Human Rights)
-        title: "Moura: Over 500 killed by Malian troops, foreign military personnel in 2022 operation"
-        url: https://news.un.org/en/story/2023/05/1136607
-        date: "2023-05-12"
         read: "2026-10-23"
 
   - id: eri-eth-tigray
@@ -98,7 +152,8 @@ links:
       of the Ethiopian Human Rights Commission and the UN's human rights office found. It found reasonable grounds to
       believe that they, like other parties, attacked civilians.
     sources:
-      - publisher: Ethiopian Human Rights Commission and Office of the UN High Commissioner for Human Rights
+      - tier: un-rights
+        publisher: Ethiopian Human Rights Commission and Office of the UN High Commissioner for Human Rights
         title: Report of the EHRC/OHCHR Joint Investigation into Alleged Violations Committed by all Parties to the Conflict in the Tigray Region (pp. 6-7)
         url: https://www.ohchr.org/sites/default/files/2021-11/OHCHR-EHRC-Tigray-Report.pdf
         date: "2021-11-03"

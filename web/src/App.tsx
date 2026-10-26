@@ -19,8 +19,10 @@ import { shown, shownValues, type Shown, type StabilityMeasure } from "./stabili
 import { AGGREGATES, type CustomIndex, fromIndexHash, indexHash, loadIndexSeries, METHODS, rememberedIndices,
   rememberIndices, scoreIndex } from "./customIndex";
 import type { Group } from "./explore/model";
-import { load, RAMP, type MetaDoc, type Section, type SectionsDoc, type StabilityDoc, type Wonder,
+import { load, loadOnce, RAMP, type MetaDoc, type Section, type SectionsDoc, type StabilityDoc, type Wonder,
   type WondersDoc } from "./data";
+import { coverageNote, KIND_COLOURS, type LinksDoc } from "./links";
+import LinksSection from "./panels/LinksSection";
 import { COLOURS, EDGE, SHAPES, SHOWN_FIRST, type LayersDoc } from "./infra";
 
 const SECTIONS: { id: Section; label: string }[] = [
@@ -46,6 +48,11 @@ export default function App() {
   const [selected, setSelected] = useState<string | null>(null);
   const [showClasses, setShowClasses] = useState(true);
   const [cities, setCities] = useState(false);  // cities and towns are drawn only when switched on
+  // the links between states: a lens switched on by the reader; the link pointed at in the panel is picked out
+  const [linksOn, setLinksOn] = useState(false);
+  const [linkFocus, setLinkFocus] = useState<string | null>(null);
+  const [links, setLinks] = useState<LinksDoc | null>(null);
+  useEffect(() => { loadOnce<LinksDoc>("geo/links.json").then(setLinks, () => setLinks(null)); }, []);
   // the Stability map: what it shows (the composite, a pillar or an indicator) and an optional grouping it is cut to
   // a reader's own indices (customIndex.ts), kept in this browser; one shared by address is added and shown
   const [shared] = useState<CustomIndex | null>(() => fromIndexHash(window.location.hash));
@@ -156,7 +163,7 @@ export default function App() {
         marked={section === "data" ? explore.items.filter((i) => i.t === "s").map((i) => i.id) : []}
         onSelect={onMapSelect} wonders={wonders?.wonders ?? null} onWonder={setViewing} infra={infra} infraOn={infraOn}
         cities={cities} names={docs.sections.names} stabilityColours={stab?.colours ?? null}
-        only={section === "stability" ? group?.members ?? null : null} />
+        only={section === "stability" ? group?.members ?? null : null} linksOn={linksOn} linkFocus={linkFocus} />
 
       <div className="topleft">
       <header className="glass masthead">
@@ -187,7 +194,29 @@ export default function App() {
             Cities and towns
           </label>
         )}
+        {section !== "wonders" && section !== "data" && (
+          <label className="infra-toggle cities-toggle"
+            title="Who backs whom in Africa's conflicts: each link named by a UN panel, the government concerned or a UN human-rights investigation">
+            <input type="checkbox" checked={linksOn} onChange={(e) => setLinksOn(e.target.checked)} />
+            <span className="swatch line" style={{ background: KIND_COLOURS.forces }} />
+            Links between states
+          </label>
+        )}
       </header>
+
+      {linksOn && links && section !== "wonders" && section !== "data" && (
+        <div className="glass legend links-legend">
+          <div className="legend-toggle">Links between states</div>
+          {Object.entries(links.kinds).map(([k, label]) => (
+            <div key={k} className="small"><span className="swatch line" style={{ background: KIND_COLOURS[k] }} /> {label}</div>
+          ))}
+          <div className="small"><span className="swatch line" style={{ background: "#c9c7c0" }} /> found, or stated
+            by the government · <span className="swatch line dashed" style={{ background: "#c9c7c0" }} /> judged
+            credible · faded: ended</div>
+          <div className="muted small">Arrows run from backer to backed. Choose a state for its links in full.</div>
+          <div className="muted small">{coverageNote(links)}</div>
+        </div>
+      )}
 
       {section === "stability" && (
         <div className="glass legend">
@@ -292,6 +321,12 @@ export default function App() {
               onCompare={compare} />}
             {section === "wonders" && <WondersPanel doc={wonders} iso3={selected} names={docs.sections.names}
               onOpen={setViewing} />}
+            {(section === "stability" || (linksOn && section !== "wonders")) && (
+              <div className="panel-body">
+                <LinksSection doc={links} iso3={selected} name={docs.sections.names[selected]} linksOn={linksOn}
+                  onShow={() => setLinksOn(true)} onFocus={setLinkFocus} />
+              </div>
+            )}
             <details className="sources">
               <summary className="muted small">Sources and licences</summary>
               {docs.meta.sources.map((s) => (
