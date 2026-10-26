@@ -9,7 +9,7 @@ import "maplibre-gl/dist/maplibre-gl.css";
 import { Protocol } from "pmtiles";
 import { asset, loadOnce, people, rampColour, type MetaDoc, type Section, type StabilityDoc, type Wonder } from "./data";
 import { activityRows, cardRows, COLOURS, EDGE, parsed, RING, SHAPES, type Activity, type LayersDoc } from "./infra";
-import { heading, KIND_COLOURS, linksOf, standing, type Link, type LinksDoc } from "./links";
+import { actorLabel, heading, KIND_COLOURS, linksBounds, linksOf, standing, type Link, type LinksDoc } from "./links";
 
 // The Infrastructure section's line layers are PMTiles archives, read by range requests from the site's own files
 // (pmtiles, BSD-3-Clause, its licence read in protomaps/PMTiles on 2026-10-21).
@@ -32,6 +32,8 @@ interface Props {
   names?: Record<string, string>;  // each member state's name, for a city's tooltip
   stabilityColours?: Record<string, string> | null;  // the Stability map's measure, a colour per state
   only?: string[] | null;  // a grouping: only its members are coloured
+  linksOn?: boolean;  // the links between states are drawn only when switched on
+  linkFocus?: string | null;  // a link pointed at in the panel, picked out alone
 }
 
 // geo/countries.json, as the map reads it: each state's code, name, Natural Earth label point, rank and abbreviation
@@ -60,6 +62,29 @@ const ESRI_KEY = import.meta.env.VITE_ESRI_KEY as string | undefined;
 // each link in its kind's hue (links.ts)
 const KIND_PAINT = ["match", ["get", "kind"], ...Object.entries(KIND_COLOURS).flat(), RING] as unknown as
   ExpressionSpecification;
+// a link that has ended is drawn faded, faint or in full
+const LINK_FAINT: ExpressionSpecification = ["case", ["get", "historical"], 0.3, 0.7];
+const LINK_FULL: ExpressionSpecification = ["case", ["get", "historical"], 0.45, 1];
+const LINK_LAYERS = ["links-casing", "links", "links-reported", "links-arrows"];
+
+// The chevron that marks a link's direction, from backer to backed: drawn on a canvas in a kind's hue over a light
+// casing, one image per kind (no sprite or glyph server needed).
+function chevron(colour: string): ImageData {
+  const size = 24, c = document.createElement("canvas");
+  c.width = c.height = size;
+  const g = c.getContext("2d")!;
+  g.lineCap = g.lineJoin = "round";
+  for (const [style, width] of [[RING, 7], [colour, 3.5]] as const) {
+    g.strokeStyle = style;
+    g.lineWidth = width;
+    g.beginPath();
+    g.moveTo(8, 5);
+    g.lineTo(16, 12);
+    g.lineTo(8, 19);
+    g.stroke();
+  }
+  return g.getImageData(0, 0, size, size);
+}
 
 // A country name's width in pixels at a size, from the canvas's text metrics in the label's own font (the weight of
 // .country-name, and its letter spacing of 0.02em), so measuring never forces the page's layout. Each is kept.
@@ -80,7 +105,7 @@ function textWidth(el: HTMLElement, text: string, size: number): number {
 
 export default function MapView({ meta, stability, section, selected, showClasses, choropleth, marked = [], onSelect,
   wonders, onWonder, infra = null, infraOn = [], cities = false, names = {},
-  stabilityColours = null, only = null }: Props) {
+  stabilityColours = null, only = null, linksOn = false, linkFocus = null }: Props) {
   const box = useRef<HTMLDivElement>(null);
   const tip = useRef<HTMLDivElement>(null);
   const map = useRef<maplibregl.Map | null>(null);
@@ -92,8 +117,16 @@ export default function MapView({ meta, stability, section, selected, showClasse
   const sectionRef = useRef(section);
   const linksDoc = useRef<LinksDoc | null>(null);
   const linksPopup = useRef<maplibregl.Popup | null>(null);
-  // shows a state's links on the map, and their cards at a click; none in Wonders
-  const linksRef = useRef<(iso3: string | null, at?: maplibregl.LngLat) => void>(() => {});
+  const linkEnds = useRef<maplibregl.Marker[]>([]);  // the names at a shown link's ends
+  const linksOnRef = useRef(linksOn);
+  linksOnRef.current = linksOn;
+  const focusRef = useRef(linkFocus);
+  focusRef.current = linkFocus;
+  const selectedRef = useRef(selected);
+  selectedRef.current = selected;
+  const otherRef = useRef<string | null>(null);  // a non-member state clicked, whose links are shown
+  // draws the links the switch, the chosen state and the panel call for; a click on another state opens its cards
+  const linksRef = useRef<(at?: maplibregl.LngLat) => void>(() => {});
   const citiesRef = useRef(cities);
   const namesRef = useRef(names);
   namesRef.current = names;
@@ -165,26 +198,50 @@ export default function MapView({ meta, stability, section, selected, showClasse
               "line-width": ["interpolate", ["linear"], ["zoom"], 2, 0.6, 6, 1.2, 10, 2],
             },
           },
-          // a state's links, shown when it is chosen: a light casing under each, then the line in its kind's hue,
-          // solid where its source confirms it and dashed where it reports it
+          // the links between states, only while their switch is on: every link faint, so the reader sees what the
+          // record holds; then the chosen state's (or the one pointed at in the panel) in full, a light casing under
+          // each line in its kind's hue, solid where its source finds it, dashed where it judges it credible, and
+          // faded once it has ended
+          {
+            id: "links-faint", type: "line", source: "links", layout: { visibility: "none", "line-cap": "round" },
+            filter: ["==", ["get", "status"], "confirmed"],
+            paint: { "line-color": KIND_PAINT, "line-width": 2, "line-opacity": LINK_FAINT },
+          },
+          {
+            id: "links-faint-reported", type: "line", source: "links", layout: { visibility: "none" },
+            filter: ["==", ["get", "status"], "reported"],
+            paint: { "line-color": KIND_PAINT, "line-width": 2, "line-opacity": LINK_FAINT,
+              "line-dasharray": [2, 1.5] },
+          },
           {
             id: "links-casing", type: "line", source: "links", filter: ["==", ["get", "id"], ""],
             layout: { "line-cap": "round" },
-            paint: { "line-color": RING, "line-opacity": 0.55, "line-width": 5 },
+            paint: { "line-color": RING, "line-opacity": ["case", ["get", "historical"], 0.25, 0.55], "line-width": 5 },
           },
           {
             id: "links", type: "line", source: "links", filter: ["==", ["get", "id"], ""],
             layout: { "line-cap": "round" },
-            paint: { "line-color": KIND_PAINT,
-              "line-width": 3 },
+            paint: { "line-color": KIND_PAINT, "line-width": 3, "line-opacity": LINK_FULL },
           },
           {
             id: "links-reported", type: "line", source: "links", filter: ["==", ["get", "id"], ""],
-            paint: { "line-color": KIND_PAINT,
-              "line-width": 3, "line-dasharray": [2, 1.5] },
+            paint: { "line-color": KIND_PAINT, "line-width": 3, "line-opacity": LINK_FULL,
+              "line-dasharray": [2, 1.5] },
           },
         ],
       },
+    });
+    // the chevrons along a shown link, pointing from backer to backed
+    m.on("load", () => {
+      for (const [kind, colour] of Object.entries(KIND_COLOURS)) m.addImage(`chevron-${kind}`, chevron(colour));
+      m.addLayer({
+        id: "links-arrows", type: "symbol", source: "links", filter: ["==", ["get", "id"], ""],
+        layout: { "symbol-placement": "line", "symbol-spacing": 90, "icon-image": ["concat", "chevron-", ["get", "kind"]],
+          "icon-size": 0.75, "icon-allow-overlap": true, "icon-ignore-placement": true,
+          "icon-rotation-alignment": "map", "icon-keep-upright": false },
+        paint: { "icon-opacity": LINK_FULL },
+      });
+      linksRef.current();  // a state chosen before the map loaded gets its links now
     });
     m.addControl(new maplibregl.NavigationControl({ visualizePitch: true }), "bottom-right");
     const credit = (sources?: string) => m.addControl(new maplibregl.AttributionControl(
@@ -212,7 +269,7 @@ export default function MapView({ meta, stability, section, selected, showClasse
       const f = found.find((x) => x.layer.id === "classes");
       const w = f ? undefined : found.find((x) => x.layer.id === "world-fill");
       if (!f && !w) { hide(); return; }
-      const has = !!w && linksOf(linksDoc.current, String(w.properties.iso3)).length > 0;
+      const has = !!w && linksOnRef.current && linksOf(linksDoc.current, String(w.properties.iso3)).length > 0;
       m.getCanvas().style.cursor = f?.properties.member || has ? "pointer" : "default";
       tip.current.textContent = f ? f.properties.name
         : has ? `${w!.properties.name} · its links into Africa on click` : w!.properties.name;
@@ -224,7 +281,8 @@ export default function MapView({ meta, stability, section, selected, showClasse
       pending = e;
     });
     m.on("mouseout", () => { pending = null; hide(); });
-    loadOnce<LinksDoc>("geo/links.json").then((d) => { linksDoc.current = d; }, () => { linksDoc.current = null; });
+    loadOnce<LinksDoc>("geo/links.json").then((d) => { linksDoc.current = d; linksRef.current(); },
+      () => { linksDoc.current = null; });
     m.on("click", (e) => {
       // a point's card, not the country under it; the hit box is wider than the dot, so a small mark is easy to take
       const near: [maplibregl.PointLike, maplibregl.PointLike] = [[e.point.x - 6, e.point.y - 6], [e.point.x + 6, e.point.y + 6]];
@@ -234,9 +292,11 @@ export default function MapView({ meta, stability, section, selected, showClasse
       const w = f ? undefined : m.queryRenderedFeatures(e.point, { layers: ["world-fill"] })[0];
       const member = f && f.properties.member ? String(f.properties.iso3) : null;
       const other = w ? String(w.properties.iso3) : null;
-      // a member state opens its panel; any state shows its links, with their cards at the click
+      // a member state opens its panel, where its links are listed; another state, which has no panel, shows its
+      // links and their cards at the click while the links are switched on
       if (!other || member) selectRef.current(member);
-      linksRef.current(member ?? other, e.lngLat);
+      otherRef.current = member ? null : other;
+      linksRef.current(e.lngLat);
     });
 
     loadOnce<PlacesGeo>("geo/places.json").then((g) => {
@@ -404,18 +464,24 @@ export default function MapView({ meta, stability, section, selected, showClasse
       if (previous.current) m.setFeatureState({ source: "countries", id: previous.current }, { chosen: false });
       if (selected) m.setFeatureState({ source: "countries", id: selected }, { chosen: true });
       previous.current = selected;
-      const e = selected ? extents.current[selected] : undefined;
+      const own = selected ? extents.current[selected] : undefined;
+      // with the links switched on, the map takes in both ends of the state's links, so a backer is never off-screen
+      const far = selected && linksOn && section !== "wonders"
+        ? linksBounds(linksDoc.current, linksOf(linksDoc.current, selected).map((l) => l.id)) : null;
+      const e = own && far ? [Math.min(own[0], far[0]), Math.min(own[1], far[1]), Math.max(own[2], far[2]),
+        Math.max(own[3], far[3])] : own;
       if (e) {
         const phone = window.innerWidth < 760;
         m.fitBounds([[e[0], e[1]], [e[2], e[3]]], {
+          // a link's ends kept clear of the keys stacked on the left as well as of the panel
           padding: phone ? { top: 120, bottom: window.innerHeight * 0.6, left: 30, right: 30 }
-            : { top: 90, bottom: 60, left: 60, right: 500 },
+            : { top: 90, bottom: 60, left: far ? 320 : 60, right: 500 },
           maxZoom: 6.5, duration: 1400,
         });
       }
     };
     if (m.isStyleLoaded()) apply(); else m.once("idle", apply);
-  }, [selected]);
+  }, [selected, linksOn]);  // eslint-disable-line react-hooks/exhaustive-deps
 
   // ── wonders, in the Wonders section only: a click opens the viewer ──────────────────────────────────────────
   const wonderPins = useRef<maplibregl.Marker[]>([]);
@@ -442,25 +508,53 @@ export default function MapView({ meta, stability, section, selected, showClasse
   const infraRef = useRef<LayersDoc | null>(null);
   const popup = useRef<maplibregl.Popup | null>(null);
   const cardRef = useRef<(f: MapGeoJSONFeature, at: maplibregl.LngLat) => void>(() => {});
-  linksRef.current = (iso3, at) => {
+  linksRef.current = (at) => {
     const m = map.current;
+    const doc = linksDoc.current;
     if (!m || !m.getLayer("links")) return;
-    const ls = sectionRef.current === "wonders" ? [] : linksOf(linksDoc.current, iso3);
+    // only while switched on, and never in Wonders: every link faint, and in full the one pointed at in the panel, or
+    // else the links of the state chosen (a member) or clicked (any other state)
+    const on = linksOnRef.current && sectionRef.current !== "wonders";
+    for (const id of ["links-faint", "links-faint-reported"]) m.setLayoutProperty(id, "visibility", on ? "visible" : "none");
+    const who = otherRef.current ?? (sectionRef.current === "data" ? null : selectedRef.current);
+    const ls = !on ? [] : focusRef.current ? (doc?.features.map((f) => f.properties)
+      .filter((l) => l.id === focusRef.current) ?? []) : linksOf(doc, who);
     const ids: ExpressionSpecification = ["in", ["get", "id"], ["literal", ls.map((l) => l.id)]];
-    m.setFilter("links-casing", ids);
-    m.setFilter("links", ["all", ids, ["==", ["get", "status"], "confirmed"]]);
-    m.setFilter("links-reported", ["all", ids, ["==", ["get", "status"], "reported"]]);
-    // a click replaces the cards; a change of country without a click keeps the ones a click just opened
-    if (at || !iso3 || !ls.length) linksPopup.current?.remove();
-    if (at && ls.length && linksDoc.current) {
+    for (const id of LINK_LAYERS) {
+      if (!m.getLayer(id)) continue;
+      m.setFilter(id, id === "links" ? ["all", ids, ["==", ["get", "status"], "confirmed"]]
+        : id === "links-reported" ? ["all", ids, ["==", ["get", "status"], "reported"]] : ids);
+    }
+    // each shown link's ends named: the armed actor it backs, and a backer outside Africa, which has no name drawn
+    linkEnds.current.forEach((mk) => mk.remove());
+    linkEnds.current = [];
+    const line = (l: Link) => doc?.features.find((f) => f.properties.id === l.id)?.geometry.coordinates ?? [];
+    for (const l of ls) {
+      const pts = line(l), actor = actorLabel(l);
+      const ends: [string | null, [number, number] | undefined][] = [
+        [actor, pts[pts.length - 1]], [namesRef.current[l.from] ? null : l.from_name, pts[0]]];
+      for (const [text, at2] of ends) {
+        if (!text || !at2) continue;
+        const el = document.createElement("div");
+        el.className = l.historical ? "link-end ended" : "link-end";
+        el.textContent = text;
+        el.style.borderColor = KIND_COLOURS[l.kind] ?? RING;
+        linkEnds.current.push(new maplibregl.Marker({ element: el, anchor: "bottom", offset: [0, -6] })
+          .setLngLat(at2).addTo(m));
+      }
+    }
+    // a click on another state (no panel of its own) opens its cards; any other change closes them
+    linksPopup.current?.remove();
+    if (at && on && otherRef.current && ls.length && doc) {
       linksPopup.current = new maplibregl.Popup({ maxWidth: "280px", className: "infra-popup" })
-        .setLngLat(at).setDOMContent(linkCards(ls, linksDoc.current.kinds)).addTo(m);
+        .setLngLat(at).setDOMContent(linkCards(ls, doc.kinds, doc.tiers)).addTo(m);
     }
   };
-  useEffect(() => {  // the chosen country's links follow it, in every section but Wonders
+  useEffect(() => {  // the links follow the switch, the chosen state and the panel's pointer
     sectionRef.current = section;
-    linksRef.current(section === "data" ? null : selected);
-  }, [selected, section]);
+    if (selected) otherRef.current = null;
+    linksRef.current();
+  }, [selected, section, linksOn, linkFocus]);
   cardRef.current = (f, at) => {
     const info = infraRef.current?.points.find((p) => `infra-pt-${p.id}` === f.layer.id);
     const m = map.current;
@@ -556,10 +650,10 @@ function addLines(m: maplibregl.Map, id: string, archive: string) {
   } else m.addLayer({ ...base, id: `infra-ln-${id}-${archive}`, paint }, "borders");
 }
 
-// A state's links, kept small: one line each (its colour, the two sides, its kind in words and its standing as its
-// sources put it), opened by a click to its conflict, summary and sources. Built from DOM nodes, so no text from the
-// data is ever read as HTML.
-function linkCards(ls: Link[], kinds: Record<string, string>): HTMLElement {
+// A non-member state's links (it has no panel of its own), kept small: one line each (its colour, the two sides, its
+// kind in words and its standing under the rule), opened by a click to its conflict, summary and sources, each with
+// its tier. Built from DOM nodes, so no text from the data is ever read as HTML.
+function linkCards(ls: Link[], kinds: Record<string, string>, tiers: Record<string, string>): HTMLElement {
   const el = document.createElement("div");
   el.className = "infra-card link-cards";
   const add = (parent: HTMLElement, tag: string, text: string, cls?: string) => {
@@ -578,7 +672,7 @@ function linkCards(ls: Link[], kinds: Record<string, string>): HTMLElement {
     sw.style.background = KIND_COLOURS[l.kind] ?? RING;
     line.append(sw);
     add(line, "span", heading(l), "link-card-title");
-    add(line, "span", `${kinds[l.kind] ?? l.kind} · ${standing(l)}`, "muted small");
+    add(line, "span", `${kinds[l.kind] ?? l.kind} · ${standing(l, tiers)}`, "muted small");
     add(card, "div", l.conflict, "muted small");
     add(card, "p", l.summary, "small");
     for (const src of l.sources) {
@@ -588,7 +682,7 @@ function linkCards(ls: Link[], kinds: Record<string, string>): HTMLElement {
       a.target = "_blank";
       a.rel = "noreferrer";
       a.textContent = `${src.publisher}, ${src.title}`;
-      line.append(a, ` (${src.date})`);
+      line.append(a, ` (${src.date}) · ${tiers[src.tier] ?? src.tier}`);
     }
   }
   add(el, "div", "The owner's compilation, from the sources each names.", "muted small");

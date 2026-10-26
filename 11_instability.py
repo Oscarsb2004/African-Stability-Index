@@ -7,7 +7,8 @@
 It writes:
     geo/links.json   each link of registry/links.yaml (the owner's compilation, R5) as a great-circle line between
                      the two states' Natural Earth label points, with its card: the actor, the kind, the status as
-                     its sources put it, its summary and its sources
+                     its sources put it, its summary and its sources, each with its tier under the rule (R7);
+                     and the coverage list: each UN panel's latest report and how much of it has been read
 
 Natural Earth comes through athena.fetch, hash-locked in the project's sources.lock.
 """
@@ -50,7 +51,8 @@ def main() -> int:
     ne = json.loads(fetcher().get(sources()["natural-earth-countries-50m"]["url"]))
     points, names = label_points(ne)
     reg = links.load(ROOT / "registry" / "links.yaml", set(points), set(COUNTRIES))
-    doc = links.LinkLines().run(links.LinkLines.Input(reg["links"], points, names)).geojson | {"kinds": reg["kinds"]}
+    doc = (links.LinkLines().run(links.LinkLines.Input(reg["links"], points, names)).geojson
+           | {k: reg[k] for k in ("kinds", "tiers", "coverage")})
     write(GEO / "links.json", doc)
     by = {s: sum(1 for l in reg["links"] if l["status"] == s) for s in links.STATUS}
     print(f"links.json: {len(doc['features'])} links {by}, "

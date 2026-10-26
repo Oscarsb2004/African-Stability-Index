@@ -48,4 +48,11 @@ Not written yet. The sub-pages above hold this section's material.
 
 ## Open questions
 
-Not written yet. The sub-pages above hold this section's material.
+- **Which links between states are listed (drafted 2026-10-26, for the owner's ruling; merging its pull request is
+  the ruling).** A link is listed only when a UN Security Council Panel or Group of Experts (an African sanctions
+  regime's final report), the government concerned, or a UN human-rights investigation names it; news adds context
+  only. Its status follows that source's words: confirmed where it finds it, establishes it or hears it from the
+  government concerned; reported where it judges allegations credible. Every panel's latest final report is to be read
+  in full and every state it names as backing a party listed; until then the site says how much has been read
+  (`registry/links.yaml`, `coverage`). Why: four hand-picked links on a neutral map read as the whole picture; a rule
+  makes the list complete by construction and its gaps visible.

@@ -1,9 +1,11 @@
 """The links between states (`registry/links.yaml`, the owner's compilation, R5): who backs whom in Africa's conflicts.
 
 `problems` checks the list before anything is drawn: its format; each link's states (the backer any state Natural
-Earth names, the state supported a member state); its kind and status; at most two sentences in its card; and every
-source with its publisher, title, address, date and the day it was read. `load` refuses a list with any problem and
-names them all.
+Earth names, the state supported a member state); its kind and status; at most two sentences in its card; every
+source with its tier, publisher, title, address, date and the day it was read; at least one source of a tier that
+qualifies a link (the rule, R7: a UN panel, the government concerned, or a UN human-rights investigation; news is
+context only); and each panel report in the coverage list with how much of it has been read. `load` refuses a list
+with any problem and names them all.
 
 `LinkLines` draws each link as a great-circle line between the two states' Natural Earth label points (derived, P4:
 the shortest path on the WGS84 ellipsoid, a drawing, not a route), carrying the card the site shows.
@@ -20,9 +22,12 @@ from pyproj import Geod
 
 from athena.component import Component
 
-FORMAT = "asi.links/1"
+FORMAT = "asi.links/2"
 STATUS = ("confirmed", "reported")
-SOURCE = ("publisher", "title", "url", "date", "read")
+SOURCE = ("tier", "publisher", "title", "url", "date", "read")
+QUALIFYING = ("un-panel", "government", "un-rights")  # the tiers that qualify a link; "context" does not
+COVERAGE = ("regime", "report", "date", "read")
+READ = ("in full", "in part", "not yet")
 SENTENCE = re.compile(r"(?<=[.!?])\s+(?=[A-Z\"'(])")
 DECIMALS = 3
 
@@ -37,6 +42,12 @@ def problems(reg: dict, states: set[str], members: set[str]) -> list[str]:
     the codes a supported state may have."""
     out = [] if reg.get("format") == FORMAT else [f"format must be {FORMAT}"]
     kinds = set(reg.get("kinds") or {})
+    tiers = set(reg.get("tiers") or {})
+    out += [f"tiers must name {t}" for t in (*QUALIFYING, "context") if t not in tiers]
+    for i, c in enumerate(reg.get("coverage") or []):
+        out += [f"coverage {i + 1} has no {k}" for k in COVERAGE if not c.get(k)]
+        if c.get("read") and c["read"] not in READ:
+            out.append(f"coverage {c.get('report', i + 1)}: read must be one of {READ}")
     ids: list[str] = []
     for link in reg.get("links") or []:
         who = link.get("id", "?")
@@ -56,6 +67,11 @@ def problems(reg: dict, states: set[str], members: set[str]) -> list[str]:
             out.append(f"{who}: the card has {sentences(link['summary'])} sentences; at most 2")
         for i, src in enumerate(link.get("sources") or []):
             out += [f"{who}: source {i + 1} has no {k}" for k in SOURCE if not src.get(k)]
+            if src.get("tier") and src["tier"] not in tiers:
+                out.append(f"{who}: source {i + 1}'s tier must be one of {sorted(tiers)}")
+        if link.get("sources") and not any(s.get("tier") in QUALIFYING for s in link["sources"]):
+            out.append(f"{who}: no source qualifies it (the rule: a UN panel, the government concerned, or a UN "
+                       f"human-rights investigation; news is context only)")
     out += [f"{i}: listed twice" for i in sorted({i for i in ids if ids.count(i) > 1})]
     return out
 
